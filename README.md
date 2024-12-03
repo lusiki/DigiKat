@@ -11,11 +11,11 @@ Projekt analizira katoličku tematiku u hrvatskom digitalnom medijskom prostoru 
 - **Primarni:** Kreiranje i održavanje baze podataka katoličkih objava.
 - **Sekundarni:** Analiza tematskih trendova poput reprezentacije klera, katoličkog obrazovanja, hodočasničkog turizma i drugih.
 
-## Prikupljanje i Analiza Podataka
+## Prikupljanje i analiza Podataka
 - **Metode:** Web scraping, NLP, strojno učenje.
 - **Izvori:** Hrvatske web stranice i društvene mreže.
 
-## Tematska Istraživanja
+## Tematska istraživanja
 1. Reprezentacija klera
 2. Katoličko obrazovanje
 3. Hodočasnički turizam
