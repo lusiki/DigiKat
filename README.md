@@ -1,4 +1,4 @@
-# Prikaz i Analiza Sadržaja Katoličke Tematike u Hrvatskom Digitalnom Medijskom Prostoru
+# Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru
 
 
 ![Project Logo](photo_.jpg)
