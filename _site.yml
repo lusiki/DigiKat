@@ -1,0 +1,38 @@
+
+name: 'Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru' 
+navbar:
+  title: 'DigiKat'
+  left:
+    - text: 'Osnovne informacije'
+      href: index.html
+    - text: 'O Projektu'
+      href: about.html
+    - text: 'Projektni raspored'
+      href: schedule.html
+    - text: 'Tematska istraživanja'
+      menu:
+        - text: 'Hodčasnički turizam'
+          href: ''
+        - text: 'Analiza self-help sadržaja na YouTube-u'
+          href: '' 
+        - text: 'Demokršćanstvo'
+          href: ''
+        - text: 'Osnove programskog jezika R'
+          href: ''
+        - text: 'Vizualizacija podataka (ggplot2)'
+          href: ''
+    - text: 'Obavijesti'
+      href: news.html  
+    - text: 'Resursi'
+      href: resources.html   
+  right:
+    - text: 'O stranici'
+      href: site-info.html
+    - icon: ion-social-github
+      href: https://github.com/lusiki/WebObradaPodataka
+output_dir: 'docs'
+output:
+  html_document:
+    theme: flatly
+    highlight: textmate
+

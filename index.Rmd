@@ -1,0 +1,29 @@
+---
+pagetitle: "Osnovne informacije"
+---
+
+
+<br>
+<br>
+<br>
+
+<p align="center">
+  <img src="Foto/dta.png" width="550" title="hover text">
+</p>
+
+
+<br>
+<br>
+<br>
+
+# **Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru**
+
+<br>
+<br>
+
+Dobrodošli na stranice projekta <b>Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru</b> koji u 2022/23 izvodi [Luka Šikić](https://www.lukasikic.info/) na Fakultetu xxx. Kolegij je prvenstveno namijenjen studentima sociologije na diplomskoj razini, a može koristiti svim studentima društvenih i humanističkih smjerova koji su upoznati s osnovama statistike.
+
+<br>
+<br>
+<br>
+<br>
