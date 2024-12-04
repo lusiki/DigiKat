@@ -7,182 +7,98 @@ title: " "
 <br>
 <br>
 
-*Napomena*: .html i .Rmd formati predavanja su dostupni u [repozitoriju](https://github.com/BrbanMiro/WebObradaPodataka).
-<br>
-
-## Predavanje 01: Pregled kolegija i studentskih obveza
 
 
-- Uvod u kolegij
-- Potrebe, interesi i ciljevi
-- Rasprava: Podatkovna znanost i *Big Data*
+# Plan i Raspored Projekta
 
+## 1. Polugodište (siječanj – lipanj 2025.)
 
+- **Identifikacija objava katoličke tematike**:
+  - Analiza digitalnog medijskog prostora u Hrvatskoj za razdoblje od 01/2021 do 06/2024.
+  - Korištenje ključnih riječi, fraza, semantičkih konstrukata i algoritamske analize.
+  - **Sudjeluju**: Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja.
 
-<br><b>Čitanje: </b><a href="https://seankross.com/chi-2019/kross-guo-chi-2019.pdf">Podatkovna znanost u biznisu i akademiji</a>
-<br>
-<br>
+- **Formiranje baze podataka**:
+  - Organizacija prikupljenih objava u strukturiranu bazu podataka.
+  - Izrada projektnog repozitorija i web stranice projekta.
+  - Prikupljanje objava u realnom vremenu i umetanje u bazu.
+  - **Provodi**: Nositelj projekta, [Luka Šikić](https://www.lukasikic.info/).
 
+- **Kontrola prikupljenih objava**:
+  - Provjera kvalitete i relevantnosti prikupljenih podataka.
+  - **Sudjeluju**: Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja.
 
+## 2. Polugodište (srpanj – prosinac 2025.)
 
-## Predavanje 02: Vrste podataka
+- **Nastavak prikupljanja i održavanje baze**:
+  - Kontinuirano prikupljanje objava u realnom vremenu.
+  - Održavanje projektnog repozitorija.
+  - **Provodi**: Nositelj projekta.
 
-- Strukturirani i ne-strukturirani podatci
-- Kvantitativni i kvalitativni
-- Diskretni i kontinuirani podatci
-- Razine podataka
-- Podatci u "praksi
-- Big data" u društvenim i humanističkim znanostima
+- **Kontrola prikupljenih objava**:
+  - Nastavak provjere kvalitete podataka.
+  - **Sudjeluju**: Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja.
 
+- **Definiranje tematskih istraživanja**:
+  - Prva podjela podataka za tematska istraživanja.
+  - Definiranje istraživačkih tema sukladno prikupljenim podacima.
+  - **Sudjeluju**: Svi članovi istraživačkog tima.
 
-<br><b>Čitanje: </b><a href="https://github.com/lusiki/WebObradaPodataka/blob/main/Literatura/Vrste_podataka.pdf">Vrste podataka-poglavlje u knjizi</a> + <a href="https://github.com/lusiki/WebObradaPodataka/blob/main/Literatura/Sociology%20in%20the%20Era%20of%20Big%20Data.pdf">Sociology in the Era of Big Data</a> + <a href="https://github.com/lusiki/WebObradaPodataka/blob/main/Literatura/VELIKI%20PODACI%20%E2%80%93%20VELIKI%20IZAZOV%20ZA%20SOCIOLOGIJU.pdf">Veliki podatci-veliki izazov za sociologiju</a> + <a href="https://github.com/lusiki/WebObradaPodataka/blob/main/Literatura/Msc_mastruko_Kristalna%20kugla.pdf">Uloga big data, algoritama i prediktivne analitike u konstrukciji zbilje</a>
-<br>
-<br>
+## 3. Polugodište (siječanj – lipanj 2026.)
 
-## Predavanje 03: Izvori podataka
+- **Nastavak prikupljanja i održavanje baze**:
+  - **Provodi**: Nositelj projekta.
 
-- Kategorije izvora podatka
-- Klasični izvori podataka
-- Moderni izvori podataka (BigData)
-- Web
-- Društvene mreže
-- Web stranice i aplikacije
-- Društvene mreže
-- Senzori
-- Upravljanje modernim podatcima
+- **Kontrola prikupljenih objava**:
+  - **Sudjeluju**: Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja.
 
+- **Izrada i prezentacija prve sistematizirane karte**:
+  - Obrada i analiza podataka za 2025. godinu, uključujući povijesni pregled od 2021. godine.
+  - **Izradu karte sudjeluju**: Doc. dr. sc. Petra Palić, izv. prof. dr. sc. Irena Palić, Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja, nositelj projekta.
+  - **Prezentaciju provode**: Dr. sc. Suzana Lipar Obrovac, doc. dr. sc. Petra Palić, nositelj projekta.
 
-<br><b>Čitanje: </b><a href="https://github.com/lusiki/WebObradaPodataka/blob/main/Literatura/BDSources.pdf">Big Data ekosistem u društvenim istraživanjima</a>
-<br>
-<br>
+- **Druga podjela podataka za tematska istraživanja**:
+  - **Sudjeluju**: Svi članovi istraživačkog tima.
 
-## Predavanje 04: Osnove programskog jezika R
+## 4. Polugodište (srpanj – prosinac 2026.)
 
+- **Nastavak prikupljanja i održavanje baze**:
+  - **Provodi**: Nositelj projekta.
 
-- Instalacija
-- Zašto R?
-- Osnovni koncepti
-- Objektno orjentirano programiranje u R
-- "Sve je objekt"
-- "Sve ima naziv"
-- Indeksiranje
- 
+- **Kontrola prikupljenih objava**:
+  - **Sudjeluju**: Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja.
 
+- **Treća podjela podataka za tematska istraživanja**:
+  - **Sudjeluju**: Svi članovi istraživačkog tima.
 
-<br><b>Čitanje: </b><a href="https://www.srce.unizg.hr/files/srce/docs/edu/R/s720_polaznik.pdf">Uvod u R - skripta I</a> + </b><a href="https://cran.r-project.org/doc/contrib/Kasum+Legovic-UvodUr.pdf">Uvod u R - skripta II</a> + </b><a href="https://learningstatisticswithr.com/lsr-0.6.pdf">LSR, poglavlja 3 i 4</a>
-<br>
-<br>
+## 5. Polugodište (siječanj – lipanj 2027.)
 
-## Predavanje 05: Manipulacija i prilagodba podataka
+- **Nastavak prikupljanja i održavanje baze**:
+  - **Provodi**: Nositelj projekta.
 
+- **Kontrola prikupljenih objava**:
+  - **Sudjeluju**: Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja.
 
-- Set-up</li>
-- tidyverse osnove</li>
-- Manipulacija podatcima - dplyr
-- Manipulacija podatcima - tidyr
-- Dodatak predavanju: data.table
+- **Izrada i prezentacija druge sistematizirane karte**:
+  - Obrada i analiza podataka za 2026. godinu.
+  - **Izradu karte sudjeluju**: Doc. dr. sc. Petra Palić, izv. prof. dr. sc. Irena Palić, Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja, nositelj projekta.
+  - **Prezentaciju provode**: Dr. sc. Suzana Lipar Obrovac, doc. dr. sc. Petra Palić, nositelj projekta.
 
+## 6. Polugodište (srpanj – prosinac 2027.)
 
-<br><b>Čitanje: </b><a href="https://vita.had.co.nz/papers/tidy-data.pdf">Tidy Data članak od Hadley Wickham-a</a>
-<br>
-<br>
+- **Završno prikupljanje i održavanje baze**:
+  - **Provodi**: Nositelj projekta.
 
-## Predavanje 06: Prikupljanje podataka sa interneta - Web Scraping I
+- **Kontrola prikupljenih objava**:
+  - **Sudjeluju**: Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja.
 
-- Softverski set-up
-- Webscraping osnove
-- WS na strani servera - rvest
-- Praktični primjeri - Wikipedia
-- Dodatni savjeti za WS na strani servera
-- WS na strani klijenta
-- API
-- Praktični primjeri
+- **Izrada i prezentacija treće sistematizirane karte**:
+  - Obrada i analiza podataka za 2027. godinu.
+  - **Izradu karte sudjeluju**: Doc. dr. sc. Petra Palić, izv. prof. dr. sc. Irena Palić, Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja, nositelj projekta.
+  - **Prezentacija** će uključivati zbirni pregled katoličkog medijskog prostora od 01/2021 do 12/2027 te rezultate svih provedenih tematskih istraživanja.
+  - **Prezentaciju provode**: Svi članovi projektnog tima.
 
+---
 
-<br><b>Čitanje: </b><a href="">Pokušajte "scrapati" nešto sa Web-a!</a>
-<br>
-<br>
-
-## Predavanje 07: Rad sa bazama podataka
-
-
-- Baze podatka
-- Baze podataka i *tidyverse*
-- Baze podataka i SQL
-- Praktični primjer - SQLite
-- Praktični primjer - Google BigQuery
-- Resursi za učenje
-
-
-<br><b>Čitanje: </b><a href="https://wizardzines.com/zines/sql/">Knjiga *Become A Select Star* od Julia-e Evans.</a>
-<br>
-<br>
-
-
-## Predavanje 08: Statistička analiza
-
-
-- Regresijski model
-- Rezidualna struktura
-- Dummie varijable
-- Analiza panel podataka
-- Instrumentalne varijable
-- Marginalni efekti
-- Prezentacija rezultata
-- Dodatni resursi
-
-
-
-<br><b>Čitanje: </b><a href="https://projecteuclid.org/download/pdf_1/euclid.ss/1009213726">"Dvije kulture" statističkog modeliranja</a>
-<br>
-<br>
-
-## Predavanje 09: Uvod u strojno učenje
-
-
-- Što je strojno učenje
-- Klasifikacija
-- Regresija
-- Klastering
-- Nadgledane i ne-nadgledane metode
-- Trening i test uzorci
-- Pristranost vs varijanca
-- Interpretabilnost modela
-
-
-<br><b>Čitanje: </b><a href="">Izbor po želji iz dodatnih resursa.</a>
-<br>
-<br>
-
-## Predavanje 10: Analiza teksta
-
-
-- Što je analiza teksta
-- Primjeri analize teksta
-- Uvoz i priprema teksta 
-- Format teksta za analizu 
-- Deskriptivna analiza teksta 
-- Analiza sentimenta
-- Analiza važnosti pojmova
-
-
-<br><b>Čitanje: </b><a href="http://eprints.lse.ac.uk/86659/1/Benoit_Text%20analysis%20in%20R_2018.pdf">Vodič za analizu teksta u R</a>
-<br>
-<br>
-
-
-
-## Predavanje 11: Prezentacija, objava i djeljenje rezultata
-
-- Reproducible research i Markdown
-- Markdown sintaksa
-- R Markdown sintaksa i funkcionalnosti
-
-
-<br><b>Čitanje: </b><a href="https://dukespace.lib.duke.edu/dspace/bitstream/handle/10161/8374/Baumer_R%20Markdown-Integrating%20a%20Reproducible%20Analysis%20Tool%20into%20Introductory%20Statistics.pdf?sequence=1"> Članak o Reproducible Analysis</a>
-<br>
-<br>
-<br>
-
-
+**Napomena**: Tijekom cijelog trajanja projekta, svi članovi istraživačkog tima aktivno će sudjelovati u definiranju i provođenju tematskih istraživanja na temelju prikupljenih podataka.
 
