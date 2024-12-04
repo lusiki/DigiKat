@@ -5,7 +5,7 @@ navbar:
   left:
     - text: 'Osnovne informacije'
       href: index.html
-    - text: 'O Projektu'
+    - text: 'O projektu'
       href: about.html
     - text: 'Projektni raspored'
       href: schedule.html

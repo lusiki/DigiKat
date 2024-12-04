@@ -7,55 +7,17 @@ title: " "
 <br>
 <br>
 
-### Osnovne informacije
-
-
-**Obrada podataka** je kolegij na diplomskoj razini koji u zimskom semestru akademske godine 2022/23 na Fakultetu hrvatskih studija u Zagrebu izvodi [Luka Sikic](https://www.lukasikic.info/). Kolegij je prvenstveno namijenjen sociolozima, ali i prilagođen za studente iz drugih društvenih zananosti poput politologije, komunikologije, povijesti i ekonomije te služi kao [premosnica](http://croecon.contentio.biz/post/2021-03-16-nova-statistika/) od osnovne razine statističkih znanja do primjene statistike u modernom i praktičnom kontekstu.
+## Prikaz i analiza sadržaja katoličke tematike u hrvatskom digitalnom medijskom prostoru
 
 <br>
-
-Kolegij polazi od računalnog pristupa društvenim znanostima **computational social science (CSS)** i modernih izvora podatka puput Web-a, aplikacija, društvenih mreža, urbanih senzora i dr. Fokus je na upoznavanju i korištenju osnovnih računalnih tehnologija za obradu i analizu podataka (**Data Science**). Kolegij ne predstavlja sveobuhvatnu referencu za rad s *Big Data* tehnologijama u društvenim znanostima. Ipak, sadržaj kolegija će studentima koristiti kao korisno polazište za daljnji studij *Big Data* principa i alata u društvenim znanostima i općenito. Za studente zainteresirane za sveobuhvatnije razumijevanje i rad sa *Big Data* tehnologijama, preporuča se samostalno nadupunjavanje kolegija temama: rad sa terminalom (*Bash Shell*), rad sa platformama za suradnju i razmjenu koda (*Git*, *GitHub*), rad sa *Docker*-om, programiranje i iteracija, paralelno programiranje, rad u oblaku (*Cloud*). 
-
 <br>
-
-Cilj kolegija je upoznavanje studenata sa:
-
-1) Ekosustavom modernog upravljanja podatcima (*Data Science*)
-2) Alatima za obradu i manipulaciju podataka (*paketi u programskom jeziku R*, *SQL*, *Spark* )
-3) Modernom metodologijom za analizu podataka (*regresija, strojno učenje, obrada teksta - NLP*)
-4) Alatima za prezentaciju i dijeljenje rezulata (*Markdown, Git*)
-5) Programskim jezikom R
-
+Projekt analizira javni digitalni medijski prostor u Hrvatskoj, uključujući web stranice i društvene mreže. Cilj projekta je identifikacija objava s katoličkom tematikom, njihovo prikupljanje i organizacija u strukturiranu bazu podataka.
 <br>
-
-Kolegij će osposobiti studente za razumijevanje modernih izvora podataka te metodolgije i alata za obradu podataka. To će studentima omogućiti uključivanje u modernu istraživačku paradigmu i tehnološke (*frontier*) tokove. Osim naglaska na akademsku primjenu stečenog znanja, kroz kolegij će se studentima olakšati uključivanje u poslovni IT sektor na strani analitike i projektnog menadžmenta.
-
 <br>
-
-### Literatura
-
-Koristiti ćemo mnoštvo različitih knjiga i resursa koje će biti dostupne na linkovima kod svakog predavanja.
-
-Sljedeća knjiga ulazi u obaveznu literaturu za kolegij:
-
-<a href="http://barbra-coco.dyndns.org/yuri/R/R%20for%20Data%20Science-%20Import,%20Tidy,%20Transform,%20Visualize,%20and%20Model%20Data.pdf">R for Data Science</a>
-<br><i>od Garrett Grolemund-a i  Hadley Wickham-a</i> 
-<br>Ovo je referenca za rad sa jezikom R. Dostupna je i <a href="https://r4ds.had.co.nz/">bookdown</a> verzija.
-
-
+**Primarne projektne aktivnosti** uključuju prikupljanje objava katoličke tematike u realnom vremenu tijekom trajanja projekta (01/2025-12/2027), njihovo umetanje u bazu i održavanje, te izradu godišnjega prikaza tih objava.
 <br>
-
-### Polaganje ispita
-
-U zimskom , ljetnom i jesenskom ispitnom roku studenti imaju završni pismeni ispit iz tema obrađenih na predavanjima i prema priloženoj literaturi. Ispit je položen ako student ostvari 60% od ukupno mogućih bodova: 60-64% = (2); 65-74% = (3); 75-84% = (4); 85% = (5). Uvjet za izlazak na ispit je sudjelovanje na nastavi (maksimalno 2 izostanka) i izrada prezentacije ili seminarskog rada.
-
 <br>
-
-### Prezentacija/seminarski rad
-
-Svi studenti tijekom semestra moraju održati jednu prezentaciju prema zadanoj literaturi u .ppt formi. Izlagači moraju pripremiti na kraju prezentacije i nekoliko (2-3) ključnih pitanja za raspravu na kraju obrađene teme. Prezentaciju je potrebno poslati na e-mail najkasnije u petak, tjedan dana prije seminara.
-
-Seminarski rad se sastoji od (min) 5 stranica teksta i (min) 5 akademskih referenci o prethodno dogovorenoj temi. Svi oblici plagiranja će se sankcionirati.
+**Sekundarne projektne aktivnosti** obuhvaćaju raznovrsna tematska istraživanja na temelju prikupljenih podataka poput medijske reprezentacije klera, katoličkog obrazovanja, hodočasničkog turizma, katoličkih influencera, reprezentacije tiskanih medija u digitalnom prostoru, demokršćanstva i drugih tema.
 
 
 
