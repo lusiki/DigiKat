@@ -4,12 +4,12 @@ title: " "
 
 <br>
 <br>
+
+## Prikaz i analiza sadržaja katoličke tematike u hrvatskom digitalnom medijskom prostoru
+
 <br>
 <br>
 
-## Prikaz i analiza sadržaja katoličke tematike u hrvatskom digitalnom medijskom prostoru
-<br>
-<br>
 ### Doprinos projekta
 <br>
 <br>
@@ -18,9 +18,12 @@ Projekt doprinosi znanstvenom i stručnom razvoju uključenih znanstvenika kroz 
 Posebna vrijednost projekta leži u korištenju principa **otvorenog pristupa** i **reproducibilnih istraživanja**. Svi alati i skripte korišteni tijekom projekta bit će dostupni kao otvoreni kod na platformama poput **GitHuba**, omogućavajući drugim istraživačima da repliciraju, verificiraju i prošire naša istraživanja. Time potičemo transparentnost i kolaboraciju u znanstvenoj zajednici.
 
 Rad na projektu omogućit će mladim znanstvenicima sudjelovanje u interdisciplinarnoj suradnji, gdje će učiti kako integrirati računalne tehnike s društvenim i humanističkim znanostima, proširujući svoje istraživačke horizonte. Kroz otvorene repozitorije i dijeljenje podataka, znanstvenici će imati priliku prezentirati svoja otkrića i metode međunarodnoj zajednici, čime će dodatno jačati svoje istraživačke profile. Projekt će poticati razvoj samostalnosti i inovativnosti, omogućujući znanstvenicima da samostalno istražuju odabrana tematska područja i doprinesu razvoju otvorene znanosti.
+<br>
+<br>
 
 ### Ciljevi projekta
-
+<br>
+<br>
 - **Identifikacija i prikupljanje** objava katoličke tematike u realnom vremenu unutar hrvatskog digitalnog medijskog prostora, koristeći otvorene alate za web skraping i API integracije.
 
 - **Organizacija** prikupljenih podataka u strukturiranu i otvorenu bazu podataka koja će služiti kao temelj za daljnje analize i biti dostupna istraživačkoj zajednici.
@@ -28,9 +31,12 @@ Rad na projektu omogućit će mladim znanstvenicima sudjelovanje u interdiscipli
 - **Analiza** podataka korištenjem naprednih računalnih tehnika poput obrade prirodnog jezika i strojnog učenja, s naglaskom na reproducibilnost i transparentnost istraživanja.
 
 - **Diseminacija** rezultata kroz znanstvene publikacije, konferencije, radionice i javne prezentacije, uz objavu korištenog koda i podataka u otvorenim repozitorijima.
+<br>
+<br>
 
-### Zašto se pridružiti ovome projketu?
-
+### Zašto se pridružiti ovome projektu?
+<br>
+<br>
 Projekt predstavlja jedinstvenu priliku za istraživače i studente da sudjeluju u inovativnom istraživanju koje kombinira društvene znanosti s naprednim računalnim tehnikama i principima otvorene znanosti. Sudjelovanjem u ovom projektu, znanstvenici će:
 
 - **Steći iskustvo** u analizi digitalnih medija koristeći alate poput **R** i **Python**.
