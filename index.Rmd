@@ -7,9 +7,7 @@ pagetitle: "Osnovne informacije"
 <br>
 <br>
 
-<p align="center">
-  <img src="Foto/dta.png" width="550" title="hover text">
-</p>
+![](photo_.jpg)
 
 
 <br>
