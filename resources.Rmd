@@ -7,7 +7,7 @@ title: " "
 <br>
 
 
-## R 
+## Praktične vještine 
 
 <ul>
 <li><a href="https://education.rstudio.com/learn/">RStudio: Finding Your Way To R</a></li>
@@ -18,7 +18,7 @@ title: " "
 </ul>
 
 
-## Statistička beletristika
+## Korisni znanstveni radovi
 
 <ul>
 <li><a href="https://www.pdfdrive.com/penguin-books-how-to-lie-with-statistics-darrell-huff-e119748826.html">How to lie with statistics</a></li>
@@ -27,12 +27,17 @@ title: " "
 <ul>
 
 
+## Tematska istraživanja
+
+
+
+
 ## Ostalo
 
 <ul>
 <li><a href="https://towardsdatascience.com/best-data-science-blogs-to-follow-in-2020-d03044169eb4">Data science blogovi</a></li>
 <li><a href="https://towardsdatascience.com/data-science-books-you-should-read-in-2020-358f70e1d9b2">Data science knjige</a></li>
-<li><a href="https://rpubs.com/shichich">Prošlogodišnja predavanja</a></li>
+<li><a href="https://rpubs.com/shichich">Kolegiji</a></li>
 <ul>
 
 
