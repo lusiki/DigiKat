@@ -29,7 +29,7 @@ navbar:
     - text: 'O stranici'
       href: site-info.html
     - icon: ion-social-github
-      href: https://github.com/lusiki/WebObradaPodataka
+      href: https://lusiki.github.io/DigiKat/index.html
 output_dir: 'docs'
 output:
   html_document:
