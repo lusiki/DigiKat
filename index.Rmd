@@ -19,12 +19,19 @@ pagetitle: "Osnovne informacije"
 <br>
 <br>
 
-Dobrodošli na stranice projekta **Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru** koji u trogodišnjem razdoblju 2025-2027 izvodi [Luka Šikić](https://www.lukasikic.info/) na [Hrvatskom katoličkom sveučilištu](https://www.unicath.hr/) pri [Odjelu za komunikologiju](https://www.unicath.hr/odjeli-i-fakultet/komunikologija). Na ovim stranicama možete pratiti razvoj projekta, pristupiti analizama i rezultatima te se informirati o metodologiji i teorijskim okvirima istraživanja.U okviru projekta koristit će se metode [računalnih društvenih znanosti](https://pure.rug.nl/ws/portalfiles/portal/140988937/Manifesto_of_computational_social_science.pdf) kako bi se analizirala digitalna prisutnost katoličke tematike u Hrvatskoj. Na taj se način unapređuje razumijevanje medijskog prostora i razvijaju nove metodologije koje su ključne za buduća istraživanja u području računalnih društvenih znanosti. Na temelju analize digitalnih objava, projekat će se baviti pitanjima poput:
-- Kako se katolička tematika prikazuje u digitalnom medijskom prostoru?
-- Kako se katolička tematika povezuje s drugim društvenim temama?
-- Kako se katolička tematika povezuje s političkim i društvenim akterima?
-- Kako se katolička tematika povezuje s društvenim događajima i vijestima?
-- Kako se katolička tematika povezuje s društvenim mrežama i digitalnim platformama?
+Dobrodošli na stranice projekta **Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru** koji u trogodišnjem razdoblju 2025-2027 izvodi [Luka Šikić](https://www.lukasikic.info/), na [Hrvatskom katoličkom sveučilištu](https://www.unicath.hr/), pri [Odjelu za komunikologiju](https://www.unicath.hr/odjeli-i-fakultet/komunikologija). Interdisciplinarni projektni tim uključuje 9 suradnka: Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja, izv.prof.dr.sc Lana Ciboci Perša, doc. dr. sc. Petra Palić, dr.sc. Suzana Lipar Obrovac, doc.dr.sc. Ivan Uldrijan, izv. prof. dr. sc. Andrea Sršen, izv. prof. dr. sc. Irena Palić.
+
+Na ovim stranicama možete pratiti razvoj projekta, pristupiti analizama i rezultatima te se informirati o metodologiji i teorijskim okvirima istraživanja.U okviru projekta koristit će se metode [računalnih društvenih znanosti](https://pure.rug.nl/ws/portalfiles/portal/140988937/Manifesto_of_computational_social_science.pdf) kako bi se analizirala digitalna prisutnost katoličke tematike u Hrvatskoj. Na taj se način unapređuje razumijevanje medijskog prostora i razvijaju nove metodologije koje su ključne za buduća istraživanja u području računalnih društvenih znanosti. Na temelju analize digitalnih objava, projekat će se baviti pitanjima:
+<br>
+ - Kako se katolička tematika prikazuje u digitalnom medijskom prostoru?
+<br>
+ - Kako se katolička tematika povezuje s drugim društvenim temama?
+<br>
+ - Kako se katolička tematika povezuje s političkim i društvenim akterima?
+<br>
+ - Kako se katolička tematika povezuje s društvenim događajima i vijestima?
+<br>
+ - Kako se katolička tematika povezuje s društvenim mrežama i digitalnim platformama?
 
 <br>
 <br>
