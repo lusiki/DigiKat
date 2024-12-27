@@ -5,26 +5,12 @@ title: " "
 <br>
 <br>
 
-## Prikaz i analiza sadržaja katoličke tematike u hrvatskom digitalnom medijskom prostoru
-
-<br>
-<br>
-
-### Doprinos projekta
-<br>
-<br>
-Projekt doprinosi znanstvenom i stručnom razvoju uključenih znanstvenika kroz stjecanje i primjenu naprednih vještina u području računalnih društvenih znanosti. Sudionici će imati priliku raditi s najnovijim računalnim tehnikama obrade podataka, uključujući rudarenje podataka, obradu prirodnog jezika, strojno učenje i statističke analize. Kroz praktičan rad na projektu, razvijat će svoje sposobnosti u analizi velikih količina podataka i primjeni ovih metoda na konkretne istraživačke izazove, što će im pružiti kompetitivnu prednost u znanstvenoj zajednici.
-
-Posebna vrijednost projekta leži u korištenju principa **otvorenog pristupa** i **reproducibilnih istraživanja**. Svi alati i skripte korišteni tijekom projekta bit će dostupni kao otvoreni kod na platformama poput **GitHuba**, omogućavajući drugim istraživačima da repliciraju, verificiraju i prošire naša istraživanja. Time potičemo transparentnost i kolaboraciju u znanstvenoj zajednici.
-
-Rad na projektu omogućit će mladim znanstvenicima sudjelovanje u interdisciplinarnoj suradnji, gdje će učiti kako integrirati računalne tehnike s društvenim i humanističkim znanostima, proširujući svoje istraživačke horizonte. Kroz otvorene repozitorije i dijeljenje podataka, znanstvenici će imati priliku prezentirati svoja otkrića i metode međunarodnoj zajednici, čime će dodatno jačati svoje istraživačke profile. Projekt će poticati razvoj samostalnosti i inovativnosti, omogućujući znanstvenicima da samostalno istražuju odabrana tematska područja i doprinesu razvoju otvorene znanosti.
-<br>
-<br>
-
 ### Ciljevi projekta
+
 <br>
 <br>
-- **Identifikacija i prikupljanje** objava katoličke tematike u realnom vremenu unutar hrvatskog digitalnog medijskog prostora, koristeći otvorene alate za web skraping i API integracije.
+
+- **Identifikacija i prikupljanje** objava katoličke tematike u realnom vremenu unutar hrvatskog digitalnog medijskog prostora, koristeći otvorene alate za *web scraping* i API integracije.
 
 - **Organizacija** prikupljenih podataka u strukturiranu i otvorenu bazu podataka koja će služiti kao temelj za daljnje analize i biti dostupna istraživačkoj zajednici.
 
@@ -34,7 +20,20 @@ Rad na projektu omogućit će mladim znanstvenicima sudjelovanje u interdiscipli
 <br>
 <br>
 
+### Doprinos projekta
+
+<br>
+<br>
+Projekt doprinosi znanstvenom i stručnom razvoju uključenih znanstvenika kroz stjecanje i primjenu naprednih vještina u području računalnih društvenih znanosti. Sudionici će imati priliku raditi s najnovijim računalnim tehnikama obrade podataka, uključujući rudarenje podataka, obradu prirodnog jezika, strojno učenje i statističke analize. Kroz praktičan rad na projektu, razvijat će svoje sposobnosti u analizi velikih količina podataka i primjeni ovih metoda na konkretne istraživačke izazove, što će im pružiti kompetitivnu prednost u znanstvenoj i poslovnoj zajednici.
+
+Posebna vrijednost projekta leži u korištenju [open source](https://roadworkasia.com/wp-content/uploads/2023/04/Labour_of_Love_An_Open_Access_Manifesto.pdf) principa i [reproducibilnosti](https://www.nature.com/articles/s41562-016-0021) istraživanja. Svi alati i skripte korišteni tijekom projekta bit će dostupni kao otvoreni kod na platformi [GitHub](https://github.com/lusiki/DigiKat), omogućavajući tako drugim istraživačima da repliciraju, verificiraju i prošire naša istraživanja. Time potičemo transparentnost i kolaboraciju u znanstvenoj zajednici.
+
+Rad na projektu omogućit će mladim znanstvenicima sudjelovanje u interdisciplinarnoj suradnji, gdje će učiti kako integrirati računalne tehnike s društvenim i humanističkim znanostima, proširujući svoje istraživačke horizonte. Kroz otvorene repozitorije i dijeljenje podataka, znanstvenici će imati priliku prezentirati svoja otkrića i metode međunarodnoj zajednici, čime će dodatno jačati svoje istraživačke profile. Projekt će poticati razvoj samostalnosti i inovativnosti, omogućujući znanstvenicima da samostalno istražuju odabrana tematska područja i doprinesu razvoju otvorene znanosti.
+<br>
+<br>
+
 ### Zašto se pridružiti ovome projektu?
+
 <br>
 <br>
 Projekt predstavlja jedinstvenu priliku za istraživače i studente da sudjeluju u inovativnom istraživanju koje kombinira društvene znanosti s naprednim računalnim tehnikama i principima otvorene znanosti. Sudjelovanjem u ovom projektu, znanstvenici će:
