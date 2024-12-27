@@ -126,21 +126,112 @@ data_sample <- data_sample %>%
  
 
 ```{r}
-# read in katolicki izrazi
 
 katolicki_izrazi <- read_excel("./Codes/katolički_izrazi.xlsx")
-katolicki_izrazi <- rbind(katolicki_izrazi, generalno)
-katolicki_izrazi <- unique(katolicki_izrazi)
+#katolicki_izrazi <- rbind(katolicki_izrazi, generalno)
+#katolicki_izrazi <- unique(katolicki_izrazi)
+#write.xlsx(katolicki_izrazi, "./Codes/katolički_izrazi.xlsx")
 
-# save the katolicki izrazi
 
-write.xlsx(katolicki_izrazi, "./Codes/katolički_izrazi.xlsx")
+# Select necessary columns for tokenization
+text_data <- data_sample %>%
+  select(URL, combined_text)
+
+# Unnest tokens using tidytext
+tidy_text <- text_data %>%
+  unnest_tokens(word, combined_text)
+
+tidy_text <- tidy_text %>%
+  anti_join(stop_corpus, by = "word") %>%
+  # remove numbers
+  filter(!grepl("[0-9]", word)) 
+
+# tidy_text %>%
+#   count(word, sort = TRUE) %>%
+#   head(100) %>%
+#   kable() %>%
+#   kable_styling("striped", full_width = FALSE)
+```
+
+## STEMMING
+
+```{r}
+# Apply stemming to the "word" column
+tidy_text_ <- tidy_text %>%
+  mutate(
+    stemmed_word = sapply(word, function(w) {
+      stemmed = write_tokens(w)  # Apply your write_tokens function
+      # Process the result similar to your generalno example
+      stemmed = sapply(strsplit(stemmed, "\t"), `[`, 2)  # Extract the second element
+      stemmed
+    })
+  )
+
+# Enframe the results if necessary
+tidy_text_ <- tidy_text_ %>%
+  rename(original_word = word) %>%
+  select(URL, original_word, stemmed_word)
+```
+
+
+```{r}
+process_in_batches <- function(data, batch_size = 1000) {
+  total_rows <- nrow(data)
+  num_batches <- ceiling(total_rows / batch_size)
+  
+  # Initialize a new column to store stemmed words
+  data$stemmed_word <- NA
+  
+  for (i in seq_len(num_batches)) {
+    # Calculate the range for the current batch
+    start_row <- (i - 1) * batch_size + 1
+    end_row <- min(i * batch_size, total_rows)
+    
+    # Process the current batch
+    current_batch <- data[start_row:end_row, ]
+    
+    data$stemmed_word[start_row:end_row] <- sapply(current_batch$word, function(w) {
+      # Apply the write_tokens function
+      stemmed <- write_tokens(w)  # Apply your write_tokens function
+      # Extract the second element from the token result
+      stemmed <- sapply(strsplit(stemmed, "\t"), `[`, 2)
+      stemmed
+    })
+    
+    # Print progress
+    cat(sprintf("Processed batch %d/%d (Rows %d to %d)\n", i, num_batches, start_row, end_row))
+  }
+  
+  return(data)
+}
+
+# Apply the batch processing function to tidy_text
+batch_size <- 10000  # Adjust the batch size as needed
+tidy_text_ <- process_in_batches(tidy_text, batch_size)
+```
+
+
+
+
+
+
+# Preform stemming
+
+
+
 
 
 ```
 
 
 
+```{r}
+tidy_text %>%
+  count(word, sort = TRUE) %>%
+  head(100) %>%
+  kable() %>%
+  kable_styling("striped", full_width = FALSE)
+```
 
 
 
