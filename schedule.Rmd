@@ -8,97 +8,74 @@ title: " "
 <br>
 
 
-
-# Plan i Raspored Projekta
-
-## 1. Polugodište (siječanj – lipanj 2025.)
+## siječanj – lipanj 2025.
 
 - **Identifikacija objava katoličke tematike**:
-  - Analiza digitalnog medijskog prostora u Hrvatskoj za razdoblje od 01/2021 do 06/2024.
+  - Prikupljanje i kontrola podataka digitalnog medijskog prostora u Hrvatskoj za razdoblje od 01/2021 do 06/2024.
   - Korištenje ključnih riječi, fraza, semantičkih konstrukata i algoritamske analize.
-  - **Sudjeluju**: Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja.
 
-- **Formiranje baze podataka**:
-  - Organizacija prikupljenih objava u strukturiranu bazu podataka.
-  - Izrada projektnog repozitorija i web stranice projekta.
+- **Računalna infrastruktura**:
+  - Organizacija prikupljenih podataka/objava u strukturiranu bazu podataka.
+  - Izrada projektnog [repozitorija](https://github.com/lusiki/DigiKat) i web [stranice](https://lusiki.github.io/DigiKat/index.html) projekta.
   - Prikupljanje objava u realnom vremenu i umetanje u bazu.
-  - **Provodi**: Nositelj projekta, [Luka Šikić](https://www.lukasikic.info/).
 
 - **Kontrola prikupljenih objava**:
   - Provjera kvalitete i relevantnosti prikupljenih podataka.
-  - **Sudjeluju**: Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja.
 
-## 2. Polugodište (srpanj – prosinac 2025.)
+
+## srpanj – prosinac 2025.
 
 - **Nastavak prikupljanja i održavanje baze**:
   - Kontinuirano prikupljanje objava u realnom vremenu.
   - Održavanje projektnog repozitorija.
-  - **Provodi**: Nositelj projekta.
 
 - **Kontrola prikupljenih objava**:
   - Nastavak provjere kvalitete podataka.
-  - **Sudjeluju**: Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja.
 
 - **Definiranje tematskih istraživanja**:
   - Prva podjela podataka za tematska istraživanja.
   - Definiranje istraživačkih tema sukladno prikupljenim podacima.
-  - **Sudjeluju**: Svi članovi istraživačkog tima.
 
-## 3. Polugodište (siječanj – lipanj 2026.)
+## siječanj – lipanj 2026.
 
 - **Nastavak prikupljanja i održavanje baze**:
-  - **Provodi**: Nositelj projekta.
+  - Kontinuirano prikupljanje objava u realnom vremenu.
+  - Održavanje projektnog repozitorija.
 
 - **Kontrola prikupljenih objava**:
-  - **Sudjeluju**: Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja.
+  - Nastavak provjere kvalitete podataka.
 
 - **Izrada i prezentacija prve sistematizirane karte**:
   - Obrada i analiza podataka za 2025. godinu, uključujući povijesni pregled od 2021. godine.
-  - **Izradu karte sudjeluju**: Doc. dr. sc. Petra Palić, izv. prof. dr. sc. Irena Palić, Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja, nositelj projekta.
-  - **Prezentaciju provode**: Dr. sc. Suzana Lipar Obrovac, doc. dr. sc. Petra Palić, nositelj projekta.
 
 - **Druga podjela podataka za tematska istraživanja**:
-  - **Sudjeluju**: Svi članovi istraživačkog tima.
 
-## 4. Polugodište (srpanj – prosinac 2026.)
+## srpanj – prosinac 2026.
 
 - **Nastavak prikupljanja i održavanje baze**:
-  - **Provodi**: Nositelj projekta.
 
 - **Kontrola prikupljenih objava**:
-  - **Sudjeluju**: Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja.
 
 - **Treća podjela podataka za tematska istraživanja**:
-  - **Sudjeluju**: Svi članovi istraživačkog tima.
 
-## 5. Polugodište (siječanj – lipanj 2027.)
+## siječanj – lipanj 2027.
 
 - **Nastavak prikupljanja i održavanje baze**:
-  - **Provodi**: Nositelj projekta.
 
 - **Kontrola prikupljenih objava**:
-  - **Sudjeluju**: Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja.
 
 - **Izrada i prezentacija druge sistematizirane karte**:
   - Obrada i analiza podataka za 2026. godinu.
-  - **Izradu karte sudjeluju**: Doc. dr. sc. Petra Palić, izv. prof. dr. sc. Irena Palić, Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja, nositelj projekta.
-  - **Prezentaciju provode**: Dr. sc. Suzana Lipar Obrovac, doc. dr. sc. Petra Palić, nositelj projekta.
 
-## 6. Polugodište (srpanj – prosinac 2027.)
+## srpanj – prosinac 2027.
 
 - **Završno prikupljanje i održavanje baze**:
-  - **Provodi**: Nositelj projekta.
 
 - **Kontrola prikupljenih objava**:
-  - **Sudjeluju**: Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja.
 
 - **Izrada i prezentacija treće sistematizirane karte**:
   - Obrada i analiza podataka za 2027. godinu.
   - **Izradu karte sudjeluju**: Doc. dr. sc. Petra Palić, izv. prof. dr. sc. Irena Palić, Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja, nositelj projekta.
   - **Prezentacija** će uključivati zbirni pregled katoličkog medijskog prostora od 01/2021 do 12/2027 te rezultate svih provedenih tematskih istraživanja.
-  - **Prezentaciju provode**: Svi članovi projektnog tima.
 
----
-
-**Napomena**: Tijekom cijelog trajanja projekta, svi članovi istraživačkog tima aktivno će sudjelovati u definiranju i provođenju tematskih istraživanja na temelju prikupljenih podataka.
 
