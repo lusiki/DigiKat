@@ -38,44 +38,158 @@ library(stringi)
 library(openxlsx)
 library(writexl)
 library(RMySQL)
+library(data.table)
+library(stringr)
+library(caret)
+library(e1071)
+library(randomForest)
+library(xgboost)
+library(ROSE)
+library(glmnet)
 ```
 
 
 ```{r echo=F, eval=T, message=F , warning= FALSE, message=F}
-source("./stemmer.R")
-source("./text_analysis.R")
-source("./write_tokens.R")
+source("./Codes/stemmer.R")
+source("./Codes/text_analysis.R")
+source("./Codes/write_tokens.R")
 ```
 
 
-## Učitaj podatke
+## IMPORT DATA
+
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 conn <- dbConnect(RMySQL::MySQL(), dbname = "determ_all", host = "127.0.0.1",
                   user = "Lux", password = "Theanswer0207", local_infile = TRUE)
 
 query <- "SELECT * FROM media_space_2022"
 data22 <- dbGetQuery(conn, query)
+#close the connection
+dbDisconnect(conn)
+
+
 
 #fwrite(data22, "C:/Users/lukas/Desktop/dta22.xlsx")
-
-
 # query <- "SELECT * FROM media_space_2022"
-# 
 # # Execute the query and fetch the results
 # data22 <- dbGetQuery(conn, query)
-
-
-
 
 # Get the column names of the table
 column_names <- dbListFields(conn, "media_space_2022")
 
 # Print the column names
 print(column_names)
+str(data22)
+summary(data22)
 
+```
+
+
+## SAMPLE TO SIZE
+
+```{r}
+
+set.seed(123) # For reproducibility
+
+# Sample 1 million observations; adjust as needed based on your system's capacity
+sample_size <- 1e6
+
+data22 <- as.data.table(data22) 
+data_sample <- data22[sample(.N, sample_size)]
+rm(data22) # Remove the original data to free up memory
+```
+
+
+## PREPROCESSING
+
+```{r}
+# Remove duplicate entries based on the 'URL' column
+data_sample <- unique(data_sample, by = "URL")
+
+# Combine relevant text fields into a single column
+data_sample <- data_sample %>%
+  mutate(
+    combined_text = paste(
+      coalesce(as.character(TITLE), ""),
+      coalesce(as.character(FULL_TEXT), ""),
+      sep = " "
+    )
+  ) %>%
+  # Remove rows where 'combined_text' is empty
+  filter(str_trim(combined_text) != "")
+
+```
+
+
+
+## TOKENIZATION AND CLEANING
+ 
+
+```{r}
+# read in katolicki izrazi
+
+katolicki_izrazi <- read_excel("./Codes/katolički_izrazi.xlsx")
+katolicki_izrazi <- rbind(katolicki_izrazi, generalno)
+katolicki_izrazi <- unique(katolicki_izrazi)
+
+# save the katolicki izrazi
+
+write.xlsx(katolicki_izrazi, "./Codes/katolički_izrazi.xlsx")
 
 
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
@@ -83,7 +197,6 @@ print(column_names)
 range(data22$DATE)
 
 #filter only web from column FROM and make a count number of rows per 
-
 data
 
 data22 %>%
@@ -97,7 +210,6 @@ data22 %>%
          Cumulative_Percentage = cumsum(Percentage)) %>% # Calculate cumulative percentage
   head(25) %>%
   pull(FROM_SITE) -> top20
-
 
 ```
 

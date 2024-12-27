@@ -2,7 +2,7 @@
 
 
 # read in lexicons
-CroSentilex_n <- read.delim("./crosentilex-negatives.txt",
+CroSentilex_n <- read.delim("./Codes/crosentilex-negatives.txt",
                             header = FALSE,
                             sep = " ",
                             stringsAsFactors = FALSE,
@@ -10,7 +10,7 @@ CroSentilex_n <- read.delim("./crosentilex-negatives.txt",
   rename(word = "V1", sentiment = "V2" ) %>%
   mutate(brija = "NEG")
 
-CroSentilex_p  <- read.delim("./crosentilex-positives.txt",
+CroSentilex_p  <- read.delim("./Codes/crosentilex-positives.txt",
                              header = FALSE,
                              sep = " ",
                              stringsAsFactors = FALSE,
@@ -23,7 +23,7 @@ Crosentilex_sve <- rbind(setDT(CroSentilex_n), setDT(CroSentilex_p))
 #head(sample_n(Crosentilex_sve,1000),15)
 
 
-CroSentilex_Gold  <- read.delim2("./gs-sentiment-annotations.txt",
+CroSentilex_Gold  <- read.delim2("./Codes/gs-sentiment-annotations.txt",
                                  header = FALSE,
                                  sep = " ",
                                  stringsAsFactors = FALSE) %>%
@@ -37,8 +37,8 @@ CroSentilex_Gold$sentiment <- as.numeric(unlist(CroSentilex_Gold$sentiment))
 #head(sample_n(CroSentilex_Gold,100),15)
 
 
-LilaHR  <- read_excel("./lilaHR_clean.xlsx", sheet = "Sheet1") %>% select (-"...1")
-LilaHR_long <- read_excel("./lilaHR_clean_long.xlsx", sheet = "Sheet1") %>% select (-"...1")
+LilaHR  <- read_excel("./Codes/lilaHR_clean.xlsx", sheet = "Sheet1") %>% select (-"...1")
+LilaHR_long <- read_excel("./Codes/lilaHR_clean_long.xlsx", sheet = "Sheet1") %>% select (-"...1")
 
 
 
