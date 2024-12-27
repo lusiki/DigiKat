@@ -5,7 +5,9 @@
 
 
 ## Opis Projekta
-Projekt analizira katoličku tematiku u hrvatskom digitalnom medijskom prostoru (web stranice, društvene mreže) od 01/2025. do 12/2027. Cilj je prikupljanje i organizacija objava u bazu podataka te provođenje tematskih istraživanja.
+Projekt analizira katoličku tematiku u hrvatskom digitalnom medijskom prostoru (web stranice, društvene mreže) od 01/2025. do 12/2027.
+Cilj je prikupljanje i organizacija objava u bazu podataka te provođenje tematskih istraživanja.
+Stranici projekta možete pristupiti [ovdje](https://lusiki.github.io/DigiKat/)
 
 ## Ciljevi
 - **Primarni:** Kreiranje i održavanje baze podataka katoličkih objava.
