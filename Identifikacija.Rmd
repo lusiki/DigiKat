@@ -1,0 +1,300 @@
+---
+title: "Full data filter"
+author: "Lux"
+date: "2023-11-13"
+output: html_document
+---
+
+```{r setup, include=T, message=FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+ 
+```
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE, message=F}
+library(tidyverse)
+library(readxl)
+library(xlsx)
+library(here)
+library(kableExtra)
+library(DT)
+library(purrr)
+library(tidytext)
+library(dplyr)
+library(lubridate)
+library(anytime)
+library(grid)
+library(wordcloud)
+library(reshape2)
+library(ggraph)
+library(widyr)
+library(topicmodels)
+library(ggthemes)
+library(xlsx)
+library(writexl)
+library(data.table)
+library(stringi)
+library(openxlsx)
+library(writexl)
+library(RMySQL)
+```
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE, message=F}
+source("./stemmer.R")
+source("./text_analysis.R")
+source("./write_tokens.R")
+```
+
+
+## Učitaj podatke
+```{r echo=F, eval=T, message=F , warning= FALSE}
+conn <- dbConnect(RMySQL::MySQL(), dbname = "determ_all", host = "127.0.0.1",
+                  user = "Lux", password = "Theanswer0207", local_infile = TRUE)
+
+query <- "SELECT * FROM media_space_2022"
+data22 <- dbGetQuery(conn, query)
+
+#fwrite(data22, "C:/Users/lukas/Desktop/dta22.xlsx")
+
+
+# query <- "SELECT * FROM media_space_2022"
+# 
+# # Execute the query and fetch the results
+# data22 <- dbGetQuery(conn, query)
+
+
+
+
+# Get the column names of the table
+column_names <- dbListFields(conn, "media_space_2022")
+
+# Print the column names
+print(column_names)
+
+
+
+```
+
+
+```{r echo=F, eval=T, message=F , warning= FALSE}
+
+range(data22$DATE)
+
+#filter only web from column FROM and make a count number of rows per 
+
+data
+
+data22 %>%
+  filter(SOURCE_TYPE == "web") %>%
+  # filter only year 2024
+  filter(year(DATE) == 2024) %>%
+  group_by(FROM_SITE) %>%
+  summarise(Count = n()) %>%
+  arrange(desc(Count)) %>%
+  mutate(Percentage = (Count / sum(Count)) * 100, # Calculate percentage
+         Cumulative_Percentage = cumsum(Percentage)) %>% # Calculate cumulative percentage
+  head(25) %>%
+  pull(FROM_SITE) -> top20
+
+
+```
+
+```{r}
+
+
+top25 <- data22 %>%
+  filter(SOURCE_TYPE == "web") %>%          # Filter for SOURCE_TYPE "web"
+  filter(year(DATE) == 2022) %>%            # Filter for the year 2024
+  group_by(FROM_SITE) %>%                    # Group by FROM_SITE
+  summarise(Count = n(), .groups = 'drop') %>% # Count occurrences and drop grouping
+  arrange(desc(Count)) %>%                   # Arrange in descending order of Count
+  mutate(
+    Percentage = (Count / sum(Count)) * 100,  # Calculate percentage
+    Cumulative_Percentage = cumsum(Percentage) # Calculate cumulative percentage
+  ) %>%
+  slice_head(n = 25) %>%                     # Select the top 25
+  pull(FROM_SITE)   
+
+
+not_top25 <- data22 %>%
+  filter(SOURCE_TYPE == "web")%>%
+  filter(year(DATE) == 2022) %>%               # Ensure only year 2024 is considered
+  filter(!(FROM_SITE %in% top25)) %>%                     # Select the top 25
+  pull(FROM_SITE)  
+
+
+
+# filter data24 for dta24_filtered
+
+
+dta22_filter <- data22 %>%
+  filter(SOURCE_TYPE == "web") %>%          # Filter for SOURCE_TYPE "web"
+  filter(year(DATE) == 2022) %>%            # Filter for the year 2024
+  filter(FROM_SITE %in% not_top25)    # Exclude sites in top25
+
+
+
+
+# Exclude sites in top25
+
+```
+
+
+```{r echo=F, eval=F, message=F , warning= FALSE}
+
+
+  
+# remove last two columns
+
+dta22_filter <- dta22_filter %>% select(-c(46,47))
+
+proba1 =
+  dta22_filter %>%
+  slice(1:100000) 
+
+proba2 =
+  dta22_filter %>%
+  slice(100001:200000)
+
+proba3 =
+  dta22_filter %>%
+  slice(200001:300000)
+proba4 =
+  dta22_filter %>%
+  slice(300001:400000)
+proba5 =
+  dta22_filter %>%
+  slice(400001:500000)
+proba6 =
+  dta22_filter %>%
+  slice(500001:600000)
+proba7 =
+  dta22_filter %>%
+  slice(600001:700000)
+proba8 = 
+  dta22_filter %>%
+  slice(700001:800000)
+
+proba9 = 
+  dta22_filter %>%
+  slice(800001:900000)
+
+proba10 = 
+  dta22_filter %>%
+  slice(900001:1000000)
+proba11 = 
+  dta22_filter %>%
+  slice(1000001:1100000)
+proba12 = 
+  dta22_filter %>%
+  slice(1100001:1200000)
+
+proba13 = 
+  dta22_filter %>%
+  slice(1200001:1300000)
+
+
+
+proba_list <- list()
+
+# Number of slices
+num_slices <- 13
+
+# Loop through each slice
+for (i in 1:num_slices) {
+  start <- (i - 1) * 100000 + 1
+  end <- i * 100000
+  
+  # Create each sliced data frame and add it to the list
+  proba_list[[i]] <- dta22_filter %>%
+    slice(start:end)
+}
+
+
+
+```
+
+```{r}
+data22 = data22 %>%
+  filter(SOURCE_TYPE == "web")
+
+
+
+
+```
+
+
+```{r}
+
+
+setDT(dta22_filter)
+
+dta22_filter[, FULL_TEXT := tolower(FULL_TEXT)]
+
+
+generalno <- c("crkva", "biskup", "Kaptol", "časna", "sestra", "svećenik", "župnik", "vjernik", "kardinal", "papa", "sveti otac", "redovnik", "redovnica","kršćanstvo", "vjera", "Gospa", "Isus", "katolički", "misa", "pričest", "krizma", "grijeh", "vjeroučitelj", "vjeronauk", "blagoslov","svjedočanstvo", "relikvija", "stigma", "duhovnost", "velečasni","zaređenje", "krunica", "vjeronauk", "ukazanje","Stepinac", "HBK", "Opus Dei", "Caritas","vatikanski", "blagoslova","sakramenata", "prolife", "sekularizacija", "sekularna", "klerikalizam", "Crkva", "veličaju" ,"ustaštvo", "oduzimaju", "prava", "katoličku", "državu", "afera", "Kaptola",  "vjeronauk" ,"vatikanski", "klerikalna", "rodna" ,"ideologija", "klerikalizam" ,"brak", "blagoslovili" , "sekularna","Katolička", "pobačaj", "abortus",  "jezuiti", "prekrštavanje", "izopćen", "bludničio",  "posvećenje", "inkardiniran", "inkardinacija", "dogma", "tolerantna", "vjerska kontrola", "pedofil", "homoseksualnost", "patrijarhat", "ozdravljenje", "čudo") %>% tolower()
+genralno_root <- sapply(generalno, write_tokens)
+genralno_root <- sapply(strsplit(genralno_root, "\t"), `[`, 2)
+generalno <- enframe(genralno_root, name = "name", value = "root")
+
+
+words_vector <- str_c("(", str_c(generalno$root, collapse = "|"), ")")
+words_vector <- str_c("\\b(", str_c(generalno$root, collapse = "|"), ")\\b")
+
+
+# Vectorized function to check for matches
+check_matches <- function(text, words_vector) {
+  any(stri_detect_regex(text, words_vector, negate = FALSE))
+}
+
+
+batch_size <- 1000
+
+# Calculate the number of batches
+num_batches <- ceiling(nrow(dta22_filter) / batch_size)
+
+
+# Loop through each batch
+for (i in 1:num_batches) {
+  
+  start_time <- Sys.time()
+  
+  # Calculate the start and end row indices for the current batch
+  start_idx <- (i - 1) * batch_size + 1
+  end_idx <- min(i * batch_size, nrow(dta22_filter))
+  
+  # Print the current batch number and row indices
+  cat(sprintf("Processing batch %d (rows %d to %d)...\n", i, start_idx, end_idx))
+  
+  # Subset the data table for the current batch and apply the operations
+  dta22_filter[start_idx:end_idx, `:=` (
+    has_word = sapply(FULL_TEXT, check_matches, words_vector),
+    matched_word = sapply(FULL_TEXT, function(x) paste(unlist(str_extract_all(x, words_vector)), collapse=", "))
+  )]
+  
+  batch_data <- dta22_filter[start_idx:end_idx]
+  
+  end_time <- Sys.time()
+  duration <- end_time - start_time
+  
+  # Print the duration for the current batch
+  cat(sprintf("Batch %d processed in %f seconds.\n", i, duration))
+  
+  # ... [rest of your loop code for saving etc.] ...
+}
+
+
+catoliq22 <- dta22_filter[has_word==T,]
+
+
+rbind(catoliq23_1, catoliq23_2, catoliq23_3, catoliq23_4, catoliq23_5, catoliq23_6, catoliq23_7, catoliq23_8, catoliq23_9, catoliq23_10, catoliq23_11, catoliq23_12, catoliq23_13) -> catoliq23
+
+
+
+write.xlsx(catoliq22, "C:/Users/lukas/Dropbox/HKS/Projekti/Dezinformacije/Data/Inicjalno citanje/catoliq22_not_top_25.xlsx")
+
+
+
+```

@@ -9,6 +9,10 @@ navbar:
       href: about.html
     - text: 'Projektni raspored'
       href: schedule.html
+    - text: 'Baza podataka'
+      href: baza.html   
+    - text: 'Mapa medijskog prostora'
+      href: mapa.html        
     - text: 'Tematska istraživanja'
       menu:
         - text: 'Hodčasnički turizam'
