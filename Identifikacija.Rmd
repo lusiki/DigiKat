@@ -80,30 +80,39 @@ dbDisconnect(conn)
 # str(data22)
 # summary(data22)
 
+
+katolicki_izrazi <- read_excel("./Codes/katolički_izrazi.xlsx")
+catholic_words <- katolicki_izrazi[order(katolicki_izrazi$name),]
+
+
+katolicki_izrazi <- read_excel("./Codes/katolički_izrazi_small.xlsx")
+catholic_words <- katolicki_izrazi[order(katolicki_izrazi$root),]
+
+
 ```
 
+
+
+# MAKE REGEX PATTERN
+
+
 ```{r}
-# Load necessary libraries
-library(data.table)
-library(stringr)
-library(stringi)
-library(future)
-library(furrr)
 
 
-
+catholic_words <- unique(tolower(katolicki_izrazi$root))
 catholic_words_sorted <- catholic_words[order(-nchar(catholic_words))]
 
-# Escape regex special characters
+# Escape regex special characters in the roots
 catholic_words_escaped <- str_replace_all(
   catholic_words_sorted,
   "([\\.\\|\\(\\)\\[\\]\\{\\}\\\\\\+\\*\\?\\^\\$])",
   "\\\\\\1"
 )
 
-# Separate single-word and multi-word roots
+# Separate multi-word roots (contain spaces) and single-word roots
 multi_word_roots <- catholic_words_escaped[grepl(" ", catholic_words_sorted)]
 single_word_roots <- catholic_words_escaped[!grepl(" ", catholic_words_sorted)]
+
 
 # Create pattern for single-word roots with word roots
 pattern_single <- if(length(single_word_roots) > 0) {
@@ -119,49 +128,125 @@ pattern_multi <- if(length(multi_word_roots) > 0) {
   NULL
 }
 
-# Combine patterns
+# Combine single-word and multi-word patterns with preceding space or start of string
 if(!is.null(pattern_single) & !is.null(pattern_multi)) {
-  pattern_final <- paste(pattern_single, pattern_multi, sep = "|")
+  # Ensure that each pattern is preceded by a space or start of string
+  pattern_final <- paste0("(?:(?<=\\s)|(?<=^))(", 
+                          paste(c(single_word_roots, multi_word_roots), collapse = "|"), 
+                          ")\\w*\\b")
 } else if(!is.null(pattern_single)) {
-  pattern_final <- pattern_single
+  pattern_final <- paste0("(?:(?<=\\s)|(?<=^))(", 
+                          paste(single_word_roots, collapse = "|"), 
+                          ")\\w*\\b")
 } else {
-  pattern_final <- pattern_multi
+  pattern_final <- paste0("(?:(?<=\\s)|(?<=^))(", 
+                          paste(multi_word_roots, collapse = "|"), 
+                          ")\\b")
 }
 
-# Assign the final pattern
-pattern <- pattern_final
-
 # Display the final regex pattern
-print(pattern)
-# Output:
-# "\\b(protestantska reformacij|katolička crkv|abortus|anglikanc|apostolsk|ateist|baptist|blagoslov|brak|caritas|duhov|duhovnost|dogm)\\w*\\b"
+print(pattern_final)
+# Example Output:
+# "(?:(?<=\\s)|(?<=^))(apostolsk|ateist|biskup|biskupij|blagoslov|blagoslovi|blagoslovljen)\\w*\\b"
 
-# Apply the pattern to filter the data frame and include matched words
-filtered_df <- data22_ %>%
+
+
+```
+
+
+# MATCHING PROCEDURE
+```{r}
+setDT(data22)
+
+filtered_df <- data22 %>%
+  head(100000) %>%
   mutate(
     # Extract all matches based on the regex pattern
-    matches = str_extract_all(TITLE, regex(pattern, ignore_case = TRUE))
+    matches = str_match_all(FULL_TEXT, regex(pattern_final, ignore_case = TRUE))
   ) %>%
   
   mutate(
-    # Count the number of matches in each row
-    match_count = lengths(matches)
+    # Extract the captured group (matched words without preceding space)
+    matched_words = sapply(matches, function(x) {
+      # x is a matrix with full match and captured group
+      # We extract the second column which contains the captured group
+      matched <- x[,2]
+      # Append any suffixes (the pattern already captures root and suffix)
+      # Remove NA values
+      matched <- matched[!is.na(matched)]
+      # Return unique matched words separated by commas
+      paste(unique(matched), collapse = ", ")
+    })
+  ) %>%
+  
+  mutate(
+    # Count the number of unique matched words
+    match_count = sapply(str_split(matched_words, ", "), length)
   ) %>%
   
   # Filter rows where the number of matches is two or more
   filter(match_count >= 2) %>%
   
-  # Create a new column 'matched_words' by collapsing the list of matches into a comma-separated string
+  # Optionally, remove the auxiliary columns
+  select(-matches, -match_count)
+```
+
+
+```{r}
+filtered_df <- data22 %>%
+  # Optionally, limit to the first 100,000 rows
+#  head(100000) %>%
+  
+  # Extract all matches based on the regex pattern
   mutate(
-    matched_words = sapply(matches, function(x) paste(unique(x), collapse = ", "))
+    matches = str_match_all(TITLE, regex(pattern_final, ignore_case = TRUE))
   ) %>%
+  
+  # Extract matched roots and full words
+  mutate(
+    # Extract the captured group (matched roots)
+    matched_roots = sapply(matches, function(x) {
+      # x is a matrix with full match and captured group
+      # Extract the second column which contains the captured group
+      matched <- x[,2]
+      # Remove NA values
+      matched <- matched[!is.na(matched)]
+      # Return unique matched roots separated by commas
+      paste(unique(matched), collapse = ", ")
+    }),
+    # Extract the full matched words
+    matched_full_words = sapply(matches, function(x) {
+      # Extract the first column which contains the full match
+      full_matched <- x[,1]
+      # Remove NA values
+      full_matched <- full_matched[!is.na(full_matched)]
+      # Return unique matched full words separated by commas
+      paste(unique(full_matched), collapse = ", ")
+    })
+  ) %>%
+  
+  # Count the number of unique matched full words
+  mutate(
+    match_count = sapply(str_split(matched_full_words, ", "), length)
+  ) %>%
+  
+  # Filter rows where the number of matches is two or more
+  filter(match_count >= 2) %>%
   
   # Optionally, remove the auxiliary columns
   select(-matches, -match_count)
 
-
-
+# View the filtered data with matched roots and full words
+print(filtered_df)
 ```
+
+
+
+
+
+
+
+
 
 ```{r}
 filtered_df <- data22_ %>%
@@ -228,7 +313,7 @@ data_sample <- data_sample %>%
 ```{r}
 
 katolicki_izrazi <- read_excel("./Codes/katolički_izrazi.xlsx")
-katolicki_izrazi <- katolicki_izrazi[order(katolicki_izrazi$root),]
+catholic_words <- katolicki_izrazi[order(katolicki_izrazi$name),]
 
 #katolicki_izrazi <- rbind(katolicki_izrazi, generalno)
 #katolicki_izrazi <- unique(katolicki_izrazi)
