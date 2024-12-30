@@ -82,6 +82,102 @@ dbDisconnect(conn)
 
 ```
 
+```{r}
+# Load necessary libraries
+library(data.table)
+library(stringr)
+library(stringi)
+library(future)
+library(furrr)
+
+
+
+catholic_words_sorted <- catholic_words[order(-nchar(catholic_words))]
+
+# Escape regex special characters
+catholic_words_escaped <- str_replace_all(
+  catholic_words_sorted,
+  "([\\.\\|\\(\\)\\[\\]\\{\\}\\\\\\+\\*\\?\\^\\$])",
+  "\\\\\\1"
+)
+
+# Separate single-word and multi-word roots
+multi_word_roots <- catholic_words_escaped[grepl(" ", catholic_words_sorted)]
+single_word_roots <- catholic_words_escaped[!grepl(" ", catholic_words_sorted)]
+
+# Create pattern for single-word roots with word roots
+pattern_single <- if(length(single_word_roots) > 0) {
+  paste0("\\b(", paste(single_word_roots, collapse = "|"), ")\\w*\\b")
+} else {
+  NULL
+}
+
+# Create pattern for multi-word roots (exact matches)
+pattern_multi <- if(length(multi_word_roots) > 0) {
+  paste0("\\b(", paste(multi_word_roots, collapse = "|"), ")\\b")
+} else {
+  NULL
+}
+
+# Combine patterns
+if(!is.null(pattern_single) & !is.null(pattern_multi)) {
+  pattern_final <- paste(pattern_single, pattern_multi, sep = "|")
+} else if(!is.null(pattern_single)) {
+  pattern_final <- pattern_single
+} else {
+  pattern_final <- pattern_multi
+}
+
+# Assign the final pattern
+pattern <- pattern_final
+
+# Display the final regex pattern
+print(pattern)
+# Output:
+# "\\b(protestantska reformacij|katolička crkv|abortus|anglikanc|apostolsk|ateist|baptist|blagoslov|brak|caritas|duhov|duhovnost|dogm)\\w*\\b"
+
+# Apply the pattern to filter the data frame and include matched words
+filtered_df <- data22_ %>%
+  mutate(
+    # Extract all matches based on the regex pattern
+    matches = str_extract_all(TITLE, regex(pattern, ignore_case = TRUE))
+  ) %>%
+  
+  mutate(
+    # Count the number of matches in each row
+    match_count = lengths(matches)
+  ) %>%
+  
+  # Filter rows where the number of matches is two or more
+  filter(match_count >= 2) %>%
+  
+  # Create a new column 'matched_words' by collapsing the list of matches into a comma-separated string
+  mutate(
+    matched_words = sapply(matches, function(x) paste(unique(x), collapse = ", "))
+  ) %>%
+  
+  # Optionally, remove the auxiliary columns
+  select(-matches, -match_count)
+
+
+
+```
+
+```{r}
+filtered_df <- data22_ %>%
+  mutate(match_count = str_count(TITLE, regex(pattern, ignore_case = TRUE))) %>%
+  filter(match_count >= 2) %>%
+  select(-match_count)
+```
+
+
+
+
+
+
+
+
+
 
 ## SAMPLE TO SIZE
 
@@ -93,9 +189,15 @@ set.seed(123) # For reproducibility
 sample_size <- 10000
 
 data22 <- as.data.table(data22) 
-data_sample <- data22[sample(.N, sample_size)]
+data22_ <- data22[sample(.N, sample_size)]
 #rm(data22) # Remove the original data to free up memory
 ```
+
+
+
+
+
+
 
 
 ## PREPROCESSING
@@ -263,11 +365,14 @@ katolcki_redovi <- tidy_text_ %>%
   filter(stemmed_word %in% katolicki_izrazi$root) %>%
   select(URL, word, stemmed_word)
 
-
-# now selectunique URLS
-
 katolcki_urlovi <- katolcki_redovi %>%
   distinct(URL, .keep_all = TRUE)
+
+katolcki_clanci <- data22 %>%
+  filter(URL %in% katolcki_urlovi$URL)
+# add a column to katolcki_clanci that contains all words in the root column that are related to the URL
+
+
 
 ```
 
