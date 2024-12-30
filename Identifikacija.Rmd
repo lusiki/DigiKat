@@ -243,16 +243,39 @@ print(filtered_df)
 
 
 
-
-
-
-
-
 ```{r}
-filtered_df <- data22_ %>%
-  mutate(match_count = str_count(TITLE, regex(pattern, ignore_case = TRUE))) %>%
-  filter(match_count >= 2) %>%
-  select(-match_count)
+# show me decsciprive stats, count per FROM_SITE, SOURCE_TYPE, AUTHOR
+
+filtered_df %>%
+  group_by(FROM_SITE) %>%
+  summarise(
+    count = n(),
+    unique_sources = n_distinct(SOURCE_TYPE),
+    unique_authors = n_distinct(AUTHOR)
+  ) %>%
+  arrange(desc(count))
+
+
+
+filtered_df %>%
+  group_by(SOURCE_TYPE) %>%
+  summarise(
+    count = n(),
+    unique_sites = n_distinct(FROM_SITE),
+    unique_authors = n_distinct(AUTHOR)
+  ) %>%
+  arrange(desc(count))
+
+
+filtered_df %>% 
+  group_by(AUTHOR) %>%
+  summarise(
+    count = n(),
+    unique_sites = n_distinct(FROM_SITE),
+    unique_sources = n_distinct(SOURCE_TYPE)
+  ) %>%
+  arrange(desc(count))
+
 ```
 
 
