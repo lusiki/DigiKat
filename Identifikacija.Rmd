@@ -67,20 +67,18 @@ data22 <- dbGetQuery(conn, query)
 #close the connection
 dbDisconnect(conn)
 
-
-
 #fwrite(data22, "C:/Users/lukas/Desktop/dta22.xlsx")
 # query <- "SELECT * FROM media_space_2022"
 # # Execute the query and fetch the results
 # data22 <- dbGetQuery(conn, query)
 
 # Get the column names of the table
-column_names <- dbListFields(conn, "media_space_2022")
-
-# Print the column names
-print(column_names)
-str(data22)
-summary(data22)
+# column_names <- dbListFields(conn, "media_space_2022")
+# 
+# # Print the column names
+# print(column_names)
+# str(data22)
+# summary(data22)
 
 ```
 
@@ -92,11 +90,11 @@ summary(data22)
 set.seed(123) # For reproducibility
 
 # Sample 1 million observations; adjust as needed based on your system's capacity
-sample_size <- 1e6
+sample_size <- 10000
 
 data22 <- as.data.table(data22) 
 data_sample <- data22[sample(.N, sample_size)]
-rm(data22) # Remove the original data to free up memory
+#rm(data22) # Remove the original data to free up memory
 ```
 
 
@@ -128,6 +126,8 @@ data_sample <- data_sample %>%
 ```{r}
 
 katolicki_izrazi <- read_excel("./Codes/katolički_izrazi.xlsx")
+katolicki_izrazi <- katolicki_izrazi[order(katolicki_izrazi$root),]
+
 #katolicki_izrazi <- rbind(katolicki_izrazi, generalno)
 #katolicki_izrazi <- unique(katolicki_izrazi)
 #write.xlsx(katolicki_izrazi, "./Codes/katolički_izrazi.xlsx")
@@ -145,7 +145,7 @@ tidy_text <- tidy_text %>%
   anti_join(stop_corpus, by = "word") %>%
   # remove numbers
   filter(!grepl("[0-9]", word)) 
-
+# 
 # tidy_text %>%
 #   count(word, sort = TRUE) %>%
 #   head(100) %>%
@@ -182,10 +182,17 @@ process_in_batches <- function(data, batch_size = 1000) {
   # Initialize a new column to store stemmed words
   data$stemmed_word <- NA
   
+  # Initialize variables to track time
+  start_time <- Sys.time()
+  batch_times <- numeric(num_batches)  # To store time taken for each batch
+  
   for (i in seq_len(num_batches)) {
     # Calculate the range for the current batch
     start_row <- (i - 1) * batch_size + 1
     end_row <- min(i * batch_size, total_rows)
+    
+    # Record the start time for the current batch
+    batch_start_time <- Sys.time()
     
     # Process the current batch
     current_batch <- data[start_row:end_row, ]
@@ -198,15 +205,48 @@ process_in_batches <- function(data, batch_size = 1000) {
       stemmed
     })
     
-    # Print progress
-    cat(sprintf("Processed batch %d/%d (Rows %d to %d)\n", i, num_batches, start_row, end_row))
+    # Record the end time for the current batch
+    batch_end_time <- Sys.time()
+    
+    # Calculate time taken for the current batch in seconds
+    batch_time <- as.numeric(difftime(batch_end_time, batch_start_time, units = "secs"))
+    batch_times[i] <- batch_time
+    
+    # Calculate elapsed time
+    elapsed_time <- as.numeric(difftime(batch_end_time, start_time, units = "secs"))
+    
+    # Estimate total time based on average time per batch
+    average_time_per_batch <- mean(batch_times[1:i])
+    estimated_total_time <- average_time_per_batch * num_batches
+    estimated_remaining_time <- estimated_total_time - elapsed_time
+    
+    # Format time for readability
+    format_time <- function(seconds) {
+      sprintf("%02dh:%02dm:%02ds",
+              floor(seconds / 3600),
+              floor((seconds %% 3600) / 60),
+              floor(seconds %% 60))
+    }
+    
+    # Print progress with time information
+    cat(sprintf("Processed batch %d/%d (Rows %d to %d) | Batch Time: %s | Elapsed Time: %s | Estimated Remaining Time: %s\n",
+                i, num_batches, start_row, end_row,
+                format_time(batch_time),
+                format_time(elapsed_time),
+                format_time(max(0, estimated_remaining_time))))
   }
+  
+  # Calculate total processing time
+  total_processing_time <- Sys.time() - start_time
+  cat(sprintf("Completed processing %d rows in %s.\n",
+              total_rows,
+              format_time(as.numeric(total_processing_time, units = "secs"))))
   
   return(data)
 }
 
 # Apply the batch processing function to tidy_text
-batch_size <- 10000  # Adjust the batch size as needed
+batch_size <- 1000  # Adjust the batch size as needed
 tidy_text_ <- process_in_batches(tidy_text, batch_size)
 ```
 
@@ -215,13 +255,26 @@ tidy_text_ <- process_in_batches(tidy_text, batch_size)
 
 
 
+
+```{r}
+# filter rows in tidy_text that contain the word in root in katolicki_izrazi
+
+katolcki_redovi <- tidy_text_ %>%
+  filter(stemmed_word %in% katolicki_izrazi$root) %>%
+  select(URL, word, stemmed_word)
+
+
+# now selectunique URLS
+
+katolcki_urlovi <- katolcki_redovi %>%
+  distinct(URL, .keep_all = TRUE)
+
+```
+
+
 # Preform stemming
 
 
-
-
-
-```
 
 
 
