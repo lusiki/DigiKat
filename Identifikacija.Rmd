@@ -55,7 +55,6 @@ source("./Codes/text_analysis.R")
 source("./Codes/write_tokens.R")
 ```
 
-
 ## IMPORT DATA
 
 ```{r echo=F, eval=T, message=F , warning= FALSE}
@@ -96,7 +95,7 @@ catholic_words <- katolicki_izrazi[order(katolicki_izrazi$root),]
 # MAKE REGEX PATTERN
 
 
-```{r}
+```{r echo=F, eval=T, message=F , warning= FALSE}
 
 
 catholic_words <- unique(tolower(katolicki_izrazi$root))
@@ -155,14 +154,14 @@ print(pattern_final)
 
 
 # MATCHING PROCEDURE
-```{r}
+```{r echo=F, eval=T, message=F , warning= FALSE}
 setDT(data22)
 
 filtered_df <- data22 %>%
   head(100000) %>%
   mutate(
     # Extract all matches based on the regex pattern
-    matches = str_match_all(FULL_TEXT, regex(pattern_final, ignore_case = TRUE))
+    matches = str_match_all(TITLE, regex(pattern_final, ignore_case = TRUE))
   ) %>%
   
   mutate(
@@ -192,8 +191,8 @@ filtered_df <- data22 %>%
 ```
 
 
-```{r}
-filtered_df <- data22 %>%
+```{r echo=F, eval=T, message=F , warning= FALSE}
+filtered_df_ <- data22 %>%
   # Optionally, limit to the first 100,000 rows
 #  head(100000) %>%
   
@@ -231,7 +230,7 @@ filtered_df <- data22 %>%
   ) %>%
   
   # Filter rows where the number of matches is two or more
-  filter(match_count >= 2) %>%
+  filter(match_count >= 3) %>%
   
   # Optionally, remove the auxiliary columns
   select(-matches, -match_count)
@@ -241,12 +240,10 @@ print(filtered_df)
 ```
 
 
-
-
 ```{r}
 # show me decsciprive stats, count per FROM_SITE, SOURCE_TYPE, AUTHOR
 
-filtered_df %>%
+filtered_df_ %>%
   group_by(FROM_SITE) %>%
   summarise(
     count = n(),
@@ -257,7 +254,7 @@ filtered_df %>%
 
 
 
-filtered_df %>%
+filtered_df_ %>%
   group_by(SOURCE_TYPE) %>%
   summarise(
     count = n(),
@@ -278,13 +275,60 @@ filtered_df %>%
 
 ```
 
+```{r}
+
+filtered_df_ %>%
+  filter(SOURCE_TYPE == "web") %>%
+  group_by(FROM_SITE) %>%
+  summarise(
+    count = n(),
+    unique_sources = n_distinct(SOURCE_TYPE),
+    unique_authors = n_distinct(AUTHOR)
+  ) %>%
+  arrange(desc(count))
+  
+
+
+```
 
 
 
 
+```{r}
+
+web  <- filtered_df_ %>%
+  filter(SOURCE_TYPE == "web")
+
+
+web %>%
+  filter(FROM_SITE == "vecernji.hr") %>%
+  View()
+
+# Unnest tokens using tidytext
+tidy_text <- filtered_df_ %>%
+  unnest_tokens(word, FULL_TEXT)
+
+tidy_text <- tidy_text %>%
+  anti_join(stop_corpus, by = "word") %>%
+  # remove numbers
+  filter(!grepl("[0-9]", word)) 
+
+
+tidy_text %>%
+  count(word, sort = TRUE) %>%
+  head(100) %>%
+  kable() %>%
+  kable_styling("striped", full_width = FALSE)
 
 
 
+```
+
+
+
+```{r}
+
+```
 
 
 ## SAMPLE TO SIZE
