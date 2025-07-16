@@ -1,30 +1,68 @@
 # Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru
 
-
 ![Project Logo](photo_.jpg)
 
+![Status Projekta](https://img.shields.io/badge/status-aktivan-green)
+![Institucija](https://img.shields.io/badge/Institucija-Hrvatsko_katoličko_sveučilište-blue)
+[![Web stranica](https://img.shields.io/badge/web-stranica_projekta-brightgreen)](https://lusiki.github.io/DigiKat/)
+![Licenca](https://img.shields.io/badge/Licenca-CC%20BY%204.0-lightgrey)
 
-## Opis Projekta
-Projekt analizira katoličku tematiku u hrvatskom digitalnom medijskom prostoru (web stranice, društvene mreže) od 01/2025. do 12/2027.
-Cilj je prikupljanje i organizacija objava u bazu podataka te provođenje tematskih istraživanja.
-Stranici projekta možete pristupiti [ovdje](https://lusiki.github.io/DigiKat/)
+> Službeni repozitorij projekta koji primjenom metoda računalnih društvenih znanosti analizira prisutnost i karakteristike katoličke tematike u digitalnom medijskom prostoru Hrvatske.
 
-## Ciljevi
-- **Primarni:** Kreiranje i održavanje baze podataka katoličkih objava.
-- **Sekundarni:** Tematske analize reprezentacije klera, katoličkog obrazovanja, hodočasničkog turizma i dr.
+---
 
-## Prikupljanje i analiza podataka
-- **Metode:** Web scraping, NLP, strojno učenje.
-- **Izvori:** Hrvatske web stranice i društvene mreže.
+### 🎯 Glavni ciljevi
 
-## Tematska istraživanja
-1. Reprezentacija klera
-2. Katoličko obrazovanje
-3. Hodočasnički turizam
-4. Katolički influenceri
-5. Digitalna prisutnost tiskanih medija
-6. Demokršćanske politike
+Cilj ovog trogodišnjeg projekta (2025.-2027.) je sustavno istražiti kako se katoličke teme predstavljaju na hrvatskim internetskim portalima i društvenim mrežama. Projekt ima dva ključna cilja:
 
+*   **Primarni cilj:** Izgradnja, održavanje i kontinuirano ažuriranje sveobuhvatne, strukturirane baze podataka o medijskim objavama s katoličkom tematikom. Ova baza služit će kao temelj za sva daljnja istraživanja.
+*   **Sekundarni cilj:** Provođenje niza tematskih istraživanja koja će produbiti razumijevanje specifičnih aspekata, poput medijske reprezentacije klera, prikaza katoličkog obrazovanja ili hodočasničkog turizma.
 
+### 🔬 Metodologija i tehnologije
 
+Za prikupljanje i analizu podataka koristimo suvremene tehnike iz područja podatkovne znanosti, uključujući:
 
+-   **Prikupljanje podataka:** Automatizirano preuzimanje podataka s internetskih stranica (**Web Scraping**) i korištenje API-ja društvenih mreža.
+-   **Obrada prirodnog jezika (NLP):** Primjena algoritama za tematsko modeliranje, analizu sentimenta i prepoznavanje ključnih aktera i lokacija u tekstovima.
+-   **Strojno učenje:** Korištenje modela za klasifikaciju sadržaja i prediktivnu analizu.
+
+Svi alati i programski kod razvijeni u sklopu projekta bit će javno dostupni u ovom repozitoriju, u skladu s principima otvorene znanosti.
+
+### 📚 Tematska istraživanja
+
+Projekt će se fokusirati na nekoliko ključnih tematskih područja:
+
+-   Reprezentacija klera i posvećenih osoba
+-   Prikaz katoličkog obrazovanja i vjeronauka
+-   Oglašavanje i sadržaj vezan uz hodočasnički turizam
+-   Analiza djelovanja i utjecaja katoličkih influencera
+-   Digitalna prisutnost i doseg katoličkih tiskanih medija
+-   Medijsko praćenje demokršćanskih politika
+
+### 📂 Struktura repozitorija
+
+Ovaj repozitorij je organiziran na sljedeći način:
+
+-   **/code**: Sadrži skripte (Python, R) za prikupljanje, obradu i analizu podataka.
+-   **/data**: Ovdje će biti pohranjeni primjeri podataka (sample datasets) i agregirani podaci.
+-   **/docs**: Službena dokumentacija projekta, uključujući prijavni obrazac i metodološke okvire.
+-   **/publications**: Popis i poveznice na znanstvene radove, članke i konferencijska izlaganja proizašla iz projekta.
+-   **/reports**: Godišnji izvještaji i druge analize namijenjene široj javnosti.
+
+### ✍️ Kako citirati
+
+Ako koristite podatke ili nalaze iz ovog projekta, molimo vas da nas citirate.
+
+Za citiranje projekta u cjelini:
+> Šikić, L. i sur. (2025.-2027.). *Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru*. Repozitorij projekta. Hrvatsko katoličko sveučilište. URL: https://github.com/lusiki/DigiKat
+
+U BibTeX formatu:
+```bibtex
+@misc{Sikic_DigiKat_2025,
+  author       = {Šikić, Luka and others},
+  title        = {Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru},
+  year         = {2025-2027},
+  publisher    = {Hrvatsko katoličko sveučilište},
+  note         = {Repozitorij projekta},
+  url          = {https://github.com/lusiki/DigiKat}
+}
