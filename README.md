@@ -49,6 +49,16 @@ Ovaj repozitorij je organiziran na sljedeći način:
 -   **/publications**: Popis i poveznice na znanstvene radove, članke i konferencijska izlaganja proizašla iz projekta.
 -   **/reports**: Godišnji izvještaji i druge analize namijenjene široj javnosti.
 
+
+###  🤝 Doprinos projektu
+
+Projekt provodi definirani istraživački tim, ali cijenimo svaki oblik suradnje i povratnih informacija. Ako uočite grešku, imate prijedlog ili pitanje, slobodno otvorite novi issue na ovom repozitoriju.
+📞 Kontakt
+
+Za sve upite, molimo kontaktirajte voditelja projekta:
+doc. dr. sc. Luka Šikić | luka.sikic@unicath.hr
+
+
 ### ✍️ Kako citirati
 
 Ako koristite podatke ili nalaze iz ovog projekta, molimo vas da nas citirate.
@@ -57,6 +67,7 @@ Za citiranje projekta u cjelini:
 > Šikić, L. i sur. (2025.-2027.). *Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru*. Repozitorij projekta. Hrvatsko katoličko sveučilište. URL: https://github.com/lusiki/DigiKat
 
 U BibTeX formatu:
+
 ```bibtex
 @misc{Sikic_DigiKat_2025,
   author       = {Šikić, Luka and others},
@@ -66,3 +77,17 @@ U BibTeX formatu:
   note         = {Repozitorij projekta},
   url          = {https://github.com/lusiki/DigiKat}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
