@@ -7,8 +7,6 @@ title: " "
 <br>
 
 
-
-
 ### 📈 Novosti i događanja
 
 Ovdje možete pratiti najnovije vijesti, ključne korake i najave vezane uz projekt.
@@ -17,33 +15,32 @@ Ovdje možete pratiti najnovije vijesti, ključne korake i najave vezane uz proj
 
 #### Uskoro
 
-*   **Lipanj 2026.** - 📊 **Prezentacija prvog godišnjeg izvještaja.**
-    *   *Tim će predstaviti prvu sistematiziranu kartu medijskog prostora na sveučilišnom seminaru.*
-
 *   **Rujan 2025.** - 📝 **Prva podjela podataka za tematska istraživanja.**
     *   *Interna radionica za definiranje smjerova istraživanja i podjelu zaduženja unutar tima.*
-
 *   **Lipanj 2025.** - 🚀 **Pokretanje sustava za prikupljanje podataka u realnom vremenu.**
     *   *Naša infrastruktura je spremna za praćenje digitalnih medija 24/7.*
 
 ---
 
-#### Prošla događanja
+#### Događanja u 2025. godini
+*   **Travanj 2025.** - 🌐 **Pokrenuta nova  verzija web stranice projekta.**
+    *   *Poboljšana  verzija stranice postavljena je za testiranje i interne potrebe tima.*
 
-*   **Siječanj 2025.** - ✅ **Službeni početak projekta!**
-    *   *Održan je početni (*kick-off*) sastanak projektnog tima i definirani su operativni planovi za prvu godinu.*
+*   **Travanj 2025.** - 🗂️ **Završena prva faza prikupljanja povijesnih podataka.**
+    *   *Uspješno je prikupljen i obrađen korpus podataka iz razdoblja 2021.-2024., čime je stvoren temelj za daljnje analize.*
 
-*   **Prosinac 2024.** - 👨‍💻 **Finaliziran kod za prikupljanje podataka (v1.0).**
-    *   *Nakon višemjesečnog razvoja, prva stabilna verzija alata za web scraping i API integraciju je spremna za rad.*
-
-*   **Studeni 2023.** - 💡 **Metodološka radionica tima.**
+*   **Ožujak 2023.** - 💡 **Metodološka radionica tima.**
     *   *Održana je interna radionica o primjeni NLP tehnika i strojnog učenja za potrebe projekta.*
 
-*   **11/12/2022** - 🎤 **[Predstavljanje projekta na HKS-u](https://www.unicath.hr/)**
-    *   *Projektni ciljevi i metodologija predstavljeni su na internom seminaru Odjela za komunikologiju.*
+*   **Veljača 2025.** - 👨‍💻 **Finaliziran kod za prikupljanje podataka (v1.0).**
+    *   *Nakon višemjesečnog razvoja, prva stabilna verzija alata za web scraping i API integraciju je spremna za rad.*
 
-*   **15/10/2022** - 👍 **Projekt službeno odobren.**
-    *   *Projekt je dobio financiranje i zeleno svjetlo za početak realizacije od strane Hrvatskog katoličkog sveučilišta.*
+*   **Siječanj 2025.** - ✅ **Službeni početak projekta i konstituiranje tima!**
+    *   *Održan je početni (*kick-off*) sastanak projektnog tima, usvojen je finalni plan rada te su potvrđene uloge i odgovornosti svih članova, čime je formaliziran rad nakon odobrenja financiranja krajem 2022. godine.*
+    
+*   **Prosinac 2024.** - 🌐 **Javno predstavljanje projekta na HKS-u.**
+    *   *Projekt, njegovi ciljevi i metodologija službeno su predstavljeni akademskoj zajednici i javnosti. Pokrenuta je i službena web stranica projekta.*
+    
+*   **Studeni 2025.** - 🎤 **[Predstavljanje projekta na HKS-u](https://www.unicath.hr/)**
+    *   *Projektni ciljevi i metodologija predstavljeni su na internom seminaru Odjela za komunikologiju.*    
 
-*   **04/12/2021** - 🌐 **Pokrenuta beta verzija web stranice projekta.**
-    *   *Prva verzija stranice postavljena je za testiranje i interne potrebe tima.*
