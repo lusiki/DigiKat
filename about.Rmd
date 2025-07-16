@@ -5,49 +5,39 @@ title: " "
 <br>
 <br>
 
-### Ciljevi projekta
+### 🎯 Ciljevi projekta
 
-<br>
-<br>
+Naša misija je stvoriti jasan i sveobuhvatan uvid u digitalnu prisutnost katoličke tematike u Hrvatskoj. To ćemo postići kroz četiri ključna cilja:
 
-- **Identifikacija i prikupljanje** objava katoličke tematike u realnom vremenu unutar hrvatskog digitalnog medijskog prostora, koristeći otvorene alate za *web scraping* i API integracije.
+*   **🔍 Identifikacija i prikupljanje:** Automatizirano prikupljanje medijskih objava u realnom vremenu, koristeći moderne alate za *web scraping* i API integracije.
+*   **🗄️ Organizacija podataka:** Stvaranje strukturirane i javno dostupne baze podataka koja će služiti kao pouzdan temelj za buduće znanstvene i javne analize.
+*   **💻 Analiza i modeliranje:** Primjena naprednih računalnih tehnika (obrada prirodnog jezika, strojno učenje) za otkrivanje obrazaca, trendova i narativa u prikupljenim podacima.
+*   **📢 Diseminacija i otvorenost:** Dijeljenje rezultata kroz znanstvene publikacije, konferencije i radionice, uz objavu cjelokupnog koda i metodologije na otvorenim repozitorijima.
 
-- **Organizacija** prikupljenih podataka u strukturiranu i otvorenu bazu podataka koja će služiti kao temelj za daljnje analize i biti dostupna istraživačkoj zajednici.
+---
 
-- **Analiza** podataka korištenjem naprednih računalnih tehnika poput obrade prirodnog jezika i strojnog učenja, s naglaskom na reproducibilnost i transparentnost istraživanja.
+### ✨ Doprinos i vrijednost projekta
 
-- **Diseminacija** rezultata kroz znanstvene publikacije, konferencije, radionice i javne prezentacije, uz objavu korištenog koda i podataka u otvorenim repozitorijima.
-<br>
-<br>
+Ovaj projekt nije samo akademska vježba; osmišljen je da stvori trajnu vrijednost za znanstvenu zajednicu i uključene pojedince.
 
-### Doprinos projekta
+**Razvoj vještina:** Sudionici projekta imat će priliku raditi s najnovijim računalnim tehnikama i alatima. Kroz praktičan rad, razvijat će napredne vještine u analizi velikih količina podataka, rudarenju teksta i statističkom modeliranju, što im pruža kompetitivnu prednost u znanstvenoj i poslovnoj zajednici.
 
-<br>
-<br>
-Projekt doprinosi znanstvenom i stručnom razvoju uključenih znanstvenika kroz stjecanje i primjenu naprednih vještina u području računalnih društvenih znanosti. Sudionici će imati priliku raditi s najnovijim računalnim tehnikama obrade podataka, uključujući rudarenje podataka, obradu prirodnog jezika, strojno učenje i statističke analize. Kroz praktičan rad na projektu, razvijat će svoje sposobnosti u analizi velikih količina podataka i primjeni ovih metoda na konkretne istraživačke izazove, što će im pružiti kompetitivnu prednost u znanstvenoj i poslovnoj zajednici.
+**Otvorena znanost na djelu:** Posebna vrijednost projekta leži u njegovoj predanosti principima otvorenosti i transparentnosti.
 
-Posebna vrijednost projekta leži u korištenju [open source](https://roadworkasia.com/wp-content/uploads/2023/04/Labour_of_Love_An_Open_Access_Manifesto.pdf) principa i [reproducibilnosti](https://www.nature.com/articles/s41562-016-0021) istraživanja. Svi alati i skripte korišteni tijekom projekta bit će dostupni kao otvoreni kod na platformi [GitHub](https://github.com/lusiki/DigiKat), omogućavajući tako drugim istraživačima da repliciraju, verificiraju i prošire naša istraživanja. Time potičemo transparentnost i kolaboraciju u znanstvenoj zajednici.
+> Naš rad temelji se na principima [otvorene znanosti](https://roadworkasia.com/wp-content/uploads/2023/04/Labour_of_Love_An_Open_Access_Manifesto.pdf) i [reproducibilnosti istraživanja](https://www.nature.com/articles/s41562-016-0021). Svi alati, skripte i metodološki okviri bit će dostupni kao otvoreni kod na [GitHubu](https://github.com/lusiki/DigiKat), omogućujući drugima da provjere, repliciraju i nadograde naš rad.
 
-Rad na projektu omogućit će mladim znanstvenicima sudjelovanje u interdisciplinarnoj suradnji, gdje će učiti kako integrirati računalne tehnike s društvenim i humanističkim znanostima, proširujući svoje istraživačke horizonte. Kroz otvorene repozitorije i dijeljenje podataka, znanstvenici će imati priliku prezentirati svoja otkrića i metode međunarodnoj zajednici, čime će dodatno jačati svoje istraživačke profile. Projekt će poticati razvoj samostalnosti i inovativnosti, omogućujući znanstvenicima da samostalno istražuju odabrana tematska područja i doprinesu razvoju otvorene znanosti.
-<br>
-<br>
+Kroz ovakav pristup, potičemo suradnju, jačamo istraživačke profile mladih znanstvenika i aktivno doprinosimo stvaranju pouzdanije i inovativnije znanstvene kulture.
 
-### Zašto se pridružiti ovome projektu?
+---
 
-<br>
-<br>
-Projekt predstavlja jedinstvenu priliku za istraživače i studente da sudjeluju u inovativnom istraživanju koje kombinira društvene znanosti s naprednim računalnim tehnikama i principima otvorene znanosti. Sudjelovanjem u ovom projektu, znanstvenici će:
+### 🚀 Pridružite se našem istraživanju!
 
-- **Steći iskustvo** u analizi digitalnih medija koristeći alate poput **R** i **Python**.
+Tražimo motivirane istraživače i studente koji žele biti dio inovativnog projekta koji spaja društvene znanosti, podatkovnu analitiku i principe otvorene znanosti. Sudjelovanjem ćete:
 
-- **Razviti napredne tehničke vještine** u područjima poput obrade prirodnog jezika, strojnog učenja i statističke analize.
-
-- **Doprinijeti stvaranju vrijednih znanstvenih saznanja** koja će biti dostupna široj zajednici kroz otvorene repozitorije i publikacije.
-
-- **Biti dio inicijative** koja potiče transparentnost, kolaboraciju i inovaciju u znanstvenom radu.
-
-Pridružite nam se u ovom uzbudljivom istraživačkom pothvatu i pomozite nam u stvaranju sveobuhvatnog razumijevanja katoličke tematike u suvremenom digitalnom prostoru! 
-
+*   **💡 Steći praktično iskustvo** u radu s velikim podacima koristeći alate poput **R** i **Python**.
+*   **👨‍💻 Razviti tehničke vještine** u područjima obrade prirodnog jezika (NLP), strojnog učenja i mrežne analize.
+*   **📈 Stvoriti vrijedan doprinos** znanosti čiji će rezultati biti javno dostupni i citirani.
+*   **🌍 Biti dio inicijative** koja aktivno promiče transparentnost, suradnju i inovacije u znanosti.
 
 
 

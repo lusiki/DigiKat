@@ -8,74 +8,61 @@ title: " "
 <br>
 
 
-## siječanj – lipanj 2025.
+### Vremenski plan projekta
 
-- **Identifikacija objava katoličke tematike**:
-  - Prikupljanje i kontrola podataka digitalnog medijskog prostora u Hrvatskoj za razdoblje od 01/2021 do 06/2024.
-  - Korištenje ključnih riječi, fraza, semantičkih konstrukata i algoritamske analize.
+Projekt je strukturiran u šest ključnih faza kroz razdoblje od tri godine (2025.-2027.). Svaka faza ima specifične ciljeve i aktivnosti koje osiguravaju postupan i sustavan napredak.
 
-- **Računalna infrastruktura**:
-  - Organizacija prikupljenih podataka/objava u strukturiranu bazu podataka.
-  - Izrada projektnog [repozitorija](https://github.com/lusiki/DigiKat) i web [stranice](https://lusiki.github.io/DigiKat/index.html) projekta.
-  - Prikupljanje objava u realnom vremenu i umetanje u bazu.
+---
 
-- **Kontrola prikupljenih objava**:
-  - Provjera kvalitete i relevantnosti prikupljenih podataka.
+### Godina 1: Postavljanje temelja i prva analiza (2025.)
 
+**Faza 1: Izgradnja infrastrukture i povijesna analiza (Siječanj – Lipanj 2025.)**
+> **Glavni cilj:** Uspostaviti tehničke temelje projekta i prikupiti povijesne podatke.
 
-## srpanj – prosinac 2025.
+*   **🗂️ Analiza povijesnih podataka:** Prikupljanje i analiza objava iz razdoblja 2021.-2024. kako bi se definirali parametri za pretragu.
+*   **🛠️ Izgradnja infrastrukture:** Postavljanje strukturirane baze podataka, projektnog [repozitorija](https://github.com/lusiki/DigiKat) i web [stranice](https://lusiki.github.io/DigiKat/index.html).
+*   **▶️ Početak prikupljanja:** Aktiviranje sustava za prikupljanje podataka u realnom vremenu.
 
-- **Nastavak prikupljanja i održavanje baze**:
-  - Kontinuirano prikupljanje objava u realnom vremenu.
-  - Održavanje projektnog repozitorija.
+**Faza 2: Prva podjela podataka i definiranje istraživanja (Srpanj – Prosinac 2025.)**
+> **Glavni cilj:** Definirati prve smjerove tematskih istraživanja na temelju prikupljenih podataka.
 
-- **Kontrola prikupljenih objava**:
-  - Nastavak provjere kvalitete podataka.
+*   **✍️ Definiranje istraživanja:** Organizacija radionice s projektnim timom za definiranje i podjelu prvih tematskih cjelina.
+*   **🔄 Kontinuirani rad:** Nastavak prikupljanja podataka, održavanje baze i kontrola kvalitete.
 
-- **Definiranje tematskih istraživanja**:
-  - Prva podjela podataka za tematska istraživanja.
-  - Definiranje istraživačkih tema sukladno prikupljenim podacima.
+---
 
-## siječanj – lipanj 2026.
+### Godina 2: Dubinska analiza i razvoj (2026.)
 
-- **Nastavak prikupljanja i održavanje baze**:
-  - Kontinuirano prikupljanje objava u realnom vremenu.
-  - Održavanje projektnog repozitorija.
+**Faza 3: Prvi godišnji izvještaj i daljnji razvoj (Siječanj – Lipanj 2026.)**
+> **Glavni cilj:** Izraditi i prezentirati prvu sistematiziranu kartu medijskog prostora.
 
-- **Kontrola prikupljenih objava**:
-  - Nastavak provjere kvalitete podataka.
+*   **📊 Prva sistematizirana karta:** Obrada, analiza i vizualizacija podataka za 2025. godinu, uz prezentaciju rezultata.
+*   **✍️ Razvoj istraživanja:** Druga podjela podataka za nove ili produbljene tematske analize.
+*   **🔄 Kontinuirani rad:** Prikupljanje, održavanje baze i kontrola kvalitete.
 
-- **Izrada i prezentacija prve sistematizirane karte**:
-  - Obrada i analiza podataka za 2025. godinu, uključujući povijesni pregled od 2021. godine.
+**Faza 4: Intenzivni istraživački rad (Srpanj – Prosinac 2026.)**
+> **Glavni cilj:** Fokus na provođenju definiranih tematskih istraživanja.
 
-- **Druga podjela podataka za tematska istraživanja**:
+*   **✍️ Istraživanje:** Timski rad na analizi dodijeljenih tematskih cjelina i priprema prvih nacrta radova.
+*   **🔄 Kontinuirani rad:** Prikupljanje, održavanje baze i kontrola kvalitete.
 
-## srpanj – prosinac 2026.
+---
 
-- **Nastavak prikupljanja i održavanje baze**:
+### Godina 3: Sinteza i finalni rezultati (2027.)
 
-- **Kontrola prikupljenih objava**:
+**Faza 5: Drugi godišnji izvještaj i priprema za sintezu (Siječanj – Lipanj 2027.)**
+> **Glavni cilj:** Analizirati podatke iz prethodne godine i integrirati prve rezultate tematskih istraživanja.
 
-- **Treća podjela podataka za tematska istraživanja**:
+*   **📊 Druga sistematizirana karta:** Obrada i analiza podataka za 2026. godinu te prezentacija novih uvida.
+*   **✍️ Priprema publikacija:** Rad na znanstvenim člancima i konferencijskim izlaganjima.
+*   **🔄 Kontinuirani rad:** Prikupljanje, održavanje baze i kontrola kvalitete.
 
-## siječanj – lipanj 2027.
+**Faza 6: Finalna sinteza i zaključci (Srpanj – Prosinac 2027.)**
+> **Glavni cilj:** Predstaviti sveobuhvatne rezultate projekta.
 
-- **Nastavak prikupljanja i održavanje baze**:
-
-- **Kontrola prikupljenih objava**:
-
-- **Izrada i prezentacija druge sistematizirane karte**:
-  - Obrada i analiza podataka za 2026. godinu.
-
-## srpanj – prosinac 2027.
-
-- **Završno prikupljanje i održavanje baze**:
-
-- **Kontrola prikupljenih objava**:
-
-- **Izrada i prezentacija treće sistematizirane karte**:
-  - Obrada i analiza podataka za 2027. godinu.
-  
-- **Prezentacija** će uključivati zbirni pregled katoličkog medijskog prostora od 01/2021 do 12/2027 te rezultate svih provedenih tematskih istraživanja.
-
+*   **🏆 Završni izvještaj i prezentacija:** Izrada treće, finalne karte (za 2027. godinu) i prezentacija koja objedinjuje:
+    *   Zbirni pregled medijskog prostora (2021.-2027.).
+    *   Ključne rezultate svih provedenih tematskih istraživanja.
+    *   Preporuke za buduća istraživanja.
+*   **📦 Arhiviranje:** Finalizacija i arhiviranje baze podataka i koda za dugoročnu dostupnost.
 
