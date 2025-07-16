@@ -87,6 +87,11 @@ catholic_words <- katolicki_izrazi[order(katolicki_izrazi$name),]
 katolicki_izrazi <- read_excel("./Codes/katolički_izrazi_small.xlsx")
 catholic_words <- katolicki_izrazi[order(katolicki_izrazi$root),]
 
+katolicki_izrazi <- read_excel("./Codes/katolicki_izrazi_.xlsx")
+catholic_words <- katolicki_izrazi[order(katolicki_izrazi$word),]
+
+
+
 
 ```
 
@@ -98,7 +103,7 @@ catholic_words <- katolicki_izrazi[order(katolicki_izrazi$root),]
 ```{r echo=F, eval=T, message=F , warning= FALSE}
 
 
-catholic_words <- unique(tolower(katolicki_izrazi$root))
+catholic_words <- unique(tolower(katolicki_izrazi$word))
 catholic_words_sorted <- catholic_words[order(-nchar(catholic_words))]
 
 # Escape regex special characters in the roots
@@ -158,7 +163,7 @@ print(pattern_final)
 setDT(data22)
 
 filtered_df <- data22 %>%
-  head(100000) %>%
+  head(1000) %>%
   mutate(
     # Extract all matches based on the regex pattern
     matches = str_match_all(TITLE, regex(pattern_final, ignore_case = TRUE))
@@ -198,7 +203,7 @@ filtered_df_ <- data22 %>%
   
   # Extract all matches based on the regex pattern
   mutate(
-    matches = str_match_all(TITLE, regex(pattern_final, ignore_case = TRUE))
+    matches = str_match_all(FULL_TEXT, regex(pattern_final, ignore_case = TRUE))
   ) %>%
   
   # Extract matched roots and full words
@@ -306,7 +311,7 @@ web %>%
 
 # Unnest tokens using tidytext
 tidy_text <- filtered_df_ %>%
-  unnest_tokens(word, FULL_TEXT)
+  unnest_tokens(word, TITLE)
 
 tidy_text <- tidy_text %>%
   anti_join(stop_corpus, by = "word") %>%
@@ -316,11 +321,16 @@ tidy_text <- tidy_text %>%
 
 tidy_text %>%
   count(word, sort = TRUE) %>%
-  head(100) %>%
+  head(200) %>%
   kable() %>%
-  kable_styling("striped", full_width = FALSE)
+  kable_styling("striped", full_width = FALSE) 
 
 
+tidy_text %>%
+  count(word, sort = TRUE) %>%
+  head(200) %>% write.xlsx(., "./Codes/katolicki_izrazi_.xlsx")
+
+write.xlsx(filtered_df_, "C:/Users/lukas/Desktop/filtered_df_.xlsx")
 
 ```
 

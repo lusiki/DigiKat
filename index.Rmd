@@ -9,31 +9,71 @@ pagetitle: "Osnovne informacije"
 
 ![](photo_.jpg)
 
+# Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru
 
-<br>
-<br>
-<br>
+> Interdisciplinarni projekt koji primjenjuje metode računalnih društvenih znanosti za mapiranje i analizu prisutnosti katoličkih tema u digitalnom medijskom prostoru Hrvatske.
 
-# **Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru**
+![Status Projekta](https://img.shields.io/badge/status-aktivan-green)
+![Institucija](https://img.shields.io/badge/Institucija-Hrvatsko_katoličko_sveučilište-blue)
+![Licenca](https://img.shields.io/badge/Licenca-CC%20BY%204.0-lightgrey)
 
-<br>
-<br>
+---
 
-Dobrodošli na stranice projekta **Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru** koji u trogodišnjem razdoblju 2025-2027 izvodi [Luka Šikić](https://www.lukasikic.info/), na [Hrvatskom katoličkom sveučilištu](https://www.unicath.hr/), pri [Odjelu za komunikologiju](https://www.unicath.hr/odjeli-i-fakultet/komunikologija). Interdisciplinarni projektni tim uključuje 9 suradnka: Hana Kilijan, Veronika Novoselec, Matea Topić Crnoja, izv.prof.dr.sc Lana Ciboci Perša, doc. dr. sc. Petra Palić, dr.sc. Suzana Lipar Obrovac, doc.dr.sc. Ivan Uldrijan, izv. prof. dr. sc. Andrea Sršen, izv. prof. dr. sc. Irena Palić.
+### 🎯 O projektu
 
-Na ovim stranicama možete pratiti razvoj projekta, pristupiti analizama i rezultatima te se informirati o metodologiji i teorijskim okvirima istraživanja.U okviru projekta koristit će se metode [računalnih društvenih znanosti](https://pure.rug.nl/ws/portalfiles/portal/140988937/Manifesto_of_computational_social_science.pdf) kako bi se analizirala digitalna prisutnost katoličke tematike u Hrvatskoj. Na taj se način unapređuje razumijevanje medijskog prostora i razvijaju nove metodologije koje su ključne za buduća istraživanja u području računalnih društvenih znanosti. Na temelju analize digitalnih objava, projekat će se baviti pitanjima:
-<br>
- - Kako se katolička tematika prikazuje u digitalnom medijskom prostoru?
-<br>
- - Kako se katolička tematika povezuje s drugim društvenim temama?
-<br>
- - Kako se katolička tematika povezuje s političkim i društvenim akterima?
-<br>
- - Kako se katolička tematika povezuje s društvenim događajima i vijestima?
-<br>
- - Kako se katolička tematika povezuje s društvenim mrežama i digitalnim platformama?
+Dobrodošli na službenu stranicu projekta **"Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru"**. Ovaj trogodišnji projekt (2025.-2027.) provodi se na [Odjelu za komunikologiju](https://www.unicath.hr/odjeli-i-fakultet/komunikologija) [Hrvatskog katoličkog sveučilišta](https://www.unicath.hr/).
 
-<br>
-<br>
-<br>
-<br>
+Iako digitalni mediji predstavljaju dominantnu komponentu javnog prostora, u Hrvatskoj nedostaje sustavni pregled njihovih tematskih sastavnica. Ovaj projekt ispunjava tu prazninu fokusirajući se na specifičnu i društveno relevantnu nišu: **sadržaje s katoličkom tematikom**.
+
+Koristeći napredne metode iz područja [računalnih društvenih znanosti](https://pure.rug.nl/ws/portalfiles/portal/140988937/Manifesto_of_computational_social_science.pdf), cilj nam je izgraditi sveobuhvatnu bazu podataka digitalnih objava te analizirati njihove značajke, narative i povezanost sa širim društvenim trendovima.
+
+### 🔬 Ključna istraživačka pitanja
+
+Naše istraživanje vođeno je sljedećim temeljnim pitanjima:
+- Kako se katolička tematika prikazuje i raspravlja u hrvatskom digitalnom medijskom prostoru?
+- Kakve su veze između katoličkih tema i drugih društvenih i političkih pitanja?
+- Koji su akteri i institucije najistaknutiji u tim raspravama?
+- Kako se narativi i sentiment mijenjaju ovisno o aktualnim događajima?
+- Kakva je mrežna dinamika između različitih platformi i medija koji obrađuju ove teme?
+
+### 💻 Metodologija
+
+Projekt integrira tehnike podatkovne znanosti s metodama društvenih znanosti. Naš metodološki okvir uključuje:
+- **Web scraping i API integracije:** Automatizirano prikupljanje velikih količina podataka s informativnih portala i društvenih mreža.
+- **Obrada prirodnog jezika (NLP):** Tematsko modeliranje, analiza sentimenta i prepoznavanje imenovanih entiteta za strukturiranje i analizu tekstualnih podataka.
+- **Mrežna analiza:** Mapiranje odnosa između aktera, tema i medijskih izvora.
+- **Statistička analiza:** Identifikacija trendova, korelacija i obrazaca unutar prikupljenih podataka.
+
+Sav programski kod i, gdje je to moguće, podaci bit će dostupni u skladu s FAIR principima za otvorenu znanost.
+
+### 👥 Projektni tim
+
+Projekt vodi interdisciplinarni tim znanstvenika.
+
+| Ime i Prezime             | Uloga         | Institucija/Odjel                               |
+| ------------------------- | :-----------: | ----------------------------------------------- |
+| **doc. dr. sc. Luka Šikić** | **Voditelj projekta** | **Hrvatsko katoličko sveučilište (Komunikologija)** |
+| izv. prof. dr. sc. Andrea Sršen | Suradnica     | Fakultet hrvatskih studija (Sociologija)        |
+| izv. prof. dr. sc. Irena Palić  | Suradnica     | Ekonomski fakultet, Zagreb (Statistika)         |
+| doc. dr. sc. Lana Ciboci Perša  | Suradnica     | Hrvatsko katoličko sveučilište (Komunikologija) |
+| doc. dr. sc. Petra Palić    | Suradnica     | Hrvatsko katoličko sveučilište (Sociologija)    |
+| doc. dr. sc. Ivan Uldrijan  | Suradnik      | Hrvatsko katoličko sveučilište (Komunikologija) |
+| dr. sc. Suzana Lipar Obrovac  | Suradnica     | Hrvatsko katoličko sveučilište (Odnosi s javnošću)|
+| Hana Kilijan              | Suradnica     | Hrvatsko katoličko sveučilište (Komunikologija) |
+| Veronika Novoselec        | Suradnica     | Hrvatsko katoličko sveučilište (Povijest)       |
+| Matea Topić Crnoja        | Suradnica     | Hrvatsko katoličko sveučilište (Sociologija)    |
+
+
+### 📄 Rezultati i publikacije
+
+*Ova sekcija će se ažurirati poveznicama na recenzirane znanstvene radove, konferencijska izlaganja, izvještaje i podatkovne setove kako budu dostupni.*
+
+1.  *[Naslov rada u pripremi, Časopis, Godina]*
+2.  *[Godišnji izvještaj o projektu 2025.]*
+
+### ✍️ Kako citirati
+
+Za citiranje projekta u cjelini, molimo koristite sljedeći format:
+
+Šikić, L. i sur. (2025.-2027.). *Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru*. Hrvatsko katoličko sveučilište. [https://github.com/lusiki/DigiKat](https://github.com/lusiki/DigiKat)
+
