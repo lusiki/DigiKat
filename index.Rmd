@@ -9,7 +9,7 @@ pagetitle: "Osnovne informacije"
 
 ![](photo_.jpg)
 
-# Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru
+# Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru 
 
 > Interdisciplinarni projekt koji primjenjuje metode računalnih društvenih znanosti za mapiranje i analizu prisutnosti katoličkih tema u digitalnom medijskom prostoru Hrvatske.
 
