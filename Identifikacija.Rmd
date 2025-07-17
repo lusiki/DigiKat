@@ -46,6 +46,8 @@ library(randomForest)
 library(xgboost)
 library(ROSE)
 library(glmnet)
+library(parallel)
+
 ```
 
 
@@ -95,6 +97,98 @@ catholic_words <- katolicki_izrazi[order(katolicki_izrazi$word),]
 
 ```
 
+```{r}
+# Function to read all Excel files from a folder
+read_all_excel_files <- function(folder_path) {
+  
+  # Get all Excel files in the folder
+  excel_files <- list.files(
+    path = folder_path,
+    pattern = "\\.(xlsx|xls)$",
+    full.names = TRUE,
+    recursive = FALSE
+  )
+  
+  if (length(excel_files) == 0) {
+    stop("No Excel files found in the specified folder.")
+  }
+  
+  cat("Found", length(excel_files), "Excel files\n")
+  
+  # Function to read a single Excel file
+  read_single_file <- function(file_path) {
+    tryCatch({
+      # Read the first sheet (you can modify this to read specific sheets)
+      df <- read_excel(file_path, sheet = 1)
+      
+      # Add filename as a column for tracking
+      df$source_file <- basename(file_path)
+      
+      return(df)
+    }, error = function(e) {
+      cat("Error reading file:", file_path, "\n")
+      cat("Error message:", e$message, "\n")
+      return(NULL)
+    })
+  }
+  
+  # Determine number of cores for parallel processing
+  num_cores <- min(detectCores() - 1, length(excel_files))
+  
+  cat("Using", num_cores, "cores for parallel processing\n")
+  
+  # Read files in parallel
+  cl <- makeCluster(num_cores)
+  clusterEvalQ(cl, {
+    library(readxl)
+  })
+  
+  # Process files in parallel
+  file_list <- parLapply(cl, excel_files, read_single_file)
+  
+  # Stop cluster
+  stopCluster(cl)
+  
+  # Remove NULL entries (failed reads)
+  file_list <- file_list[!sapply(file_list, is.null)]
+  
+  if (length(file_list) == 0) {
+    stop("No files could be read successfully.")
+  }
+  
+  cat("Successfully read", length(file_list), "files\n")
+  
+  # Combine all data frames using data.table for speed
+  combined_df <- rbindlist(file_list, fill = TRUE)
+  
+  # Convert back to data.frame if preferred
+  combined_df <- as.data.frame(combined_df)
+  
+  cat("Combined data frame created with", nrow(combined_df), "rows and", ncol(combined_df), "columns\n")
+  
+  return(combined_df)
+}
+
+# Set your folder path
+folder_path <- "C:/Users/Lukas/Dropbox/Determ_mediaspace/2024"
+
+# Read all Excel files and create combined data frame
+start_time <- Sys.time()
+df_combined <- read_all_excel_files(folder_path)
+end_time <- Sys.time()
+
+cat("Processing completed in", round(difftime(end_time, start_time, units = "secs"), 2), "seconds\n")
+
+# Display basic info about the combined data frame
+cat("\nData frame summary:\n")
+str(df_combined)
+cat("\nFirst few rows:\n")
+head(df_combined)
+
+# Optional: Save the combined data frame
+# write.csv(df_combined, "combined_excel_data.csv", row.names = FALSE)
+# saveRDS(df_combined, "combined_excel_data.rds")  # More efficient for R objects
+```
 
 
 # MAKE REGEX PATTERN
@@ -156,6 +250,18 @@ print(pattern_final)
 
 
 ```
+
+
+
+```{r}
+
+
+
+pattern_final <- "(?:(?<=\s)|(?<=^))(presveti oltarski sakrament|apostolsko nasljeđe|bolesničko pomazanje|bezgrešno začeće|nicejsko vjerovanje|vazmeno trodnevlje|rimokatolička crkva|sveto trojstvo|neokaljano srce|katolička crkva|sveta krunica|sveta stolica|sveto pismo|časna sestra|časne sestre|srce isusovo|križni put|sveti otac|sveti križ|sveti red|opus dei|nadbiskupija|ispovjedaonica|franjevac|benediktinac|dominikanac|salezijanac|karmelićanin|kršćanstvo|hodočašće|pontifikat|vatikanski|euharistija|ispovijed|katekizam|liturgija|redovnica|vjeronauk|enciklika|gvardijan|kardinal|nadbiskup|provincijal|sakrament|svećenik|teologija|vatikan|biskupija|demon|blagoslov|celibat|hodočasnik|isusovac|kapelan|katedrala|kršćanin|monsinjor|papinski|posvećenje|redovnik|relikvija|stepinac|teološki|ukazanje|zaređenje|bazilika|crkveni|jezuiti|kapitul|korizma|krunica|papinstvo|pobožnost|pontif|pričest|trapist|časna|đakon|došašće|hostija|kapelan|kaptol|krizma|nuncij|pavlin|župnik|biskup|gospa|kler|misa|papa)\w*\b"
+```
+
+
+
 
 
 # MATCHING PROCEDURE
