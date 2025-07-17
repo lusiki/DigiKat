@@ -383,10 +383,23 @@ print(filtered_df)
 
 ```{r}
 
+# Optimized text processing function with progress tracking
+# Install required packages if not already installed
+if (!require("dplyr")) install.packages("dplyr")
+if (!require("stringr")) install.packages("stringr")
+if (!require("parallel")) install.packages("parallel")
+if (!require("data.table")) install.packages("data.table")
+if (!require("pbapply")) install.packages("pbapply")
+
+library(dplyr)
+library(stringr)
+library(parallel)
+library(data.table)
+library(pbapply)
 
 # Optimized text processing function
 process_text_with_progress <- function(data, text_column = "FULL_TEXT", pattern_final, 
-                                     min_matches = 3, chunk_size = 10000, 
+                                     min_matches = 2, chunk_size = 10000, 
                                      use_parallel = TRUE, verbose = TRUE) {
   
   # Start timing
@@ -568,8 +581,8 @@ process_text_with_progress <- function(data, text_column = "FULL_TEXT", pattern_
 # pattern_final <- "your_regex_pattern_here"
 
 
-proba <- head(df_combined,100000)
 
+proba <- head(df_combined,100)
 
 
 # Run the optimized function
@@ -601,7 +614,7 @@ if (nrow(df_combined) > 100000) {
     data = df_combined,
     text_column = "FULL_TEXT",
     pattern_final = pattern_final,
-    min_matches = 3,
+    min_matches = 2,
     chunk_size = optimal_chunk,
     use_parallel = TRUE,
     verbose = TRUE
