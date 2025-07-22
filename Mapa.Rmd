@@ -1,0 +1,165 @@
+---
+title: "Untitled"
+author: "Lux"
+date: "2025-07-22"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 
+
+
+```{r }
+library(ggplot2)
+library(dplyr)
+library(scales) # Za ljepše formatiranje brojeva na osima
+library(patchwork) # Za elegantno spajanje više grafova
+
+```
+
+## 
+
+
+```{r}
+dta <- readRDS("D:/LUKA/Dropbox/df_all.rds")
+
+```
+
+
+```{r}
+platform_summary <- dta %>%
+  group_by(year, SOURCE_TYPE) %>%
+  summarise(
+    total_posts = n(),
+    total_interactions = sum(INTERACTIONS, na.rm = TRUE),
+    total_reach = sum(REACH, na.rm = TRUE) # Posebno korisno za YouTube/video
+  ) %>%
+  ungroup() %>%
+  arrange(year, desc(total_posts))
+
+# Pregled rezultata
+print(platform_summary, n = 20)
+```
+
+```{r dpi = 500, fig.width=10, fig.height=8}
+platform_colors <- c(
+  "web" = "#1f77b4",       # Plava
+  "youtube" = "#d62728",    # Crvena
+  "facebook" = "#3b5998",   # Facebook plava
+  "twitter" = "#1DA1F2",    # Twitter plava
+  "tiktok" = "#000000",      # Crna
+  "reddit" = "#FF4500",     # Narančasto-crvena
+  "forum" = "#7f7f7f",       # Siva
+  "comment" = "#bcbd22"     # Maslinasta
+)
+
+
+plot_volume <- platform_summary %>%
+  # Sortiramo unutar svake godine da bi graf bio čitljiviji
+  arrange(year, total_posts) %>%
+  mutate(SOURCE_TYPE_ordered = factor(SOURCE_TYPE, levels = unique(SOURCE_TYPE))) %>%
+  
+  ggplot(aes(x = total_posts, y = SOURCE_TYPE_ordered, fill = SOURCE_TYPE)) +
+  geom_col() +
+  geom_text(aes(label = comma(total_posts, accuracy = 1)), hjust = -0.1, size = 3, color = "black") +
+  facet_wrap(~year, scales = "free_y") +
+  scale_x_continuous(labels = label_number(suffix = " K", scale = 1e-3)) +
+  scale_fill_manual(values = platform_colors) +
+  theme_minimal(base_size = 14) +
+  theme(
+    legend.position = "none",
+    strip.text = element_text(face = "bold", size = 16),
+    panel.grid.major.y = element_blank(),
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  ) +
+  labs(
+    title = "Volumen objava po platformama (2021-2024)",
+    subtitle = "Web portali su dominantan izvor, ali vide se promjene u nišnim platformama",
+    x = "Ukupan broj objava (u tisućama)",
+    y = "Tip platforme",
+    caption = "Napomena: Podaci za 2024. su djelomični. Stupci su sortirani po volumenu."
+  )
+
+
+print(plot_volume)
+
+
+
+
+
+
+
+
+
+```
+
+
+```{r}
+source_summary <- dta %>%
+  filter(!is.na(FROM)) %>%
+  group_by(year, FROM) %>%
+  summarise(
+    productivity = n(), # Broj objava
+    total_interactions = sum(INTERACTIONS, na.rm = TRUE), # Ukupan angažman
+    avg_engagement_rate = mean(ENGAGEMENT_RATE, na.rm = TRUE), # Prosječna stopa angažmana
+    total_reach = sum(REACH, na.rm = TRUE) # Ukupan doseg
+  ) %>%
+  ungroup()
+
+# Identificiramo Top 15 izvora po godini na temelju ukupnih interakcija
+top_sources_by_year <- source_summary %>%
+  group_by(year) %>%
+  slice_max(order_by = total_interactions, n = 15) %>%
+  ungroup() %>%
+  arrange(year, desc(total_interactions))
+
+# Pregled rezultata
+print(top_sources_by_year, n = 60) # Prikazujemo više redaka da vidimo rezultate za sve godine
+```
+
+```{r }
+plot_interactions <- platform_summary %>%
+  filter(total_interactions > 0) %>%
+  ggplot(aes(x = total_interactions, y = reorder(SOURCE_TYPE, total_interactions), fill = SOURCE_TYPE)) +
+  geom_col() +
+  facet_wrap(~year) +
+  scale_x_continuous(labels = label_number(suffix = " M", scale = 1e-6)) +
+  scale_fill_manual(values = platform_colors, guide = "none") + # Skrivamo legendu jer je redundantna
+  theme_light(base_size = 14) +
+  theme(
+    strip.text = element_text(face = "bold", size = 16),
+    panel.grid.major.y = element_blank()
+  ) +
+  labs(
+    title = "Angažman publike po platformama (2021-2024)",
+    subtitle = "Web i YouTube dominiraju, ali TikTok pokazuje ogroman potencijal angažmana",
+    x = "Ukupne interakcije (u milijunima)",
+    y = "Tip platforme",
+    caption = "Napomena: Prikazane su samo platforme s zabilježenim interakcijama."
+  )
+
+
+print(plot_interactions)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

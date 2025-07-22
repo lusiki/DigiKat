@@ -36,16 +36,9 @@ library(writexl)
 library(data.table)
 library(stringi)
 library(openxlsx)
-library(writexl)
 library(RMySQL)
 library(data.table)
 library(stringr)
-library(caret)
-library(e1071)
-library(randomForest)
-library(xgboost)
-library(ROSE)
-library(glmnet)
 library(parallel)
 library(pbapply)
 
@@ -171,7 +164,7 @@ read_all_excel_files <- function(folder_path) {
 }
 
 # Set your folder path
-folder_path <- "D:/LUKA/Dropbox/Determ_mediaspace/2023"
+folder_path <- "C:/Users/Lukas/Dropbox/Determ_mediaspace/2021"
 
 
 # Read all Excel files and create combined data frame
@@ -979,7 +972,7 @@ filtered_df_ <- process_text_sequential_batches(
 
 
 
-saveRDS(filtered_df_, "D:/LUKA/Dropbox/filtered_df_2023.rds")
+saveRDS(filtered_df_, "D:/LUKA/Dropbox/filtered_df_2021.rds")
 ```
 
 
