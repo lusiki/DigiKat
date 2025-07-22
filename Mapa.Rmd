@@ -6,13 +6,13 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.width = 10, fig.height = 8)
 ```
 
 ## 
 
 
-```{r }
+```{r}
 library(ggplot2)
 library(dplyr)
 library(scales) # Za ljepše formatiranje brojeva na osima
@@ -25,6 +25,13 @@ library(patchwork) # Za elegantno spajanje više grafova
 
 ```{r}
 dta <- readRDS("D:/LUKA/Dropbox/df_all.rds")
+
+# remove titkok from SOURCE_TYPE
+dta <- dta %>%
+  filter(SOURCE_TYPE != "tiktok") %>%
+  mutate(
+    SOURCE_TYPE = factor(SOURCE_TYPE, levels = c("web", "youtube", "facebook", "twitter", "reddit", "forum", "comment"))
+  )
 
 ```
 
@@ -44,7 +51,7 @@ platform_summary <- dta %>%
 print(platform_summary, n = 20)
 ```
 
-```{r dpi = 500, fig.width=10, fig.height=8}
+```{r dpi = 200, fig.width=10, fig.height=8}
 platform_colors <- c(
   "web" = "#1f77b4",       # Plava
   "youtube" = "#d62728",    # Crvena
@@ -61,7 +68,6 @@ plot_volume <- platform_summary %>%
   # Sortiramo unutar svake godine da bi graf bio čitljiviji
   arrange(year, total_posts) %>%
   mutate(SOURCE_TYPE_ordered = factor(SOURCE_TYPE, levels = unique(SOURCE_TYPE))) %>%
-  
   ggplot(aes(x = total_posts, y = SOURCE_TYPE_ordered, fill = SOURCE_TYPE)) +
   geom_col() +
   geom_text(aes(label = comma(total_posts, accuracy = 1)), hjust = -0.1, size = 3, color = "black") +
@@ -76,8 +82,8 @@ plot_volume <- platform_summary %>%
     axis.text.x = element_text(angle = 45, hjust = 1)
   ) +
   labs(
-    title = "Volumen objava po platformama (2021-2024)",
-    subtitle = "Web portali su dominantan izvor, ali vide se promjene u nišnim platformama",
+    title = "Broj objava po platformama (2021-2024)",
+    subtitle = "",
     x = "Ukupan broj objava (u tisućama)",
     y = "Tip platforme",
     caption = "Napomena: Podaci za 2024. su djelomični. Stupci su sortirani po volumenu."
@@ -88,12 +94,149 @@ print(plot_volume)
 
 
 
+```
+
+
+```{r dpi = 200, fig.width=10, fig.height=8}
+plot_interactions <- platform_summary %>%
+  arrange(year, total_interactions) %>%
+  mutate(
+    SOURCE_TYPE_ordered = factor(SOURCE_TYPE, levels = unique(SOURCE_TYPE))
+  ) %>%
+  ggplot(aes(x = total_interactions, y = SOURCE_TYPE_ordered, fill = SOURCE_TYPE)) +
+  geom_col() +
+  geom_text(
+    aes(label = comma(total_interactions, accuracy = 1)),
+    hjust = -0.1, size = 3, color = "black"
+  ) +
+  facet_wrap(~year, scales = "free_y") +
+  # if your interactions run into the millions, scale accordingly
+  scale_x_continuous(
+    labels = label_number(suffix = " M", scale = 1e-6)
+  ) +
+  scale_fill_manual(values = platform_colors) +
+  theme_minimal(base_size = 14) +
+  theme(
+    legend.position    = "none",
+    strip.text         = element_text(face = "bold", size = 16),
+    panel.grid.major.y = element_blank(),
+    axis.text.x        = element_text(angle = 45, hjust = 1)
+  ) +
+  labs(
+    title    = "Ukupan broj interakcija po platformama (2021–2024)",
+    x        = "Interakcije (u milijunima)",
+    y        = "Tip platforme",
+    caption  = "Napomena: Podaci za 2024. su djelomični. Stupci su sortirani po volumenu."
+  )
+
+print(plot_interactions)
+```
 
 
 
+```{r dpi = 200, fig.width=10, fig.height=8}
+plot_reach <- platform_summary %>%
+  arrange(year, total_reach) %>%
+  mutate(
+    SOURCE_TYPE_ordered = factor(SOURCE_TYPE, levels = unique(SOURCE_TYPE))
+  ) %>%
+  ggplot(aes(x = total_reach, y = SOURCE_TYPE_ordered, fill = SOURCE_TYPE)) +
+  geom_col() +
+  geom_text(
+    aes(label = comma(total_reach, accuracy = 1)),
+    hjust = -0.1, size = 3, color = "black"
+  ) +
+  facet_wrap(~year, scales = "free_y") +
+  # likewise, adjust scale/suffix if reach is in thousands vs. millions
+  scale_x_continuous(
+    labels = label_number(suffix = " M", scale = 1e-6)
+  ) +
+  scale_fill_manual(values = platform_colors) +
+  theme_minimal(base_size = 14) +
+  theme(
+    legend.position    = "none",
+    strip.text         = element_text(face = "bold", size = 16),
+    panel.grid.major.y = element_blank(),
+    axis.text.x        = element_text(angle = 45, hjust = 1)
+  ) +
+  labs(
+    title    = "Ukupan doseg po platformama (2021–2024)",
+    x        = "Doseg (u milijunima)",
+    y        = "Tip platforme",
+    caption  = "Napomena: Podaci za 2024. su djelomični. Stupci su sortirani po volumenu."
+  )
+
+print(plot_reach)
+```
 
 
 
+```{r}
+proportions_summary <- platform_summary %>%
+  group_by(year) %>%
+  mutate(
+    post_share        = total_posts / sum(total_posts),
+    interaction_share = total_interactions / sum(total_interactions),
+    reach_share       = total_reach / sum(total_reach)
+  ) %>%
+  ungroup()
+
+# 2) Graf za udio u objavama
+plot_share_posts <- proportions_summary %>%
+  ggplot(aes(x = year, y = post_share, fill = SOURCE_TYPE)) +
+  geom_col(position = "fill") +
+  scale_y_continuous(labels = percent_format()) +
+  scale_x_continuous(breaks = c(2021, 2022, 2023, 2024)) +
+  scale_fill_manual(values = platform_colors) +
+  theme_minimal(base_size = 14) +
+  labs(
+    title = "Udio objava",
+    x     = "Godina",
+    y     = "Postotak"
+  )
+
+# 3) Graf za udio u interakcijama
+plot_share_interactions <- proportions_summary %>%
+  filter(total_interactions > 0) %>%
+  ggplot(aes(x = year, y = interaction_share, fill = SOURCE_TYPE)) +
+  geom_col(position = "fill") +
+  scale_y_continuous(labels = percent_format()) +
+  scale_x_continuous(breaks = c(2021, 2022, 2023, 2024)) +
+  scale_fill_manual(values = platform_colors, guide = "none") +
+  theme_minimal(base_size = 14) +
+  labs(
+    title = "Udio interakcija",
+    x     = "",
+    y     = "Postotak"
+  )
+
+# 4) Graf za udio u dosegu
+plot_share_reach <- proportions_summary %>%
+  filter(total_reach > 0) %>%
+  ggplot(aes(x = year, y = reach_share, fill = SOURCE_TYPE)) +
+  geom_col(position = "fill") +
+  scale_y_continuous(labels = percent_format()) +
+  scale_x_continuous(breaks = c(2021, 2022, 2023, 2024)) +
+  scale_fill_manual(values = platform_colors, guide = "none") +
+  theme_minimal(base_size = 14) +
+  labs(
+    title = "Udio dosega",
+    x     = "",
+    y     = "Postotak"
+  )
+
+# 5) Spojimo sve tri u jedan prikaz
+plot_combined_share <- (
+    plot_share_posts + plot_share_interactions + plot_share_reach
+  ) +
+  plot_layout(guides = 'collect') +
+  plot_annotation(
+    title    = "Struktura digitalnog ekosustava (2021–2024)",
+    subtitle = "Lijevo: objave ─ Sredina: interakcije ─ Desno: doseg",
+    caption  = "Web generira najviše sadržaja, ali YouTube preuzima sve veći dio interakcija i dosega."
+  )
+
+print(plot_combined_share)
 ```
 
 
@@ -135,7 +278,7 @@ plot_interactions <- platform_summary %>%
   ) +
   labs(
     title = "Angažman publike po platformama (2021-2024)",
-    subtitle = "Web i YouTube dominiraju, ali TikTok pokazuje ogroman potencijal angažmana",
+    subtitle = "",
     x = "Ukupne interakcije (u milijunima)",
     y = "Tip platforme",
     caption = "Napomena: Prikazane su samo platforme s zabilježenim interakcijama."
@@ -144,7 +287,6 @@ plot_interactions <- platform_summary %>%
 
 print(plot_interactions)
 ```
-
 
 
 
