@@ -171,7 +171,8 @@ read_all_excel_files <- function(folder_path) {
 }
 
 # Set your folder path
-folder_path <- "C:/Users/Lukas/Dropbox/Determ_mediaspace/2024"
+folder_path <- "D:/LUKA/Dropbox/Determ_mediaspace/2023"
+
 
 # Read all Excel files and create combined data frame
 start_time <- Sys.time()
@@ -624,6 +625,365 @@ if (nrow(df_combined) > 100000) {
 
 
 
+```{r}
+#Memory-efficient text processing function for very large datasets
+# Install required packages if not already installed
+required_packages <- c("dplyr", "stringr", "data.table", "future", "future.apply", "progressr")
+for (pkg in required_packages) {
+  if (!require(pkg, character.only = TRUE)) {
+    install.packages(pkg)
+    library(pkg, character.only = TRUE)
+  }
+}
+
+# Optimized function for very large datasets
+process_text_large_dataset <- function(data, text_column = "FULL_TEXT", pattern_final, 
+                                     min_matches = 2, chunk_size = 5000, 
+                                     use_parallel = TRUE, verbose = TRUE, 
+                                     save_intermediate = TRUE, temp_dir = tempdir()) {
+  
+  # Start timing
+  start_time <- Sys.time()
+  total_rows <- nrow(data)
+  
+  if (verbose) {
+    cat("Starting text processing for large dataset...\n")
+    cat("Total rows to process:", format(total_rows, big.mark = ","), "\n")
+    cat("Minimum matches required:", min_matches, "\n")
+    cat("Chunk size:", format(chunk_size, big.mark = ","), "\n")
+    cat("Save intermediate results:", save_intermediate, "\n")
+  }
+  
+  # Convert to data.table for faster operations
+  if (!is.data.table(data)) {
+    data <- as.data.table(data)
+  }
+  
+  # Pre-compile regex pattern for better performance
+  compiled_pattern <- regex(pattern_final, ignore_case = TRUE)
+  
+  # Function to process a single chunk (standalone, no external dependencies)
+  process_chunk_standalone <- function(chunk_data, pattern_str, text_col, min_match, chunk_id) {
+    # Load required libraries within function
+    library(stringr)
+    library(data.table)
+    
+    # Recreate pattern within function
+    pattern_obj <- regex(pattern_str, ignore_case = TRUE)
+    
+    # Extract all matches
+    matches_list <- str_match_all(chunk_data[[text_col]], pattern_obj)
+    
+    # Initialize results
+    n_rows <- nrow(chunk_data)
+    matched_roots <- character(n_rows)
+    matched_full_words <- character(n_rows)
+    match_count <- integer(n_rows)
+    
+    # Process matches
+    for (i in seq_along(matches_list)) {
+      match_matrix <- matches_list[[i]]
+      
+      if (nrow(match_matrix) > 0) {
+        # Extract captured groups (roots) - column 2
+        roots <- match_matrix[, 2]
+        roots <- roots[!is.na(roots)]
+        
+        # Extract full matches - column 1
+        full_matches <- match_matrix[, 1]
+        full_matches <- full_matches[!is.na(full_matches)]
+        
+        if (length(roots) > 0) {
+          matched_roots[i] <- paste(unique(roots), collapse = ", ")
+          matched_full_words[i] <- paste(unique(full_matches), collapse = ", ")
+          match_count[i] <- length(unique(full_matches))
+        }
+      }
+    }
+    
+    # Filter rows with sufficient matches
+    valid_rows <- match_count >= min_match
+    
+    if (any(valid_rows)) {
+      result <- chunk_data[valid_rows]
+      result$matched_roots <- matched_roots[valid_rows]
+      result$matched_full_words <- matched_full_words[valid_rows]
+      return(result)
+    } else {
+      return(NULL)
+    }
+  }
+  
+  # Calculate number of chunks
+  num_chunks <- ceiling(total_rows / chunk_size)
+  
+  if (verbose) {
+    cat("Processing in", format(num_chunks, big.mark = ","), "chunks\n")
+  }
+  
+  # Setup progress tracking
+  if (verbose) {
+    cat("Setting up progress tracking...\n")
+  }
+  
+  # Create temporary directory for intermediate results if needed
+  if (save_intermediate) {
+    temp_results_dir <- file.path(temp_dir, paste0("text_processing_", Sys.getpid()))
+    dir.create(temp_results_dir, showWarnings = FALSE)
+    if (verbose) cat("Temp directory:", temp_results_dir, "\n")
+  }
+  
+  # Process chunks with proper memory management
+  if (use_parallel && num_chunks > 1) {
+    # Setup future for parallel processing
+    if (verbose) cat("Setting up parallel processing...\n")
+    
+    # Use multisession to avoid serialization issues
+    plan(multisession, workers = min(7, num_chunks))
+    
+    # Process chunks in batches to avoid memory issues
+    batch_size <- 50  # Process 50 chunks at a time
+    num_batches <- ceiling(num_chunks / batch_size)
+    all_results <- list()
+    
+    for (batch_idx in 1:num_batches) {
+      start_chunk <- (batch_idx - 1) * batch_size + 1
+      end_chunk <- min(batch_idx * batch_size, num_chunks)
+      
+      if (verbose) {
+        cat(sprintf("Processing batch %d/%d (chunks %d-%d)\n", 
+                   batch_idx, num_batches, start_chunk, end_chunk))
+      }
+      
+      # Process batch
+      batch_results <- future_lapply(start_chunk:end_chunk, function(i) {
+        start_idx <- (i - 1) * chunk_size + 1
+        end_idx <- min(i * chunk_size, total_rows)
+        chunk_data <- data[start_idx:end_idx]
+        
+        result <- process_chunk_standalone(chunk_data, pattern_final, text_column, min_matches, i)
+        
+        # Save intermediate result if requested
+        if (save_intermediate && !is.null(result)) {
+          saveRDS(result, file.path(temp_results_dir, paste0("chunk_", i, ".rds")))
+        }
+        
+        return(result)
+      })
+      
+      # Store batch results
+      all_results <- c(all_results, batch_results)
+      
+      # Progress update
+      if (verbose) {
+        progress_pct <- round((end_chunk / num_chunks) * 100, 1)
+        elapsed_time <- as.numeric(difftime(Sys.time(), start_time, units = "secs"))
+        estimated_total <- elapsed_time / (end_chunk / num_chunks)
+        remaining_time <- estimated_total - elapsed_time
+        
+        cat(sprintf("Batch %d complete. Overall progress: %.1f%% | Elapsed: %.1fs | ETA: %.1fs\n", 
+                   batch_idx, progress_pct, elapsed_time, remaining_time))
+      }
+      
+      # Force garbage collection
+      gc()
+    }
+    
+    chunk_results <- all_results
+    
+  } else {
+    # Sequential processing with progress tracking
+    chunk_results <- list()
+    
+    for (i in 1:num_chunks) {
+      start_idx <- (i - 1) * chunk_size + 1
+      end_idx <- min(i * chunk_size, total_rows)
+      chunk_data <- data[start_idx:end_idx]
+      
+      result <- process_chunk_standalone(chunk_data, pattern_final, text_column, min_matches, i)
+      chunk_results[[i]] <- result
+      
+      # Save intermediate result if requested
+      if (save_intermediate && !is.null(result)) {
+        saveRDS(result, file.path(temp_results_dir, paste0("chunk_", i, ".rds")))
+      }
+      
+      # Progress update
+      if (verbose && i %% 10 == 0) {
+        progress_pct <- round((end_idx / total_rows) * 100, 1)
+        elapsed_time <- as.numeric(difftime(Sys.time(), start_time, units = "secs"))
+        estimated_total <- elapsed_time / (end_idx / total_rows)
+        remaining_time <- estimated_total - elapsed_time
+        
+        cat(sprintf("Progress: %s/%s rows (%.1f%%) | Elapsed: %.1fs | ETA: %.1fs\n", 
+                   format(end_idx, big.mark = ","), format(total_rows, big.mark = ","), 
+                   progress_pct, elapsed_time, remaining_time))
+      }
+      
+      # Force garbage collection every 50 chunks
+      if (i %% 50 == 0) {
+        gc()
+      }
+    }
+  }
+  
+  # Combine results
+  if (verbose) cat("Combining results...\n")
+  
+  # Remove NULL results
+  chunk_results <- chunk_results[!sapply(chunk_results, is.null)]
+  
+  if (length(chunk_results) == 0) {
+    if (verbose) cat("No matches found meeting the criteria.\n")
+    return(data.table())
+  }
+  
+  # Combine all chunks efficiently
+  final_result <- rbindlist(chunk_results, fill = TRUE)
+  
+  # Clean up temporary files
+  if (save_intermediate && dir.exists(temp_results_dir)) {
+    if (verbose) cat("Cleaning up temporary files...\n")
+    unlink(temp_results_dir, recursive = TRUE)
+  }
+  
+  # Convert back to data.frame if input was data.frame
+  if (!is.data.table(data)) {
+    final_result <- as.data.frame(final_result)
+  }
+  
+  # Final timing and statistics
+  end_time <- Sys.time()
+  total_time <- as.numeric(difftime(end_time, start_time, units = "secs"))
+  
+  if (verbose) {
+    cat("\n=== PROCESSING COMPLETE ===\n")
+    cat("Total processing time:", round(total_time, 2), "seconds\n")
+    cat("Rows processed:", format(total_rows, big.mark = ","), "\n")
+    cat("Rows matching criteria:", format(nrow(final_result), big.mark = ","), "\n")
+    cat("Match rate:", round((nrow(final_result) / total_rows) * 100, 2), "%\n")
+    cat("Processing speed:", format(round(total_rows / total_time, 0), big.mark = ","), "rows/second\n")
+  }
+  
+  return(final_result)
+}
+
+# Alternative: Process in smaller sequential batches (most reliable for very large datasets)
+process_text_sequential_batches <- function(data, text_column = "FULL_TEXT", pattern_final, 
+                                          min_matches = 2, chunk_size = 2000, 
+                                          verbose = TRUE, save_progress = TRUE) {
+  
+  start_time <- Sys.time()
+  total_rows <- nrow(data)
+  
+  if (verbose) {
+    cat("Starting sequential batch processing...\n")
+    cat("Total rows:", format(total_rows, big.mark = ","), "\n")
+    cat("Chunk size:", format(chunk_size, big.mark = ","), "\n")
+  }
+  
+  # Convert to data.table
+  if (!is.data.table(data)) {
+    data <- as.data.table(data)
+  }
+  
+  compiled_pattern <- regex(pattern_final, ignore_case = TRUE)
+  num_chunks <- ceiling(total_rows / chunk_size)
+  all_results <- list()
+  
+  for (i in 1:num_chunks) {
+    start_idx <- (i - 1) * chunk_size + 1
+    end_idx <- min(i * chunk_size, total_rows)
+    chunk_data <- data[start_idx:end_idx]
+    
+    # Process chunk
+    matches_list <- str_match_all(chunk_data[[text_column]], compiled_pattern)
+    
+    n_rows <- nrow(chunk_data)
+    matched_roots <- character(n_rows)
+    matched_full_words <- character(n_rows)
+    match_count <- integer(n_rows)
+    
+    for (j in seq_along(matches_list)) {
+      match_matrix <- matches_list[[j]]
+      if (nrow(match_matrix) > 0) {
+        roots <- match_matrix[, 2][!is.na(match_matrix[, 2])]
+        full_matches <- match_matrix[, 1][!is.na(match_matrix[, 1])]
+        
+        if (length(roots) > 0) {
+          matched_roots[j] <- paste(unique(roots), collapse = ", ")
+          matched_full_words[j] <- paste(unique(full_matches), collapse = ", ")
+          match_count[j] <- length(unique(full_matches))
+        }
+      }
+    }
+    
+    # Filter and store results
+    valid_rows <- match_count >= min_matches
+    if (any(valid_rows)) {
+      result <- chunk_data[valid_rows]
+      result$matched_roots <- matched_roots[valid_rows]
+      result$matched_full_words <- matched_full_words[valid_rows]
+      all_results[[i]] <- result
+    }
+    
+    # Progress update
+    if (verbose && i %% 10 == 0) {
+      progress_pct <- round((end_idx / total_rows) * 100, 1)
+      elapsed_time <- as.numeric(difftime(Sys.time(), start_time, units = "secs"))
+      estimated_total <- elapsed_time / (end_idx / total_rows)
+      remaining_time <- estimated_total - elapsed_time
+      
+      cat(sprintf("Chunk %d/%d (%.1f%%) | Elapsed: %.1fs | ETA: %.1fs\n", 
+                 i, num_chunks, progress_pct, elapsed_time, remaining_time))
+    }
+    
+    # Memory management
+    if (i %% 100 == 0) {
+      gc()
+    }
+  }
+  
+  # Combine results
+  if (verbose) cat("Combining final results...\n")
+  final_result <- rbindlist(all_results[!sapply(all_results, is.null)], fill = TRUE)
+  
+  end_time <- Sys.time()
+  total_time <- as.numeric(difftime(end_time, start_time, units = "secs"))
+  
+  if (verbose) {
+    cat("\n=== PROCESSING COMPLETE ===\n")
+    cat("Total time:", round(total_time, 2), "seconds\n")
+    cat("Rows processed:", format(total_rows, big.mark = ","), "\n")
+    cat("Rows matching:", format(nrow(final_result), big.mark = ","), "\n")
+    cat("Speed:", format(round(total_rows / total_time, 0), big.mark = ","), "rows/second\n")
+  }
+  
+  return(final_result)
+}
+
+# RECOMMENDED USAGE FOR YOUR LARGE DATASET (3M+ rows):
+
+# Option 1: Sequential processing (most reliable)
+cat("Starting sequential processing (recommended for stability)...\n")
+filtered_df_ <- process_text_sequential_batches(
+  data = df_combined,
+  text_column = "FULL_TEXT",
+  pattern_final = pattern_final,
+  min_matches = 2,
+  chunk_size = 2000,  # Smaller chunks for stability
+  verbose = TRUE
+)
+
+
+
+
+
+saveRDS(filtered_df_, "D:/LUKA/Dropbox/filtered_df_2023.rds")
+```
+
+
+
 
 
 
@@ -681,7 +1041,7 @@ filtered_df %>%
 
 filtered_df_ %>%
   filter(SOURCE_TYPE == "web") %>%
-  group_by(FROM_SITE) %>%
+  group_by(FROM) %>%
   summarise(
     count = n(),
     unique_sources = n_distinct(SOURCE_TYPE),
