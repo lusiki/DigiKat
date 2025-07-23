@@ -404,7 +404,7 @@ kable(performance_tips,
 
 
 
-## Download Dataset
+## Preuzmi bazu podataka
 
 📊 **Kaggle Dataset**: [Croatian Catholic Media Space 2021- 2024](https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space/data1)
 
