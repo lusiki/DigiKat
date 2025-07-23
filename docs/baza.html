@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+<meta name="date" content="2025-07-23" />
+
+<title>Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)</title>
+
+<script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">DigiKat</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Osnovne informacije</a>
+</li>
+<li>
+  <a href="about.html">O projektu</a>
+</li>
+<li>
+  <a href="schedule.html">Projektni raspored</a>
+</li>
+<li>
+  <a href="baza.html">Baza podataka</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Mapa medijskog prostora
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="mapa.html">Mapa ekosustava</a>
+    </li>
+    <li>
+      <a href="mapa_stats.html">Tematske struje</a>
+    </li>
+    <li>
+      <a href="diskurs.html">Atmosfera diskursa</a>
+    </li>
+    <li>
+      <a href="događaji.html">Fokus na događaje i kampanje</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Tematska istraživanja
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="">Hodčasnički turizam</a>
+    </li>
+    <li>
+      <a href="">Analiza self-help sadržaja na YouTube-u</a>
+    </li>
+    <li>
+      <a href="">Demokršćanstvo</a>
+    </li>
+    <li>
+      <a href="">Osnove programskog jezika R</a>
+    </li>
+    <li>
+      <a href="">Vizualizacija podataka (ggplot2)</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="news.html">Obavijesti</a>
+</li>
+<li>
+  <a href="resources.html">Resursi</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="site-info.html">O stranici</a>
+</li>
+<li>
+  <a href="https://lusiki.github.io/DigiKat/index.html">
+    <span class="ion ion-social-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Baza podataka - Katolički digitalni
+medijski prostor u Hrvatskoj (2021-2024)</h1>
+<h4 class="date">2025-07-23</h4>
+
+</div>
+
+
+<div id="pregled-baze-podataka" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Pregled baze
+podataka</h1>
+<p>Baza podataka sadrži <strong>258,757 zapisa</strong> medijskih objava
+prikupljenih tijekom 2021/22/23. godine, fokusiranih na katoličke teme i
+sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za
+analizu medijskog diskursa, sentimenta i angažmana publike u domeni
+religijskih tema.</p>
+<table class="table table-striped table-hover table-condensed table-responsive" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+Osnovne karakteristike dataseta
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Karakteristika
+</th>
+<th style="text-align:left;">
+Vrijednost
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Broj zapisa
+</td>
+<td style="text-align:left;">
+258,757
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Broj varijabli
+</td>
+<td style="text-align:left;">
+49
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Vremenski period
+</td>
+<td style="text-align:left;">
+<ol start="2021" style="list-style-type: decimal">
+<li>godina
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Format
+</td>
+<td style="text-align:left;">
+R data.table
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Glavni jezik
+</td>
+<td style="text-align:left;">
+Hrvatski (hr)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Geografski opseg
+</td>
+<td style="text-align:left;">
+Hrvatska (HR)
+</td>
+</tr>
+</tbody>
+</table></li>
+</ol>
+<div id="struktura-podataka" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Struktura
+podataka</h2>
+<pre><code>## Classes &#39;data.table&#39; and &#39;data.frame&#39;: 258757 obs. of 49 variables:</code></pre>
+<pre><code>## $ DATE                 : chr [1:258757] &#39;2021-01-02&#39; &#39;2021-01-02&#39; ...</code></pre>
+<pre><code>## $ TIME                 : chr [1:258757] &#39;23:36:00&#39; &#39;23:28:34&#39; ...</code></pre>
+<pre><code>## $ TITLE                : chr [1:258757] &#39;Župa Gospe Brze Pomoći...&#39; ...</code></pre>
+<pre><code>## $ AUTO_SENTIMENT       : chr [1:258757] &#39;positive&#39; &#39;neutral&#39; &#39;negative&#39; ...</code></pre>
+<pre><code>## $ REACH                : num [1:258757] 21 48 3300 312 ...</code></pre>
+<pre><code>## ... [dodatnih 44 varijabli]</code></pre>
+</div>
+</div>
+<div id="opis-varijabli" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Opis varijabli</h1>
+<div id="vremenske-varijable" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Vremenske
+varijable</h2>
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+📅 Vremenske varijable
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Varijabla
+</th>
+<th style="text-align:left;">
+Tip
+</th>
+<th style="text-align:left;">
+Opis
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+DATE
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Datum objave u formatu YYYY-MM-DD
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TIME
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Vrijeme objave u formatu HH:MM:SS
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+year
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Godina izvlečena iz datuma
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sadržaj-i-metapodaci" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Sadržaj i
+metapodaci</h2>
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+📰 Sadržaj i metapodaci
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Varijabla
+</th>
+<th style="text-align:left;">
+Tip
+</th>
+<th style="text-align:left;">
+Opis
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+TITLE
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Naslov članka/objave
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FULL_TEXT
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Potpuni tekst objave
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MENTION_SNIPPET
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Isječak teksta koji sadrži ključne riječi
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AUTHOR
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Autor objave (ako je dostupan)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FROM
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Izvor/domena web stranice
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+URL
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Potpuna URL adresa objave
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+URL_PHOTO
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+URL fotografije povezane s objavom
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="kategorizacija-i-označavanje" class="section level2"
+number="2.3">
+<h2><span class="header-section-number">2.3</span> Kategorizacija i
+označavanje</h2>
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+🏷️ Kategorizacija i označavanje
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Varijabla
+</th>
+<th style="text-align:left;">
+Tip
+</th>
+<th style="text-align:left;">
+Opis
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+SOURCE_TYPE
+</td>
+<td style="text-align:left;">
+factor
+</td>
+<td style="text-align:left;">
+Tip izvora (web, youtube, facebook, twitter itd.)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GROUP_NAME
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Naziv grupe za praćenje
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+KEYWORD_NAME
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Naziv ključne riječi
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FOUND_KEYWORDS
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Pronađene ključne riječi u tekstu
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TAGS
+</td>
+<td style="text-align:left;">
+logical
+</td>
+<td style="text-align:left;">
+Dodatne oznake (trenutno prazno)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LANGUAGES
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Jezik objave (hr, bs)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LOCATIONS
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Geografska lokacija (HR)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sentiment-analiza" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Sentiment
+analiza</h2>
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+🎯 Sentiment analiza
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Varijabla
+</th>
+<th style="text-align:left;">
+Tip
+</th>
+<th style="text-align:left;">
+Opis
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+AUTO_SENTIMENT
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:left;">
+Automatski detektirani sentiment (positive/neutral/negative)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MANUAL_SENTIMENT
+</td>
+<td style="text-align:left;">
+logical
+</td>
+<td style="text-align:left;">
+Ručno označen sentiment (trenutno prazno)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="metrike-angažmana" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Metrike
+angažmana</h2>
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+📊 Metrije angažmana
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Varijabla
+</th>
+<th style="text-align:left;">
+Tip
+</th>
+<th style="text-align:left;">
+Opis
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+REACH
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Doseg objave (broj ljudi koji je vidjelo)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+VIRALITY
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Indeks viralnosti
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ENGAGEMENT_RATE
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Stopa angažmana (%)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERACTIONS
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Ukupan broj interakcija
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FOLLOWERS_COUNT
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Broj pratitelja autora
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="specifične-reakcije-facebook" class="section level2"
+number="2.6">
+<h2><span class="header-section-number">2.6</span> Specifične reakcije
+(Facebook)</h2>
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+👍 Specifične reakcije (Facebook)
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Varijabla
+</th>
+<th style="text-align:left;">
+Tip
+</th>
+<th style="text-align:left;">
+Opis
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+LIKE_COUNT
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Broj ‘like’ reakcija
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LOVE_COUNT
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Broj ‘love’ reakcija
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WOW_COUNT
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Broj ‘wow’ reakcija
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HAHA_COUNT
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Broj ‘haha’ reakcija
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SAD_COUNT
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Broj ‘sad’ reakcija
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ANGRY_COUNT
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Broj ‘angry’ reakcija
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+COMMENT_COUNT
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Broj komentara
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SHARE_COUNT
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Broj dijeljenja
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TOTAL_REACTIONS_COUNT
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:left;">
+Ukupan broj svih reakcija
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="kvaliteta-i-kompletnost-podataka" class="section level1"
+number="3">
+<h1><span class="header-section-number">3</span> Kvaliteta i kompletnost
+podataka</h1>
+<div id="pregled-nedostajućih-vrijednosti" class="section level2"
+number="3.1">
+<h2><span class="header-section-number">3.1</span> Pregled nedostajućih
+vrijednosti</h2>
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+Pregled nedostajućih vrijednosti u ključnim varijablama
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Varijabla
+</th>
+<th style="text-align:right;">
+Nedostaje (%)
+</th>
+<th style="text-align:left;">
+Razlog
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+AUTHOR
+</td>
+<td style="text-align:right;">
+35.2
+</td>
+<td style="text-align:left;">
+Nije uvijek dostupno od izvora
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+TAGS
+</td>
+<td style="text-align:right;">
+100.0
+</td>
+<td style="text-align:left;">
+Funkcionalnost nije implementirana
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MANUAL_SENTIMENT
+</td>
+<td style="text-align:right;">
+100.0
+</td>
+<td style="text-align:left;">
+Ručno označavanje nije provedeno
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+FOLLOWERS_COUNT
+</td>
+<td style="text-align:right;">
+68.5
+</td>
+<td style="text-align:left;">
+Ovisi o platformi i dostupnosti
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+REDDIT_SCORE
+</td>
+<td style="text-align:right;">
+92.1
+</td>
+<td style="text-align:left;">
+Specifično za Reddit objave
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+VIEW_COUNT
+</td>
+<td style="text-align:right;">
+85.3
+</td>
+<td style="text-align:left;">
+Specifično za video sadržaj
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="statistički-sažetak-numeričkih-varijabli"
+class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Statistički sažetak
+numeričkih varijabli</h2>
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+Statistički sažetak ključnih numeričkih varijabli
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Varijabla
+</th>
+<th style="text-align:right;">
+Mean
+</th>
+<th style="text-align:right;">
+Median
+</th>
+<th style="text-align:right;">
+SD
+</th>
+<th style="text-align:right;">
+Min
+</th>
+<th style="text-align:right;">
+Max
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+REACH
+</td>
+<td style="text-align:right;">
+2543.2
+</td>
+<td style="text-align:right;">
+312.0
+</td>
+<td style="text-align:right;">
+8734.5
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+125000.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INTERACTIONS
+</td>
+<td style="text-align:right;">
+67.8
+</td>
+<td style="text-align:right;">
+8.0
+</td>
+<td style="text-align:right;">
+245.6
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+5847.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ENGAGEMENT_RATE
+</td>
+<td style="text-align:right;">
+4.2
+</td>
+<td style="text-align:right;">
+1.8
+</td>
+<td style="text-align:right;">
+8.7
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+89.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LIKE_COUNT
+</td>
+<td style="text-align:right;">
+52.1
+</td>
+<td style="text-align:right;">
+6.0
+</td>
+<td style="text-align:right;">
+187.3
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+3245.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+INFLUENCE_SCORE
+</td>
+<td style="text-align:right;">
+3.2
+</td>
+<td style="text-align:right;">
+3.0
+</td>
+<td style="text-align:right;">
+2.1
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+10.0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="primjeri-korištenja" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Primjeri
+korištenja</h1>
+<div id="osnovne-analize" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Osnovne analize</h2>
+<table class="table table-striped table-hover table-condensed" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+Osnovne analize - pregled kodova i rezultata
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Tip analize
+</th>
+<th style="text-align:left;">
+R kod
+</th>
+<th style="text-align:left;">
+Rezultat
+</th>
+<th style="text-align:left;">
+Sortiranje
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Analiza sentimenta po izvorima
+</td>
+<td style="text-align:left;width: 35%; font-family: monospace; font-size: 11px;">
+sentiment_by_source &lt;- dta[, .N, by = .(FROM, AUTO_SENTIMENT)]
+</td>
+<td style="text-align:left;">
+Broj objava po izvoru i sentimentu
+</td>
+<td style="text-align:left;width: 25%; font-family: monospace; font-size: 11px;">
+sentiment_by_source[order(-N)]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Trendovi kroz vrijeme
+</td>
+<td style="text-align:left;width: 35%; font-family: monospace; font-size: 11px;">
+temporal_trends &lt;- dta[, .N, by = .(year, month = substr(DATE, 6,
+7))]
+</td>
+<td style="text-align:left;">
+Broj objava po mjesecima
+</td>
+<td style="text-align:left;width: 25%; font-family: monospace; font-size: 11px;">
+temporal_trends[order(year, month)]
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Top izvori po angažmanu
+</td>
+<td style="text-align:left;width: 35%; font-family: monospace; font-size: 11px;">
+top_sources &lt;- dta[, .(avg_engagement = mean(ENGAGEMENT_RATE, na.rm =
+TRUE)), by = FROM]
+</td>
+<td style="text-align:left;">
+Prosječni angažman po izvoru
+</td>
+<td style="text-align:left;width: 25%; font-family: monospace; font-size: 11px;">
+top_sources[order(-avg_engagement)]
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="napredne-analize" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Napredne analize</h2>
+<div
+style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:400px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-hover table-condensed" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+Napredne analize - detaljni pregled metoda
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Analiza
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Potrebne biblioteke
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Ključni kod
+</th>
+<th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">
+Očekivani output
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Tokenizacija teksta
+</td>
+<td style="text-align:left;">
+tidytext, dplyr
+</td>
+<td style="text-align:left;width: 30%; font-family: monospace; font-size: 10px;">
+unnest_tokens(word, TITLE)
+</td>
+<td style="text-align:left;">
+Pojedinačne riječi iz naslova
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Čišćenje stop riječi
+</td>
+<td style="text-align:left;">
+tidytext
+</td>
+<td style="text-align:left;width: 30%; font-family: monospace; font-size: 10px;">
+anti_join(stop_words)
+</td>
+<td style="text-align:left;">
+Filtrirane značajne riječi
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Brojanje riječi po sentimentu
+</td>
+<td style="text-align:left;">
+dplyr, tidytext
+</td>
+<td style="text-align:left;width: 30%; font-family: monospace; font-size: 10px;">
+count(word, AUTO_SENTIMENT, sort = TRUE)
+</td>
+<td style="text-align:left;">
+Frekvencija riječi po sentimentu
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sentiment scoring
+</td>
+<td style="text-align:left;">
+dplyr, case_when
+</td>
+<td style="text-align:left;width: 30%; font-family: monospace; font-size: 10px;">
+summarise(sentiment_score = sum(n * case_when(…)))
+</td>
+<td style="text-align:left;">
+Numerički sentiment score
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Wordcloud generiranje
+</td>
+<td style="text-align:left;">
+wordcloud, RColorBrewer
+</td>
+<td style="text-align:left;width: 30%; font-family: monospace; font-size: 10px;">
+wordcloud(words, freq, colors = brewer.pal(8, ‘Dark2’))
+</td>
+<td style="text-align:left;">
+Vizualna reprezentacija
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="tehnički-detalji" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Tehnički detalji</h1>
+<div id="izvorni-format-podataka" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Izvorni format
+podataka</h2>
+<table class="table table-striped table-hover table-condensed" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+Tehnički detalji dataseta i preporučeni alati
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Kategorija
+</th>
+<th style="text-align:left;">
+Vrijednost/Opis
+</th>
+<th style="text-align:left;">
+Napomene
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;background-color: rgba(248, 249, 250, 255) !important;">
+Izvorne datoteke
+</td>
+<td style="text-align:left;width: 40%; background-color: rgba(248, 249, 250, 255) !important;">
+op_e_[datum-raspon].xlsx
+</td>
+<td style="text-align:left;width: 35%; background-color: rgba(248, 249, 250, 255) !important;">
+Batch obrada po vremenskim periodima
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(248, 249, 250, 255) !important;">
+Format obrade
+</td>
+<td style="text-align:left;width: 40%; background-color: rgba(248, 249, 250, 255) !important;">
+R data.table
+</td>
+<td style="text-align:left;width: 35%; background-color: rgba(248, 249, 250, 255) !important;">
+Optimizirano za velike podatke
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(248, 249, 250, 255) !important;">
+Kodiranje
+</td>
+<td style="text-align:left;width: 40%; background-color: rgba(248, 249, 250, 255) !important;">
+UTF-8
+</td>
+<td style="text-align:left;width: 35%; background-color: rgba(248, 249, 250, 255) !important;">
+Podrška za hrvatske znakove
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(248, 249, 250, 255) !important;">
+Separatori
+</td>
+<td style="text-align:left;width: 40%; background-color: rgba(248, 249, 250, 255) !important;">
+Automatski detektirani
+</td>
+<td style="text-align:left;width: 35%; background-color: rgba(248, 249, 250, 255) !important;">
+Excel format automatski parsiran
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(248, 249, 250, 255) !important;">
+Nedostajuće vrijednosti
+</td>
+<td style="text-align:left;width: 40%; background-color: rgba(248, 249, 250, 255) !important;">
+NA
+</td>
+<td style="text-align:left;width: 35%; background-color: rgba(248, 249, 250, 255) !important;">
+Standardno R označavanje
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(227, 242, 253, 255) !important;">
+Preporučena biblioteka - Manipulacija
+</td>
+<td style="text-align:left;width: 40%; background-color: rgba(227, 242, 253, 255) !important;">
+data.table - za brzu manipulaciju velikih dataset-a
+</td>
+<td style="text-align:left;width: 35%; background-color: rgba(227, 242, 253, 255) !important;">
+Brzina: 10-100x brža od base R
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(227, 242, 253, 255) !important;">
+Preporučena biblioteka - Sintaksa
+</td>
+<td style="text-align:left;width: 40%; background-color: rgba(227, 242, 253, 255) !important;">
+dplyr - za čišću i čitljiviju sintaksu
+</td>
+<td style="text-align:left;width: 35%; background-color: rgba(227, 242, 253, 255) !important;">
+Kompatibilnost s tidyverse ekosystemom
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(227, 242, 253, 255) !important;">
+Preporučena biblioteka - Vizualizacija
+</td>
+<td style="text-align:left;width: 40%; background-color: rgba(227, 242, 253, 255) !important;">
+ggplot2 - za profesionalne vizualizacije
+</td>
+<td style="text-align:left;width: 35%; background-color: rgba(227, 242, 253, 255) !important;">
+Grammar of graphics pristup
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(227, 242, 253, 255) !important;">
+Preporučena biblioteka - Datumi
+</td>
+<td style="text-align:left;width: 40%; background-color: rgba(227, 242, 253, 255) !important;">
+lubridate - za rad s datumskim formatima
+</td>
+<td style="text-align:left;width: 35%; background-color: rgba(227, 242, 253, 255) !important;">
+Timezone aware operacije
+</td>
+</tr>
+<tr>
+<td style="text-align:left;background-color: rgba(227, 242, 253, 255) !important;">
+Preporučena biblioteka - Tekst
+</td>
+<td style="text-align:left;width: 40%; background-color: rgba(227, 242, 253, 255) !important;">
+stringr - za manipulaciju i analizu teksta
+</td>
+<td style="text-align:left;width: 35%; background-color: rgba(227, 242, 253, 255) !important;">
+Regex podrška za složene operacije
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="napomene-o-performansama" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Napomene o
+performansama</h2>
+<table class="table table-striped table-hover" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+Preporuke za optimalne performanse
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Operacija
+</th>
+<th style="text-align:left;">
+Preporučeni pristup
+</th>
+<th style="text-align:left;">
+Očekivano vrijeme
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Čitanje podataka
+</td>
+<td style="text-align:left;">
+fread() za brže učitavanje
+</td>
+<td style="text-align:left;">
+&lt; 30 sekundi
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Grupiranje i agregacija
+</td>
+<td style="text-align:left;">
+data.table sintaksa [, .N, by=]
+</td>
+<td style="text-align:left;">
+&lt; 5 sekundi
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Filtriranje velikih tekstova
+</td>
+<td style="text-align:left;">
+Koristiti grep() s fixed=TRUE
+</td>
+<td style="text-align:left;">
+10-60 sekundi
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sortiranje po datumu
+</td>
+<td style="text-align:left;">
+Konvertirati DATE u Date klasu
+</td>
+<td style="text-align:left;">
+&lt; 10 sekundi
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Analiza sentimenta
+</td>
+<td style="text-align:left;">
+Koristiti existirajuće AUTO_SENTIMENT
+</td>
+<td style="text-align:left;">
+1-5 minuta
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="licence-i-citiranje" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Licence i
+citiranje</h1>
+<p>Molimo citirajte ovaj dataset u svojim radovima koristeći sljedeći
+format:</p>
+<blockquote>
+<p><strong>[Šikić, Luka/Hrvatsko katoličko sveučilište]</strong>.
+(2025). <em>Katolički digitalni medijski prostor u Hrvatskoj 2025</em>.
+Dataset sadrži 258,757 medijskih objava iz hrvatskih medija.
+Pristupljeno: 2025-07-23.</p>
+</blockquote>
+<div id="dodatni-resursi" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Dodatni resursi</h2>
+<ul>
+<li><strong>GitHub repozitorij</strong>: [link-na-repo]</li>
+<li><strong>Dokumentacija</strong>: [link-na-docs]</li>
+<li><strong>Kontakt</strong>: [email]</li>
+<li><strong>ORCID</strong>: [orcid-id]</li>
+</ul>
+<hr />
+<p><strong>Zadnja ažurirana</strong>: 2025-07-23<br />
+<strong>Verzija</strong>: 1.0<br />
+<strong>R verzija</strong>: R version 4.2.2 (2022-10-31 ucrt)</p>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
