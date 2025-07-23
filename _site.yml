@@ -29,9 +29,9 @@ navbar:
           href: '' 
         - text: 'Demokršćanstvo'
           href: ''
-        - text: 'Osnove programskog jezika R'
+        - text: 'Katoličko obrazovanje'
           href: ''
-        - text: 'Vizualizacija podataka (ggplot2)'
+        - text: 'Prikazivanje katoličkih svetaca i svetica'
           href: ''
     - text: 'Obavijesti'
       href: news.html  
