@@ -1,18 +1,25 @@
 ---
-title: "Untitled"
-author: "Lux"
-date: "2025-07-22"
-output: html_document
+title: "Mapa katoličkog digitalnog prostora u RH (2021-2023)"
+author: ""
+date: "22. srpnja 2025."
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: flatly
+    code_folding: hide
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.width = 10, fig.height = 8)
+```{r setup}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.width = 12, fig.height = 7, dpi = 200)
 ```
 
-## 
 
 
-```{r}
+
+
+
+```{r libraries}
 library(ggplot2)
 library(dplyr)
 library(scales) # Za ljepše formatiranje brojeva na osima
@@ -25,7 +32,17 @@ library(ggrepel)
 
 ```
 
-## Makro pogled 
+## Uvod: Mapiranje digitalne medijske arene
+
+Ovaj dokument predstavlja prvu fazu analize u sklopu projekta **"Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru"**. Cilj ove analize je stvoriti sveobuhvatnu i jasnu **mapu ekosustava** – temeljni pregled arene u kojoj se odvijaju rasprave o katoličkim temama u Hrvatskoj.
+
+Koristeći bazu podataka od preko 250.000 medijskih objava prikupljenih u periodu od **1. siječnja 2021. do 31. prosinca 2023.**, odgovaramo na temeljna pitanja:
+
+1.  **Gdje se odvija rasprava?** Analiziramo dominantne platforme (web, YouTube, Facebook itd.).
+2.  **Tko su ključni akteri?** Identificiramo najproduktivnije i najutjecajnije medijske izvore.
+3.  **Kakva je dinamika utjecaja?** Uspoređujemo doseg (reach) i angažman (interactions) kako bismo razumjeli različite strategije utjecaja.
+
+Analiza je podijeljena u tri dijela: od općeg, makro pogleda na platforme, preko detaljnijeg pregleda ključnih aktera, do sintetske "Mape utjecaja" koja spaja sve dimenzije u jednu cjelinu.
 
 
 ```{r eval=FALSE}
@@ -174,7 +191,6 @@ for(pl in c("web","youtube","facebook")) {
 
 ```
 
-
 ```{r  eval=FALSE}
 platform_summary <- dta %>%
   group_by(year, SOURCE_TYPE) %>%
@@ -261,8 +277,7 @@ top_facebook_sources <- dta %>%
   mutate(FROM = factor(FROM, levels = FROM))
 ```
 
-
-```{r   eval=FALSE, dpi = 200, fig.width=15, fig.height=8}
+```{r eval=FALSE}
 # 1) Filtriranje i agregacija po REACH za WEB portale
 top_web_sources_reach <- dta %>%
   filter(SOURCE_TYPE == "web", !is.na(FROM)) %>%
@@ -304,8 +319,7 @@ top_facebook_sources_reach <- dta %>%
 
 ```
 
-
-```{r}
+```{r eval=FALSE}
 
 
 # Funkcija za dohvaćanje najvažnijih aktera
@@ -352,7 +366,7 @@ facebook_actors <- get_top_actors(dta, "facebook")
 
 
 
-```{r}
+```{r load-data}
 # load only the pre-computed tables
 platform_summary        <- readRDS("data/platform_summary.rds")
 proportions_summary     <- readRDS("data/proportions_summary.rds")
@@ -366,22 +380,23 @@ top_facebook_sources    <- readRDS("data/top_facebook_sources.rds")
 web_actors              <- readRDS("data/web_actors.rds")
 youtube_actors          <- readRDS("data/youtube_actors.rds")
 facebook_actors         <- readRDS("data/facebook_actors.rds")
+
+# Definiramo paletu boja za konzistentnost
+platform_colors <- c(
+  "web" = "#1f77b4", "youtube" = "#d62728", "facebook" = "#3b5998",
+  "twitter" = "#1DA1F2", "reddit" = "#FF4500", "forum" = "#7f7f7f", "comment" = "#bcbd22"
+)
 ```
 
+# 1. Makro pogled: Topografija digitalnog prostora
 
+Prvi korak u razumijevanju ekosustava je analiza ključnih platformi. Promatramo tri ključne metrike: **Volumen** (ukupan broj objava), **Angažman** (ukupne interakcije) i **Doseg** (ukupan reach).
 
-```{r dpi = 200, fig.width=10, fig.height=8}
-platform_colors <- c(
-  "web" = "#1f77b4",       # Plava
-  "youtube" = "#d62728",    # Crvena
-  "facebook" = "#3b5998",   # Facebook plava
-  "twitter" = "#1DA1F2",    # Twitter plava
-  "tiktok" = "#000000",      # Crna
-  "reddit" = "#FF4500",     # Narančasto-crvena
-  "forum" = "#7f7f7f",       # Siva
-  "comment" = "#bcbd22"     # Maslinasta
-)
+#### **Volumen objava: Tko najviše producira sadržaj?**
 
+Ovaj grafikon prikazuje apsolutnu dominaciju tradicionalnih **web portala** kao glavnih proizvođača sadržaja. Kroz sve tri promatrane godine, web generira znatno više objava od svih ostalih platformi zajedno. Ipak, primjetan je i kontinuirani rast volumena sadržaja na **YouTubeu**, što ukazuje na sve veću važnost video formata.
+
+```{r plot-volume}
 
 plot_volume <- platform_summary %>%
   # Sortiramo unutar svake godine da bi graf bio čitljiviji
@@ -411,49 +426,47 @@ plot_volume <- platform_summary %>%
 
 print(plot_volume)
 
-
-
 ```
 
+#### **Interakcije: Gdje se odvija najživlja rasprava?**
 
-```{r dpi = 200, fig.width=10, fig.height=8}
+Kada pogledamo angažman publike, slika postaje zanimljivija. Iako web i dalje vodi, **YouTube** i **Facebook** zauzimaju značajno veći udio u interakcijama nego što imaju u volumenu objava. Ovo je prvi pokazatelj da, iako web proizvodi najviše sadržaja, društvene mreže i video platforme uspješnije potiču direktan angažman publike.
+
+
+```{r plot-interaction}
+
 plot_interactions <- platform_summary %>%
+  filter(total_interactions > 0) %>%
   arrange(year, total_interactions) %>%
-  mutate(
-    SOURCE_TYPE_ordered = factor(SOURCE_TYPE, levels = unique(SOURCE_TYPE))
-  ) %>%
+  mutate(SOURCE_TYPE_ordered = factor(SOURCE_TYPE, levels = unique(SOURCE_TYPE))) %>%
   ggplot(aes(x = total_interactions, y = SOURCE_TYPE_ordered, fill = SOURCE_TYPE)) +
   geom_col() +
-  geom_text(
-    aes(label = comma(total_interactions, accuracy = 1)),
-    hjust = -0.1, size = 3, color = "black"
-  ) +
+  geom_text(aes(label = comma(total_interactions, accuracy = 1)), hjust = -0.1, size = 3, color = "black") +
   facet_wrap(~year, scales = "free_y") +
-  # if your interactions run into the millions, scale accordingly
-  scale_x_continuous(
-    labels = label_number(suffix = " M", scale = 1e-6)
-  ) +
+  scale_x_continuous(labels = label_number(suffix = " M", scale = 1e-6)) +
   scale_fill_manual(values = platform_colors) +
   theme_minimal(base_size = 14) +
   theme(
-    legend.position    = "none",
-    strip.text         = element_text(face = "bold", size = 16),
+    legend.position = "none",
+    strip.text = element_text(face = "bold", size = 16),
     panel.grid.major.y = element_blank(),
-    axis.text.x        = element_text(angle = 45, hjust = 1)
+    axis.text.x = element_text(angle = 45, hjust = 1)
   ) +
   labs(
-    title    = "Ukupan broj interakcija po platformama (2021–2023)",
-    x        = "Interakcije (u milijunima)",
-    y        = "Tip platforme",
-    caption  = "Napomena: Stupci su sortirani po interakcijama."
+    title = "Ukupan broj interakcija po platformama (2021–2023)",
+    x = "Interakcije (u milijunima)",
+    y = "Tip platforme",
+    caption = "Napomena: Stupci su sortirani po interakcijama. Prikazane su samo platforme s >0 interakcija."
   )
-
 print(plot_interactions)
+
+
 ```
 
 
 
-```{r dpi = 200, fig.width=10, fig.height=8}
+
+```{r eval=FALSE}
 plot_reach <- platform_summary %>%
   arrange(year, total_reach) %>%
   mutate(
@@ -490,173 +503,175 @@ print(plot_reach)
 
 
 
-```{r dpi = 200, fig.width=10, fig.height=8}
-proportions_summary <- platform_summary %>%
-  group_by(year) %>%
-  mutate(
-    post_share        = total_posts / sum(total_posts),
-    interaction_share = total_interactions / sum(total_interactions),
-    reach_share       = total_reach / sum(total_reach)
-  ) %>%
-  ungroup()
+#### **Relativna važnost platformi: Udio u ekosustavu**
 
-# 2) Graf za udio u objavama
+Apsolutni brojevi su korisni, ali relativni udjeli otkrivaju pravu dinamiku moći unutar ekosustava. Sljedeći grafikon uspoređuje udio svake platforme u ukupnom broju **objava**, **interakcija** i **dosega**.
+
+Ova vizualizacija je ključna jer pokazuje **asimetriju utjecaja**:
+
+*   **Lijevo (Objave):** Web čini oko 80% svih objava.
+*   **Sredina (Interakcije):** Udio weba u interakcijama pada na ~70-75%, dok udio YouTubea raste, dosežući gotovo 20% u 2023. godini.
+*   **Desno (Doseg):** Sličan trend vidljiv je i kod dosega, gdje web gubi dio svoje dominacije u korist društvenih i video platformi.
+
+To znači da je sadržaj na YouTubeu i Facebooku, u prosjeku, znatno "utjecajniji" po objavi od sadržaja na web portalima.
+
+
+
+```{r plot-shares}
 plot_share_posts <- proportions_summary %>%
   ggplot(aes(x = year, y = post_share, fill = SOURCE_TYPE)) +
   geom_col(position = "fill") +
   scale_y_continuous(labels = percent_format()) +
-  scale_x_continuous(breaks = c(2021, 2022, 2023, 2024)) +
+  scale_x_continuous(breaks = c(2021, 2022, 2023)) +
   scale_fill_manual(values = platform_colors) +
   theme_minimal(base_size = 14) +
-  labs(
-    title = "Udio objava",
-    x     = "Godina",
-    y     = "Postotak"
-  )
+  labs(title = "Udio objava", x = "Godina", y = "Postotak")
 
-# 3) Graf za udio u interakcijama
 plot_share_interactions <- proportions_summary %>%
   filter(total_interactions > 0) %>%
   ggplot(aes(x = year, y = interaction_share, fill = SOURCE_TYPE)) +
   geom_col(position = "fill") +
   scale_y_continuous(labels = percent_format()) +
-  scale_x_continuous(breaks = c(2021, 2022, 2023, 2024)) +
+  scale_x_continuous(breaks = c(2021, 2022, 2023)) +
   scale_fill_manual(values = platform_colors, guide = "none") +
   theme_minimal(base_size = 14) +
-  labs(
-    title = "Udio interakcija",
-    x     = "",
-    y     = "Postotak"
-  )
+  labs(title = "Udio interakcija", x = "Godina", y = "Postotak")
 
-# 4) Graf za udio u dosegu
 plot_share_reach <- proportions_summary %>%
   filter(total_reach > 0) %>%
   ggplot(aes(x = year, y = reach_share, fill = SOURCE_TYPE)) +
   geom_col(position = "fill") +
   scale_y_continuous(labels = percent_format()) +
-  scale_x_continuous(breaks = c(2021, 2022, 2023, 2024)) +
+  scale_x_continuous(breaks = c(2021, 2022, 2023)) +
   scale_fill_manual(values = platform_colors, guide = "none") +
   theme_minimal(base_size = 14) +
-  labs(
-    title = "Udio dosega",
-    x     = "",
-    y     = "Postotak"
-  )
+  labs(title = "Udio dosega", x = "Godina", y = "Postotak")
 
-# 5) Spojimo sve tri u jedan prikaz
-plot_combined_share <- (
-    plot_share_posts + plot_share_interactions + plot_share_reach
-  ) +
+plot_combined_share <- (plot_share_posts + plot_share_interactions + plot_share_reach) +
   plot_layout(guides = 'collect') +
   plot_annotation(
     title    = "Struktura digitalnog ekosustava (2021–2023)",
-    subtitle = "Lijevo: objave ─ Sredina: interakcije ─ Desno: doseg",
-    caption  = "Web generira najvise sadrzaja, ali YouTube preuzima sve veći dio interakcija i dosega."
+    subtitle = "Usporedba udjela platformi u ukupnom broju objava, interakcija i dosega.",
+    caption  = "Web generira najviše sadržaja, ali YouTube i Facebook preuzimaju sve veći dio 'kolača' utjecaja."
   )
-
 print(plot_combined_share)
 ```
 
 
-```{r dpi = 200, fig.width=10, fig.height=8}
-plot_interactions <- platform_summary %>%
-  filter(total_interactions > 0) %>%
-  ggplot(aes(x = total_interactions, y = reorder(SOURCE_TYPE, total_interactions), fill = SOURCE_TYPE)) +
-  geom_col() +
-  facet_wrap(~year) +
-  scale_x_continuous(labels = label_number(suffix = " M", scale = 1e-6)) +
-  scale_fill_manual(values = platform_colors, guide = "none") + # Skrivamo legendu jer je redundantna
-  theme_light(base_size = 14) +
-  theme(
-    strip.text = element_text(face = "bold", size = 16),
-    panel.grid.major.y = element_blank()
-  ) +
-  labs(
-    title = "Angažman publike po platformama (2021-2023)",
-    subtitle = "",
-    x = "Ukupne interakcije (u milijunima)",
-    y = "Tip platforme",
-    caption = "Napomena: Prikazane su samo platforme s zabiljezenim interakcijama."
-  )
 
+# 2. Mikro pogled: Najutjecajniji akteri
 
-print(plot_interactions)
-```
+Nakon makro pogleda, zumiramo na najvažnije (najveće) pojedinačne aktere unutar tri ključna ekosustava: **Web**, **YouTube** i **Facebook**.
 
+#### **Top 20 Aktera po Angažmanu (Interakcijama)**
 
+Prvo rangiramo aktere prema najdirektnijoj mjeri angažmana – ukupnom broju interakcija. Ovdje primjećujemo jasnu podjelu:
 
+*   **Web:** Dominiraju veliki mainstream mediji (`vecernji.hr`, `jutarnji.hr`, `index.hr`) i specijalizirani vjerski portali (`bitno.net`).
+*   **YouTube:** Scenom dominiraju isključivo specijalizirani kanali (`LaudatoTV`, `T Studio`), pojedini svećenici i župe.
+*   **Facebook:** Mješavina mainstream medija i specijaliziranih stranica.
 
+Veličina točke predstavlja produktivnost (broj objava), otkrivajući različite strategije – neki akteri objavljuju puno s manjim prosječnim angažmanom, dok drugi objavljuju rijetko, ali s velikim odjekom.
 
-```{r dpi = 200, fig.width=15, fig.height=8}
-
-
-
-theme(
-      panel.grid.major.y = element_blank(),
-      panel.border       = element_blank(),
-      axis.ticks.y       = element_blank(),
-      legend.position    = "bottom",
-      axis.text.y        = element_text(angle = 45, hjust = 1)
-    )
-
-
+```{r plot-lollipops-interactions}
 create_top_source_plot <- function(data, platform_name, platform_color) {
-
-  if (nrow(data) == 0) {
-    return(
-      ggplot() +
-        labs(title = paste("Nema dostupnih podataka za", platform_name)) +
-        theme_void()
-    )
-  }
-
+  data <- data %>% arrange(total_interactions) %>% mutate(FROM = factor(FROM, levels = FROM))
   ggplot(data, aes(x = FROM, y = total_interactions)) +
-    geom_segment(aes(x = FROM, xend = FROM, y = 0, yend = total_interactions),
-                 color = "grey", linewidth = 0.5) +
+    geom_segment(aes(x = FROM, xend = FROM, y = 0, yend = total_interactions), color = "grey", linewidth = 0.5) +
     geom_point(aes(size = total_posts), color = platform_color, alpha = 0.8) +
     coord_flip() +
-    scale_y_continuous(labels = label_number(suffix = "", scale = 1e-3)) +
+    scale_y_continuous(labels = label_number(suffix = " K", scale = 1e-3)) +
     scale_size_continuous(range = c(2, 10), name = "Broj objava") +
     theme_light(base_size = 12) +
     theme(
-      panel.grid.major.y = element_blank(),
-      panel.border       = element_blank(),
-      axis.ticks.y       = element_blank(),
-      legend.position    = "bottom",
-      axis.text.x        = element_text(angle = 45, hjust = 1)
+      panel.grid.major.y = element_blank(), panel.border = element_blank(),
+      axis.ticks.y = element_blank(), legend.position = "bottom",
+      axis.text.x = element_text(angle = 45, hjust = 1)
     ) +
-    labs(
-      title = platform_name,
-      x     = "",
-      y     = "Ukupne interakcije (u tisucama)"
-    )
+    labs(title = platform_name, x = "", y = "Ukupne interakcije (u tisućama)")
 }
 
-
-
-
-# Kreiramo svaki pojedinačni graf
 plot_web <- create_top_source_plot(top_web_sources, "Web portali", "#1f77b4")
-
 plot_youtube <- create_top_source_plot(top_youtube_sources, "YouTube kanali", "#d62728")
 plot_facebook <- create_top_source_plot(top_facebook_sources, "Facebook stranice", "#3b5998")
 
-# Spajamo ih u jednu veliku vizualizaciju
 final_dashboard <- plot_web + plot_youtube + plot_facebook +
   plot_annotation(
-    title = "Top 20 profila u najvažnijim katoličkim digitalnim medijskim prostorima (2021-2023)",
+    title = "Top 20 Aktera po Angažmanu u Ključnim Ekosustavima (2021-2023)",
     subtitle = "Rangirano prema ukupnim interakcijama. Veličina točke predstavlja ukupan broj objava.",
     caption = "Izvor: Analiza projekta 'Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru'",
     theme = theme(plot.title = element_text(size = 20, face = "bold"))
   )
-
-# Prikazujemo konačni dashboard
 print(final_dashboard)
 ```
 
 
-```{r dpi = 200, fig.width=15, fig.height=8}
+# 3. Sinteza: Mapa utjecaja najvažnijih aktera
+
+Konačno, spajamo sve u jednu, sofisticiranu vizualizaciju. "Mapa Utjecaja" prikazuje aktere u dvodimenzionalnom prostoru definiranom **angažmanom (X-os)** i **dosegom (Y-os)**. Ovo nam omogućuje da identificiramo četiri osnovna arhetipa:
+
+*   **Divovi (Gore desno):** Visok doseg I visok angažman. Apsolutni lideri.
+*   **Graditelji zajednica (Dolje desno):** Nizak doseg, ali iznimno visok angažman. Imaju vjernu, aktivnu publiku.
+*   **Megafoni (Gore lijevo):** Visok doseg, ali nizak angažman. Njihov sadržaj se vidi, ali ne potiče nužno raspravu.
+*   **Nišni igrači (Dolje lijevo):** Fokusirani na specifičnu, manju publiku s umjerenim dosegom i angažmanom.
+
+Osi su na logaritamskoj skali kako bi se bolje prikazao širok raspon vrijednosti.
+
+```{r plot-actor-map}
+create_actor_map_plot <- function(data, platform_name, platform_color) {
+  if(nrow(data) < 2) { return(ggplot() + labs(title = paste("Nema dovoljno podataka za", platform_name)) + theme_void()) }
+  
+  median_interactions <- median(data$total_interactions, na.rm = TRUE)
+  median_reach <- median(data$total_reach, na.rm = TRUE)
+
+  ggplot(data, aes(x = total_interactions, y = total_reach)) +
+    geom_vline(xintercept = median_interactions, linetype = "dashed", color = "grey70") +
+    geom_hline(yintercept = median_reach, linetype = "dashed", color = "grey70") +
+    geom_point(aes(size = total_posts), color = platform_color, alpha = 0.7) +
+    geom_text_repel(aes(label = FROM), size = 3, max.overlaps = 15) +
+    scale_x_log10(labels = label_number(big.mark = ".", suffix = " K", scale = 1e-3)) +
+    scale_y_log10(labels = label_number(big.mark = ".", suffix = " M", scale = 1e-6)) +
+    scale_size_continuous(range = c(2, 12), name = "Broj objava") +
+    theme_minimal(base_size = 12) +
+    theme(legend.position = "bottom") +
+    labs(
+      title = platform_name, x = "Ukupne interakcije (Log)", y = "Ukupan doseg (Log)"
+    )
+}
+
+plot_map_web <- create_actor_map_plot(web_actors, "Web Portali", "#1f77b4")
+plot_map_youtube <- create_actor_map_plot(youtube_actors, "YouTube Kanali", "#d62728")
+plot_map_facebook <- create_actor_map_plot(facebook_actors, "Facebook Stranice", "#3b5998")
+
+final_map_dashboard <- plot_map_web + plot_map_youtube + plot_map_facebook +
+  plot_annotation(
+    title = "Mapa Utjecaja Aktera u Ključnim Ekosustavima (2021-2023)",
+    subtitle = "Usporedba dosega i angažmana. Veličina točke predstavlja produktivnost (broj objava).",
+    caption = "Izvor: Analiza projekta 'Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru' | Osi su na logaritamskoj skali.",
+    theme = theme(plot.title = element_text(size = 20, face = "bold"))
+  ) & theme(plot.background = element_rect(fill = "white", color = NA))
+
+print(final_map_dashboard)
+```
+
+
+## Zaključak i sljedeći soraci
+
+Ova inicijalna analiza ekosustava otkriva složenu i višeslojnu digitalnu arenu. Ključni nalazi su:
+
+1.  **Postoji jasna podjela rada:** Web portali su dominantni proizvođači sadržaja, dok su YouTube i Facebook ključne arene za angažman publike.
+2.  **Akteri su specijalizirani:** Najutjecajniji glasovi se značajno razlikuju od platforme do platforme, ukazujući na različite publike i komunikacijske strategije.
+3.  **Utjecaj je višedimenzionalan:** Promatranje samo jedne metrike (npr. samo interakcija) nije dovoljno. Mapa utjecaja pokazuje da akteri balansiraju između dosega, angažmana i produktivnosti.
+
+Nakon što smo mapirali **tko** i **gdje** govori, sljedeća faza našeg istraživanja usmjerit će se na pitanje **o čemu** se govori. To će uključivati dubinsku tematsku analizu i analizu sentimenata kako bismo razumjeli ključne narative koji oblikuju katoličku tematiku u hrvatskom digitalnom prostoru.
+
+
+
+
+
+
+
+```{r eval= FALSE}
 
 create_top_source_plot_reach <- function(data, platform_name, platform_color) {
   if (nrow(data) == 0) {
@@ -718,66 +733,6 @@ print(final_reach_dashboard)
 
 
 
-```{r}
-create_actor_map_plot <- function(data, platform_name, platform_color) {
-  
-  # Provjera je li data frame prazan
-  if(nrow(data) < 2) {
-    return(
-      ggplot() + 
-      labs(title = paste("Nema dovoljno podataka za", platform_name)) +
-      theme_void()
-    )
-  }
-  
-  # Izračunaj medijane za iscrtavanje linija kvadranata
-  median_interactions <- median(data$total_interactions, na.rm = TRUE)
-  median_reach <- median(data$total_reach, na.rm = TRUE)
-
-  ggplot(data, aes(x = total_interactions, y = total_reach)) +
-    # Linije koje dijele graf u 4 kvadranta (na temelju medijana)
-    geom_vline(xintercept = median_interactions, linetype = "dashed", color = "grey70") +
-    geom_hline(yintercept = median_reach, linetype = "dashed", color = "grey70") +
-    
-    # Točke koje predstavljaju aktere
-    geom_point(aes(size = total_posts), color = platform_color, alpha = 0.7) +
-    
-    # Inteligentne labele koje se ne preklapaju
-    geom_text_repel(aes(label = FROM), size = 3, max.overlaps = 15) +
-    
-    # Korištenje logaritamske skale za bolju distribuciju točaka
-    scale_x_log10(labels = label_number(big.mark = ".", suffix = " K", scale = 1e-3)) +
-    scale_y_log10(labels = label_number(big.mark = ".", suffix = " M", scale = 1e-6)) +
-    
-    scale_size_continuous(range = c(2, 12), name = "Broj objava") +
-    theme_minimal(base_size = 12) +
-    theme(legend.position = "bottom") +
-    labs(
-      title = platform_name,
-      x = "Ukupne interakcije (Log)",
-      y = "Ukupan doseg (Log)"
-    )
-}
-
-plot_map_web <- create_actor_map_plot(web_actors, "Web Portali", "#1f77b4")
-plot_map_youtube <- create_actor_map_plot(youtube_actors, "YouTube Kanali", "#d62728")
-plot_map_facebook <- create_actor_map_plot(facebook_actors, "Facebook Stranice", "#3b5998")
-
-# Spajamo ih u jednu veliku vizualizaciju
-final_map_dashboard <- plot_map_web + plot_map_youtube + plot_map_facebook +
-  plot_annotation(
-    title = "Mapa utjecaja aktera u najvažnijim katoličkim digitalnim medijskim prostorima (2021-2023)",
-    subtitle = "Usporedba dosega (reach) i angažmana (interactions). Veličina točke predstavlja produktivnost (broj objava).",
-    caption = "Izvor: Analiza projekta 'Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru' | Osi su na logaritamskoj skali.",
-    theme = theme(plot.title = element_text(size = 20, face = "bold"))
-  ) & theme(plot.background = element_rect(fill = "white", color = NA)) # Osigurava bijelu pozadinu za svaki graf
-
-# Prikazujemo konačni dashboard
-print(final_map_dashboard)
-
-
-
-```
 
 
 
