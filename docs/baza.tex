@@ -1,26 +1,103 @@
----
-title: "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)"
-date: "2025-07-23"
-output: 
-  html_document:
-    theme: flatly
-    toc: true
-    toc_float: true
-    toc_depth: 3
-    number_sections: true
-    code_folding: show
-    df_print: paged
-  pdf_document:
-    toc: true
-    number_sections: true
----
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
+\title{Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj
+(2021-2024)}
+\author{}
+\date{\vspace{-2.5em}2025-07-23}
 
+\begin{document}
+\maketitle
 
-# Pregled baze podataka
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\section{Pregled baze podataka}\label{pregled-baze-podataka}
 
-Baza podataka sadrži **258,757 zapisa** medijskih objava prikupljenih tijekom 2021/22/23. godine, fokusiranih na katoličke teme i sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za analizu medijskog diskursa, sentimenta i angažmana publike u domeni religijskih tema.
-
+Baza podataka sadrži \textbf{258,757 zapisa} medijskih objava
+prikupljenih tijekom 2021/22/23. godine, fokusiranih na katoličke teme i
+sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za
+analizu medijskog diskursa, sentimenta i angažmana publike u domeni
+religijskih tema.
 
 \begin{longtable}[t]{ll}
 \caption{\label{tab:load-data}Osnovne karakteristike dataseta}\\
@@ -37,41 +114,39 @@ Geografski opseg & Hrvatska (HR)\\
 \bottomrule
 \end{longtable}
 
-## Struktura podataka
+\subsection{Struktura podataka}\label{struktura-podataka}
 
-
-```
+\begin{verbatim}
 ## Classes 'data.table' and 'data.frame': 258757 obs. of 49 variables:
-```
+\end{verbatim}
 
-```
+\begin{verbatim}
 ## $ DATE                 : chr [1:258757] '2021-01-02' '2021-01-02' ...
-```
+\end{verbatim}
 
-```
+\begin{verbatim}
 ## $ TIME                 : chr [1:258757] '23:36:00' '23:28:34' ...
-```
+\end{verbatim}
 
-```
+\begin{verbatim}
 ## $ TITLE                : chr [1:258757] 'Župa Gospe Brze Pomoći...' ...
-```
+\end{verbatim}
 
-```
+\begin{verbatim}
 ## $ AUTO_SENTIMENT       : chr [1:258757] 'positive' 'neutral' 'negative' ...
-```
+\end{verbatim}
 
-```
+\begin{verbatim}
 ## $ REACH                : num [1:258757] 21 48 3300 312 ...
-```
+\end{verbatim}
 
-```
+\begin{verbatim}
 ## ... [dodatnih 44 varijabli]
-```
+\end{verbatim}
 
-# Opis varijabli
+\section{Opis varijabli}\label{opis-varijabli}
 
-## Vremenske varijable
-
+\subsection{Vremenske varijable}\label{vremenske-varijable}
 
 \begin{longtable}[t]{lll}
 \caption{\label{tab:temporal-vars}Vremenske varijable}\\
@@ -84,8 +159,7 @@ year & numeric & Godina izvlučena iz datuma\\
 \bottomrule
 \end{longtable}
 
-## Sadržaj i metapodaci
-
+\subsection{Sadržaj i metapodaci}\label{sadrux17eaj-i-metapodaci}
 
 \begin{longtable}[t]{lll}
 \caption{\label{tab:content-vars}Sadržaj i metapodaci}\\
@@ -103,8 +177,8 @@ URL\_PHOTO & character & URL fotografije povezane s objavom\\
 \bottomrule
 \end{longtable}
 
-## Kategorizacija i označavanje
-
+\subsection{Kategorizacija i
+označavanje}\label{kategorizacija-i-oznaux10davanje}
 
 \begin{longtable}[t]{lll}
 \caption{\label{tab:categorization-vars}Kategorizacija i označavanje}\\
@@ -122,8 +196,7 @@ LOCATIONS & character & Geografska lokacija (HR)\\
 \bottomrule
 \end{longtable}
 
-## Sentiment analiza
-
+\subsection{Sentiment analiza}\label{sentiment-analiza}
 
 \begin{longtable}[t]{lll}
 \caption{\label{tab:sentiment-vars}Sentiment analiza}\\
@@ -135,8 +208,7 @@ MANUAL\_SENTIMENT & logical & Ručno označen sentiment (trenutno prazno)\\
 \bottomrule
 \end{longtable}
 
-## Metrike angažmana
-
+\subsection{Metrike angažmana}\label{metrike-angaux17emana}
 
 \begin{longtable}[t]{lll}
 \caption{\label{tab:engagement-vars}Metrike angažmana}\\
@@ -151,8 +223,8 @@ FOLLOWERS\_COUNT & numeric & Broj pratitelja autora\\
 \bottomrule
 \end{longtable}
 
-## Specifične reakcije (Facebook)
-
+\subsection{Specifične reakcije
+(Facebook)}\label{specifiux10dne-reakcije-facebook}
 
 \begin{longtable}[t]{lll}
 \caption{\label{tab:facebook-vars}Specifične reakcije (Facebook)}\\
@@ -172,10 +244,11 @@ TOTAL\_REACTIONS\_COUNT & numeric & Ukupan broj svih reakcija\\
 \bottomrule
 \end{longtable}
 
-# Kvaliteta i kompletnost podataka
+\section{Kvaliteta i kompletnost
+podataka}\label{kvaliteta-i-kompletnost-podataka}
 
-## Pregled nedostajućih vrijednosti
-
+\subsection{Pregled nedostajućih
+vrijednosti}\label{pregled-nedostajuux107ih-vrijednosti}
 
 \begin{longtable}[t]{lrl}
 \caption{\label{tab:missing-data}Pregled nedostajućih vrijednosti u ključnim varijablama}\\
@@ -192,8 +265,8 @@ VIEW\_COUNT & 85.3 & Specifično za video sadržaj\\
 \bottomrule
 \end{longtable}
 
-## Statistički sažetak numeričkih varijabli
-
+\subsection{Statistički sažetak numeričkih
+varijabli}\label{statistiux10dki-saux17eetak-numeriux10dkih-varijabli}
 
 \begin{longtable}[t]{lrrrrr}
 \caption{\label{tab:numeric-summary}Statistički sažetak ključnih numeričkih varijabli}\\
@@ -208,10 +281,9 @@ INFLUENCE\_SCORE & 3.2 & 3.0 & 2.1 & 1 & 10.0\\
 \bottomrule
 \end{longtable}
 
-# Primjeri korištenja
+\section{Primjeri korištenja}\label{primjeri-koriux161tenja}
 
-## Osnovne analize
-
+\subsection{Osnovne analize}\label{osnovne-analize}
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{35%}l>{\raggedright\arraybackslash}p{25%}}
 \caption{\label{tab:basic-analysis-table}Osnovne analize - pregled kodova i rezultata}\\
@@ -224,8 +296,7 @@ Top izvori po angažmanu & top\_sources <- dta[, .(avg\_engagement = mean(ENGAGE
 \bottomrule
 \end{longtable}
 
-## Napredne analize
-
+\subsection{Napredne analize}\label{napredne-analize}
 
 \begin{longtable}[t]{ll>{\raggedright\arraybackslash}p{30%}l}
 \caption{\label{tab:advanced-analysis-table}Napredne analize - detaljni pregled metoda}\\
@@ -240,10 +311,9 @@ Wordcloud generiranje & wordcloud, RColorBrewer & wordcloud(words, freq, colors 
 \bottomrule
 \end{longtable}
 
-# Tehnički detalji
+\section{Tehnički detalji}\label{tehniux10dki-detalji}
 
-## Izvorni format podataka
-
+\subsection{Izvorni format podataka}\label{izvorni-format-podataka}
 
 \begin{longtable}[t]{l>{\raggedright\arraybackslash}p{40%}>{\raggedright\arraybackslash}p{35%}}
 \caption{\label{tab:technical-details-table}Tehnički detalji dataseta i preporučeni alati}\\
@@ -264,8 +334,7 @@ Kategorija & Vrijednost/Opis & Napomene\\
 \bottomrule
 \end{longtable}
 
-## Napomene o performansama
-
+\subsection{Napomene o performansama}\label{napomene-o-performansama}
 
 \begin{longtable}[t]{lll}
 \caption{\label{tab:performance-notes}Preporuke za optimalne performanse}\\
@@ -280,29 +349,44 @@ Analiza sentimenta & Koristiti existirajuće AUTO\_SENTIMENT & 1-5 minuta\\
 \bottomrule
 \end{longtable}
 
+\subsection{Preuzmi bazu podataka}\label{preuzmi-bazu-podataka}
 
+📊 \textbf{Kaggle Dataset}:
+\href{https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space/data1}{Croatian
+Catholic Media Space 2021- 2024}
 
-## Preuzmi bazu podataka
-
-📊 **Kaggle Dataset**: [Croatian Catholic Media Space 2021- 2024](https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space/data1)
-
-
-
-# Licence i citiranje
+\section{Licence i citiranje}\label{licence-i-citiranje}
 
 Molimo citirajte ovu bazu u svojim radovima koristeći sljedeći format:
 
-> **[Šikić, Luka/Hrvatsko katoličko sveučilište]**. (2025). *Katolički digitalni medijski prostor u Hrvatskoj 2025*. Dataset sadrži 258,757 medijskih objava iz hrvatskih medija. Pristupljeno: 2025-07-23.
+\begin{quote}
+\textbf{{[}Šikić, Luka/Hrvatsko katoličko sveučilište{]}}. (2025).
+\emph{Katolički digitalni medijski prostor u Hrvatskoj 2025}. Dataset
+sadrži 258,757 medijskih objava iz hrvatskih medija. Pristupljeno:
+2025-07-23.
+\end{quote}
 
-## Dodatni resursi
+\subsection{Dodatni resursi}\label{dodatni-resursi}
 
-- **GitHub repozitorij**: [https://github.com/lusiki/DigiKat]
-- **Dokumentacija**: [https://lusiki.github.io/DigiKat/baza.html] 
-- **Kontakt**: [luka.sikic@unicath.hr]
-- **ORCID**: [0009-0006-3519-0272]
+\begin{itemize}
+\tightlist
+\item
+  \textbf{GitHub repozitorij}:
+  {[}\url{https://github.com/lusiki/DigiKat}{]}
+\item
+  \textbf{Dokumentacija}:
+  {[}\url{https://lusiki.github.io/DigiKat/baza.html}{]}
+\item
+  \textbf{Kontakt}:
+  {[}\href{mailto:luka.sikic@unicath.hr}{\nolinkurl{luka.sikic@unicath.hr}}{]}
+\item
+  \textbf{ORCID}: {[}0009-0006-3519-0272{]}
+\end{itemize}
 
----
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
-**Zadnja ažurirana**: 2025-07-23  
-**Verzija**: 1.0  
-**R verzija**: R version 4.2.2 (2022-10-31 ucrt)
+\textbf{Zadnja ažurirana}: 2025-07-23\\
+\textbf{Verzija}: 1.0\\
+\textbf{R verzija}: R version 4.2.2 (2022-10-31 ucrt)
+
+\end{document}

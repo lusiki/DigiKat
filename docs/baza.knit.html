@@ -10,8 +10,9 @@
 
 
 
+<meta name="date" content="2025-07-23" />
 
-<title>about.knit</title>
+<title>Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)</title>
 
 <script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -29,10 +30,15 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -217,7 +223,73 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
 
 
 
@@ -227,6 +299,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -324,80 +406,162 @@ $(document).ready(function () {
 
 <div id="header">
 
-
-
-
-</div>
-
-
-<p><br> <br></p>
-<div id="ciljevi-projekta" class="section level3">
-<h3>Ciljevi projekta</h3>
-<p>Naša misija je stvoriti jasan i sveobuhvatan uvid u digitalnu
-prisutnost katoličke tematike u Hrvatskoj. To ćemo postići kroz četiri
-ključna cilja:</p>
-<ul>
-<li><strong>Identifikacija i prikupljanje:</strong> Automatizirano
-prikupljanje medijskih objava u realnom vremenu, koristeći moderne alate
-za <em>web scraping</em> i API integracije.</li>
-<li><strong>Organizacija podataka:</strong> Stvaranje strukturirane i
-javno dostupne baze podataka koja će služiti kao pouzdan temelj za
-buduće znanstvene i javne analize.</li>
-<li><strong>Analiza i modeliranje:</strong> Primjena naprednih
-računalnih tehnika (obrada prirodnog jezika, strojno učenje) za
-otkrivanje obrazaca, trendova i narativa u prikupljenim podacima.</li>
-<li><strong>Diseminacija i otvorenost:</strong> Dijeljenje rezultata
-kroz znanstvene publikacije, konferencije i radionice, uz objavu
-cjelokupnog koda i metodologije na otvorenim repozitorijima.</li>
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
 </ul>
-<hr />
 </div>
-<div id="doprinos-i-vrijednost-projekta" class="section level3">
-<h3>Doprinos i vrijednost projekta</h3>
-<p>Ovaj projekt nije samo akademska vježba; osmišljen je da stvori
-trajnu vrijednost za znanstvenu zajednicu i uključene pojedince.</p>
-<p><strong>Razvoj vještina:</strong> Sudionici projekta imat će priliku
-raditi s najnovijim računalnim tehnikama i alatima. Kroz praktičan rad,
-razvijat će napredne vještine u analizi velikih količina podataka,
-rudarenju teksta i statističkom modeliranju, što im pruža kompetitivnu
-prednost u znanstvenoj i poslovnoj zajednici.</p>
-<p><strong>Otvorena znanost na djelu:</strong> Posebna vrijednost
-projekta leži u njegovoj predanosti principima otvorenosti i
-transparentnosti.</p>
+
+
+
+<h1 class="title toc-ignore">Baza podataka - Katolički digitalni
+medijski prostor u Hrvatskoj (2021-2024)</h1>
+<h4 class="date">2025-07-23</h4>
+
+</div>
+
+
+<div id="pregled-baze-podataka" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Pregled baze
+podataka</h1>
+<p>Baza podataka sadrži <strong>258,757 zapisa</strong> medijskih objava
+prikupljenih tijekom 2021/22/23. godine, fokusiranih na katoličke teme i
+sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za
+analizu medijskog diskursa, sentimenta i angažmana publike u domeni
+religijskih tema.</p>
+<div id="struktura-podataka" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Struktura
+podataka</h2>
+<pre><code>## Classes &#39;data.table&#39; and &#39;data.frame&#39;: 258757 obs. of 49 variables:</code></pre>
+<pre><code>## $ DATE                 : chr [1:258757] &#39;2021-01-02&#39; &#39;2021-01-02&#39; ...</code></pre>
+<pre><code>## $ TIME                 : chr [1:258757] &#39;23:36:00&#39; &#39;23:28:34&#39; ...</code></pre>
+<pre><code>## $ TITLE                : chr [1:258757] &#39;Župa Gospe Brze Pomoći...&#39; ...</code></pre>
+<pre><code>## $ AUTO_SENTIMENT       : chr [1:258757] &#39;positive&#39; &#39;neutral&#39; &#39;negative&#39; ...</code></pre>
+<pre><code>## $ REACH                : num [1:258757] 21 48 3300 312 ...</code></pre>
+<pre><code>## ... [dodatnih 44 varijabli]</code></pre>
+</div>
+</div>
+<div id="opis-varijabli" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Opis varijabli</h1>
+<div id="vremenske-varijable" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Vremenske
+varijable</h2>
+
+</div>
+<div id="sadržaj-i-metapodaci" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Sadržaj i
+metapodaci</h2>
+
+</div>
+<div id="kategorizacija-i-označavanje" class="section level2"
+number="2.3">
+<h2><span class="header-section-number">2.3</span> Kategorizacija i
+označavanje</h2>
+
+</div>
+<div id="sentiment-analiza" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Sentiment
+analiza</h2>
+
+</div>
+<div id="metrike-angažmana" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Metrike
+angažmana</h2>
+
+</div>
+<div id="specifične-reakcije-facebook" class="section level2"
+number="2.6">
+<h2><span class="header-section-number">2.6</span> Specifične reakcije
+(Facebook)</h2>
+
+</div>
+</div>
+<div id="kvaliteta-i-kompletnost-podataka" class="section level1"
+number="3">
+<h1><span class="header-section-number">3</span> Kvaliteta i kompletnost
+podataka</h1>
+<div id="pregled-nedostajućih-vrijednosti" class="section level2"
+number="3.1">
+<h2><span class="header-section-number">3.1</span> Pregled nedostajućih
+vrijednosti</h2>
+
+</div>
+<div id="statistički-sažetak-numeričkih-varijabli"
+class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Statistički sažetak
+numeričkih varijabli</h2>
+
+</div>
+</div>
+<div id="primjeri-korištenja" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Primjeri
+korištenja</h1>
+<div id="osnovne-analize" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Osnovne analize</h2>
+
+</div>
+<div id="napredne-analize" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Napredne analize</h2>
+
+</div>
+</div>
+<div id="tehnički-detalji" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Tehnički detalji</h1>
+<div id="izvorni-format-podataka" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Izvorni format
+podataka</h2>
+
+</div>
+<div id="napomene-o-performansama" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Napomene o
+performansama</h2>
+
+</div>
+<div id="preuzmi-bazu-podataka" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Preuzmi bazu
+podataka</h2>
+<p>📊 <strong>Kaggle Dataset</strong>: <a
+href="https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space/data1">Croatian
+Catholic Media Space 2021- 2024</a></p>
+</div>
+</div>
+<div id="licence-i-citiranje" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Licence i
+citiranje</h1>
+<p>Molimo citirajte ovu bazu u svojim radovima koristeći sljedeći
+format:</p>
 <blockquote>
-<p>Naš rad temelji se na principima <a
-href="https://roadworkasia.com/wp-content/uploads/2023/04/Labour_of_Love_An_Open_Access_Manifesto.pdf">otvorene
-znanosti</a> i <a
-href="https://www.nature.com/articles/s41562-016-0021">reproducibilnosti
-istraživanja</a>. Svi alati, skripte i metodološki okviri bit će
-dostupni kao otvoreni kod na <a
-href="https://github.com/lusiki/DigiKat">GitHubu</a>, omogućujući
-drugima da provjere, repliciraju i nadograde naš rad.</p>
+<p><strong>[Šikić, Luka/Hrvatsko katoličko sveučilište]</strong>.
+(2025). <em>Katolički digitalni medijski prostor u Hrvatskoj 2025</em>.
+Dataset sadrži 258,757 medijskih objava iz hrvatskih medija.
+Pristupljeno: 2025-07-23.</p>
 </blockquote>
-<p>Kroz ovakav pristup, potičemo suradnju, jačamo istraživačke profile
-mladih znanstvenika i aktivno doprinosimo stvaranju pouzdanije i
-inovativnije znanstvene kulture.</p>
-<hr />
-</div>
-<div id="pridružite-se-našem-istraživanju" class="section level3">
-<h3>Pridružite se našem istraživanju!</h3>
-<p>Tražimo motivirane istraživače i studente koji žele biti dio
-inovativnog projekta koji spaja društvene znanosti, podatkovnu analitiku
-i principe otvorene znanosti. Sudjelovanjem ćete:</p>
+<div id="dodatni-resursi" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Dodatni resursi</h2>
 <ul>
-<li>** Steći praktično iskustvo** u radu s velikim podacima koristeći
-alate poput <strong>R</strong> i <strong>Python</strong>.</li>
-<li>** Razviti tehničke vještine** u područjima obrade prirodnog jezika
-(NLP), strojnog učenja i mrežne analize.</li>
-<li>** Stvoriti vrijedan doprinos** znanosti čiji će rezultati biti
-javno dostupni i citirani.</li>
-<li>** Biti dio inicijative** koja aktivno promiče transparentnost,
-suradnju i inovacije u znanosti.</li>
+<li><strong>GitHub repozitorij</strong>: [<a
+href="https://github.com/lusiki/DigiKat"
+class="uri">https://github.com/lusiki/DigiKat</a>]</li>
+<li><strong>Dokumentacija</strong>: [<a
+href="https://lusiki.github.io/DigiKat/baza.html"
+class="uri">https://lusiki.github.io/DigiKat/baza.html</a>]</li>
+<li><strong>Kontakt</strong>: [<a href="mailto:luka.sikic@unicath.hr"
+class="email">luka.sikic@unicath.hr</a>]</li>
+<li><strong>ORCID</strong>: [0009-0006-3519-0272]</li>
 </ul>
+<hr />
+<p><strong>Zadnja ažurirana</strong>: 2025-07-23<br />
+<strong>Verzija</strong>: 1.0<br />
+<strong>R verzija</strong>: R version 4.2.2 (2022-10-31 ucrt)</p>
+</div>
 </div>
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -429,7 +593,41 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "show");
+});
+</script>
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
