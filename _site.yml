@@ -23,9 +23,9 @@ navbar:
           href: događaji.html  
     - text: 'Tematska istraživanja'
       menu:
-        - text: 'Hodčasnički turizam'
-          href: ''
         - text: 'Analiza self-help sadržaja na YouTube-u'
+          href: ''
+        - text: 'Hodčasnički turizam'
           href: '' 
         - text: 'Demokršćanstvo'
           href: ''

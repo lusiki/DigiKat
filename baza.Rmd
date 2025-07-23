@@ -48,7 +48,7 @@ Baza podataka sadrži **258,757 zapisa** medijskih objava prikupljenih tijekom 2
 # Za demonstraciju, kreiramo osnovne informacije
 basic_info <- data.frame(
   Karakteristika = c("Broj zapisa", "Broj varijabli", "Vremenski period", "Format", "Glavni jezik", "Geografski opseg"),
-  Vrijednost = c("258,757", "49", "2021. godina", "R data.table", "Hrvatski (hr)", "Hrvatska (HR)")
+  Vrijednost = c("258,757", "49", "2021 - 2024 godina", "R data.table", "Hrvatski (hr)", "Hrvatska (HR)")
 )
 
 kable(basic_info, caption = "Osnovne karakteristike dataseta") %>%
@@ -82,11 +82,11 @@ temporal_vars <- data.frame(
   Opis = c(
     "Datum objave u formatu YYYY-MM-DD",
     "Vrijeme objave u formatu HH:MM:SS", 
-    "Godina izvlečena iz datuma"
+    "Godina izvlučena iz datuma"
   )
 )
 
-kable(temporal_vars, caption = "📅 Vremenske varijable") %>%
+kable(temporal_vars, caption = "Vremenske varijable") %>%
   kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
@@ -98,7 +98,7 @@ content_vars <- data.frame(
   Tip = c("character", "character", "character", "character", "character", "character", "character"),
   Opis = c(
     "Naslov članka/objave",
-    "Potpuni tekst objave",
+    "Potpuni tekst objave(dostupan isključivo na zahtjev)",
     "Isječak teksta koji sadrži ključne riječi",
     "Autor objave (ako je dostupan)",
     "Izvor/domena web stranice",
@@ -107,7 +107,7 @@ content_vars <- data.frame(
   )
 )
 
-kable(content_vars, caption = "📰 Sadržaj i metapodaci") %>%
+kable(content_vars, caption = "Sadržaj i metapodaci") %>%
   kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
@@ -128,7 +128,7 @@ cat_vars <- data.frame(
   )
 )
 
-kable(cat_vars, caption = "🏷️ Kategorizacija i označavanje") %>%
+kable(cat_vars, caption = "Kategorizacija i označavanje") %>%
   kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
@@ -144,7 +144,7 @@ sentiment_vars <- data.frame(
   )
 )
 
-kable(sentiment_vars, caption = "🎯 Sentiment analiza") %>%
+kable(sentiment_vars, caption = "Sentiment analiza") %>%
   kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
@@ -163,7 +163,7 @@ engagement_vars <- data.frame(
   )
 )
 
-kable(engagement_vars, caption = "📊 Metrije angažmana") %>%
+kable(engagement_vars, caption = "Metrike angažmana") %>%
   kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
@@ -186,7 +186,7 @@ fb_vars <- data.frame(
   )
 )
 
-kable(fb_vars, caption = "👍 Specifične reakcije (Facebook)") %>%
+kable(fb_vars, caption = "Specifične reakcije (Facebook)") %>%
   kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
@@ -402,18 +402,32 @@ kable(performance_tips,
   kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
+
+
+## Download Dataset
+
+📊 **Kaggle Dataset**: [Croatian Catholic Media Space 2021- 2024](https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space/data1)
+
+```{r eval=F}
+# Direct download via Kaggle API
+library(pins)
+board <- board_kaggle()
+dataset <- pin_read(board, "https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space/data")
+
+```
+
 # Licence i citiranje
 
-Molimo citirajte ovaj dataset u svojim radovima koristeći sljedeći format:
+Molimo citirajte ovu bazu u svojim radovima koristeći sljedeći format:
 
 > **[Šikić, Luka/Hrvatsko katoličko sveučilište]**. (2025). *Katolički digitalni medijski prostor u Hrvatskoj 2025*. Dataset sadrži 258,757 medijskih objava iz hrvatskih medija. Pristupljeno: `r Sys.Date()`.
 
 ## Dodatni resursi
 
-- **GitHub repozitorij**: [link-na-repo]
-- **Dokumentacija**: [link-na-docs] 
-- **Kontakt**: [email]
-- **ORCID**: [orcid-id]
+- **GitHub repozitorij**: [https://github.com/lusiki/DigiKat]
+- **Dokumentacija**: [https://lusiki.github.io/DigiKat/baza.html] 
+- **Kontakt**: [luka.sikic@unicath.hr]
+- **ORCID**: [0009-0006-3519-0272]
 
 ---
 

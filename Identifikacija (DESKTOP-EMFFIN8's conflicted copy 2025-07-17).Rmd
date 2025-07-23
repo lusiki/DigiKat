@@ -973,6 +973,13 @@ filtered_df_ <- process_text_sequential_batches(
 
 
 saveRDS(filtered_df_, "D:/LUKA/Dropbox/filtered_df_2021.rds")
+
+
+saveRDS(dta, "D:/LUKA/Dropbox/CCDMS.rds")
+# save as csv
+write.csv(dta, "D:/LUKA/Dropbox/CCDMS.csv", row.names = FALSE)
+
+
 ```
 
 
