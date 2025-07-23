@@ -19,7 +19,7 @@ pagetitle: "Osnovne informacije"
 
 ---
 
-### 🎯 O projektu
+###  O projektu
 
 Dobrodošli na službenu stranicu projekta **"Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru"**. Ovaj trogodišnji projekt (2025.-2027.) provodi se na [Odjelu za komunikologiju](https://www.unicath.hr/odjeli-i-fakultet/komunikologija) [Hrvatskog katoličkog sveučilišta](https://www.unicath.hr/).
 
@@ -27,7 +27,7 @@ Iako digitalni mediji predstavljaju dominantnu komponentu javnog prostora, u Hrv
 
 Koristeći napredne metode iz područja [računalnih društvenih znanosti](https://pure.rug.nl/ws/portalfiles/portal/140988937/Manifesto_of_computational_social_science.pdf), cilj nam je izgraditi sveobuhvatnu bazu podataka digitalnih objava te analizirati njihove značajke, narative i povezanost sa širim društvenim trendovima.
 
-### 🔬 Ključna istraživačka pitanja
+###  Ključna istraživačka pitanja
 
 Naše istraživanje vođeno je sljedećim temeljnim pitanjima:
 - Kako se katolička tematika prikazuje i raspravlja u hrvatskom digitalnom medijskom prostoru?
@@ -36,7 +36,7 @@ Naše istraživanje vođeno je sljedećim temeljnim pitanjima:
 - Kako se narativi i sentiment mijenjaju ovisno o aktualnim događajima?
 - Kakva je mrežna dinamika između različitih platformi i medija koji obrađuju ove teme?
 
-### 💻 Metodologija
+###  Metodologija
 
 Projekt integrira tehnike podatkovne znanosti s metodama društvenih znanosti. Naš metodološki okvir uključuje:
 - **Web scraping i API integracije:** Automatizirano prikupljanje velikih količina podataka s informativnih portala i društvenih mreža.
@@ -46,7 +46,7 @@ Projekt integrira tehnike podatkovne znanosti s metodama društvenih znanosti. N
 
 Sav programski kod i, gdje je to moguće, podaci bit će dostupni u skladu s FAIR principima za otvorenu znanost.
 
-### 👥 Projektni tim
+###  Projektni tim
 
 Projekt vodi interdisciplinarni tim znanstvenika.
 
@@ -64,14 +64,14 @@ Projekt vodi interdisciplinarni tim znanstvenika.
 | Matea Topić Crnoja        | Suradnica     | Hrvatsko katoličko sveučilište (Sociologija)    |
 
 
-### 📄 Rezultati i publikacije
+###  Rezultati i publikacije
 
 *Ova sekcija će se ažurirati poveznicama na recenzirane znanstvene radove, konferencijska izlaganja, izvještaje i podatkovne setove kako budu dostupni.*
 
 1.  *[Naslov rada u pripremi, Časopis, Godina]*
 2.  *[Godišnji izvještaj o projektu 2025.]*
 
-### ✍️ Kako citirati
+###  Kako citirati
 
 Za citiranje projekta u cjelini, molimo koristite sljedeći format:
 

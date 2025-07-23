@@ -15,32 +15,32 @@ Ovdje možete pratiti najnovije vijesti, ključne korake i najave vezane uz proj
 
 #### Uskoro
 
-*   **Rujan 2025.** - 📝 **Prva podjela podataka za tematska istraživanja.**
+*   **Rujan 2025.** -  **Prva podjela podataka za tematska istraživanja.**
     *   *Interna radionica za definiranje smjerova istraživanja i podjelu zaduženja unutar tima.*
-*   **Lipanj 2025.** - 🚀 **Pokretanje sustava za prikupljanje podataka u realnom vremenu.**
+*   **Lipanj 2025.** -  **Pokretanje sustava za prikupljanje podataka u realnom vremenu.**
     *   *Naša infrastruktura je spremna za praćenje digitalnih medija 24/7.*
 
 ---
 
 #### Događanja u 2025. godini
-*   **Travanj 2025.** - 🌐 **Pokrenuta nova  verzija web stranice projekta.**
+*   **Travanj 2025.** -  **Pokrenuta nova  verzija web stranice projekta.**
     *   *Poboljšana  verzija stranice postavljena je za testiranje i interne potrebe tima.*
 
-*   **Travanj 2025.** - 🗂️ **Završena prva faza prikupljanja povijesnih podataka.**
+*   **Travanj 2025.** - ️ **Završena prva faza prikupljanja povijesnih podataka.**
     *   *Uspješno je prikupljen i obrađen korpus podataka iz razdoblja 2021.-2024., čime je stvoren temelj za daljnje analize.*
 
-*   **Ožujak 2023.** - 💡 **Metodološka radionica tima.**
+*   **Ožujak 2023.** -  **Metodološka radionica tima.**
     *   *Održana je interna radionica o primjeni NLP tehnika i strojnog učenja za potrebe projekta.*
 
-*   **Veljača 2025.** - 👨‍💻 **Finaliziran kod za prikupljanje podataka (v1.0).**
+*   **Veljača 2025.** -  **Finaliziran kod za prikupljanje podataka (v1.0).**
     *   *Nakon višemjesečnog razvoja, prva stabilna verzija alata za web scraping i API integraciju je spremna za rad.*
 
-*   **Siječanj 2025.** - ✅ **Službeni početak projekta i konstituiranje tima!**
+*   **Siječanj 2025.** - **Službeni početak projekta i konstituiranje tima!**
     *   *Održan je početni (*kick-off*) sastanak projektnog tima, usvojen je finalni plan rada te su potvrđene uloge i odgovornosti svih članova, čime je formaliziran rad nakon odobrenja financiranja krajem 2022. godine.*
     
-*   **Prosinac 2024.** - 🌐 **Javno predstavljanje projekta na HKS-u.**
+*   **Prosinac 2024.** -  **Javno predstavljanje projekta na HKS-u.**
     *   *Projekt, njegovi ciljevi i metodologija službeno su predstavljeni akademskoj zajednici i javnosti. Pokrenuta je i službena web stranica projekta.*
     
-*   **Studeni 2025.** - 🎤 **[Predstavljanje projekta na HKS-u](https://www.unicath.hr/)**
+*   **Studeni 2025.** -  **[Predstavljanje projekta na HKS-u](https://www.unicath.hr/)**
     *   *Projektni ciljevi i metodologija predstavljeni su na internom seminaru Odjela za komunikologiju.*    
 

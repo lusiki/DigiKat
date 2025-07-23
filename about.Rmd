@@ -5,18 +5,18 @@ title: " "
 <br>
 <br>
 
-### 🎯 Ciljevi projekta
+###  Ciljevi projekta
 
 Naša misija je stvoriti jasan i sveobuhvatan uvid u digitalnu prisutnost katoličke tematike u Hrvatskoj. To ćemo postići kroz četiri ključna cilja:
 
-*   **🔍 Identifikacija i prikupljanje:** Automatizirano prikupljanje medijskih objava u realnom vremenu, koristeći moderne alate za *web scraping* i API integracije.
-*   **🗄️ Organizacija podataka:** Stvaranje strukturirane i javno dostupne baze podataka koja će služiti kao pouzdan temelj za buduće znanstvene i javne analize.
-*   **💻 Analiza i modeliranje:** Primjena naprednih računalnih tehnika (obrada prirodnog jezika, strojno učenje) za otkrivanje obrazaca, trendova i narativa u prikupljenim podacima.
-*   **📢 Diseminacija i otvorenost:** Dijeljenje rezultata kroz znanstvene publikacije, konferencije i radionice, uz objavu cjelokupnog koda i metodologije na otvorenim repozitorijima.
+*   **Identifikacija i prikupljanje:** Automatizirano prikupljanje medijskih objava u realnom vremenu, koristeći moderne alate za *web scraping* i API integracije.
+*   **Organizacija podataka:** Stvaranje strukturirane i javno dostupne baze podataka koja će služiti kao pouzdan temelj za buduće znanstvene i javne analize.
+*   **Analiza i modeliranje:** Primjena naprednih računalnih tehnika (obrada prirodnog jezika, strojno učenje) za otkrivanje obrazaca, trendova i narativa u prikupljenim podacima.
+*   **Diseminacija i otvorenost:** Dijeljenje rezultata kroz znanstvene publikacije, konferencije i radionice, uz objavu cjelokupnog koda i metodologije na otvorenim repozitorijima.
 
 ---
 
-### ✨ Doprinos i vrijednost projekta
+###  Doprinos i vrijednost projekta
 
 Ovaj projekt nije samo akademska vježba; osmišljen je da stvori trajnu vrijednost za znanstvenu zajednicu i uključene pojedince.
 
@@ -30,14 +30,14 @@ Kroz ovakav pristup, potičemo suradnju, jačamo istraživačke profile mladih z
 
 ---
 
-### 🚀 Pridružite se našem istraživanju!
+###  Pridružite se našem istraživanju!
 
 Tražimo motivirane istraživače i studente koji žele biti dio inovativnog projekta koji spaja društvene znanosti, podatkovnu analitiku i principe otvorene znanosti. Sudjelovanjem ćete:
 
-*   **💡 Steći praktično iskustvo** u radu s velikim podacima koristeći alate poput **R** i **Python**.
-*   **👨‍💻 Razviti tehničke vještine** u područjima obrade prirodnog jezika (NLP), strojnog učenja i mrežne analize.
-*   **📈 Stvoriti vrijedan doprinos** znanosti čiji će rezultati biti javno dostupni i citirani.
-*   **🌍 Biti dio inicijative** koja aktivno promiče transparentnost, suradnju i inovacije u znanosti.
+*   ** Steći praktično iskustvo** u radu s velikim podacima koristeći alate poput **R** i **Python**.
+*   ** Razviti tehničke vještine** u područjima obrade prirodnog jezika (NLP), strojnog učenja i mrežne analize.
+*   ** Stvoriti vrijedan doprinos** znanosti čiji će rezultati biti javno dostupni i citirani.
+*   ** Biti dio inicijative** koja aktivno promiče transparentnost, suradnju i inovacije u znanosti.
 
 
 
