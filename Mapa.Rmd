@@ -655,7 +655,7 @@ print(final_map_dashboard)
 ```
 
 
-## Zaključak i sljedeći soraci
+## Zaključak i sljedeći koraci
 
 Ova inicijalna analiza ekosustava otkriva složenu i višeslojnu digitalnu arenu. Ključni nalazi su:
 

@@ -14,7 +14,7 @@ navbar:
     - text: 'Mapa medijskog prostora'
       menu:
         - text: 'Mapa ekosustava'
-          href: mapa.html
+          href: Mapa.html
         - text: 'Tematske struje'
           href: mapa_stats.html
         - text: 'Atmosfera diskursa'
