@@ -31,7 +31,9 @@ dta <- dta %>%
   filter(SOURCE_TYPE != "tiktok") %>%
   mutate(
     SOURCE_TYPE = factor(SOURCE_TYPE, levels = c("web", "youtube", "facebook", "twitter", "reddit", "forum", "comment"))
-  )
+  ) %>%
+  #remove year 2024
+  filter(DATE >= as.Date("2021-01-01") & DATE < as.Date("2024-01-01"))
 
 ```
 

@@ -12,7 +12,15 @@ navbar:
     - text: 'Baza podataka'
       href: baza.html   
     - text: 'Mapa medijskog prostora'
-      href: mapa.html        
+      menu:
+        - text: 'Mapa ekosustava'
+          href: mapa.html
+        - text: 'Tematske struje'
+          href: mapa_stats.html
+        - text: 'Atmosfera diskursa'
+          href: diskurs.html
+        - text: 'Fokus na događaje i kampanje'
+          href: događaji.html  
     - text: 'Tematska istraživanja'
       menu:
         - text: 'Hodčasnički turizam'
