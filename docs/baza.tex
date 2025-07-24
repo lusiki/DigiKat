@@ -305,7 +305,7 @@ Analiza & Potrebne biblioteke & Ključni kod & Očekivani output\\
 \midrule
 Tokenizacija teksta & tidytext, dplyr & unnest\_tokens(word, TITLE) & Pojedinačne riječi iz naslova\\
 Čišćenje stop riječi & tidytext & anti\_join(stop\_words) & Filtrirane značajne riječi\\
-Brojanje riječi po sentimentu & dplyr, tidytext & count(word, AUTO\_SENTIMENT, sort = TRUE) & Frekvencija riječi po sentimentu\\
+Brojanje riječi po sentimentu & |dplyr, tidytext & |count(word, AUTO\_SENTIMENT, sort = TRUE) & |Frekvencija riječi po sentiment\\
 Sentiment scoring & dplyr, case\_when & summarise(sentiment\_score = sum(n * case\_when(...))) & Numerički sentiment score\\
 Wordcloud generiranje & wordcloud, RColorBrewer & wordcloud(words, freq, colors = brewer.pal(8, 'Dark2')) & Vizualna reprezentacija\\
 \bottomrule
@@ -328,7 +328,7 @@ Kategorija & Vrijednost/Opis & Napomene\\
 \addlinespace
 \cellcolor[HTML]{e3f2fd}{Preporučena biblioteka - Manipulacija} & \cellcolor[HTML]{e3f2fd}{data.table - za brzu manipulaciju velikih dataset-a} & \cellcolor[HTML]{e3f2fd}{Brzina: 10-100x brža od base R}\\
 \cellcolor[HTML]{e3f2fd}{Preporučena biblioteka - Sintaksa} & \cellcolor[HTML]{e3f2fd}{dplyr - za čišću i čitljiviju sintaksu} & \cellcolor[HTML]{e3f2fd}{Kompatibilnost s tidyverse ekosystemom}\\
-\cellcolor[HTML]{e3f2fd}{Preporučena biblioteka - Vizualizacija} & \cellcolor[HTML]{e3f2fd}{ggplot2 - za profesionalne vizualizacije} & \cellcolor[HTML]{e3f2fd}{Grammar of graphics pristup}\\
+\cellcolor[HTML]{e3f2fd}{Preporučena biblioteka - Vizualizacija} & \cellcolor[HTML]{e3f2fd}{|ggplot2 - za profesionalne vizualizacije} & \cellcolor[HTML]{e3f2fd}{|Grammar of graphics pristup}\\
 \cellcolor[HTML]{e3f2fd}{Preporučena biblioteka - Datumi} & \cellcolor[HTML]{e3f2fd}{lubridate - za rad s datumskim formatima} & \cellcolor[HTML]{e3f2fd}{Timezone aware operacije}\\
 \cellcolor[HTML]{e3f2fd}{Preporučena biblioteka - Tekst} & \cellcolor[HTML]{e3f2fd}{stringr - za manipulaciju i analizu teksta} & \cellcolor[HTML]{e3f2fd}{Regex podrška za složene operacije}\\
 \bottomrule
@@ -345,7 +345,7 @@ Operacija & Preporučeni pristup & Očekivano vrijeme\\
 Grupiranje i agregacija & data.table sintaksa [, .N, by=] & < 5 sekundi\\
 Filtriranje velikih tekstova & Koristiti grep() s fixed=TRUE & 10-60 sekundi\\
 Sortiranje po datumu & Konvertirati DATE u Date klasu & < 10 sekundi\\
-Analiza sentimenta & Koristiti existirajuće AUTO\_SENTIMENT & 1-5 minuta\\
+Analiza sentimenta & Koristiti existirajuće AUTO\_SENTIMENT & |1-5 minuta\\
 \bottomrule
 \end{longtable}
 

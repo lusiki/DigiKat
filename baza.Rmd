@@ -10,9 +10,6 @@ output:
     number_sections: true
     code_folding: show
     df_print: paged
-  pdf_document:
-    toc: true
-    number_sections: true
 ---
 
 ```{r setup, include=FALSE}
