@@ -505,7 +505,7 @@ print(plot_reach)
 
 #### **Relativna važnost platformi: Udio u ekosustavu**
 
-Apsolutni brojevi su korisni, ali relativni udjeli otkrivaju pravu dinamiku moći unutar ekosustava. Sljedeći grafikon uspoređuje udio svake platforme u ukupnom broju **objava**, **interakcija** i **dosega**.
+Apsolutni brojevi su korisni, ali relativni udjeli otkrivaju pravu dinamiku unutar ekosustava. Sljedeći grafikon uspoređuje udio svake platforme u ukupnom broju **objava**, **interakcija** i **dosega**.
 
 Ova vizualizacija je ključna jer pokazuje **asimetriju utjecaja**:
 
@@ -691,9 +691,9 @@ print(final_dashboard)
 
 # 3. Sinteza: Mapa utjecaja najvažnijih aktera
 
-Konačno, spajamo sve u jednu, sofisticiranu vizualizaciju. "Mapa Utjecaja" prikazuje aktere u dvodimenzionalnom prostoru definiranom **angažmanom (X-os)** i **dosegom (Y-os)**. Ovo nam omogućuje da identificiramo četiri osnovna arhetipa:
+Konačno, spajamo sve u jednu, sofisticiranu vizualizaciju. "Mapa Utjecaja" prikazuje aktere u dvodimenzionalnom prostoru **angažmana (X-os)** i **dosega (Y-os)**. Ovo nam omogućuje da identificiramo četiri osnovna arhetipa:
 
-*   **Divovi (Gore desno):** Visok doseg I visok angažman. Apsolutni lideri.
+*   **Divovi (Gore desno):** Visok doseg i visok angažman. Apsolutni lideri.
 *   **Graditelji zajednica (Dolje desno):** Nizak doseg, ali iznimno visok angažman. Imaju vjernu, aktivnu publiku.
 *   **Megafoni (Gore lijevo):** Visok doseg, ali nizak angažman. Njihov sadržaj se vidi, ali ne potiče nužno raspravu.
 *   **Nišni igrači (Dolje lijevo):** Fokusirani na specifičnu, manju publiku s umjerenim dosegom i angažmanom.
@@ -740,7 +740,7 @@ print(final_map_dashboard)
 
 ## Zaključak i sljedeći koraci
 
-Ova inicijalna analiza ekosustava otkriva složenu i višeslojnu digitalnu arenu. Ključni nalazi su:
+Ova inicijalna analiza ekosustava otkriva višeslojnost digitalne arene. Ključni nalazi su:
 
 1.  **Postoji jasna podjela rada:** Web portali su dominantni proizvođači sadržaja, dok su YouTube i Facebook ključne arene za angažman publike.
 2.  **Akteri su specijalizirani:** Najutjecajniji glasovi se značajno razlikuju od platforme do platforme, ukazujući na različite publike i komunikacijske strategije.
