@@ -162,7 +162,7 @@ stop_words_hr <- tibble(word = c(
   "velik", "malen", "dobar", "loš", "nov", "star", "lijep", "ružan", "visok", "nizak", "mlad", "star", "jak", "slab", "brz", "spor", "topao", "hladan", "pun", "prazan", "lak", "težak", "isti", "drugi", "različit", "jednostavan", "složen", "moguć", "nemoguć", "poznat", "nepoznat", "pravi", "krivi",
 
   # Česte imenice (Common Verbs)
-  "godina"
+  "godina", "moći"
   
   
 ))
@@ -205,15 +205,19 @@ custom_stop_words <- tibble(word = c(
 # Kombiniramo liste
 all_stop_words <- bind_rows(stop_words_hr, custom_stop_words)
 
+words_to_remove <- c("godina", "moći") # Dodajte ovdje svoje riječi
 
 word_freq_for_cloud <- nlp_results_df %>%
   filter(upos %in% c("NOUN", "ADJ", "VERB")) %>%
-  filter(!lemma %in% stop_words_hr) %>% # Primjenjujemo dodatni filter
+  filter(!lemma %in% stop_words_hr) %>% # Uklanjanje općih stop-riječi
+  filter(!lemma %in% words_to_remove) %>% # Uklanjanje vaših specifičnih riječi
   count(lemma, sort = TRUE)
 
 
+
+
 # 2. Kreiranje vizualizacije s ggwordcloud
-set.seed(123) # Za reproduktivnost izgleda oblaka
+#set.seed(123) # Za reproduktivnost izgleda oblaka
 wordcloud(
   words = word_freq_for_cloud$lemma,    # Riječi
   freq = word_freq_for_cloud$n,         # Frekvencije

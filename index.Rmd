@@ -7,7 +7,7 @@ pagetitle: "Osnovne informacije"
 <br>
 <br>
 
-![](photo_.jpg)
+![](photo_.png)
 
 # Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru 
 
