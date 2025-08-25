@@ -125,7 +125,7 @@ Ova analiza koristi **vođeni pristup tematskom modeliranju**, gdje smo na temel
 
 Prije nego što zaronimo u detaljnu analizu, započnimo s pogledom iz ptičje perspektive. Sljedeći oblak riječi prikazuje **150 najčešćih, smislenih riječi** (imenica, pridjeva i glagola) u cjelokupnom korpusu od preko 250.000 medijskih objava. Veličina svake riječi proporcionalna je njenoj ukupnoj frekvenciji.
 
-Ovaj vizualni sažetak odmah otkriva ključne entitete i koncepte koji čine srž diskursa: **Crkva, papa, biskup, Hrvatska, život, godina, čovjek, vjera i molitva**.
+Ovaj vizualni sažetak odmah otkriva ključne entitete i koncepte koji čine srž diskursa: **crkva, papa, biskup, Hrvatska, život, godina, čovjek, vjera i molitva**.
 
 ```{r plot-wordcloud, fig.height=8, fig.width=12}
 # 1. Priprema teksta: Lematizacija i uklanjanje zaustavnih riječi
@@ -218,7 +218,7 @@ wordcloud(
   words = word_freq_for_cloud$lemma,    # Riječi
   freq = word_freq_for_cloud$n,         # Frekvencije
   min.freq = 50,                        # Prikazuj samo riječi koje se pojave bar 50 puta
-  max.words = 150,                      # Maksimalan broj riječi za prikaz
+  max.words = 100,                      # Maksimalan broj riječi za prikaz
   random.order = FALSE,                 # Najčešće riječi idu u centar
   rot.per = 0.30,                       # Postotak riječi koje će biti rotirane
   colors = brewer.pal(8, "Dark2")       # Paleta boja
@@ -269,7 +269,7 @@ ggplot(topic_trends_guided, aes(x = year, y = share, color = topic, group = topi
 
 ### Intenzitet tema: Što je vijest, a što pozadinski šum?
 
-Nije svako spominjanje teme jednako važno. Ovaj grafikon pokazuje koliko je tema **centralna** za članak kada se u njemu pojavi. Teme s distribucijom pomaknutom udesno (npr. `ZLOSTAVLJANJE`) su one koje, kada se pojave, dominiraju člankom i predstavljaju glavnu vijest. Teme s distribucijom bliže lijevoj strani (npr. `POLITIKA`) češće se spominju usputno, kao kontekst.
+Nije svako spominjanje teme jednako važno. Ovaj grafikon pokazuje koliko je tema **centralna** za članak kada se u njemu pojavi. Teme s distribucijom pomaknutom udesno (npr. `duhovnost`) su one koje, kada se pojave, dominiraju člankom i predstavljaju glavnu vijest. Teme s distribucijom bliže lijevoj strani (npr. `ideologija`) češće se spominju usputno, kao kontekst.
 
 ```{r plot-topic-intensity}
 thematic_intensity_data <- dta_enriched %>%
@@ -460,7 +460,10 @@ topic_pairs %>%
 ## Zaključak
 
 Ova dubinska tematska analiza otkriva da katolički digitalni prostor nije monolitan. Sastoji se od različitih, često odvojenih, tematskih svjetova:
-*   **Pastoralni svijet:** Fokusiran na duhovnost, liturgiju i karitas, s dominantno pozitivnim prijemom kod publike.
-*   **Društveno-politički svijet:** Gdje se teme politike, povijesti i bioetike isprepliću, generirajući najveći angažman, ali i najsnažniju polarizaciju.
 
+<br>
+*   **Pastoralni svijet:** Fokusiran na duhovnost, liturgiju i karitas, s dominantno pozitivnim prijemom kod publike.
+<br>
+*   **Društveno-politički svijet:** Gdje se teme politike, povijesti i bioetike isprepliću, generirajući najveći angažman, ali i najsnažniju polarizaciju.
+<br>
 Razumijevanje strukture, utjecaja i povezanosti ovih tema ključno je za svaku daljnju analizu narativa i sentimenata koji oblikuju javnu percepciju Crkve i vjere u Hrvatskoj.
