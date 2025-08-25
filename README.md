@@ -1,6 +1,6 @@
 # Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru
 
-![Project Logo](photo_.jpg)
+![Project Logo](photo_.png)
 
 ![Status Projekta](https://img.shields.io/badge/status-aktivan-green)
 ![Institucija](https://img.shields.io/badge/Institucija-Hrvatsko_katoličko_sveučilište-blue)
