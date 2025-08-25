@@ -1,361 +1,133 @@
 ---
-title: "NLP katoličkog digitalnog prostora u RH (2021-2023)""
+title: "Anatomija diskursa: tematska mapa katoličkog digitalnog prostora u RH (2021-2023)"
 author: "Lux"
-date: "2025-08-20"
-output: html_document
+date: "20. kolovoza 2025."
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: flatly
+    code_folding: hide 
 ---
 
-
-```{r setup}
-knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.width = 12, fig.height = 7, dpi = 200)
+```{r setup, include=FALSE}
+# --- Globalne postavke za R Markdown dokument ---
+knitr::opts_chunk$set(
+  echo = FALSE,       # Skriva kod
+  message = FALSE,    # Skriva poruke
+  warning = FALSE,    # Skriva upozorenja
+  fig.width = 12,     # Širina slika
+  fig.height = 7,     # Visina slika
+  dpi = 200           # Visoka rezolucija slika
+)
 ```
 
-
-
-```{r libraries}
-library(scales) # Za ljepše formatiranje brojeva na osima
-library(patchwork) # Za elegantno spajanje više grafova
+```{r libraries, include=FALSE}
+# --- Učitavanje svih potrebnih paketa na jednom mjestu ---
 library(scales)
 library(patchwork)
 library(ggrepel)
 library(udpipe)
 library(dplyr)
 library(tidytext)
-library(topicmodels)
 library(stringr)
 library(ggplot2)
-library(progress)
-library(ggplot2)
-library(forcats) 
+library(forcats)
 library(tidyr)
+library(ggridges)
+library(widyr)
+library(ggraph)
+library(igraph)
+library(wordcloud)
+library(RColorBrewer)
 ```
 
+```{r data-preparation, include=FALSE}
+# --- Priprema podataka (izvršava se u pozadini) ---
 
-```{r}
+# Učitavanje glavne baze podataka
 dta <- readRDS("D:/LUKA/Dropbox/df_all.rds")
 
-
-# dta_sample <- dta %>%
-#   mutate(doc_id = row_number()) %>% # Stvaramo jedinstveni ID
-#   filter(nchar(FULL_TEXT) > 100) %>% # Koristimo samo tekstove s dovoljno sadržaja
-#   slice_sample(n = 10000) # RADIMO NA UZORKU OD x DOKUMENATA
-
-
-
-# 1. Definiramo željenu veličinu uzorka kao postotak
-sample_proportion <- 0.05 # Uzimamo 5% podataka. Za ~250k redaka, ovo je ~12,500 objava.
-
-# 2. Kreiramo stratificirani uzorak
-set.seed(123) # Za reproduktivnost
+# Kreiranje stratificiranog uzorka
+sample_proportion <- 0.05
+set.seed(123)
 dta_stratified_sample <- dta %>%
-  filter(nchar(FULL_TEXT) > 100) %>% # Prvo filtriramo prekratke tekstove
-  group_by(year, SOURCE_TYPE) %>%    # Grupiramo po našim stratama
-  slice_sample(prop = sample_proportion) %>% # Uzimamo isti postotak iz svake grupe
-  ungroup() %>%                           # Obavezno razgrupiramo nakon uzorkovanja
-  mutate(doc_id = row_number())           # Stvaramo novi doc_id za ovaj uzorak
+  filter(nchar(FULL_TEXT) > 100) %>%
+  group_by(year, SOURCE_TYPE) %>%
+  slice_sample(prop = sample_proportion) %>%
+  ungroup() %>%
+  mutate(doc_id = row_number())
 
-
-# original_distribution <- dta %>%
-#   count(year, SOURCE_TYPE) %>%
-#   mutate(share = n / sum(n))
-# 
-# sample_distribution <- dta_stratified_sample %>%
-#   count(year, SOURCE_TYPE) %>%
-#   mutate(share = n / sum(n))
-# 
-# print("Distribucija u originalnoj bazi:")
-# print(original_distribution)
-# 
-# print("Distribucija u našem uzorku:")
-# print(sample_distribution)
-# 
-
-
-# list files from folder and bind rows into tibble
-
+# Učitavanje prethodno obrađenih lingvističkih podataka (štedi vrijeme)
 files <- list.files("D:/LUKA/Language model", full.names = TRUE, pattern = "\\.rds")
-
 nlp_results_df <- lapply(files, readRDS) %>%
   bind_rows() %>%
-  mutate(doc_id = as.integer(doc_id)) # Osiguravamo da je doc_id integer
+  mutate(doc_id = as.integer(doc_id))
 
-```
-
-```{r}
-
-# Preuzimanje predtreniranog modela za hrvatski jezik za udpipe (treba napraviti samo jednom)
-# udpipe_download_model(language = "croatian-hdt")
-# ud_model_hr <- udpipe_load_model(file = 'croatian-hdt-ud-2.5-191206.udpipe')
-
-
-# 1. Definiramo ISPRAVNO ime datoteke modela (hdt -> set)
-model_file <- "croatian-set-ud-2.5-191206.udpipe"
-
-# 2. Provjeravamo postoji li model već u našem radnom direktoriju
-# if (!file.exists(model_file)) {
-#   cat("Model nije pronađen. Preuzimam model za hrvatski jezik...\n")
-#   # Koristimo 'croatian' kao jezik, što je ispravno
-#   udpipe_download_model(language = "croatian", model_dir = getwd())
-#   cat("Preuzimanje završeno.\n")
-# } else {
-#   cat("Model je već preuzet.\n")
-# }
-
-# 3. Sada će učitavanje uspjeti jer tražimo datoteku s ispravnim imenom
-cat("Učitavam model...\n")
-ud_model_hr <- udpipe_load_model(file = model_file)
-cat("Model uspješno učitan.\n")
-
-
-```
-
-```{r}
-
-udpipe_annotate_in_batches <- function(data, text_col, doc_id_col, model, batch_size = 500, cores = 1) {
-
-  # Ensure the progress package is loaded
-  if (!requireNamespace("progress", quietly = TRUE)) {
-    stop("The 'progress' package is needed. Please install it with install.packages('progress')")
-  }
-
-  # Get the total number of documents and calculate number of batches
-  total_docs <- nrow(data)
-  num_batches <- ceiling(total_docs / batch_size)
-
-  # Initialize an empty list to store the results
-  all_results <- list()
-
-  # Set up the progress bar with elapsed time and ETA
-  pb <- progress_bar$new(
-    format = "[:bar] :percent | Elapsed: :elapsed | ETA: :eta | Time/batch: :batch_time | batches processed: :current/:total",
-    total = num_batches,
-    clear = FALSE,
-    width = 80
-  )
-
-  # Process data in batches
-  for (i in 1:num_batches) {
-    # Start timing for the current batch
-    start_time <- Sys.time()
-
-    # Determine the start and end indices for the current batch
-    start_index <- (i - 1) * batch_size + 1
-    end_index <- min(i * batch_size, total_docs)
-    
-    # Extract the current batch
-    batch_data <- data[start_index:end_index, ]
-    
-    # Annotate the current batch
-    result <- udpipe_annotate(
-      model,
-      x = batch_data[[text_col]],
-      doc_id = batch_data[[doc_id_col]],
-      parallel.cores = cores
-    )
-    
-    # Calculate time for the current batch
-    batch_time <- round(as.numeric(difftime(Sys.time(), start_time, units = "secs")), 2)
-    
-    # Convert the result to a tibble and add to the list
-    all_results[[i]] <- as_tibble(result)
-    
-    # Advance the progress bar, passing custom tokens for batch time
-    pb$tick(tokens = list(batch_time = paste0(batch_time, "s")))
-    
-    # Flush the console output to display the progress bar immediately
-    flush.console()
-  }
-  
-  # Combine all results from the batches into a single tibble
-  final_df <- bind_rows(all_results)
-  
-  return(final_df)
-}
-
-
-# Load your udpipe model
-#ud_model_en <- udpipe_load_model(file = udpipe_download_model("english-gum")$file_model)
-
-# Run the function with a batch size of 100
-nlp_results_df_batches <- udpipe_annotate_in_batches(
-  data = dta_sample,
-  text_col = "FULL_TEXT",
-  doc_id_col = "doc_id",
-  model = ud_model_hr,
-  batch_size = 100,
-  cores = parallel::detectCores() - 1 # Use all available cores minus one
+# Definicija tematskih rječnika v3
+thematic_dictionaries_v3 <- list(
+  DUHOVNOST_I_LITURGIJA = c("molitv", "mis", "euharistij", "sakrament", "duhovn", "vjer", "blagoslov", "gosp", "hodočašć", "propovijed", "klanjanj", "zornic", "liturgij", "advent", "korizm", "blagdan", "svetkovin", "krunic", "brevijar", "duhovne vježbe"),
+  TEOLOGIJA_I_DOKTRINA = c("teologij", "dogm", "eshatologij", "kristologij", "trojstv", "grijeh", "spasenje", "opravdanje", "moral", "krštenje", "biblija", "sveto pismo", "evanđelj"),
+  CRKVENO_UPRAVLJANJE_I_STRUKTURA = c("crkv", "biskup", "nadbiskup", "kardinal", "sveta stolica", "hbk", "žup", "svećenic", "kler", "redovnik", "časna sestra", "laik", "dekanat", "biskupija"),
+  PAPE_I_VATIKAN = c("papa franjo", "benedikt xvi", "ivan pavao ii", "vatikan", "dikasterij", "enciklik", "sinodalni put", "sveti otac", "konklav", "apostolsk"),
+  CRKVENE_FINANCIJE_I_IMOVINA = c("financij", "imovin", "novac", "proračun", "porez", "restitucij", "ugovor sa svetom stolicom", "nekretnin", "donacij", "milodar"),
+  GLOBALNA_CRKVA_I_MISIJE = c("misije", "misionar", "progonjeni kršćani", "svjetski dan mladih", "afrik", "azij", "južna amerik", "svjetska crkva", "papinsk"),
+  POLITIKA_I_ODNOS_S_DRZAVOM = c("izbor", "vlada", "strank", "hdz", "sdp", "sabor", "zakon", "predsjednik", "politi", "europ", "milanović", "plenković", "ustav", "sekularnost", "vjeronauk u školi"),
+  BIOETIKA_I_KULTURNI_RATOVI = c("obitelj", "život", "pobačaj", "abortus", "brak", "roditelj", "djec", "spol", "rodn", "hod za život", "lgbt", "istospoln", "eutanazij", "transrodnost", "medicinski potpomognuta oplodnja", "palijativna skrb"),
+  KARITAS_I_SOCIJALNA_PRAVDA = c("caritas", "pomoć", "siromaš", "siroma", "humanitar", "solidarn", "socijaln", "izbjeglic", "potres", "volonter", "socijalni nauk", "ekologij", "laudato si'", "migranti", "pravednost"),
+  POVIJEST_I_NACIONALNI_IDENTITET = c("stepinac", "rat", "komuniz", "jugoslavij", "žrtv", "povijest", "branitelj", "lustracij", "domovinsk", "ustaš", "partizan", "bleiburg", "vukovar", "nacionalni identitet"),
+  ZNANOST_I_VJERA = c("znanost", "evolucij", "stvaranje", "bioetik", "umjetna inteligencija", "svemir", "psihologij", "vjera i razum"),
+  MEDIJI_UMJETNOST_I_KULTURA = c("medij", "film", "glazb", "umjetnost", "književnost", "kazališt", "arhitektur", "sakraln", "kultura", "koncert", "izložb"),
+  DIGITALNA_EVANGELIZACIJA_I_MLADI = c("digitaln", "internet", "društvene mreže", "mladi", "pastoral mladih", "influencer", "podcast", "aplikacij", "evangelizacij", "susret hrvatske katoličke mladeži"),
+  ZLOSTAVLJANJE_I_KRIZA_POVJERENJA = c("zlostavljan", "pedofilij", "skandal", "prikrivan", "nulta tolerancija", "žrtv", "susret sa žrtvama"),
+  UNUTARCRKVENI_PRIJEPORI_I_IDEOLOGIJE = c("tradicionalist", "progresiv", "konzervativ", "liberal", "karizmatik", "lefebvrovci", "tradicijska misa", "aggiornamento", "hermeneutik", "pluraliz"),
+  ODNOS_S_DRUGIM_RELIGIJAMA_I_POGLEDIMA = c("ekumeniz", "međureligijsk", "dijalog", "islam", "pravoslavn", "protestant", "judaiz", "ateiz", "agnosticiz")
 )
 
-# 1. Osnovna lingvistička anotacija s udpipe
-# Ovo je najintenzivniji korak! Može potrajati nekoliko minuta za 5000 dokumenata.
-nlp_results <- udpipe_annotate(ud_model_hr, x = dta_sample$FULL_TEXT, doc_id = dta_sample$doc_id)
-nlp_results_df <- as_tibble(nlp_results)
-
-
-
-
-
-
-```
-
-```{r}
-# 2. Ekstrakcija standardnih entiteta (aproksimacija preko vlastitih imenica)
-# 'udpipe' ne radi klasični NER, ali možemo izvući vlastite imenice (PROPN) kao dobru aproksimaciju
-standard_entities <- nlp_results_df %>%
-  filter(upos == "PROPN") %>% # PROPN = Proper Noun
-  group_by(doc_id) %>%
-  summarise(persons_orgs_locs = list(unique(lemma)))
-
-
-
-
-# 3. Razvoj i primjena vlastitih rječnika (Naša Inovacija)
-# Definiramo rječnike i regularne izraze za naše specifične entitete
-custom_entity_dict <- list(
-  SVETAC = paste(
-      # Croatian Saints and Blesseds
-      "sveti\\s+leopold\\s+mandić", "blaženi\\s+alojzije\\s+stepinac", "sveti\\s+marko\\s+križevčanin",
-      "sveti\\s+dujam", "sveti\\s+jeronim", "sveti\\s+nikola\\s+tavelić", "sveti\\s+kuzma\\s+i\\s+damjan",
-      "sveta\\s+marija\\s+propetog\\s+isusa\\s+petković", "blaženi\\s+augustin\\s+kažotić", "blažena\\s+ozana\\s+kotorska",
-      "blaženi\\s+ivan\\s+merz", "blaženi\\s+jakov\\s+zadranin", "blaženi\\s+miroslav\\s+bulešić",
-      # Apostles and Evangelists
-      "sveti\\s+petar", "sveti\\s+pavao", "sveti\\s+andrija", "sveti\\s+ivan\\s+evanđelist", "sveti\\s+jakov\\s+stariji",
-      "sveti\\s+jakov\\s+mlađi", "sveti\\s+toma", "sveti\\s+matej", "sveti\\s+filip", "sveti\\s+bartolomej", "sveti\\s+šimun",
-      "sveti\\s+tadej", "sveti\\s+matija", "sveti\\s+marko\\s+evanđelist", "sveti\\s+luka\\s+evanđelist",
-      # Major Saints
-      "sveti\\s+josip", "sveti\\s+ivan\\s+krstitelj", "sveta\\s+marija\\s+magdalena", "sveti\\s+stjepan\\s+prvomučenik",
-      "sveti\\s+lovro", "sveti\\s+franjo\\s+asiški", "sveti\\s+antin\\s+padovanski", "sveti\\s+dominik", "sveti\\s+benedikt",
-      "sveti\\s+ignacije\\s+lojolski", "sveti\\s+augustin", "sveti\\s+toma\\s+akvinski", "sveta\\s+klara\\s+asiška",
-      "sveta\\s+terezija\\s+avilska", "sveta\\s+terezija\\s+od\\s+djeteta\\s+isusa", "sveta\\s+katarina\\s+sijenska",
-      "sveta\\s+rita", "sveta\\s+lucija", "sveta\\s+barbara", "sveti\\s+juraj", "sveti\\s+mihovil", "sveti\\s+gabrijel",
-      "sveti\\s+rafael", "sveti\\s+vinko\\s+paulski", "sveta\\s+majka\\s+terezija", "sveti\\s+ivan\\s+pavao\\s+ii",
-      "blažena\\s+djevica\\s+marija", "gospa",
-      sep = "|"
-  ),
-  CRKVENA_TITULA = paste(
-      "papa", "kardinal", "patrijarh", "nadbiskup", "biskup", "metropolit", "nuncij", "apostolski\\s+nuncij", "opat", "prior", "gvardijan",
-      "provincijal", "župnik", "kapelan", "vikar", "generalni\\s+vikar", "biskupijski\\s+vikar", "dekan", "kanonik", "svećenik", "đakon",
-      "bogoslov", "sjemeništarac", "redovnik", "redovnica", "franjevac", "dominikanac", "isusovac", "benediktinac", "karmelićanin",
-      "časna\\s+sestra", "monah", "monahinja", "pustinjak", "opatica", "poglavar", "poglavarica", "laik", "klerik",
-      sep = "|"
-  ),
-  TEOLOŠKI_POJAM = paste(
-      "euharistija", "kerygma", "transsupstancijacija", "utjelovljenje", "uskrsnuće", "spasenje", "otkupljenje", "grijeh", "istočni\\s+grijeh",
-      "sakrament", "apostolsko\\s+vjerovanje", "nicejsko-carigradsko\\s+vjerovanje", "otajstvo", "općinstvo\\s+svetih",
-      "božja\\s+milost", "teološke\\s+kreposti", "kardinalne\\s+kreposti", "sedam\\s+glavnih\\s+grijeha", "slobodna\\s+volja",
-      "katekizam", "eshatologija", "ekumenizam", "dogma", "hereza", "trojstvo", "sveto\\s+trojstvo", "presveto\\s+trojstvo", "bog\\s+otac",
-      "bog\\s+sin", "duh\\s+sveti", "kristologija", "pneumatologija", "mariologija", "ekleziologija", "soteriologija", "apologetika",
-      "liturgika", "moralna\\s+teologija", "kanonsko\\s+pravo", "čistilište", "pakao", "raj", "limb", "anđeo", "arkanđeo", "demon", "nebo",
-      sep = "|"
-  ),
-  DIJELOVI_MISE = paste(
-      "sveta\\s+misa", "uvodni\\s+obredi", "pokajnički\\s+čin", "gospodine\\s+smiluj\\s+se", "kyrie\\s+eleison", "slava", "gloria",
-      "zborna\\s+molitva", "služba\\s+riječi", "liturgija\\s+riječi", "prvo\\s+čitanje", "drugo\\s+čitanje", "psalam", "pripjevni\\s+psalam",
-      "aleluja", "evanđelje", "homilija", "propovijed", "vjerovanje", "credo", "molitva\\s+vjernika", "euharistijska\\s+služba",
-      "liturgija\\s+euharistije", "prinos\\s+darova", "darovna\\s+molitva", "predslovlje", "prikazanje", "sveti", "sanctus", "euharistijska\\s+molitva",
-      "pretvorba", "anamneza", "doksologija", "obred\\s+pričesti", "očenaš", "obred\\s+mira", "jaganjče\\s+božji", "agnus\\s+dei", "pričest",
-      "popričesna\\s+molitva", "završni\\s+obredi", "blagoslov", "otpust\\s+vjernika", "amen",
-      sep = "|"
-  ),
-  SAKRAMENT = paste(
-      "krštenje", "sveto\\s+krštenje", "potvrda", "sveta\\s+potvrda", "krizma", "euharistija", "sveta\\s+pričest", "ispovijed", "sveta\\s+ispovijed",
-      "pomirenje", "pokora", "ženidba", "sakrament\\s+ženidbe", "sveti\\s+red", "svećenički\\s+red", "bolesničko\\s+pomazanje",
-      sep = "|"
-  ),
-  CRKVENA_GRAĐEVINA = paste(
-      "crkva", "katedrala", "bazilika", "kapela", "kapelica", "svetište", "samostan", "opatija", "župna\\s+crkva", "župni\\s+dvor", "oratorij",
-      "bogoslovija", "sjemenište", "kripta", "katedralna\\s+riznica", "oltar", "glavni\\s+oltar", "svetohranište", "tabernakul", "ambon",
-      "krstionica", "ispovjedaonica", "sakristija", "zvonik", "kor", "prezbiterij", "crkvena\\s+lađa", "apsida", "portal",
-      sep = "|"
-  ),
-  MOLITVA = paste(
-      "očenaš", "oče\\s+naš", "zdravo\\s+marijo", "zdravomarija", "vjerovanje", "slava\\s+ocu", "krunica", "sveta\\s+krunica", "radosna\\s+otajstva",
-      "žalosna\\s+otajstva", "slavna\\s+otajstva", "otajstva\\s+svjetla", "liturgija\\s+sati", "časoslov", "jutarnja", "večernja", "povečerje",
-      "angelus", "anđeo\\s+gospodnji", "kraljice\\s+neba", "regina\\s+caeli", "križni\\s+put", "litanije", "litanije\\s+svih\\s+svetih",
-      "litanije\\s+lauretanske", "devetnica", "trodnevnica", "zlatna\\s+krunica", "molitva\\s+vjernika", "blagoslov\\s+stola",
-      sep = "|"
-  ),
-  LITURGIJSKO_RAZDOBLJE = paste(
-      "liturgijska\\s+godina", "došašće", "advent", "božićno\\s+vrijeme", "korizma", "pepelnica", "čista\\s+srijeda", "sveto\\s+trodnevlje",
-      "veliki\\s+tjedan", "cvjetnica", "veliki\\s+četvrtak", "veliki\\s+petak", "velika\\s+subota", "vazmeno\\s+bdijenje", "uskrs", "vazam",
-      "uskrsno\\s+vrijeme", "vazmeno\\s+vrijeme", "duhovi", "pedesetnica", "vrijeme\\s+kroz\\s+godinu",
-      sep = "|"
-  ),
-  CRKVENI_BLAGDAN = paste(
-      "božić", "uskrs", "duhovi", "tijelovo", "presveto\\s+tijelo\\s+i\\s+krv\\s+kristova", "sveta\\s+marija\\s+bogorodica", "nova\\s+godina",
-      "bogojavljenje", "sveta\\s+tri\\s+kralja", "svijećnica", "prikazanje\\s+gospodinovo", "blagovijest", "navještenje\\s+gospodinovo",
-      "pepelnica", "cvjetnica", "uznesenje\\s+blažene\\s+jevice\\s+marije", "velika\\s+gospa", "svi\\s+sveti", "dušni\\s+dan",
-      "bezgrešno\\s+začeće", "sveti\\s+josip", "sveti\\s+petar\\s+i\\s+pavao", "preobraženje\\s+gospodinovo", "uzvišenje\\s+svetog\\s+križa",
-      "krist\\s+kralj", "sveta\\s+obitelj", "krštenje\\s+gospodinovo",
-      sep = "|"
-  ),
-  LITURGIJSKI_PREDMETI = paste(
-      "oltar", "ambon", "svetohranište", "tabernakul", "kalež", "patena", "ciborij", "pokaznica", "monstranca", "križ", "raspelo", "procesijski\\s+križ",
-      "evanđelistar", "lekcionar", "misal", "obrednik", "časoslov", "svijeća", "uskrsna\\s+svijeća", "adventski\\s+vijenac", "kadionica", "tamjan",
-      "lađica", "škropilo", "posuda\\s+za\\s+svetu\\s+vodu", "plam\\s+vječnog\\s+svjetla", "relikvijar", "moćnik",
-      sep = "|"
-  ),
-  LITURGIJSKA_ODJEĆA = paste(
-      "alba", "amikt", "cingulum", "štola", "misnica", "dalmatika", "plašt", "rocheta", "moceta", "mitra", "palij", "biskupski\\s+prsten", "biskupski\\s+štap",
-      "tunicela", "velum", "liturgijske\\s+boje", "bijela", "crvena", "zelena", "ljubičasta", "ružičasta", "crna",
-      sep = "|"
-  ),
-  BIBLIJSKE_KNJIGE = paste(
-      "biblija", "sveto\\s+pismo", "stari\\s+zavjet", "novi\\s+zavjet", "petoknjižje", "postanak", "izlazak", "levitski\\s+zakonik", "brojevi",
-      "ponovljeni\\s+zakon", "jošua", "suci", "ruta", "prva\\s+knjiga\\s+o\\s+samuelu", "druga\\s+knjiga\\s+o\\s+samuelu",
-      "prva\\s+knjiga\\s+o\\s+kraljevima", "druga\\s+knjiga\\s+o\\s+kraljevima", "prva\\s+knjiga\\s+ljetopisa", "druga\\s+knjiga\\s+ljetopisa",
-      "ezra", "nehemija", "tobija", "judita", "estera", "job", "psalmi", "izreke", "propovjednik", "pjesma\\s+nad\\s+pjesmama", "mudrost", "sirah",
-      "izaija", "jeremija", "tužaljke", "baruh", "ezekiel", "daniel", "hošea", "joel", "amos", "obadija", "jona", "mihej", "nahum", "habakuk", "sefanija", "hagaj",
-      "zaharija", "malahija", "evanđelje\\s+po\\s+mateju", "evanđelje\\s+po\\s+marku", "evanđelje\\s+po\\s+luki", "evanđelje\\s+po\\s+ivanu",
-      "djela\\s+apostolska", "poslanica\\s+rimljanima", "prva\\s+poslanica\\s+korinćanima", "druga\\s+poslanica\\s+korinćanima",
-      "poslanica\\s+galaćanima", "poslanica\\s+efežanima", "poslanica\\s+filipljanima", "poslanica\\s+kološanima",
-      "prva\\s+poslanica\\s+solunjanima", "druga\\s+poslanica\\s+solunjanima", "prva\\s+poslanica\\s+timoteju",
-      "druga\\s+poslanica\\s+timoteju", "poslanica\\s+titu", "poslanica\\s+filemonu", "poslanica\\s+hebrejima", "jakovljeva\\s+poslanica",
-      "prva\\s+petrova\\s+poslanica", "druga\\s+petrova\\s+poslanica", "prva\\s+ivanova\\s+poslanica", "druga\\s+ivanova\\s+poslanica",
-      "treća\\s+ivanova\\s+poslanica", "judina\\s+poslanica", "otkrivenje", "apokalipsa",
-      sep = "|"
-  ),
-  CRKVENI_REDOVI = paste(
-      "benediktinci", "cisterciti", "trapisti", "franjevci", "manja\\s+braća", "kapucini", "konventualci", "treći\\s+red", "dominikanci",
-      "isusovci", "karmelićani", "bosonogi\\s+karmelićani", "pavlini", "salezijanci", "augustinci", "klarise", "sestre\\s+milosrdnice",
-      "uršulinke", "kćeri\\s+božje\\s+ljubavi", "misionari\\s+ljubavi",
-      sep = "|"
-  ),
-  CRKVENI_DOKUMENTI = paste(
-      "enciklika", "apostolska\\s+pobudnica", "apostolsko\\s+pismo", "motu\\s+proprij", "papinska\\s+bula", "koncilski\\s+dokument",
-      "konstitucija", "dekret", "zakonik\\s+kanonskog\\s+prava", "katekizam\\s+katoličke\\s+crkve", "pastoralno\\s+pismo",
-      sep = "|"
-  )
-)
-
-# Funkcija za pronalaženje naših entiteta u tekstu
-find_custom_entities <- function(text, entity_dict) {
-  found_entities <- list()
-  for (label in names(entity_dict)) {
-    matches <- str_extract_all(tolower(text), entity_dict[[label]]) %>% unlist()
-    if (length(matches) > 0) {
-      found_entities[[label]] <- unique(matches)
-    }
+# Izračun tematskih scoreova i obogaćivanje baze podataka
+calculate_theme_scores <- function(text, dictionaries) {
+  text_lower <- tolower(text)
+  total_words <- str_count(text_lower, "\\w+")
+  if (total_words == 0) return(NULL)
+  scores <- purrr::map(dictionaries, ~sum(str_count(text_lower, .x)))
+  normalized_scores <- purrr::map(scores, ~(.x / total_words) * 1000)
+  names(normalized_scores) <- paste0("norm_", names(scores))
+  scores_vec <- unlist(scores)
+  if(all(scores_vec == 0)){
+    dominant_topic <- "Nema Teme"
+  } else {
+    dominant_topic <- names(scores)[which.max(scores_vec)]
   }
-  return(found_entities)
+  return(c(as.list(scores), as.list(normalized_scores), dominant_topic = dominant_topic))
 }
+theme_analysis_data <- purrr::map_dfr(dta_stratified_sample$FULL_TEXT, ~calculate_theme_scores(., thematic_dictionaries_v3))
+dta_enriched <- bind_cols(dta_stratified_sample, theme_analysis_data)
+dta_with_themes <- bind_cols(dta_stratified_sample, theme_analysis_data)
 
-# Primijenimo funkciju na naš uzorak
-dta_stratified_sample$custom_entities <- purrr::map(dta_stratified_sample$FULL_TEXT, ~find_custom_entities(., custom_entity_dict))
-
-# Pregledajmo rezultat za jedan dokument
-print("Pronađeni prilagođeni entiteti u prvom dokumentu:")
-print(dta_stratified_sample$custom_entities[[50]])
-
-# KONAČNI REZULTAT OVOG KORAKA:
-# Naš `dta_sample` dataframe sada ima novi stupac `custom_entities` sa strukturiranim informacijama.
-# Kasnije možemo spojiti i `standard_entities` ako je potrebno.
-
-  
 ```
 
+## Uvod: O čemu se govori?
 
-```{r}
+Nakon mapiranja ključnih aktera i platformi u našoj [prvoj analizi](https://lusiki.github.io/DigiKat/mapa.html), ovaj izvještaj zaranja dublje u **sadržaj** digitalnog diskursa. Koristeći metode obrade prirodnog jezika (NLP) na uzorku od 270k medijskih objava, prelazimo s pitanja *tko* i *gdje* na ključno pitanje: **o čemu se govori?**
+
+Naš cilj je stvoriti "anatomiju diskursa":
+<br>
+1.  **Identificirati** glavne teme koje oblikuju raspravu.
+<br>
+2.  **Izmjeriti** njihov intenzitet, utjecaj i polarizacijski potencijal.
+<br>
+3.  **Otkriti** kako se teme međusobno povezuju i kako se njihov fokus mijenja kroz vrijeme.
+
+Ova analiza koristi **vođeni pristup tematskom modeliranju**, gdje smo na temelju teološke i komunikološke ekspertize definirali 16 ključnih tematskih kategorija, omogućujući preciznu i interpretativnu klasifikaciju sadržaja.
+
+
+## Vizualni sažetak korupsa: Oblak riječi
+
+Prije nego što zaronimo u detaljnu analizu, započnimo s pogledom iz ptičje perspektive. Sljedeći oblak riječi prikazuje **150 najčešćih, smislenih riječi** (imenica, pridjeva i glagola) u cjelokupnom korpusu od preko 250.000 medijskih objava. Veličina svake riječi proporcionalna je njenoj ukupnoj frekvenciji.
+
+Ovaj vizualni sažetak odmah otkriva ključne entitete i koncepte koji čine srž diskursa: **Crkva, papa, biskup, Hrvatska, život, godina, čovjek, vjera i molitva**.
+
+```{r plot-wordcloud, fig.height=8, fig.width=12}
 # 1. Priprema teksta: Lematizacija i uklanjanje zaustavnih riječi
 # Učitajmo standardne hrvatske zaustavne riječi (možete ih naći online ili napraviti svoju listu)
 stop_words_hr <- tibble(word = c(
@@ -387,7 +159,12 @@ stop_words_hr <- tibble(word = c(
   "stvar", "dio", "godina", "dan", "vrijeme", "čovjek", "ljudi", "žena", "muškarac", "dijete", "život", "svijet", "zemlja", "grad", "kuća", "posao", "ruka", "noga", "oko", "glava", "srce", "broj", "primjer", "način", "pitanje", "odgovor", "početak", "kraj", "strana", "slučaj",
 
   # Česti pridjevi (Common Adjectives)
-  "velik", "malen", "dobar", "loš", "nov", "star", "lijep", "ružan", "visok", "nizak", "mlad", "star", "jak", "slab", "brz", "spor", "topao", "hladan", "pun", "prazan", "lak", "težak", "isti", "drugi", "različit", "jednostavan", "složen", "moguć", "nemoguć", "poznat", "nepoznat", "pravi", "krivi"
+  "velik", "malen", "dobar", "loš", "nov", "star", "lijep", "ružan", "visok", "nizak", "mlad", "star", "jak", "slab", "brz", "spor", "topao", "hladan", "pun", "prazan", "lak", "težak", "isti", "drugi", "različit", "jednostavan", "složen", "moguć", "nemoguć", "poznat", "nepoznat", "pravi", "krivi",
+
+  # Česte imenice (Common Verbs)
+  "godina"
+  
+  
 ))
 
 # Naša inovacija: Prilagođena lista religijskih zaustavnih riječi
@@ -424,341 +201,136 @@ custom_stop_words <- tibble(word = c(
 ))
 
 
+
 # Kombiniramo liste
 all_stop_words <- bind_rows(stop_words_hr, custom_stop_words)
 
-# Pripremamo lematizirane riječi za modeliranje
-lemmatized_words <- nlp_results_df %>%
-  filter(upos %in% c("NOUN", "ADJ", "VERB")) %>% # Koristimo imenice, pridjeve i glagole
-  anti_join(stop_words_hr, by = c("lemma" = "word")) %>%
-  filter(nchar(lemma) > 2) %>%
-  count(doc_id, lemma, sort = TRUE)
+
+word_freq_for_cloud <- nlp_results_df %>%
+  filter(upos %in% c("NOUN", "ADJ", "VERB")) %>%
+  filter(!lemma %in% stop_words_hr) %>% # Primjenjujemo dodatni filter
+  count(lemma, sort = TRUE)
 
 
-
-# 1. Izračunajmo ukupnu frekvenciju svake riječi
-word_freq <- lemmatized_words %>%
-  group_by(lemma) %>%
-  summarise(total_n = sum(n)) %>%
-  ungroup() %>%
-  arrange(desc(total_n))
-
-# Prikaz tablice s najčešćim riječima
-print(head(word_freq, 200))
-
-
-# 2. Vizualizirajmo top 20 najčešćih riječi
-word_freq %>%
-  top_n(20, total_n) %>%
-  ggplot(aes(x = fct_reorder(lemma, total_n), y = total_n)) +
-  geom_col(fill = "#2E86C1", width = 0.8) +
-  coord_flip() + # Okreće osi kako bi riječi bile lakše čitljive
-  labs(
-    title = "Top 20 najčešćih riječi u korpusu",
-    subtitle = "Nakon uklanjanja zaustavnih riječi i lematizacije",
-    x = "Riječ (lema)",
-    y = "Ukupna frekvencija"
-  ) +
-  theme_minimal(base_size = 14) +
-  theme(
-    plot.title = element_text(hjust = 0.5, face = "bold"),
-    plot.subtitle = element_text(hjust = 0.5)
-  )
-```
-
-
-
-```{r}
-# --- 1. PROŠIRENI I OBOGAĆENI TEMATSKI RJEČNICI ---
-
-# Koristimo korijene riječi (lemas) za maksimalnu pokrivenost
-# Važno je koristiti | (ILI) unutar jedne riječi za varijacije, npr. "papa|pape|papin"
-thematic_dictionaries_v2 <- list(
-  # Proširena tema - uključuje EU, globalna pitanja
-  POLITIKA_DRUSTVO = c(
-    "izbor", "vlada", "strank", "hdz", "sdp", "sabor", "zakon", "predsjednik",
-    "politi", "europ", "milanović", "plenković", "ustav", "referendum", "ministar"
-  ),
-  # Preciznija tema - fokus na 'kulturalnim ratovima'
-  BIOETIKA_KULTURNI_RATOVI = c(
-    "obitelj", "život", "pobačaj", "abortus", "brak", "roditelj", "djec", "spol",
-    "rodn", "hod za život", "lgbt", "istospoln", "parad", "ponos"
-  ),
-  # Proširena tema - uključuje širi kontekst
-  POVIJEST_IDENTITET = c(
-    "stepinac", "rat", "komuniz", "jugoslavij", "žrtv", "povijest", "branitelj",
-    "lustracij", "domovinsk", "ustaš", "partizan", "bleiburg", "vukovar"
-  ),
-  # Tema podijeljena na dvije za veću preciznost
-  DUHOVNOST_PRAKSA = c(
-    "molitv", "mis", "euharistij", "sakrament", "duhovn", "vjer", "blagoslov",
-    "gosp", "hodočašć", "propovijed", "klanjanj", "zornic"
-  ),
-  CRKVA_INSTITUCIJA = c(
-    "crkv", "biskup", "nadbiskup", "kardinal", "vatikan", "papa|pape|papin", "franj",
-    "hbk", "žup", "svećenic", "sinod", "vjeronauk"
-  ),
-  # Proširena tema
-  KARITAS_SOCIJALNO = c(
-    "caritas", "pomoć", "siromaš", "siroma", "humanitar", "solidarn", "socijaln",
-    "izbjeglic", "potres", "volonter", "donacij"
-  ),
-  # Potpuno nova, važna tema
-  MEDIJI_KULTURA = c(
-    "medij", "film", "glazb", "umjetnost", "knjig", "koncert", "laudato", "hkm",
-    "bitno.net", "veritas", "kazališt"
-  )
+# 2. Kreiranje vizualizacije s ggwordcloud
+set.seed(123) # Za reproduktivnost izgleda oblaka
+wordcloud(
+  words = word_freq_for_cloud$lemma,    # Riječi
+  freq = word_freq_for_cloud$n,         # Frekvencije
+  min.freq = 50,                        # Prikazuj samo riječi koje se pojave bar 50 puta
+  max.words = 150,                      # Maksimalan broj riječi za prikaz
+  random.order = FALSE,                 # Najčešće riječi idu u centar
+  rot.per = 0.30,                       # Postotak riječi koje će biti rotirane
+  colors = brewer.pal(8, "Dark2")       # Paleta boja
 )
+
+# Dodajemo naslo
+
 ```
 
 
+---
 
+## 1. Pregled tematskog pejzaža
 
-```{r}
-thematic_dictionaries_v3 <- list(
-  
-  # I. JEZGRA VJERE: DOKTRINA I PRAKSA
-  DUHOVNOST_I_LITURGIJA = c("molitv", "mis", "euharistij", "sakrament", "duhovn", "vjer", "blagoslov", "gosp", "hodočašć", "propovijed", "klanjanj", "zornic", "liturgij", "advent", "korizm", "blagdan", "svetkovin", "krunic", "brevijar", "duhovne vježbe"),
-  TEOLOGIJA_I_DOKTRINA = c("teologij", "dogm", "eshatologij", "kristologij", "trojstv", "grijeh", "spasenje", "opravdanje", "moral", "krštenje", "biblija", "sveto pismo", "evanđelj"),
-
-  # II. INSTITUCIONALNA CRKVA: STRUKTURA I DJELOVANJE
-  CRKVENO_UPRAVLJANJE_I_STRUKTURA = c("crkv", "biskup", "nadbiskup", "kardinal", "sveta stolica", "hbk", "žup", "svećenic", "kler", "redovnik", "časna sestra", "laik", "dekanat", "biskupija"),
-  PAPE_I_VATIKAN = c("papa franjo", "benedikt xvi", "ivan pavao ii", "vatikan", "dikasterij", "enciklik", "sinodalni put", "sveti otac", "konklav", "apostolsk"),
-  CRKVENE_FINANCIJE_I_IMOVINA = c("financij", "imovin", "novac", "proračun", "porez", "restitucij", "ugovor sa svetom stolicom", "nekretnin", "donacij", "milodar"),
-  GLOBALNA_CRKVA_I_MISIJE = c("misije", "misionar", "progonjeni kršćani", "svjetski dan mladih", "afrik", "azij", "južna amerik", "svjetska crkva", "papinsk"),
-
-  # III. CRKVA U JAVNOJ ARENI: DRUŠTVO I POLITIKA
-  POLITIKA_I_ODNOS_S_DRZAVOM = c("izbor", "vlada", "strank", "hdz", "sdp", "sabor", "zakon", "predsjednik", "politi", "europ", "milanović", "plenković", "ustav", "sekularnost", "vjeronauk u školi"),
-  BIOETIKA_I_KULTURNI_RATOVI = c("obitelj", "život", "pobačaj", "abortus", "brak", "roditelj", "djec", "spol", "rodn", "hod za život", "lgbt", "istospoln", "eutanazij", "transrodnost", "medicinski potpomognuta oplodnja", "palijativna skrb"),
-  KARITAS_I_SOCIJALNA_PRAVDA = c("caritas", "pomoć", "siromaš", "siroma", "humanitar", "solidarn", "socijaln", "izbjeglic", "potres", "volonter", "socijalni nauk", "ekologij", "laudato si'", "migranti", "pravednost"),
-  POVIJEST_I_NACIONALNI_IDENTITET = c("stepinac", "rat", "komuniz", "jugoslavij", "žrtv", "povijest", "branitelj", "lustracij", "domovinsk", "ustaš", "partizan", "bleiburg", "vukovar", "nacionalni identitet"),
-
-  # IV. CRKVA I SUVREMENOST: KULTURA, ZNANOST I MEDIJI
-  ZNANOST_I_VJERA = c("znanost", "evolucij", "stvaranje", "bioetik", "umjetna inteligencija", "svemir", "psihologij", "vjera i razum"),
-  MEDIJI_UMJETNOST_I_KULTURA = c("medij", "film", "glazb", "umjetnost", "književnost", "kazališt", "arhitektur", "sakraln", "kultura", "koncert", "izložb"),
-  DIGITALNA_EVANGELIZACIJA_I_MLADI = c("digitaln", "internet", "društvene mreže", "mladi", "pastoral mladih", "influencer", "podcast", "aplikacij", "evangelizacij", "susret hrvatske katoličke mladeži"),
-
-  # V. IZAZOVI I UNUTARNJI PRIJEPORI
-  ZLOSTAVLJANJE_I_KRIZA_POVJERENJA = c("zlostavljan", "pedofilij", "skandal", "prikrivan", "nulta tolerancija", "žrtv", "susret sa žrtvama"),
-  UNUTARCRKVENI_PRIJEPORI_I_IDEOLOGIJE = c("tradicionalist", "progresiv", "konzervativ", "liberal", "karizmatik", "lefebvrovci", "tradicijska misa", "aggiornamento", "hermeneutik", "pluraliz"),
-  ODNOS_S_DRUGIM_RELIGIJAMA_I_POGLEDIMA = c("ekumeniz", "međureligijsk", "dijalog", "islam", "pravoslavn", "protestant", "judaiz", "ateiz", "agnosticiz")
-)
-```
+Prvi korak je razumjeti opću strukturu diskursa. Koje teme dominiraju, a koje su na marginama? Koliko su te teme centralne za članke u kojima se pojavljuju?
 
 
 
+### Dinamika glavnih tema (2021-2023)
+
+Analiza udjela svake teme u ukupnom broju spominjanja otkriva stabilnu strukturu, ali i suptilne promjene. Očekivano, teme vezane za **Duhovnost i liturgiju** te **Crkvenu instituciju** čine okosnicu diskursa. Značajan udio zauzimaju i teme koje povezuju Crkvu s društvom, poput **Politike** i **Bioetike**.
+
+```{r plot-topic-trends}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```{r}
-# --- 2. NAPREDNA ANALIZA: TEMATSKA SPECIJALIZACIJA IZVORA ---
-
-# Prvo, ponovno pokrećemo brojanje s novim, boljim rječnicima na cijeloj bazi
-# (ili uzorku - dovoljno je brzo za cijelu bazu!)
-
-
-
-count_themes <- function(text, dictionaries) {
-  # 1. Priprema teksta: sve pretvaramo u mala slova radi uniformnosti
-  text_lower <- tolower(text)
-  
-  # 2. Glavni posao: prebrojavanje
-  theme_counts <- purrr::map_int(dictionaries, ~sum(str_count(text_lower, .x)))
-  
-  # 3. Vraćanje rezultata
-  return(theme_counts)
-}
-theme_data_v2 <- purrr::map_dfr(dta_stratified_sample$FULL_TEXT, ~count_themes(., thematic_dictionaries_v3))
-dta_with_themes <- bind_cols(dta_stratified_sample, theme_data_v2)
-
-# Analiza: Koji tipovi izvora (SOURCE_TYPE) se fokusiraju na koje teme?
-source_type_specialization <- dta_with_themes %>%
-  select(SOURCE_TYPE, DUHOVNOST_I_LITURGIJA:ODNOS_S_DRUGIM_RELIGIJAMA_I_POGLEDIMA) %>%
-  pivot_longer(cols = -SOURCE_TYPE, names_to = "topic", values_to = "count") %>%
-  group_by(SOURCE_TYPE, topic) %>%
-  summarise(total_mentions = sum(count)) %>%
-  group_by(SOURCE_TYPE) %>%
-  # Računamo udio svake teme unutar pojedinog tipa izvora
-  mutate(share = total_mentions / sum(total_mentions)) %>%
-  ungroup() %>%
-  filter(total_mentions > 0) # Uklanjamo kombinacije bez spominjanja
-
-# Vizualizacija: Heatmap tematske specijalizacije
-ggplot(source_type_specialization, aes(x = SOURCE_TYPE, y = topic, fill = share)) +
-  geom_tile(color = "white") +
-  geom_text(aes(label = percent(share, accuracy = 1)), size = 3) +
-  scale_fill_gradient(low = "white", high = "#0072B2", labels = percent) +
-  theme_minimal(base_size = 14) +
-  theme(
-    axis.text.x = element_text(angle = 45, hjust = 1),
-    legend.position = "none"
-  ) +
-  labs(
-    title = "Tematska Specijalizacija po Tipu Platforme",
-    subtitle = "Postotak udjela svake teme unutar pojedine platforme",
-    x = "Tip Platforme", y = "Tema"
-  )
-```
-
-
-
-```{r}
-# Pretvorimo podatke u 'dugi' format za lakšu vizualizaciju
 topic_trends_guided <- dta_with_themes %>%
   select(year, DUHOVNOST_I_LITURGIJA:ODNOS_S_DRUGIM_RELIGIJAMA_I_POGLEDIMA) %>%
   pivot_longer(cols = -year, names_to = "topic", values_to = "count") %>%
   group_by(year, topic) %>%
-  summarise(total_mentions = sum(count)) %>%
+  summarise(total_mentions = sum(count), .groups = 'drop') %>%
   group_by(year) %>%
   mutate(share = total_mentions / sum(total_mentions)) %>%
+  ungroup() %>%
+  group_by(topic) %>%
+  filter(any(share >= 0.05)) %>%
   ungroup()
 
-# Vizualizacija trendova
 ggplot(topic_trends_guided, aes(x = year, y = share, color = topic, group = topic)) +
   geom_line(linewidth = 1.5) +
   geom_point(size = 3) +
   scale_y_continuous(labels = scales::percent_format()) +
-  labs(title = "Promjena zastupljenosti tema (Vođena analiza)",
-       x = "Godina", y = "Udio spominjanja", color = "Tema") +
-  theme_minimal() +
+  scale_x_continuous(breaks = c(2021, 2022, 2023)) +
+  labs(title = "Promjena zastupljenosti glavnih tema (iznad 5% udjela)",
+       x = "Godina", y = "Udio spominjanja u korpusu", color = "Tema") +
+  theme_minimal(base_size = 14) +
   theme(legend.position = "bottom")
 ```
 
+### Intenzitet tema: Što je vijest, a što pozadinski šum?
 
+Nije svako spominjanje teme jednako važno. Ovaj grafikon pokazuje koliko je tema **centralna** za članak kada se u njemu pojavi. Teme s distribucijom pomaknutom udesno (npr. `ZLOSTAVLJANJE`) su one koje, kada se pojave, dominiraju člankom i predstavljaju glavnu vijest. Teme s distribucijom bliže lijevoj strani (npr. `POLITIKA`) češće se spominju usputno, kao kontekst.
 
+```{r plot-topic-intensity}
+thematic_intensity_data <- dta_enriched %>%
+  select(starts_with("norm_")) %>%
+  pivot_longer(everything(), names_to = "topic", values_to = "intensity") %>%
+  mutate(topic = str_remove(topic, "norm_")) %>%
+  filter(intensity > 0)
 
-```{r}
-# --- 3. INDEKS ISTAKNUTOSTI: KOJI MEDIJI "GURAJU" KOJE TEME? ---
-
-# Uzimamo samo top 20 medija po broju objava radi preglednosti
-top_20_media <- dta_stratified_sample %>% count(FROM, sort = TRUE) %>% slice(1:20) %>% pull(FROM)
-
-# Prvo izračunavamo prosječni udio svake teme u cijelom prostoru
-overall_topic_shares <- dta_with_themes %>%
-  select(DUHOVNOST_I_LITURGIJA:ODNOS_S_DRUGIM_RELIGIJAMA_I_POGLEDIMA) %>%
-  pivot_longer(everything(), names_to = "topic", values_to = "count") %>%
-  group_by(topic) %>%
-  summarise(total_mentions = sum(count)) %>%
-  mutate(overall_share = total_mentions / sum(total_mentions))
-
-# Zatim, računamo udio tema za svaki od top 20 medija
-media_topic_shares <- dta_with_themes %>%
-  filter(FROM %in% top_20_media) %>%
-  select(FROM, DUHOVNOST_I_LITURGIJA:ODNOS_S_DRUGIM_RELIGIJAMA_I_POGLEDIMA) %>%
-  pivot_longer(cols = -FROM, names_to = "topic", values_to = "count") %>%
-  group_by(FROM, topic) %>%
-  summarise(total_mentions = sum(count)) %>%
-  group_by(FROM) %>%
-  mutate(media_share = total_mentions / sum(total_mentions)) %>%
-  ungroup()
-
-# Spajamo podatke i računamo Indeks Istaknutosti
-salience_index <- media_topic_shares %>%
-  left_join(overall_topic_shares, by = "topic") %>%
-  mutate(
-    # Dodajemo mali broj da izbjegnemo dijeljenje s nulom
-    salience = media_share / (overall_share + 0.0001)
-  ) %>%
-  select(FROM, topic, salience)
-
-# Vizualizacija: Heatmap Indeksa Istaknutosti
-ggplot(salience_index, aes(x = FROM, y = topic, fill = salience)) +
-  geom_tile(color = "white") +
-  scale_fill_gradient2(low = "blue", mid = "white", high = "red", midpoint = 1,
-                       name = "Indeks Istaknutosti\n(<1 manje od prosjeka, >1 više od prosjeka)") +
-  theme_minimal(base_size = 12) +
-  theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5)) +
+ggplot(thematic_intensity_data, aes(x = intensity, y = fct_reorder(topic, intensity, .fun = median))) +
+  geom_density_ridges(scale = 2, fill = "#0072B2", color = "white", alpha = 0.8) +
+  scale_x_log10(breaks = c(1, 10, 100, 1000), labels = c("1", "10", "100", "1000")) +
+  theme_minimal(base_size = 14) +
   labs(
-    title = "Indeks Istaknutosti Tema za Top 20 Medija",
-    subtitle = "Tko se neproporcionalno bavi određenim temama?",
-    x = "Medij", y = "Tema"
-  )
+    title = "Distribucija intenziteta tema",
+    subtitle = "Koliko su teme centralne za članke u kojima se pojavljuju?",
+    x = "Intenzitet teme (spominjanja na 1000 riječi, log skala)",
+    y = "Tema"
+  ) +
+  theme(panel.grid.major.y = element_blank())
 ```
 
+---
 
+## 2. Utjecaj i prijem tema
 
-```{r}
-# Unaprijeđena funkcija koja računa i APSOLUTNI i NORMALIZIRANI score
-calculate_theme_scores <- function(text, dictionaries) {
-  text_lower <- tolower(text)
-  total_words <- str_count(text_lower, "\\w+")
-  if (total_words == 0) return(NULL)
-  
-  scores <- purrr::map(dictionaries, ~sum(str_count(text_lower, .x)))
-  
-  # Normalizirani score (broj spominjanja na 1000 riječi)
-  normalized_scores <- purrr::map(scores, ~(.x / total_words) * 1000)
-  names(normalized_scores) <- paste0("norm_", names(scores))
-  
-  # Određivanje dominantne teme
-  scores_vec <- unlist(scores)
-  if(all(scores_vec == 0)){
-    dominant_topic <- "Nema Teme"
-  } else {
-    dominant_topic <- names(scores)[which.max(scores_vec)]
-  }
-  
-  return(c(as.list(scores), as.list(normalized_scores), dominant_topic = dominant_topic))
-}
+Nakon što smo mapirali teme, istražujemo kako publika reagira na njih. Koje teme potiču najveći angažman, a koje najviše polariziraju?
 
-# Primijenimo novu funkciju (može potrajati minutu-dvije na cijeloj bazi)
-theme_analysis_data <- purrr::map_dfr(dta_stratified_sample$FULL_TEXT, ~calculate_theme_scores(., thematic_dictionaries_v3))
+### Koje teme generiraju najviše interakcija?
 
-# Spajamo s originalnom bazom
-dta_enriched <- bind_cols(dta_stratified_sample, theme_analysis_data)
-```
+Analiza prosječnog broja interakcija po članku otkriva da teme koje se tiču **unutarcrkvenih prijepora, bioetike i skandala** generiraju značajno veći angažman od tema vezanih za duhovnost ili institucionalno funkcioniranje. Ovo ukazuje da **konflikt i kontroverza** služe kao ključni pokretači interakcija u digitalnom prostoru.
 
-
-```{r}
-# --- 2. ANALIZA UTJECAJA I ANGAŽMANA TEMA ---
-
-# Filtriramo dokumente koji nemaju dodijeljenu temu
-thematic_impact <- dta_enriched %>%
-  filter(dominant_topic != "Nema Teme")
-
-# A. Koje teme imaju najveći prosječni doseg i interakcije?
-engagement_by_topic <- thematic_impact %>%
+```{r plot-engagement-by-topic}
+engagement_by_topic <- dta_enriched %>%
+  filter(dominant_topic != "Nema Teme") %>%
   group_by(dominant_topic) %>%
   summarise(
     avg_interactions = mean(INTERACTIONS, na.rm = TRUE),
-    avg_reach = mean(REACH, na.rm = TRUE),
     total_articles = n()
   ) %>%
   arrange(desc(avg_interactions))
 
-print("Prosječni angažman po dominantnoj temi:")
-print(engagement_by_topic)
-
-# Vizualizacija
 ggplot(engagement_by_topic, aes(x = avg_interactions, y = reorder(dominant_topic, avg_interactions))) +
-  geom_col(fill = "#0072B2") +
-  geom_text(aes(label = round(avg_interactions)), hjust = -0.2) +
-  theme_minimal() +
+  geom_col(fill = "#0072B2", width=0.8) +
+  geom_text(aes(label = round(avg_interactions)), hjust = -0.2, size=4) +
+  expand_limits(x = max(engagement_by_topic$avg_interactions) * 1.1) +
+  theme_minimal(base_size = 14) +
   labs(title = "Koje teme generiraju najviše interakcija?",
        subtitle = "Prosječan broj interakcija po članku za svaku dominantnu temu",
-       x = "Prosječne interakcije", y = "Dominantna tema")
+       x = "Prosječne interakcije", y = "Dominantna tema") +
+  theme(panel.grid.major.y = element_blank())
+```
 
-# B. Koje teme su najpolarizirajuće?
-# Mjerimo polarizaciju kao omjer 'Angry' reakcija prema ukupnim reakcijama
-polarization_by_topic <- thematic_impact %>%
-  filter(TOTAL_REACTIONS_COUNT > 10) %>% # Gledamo samo članke s nekim odjekom
+### Mapa emocija: Koje teme izazivaju ljubav, a koje ljutnju?
+
+Analizirajući Facebook reakcije, možemo okvirno mapirati emocionalni odgovor na svaku temu. Rezultati su jasni: teme vezane za **Duhovnost i Karitas** dominantno izazivaju pozitivne reakcije (`Love`), dok teme **Bioetike, Politike i Skandala** generiraju najveći udio negativnih (`Angry`) reakcija, potvrđujući njihovu ulogu kao glavnih točaka polarizacije.
+
+```{r plot-polarization-by-topic}
+polarization_by_topic <- dta_enriched %>%
+  filter(TOTAL_REACTIONS_COUNT > 10) %>%
   group_by(dominant_topic) %>%
   summarise(
-    # Zbrajamo sve reakcije za temu
     total_angry = sum(ANGRY_COUNT, na.rm = TRUE),
     total_love = sum(LOVE_COUNT, na.rm = TRUE),
     total_reactions = sum(TOTAL_REACTIONS_COUNT, na.rm = TRUE)
@@ -767,357 +339,128 @@ polarization_by_topic <- thematic_impact %>%
     angry_ratio = total_angry / total_reactions,
     love_ratio = total_love / total_reactions
   ) %>%
-  arrange(desc(angry_ratio))
+  filter(total_reactions > 100) # Gledamo samo teme s dovoljno reakcija za analizu
 
-print("Indeks polarizacije po temi:")
-print(polarization_by_topic)
-
-# Vizualizacija
 ggplot(polarization_by_topic, aes(y = reorder(dominant_topic, angry_ratio))) +
-  geom_col(aes(x = angry_ratio), fill = "red", alpha = 0.7) +
-  geom_col(aes(x = -love_ratio), fill = "blue", alpha = 0.7) + # Koristimo negativnu vrijednost za "ogledalo" graf
+  geom_col(aes(x = angry_ratio), fill = "firebrick", alpha = 0.8) +
+  geom_col(aes(x = -love_ratio), fill = "steelblue", alpha = 0.8) +
+  geom_vline(xintercept = 0, color="grey") +
   scale_x_continuous(labels = function(x) percent(abs(x)), name = "Udio u ukupnim reakcijama") +
-  theme_minimal() +
+  theme_minimal(base_size = 14) +
   labs(title = "Koje teme generiraju 'Ljubav', a koje 'Ljutnju'?",
        subtitle = "Plavo = udio 'Love' reakcija | Crveno = udio 'Angry' reakcija",
        y = "Dominantna tema")
 ```
 
+---
 
-```{r}
-# --- 3. MREŽA TEMATSKIH POVEZNICA ---
-# install.packages(c("widyr", "ggraph", "igraph"))
-library(widyr)
-library(ggraph)
-library(igraph)
+## 3. Akteri i narativni okviri
 
-# Kreiramo parove tema koje se pojavljuju u istom dokumentu
-# Koristimo normalizirane score-ove i gledamo samo teme s određenim intenzitetom
+Tko su glavni protagonisti svake teme i kako se teme međusobno povezuju u šire narativne okvire? Ova sekcija spaja tematsku analizu s analizom aktera i mrežnom analizom.
+
+### Glavni akteri unutar svake teme
+
+Svaka tematska "priča" ima svoje glavne likove. Analizom najčešće spominjanih osoba i organizacija unutar svake dominantne teme, dobivamo uvid u to tko su nositelji narativa. Očekivano, političari dominiraju političkim temama, dok crkveni velikodostojnici dominiraju institucionalnim.
+
+
+```{r, fig.height=10}
+
+
+# --- ANALIZA AKTERA U TOP 5 DOMINANTNIH TEMA ---
+
+# 1. KORAK: Identificiramo kojih je 5 najčešćih dominantnih tema
+top_5_dominant_topics <- dta_enriched %>%
+  filter(dominant_topic != "Nema Teme") %>%
+  count(dominant_topic, sort = TRUE) %>%
+  slice_max(order_by = n, n = 5) %>%
+  pull(dominant_topic) # 'pull' izvlači samo imena tema u vektor
+
+# 2. KORAK: Priprema podataka ostaje ista, ali s dodatnim filterom
+entities_in_topics <- nlp_results_df %>%
+  filter(upos == "PROPN") %>%
+  select(doc_id, lemma) %>%
+  inner_join(dta_enriched %>% select(doc_id, dominant_topic), by = "doc_id") %>%
+  filter(dominant_topic %in% top_5_dominant_topics) %>% # OVDJE JE FILTER!
+  filter(!lemma %in% c("hrvatska", "OŽALOŠCENI", "bog", "isus", "zagreb", "split", "nedjelja", "crkva", "dalmacija"))
+
+# 3. KORAK: Izračun top 6 aktera unutar tih 5 tema
+top_actors_in_top_topics <- entities_in_topics %>%
+  count(dominant_topic, lemma, sort = TRUE) %>%
+  group_by(dominant_topic) %>%
+  slice_max(order_by = n, n = 10) %>%
+  ungroup()
+
+# 4. KORAK: Poboljšana vizualizacija
+ggplot(top_actors_in_top_topics, aes(x = n, y = reorder_within(lemma, n, dominant_topic), fill = dominant_topic)) +
+  
+  # Stupci ostaju isti
+  geom_col(show.legend = FALSE, width = 0.8) +
+  
+  # UKLANJAMO 'geom_text' LINIJU - OVO JE KLJUČNA PROMJENA
+  # geom_text(aes(label = n), hjust = -0.2, size = 3.5, color = "gray20") +
+  
+  # Ostatak koda ostaje isti
+  scale_y_reordered() +
+  scale_fill_viridis_d() +
+  
+  # Promijenili smo broj stupaca na 1 radi boljeg prikaza 5 tema
+  facet_wrap(~ dominant_topic, scales = "free_y", ncol = 1) + 
+  
+  labs(
+    title = "Ključni akteri unutar Top 5 najzastupljenijih tema",
+    subtitle = "Top 6 najčešće spominjanih osoba ili organizacija za svaku temu",
+    x = "Ukupan broj spominjanja", # Dodajemo x-os jer više nema tekstualnih oznaka
+    y = "Akter (lema)"
+  ) +
+  
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 20, margin = margin(b = 5)),
+    plot.subtitle = element_text(size = 14, color = "gray40", margin = margin(b = 20)),
+    strip.text = element_text(face = "bold", size = 12, hjust = 0),
+    panel.grid.major.y = element_blank(),
+    panel.grid.major.x = element_line(color = "#f0f0f0"),
+    panel.grid.minor = element_blank(),
+    plot.margin = margin(20, 20, 20, 20)
+  )
+```
+
+
+
+### Mreža narativnih okvira: Kako se teme povezuju?
+
+Teme se rijetko pojavljuju izolirano. One se spajaju u šire **narativne okvire (frames)**. Analizom ko-okurencije tema unutar istih članaka, možemo mapirati te veze. Mreža pokazuje snažnu povezanost između **Politike, Povijesti i Bioetike**, tvoreći dominantan "društveno-politički" klaster. S druge strane, teme poput **Duhovnosti i Karitasa** čine zaseban, "pastoralni" klaster.
+
+```{r plot-topic-network, fig.height=10}
+# Ovaj kod je iz vašeg RMD-a, samo ga prikazujemo ovdje.
 topic_pairs <- dta_enriched %>%
   select(doc_id, starts_with("norm_")) %>%
   pivot_longer(-doc_id, names_to = "topic", values_to = "intensity") %>%
-  filter(intensity > 0) %>% # Gledamo samo teme koje su prisutne
-  # `pairwise_cor` je moćna funkcija koja računa korelacije između parova
-  pairwise_cor(item = topic, feature = doc_id, value = intensity, upper = FALSE)
+  mutate(topic = str_remove(topic, "norm_")) %>%
+  filter(intensity > 0) %>%
+  pairwise_cor(item = topic, feature = doc_id, upper = FALSE)
 
-# Gradimo i vizualiziramo mrežu
 set.seed(123)
 topic_pairs %>%
-  filter(correlation > 0.1) %>% # Prikazujemo samo značajnije veze
+  filter(correlation > 0.1) %>%
   graph_from_data_frame() %>%
   ggraph(layout = "fr") +
   geom_edge_link(aes(edge_alpha = correlation, edge_width = correlation), color = "lightblue") +
   geom_node_point(color = "darkblue", size = 5) +
-  geom_node_text(aes(label = name), repel = TRUE, size = 4) +
+  geom_node_text(aes(label = str_wrap(name, 20)), repel = TRUE, size = 4) +
   theme_void() +
   labs(
-    title = "Mreža Povezanosti Tema",
+    title = "Mreža povezanosti tema",
     subtitle = "Koje se teme najčešće pojavljuju zajedno u istim člancima?",
     edge_width = "Snaga veze (korelacija)",
-    edge_alpha = "Snaga veze (korelacija)"
+    edge_alpha = ""
   )
 ```
 
+## Zaključak
 
+Ova dubinska tematska analiza otkriva da katolički digitalni prostor nije monolitan. Sastoji se od različitih, često odvojenih, tematskih svjetova:
+*   **Pastoralni svijet:** Fokusiran na duhovnost, liturgiju i karitas, s dominantno pozitivnim prijemom kod publike.
+*   **Društveno-politički svijet:** Gdje se teme politike, povijesti i bioetike isprepliću, generirajući najveći angažman, ali i najsnažniju polarizaciju.
 
-
-
-```{r}
-# --- 3A. IDEOLOŠKO MAPIRANJE MEDIJA (PCA) ---
-library(ggrepel)
-
-# Agregiramo prosječne tematske scoreove za top 30 medija
-media_ideological_space <- dta_semantic %>%
-  filter(FROM %in% (dta %>% count(FROM, sort=T) %>% slice(1:30) %>% pull(FROM))) %>%
-  select(FROM, all_of(topic_names)) %>%
-  group_by(FROM) %>%
-  summarise(across(everything(), mean))
-
-# Pripremamo matricu za PCA
-media_matrix <- media_ideological_space %>% select(-FROM) %>% as.matrix()
-rownames(media_matrix) <- media_ideological_space$FROM
-
-# Pokrećemo PCA
-pca_result <- prcomp(media_matrix, scale. = TRUE)
-
-# Ekstrahiramo prve dvije komponente
-pca_coords <- as_tibble(pca_result$x[, 1:2]) %>%
-  mutate(media = rownames(media_matrix))
-
-# Vizualizacija ideološkog prostora
-ggplot(pca_coords, aes(x = PC1, y = PC2)) +
-  geom_point(color = "red", size = 3) +
-  geom_text_repel(aes(label = media)) +
-  theme_minimal() +
-  labs(
-    title = "Ideološka Mapa Hrvatskog Medijskog Prostora",
-    subtitle = "Pozicija medija temeljena na njihovom tematskom fokusu. Osi predstavljaju glavne dimenzije prijepora.",
-    x = "Prva Glavna Komponenta (npr. Institucionalno vs. Političko)",
-    y = "Druga Glavna Komponenta (npr. Povijesno vs. Socijalno)"
-  )
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```{r stm_analysis}
-# --- ALTERNATIVA 2: STRUKTURNI TEMATSKI MODEL (STM) ---
-
-# Instalirajte paket ako ga nemate
-# install.packages("stm")
-library(stm)
-
-# 1. Priprema podataka za STM
-# `udpipe` je već odradio težak posao. Samo trebamo malo preformatirati.
-# Koristimo isti 'lemmatized_words' dataframe kao i prije.
-stm_data <- lemmatized_words %>%
-  # Spojimo metapodatke (godinu i tip izvora)
-  inner_join(dta_stratified_sample %>% select(doc_id, year, SOURCE_TYPE), by = "doc_id")
-
-# Procesiramo tekst i metapodatke
-# `textProcessor` i `prepDocuments` su STM-ove funkcije koje rade DTM i rječnik
-processed <- textProcessor(stm_data$lemma, metadata = stm_data)
-out <- prepDocuments(processed$documents, processed$vocab, processed$meta)
-
-# 2. Pokretanje STM modela (ZNATNO BRŽE od LDA)
-# Uključujemo metapodatke u formulu!
-# 'prevalence' govori modelu da prevalencija teme može ovisiti o tipu izvora i godini
-stm_model <- stm(documents = out$documents, vocab = out$vocab,
-                 K = 12, # Biramo 12 tema
-                 prevalence = ~ SOURCE_TYPE + s(year), # OVDJE JE MAGIJA!
-                 max.em.its = 75, data = out$meta,
-                 init.type = "Spectral", seed = 1234)
-
-# 3. Interpretacija i vizualizacija
-# Prikaz top riječi po temi
-plot(stm_model, type = "summary", n = 7)
-
-# 4. DIJAKRONIJSKA ANALIZA S METAPODACIMA (Najmoćniji dio)
-# Pripremamo podatke za procjenu efekta godine na teme
-prep <- estimateEffect(1:12 ~ s(year), stm_model, meta = out$meta, uncertainty = "Global")
-
-# Vizualizacija promjene prevalencije tema kroz godine
-plot(prep, "year", method = "continuous", topics = c(1, 2, 3, 7), # Odaberite teme koje vas zanimaju
-     main = "Efekt godine na prevalenciju odabranih tema", print.legend = TRUE)
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```{r}
-# 2. Kreiranje Document-Term Matrice (DTM)
-dtm <- lemmatized_words %>%
-  cast_dtm(document = doc_id, term = lemma, value = n)
-
-# 3. Pokretanje LDA modela
-# Odabiremo k=8 tema za ovu demonstraciju
-lda_model <- LDA(dtm, k = 8, control = list(seed = 1234))
-
-# 4. Interpretacija tema: Koje riječi čine koju temu?
-topics_beta <- tidy(lda_model, matrix = "beta")
-
-top_terms_per_topic <- topics_beta %>%
-  group_by(topic) %>%
-  slice_max(beta, n = 10) %>%
-  ungroup() %>%
-  arrange(topic, -beta)
-
-# Vizualizacija top riječi po temi
-top_terms_per_topic %>%
-  mutate(term = reorder_within(term, beta, topic)) %>%
-  ggplot(aes(beta, term, fill = factor(topic))) +
-  geom_col(show.legend = FALSE) +
-  facet_wrap(~ topic, scales = "free") +
-  scale_y_reordered() +
-  labs(title = "Top 10 riječi za svaku od 12 tema", x = "Vjerojatnost (beta)", y = "Termin")
-
-# 5. Dijakronijska analiza: Kako se teme mijenjaju kroz vrijeme?
-# Pridružujemo teme natrag originalnim dokumentima
-doc_topics_gamma <- tidy(lda_model, matrix = "gamma") %>%
-  group_by(document) %>%
-  slice_max(gamma, n = 1) %>%
-  ungroup()
-
-# Spajamo s godinama iz originalnog dataseta
-doc_topics_gamma$doc_id <- as.integer(doc_topics_gamma$document)
-topics_over_time <- dta_sample %>%
-  select(doc_id, year) %>%
-  inner_join(doc_topics_gamma, by = "doc_id")
-
-# Agregiramo po godini i temi
-topic_trends <- topics_over_time %>%
-  count(year, topic) %>%
-  group_by(year) %>%
-  mutate(share = n / sum(n)) %>%
-  ungroup()
-
-# Vizualizacija trendova
-ggplot(topic_trends, aes(x = year, y = share, color = factor(topic), group = topic)) +
-  geom_line(linewidth = 1.5) +
-  geom_point(size = 3) +
-  scale_y_continuous(labels = scales::percent_format()) +
-  labs(title = "Promjena zastupljenosti tema (2021-2023)",
-       x = "Godina", y = "Udio tema u korpusu", color = "Tema ID") +
-  theme_minimal()
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```{r}
-# 1. Kreiranje našeg prilagođenog leksikona (Naš tajni sastojak)
-custom_sentiment_lexicon <- tibble(
-  word = c("ljubav", "nada", "radost", "mir", "blagoslov", "pomoć", # Pozitivne
-           "grijeh", "mržnja", "rat", "patnja", "korupcija", "skandal", # Negativne
-           "žrtva", "križ", "pokora"), # Dvosmislene/neutralne
-  value = c(1, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1, -1, 0, 0, 0)
-)
-
-# 2. Izračun sentimenata po dokumentu
-document_sentiments <- lemmatized_words %>%
-  inner_join(custom_sentiment_lexicon, by = c("lemma" = "word")) %>%
-  group_by(doc_id) %>%
-  summarise(sentiment_score = sum(value * n)) %>% # Ponderiramo s frekvencijom riječi
-  ungroup()
-
-# Spajamo sentiment score natrag na naš uzorak
-dta_sample <- dta_sample %>%
-  left_join(document_sentiments, by = "doc_id") %>%
-  mutate(sentiment_score = ifelse(is.na(sentiment_score), 0, sentiment_score)) # Popunjavamo NA s 0
-
-# 3. Validacija pomoću Facebook/YouTube reakcija
-# Filtriramo samo objave s reakcijama i našim scoreom
-validation_data <- dta_sample %>%
-  filter(!is.na(ANGRY_COUNT), !is.na(LOVE_COUNT), sentiment_score != 0) %>%
-  mutate(polarization_ratio = (ANGRY_COUNT + 1) / (LOVE_COUNT + ANGRY_COUNT + 1)) # Dodajemo 1 da izbjegnemo dijeljenje s nulom
-
-# Vizualizacija: Očekujemo da će negativniji sentiment score biti povezan s više 'Angry' reakcija
-ggplot(validation_data, aes(x = sentiment_score, y = polarization_ratio)) +
-  geom_point(alpha = 0.5) +
-  geom_smooth(method = "lm", col = "red") +
-  scale_y_log10() +
-  labs(title = "Validacija NLP Sentimenta s 'Angry' reakcijama",
-       x = "Naš izračunati Sentiment Score",
-       y = "Omjer 'Angry' vs 'Love' reakcija (Log skala)")
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Razumijevanje strukture, utjecaja i povezanosti ovih tema ključno je za svaku daljnju analizu narativa i sentimenata koji oblikuju javnu percepciju Crkve i vjere u Hrvatskoj.

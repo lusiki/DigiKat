@@ -55,7 +55,7 @@ Projekt vodi interdisciplinarni tim znanstvenika.
 | **doc. dr. sc. Luka Šikić** | **Voditelj projekta** | **Hrvatsko katoličko sveučilište (Komunikologija)** |
 | izv. prof. dr. sc. Andrea Sršen | Suradnica     | Fakultet hrvatskih studija (Sociologija)        |
 | izv. prof. dr. sc. Irena Palić  | Suradnica     | Ekonomski fakultet, Zagreb (Statistika)         |
-| doc. dr. sc. Lana Ciboci Perša  | Suradnica     | Hrvatsko katoličko sveučilište (Komunikologija) |
+| izv. prof. dr. sc. Lana Ciboci Perša  | Suradnica     | Hrvatsko katoličko sveučilište (Komunikologija) |
 | izv. prof. dr. sc. Petra Palić    | Suradnica     | Hrvatsko katoličko sveučilište (Sociologija)    |
 | doc. dr. sc. Ivan Uldrijan  | Suradnik      | Hrvatsko katoličko sveučilište (Komunikologija) |
 | dr. sc. Suzana Lipar Obrovac  | Suradnica     | Hrvatsko katoličko sveučilište (Odnosi s javnošću)|
