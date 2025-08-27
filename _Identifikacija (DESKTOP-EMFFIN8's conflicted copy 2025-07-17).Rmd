@@ -279,7 +279,7 @@ terms <- c(
 # 2. Build the regex string, escaping backslashes for R:
 pattern_final <- sprintf(
   "(?:(?<=\\s)|(?<=^))(%s)\\w*\\b",
-  paste(terms, collapse = "|")
+  paste(katolicki_izrazi, collapse = "|")
 )
 
 # 3. That’s it:
