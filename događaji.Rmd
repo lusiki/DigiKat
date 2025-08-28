@@ -441,8 +441,10 @@ p_cli_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_cli)) +
   )
 
 # Spajamo grafove
-p_volume_z / p_cli_z
+p_volume_z 
 
+
+p_cli_z
 ```
 
 
