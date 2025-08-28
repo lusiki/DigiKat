@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Istraživački tim projekta, Hrvatsko katoličko sveučilište" />
+
+
+<title>Digitalni odjeci: Dinamička analiza utjecaja stvarnih događaja na online diskurs</title>
+
+<script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">DigiKat</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Osnovne informacije</a>
+</li>
+<li>
+  <a href="about.html">O projektu</a>
+</li>
+<li>
+  <a href="schedule.html">Projektni raspored</a>
+</li>
+<li>
+  <a href="baza.html">Baza podataka</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Mapa medijskog prostora
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="mapa.html">Mapa ekosustava</a>
+    </li>
+    <li>
+      <a href="mapa_stats.html">Tematske struje</a>
+    </li>
+    <li>
+      <a href="diskurs.html">Atmosfera diskursa</a>
+    </li>
+    <li>
+      <a href="događaji.html">Fokus na događaje i kampanje</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Tematska istraživanja
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="">Analiza self-help sadržaja na YouTube-u</a>
+    </li>
+    <li>
+      <a href="">Hodčasnički turizam</a>
+    </li>
+    <li>
+      <a href="">Demokršćanstvo</a>
+    </li>
+    <li>
+      <a href="">Katoličko obrazovanje</a>
+    </li>
+    <li>
+      <a href="">Prikazivanje katoličkih svetaca i svetica</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="news.html">Obavijesti</a>
+</li>
+<li>
+  <a href="resources.html">Resursi</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="site-info.html">O stranici</a>
+</li>
+<li>
+  <a href="https://lusiki.github.io/DigiKat/index.html">
+    <span class="ion ion-social-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Digitalni odjeci: Dinamička analiza
+utjecaja stvarnih događaja na online diskurs</h1>
+<h4 class="author">Istraživački tim projekta, Hrvatsko katoličko
+sveučilište</h4>
+<h4 class="date">25. kolovoza 2025.</h4>
+
+</div>
+
+
+<div id="uvod-dinamika-medijskog-prostora" class="section level2">
+<h2>Uvod: Dinamika medijskog prostora</h2>
+<p>U prethodnim fazama mapirali smo aktere, teme i opću atmosferu
+diskursa. Ova finalna faza analize ide korak dalje: prelazimo sa
+statične slike na <strong>dinamičko modeliranje</strong>. Cilj nam je
+razumjeti kako se digitalni diskurs ponaša kao “živi organizam” koji
+reagira na vanjske podražaje – stvarne događaje.</p>
+<p>Ovaj izvještaj će demonstrirati kako možemo: 1. <strong>Automatski
+detektirati</strong> dane neuobičajene medijske aktivnosti s visokom
+pouzdanošću. 2. <strong>Vizualizirati “životni ciklus” događaja</strong>
+kroz “Narativni seizmograf” koji istovremeno prati volumen, konflikt i
+sentiment. 3. <strong>Analizirati evoluciju narativa</strong> mjereći ne
+samo koje se riječi vežu uz temu, već i kakva je
+<strong>atmosfera</strong> tih veza.</p>
+<hr />
+</div>
+<div id="digitalni-seizmograf-automatska-setekcija-ključnih-događaja"
+class="section level2">
+<h2>1. Digitalni seizmograf: Automatska setekcija ključnih događaja</h2>
+<p>Kako bismo identificirali najvažnije dane u našem trogodišnjem
+razdoblju, razvili smo “digitalni seizmograf”. On detektira dane kada su
+<strong>intenzitet konfliktnog jezika (CLI)</strong> ili <strong>volumen
+objava</strong> prešli prag od <strong>99-og percentila</strong>,
+signalizirajući izvanredan događaj.</p>
+<p><strong>Interpretacija:</strong> Crvene točke su dani koji su
+“uzdrmali” digitalni prostor. Naša analiza pokazuje da ovi dani gotovo
+savršeno odgovaraju ključnim događajima poput <strong>Hoda za život,
+Pride povorke, parlamentarnih izbora i važnih obljetnica</strong>,
+potvrđujući da naš “seizmograf” uspješno identificira trenutke od
+najveće javne važnosti.</p>
+<pre><code>## ### Dani s Ekstremnim Volumom Objava</code></pre>
+<table>
+<caption>Top datumi rangirani po Z-scoreu volumena.</caption>
+<thead>
+<tr class="header">
+<th align="left">date</th>
+<th align="right">n_articles</th>
+<th align="right">z_score_volume</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2022-04-17</td>
+<td align="right">36</td>
+<td align="right">5.102019</td>
+</tr>
+<tr class="even">
+<td align="left">2023-04-01</td>
+<td align="right">28</td>
+<td align="right">3.577658</td>
+</tr>
+<tr class="odd">
+<td align="left">2023-12-24</td>
+<td align="right">28</td>
+<td align="right">3.577658</td>
+</tr>
+<tr class="even">
+<td align="left">2022-08-15</td>
+<td align="right">28</td>
+<td align="right">3.395846</td>
+</tr>
+<tr class="odd">
+<td align="left">2023-04-07</td>
+<td align="right">27</td>
+<td align="right">3.360118</td>
+</tr>
+<tr class="even">
+<td align="left">2023-04-08</td>
+<td align="right">27</td>
+<td align="right">3.360118</td>
+</tr>
+<tr class="odd">
+<td align="left">2021-01-12</td>
+<td align="right">30</td>
+<td align="right">3.209386</td>
+</tr>
+</tbody>
+</table>
+<pre><code>## 
+## ### Dani s Ekstremnim Intenzitetom Konflikta</code></pre>
+<table>
+<caption>Top datumi rangirani po Z-scoreu konflikta.</caption>
+<thead>
+<tr class="header">
+<th align="left">date</th>
+<th align="right">avg_cli</th>
+<th align="right">z_score_cli</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2023-03-29</td>
+<td align="right">133.8143</td>
+<td align="right">4.404628</td>
+</tr>
+<tr class="even">
+<td align="left">2022-04-28</td>
+<td align="right">141.9340</td>
+<td align="right">4.395141</td>
+</tr>
+<tr class="odd">
+<td align="left">2022-07-08</td>
+<td align="right">130.9002</td>
+<td align="right">3.602335</td>
+</tr>
+<tr class="even">
+<td align="left">2022-02-20</td>
+<td align="right">128.7471</td>
+<td align="right">3.447630</td>
+</tr>
+<tr class="odd">
+<td align="left">2021-07-28</td>
+<td align="right">119.2026</td>
+<td align="right">3.021647</td>
+</tr>
+</tbody>
+</table>
+<p><img src="doga%C4%91aji_files/figure-html/standardized-anomaly-detection-1.png" width="4200" /></p>
+<hr />
+</div>
+<div id="anatomija-događaja-narativni-seizmograf-uskrsa-2022."
+class="section level2">
+<h2>2. Anatomija događaja: Narativni seizmograf Uskrsa 2022.</h2>
+<p>Kako bismo ispitali kako se diskurs mijenja oko različitih tipova
+događaja, sada ćemo analizirati <strong>Uskrs 2022. godine (17.
+travnja)</strong>. Za razliku od Hoda za život, Uskrs je primarno
+liturgijski i duhovni događaj. Očekujemo da će se to odraziti i u
+“digitalnom odjeku”.</p>
+<p>Seizmograf je podešen da prati temu
+<strong><code>DUHOVNOST_I_LITURGIJA</code></strong>. *
+<strong>Linija:</strong> Prikazuje udio ove teme u ukupnom diskursu. *
+<strong>Veličina točke:</strong> Predstavlja intenzitet
+<strong>konflikta (CLI)</strong>. * <strong>Boja točke:</strong>
+Predstavlja prosječni <strong>tonalitet (sentiment)</strong>.</p>
+<p><img src="doga%C4%91aji_files/figure-html/event-seismograph-uskrs-1.png" width="3500" /></p>
+<div id="interpretacija-mir-i-pozitivan-tonalitet"
+class="section level3">
+<h3><strong>Interpretacija: Mir i pozitivan tonalitet</strong></h3>
+<p>Seizmograf za Uskrs priča potpuno drugačiju priču od onog za Hod za
+život:</p>
+<ul>
+<li><strong>Jasan i oštar vrhunac:</strong> Za razliku od višestrukih
+“valova”, medijska pažnja je <strong>izrazito koncentrirana</strong> na
+sam dan Uskrsa i dane neposredno prije (Veliki Tjedan). Udio teme
+<code>DUHOVNOST</code> doseže svoj apsolutni vrhunac točno na dan
+blagdana.</li>
+<li><strong>Odsustvo konflikta:</strong> Najvažniji nalaz je
+<strong>veličina točaka</strong>. One su <strong>konstantno
+male</strong> kroz cijelo promatrano razdoblje. To je kvantitativni
+dokaz da je diskurs o Uskrsu gotovo u potpunosti <strong>ne-konfliktan i
+ne-polemičan</strong>.</li>
+<li><strong>Dominacija pozitivnog tona:</strong> Sve točke na grafikonu
+su <strong>izrazito plave</strong>, što ukazuje na <strong>visoko
+pozitivan sentiment</strong>. Medijsko izvještavanje je afirmativno,
+fokusirano na poruke nade, mira i duhovne obnove.</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="životopis-narativa-evolucija-teme-o-alojziju-stepincu"
+class="section level2">
+<h2>3. “Životopis” narativa: Evolucija teme o Alojziju Stepincu</h2>
+<p>Na kraju, umjesto da gledamo pojedinačne događaje, pratimo kako se
+jedan dugotrajan i kompleksan narativ – onaj o <strong>blaženom Alojziju
+Stepincu</strong> – mijenjao i uokvirivao kroz godine. Analizirali smo
+koje su se riječi najsnažnije vezale uz pojam “Stepinac” u svakoj od
+promatranih godina i izmjerili prosječni tonalitet tih specifičnih
+narativnih spojeva.</p>
+<p><img src="doga%C4%91aji_files/figure-html/narrative-biography-robust-1.png" width="4200" /></p>
+<p><strong>Interpretacija:</strong> Ova vizualizacija otkriva suptilne,
+ali značajne pomake u načinu na koji se o bl. Alojziju Stepincu govori
+iz godine u godinu. Iako je cjelokupan tonalitet diskursa, prikazan
+nijansama plave boje, konzistentno pozitivan, <strong>fokus i kontekst
+narativa se dramatično mijenjaju</strong>:</p>
+<ul>
+<li><strong>2021. Godina:</strong> Dominiraju termini poput
+<strong>“sps”</strong> i <strong>“pravoslavan”</strong>, što ukazuje da
+je narativ bio snažno uokviren <strong>ekumensko-političkim
+odnosima</strong> sa Srpskom Pravoslavnom Crkvom i pitanjem
+kanonizacije.</li>
+<li><strong>2022. Godina:</strong> Asocijacije se šire na <strong>“rat”,
+“crkva”</strong> i <strong>“emisija”</strong>. Ovo signalizira pomak
+prema <strong>povijesno-medijskom okviru</strong>, gdje se raspravlja o
+njegovoj ulozi u Drugom svjetskom ratu, često kroz medijske formate
+poput emisija i dokumentaraca.</li>
+<li><strong>2023. Godina:</strong> Diskursom dominiraju riječi
+<strong>“molitva”, “veljača”, “krunica”</strong> i
+<strong>“devetnica”</strong>. Ovo predstavlja jasan pomak na
+<strong>liturgijsko-pobožni okvir</strong>, potaknut komemoracijom i
+vjerskim praksama vezanim uz obljetnicu njegove smrti.</li>
+</ul>
+<p>Ovo je kvantitativni dokaz da veliki nacionalni i vjerski narativi
+nisu statični. Oni se dinamički rekontekstualiziraju ovisno o trenutnim
+događajima, prelazeći iz političke u povijesnu, a zatim u duhovnu sferu,
+pri čemu svaka godina naglašava drugačiji aspekt iste ličnosti.</p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
