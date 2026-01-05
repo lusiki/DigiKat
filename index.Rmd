@@ -21,7 +21,7 @@ pagetitle: "Osnovne informacije"
 
 ###  O projektu
 
-Dobrodošli na službenu stranicu projekta **"Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru"**. Ovaj trogodišnji projekt (2025.-2027.) provodi se na [Odjelu za komunikologiju](https://www.unicath.hr/odjeli-i-fakultet/komunikologija) [Hrvatskog katoličkog sveučilišta](https://www.unicath.hr/).
+Dobrodošli na službenu stranicu projekta **"Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru"**. Ovaj trogodišnji projekt (2025.-2027.) provodi se na [Odjelu za komunikologiju](https://www.unicath.hr/odjeli-i-fakulteti/komunikologija) [Hrvatskog katoličkog sveučilišta](https://www.unicath.hr/).
 
 Iako digitalni mediji predstavljaju dominantnu komponentu javnog prostora, u Hrvatskoj nedostaje sustavni pregled njihovih tematskih sastavnica. Ovaj projekt ispunjava tu prazninu fokusirajući se na specifičnu i društveno relevantnu nišu: **sadržaje s katoličkom tematikom**.
 
