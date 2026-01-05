@@ -75,13 +75,54 @@ Koristeći napredne metode iz područja [računalnih društvenih znanosti](https
 
 ## Ključna istraživačka pitanja {.section-header}
 
-Naše istraživanje vođeno je sljedećim temeljnim pitanjima:
-<br><br>
- Kako se katolička tematika prikazuje i raspravlja u hrvatskom digitalnom medijskom prostoru?<br>
- Kakve su veze između katoličkih tema i drugih društvenih i političkih pitanja?<br>
- Koji su akteri i institucije najistaknutiji u tim raspravama?<br>
- Kako se narativi i sentiment mijenjaju ovisno o aktualnim događajima?<br>
- Kakva je mrežna dinamika između različitih platformi i medija koji obrađuju ove teme?
+::: {.questions-grid}
+
+::: {.question-card}
+::: {.question-icon}
+**Q1**
+:::
+::: {.question-text}
+Kako se katolička tematika prikazuje i raspravlja u hrvatskom digitalnom medijskom prostoru te koji su dominantni narativni i diskurzivni obrasci prisutni u ovim sadržajima?
+:::
+:::
+
+::: {.question-card}
+::: {.question-icon}
+**Q2**
+:::
+::: {.question-text}
+Koje su tematske i diskurzivne povezanosti između katoličkih tema i drugih društvenih, političkih i kulturnih pitanja u digitalnom medijskom prostoru?
+:::
+:::
+
+::: {.question-card}
+::: {.question-icon}
+**Q3**
+:::
+::: {.question-text}
+Koji su ključni akteri, institucije i mediji najistaknutiji u produkciji i distribuciji sadržaja s katoličkom tematikom te kakve su njihove međusobne relacije?
+:::
+:::
+
+::: {.question-card}
+::: {.question-icon}
+**Q4**
+:::
+::: {.question-text}
+Kako se narativi, tonalitet i sentiment mijenjaju u ovisnosti o aktualnim društvenim događajima, medijskim kampanjama i liturgijskim ciklusima?
+:::
+:::
+
+::: {.question-card}
+::: {.question-icon}
+**Q5**
+:::
+::: {.question-text}
+Kakva je mrežna dinamika i informacijski protok između različitih digitalnih platformi, medijskih izvora i komunikacijskih kanala koji obrađuju katoličku tematiku?
+:::
+:::
+
+:::
 
 ::: {.section-divider}
 :::
@@ -92,11 +133,45 @@ Naše istraživanje vođeno je sljedećim temeljnim pitanjima:
 Projekt integrira tehnike podatkovne znanosti s metodama empirijskog istraživanja u društvenim znanostima. Metodološki okvir projekta temelji se na sljedećim analitičkim pristupima:
 :::
 
-- **Web scraping i API integracije:** Automatizirano prikupljanje velikih količina podataka s informativnih portala i društvenih mreža.
-- **Obrada prirodnog jezika (NLP):** Tematsko modeliranje, analiza sentimenta i prepoznavanje imenovanih entiteta za strukturiranje i analizu tekstualnih podataka.
-- **Mrežna analiza:** Mapiranje odnosa između aktera, tema i medijskih izvora.
-- **Statistička analiza:** Identifikacija trendova, korelacija i obrazaca unutar prikupljenih podataka.
+::: {.methodology-grid}
 
+::: {.method-card}
+::: {.method-header}
+### Web scraping i API integracije
+:::
+::: {.method-description}
+Automatizirano i sistematsko prikupljanje velikih količina strukturiranih i nestrukturiranih podataka s informativnih portala, društvenih mreža i drugih digitalnih izvora putem naprednih tehnika ekstrakcije podataka
+:::
+:::
+
+::: {.method-card}
+::: {.method-header}
+### Računalna obrada prirodnog jezika
+:::
+::: {.method-description}
+Primjena naprednih NLP tehnika uključujući tematsko modeliranje, analizu sentimenta, prepoznavanje imenovanih entiteta te ekstrakciju diskurzivnih obrazaca za strukturiranje i analizu tekstualnih podataka
+:::
+:::
+
+::: {.method-card}
+::: {.method-header}
+### Mrežna analiza
+:::
+::: {.method-description}
+Mapiranje i vizualizacija složenih odnosa između aktera, tema i medijskih izvora primjenom metoda teorije grafova i analize društvenih mreža za identifikaciju ključnih čvorišta i komunikacijskih struktura
+:::
+:::
+
+::: {.method-card}
+::: {.method-header}
+### Statistička analiza i modeliranje
+:::
+::: {.method-description}
+Primjena kvantitativnih metoda za identifikaciju statistički značajnih trendova, korelacija i prediktivnih obrazaca unutar prikupljenih podataka te testiranje istraživačkih hipoteza
+:::
+:::
+
+:::
 
 ::: {.callout-note icon=false}
 ## Načela otvorene znanosti
@@ -141,6 +216,29 @@ Hrvatsko katoličko sveučilište (Komunikologija)
 ::: {.section-divider}
 :::
 
+## Rezultati i publikacije {.section-header}
+
+::: {.callout-tip icon=false}
+## Ažuriranje rezultata
+
+Ova sekcija se kontinuirano ažurira kako bi pružila uvid u najnovije rezultate projekta. Rezultati uključuju:
+
+- Recenzirane znanstvene radove u domaćim i međunarodnim časopisima
+- Izlaganja na znanstvenim konferencijama
+- Stručne analize i izvještaje
+- Podatkovne setove i analitičke modele
+- Medijske objave i prezentacije za širu javnost
+
+**Prvi znanstveni rezultati očekuju se tijekom 2025. godine.**
+:::
+
+::: {.publications-preview}
+### Planirane publikacije
+
+1. Šikić, L. i sur. *Metodološki okvir projekta DigiKat: Računalne društvene znanosti u analizi religijske komunikacije* (u pripremi, 2025)
+2. Šikić, L. i sur. *Godišnji izvještaj o projektu 2025* (planiran za prosinac 2025)
+3. Šikić, L. i sur. *Mapa katoličkog digitalnog medijskog ekosustava u Hrvatskoj* (u pripremi, 2026)
+:::
 
 ::: {.section-divider}
 :::
@@ -150,6 +248,7 @@ Hrvatsko katoličko sveučilište (Komunikologija)
 ::: {.citation-box}
 
 ::: {.citation-format}
+### Standardni bibliografski format
 
 Šikić, L. i sur. (2025.-2027.). *Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru*. Hrvatsko katoličko sveučilište. Dostupno na: [https://github.com/lusiki/DigiKat](https://github.com/lusiki/DigiKat)
 :::
