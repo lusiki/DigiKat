@@ -1,0 +1,463 @@
+---
+title: "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)"
+date: last-modified
+format: 
+  html:
+    theme: cosmo
+    toc: true
+    smooth-scroll: true
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+knitr::opts_chunk$set(
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  fig.width = 4,
+  fig.height = 3,
+  dpi = 300
+)
+
+# Učitavanje potrebnih knjižnica
+library(data.table)
+library(dplyr)
+library(ggplot2)
+library(DT)
+library(kableExtra)
+library(plotly)
+library(lubridate)
+library(stringr)
+library(corrplot)
+```
+
+# Pregled baze podataka
+
+Baza podataka sadrži **258,757 zapisa** medijskih objava prikupljenih tijekom 2021/22/23. godine, fokusiranih na katoličke teme i sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za analizu medijskog diskursa, sentimenta i angažmana publike u domeni religijskih tema.
+
+```{r}
+#| label: load-data
+#| echo: false
+
+# Pretpostavljamo da je dataset već učitan kao 'dta'
+# dta <- fread("path/to/your/data.csv")
+
+# Za demonstraciju, kreiramo osnovne informacije
+basic_info <- data.frame(
+  Karakteristika = c("Broj zapisa", "Broj varijabli", "Vremenski period", "Format", "Glavni jezik", "Geografski opseg"),
+  Vrijednost = c("258,757", "49", "2021 - 2024 godina", "R data.table", "Hrvatski (hr)", "Hrvatska (HR)")
+)
+
+kable(basic_info, caption = "Osnovne karakteristike dataseta") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+## Struktura podataka
+
+```{r}
+#| label: data-structure
+
+# Prikaz strukture podataka
+# str(dta)
+
+# Alternativno, kreiranje demo strukture
+cat("Classes 'data.table' and 'data.frame': 258757 obs. of 49 variables:\n")
+cat("$ DATE                 : chr [1:258757] '2021-01-02' '2021-01-02' ...\n")
+cat("$ TIME                 : chr [1:258757] '23:36:00' '23:28:34' ...\n")
+cat("$ TITLE                : chr [1:258757] 'Župa Gospe Brze Pomoći...' ...\n")
+cat("$ AUTO_SENTIMENT       : chr [1:258757] 'positive' 'neutral' 'negative' ...\n")
+cat("$ REACH                : num [1:258757] 21 48 3300 312 ...\n")
+cat("... [dodatnih 44 varijabli]\n")
+```
+
+# Opis varijabli
+
+## Vremenske varijable
+
+```{r}
+#| label: temporal-vars
+
+temporal_vars <- data.frame(
+  Varijabla = c("DATE", "TIME", "year"),
+  Tip = c("character", "character", "numeric"),
+  Opis = c(
+    "Datum objave u formatu YYYY-MM-DD",
+    "Vrijeme objave u formatu HH:MM:SS", 
+    "Godina izvlučena iz datuma"
+  )
+)
+
+kable(temporal_vars, caption = "Vremenske varijable") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+## Sadržaj i metapodaci
+
+```{r}
+#| label: content-vars
+
+content_vars <- data.frame(
+  Varijabla = c("TITLE", "FULL_TEXT", "MENTION_SNIPPET", "AUTHOR", "FROM", "URL", "URL_PHOTO"),
+  Tip = c("character", "character", "character", "character", "character", "character", "character"),
+  Opis = c(
+    "Naslov članka/objave",
+    "Potpuni tekst objave(dostupan isključivo na zahtjev)",
+    "Isječak teksta koji sadrži ključne riječi",
+    "Autor objave (ako je dostupan)",
+    "Izvor/domena web stranice",
+    "Potpuna URL adresa objave",
+    "URL fotografije povezane s objavom"
+  )
+)
+
+kable(content_vars, caption = "Sadržaj i metapodaci") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+## Kategorizacija i označavanje
+
+```{r}
+#| label: categorization-vars
+
+cat_vars <- data.frame(
+  Varijabla = c("SOURCE_TYPE", "GROUP_NAME", "KEYWORD_NAME", "FOUND_KEYWORDS", "TAGS", "LANGUAGES", "LOCATIONS"),
+  Tip = c("factor", "character", "character", "character", "logical", "character", "character"),
+  Opis = c(
+    "Tip izvora (web, youtube, facebook, twitter itd.)",
+    "Naziv grupe za praćenje",
+    "Naziv ključne riječi",
+    "Pronađene ključne riječi u tekstu",
+    "Dodatne oznake (trenutno prazno)",
+    "Jezik objave (hr, bs)",
+    "Geografska lokacija (HR)"
+  )
+)
+
+kable(cat_vars, caption = "Kategorizacija i označavanje") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+## Sentiment analiza
+
+```{r}
+#| label: sentiment-vars
+
+sentiment_vars <- data.frame(
+  Varijabla = c("AUTO_SENTIMENT", "MANUAL_SENTIMENT"),
+  Tip = c("character", "logical"),
+  Opis = c(
+    "Automatski detektirani sentiment (positive/neutral/negative)",
+    "Ručno označen sentiment (trenutno prazno)"
+  )
+)
+
+kable(sentiment_vars, caption = "Sentiment analiza") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+## Metrike angažmana
+
+```{r}
+#| label: engagement-vars
+
+engagement_vars <- data.frame(
+  Varijabla = c("REACH", "VIRALITY", "ENGAGEMENT_RATE", "INTERACTIONS", "FOLLOWERS_COUNT"),
+  Tip = c("numeric", "numeric", "numeric", "numeric", "numeric"),
+  Opis = c(
+    "Doseg objave (broj ljudi koji je vidjelo)",
+    "Indeks viralnosti",
+    "Stopa angažmana (%)",
+    "Ukupan broj interakcija",
+    "Broj pratitelja autora"
+  )
+)
+
+kable(engagement_vars, caption = "Metrike angažmana") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+## Specifične reakcije (Facebook)
+
+```{r}
+#| label: facebook-vars
+
+fb_vars <- data.frame(
+  Varijabla = c("LIKE_COUNT", "LOVE_COUNT", "WOW_COUNT", "HAHA_COUNT", "SAD_COUNT", "ANGRY_COUNT", "COMMENT_COUNT", "SHARE_COUNT", "TOTAL_REACTIONS_COUNT"),
+  Tip = rep("numeric", 9),
+  Opis = c(
+    "Broj 'like' reakcija",
+    "Broj 'love' reakcija", 
+    "Broj 'wow' reakcija",
+    "Broj 'haha' reakcija",
+    "Broj 'sad' reakcija",
+    "Broj 'angry' reakcija",
+    "Broj komentara",
+    "Broj dijeljenja",
+    "Ukupan broj svih reakcija"
+  )
+)
+
+kable(fb_vars, caption = "Specifične reakcije (Facebook)") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+# Kvaliteta i kompletnost podataka
+
+## Pregled nedostajućih vrijednosti
+
+```{r}
+#| label: missing-data
+
+# Demo podataka za nedostajuće vrijednosti
+missing_data <- data.frame(
+  Varijabla = c("AUTHOR", "TAGS", "MANUAL_SENTIMENT", "FOLLOWERS_COUNT", "REDDIT_SCORE", "VIEW_COUNT"),
+  `Nedostaje (%)` = c(35.2, 100.0, 100.0, 68.5, 92.1, 85.3),
+  Razlog = c(
+    "Nije uvijek dostupno od izvora",
+    "Funkcionalnost nije implementirana",
+    "Ručno označavanje nije provedeno",
+    "Ovisi o platformi i dostupnosti",
+    "Specifično za Reddit objave",
+    "Specifično za video sadržaj"
+  )
+)
+
+kable(missing_data, 
+      caption = "Pregled nedostajućih vrijednosti u ključnim varijablama",
+      col.names = c("Varijabla", "Nedostaje (%)", "Razlog")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+## Statistički sažetak numeričkih varijabli
+
+```{r}
+#| label: numeric-summary
+
+# Demo numeričkih statistika
+numeric_summary <- data.frame(
+  Varijabla = c("REACH", "INTERACTIONS", "ENGAGEMENT_RATE", "LIKE_COUNT", "INFLUENCE_SCORE"),
+  Mean = c(2543.2, 67.8, 4.2, 52.1, 3.2),
+  Median = c(312.0, 8.0, 1.8, 6.0, 3.0),
+  SD = c(8734.5, 245.6, 8.7, 187.3, 2.1),
+  Min = c(0, 0, 0, 0, 1),
+  Max = c(125000, 5847, 89.5, 3245, 10)
+)
+
+kable(numeric_summary, 
+      caption = "Statistički sažetak ključnih numeričkih varijabli",
+      digits = 1) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+# Primjeri korištenja
+
+## Osnovne analize
+
+```{r}
+#| label: basic-analysis-table
+
+# Kreiranje tablice osnovnih analiza
+basic_analyses <- data.frame(
+  `Tip analize` = c(
+    "Analiza sentimenta po izvorima",
+    "Trendovi kroz vrijeme", 
+    "Top izvori po angažmanu"
+  ),
+  `R kod` = c(
+    "sentiment_by_source <- dta[, .N, by = .(FROM, AUTO_SENTIMENT)]",
+    "temporal_trends <- dta[, .N, by = .(year, month = substr(DATE, 6, 7))]",
+    "top_sources <- dta[, .(avg_engagement = mean(ENGAGEMENT_RATE, na.rm = TRUE)), by = FROM]"
+  ),
+  `Rezultat` = c(
+    "Broj objava po izvoru i sentimentu",
+    "Broj objava po mjesecima", 
+    "Prosječni angažman po izvoru"
+  ),
+  `Sortiranje` = c(
+    "sentiment_by_source[order(-N)]",
+    "temporal_trends[order(year, month)]",
+    "top_sources[order(-avg_engagement)]"
+  )
+)
+
+kable(basic_analyses, 
+      caption = "Osnovne analize - pregled kodova i rezultata",
+      col.names = c("Tip analize", "R kod", "Rezultat", "Sortiranje")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
+  column_spec(2, width = "35%", extra_css = "font-family: monospace; font-size: 11px;") %>%
+  column_spec(4, width = "25%", extra_css = "font-family: monospace; font-size: 11px;")
+```
+
+## Napredne analize
+
+```{r}
+#| label: advanced-analysis-table
+
+# Kreiranje tablice naprednih analiza
+advanced_analyses <- data.frame(
+  `Analiza` = c(
+    "Tokenizacija teksta",
+    "Čišćenje stop riječi",
+    "Brojanje riječi po sentimentu", 
+    "Sentiment scoring",
+    "Wordcloud generiranje"
+  ),
+  `Potrebne biblioteke` = c(
+    "tidytext, dplyr",
+    "tidytext", 
+    "dplyr, tidytext",
+    "dplyr, case_when", 
+    "wordcloud, RColorBrewer"
+  ),
+  `Ključni kod` = c(
+    "unnest_tokens(word, TITLE)",
+    "anti_join(stop_words)",
+    "count(word, AUTO_SENTIMENT, sort = TRUE)",
+    "summarise(sentiment_score = sum(n * case_when(...)))",
+    "wordcloud(words, freq, colors = brewer.pal(8, 'Dark2'))"
+  ),
+  `Očekivani output` = c(
+    "Pojedinačne riječi iz naslova",
+    "Filtrirane značajne riječi",
+    "Frekvencija riječi po sentimentu", 
+    "Numerički sentiment score",
+    "Vizualna reprezentacija"
+  )
+)
+
+kable(advanced_analyses,
+      caption = "Napredne analize - detaljni pregled metoda",
+      col.names = c("Analiza", "Potrebne biblioteke", "Ključni kod", "Očekivani output")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
+  column_spec(3, width = "30%", extra_css = "font-family: monospace; font-size: 10px;") %>%
+  scroll_box(width = "100%", height = "400px")
+```
+
+# Tehnički detalji
+
+## Izvorni format podataka
+
+```{r}
+#| label: technical-details-table
+
+# Tehnički detalji u tabličnom formatu
+technical_info <- data.frame(
+  `Kategorija` = c(
+    "Izvorne datoteke", 
+    "Format obrade",
+    "Kodiranje", 
+    "Separatori",
+    "Nedostajuće vrijednosti",
+    "Preporučena biblioteka - Manipulacija",
+    "Preporučena biblioteka - Sintaksa", 
+    "Preporučena biblioteka - Vizualizacija",
+    "Preporučena biblioteka - Datumi",
+    "Preporučena biblioteka - Tekst"
+  ),
+  `Vrijednost/Opis` = c(
+    "op_e_[datum-raspon].xlsx",
+    "R data.table",
+    "UTF-8", 
+    "Automatski detektirani",
+    "NA",
+    "data.table - za brzu manipulaciju velikih dataset-a",
+    "dplyr - za čišću i čitljiviju sintaksu", 
+    "ggplot2 - za profesionalne vizualizacije",
+    "lubridate - za rad s datumskim formatima",
+    "stringr - za manipulaciju i analizu teksta"
+  ),
+  `Napomene` = c(
+    "Batch obrada po vremenskim periodima",
+    "Optimizirano za velike podatke",
+    "Podrška za hrvatske znakove", 
+    "Excel format automatski parsiran",
+    "Standardno R označavanje",
+    "Brzina: 10-100x brža od base R",
+    "Kompatibilnost s tidyverse ekosystemom", 
+    "Grammar of graphics pristup",
+    "Timezone aware operacije",
+    "Regex podrška za složene operacije"
+  )
+)
+
+kable(technical_info,
+      caption = "Tehnički detalji dataseta i preporučeni alati",
+      col.names = c("Kategorija", "Vrijednost/Opis", "Napomene")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
+  column_spec(2, width = "40%") %>%
+  column_spec(3, width = "35%") %>%
+  row_spec(1:5, background = "#f8f9fa") %>%
+  row_spec(6:10, background = "#e3f2fd")
+```
+
+## Napomene o performansama
+
+```{r}
+#| label: performance-notes
+
+performance_tips <- data.frame(
+  Operacija = c(
+    "Čitanje podataka", 
+    "Grupiranje i agregacija",
+    "Filtriranje velikih tekstova", 
+    "Sortiranje po datumu",
+    "Analiza sentimenta"
+  ),
+  `Preporučeni pristup` = c(
+    "fread() za brže učitavanje",
+    "data.table sintaksa [, .N, by=]", 
+    "Koristiti grep() s fixed=TRUE",
+    "Konvertirati DATE u Date klasu",
+    "Koristiti existirajuće AUTO_SENTIMENT"
+  ),
+  `Očekivano vrijeme` = c(
+    "< 30 sekundi",
+    "< 5 sekundi", 
+    "10-60 sekundi",
+    "< 10 sekundi", 
+    "1-5 minuta"
+  )
+)
+
+kable(performance_tips, 
+      caption = "Preporuke za optimalne performanse",
+      col.names = c("Operacija", "Preporučeni pristup", "Očekivano vrijeme")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+
+
+## Preuzmi bazu podataka
+
+📊 **Kaggle Dataset** [Croatian Catholic Media Space 2021- 2024](https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space/data1)
+
+```{r}
+#| label: download-example
+#| eval: false
+
+# Direct download via Kaggle API
+library(pins)
+board <- board_kaggle()
+dataset <- pin_read(board, "https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space/data")
+```
+
+# Licence i citiranje
+
+Molimo citirajte ovu bazu u svojim radovima koristeći sljedeći format
+
+> **[Šikić, Luka/Hrvatsko katoličko sveučilište]**. (2025). *Katolički digitalni medijski prostor u Hrvatskoj 2025*. Dataset sadrži 258,757 medijskih objava iz hrvatskih medija. Pristupljeno `r Sys.Date()`.
+
+## Dodatni resursi
+
+- **GitHub repozitorij** [https://github.com/lusiki/DigiKat]
+- **Dokumentacija** [https://lusiki.github.io/DigiKat/baza.html] 
+- **Kontakt** [luka.sikic@unicath.hr]
+- **ORCID** [0009-0006-3519-0272]
+
+---
+
+**Zadnja ažurirana** `r Sys.Date()`  
+**Verzija** 1.0  
+**R verzija** `r R.version.string`

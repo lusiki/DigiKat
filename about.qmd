@@ -39,6 +39,7 @@ Ovaj projekt je osmišljen kako bi stvorio trajnu vrijednost za znanstvenu zajed
 ### Razvoj vještina
 
 Sudionici projekta imat će priliku raditi s najnovijim računalnim tehnikama i alatima. Kroz praktičan rad, razvijat će vještine u:
+<br>
 * Analizi velikih količina podataka (Big Data).
 * Rudarenju teksta (Text Mining).
 * Statističkom modeliranju.
