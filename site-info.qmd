@@ -1,0 +1,12 @@
+---
+title: "O stranici"
+---
+
+Ova stranica je napravljena u [Quarto](https://quarto.org/) kroz [Positron](https://positron.posit.co/).
+
+```{r}
+#| label: session-info
+#| echo: false
+
+sessionInfo()
+```

@@ -1,736 +1,754 @@
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<html>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
 
-<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta charset="utf-8" />
-<meta name="generator" content="pandoc" />
-<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+<meta name="author" content="Istraživački tim projekta, Hrvatsko katoličko sveučilište">
+<meta name="dcterms.date" content="2026-01-05">
 
-
-<meta name="author" content="Istraživački tim projekta, Hrvatsko katoličko sveučilište" />
-
-
-<title>Atmosfera diskursa: Emocionalna i konfliktna mapa katoličkog digitalnog prostora</title>
-
-<script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
-<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
-<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<style>h1 {font-size: 34px;}
-       h1.title {font-size: 38px;}
-       h2 {font-size: 30px;}
-       h3 {font-size: 24px;}
-       h4 {font-size: 18px;}
-       h5 {font-size: 16px;}
-       h6 {font-size: 12px;}
-       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
-       pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
-<script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/navigation-1.1/codefolding.js"></script>
-<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
-
-<style type="text/css">
-  code{white-space: pre-wrap;}
-  span.smallcaps{font-variant: small-caps;}
-  span.underline{text-decoration: underline;}
-  div.column{display: inline-block; vertical-align: top; width: 50%;}
-  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-  ul.task-list{list-style: none;}
-    </style>
-
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
-
-
-
-
-
-
-
-
-
-<style type = "text/css">
-.main-container {
-  max-width: 940px;
-  margin-left: auto;
-  margin-right: auto;
-}
-img {
-  max-width:100%;
-}
-.tabbed-pane {
-  padding-top: 12px;
-}
-.html-widget {
-  margin-bottom: 20px;
-}
-button.code-folding-btn:focus {
-  outline: none;
-}
-summary {
-  display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
-}
-pre code {
-  padding: 0;
+<title>Emocionalna i konfliktna mapa katoličkog digitalnog prostora – DigiKat</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
 }
 </style>
 
 
-<style type="text/css">
-.dropdown-submenu {
-  position: relative;
-}
-.dropdown-submenu>.dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-  border-radius: 0 6px 6px 6px;
-}
-.dropdown-submenu:hover>.dropdown-menu {
-  display: block;
-}
-.dropdown-submenu>a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-.dropdown-submenu:hover>a:after {
-  border-left-color: #adb5bd;
-}
-.dropdown-submenu.pull-left {
-  float: none;
-}
-.dropdown-submenu.pull-left>.dropdown-menu {
-  left: -100%;
-  margin-left: 10px;
-  border-radius: 6px 0 6px 6px;
-}
-</style>
-
-<script type="text/javascript">
-// manage active state of menu based on current page
-$(document).ready(function () {
-  // active menu anchor
-  href = window.location.pathname
-  href = href.substr(href.lastIndexOf('/') + 1)
-  if (href === "")
-    href = "index.html";
-  var menuAnchor = $('a[href="' + href + '"]');
-
-  // mark the anchor link active (and if it's in a dropdown, also mark that active)
-  var dropdown = menuAnchor.closest('li.dropdown');
-  if (window.bootstrap) { // Bootstrap 4+
-    menuAnchor.addClass('active');
-    dropdown.find('> .dropdown-toggle').addClass('active');
-  } else { // Bootstrap 3
-    menuAnchor.parent().addClass('active');
-    dropdown.addClass('active');
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
-
-  // Navbar adjustments
-  var navHeight = $(".navbar").first().height() + 15;
-  var style = document.createElement('style');
-  var pt = "padding-top: " + navHeight + "px; ";
-  var mt = "margin-top: -" + navHeight + "px; ";
-  var css = "";
-  // offset scroll position for anchor links (for fixed navbar)
-  for (var i = 1; i <= 6; i++) {
-    css += ".section h" + i + "{ " + pt + mt + "}\n";
-  }
-  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
-  document.head.appendChild(style);
-});
-</script>
-
-<!-- tabsets -->
-
-<style type="text/css">
-.tabset-dropdown > .nav-tabs {
-  display: inline-table;
-  max-height: 500px;
-  min-height: 44px;
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "\e259";
-  font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "\e258";
-  font-family: 'Glyphicons Halflings';
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs > li.active {
-  display: block;
-}
-
-.tabset-dropdown > .nav-tabs > li > a,
-.tabset-dropdown > .nav-tabs > li > a:focus,
-.tabset-dropdown > .nav-tabs > li > a:hover {
-  border: none;
-  display: inline-block;
-  border-radius: 4px;
-  background-color: transparent;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
-  display: block;
-  float: none;
-}
-
-.tabset-dropdown > .nav-tabs > li {
-  display: none;
-}
-</style>
-
-<!-- code folding -->
-<style type="text/css">
-.code-folding-btn { margin-bottom: 4px; }
-</style>
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
 
 
-
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
-
+<link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="floating nav-fixed quarto-light">
 
-
-<div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">DigiKat</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Osnovne informacije</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">O projektu</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./schedule.html"> 
+<span class="menu-text">Projektni raspored</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./baza.html"> 
+<span class="menu-text">Baza podataka</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mapa-medijskog-prostora" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Mapa medijskog prostora</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-mapa-medijskog-prostora">    
+        <li>
+    <a class="dropdown-item" href="./mapa.html">
+ <span class="dropdown-text">Mapa ekosustava</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./mapa_stats.html">
+ <span class="dropdown-text">Tematske struje</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./diskurs.html">
+ <span class="dropdown-text">Atmosfera diskursa</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./događaji.html">
+ <span class="dropdown-text">Fokus na događaje i kampanje</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tematska-istraživanja" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tematska istraživanja</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tematska-istraživanja">    
+        <li class="dropdown-header">Analiza self-help sadržaja na YouTube-u</li>
+        <li class="dropdown-header">Hodočasnički turizam</li>
+        <li class="dropdown-header">Demokršćanstvo</li>
+        <li class="dropdown-header">Katoličko obrazovanje</li>
+        <li class="dropdown-header">Prikazivanje katoličkih svetaca i svetica</li>
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./news.html"> 
+<span class="menu-text">Obavijesti</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./resources.html"> 
+<span class="menu-text">Resursi</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./site-info.html"> 
+<span class="menu-text">O stranici</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/lusiki/DigiKat"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
 </div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
-
-
-
-
-<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">DigiKat</a>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#uvod" id="toc-uvod" class="nav-link active" data-scroll-target="#uvod">Uvod</a></li>
+  <li><a href="#dvoslojna-emocionalna-analiza-tonalitet-vs.-psihologija" id="toc-dvoslojna-emocionalna-analiza-tonalitet-vs.-psihologija" class="nav-link" data-scroll-target="#dvoslojna-emocionalna-analiza-tonalitet-vs.-psihologija">Dvoslojna emocionalna analiza Tonalitet vs.&nbsp;psihologija</a>
+  <ul class="collapse">
+  <li><a href="#matrica-tona-i-psihologije" id="toc-matrica-tona-i-psihologije" class="nav-link" data-scroll-target="#matrica-tona-i-psihologije">Matrica tona i psihologije</a></li>
+  </ul></li>
+  <li><a href="#relativni-indeks-konflikta-rci" id="toc-relativni-indeks-konflikta-rci" class="nav-link" data-scroll-target="#relativni-indeks-konflikta-rci">Relativni indeks konflikta (RCI)</a>
+  <ul class="collapse">
+  <li><a href="#mapa-medijskih-strategija-konflikta" id="toc-mapa-medijskih-strategija-konflikta" class="nav-link" data-scroll-target="#mapa-medijskih-strategija-konflikta">Mapa medijskih strategija konflikta</a></li>
+  </ul></li>
+  <li><a href="#mreža-narativne-atmosfere" id="toc-mreža-narativne-atmosfere" class="nav-link" data-scroll-target="#mreža-narativne-atmosfere">Mreža narativne atmosfere</a></li>
+  <li><a href="#zaključak" id="toc-zaključak" class="nav-link" data-scroll-target="#zaključak">Zaključak</a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li>
-  <a href="index.html">Osnovne informacije</a>
-</li>
-<li>
-  <a href="about.html">O projektu</a>
-</li>
-<li>
-  <a href="schedule.html">Projektni raspored</a>
-</li>
-<li>
-  <a href="baza.html">Baza podataka</a>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Mapa medijskog prostora
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="mapa.html">Mapa ekosustava</a>
-    </li>
-    <li>
-      <a href="mapa_stats.html">Tematske struje</a>
-    </li>
-    <li>
-      <a href="diskurs.html">Atmosfera diskursa</a>
-    </li>
-    <li>
-      <a href="događaji.html">Fokus na događaje i kampanje</a>
-    </li>
-  </ul>
-</li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Tematska istraživanja
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="">Analiza self-help sadržaja na YouTube-u</a>
-    </li>
-    <li>
-      <a href="">Hodčasnički turizam</a>
-    </li>
-    <li>
-      <a href="">Demokršćanstvo</a>
-    </li>
-    <li>
-      <a href="">Katoličko obrazovanje</a>
-    </li>
-    <li>
-      <a href="">Prikazivanje katoličkih svetaca i svetica</a>
-    </li>
-  </ul>
-</li>
-<li>
-  <a href="news.html">Obavijesti</a>
-</li>
-<li>
-  <a href="resources.html">Resursi</a>
-</li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-  <a href="site-info.html">O stranici</a>
-</li>
-<li>
-  <a href="https://lusiki.github.io/DigiKat/index.html">
-    <span class="ion ion-social-github"></span>
-     
-  </a>
-</li>
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div><!--/.container -->
-</div><!--/.navbar -->
+<!-- main -->
+<main class="content" id="quarto-document-content">
 
-<div id="header">
-
-<div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
-<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
-<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
-<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
-</ul>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Emocionalna i konfliktna mapa katoličkog digitalnog prostora</h1>
 </div>
 
 
 
-<h1 class="title toc-ignore">Atmosfera diskursa: Emocionalna i
-konfliktna mapa katoličkog digitalnog prostora</h1>
-<h4 class="author">Istraživački tim projekta, Hrvatsko katoličko
-sveučilište</h4>
-<h4 class="date">22. kolovoza 2025.</h4>
+<div class="quarto-title-meta">
 
-</div>
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Istraživački tim projekta, Hrvatsko katoličko sveučilište </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 5, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
 
 
-<div id="uvod-kako-se-govori" class="section level2">
-<h2>Uvod: “Kako” se govori</h2>
-<p>Nakon što smo mapirali <em>tko</em> govori i <em>o čemu</em>, ova
-treća faza analize bavi se najsuptilnijim, ali možda i najvažnijim
-pitanjem: <strong>kakva je atmosfera digitalnog diskursa?</strong>
-Zanima nas <em>kako</em> se o temama govori – s kojim emocionalnim
-tonom, kojim psihološkim apelima i s kojim intenzitetom konflikta.</p>
-<p>Ovaj izvještaj uvodi <strong>inovativne, kontekstualno svjesne
-metrike</strong> za mjerenje atmosfere, odmičući se od jednostavnih
-kategorija prema dubinskom razumijevanju komunikacijskih strategija. Naš
-pristup sastoji se od tri koraka: 1. <strong>Dvoslojna Emocionalna
-Analiza:</strong> Razdvajamo površinski tonalitet od dubinskih
-psiholoških procesa. 2. <strong>Relativni Indeks Konflikta
-(RCI):</strong> Mjerimo “neočekivanu” agresivnost jezika. 3.
-<strong>Mapa Narativne Atmosfere:</strong> Vizualiziramo kako se
-atmosfera mijenja kada se teme spoje.</p>
-<hr />
-</div>
-<div id="dvoslojna-emocionalna-analiza-tonalitet-vs.-psihologija"
-class="section level2">
-<h2>1. Dvoslojna emocionalna analiza: Tonalitet vs. psihologija</h2>
-<p>Da bismo razumjeli atmosferu, moramo razlikovati dvije stvari: je li
-tekst napisan u <strong>pozitivnom/negativnom tonu</strong> (tonalitet)
-i kojim se <strong>psihološkim apelima</strong> (strah, nada,
-povjerenje) služi da bi prenio poruku.</p>
-<div id="matrica-tona-i-psihologije" class="section level3">
-<h3>Matrica tona i psihologije</h3>
-<p>Sljedeća vizualizacija prikazuje kako se <strong>tonalitet (boja
-ćelije)</strong> mijenja ovisno o <strong>dominantnom psihološkom
-procesu (stupci)</strong> unutar svake <strong>teme (redovi)</strong>.
-Plave ćelije označavaju pozitivan tonalitet, a crvene negativan, dok
-desni stupac prikazuje ukupni prosječni sentiment svake teme.</p>
-<p>Ova matrica otkriva sofisticirane strategije medijskog uokvirivanja i
-donosi nekoliko ključnih uvida:</p>
-<ul>
-<li><strong>Kontekst je ključan:</strong> Tonalitet teme nije fiksan.
-Vidljivo je da gotovo sve teme postaju <strong>negativne (crvena
-boja)</strong> kada su uokvirene <strong>Ljutnjom</strong>,
-<strong>Strahom</strong> ili <strong>Tugom</strong>. S druge strane,
-okviri <strong>Povjerenja</strong>, <strong>Radosti</strong> i
-<strong>Iščekivanja</strong> gotovo univerzalno proizvode
-<strong>pozitivan tonalitet (plava boja)</strong>.</li>
-<li><strong>Identifikacija “vrućih zočaka”:</strong> Teme poput
-<strong><code>PAPE_I_VATIKAN</code></strong> i
-<strong><code>POLITIKA_I_ODNOS_S_DRZAVOM</code></strong> pokazuju
-najveći raspon sentimenata – od izrazito negativnih do izrazito
-pozitivnih. To ih identificira kao ključna “bojna polja” narativa, gdje
-je izbor emocionalnog okvira presudan za oblikovanje percepcije
-publike.</li>
-<li><strong>Paradoks emocija:</strong> Najzanimljiviji nalaz je uloga
-emocije <strong>Gađenja</strong>. Kada je usmjerena na temu
-<code>POLITIKE</code> (vjerojatno na korupciju ili nemoral), stvara
-izrazito pozitivan sentiment (<strong>+0.79</strong>), signalizirajući
-moralnu osudu. Međutim, kada je usmjerena na <code>PAPE_I_VATIKAN</code>
-(vjerojatno na unutarcrkvene probleme), stvara najnegativniji sentiment
-u cijeloj matrici (<strong>-0.22</strong>).</li>
-</ul>
-<p>Ukratko, ova analiza pokazuje da mediji ne prenose samo informacije,
-već aktivno <strong>upravljaju atmosferom</strong> oko pojedine teme
-strateškim odabirom emocionalnog ključa u kojem je predstavljaju.</p>
-<p><img src="diskurs_files/figure-html/plot-emotion-heatmap-1.png" width="2000" /></p>
-<hr />
-</div>
-</div>
-<div id="relativni-indeks-konflikta-rci" class="section level2">
-<h2>2. Relativni indeks konflikta (RCI)</h2>
-<p>Standardna mjerenja ne uzimaju u obzir kontekst. Nije isto koristiti
-konfliktan jezik u članku o ratu i u članku o duhovnosti.
-<strong>Relativni indeks konflikta (RCI)</strong> mjeri koliko je neki
-članak <strong>neočekivano agresivniji ili pomirljiviji</strong> od
-onoga što je uobičajeno za njegov medij i njegovu temu.</p>
-<div id="mapa-medijskih-strategija-konflikta" class="section level3">
-<h3>Mapa medijskih strategija konflikta</h3>
-<p>Standardna mjerenja ne uzimaju u obzir kontekst. Nije isto koristiti
-konfliktan jezik u članku o ratu i u članku o duhovnosti.
-<strong>Relativni indeks konflikta (RCI)</strong> mjeri koliko je neki
-članak <strong>neočekivano agresivniji ili pomirljiviji</strong> od
-onoga što je uobičajeno za njegov medij i njegovu temu.</p>
-<p>Sljedeći grafikon koristi tu mjeru kako bi mapirao medije na temelju
-njihove strategije korištenja konfliktnog jezika. *
-<strong>X-os:</strong> Prosječna, “kućna” razina konfliktnog jezika
-medija (<code>CLI</code>). Što je medij više desno, to je njegov ton u
-prosjeku agresivniji. * <strong>Y-os:</strong> Varijabilnost
-(<code>RCI</code>) u korištenju konfliktnog jezika. Što je medij više na
-grafikonu, to je njegov ton nepredvidljiviji – ponekad je miran, a
-ponekad izrazito agresivan. * <strong>Veličina Točke:</strong> Ukupna
-prisutnost medija u diskursu.</p>
-<p>Ova mapa otkriva četiri fundamentalno različita modela komunikacije u
-hrvatskom digitalnom prostoru:</p>
-<ol style="list-style-type: decimal">
-<li><strong>Gore desno - “Strateški eskalatori”:</strong> Ovdje se
-nalazi gusta skupina <strong>velikih mainstream medija</strong>
-(<code>index.hr</code>, <code>24sata.hr</code>,
-<code>dnevnik.hr</code>). Karakterizira ih visok prosječni konflikt i
-visoka nepredvidivost. Njihova strategija je <strong>doziranje
-konflikta</strong>: koriste ga snažno kada žele privući pažnju na
-“veliku priču”, ali su u drugim situacijama umjereniji.</li>
-<li><strong>Dolje desno - “Dosljedni kritičari”:</strong> U ovom
-kvadrantu grupirani su <strong>desno orijentirani i aktivistički
-portali</strong> (<code>narod.hr</code>, <code>dnevno.hr</code>,
-<code>dragovoljac.com</code>). Njihov ton je konstantno visok u
-konfliktnosti, ali predvidiv. Oni ne “biraju bitke” – njihova je
-uređivačka politika inherentno konfliktna i kritička.</li>
-<li><strong>Gore lijevo - “Pragmatični promatrači”:</strong> Ovdje
-nalazimo <strong>tradicionalne medije</strong>
-(<code>vecernji.hr</code>, <code>slobodnadalmacija.hr</code>,
-<code>hrt.hr</code>). Njihov prosječni ton je umjereniji, ali visoka
-nepredvidivost pokazuje da zadržavaju sposobnost snažne eskalacije
-konflikta kada procijene da je to potrebno.</li>
-<li><strong>Dolje lijevo - “Graditelji zajednice”:</strong> Ovaj prostor
-pripada <strong>vjerskim medijima i YouTube kanalima</strong>
-(<code>hkm.hr</code>, <code>laudato.hr</code>, <code>LaudatoTV</code>).
-Njihova strategija je dijametralno suprotna ostalima: dosljedno nizak i
-predvidiv ton konflikta, s fokusom na informiranje i izgradnju
-zajednice, a ne na stvaranje prijepora.</li>
+</header>
+
+
+<section id="uvod" class="level2">
+<h2 class="anchored" data-anchor-id="uvod">Uvod</h2>
+<p>Nakon što smo mapirali tko govori i o čemu, ova treća faza analize bavi se najsuptilnijim, ali možda i najvažnijim pitanjem kakva je atmosfera digitalnog diskursa? Zanima nas kako se o temama govori s kojim emocionalnim tonom, kojim psihološkim apelima i s kojim intenzitetom konflikta.</p>
+<p>Ovaj izvještaj uvodi inovativne, kontekstualno svjesne metrike za mjerenje atmosfere, odmičući se od jednostavnih kategorija prema dubinskom razumijevanju komunikacijskih strategija. Naš pristup sastoji se od tri koraka.</p>
+<ol type="1">
+<li>Dvoslojna emocionalna analiza: Razdvajamo površinski tonalitet od dubinskih psiholoških procesa.</li>
+<li>Relativni indeks konflikta (RCI): Mjerimo neočekivanu agresivnost jezika.</li>
+<li>Mapa narativne atmosfere: Vizualiziramo kako se atmosfera mijenja kada se teme spoje.</li>
 </ol>
-<p><img src="diskurs_files/figure-html/plot-rci-strategy-1.png" width="2000" /></p>
-<hr />
-</div>
-</div>
-<div id="sinteza-mreža-narativne-atmosfere" class="section level2">
-<h2>3. Sinteza: Mreža narativne atmosfere</h2>
-<p>Konačno, spajamo sve u jednu vizualizaciju. Mreža povezanosti tema
-prikazuje kako se teme spajaju u šire narativne okvire. Izgled svake
-<strong>veze</strong> otkriva atmosferu tih spojeva:</p>
+<hr>
+</section>
+<section id="dvoslojna-emocionalna-analiza-tonalitet-vs.-psihologija" class="level2">
+<h2 class="anchored" data-anchor-id="dvoslojna-emocionalna-analiza-tonalitet-vs.-psihologija">Dvoslojna emocionalna analiza Tonalitet vs.&nbsp;psihologija</h2>
+<p>Da bismo razumjeli atmosferu, moramo razlikovati dvije stvari. Je li tekst napisan u pozitivnom ili negativnom tonu (tonalitet) i kojim se psihološkim apelima (strah, nada, povjerenje) služi da bi prenio poruku.</p>
+<section id="matrica-tona-i-psihologije" class="level3">
+<h3 class="anchored" data-anchor-id="matrica-tona-i-psihologije">Matrica tona i psihologije</h3>
+<p>Sljedeća vizualizacija prikazuje kako se tonalitet (boja ćelije) mijenja ovisno o dominantnom psihološkom procesu (stupci) unutar svake teme (redovi). Plave ćelije označavaju pozitivan tonalitet, a crvene negativan, dok desni stupac prikazuje ukupni prosječni sentiment svake teme.</p>
+<p>Ova matrica otkriva sofisticirane strategije medijskog uokvirivanja i donosi nekoliko ključnih uvida.</p>
 <ul>
-<li><strong>Boja veze:</strong> Prosječni tonalitet (Plavo =
-pozitivno).</li>
-<li><strong>Debljina veze:</strong> Prosječni intenzitet konflikta
-(Deblje = konfliktnije).</li>
-<li><strong>Prozirnost veze:</strong> Pouzdanost veze, tj. broj članaka
-na kojima se temelji (Tamnije = pouzdanije).</li>
+<li>Kontekst je ključan. Tonalitet teme nije fiksan. Vidljivo je da gotovo sve teme postaju negativne (crvena boja) kada su uokvirene Ljutnjom, Strahom ili Tugom. S druge strane, okviri Povjerenja, Radosti i Iščekivanja gotovo univerzalno proizvode pozitivan tonalitet (plava boja).</li>
+<li>Identifikacija vrućih zona. Teme poput PAPE I VATIKAN i POLITIKA I ODNOS S DRZAVOM pokazuju najveći raspon sentimenata od izrazito negativnih do izrazito pozitivnih. To ih identificira kao ključna bojna polja narativa, gdje je izbor emocionalnog okvira presudan za oblikovanje percepcije publike.</li>
+<li>Paradoks emocija. Najzanimljiviji nalaz je uloga emocije Gađenja. Kada je usmjerena na temu POLITIKE (vjerojatno na korupciju ili nemoral), stvara izrazito pozitivan sentiment, signalizirajući moralnu osudu. Međutim, kada je usmjerena na PAPE I VATIKAN (vjerojatno na unutarcrkvene probleme), stvara najnegativniji sentiment u cijeloj matrici.</li>
 </ul>
-<p>Ova mreža otkriva duboku, temeljnu strukturu hrvatskog katoličkog
-digitalnog prostora:</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Dva “Narativna svemira”:</strong> Mreža nije kaotična;
-vidljiva je jasna podjela.</p>
+<p>Ukratko, ova analiza pokazuje da mediji ne prenose samo informacije već aktivno upravljaju atmosferom oko pojedine teme strateškim odabirom emocionalnog ključa u kojem je predstavljaju.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="diskurs_files/figure-html/plot-emotion-heatmap-1.png" class="img-fluid figure-img" width="2000"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="relativni-indeks-konflikta-rci" class="level2">
+<h2 class="anchored" data-anchor-id="relativni-indeks-konflikta-rci">Relativni indeks konflikta (RCI)</h2>
+<p>Standardna mjerenja ne uzimaju u obzir kontekst. Nije isto koristiti konfliktan jezik u članku o ratu i u članku o duhovnosti. Relativni indeks konflikta (RCI) mjeri koliko je neki članak neočekivano agresivniji ili pomirljiviji od onoga što je uobičajeno za njegov medij i njegovu temu.</p>
+<section id="mapa-medijskih-strategija-konflikta" class="level3">
+<h3 class="anchored" data-anchor-id="mapa-medijskih-strategija-konflikta">Mapa medijskih strategija konflikta</h3>
+<p>Sljedeći grafikon koristi RCI mjeru kako bi mapirao medije na temelju njihove strategije korištenja konfliktnog jezika.</p>
 <ul>
-<li><strong>“Društveno-politička arena” (lijevi i donji dio):</strong>
-Gusta isprepletenost tema poput <code>POLITIKE</code>,
-<code>POVIJESTI</code>, <code>BIOETIKE</code>, i
-<code>UNUTARCRKVENIH PRIJEPORA</code>. Veze između ovih tema su
-<strong>izrazito debele</strong>, što znači da su <strong>visoko
-konfliktne</strong>. Ovo je epicentar svih prijepora i “kulturalnih
-ratova”.</li>
-<li><strong>“Pastoralno-institucionalna jezgra” (gornji i desni
-dio):</strong> Ovdje se nalaze teme <code>DUHOVNOSTI</code>,
-<code>TEOLOGIJE</code>, i <code>CRKVENOG UPRAVLJANJA</code>. Veze
-<em>unutar</em> ovog klastera i prema njemu su <strong>znatno
-tanje</strong>, što ukazuje na puno nižu razinu konflikta. Ovo je svijet
-unutarcrkvenih, doktrinalnih i duhovnih rasprava.</li>
+<li>X os: Prosječna, kućna razina konfliktnog jezika medija (CLI). Što je medij više desno, to je njegov ton u prosjeku agresivniji.</li>
+<li>Y os: Varijabilnost (RCI) u korištenju konfliktnog jezika. Što je medij više na grafikonu, to je njegov ton nepredvidljiviji ponekad je miran, a ponekad izrazito agresivan.</li>
+<li>Veličina točke: Ukupna prisutnost medija u diskursu.</li>
+</ul>
+<p>Ova mapa otkriva četiri fundamentalno različita modela komunikacije u hrvatskom digitalnom prostoru.</p>
+<ol type="1">
+<li>Gore desno (strateški eskalatori): Ovdje se nalazi gusta skupina velikih mainstream medija (index.hr, 24sata.hr, dnevnik.hr). Karakterizira ih visok prosječni konflikt i visoka nepredvidivost. Njihova strategija je doziranje konflikta. Koriste ga snažno kada žele privući pažnju na veliku priču, ali su u drugim situacijama umjereniji.</li>
+<li>Dolje desno (dosljedni kritičari): U ovom kvadrantu grupirani su desno orijentirani i aktivistički portali (narod.hr, dnevno.hr, dragovoljac.com). Njihov ton je konstantno visok u konfliktnosti, ali predvidiv. Oni ne biraju bitke. Njihova je uređivačka politika inherentno konfliktna i kritička.</li>
+<li>Gore lijevo (pragmatični promatrači): Ovdje nalazimo tradicionalne medije (vecernji.hr, slobodnadalmacija.hr, hrt.hr). Njihov prosječni ton je umjereniji, ali visoka nepredvidivost pokazuje da zadržavaju sposobnost snažne eskalacije konflikta kada procijene da je to potrebno.</li>
+<li>Dolje lijevo (graditelji zajednic)e: Ovaj prostor pripada vjerskim medijima i YouTube kanalima (hkm.hr, laudato.hr, LaudatoTV). Njihova strategija je dijametralno suprotna ostalima. Dosljedno nizak i predvidiv ton konflikta, s fokusom na informiranje i izgradnju zajednice, a ne na stvaranje prijepora.</li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="diskurs_files/figure-html/plot-rci-strategy-1.png" class="img-fluid figure-img" width="2000"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="mreža-narativne-atmosfere" class="level2">
+<h2 class="anchored" data-anchor-id="mreža-narativne-atmosfere">Mreža narativne atmosfere</h2>
+<p>Konačno, spajamo sve u jednu vizualizaciju. Mreža povezanosti tema prikazuje kako se teme spajaju u šire narativne okvire. Izgled svake veze otkriva atmosferu tih spojeva.</p>
+<ul>
+<li>Boja veze: Prosječni tonalitet (Plavo = pozitivno).</li>
+<li>Debljina veze: Prosječni intenzitet konflikta (Deblje = konfliktnije).</li>
+<li>Prozirnost veze: Pouzdanost veze, tj. broj članaka na kojima se temelji (Tamnije = pouzdanije).</li>
+</ul>
+<p>Ova mreža otkriva temeljnu strukturu hrvatskog katoličkog digitalnog prostora.</p>
+<ol type="1">
+<li><p>Dva narativna svemira. Mreža nije kaotična. Vidljiva je jasna podjela.</p>
+<ul>
+<li>Društveno politička arena (lijevi i donji dio): Gusta isprepletenost tema poput POLITIKE, POVIJESTI, BIOETIKE i UNUTARCRKVENIH PRIJEPORA. Veze između ovih tema su izrazito debele, što znači da su visoko konfliktne. Ovo je epicentar svih prijepora i kulturalnih ratova.</li>
+<li>Pastoralno institucionalna jezgra (gornji i desni dio): Ovdje se nalaze teme DUHOVNOSTI, TEOLOGIJE i CRKVENOG UPRAVLJANJA. Veze unutar ovog klastera i prema njemu su znatno tanje, što upućuje na puno nižu razinu konflikta. Ovo je svijet unutarcrkvenih, doktrinalnih i duhovnih rasprava.</li>
 </ul></li>
-<li><p><strong>Konflikt kao ključni diferencijator:</strong>
-Najiznenađujući nalaz je gotovo potpuno odsustvo negativno obojenih
-veza. To ne znači da nema kritike, već da je <strong>intenzitet
-konflikta (debljina veze)</strong> ključni element koji razlikuje
-narative. Najdeblje i najtamnije linije – koje predstavljaju
-najpouzdanije i najkonfliktnije narativne spojeve – jasno povezuju teme
-<code>BIOETIKE</code>, <code>POLITIKE</code>,
-<code>PAPE I VATIKANA</code> i <code>POVIJESTI</code>. Ovo je
-“četverokut prijepora” gdje se odvijaju najžešće medijske
-rasprave.</p></li>
-<li><p><strong>Uloga “mostova”:</strong> Teme poput
-<code>CRKVENO UPRAVLJANJE</code> i <code>DIGITALNA EVANGELIZACIJA</code>
-pozicionirane su centralno i služe kao mostovi koji povezuju ova dva
-svijeta, imajući snažne veze i prema “političkom” i prema “pastoralnom”
-klasteru.</p></li>
+<li><p>Konflikt kao ključni diferencijator. Najiznenađujući nalaz je gotovo potpuno odsustvo negativno obojenih veza. To ne znači da nema kritike, već da je intenzitet konflikta (debljina veze) ključni element koji razlikuje narative. Najdeblje i najtamnije linije koje predstavljaju najpouzdanije i najkonfliktnije narativne spojeve jasno povezuju teme BIOETIKE, POLITIKE, PAPE I VATIKANA i POVIJESTI. Ovo je četverokut prijepora gdje se odvijaju najžešće medijske rasprave.</p></li>
+<li><p>Uloga mostova. Teme poput CRKVENO UPRAVLJANJE i DIGITALNA EVANGELIZACIJA pozicionirane su centralno i služe kao mostovi koji povezuju ova dva svijeta, imajući snažne veze i prema političkom i prema pastoralnom klasteru.</p></li>
 </ol>
-<p>Ukratko, ova mreža je vizualni dokaz postojanja dva različita
-komunikacijska modela: jedan koji funkcionira na “gorivu”
-<strong>visokog konflikta</strong> i drugi koji teži <strong>mirnom i
-ne-konfliktnom</strong> izričaju. Ključne bitke za javno mnijenje vode
-se na “mostovima” između ova dva svijeta.</p>
-<p><img src="diskurs_files/figure-html/unnamed-chunk-3-1.png" width="2400" /></p>
+<p>Ukratko, ova mreža je vizualni dokaz postojanja dva različita komunikacijska modela. Jedan koji funkcionira na gorivu visokog konflikta i drugi koji teži mirnom i ne konfliktnom izričaju. Ključne bitke za javno mnijenje vode se na mostovima između ova dva svijeta.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="diskurs_files/figure-html/plot-network-1.png" class="img-fluid figure-img" width="2400"></p>
+</figure>
 </div>
-<div id="zaključak" class="section level2">
-<h2>Zaključak</h2>
-<p>Dubinska analiza atmosfere katoličkog digitalnog prostora u Hrvatskoj
-otkrila je kompleksnu sliku koja nadilazi jednostavnu podjelu na
-“pozitivne” i “negativne” teme. Naši nalazi ukazuju na postojanje
-sofisticiranih komunikacijskih strategija i dubokih strukturnih obrazaca
-u načinu na koji se o vjeri i Crkvi govori u javnosti.</p>
-<p>Tri ključna zaključka se ističu:</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>Kontekstualno oblikovanje tonaliteta:</strong> Dokazali
-smo da tonalitet teme nije inherentno svojstvo, već rezultat strateškog
-<strong>emocionalnog uokvirivanja</strong>. Isti sadržaj može biti
-predstavljen kao pozitivan ili negativan ovisno o tome služi li se medij
-psihološkim apelima na <code>Povjerenje</code> i <code>Radost</code> ili
-na <code>Ljutnju</code> i <code>Strah</code>. Ovo potvrđuje da mediji
-nisu samo pasivni prenositelji informacija, već aktivni kreatori
-atmosfere.</p></li>
-<li><p><strong>Četiri modela komunikacije:</strong> Identificirali smo
-četiri fundamentalno različite medijske strategije u korištenju
-konfliktnog jezika, koje grubo odgovaraju tipologiji medija:</p>
+</div>
+</div>
+</section>
+<section id="zaključak" class="level2">
+<h2 class="anchored" data-anchor-id="zaključak">Zaključak</h2>
+<p>Dubinska analiza atmosfere katoličkog digitalnog prostora u Hrvatskoj otkrila je kompleksnu sliku koja nadilazi jednostavnu podjelu na pozitivne i negativne teme. Naši nalazi upućuju na postojanje sofisticiranih komunikacijskih strategija i dubokih strukturnih obrazaca u načinu na koji se o vjeri i Crkvi govori u javnosti.</p>
+<p>Tri ključna zaključka se ističu.</p>
+<ol type="1">
+<li><p>Kontekstualno oblikovanje tonaliteta. Dokazali smo da tonalitet teme nije inherentno svojstvo, već rezultat strateškog emocionalnog uokvirivanja. Isti sadržaj može biti predstavljen kao pozitivan ili negativan ovisno o tome služi li se medij psihološkim apelima na Povjerenje i Radost ili na Ljutnju i Strah. Ovo potvrđuje da mediji nisu samo pasivni prenositelji informacija, već aktivni kreatori atmosfere.</p></li>
+<li><p>Četiri modela komunikacije. Identificirali smo četiri fundamentalno različite medijske strategije u korištenju konfliktnog jezika, koje grubo odgovaraju tipologiji medija.</p>
 <ul>
-<li><strong>“Strateški eskalatori”</strong> (mainstream mediji) koji
-doziraju konflikt.</li>
-<li><strong>“Dosljedni kritičari”</strong> (aktivistički portali) koji
-ga koriste kao temeljni dio svog identiteta.</li>
-<li><strong>“Pragmatični promatrači”</strong> (tradicionalni mediji)
-koji ga koriste uravnoteženo.</li>
-<li><strong>“Graditelji zajednice”</strong> (vjerski mediji) koji ga
-sustavno izbjegavaju.</li>
+<li>Strateški eskalatori (mainstream mediji) koji doziraju konflikt.</li>
+<li>Dosljedni kritičari (aktivistički portali) koji ga koriste kao temeljni dio svog identiteta.</li>
+<li>Pragmatični promatrači (tradicionalni mediji) koji ga koriste uravnoteženo.</li>
+<li>Graditelji zajednice (vjerski mediji) koji ga sustavno izbjegavaju.</li>
 </ul></li>
-<li><p><strong>Dva “Svemira” diskursa:</strong> Najvažniji nalaz,
-vizualiziran u Mreži Narativne Atmosfere, jest postojanje dva jasno
-odvojena tematska i atmosferska svijeta. Jedan je
-<strong>društveno-politički</strong>, obilježen visokim intenzitetom
-konflikta i ispreplitanjem tema politike, povijesti i bioetike. Drugi je
-<strong>pastoralno-institucionalni</strong>, karakteriziran niskim
-konfliktom i fokusom na duhovnost i unutarcrkvena pitanja.</p></li>
+<li><p>Dva svemira diskursa. Najvažniji nalaz, vizualiziran u Mreži narativne atmosfere, jest postojanje dva jasno odvojena tematska i atmosferska svijeta. Jedan je društveno politički, obilježen visokim intenzitetom konflikta i ispreplitanjem tema politike, povijesti i bioetike. Drugi je pastoralno institucionalni, karakteriziran niskim konfliktom i fokusom na duhovnost i unutarcrkvena pitanja.</p></li>
 </ol>
-<p>Ovi nalazi pokazuju da je za razumijevanje digitalnog prostora nužno
-koristiti višeslojne, kontekstualno svjesne metode koje mogu razotkriti
-suptilne komunikacijske strategije koje oblikuju javnu percepciju Crkve
-i vjere u Hrvatskoj.</p>
-<p><strong>Budući koraci</strong> ovog istraživanja usmjerit će se na
-povezivanje ovih nalaza s konkretnim događajima (<strong>Event
-Detection</strong>) te na finiju analizu specifičnih narativa i fraza
-koje se koriste unutar najkonfliktnijih tema. Krajnji cilj ostaje
-stvaranje dinamičnog “digitalnog opservatorija” koji će u stvarnom
-vremenu moći pratiti i analizirati puls ovih važnih društvenih
-rasprava.</p>
-</div>
+<p>Ovi nalazi pokazuju da je za razumijevanje digitalnog prostora nužno koristiti višeslojne, kontekstualno svjesne metode koje mogu razotkriti suptilne komunikacijske strategije koje oblikuju javnu percepciju Crkve i vjere u Hrvatskoj.</p>
+<p>Budući koraci ovog istraživanja usmjerit će se na povezivanje ovih nalaza s konkretnim događajima (Event Detection) te na finiju analizu specifičnih narativa i fraza koje se koriste unutar najkonfliktnijih tema. Krajnji cilj ostaje stvaranje dinamičnog digitalnog opservatorija koji će u stvarnom vremenu moći pratiti i analizirati puls ovih važnih društvenih rasprava.</p>
 
 
+</section>
 
-</div>
-</div>
-
-</div>
-
-<script>
-
-// add bootstrap table styles to pandoc tables
-function bootstrapStylePandocTables() {
-  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
-}
-$(document).ready(function () {
-  bootstrapStylePandocTables();
-});
-
-
-</script>
-
-<!-- tabsets -->
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open');
-  });
-});
-</script>
-
-<!-- code folding -->
-<script>
-$(document).ready(function () {
-  window.initializeCodeFolding("hide" === "show");
-});
-</script>
-
-<script>
-$(document).ready(function ()  {
-
-    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
-    $('.unlisted.unnumbered').addClass('toc-ignore')
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    options.showAndHide = true;
-    options.smoothScroll = true;
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/lusiki\.github\.io\/DigiKat\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
 
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 
-</body>
-</html>
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

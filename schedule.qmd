@@ -1,11 +1,5 @@
 ---
 title: "Projektni raspored"
-date: last-modified
-format: 
-  html:
-    theme: cosmo
-    toc: true
-    smooth-scroll: true
 ---
 
 

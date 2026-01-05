@@ -1,0 +1,57 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "DigiKat"
+  site-url: https://lusiki.github.io/DigiKat/
+  navbar:
+    left:
+      - text: "Osnovne informacije"
+        href: index.qmd
+      - text: "O projektu"
+        href: about.qmd
+      - text: "Projektni raspored"
+        href: schedule.qmd
+      - text: "Baza podataka"
+        href: baza.qmd
+      - text: "Mapa medijskog prostora"
+        menu:
+          - text: "Mapa ekosustava"
+            href: mapa.qmd
+          - text: "Tematske struje"
+            href: mapa_stats.qmd
+          - text: "Atmosfera diskursa"
+            href: diskurs.qmd
+          - text: "Fokus na događaje i kampanje"
+            href: događaji.qmd
+      - text: "Tematska istraživanja"
+        menu:
+          - text: "Analiza self-help sadržaja na YouTube-u"
+            href: ""
+          - text: "Hodočasnički turizam"
+            href: ""
+          - text: "Demokršćanstvo"
+            href: ""
+          - text: "Katoličko obrazovanje"
+            href: ""
+          - text: "Prikazivanje katoličkih svetaca i svetica"
+            href: ""
+      - text: "Obavijesti"
+        href: news.qmd
+      - text: "Resursi"
+        href: resources.qmd
+    right:
+      - text: "O stranici"
+        href: site-info.qmd
+      - icon: github
+        href: https://github.com/lusiki/DigiKat
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-location: left
+    code-fold: show
+    code-tools: true
