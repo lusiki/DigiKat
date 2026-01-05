@@ -21,28 +21,25 @@ pagetitle: "Osnovne informacije"
 
 ###  O projektu
 
-Dobrodošli na službenu stranicu projekta **"Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru"**. Ovaj trogodišnji projekt (2025.-2027.) provodi se na [Odjelu za komunikologiju](https://www.unicath.hr/odjeli-i-fakulteti/komunikologija) [Hrvatskog katoličkog sveučilišta](https://www.unicath.hr/).
+Dobrodošli na službenu stranicu projekta **Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru**. Ovaj trogodišnji projekt (2025.-2027.) provodi se na [Odjelu za komunikologiju](https://www.unicath.hr/odjeli-i-fakulteti/komunikologija) [Hrvatskog katoličkog sveučilišta](https://www.unicath.hr/).
 
 Iako digitalni mediji predstavljaju dominantnu komponentu javnog prostora, u Hrvatskoj nedostaje sustavni pregled njihovih tematskih sastavnica. Ovaj projekt ispunjava tu prazninu fokusirajući se na specifičnu i društveno relevantnu nišu: **sadržaje s katoličkom tematikom**.
 
 Koristeći napredne metode iz područja [računalnih društvenih znanosti](https://pure.rug.nl/ws/portalfiles/portal/140988937/Manifesto_of_computational_social_science.pdf), cilj nam je izgraditi sveobuhvatnu bazu podataka digitalnih objava te analizirati njihove značajke, narative i povezanost sa širim društvenim trendovima.
 
-###  Ključna istraživačka pitanja
+### Istraživačka pitanja
 
-Naše istraživanje vođeno je sljedećim temeljnim pitanjima:
-- Kako se katolička tematika prikazuje i raspravlja u hrvatskom digitalnom medijskom prostoru?
-- Kakve su veze između katoličkih tema i drugih društvenih i političkih pitanja?
-- Koji su akteri i institucije najistaknutiji u tim raspravama?
-- Kako se narativi i sentiment mijenjaju ovisno o aktualnim događajima?
-- Kakva je mrežna dinamika između različitih platformi i medija koji obrađuju ove teme?
+
+ Kako se katolička tematika prikazuje i raspravlja u hrvatskom digitalnom medijskom prostoru?<br> 
+ Kakve su veze između katoličkih tema i drugih društvenih i političkih pitanja?<br> 
+ Koji su akteri i institucije najistaknutiji u tim raspravama?<br> 
+ Kako se narativi i sentiment mijenjaju ovisno o aktualnim događajima?<br> 
+ Kakva je mrežna dinamika između različitih platformi i medija koji obrađuju ove teme?<br> 
 
 ###  Metodologija
 
 Projekt integrira tehnike podatkovne znanosti s metodama društvenih znanosti. Naš metodološki okvir uključuje:
-- **Web scraping i API integracije:** Automatizirano prikupljanje velikih količina podataka s informativnih portala i društvenih mreža.
-- **Obrada prirodnog jezika (NLP):** Tematsko modeliranje, analiza sentimenta i prepoznavanje imenovanih entiteta za strukturiranje i analizu tekstualnih podataka.
-- **Mrežna analiza:** Mapiranje odnosa između aktera, tema i medijskih izvora.
-- **Statistička analiza:** Identifikacija trendova, korelacija i obrazaca unutar prikupljenih podataka.
+Web scraping i API integracije (Automatizirano prikupljanje velikih količina podataka s informativnih portala i društvenih mreža), Obradu prirodnog jezika (NLP: Tematsko modeliranje, analiza sentimenta i prepoznavanje imenovanih entiteta za strukturiranje i analizu tekstualnih podataka), Mrežnu analizu (mapiranje odnosa između aktera, tema i medijskih izvora), statistička analiza(identifikacija trendova, korelacija i obrazaca unutar prikupljenih podataka).
 
 Sav programski kod i, gdje je to moguće, podaci bit će dostupni u skladu s FAIR principima za otvorenu znanost.
 
