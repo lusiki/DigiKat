@@ -1,0 +1,136 @@
+---
+title: "Resursi i korisni linkovi"
+date: last-modified
+format: 
+  html:
+    theme: cosmo
+    toc: true
+    toc-location: left
+    toc-depth: 3
+    toc-expand: 2
+    smooth-scroll: true
+    code-tools: false
+---
+
+## Pregled
+
+Ovdje smo pripremili kuriranu listu resursa koja će vam pomoći da dublje zaronite u svijet računalnih društvenih znanosti, analize podataka i alata koje koristimo na ovom projektu.
+
+
+---
+
+## Uvod u alate i programske jezike
+
+Ovi resursi idealni su za sve koji žele naučiti ili usavršiti svoje vještine u programskim jezicima R i Python, koji su temelj našeg analitičkog rada.
+
+### Za korisnike R
+
+*   **RStudio Finding Your Way To R** Službeni vodič za početnike koji pokriva osnove rada u RStudio okruženju. [Link](https://education.rstudio.com/learn/)
+*   **R for Data Science** Biblija za svakoga tko se bavi analizom podataka u R u. Autori su Hadley Wickham i Garrett Grolemund. [Link](https://r4ds.had.co.nz/)
+*   **Text Mining with R** Odlična knjiga za uvod u analizu teksta, s naglaskom na tidy principe. Autorice su Julia Silge i David Robinson. [Link](https://www.tidytextmining.com/)
+*   **CRAN Task View Social Sciences** Kurirana lista R paketa specifično namijenjenih za primjenu u društvenim znanostima. [Link](https://cran.r-project.org/web/views/SocialSciences.html)
+*   **R bloggers** Agregator najboljih blogova o R u, svakodnevno donosi nove tutorijale i studije slučaja. [Link](https://www.r-bloggers.com/)
+
+### Za korisnike Pythona
+
+*   **The Python Tutorial** Službena dokumentacija i najbolja polazna točka za učenje osnova Pythona. [Link](https://docs.python.org/3/tutorial/)
+*   **spaCy 101** Moderna i brza biblioteka za obradu prirodnog jezika (NLP). Njihov tečaj je odličan za početnike. [Link](https://course.spacy.io/)
+*   **Real Python** Visokokvalitetni tutorijali za sve razine znanja, od osnova do naprednih tema. [Link](https://realpython.com/)
+
+---
+
+## Temeljna literatura i koncepti
+
+Knjige i znanstveni radovi koji oblikuju područje kojim se bavimo.
+
+### Računalne društvene znanosti
+
+*   **Bit by Bit Social Research in the Digital Age** Ključna knjiga Matthewa Salganika koja objašnjava kako digitalno doba transformira društvena istraživanja. [Link](https://www.bitbybitbook.com/)
+*   **Computational Social Science A Manifesto** Seminalni rad (Lazer i sur.) koji je definirao polje i njegove glavne izazove i prilike. [Link](https://www.science.org/doi/10.1126/science.1167742)
+
+### Analiza teksta kao podatka
+
+*   **Text as Data A New Framework** Sveobuhvatan pregled metoda za analizu teksta u društvenim znanostima. Autori su Grimmer, Roberts i Stewart. [Link](https://textasdata.com/)
+
+### Statistika i razumijevanje podataka
+
+*   **How to Lie with Statistics** Klasična i zabavna knjiga Darrella Huffa o tome kako prepoznati manipulaciju statistikom. [Link](https://archive.org/details/how-to-lie-with-statistics-darrell-huff/page/n5/mode/2up)
+*   **The Art of Statistics Learning from Data** David Spiegelhalter na pristupačan način objašnjava kako statističari razmišljaju i kako učiti iz podataka. [Link](https://www.bookdepository.com/Art-Statistics-David-Spiegelhalter/9780241258767)
+
+---
+
+## Podaci i resursi za tematska istraživanja
+
+Linkovi na relevantne izvore podataka, časopise i organizacije koje se bave sličnim temama.
+
+*   **Pew Research Center Religion & Public Life** Jedan od najvažnijih izvora podataka i analiza o ulozi religije u društvu. [Link](https://www.pewresearch.org/religion/)
+*   **Journal of Media and Religion** Vodeći znanstveni časopis koji objavljuje istraživanja na sjecištu medija i religije. [Link](https://www.tandfonline.com/journals/hmre20)
+*   **Alliance of Digital Humanities Organizations (ADHO)** Globalna organizacija koja promiče primjenu digitalnih tehnologija u humanističkim znanostima. [Link](https://adho.org/)
+
+---
+
+## Blogovi, zajednice i platforme
+
+Mjesta za učenje, postavljanje pitanja i praćenje najnovijih trendova.
+
+*   **Towards Data Science** Jedna od najvećih online publikacija o podatkovnoj znanosti, s tisućama korisnih članaka i tutorijala. [Link](https://towardsdatascience.com/)
+*   **Stack Overflow** Najvažnija zajednica za programere. Ako imate tehnički problem, ovdje ćete najvjerojatnije pronaći odgovor. [Link](https://stackoverflow.com/)
+*   **GitHub** Platforma na kojoj se nalazi ovaj projekt. Ključan alat za otvorenu znanost, suradnju i dijeljenje koda. [Link](https://github.com/)
+*   **Zenodo** Otvoreni repozitorij za pohranu znanstvenih podataka, softvera i publikacija, u skladu s FAIR principima. [Link](https://zenodo.org/)
+
+---
+
+## Akademska literatura po temama
+
+Kurirana lista ključnih knjiga i radova organiziranih po metodološkim područjima.
+
+### Kvantitativna analiza teksta
+
+*   Grimmer, Justin, Margaret E. Roberts, and Brandon M. Stewart (2022). Text as Data A New Framework for Machine Learning and the Social Sciences. Princeton University Press.
+*   Grimmer, Justin and Brandon M. Stewart (2013). Text as Data The Promise and Pitfalls of Automatic Content Analysis Methods for Political Texts. Political Analysis 21(3) 267–297.
+*   Benoit, Kenneth (2020). Text as Data An Overview. In Curini, Luigi and Robert Franzese, eds. Handbook of Research Methods in Political Science and International Relations. Sage Publications.
+*   Jurafsky, Daniel and James H. Martin (2024). Speech and Language Processing. (3rd edition).
+*   Manning, C. D., Raghavan, P., & Schütze, H. (2008). Introduction to Information Retrieval. Cambridge University Press.
+
+### Analiza društvenih mreža
+
+*   Newman, M.E.J. (2010). Networks An Introduction. Oxford University Press.
+*   Scott, J. (2017). Social Network Analysis. SAGE (4th edition).
+*   Easley, D., & Kleinberg, J. (2010). Networks, Crowds, and Markets Reasoning About a Highly Connected World. Cambridge University Press.
+*   Robins, G. (2015). Doing Social Network Research Network based Research Design for Social Scientists. SAGE.
+*   Borgatti, S. P., Everett, M. G., & Johnson, J. C. (2018). Analyzing Social Networks. SAGE.
+
+### Programiranje i računalno razmišljanje
+
+*   Guttag, John V. (2016). Introduction to Computation and Programming Using Python With Application to Understanding Data. MIT Press.
+*   Miller, Bradley N. and David L. Ranum. Problem Solving with Algorithms and Data Structures Using Python.
+*   Grolemund, Garrett and Hadley Wickham (2016). R for Data Science. O'Reilly.
+*   Wing, Jeannette M. (2006). Computational thinking. Communications of the ACM, 49(3), 33–35.
+
+### Podaci i vizualizacija
+
+*   Beaulieu, Alan (2020). Learning SQL Generate, Manipulate, and Retrieve Data. 3rd Ed. O'Reilly.
+*   Healy, Kieran (2019). Data Visualization A Practical Introduction. Princeton University Press.
+*   Munzert, Simon, et al. (2015). Automated Data Collection with R A Practical Guide to Web Scraping and Text Mining. Wiley.
+*   Wickham, Hadley, Mine Çetinkaya Rundel and Garett Grolemund (2023). R for Data Science Import, Tidy, Transform, Visualize, and Model Data. 2nd Ed. O'Reilly.
+*   Lazer, David and Jason Radford (2017). Data ex Machina Introduction to Big Data. Annual Review of Sociology.
+
+### Strojno učenje
+
+*   Géron, A. (2017). Hands on Machine Learning with Scikit Learn and TensorFlow Concepts, Tools, and Techniques to Build Intelligent Systems. O'Reilly Media.
+*   James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013). An Introduction to Statistical Learning. Springer.
+*   Müller, A. C., & Guido, S. (2016). Introduction to Machine Learning with Python A Guide for Data Scientists. O'Reilly Media.
+*   Conway, D., & White, J. (2012). Machine Learning for Hackers. O'Reilly Media.
+
+### Duboko učenje
+
+*   Goodfellow, Ian, Yoshua Bengio, and Aaron Courville (2016). Deep Learning. MIT Press.
+*   Raff, E. (2022). Inside Deep Learning Math, Algorithms, Models. Simon and Schuster.
+*   Argyle, L. P., et al. (2023). Out of one, many Using language models to simulate human samples. Political Analysis.
+*   Rodriguez, P. L., & Spirling, A. (2022). Word embeddings What works, what doesn't, and how to tell the difference for applied research. The Journal of Politics.
+*   Torres, M., & Cantú, F. (2022). Learning to See Convolutional Neural Networks for the Analysis of Social Science Data. Political Analysis.
+
+    
+<br>
+<br>
+<br>
