@@ -1,6 +1,29 @@
+# R/RStudio
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
 
+# Quarto
 /.quarto/
+
+# Build artifacts
+*.log
+*.tex
+*.knit.*
+*.utf8.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Conflicted copies (sync issues)
+*conflicted copy*
+
+# Large model files (optional - uncomment if needed)
+# resources/models/*.udpipe
+
+# Temporary files
+*~
+*.tmp
+*.bak

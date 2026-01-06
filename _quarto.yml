@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - assets/
 
 website:
   title: "DigiKat"
@@ -8,23 +10,23 @@ website:
   navbar:
     left:
       - text: "Osnovne informacije"
-        href: index.qmd
+        href: pages/index.qmd
       - text: "O projektu"
-        href: about.qmd
+        href: pages/about.qmd
       - text: "Projektni raspored"
-        href: schedule.qmd
+        href: pages/schedule.qmd
       - text: "Baza podataka"
-        href: baza.qmd
+        href: pages/baza.qmd
       - text: "Mapa medijskog prostora"
         menu:
           - text: "Mapa ekosustava"
-            href: mapa.qmd
+            href: pages/mapa/mapa.qmd
           - text: "Tematske struje"
-            href: mapa_stats.qmd
+            href: pages/mapa/mapa_stats.qmd
           - text: "Atmosfera diskursa"
-            href: diskurs.qmd
+            href: pages/mapa/diskurs.qmd
           - text: "Fokus na događaje i kampanje"
-            href: događaji.qmd
+            href: pages/mapa/događaji.qmd
       - text: "Tematska istraživanja"
         menu:
           - text: "Analiza self-help sadržaja na YouTube-u"
@@ -38,19 +40,19 @@ website:
           - text: "Prikazivanje katoličkih svetaca i svetica"
             href: ""
       - text: "Obavijesti"
-        href: news.qmd
+        href: pages/news.qmd
       - text: "Resursi"
-        href: resources.qmd
+        href: pages/resources.qmd
     right:
       - text: "O stranici"
-        href: site-info.qmd
+        href: pages/site-info.qmd
       - icon: github
         href: https://github.com/lusiki/DigiKat
 
 format:
   html:
     theme: cosmo
-    css: styles.css
+    css: assets/css/style.css
     toc: true
     toc-location: left
     code-fold: show
