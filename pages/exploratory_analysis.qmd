@@ -1,0 +1,788 @@
+---
+title: "Eksploratorna analiza podataka"
+subtitle: "Katolička tematika u digitalnom medijskom prostoru"
+author: "DigiKat istraživački tim"
+date: last-modified
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    code-fold: true
+    code-summary: "Prikaži kod"
+    code-tools: true
+    number-sections: true
+    smooth-scroll: true
+    theme: cosmo
+execute:
+  warning: false
+  message: false
+  echo: true
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+# Učitavanje paketa
+library(tidyverse)
+library(scales)
+library(lubridate)
+library(data.table)  # Load after lubridate
+library(knitr)
+library(kableExtra)
+library(patchwork)
+library(ggrepel)
+library(DT)
+library(skimr)
+library(corrplot)
+library(treemapify)
+library(tidytext)
+
+# Učitavanje podataka
+dta <- readRDS("C:/Users/lsikic/Luka C/HKS/Projekti/Digitalni Kat/SHKM/Podatci/df_all.rds")
+
+# Pretvorba u tibble za lakši rad
+dta <- as_tibble(dta)
+
+# Tema za vizualizacije
+theme_digikat <- theme_minimal(base_size = 12) +
+ theme(
+    plot.title = element_text(face = "bold", size = 14),
+    plot.subtitle = element_text(color = "gray40"),
+    legend.position = "bottom",
+    panel.grid.minor = element_blank()
+  )
+
+theme_set(theme_digikat)
+
+# Boje
+colors_digikat <- c("#1e3a8a", "#991b1b", "#065f46", "#92400e", "#0c4a6e", "#475569", "#7c2d12", "#be123c")
+```
+
+# Pregled podataka {#pregled}
+
+## Osnovne informacije
+
+```{r}
+#| label: basic-info
+
+# Dimenzije
+cat("Broj redaka:", nrow(dta), "\n")
+cat("Broj stupaca:", ncol(dta), "\n")
+cat("Veličina u memoriji:", format(object.size(dta), units = "MB"), "\n")
+```
+
+```{r}
+#| label: column-types
+
+# Tipovi varijabli
+col_types <- dta |>
+  summarise(across(everything(), class)) |>
+  pivot_longer(everything(), names_to = "Varijabla", values_to = "Tip") |>
+  count(Tip, name = "Broj varijabli")
+
+col_types |>
+  kable(caption = "Tipovi varijabli u skupu podataka") |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+```
+
+## Struktura podataka
+
+```{r}
+#| label: data-glimpse
+
+glimpse(dta)
+```
+
+## Nedostajuće vrijednosti
+
+```{r}
+#| label: missing-values
+
+missing_summary <- dta |>
+  summarise(across(everything(), ~sum(is.na(.)))) |>
+  pivot_longer(everything(), names_to = "Varijabla", values_to = "Nedostaje") |>
+  mutate(
+    Postotak = round(Nedostaje / nrow(dta) * 100, 2),
+    Status = case_when(
+      Postotak == 0 ~ "Kompletno",
+      Postotak < 10 ~ "Nizak",
+      Postotak < 50 ~ "Srednji",
+      TRUE ~ "Visok"
+    )
+  ) |>
+  arrange(desc(Nedostaje))
+
+# Vizualizacija nedostajućih vrijednosti
+missing_summary |>
+  filter(Nedostaje > 0) |>
+  head(20) |>
+  ggplot(aes(x = reorder(Varijabla, Postotak), y = Postotak, fill = Status)) +
+  geom_col() +
+  coord_flip() +
+  scale_fill_manual(values = c("Kompletno" = "#065f46", "Nizak" = "#0c4a6e", 
+                                "Srednji" = "#92400e", "Visok" = "#991b1b")) +
+  labs(
+    title = "Nedostajuće vrijednosti po varijablama",
+    subtitle = "Top 20 varijabli s najviše nedostajućih vrijednosti",
+    x = NULL,
+    y = "Postotak nedostajućih (%)"
+  )
+```
+
+```{r}
+#| label: missing-table
+
+missing_summary |>
+  filter(Nedostaje > 0) |>
+  datatable(
+    caption = "Pregled nedostajućih vrijednosti",
+    options = list(pageLength = 15, scrollX = TRUE),
+    filter = "top"
+  )
+```
+
+# Temporalna analiza {#temporalna}
+
+## Distribucija po datumima
+
+```{r}
+#| label: temporal-prep
+
+# Pretvorba datuma
+dta <- dta |>
+  mutate(
+    DATE = as.Date(DATE),
+    YEAR = year(DATE),
+    MONTH = lubridate::month(DATE, label = TRUE),
+    WEEK = week(DATE),
+    DAY_OF_WEEK = lubridate::wday(DATE, label = TRUE),
+    YEAR_MONTH = floor_date(DATE, "month")
+  )
+```
+
+```{r}
+#| label: date-range
+
+cat("Raspon datuma:", as.character(min(dta$DATE, na.rm = TRUE)), 
+    "do", as.character(max(dta$DATE, na.rm = TRUE)), "\n")
+cat("Ukupno dana:", as.numeric(max(dta$DATE, na.rm = TRUE) - min(dta$DATE, na.rm = TRUE)), "\n")
+```
+
+## Trend objava kroz vrijeme
+
+```{r}
+#| label: temporal-trend
+#| fig-height: 6
+
+monthly_counts <- dta |>
+  count(YEAR_MONTH) |>
+  filter(!is.na(YEAR_MONTH))
+
+ggplot(monthly_counts, aes(x = YEAR_MONTH, y = n)) +
+  geom_line(color = colors_digikat[1], linewidth = 0.8) +
+  geom_smooth(method = "loess", se = TRUE, alpha = 0.2, color = colors_digikat[2]) +
+  scale_x_date(date_breaks = "6 months", date_labels = "%b %Y") +
+  scale_y_continuous(labels = comma) +
+  labs(
+    title = "Trend broja objava kroz vrijeme",
+    subtitle = "Mjesečna agregacija s LOESS trend linijom",
+    x = NULL,
+    y = "Broj objava"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+## Distribucija po godinama
+
+```{r}
+#| label: yearly-dist
+#| fig-height: 5
+
+yearly_counts <- dta |>
+  count(YEAR) |>
+  filter(!is.na(YEAR))
+
+ggplot(yearly_counts, aes(x = factor(YEAR), y = n)) +
+  geom_col(fill = colors_digikat[1], alpha = 0.8) +
+  geom_text(aes(label = comma(n)), vjust = -0.5, size = 3.5) +
+  scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.15))) +
+  labs(
+    title = "Broj objava po godinama",
+    x = "Godina",
+    y = "Broj objava"
+  )
+```
+
+## Distribucija po danima u tjednu
+
+```{r}
+#| label: weekday-dist
+#| fig-height: 4
+
+dta |>
+  filter(!is.na(DAY_OF_WEEK)) |>
+  count(DAY_OF_WEEK) |>
+  ggplot(aes(x = DAY_OF_WEEK, y = n)) +
+  geom_col(fill = colors_digikat[3], alpha = 0.8) +
+  geom_text(aes(label = comma(n)), vjust = -0.5, size = 3.5) +
+  scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.15))) +
+  labs(
+    title = "Distribucija objava po danima u tjednu",
+    x = NULL,
+    y = "Broj objava"
+  )
+```
+
+## Heatmapa: Dan u tjednu × Mjesec
+
+```{r}
+#| label: heatmap-day-month
+#| fig-height: 6
+
+heatmap_data <- dta |>
+  filter(!is.na(DAY_OF_WEEK), !is.na(MONTH)) |>
+  count(DAY_OF_WEEK, MONTH)
+
+ggplot(heatmap_data, aes(x = MONTH, y = DAY_OF_WEEK, fill = n)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient(low = "#f8fafc", high = colors_digikat[1], labels = comma) +
+  labs(
+    title = "Distribucija objava: Dan u tjednu × Mjesec",
+    x = "Mjesec",
+    y = "Dan u tjednu",
+    fill = "Broj objava"
+  ) +
+  theme(legend.position = "right")
+```
+
+# Analiza izvora {#izvori}
+
+## Tipovi izvora (SOURCE_TYPE)
+
+```{r}
+#| label: source-type-dist
+#| fig-height: 5
+
+source_type_counts <- dta |>
+  count(SOURCE_TYPE, sort = TRUE) |>
+  filter(!is.na(SOURCE_TYPE)) |>
+  mutate(pct = n / sum(n) * 100)
+
+ggplot(source_type_counts, aes(x = reorder(SOURCE_TYPE, n), y = n)) +
+  geom_col(aes(fill = SOURCE_TYPE), show.legend = FALSE) +
+  geom_text(aes(label = paste0(comma(n), " (", round(pct, 1), "%)")), 
+            hjust = -0.1, size = 3.5) +
+  coord_flip() +
+  scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.25))) +
+  scale_fill_viridis_d() +
+  labs(
+    title = "Distribucija po tipu izvora",
+    x = NULL,
+    y = "Broj objava"
+  )
+```
+
+## Top 20 izvora (FROM)
+
+```{r}
+#| label: top-sources
+#| fig-height: 8
+
+top_sources <- dta |>
+  count(FROM, sort = TRUE) |>
+  filter(!is.na(FROM)) |>
+  head(20)
+
+ggplot(top_sources, aes(x = reorder(FROM, n), y = n)) +
+  geom_col(fill = colors_digikat[1], alpha = 0.8) +
+  geom_text(aes(label = comma(n)), hjust = -0.1, size = 3) +
+  coord_flip() +
+  scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.15))) +
+  labs(
+    title = "Top 20 izvora po broju objava",
+    x = NULL,
+    y = "Broj objava"
+  )
+```
+
+## Top izvori po tipu platforme
+
+```{r}
+#| label: top-sources-by-type
+#| fig-height: 10
+
+top_by_type <- dta |>
+  filter(!is.na(SOURCE_TYPE), !is.na(FROM)) |>
+group_by(SOURCE_TYPE) |>
+count(FROM, sort = TRUE) |>
+slice_max(n, n = 5, with_ties = FALSE) |>
+mutate(FROM = str_trunc(FROM, 35)) |>
+ungroup()
+
+ggplot(top_by_type, aes(x = reorder_within(FROM, n, SOURCE_TYPE), y = n)) +
+geom_col(aes(fill = SOURCE_TYPE), show.legend = FALSE) +
+facet_wrap(~SOURCE_TYPE, scales = "free_y", ncol = 2) +
+coord_flip() +
+scale_x_reordered() +
+scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.15))) +
+scale_fill_manual(values = colors_digikat) +
+labs(
+    title = "Top 5 izvora po tipu platforme",
+    x = NULL,
+    y = "Broj objava"
+  ) +
+  theme(strip.text = element_text(face = "bold"))
+```
+
+# Analiza sentimenta {#sentiment}
+
+## Distribucija automatskog sentimenta
+
+```{r}
+#| label: sentiment-dist
+#| fig-height: 5
+
+sentiment_counts <- dta |>
+  count(AUTO_SENTIMENT, sort = TRUE) |>
+  filter(!is.na(AUTO_SENTIMENT)) |>
+  mutate(pct = n / sum(n) * 100)
+
+sentiment_colors <- c("positive" = "#065f46", "neutral" = "#475569", "negative" = "#991b1b")
+
+ggplot(sentiment_counts, aes(x = reorder(AUTO_SENTIMENT, n), y = n, fill = AUTO_SENTIMENT)) +
+  geom_col(show.legend = FALSE) +
+  geom_text(aes(label = paste0(comma(n), "\n(", round(pct, 1), "%)")), 
+            hjust = -0.1, size = 4) +
+  coord_flip() +
+  scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.25))) +
+  scale_fill_manual(values = sentiment_colors) +
+  labs(
+    title = "Distribucija automatskog sentimenta",
+    x = NULL,
+    y = "Broj objava"
+  )
+```
+
+## Sentiment po tipu izvora
+
+```{r}
+#| label: sentiment-by-source
+#| fig-height: 6
+
+sentiment_by_source <- dta |>
+  filter(!is.na(AUTO_SENTIMENT), !is.na(SOURCE_TYPE)) |>
+  count(SOURCE_TYPE, AUTO_SENTIMENT) |>
+  group_by(SOURCE_TYPE) |>
+  mutate(pct = n / sum(n) * 100) |>
+  ungroup()
+
+ggplot(sentiment_by_source, aes(x = SOURCE_TYPE, y = pct, fill = AUTO_SENTIMENT)) +
+  geom_col(position = "dodge") +
+  geom_text(aes(label = paste0(round(pct, 1), "%")), 
+            position = position_dodge(width = 0.9), vjust = -0.5, size = 3) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.15))) +
+  scale_fill_manual(values = sentiment_colors) +
+  labs(
+    title = "Distribucija sentimenta po tipu izvora",
+    x = NULL,
+    y = "Postotak (%)",
+    fill = "Sentiment"
+  )
+```
+
+## Trend sentimenta kroz vrijeme
+
+```{r}
+#| label: sentiment-trend
+#| fig-height: 6
+
+sentiment_trend <- dta |>
+  filter(!is.na(AUTO_SENTIMENT), !is.na(YEAR_MONTH)) |>
+  count(YEAR_MONTH, AUTO_SENTIMENT) |>
+  group_by(YEAR_MONTH) |>
+  mutate(pct = n / sum(n) * 100) |>
+  ungroup()
+
+ggplot(sentiment_trend, aes(x = YEAR_MONTH, y = pct, color = AUTO_SENTIMENT)) +
+  geom_line(linewidth = 0.8) +
+  geom_smooth(method = "loess", se = FALSE, linetype = "dashed", alpha = 0.5) +
+  scale_x_date(date_breaks = "6 months", date_labels = "%b %Y") +
+  scale_color_manual(values = sentiment_colors) +
+  labs(
+    title = "Trend sentimenta kroz vrijeme",
+    subtitle = "Mjesečni postoci s LOESS trend linijama",
+    x = NULL,
+    y = "Postotak (%)",
+    color = "Sentiment"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+# Analiza dosega i angažmana {#engagement}
+
+## Distribucija dosega (REACH)
+
+```{r}
+#| label: reach-dist
+#| fig-height: 5
+
+reach_summary <- dta |>
+  filter(!is.na(REACH), REACH > 0) |>
+  summarise(
+    Min = min(REACH),
+    Q1 = quantile(REACH, 0.25),
+    Median = median(REACH),
+    Mean = mean(REACH),
+    Q3 = quantile(REACH, 0.75),
+    Max = max(REACH),
+    SD = sd(REACH)
+  )
+
+reach_summary |>
+  pivot_longer(everything()) |>
+  mutate(value = round(value, 0)) |>
+  kable(col.names = c("Statistika", "Vrijednost"), caption = "Sažetak dosega") |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+```
+
+```{r}
+#| label: reach-histogram
+#| fig-height: 5
+
+dta |>
+  filter(!is.na(REACH), REACH > 0, REACH < quantile(REACH, 0.99, na.rm = TRUE)) |>
+  ggplot(aes(x = REACH)) +
+  geom_histogram(bins = 50, fill = colors_digikat[1], alpha = 0.8, color = "white") +
+  scale_x_log10(labels = comma) +
+  scale_y_continuous(labels = comma) +
+  labs(
+    title = "Distribucija dosega (REACH)",
+    subtitle = "Logaritamska skala, bez gornjeg 1% outliera",
+    x = "Doseg (log skala)",
+    y = "Broj objava"
+  )
+```
+
+## Distribucija interakcija
+
+```{r}
+#| label: interactions-dist
+#| fig-height: 5
+
+dta |>
+  filter(!is.na(INTERACTIONS), INTERACTIONS > 0, 
+         INTERACTIONS < quantile(INTERACTIONS, 0.99, na.rm = TRUE)) |>
+  ggplot(aes(x = INTERACTIONS)) +
+  geom_histogram(bins = 50, fill = colors_digikat[2], alpha = 0.8, color = "white") +
+  scale_x_log10(labels = comma) +
+  scale_y_continuous(labels = comma) +
+  labs(
+    title = "Distribucija ukupnih interakcija",
+    subtitle = "Logaritamska skala, bez gornjeg 1% outliera",
+    x = "Interakcije (log skala)",
+    y = "Broj objava"
+  )
+```
+
+## Tipovi interakcija
+
+```{r}
+#| label: interaction-types
+#| fig-height: 6
+
+interaction_cols <- c("LIKE_COUNT", "COMMENT_COUNT", "SHARE_COUNT", 
+                      "LOVE_COUNT", "WOW_COUNT", "HAHA_COUNT", "SAD_COUNT", "ANGRY_COUNT")
+
+interaction_summary <- dta |>
+  summarise(across(all_of(interaction_cols), ~sum(., na.rm = TRUE))) |>
+  pivot_longer(everything(), names_to = "Tip", values_to = "Ukupno") |>
+  mutate(
+    Tip = str_remove(Tip, "_COUNT"),
+    pct = Ukupno / sum(Ukupno) * 100
+  ) |>
+  arrange(desc(Ukupno))
+
+ggplot(interaction_summary, aes(x = reorder(Tip, Ukupno), y = Ukupno)) +
+  geom_col(fill = colors_digikat[3], alpha = 0.8) +
+  geom_text(aes(label = paste0(comma(Ukupno), "\n(", round(pct, 1), "%)")), 
+            hjust = -0.1, size = 3) +
+  coord_flip() +
+  scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.25))) +
+  labs(
+    title = "Ukupne interakcije po tipu",
+    x = NULL,
+    y = "Ukupni broj"
+  )
+```
+
+## Angažman po tipu izvora
+
+```{r}
+#| label: engagement-by-source
+#| fig-height: 6
+
+engagement_by_source <- dta |>
+  filter(!is.na(SOURCE_TYPE)) |>
+  group_by(SOURCE_TYPE) |>
+  summarise(
+    n = n(),
+    avg_reach = mean(REACH, na.rm = TRUE),
+    avg_interactions = mean(INTERACTIONS, na.rm = TRUE),
+    avg_engagement_rate = mean(ENGAGEMENT_RATE, na.rm = TRUE),
+    .groups = "drop"
+  ) |>
+  arrange(desc(avg_interactions))
+
+engagement_by_source |>
+  mutate(across(where(is.numeric), ~round(., 2))) |>
+  kable(
+    col.names = c("Tip izvora", "Broj objava", "Prosjek dosega", 
+                  "Prosjek interakcija", "Prosjek stope angažmana"),
+    caption = "Angažman po tipu izvora"
+  ) |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE)
+```
+
+```{r}
+#| label: engagement-scatter
+#| fig-height: 6
+
+dta |>
+  filter(!is.na(REACH), !is.na(INTERACTIONS), !is.na(SOURCE_TYPE),
+         REACH > 0, INTERACTIONS > 0,
+         REACH < quantile(REACH, 0.99, na.rm = TRUE),
+         INTERACTIONS < quantile(INTERACTIONS, 0.99, na.rm = TRUE)) |>
+  sample_n(min(10000, n())) |>
+  ggplot(aes(x = REACH, y = INTERACTIONS, color = SOURCE_TYPE)) +
+  geom_point(alpha = 0.3, size = 1) +
+  scale_x_log10(labels = comma) +
+  scale_y_log10(labels = comma) +
+  scale_color_manual(values = colors_digikat) +
+  labs(
+    title = "Odnos dosega i interakcija",
+    subtitle = "Uzorak od max 10.000 objava (log skale)",
+    x = "Doseg",
+    y = "Interakcije",
+    color = "Tip izvora"
+  )
+```
+
+# Analiza jezika i lokacija {#jezik-lokacija}
+
+## Distribucija jezika
+
+```{r}
+#| label: language-dist
+#| fig-height: 5
+
+language_counts <- dta |>
+  separate_rows(LANGUAGES, sep = ", ") |>
+  count(LANGUAGES, sort = TRUE) |>
+  filter(!is.na(LANGUAGES)) |>
+  head(15)
+
+ggplot(language_counts, aes(x = reorder(LANGUAGES, n), y = n)) +
+  geom_col(fill = colors_digikat[4], alpha = 0.8) +
+  geom_text(aes(label = comma(n)), hjust = -0.1, size = 3.5) +
+  coord_flip() +
+  scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.15))) +
+  labs(
+    title = "Distribucija po jezicima",
+    subtitle = "Top 15 jezika",
+    x = NULL,
+    y = "Broj objava"
+  )
+```
+
+## Distribucija lokacija
+
+```{r}
+#| label: location-dist
+#| fig-height: 5
+
+location_counts <- dta |>
+  separate_rows(LOCATIONS, sep = ", ") |>
+  count(LOCATIONS, sort = TRUE) |>
+  filter(!is.na(LOCATIONS)) |>
+  head(15)
+
+ggplot(location_counts, aes(x = reorder(LOCATIONS, n), y = n)) +
+  geom_col(fill = colors_digikat[5], alpha = 0.8) +
+  geom_text(aes(label = comma(n)), hjust = -0.1, size = 3.5) +
+  coord_flip() +
+  scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.15))) +
+  labs(
+    title = "Distribucija po lokacijama",
+    subtitle = "Top 15 lokacija (ISO kodovi)",
+    x = NULL,
+    y = "Broj objava"
+  )
+```
+
+# Analiza ključnih riječi {#kljucne-rijeci}
+
+## Distribucija pronađenih ključnih riječi
+
+```{r}
+#| label: keyword-dist
+#| fig-height: 6
+
+keyword_counts <- dta |>
+  filter(!is.na(FOUND_KEYWORDS), FOUND_KEYWORDS != "") |>
+  separate_rows(FOUND_KEYWORDS, sep = ", ") |>
+  count(FOUND_KEYWORDS, sort = TRUE) |>
+  filter(nchar(FOUND_KEYWORDS) > 2) |>
+  head(30)
+
+ggplot(keyword_counts, aes(x = reorder(FOUND_KEYWORDS, n), y = n)) +
+  geom_col(fill = colors_digikat[1], alpha = 0.8) +
+  coord_flip() +
+  scale_y_continuous(labels = comma) +
+  labs(
+    title = "Top 30 pronađenih ključnih riječi",
+    x = NULL,
+    y = "Broj pojava"
+  )
+```
+
+## Wordcloud ključnih riječi
+
+```{r}
+#| label: keyword-wordcloud
+#| fig-height: 6
+
+if (nrow(keyword_counts) > 0) {
+  wordcloud2(keyword_counts, size = 0.5, color = "random-dark", 
+             backgroundColor = "white", minRotation = 0, maxRotation = 0)
+}
+```
+
+# Influence Score analiza {#influence}
+
+## Distribucija Influence Score
+
+```{r}
+#| label: influence-dist
+#| fig-height: 5
+
+dta |>
+  filter(!is.na(INFLUENCE_SCORE)) |>
+  ggplot(aes(x = factor(INFLUENCE_SCORE))) +
+  geom_bar(fill = colors_digikat[1], alpha = 0.8) +
+  geom_text(stat = "count", aes(label = comma(after_stat(count))), vjust = -0.5, size = 3) +
+  scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.15))) +
+  labs(
+    title = "Distribucija Influence Score",
+    x = "Influence Score",
+    y = "Broj objava"
+  )
+```
+
+## Influence Score po tipu izvora
+
+```{r}
+#| label: influence-by-source
+#| fig-height: 6
+
+influence_by_source <- dta |>
+  filter(!is.na(INFLUENCE_SCORE), !is.na(SOURCE_TYPE)) |>
+  group_by(SOURCE_TYPE) |>
+  summarise(
+    mean_influence = mean(INFLUENCE_SCORE, na.rm = TRUE),
+    median_influence = median(INFLUENCE_SCORE, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+ggplot(influence_by_source, aes(x = reorder(SOURCE_TYPE, mean_influence), y = mean_influence)) +
+  geom_col(fill = colors_digikat[2], alpha = 0.8) +
+  geom_text(aes(label = round(mean_influence, 2)), hjust = -0.1, size = 4) +
+  coord_flip() +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.15))) +
+  labs(
+    title = "Prosječni Influence Score po tipu izvora",
+    x = NULL,
+    y = "Prosječni Influence Score"
+  )
+```
+
+# Korelacijska analiza {#korelacija}
+
+## Korelacijska matrica numeričkih varijabli
+
+```{r}
+#| label: correlation-matrix
+#| fig-height: 8
+
+numeric_vars <- dta |>
+  select(REACH, VIRALITY, ENGAGEMENT_RATE, INTERACTIONS, FOLLOWERS_COUNT,
+         LIKE_COUNT, COMMENT_COUNT, SHARE_COUNT, INFLUENCE_SCORE) |>
+  select(where(~sum(!is.na(.)) > 1000))
+
+cor_matrix <- cor(numeric_vars, use = "pairwise.complete.obs")
+
+# Remove variables with too many NAs that cause issues
+cor_matrix <- cor_matrix[complete.cases(cor_matrix), complete.cases(cor_matrix)]
+
+corrplot(cor_matrix, method = "color", type = "upper", 
+         order = "hclust", addCoef.col = "black", number.cex = 0.7,
+         tl.col = "black", tl.srt = 45, 
+         col = colorRampPalette(c("#991b1b", "white", "#1e3a8a"))(100),
+         title = "Korelacijska matrica numeričkih varijabli",
+         mar = c(0, 0, 2, 0))
+```
+
+# Sažetak i zaključci {#sazetak}
+
+## Ključne statistike
+
+```{r}
+#| label: key-stats
+
+key_stats <- tibble(
+  Metrika = c(
+    "Ukupno objava",
+    "Vremenski raspon",
+    "Broj jedinstvenih izvora",
+    "Najčešći tip izvora",
+    "Prevladavajući sentiment",
+    "Ukupni doseg",
+    "Ukupne interakcije",
+    "Prosječni angažman po objavi"
+  ),
+  Vrijednost = c(
+    comma(nrow(dta)),
+    paste(min(dta$DATE, na.rm = TRUE), "do", max(dta$DATE, na.rm = TRUE)),
+    comma(n_distinct(dta$FROM, na.rm = TRUE)),
+    names(which.max(table(dta$SOURCE_TYPE))),
+    names(which.max(table(dta$AUTO_SENTIMENT))),
+    comma(sum(dta$REACH, na.rm = TRUE)),
+    comma(sum(dta$INTERACTIONS, na.rm = TRUE)),
+    round(mean(dta$ENGAGEMENT_RATE, na.rm = TRUE), 2)
+  )
+)
+
+key_stats |>
+  kable(caption = "Ključne statistike skupa podataka") |>
+  kable_styling(bootstrap_options = c("striped", "hover"), full_width = FALSE) |>
+  column_spec(1, bold = TRUE)
+```
+
+## Preporuke za daljnju analizu
+
+::: {.callout-tip}
+## Sljedeći koraci
+
+Na temelju ove eksploratorne analize, preporučujemo sljedeće daljnje analize:
+
+1. **Tematsko modeliranje** - Primjena LDA ili drugih algoritama za identifikaciju glavnih tema u sadržaju
+2. **Analiza mreže** - Mapiranje odnosa između izvora i aktera
+3. **Vremenske serije** - Detaljnija analiza trendova i sezonalnosti
+4. **Sentimentna analiza teksta** - Dublja analiza sadržaja objava
+5. **Geo-prostorna analiza** - Vizualizacija geografske distribucije sadržaja
+:::
+
+---
+
+*Dokument generiran: `r Sys.time()`*

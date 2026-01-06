@@ -348,5 +348,201 @@
     "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)",
     "section": "Dodatni resursi",
     "text": "Dodatni resursi\n\nGitHub repozitorij [https://github.com/lusiki/DigiKat]\nDokumentacija [https://lusiki.github.io/DigiKat/baza.html]\nKontakt [luka.sikic@unicath.hr]\nORCID [0009-0006-3519-0272]\n\n\nZadnja ažurirana 2026-01-06\nVerzija 1.0\nR verzija R version 4.5.2 (2025-10-31 ucrt)"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html",
+    "href": "pages/exploratory_analysis.html",
+    "title": "Eksploratorna analiza podataka",
+    "section": "",
+    "text": "Prikaži kod\n# Dimenzije\ncat(\"Broj redaka:\", nrow(dta), \"\\n\")\n\n\nBroj redaka: 269583 \n\n\nPrikaži kod\ncat(\"Broj stupaca:\", ncol(dta), \"\\n\")\n\n\nBroj stupaca: 49 \n\n\nPrikaži kod\ncat(\"Veličina u memoriji:\", format(object.size(dta), units = \"MB\"), \"\\n\")\n\n\nVeličina u memoriji: 1391 Mb \n\n\n\n\nPrikaži kod\n# Tipovi varijabli\ncol_types &lt;- dta |&gt;\n  summarise(across(everything(), class)) |&gt;\n  pivot_longer(everything(), names_to = \"Varijabla\", values_to = \"Tip\") |&gt;\n  count(Tip, name = \"Broj varijabli\")\n\ncol_types |&gt;\n  kable(caption = \"Tipovi varijabli u skupu podataka\") |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"), full_width = FALSE)\n\n\n\nTipovi varijabli u skupu podataka\n\n\nTip\nBroj varijabli\n\n\n\n\ncharacter\n23\n\n\nlogical\n5\n\n\nnumeric\n21\n\n\n\n\n\n\n\n\n\n\nPrikaži kod\nglimpse(dta)\n\n\nRows: 269,583\nColumns: 49\n$ DATE                  &lt;chr&gt; \"2021-01-02\", \"2021-01-02\", \"2021-01-02\", \"2021-…\n$ TIME                  &lt;chr&gt; \"23:36:00\", \"23:28:34\", \"23:16:12\", \"23:05:51\", …\n$ TITLE                 &lt;chr&gt; \"Župa Gospe Brze Pomoći u Slavonskom Brodu uz Si…\n$ FROM                  &lt;chr&gt; \"laudato.hr\", \"hkm.hr\", \"vecernji.hr\", \"hrvatska…\n$ AUTHOR                &lt;chr&gt; NA, \"@hkr_radio\", NA, NA, \"Sisačka biskupija\", \"…\n$ URL                   &lt;chr&gt; \"https://laudato.hr/vijesti/biskupije/zupa-gospe…\n$ URL_PHOTO             &lt;chr&gt; \"https://app.determ.com/images/5Sl_WFcfb5IwTF-ND…\n$ SOURCE_TYPE           &lt;chr&gt; \"web\", \"web\", \"web\", \"web\", \"facebook\", \"web\", \"…\n$ GROUP_NAME            &lt;chr&gt; \"Luka\", \"Luka\", \"Luka\", \"Luka\", \"Luka\", \"Luka\", …\n$ KEYWORD_NAME          &lt;chr&gt; \"opće\", \"opće\", \"opće\", \"opće\", \"opće\", \"opće\", …\n$ FOUND_KEYWORDS        &lt;chr&gt; \"i\", \"i\", \"i\", \"i\", \"i\", \"i\", \"i\", \"i\", \"i\", \"i\"…\n$ LANGUAGES             &lt;chr&gt; \"hr\", \"hr\", \"hr\", \"hr, bs\", \"hr, bs\", \"hr\", \"hr\"…\n$ LOCATIONS             &lt;chr&gt; \"HR\", \"HR\", \"HR\", \"HR\", \"HR\", \"HR\", \"HR\", \"HR\", …\n$ TAGS                  &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ MANUAL_SENTIMENT      &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ AUTO_SENTIMENT        &lt;chr&gt; \"positive\", \"neutral\", \"negative\", \"negative\", \"…\n$ MENTION_SNIPPET       &lt;chr&gt; \"sa svima koji su ovih dana stradali od potresa …\n$ REACH                 &lt;dbl&gt; 21, 48, 3300, 312, 10742, 0, 1760, 606, 3118, 16…\n$ VIRALITY              &lt;dbl&gt; 0.000000000, 0.000000000, 0.000000000, 0.3809523…\n$ ENGAGEMENT_RATE       &lt;dbl&gt; 0.0000000, 0.0000000, 0.0000000, 8.9743590, 2.61…\n$ INTERACTIONS          &lt;dbl&gt; 0, 0, 0, 28, 281, 0, 134, 56, 67, 17, 13, 0, 65,…\n$ FOLLOWERS_COUNT       &lt;dbl&gt; NA, NA, NA, NA, 7025, NA, NA, NA, 13828, 20075, …\n$ LIKE_COUNT            &lt;dbl&gt; 0, 0, 0, 26, 261, 0, 119, 54, 64, 17, 11, 0, 51,…\n$ COMMENT_COUNT         &lt;dbl&gt; 0, 0, 0, 1, 10, 0, 0, 1, 0, 0, 0, 0, 10, 34, 0, …\n$ SHARE_COUNT           &lt;dbl&gt; 0, 0, 0, 1, 10, 0, 15, 1, 3, 0, 2, 0, 4, 1, 0, 1…\n$ TWEET_COUNT           &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ LOVE_COUNT            &lt;dbl&gt; NA, NA, NA, NA, 0, NA, NA, NA, 0, 0, NA, NA, NA,…\n$ WOW_COUNT             &lt;dbl&gt; NA, NA, NA, NA, 0, NA, NA, NA, 0, 0, NA, NA, NA,…\n$ HAHA_COUNT            &lt;dbl&gt; NA, NA, NA, NA, 0, NA, NA, NA, 0, 0, NA, NA, NA,…\n$ SAD_COUNT             &lt;dbl&gt; NA, NA, NA, NA, 0, NA, NA, NA, 0, 0, NA, NA, NA,…\n$ ANGRY_COUNT           &lt;dbl&gt; NA, NA, NA, NA, 0, NA, NA, NA, 0, 0, NA, NA, NA,…\n$ TOTAL_REACTIONS_COUNT &lt;dbl&gt; 0, 0, 0, 28, 281, 0, 134, 56, 67, 17, 13, 0, 65,…\n$ FAVORITE_COUNT        &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ RETWEET_COUNT         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ VIEW_COUNT            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ DISLIKE_COUNT         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ COUNT                 &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ REPOST_COUNT          &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ REDDIT_TYPE           &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ REDDIT_SCORE          &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ INFLUENCE_SCORE       &lt;dbl&gt; 2, 3, 7, 1, 4, 1, 1, 3, 4, 4, 3, 3, 7, 3, 3, 3, …\n$ TWEET_TYPE            &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ TWEET_SOURCE_NAME     &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ TWEET_SOURCE_URL      &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ FULL_TEXT             &lt;chr&gt; \"Župa Gospe Brze Pomoći u Slavonskom Brodu uz Si…\n$ source_file           &lt;chr&gt; \"op_e_01-01-2021_02-01-2021.xlsx\", \"op_e_01-01-2…\n$ matched_roots         &lt;chr&gt; \"biskup, đakon, Biskup, blagoslov\", \"Kardinal, n…\n$ matched_full_words    &lt;chr&gt; \"biskupiju, biskupiji, đakon, Biskupije, blagosl…\n$ year                  &lt;dbl&gt; 2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021, …\n\n\n\n\n\n\n\nPrikaži kod\nmissing_summary &lt;- dta |&gt;\n  summarise(across(everything(), ~sum(is.na(.)))) |&gt;\n  pivot_longer(everything(), names_to = \"Varijabla\", values_to = \"Nedostaje\") |&gt;\n  mutate(\n    Postotak = round(Nedostaje / nrow(dta) * 100, 2),\n    Status = case_when(\n      Postotak == 0 ~ \"Kompletno\",\n      Postotak &lt; 10 ~ \"Nizak\",\n      Postotak &lt; 50 ~ \"Srednji\",\n      TRUE ~ \"Visok\"\n    )\n  ) |&gt;\n  arrange(desc(Nedostaje))\n\n# Vizualizacija nedostajućih vrijednosti\nmissing_summary |&gt;\n  filter(Nedostaje &gt; 0) |&gt;\n  head(20) |&gt;\n  ggplot(aes(x = reorder(Varijabla, Postotak), y = Postotak, fill = Status)) +\n  geom_col() +\n  coord_flip() +\n  scale_fill_manual(values = c(\"Kompletno\" = \"#065f46\", \"Nizak\" = \"#0c4a6e\", \n                                \"Srednji\" = \"#92400e\", \"Visok\" = \"#991b1b\")) +\n  labs(\n    title = \"Nedostajuće vrijednosti po varijablama\",\n    subtitle = \"Top 20 varijabli s najviše nedostajućih vrijednosti\",\n    x = NULL,\n    y = \"Postotak nedostajućih (%)\"\n  )\n\n\n\n\n\n\n\n\n\n\n\nPrikaži kod\nmissing_summary |&gt;\n  filter(Nedostaje &gt; 0) |&gt;\n  datatable(\n    caption = \"Pregled nedostajućih vrijednosti\",\n    options = list(pageLength = 15, scrollX = TRUE),\n    filter = \"top\"\n  )"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#osnovne-informacije",
+    "href": "pages/exploratory_analysis.html#osnovne-informacije",
+    "title": "Eksploratorna analiza podataka",
+    "section": "",
+    "text": "Prikaži kod\n# Dimenzije\ncat(\"Broj redaka:\", nrow(dta), \"\\n\")\n\n\nBroj redaka: 269583 \n\n\nPrikaži kod\ncat(\"Broj stupaca:\", ncol(dta), \"\\n\")\n\n\nBroj stupaca: 49 \n\n\nPrikaži kod\ncat(\"Veličina u memoriji:\", format(object.size(dta), units = \"MB\"), \"\\n\")\n\n\nVeličina u memoriji: 1391 Mb \n\n\n\n\nPrikaži kod\n# Tipovi varijabli\ncol_types &lt;- dta |&gt;\n  summarise(across(everything(), class)) |&gt;\n  pivot_longer(everything(), names_to = \"Varijabla\", values_to = \"Tip\") |&gt;\n  count(Tip, name = \"Broj varijabli\")\n\ncol_types |&gt;\n  kable(caption = \"Tipovi varijabli u skupu podataka\") |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"), full_width = FALSE)\n\n\n\nTipovi varijabli u skupu podataka\n\n\nTip\nBroj varijabli\n\n\n\n\ncharacter\n23\n\n\nlogical\n5\n\n\nnumeric\n21"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#struktura-podataka",
+    "href": "pages/exploratory_analysis.html#struktura-podataka",
+    "title": "Eksploratorna analiza podataka",
+    "section": "",
+    "text": "Prikaži kod\nglimpse(dta)\n\n\nRows: 269,583\nColumns: 49\n$ DATE                  &lt;chr&gt; \"2021-01-02\", \"2021-01-02\", \"2021-01-02\", \"2021-…\n$ TIME                  &lt;chr&gt; \"23:36:00\", \"23:28:34\", \"23:16:12\", \"23:05:51\", …\n$ TITLE                 &lt;chr&gt; \"Župa Gospe Brze Pomoći u Slavonskom Brodu uz Si…\n$ FROM                  &lt;chr&gt; \"laudato.hr\", \"hkm.hr\", \"vecernji.hr\", \"hrvatska…\n$ AUTHOR                &lt;chr&gt; NA, \"@hkr_radio\", NA, NA, \"Sisačka biskupija\", \"…\n$ URL                   &lt;chr&gt; \"https://laudato.hr/vijesti/biskupije/zupa-gospe…\n$ URL_PHOTO             &lt;chr&gt; \"https://app.determ.com/images/5Sl_WFcfb5IwTF-ND…\n$ SOURCE_TYPE           &lt;chr&gt; \"web\", \"web\", \"web\", \"web\", \"facebook\", \"web\", \"…\n$ GROUP_NAME            &lt;chr&gt; \"Luka\", \"Luka\", \"Luka\", \"Luka\", \"Luka\", \"Luka\", …\n$ KEYWORD_NAME          &lt;chr&gt; \"opće\", \"opće\", \"opće\", \"opće\", \"opće\", \"opće\", …\n$ FOUND_KEYWORDS        &lt;chr&gt; \"i\", \"i\", \"i\", \"i\", \"i\", \"i\", \"i\", \"i\", \"i\", \"i\"…\n$ LANGUAGES             &lt;chr&gt; \"hr\", \"hr\", \"hr\", \"hr, bs\", \"hr, bs\", \"hr\", \"hr\"…\n$ LOCATIONS             &lt;chr&gt; \"HR\", \"HR\", \"HR\", \"HR\", \"HR\", \"HR\", \"HR\", \"HR\", …\n$ TAGS                  &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ MANUAL_SENTIMENT      &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ AUTO_SENTIMENT        &lt;chr&gt; \"positive\", \"neutral\", \"negative\", \"negative\", \"…\n$ MENTION_SNIPPET       &lt;chr&gt; \"sa svima koji su ovih dana stradali od potresa …\n$ REACH                 &lt;dbl&gt; 21, 48, 3300, 312, 10742, 0, 1760, 606, 3118, 16…\n$ VIRALITY              &lt;dbl&gt; 0.000000000, 0.000000000, 0.000000000, 0.3809523…\n$ ENGAGEMENT_RATE       &lt;dbl&gt; 0.0000000, 0.0000000, 0.0000000, 8.9743590, 2.61…\n$ INTERACTIONS          &lt;dbl&gt; 0, 0, 0, 28, 281, 0, 134, 56, 67, 17, 13, 0, 65,…\n$ FOLLOWERS_COUNT       &lt;dbl&gt; NA, NA, NA, NA, 7025, NA, NA, NA, 13828, 20075, …\n$ LIKE_COUNT            &lt;dbl&gt; 0, 0, 0, 26, 261, 0, 119, 54, 64, 17, 11, 0, 51,…\n$ COMMENT_COUNT         &lt;dbl&gt; 0, 0, 0, 1, 10, 0, 0, 1, 0, 0, 0, 0, 10, 34, 0, …\n$ SHARE_COUNT           &lt;dbl&gt; 0, 0, 0, 1, 10, 0, 15, 1, 3, 0, 2, 0, 4, 1, 0, 1…\n$ TWEET_COUNT           &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ LOVE_COUNT            &lt;dbl&gt; NA, NA, NA, NA, 0, NA, NA, NA, 0, 0, NA, NA, NA,…\n$ WOW_COUNT             &lt;dbl&gt; NA, NA, NA, NA, 0, NA, NA, NA, 0, 0, NA, NA, NA,…\n$ HAHA_COUNT            &lt;dbl&gt; NA, NA, NA, NA, 0, NA, NA, NA, 0, 0, NA, NA, NA,…\n$ SAD_COUNT             &lt;dbl&gt; NA, NA, NA, NA, 0, NA, NA, NA, 0, 0, NA, NA, NA,…\n$ ANGRY_COUNT           &lt;dbl&gt; NA, NA, NA, NA, 0, NA, NA, NA, 0, 0, NA, NA, NA,…\n$ TOTAL_REACTIONS_COUNT &lt;dbl&gt; 0, 0, 0, 28, 281, 0, 134, 56, 67, 17, 13, 0, 65,…\n$ FAVORITE_COUNT        &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ RETWEET_COUNT         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ VIEW_COUNT            &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ DISLIKE_COUNT         &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ COUNT                 &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ REPOST_COUNT          &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ REDDIT_TYPE           &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ REDDIT_SCORE          &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ INFLUENCE_SCORE       &lt;dbl&gt; 2, 3, 7, 1, 4, 1, 1, 3, 4, 4, 3, 3, 7, 3, 3, 3, …\n$ TWEET_TYPE            &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ TWEET_SOURCE_NAME     &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ TWEET_SOURCE_URL      &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ FULL_TEXT             &lt;chr&gt; \"Župa Gospe Brze Pomoći u Slavonskom Brodu uz Si…\n$ source_file           &lt;chr&gt; \"op_e_01-01-2021_02-01-2021.xlsx\", \"op_e_01-01-2…\n$ matched_roots         &lt;chr&gt; \"biskup, đakon, Biskup, blagoslov\", \"Kardinal, n…\n$ matched_full_words    &lt;chr&gt; \"biskupiju, biskupiji, đakon, Biskupije, blagosl…\n$ year                  &lt;dbl&gt; 2021, 2021, 2021, 2021, 2021, 2021, 2021, 2021, …"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#nedostajuće-vrijednosti",
+    "href": "pages/exploratory_analysis.html#nedostajuće-vrijednosti",
+    "title": "Eksploratorna analiza podataka",
+    "section": "",
+    "text": "Prikaži kod\nmissing_summary &lt;- dta |&gt;\n  summarise(across(everything(), ~sum(is.na(.)))) |&gt;\n  pivot_longer(everything(), names_to = \"Varijabla\", values_to = \"Nedostaje\") |&gt;\n  mutate(\n    Postotak = round(Nedostaje / nrow(dta) * 100, 2),\n    Status = case_when(\n      Postotak == 0 ~ \"Kompletno\",\n      Postotak &lt; 10 ~ \"Nizak\",\n      Postotak &lt; 50 ~ \"Srednji\",\n      TRUE ~ \"Visok\"\n    )\n  ) |&gt;\n  arrange(desc(Nedostaje))\n\n# Vizualizacija nedostajućih vrijednosti\nmissing_summary |&gt;\n  filter(Nedostaje &gt; 0) |&gt;\n  head(20) |&gt;\n  ggplot(aes(x = reorder(Varijabla, Postotak), y = Postotak, fill = Status)) +\n  geom_col() +\n  coord_flip() +\n  scale_fill_manual(values = c(\"Kompletno\" = \"#065f46\", \"Nizak\" = \"#0c4a6e\", \n                                \"Srednji\" = \"#92400e\", \"Visok\" = \"#991b1b\")) +\n  labs(\n    title = \"Nedostajuće vrijednosti po varijablama\",\n    subtitle = \"Top 20 varijabli s najviše nedostajućih vrijednosti\",\n    x = NULL,\n    y = \"Postotak nedostajućih (%)\"\n  )\n\n\n\n\n\n\n\n\n\n\n\nPrikaži kod\nmissing_summary |&gt;\n  filter(Nedostaje &gt; 0) |&gt;\n  datatable(\n    caption = \"Pregled nedostajućih vrijednosti\",\n    options = list(pageLength = 15, scrollX = TRUE),\n    filter = \"top\"\n  )"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#distribucija-po-datumima",
+    "href": "pages/exploratory_analysis.html#distribucija-po-datumima",
+    "title": "Eksploratorna analiza podataka",
+    "section": "2.1 Distribucija po datumima",
+    "text": "2.1 Distribucija po datumima\n\n\nPrikaži kod\n# Pretvorba datuma\ndta &lt;- dta |&gt;\n  mutate(\n    DATE = as.Date(DATE),\n    YEAR = year(DATE),\n    MONTH = lubridate::month(DATE, label = TRUE),\n    WEEK = week(DATE),\n    DAY_OF_WEEK = lubridate::wday(DATE, label = TRUE),\n    YEAR_MONTH = floor_date(DATE, \"month\")\n  )\n\n\n\n\nPrikaži kod\ncat(\"Raspon datuma:\", as.character(min(dta$DATE, na.rm = TRUE)), \n    \"do\", as.character(max(dta$DATE, na.rm = TRUE)), \"\\n\")\n\n\nRaspon datuma: 2021-01-01 do 2024-07-04 \n\n\nPrikaži kod\ncat(\"Ukupno dana:\", as.numeric(max(dta$DATE, na.rm = TRUE) - min(dta$DATE, na.rm = TRUE)), \"\\n\")\n\n\nUkupno dana: 1280"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#trend-objava-kroz-vrijeme",
+    "href": "pages/exploratory_analysis.html#trend-objava-kroz-vrijeme",
+    "title": "Eksploratorna analiza podataka",
+    "section": "2.2 Trend objava kroz vrijeme",
+    "text": "2.2 Trend objava kroz vrijeme\n\n\nPrikaži kod\nmonthly_counts &lt;- dta |&gt;\n  count(YEAR_MONTH) |&gt;\n  filter(!is.na(YEAR_MONTH))\n\nggplot(monthly_counts, aes(x = YEAR_MONTH, y = n)) +\n  geom_line(color = colors_digikat[1], linewidth = 0.8) +\n  geom_smooth(method = \"loess\", se = TRUE, alpha = 0.2, color = colors_digikat[2]) +\n  scale_x_date(date_breaks = \"6 months\", date_labels = \"%b %Y\") +\n  scale_y_continuous(labels = comma) +\n  labs(\n    title = \"Trend broja objava kroz vrijeme\",\n    subtitle = \"Mjesečna agregacija s LOESS trend linijom\",\n    x = NULL,\n    y = \"Broj objava\"\n  ) +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#distribucija-po-godinama",
+    "href": "pages/exploratory_analysis.html#distribucija-po-godinama",
+    "title": "Eksploratorna analiza podataka",
+    "section": "2.3 Distribucija po godinama",
+    "text": "2.3 Distribucija po godinama\n\n\nPrikaži kod\nyearly_counts &lt;- dta |&gt;\n  count(YEAR) |&gt;\n  filter(!is.na(YEAR))\n\nggplot(yearly_counts, aes(x = factor(YEAR), y = n)) +\n  geom_col(fill = colors_digikat[1], alpha = 0.8) +\n  geom_text(aes(label = comma(n)), vjust = -0.5, size = 3.5) +\n  scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.15))) +\n  labs(\n    title = \"Broj objava po godinama\",\n    x = \"Godina\",\n    y = \"Broj objava\"\n  )"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#distribucija-po-danima-u-tjednu",
+    "href": "pages/exploratory_analysis.html#distribucija-po-danima-u-tjednu",
+    "title": "Eksploratorna analiza podataka",
+    "section": "2.4 Distribucija po danima u tjednu",
+    "text": "2.4 Distribucija po danima u tjednu\n\n\nPrikaži kod\ndta |&gt;\n  filter(!is.na(DAY_OF_WEEK)) |&gt;\n  count(DAY_OF_WEEK) |&gt;\n  ggplot(aes(x = DAY_OF_WEEK, y = n)) +\n  geom_col(fill = colors_digikat[3], alpha = 0.8) +\n  geom_text(aes(label = comma(n)), vjust = -0.5, size = 3.5) +\n  scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.15))) +\n  labs(\n    title = \"Distribucija objava po danima u tjednu\",\n    x = NULL,\n    y = \"Broj objava\"\n  )"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#heatmapa-dan-u-tjednu-mjesec",
+    "href": "pages/exploratory_analysis.html#heatmapa-dan-u-tjednu-mjesec",
+    "title": "Eksploratorna analiza podataka",
+    "section": "2.5 Heatmapa: Dan u tjednu × Mjesec",
+    "text": "2.5 Heatmapa: Dan u tjednu × Mjesec\n\n\nPrikaži kod\nheatmap_data &lt;- dta |&gt;\n  filter(!is.na(DAY_OF_WEEK), !is.na(MONTH)) |&gt;\n  count(DAY_OF_WEEK, MONTH)\n\nggplot(heatmap_data, aes(x = MONTH, y = DAY_OF_WEEK, fill = n)) +\n  geom_tile(color = \"white\") +\n  scale_fill_gradient(low = \"#f8fafc\", high = colors_digikat[1], labels = comma) +\n  labs(\n    title = \"Distribucija objava: Dan u tjednu × Mjesec\",\n    x = \"Mjesec\",\n    y = \"Dan u tjednu\",\n    fill = \"Broj objava\"\n  ) +\n  theme(legend.position = \"right\")"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#tipovi-izvora-source_type",
+    "href": "pages/exploratory_analysis.html#tipovi-izvora-source_type",
+    "title": "Eksploratorna analiza podataka",
+    "section": "3.1 Tipovi izvora (SOURCE_TYPE)",
+    "text": "3.1 Tipovi izvora (SOURCE_TYPE)\n\n\nPrikaži kod\nsource_type_counts &lt;- dta |&gt;\n  count(SOURCE_TYPE, sort = TRUE) |&gt;\n  filter(!is.na(SOURCE_TYPE)) |&gt;\n  mutate(pct = n / sum(n) * 100)\n\nggplot(source_type_counts, aes(x = reorder(SOURCE_TYPE, n), y = n)) +\n  geom_col(aes(fill = SOURCE_TYPE), show.legend = FALSE) +\n  geom_text(aes(label = paste0(comma(n), \" (\", round(pct, 1), \"%)\")), \n            hjust = -0.1, size = 3.5) +\n  coord_flip() +\n  scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.25))) +\n  scale_fill_viridis_d() +\n  labs(\n    title = \"Distribucija po tipu izvora\",\n    x = NULL,\n    y = \"Broj objava\"\n  )"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#top-20-izvora-from",
+    "href": "pages/exploratory_analysis.html#top-20-izvora-from",
+    "title": "Eksploratorna analiza podataka",
+    "section": "3.2 Top 20 izvora (FROM)",
+    "text": "3.2 Top 20 izvora (FROM)\n\n\nPrikaži kod\ntop_sources &lt;- dta |&gt;\n  count(FROM, sort = TRUE) |&gt;\n  filter(!is.na(FROM)) |&gt;\n  head(20)\n\nggplot(top_sources, aes(x = reorder(FROM, n), y = n)) +\n  geom_col(fill = colors_digikat[1], alpha = 0.8) +\n  geom_text(aes(label = comma(n)), hjust = -0.1, size = 3) +\n  coord_flip() +\n  scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.15))) +\n  labs(\n    title = \"Top 20 izvora po broju objava\",\n    x = NULL,\n    y = \"Broj objava\"\n  )"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#top-izvori-po-tipu-platforme",
+    "href": "pages/exploratory_analysis.html#top-izvori-po-tipu-platforme",
+    "title": "Eksploratorna analiza podataka",
+    "section": "3.3 Top izvori po tipu platforme",
+    "text": "3.3 Top izvori po tipu platforme\n\n\nPrikaži kod\ntop_by_type &lt;- dta |&gt;\n  filter(!is.na(SOURCE_TYPE), !is.na(FROM)) |&gt;\ngroup_by(SOURCE_TYPE) |&gt;\ncount(FROM, sort = TRUE) |&gt;\nslice_max(n, n = 5, with_ties = FALSE) |&gt;\nmutate(FROM = str_trunc(FROM, 35)) |&gt;\nungroup()\n\nggplot(top_by_type, aes(x = reorder_within(FROM, n, SOURCE_TYPE), y = n)) +\ngeom_col(aes(fill = SOURCE_TYPE), show.legend = FALSE) +\nfacet_wrap(~SOURCE_TYPE, scales = \"free_y\", ncol = 2) +\ncoord_flip() +\nscale_x_reordered() +\nscale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.15))) +\nscale_fill_manual(values = colors_digikat) +\nlabs(\n    title = \"Top 5 izvora po tipu platforme\",\n    x = NULL,\n    y = \"Broj objava\"\n  ) +\n  theme(strip.text = element_text(face = \"bold\"))"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#distribucija-automatskog-sentimenta",
+    "href": "pages/exploratory_analysis.html#distribucija-automatskog-sentimenta",
+    "title": "Eksploratorna analiza podataka",
+    "section": "4.1 Distribucija automatskog sentimenta",
+    "text": "4.1 Distribucija automatskog sentimenta\n\n\nPrikaži kod\nsentiment_counts &lt;- dta |&gt;\n  count(AUTO_SENTIMENT, sort = TRUE) |&gt;\n  filter(!is.na(AUTO_SENTIMENT)) |&gt;\n  mutate(pct = n / sum(n) * 100)\n\nsentiment_colors &lt;- c(\"positive\" = \"#065f46\", \"neutral\" = \"#475569\", \"negative\" = \"#991b1b\")\n\nggplot(sentiment_counts, aes(x = reorder(AUTO_SENTIMENT, n), y = n, fill = AUTO_SENTIMENT)) +\n  geom_col(show.legend = FALSE) +\n  geom_text(aes(label = paste0(comma(n), \"\\n(\", round(pct, 1), \"%)\")), \n            hjust = -0.1, size = 4) +\n  coord_flip() +\n  scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.25))) +\n  scale_fill_manual(values = sentiment_colors) +\n  labs(\n    title = \"Distribucija automatskog sentimenta\",\n    x = NULL,\n    y = \"Broj objava\"\n  )"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#sentiment-po-tipu-izvora",
+    "href": "pages/exploratory_analysis.html#sentiment-po-tipu-izvora",
+    "title": "Eksploratorna analiza podataka",
+    "section": "4.2 Sentiment po tipu izvora",
+    "text": "4.2 Sentiment po tipu izvora\n\n\nPrikaži kod\nsentiment_by_source &lt;- dta |&gt;\n  filter(!is.na(AUTO_SENTIMENT), !is.na(SOURCE_TYPE)) |&gt;\n  count(SOURCE_TYPE, AUTO_SENTIMENT) |&gt;\n  group_by(SOURCE_TYPE) |&gt;\n  mutate(pct = n / sum(n) * 100) |&gt;\n  ungroup()\n\nggplot(sentiment_by_source, aes(x = SOURCE_TYPE, y = pct, fill = AUTO_SENTIMENT)) +\n  geom_col(position = \"dodge\") +\n  geom_text(aes(label = paste0(round(pct, 1), \"%\")), \n            position = position_dodge(width = 0.9), vjust = -0.5, size = 3) +\n  scale_y_continuous(expand = expansion(mult = c(0, 0.15))) +\n  scale_fill_manual(values = sentiment_colors) +\n  labs(\n    title = \"Distribucija sentimenta po tipu izvora\",\n    x = NULL,\n    y = \"Postotak (%)\",\n    fill = \"Sentiment\"\n  )"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#trend-sentimenta-kroz-vrijeme",
+    "href": "pages/exploratory_analysis.html#trend-sentimenta-kroz-vrijeme",
+    "title": "Eksploratorna analiza podataka",
+    "section": "4.3 Trend sentimenta kroz vrijeme",
+    "text": "4.3 Trend sentimenta kroz vrijeme\n\n\nPrikaži kod\nsentiment_trend &lt;- dta |&gt;\n  filter(!is.na(AUTO_SENTIMENT), !is.na(YEAR_MONTH)) |&gt;\n  count(YEAR_MONTH, AUTO_SENTIMENT) |&gt;\n  group_by(YEAR_MONTH) |&gt;\n  mutate(pct = n / sum(n) * 100) |&gt;\n  ungroup()\n\nggplot(sentiment_trend, aes(x = YEAR_MONTH, y = pct, color = AUTO_SENTIMENT)) +\n  geom_line(linewidth = 0.8) +\n  geom_smooth(method = \"loess\", se = FALSE, linetype = \"dashed\", alpha = 0.5) +\n  scale_x_date(date_breaks = \"6 months\", date_labels = \"%b %Y\") +\n  scale_color_manual(values = sentiment_colors) +\n  labs(\n    title = \"Trend sentimenta kroz vrijeme\",\n    subtitle = \"Mjesečni postoci s LOESS trend linijama\",\n    x = NULL,\n    y = \"Postotak (%)\",\n    color = \"Sentiment\"\n  ) +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#distribucija-dosega-reach",
+    "href": "pages/exploratory_analysis.html#distribucija-dosega-reach",
+    "title": "Eksploratorna analiza podataka",
+    "section": "5.1 Distribucija dosega (REACH)",
+    "text": "5.1 Distribucija dosega (REACH)\n\n\nPrikaži kod\nreach_summary &lt;- dta |&gt;\n  filter(!is.na(REACH), REACH &gt; 0) |&gt;\n  summarise(\n    Min = min(REACH),\n    Q1 = quantile(REACH, 0.25),\n    Median = median(REACH),\n    Mean = mean(REACH),\n    Q3 = quantile(REACH, 0.75),\n    Max = max(REACH),\n    SD = sd(REACH)\n  )\n\nreach_summary |&gt;\n  pivot_longer(everything()) |&gt;\n  mutate(value = round(value, 0)) |&gt;\n  kable(col.names = c(\"Statistika\", \"Vrijednost\"), caption = \"Sažetak dosega\") |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"), full_width = FALSE)\n\n\n\nSažetak dosega\n\n\nStatistika\nVrijednost\n\n\n\n\nMin\n1\n\n\nQ1\n48\n\n\nMedian\n501\n\n\nMean\n3201\n\n\nQ3\n2062\n\n\nMax\n8528601\n\n\nSD\n28730\n\n\n\n\n\n\n\nPrikaži kod\ndta |&gt;\n  filter(!is.na(REACH), REACH &gt; 0, REACH &lt; quantile(REACH, 0.99, na.rm = TRUE)) |&gt;\n  ggplot(aes(x = REACH)) +\n  geom_histogram(bins = 50, fill = colors_digikat[1], alpha = 0.8, color = \"white\") +\n  scale_x_log10(labels = comma) +\n  scale_y_continuous(labels = comma) +\n  labs(\n    title = \"Distribucija dosega (REACH)\",\n    subtitle = \"Logaritamska skala, bez gornjeg 1% outliera\",\n    x = \"Doseg (log skala)\",\n    y = \"Broj objava\"\n  )"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#distribucija-interakcija",
+    "href": "pages/exploratory_analysis.html#distribucija-interakcija",
+    "title": "Eksploratorna analiza podataka",
+    "section": "5.2 Distribucija interakcija",
+    "text": "5.2 Distribucija interakcija\n\n\nPrikaži kod\ndta |&gt;\n  filter(!is.na(INTERACTIONS), INTERACTIONS &gt; 0, \n         INTERACTIONS &lt; quantile(INTERACTIONS, 0.99, na.rm = TRUE)) |&gt;\n  ggplot(aes(x = INTERACTIONS)) +\n  geom_histogram(bins = 50, fill = colors_digikat[2], alpha = 0.8, color = \"white\") +\n  scale_x_log10(labels = comma) +\n  scale_y_continuous(labels = comma) +\n  labs(\n    title = \"Distribucija ukupnih interakcija\",\n    subtitle = \"Logaritamska skala, bez gornjeg 1% outliera\",\n    x = \"Interakcije (log skala)\",\n    y = \"Broj objava\"\n  )"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#tipovi-interakcija",
+    "href": "pages/exploratory_analysis.html#tipovi-interakcija",
+    "title": "Eksploratorna analiza podataka",
+    "section": "5.3 Tipovi interakcija",
+    "text": "5.3 Tipovi interakcija\n\n\nPrikaži kod\ninteraction_cols &lt;- c(\"LIKE_COUNT\", \"COMMENT_COUNT\", \"SHARE_COUNT\", \n                      \"LOVE_COUNT\", \"WOW_COUNT\", \"HAHA_COUNT\", \"SAD_COUNT\", \"ANGRY_COUNT\")\n\ninteraction_summary &lt;- dta |&gt;\n  summarise(across(all_of(interaction_cols), ~sum(., na.rm = TRUE))) |&gt;\n  pivot_longer(everything(), names_to = \"Tip\", values_to = \"Ukupno\") |&gt;\n  mutate(\n    Tip = str_remove(Tip, \"_COUNT\"),\n    pct = Ukupno / sum(Ukupno) * 100\n  ) |&gt;\n  arrange(desc(Ukupno))\n\nggplot(interaction_summary, aes(x = reorder(Tip, Ukupno), y = Ukupno)) +\n  geom_col(fill = colors_digikat[3], alpha = 0.8) +\n  geom_text(aes(label = paste0(comma(Ukupno), \"\\n(\", round(pct, 1), \"%)\")), \n            hjust = -0.1, size = 3) +\n  coord_flip() +\n  scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.25))) +\n  labs(\n    title = \"Ukupne interakcije po tipu\",\n    x = NULL,\n    y = \"Ukupni broj\"\n  )"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#angažman-po-tipu-izvora",
+    "href": "pages/exploratory_analysis.html#angažman-po-tipu-izvora",
+    "title": "Eksploratorna analiza podataka",
+    "section": "5.4 Angažman po tipu izvora",
+    "text": "5.4 Angažman po tipu izvora\n\n\nPrikaži kod\nengagement_by_source &lt;- dta |&gt;\n  filter(!is.na(SOURCE_TYPE)) |&gt;\n  group_by(SOURCE_TYPE) |&gt;\n  summarise(\n    n = n(),\n    avg_reach = mean(REACH, na.rm = TRUE),\n    avg_interactions = mean(INTERACTIONS, na.rm = TRUE),\n    avg_engagement_rate = mean(ENGAGEMENT_RATE, na.rm = TRUE),\n    .groups = \"drop\"\n  ) |&gt;\n  arrange(desc(avg_interactions))\n\nengagement_by_source |&gt;\n  mutate(across(where(is.numeric), ~round(., 2))) |&gt;\n  kable(\n    col.names = c(\"Tip izvora\", \"Broj objava\", \"Prosjek dosega\", \n                  \"Prosjek interakcija\", \"Prosjek stope angažmana\"),\n    caption = \"Angažman po tipu izvora\"\n  ) |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"), full_width = FALSE)\n\n\n\nAngažman po tipu izvora\n\n\nTip izvora\nBroj objava\nProsjek dosega\nProsjek interakcija\nProsjek stope angažmana\n\n\n\n\ntiktok\n2\n535150.00\n27345.50\n3.30\n\n\nfacebook\n13181\n10108.47\n160.66\n1.29\n\n\nweb\n222298\n2562.83\n124.57\n2.98\n\n\nyoutube\n24319\n3334.91\n113.57\n7.85\n\n\ntwitter\n2300\n333.25\n7.83\n2.30\n\n\ncomment\n1571\nNaN\nNaN\nNaN\n\n\nforum\n4051\nNaN\nNaN\nNaN\n\n\nreddit\n1861\nNaN\nNaN\nNaN\n\n\n\n\n\n\n\nPrikaži kod\ndta |&gt;\n  filter(!is.na(REACH), !is.na(INTERACTIONS), !is.na(SOURCE_TYPE),\n         REACH &gt; 0, INTERACTIONS &gt; 0,\n         REACH &lt; quantile(REACH, 0.99, na.rm = TRUE),\n         INTERACTIONS &lt; quantile(INTERACTIONS, 0.99, na.rm = TRUE)) |&gt;\n  sample_n(min(10000, n())) |&gt;\n  ggplot(aes(x = REACH, y = INTERACTIONS, color = SOURCE_TYPE)) +\n  geom_point(alpha = 0.3, size = 1) +\n  scale_x_log10(labels = comma) +\n  scale_y_log10(labels = comma) +\n  scale_color_manual(values = colors_digikat) +\n  labs(\n    title = \"Odnos dosega i interakcija\",\n    subtitle = \"Uzorak od max 10.000 objava (log skale)\",\n    x = \"Doseg\",\n    y = \"Interakcije\",\n    color = \"Tip izvora\"\n  )"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#distribucija-jezika",
+    "href": "pages/exploratory_analysis.html#distribucija-jezika",
+    "title": "Eksploratorna analiza podataka",
+    "section": "6.1 Distribucija jezika",
+    "text": "6.1 Distribucija jezika\n\n\nPrikaži kod\nlanguage_counts &lt;- dta |&gt;\n  separate_rows(LANGUAGES, sep = \", \") |&gt;\n  count(LANGUAGES, sort = TRUE) |&gt;\n  filter(!is.na(LANGUAGES)) |&gt;\n  head(15)\n\nggplot(language_counts, aes(x = reorder(LANGUAGES, n), y = n)) +\n  geom_col(fill = colors_digikat[4], alpha = 0.8) +\n  geom_text(aes(label = comma(n)), hjust = -0.1, size = 3.5) +\n  coord_flip() +\n  scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.15))) +\n  labs(\n    title = \"Distribucija po jezicima\",\n    subtitle = \"Top 15 jezika\",\n    x = NULL,\n    y = \"Broj objava\"\n  )"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#distribucija-lokacija",
+    "href": "pages/exploratory_analysis.html#distribucija-lokacija",
+    "title": "Eksploratorna analiza podataka",
+    "section": "6.2 Distribucija lokacija",
+    "text": "6.2 Distribucija lokacija\n\n\nPrikaži kod\nlocation_counts &lt;- dta |&gt;\n  separate_rows(LOCATIONS, sep = \", \") |&gt;\n  count(LOCATIONS, sort = TRUE) |&gt;\n  filter(!is.na(LOCATIONS)) |&gt;\n  head(15)\n\nggplot(location_counts, aes(x = reorder(LOCATIONS, n), y = n)) +\n  geom_col(fill = colors_digikat[5], alpha = 0.8) +\n  geom_text(aes(label = comma(n)), hjust = -0.1, size = 3.5) +\n  coord_flip() +\n  scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.15))) +\n  labs(\n    title = \"Distribucija po lokacijama\",\n    subtitle = \"Top 15 lokacija (ISO kodovi)\",\n    x = NULL,\n    y = \"Broj objava\"\n  )"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#distribucija-pronađenih-ključnih-riječi",
+    "href": "pages/exploratory_analysis.html#distribucija-pronađenih-ključnih-riječi",
+    "title": "Eksploratorna analiza podataka",
+    "section": "7.1 Distribucija pronađenih ključnih riječi",
+    "text": "7.1 Distribucija pronađenih ključnih riječi\n\n\nPrikaži kod\nkeyword_counts &lt;- dta |&gt;\n  filter(!is.na(FOUND_KEYWORDS), FOUND_KEYWORDS != \"\") |&gt;\n  separate_rows(FOUND_KEYWORDS, sep = \", \") |&gt;\n  count(FOUND_KEYWORDS, sort = TRUE) |&gt;\n  filter(nchar(FOUND_KEYWORDS) &gt; 2) |&gt;\n  head(30)\n\nggplot(keyword_counts, aes(x = reorder(FOUND_KEYWORDS, n), y = n)) +\n  geom_col(fill = colors_digikat[1], alpha = 0.8) +\n  coord_flip() +\n  scale_y_continuous(labels = comma) +\n  labs(\n    title = \"Top 30 pronađenih ključnih riječi\",\n    x = NULL,\n    y = \"Broj pojava\"\n  )"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#wordcloud-ključnih-riječi",
+    "href": "pages/exploratory_analysis.html#wordcloud-ključnih-riječi",
+    "title": "Eksploratorna analiza podataka",
+    "section": "7.2 Wordcloud ključnih riječi",
+    "text": "7.2 Wordcloud ključnih riječi\n\n\nPrikaži kod\nif (nrow(keyword_counts) &gt; 0) {\n  wordcloud2(keyword_counts, size = 0.5, color = \"random-dark\", \n             backgroundColor = \"white\", minRotation = 0, maxRotation = 0)\n}"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#distribucija-influence-score",
+    "href": "pages/exploratory_analysis.html#distribucija-influence-score",
+    "title": "Eksploratorna analiza podataka",
+    "section": "8.1 Distribucija Influence Score",
+    "text": "8.1 Distribucija Influence Score\n\n\nPrikaži kod\ndta |&gt;\n  filter(!is.na(INFLUENCE_SCORE)) |&gt;\n  ggplot(aes(x = factor(INFLUENCE_SCORE))) +\n  geom_bar(fill = colors_digikat[1], alpha = 0.8) +\n  geom_text(stat = \"count\", aes(label = comma(after_stat(count))), vjust = -0.5, size = 3) +\n  scale_y_continuous(labels = comma, expand = expansion(mult = c(0, 0.15))) +\n  labs(\n    title = \"Distribucija Influence Score\",\n    x = \"Influence Score\",\n    y = \"Broj objava\"\n  )"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#influence-score-po-tipu-izvora",
+    "href": "pages/exploratory_analysis.html#influence-score-po-tipu-izvora",
+    "title": "Eksploratorna analiza podataka",
+    "section": "8.2 Influence Score po tipu izvora",
+    "text": "8.2 Influence Score po tipu izvora\n\n\nPrikaži kod\ninfluence_by_source &lt;- dta |&gt;\n  filter(!is.na(INFLUENCE_SCORE), !is.na(SOURCE_TYPE)) |&gt;\n  group_by(SOURCE_TYPE) |&gt;\n  summarise(\n    mean_influence = mean(INFLUENCE_SCORE, na.rm = TRUE),\n    median_influence = median(INFLUENCE_SCORE, na.rm = TRUE),\n    .groups = \"drop\"\n  )\n\nggplot(influence_by_source, aes(x = reorder(SOURCE_TYPE, mean_influence), y = mean_influence)) +\n  geom_col(fill = colors_digikat[2], alpha = 0.8) +\n  geom_text(aes(label = round(mean_influence, 2)), hjust = -0.1, size = 4) +\n  coord_flip() +\n  scale_y_continuous(expand = expansion(mult = c(0, 0.15))) +\n  labs(\n    title = \"Prosječni Influence Score po tipu izvora\",\n    x = NULL,\n    y = \"Prosječni Influence Score\"\n  )"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#korelacijska-matrica-numeričkih-varijabli",
+    "href": "pages/exploratory_analysis.html#korelacijska-matrica-numeričkih-varijabli",
+    "title": "Eksploratorna analiza podataka",
+    "section": "9.1 Korelacijska matrica numeričkih varijabli",
+    "text": "9.1 Korelacijska matrica numeričkih varijabli\n\n\nPrikaži kod\nnumeric_vars &lt;- dta |&gt;\n  select(REACH, VIRALITY, ENGAGEMENT_RATE, INTERACTIONS, FOLLOWERS_COUNT,\n         LIKE_COUNT, COMMENT_COUNT, SHARE_COUNT, INFLUENCE_SCORE) |&gt;\n  select(where(~sum(!is.na(.)) &gt; 1000))\n\ncor_matrix &lt;- cor(numeric_vars, use = \"pairwise.complete.obs\")\n\n# Remove variables with too many NAs that cause issues\ncor_matrix &lt;- cor_matrix[complete.cases(cor_matrix), complete.cases(cor_matrix)]\n\ncorrplot(cor_matrix, method = \"color\", type = \"upper\", \n         order = \"hclust\", addCoef.col = \"black\", number.cex = 0.7,\n         tl.col = \"black\", tl.srt = 45, \n         col = colorRampPalette(c(\"#991b1b\", \"white\", \"#1e3a8a\"))(100),\n         title = \"Korelacijska matrica numeričkih varijabli\",\n         mar = c(0, 0, 2, 0))"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#ključne-statistike",
+    "href": "pages/exploratory_analysis.html#ključne-statistike",
+    "title": "Eksploratorna analiza podataka",
+    "section": "10.1 Ključne statistike",
+    "text": "10.1 Ključne statistike\n\n\nPrikaži kod\nkey_stats &lt;- tibble(\n  Metrika = c(\n    \"Ukupno objava\",\n    \"Vremenski raspon\",\n    \"Broj jedinstvenih izvora\",\n    \"Najčešći tip izvora\",\n    \"Prevladavajući sentiment\",\n    \"Ukupni doseg\",\n    \"Ukupne interakcije\",\n    \"Prosječni angažman po objavi\"\n  ),\n  Vrijednost = c(\n    comma(nrow(dta)),\n    paste(min(dta$DATE, na.rm = TRUE), \"do\", max(dta$DATE, na.rm = TRUE)),\n    comma(n_distinct(dta$FROM, na.rm = TRUE)),\n    names(which.max(table(dta$SOURCE_TYPE))),\n    names(which.max(table(dta$AUTO_SENTIMENT))),\n    comma(sum(dta$REACH, na.rm = TRUE)),\n    comma(sum(dta$INTERACTIONS, na.rm = TRUE)),\n    round(mean(dta$ENGAGEMENT_RATE, na.rm = TRUE), 2)\n  )\n)\n\nkey_stats |&gt;\n  kable(caption = \"Ključne statistike skupa podataka\") |&gt;\n  kable_styling(bootstrap_options = c(\"striped\", \"hover\"), full_width = FALSE) |&gt;\n  column_spec(1, bold = TRUE)\n\n\n\nKljučne statistike skupa podataka\n\n\nMetrika\nVrijednost\n\n\n\n\nUkupno objava\n269,583\n\n\nVremenski raspon\n2021-01-01 do 2024-07-04\n\n\nBroj jedinstvenih izvora\n6,056\n\n\nNajčešći tip izvora\nweb\n\n\nPrevladavajući sentiment\npositive\n\n\nUkupni doseg\n760,678,338\n\n\nUkupne interakcije\n32,516,852\n\n\nProsječni angažman po objavi\n3.2"
+  },
+  {
+    "objectID": "pages/exploratory_analysis.html#preporuke-za-daljnju-analizu",
+    "href": "pages/exploratory_analysis.html#preporuke-za-daljnju-analizu",
+    "title": "Eksploratorna analiza podataka",
+    "section": "10.2 Preporuke za daljnju analizu",
+    "text": "10.2 Preporuke za daljnju analizu\n\n\n\n\n\n\nSljedeći koraci\n\n\n\nNa temelju ove eksploratorne analize, preporučujemo sljedeće daljnje analize:\n\nTematsko modeliranje - Primjena LDA ili drugih algoritama za identifikaciju glavnih tema u sadržaju\nAnaliza mreže - Mapiranje odnosa između izvora i aktera\nVremenske serije - Detaljnija analiza trendova i sezonalnosti\nSentimentna analiza teksta - Dublja analiza sadržaja objava\nGeo-prostorna analiza - Vizualizacija geografske distribucije sadržaja\n\n\n\n\nDokument generiran: 2026-01-06 09:22:47.375032"
   }
 ]
