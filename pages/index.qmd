@@ -26,16 +26,19 @@ format:
 
 Dobrodošli na službenu stranicu projekta. Ovaj trogodišnji projekt (**2025.–2027.**) provodi se na [Odjelu za komunikologiju](https://www.unicath.hr/odjeli-i-fakulteti/komunikologija) [Hrvatskog katoličkog sveučilišta](https://www.unicath.hr/).
 
-Iako digitalni mediji predstavljaju dominantnu komponentu javnog prostora, u Hrvatskoj nedostaje sustavni pregled njihovih tematskih sastavnica. Ovaj projekt ispunjava tu prazninu fokusirajući se na specifičnu i društveno relevantnu nišu: **sadržaje s katoličkom tematikom**.
+Iako digitalni mediji predstavljaju dominantnu komponentu javnog prostora, u Hrvatskoj nedostaje sustavni pregled njihovih tematskih sastavnica. Ovaj projekt ispunjava tu prazninu fokusirajući se na specifičnu i društveno relevantnu nišu **sadržaja s katoličkom tematikom**.
+
 
 Koristeći napredne metode iz područja [računalnih društvenih znanosti](https://pure.rug.nl/ws/portalfiles/portal/140988937/Manifesto_of_computational_social_science.pdf), cilj nam je:
-1.  Izgraditi sveobuhvatnu bazu podataka digitalnih objava.
-2.  Analizirati značajke i narative objava.
-3.  Utvrditi povezanost sa širim društvenim trendovima.
+
+1. Izgraditi sveobuhvatnu bazu podataka digitalnih objava.
+2. Analizirati značajke i narative objava.
+3. Utvrditi povezanost sa širim društvenim trendovima.
+
 
 ## Istraživačka pitanja
 
-Fokusirani smo na pet ključnih pitanja koja definiraju smjer istraživanja:
+Fokusirani smo na pet pitanja koja definiraju smjer istraživanja:
 
 1.  Kako se katolička tematika prikazuje i raspravlja u hrvatskom digitalnom medijskom prostoru?
 2.  Kakve su veze između katoličkih tema i drugih društvenih i političkih pitanja?
