@@ -1,0 +1,545 @@
+/*-- scss:defaults --*/
+
+// Professional academic color palette
+$primary: #1e3a8a !default;      // Deep navy blue - authority, trust
+$secondary: #475569 !default;     // Slate gray - professionalism  
+$accent: #991b1b !default;        // Deep red - emphasis
+$success: #065f46 !default;       // Forest green
+$info: #0c4a6e !default;          // Deep blue
+$warning: #92400e !default;       // Brown
+$danger: #991b1b !default;        // Deep red
+$light: #f8fafc !default;         // Very light gray
+$dark: #0f172a !default;          // Almost black
+
+// Professional typography
+$font-family-sans-serif: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !default;
+$font-family-monospace: "Roboto Mono", monospace !default;
+$headings-font-family: "Roboto", sans-serif !default;
+$headings-font-weight: 600 !default;
+$headings-color: $dark !default;
+
+// Base
+$body-bg: #ffffff !default;
+$body-color: #1e293b !default;
+$link-color: $primary !default;
+$link-hover-color: darken($primary, 10%) !default;
+
+// Professional borders and shadows
+$border-radius: 0.25rem !default;
+$box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !default;
+$box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !default;
+
+/*-- scss:rules --*/
+
+// Import Roboto fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap');
+
+// Smooth scrolling
+html {
+  scroll-behavior: smooth;
+}
+
+// Body improvements
+body {
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+// Hero section - professional and restrained
+.hero-section {
+  background: linear-gradient(180deg, #1e3a8a 0%, #1e40af 100%);
+  color: white;
+  padding: 4rem 2rem 3rem 2rem;
+  margin: -2rem -2rem 3rem -2rem;
+  border-bottom: 3px solid $accent;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-image {
+  max-width: 200px;
+  margin: 0 auto 2rem auto;
+  display: block;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+  border-radius: 0.25rem;
+}
+
+.hero-title {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+  color: white !important;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  opacity: 0.95;
+  max-width: 750px;
+  margin: 0 auto 2rem auto;
+  font-weight: 400;
+}
+
+.badges {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.badge {
+  transition: opacity 0.2s;
+}
+
+.badge:hover {
+  opacity: 0.8;
+}
+
+// Section headers - professional styling
+.section-header {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: $primary;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid $primary;
+  position: relative;
+  letter-spacing: -0.01em;
+}
+
+.section-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 3rem 0;
+}
+
+// Content boxes - clean and professional
+.content-box {
+  margin-bottom: 2rem;
+}
+
+.welcome-message {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: $light;
+  border-left: 3px solid $primary;
+  border-radius: $border-radius;
+}
+
+.info-card {
+  background: white;
+  padding: 2rem;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  height: 100%;
+  border: 1px solid #e2e8f0;
+  transition: box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  box-shadow: $box-shadow-lg;
+}
+
+.info-card h3 {
+  color: $primary;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.approach-box {
+  background: #f8fafc;
+  padding: 2rem;
+  border-radius: $border-radius;
+  margin-top: 2rem;
+  border: 1px solid #e2e8f0;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+// Questions grid - professional cards
+.questions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.question-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  border-left: 3px solid $primary;
+  transition: all 0.3s ease;
+  display: flex;
+  gap: 1rem;
+  align-items: start;
+}
+
+.question-card:hover {
+  box-shadow: $box-shadow-lg;
+  border-left-color: $accent;
+}
+
+.question-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  font-weight: 700;
+  color: $primary;
+  background: #f1f5f9;
+  padding: 0.5rem 0.75rem;
+  border-radius: $border-radius;
+  min-width: 3rem;
+  text-align: center;
+}
+
+.question-text {
+  flex: 1;
+  line-height: 1.7;
+  font-weight: 400;
+  font-size: 0.9375rem;
+}
+
+// Methodology section - professional and clean
+.methodology-intro {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: $dark;
+}
+
+.methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.method-card {
+  background: white;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  border: 1px solid #e2e8f0;
+}
+
+.method-card:hover {
+  box-shadow: $box-shadow-lg;
+}
+
+.method-header {
+  background: $primary;
+  color: white;
+  padding: 1.25rem 1.5rem;
+  margin: 0;
+}
+
+.method-header h3 {
+  color: white !important;
+  font-size: 1.0625rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.method-description {
+  padding: 1.5rem;
+  line-height: 1.7;
+  font-size: 0.9375rem;
+}
+
+// Team section - professional presentation
+.team-intro {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.team-leader {
+  margin-bottom: 2rem;
+}
+
+.leader-card {
+  background: $primary;
+  color: white;
+  padding: 2rem;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-lg;
+  text-align: center;
+  border: 1px solid darken($primary, 5%);
+}
+
+.leader-card h3 {
+  color: white !important;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.team-members {
+  background: white;
+  padding: 2rem;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  border: 1px solid #e2e8f0;
+}
+
+.team-members table {
+  width: 100%;
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.team-members thead {
+  background: $light;
+}
+
+.team-members thead th {
+  font-weight: 600;
+  color: $dark;
+}
+
+.team-members tbody tr {
+  transition: background-color 0.2s;
+}
+
+.team-members tbody tr:hover {
+  background: #f8fafc;
+}
+
+// Publications section
+.publications-preview {
+  background: white;
+  padding: 2rem;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  margin-top: 1.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.publications-preview h3 {
+  color: $primary;
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.publications-preview ol {
+  line-height: 1.9;
+  font-size: 0.9375rem;
+}
+
+// Citation section - academic styling
+.citation-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.citation-format,
+.citation-bibtex {
+  background: white;
+  padding: 2rem;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  border: 1px solid #e2e8f0;
+}
+
+.citation-format h3,
+.citation-bibtex h3 {
+  color: $primary;
+  margin-bottom: 1.5rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+
+.citation-bibtex pre {
+  background: $light;
+  padding: 1rem;
+  border-radius: $border-radius;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  font-size: 0.875rem;
+}
+
+// Footer CTA - professional and understated
+.footer-cta {
+  background: $dark;
+  color: white;
+  padding: 2.5rem 2rem;
+  margin: 3rem -2rem -2rem -2rem;
+  border-top: 3px solid $accent;
+  text-align: center;
+}
+
+.cta-content h3 {
+  color: white !important;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.625rem 1.25rem;
+  margin: 0.5rem;
+  border-radius: $border-radius;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  font-size: 0.9375rem;
+}
+
+.btn-primary {
+  background: white;
+  color: $primary;
+}
+
+.btn-primary:hover {
+  background: $light;
+  color: $primary;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+// Callouts - professional styling
+.callout {
+  border-radius: $border-radius;
+  border-left-width: 3px;
+  padding: 1.5rem;
+}
+
+.callout-note {
+  border-left-color: $primary;
+  background-color: #f8fafc;
+}
+
+.callout-tip {
+  border-left-color: $success;
+  background-color: #f0fdf4;
+}
+
+.callout h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+// Tables - professional styling
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+thead {
+  background-color: $light;
+  border-bottom: 2px solid #cbd5e1;
+}
+
+th, td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+  font-weight: 600;
+  color: $dark;
+}
+
+tr:hover {
+  background-color: #f8fafc;
+}
+
+// Links - professional styling
+a {
+  text-decoration: none;
+  color: $primary;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: $accent;
+  text-decoration: underline;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .section-header {
+    font-size: 1.5rem;
+  }
+  
+  .questions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .methodology-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .citation-box {
+    grid-template-columns: 1fr;
+  }
+  
+  .info-card,
+  .method-card,
+  .question-card {
+    font-size: 0.9375rem;
+  }
+}
+
+// Print styles
+@media print {
+  .navbar,
+  .page-footer,
+  .sidebar,
+  .btn,
+  .badges {
+    display: none !important;
+  }
+  
+  .hero-section {
+    background: white !important;
+    color: black !important;
+    border-bottom: 2px solid black;
+  }
+  
+  .section-header {
+    color: black !important;
+    border-bottom: 2px solid black !important;
+  }
+  
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+}

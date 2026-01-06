@@ -149,18 +149,18 @@ for(pl in c("web","youtube","facebook")) {
 #| label: load-data
 
 # load only the pre-computed tables
-platform_summary        <- readRDS("data/platform_summary.rds")
-proportions_summary     <- readRDS("data/proportions_summary.rds")
-source_summary          <- readRDS("data/source_summary.rds")
-top_sources_by_year     <- readRDS("data/top_sources_by_year.rds")
+platform_summary        <- readRDS("../../data/processed/platform_summary.rds")
+proportions_summary     <- readRDS("../../data/processed/proportions_summary.rds")
+source_summary          <- readRDS("../../data/processed/source_summary.rds")
+top_sources_by_year     <- readRDS("../../data/processed/top_sources_by_year.rds")
 
-top_web_sources         <- readRDS("data/top_web_sources.rds")
-top_youtube_sources     <- readRDS("data/top_youtube_sources.rds")
-top_facebook_sources    <- readRDS("data/top_facebook_sources.rds")
+top_web_sources         <- readRDS("../../data/processed/top_web_sources.rds")
+top_youtube_sources     <- readRDS("../../data/processed/top_youtube_sources.rds")
+top_facebook_sources    <- readRDS("../../data/processed/top_facebook_sources.rds")
 
-web_actors              <- readRDS("data/web_actors.rds")
-youtube_actors          <- readRDS("data/youtube_actors.rds")
-facebook_actors         <- readRDS("data/facebook_actors.rds")
+web_actors              <- readRDS("../../data/processed/web_actors.rds")
+youtube_actors          <- readRDS("../../data/processed/youtube_actors.rds")
+facebook_actors         <- readRDS("../../data/processed/facebook_actors.rds")
 
 # Definiramo paletu boja za konzistentnost
 platform_colors <- c(
