@@ -1,0 +1,352 @@
+[
+  {
+    "objectID": "pages/site-info.html",
+    "href": "pages/site-info.html",
+    "title": "O stranici",
+    "section": "",
+    "text": "Ova stranica je napravljena u Quarto kroz Positron.\n\n\nR version 4.5.2 (2025-10-31 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 22631)\n\nMatrix products: default\n  LAPACK version 3.12.1\n\nlocale:\n[1] LC_COLLATE=Croatian_Croatia.utf8  LC_CTYPE=Croatian_Croatia.utf8   \n[3] LC_MONETARY=Croatian_Croatia.utf8 LC_NUMERIC=C                     \n[5] LC_TIME=Croatian_Croatia.utf8    \n\ntime zone: Europe/Zagreb\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.5.2    fastmap_1.2.0     cli_3.6.5        \n [5] tools_4.5.2       htmltools_0.5.8.1 yaml_2.3.11       rmarkdown_2.30   \n [9] knitr_1.50        jsonlite_2.0.0    xfun_0.54         digest_0.6.39    \n[13] rlang_1.1.6       evaluate_1.0.5"
+  },
+  {
+    "objectID": "pages/resources.html",
+    "href": "pages/resources.html",
+    "title": "Resursi i korisni linkovi",
+    "section": "",
+    "text": "Ovdje smo pripremili kuriranu listu resursa koja će vam pomoći da dublje zaronite u svijet računalnih društvenih znanosti, analize podataka i alata koje koristimo na ovom projektu."
+  },
+  {
+    "objectID": "pages/resources.html#pregled",
+    "href": "pages/resources.html#pregled",
+    "title": "Resursi i korisni linkovi",
+    "section": "",
+    "text": "Ovdje smo pripremili kuriranu listu resursa koja će vam pomoći da dublje zaronite u svijet računalnih društvenih znanosti, analize podataka i alata koje koristimo na ovom projektu."
+  },
+  {
+    "objectID": "pages/resources.html#uvod-u-alate-i-programske-jezike",
+    "href": "pages/resources.html#uvod-u-alate-i-programske-jezike",
+    "title": "Resursi i korisni linkovi",
+    "section": "Uvod u alate i programske jezike",
+    "text": "Uvod u alate i programske jezike\nOvi resursi idealni su za sve koji žele naučiti ili usavršiti svoje vještine u programskim jezicima R i Python, koji su temelj našeg analitičkog rada.\n\nZa korisnike R\n\nRStudio Finding Your Way To R Službeni vodič za početnike koji pokriva osnove rada u RStudio okruženju. Link\nR for Data Science Biblija za svakoga tko se bavi analizom podataka u R u. Autori su Hadley Wickham i Garrett Grolemund. Link\nText Mining with R Odlična knjiga za uvod u analizu teksta, s naglaskom na tidy principe. Autorice su Julia Silge i David Robinson. Link\nCRAN Task View Social Sciences Kurirana lista R paketa specifično namijenjenih za primjenu u društvenim znanostima. Link\nR bloggers Agregator najboljih blogova o R u, svakodnevno donosi nove tutorijale i studije slučaja. Link\n\n\n\nZa korisnike Pythona\n\nThe Python Tutorial Službena dokumentacija i najbolja polazna točka za učenje osnova Pythona. Link\nspaCy 101 Moderna i brza biblioteka za obradu prirodnog jezika (NLP). Njihov tečaj je odličan za početnike. Link\nReal Python Visokokvalitetni tutorijali za sve razine znanja, od osnova do naprednih tema. Link"
+  },
+  {
+    "objectID": "pages/resources.html#temeljna-literatura-i-koncepti",
+    "href": "pages/resources.html#temeljna-literatura-i-koncepti",
+    "title": "Resursi i korisni linkovi",
+    "section": "Temeljna literatura i koncepti",
+    "text": "Temeljna literatura i koncepti\nKnjige i znanstveni radovi koji oblikuju područje kojim se bavimo.\n\nRačunalne društvene znanosti\n\nBit by Bit Social Research in the Digital Age Ključna knjiga Matthewa Salganika koja objašnjava kako digitalno doba transformira društvena istraživanja. Link\nComputational Social Science A Manifesto Seminalni rad (Lazer i sur.) koji je definirao polje i njegove glavne izazove i prilike. Link\n\n\n\nAnaliza teksta kao podatka\n\nText as Data A New Framework Sveobuhvatan pregled metoda za analizu teksta u društvenim znanostima. Autori su Grimmer, Roberts i Stewart. Link\n\n\n\nStatistika i razumijevanje podataka\n\nHow to Lie with Statistics Klasična i zabavna knjiga Darrella Huffa o tome kako prepoznati manipulaciju statistikom. Link\nThe Art of Statistics Learning from Data David Spiegelhalter na pristupačan način objašnjava kako statističari razmišljaju i kako učiti iz podataka. Link"
+  },
+  {
+    "objectID": "pages/resources.html#podaci-i-resursi-za-tematska-istraživanja",
+    "href": "pages/resources.html#podaci-i-resursi-za-tematska-istraživanja",
+    "title": "Resursi i korisni linkovi",
+    "section": "Podaci i resursi za tematska istraživanja",
+    "text": "Podaci i resursi za tematska istraživanja\nLinkovi na relevantne izvore podataka, časopise i organizacije koje se bave sličnim temama.\n\nPew Research Center Religion & Public Life Jedan od najvažnijih izvora podataka i analiza o ulozi religije u društvu. Link\nJournal of Media and Religion Vodeći znanstveni časopis koji objavljuje istraživanja na sjecištu medija i religije. Link\nAlliance of Digital Humanities Organizations (ADHO) Globalna organizacija koja promiče primjenu digitalnih tehnologija u humanističkim znanostima. Link"
+  },
+  {
+    "objectID": "pages/resources.html#blogovi-zajednice-i-platforme",
+    "href": "pages/resources.html#blogovi-zajednice-i-platforme",
+    "title": "Resursi i korisni linkovi",
+    "section": "Blogovi, zajednice i platforme",
+    "text": "Blogovi, zajednice i platforme\nMjesta za učenje, postavljanje pitanja i praćenje najnovijih trendova.\n\nTowards Data Science Jedna od najvećih online publikacija o podatkovnoj znanosti, s tisućama korisnih članaka i tutorijala. Link\nStack Overflow Najvažnija zajednica za programere. Ako imate tehnički problem, ovdje ćete najvjerojatnije pronaći odgovor. Link\nGitHub Platforma na kojoj se nalazi ovaj projekt. Ključan alat za otvorenu znanost, suradnju i dijeljenje koda. Link\nZenodo Otvoreni repozitorij za pohranu znanstvenih podataka, softvera i publikacija, u skladu s FAIR principima. Link"
+  },
+  {
+    "objectID": "pages/resources.html#akademska-literatura-po-temama",
+    "href": "pages/resources.html#akademska-literatura-po-temama",
+    "title": "Resursi i korisni linkovi",
+    "section": "Akademska literatura po temama",
+    "text": "Akademska literatura po temama\nKurirana lista ključnih knjiga i radova organiziranih po metodološkim područjima.\n\nKvantitativna analiza teksta\n\nGrimmer, Justin, Margaret E. Roberts, and Brandon M. Stewart (2022). Text as Data A New Framework for Machine Learning and the Social Sciences. Princeton University Press.\nGrimmer, Justin and Brandon M. Stewart (2013). Text as Data The Promise and Pitfalls of Automatic Content Analysis Methods for Political Texts. Political Analysis 21(3) 267–297.\nBenoit, Kenneth (2020). Text as Data An Overview. In Curini, Luigi and Robert Franzese, eds. Handbook of Research Methods in Political Science and International Relations. Sage Publications.\nJurafsky, Daniel and James H. Martin (2024). Speech and Language Processing. (3rd edition).\nManning, C. D., Raghavan, P., & Schütze, H. (2008). Introduction to Information Retrieval. Cambridge University Press.\n\n\n\nAnaliza društvenih mreža\n\nNewman, M.E.J. (2010). Networks An Introduction. Oxford University Press.\nScott, J. (2017). Social Network Analysis. SAGE (4th edition).\nEasley, D., & Kleinberg, J. (2010). Networks, Crowds, and Markets Reasoning About a Highly Connected World. Cambridge University Press.\nRobins, G. (2015). Doing Social Network Research Network based Research Design for Social Scientists. SAGE.\nBorgatti, S. P., Everett, M. G., & Johnson, J. C. (2018). Analyzing Social Networks. SAGE.\n\n\n\nProgramiranje i računalno razmišljanje\n\nGuttag, John V. (2016). Introduction to Computation and Programming Using Python With Application to Understanding Data. MIT Press.\nMiller, Bradley N. and David L. Ranum. Problem Solving with Algorithms and Data Structures Using Python.\nGrolemund, Garrett and Hadley Wickham (2016). R for Data Science. O’Reilly.\nWing, Jeannette M. (2006). Computational thinking. Communications of the ACM, 49(3), 33–35.\n\n\n\nPodaci i vizualizacija\n\nBeaulieu, Alan (2020). Learning SQL Generate, Manipulate, and Retrieve Data. 3rd Ed. O’Reilly.\nHealy, Kieran (2019). Data Visualization A Practical Introduction. Princeton University Press.\nMunzert, Simon, et al. (2015). Automated Data Collection with R A Practical Guide to Web Scraping and Text Mining. Wiley.\nWickham, Hadley, Mine Çetinkaya Rundel and Garett Grolemund (2023). R for Data Science Import, Tidy, Transform, Visualize, and Model Data. 2nd Ed. O’Reilly.\nLazer, David and Jason Radford (2017). Data ex Machina Introduction to Big Data. Annual Review of Sociology.\n\n\n\nStrojno učenje\n\nGéron, A. (2017). Hands on Machine Learning with Scikit Learn and TensorFlow Concepts, Tools, and Techniques to Build Intelligent Systems. O’Reilly Media.\nJames, G., Witten, D., Hastie, T., & Tibshirani, R. (2013). An Introduction to Statistical Learning. Springer.\nMüller, A. C., & Guido, S. (2016). Introduction to Machine Learning with Python A Guide for Data Scientists. O’Reilly Media.\nConway, D., & White, J. (2012). Machine Learning for Hackers. O’Reilly Media.\n\n\n\nDuboko učenje\n\nGoodfellow, Ian, Yoshua Bengio, and Aaron Courville (2016). Deep Learning. MIT Press.\nRaff, E. (2022). Inside Deep Learning Math, Algorithms, Models. Simon and Schuster.\nArgyle, L. P., et al. (2023). Out of one, many Using language models to simulate human samples. Political Analysis.\nRodriguez, P. L., & Spirling, A. (2022). Word embeddings What works, what doesn’t, and how to tell the difference for applied research. The Journal of Politics.\nTorres, M., & Cantú, F. (2022). Learning to See Convolutional Neural Networks for the Analysis of Social Science Data. Political Analysis."
+  },
+  {
+    "objectID": "pages/mapa/mapa_stats.html",
+    "href": "pages/mapa/mapa_stats.html",
+    "title": "Anatomija diskursa katoličkog digitalnog prostora u Hrvatskoj (2021-2023)",
+    "section": "",
+    "text": "Nakon mapiranja ključnih aktera i platformi u našoj prvoj analizi, ovaj izvještaj zaranja dublje u sadržaj digitalnog diskursa. Koristeći metode obrade prirodnog jezika (NLP) na uzorku od 270 tisuća medijskih objava, prelazimo s pitanja tko i gdje na ključno pitanje o čemu se govori?\nNaš cilj je stvoriti anatomiju diskursa:\n\nIdentificirati glavne teme koje oblikuju raspravu.\nIzmjeriti njihov intenzitet, utjecaj i polarizacijski potencijal.\nOtkriti kako se teme međusobno povezuju i kako se njihov fokus mijenja kroz vrijeme.\n\nOva analiza koristi vođeni pristup tematskom modeliranju, gdje smo na temelju teološke i komunikološke ekspertize definirali 16 ključnih tematskih kategorija, omogućujući preciznu i interpretativnu klasifikaciju sadržaja."
+  },
+  {
+    "objectID": "pages/mapa/mapa_stats.html#o-čemu-se-govori",
+    "href": "pages/mapa/mapa_stats.html#o-čemu-se-govori",
+    "title": "Anatomija diskursa katoličkog digitalnog prostora u Hrvatskoj (2021-2023)",
+    "section": "",
+    "text": "Nakon mapiranja ključnih aktera i platformi u našoj prvoj analizi, ovaj izvještaj zaranja dublje u sadržaj digitalnog diskursa. Koristeći metode obrade prirodnog jezika (NLP) na uzorku od 270 tisuća medijskih objava, prelazimo s pitanja tko i gdje na ključno pitanje o čemu se govori?\nNaš cilj je stvoriti anatomiju diskursa:\n\nIdentificirati glavne teme koje oblikuju raspravu.\nIzmjeriti njihov intenzitet, utjecaj i polarizacijski potencijal.\nOtkriti kako se teme međusobno povezuju i kako se njihov fokus mijenja kroz vrijeme.\n\nOva analiza koristi vođeni pristup tematskom modeliranju, gdje smo na temelju teološke i komunikološke ekspertize definirali 16 ključnih tematskih kategorija, omogućujući preciznu i interpretativnu klasifikaciju sadržaja."
+  },
+  {
+    "objectID": "pages/mapa/mapa_stats.html#vizualni-sažetak-korpusa",
+    "href": "pages/mapa/mapa_stats.html#vizualni-sažetak-korpusa",
+    "title": "Anatomija diskursa katoličkog digitalnog prostora u Hrvatskoj (2021-2023)",
+    "section": "Vizualni sažetak korpusa",
+    "text": "Vizualni sažetak korpusa\nPrije nego što zaronimo u detaljnu analizu, započnimo s pogledom iz ptičje perspektive. Sljedeći oblak riječi prikazuje 150 najčešćih, smislenih riječi (imenica, pridjeva i glagola) u cjelokupnom korpusu od preko 250.000 medijskih objava. Veličina svake riječi proporcionalna je njenoj ukupnoj frekvenciji.\nOvaj vizualni sažetak odmah otkriva ključne entitete i koncepte koji čine srž diskursa: crkva, papa, biskup, Hrvatska, život, godina, čovjek, vjera i molitva."
+  },
+  {
+    "objectID": "pages/mapa/mapa_stats.html#pregled-tematskog-pejzaža",
+    "href": "pages/mapa/mapa_stats.html#pregled-tematskog-pejzaža",
+    "title": "Anatomija diskursa katoličkog digitalnog prostora u Hrvatskoj (2021-2023)",
+    "section": "Pregled tematskog pejzaža",
+    "text": "Pregled tematskog pejzaža\nPrvi korak je razumjeti opću strukturu diskursa. Koje teme dominiraju, a koje su na marginama? Koliko su te teme centralne za članke u kojima se pojavljuju?\n\nDinamika glavnih tema (2021 do 2023)\nAnaliza udjela svake teme u ukupnom broju spominjanja otkriva stabilnu strukturu, ali i suptilne promjene. Očekivano, teme vezane za Duhovnost i liturgiju te Crkvenu instituciju čine okosnicu diskursa. Značajan udio zauzimaju i teme koje povezuju Crkvu s društvom, poput Politike i Bioetike.\n\n\n\n\n\n\n\n\n\n\n\nŠto je vijest, a što pozadinski šum?\nNije svako spominjanje teme jednako važno. Ovaj grafikon pokazuje koliko je tema centralna za članak kada se u njemu pojavi. Teme s distribucijom pomaknutom udesno (primjerice duhovnost) su one koje, kada se pojave, dominiraju člankom i predstavljaju glavnu vijest. Teme s distribucijom bliže lijevoj strani (primjerice ideologija) češće se spominju usputno, kao kontekst."
+  },
+  {
+    "objectID": "pages/mapa/mapa_stats.html#utjecaj-i-prijem-tema",
+    "href": "pages/mapa/mapa_stats.html#utjecaj-i-prijem-tema",
+    "title": "Anatomija diskursa katoličkog digitalnog prostora u Hrvatskoj (2021-2023)",
+    "section": "Utjecaj i prijem tema",
+    "text": "Utjecaj i prijem tema\nNakon što smo mapirali teme, istražujemo kako publika reagira na njih. Koje teme potiču najveći angažman, a koje najviše polariziraju?\n\nKoje teme generiraju najviše interakcija?\nAnaliza prosječnog broja interakcija po članku otkriva da teme koje se tiču unutarcrkvenih prijepora, bioetike i skandala generiraju značajno veći angažman od tema vezanih za duhovnost ili institucionalno funkcioniranje. Ovo upućuje na to da konflikt i kontroverza služe kao ključni pokretači interakcija u digitalnom prostoru.\n\n\n\n\n\n\n\n\n\n\n\nMapa emocija\nAnalizirajući Facebook reakcije, možemo okvirno mapirati emocionalni odgovor na svaku temu. Rezultati su jasni. Teme vezane za Duhovnost i Karitas dominantno izazivaju pozitivne reakcije (Love), dok teme Bioetike, Politike i Skandala generiraju najveći udio negativnih (Angry) reakcija, potvrđujući njihovu ulogu kao glavnih točaka polarizacije."
+  },
+  {
+    "objectID": "pages/mapa/mapa_stats.html#akteri-i-narativni-okviri",
+    "href": "pages/mapa/mapa_stats.html#akteri-i-narativni-okviri",
+    "title": "Anatomija diskursa katoličkog digitalnog prostora u Hrvatskoj (2021-2023)",
+    "section": "Akteri i narativni okviri",
+    "text": "Akteri i narativni okviri\nTko su glavni protagonisti svake teme i kako se teme međusobno povezuju u šire narativne okvire? Ova sekcija spaja tematsku analizu s analizom aktera i mrežnom analizom.\n\nGlavni akteri unutar svake teme\nSvaka tematska priča ima svoje glavne likove. Analizom najčešće spominjanih osoba i organizacija unutar svake dominantne teme dobivamo uvid u to tko su nositelji narativa. Očekivano, političari dominiraju političkim temama, dok crkveni velikodostojnici dominiraju institucionalnim.\n\n\n\n\n\n\n\n\n\n\n\nMreža narativnih okvira\nTeme se rijetko pojavljuju izolirano. One se spajaju u šire narativne okvire (frames). Analizom ko okurencije tema unutar istih članaka možemo mapirati te veze. Mreža pokazuje snažnu povezanost između Politike, Povijesti i Bioetike, tvoreći dominantan društveno politički klaster. S druge strane, teme poput Duhovnosti i Karitasa čine zaseban, pastoralni klaster."
+  },
+  {
+    "objectID": "pages/mapa/mapa_stats.html#zaključak",
+    "href": "pages/mapa/mapa_stats.html#zaključak",
+    "title": "Anatomija diskursa katoličkog digitalnog prostora u Hrvatskoj (2021-2023)",
+    "section": "Zaključak",
+    "text": "Zaključak\nOva dubinska tematska analiza otkriva da katolički digitalni prostor nije monolitan. Sastoji se od različitih, često odvojenih, tematskih svjetova.\n\nPastoralni svijet: Fokusiran na duhovnost, liturgiju i karitas, s dominantno pozitivnim prijemom kod publike.\nDruštveno politički svijet: Gdje se teme politike, povijesti i bioetike isprepliću, generirajući najveći angažman, ali i najsnažniju polarizaciju.\n\nRazumijevanje strukture, utjecaja i povezanosti ovih tema ključno je za svaku daljnju analizu narativa i sentimenata koji oblikuju javnu percepciju Crkve i vjere u Hrvatskoj."
+  },
+  {
+    "objectID": "pages/mapa/mapa.html",
+    "href": "pages/mapa/mapa.html",
+    "title": "Mapa katoličkog digitalnog prostora u RH (2021-2023)",
+    "section": "",
+    "text": "Ovaj dokument predstavlja prvu fazu analize u sklopu projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru. Cilj ove analize je stvoriti sveobuhvatnu i jasnu mapu ekosustava, odnosno temeljni pregled arene u kojoj se odvijaju rasprave o katoličkim temama u Hrvatskoj.\nKoristeći bazu podataka od preko 250.000 medijskih objava prikupljenih u razdoblju od 1. siječnja 2021. do 31. prosinca 2023., odgovaramo na temeljna pitanja.\n\nGdje se odvija rasprava? Analiziramo dominantne platforme (web, YouTube, Facebook i druge).\nTko su ključni akteri? Identificiramo najproduktivnije i najutjecajnije medijske izvore.\nKakva je dinamika utjecaja? Uspoređujemo doseg (reach) i angažman (interactions) kako bismo razumjeli različite strategije utjecaja.\n\nAnaliza je podijeljena u tri dijela. Kreće od općeg, makro pogleda na platforme, nastavlja s detaljnijim pregledom ključnih aktera i završava sa sintetskom Mapom utjecaja koja spaja sve dimenzije u jednu cjelinu."
+  },
+  {
+    "objectID": "pages/mapa/mapa.html#mapiranje-digitalne-medijske-arene",
+    "href": "pages/mapa/mapa.html#mapiranje-digitalne-medijske-arene",
+    "title": "Mapa katoličkog digitalnog prostora u RH (2021-2023)",
+    "section": "",
+    "text": "Ovaj dokument predstavlja prvu fazu analize u sklopu projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru. Cilj ove analize je stvoriti sveobuhvatnu i jasnu mapu ekosustava, odnosno temeljni pregled arene u kojoj se odvijaju rasprave o katoličkim temama u Hrvatskoj.\nKoristeći bazu podataka od preko 250.000 medijskih objava prikupljenih u razdoblju od 1. siječnja 2021. do 31. prosinca 2023., odgovaramo na temeljna pitanja.\n\nGdje se odvija rasprava? Analiziramo dominantne platforme (web, YouTube, Facebook i druge).\nTko su ključni akteri? Identificiramo najproduktivnije i najutjecajnije medijske izvore.\nKakva je dinamika utjecaja? Uspoređujemo doseg (reach) i angažman (interactions) kako bismo razumjeli različite strategije utjecaja.\n\nAnaliza je podijeljena u tri dijela. Kreće od općeg, makro pogleda na platforme, nastavlja s detaljnijim pregledom ključnih aktera i završava sa sintetskom Mapom utjecaja koja spaja sve dimenzije u jednu cjelinu."
+  },
+  {
+    "objectID": "pages/mapa/mapa.html#tko-najviše-producira-sadržaj",
+    "href": "pages/mapa/mapa.html#tko-najviše-producira-sadržaj",
+    "title": "Mapa katoličkog digitalnog prostora u RH (2021-2023)",
+    "section": "Tko najviše producira sadržaj?",
+    "text": "Tko najviše producira sadržaj?\nOvaj grafikon prikazuje apsolutnu dominaciju tradicionalnih web portala kao glavnih proizvođača sadržaja. Kroz sve tri promatrane godine web generira znatno više objava od svih ostalih platformi zajedno. Ipak, primjetan je i kontinuirani rast volumena sadržaja na YouTubeu, što upućuje na sve veću važnost video formata."
+  },
+  {
+    "objectID": "pages/mapa/mapa.html#gdje-se-odvija-najživlja-rasprava",
+    "href": "pages/mapa/mapa.html#gdje-se-odvija-najživlja-rasprava",
+    "title": "Mapa katoličkog digitalnog prostora u RH (2021-2023)",
+    "section": "Gdje se odvija najživlja rasprava?",
+    "text": "Gdje se odvija najživlja rasprava?\nKada pogledamo angažman publike, slika postaje zanimljivija. Iako web i dalje vodi, YouTube i Facebook zauzimaju značajno veći udio u interakcijama nego što imaju u volumenu objava. Ovo je prvi pokazatelj da, premda web proizvodi najviše sadržaja, društvene mreže i video platforme uspješnije potiču direktan angažman publike."
+  },
+  {
+    "objectID": "pages/mapa/mapa.html#relativna-važnost-platformi",
+    "href": "pages/mapa/mapa.html#relativna-važnost-platformi",
+    "title": "Mapa katoličkog digitalnog prostora u RH (2021-2023)",
+    "section": "Relativna važnost platformi",
+    "text": "Relativna važnost platformi\nApsolutni brojevi su korisni, ali relativni udjeli otkrivaju pravu dinamiku unutar ekosustava. Sljedeći grafikon uspoređuje udio svake platforme u ukupnom broju objava, interakcija i dosega.\nOva vizualizacija je ključna jer pokazuje asimetriju utjecaja.\n\nLijevo (Objave): Web čini oko 80% svih objava.\nSredina (Interakcije): Udio weba u interakcijama pada na približno 70 do 75%, dok udio YouTubea raste i doseže gotovo 20% u 2023. godini.\nDesno (Doseg): Sličan trend vidljiv je i kod dosega, gdje web gubi dio svoje dominacije u korist društvenih i video platformi.\n\nOvo znači da je sadržaj na YouTubeu i Facebooku u prosjeku znatno utjecajniji po objavi u odnosu na sadržaj web portala."
+  },
+  {
+    "objectID": "pages/mapa/mapa.html#top-20-aktera-po-angažmanu-interakcijama",
+    "href": "pages/mapa/mapa.html#top-20-aktera-po-angažmanu-interakcijama",
+    "title": "Mapa katoličkog digitalnog prostora u RH (2021-2023)",
+    "section": "Top 20 aktera po angažmanu (interakcijama)",
+    "text": "Top 20 aktera po angažmanu (interakcijama)\nPrvo rangiramo aktere prema najdirektnijoj mjeri angažmana, a to je ukupan broj interakcija. Ovdje primjećujemo jasnu podjelu.\n\nWeb: Dominiraju veliki mainstream mediji (vecernji.hr, jutarnji.hr, index.hr) i specijalizirani vjerski portali (bitno.net).\nYouTube: Scenom dominiraju isključivo specijalizirani kanali (LaudatoTV, T Studio), pojedini svećenici i župe.\nFacebook: Prisutna je mješavina mainstream medija i specijaliziranih stranica.\n\nVeličina točke predstavlja produktivnost (broj objava) i otkriva različite strategije. Neki akteri objavljuju puno sadržaja s manjim prosječnim angažmanom, dok drugi objavljuju rjeđe, ali s velikim odjekom."
+  },
+  {
+    "objectID": "pages/mapa/mapa.html#zaključak-i-sljedeći-koraci",
+    "href": "pages/mapa/mapa.html#zaključak-i-sljedeći-koraci",
+    "title": "Mapa katoličkog digitalnog prostora u RH (2021-2023)",
+    "section": "Zaključak i sljedeći koraci",
+    "text": "Zaključak i sljedeći koraci\nOva inicijalna analiza ekosustava otkriva višeslojnost digitalne arene. Ključni nalazi su sljedeći.\n\nPostoji jasna podjela rada. Web portali su dominantni proizvođači sadržaja, dok su YouTube i Facebook ključne arene za angažman publike.\nAkteri su specijalizirani. Najutjecajniji glasovi se značajno razlikuju od platforme do platforme, što upućuje na različite publike i komunikacijske strategije.\nUtjecaj je višedimenzionalan. Promatranje samo jedne metrike (primjerice samo interakcija) nije dovoljno. Mapa utjecaja pokazuje da akteri balansiraju između dosega, angažmana i produktivnosti.\n\nNakon što smo mapirali tko i gdje govori, sljedeća faza našeg istraživanja usredotočit će se na pitanje o čemu se govori. To će uključivati dubinsku tematsku analizu i analizu sentimenta kako bismo razumjeli ključne narative koji oblikuju katoličku tematiku u hrvatskom digitalnom prostoru."
+  },
+  {
+    "objectID": "pages/news.html",
+    "href": "pages/news.html",
+    "title": "Obavijesti",
+    "section": "",
+    "text": "Novosti i događanja\n(Ovdje možete pratiti najnovije vijesti, korake i najave vezane uz projekt.)  \n\n\nUskoro\n\nSiječanj 2026 Prezentacija rezultata prvog godišnjeg izvještaja.\n\n\n\n\nDogađanja u 2025. godini\n\nProsinac 2025 Interna radionica za planiranje aktivnosti u 2026. godini.\n\nTim je evaluirao rad u prvoj godini projekta i definirao prioritete za sljedeću fazu istraživanja.\n\nStudeni 2025 Objavljen prvi tehnički izvještaj o sustavu za prikupljanje podataka.\n\nDetaljno dokumentiran proces razvoja infrastrukture, algoritmi i tehnička rješenja objavljena su u internom dokumentu.\n\nListopad 2025 Provedena sentiment analiza na povijesnim podacima.\n\nPrimijenjene su NLP tehnike za automatsku klasifikaciju tona i sentimenta u prikupljenim objavama.\n\nRujan 2025 Održana radionica za podjelu tematskih istraživanja.\n\nDefiniranje smjerova istraživanja i podjela zaduženja unutar tima za prvu seriju tematskih analiza.\n\nKolovoz 2025 Integracija analitičkih alata i dashboard aplikacije.\n\nImplementiran interaktivni dashboard za praćenje ključnih metrika i trendova u prikupljenim podacima.\n\nSrpanj 2025 Objavljena baza podataka na Kaggle platformi.\n\nPrvi javno dostupan dataset projekta objavljen je na Kaggle platformi, omogućavajući široj akademskoj zajednici pristup podacima.\n\nLipanj 2025 Uspješno uspostavljen sustav za prikupljanje podataka u realnom vremenu.\n\nAutomatizirani sustav za praćenje digitalnih medija 24/7 postaje operativan.\n\nSvibanj 2025 Prezentacija preliminarnih rezultata na internom seminaru.\n\nTim je predstavio prve uvide iz povijesnih podataka i planove za tematske analize.\n\nTravanj 2025 Pokrenuta nova verzija web stranice projekta.\n\nPoboljšana verzija stranice postavljena je za testiranje i interne potrebe tima.\n\nTravanj 2025 Završena prva faza prikupljanja povijesnih podataka.\n\nUspješno je prikupljen i obrađen korpus podataka iz razdoblja 2021 do 2024, čime je stvoren temelj za daljnje analize.\n\nOžujak 2023 Metodološka radionica tima.\n\nOdržana je interna radionica o primjeni NLP tehnika i strojnog učenja za potrebe projekta.\n\nVeljača 2025 Finaliziran kod za prikupljanje podataka (v1.0).\n\nNakon višemjesečnog razvoja, prva stabilna verzija alata za web scraping i API integraciju je spremna za rad.\n\nSiječanj 2025 Službeni početak projekta i konstituiranje tima!\n\nOdržan je početni (kick off) sastanak projektnog tima, usvojen je finalni plan rada te su potvrđene uloge i odgovornosti svih članova, čime je formaliziran rad nakon odobrenja financiranja krajem 2022. godine.\n\n\n\n\nDogađanja u 2024. godini\n\nProsinac 2024 Javno predstavljanje projekta na HKS u.\n\nProjekt, njegovi ciljevi i metodologija službeno su predstavljeni akademskoj zajednici i javnosti. Pokrenuta je i službena web stranica projekta.\n\nStudeni 2024 Predstavljanje projekta na HKS u\n\nProjektni ciljevi i metodologija predstavljeni su na internom seminaru Odjela za komunikologiju."
+  },
+  {
+    "objectID": "pages/schedule.html",
+    "href": "pages/schedule.html",
+    "title": "Projektni raspored",
+    "section": "",
+    "text": "Vremenski plan projekta\nProjekt je strukturiran u šest faza kroz razdoblje od tri godine (2025.-2027.). Svaka faza ima specifične ciljeve i aktivnosti koje osiguravaju postupan i sustavan napredak.\n\n\n\nGodina 1: Postavljanje temelja i prva analiza (2025.)\nFaza 1: Izgradnja infrastrukture i povijesna analiza (Siječanj – Lipanj 2025.)\n\n\n\n\n\n\nGlavni cilj\n\n\n\nUspostaviti tehničke temelje projekta i prikupiti povijesne podatke.\n\n\n\nAnaliza povijesnih podataka: Prikupljanje i analiza objava iz razdoblja 2021.-2024. kako bi se definirali parametri za pretragu.\nIzgradnja infrastrukture: Postavljanje strukturirane baze podataka, projektnog repozitorija i web stranice.\nPočetak prikupljanja: Aktiviranje sustava za prikupljanje podataka u realnom vremenu.\n\nFaza 2: Prva podjela podataka i definiranje istraživanja (Srpanj – Prosinac 2025.)\n\n\n\n\n\n\nGlavni cilj\n\n\n\nDefinirati prve smjerove tematskih istraživanja na temelju prikupljenih podataka.\n\n\n\nDefiniranje istraživanja: Organizacija radionice s projektnim timom za definiranje i podjelu prvih tematskih cjelina.\nKontinuirani rad: Nastavak prikupljanja podataka, održavanje baze i kontrola kvalitete.\n\n\n\n\nGodina 2: Dubinska analiza i razvoj (2026.)\nFaza 3: Prvi godišnji izvještaj i daljnji razvoj (Siječanj – Lipanj 2026.)\n\n\n\n\n\n\nGlavni cilj\n\n\n\nIzraditi i prezentirati prvu sistematiziranu kartu medijskog prostora.\n\n\n\nPrva sistematizirana karta: Obrada, analiza i vizualizacija podataka za 2025. godinu, uz prezentaciju rezultata.\nRazvoj istraživanja: Druga podjela podataka za nove ili produbljene tematske analize.\nKontinuirani rad: Prikupljanje, održavanje baze i kontrola kvalitete.\n\nFaza 4: Intenzivni istraživački rad (Srpanj – Prosinac 2026.)\n\n\n\n\n\n\nGlavni cilj\n\n\n\nFokus na provođenju definiranih tematskih istraživanja.\n\n\n\nIstraživanje: Timski rad na analizi dodijeljenih tematskih cjelina i priprema prvih nacrta radova.\nKontinuirani rad: Prikupljanje, održavanje baze i kontrola kvalitete.\n\n\n\n\nGodina 3: Sinteza i finalni rezultati (2027.)\nFaza 5: Drugi godišnji izvještaj i priprema za sintezu (Siječanj – Lipanj 2027.)\n\n\n\n\n\n\nGlavni cilj\n\n\n\nAnalizirati podatke iz prethodne godine i integrirati prve rezultate tematskih istraživanja.\n\n\n\nDruga sistematizirana karta: Obrada i analiza podataka za 2026. godinu te prezentacija novih uvida.\nPriprema publikacija: Rad na znanstvenim člancima i konferencijskim izlaganjima.\nKontinuirani rad: Prikupljanje, održavanje baze i kontrola kvalitete.\n\nFaza 6: Finalna sinteza i zaključci (Srpanj – Prosinac 2027.)\n\n\n\n\n\n\nGlavni cilj\n\n\n\nPredstaviti sveobuhvatne rezultate projekta.\n\n\n\nZavršni izvještaj i prezentacija: Izrada treće, finalne karte (za 2027. godinu) i prezentacija koja objedinjuje:\n\nZbirni pregled medijskog prostora (2021.-2027.).\nKljučne rezultate svih provedenih tematskih istraživanja.\nPreporuke za buduća istraživanja.\n\nArhiviranje: Finalizacija i arhiviranje baze podataka i koda za dugoročnu dostupnost."
+  },
+  {
+    "objectID": "pages/about.html",
+    "href": "pages/about.html",
+    "title": "Ciljevi i doprinos projekta",
+    "section": "",
+    "text": "Naša misija je stvoriti sveobuhvatan uvid u digitalnu prisutnost katoličke tematike u Hrvatskoj. To ćemo postići kroz četiri cilja koji prate životni ciklus podataka:\n\nIdentifikacija i prikupljanje  Automatizirano prikupljanje medijskih objava u realnom vremenu, koristeći alate za web scraping i API integracije.\nOrganizacija podataka  Stvaranje strukturirane i javno dostupne baze podataka koja će služiti kao osnova za buduće znanstvene i javne analize.\nAnaliza i modeliranje  Primjena računalnih tehnika (obrada prirodnog jezika, strojno učenje) za otkrivanje obrazaca, trendova i narativa u prikupljenim podacima.\nDiseminacija i otvorenost  Dijeljenje rezultata kroz znanstvene publikacije, konferencije i radionice, uz objavu koda i metodologije na otvorenim repozitorijima."
+  },
+  {
+    "objectID": "pages/about.html#ciljevi-projekta",
+    "href": "pages/about.html#ciljevi-projekta",
+    "title": "Ciljevi i doprinos projekta",
+    "section": "",
+    "text": "Naša misija je stvoriti sveobuhvatan uvid u digitalnu prisutnost katoličke tematike u Hrvatskoj. To ćemo postići kroz četiri cilja koji prate životni ciklus podataka:\n\nIdentifikacija i prikupljanje  Automatizirano prikupljanje medijskih objava u realnom vremenu, koristeći alate za web scraping i API integracije.\nOrganizacija podataka  Stvaranje strukturirane i javno dostupne baze podataka koja će služiti kao osnova za buduće znanstvene i javne analize.\nAnaliza i modeliranje  Primjena računalnih tehnika (obrada prirodnog jezika, strojno učenje) za otkrivanje obrazaca, trendova i narativa u prikupljenim podacima.\nDiseminacija i otvorenost  Dijeljenje rezultata kroz znanstvene publikacije, konferencije i radionice, uz objavu koda i metodologije na otvorenim repozitorijima."
+  },
+  {
+    "objectID": "pages/about.html#doprinos-i-vrijednost-projekta",
+    "href": "pages/about.html#doprinos-i-vrijednost-projekta",
+    "title": "Ciljevi i doprinos projekta",
+    "section": "Doprinos i vrijednost projekta",
+    "text": "Doprinos i vrijednost projekta\nOvaj projekt je osmišljen kako bi stvorio trajnu vrijednost za znanstvenu zajednicu i uključene pojedince.\n\nRazvoj vještina\nSudionici projekta imat će priliku raditi s najnovijim računalnim tehnikama i alatima. Kroz praktičan rad, razvijat će vještine u:  * Analizi velikih količina podataka (Big Data). * Rudarenju teksta (Text Mining). * Statističkom modeliranju.\n\n\nOtvorena znanost na djelu\nPosebna vrijednost projekta leži u njegovoj predanosti principima otvorenosti i transparentnosti.\n\n\n\n\n\n\nManifest otvorene znanosti\n\n\n\nNaš rad temelji se na principima otvorene znanosti i reproducibilnosti istraživanja.\nSvi alati, skripte i metodološki okviri bit će dostupni kao otvoreni kod na GitHubu, omogućujući drugima da provjere, repliciraju i nadograde naš rad.\nKroz ovakav pristup, potičemo suradnju, jačamo istraživačke profile mladih znanstvenika i aktivno doprinosimo stvaranju pouzdanije i inovativnije znanstvene kulture."
+  },
+  {
+    "objectID": "pages/about.html#pridružite-se-našem-istraživanju",
+    "href": "pages/about.html#pridružite-se-našem-istraživanju",
+    "title": "Ciljevi i doprinos projekta",
+    "section": "Pridružite se našem istraživanju!",
+    "text": "Pridružite se našem istraživanju!\n\n\n\n\n\n\nOtvoreni poziv za suradnju\n\n\n\nTražimo motivirane istraživače i studente koji žele biti dio inovativnog projekta koji spaja društvene znanosti, podatkovnu analitiku i principe otvorene znanosti.\nŠto dobivate sudjelovanjem?\n\nSteći ćete praktično iskustvo u radu s velikim podacima koristeći alate poput R i Python.\nRazvit ćete tehničke vještine u područjima obrade prirodnog jezika (NLP), strojnog učenja i mrežne analize.\nStvorit ćete vrijedan doprinos znanosti čiji će rezultati biti javno dostupni i citirani.\nPostat ćete dio inicijative koja aktivno promiče transparentnost, suradnju i inovacije u znanosti."
+  },
+  {
+    "objectID": "pages/index.html#o-projektu",
+    "href": "pages/index.html#o-projektu",
+    "title": "Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
+    "section": "O projektu",
+    "text": "O projektu\nDobrodošli na službenu stranicu projekta. Ovaj trogodišnji projekt (2025.–2027.) provodi se na Odjelu za komunikologiju Hrvatskog katoličkog sveučilišta.\nIako digitalni mediji predstavljaju dominantnu komponentu javnog prostora, u Hrvatskoj nedostaje sustavni pregled njihovih tematskih sastavnica. Ovaj projekt ispunjava tu prazninu fokusirajući se na specifičnu i društveno relevantnu nišu: sadržaje s katoličkom tematikom.\nKoristeći napredne metode iz područja računalnih društvenih znanosti, cilj nam je: 1. Izgraditi sveobuhvatnu bazu podataka digitalnih objava. 2. Analizirati značajke i narative objava. 3. Utvrditi povezanost sa širim društvenim trendovima."
+  },
+  {
+    "objectID": "pages/index.html#istraživačka-pitanja",
+    "href": "pages/index.html#istraživačka-pitanja",
+    "title": "Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
+    "section": "Istraživačka pitanja",
+    "text": "Istraživačka pitanja\nFokusirani smo na pet ključnih pitanja koja definiraju smjer istraživanja:\n\nKako se katolička tematika prikazuje i raspravlja u hrvatskom digitalnom medijskom prostoru?\nKakve su veze između katoličkih tema i drugih društvenih i političkih pitanja?\nKoji su akteri i institucije najistaknutiji u tim raspravama?\nKako se narativi i sentiment mijenjaju ovisno o aktualnim događajima?\nKakva je mrežna dinamika između različitih platformi i medija koji obrađuju ove teme?"
+  },
+  {
+    "objectID": "pages/index.html#metodologija",
+    "href": "pages/index.html#metodologija",
+    "title": "Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
+    "section": "Metodologija",
+    "text": "Metodologija\nProjekt integrira tehnike podatkovne znanosti s metodama društvenih znanosti. Naš metodološki okvir uključuje:\n\nWeb scraping i API integracije: Automatizirano prikupljanje velikih količina podataka s informativnih portala i društvenih mreža.\nObrada prirodnog jezika (NLP): Korištenje tematskog modeliranja, analize sentimenta i prepoznavanja imenovanih entiteta za strukturiranje tekstualnih podataka.\nMrežna analiza: Mapiranje odnosa između aktera, tema i medijskih izvora.\nStatistička analiza: Identifikacija trendova, korelacija i obrazaca unutar prikupljenih podataka.\n\n\n\n\n\n\n\nOtvorena znanost\n\n\n\nSav programski kod i, gdje je to moguće, podaci bit će dostupni u skladu s FAIR principima za otvorenu znanost."
+  },
+  {
+    "objectID": "pages/index.html#projektni-tim",
+    "href": "pages/index.html#projektni-tim",
+    "title": "Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
+    "section": "Projektni tim",
+    "text": "Projektni tim\nProjekt vodi interdisciplinarni tim znanstvenika koji pokriva područja komunikologije, sociologije, statistike i povijesti.\n\n\n\n\n\n\n\n\nIme i Prezime\nUloga\nInstitucija/Odjel\n\n\n\n\ndoc. dr. sc. Luka Šikić\nVoditelj\nHKS (Komunikologija)\n\n\nizv. prof. dr. sc. Andrea Sršen\nSuradnica\nFHS (Sociologija)\n\n\nizv. prof. dr. sc. Irena Palić\nSuradnica\nEFZG (Statistika)\n\n\nizv. prof. dr. sc. Lana Ciboci Perša\nSuradnica\nHKS (Komunikologija)\n\n\nizv. prof. dr. sc. Petra Palić\nSuradnica\nHKS (Sociologija)\n\n\ndoc. dr. sc. Ivan Uldrijan\nSuradnik\nHKS (Komunikologija)\n\n\ndr. sc. Suzana Lipar Obrovac\nSuradnica\nHKS (Odnosi s javnošću)\n\n\nHana Kilijan\nSuradnica\nHKS (Komunikologija)\n\n\nVeronika Novoselec\nSuradnica\nHKS (Povijest)\n\n\nMatea Topić Crnoja\nSuradnica\nHKS (Sociologija)"
+  },
+  {
+    "objectID": "pages/index.html#rezultati-i-publikacije",
+    "href": "pages/index.html#rezultati-i-publikacije",
+    "title": "Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
+    "section": "Rezultati i publikacije",
+    "text": "Rezultati i publikacije\nOva sekcija će se ažurirati poveznicama na recenzirane znanstvene radove, konferencijska izlaganja, izvještaje i podatkovne setove kako budu dostupni."
+  },
+  {
+    "objectID": "pages/index.html#kako-citirati",
+    "href": "pages/index.html#kako-citirati",
+    "title": "Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
+    "section": "Kako citirati",
+    "text": "Kako citirati\nZa citiranje projekta u cjelini, molimo koristite sljedeći format:\n\n\n\n\n\n\nTip\n\n\n\nŠikić, L. i sur. (2025.-2027.). Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru. Hrvatsko katoličko sveučilište. Dostupno na: github.com/lusiki/DigiKat"
+  },
+  {
+    "objectID": "pages/baza.html",
+    "href": "pages/baza.html",
+    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)",
+    "section": "",
+    "text": "Baza podataka sadrži 258,757 zapisa medijskih objava prikupljenih tijekom 2021/22/23. godine, fokusiranih na katoličke teme i sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za analizu medijskog diskursa, sentimenta i angažmana publike u domeni religijskih tema.\n\n\n\n\nOsnovne karakteristike dataseta\n\n\nKarakteristika\nVrijednost\n\n\n\n\nBroj zapisa\n258,757\n\n\nBroj varijabli\n49\n\n\nVremenski period\n2021 - 2024 godina\n\n\nFormat\nR data.table\n\n\nGlavni jezik\nHrvatski (hr)\n\n\nGeografski opseg\nHrvatska (HR)\n\n\n\n\n\n\n\n\n\n\nClasses 'data.table' and 'data.frame': 258757 obs. of 49 variables:\n\n\n$ DATE                 : chr [1:258757] '2021-01-02' '2021-01-02' ...\n\n\n$ TIME                 : chr [1:258757] '23:36:00' '23:28:34' ...\n\n\n$ TITLE                : chr [1:258757] 'Župa Gospe Brze Pomoći...' ...\n\n\n$ AUTO_SENTIMENT       : chr [1:258757] 'positive' 'neutral' 'negative' ...\n\n\n$ REACH                : num [1:258757] 21 48 3300 312 ...\n\n\n... [dodatnih 44 varijabli]"
+  },
+  {
+    "objectID": "pages/baza.html#struktura-podataka",
+    "href": "pages/baza.html#struktura-podataka",
+    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)",
+    "section": "",
+    "text": "Classes 'data.table' and 'data.frame': 258757 obs. of 49 variables:\n\n\n$ DATE                 : chr [1:258757] '2021-01-02' '2021-01-02' ...\n\n\n$ TIME                 : chr [1:258757] '23:36:00' '23:28:34' ...\n\n\n$ TITLE                : chr [1:258757] 'Župa Gospe Brze Pomoći...' ...\n\n\n$ AUTO_SENTIMENT       : chr [1:258757] 'positive' 'neutral' 'negative' ...\n\n\n$ REACH                : num [1:258757] 21 48 3300 312 ...\n\n\n... [dodatnih 44 varijabli]"
+  },
+  {
+    "objectID": "pages/baza.html#vremenske-varijable",
+    "href": "pages/baza.html#vremenske-varijable",
+    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)",
+    "section": "Vremenske varijable",
+    "text": "Vremenske varijable\n\n\n\nVremenske varijable\n\n\nVarijabla\nTip\nOpis\n\n\n\n\nDATE\ncharacter\nDatum objave u formatu YYYY-MM-DD\n\n\nTIME\ncharacter\nVrijeme objave u formatu HH:MM:SS\n\n\nyear\nnumeric\nGodina izvlučena iz datuma"
+  },
+  {
+    "objectID": "pages/baza.html#sadržaj-i-metapodaci",
+    "href": "pages/baza.html#sadržaj-i-metapodaci",
+    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)",
+    "section": "Sadržaj i metapodaci",
+    "text": "Sadržaj i metapodaci\n\n\n\nSadržaj i metapodaci\n\n\nVarijabla\nTip\nOpis\n\n\n\n\nTITLE\ncharacter\nNaslov članka/objave\n\n\nFULL_TEXT\ncharacter\nPotpuni tekst objave(dostupan isključivo na zahtjev)\n\n\nMENTION_SNIPPET\ncharacter\nIsječak teksta koji sadrži ključne riječi\n\n\nAUTHOR\ncharacter\nAutor objave (ako je dostupan)\n\n\nFROM\ncharacter\nIzvor/domena web stranice\n\n\nURL\ncharacter\nPotpuna URL adresa objave\n\n\nURL_PHOTO\ncharacter\nURL fotografije povezane s objavom"
+  },
+  {
+    "objectID": "pages/baza.html#kategorizacija-i-označavanje",
+    "href": "pages/baza.html#kategorizacija-i-označavanje",
+    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)",
+    "section": "Kategorizacija i označavanje",
+    "text": "Kategorizacija i označavanje\n\n\n\nKategorizacija i označavanje\n\n\nVarijabla\nTip\nOpis\n\n\n\n\nSOURCE_TYPE\nfactor\nTip izvora (web, youtube, facebook, twitter itd.)\n\n\nGROUP_NAME\ncharacter\nNaziv grupe za praćenje\n\n\nKEYWORD_NAME\ncharacter\nNaziv ključne riječi\n\n\nFOUND_KEYWORDS\ncharacter\nPronađene ključne riječi u tekstu\n\n\nTAGS\nlogical\nDodatne oznake (trenutno prazno)\n\n\nLANGUAGES\ncharacter\nJezik objave (hr, bs)\n\n\nLOCATIONS\ncharacter\nGeografska lokacija (HR)"
+  },
+  {
+    "objectID": "pages/baza.html#sentiment-analiza",
+    "href": "pages/baza.html#sentiment-analiza",
+    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)",
+    "section": "Sentiment analiza",
+    "text": "Sentiment analiza\n\n\n\nSentiment analiza\n\n\nVarijabla\nTip\nOpis\n\n\n\n\nAUTO_SENTIMENT\ncharacter\nAutomatski detektirani sentiment (positive/neutral/negative)\n\n\nMANUAL_SENTIMENT\nlogical\nRučno označen sentiment (trenutno prazno)"
+  },
+  {
+    "objectID": "pages/baza.html#metrike-angažmana",
+    "href": "pages/baza.html#metrike-angažmana",
+    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)",
+    "section": "Metrike angažmana",
+    "text": "Metrike angažmana\n\n\n\nMetrike angažmana\n\n\nVarijabla\nTip\nOpis\n\n\n\n\nREACH\nnumeric\nDoseg objave (broj ljudi koji je vidjelo)\n\n\nVIRALITY\nnumeric\nIndeks viralnosti\n\n\nENGAGEMENT_RATE\nnumeric\nStopa angažmana (%)\n\n\nINTERACTIONS\nnumeric\nUkupan broj interakcija\n\n\nFOLLOWERS_COUNT\nnumeric\nBroj pratitelja autora"
+  },
+  {
+    "objectID": "pages/baza.html#specifične-reakcije-facebook",
+    "href": "pages/baza.html#specifične-reakcije-facebook",
+    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)",
+    "section": "Specifične reakcije (Facebook)",
+    "text": "Specifične reakcije (Facebook)\n\n\n\nSpecifične reakcije (Facebook)\n\n\nVarijabla\nTip\nOpis\n\n\n\n\nLIKE_COUNT\nnumeric\nBroj 'like' reakcija\n\n\nLOVE_COUNT\nnumeric\nBroj 'love' reakcija\n\n\nWOW_COUNT\nnumeric\nBroj 'wow' reakcija\n\n\nHAHA_COUNT\nnumeric\nBroj 'haha' reakcija\n\n\nSAD_COUNT\nnumeric\nBroj 'sad' reakcija\n\n\nANGRY_COUNT\nnumeric\nBroj 'angry' reakcija\n\n\nCOMMENT_COUNT\nnumeric\nBroj komentara\n\n\nSHARE_COUNT\nnumeric\nBroj dijeljenja\n\n\nTOTAL_REACTIONS_COUNT\nnumeric\nUkupan broj svih reakcija"
+  },
+  {
+    "objectID": "pages/baza.html#pregled-nedostajućih-vrijednosti",
+    "href": "pages/baza.html#pregled-nedostajućih-vrijednosti",
+    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)",
+    "section": "Pregled nedostajućih vrijednosti",
+    "text": "Pregled nedostajućih vrijednosti\n\n\n\nPregled nedostajućih vrijednosti u ključnim varijablama\n\n\nVarijabla\nNedostaje (%)\nRazlog\n\n\n\n\nAUTHOR\n35.2\nNije uvijek dostupno od izvora\n\n\nTAGS\n100.0\nFunkcionalnost nije implementirana\n\n\nMANUAL_SENTIMENT\n100.0\nRučno označavanje nije provedeno\n\n\nFOLLOWERS_COUNT\n68.5\nOvisi o platformi i dostupnosti\n\n\nREDDIT_SCORE\n92.1\nSpecifično za Reddit objave\n\n\nVIEW_COUNT\n85.3\nSpecifično za video sadržaj"
+  },
+  {
+    "objectID": "pages/baza.html#statistički-sažetak-numeričkih-varijabli",
+    "href": "pages/baza.html#statistički-sažetak-numeričkih-varijabli",
+    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)",
+    "section": "Statistički sažetak numeričkih varijabli",
+    "text": "Statistički sažetak numeričkih varijabli\n\n\n\nStatistički sažetak ključnih numeričkih varijabli\n\n\nVarijabla\nMean\nMedian\nSD\nMin\nMax\n\n\n\n\nREACH\n2543.2\n312.0\n8734.5\n0\n125000.0\n\n\nINTERACTIONS\n67.8\n8.0\n245.6\n0\n5847.0\n\n\nENGAGEMENT_RATE\n4.2\n1.8\n8.7\n0\n89.5\n\n\nLIKE_COUNT\n52.1\n6.0\n187.3\n0\n3245.0\n\n\nINFLUENCE_SCORE\n3.2\n3.0\n2.1\n1\n10.0"
+  },
+  {
+    "objectID": "pages/baza.html#osnovne-analize",
+    "href": "pages/baza.html#osnovne-analize",
+    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)",
+    "section": "Osnovne analize",
+    "text": "Osnovne analize\n\n\n\nOsnovne analize - pregled kodova i rezultata\n\n\nTip analize\nR kod\nRezultat\nSortiranje\n\n\n\n\nAnaliza sentimenta po izvorima\nsentiment_by_source &lt;- dta[, .N, by = .(FROM, AUTO_SENTIMENT)]\nBroj objava po izvoru i sentimentu\nsentiment_by_source[order(-N)]\n\n\nTrendovi kroz vrijeme\ntemporal_trends &lt;- dta[, .N, by = .(year, month = substr(DATE, 6, 7))]\nBroj objava po mjesecima\ntemporal_trends[order(year, month)]\n\n\nTop izvori po angažmanu\ntop_sources &lt;- dta[, .(avg_engagement = mean(ENGAGEMENT_RATE, na.rm = TRUE)), by = FROM]\nProsječni angažman po izvoru\ntop_sources[order(-avg_engagement)]"
+  },
+  {
+    "objectID": "pages/baza.html#napredne-analize",
+    "href": "pages/baza.html#napredne-analize",
+    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)",
+    "section": "Napredne analize",
+    "text": "Napredne analize\n\n\n\n\nNapredne analize - detaljni pregled metoda\n\n\nAnaliza\nPotrebne biblioteke\nKljučni kod\nOčekivani output\n\n\n\n\nTokenizacija teksta\ntidytext, dplyr\nunnest_tokens(word, TITLE)\nPojedinačne riječi iz naslova\n\n\nČišćenje stop riječi\ntidytext\nanti_join(stop_words)\nFiltrirane značajne riječi\n\n\nBrojanje riječi po sentimentu\ndplyr, tidytext\ncount(word, AUTO_SENTIMENT, sort = TRUE)\nFrekvencija riječi po sentimentu\n\n\nSentiment scoring\ndplyr, case_when\nsummarise(sentiment_score = sum(n * case_when(...)))\nNumerički sentiment score\n\n\nWordcloud generiranje\nwordcloud, RColorBrewer\nwordcloud(words, freq, colors = brewer.pal(8, 'Dark2'))\nVizualna reprezentacija"
+  },
+  {
+    "objectID": "pages/baza.html#izvorni-format-podataka",
+    "href": "pages/baza.html#izvorni-format-podataka",
+    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)",
+    "section": "Izvorni format podataka",
+    "text": "Izvorni format podataka\n\n\n\nTehnički detalji dataseta i preporučeni alati\n\n\nKategorija\nVrijednost/Opis\nNapomene\n\n\n\n\nIzvorne datoteke\nop_e_[datum-raspon].xlsx\nBatch obrada po vremenskim periodima\n\n\nFormat obrade\nR data.table\nOptimizirano za velike podatke\n\n\nKodiranje\nUTF-8\nPodrška za hrvatske znakove\n\n\nSeparatori\nAutomatski detektirani\nExcel format automatski parsiran\n\n\nNedostajuće vrijednosti\nNA\nStandardno R označavanje\n\n\nPreporučena biblioteka - Manipulacija\ndata.table - za brzu manipulaciju velikih dataset-a\nBrzina: 10-100x brža od base R\n\n\nPreporučena biblioteka - Sintaksa\ndplyr - za čišću i čitljiviju sintaksu\nKompatibilnost s tidyverse ekosystemom\n\n\nPreporučena biblioteka - Vizualizacija\nggplot2 - za profesionalne vizualizacije\nGrammar of graphics pristup\n\n\nPreporučena biblioteka - Datumi\nlubridate - za rad s datumskim formatima\nTimezone aware operacije\n\n\nPreporučena biblioteka - Tekst\nstringr - za manipulaciju i analizu teksta\nRegex podrška za složene operacije"
+  },
+  {
+    "objectID": "pages/baza.html#napomene-o-performansama",
+    "href": "pages/baza.html#napomene-o-performansama",
+    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)",
+    "section": "Napomene o performansama",
+    "text": "Napomene o performansama\n\n\n\nPreporuke za optimalne performanse\n\n\nOperacija\nPreporučeni pristup\nOčekivano vrijeme\n\n\n\n\nČitanje podataka\nfread() za brže učitavanje\n&lt; 30 sekundi\n\n\nGrupiranje i agregacija\ndata.table sintaksa [, .N, by=]\n&lt; 5 sekundi\n\n\nFiltriranje velikih tekstova\nKoristiti grep() s fixed=TRUE\n10-60 sekundi\n\n\nSortiranje po datumu\nKonvertirati DATE u Date klasu\n&lt; 10 sekundi\n\n\nAnaliza sentimenta\nKoristiti existirajuće AUTO_SENTIMENT\n1-5 minuta"
+  },
+  {
+    "objectID": "pages/baza.html#preuzmi-bazu-podataka",
+    "href": "pages/baza.html#preuzmi-bazu-podataka",
+    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)",
+    "section": "Preuzmi bazu podataka",
+    "text": "Preuzmi bazu podataka\n📊 Kaggle Dataset Croatian Catholic Media Space 2021- 2024"
+  },
+  {
+    "objectID": "pages/baza.html#dodatni-resursi",
+    "href": "pages/baza.html#dodatni-resursi",
+    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)",
+    "section": "Dodatni resursi",
+    "text": "Dodatni resursi\n\nGitHub repozitorij [https://github.com/lusiki/DigiKat]\nDokumentacija [https://lusiki.github.io/DigiKat/baza.html]\nKontakt [luka.sikic@unicath.hr]\nORCID [0009-0006-3519-0272]\n\n\nZadnja ažurirana 2026-01-06\nVerzija 1.0\nR verzija R version 4.5.2 (2025-10-31 ucrt)"
+  }
+]

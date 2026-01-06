@@ -9,10 +9,9 @@ format:
     toc: true
     toc-depth: 2
     smooth-scroll: true
-    css: styles.css
 ---
 
-![](photo_.png){fig-align="center" width="100%"}
+![](../assets/images/photo_.png){fig-align="center" width="100%" style="max-height: 400px; object-fit: cover; border-radius: 8px; margin: 2rem 0;"}
 
 <div style="text-align: center; margin-bottom: 30px;">
   ![Status Projekta](https://img.shields.io/badge/status-aktivan-green)
