@@ -13,7 +13,7 @@
 
 ### 🎯 Glavni ciljevi
 
-Cilj ovog trogodišnjeg [projekta](https://raw.githack.com/lusiki/DigiKat/main/docs/index.html) (2025.-2027.) je sustavno istražiti kako se katoličke teme predstavljaju na hrvatskim internetskim portalima i društvenim mrežama. Projekt ima dva ključna cilja:
+Cilj ovog trogodišnjeg [projekta](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/index.html) (2025.-2027.) je sustavno istražiti kako se katoličke teme predstavljaju na hrvatskim internetskim portalima i društvenim mrežama. Projekt ima dva ključna cilja:
 
 *   **Primarni cilj:** Izgradnja, održavanje i kontinuirano ažuriranje sveobuhvatne, strukturirane baze podataka o medijskim objavama s katoličkom tematikom. Ova baza služit će kao temelj za sva daljnja istraživanja.
 *   **Sekundarni cilj:** Provođenje niza tematskih istraživanja koja će produbiti razumijevanje specifičnih aspekata, poput medijske reprezentacije klera, prikaza katoličkog obrazovanja ili hodočasničkog turizma.
