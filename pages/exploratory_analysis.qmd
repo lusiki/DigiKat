@@ -1,6 +1,7 @@
 ---
 title: "Eksploratorna analiza podataka"
 subtitle: "Katolička tematika u digitalnom medijskom prostoru"
+date: last-modified
 format:
   html:
     toc: true

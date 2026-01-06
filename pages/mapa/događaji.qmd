@@ -1,5 +1,6 @@
 ---
 title: "Dinamička analiza utjecaja stvarnih događaja na online diskurs"
+date: last-modified
 format:
   html:
     theme: cosmo

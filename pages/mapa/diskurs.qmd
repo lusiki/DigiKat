@@ -1,5 +1,6 @@
 ---
 title: "Emocionalna i konfliktna mapa katoličkog digitalnog prostora"
+date: last-modified
 format:
   html:
     theme: cosmo

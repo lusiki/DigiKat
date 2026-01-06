@@ -1,6 +1,7 @@
 ---
 title: "Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru"
 subtitle: "Interdisciplinarni projekt računalnih društvenih znanosti"
+date: last-modified
 format: 
   html:
     theme: cosmo
