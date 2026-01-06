@@ -1,6 +1,6 @@
 # Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru
 
-![](../assets/images/photo_.png)
+![](assets/images/photo_.png)
 
 ![Status Projekta](https://img.shields.io/badge/status-aktivan-green) ![Institucija](https://img.shields.io/badge/Institucija-Hrvatsko_katoličko_sveučilište-blue) [![Web stranica](https://img.shields.io/badge/web-stranica_projekta-brightgreen)](https://lusiki.github.io/DigiKat/) ![Licenca](https://img.shields.io/badge/Licenca-CC%20BY%204.0-lightgrey)
 
