@@ -1,7 +1,5 @@
 ---
 title: "Dinamička analiza utjecaja stvarnih događaja na online diskurs"
-author: "Istraživački tim projekta, Hrvatsko katoličko sveučilište"
-date: last-modified
 format:
   html:
     theme: cosmo

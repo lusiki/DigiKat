@@ -1,6 +1,5 @@
 ---
 title: "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)"
-date: last-modified
 format: 
   html:
     theme: cosmo

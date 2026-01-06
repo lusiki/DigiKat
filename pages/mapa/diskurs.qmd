@@ -1,7 +1,5 @@
 ---
 title: "Emocionalna i konfliktna mapa katoličkog digitalnog prostora"
-author: "Istraživački tim projekta, Hrvatsko katoličko sveučilište"
-date: last-modified
 format:
   html:
     theme: cosmo

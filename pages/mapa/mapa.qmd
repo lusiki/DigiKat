@@ -1,6 +1,5 @@
 ---
 title: "Mapa katoličkog digitalnog prostora u RH (2021-2023)"
-date: last-modified
 format:
   html:
     theme: cosmo

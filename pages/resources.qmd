@@ -1,6 +1,5 @@
 ---
 title: "Resursi i korisni linkovi"
-date: last-modified
 format: 
   html:
     theme: cosmo

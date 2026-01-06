@@ -1,8 +1,6 @@
 ---
 title: "Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru"
 subtitle: "Interdisciplinarni projekt računalnih društvenih znanosti"
-date: last-modified
-author: "Hrvatsko katoličko sveučilište"
 format: 
   html:
     theme: cosmo
