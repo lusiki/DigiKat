@@ -27,3 +27,7 @@ Thumbs.db
 *~
 *.tmp
 *.bak
+
+# Large data files (too big for GitHub)
+data/*.rds
+data/merged_comprehensive.rds
