@@ -1,5 +1,5 @@
 ---
-title: "Anatomija diskursa katoličkog digitalnog prostora u Hrvatskoj (2021-2023)"
+title: "Anatomija diskursa katoličkog digitalnog prostora u Hrvatskoj (2021-2025)"
 date: last-modified
 format:
   html:
@@ -57,8 +57,11 @@ library(RColorBrewer)
 
 # Priprema podataka (izvršava se u pozadini)
 
-# Učitavanje glavne baze podataka
-dta <- readRDS("C:/Users/lsikic/Luka C/HKS/Projekti/Digitalni Kat/SHKM/Podatci/df_all.rds")
+# Učitavanje glavne baze podataka (2021-2025) i čišćenje
+dta <- readRDS("../../data/merged_comprehensive.rds") %>%
+  filter(SOURCE_TYPE != "tiktok", !is.na(SOURCE_TYPE)) %>%
+  filter(DATE >= as.Date("2021-01-01") & DATE <= as.Date("2025-12-31")) %>%
+  filter(year >= 2021 & year <= 2025)
 
 # Kreiranje stratificiranog uzorka
 sample_proportion <- 0.05
@@ -122,7 +125,7 @@ dta_with_themes <- bind_cols(dta_stratified_sample, theme_analysis_data)
 
 ## O čemu se govori?
 
-Nakon mapiranja ključnih aktera i platformi u našoj [prvoj analizi](https://lusiki.github.io/DigiKat/mapa.html), ovaj izvještaj zaranja dublje u sadržaj digitalnog diskursa. Koristeći metode obrade prirodnog jezika (NLP) na uzorku od 270 tisuća medijskih objava, prelazimo s pitanja tko i gdje na ključno pitanje o čemu se govori?
+Nakon mapiranja ključnih aktera i platformi u našoj [prvoj analizi](https://lusiki.github.io/DigiKat/mapa.html), ovaj izvještaj zaranja dublje u sadržaj digitalnog diskursa. Koristeći metode obrade prirodnog jezika (NLP) na korpusu od preko 610 tisuća medijskih objava u razdoblju 2021–2025, prelazimo s pitanja tko i gdje na ključno pitanje o čemu se govori?
 
 Naš cilj je stvoriti anatomiju diskursa:
 
@@ -242,7 +245,7 @@ wordcloud(
 
 Prvi korak je razumjeti opću strukturu diskursa. Koje teme dominiraju, a koje su na marginama? Koliko su te teme centralne za članke u kojima se pojavljuju?
 
-### Dinamika glavnih tema (2021 do 2023)
+### Dinamika glavnih tema (2021 do 2025)
 
 Analiza udjela svake teme u ukupnom broju spominjanja otkriva stabilnu strukturu, ali i suptilne promjene. Očekivano, teme vezane za Duhovnost i liturgiju te Crkvenu instituciju čine okosnicu diskursa. Značajan udio zauzimaju i teme koje povezuju Crkvu s društvom, poput Politike i Bioetike.
 
@@ -265,7 +268,7 @@ ggplot(topic_trends_guided, aes(x = year, y = share, color = topic, group = topi
   geom_line(linewidth = 1.5) +
   geom_point(size = 3) +
   scale_y_continuous(labels = scales::percent_format()) +
-  scale_x_continuous(breaks = c(2021, 2022, 2023)) +
+  scale_x_continuous(breaks = c(2021, 2022, 2023, 2024, 2025)) +
   labs(title = "Promjena zastupljenosti glavnih tema (iznad 5% udjela)",
        x = "Godina", y = "Udio spominjanja u korpusu", color = "Tema") +
   theme_minimal(base_size = 14) +
