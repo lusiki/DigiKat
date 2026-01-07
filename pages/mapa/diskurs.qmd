@@ -196,21 +196,19 @@ theme_analysis_data <- purrr::map_dfr(dta_stratified_sample$FULL_TEXT, ~calculat
 dta_enriched <- bind_cols(dta_stratified_sample, theme_analysis_data)
 ```
 
-## Uvod
+## Uvod u analizu emocionalne i konfliktne strukture diskursa
 
-Nakon što smo mapirali tko govori i o čemu, ova treća faza analize bavi se najsuptilnijim, ali možda i najvažnijim pitanjem kakva je atmosfera digitalnog diskursa? Zanima nas kako se o temama govori s kojim emocionalnim tonom, kojim psihološkim apelima i s kojim intenzitetom konflikta.
+Nakon kartografiranja aktera i platformi te identifikacije tematskih kategorija, ova treća analitička faza usmjerava se na najsuptilniju, ali kritičnu dimenziju diskursa. Istraživanje se bavi pitanjem atmosfere komunikacijskog prostora, odnosno načina na koji se teme artikuliraju. Fokus je na emocionalnom tonalitetu, psihološkim apelima i intenzitetu konfliktnog jezika koji karakterizira različite narativne okvire.
 
-Ovaj izvještaj uvodi inovativne, kontekstualno svjesne metrike za mjerenje atmosfere, odmičući se od jednostavnih kategorija prema dubinskom razumijevanju komunikacijskih strategija. Naš pristup sastoji se od tri koraka.
+Ovaj pristup nadilazi tradicionalne binarne klasifikacije sentimenta, uvodeći višeslojne, kontekstualno svjesne metrike koje omogućuju dubinsko razumijevanje komunikacijskih strategija. Analitički okvir strukturiran je u tri komponente.
 
-1. Dvoslojna emocionalna analiza: Razdvajamo površinski tonalitet od dubinskih psiholoških procesa.
-2. Relativni indeks konflikta (RCI): Mjerimo neočekivanu agresivnost jezika.
-3. Mapa narativne atmosfere: Vizualiziramo kako se atmosfera mijenja kada se teme spoje.
+Prvo, dvoslojna emocionalna analiza koja razdvaja površinski tonalitet teksta od dubinskih psiholoških procesa koji se u njemu aktiviraju. Drugo, Relativni indeks konflikta koji mjeri neočekivanu agresivnost jezika u odnosu na kontekstualne baseline karakteristike medija i teme. Treće, Mreža narativne atmosfere koja vizualizira kako se emocionalni tonalitet i intenzitet konflikta mijenjaju kada se različite tematske kategorije kombiniraju u šire narativne okvire.
 
 ---
 
-## Dvoslojna emocionalna analiza Tonalitet vs. psihologija
+## Dvoslojna emocionalna analiza atmosfere diskursa
 
-Da bismo razumjeli atmosferu, moramo razlikovati dvije stvari. Je li tekst napisan u pozitivnom ili negativnom tonu (tonalitet) i kojim se psihološkim apelima (strah, nada, povjerenje) služi da bi prenio poruku.
+Za precizno razumijevanje atmosfere potrebno je razlikovati dva analitička nivoa. Prvi je tonalitet, odnosno pozitivna ili negativna valencija teksta mjerena leksičkim sentimentom. Drugi su psihološki procesi, odnosno emocionalni okviri poput straha, nade, povjerenja ili ljutnje kroz koje se poruka artikulira i koji aktiviraju specifične kognitivne i afektivne odgovore kod publike.
 
 ```{r}
 #| label: analyze-atmosphere
@@ -306,17 +304,9 @@ heatmap_data <- dta_atmosphere %>%
   filter(n_articles > 3)
 ```
 
-### Matrica tona i psihologije
+### Matrica tonaliteta i psiholoških procesa
 
-Sljedeća vizualizacija prikazuje kako se tonalitet (boja ćelije) mijenja ovisno o dominantnom psihološkom procesu (stupci) unutar svake teme (redovi). Plave ćelije označavaju pozitivan tonalitet, a crvene negativan, dok desni stupac prikazuje ukupni prosječni sentiment svake teme.
-
-Ova matrica otkriva sofisticirane strategije medijskog uokvirivanja i donosi nekoliko ključnih uvida.
-
-* Kontekst je ključan. Tonalitet teme nije fiksan. Vidljivo je da gotovo sve teme postaju negativne (crvena boja) kada su uokvirene Ljutnjom, Strahom ili Tugom. S druge strane, okviri Povjerenja, Radosti i Iščekivanja gotovo univerzalno proizvode pozitivan tonalitet (plava boja).
-* Identifikacija vrućih zona. Teme poput PAPE I VATIKAN i POLITIKA I ODNOS S DRZAVOM pokazuju najveći raspon sentimenata od izrazito negativnih do izrazito pozitivnih. To ih identificira kao ključna bojna polja narativa, gdje je izbor emocionalnog okvira presudan za oblikovanje percepcije publike.
-* Paradoks emocija. Najzanimljiviji nalaz je uloga emocije Gađenja. Kada je usmjerena na temu POLITIKE (vjerojatno na korupciju ili nemoral), stvara izrazito pozitivan sentiment, signalizirajući moralnu osudu. Međutim, kada je usmjerena na PAPE I VATIKAN (vjerojatno na unutarcrkvene probleme), stvara najnegativniji sentiment u cijeloj matrici.
-
-Ukratko, ova analiza pokazuje da mediji ne prenose samo informacije već aktivno upravljaju atmosferom oko pojedine teme strateškim odabirom emocionalnog ključa u kojem je predstavljaju.
+Sljedeća vizualizacija predstavlja dvodimenzionalnu matricu koja prikazuje interakciju između tematskih kategorija i psiholoških procesa. Boja svake ćelije označava prosječni tonalitet tekstova koji pripadaju kombinaciji određene teme i emocionalnopg okvira. Plave nijanse označavaju pozitivan tonalitet, crvene nijanse negativan, dok desni stupac agregira prosječni sentiment svake tematske kategorije.
 
 ```{r}
 #| label: plot-emotion-heatmap
@@ -330,18 +320,28 @@ ggplot(heatmap_data, aes(x = dominant_emotion, y = dominant_topic, fill = avg_se
   theme_minimal(base_size = 12) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   labs(
-    title = "Matrica atmosfere: Kako psihološki okvir utječe na tonalitet teme",
-    subtitle = "Boja ćelije predstavlja prosječni sentiment (CroSentilex) unutar svake kombinacije teme i dominantne emocije (NRC)",
-    x = "Dominantni psihološki proces (NRC)",
-    y = "Dominantna tema"
+    title = "Matrica tonaliteta prema tematskim kategorijama i psihološkim okvirima",
+    subtitle = "Boja ćelije predstavlja prosječni sentiment unutar svake kombinacije teme i dominantne emocije",
+    x = "Dominantni psihološki proces",
+    y = "Dominantna tematska kategorija"
   )
 ```
 
+Ova matrica otkriva sofisticirane mehanizme medijskog uokvirivanja i donosi nekoliko ključnih analitičkih uvida.
+
+Prvi, kontekstualna ovisnost tonaliteta. Tonalitet pojedine tematske kategorije nije inherentna karakteristika sadržaja, već rezultat strateškog izbora emocionalnog okvira. Gotovo sve tematske kategorije manifestiraju negativan tonalitet kada su artikulirane kroz psihološke okvire Ljutnje, Straha ili Tuge. Nasuprot tome, okviri Povjerenja, Radosti i Iščekivanja gotovo univerzalno proizvode pozitivan tonalitet. Ovo potvrđuje da mediji ne prenose neutralne informacije, već aktivno konstruiraju atmosferu strateškim odabirom emocionalnog ključa.
+
+Drugi, identifikacija kritičnih narativnih zona. Tematske kategorije poput Pape i Vatikan te Politika i odnos s državom pokazuju najveći raspon sentimenata, od izrazito negativnih do izrazito pozitivnih. Ove kategorije predstavljaju ključna bojna polja narativa gdje izbor emocionalnog okvira ima najsnažniji učinak na oblikovanje percepcije publike.
+
+Treći, paradoksalna uloga emocije Gađenja. Analiza otkriva fascinantnu asimetriju. Kada je Gađenje usmjereno prema temi Politike i odnosa s državom, najvjerojatnije u kontekstu kritike političke korupcije ili nemoralnosti, rezultira pozitivnim sentimentom koji signalizira moralnu osudu. Međutim, kada je ista emocija usmjerena prema temi Pape i Vatikan, u kontekstu unutarcrkvenih skandala ili problema, generira najnegativniji sentiment u cijeloj matrici.
+
+Ljutnja u temama poput Politike i odnosa s državom nije samo statistička pojava. Ona odražava stvarne komunikacijske dinamike u hrvatskim medijima, posebno u raspravama oko crkvenih komentara na zakonske prijedloge ili političke odluke. Publika izražava frustraciju i neslaganje kroz specifične obrasce interakcije, uključujući kritičke komentare, dijeljenja sadržaja s negativnim tonalitetom i reakcije koje signaliziraju ljutnju. Ova ljutnja predstavlja manifestaciju dubljih društvenih tenzija oko odnosa između religijske i sekularne sfere, gdje crkveni stavovi prema političkim pitanjima često postaju katalizatori polarizacije.
+
 ---
 
-## Relativni indeks konflikta (RCI)
+## Relativni indeks konflikta kao kontekstualno prilagođena metrika
 
-Standardna mjerenja ne uzimaju u obzir kontekst. Nije isto koristiti konfliktan jezik u članku o ratu i u članku o duhovnosti. Relativni indeks konflikta (RCI) mjeri koliko je neki članak neočekivano agresivniji ili pomirljiviji od onoga što je uobičajeno za njegov medij i njegovu temu.
+Tradicionalne metrike intenziteta konflikta ne uzimaju u obzir kontekstualne baseline karakteristike. Korištenje konfliktnog vokabulara u članku o povijesnim ratnim događajima nije ekvivalentno njegovoj uporabi u članku o liturgijskim praksama. Relativni indeks konflikta predstavlja metodološku inovaciju koja mjeri koliko je pojedini tekst neočekivano agresivniji ili pomirljiviji od baseline očekivanja temeljenog na prosječnom diskursu njegovog izvora i njegove tematske kategorije.
 
 ```{r}
 #| label: rci-calculation
@@ -372,20 +372,9 @@ dta_atmosphere_final <- dta_atmosphere %>%
   )
 ```
 
-### Mapa medijskih strategija konflikta
+### Tipologija medijskih strategija konfliktnog diskursa
 
-Sljedeći grafikon koristi RCI mjeru kako bi mapirao medije na temelju njihove strategije korištenja konfliktnog jezika.
-
-* X os: Prosječna, kućna razina konfliktnog jezika medija (CLI). Što je medij više desno, to je njegov ton u prosjeku agresivniji.
-* Y os: Varijabilnost (RCI) u korištenju konfliktnog jezika. Što je medij više na grafikonu, to je njegov ton nepredvidljiviji ponekad je miran, a ponekad izrazito agresivan.
-* Veličina točke: Ukupna prisutnost medija u diskursu.
-
-Ova mapa otkriva četiri fundamentalno različita modela komunikacije u hrvatskom digitalnom prostoru.
-
-1. Gore desno (strateški eskalatori): Ovdje se nalazi gusta skupina velikih mainstream medija (index.hr, 24sata.hr, dnevnik.hr). Karakterizira ih visok prosječni konflikt i visoka nepredvidivost. Njihova strategija je doziranje konflikta. Koriste ga snažno kada žele privući pažnju na veliku priču, ali su u drugim situacijama umjereniji.
-2. Dolje desno (dosljedni kritičari): U ovom kvadrantu grupirani su desno orijentirani i aktivistički portali (narod.hr, dnevno.hr, dragovoljac.com). Njihov ton je konstantno visok u konfliktnosti, ali predvidiv. Oni ne biraju bitke. Njihova je uređivačka politika inherentno konfliktna i kritička.
-3. Gore lijevo (pragmatični promatrači): Ovdje nalazimo tradicionalne medije (vecernji.hr, slobodnadalmacija.hr, hrt.hr). Njihov prosječni ton je umjereniji, ali visoka nepredvidivost pokazuje da zadržavaju sposobnost snažne eskalacije konflikta kada procijene da je to potrebno.
-4. Dolje lijevo (graditelji zajednic)e: Ovaj prostor pripada vjerskim medijima i YouTube kanalima (hkm.hr, laudato.hr, LaudatoTV). Njihova strategija je dijametralno suprotna ostalima. Dosljedno nizak i predvidiv ton konflikta, s fokusom na informiranje i izgradnju zajednice, a ne na stvaranje prijepora.
+Sljedeći grafikon koristi Relativni indeks konflikta za identifikaciju i klasifikaciju medijskih strategija u korištenju konfliktnog jezika. Horizontalna os predstavlja prosječnu, baznu razinu konfliktnog jezika karakterističnu za svaki medij. Vertikalna os predstavlja varijabilnost u korištenju konfliktnog jezika, mjerenu standardnom devijacijom RCI vrijednosti. Veličina točke označava ukupnu prisutnost medija u korpusu.
 
 ```{r}
 #| label: plot-rci-strategy
@@ -413,34 +402,30 @@ ggplot(media_strategy_data, aes(x = avg_cli, y = rci_sd, size = n_articles)) +
   scale_size_continuous(range = c(2, 10), name = "Broj članaka") +
   theme_minimal(base_size = 14) +
   labs(
-    title = "Mapa medijskih strategija konflikta",
+    title = "Tipologija medijskih strategija konfliktnog diskursa",
     subtitle = "Pozicija medija temeljena na prosječnoj razini i varijabilnosti konfliktnog jezika",
-    x = "Prosječni indeks konfliktnog jezika (CLI) Kućni ton (Log skala)",
-    y = "Standardna devijacija RCI a Nepredvidivost (Log skala)"
+    x = "Prosječni indeks konfliktnog jezika (Bazna razina, logaritamska skala)",
+    y = "Standardna devijacija Relativnog indeksa konflikta (Nepredvidivost, logaritamska skala)"
   )
 ```
+
+Ova vizualizacija otkriva postojanje četiri fundamentalno različita modela komunikacijske strategije u hrvatskom digitalnom prostoru.
+
+Prvi model, strateški eskalatori, pozicioniran u gornjem desnom kvadrantu, okuplja gustu skupinu velikih mainstream medija, uključujući index.hr, 24sata.hr i dnevnik.hr. Ovaj model karakterizira visoka prosječna razina konfliktnog jezika kombinirana s visokom varijabilnosti. Ovi mediji prakticiraju sofisticirano doziranje konflikta, koristeći ga selektivno i intenzivno kada žele maksimizirati angažman publike, dok u drugim situacijama održavaju umjereniji tonalitet. Primjer je portal index.hr koji vješto koristi konfliktni diskurs za privlačenje pažnje kroz senzacionalizirane naslove o crkvenim skandalima ili kontroverznim izjavama crkvenih velikodostojnika, dok istovremeno objavljuje i umjerenije informativne sadržaje.
+
+Drugi model, dosljedni kritičari, smješten u donjem desnom kvadrantu, obuhvaća desno orijentirane i aktivističke portale poput narod.hr, dnevno.hr i dragovoljac.com. Njihova komunikacijska strategija karakterizirana je konstantno visokom razinom konfliktnosti uz nisku varijabilnost. Ovi mediji ne prakticiraju stratešku modulaciju tonaliteta, već održavaju dosljedan kritički i konfrontirajući diskurs kao temeljnu karakteristiku svog uređivačkog identiteta.
+
+Treći model, pragmatični promatrači, okuplja tradicionalne medije poput vecernji.hr, slobodnadalmacija.hr i hrt.hr. Ovi mediji karakterizirani su umjerenom prosječnom razinom konfliktnosti, ali visokom nepredvidljivošću, što ukazuje na sposobnost fleksibilne prilagodbe tonaliteta ovisno o prirodi događaja. Zadržavaju kapacitet za intenzivnu eskalaciju konfliktnog diskursa kada procijene da to zahtijeva javni interes ili novinska vrijednost događaja.
+
+Četvrti model, graditelji zajednice, pozicioniran u donjem lijevom kvadrantu, pripada vjerskim medijima i specijaliziranim YouTube kanalima, uključujući hkm.hr, laudato.hr i LaudatoTV. Ovaj model manifestira dijametralno suprotnu strategiju od svih prethodnih, karakteriziranu dosljednom niskom razinom konfliktnosti i niskom varijabilnosti. Ovi mediji fokusirani su na informiranje, edukaciju i izgradnju zajednice, grade pozitivnu atmosferu kroz priče o duhovnom rastu, zajedništvu i pastoralnim aktivnostima, sustavno izbjegavajući konfrontirajući diskurs.
 
 ---
 
 ##  Mreža narativne atmosfere
 
-Konačno, spajamo sve u jednu vizualizaciju. Mreža povezanosti tema prikazuje kako se teme spajaju u šire narativne okvire. Izgled svake veze otkriva atmosferu tih spojeva.
+Konačna sinteza integrira sve analitičke dimenzije u jednu kompleksnu mrežnu vizualizaciju. Mreža prikazuje kako se različite tematske kategorije povezuju u šire narativne okvire, dok vizualne karakteristike svake veze otkrivaju atmosferske osobine tih narativnih kombinacija.
 
-* Boja veze: Prosječni tonalitet (Plavo = pozitivno).
-* Debljina veze: Prosječni intenzitet konflikta (Deblje = konfliktnije).
-* Prozirnost veze: Pouzdanost veze, tj. broj članaka na kojima se temelji (Tamnije = pouzdanije).
-
-Ova mreža otkriva temeljnu strukturu hrvatskog katoličkog digitalnog prostora.
-
-1. Dva narativna svemira. Mreža nije kaotična. Vidljiva je jasna podjela.
-   * Društveno politička arena (lijevi i donji dio): Gusta isprepletenost tema poput POLITIKE, POVIJESTI, BIOETIKE i UNUTARCRKVENIH PRIJEPORA. Veze između ovih tema su izrazito debele, što znači da su visoko konfliktne. Ovo je epicentar svih prijepora i kulturalnih ratova.
-   * Pastoralno institucionalna jezgra (gornji i desni dio): Ovdje se nalaze teme DUHOVNOSTI, TEOLOGIJE i CRKVENOG UPRAVLJANJA. Veze unutar ovog klastera i prema njemu su znatno tanje, što upućuje na puno nižu razinu konflikta. Ovo je svijet unutarcrkvenih, doktrinalnih i duhovnih rasprava.
-
-2. Konflikt kao ključni diferencijator. Najiznenađujući nalaz je gotovo potpuno odsustvo negativno obojenih veza. To ne znači da nema kritike, već da je intenzitet konflikta (debljina veze) ključni element koji razlikuje narative. Najdeblje i najtamnije linije koje predstavljaju najpouzdanije i najkonfliktnije narativne spojeve jasno povezuju teme BIOETIKE, POLITIKE, PAPE I VATIKANA i POVIJESTI. Ovo je četverokut prijepora gdje se odvijaju najžešće medijske rasprave.
-
-3. Uloga mostova. Teme poput CRKVENO UPRAVLJANJE i DIGITALNA EVANGELIZACIJA pozicionirane su centralno i služe kao mostovi koji povezuju ova dva svijeta, imajući snažne veze i prema političkom i prema pastoralnom klasteru.
-
-Ukratko, ova mreža je vizualni dokaz postojanja dva različita komunikacijska modela. Jedan koji funkcionira na gorivu visokog konflikta i drugi koji teži mirnom i ne konfliktnom izričaju. Ključne bitke za javno mnijenje vode se na mostovima između ova dva svijeta.
+Boja veze označava prosječni tonalitet, gdje plave nijanse označavaju pozitivno obojene narativne spojeve, a crvene nijanse negativno obojene. Debljina veze označava prosječni intenzitet konfliktnog jezika, gdje deblje linije upućuju na konfliktnije narative. Prozirnost veze označava pouzdanost veze, mjerenu brojem tekstova na kojima se temelji analiza, gdje tamnije linije predstavljaju statistički robusnije nalaze.
 
 ```{r}
 #| label: plot-network
@@ -545,11 +530,11 @@ graph_from_data_frame(graph_data, directed = FALSE) %>%
     geom_node_text(aes(label = str_wrap(name, 15)), color = "black", size = 3.5) +
     scale_edge_color_gradient2(
       low = "firebrick", mid = "lightgrey", high = "steelblue", midpoint = 0, 
-      name="Prosj. sentiment\nnarativnog okvira"
+      name="Prosječni sentiment\nnarativnog okvira"
     ) +
     scale_edge_width(
       range = c(1, 4), 
-      name="Prosj. intenzitet konflikta (RCI)"
+      name="Prosječni intenzitet konflikta"
     ) +
     scale_edge_alpha(
       range = c(0.3, 1),
@@ -562,22 +547,28 @@ graph_from_data_frame(graph_data, directed = FALSE) %>%
     )
 ```
 
-## Zaključak
+Vizualizacija mreže otkriva temeljnu strukturu hrvatskog katoličkog digitalnog prostora kroz prizmu atmosfere i konflikta.
 
-Dubinska analiza atmosfere katoličkog digitalnog prostora u Hrvatskoj otkrila je kompleksnu sliku koja nadilazi jednostavnu podjelu na pozitivne i negativne teme. Naši nalazi upućuju na postojanje sofisticiranih komunikacijskih strategija i dubokih strukturnih obrazaca u načinu na koji se o vjeri i Crkvi govori u javnosti.
+Prvi ključni nalaz je postojanje dva jasno razgraničena narativna svijeta. Prvi je društveno politička arena, smještena u lijevom i donjem dijelu mreže. Ovaj prostor karakterizira gusta isprepletenost tematskih kategorija Politike i odnosa s državom, Povijesti i nacionalnog identiteta, Bioetike i kulturnih ratova te Unutarcrkvenih prijepora i ideologija. Veze između ovih kategorija manifestiraju izrazitu debljinu, što signalizira visok intenzitet konfliktnog jezika. Ovo predstavlja epicentar svih narativnih prijepora i kulturalnih ratova koji karakteriziraju hrvatski katolički digitalni prostor.
 
-Tri ključna zaključka se ističu.
+Drugi narativni svijet je pastoralno institucionalna jezgra, pozicionirana u gornjem i desnom dijelu mreže. Ovdje se grupiraju teme Duhovnosti i liturgije, Teologije i doktrine te Crkvenog upravljanja i strukture. Veze unutar ovog klastera karakterizirane su znatno manjom debljinom, što upućuje na značajno nižu razinu konfliktnosti. Ovaj prostor predstavlja svijet unutarcrkvenih, doktrinalnih i duhovnih rasprava, vođenih primarno kroz informativni i edukativni diskurs.
 
-1. Kontekstualno oblikovanje tonaliteta. Dokazali smo da tonalitet teme nije inherentno svojstvo, već rezultat strateškog emocionalnog uokvirivanja. Isti sadržaj može biti predstavljen kao pozitivan ili negativan ovisno o tome služi li se medij psihološkim apelima na Povjerenje i Radost ili na Ljutnju i Strah. Ovo potvrđuje da mediji nisu samo pasivni prenositelji informacija, već aktivni kreatori atmosfere.
+Drugi ključni nalaz odnosi se na ulogu konfliktnog jezika kao primarnog diferencijatora narativnih okvira. Iznenađujući je gotovo potpun nedostatak negativno obojenih veza u mreži. To ne implicira odsutnost kritičkog diskursa, već sugerira da intenzitet konfliktnog jezika, vizualiziran debljinom veze, predstavlja ključniju dimenziju razlikovanja narativa od tonaliteta. Najdeblje i najtamnije linije, koje predstavljaju najpouzdanije i najkonfliktnije narativne spojeve, jasno povezuju tematske kategorije Bioetike i kulturnih ratova, Politike i odnosa s državom, Pape i Vatikana te Povijesti i nacionalnog identiteta. Ovaj četverokut predstavlja primarno bojište narativnih prijepora gdje se odvijaju najintenzivnije medijske rasprave.
 
-2. Četiri modela komunikacije. Identificirali smo četiri fundamentalno različite medijske strategije u korištenju konfliktnog jezika, koje grubo odgovaraju tipologiji medija.
-   * Strateški eskalatori (mainstream mediji) koji doziraju konflikt.
-   * Dosljedni kritičari (aktivistički portali) koji ga koriste kao temeljni dio svog identiteta.
-   * Pragmatični promatrači (tradicionalni mediji) koji ga koriste uravnoteženo.
-   * Graditelji zajednice (vjerski mediji) koji ga sustavno izbjegavaju.
+Treći ključni nalaz je identifikacija tematskih kategorija koje funkcioniraju kao mostovi između dva narativna svijeta. Teme poput Crkvenog upravljanja i strukture te Digitalne evangelizacije i mladih pozicionirane su centralno u mreži i održavaju snažne veze prema objema stranama. Međutim, ova dva narativna svijeta nisu samo strukturno odvojena, oni se i aktivno dodiruju i prožimaju kroz ove mostovne kategorije. Konfliktni diskurs iz političkog i bioetičkog klastera može prelijevati se u pastoralni mir, ilustrirajući dinamičnost i fluidnost digitalnih rasprava u hrvatskom katoličkom prostoru. Primjerice, rasprave o crkvenom upravljanju često postaju arena gdje se politički konflikti i unutarcrkvene ideološke podjele manifestiraju, transformirajući nominalno institucionalnu temu u žarište prijepora. Ovi mostovi nisu samo pasivni prijelazi, već aktivna područja transformacije atmosfere gdje se narativni okviri rekonfiguriraju.
 
-3. Dva svemira diskursa. Najvažniji nalaz, vizualiziran u Mreži narativne atmosfere, jest postojanje dva jasno odvojena tematska i atmosferska svijeta. Jedan je društveno politički, obilježen visokim intenzitetom konflikta i ispreplitanjem tema politike, povijesti i bioetike. Drugi je pastoralno institucionalni, karakteriziran niskim konfliktom i fokusom na duhovnost i unutarcrkvena pitanja.
+## Sinteza nalaza i zaključne implikacije
 
-Ovi nalazi pokazuju da je za razumijevanje digitalnog prostora nužno koristiti višeslojne, kontekstualno svjesne metode koje mogu razotkriti suptilne komunikacijske strategije koje oblikuju javnu percepciju Crkve i vjere u Hrvatskoj.
+Dubinska analiza emocionalne i konfliktne strukture katoličkog digitalnog prostora u Hrvatskoj razotkriva kompleksnu sliku koja transcendira jednostavne dihotomije. Rezultati istraživanja upućuju na postojanje sofisticiranih komunikacijskih strategija i dubinskih strukturnih obrazaca koji oblikuju način artikulacije vjere i Crkve u javnom diskursu.
 
-Budući koraci ovog istraživanja usmjerit će se na povezivanje ovih nalaza s konkretnim događajima (Event Detection) te na finiju analizu specifičnih narativa i fraza koje se koriste unutar najkonfliktnijih tema. Krajnji cilj ostaje stvaranje dinamičnog digitalnog opservatorija koji će u stvarnom vremenu moći pratiti i analizirati puls ovih važnih društvenih rasprava.
+Tri fundamentalna nalaza se izdvajaju kao ključni za razumijevanje atmosfere diskursa.
+
+Prvi, kontekstualno posredovano oblikovanje tonaliteta. Istraživanje je empirijski verificiralo da tonalitet pojedine tematske kategorije nije inherentna karakteristika sadržaja, već rezultat strateškog emocionalnog uokvirivanja. Identičan sadržaj može biti artikuliran kao pozitivan ili negativan ovisno o psihološkim apelima koje medij aktivira, bilo da su to okviri Povjerenja i Radosti ili Ljutnje i Straha. Ovaj nalaz potvrđuje teorijsku poziciju da mediji ne funkcioniraju kao pasivni prenositelji informacija, već kao aktivni konstruktori atmosfere kroz stratešku selekciju emocionalnih ključeva.
+
+Drugi, tipologija medijskih strategija konfliktnog diskursa. Istraživanje je identificiralo četiri fundamentalno različite komunikacijske strategije u korištenju konfliktnog jezika, koje grubo koreliraju s tipologijom medijskih izvora. Strateški eskalatori, reprezentativni za mainstream medije, prakticiraju sofisticirano doziranje konflikta. Dosljedni kritičari, karakteristični za aktivističke portale, koriste konfliktni diskurs kao temeljni identitetski marker. Pragmatični promatrači, karakteristični za tradicionalne medije, održavaju uravnotežen pristup uz kapacitet fleksibilne eskalacije. Graditelji zajednice, karakteristični za vjerske medije, sustavno izbjegavaju konfliktni diskurs fokusirajući se na informiranje i zajednicu.
+
+Treći, strukturna bifurkacija diskursnog prostora. Najvažniji nalaz, vizualiziran kroz mrežu narativne atmosfere, jest postojanje dva strukturno i atmosferski razgraničena tematska svijeta. Prvi, društveno politički, karakteriziran visokim intenzitetom konflikta i isprepletanjem tema politike, povijesti i bioetike. Drugi, pastoralno institucionalni, karakteriziran niskim konfliktom i fokusom na duhovnost i unutarcrkvena pitanja. Ova bifurkacija nije apsolutna, već je posredovana mostovnim kategorijama koje omogućuju prelijevanje atmosfere između svjetova.
+
+Ovi nalazi demonstriraju nužnost korištenja višeslojnih, kontekstualno prilagođenih analitičkih metoda koje mogu dekodirati suptilne komunikacijske strategije. Razumijevanje ovih strategija ključno je za interpretaciju javne percepcije Crkve i vjere u Hrvatskoj te za osmišljavanje učinkovitih komunikacijskih intervencija.
+
+Buduće faze istraživanja usmjerit će se na temporalnu dinamiku atmosfere kroz detekciju kritičnih događaja te na detaljniju analizu specifičnih fraza i narativnih struktura koje dominiraju najkonfliktnijim tematskim kategorijama. Krajnji cilj ostaje stvaranje dinamičkog digitalnog opservatorija koji će omogućiti praćenje i analizu atmosfere katoličkog digitalnog prostora u stvarnom vremenu, pružajući tako kontinuirani uvid u ove važne društvene procese.

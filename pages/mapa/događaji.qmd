@@ -1,5 +1,5 @@
 ---
-title: "Dinamička analiza utjecaja stvarnih događaja na online diskurs"
+title: "Dinamička analiza utjecaja stvarnih događaja na online diskurs (2021-2025)"
 date: last-modified
 format:
   html:
@@ -154,7 +154,10 @@ nrc_lexicon_long <- nrc_lexicon_raw %>%
   mutate(emotion = recode(emotion, !!!emotion_translator_hr)) %>%
   select(word, emotion)
 
-dta <- readRDS("C:/Users/lsikic/Luka C/HKS/Projekti/Digitalni Kat/SHKM/Podatci/df_all.rds")
+dta <- readRDS("../../data/merged_comprehensive.rds") %>%
+  filter(SOURCE_TYPE != "tiktok", !is.na(SOURCE_TYPE)) %>%
+  filter(DATE >= as.Date("2021-01-01") & DATE <= as.Date("2025-12-31")) %>%
+  filter(year >= 2021 & year <= 2025)
 
 # Kreiranje stratificiranog uzorka od 5%
 sample_proportion <- 0.05
