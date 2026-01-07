@@ -123,23 +123,19 @@ dta_enriched <- bind_cols(dta_stratified_sample, theme_analysis_data)
 dta_with_themes <- bind_cols(dta_stratified_sample, theme_analysis_data)
 ```
 
-## O čemu se govori?
+## Uvod u analizu sadržaja diskursa
 
-Nakon mapiranja ključnih aktera i platformi u našoj [prvoj analizi](https://lusiki.github.io/DigiKat/mapa.html), ovaj izvještaj zaranja dublje u sadržaj digitalnog diskursa. Koristeći metode obrade prirodnog jezika (NLP) na korpusu od preko 610 tisuća medijskih objava u razdoblju 2021–2025, prelazimo s pitanja tko i gdje na ključno pitanje o čemu se govori?
+Nakon mapiranja ključnih aktera i platformi u našoj [prvoj analizi](https://lusiki.github.io/DigiKat/mapa.html), ovo istraživanje usmjerava analitički fokus na sadržajnu strukturu digitalnog diskursa. Primjenjujući metode obrade prirodnog jezika na korpusu od preko 610 tisuća medijskih objava u razdoblju 2021 do 2025, istraživanje premješta fokus s pitanja tko i gdje na fundamentalno pitanje o čemu se govori.
 
-Naš cilj je stvoriti anatomiju diskursa:
+Cilj je stvoriti anatomiju diskursa koja obuhvaća tri analitičke razine. Prvo, identifikaciju glavnih tematskih kategorija koje strukturiraju raspravu. Drugo, mjerenje njihovog intenziteta, utjecaja i polarizacijskog potencijala. Treće, otkrivanje obrazaca međusobne povezanosti tema i njihove temporalne dinamike.
 
-1. Identificirati glavne teme koje oblikuju raspravu.
-2. Izmjeriti njihov intenzitet, utjecaj i polarizacijski potencijal.
-3. Otkriti kako se teme međusobno povezuju i kako se njihov fokus mijenja kroz vrijeme.
+Istraživanje koristi vođeni pristup tematskom modeliranju. Na temelju teološke i komunikološke ekspertize definiranih je 16 ključnih tematskih kategorija. Ovaj pristup omogućuje preciznu i interpretativnu klasifikaciju sadržaja, nadilažeći ograničenja isključivo strojnog učenja koje često generira tematske kategorije slabije interpretabilnosti.
 
-Ova analiza koristi vođeni pristup tematskom modeliranju, gdje smo na temelju teološke i komunikološke ekspertize definirali 16 ključnih tematskih kategorija, omogućujući preciznu i interpretativnu klasifikaciju sadržaja.
+## Leksička struktura korpusa
 
-## Vizualni sažetak korpusa 
+Prije detaljne tematske analize, prezentira se pogled iz široke perspektive na leksičku strukturu korpusa. Sljedeći oblak riječi prikazuje 100 najfrekventnijih smislenih riječi, odnosno imenica, pridjeva i glagola, u cjelokupnom korpusu od preko 250.000 medijskih objava. Veličina svake riječi proporcionalna je njenoj ukupnoj frekvenciji u korpusu.
 
-Prije nego što zaronimo u detaljnu analizu, započnimo s pogledom iz ptičje perspektive. Sljedeći oblak riječi prikazuje 150 najčešćih, smislenih riječi (imenica, pridjeva i glagola) u cjelokupnom korpusu od preko 250.000 medijskih objava. Veličina svake riječi proporcionalna je njenoj ukupnoj frekvenciji.
-
-Ovaj vizualni sažetak odmah otkriva ključne entitete i koncepte koji čine srž diskursa: crkva, papa, biskup, Hrvatska, život, godina, čovjek, vjera i molitva.
+Ovaj vizualni sažetak odmah otkriva ključne entitete i koncepte koji čine srž diskursa. Dominiraju riječi crkva, papa, biskup, Hrvatska, život, godina, čovjek, vjera i molitva, što upućuje na središnje koncepte i aktere katoličkog digitalnog prostora.
 
 ```{r}
 #| label: plot-wordcloud
@@ -239,15 +235,17 @@ wordcloud(
 )
 ```
 
+Riječi poput crkva i papa nisu samo statistički ključne, one evociraju svakodnevni život hrvatskih vjernika. Ove riječi označavaju kontinuum iskustva, od intimnosti nedjeljnih misa u lokalnim župama do praćenja medijskih rasprava o vatikanskim odlukama. Njihova prisutnost u korpusu pokazuje kako katolička tematika prožima istovremeno duhovni i društveni sloj hrvatskog društva. Sadržaj o vjeri nije odvojen od društvene stvarnosti, već predstavlja integralni dio javnog diskursa, spajajući privatnu pobožnost s javnim angažmanom.
+
 ---
 
-## Pregled tematskog pejzaža
+## Struktura tematskog pejzaža
 
-Prvi korak je razumjeti opću strukturu diskursa. Koje teme dominiraju, a koje su na marginama? Koliko su te teme centralne za članke u kojima se pojavljuju?
+Prvi analitički korak obuhvaća razumijevanje opće strukture diskursa. Koje tematske kategorije dominiraju prostorom, a koje zauzimaju marginalne pozicije? Kako se njihova zastupljenost mijenja kroz promatrano razdoblje? Koliko su te teme centralne za članke u kojima se pojavljuju?
 
-### Dinamika glavnih tema (2021 do 2025)
+### Temporalna dinamika tematskih kategorija
 
-Analiza udjela svake teme u ukupnom broju spominjanja otkriva stabilnu strukturu, ali i suptilne promjene. Očekivano, teme vezane za Duhovnost i liturgiju te Crkvenu instituciju čine okosnicu diskursa. Značajan udio zauzimaju i teme koje povezuju Crkvu s društvom, poput Politike i Bioetike.
+Analiza udjela svake tematske kategorije u ukupnom broju spominjanja otkriva relativno stabilnu strukturu, ali i suptilne promjene kroz promatrano razdoblje. Teme vezane za Duhovnost i liturgiju te Crkveno upravljanje i strukturu čine okosnicu diskursa. Značajan udio zauzimaju i teme koje povezuju Crkvu sa širim društvenim kontekstom, posebno Politika i odnos s državom te Bioetika i kulturni ratovi.
 
 ```{r}
 #| label: plot-topic-trends
@@ -275,9 +273,11 @@ ggplot(topic_trends_guided, aes(x = year, y = share, color = topic, group = topi
   theme(legend.position = "bottom")
 ```
 
-### Što je vijest, a što pozadinski šum?
+### Intenzitet i centralnost tematskih kategorija
 
-Nije svako spominjanje teme jednako važno. Ovaj grafikon pokazuje koliko je tema centralna za članak kada se u njemu pojavi. Teme s distribucijom pomaknutom udesno (primjerice duhovnost) su one koje, kada se pojave, dominiraju člankom i predstavljaju glavnu vijest. Teme s distribucijom bliže lijevoj strani (primjerice ideologija) češće se spominju usputno, kao kontekst.
+Frekvencija spominjanja tema nije jedini relevantan indikator. Potrebno je razumjeti i centralnost svake teme za tekstove u kojima se pojavljuje. Ovaj grafikon prikazuje distribuciju intenziteta tematskih kategorija, mjerenog brojem tematskih spominjanja normaliziranih na tisuću riječi.
+
+Teme s distribucijom pomaknutom udesno, poput Duhovnosti i liturgije, karakterizira visoka centralnost. Kada se ove teme pojave u tekstu, one obično predstavljaju primarni fokus i mogu se smatrati glavnom viješću. Teme s distribucijom bliže lijevoj strani, poput Unutarcrkvenih prijepora i ideologija, češće se spominju usputno, kao kontekstualni element unutar tekstova čija je primarna tema drugačija.
 
 ```{r}
 #| label: plot-topic-intensity
@@ -293,23 +293,25 @@ ggplot(thematic_intensity_data, aes(x = intensity, y = fct_reorder(topic, intens
   scale_x_log10(breaks = c(1, 10, 100, 1000), labels = c("1", "10", "100", "1000")) +
   theme_minimal(base_size = 14) +
   labs(
-    title = "Distribucija intenziteta tema",
-    subtitle = "Koliko su teme centralne za članke u kojima se pojavljuju?",
-    x = "Intenzitet teme (spominjanja na 1000 riječi, log skala)",
-    y = "Tema"
+    title = "Distribucija intenziteta tematskih kategorija",
+    subtitle = "Koliko su teme centralne za tekstove u kojima se pojavljuju?",
+    x = "Intenzitet teme (spominjanja na 1000 riječi, logaritamska skala)",
+    y = "Tematska kategorija"
   ) +
   theme(panel.grid.major.y = element_blank())
 ```
 
 ---
 
-## Utjecaj i prijem tema
+## Utjecaj i recepcija tematskih kategorija
 
-Nakon što smo mapirali teme, istražujemo kako publika reagira na njih. Koje teme potiču najveći angažman, a koje najviše polariziraju?
+Nakon mapiranja tematske strukture, analiza se usmjerava na način na koji publika reagira na različite tematske kategorije. Koje teme generiraju najveći angažman publike? Koje teme izazivaju najsnažnije emocionalne reakcije i koje su to reakcije?
 
-### Koje teme generiraju najviše interakcija?
+### Angažman publike prema tematskim kategorijama
 
-Analiza prosječnog broja interakcija po članku otkriva da teme koje se tiču unutarcrkvenih prijepora, bioetike i skandala generiraju značajno veći angažman od tema vezanih za duhovnost ili institucionalno funkcioniranje. Ovo upućuje na to da konflikt i kontroverza služe kao ključni pokretači interakcija u digitalnom prostoru.
+Analiza prosječnog broja interakcija po članku, kategorizirano prema dominantnoj temi, otkriva značajne varijacije u angažmanu. Teme koje se tiču Unutarcrkvenih prijepora i ideologija, Bioetike i kulturnih ratova te Zlostavljanja i krize povjerenja generiraju značajno veći angažman od tema vezanih za Duhovnost i liturgiju ili institucionalno funkcioniranje Crkve.
+
+Ovaj obrazac upućuje na mehanizam prema kojem konflikt, kontroverza i krizni narativi djeluju kao ključni pokretači interakcija u digitalnom prostoru. Teme koje izazivaju neslaganje ili zahtijevaju zauzimanje stava aktiviraju publiku na participaciju, dok teme konsenzusa ili rutinske prirode generiraju pasivniji prijem.
 
 ```{r}
 #| label: plot-engagement-by-topic
@@ -328,15 +330,17 @@ ggplot(engagement_by_topic, aes(x = avg_interactions, y = reorder(dominant_topic
   geom_text(aes(label = round(avg_interactions)), hjust = -0.2, size=4) +
   expand_limits(x = max(engagement_by_topic$avg_interactions) * 1.1) +
   theme_minimal(base_size = 14) +
-  labs(title = "Koje teme generiraju najviše interakcija?",
+  labs(title = "Angažman publike prema tematskim kategorijama",
        subtitle = "Prosječan broj interakcija po članku za svaku dominantnu temu",
-       x = "Prosječne interakcije", y = "Dominantna tema") +
+       x = "Prosječne interakcije", y = "Dominantna tematska kategorija") +
   theme(panel.grid.major.y = element_blank())
 ```
 
-### Mapa emocija 
+### Emocionalna polarizacija prema tematskim kategorijama
 
-Analizirajući Facebook reakcije, možemo okvirno mapirati emocionalni odgovor na svaku temu. Rezultati su jasni. Teme vezane za Duhovnost i Karitas dominantno izazivaju pozitivne reakcije (Love), dok teme Bioetike, Politike i Skandala generiraju najveći udio negativnih (Angry) reakcija, potvrđujući njihovu ulogu kao glavnih točaka polarizacije.
+Analizirajući Facebook reakcije, moguće je rekonstruirati emocionalnu valencu odgovora publike na različite tematske kategorije. Fokus je na dihotomiji između pozitivnih reakcija, reprezentiranih reakcijom Love, i negativnih reakcija, reprezentiranih reakcijom Angry.
+
+Rezultati su jasni i konzistentni s prethodnim nalazima. Teme vezane za Duhovnost i liturgiju te Karitas i socijalnu pravdu dominantno izazivaju pozitivne reakcije. Ove teme rezoniraju s zajedničarskim aspektima vjere i solidarnosti. Nasuprot tome, teme Bioetike i kulturnih ratova, Politike i odnosa s državom te Zlostavljanja i krize povjerenja generiraju najveći udio negativnih reakcija, potvrđujući njihovu ulogu kao primarnih točaka polarizacije u katoličkom digitalnom prostoru.
 
 ```{r}
 #| label: plot-polarization-by-topic
@@ -361,20 +365,26 @@ ggplot(polarization_by_topic, aes(y = reorder(dominant_topic, angry_ratio))) +
   geom_vline(xintercept = 0, color="grey") +
   scale_x_continuous(labels = function(x) percent(abs(x)), name = "Udio u ukupnim reakcijama") +
   theme_minimal(base_size = 14) +
-  labs(title = "Koje teme generiraju ljubav, a koje ljutnju?",
+  labs(title = "Emocionalna polarizacija prema tematskim kategorijama",
        subtitle = "Plavo = udio Love reakcija | Crveno = udio Angry reakcija",
-       y = "Dominantna tema")
+       y = "Dominantna tematska kategorija")
 ```
+
+Pozitivne reakcije na teme poput Karitasa i socijalne pravde odražavaju toplinu zajedničkih akcija i solidarnosti. Ove reakcije često prate izvještaje o humanitarnim kampanjama Crkve tijekom kriznih situacija, poput potresa ili izbjeglička kriza. Reakcije Love simboliziraju priznanje i emocionalnu podršku društveno korisnim aktivnostima crkvenih institucija.
+
+Nasuprot tome, ljutnja koja se manifestira u reakcijama na teme Bioetike i kulturnih ratova signalizira duboke podjele u hrvatskom društvu oko pitanja života, etike i obiteljskih vrijednosti. Ova ljutnja nije samo odgovor na sadržaj članaka, već odražava fundamentalne svjetonazorske sukobe koji karakteriziraju suvremeno hrvatsko društvo. Bioetičke teme djeluju kao okidač za intenzivne reakcije jer zadiru u pitanja identiteta, morala i odnosa između religijske i sekularne sfere.
 
 ---
 
 ## Akteri i narativni okviri
 
-Tko su glavni protagonisti svake teme i kako se teme međusobno povezuju u šire narativne okvire? Ova sekcija spaja tematsku analizu s analizom aktera i mrežnom analizom.
+Nakon identifikacije tematskih kategorija i mjerenja njihovog utjecaja, analiza prelazi na ispitivanje aktera koji nose te narative te načina na koji se teme međusobno povezuju u šire narativne okvire. Ova sekcija integrira tematsku analizu s analizom aktera i mrežnom analizom diskursa.
 
-### Glavni akteri unutar svake teme
+### Protagonisti tematskih kategorija
 
-Svaka tematska priča ima svoje glavne likove. Analizom najčešće spominjanih osoba i organizacija unutar svake dominantne teme dobivamo uvid u to tko su nositelji narativa. Očekivano, političari dominiraju političkim temama, dok crkveni velikodostojnici dominiraju institucionalnim.
+Svaka tematska kategorija ima svoje glavne protagoniste, odnosno aktere koji se najčešće spominju u kontekstu te teme. Analizom najfrekventnijih imenskih entiteta unutar svake dominantne teme dobiva se uvid u to koji su pojedinci i institucije nositelji specifičnih narativa.
+
+Rezultati pokazuju očekivanu ali važnu strukturu. Političari dominiraju temama vezanim za Politiku i odnos s državom, gdje se najčešće spominju imena aktualnih političkih čelnika. Crkveni velikodostojnici dominiraju institucionalnim temama i temama vezanim za Pape i Vatikan. Ova diferencijacija potvrđuje funkcionalne granice između različitih tematskih domena unutar katoličkog digitalnog prostora.
 
 ```{r}
 #| label: plot-actors-in-topics
@@ -411,10 +421,10 @@ ggplot(top_actors_in_top_topics, aes(x = n, y = reorder_within(lemma, n, dominan
   scale_fill_viridis_d() +
   facet_wrap(~ dominant_topic, scales = "free_y", ncol = 1) + 
   labs(
-    title = "Ključni akteri unutar Top 5 najzastupljenijih tema",
-    subtitle = "Top 10 najčešće spominjanih osoba ili organizacija za svaku temu",
+    title = "Protagonisti najzastupljenijih tematskih kategorija",
+    subtitle = "Deset najčešće spominjanih aktera za svaku od pet najzastupljenijih tema",
     x = "Ukupan broj spominjanja",
-    y = "Akter (lema)"
+    y = "Akter (lematizirana forma)"
   ) +
   theme_minimal(base_size = 14) +
   theme(
@@ -428,9 +438,13 @@ ggplot(top_actors_in_top_topics, aes(x = n, y = reorder_within(lemma, n, dominan
   )
 ```
 
-### Mreža narativnih okvira
+### Mreža povezanosti tematskih kategorija
 
-Teme se rijetko pojavljuju izolirano. One se spajaju u šire narativne okvire (frames). Analizom ko okurencije tema unutar istih članaka možemo mapirati te veze. Mreža pokazuje snažnu povezanost između Politike, Povijesti i Bioetike, tvoreći dominantan društveno politički klaster. S druge strane, teme poput Duhovnosti i Karitasa čine zaseban, pastoralni klaster.
+Tematske kategorije se rijetko pojavljuju izolirano. One se kombiniraju i isprepliću, tvoreći šire narativne okvire. Analizirajući ko okurenciju tematskih kategorija unutar istih članaka, moguće je mapirati strukturu ovih veza. Mreža prikazuje koje se teme najčešće pojavljuju zajedno, otkrivajući latentne narativne strukture.
+
+Vizualizacija pokazuje jasnu segmentaciju. Postoji snažna povezanost između tema Politike i odnosa s državom, Povijesti i nacionalnog identiteta te Bioetike i kulturnih ratova, tvoreći dominantan društveno političkim klaster. Ovaj klaster predstavlja prostor gdje se katolička tematika najintenzivnije isprepliće s pitanjima nacionalnog identiteta i političke pripadnosti.
+
+S druge strane, teme poput Duhovnosti i liturgije te Karitasa i socijalne pravde čine relativno odvojen, pastoralni klaster. Ove teme fokusirane su na internu crkvenu praksu i humanitarian rad, s manjim naglaskom na široke društvene kontroverze.
 
 ```{r}
 #| label: plot-topic-network
@@ -453,18 +467,21 @@ topic_pairs %>%
   geom_node_text(aes(label = str_wrap(name, 20)), repel = TRUE, size = 4) +
   theme_void() +
   labs(
-    title = "Mreža povezanosti tema",
+    title = "Mreža povezanosti tematskih kategorija",
     subtitle = "Koje se teme najčešće pojavljuju zajedno u istim člancima?",
     edge_width = "Snaga veze (korelacija)",
     edge_alpha = ""
   )
 ```
 
-## Zaključak
+## Sinteza i zaključne implikacije
 
-Ova dubinska tematska analiza otkriva da katolički digitalni prostor nije monolitan. Sastoji se od različitih, često odvojenih, tematskih svjetova.
+Ova dubinska analiza sadržaja razotkriva da katolički digitalni prostor u Hrvatskoj nije monolitna cjelina. Diskurs je strukturiran oko različitih, djelomično autonomnih tematskih domena koje funkcioniraju prema različitim logikama i obraćaju se različitim publikama.
 
-* Pastoralni svijet: Fokusiran na duhovnost, liturgiju i karitas, s dominantno pozitivnim prijemom kod publike.
-* Društveno politički svijet: Gdje se teme politike, povijesti i bioetike isprepliću, generirajući najveći angažman, ali i najsnažniju polarizaciju.
+Identificirana je jasna segmentacija na dva primarna tematska svijeta. Prvi je pastoralni svijet, koji okuplja teme Duhovnosti i liturgije, Karitasa i socijalne pravde te Digitalne evangelizacije. Ovaj svijet fokusiran je na internu crkvenu praksu, duhovni razvoj i socijalni angažman. Karakterizira ga dominantno pozitivan prijem kod publike, s visokim udjelom Love reakcija. Ove teme rezoniraju sa zajedničarskim aspektima vjere i ne izazivaju značajnu polarizaciju.
 
-Razumijevanje strukture, utjecaja i povezanosti ovih tema ključno je za svaku daljnju analizu narativa i sentimenata koji oblikuju javnu percepciju Crkve i vjere u Hrvatskoj.
+Drugi je društveno politički svijet, gdje se isprepliću teme Politike i odnosa s državom, Povijesti i nacionalnog identiteta te Bioetike i kulturnih ratova. Ovaj svijet predstavlja prostor najintenzivnije društvene konfliktnosti. Ove teme generiraju najveći angažman publike, ali istovremeno i najsnažniju polarizaciju, s visokim udjelom Angry reakcija. One funkcioniraju kao žarišta svjetonazorskih sukoba koji karakteriziraju suvremeno hrvatsko društvo.
+
+Mreža povezanosti tematskih kategorija otkriva dodatnu kompleksnost. Ova mreža nije samo dijagram apstraktnih veza, ona prikazuje kako se konkretne teme iz pastoralnog svijeta, poput Duhovnosti i liturgije, u specifičnim kontekstima prepliću s političkim temama. Primjer je rasprava o crkvenim stavovima prema izborima ili bioetičkim pitanjima, gdje se liturgijski autoritet instrumentalizira za političke svrhe. Ova prožimanja stvaraju bogat tapiserij koji odražava svu kompleksnost katoličkog života u Hrvatskoj, gdje se vjera istovremeno doživljava kao privatna duhovnost i javni identitetski marker.
+
+Razumijevanje ove strukture, uključujući intenzitet, utjecaj i povezanost tematskih kategorija, predstavlja temelj za sve buduće analize narativa i sentimenta. Tek nakon kartografiranja što se govori, moguće je produbiti razumijevanje kako se govori i s kojim komunikacijskim namjerama, što će biti fokus sljedećih faza ovog istraživačkog projekta.
