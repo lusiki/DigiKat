@@ -1,5 +1,5 @@
 ---
-title: "Mapa katoličkog digitalnog prostora u RH (2021-2023)"
+title: "Mapa katoličkog digitalnog prostora u RH (2021-2025)"
 date: last-modified
 format:
   html:
@@ -38,31 +38,27 @@ library(ggrepel)
 
 ## Mapiranje digitalne medijske arene
 
-Ovaj dokument predstavlja prvu fazu analize u sklopu projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru. Cilj ove analize je stvoriti sveobuhvatnu i jasnu mapu ekosustava, odnosno temeljni pregled arene u kojoj se odvijaju rasprave o katoličkim temama u Hrvatskoj.
+Ovaj dokument predstavlja prvu analitičku fazu projekta koji istražuje reprezentaciju i analizu katoličke tematike u digitalnom medijskom prostoru. Analiza obuhvaća korpus od preko 610.000 medijskih objava prikupljenih u razdoblju od 1. siječnja 2021. do 31. prosinca 2025. Cilj istraživanja je stvoriti sveobuhvatnu mapu ekosustava, odnosno temeljni pregled arene u kojoj se odvijaju rasprave o katoličkim temama u Hrvatskoj.
 
-Koristeći bazu podataka od preko 250.000 medijskih objava prikupljenih u razdoblju od 1. siječnja 2021. do 31. prosinca 2023., odgovaramo na temeljna pitanja.
+Istraživanje primjenjuje kvantitativnu analizu medijskog sadržaja s ciljem identifikacije strukturnih karakteristika ekosustava. Analitički pristup organiziran je u tri faze. Prvo se analiziraju platformske karakteristike prema volumenu produkcije, angažmanu publike i dosegu sadržaja. Zatim se identificiraju najproduktivniji i najutjecajniji medijski izvori. Konačno se sintetiziraju svi nalazi kroz sveobuhvatnu mapu utjecaja.
 
-1. Gdje se odvija rasprava? Analiziramo dominantne platforme (web, YouTube, Facebook i druge).
-2. Tko su ključni akteri? Identificiramo najproduktivnije i najutjecajnije medijske izvore.
-3. Kakva je dinamika utjecaja? Uspoređujemo doseg (reach) i angažman (interactions) kako bismo razumjeli različite strategije utjecaja.
-
-Analiza je podijeljena u tri dijela. Kreće od općeg, makro pogleda na platforme, nastavlja s detaljnijim pregledom ključnih aktera i završava sa sintetskom Mapom utjecaja koja spaja sve dimenzije u jednu cjelinu.
+Istraživanje odgovara na tri temeljna pitanja. Gdje se odvija rasprava? Analiziramo dominantne platforme, uključujući web, YouTube, Facebook i druge digitalne prostore. Tko su ključni akteri? Identificiramo najproduktivnije i najutjecajnije medijske izvore. Kakva je dinamika utjecaja? Uspoređujamo doseg i angažman kako bismo razumjeli različite strategije komunikacijskog djelovanja.
 
 ```{r}
 #| label: data-preparation
-#| eval: false
+#| eval: true
 #| echo: false
 
-dta <- readRDS("C:/Users/lsikic/Luka C/HKS/Projekti/Digitalni Kat/SHKM/Podatci/df_all.rds")
-# remove tiktok from SOURCE_TYPE
+dta <- readRDS("../../data/merged_comprehensive.rds")
+# remove tiktok and missing SOURCE_TYPE
 dta <- dta %>%
-  filter(SOURCE_TYPE != "tiktok") %>%
+  filter(SOURCE_TYPE != "tiktok", !is.na(SOURCE_TYPE)) %>%
   mutate(
     SOURCE_TYPE = factor(SOURCE_TYPE, levels = c("web", "youtube", "facebook", "twitter", "reddit", "forum", "comment"))
   ) %>%
-  # remove year 2024
-  filter(DATE >= as.Date("2021-01-01") & DATE < as.Date("2024-01-01")) %>%
-  filter(year != 2024)
+  # filter data from 2021-01-01 to 2025-12-31
+  filter(DATE >= as.Date("2021-01-01") & DATE <= as.Date("2025-12-31")) %>%
+  filter(year >= 2021 & year <= 2025)
 
 # 3. platform_summary
 platform_summary <- dta %>%
@@ -73,7 +69,7 @@ platform_summary <- dta %>%
     total_reach        = sum(REACH, na.rm=TRUE)
   ) %>%
   ungroup()
-saveRDS(platform_summary, "data/platform_summary.rds")
+saveRDS(platform_summary, "../../data/processed/platform_summary.rds")
 
 # 4. proportions_summary
 proportions_summary <- platform_summary %>%
@@ -84,7 +80,7 @@ proportions_summary <- platform_summary %>%
     reach_share       = total_reach / sum(total_reach)
   ) %>%
   ungroup()
-saveRDS(proportions_summary, "data/proportions_summary.rds")
+saveRDS(proportions_summary, "../../data/processed/proportions_summary.rds")
 
 # 5. source_summary & top_sources_by_year
 source_summary <- dta %>%
@@ -97,14 +93,14 @@ source_summary <- dta %>%
     total_reach         = sum(REACH, na.rm=TRUE)
   ) %>%
   ungroup()
-saveRDS(source_summary, "data/source_summary.rds")
+saveRDS(source_summary, "../../data/processed/source_summary.rds")
 
 top_sources_by_year <- source_summary %>%
   group_by(year) %>%
   slice_max(order_by = total_interactions, n = 15) %>%
   ungroup()
 
-saveRDS(top_sources_by_year, "data/top_sources_by_year.rds")
+saveRDS(top_sources_by_year, "../../data/processed/top_sources_by_year.rds")
 
 # 6. top_XX_sources for web/youtube/facebook
 for(pl in c("web","youtube","facebook")) {
@@ -119,7 +115,7 @@ for(pl in c("web","youtube","facebook")) {
     ungroup() %>%
     slice_max(order_by = total_interactions, n = 20)
 
-  saveRDS(df, file = sprintf("data/top_%s_sources.rds", pl))
+  saveRDS(df, file = sprintf("../../data/processed/top_%s_sources.rds", pl))
 }
 
 # 7. web_actors / youtube_actors / facebook_actors
@@ -141,7 +137,7 @@ get_top_actors <- function(data, platform_filter) {
 
 for(pl in c("web","youtube","facebook")) {
   actors <- get_top_actors(dta, pl)
-  saveRDS(actors, file = sprintf("data/%s_actors.rds", pl))
+  saveRDS(actors, file = sprintf("../../data/processed/%s_actors.rds", pl))
 }
 ```
 
@@ -171,11 +167,11 @@ platform_colors <- c(
 
 # Topografija digitalnog prostora
 
-Prvi korak u razumijevanju ekosustava je analiza ključnih platformi. Promatramo tri metrike: Volumen (ukupan broj objava), Angažman (ukupne interakcije) i Doseg (ukupan reach).
+Prvi korak u razumijevanju ekosustava predstavlja analiza ključnih platformi. Istraživanje promatra tri metrike koje oblikuju digitalnu komunikaciju. Volumen označava ukupan broj objava i reflektira produktivnost aktera. Angažman mjeri ukupne interakcije i ukazuje na aktivnost publike. Doseg predstavlja ukupan reach i ilustrira potencijalni utjecaj sadržaja.
 
-## Tko najviše producira sadržaj?
+## Distribucija produkcije sadržaja prema platformama
 
-Ovaj grafikon prikazuje apsolutnu dominaciju tradicionalnih web portala kao glavnih proizvođača sadržaja. Kroz sve tri promatrane godine web generira znatno više objava od svih ostalih platformi zajedno. Ipak, primjetan je i kontinuirani rast volumena sadržaja na YouTubeu, što upućuje na sve veću važnost video formata.
+Ovaj grafikon prikazuje apsolutnu dominaciju tradicionalnih web portala kao glavnih proizvođača sadržaja. Kroz sve promatrane godine web generira znatno više objava od svih ostalih platformi zajedno. Primjetan je kontinuirani rast volumena sadržaja na YouTubeu, što upućuje na sve veću važnost video formata u komunikacijskoj strategiji aktera.
 
 ```{r}
 #| label: plot-volume
@@ -183,6 +179,7 @@ Ovaj grafikon prikazuje apsolutnu dominaciju tradicionalnih web portala kao glav
 #| fig-height: 7
 
 plot_volume <- platform_summary %>%
+  filter(!is.na(SOURCE_TYPE)) %>%
   # Sortiramo unutar svake godine da bi graf bio čitljiviji
   arrange(year, total_posts) %>%
   mutate(SOURCE_TYPE_ordered = factor(SOURCE_TYPE, levels = unique(SOURCE_TYPE))) %>%
@@ -200,7 +197,7 @@ plot_volume <- platform_summary %>%
     axis.text.x = element_text(angle = 45, hjust = 1)
   ) +
   labs(
-    title = "Broj objava po platformama (2021-2023)",
+    title = "Broj objava po platformama (2021-2025)",
     subtitle = "",
     x = "Ukupan broj objava (u tisućama)",
     y = "Tip platforme",
@@ -210,9 +207,11 @@ plot_volume <- platform_summary %>%
 print(plot_volume)
 ```
 
-## Gdje se odvija najživlja rasprava?
+Ova dominacija weba nije samo brojčana, ona odražava ulogu tradicionalnih medija kao čuvara vijesti u hrvatskom društvu. Portali poput vecernji.hr brzo reagiraju na crkvene događaje, uključujući papine posjete ili lokalne blagdane, stvarajući široku, ali ponekad površnu raspravu. Web portali funkcioniraju kao primarni kanali distribucije informacija o katoličkoj tematici, postavljajući agendu za daljnju raspravu na drugim platformama.
 
-Kada pogledamo angažman publike, slika postaje zanimljivija. Iako web i dalje vodi, YouTube i Facebook zauzimaju značajno veći udio u interakcijama nego što imaju u volumenu objava. Ovo je prvi pokazatelj da, premda web proizvodi najviše sadržaja, društvene mreže i video platforme uspješnije potiču direktan angažman publike.
+## Distribucija angažmana publike prema platformama
+
+Kada se usmjeri analitički fokus na angažman publike, struktura ekosustava postaje složenija. Iako web i dalje vodi u apsolutnom iznosu interakcija, YouTube i Facebook zauzimaju značajno veći udio u angažmanu nego što imaju u volumenu objava. Ovo predstavlja prvi pokazatelj da, premda web proizvodi najviše sadržaja, društvene mreže i video platforme uspješnije potiču direktan angažman publike.
 
 ```{r}
 #| label: plot-interaction
@@ -220,6 +219,7 @@ Kada pogledamo angažman publike, slika postaje zanimljivija. Iako web i dalje v
 #| fig-height: 7
 
 plot_interactions <- platform_summary %>%
+  filter(!is.na(SOURCE_TYPE)) %>%
   filter(total_interactions > 0) %>%
   arrange(year, total_interactions) %>%
   mutate(SOURCE_TYPE_ordered = factor(SOURCE_TYPE, levels = unique(SOURCE_TYPE))) %>%
@@ -237,7 +237,7 @@ plot_interactions <- platform_summary %>%
     axis.text.x = element_text(angle = 45, hjust = 1)
   ) +
   labs(
-    title = "Ukupan broj interakcija po platformama (2021–2023)",
+    title = "Ukupan broj interakcija po platformama (2021–2025)",
     x = "Interakcije (u milijunima)",
     y = "Tip platforme",
     caption = "Napomena: Stupci su sortirani po interakcijama. Prikazane su samo platforme s više od 0 interakcija."
@@ -246,17 +246,11 @@ plot_interactions <- platform_summary %>%
 print(plot_interactions)
 ```
 
-## Relativna važnost platformi 
+## Relativna važnost platformi u ekosustavu
 
-Apsolutni brojevi su korisni, ali relativni udjeli otkrivaju pravu dinamiku unutar ekosustava. Sljedeći grafikon uspoređuje udio svake platforme u ukupnom broju objava, interakcija i dosega.
+Apsolutni brojevi su korisni za razumijevanje razmjera, ali relativni udjeli otkrivaju pravu dinamiku unutar ekosustava. Sljedeći grafikon uspoređuje udio svake platforme u ukupnom broju objava, interakcija i dosega.
 
-Ova vizualizacija je ključna jer pokazuje asimetriju utjecaja.
-
-* Lijevo (Objave): Web čini oko 80% svih objava.
-* Sredina (Interakcije): Udio weba u interakcijama pada na približno 70 do 75%, dok udio YouTubea raste i doseže gotovo 20% u 2023. godini.
-* Desno (Doseg): Sličan trend vidljiv je i kod dosega, gdje web gubi dio svoje dominacije u korist društvenih i video platformi.
-
-Ovo znači da je sadržaj na YouTubeu i Facebooku u prosjeku znatno utjecajniji po objavi u odnosu na sadržaj web portala.
+Ova vizualizacija je ključna jer pokazuje asimetriju utjecaja. Na lijevom panelu, koji prikazuje objave, web čini oko 80 posto svih objava. U srednjem panelu, koji prikazuje interakcije, udio weba u interakcijama pada na približno 70 do 75 posto, dok udio YouTubea raste i doseže gotovo 20 posto u 2023. godini. Na desnom panelu, koji prikazuje doseg, sličan trend vidljiv je gdje web gubi dio svoje dominacije u korist društvenih i video platformi.
 
 ```{r}
 #| label: plot-shares
@@ -264,30 +258,33 @@ Ovo znači da je sadržaj na YouTubeu i Facebooku u prosjeku znatno utjecajniji 
 #| fig-height: 6
 
 plot_share_posts <- proportions_summary %>%
+  filter(!is.na(SOURCE_TYPE)) %>%
   ggplot(aes(x = year, y = post_share, fill = SOURCE_TYPE)) +
   geom_col(position = "fill") +
   scale_y_continuous(labels = percent_format()) +
-  scale_x_continuous(breaks = c(2021, 2022, 2023)) +
+  scale_x_continuous(breaks = c(2021, 2022, 2023, 2024, 2025)) +
   scale_fill_manual(values = platform_colors) +
   theme_minimal(base_size = 14) +
   labs(title = "Udio objava", x = "Godina", y = "Postotak")
 
 plot_share_interactions <- proportions_summary %>%
+  filter(!is.na(SOURCE_TYPE)) %>%
   filter(total_interactions > 0) %>%
   ggplot(aes(x = year, y = interaction_share, fill = SOURCE_TYPE)) +
   geom_col(position = "fill") +
   scale_y_continuous(labels = percent_format()) +
-  scale_x_continuous(breaks = c(2021, 2022, 2023)) +
+  scale_x_continuous(breaks = c(2021, 2022, 2023, 2024, 2025)) +
   scale_fill_manual(values = platform_colors, guide = "none") +
   theme_minimal(base_size = 14) +
   labs(title = "Udio interakcija", x = "Godina", y = "Postotak")
 
 plot_share_reach <- proportions_summary %>%
+  filter(!is.na(SOURCE_TYPE)) %>%
   filter(total_reach > 0) %>%
   ggplot(aes(x = year, y = reach_share, fill = SOURCE_TYPE)) +
   geom_col(position = "fill") +
   scale_y_continuous(labels = percent_format()) +
-  scale_x_continuous(breaks = c(2021, 2022, 2023)) +
+  scale_x_continuous(breaks = c(2021, 2022, 2023, 2024, 2025)) +
   scale_fill_manual(values = platform_colors, guide = "none") +
   theme_minimal(base_size = 14) +
   labs(title = "Udio dosega", x = "Godina", y = "Postotak")
@@ -295,7 +292,7 @@ plot_share_reach <- proportions_summary %>%
 plot_combined_share <- (plot_share_posts + plot_share_interactions + plot_share_reach) +
   plot_layout(guides = 'collect') +
   plot_annotation(
-    title    = "Struktura digitalnog ekosustava (2021–2023)",
+    title    = "Struktura digitalnog ekosustava (2021–2025)",
     subtitle = "Usporedba udjela platformi u ukupnom broju objava, interakcija i dosega.",
     caption  = "Web generira najviše sadržaja, ali YouTube i Facebook preuzimaju sve veći dio utjecaja."
   )
@@ -303,19 +300,23 @@ plot_combined_share <- (plot_share_posts + plot_share_interactions + plot_share_
 print(plot_combined_share)
 ```
 
-# Najutjecajniji akteri
+Asimetrija između volumena produkcije i ostvarenog angažmana ukazuje na različite mehanizme stvaranja utjecaja. Dok web portali dominiraju kvantitetom sadržaja, vizualni i interaktivni formati na YouTubeu i Facebooku generiraju proporcionalno veći angažman po objavi. Ova dinamika sugerira da je učinkovitost komunikacije funkcija ne samo volumena već i platformskih affordanci i strategija pripreme sadržaja. Različite platforme omogućuju različite tipove interakcije, što rezultira različitim obrascima angažmana.
 
-Nakon makro pogleda zumiramo na najvažnije pojedinačne aktere unutar tri ekosustava: Web, YouTube i Facebook.
+# Najutjecajniji akteri u ekosustavu
 
-## Top 20 aktera po angažmanu (interakcijama)
+Nakon makro pregleda strukturnih karakteristika, analiza se usmjerava na identifikaciju najvažnijih pojedinačnih aktera unutar tri dominantna ekosustava. Fokus je na web portalima, YouTube kanalima i Facebook stranicama, kao primarnim arenama produkcije i distribucije sadržaja o katoličkoj tematici.
 
-Prvo rangiramo aktere prema najdirektnijoj mjeri angažmana, a to je ukupan broj interakcija. Ovdje primjećujemo jasnu podjelu.
+## Rangiranje medijskih aktera prema metrikama angažmana
 
-* Web: Dominiraju veliki mainstream mediji (vecernji.hr, jutarnji.hr, index.hr) i specijalizirani vjerski portali (bitno.net).
-* YouTube: Scenom dominiraju isključivo specijalizirani kanali (LaudatoTV, T Studio), pojedini svećenici i župe.
-* Facebook: Prisutna je mješavina mainstream medija i specijaliziranih stranica.
+Prvo rangiranje aktera provodi se prema najdirektnijoj mjeri angažmana publike, odnosno prema ukupnom broju interakcija. Ovdje je primjetna jasna podjela prema platformskim karakteristikama.
 
-Veličina točke predstavlja produktivnost (broj objava) i otkriva različite strategije. Neki akteri objavljuju puno sadržaja s manjim prosječnim angažmanom, dok drugi objavljuju rjeđe, ali s velikim odjekom.
+Na web platformi dominiraju veliki mainstream mediji poput vecernji.hr, jutarnji.hr i index.hr, uz specijalizirane vjerske portale kao što je bitno.net. Ovi portali kombiniraju visoku produktivnost s širokim dosegom, postavljajući agendu javne rasprave o katoličkoj tematici.
+
+YouTube platformu karakteriziraju isključivo specijalizirani kanali, među kojima prednjače LaudatoTV i T Studio, uz značajnu prisutnost pojedinačnih svećenika i župa. Ovi akteri razvijaju dugoročne odnose s publikom kroz redovitu video produkciju.
+
+Facebook scenu karakterizira mješavina mainstream medija i specijaliziranih stranica, što odražava hibridnu prirodu platforme koja spaja informativnu i zajedničarsku funkciju.
+
+Veličina točke na grafikonu predstavlja produktivnost aktera mjerenu brojem objava i otkriva različite komunikacijske strategije. Neki akteri objavljuju puno sadržaja s manjim prosječnim angažmanom po objavi, dok drugi objavljuju rjeđe, ali s izraženim odjekom. Nema jedinstvene formule uspjeha, što ukazuje na važnost prilagodbe strategije specifičnostima platforme i publike.
 
 ```{r}
 #| label: plot-lollipops-interactions
@@ -345,7 +346,7 @@ plot_facebook <- create_top_source_plot(top_facebook_sources, "Facebook stranice
 
 final_dashboard <- plot_web + plot_youtube + plot_facebook +
   plot_annotation(
-    title = "Top 20 profila u katoličkom digitalnom medijskom prostoru (2021-2023)",
+    title = "Top 20 profila u katoličkom digitalnom medijskom prostoru (2021-2025)",
     subtitle = "Rangirano prema ukupnim interakcijama. Veličina točke predstavlja ukupan broj objava.",
     caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
     theme = theme(plot.title = element_text(size = 20, face = "bold"))
@@ -354,16 +355,21 @@ final_dashboard <- plot_web + plot_youtube + plot_facebook +
 print(final_dashboard)
 ```
 
+Ovi akteri nisu samo izvori sadržaja, već i oblikovatelji mišljenja u digitalnom prostoru. Mainstream mediji poput jutarnji.hr služe kao most između sekularnog svijeta i vjerskih tema, prenoseći katoličku problematiku široj javnosti. Specijalizirani kanali poput LaudatoTV na YouTubeu nude intimniji prostor za duhovne razmjene, gdje publika aktivno sudjeluje kroz komentare i dijeljenja sadržaja. Ova diferencijacija uloga odražava kompleksnost katoličke tematike koja zahtijeva različite pristupe komunikaciji, od informativnog do formativnog.
+
 # Mapa utjecaja najvažnijih aktera
 
-Konačno, spajamo sve u jednu sofisticiranu vizualizaciju. Mapa utjecaja prikazuje aktere u dvodimenzionalnom prostoru angažmana (X os) i dosega (Y os). To nam omogućuje identificiranje četiri osnovna arhetipa.
+Konačna sinteza analize objedinjuje sve dimenzije u jednu sofisticiranu vizualizaciju. Mapa utjecaja prikazuje aktere u dvodimenzionalnom prostoru, gdje horizontalna os predstavlja angažman, a vertikalna os doseg. Ova vizualizacija omogućuje identifikaciju četiri osnovna arhetipa digitalnog utjecaja.
 
-* Divovi (gore desno): Visok doseg i visok angažman. Apsolutni lideri.
-* Graditelji zajednica (dolje desno): Nizak doseg, ali iznimno visok angažman. Imaju vjernu i aktivnu publiku.
-* Megafoni (gore lijevo): Visok doseg, ali nizak angažman. Njihov sadržaj je vidljiv, ali ne potiče nužno raspravu.
-* Nišni igrači (dolje lijevo): Fokusirani su na specifičnu, manju publiku s umjerenim dosegom i angažmanom.
+Divovi, pozicionirani u gornjem desnom kvadrantu, ostvaruju istovremeno visok doseg i visok angažman. Ovi akteri predstavljaju apsolutne lidere ekosustava, kombinirajući široku vidljivost s aktivnim angažmanom publike.
 
-Osi su prikazane na logaritamskoj skali kako bi se bolje prikazao širok raspon vrijednosti.
+Graditelji zajednica, smješteni u donjem desnom kvadrantu, karakterizira nizak doseg uz iznimno visok angažman. Ovi akteri razvijaju duboke odnose s vjernom i aktivnom publikom, često fokusirajući se na specifične demografske ili tematske niše.
+
+Megafoni, pozicionirani u gornjem lijevom kvadrantu, ostvaruju visok doseg uz nizak angažman. Njihov sadržaj je vidljiv širokoj publici, ali ne potiče nužno aktivnu raspravu ili interakciju.
+
+Specijalizirani akteri, smješteni u donjem lijevom kvadrantu, fokusirani su na specifičnu, manju publiku s umjerenim dosegom i angažmanom. Ovi akteri često služe jako ograničene tematske ili geografske niše.
+
+Osi grafikona prikazane su na logaritamskoj skali kako bi se bolje prikazao širok raspon vrijednosti i omogućilo smisleno uspoređivanje aktera različitih magnitudnih razreda.
 
 ```{r}
 #| label: plot-actor-map
@@ -397,7 +403,7 @@ plot_map_facebook <- create_actor_map_plot(facebook_actors, "Facebook Stranice",
 
 final_map_dashboard <- plot_map_web + plot_map_youtube + plot_map_facebook +
   plot_annotation(
-    title = "Mapa utjecaja najvećih profila u katoličkom digitalnom medijskom prostoru (2021-2023)",
+    title = "Mapa utjecaja najvećih profila u katoličkom digitalnom medijskom prostoru (2021-2025)",
     subtitle = "Usporedba dosega i angažmana. Veličina točke predstavlja produktivnost (broj objava).",
     caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru | Osi su prikazane na logaritamskoj skali.",
     theme = theme(plot.title = element_text(size = 20, face = "bold"))
@@ -406,12 +412,16 @@ final_map_dashboard <- plot_map_web + plot_map_youtube + plot_map_facebook +
 print(final_map_dashboard)
 ```
 
-## Zaključak i sljedeći koraci
+Arhetipi poput graditelja zajednica ilustriraju snagu malih, ali predanih grupa u digitalnom prostoru. Primjerice, župne Facebook stranice okupljaju lokalne vjernike oko svakodnevnih molitava i zajedničkih aktivnosti, pokazujući kako digitalni prostor može jačati stvarne zajednice umjesto samo širiti informacije. Ovi akteri ne teže maksimalnom dosegu, već produbljivanju odnosa s postojećom zajednicom, što rezultira visokim stopama angažmana i lojalnosti. Njihova strategija ilustrira alternativni put do utjecaja koji ne ovisi o volumenu publike već o kvaliteti odnosa.
 
-Ova inicijalna analiza ekosustava otkriva višeslojnost digitalne arene. Ključni nalazi su sljedeći.
+## Zaključak i sljedeći koraci u istraživanju
 
-1. Postoji jasna podjela rada. Web portali su dominantni proizvođači sadržaja, dok su YouTube i Facebook ključne arene za angažman publike.
-2. Akteri su specijalizirani. Najutjecajniji glasovi se značajno razlikuju od platforme do platforme, što upućuje na različite publike i komunikacijske strategije.
-3. Utjecaj je višedimenzionalan. Promatranje samo jedne metrike (primjerice samo interakcija) nije dovoljno. Mapa utjecaja pokazuje da akteri balansiraju između dosega, angažmana i produktivnosti.
+Provedena analiza ekosustava razotkriva kompleksnu arhitekturu digitalnog medijskog prostora u kojoj se odvija rasprava o katoličkoj tematici. Tri ključna nalaza karakteriziraju ovu arenu.
 
-Nakon što smo mapirali tko i gdje govori, sljedeća faza našeg istraživanja usredotočit će se na pitanje o čemu se govori. To će uključivati dubinsku tematsku analizu i analizu sentimenta kako bismo razumjeli ključne narative koji oblikuju katoličku tematiku u hrvatskom digitalnom prostoru.
+Prvo, uočljiva je funkcionalna specijalizacija platformi. Web portali funkcioniraju primarno kao proizvođači sadržaja s visokim volumenom produkcije, postavljajući agendu i brzo reagirajući na aktualne crkvene događaje. YouTube i Facebook predstavljaju arene pojačanog angažmana gdje se ostvaruje proporcionalno veći utjecaj po objavi. Ova specijalizacija odražava različite komunikacijske mogućnosti i očekivanja publike na svakoj platformi.
+
+Drugo, identifikacija najutjecajnijih aktera otkriva jasnu segmentaciju prema platformama. Mainstream mediji dominiraju web prostorom, održavajući ulogu primarnih distributera informacija o katoličkoj tematici. Specijalizirani kanali i pojedinci preuzimaju vodeće pozicije na YouTubeu i Facebooku, razvijajući dublje odnose s publikom kroz redovitu interakciju. Ova diferencijacija odražava različite strategije pristupa publici i komunikacijske paradigme, od informativne do formativne.
+
+Treće, analiza utjecaja demonstrira višedimenzionalnost digitalne moći. Promatranje isključivo jedne metrike ne reflektira kompleksnost utjecaja koji akteri ostvaruju kroz različite kombinacije dosega, angažmana i produktivnosti. Različiti akteri uspijevaju kroz različite strategije, od masovne produkcije mainstream medija do fokusirane izgradnje zajednice specijaliziranih kanala. Ne postoji jedinstvena formula uspjeha, već različiti putevi do utjecaja prilagođeni specifičnostima platforme, publike i ciljeva aktera.
+
+Nakon što je kartografirana struktura ekosustava i identificirani ključni akteri, sljedeća istraživačka faza usmjerava se na tematsku analizu sadržaja. To uključuje dubinsku analizu diskurzivnih obrazaca i sentimenta kako bi se rekonstruirali dominantni narativi koji oblikuju katoličku tematiku u hrvatskom digitalnom prostoru. Tematska analiza omogućit će razumijevanje ne samo tko govori i gdje, već i o čemu se govori, kako se tema razvija kroz vrijeme, i koje perspektive dominiraju javnom raspravom o katoličkim pitanjima u Hrvatskoj.

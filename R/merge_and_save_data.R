@@ -5,8 +5,8 @@ library(tidyverse)
 library(stringi)
 
 # Source the religious terms and filtering script
-source("R/religious_terms.R")
-source("R/load_merge_filter_religious.R")
+#source("R/religious_terms.R")
+#source("R/load_merge_filter_religious.R")
 
 # filtered_data is now available from the sourced script
 # Now merge dta with filtered_data
@@ -25,8 +25,11 @@ filtered_with_source <- filtered_data |>
 # Merge the datasets - keep only common columns
 common_cols <- intersect(names(dta_with_source), names(filtered_with_source))
 merged_comprehensive <- bind_rows(
-  dta_with_source |> select(all_of(common_cols)),
-  filtered_with_source |> select(all_of(common_cols))
+  dta_with_source |> 
+    select(all_of(common_cols)),
+  filtered_with_source |> 
+    mutate(year = as.numeric(year)) |>
+    select(all_of(common_cols))
 )
 
 cat("Original dta rows:", nrow(dta), "\n")
