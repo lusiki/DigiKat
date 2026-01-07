@@ -289,7 +289,7 @@ dta_final <- dta_temp %>%
   )
 ```
 
-## Uvod u dinamičku analizu događajno pogonjenog diskursa
+## Uvod u dinamičku analizu 
 
 Nakon što su prethodne faze istraživanja mapirali strukturu aktera, identifikale tematske kategorije i analizirale emocionalnu i konfliktnu atmosferu, ova konačna analitička faza prelazi s estatičkog opisa na dinamičko modeliranje. Fundamentalna promjena perspektive sastoji se u razumijevanju digitalnog diskursa ne kao fiksne strukture, već kao živog ekosustava koji manifestira kompleksne reakcijske obrasce na vanjske podražaje, odnosno stvarne društvene, političke i vjerske događaje.
 
@@ -299,7 +299,7 @@ Istraživanje uvodi tri metodološke inovacije. Prvo, digitalni seizmograf koji 
 
 ---
 
-## Digitalni seizmograf kao instrument detekcije kritičnih događaja
+## Digitalni seizmograf kao instrument detekcije najbitnijih događaja
 
 Za identifikaciju najvažnijih trenutaka u promatranom razdoblju, razvijen je digitalni seizmograf koji reprezentira metodološki pristup detekciji anomalija u vremenskim serijama medijskog diskursa. Seizmograf operira na principu standardiziranog odstupanja, gdje se za svaki dan izračunava Z score koji mjeri koliko standardnih devijacija vrijednost odstupa od prosjeka unutar godine.
 
@@ -403,7 +403,7 @@ Ovi vrhunci nisu arbitrarni statistički artefakti. oni odražavaju dublje druš
 
 ---
 
-## Narativni seizmograf liturgijskog događaja Uskrs 2022
+## Narativni seizmograf liturgijskog događaja (*Uskrs 2022*)
 
 Kako bi se istražile distinktivne digitalne potpise različitih tipova događaja, analiza se sada usmjerava na Uskrs 2022. godine, koji je slavljen 17. travnja. Za razliku od društveno politički kontroverznih događaja, Uskrs predstavlja primarno liturgijski i duhovni događaj, što se očekuje manifestirati kroz specifične obrasce u digitalnom diskursu.
 
@@ -487,11 +487,15 @@ associated_words_atmosphere <- context_words %>%
     .groups = "drop"
   )
 
+# Ensure all years in dataset are represented
+available_years <- sort(unique(associated_words_atmosphere$year))
+
 top_associated_words_final <- associated_words_atmosphere %>%
   group_by(year) %>%
   arrange(desc(total_cooccurrences)) %>%
   slice_head(n = 12) %>%
-  ungroup()
+  ungroup() %>%
+  mutate(year = factor(year, levels = as.character(available_years)))
 
 ggplot(top_associated_words_final, aes(x = total_cooccurrences, y = reorder_within(lemma, total_cooccurrences, year), fill = avg_sentiment)) +
   geom_col() +
@@ -511,17 +515,17 @@ ggplot(top_associated_words_final, aes(x = total_cooccurrences, y = reorder_with
 
 Vizualizacija razotkriva suptilne, ali analitički značajne transformacije u načinu artikulacije diskursa o blaženom Alojziju Stepincu. Premda je cjelokupan tonalitet diskursa, reprezentiran nijansama plave boje, konzistentno pozitivan kroz sve promatrane godine, fokus i kontekstualni okviri narativa manifestiraju dramatične promjene.
 
-Godina 2021. karakterizirana je dominacijom termina poput sps i pravoslavan. Ova leksička dominacija upućuje da je narativ bio primarno uokviren kroz ekumensko političke odnose sa Srpskom pravoslavnom crkvom i problematiikom kanonizacije, reflektirajući trenutak intenzivnih međunacionalnih i međureligijskih rasprava.
+Početna leta razdoblja (2021–2022) karakteriziraju se dominacijom termina povezanih s ekumenskom i političkom dimenzijom. Godina 2021. ukazuje na prevlast termina poput *sps* i *pravoslavan*, što upućuje na narativ primarno ukorijenjen u ekumensko-političkim odnosima sa Srpskom pravoslavnom crkvom i problematici kanonizacije, reflektirajući trenutak intenzivnih međunacionalnih i međureligijskih rasprava. Godina 2022. manifestira proširenje asocijativnog polja na termine *rat*, *crkva* i *emisija*, signalizirajući temeljni pomak prema povijesno-medijskom okviru, gdje se raspravlja o njegovoj ulozi u Drugom svjetskom ratu, često kroz medijske formate poput emisija, dokumentaraca i javnih tribina.
 
-Godina 2022. manifestira proširenje asocijativnog polja na termine rat, crkva i emisija. Ovo signalizira temeljni pomak prema povijesno medijskom okviru, gdje se raspravlja o njegovoj ulozi u Drugom svjetskom ratu, često kroz medijske formate poput emisija, dokumentaraca i javnih tribina. Diskurs postaje kompleksniji, integrirajući povijesnu interpretaciju s trenutnom medijskom prezentacijom.
+Srednja letih razdoblja (2023) reprezentira radikalni diskursni preokret. Diskursom dominiraju termini *molitva*, *veljača*, *krunica* i *devetnica*, što predstavlja jasan prijelaz na liturgijsko-pobožni okvir, najvjerojatnije potaknut komemoracijom obljetnice njegove smrti i intenzivnim vjerskim praksama vezanim uz njegovu pobožnu memoriju.
 
-Godina 2023. reprezentira još jedan radikalni pomak. Diskursom dominiraju termini molitva, veljača, krunica i devetnica. Ovo predstavlja jasan prijelaz na liturgijsko pobožni okvir, najvjerojatnije potaknut komemoracijom obljetnice njegove smrti i intenzivnim vjerskim praksama vezanim uz njegovu pobožnu memoriju.
+Novija leta (2024–2025) sugeriraju nastavak dinamičke rekontekstualizacije narativa, gdje se različite semantičke dimenzije kontinuirano aktiviraju u skladu s aktualnim društvenim i medijskim kontekstima. Longitudinalna struktura koju prikazuje analiza demonstrira da narativ o Stepincu nije monolitni konstrukt, već fluidni predmet kontinuirane reinterpretacije.
 
 Ovaj pomak od ekumenskog preko povijesnog prema duhovnom nije samo statistička fluktuacija u leksičkom izboru. On odražava širi kontekst hrvatske društvene i političke dinamike. Mediji ne samo što mijenjaju teme, oni prelaze iz političkih debata o međunacionalnim i međuvjerskim odnosima u pobožne priče o svecima i mučenicima, aktivno jačajući kulturnu baštinu kroz specifične narativne strategije. Ovaj proces rekontekstualizacije demonstrira kako se ista povijesna ličnost može funkcionalizirati za različite društvene svrhe, ovisno o trenutnim potrebama za političkom legitimacijom, povijesnom reinterpretacijom ili duhovnom mobilizacijom.
 
-Ovo predstavlja kvantitativnu evidenciju da veliki nacionalni i vjerski narativi nisu statični konstrukti. Oni se dinamički rekontekstualiziraju, prelažući iz političke u povijesnu, a zatim u duhovnu sferu, pri čemu svaka godina aktivira drugačije aspekte iste kompleksne ličnosti u skladu s trenutnim društvenim i komunikacijskim potrebama.
+Ovo predstavlja kvantitativnu evidenciju da veliki nacionalni i vjerski narativi nisu statični konstrukti. Oni se dinamički rekontekstualiziraju, prelažući kroz višeslojne diskursne dimenzije, pri čemu svaka godina aktivira drugačije aspekte iste kompleksne ličnosti u skladu s trenutnim društvenim i komunikacijskim potrebama. Široki vremenski raspon podataka omogućuje uvid u ta transformacijska razdoblja kao dijelove većih društvenih, tehničkih i kulturnih struja koje kontinuirano oblikuju značenja koja se pripisuju ključnim ličnostima i temama nacionalne baštine.
 
-## Sinteza nalaza i implikacije za razumijevanje diskursne dinamike
+## Sinteza nalaza
 
 Dinamička analiza utjecaja stvarnih događaja na digitalni diskurs razotkriva kako katolički medijski prostor funkcionira kao reaktivni ekosustav s prepoznatljivim obrascima odgovora na različite tipove vanjskih podražaja. Istraživanje je kvantitativno dokumentiralo mehanizme putem kojih se digitalni diskurs transformira u odgovoru na društvene, političke i vjerske događaje.
 
