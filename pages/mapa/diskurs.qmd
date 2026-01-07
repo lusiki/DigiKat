@@ -133,7 +133,7 @@ dta_stratified_sample <- dta %>%
   mutate(doc_id = row_number())
 
 # Učitavanje i filtriranje lingvističkih podataka (ako su dostupni)
-files <- list.files("C:/Users/lsikic/Luka C/HKS/Projekti/Digitalni Kat/SHKM/Podatci/Language model", full.names = TRUE, pattern = "\.rds")
+files <- list.files("C:/Users/lsikic/Luka C/HKS/Projekti/Digitalni Kat/SHKM/Podatci/Language model", full.names = TRUE, pattern = "\\.rds")
 if (length(files) > 0) {
   nlp_results_df <- lapply(files, readRDS) %>%
     bind_rows()
