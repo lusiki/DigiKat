@@ -282,140 +282,140 @@
   {
     "objectID": "pages/baza.html",
     "href": "pages/baza.html",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "",
     "text": "Baza podataka sadrži 612,065 zapisa medijskih objava prikupljenih tijekom 2021 - 2026 godina, fokusiranih na katoličke teme i sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za analizu medijskog diskursa, sentimenta i angažmana publike u domeni religijskih tema.\n\n\n\n\nOsnovne karakteristike dataseta\n\n\nKarakteristika\nVrijednost\n\n\n\n\nBroj zapisa\n612,065\n\n\nBroj varijabli\n47\n\n\nVremenski period\n2021 - 2026 godina\n\n\nFormat\nR data.table\n\n\nGlavni jezik\nHrvatski (hr)\n\n\nGeografski opseg\nHrvatska (HR)\n\n\n\n\n\n\n\n\n\n\nClasses 'data.table' and 'data.frame': 612065 obs. of 47 variables:\n\n\n$ DATE                     : character '2021-01-02' '2021-01-02' '2021-01-02' ...\n$ TIME                     : character '23:36:00' '23:28:34' '23:16:12' ...\n$ TITLE                    : character 'Župa Gospe Brze Pomoći u ' 'Kardinal Bozanić predvodi' 'Otac renesanse se potpisa' ...\n$ FROM                     : character 'laudato.hr' 'hkm.hr' 'vecernji.hr' ...\n$ AUTHOR                   : character 'NA' '@hkr_radio' 'NA' ...\n$ URL                      : character 'https://laudato.hr/vijest' 'https://ika.hkm.hr/novost' 'https://www.vecernji.hr/v' ...\n$ URL_PHOTO                : character 'https://app.determ.com/im' 'https://app.determ.com/im' 'https://app.determ.com/im' ...\n$ SOURCE_TYPE              : character 'web' 'web' 'web' ...\n$ GROUP_NAME               : character 'Luka' 'Luka' 'Luka' ...\n$ KEYWORD_NAME             : character 'opće' 'opće' 'opće' ...\n\n\n... [dodatnih 37 varijabli]\n\n\n\n\n\n\n\n\nBroj zapisa po godinama\n\n\nGodina\nBroj zapisa\n\n\n\n\n2021\n90388\n\n\n2022\n84535\n\n\n2023\n83836\n\n\n2024\n114231\n\n\n2025\n236166\n\n\n2026\n2909"
   },
   {
     "objectID": "pages/baza.html#struktura-podataka",
     "href": "pages/baza.html#struktura-podataka",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "",
     "text": "Classes 'data.table' and 'data.frame': 612065 obs. of 47 variables:\n\n\n$ DATE                     : character '2021-01-02' '2021-01-02' '2021-01-02' ...\n$ TIME                     : character '23:36:00' '23:28:34' '23:16:12' ...\n$ TITLE                    : character 'Župa Gospe Brze Pomoći u ' 'Kardinal Bozanić predvodi' 'Otac renesanse se potpisa' ...\n$ FROM                     : character 'laudato.hr' 'hkm.hr' 'vecernji.hr' ...\n$ AUTHOR                   : character 'NA' '@hkr_radio' 'NA' ...\n$ URL                      : character 'https://laudato.hr/vijest' 'https://ika.hkm.hr/novost' 'https://www.vecernji.hr/v' ...\n$ URL_PHOTO                : character 'https://app.determ.com/im' 'https://app.determ.com/im' 'https://app.determ.com/im' ...\n$ SOURCE_TYPE              : character 'web' 'web' 'web' ...\n$ GROUP_NAME               : character 'Luka' 'Luka' 'Luka' ...\n$ KEYWORD_NAME             : character 'opće' 'opće' 'opće' ...\n\n\n... [dodatnih 37 varijabli]"
   },
   {
     "objectID": "pages/baza.html#distribucija-po-godinama",
     "href": "pages/baza.html#distribucija-po-godinama",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "",
     "text": "Broj zapisa po godinama\n\n\nGodina\nBroj zapisa\n\n\n\n\n2021\n90388\n\n\n2022\n84535\n\n\n2023\n83836\n\n\n2024\n114231\n\n\n2025\n236166\n\n\n2026\n2909"
   },
   {
     "objectID": "pages/baza.html#vremenske-varijable",
     "href": "pages/baza.html#vremenske-varijable",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "Vremenske varijable",
     "text": "Vremenske varijable\n\n\n\nVremenske varijable\n\n\nVarijabla\nTip\nOpis\n\n\n\n\nDATE\ncharacter\nDatum objave u formatu YYYY-MM-DD\n\n\nTIME\ncharacter\nVrijeme objave u formatu HH:MM:SS\n\n\nyear\nnumeric\nGodina izvlučena iz datuma"
   },
   {
     "objectID": "pages/baza.html#sadržaj-i-metapodaci",
     "href": "pages/baza.html#sadržaj-i-metapodaci",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "Sadržaj i metapodaci",
     "text": "Sadržaj i metapodaci\n\n\n\nSadržaj i metapodaci\n\n\nVarijabla\nTip\nOpis\n\n\n\n\nTITLE\ncharacter\nNaslov članka/objave\n\n\nFULL_TEXT\ncharacter\nPotpuni tekst objave (dostupan isključivo na zahtjev)\n\n\nMENTION_SNIPPET\ncharacter\nIsječak teksta koji sadrži ključne riječi\n\n\nAUTHOR\ncharacter\nAutor objave (ako je dostupan)\n\n\nFROM\ncharacter\nIzvor/domena web stranice\n\n\nURL\ncharacter\nPotpuna URL adresa objave\n\n\nURL_PHOTO\ncharacter\nURL fotografije povezane s objavom"
   },
   {
     "objectID": "pages/baza.html#kategorizacija-i-označavanje",
     "href": "pages/baza.html#kategorizacija-i-označavanje",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "Kategorizacija i označavanje",
     "text": "Kategorizacija i označavanje\n\n\n\nKategorizacija i označavanje\n\n\nVarijabla\nTip\nOpis\n\n\n\n\nSOURCE_TYPE\nfactor\nTip izvora (web, youtube, facebook, twitter itd.)\n\n\nGROUP_NAME\ncharacter\nNaziv grupe za praćenje\n\n\nKEYWORD_NAME\ncharacter\nNaziv ključne riječi\n\n\nFOUND_KEYWORDS\ncharacter\nPronađene ključne riječi u tekstu\n\n\nTAGS\nlogical\nDodatne oznake (trenutno prazno)\n\n\nLANGUAGES\ncharacter\nJezik objave (hr, bs)\n\n\nLOCATIONS\ncharacter\nGeografska lokacija (HR)"
   },
   {
     "objectID": "pages/baza.html#sentiment-analiza",
     "href": "pages/baza.html#sentiment-analiza",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "Sentiment analiza",
     "text": "Sentiment analiza\n\n\n\nSentiment analiza\n\n\nVarijabla\nTip\nOpis\n\n\n\n\nAUTO_SENTIMENT\ncharacter\nAutomatski detektirani sentiment (positive/neutral/negative)\n\n\nMANUAL_SENTIMENT\nlogical\nRučno označen sentiment (trenutno prazno)"
   },
   {
     "objectID": "pages/baza.html#distribucija-sentimenta",
     "href": "pages/baza.html#distribucija-sentimenta",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "Distribucija sentimenta",
     "text": "Distribucija sentimenta\n\n\n\nDistribucija automatskog sentimenta\n\n\nSentiment\nBroj zapisa\nPostotak (%)\n\n\n\n\npositive\n289179\n47.2\n\n\nnegative\n175974\n28.8\n\n\nneutral\n146834\n24.0\n\n\nundefined\n78\n0.0"
   },
   {
     "objectID": "pages/baza.html#metrike-angažmana",
     "href": "pages/baza.html#metrike-angažmana",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "Metrike angažmana",
     "text": "Metrike angažmana\n\n\n\nMetrike angažmana\n\n\nVarijabla\nTip\nOpis\n\n\n\n\nREACH\nnumeric\nDoseg objave (broj ljudi koji je vidjelo)\n\n\nVIRALITY\nnumeric\nIndeks viralnosti\n\n\nENGAGEMENT_RATE\nnumeric\nStopa angažmana (%)\n\n\nINTERACTIONS\nnumeric\nUkupan broj interakcija\n\n\nFOLLOWERS_COUNT\nnumeric\nBroj pratitelja autora"
   },
   {
     "objectID": "pages/baza.html#specifične-reakcije-facebook",
     "href": "pages/baza.html#specifične-reakcije-facebook",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "Specifične reakcije (Facebook)",
     "text": "Specifične reakcije (Facebook)\n\n\n\nSpecifične reakcije (Facebook)\n\n\nVarijabla\nTip\nOpis\n\n\n\n\nLIKE_COUNT\nnumeric\nBroj 'like' reakcija\n\n\nLOVE_COUNT\nnumeric\nBroj 'love' reakcija\n\n\nWOW_COUNT\nnumeric\nBroj 'wow' reakcija\n\n\nHAHA_COUNT\nnumeric\nBroj 'haha' reakcija\n\n\nSAD_COUNT\nnumeric\nBroj 'sad' reakcija\n\n\nANGRY_COUNT\nnumeric\nBroj 'angry' reakcija\n\n\nCOMMENT_COUNT\nnumeric\nBroj komentara\n\n\nSHARE_COUNT\nnumeric\nBroj dijeljenja\n\n\nTOTAL_REACTIONS_COUNT\nnumeric\nUkupan broj svih reakcija"
   },
   {
     "objectID": "pages/baza.html#pregled-nedostajućih-vrijednosti",
     "href": "pages/baza.html#pregled-nedostajućih-vrijednosti",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "Pregled nedostajućih vrijednosti",
     "text": "Pregled nedostajućih vrijednosti\n\n\n\nPregled nedostajućih vrijednosti u ključnim varijablama\n\n\nVarijabla\nNedostaje (%)\nRazlog\n\n\n\n\nTAGS\n100.0\nFunkcionalnost nije implementirana\n\n\nMANUAL_SENTIMENT\n100.0\nRučno označavanje nije provedeno\n\n\nREDDIT_SCORE\n98.7\nSpecifično za Reddit objave\n\n\nVIEW_COUNT\n88.7\nSpecifično za video sadržaj\n\n\nFOLLOWERS_COUNT\n86.4\nOvisi o platformi i dostupnosti\n\n\nAUTHOR\n39.7\nNije uvijek dostupno od izvora\n\n\nURL_PHOTO\n2.2\nNije dostupno za sve objave\n\n\nFULL_TEXT\n0.0\nDostupno na zahtjev"
   },
   {
     "objectID": "pages/baza.html#statistički-sažetak-numeričkih-varijabli",
     "href": "pages/baza.html#statistički-sažetak-numeričkih-varijabli",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "Statistički sažetak numeričkih varijabli",
     "text": "Statistički sažetak numeričkih varijabli\n\n\n\nStatistički sažetak ključnih numeričkih varijabli\n\n\nVarijabla\nMean\nMedian\nSD\nMin\nMax\n\n\n\n\nREACH\n3586.7\n552.0\n28553.7\n0\n9064560\n\n\nINTERACTIONS\n105.5\n9.0\n814.3\n0\n257884\n\n\nENGAGEMENT_RATE\n3.5\n2.3\n8.0\n0\n3300\n\n\nLIKE_COUNT\n79.7\n3.0\n501.2\n0\n115565\n\n\nINFLUENCE_SCORE\n3.1\n3.0\n2.2\n1\n10"
   },
   {
     "objectID": "pages/baza.html#distribucija-po-izvorima",
     "href": "pages/baza.html#distribucija-po-izvorima",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "Distribucija po izvorima",
     "text": "Distribucija po izvorima\n\n\n\nTop 10 izvora po broju zapisa\n\n\nTip izvora\nBroj zapisa\nPostotak (%)\n\n\n\n\nweb\n449698\n73.5\n\n\nfacebook\n69315\n11.3\n\n\nyoutube\n65521\n10.7\n\n\nreddit\n8149\n1.3\n\n\nforum\n6235\n1.0\n\n\ntwitter\n5961\n1.0\n\n\ncomment\n3649\n0.6\n\n\ninstagram\n3260\n0.5\n\n\ntiktok\n277\n0.0"
   },
   {
     "objectID": "pages/baza.html#osnovne-analize",
     "href": "pages/baza.html#osnovne-analize",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "Osnovne analize",
     "text": "Osnovne analize\n\n\n\nOsnovne analize - pregled kodova i rezultata\n\n\nTip analize\nR kod\nRezultat\nSortiranje\n\n\n\n\nAnaliza sentimenta po izvorima\nsentiment_by_source &lt;- dta[, .N, by = .(FROM, AUTO_SENTIMENT)]\nBroj objava po izvoru i sentimentu\nsentiment_by_source[order(-N)]\n\n\nTrendovi kroz vrijeme\ntemporal_trends &lt;- dta[, .N, by = .(year, month = substr(DATE, 6, 7))]\nBroj objava po mjesecima\ntemporal_trends[order(year, month)]\n\n\nTop izvori po angažmanu\ntop_sources &lt;- dta[, .(avg_engagement = mean(ENGAGEMENT_RATE, na.rm = TRUE)), by = FROM]\nProsječni angažman po izvoru\ntop_sources[order(-avg_engagement)]\n\n\nDistribucija po godinama\nyearly_dist &lt;- dta[, .N, by = year][order(year)]\nBroj objava po godinama\nyearly_dist[order(year)]\n\n\nNajčešće ključne riječi\nkeyword_freq &lt;- dta[, .N, by = KEYWORD_NAME][order(-N)]\nFrekvencija ključnih riječi\nkeyword_freq[order(-N)]"
   },
   {
     "objectID": "pages/baza.html#napredne-analize",
     "href": "pages/baza.html#napredne-analize",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "Napredne analize",
     "text": "Napredne analize\n\n\n\n\nNapredne analize - detaljni pregled metoda\n\n\nAnaliza\nPotrebne biblioteke\nKljučni kod\nOčekivani output\n\n\n\n\nTokenizacija teksta\ntidytext, dplyr\nunnest_tokens(word, TITLE)\nPojedinačne riječi iz naslova\n\n\nČišćenje stop riječi\ntidytext\nanti_join(stop_words)\nFiltrirane značajne riječi\n\n\nBrojanje riječi po sentimentu\ndplyr, tidytext\ncount(word, AUTO_SENTIMENT, sort = TRUE)\nFrekvencija riječi po sentimentu\n\n\nSentiment scoring\ndplyr, case_when\nsummarise(sentiment_score = sum(n * case_when(...)))\nNumerički sentiment score\n\n\nWordcloud generiranje\nwordcloud, RColorBrewer\nwordcloud(words, freq, colors = brewer.pal(8, 'Dark2'))\nVizualna reprezentacija\n\n\nVremenska serija angažmana\nggplot2, lubridate\nggplot(aes(x = DATE, y = ENGAGEMENT_RATE)) + geom_smooth()\nTrend angažmana kroz vrijeme\n\n\nKorelacijska analiza\ncorrplot\ncorrplot(cor(numeric_vars, use = 'complete.obs'))\nMatrica korelacija"
   },
   {
     "objectID": "pages/baza.html#primjer-koda-za-učitavanje-i-osnovnu-obradu",
     "href": "pages/baza.html#primjer-koda-za-učitavanje-i-osnovnu-obradu",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "Primjer koda za učitavanje i osnovnu obradu",
     "text": "Primjer koda za učitavanje i osnovnu obradu\n\n\nCode\n# Učitavanje podataka\ndta &lt;- readRDS(\"../../data/merged_comprehensive.rds\")\n\n# Konverzija datuma\ndta[, DATE := as.Date(DATE)]\ndta[, year := year(DATE)]\ndta[, month := month(DATE)]\ndta[, yearmonth := floor_date(DATE, \"month\")]\n\n# Filtriranje po godinama\ndta_2024_2025 &lt;- dta[year %in% c(2024, 2025)]\n\n# Agregacija po izvoru i sentimentu\nsummary_table &lt;- dta[, .(\n  n_posts = .N,\n  avg_reach = mean(REACH, na.rm = TRUE),\n  avg_engagement = mean(ENGAGEMENT_RATE, na.rm = TRUE),\n  total_interactions = sum(INTERACTIONS, na.rm = TRUE)\n), by = .(SOURCE_TYPE, AUTO_SENTIMENT)]\n\n# Trend analiza\nmonthly_trend &lt;- dta[, .(\n  n_posts = .N,\n  avg_sentiment_positive = mean(AUTO_SENTIMENT == \"positive\", na.rm = TRUE)\n), by = yearmonth][order(yearmonth)]"
   },
   {
     "objectID": "pages/baza.html#izvorni-format-podataka",
     "href": "pages/baza.html#izvorni-format-podataka",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "Izvorni format podataka",
     "text": "Izvorni format podataka\n\n\n\nTehnički detalji dataseta i preporučeni alati\n\n\nKategorija\nVrijednost/Opis\nNapomene\n\n\n\n\nIzvorne datoteke\nmerged_comprehensive.rds\nSvi podaci spojeni u jednu datoteku\n\n\nFormat obrade\nR data.table\nOptimizirano za velike podatke\n\n\nKodiranje\nUTF-8\nPodrška za hrvatske znakove\n\n\nSeparatori\nAutomatski detektirani\nRDS format automatski parsiran\n\n\nNedostajuće vrijednosti\nNA\nStandardno R označavanje\n\n\nPreporučena biblioteka Manipulacija\ndata.table za brzu manipulaciju velikih dataset-a\nBrzina: 10-100x brža od base R\n\n\nPreporučena biblioteka Sintaksa\ndplyr za čišću i čitljiviju sintaksu\nKompatibilnost s tidyverse ekosystemom\n\n\nPreporučena biblioteka Vizualizacija\nggplot2 za profesionalne vizualizacije\nGrammar of graphics pristup\n\n\nPreporučena biblioteka Datumi\nlubridate za rad s datumskim formatima\nTimezone aware operacije\n\n\nPreporučena biblioteka Tekst\nstringr za manipulaciju i analizu teksta\nRegex podrška za složene operacije"
   },
   {
     "objectID": "pages/baza.html#napomene-o-performansama",
     "href": "pages/baza.html#napomene-o-performansama",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "Napomene o performansama",
     "text": "Napomene o performansama\n\n\n\nPreporuke za optimalne performanse\n\n\nOperacija\nPreporučeni pristup\nOčekivano vrijeme\n\n\n\n\nČitanje podataka\nreadRDS() za RDS format\n&lt; 30 sekundi\n\n\nGrupiranje i agregacija\ndata.table sintaksa [, .N, by=]\n&lt; 5 sekundi\n\n\nFiltriranje velikih tekstova\nKoristiti grep() s fixed=TRUE\n10-60 sekundi\n\n\nSortiranje po datumu\nKonvertirati DATE u Date klasu\n&lt; 10 sekundi\n\n\nAnaliza sentimenta\nKoristiti existirajuće AUTO_SENTIMENT\n1-5 minuta\n\n\nEksport u CSV\nfwrite() za brzi eksport\n&lt; 60 sekundi"
   },
   {
     "objectID": "pages/baza.html#preuzmi-bazu-podataka",
     "href": "pages/baza.html#preuzmi-bazu-podataka",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "Preuzmi bazu podataka",
     "text": "Preuzmi bazu podataka\n📊 Kaggle Dataset Croatian Catholic Media Space 2021-2025"
   },
   {
     "objectID": "pages/baza.html#dodatni-resursi",
     "href": "pages/baza.html#dodatni-resursi",
-    "title": "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)",
+    "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "Dodatni resursi",
     "text": "Dodatni resursi\n\nGitHub repozitorij [https://github.com/lusiki/DigiKat]\nDokumentacija [https://lusiki.github.io/DigiKat/baza.html]\nKontakt [luka.sikic@unicath.hr]\nORCID [0009-0006-3519-0272]\n\n\nZadnja ažurirana 2026-01-12\nVerzija 2.0\nR verzija R version 4.5.2 (2025-10-31 ucrt)"
   },

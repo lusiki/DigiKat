@@ -1,5 +1,5 @@
 ---
-title: "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)"
+title: "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)"
 date: last-modified
 format: 
   html:
