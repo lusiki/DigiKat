@@ -87,5 +87,5 @@ U projektu sudjeluje interdisciplinarni tim znanstvenika iz područja ekonomike,
 Za citiranje projekta u cjelini, molimo koristite sljedeći format:
 
 ::: {.callout-tip icon="false"}
-Šikić, L. i sur. (2025.-2027.). *Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru*. Hrvatsko katoličko sveučilište. Dostupno na: [github.com/lusiki/DigiKat](https://github.com/lusiki/DigiKat)
+Šikić, L. (2026). *Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru*. Hrvatsko katoličko sveučilište. Dostupno na: [github.com/lusiki/DigiKat](https://github.com/lusiki/DigiKat)
 :::
