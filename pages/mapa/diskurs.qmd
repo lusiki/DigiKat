@@ -62,13 +62,13 @@ library(ggrepel)
 # sa standardiziranom numeričkom skalom.
 crosentilex_full <- bind_rows(
   # Učitavanje negativnih riječi
-  read.delim("../resources/lexicons/crosentilex-negatives.txt",
+  read.delim("../../resources/lexicons/crosentilex-negatives.txt",
              header = FALSE, sep = " ", stringsAsFactors = FALSE, fileEncoding = "UTF-8") %>%
     rename(word = "V1", sentiment_value = "V2") %>%
     mutate(sentiment_value = -sentiment_value), # Pretvaramo score u negativan
   
   # Učitavanje pozitivnih riječi
-  read.delim("../resources/lexicons/crosentilex-positives.txt",
+  read.delim("../../resources/lexicons/crosentilex-positives.txt",
              header = FALSE, sep = " ", stringsAsFactors = FALSE, fileEncoding = "UTF-8") %>%
     rename(word = "V1", sentiment_value = "V2") # Score je već pozitivan
 ) %>%
@@ -76,7 +76,7 @@ crosentilex_full <- bind_rows(
 
 # 1.2: CroSentilex-Gold (kategorički sentiment)
 # Učitavamo zlatni standard i pretvaramo tekstualne oznake u numeričku skalu
-crosentilex_gold_prepared <- read.delim2("../resources/lexicons/gs-sentiment-annotations.txt",
+crosentilex_gold_prepared <- read.delim2("../../resources/lexicons/gs-sentiment-annotations.txt",
                                          header = FALSE, sep = " ", stringsAsFactors = FALSE, fileEncoding = "UTF-8") %>%
   rename(word = "V1", sentiment_str = "V2") %>%
   mutate(
@@ -91,27 +91,26 @@ crosentilex_gold_prepared <- read.delim2("../resources/lexicons/gs-sentiment-ann
 
 # 1.3: NRC Leksikon Emocija (za psihološke procese)
 # Učitavamo NRC leksikon, pretvaramo ga u dugi format i prevodimo na hrvatski.
-# nrc_lexicon_raw <- read_excel("../resources/dictionaries/lilaHR_clean.xlsx", sheet = "Sheet1") %>% 
-#                    select(-"...1") %>%
-#                    rename(word = HR)
+ nrc_lexicon_raw <- read_excel("../../resources/dictionaries/lilaHR_clean.xlsx", sheet = "Sheet1") %>% 
+                    select(-"...1") %>%
+                    rename(word = HR)
 
 # Rječnik za prevođenje engleskih naziva emocija
-# emotion_translator_hr <- c(
-#   "Anger" = "Ljutnja", "Anticipation" = "Iščekivanje", "Disgust" = "Gađenje",
-#   "Fear" = "Strah", "Joy" = "Radost", "Sadness" = "Tuga",
-#   "Surprise" = "Iznenađenje", "Trust" = "Povjerenje"
-# )
-# 
-# # Transformacija u dugi, prevedeni format
-# nrc_lexicon_long <- nrc_lexicon_raw %>% 
-#   pivot_longer(
-#     cols = all_of(names(emotion_translator_hr)), # Koristimo samo 8 glavnih emocija
-#     names_to = "emotion",
-#     values_to = "value"
-#   ) %>%
-#   filter(value == 1) %>% # Zadržavamo samo postojeće veze riječ-emocija
-#   mutate(emotion = recode(emotion, !!!emotion_translator_hr)) %>% # Prevodimo na hrvatski
-#   select(word, emotion)
+ emotion_translator_hr <- c(
+   "Anger" = "Ljutnja", "Anticipation" = "Iščekivanje", "Disgust" = "Gađenje",
+   "Fear" = "Strah", "Joy" = "Radost", "Sadness" = "Tuga",
+   "Surprise" = "Iznenađenje", "Trust" = "Povjerenje"
+ )
+
+ nrc_lexicon_long <- nrc_lexicon_raw %>%
+   pivot_longer(
+     cols = all_of(names(emotion_translator_hr)), # Koristimo samo 8 glavnih emocija
+     names_to = "emotion",
+     values_to = "value"
+   ) %>%
+   filter(value == 1) %>% # Zadržavamo samo postojeće veze riječ-emocija
+   mutate(emotion = recode(emotion, !!!emotion_translator_hr)) %>% # Prevodimo na hrvatski
+   select(word, emotion)
 ```
 
 ```{r}
