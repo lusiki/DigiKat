@@ -34,7 +34,7 @@ library(corrplot)
 library(skimr)
 ```
 
-# Pregled baze podataka
+
 
 ```{r}
 #| label: load-data
