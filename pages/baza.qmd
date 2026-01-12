@@ -1,5 +1,5 @@
 ---
-title: "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2024)"
+title: "Baza podataka - Katolički digitalni medijski prostor u Hrvatskoj (2021-2025)"
 date: last-modified
 format: 
   html:
@@ -31,23 +31,55 @@ library(plotly)
 library(lubridate)
 library(stringr)
 library(corrplot)
+library(skimr)
 ```
 
 # Pregled baze podataka
-
-Baza podataka sadrži **258,757 zapisa** medijskih objava prikupljenih tijekom 2021/22/23. godine, fokusiranih na katoličke teme i sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za analizu medijskog diskursa, sentimenta i angažmana publike u domeni religijskih tema.
 
 ```{r}
 #| label: load-data
 #| echo: false
 
-# Pretpostavljamo da je dataset već učitan kao 'dta'
-# dta <- fread("path/to/your/data.csv")
+# Učitavanje podataka
+dta <- readRDS("../data/merged_comprehensive.rds")
 
-# Za demonstraciju, kreiramo osnovne informacije
+# Konverzija u data.table ako nije
+if (!inherits(dta, "data.table")) {
+  dta <- as.data.table(dta)
+}
+
+# Izračun osnovnih statistika
+n_records <- format(nrow(dta), big.mark = ",")
+n_vars <- ncol(dta)
+
+# Određivanje vremenskog raspona
+if ("DATE" %in% names(dta)) {
+  date_col <- as.Date(dta$DATE)
+  min_year <- min(year(date_col), na.rm = TRUE)
+  max_year <- max(year(date_col), na.rm = TRUE)
+  time_period <- paste0(min_year, " - ", max_year, " godina")
+} else {
+  time_period <- "2021 - 2025 godina"
+}
+```
+
+Baza podataka sadrži **`r n_records` zapisa** medijskih objava prikupljenih tijekom `r time_period`, fokusiranih na katoličke teme i sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za analizu medijskog diskursa, sentimenta i angažmana publike u domeni religijskih tema.
+
+```{r}
+#| label: basic-info-table
+#| echo: false
+
+# Dinamičko kreiranje osnovnih informacija
 basic_info <- data.frame(
   Karakteristika = c("Broj zapisa", "Broj varijabli", "Vremenski period", "Format", "Glavni jezik", "Geografski opseg"),
-  Vrijednost = c("258,757", "49", "2021 - 2024 godina", "R data.table", "Hrvatski (hr)", "Hrvatska (HR)")
+  Vrijednost = c(
+    n_records, 
+    as.character(n_vars), 
+    time_period, 
+    "R data.table", 
+    "Hrvatski (hr)", 
+    "Hrvatska (HR)"
+  )
 )
 
 kable(basic_info, caption = "Osnovne karakteristike dataseta") %>%
@@ -59,17 +91,42 @@ kable(basic_info, caption = "Osnovne karakteristike dataseta") %>%
 ```{r}
 #| label: data-structure
 
-# Prikaz strukture podataka
-# str(dta)
+# Prikaz prvih nekoliko varijabli i njihovih tipova
+var_types <- sapply(dta, class)
+var_types_simple <- sapply(var_types, function(x) x[1])
 
-# Alternativno, kreiranje demo strukture
-cat("Classes 'data.table' and 'data.frame': 258757 obs. of 49 variables:\n")
-cat("$ DATE                 : chr [1:258757] '2021-01-02' '2021-01-02' ...\n")
-cat("$ TIME                 : chr [1:258757] '23:36:00' '23:28:34' ...\n")
-cat("$ TITLE                : chr [1:258757] 'Župa Gospe Brze Pomoći...' ...\n")
-cat("$ AUTO_SENTIMENT       : chr [1:258757] 'positive' 'neutral' 'negative' ...\n")
-cat("$ REACH                : num [1:258757] 21 48 3300 312 ...\n")
-cat("... [dodatnih 44 varijabli]\n")
+# Prikaz strukture
+cat(paste0("Classes 'data.table' and 'data.frame': ", nrow(dta), " obs. of ", ncol(dta), " variables:\n"))
+
+# Prikaži prvih 10 varijabli
+for (i in seq_len(min(10, ncol(dta)))) {
+  var_name <- names(dta)[i]
+  var_type <- var_types_simple[i]
+  sample_vals <- head(dta[[var_name]], 3)
+  sample_str <- paste0("'", substr(as.character(sample_vals), 1, 25), "'", collapse = " ")
+  cat(paste0("$ ", var_name, paste(rep(" ", max(1, 25 - nchar(var_name))), collapse = ""), 
+             ": ", var_type, " ", sample_str, " ...\n"))
+}
+
+if (ncol(dta) > 10) {
+  cat(paste0("... [dodatnih ", ncol(dta) - 10, " varijabli]\n"))
+}
+```
+
+## Distribucija po godinama
+
+```{r}
+#| label: yearly-distribution
+
+if ("DATE" %in% names(dta)) {
+  dta[, year := year(as.Date(DATE))]
+  yearly_counts <- dta[, .N, by = year][order(year)]
+  
+  kable(yearly_counts, 
+        caption = "Broj zapisa po godinama",
+        col.names = c("Godina", "Broj zapisa")) %>%
+    kable_styling(bootstrap_options = c("striped", "hover"))
+}
 ```
 
 # Opis varijabli
@@ -79,6 +136,10 @@ cat("... [dodatnih 44 varijabli]\n")
 ```{r}
 #| label: temporal-vars
 
+# Dinamička provjera postojanja varijabli
+temporal_vars_list <- c("DATE", "TIME", "year")
+temporal_vars_exist <- temporal_vars_list[temporal_vars_list %in% names(dta)]
+
 temporal_vars <- data.frame(
   Varijabla = c("DATE", "TIME", "year"),
   Tip = c("character", "character", "numeric"),
@@ -86,10 +147,11 @@ temporal_vars <- data.frame(
     "Datum objave u formatu YYYY-MM-DD",
     "Vrijeme objave u formatu HH:MM:SS", 
     "Godina izvlučena iz datuma"
-  )
+  ),
+  Prisutno = c("DATE", "TIME", "year") %in% names(dta)
 )
 
-kable(temporal_vars, caption = "Vremenske varijable") %>%
+kable(temporal_vars[, 1:3], caption = "Vremenske varijable") %>%
   kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
@@ -103,7 +165,7 @@ content_vars <- data.frame(
   Tip = c("character", "character", "character", "character", "character", "character", "character"),
   Opis = c(
     "Naslov članka/objave",
-    "Potpuni tekst objave(dostupan isključivo na zahtjev)",
+    "Potpuni tekst objave (dostupan isključivo na zahtjev)",
     "Isječak teksta koji sadrži ključne riječi",
     "Autor objave (ako je dostupan)",
     "Izvor/domena web stranice",
@@ -155,6 +217,22 @@ sentiment_vars <- data.frame(
 
 kable(sentiment_vars, caption = "Sentiment analiza") %>%
   kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+## Distribucija sentimenta
+
+```{r}
+#| label: sentiment-distribution
+
+if ("AUTO_SENTIMENT" %in% names(dta)) {
+  sentiment_dist <- dta[!is.na(AUTO_SENTIMENT), .N, by = AUTO_SENTIMENT][order(-N)]
+  sentiment_dist[, Postotak := round(N / sum(N) * 100, 1)]
+  
+  kable(sentiment_dist, 
+        caption = "Distribucija automatskog sentimenta",
+        col.names = c("Sentiment", "Broj zapisa", "Postotak (%)")) %>%
+    kable_styling(bootstrap_options = c("striped", "hover"))
+}
 ```
 
 ## Metrike angažmana
@@ -210,24 +288,66 @@ kable(fb_vars, caption = "Specifične reakcije (Facebook)") %>%
 ```{r}
 #| label: missing-data
 
-# Demo podataka za nedostajuće vrijednosti
-missing_data <- data.frame(
-  Varijabla = c("AUTHOR", "TAGS", "MANUAL_SENTIMENT", "FOLLOWERS_COUNT", "REDDIT_SCORE", "VIEW_COUNT"),
-  `Nedostaje (%)` = c(35.2, 100.0, 100.0, 68.5, 92.1, 85.3),
-  Razlog = c(
-    "Nije uvijek dostupno od izvora",
-    "Funkcionalnost nije implementirana",
-    "Ručno označavanje nije provedeno",
-    "Ovisi o platformi i dostupnosti",
-    "Specifično za Reddit objave",
-    "Specifično za video sadržaj"
-  )
+# Dinamički izračun nedostajućih vrijednosti
+calc_missing <- function(x) {
+  round(sum(is.na(x) | x == "" | x == "NA") / length(x) * 100, 1)
+}
+
+# Odabir ključnih varijabli za provjeru
+key_vars <- c("AUTHOR", "TAGS", "MANUAL_SENTIMENT", "FOLLOWERS_COUNT", 
+              "REDDIT_SCORE", "VIEW_COUNT", "FULL_TEXT", "URL_PHOTO")
+key_vars_exist <- intersect(key_vars, names(dta))
+
+missing_reasons <- c(
+  AUTHOR = "Nije uvijek dostupno od izvora",
+  TAGS = "Funkcionalnost nije implementirana",
+  MANUAL_SENTIMENT = "Ručno označavanje nije provedeno",
+  FOLLOWERS_COUNT = "Ovisi o platformi i dostupnosti",
+  REDDIT_SCORE = "Specifično za Reddit objave",
+  VIEW_COUNT = "Specifično za video sadržaj",
+  FULL_TEXT = "Dostupno na zahtjev",
+  URL_PHOTO = "Nije dostupno za sve objave"
 )
 
-kable(missing_data, 
-      caption = "Pregled nedostajućih vrijednosti u ključnim varijablama",
-      col.names = c("Varijabla", "Nedostaje (%)", "Razlog")) %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
+if (length(key_vars_exist) > 0) {
+  
+  missing_pct <- sapply(key_vars_exist, function(var) calc_missing(dta[[var]]))
+  
+  missing_data <- data.frame(
+    Varijabla = names(missing_pct),
+    Nedostaje = as.numeric(missing_pct),
+    Razlog = missing_reasons[names(missing_pct)],
+    stringsAsFactors = FALSE
+  )
+  
+  missing_data <- missing_data[order(-missing_data$Nedostaje), ]
+  
+  kable(missing_data, 
+        caption = "Pregled nedostajućih vrijednosti u ključnim varijablama",
+        col.names = c("Varijabla", "Nedostaje (%)", "Razlog"),
+        row.names = FALSE) %>%
+    kable_styling(bootstrap_options = c("striped", "hover"))
+  
+} else {
+  
+  # Prikaži nedostajuće vrijednosti za prvih 10 varijabli
+  first_vars <- head(names(dta), 10)
+  missing_pct <- sapply(first_vars, function(var) calc_missing(dta[[var]]))
+  
+  missing_data <- data.frame(
+    Varijabla = names(missing_pct),
+    Nedostaje = as.numeric(missing_pct),
+    stringsAsFactors = FALSE
+  )
+  
+  missing_data <- missing_data[order(-missing_data$Nedostaje), ]
+  
+  kable(missing_data, 
+        caption = "Pregled nedostajućih vrijednosti",
+        col.names = c("Varijabla", "Nedostaje (%)"),
+        row.names = FALSE) %>%
+    kable_styling(bootstrap_options = c("striped", "hover"))
+}
 ```
 
 ## Statistički sažetak numeričkih varijabli
@@ -235,20 +355,80 @@ kable(missing_data,
 ```{r}
 #| label: numeric-summary
 
-# Demo numeričkih statistika
-numeric_summary <- data.frame(
-  Varijabla = c("REACH", "INTERACTIONS", "ENGAGEMENT_RATE", "LIKE_COUNT", "INFLUENCE_SCORE"),
-  Mean = c(2543.2, 67.8, 4.2, 52.1, 3.2),
-  Median = c(312.0, 8.0, 1.8, 6.0, 3.0),
-  SD = c(8734.5, 245.6, 8.7, 187.3, 2.1),
-  Min = c(0, 0, 0, 0, 1),
-  Max = c(125000, 5847, 89.5, 3245, 10)
-)
+# Dinamički izračun statistika za numeričke varijable
+target_vars <- c("REACH", "INTERACTIONS", "ENGAGEMENT_RATE", "LIKE_COUNT", "INFLUENCE_SCORE")
+numeric_vars_exist <- intersect(target_vars, names(dta))
 
-kable(numeric_summary, 
-      caption = "Statistički sažetak ključnih numeričkih varijabli",
-      digits = 1) %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
+if (length(numeric_vars_exist) > 0) {
+  
+  # Izračunaj statistike za svaku varijablu pojedinačno
+  stats_list <- lapply(numeric_vars_exist, function(var_name) {
+    x <- as.numeric(dta[[var_name]])
+    data.frame(
+      Varijabla = var_name,
+      Mean = mean(x, na.rm = TRUE),
+      Median = median(x, na.rm = TRUE),
+      SD = sd(x, na.rm = TRUE),
+      Min = min(x, na.rm = TRUE),
+      Max = max(x, na.rm = TRUE)
+    )
+  })
+  
+  numeric_summary <- do.call(rbind, stats_list)
+  
+  kable(numeric_summary, 
+        caption = "Statistički sažetak ključnih numeričkih varijabli",
+        digits = 1,
+        row.names = FALSE) %>%
+    kable_styling(bootstrap_options = c("striped", "hover"))
+  
+} else {
+  
+  # Pronađi bilo koje numeričke varijable u datasetu
+  all_numeric <- names(dta)[sapply(dta, is.numeric)]
+  
+  if (length(all_numeric) > 0) {
+    vars_to_use <- head(all_numeric, 5)
+    
+    stats_list <- lapply(vars_to_use, function(var_name) {
+      x <- as.numeric(dta[[var_name]])
+      data.frame(
+        Varijabla = var_name,
+        Mean = mean(x, na.rm = TRUE),
+        Median = median(x, na.rm = TRUE),
+        SD = sd(x, na.rm = TRUE),
+        Min = min(x, na.rm = TRUE),
+        Max = max(x, na.rm = TRUE)
+      )
+    })
+    
+    numeric_summary <- do.call(rbind, stats_list)
+    
+    kable(numeric_summary, 
+          caption = "Statistički sažetak numeričkih varijabli",
+          digits = 1,
+          row.names = FALSE) %>%
+      kable_styling(bootstrap_options = c("striped", "hover"))
+  } else {
+    cat("Numeričke varijable nisu pronađene u datasetu.")
+  }
+}
+```
+
+## Distribucija po izvorima
+
+```{r}
+#| label: source-distribution
+
+if ("SOURCE_TYPE" %in% names(dta)) {
+  source_dist <- dta[!is.na(SOURCE_TYPE), .N, by = SOURCE_TYPE][order(-N)]
+  source_dist[, Postotak := round(N / sum(N) * 100, 1)]
+  
+  kable(head(source_dist, 10), 
+        caption = "Top 10 izvora po broju zapisa",
+        col.names = c("Tip izvora", "Broj zapisa", "Postotak (%)")) %>%
+    kable_styling(bootstrap_options = c("striped", "hover"))
+}
 ```
 
 # Primjeri korištenja
@@ -263,22 +443,30 @@ basic_analyses <- data.frame(
   `Tip analize` = c(
     "Analiza sentimenta po izvorima",
     "Trendovi kroz vrijeme", 
-    "Top izvori po angažmanu"
+    "Top izvori po angažmanu",
+    "Distribucija po godinama",
+    "Najčešće ključne riječi"
   ),
   `R kod` = c(
     "sentiment_by_source <- dta[, .N, by = .(FROM, AUTO_SENTIMENT)]",
     "temporal_trends <- dta[, .N, by = .(year, month = substr(DATE, 6, 7))]",
-    "top_sources <- dta[, .(avg_engagement = mean(ENGAGEMENT_RATE, na.rm = TRUE)), by = FROM]"
+    "top_sources <- dta[, .(avg_engagement = mean(ENGAGEMENT_RATE, na.rm = TRUE)), by = FROM]",
+    "yearly_dist <- dta[, .N, by = year][order(year)]",
+    "keyword_freq <- dta[, .N, by = KEYWORD_NAME][order(-N)]"
   ),
   `Rezultat` = c(
     "Broj objava po izvoru i sentimentu",
     "Broj objava po mjesecima", 
-    "Prosječni angažman po izvoru"
+    "Prosječni angažman po izvoru",
+    "Broj objava po godinama",
+    "Frekvencija ključnih riječi"
   ),
   `Sortiranje` = c(
     "sentiment_by_source[order(-N)]",
     "temporal_trends[order(year, month)]",
-    "top_sources[order(-avg_engagement)]"
+    "top_sources[order(-avg_engagement)]",
+    "yearly_dist[order(year)]",
+    "keyword_freq[order(-N)]"
   )
 )
 
@@ -302,28 +490,36 @@ advanced_analyses <- data.frame(
     "Čišćenje stop riječi",
     "Brojanje riječi po sentimentu", 
     "Sentiment scoring",
-    "Wordcloud generiranje"
+    "Wordcloud generiranje",
+    "Vremenska serija angažmana",
+    "Korelacijska analiza"
   ),
   `Potrebne biblioteke` = c(
     "tidytext, dplyr",
     "tidytext", 
     "dplyr, tidytext",
     "dplyr, case_when", 
-    "wordcloud, RColorBrewer"
+    "wordcloud, RColorBrewer",
+    "ggplot2, lubridate",
+    "corrplot"
   ),
   `Ključni kod` = c(
     "unnest_tokens(word, TITLE)",
     "anti_join(stop_words)",
     "count(word, AUTO_SENTIMENT, sort = TRUE)",
     "summarise(sentiment_score = sum(n * case_when(...)))",
-    "wordcloud(words, freq, colors = brewer.pal(8, 'Dark2'))"
+    "wordcloud(words, freq, colors = brewer.pal(8, 'Dark2'))",
+    "ggplot(aes(x = DATE, y = ENGAGEMENT_RATE)) + geom_smooth()",
+    "corrplot(cor(numeric_vars, use = 'complete.obs'))"
   ),
   `Očekivani output` = c(
     "Pojedinačne riječi iz naslova",
     "Filtrirane značajne riječi",
     "Frekvencija riječi po sentimentu", 
     "Numerički sentiment score",
-    "Vizualna reprezentacija"
+    "Vizualna reprezentacija",
+    "Trend angažmana kroz vrijeme",
+    "Matrica korelacija"
   )
 )
 
@@ -333,6 +529,40 @@ kable(advanced_analyses,
   kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
   column_spec(3, width = "30%", extra_css = "font-family: monospace; font-size: 10px;") %>%
   scroll_box(width = "100%", height = "400px")
+```
+
+## Primjer koda za učitavanje i osnovnu obradu
+
+```{r}
+#| label: example-code
+#| echo: true
+#| eval: false
+
+# Učitavanje podataka
+dta <- readRDS("../../data/merged_comprehensive.rds")
+
+# Konverzija datuma
+dta[, DATE := as.Date(DATE)]
+dta[, year := year(DATE)]
+dta[, month := month(DATE)]
+dta[, yearmonth := floor_date(DATE, "month")]
+
+# Filtriranje po godinama
+dta_2024_2025 <- dta[year %in% c(2024, 2025)]
+
+# Agregacija po izvoru i sentimentu
+summary_table <- dta[, .(
+  n_posts = .N,
+  avg_reach = mean(REACH, na.rm = TRUE),
+  avg_engagement = mean(ENGAGEMENT_RATE, na.rm = TRUE),
+  total_interactions = sum(INTERACTIONS, na.rm = TRUE)
+), by = .(SOURCE_TYPE, AUTO_SENTIMENT)]
+
+# Trend analiza
+monthly_trend <- dta[, .(
+  n_posts = .N,
+  avg_sentiment_positive = mean(AUTO_SENTIMENT == "positive", na.rm = TRUE)
+), by = yearmonth][order(yearmonth)]
 ```
 
 # Tehnički detalji
@@ -350,29 +580,29 @@ technical_info <- data.frame(
     "Kodiranje", 
     "Separatori",
     "Nedostajuće vrijednosti",
-    "Preporučena biblioteka - Manipulacija",
-    "Preporučena biblioteka - Sintaksa", 
-    "Preporučena biblioteka - Vizualizacija",
-    "Preporučena biblioteka - Datumi",
-    "Preporučena biblioteka - Tekst"
+    "Preporučena biblioteka  Manipulacija",
+    "Preporučena biblioteka  Sintaksa", 
+    "Preporučena biblioteka  Vizualizacija",
+    "Preporučena biblioteka  Datumi",
+    "Preporučena biblioteka  Tekst"
   ),
   `Vrijednost/Opis` = c(
-    "op_e_[datum-raspon].xlsx",
+    "merged_comprehensive.rds",
     "R data.table",
     "UTF-8", 
     "Automatski detektirani",
     "NA",
-    "data.table - za brzu manipulaciju velikih dataset-a",
-    "dplyr - za čišću i čitljiviju sintaksu", 
-    "ggplot2 - za profesionalne vizualizacije",
-    "lubridate - za rad s datumskim formatima",
-    "stringr - za manipulaciju i analizu teksta"
+    "data.table  za brzu manipulaciju velikih dataset-a",
+    "dplyr  za čišću i čitljiviju sintaksu", 
+    "ggplot2  za profesionalne vizualizacije",
+    "lubridate  za rad s datumskim formatima",
+    "stringr  za manipulaciju i analizu teksta"
   ),
   `Napomene` = c(
-    "Batch obrada po vremenskim periodima",
+    "Svi podaci spojeni u jednu datoteku",
     "Optimizirano za velike podatke",
     "Podrška za hrvatske znakove", 
-    "Excel format automatski parsiran",
+    "RDS format automatski parsiran",
     "Standardno R označavanje",
     "Brzina: 10-100x brža od base R",
     "Kompatibilnost s tidyverse ekosystemom", 
@@ -403,21 +633,24 @@ performance_tips <- data.frame(
     "Grupiranje i agregacija",
     "Filtriranje velikih tekstova", 
     "Sortiranje po datumu",
-    "Analiza sentimenta"
+    "Analiza sentimenta",
+    "Eksport u CSV"
   ),
   `Preporučeni pristup` = c(
-    "fread() za brže učitavanje",
+    "readRDS() za RDS format",
     "data.table sintaksa [, .N, by=]", 
     "Koristiti grep() s fixed=TRUE",
     "Konvertirati DATE u Date klasu",
-    "Koristiti existirajuće AUTO_SENTIMENT"
+    "Koristiti existirajuće AUTO_SENTIMENT",
+    "fwrite() za brzi eksport"
   ),
   `Očekivano vrijeme` = c(
     "< 30 sekundi",
     "< 5 sekundi", 
     "10-60 sekundi",
     "< 10 sekundi", 
-    "1-5 minuta"
+    "1-5 minuta",
+    "< 60 sekundi"
   )
 )
 
@@ -427,11 +660,37 @@ kable(performance_tips,
   kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
+# Potpuni popis varijabli
+
+```{r}
+#| label: full-variable-list
+
+# Dinamički popis svih varijabli u datasetu
+var_names <- names(dta)
+
+all_vars <- data.frame(
+  Redni_broj = seq_along(var_names),
+  Varijabla = var_names,
+  Tip = sapply(var_names, function(v) class(dta[[v]])[1]),
+  N_jedinstvenih = sapply(var_names, function(v) length(unique(dta[[v]]))),
+  Nedostaje_pct = sapply(var_names, function(v) round(sum(is.na(dta[[v]])) / nrow(dta) * 100, 1)),
+  stringsAsFactors = FALSE
+)
+
+rownames(all_vars) <- NULL
+
+kable(all_vars, 
+      caption = "Potpuni popis varijabli u datasetu",
+      col.names = c("Br.", "Varijabla", "Tip", "N jedinstvenih", "Nedostaje (%)")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
+  scroll_box(width = "100%", height = "500px")
+```
+
 
 
 ## Preuzmi bazu podataka
 
-📊 **Kaggle Dataset** [Croatian Catholic Media Space 2021- 2024](https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space/data1)
+📊 **Kaggle Dataset** [Croatian Catholic Media Space 2021-2025](https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space/data)
 
 ```{r}
 #| label: download-example
@@ -441,13 +700,16 @@ kable(performance_tips,
 library(pins)
 board <- board_kaggle()
 dataset <- pin_read(board, "https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space/data")
+
+# Alternativno, učitavanje lokalne verzije
+dta <- readRDS("../../data/merged_comprehensive.rds")
 ```
 
 # Licence i citiranje
 
 Molimo citirajte ovu bazu u svojim radovima koristeći sljedeći format
 
-> **[Šikić, Luka/Hrvatsko katoličko sveučilište]**. (2025). *Katolički digitalni medijski prostor u Hrvatskoj 2025*. Dataset sadrži 258,757 medijskih objava iz hrvatskih medija. Pristupljeno `r Sys.Date()`.
+> **[Šikić, Luka/Hrvatsko katoličko sveučilište]**. (2025). *Katolički digitalni medijski prostor u Hrvatskoj 2021-2025*. Dataset sadrži `r n_records` medijskih objava iz hrvatskih medija. Pristupljeno `r Sys.Date()`.
 
 ## Dodatni resursi
 
@@ -459,5 +721,5 @@ Molimo citirajte ovu bazu u svojim radovima koristeći sljedeći format
 ---
 
 **Zadnja ažurirana** `r Sys.Date()`  
-**Verzija** 1.0  
+**Verzija** 2.0  
 **R verzija** `r R.version.string`

@@ -160,7 +160,7 @@ dta <- readRDS("../../data/merged_comprehensive.rds") %>%
   filter(year >= 2021 & year <= 2025)
 
 # Kreiranje stratificiranog uzorka od 5%
-sample_proportion <- 0.05
+sample_proportion <- 0.03
 set.seed(123)
 dta_stratified_sample <- dta %>%
   filter(nchar(FULL_TEXT) > 100) %>%

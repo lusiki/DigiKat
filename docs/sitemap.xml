@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lusiki.github.io/DigiKat/pages/mapa/događaji.html</loc>
-    <lastmod>2026-01-12T09:08:05.133Z</lastmod>
+    <lastmod>2026-01-12T10:24:30.120Z</lastmod>
   </url>
   <url>
     <loc>https://lusiki.github.io/DigiKat/pages/site-info.html</loc>
@@ -35,5 +35,9 @@
   <url>
     <loc>https://lusiki.github.io/DigiKat/pages/about.html</loc>
     <lastmod>2026-01-12T09:46:36.209Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lusiki.github.io/DigiKat/pages/baza.html</loc>
+    <lastmod>2026-01-12T10:21:26.040Z</lastmod>
   </url>
 </urlset>
