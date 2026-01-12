@@ -51,9 +51,9 @@ Fokusirani smo na pet pitanja koja definiraju smjer istraživanja:
 Projekt integrira tehnike podatkovne znanosti s metodama računalnih društvenih znanosti. Metodološki okvir uključuje:
 
 * **Web scraping i API integracije:** Automatizirano prikupljanje velikih količina podataka s informativnih portala i društvenih mreža.
-* **Obrada prirodnog jezika (NLP):** Korištenje tematskog modeliranja, analize sentimenta i prepoznavanja imenovanih entiteta za strukturiranje tekstualnih podataka.
-* **Mrežna analiza:** Mapiranje odnosa između aktera, tema i medijskih izvora.
-* **Statistička analiza:** Identifikacija trendova, korelacija i obrazaca unutar prikupljenih podataka.
+* **Obradu prirodnog jezika (NLP):** Korištenje tematskog modeliranja, analize sentimenta i prepoznavanja imenovanih entiteta za strukturiranje tekstualnih podataka.
+* **Mrežnu analiza:** Mapiranje odnosa između aktera, tema i medijskih izvora.
+* **Statističku analiza:** Identifikacija trendova, korelacija i obrazaca unutar prikupljenih podataka.
 
 ::: {.callout-note}
 ### Otvorena znanost
@@ -62,12 +62,12 @@ Sav programski kod i, gdje je to moguće, podaci bit će dostupni u skladu s **F
 
 ## Projektni tim
 
-Projekt vodi interdisciplinarni tim znanstvenika koji pokriva područja komunikologije, sociologije, statistike i povijesti.
+U projektu sudjeluje interdisciplinarni tim znanstvenika iz područja ekonomike, komunikologije, sociologije, statistike i povijesti.
 
 | Ime i Prezime | Uloga | Institucija/Odjel |
 | :--- | :---: | :--- |
 | **doc. dr. sc. Luka Šikić** | **Voditelj** | **HKS (Komunikologija)** |
-| izv. prof. dr. sc. Andrea Sršen | Suradnica | FHS (Sociologija) |
+| izv. prof. dr. sc. Andreja Sršen | Suradnica | FHS (Sociologija) |
 | izv. prof. dr. sc. Irena Palić | Suradnica | EFZG (Statistika) |
 | izv. prof. dr. sc. Lana Ciboci Perša | Suradnica | HKS (Komunikologija) |
 | izv. prof. dr. sc. Petra Palić | Suradnica | HKS (Sociologija) |

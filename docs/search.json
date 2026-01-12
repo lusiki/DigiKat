@@ -158,21 +158,21 @@
     "href": "pages/index.html#istraživačka-pitanja",
     "title": "Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
     "section": "Istraživačka pitanja",
-    "text": "Istraživačka pitanja\nFokusirani smo na pet pitanja koja definiraju smjer istraživanja:\n\nKako se katolička tematika prikazuje i raspravlja u hrvatskom digitalnom medijskom prostoru?\nKakve su veze između katoličkih tema i drugih društvenih i političkih pitanja?\nKoji su akteri i institucije najistaknutiji u tim raspravama?\nKako se narativi i sentiment mijenjaju ovisno o aktualnim događajima?\nKakva je mrežna dinamika između različitih platformi i medija koji obrađuju ove teme?"
+    "text": "Istraživačka pitanja\nFokusirani smo na pet pitanja koja definiraju smjer istraživanja:\n\nKako se katolička tematika prikazuje i kako se o njoj raspravlja u digitalnom medijskom prostoru?\nKakve su veze između katoličkih tema i drugih društvenih i političkih pitanja?\nKoji su akteri i institucije najistaknutiji u tim raspravama?\nKako se narativi i sentiment mijenjaju ovisno o aktualnim događajima?\nKakva je mrežna dinamika između različitih platformi i medija koji obrađuju ove teme?"
   },
   {
     "objectID": "pages/index.html#metodologija",
     "href": "pages/index.html#metodologija",
     "title": "Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
     "section": "Metodologija",
-    "text": "Metodologija\nProjekt integrira tehnike podatkovne znanosti s metodama društvenih znanosti. Naš metodološki okvir uključuje:\n\nWeb scraping i API integracije: Automatizirano prikupljanje velikih količina podataka s informativnih portala i društvenih mreža.\nObrada prirodnog jezika (NLP): Korištenje tematskog modeliranja, analize sentimenta i prepoznavanja imenovanih entiteta za strukturiranje tekstualnih podataka.\nMrežna analiza: Mapiranje odnosa između aktera, tema i medijskih izvora.\nStatistička analiza: Identifikacija trendova, korelacija i obrazaca unutar prikupljenih podataka.\n\n\n\n\n\n\n\nNoteOtvorena znanost\n\n\n\nSav programski kod i, gdje je to moguće, podaci bit će dostupni u skladu s FAIR principima za otvorenu znanost."
+    "text": "Metodologija\nProjekt integrira tehnike podatkovne znanosti s metodama računalnih društvenih znanosti. Metodološki okvir uključuje:\n\nWeb scraping i API integracije: Automatizirano prikupljanje velikih količina podataka s informativnih portala i društvenih mreža.\nObradu prirodnog jezika (NLP): Korištenje tematskog modeliranja, analize sentimenta i prepoznavanja imenovanih entiteta za strukturiranje tekstualnih podataka.\nMrežnu analiza: Mapiranje odnosa između aktera, tema i medijskih izvora.\nStatističku analiza: Identifikacija trendova, korelacija i obrazaca unutar prikupljenih podataka.\n\n\n\n\n\n\n\nNoteOtvorena znanost\n\n\n\nSav programski kod i, gdje je to moguće, podaci bit će dostupni u skladu s FAIR principima za otvorenu znanost."
   },
   {
     "objectID": "pages/index.html#projektni-tim",
     "href": "pages/index.html#projektni-tim",
     "title": "Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
     "section": "Projektni tim",
-    "text": "Projektni tim\nProjekt vodi interdisciplinarni tim znanstvenika koji pokriva područja komunikologije, sociologije, statistike i povijesti.\n\n\n\n\n\n\n\n\nIme i Prezime\nUloga\nInstitucija/Odjel\n\n\n\n\ndoc. dr. sc. Luka Šikić\nVoditelj\nHKS (Komunikologija)\n\n\nizv. prof. dr. sc. Andrea Sršen\nSuradnica\nFHS (Sociologija)\n\n\nizv. prof. dr. sc. Irena Palić\nSuradnica\nEFZG (Statistika)\n\n\nizv. prof. dr. sc. Lana Ciboci Perša\nSuradnica\nHKS (Komunikologija)\n\n\nizv. prof. dr. sc. Petra Palić\nSuradnica\nHKS (Sociologija)\n\n\ndoc. dr. sc. Ivan Uldrijan\nSuradnik\nHKS (Komunikologija)\n\n\ndr. sc. Suzana Lipar Obrovac\nSuradnica\nHKS (Odnosi s javnošću)\n\n\nHana Kilijan\nSuradnica\nHKS (Komunikologija)\n\n\nVeronika Novoselec\nSuradnica\nHKS (Povijest)\n\n\nMatea Topić Crnoja\nSuradnica\nHKS (Sociologija)"
+    "text": "Projektni tim\nU projektu sudjeluje interdisciplinarni tim znanstvenika iz područja ekonomike, komunikologije, sociologije, statistike i povijesti.\n\n\n\n\n\n\n\n\nIme i Prezime\nUloga\nInstitucija/Odjel\n\n\n\n\ndoc. dr. sc. Luka Šikić\nVoditelj\nHKS (Komunikologija)\n\n\nizv. prof. dr. sc. Andreja Sršen\nSuradnica\nFHS (Sociologija)\n\n\nizv. prof. dr. sc. Irena Palić\nSuradnica\nEFZG (Statistika)\n\n\nizv. prof. dr. sc. Lana Ciboci Perša\nSuradnica\nHKS (Komunikologija)\n\n\nizv. prof. dr. sc. Petra Palić\nSuradnica\nHKS (Sociologija)\n\n\ndoc. dr. sc. Ivan Uldrijan\nSuradnik\nHKS (Komunikologija)\n\n\ndr. sc. Suzana Lipar Obrovac\nSuradnica\nHKS (Odnosi s javnošću)\n\n\nHana Kilijan\nSuradnica\nHKS (Komunikologija)\n\n\nVeronika Novoselec\nSuradnica\nHKS (Povijest)\n\n\nMatea Topić Crnoja\nSuradnica\nHKS (Sociologija)"
   },
   {
     "objectID": "pages/index.html#rezultati-i-publikacije",
