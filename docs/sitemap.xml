@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lusiki.github.io/DigiKat/pages/mapa/događaji.html</loc>
-    <lastmod>2026-01-07T12:48:24.285Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lusiki.github.io/DigiKat/pages/about.html</loc>
-    <lastmod>2026-01-05T09:04:59.057Z</lastmod>
-  </url>
-  <url>
     <loc>https://lusiki.github.io/DigiKat/pages/site-info.html</loc>
     <lastmod>2026-01-05T12:35:02.155Z</lastmod>
   </url>
@@ -21,12 +13,24 @@
     <lastmod>2026-01-07T12:23:57.369Z</lastmod>
   </url>
   <url>
-    <loc>https://lusiki.github.io/DigiKat/pages/mapa/diskurs.html</loc>
-    <lastmod>2026-01-12T07:18:52.498Z</lastmod>
+    <loc>https://lusiki.github.io/DigiKat/pages/mapa/događaji.html</loc>
+    <lastmod>2026-01-07T12:48:24.285Z</lastmod>
   </url>
   <url>
     <loc>https://lusiki.github.io/DigiKat/pages/index.html</loc>
     <lastmod>2026-01-06T11:30:53.572Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lusiki.github.io/DigiKat/pages/about.html</loc>
+    <lastmod>2026-01-05T09:04:59.057Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lusiki.github.io/DigiKat/pages/baza.html</loc>
+    <lastmod>2026-01-06T10:23:50.779Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lusiki.github.io/DigiKat/pages/mapa/diskurs.html</loc>
+    <lastmod>2026-01-12T07:26:15.563Z</lastmod>
   </url>
   <url>
     <loc>https://lusiki.github.io/DigiKat/pages/mapa/mapa.html</loc>
