@@ -1,0 +1,8 @@
+# This folder contains NLP batch processing results
+# These are large data files not tracked in git
+
+# Copy the following files here:
+# - batched_processed_udpipe_1.rds through batched_processed_udpipe_27.rds
+# 
+# Source location on your machine:
+# C:/Users/lsikic/Luka C/HKS/Projekti/Digitalni Kat/SHKM/Podatci/Language model/

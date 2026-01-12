@@ -4,8 +4,9 @@ library(readxl)
 library(tidyverse)
 library(stringi)
 
-# Set the folder path
-folder_path <- "C:/Users/lsikic/Dropbox/DigiKat/2024&25 Dta"
+# Set the folder path (relative to project root)
+# NOTE: Place raw Excel files in data/raw/ folder
+folder_path <- "data/raw"
 
 # List all .xlsx files in the folder
 xlsx_files <- list.files(

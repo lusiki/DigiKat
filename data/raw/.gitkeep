@@ -1,0 +1,5 @@
+# This folder contains raw Excel data files
+# These are large data files not tracked in git
+
+# Copy the .xlsx files from your Dropbox here if you need to re-run data loading scripts:
+# Source location: C:/Users/lsikic/Dropbox/DigiKat/2024&25 Dta/

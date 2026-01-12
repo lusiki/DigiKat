@@ -54,7 +54,7 @@ library(readr)
 #| include: false
 
 # Učitavanje leksikona
-CroSentilex_n <- read.delim("C:/Users/lsikic/Dropbox/Mislav@Luka/crosentilex-negatives.txt",
+CroSentilex_n <- read.delim("../../resources/lexicons/crosentilex-negatives.txt",
                             header = FALSE,
                             sep = " ",
                             stringsAsFactors = FALSE,
@@ -62,7 +62,7 @@ CroSentilex_n <- read.delim("C:/Users/lsikic/Dropbox/Mislav@Luka/crosentilex-neg
   rename(word = "V1", sentiment = "V2") %>%
   mutate(brija = "NEG")
 
-CroSentilex_p <- read.delim("C:/Users/lsikic/Dropbox/Mislav@Luka/crosentilex-positives.txt",
+CroSentilex_p <- read.delim("../../resources/lexicons/crosentilex-positives.txt",
                             header = FALSE,
                             sep = " ",
                             stringsAsFactors = FALSE,
@@ -72,7 +72,7 @@ CroSentilex_p <- read.delim("C:/Users/lsikic/Dropbox/Mislav@Luka/crosentilex-pos
 
 crosentilex <- rbind(setDT(CroSentilex_n), setDT(CroSentilex_p))
 
-CroSentilex_Gold <- read.delim2("C:/Users/lsikic/Dropbox/Mislav@Luka/gs-sentiment-annotations.txt",
+CroSentilex_Gold <- read.delim2("../../resources/lexicons/gs-sentiment-annotations.txt",
                                 header = FALSE,
                                 sep = " ",
                                 stringsAsFactors = FALSE) %>%
@@ -88,7 +88,7 @@ crosentilex_gold_prepared <- CroSentilex_Gold %>%
   ) %>%
   select(word, sentiment_value)
 
-nrc_lexicon <- read_excel("C:/Users/lsikic/Dropbox/Mislav@Luka/lilaHR_clean.xlsx", sheet = "Sheet1") %>% 
+nrc_lexicon <- read_excel("../../resources/dictionaries/lilaHR_clean.xlsx", sheet = "Sheet1") %>% 
   select(-"...1")
 
 # Rječnik za prevođenje
@@ -116,18 +116,18 @@ nrc_lexicon_long <- nrc_lexicon %>%
   mutate(emotion = recode(emotion, !!!emotion_translator_hr))
 
 crosentilex_full <- bind_rows(
-  read.delim("C:/Users/lsikic/Dropbox/Mislav@Luka/crosentilex-negatives.txt",
+  read.delim("../../resources/lexicons/crosentilex-negatives.txt",
              header = FALSE, sep = " ", stringsAsFactors = FALSE, fileEncoding = "UTF-8") %>%
     rename(word = "V1", sentiment_value = "V2") %>%
     mutate(sentiment_value = -sentiment_value),
   
-  read.delim("C:/Users/lsikic/Dropbox/Mislav@Luka/crosentilex-positives.txt",
+  read.delim("../../resources/lexicons/crosentilex-positives.txt",
              header = FALSE, sep = " ", stringsAsFactors = FALSE, fileEncoding = "UTF-8") %>%
     rename(word = "V1", sentiment_value = "V2")
 ) %>%
   as_tibble()
 
-crosentilex_gold_prepared <- read.delim2("C:/Users/lsikic/Dropbox/Mislav@Luka/gs-sentiment-annotations.txt",
+crosentilex_gold_prepared <- read.delim2("../../resources/lexicons/gs-sentiment-annotations.txt",
                                          header = FALSE, sep = " ", stringsAsFactors = FALSE, fileEncoding = "UTF-8") %>%
   rename(word = "V1", sentiment_str = "V2") %>%
   mutate(
@@ -140,7 +140,7 @@ crosentilex_gold_prepared <- read.delim2("C:/Users/lsikic/Dropbox/Mislav@Luka/gs
   select(word, sentiment_value) %>%
   as_tibble()
 
-nrc_lexicon_raw <- read_excel("C:/Users/lsikic/Dropbox/Mislav@Luka/lilaHR_clean.xlsx", sheet = "Sheet1") %>% 
+nrc_lexicon_raw <- read_excel("../../resources/dictionaries/lilaHR_clean.xlsx", sheet = "Sheet1") %>% 
   select(-"...1") %>%
   rename(word = HR)
 
@@ -170,7 +170,7 @@ dta_stratified_sample <- dta %>%
   mutate(doc_id = row_number())
 
 # Učitavanje i filtriranje lingvističkih podataka
-files <- list.files("C:/Users/lsikic/Luka C/HKS/Projekti/Digitalni Kat/SHKM/Podatci/Language model", 
+files <- list.files("../../data/nlp", 
                     full.names = TRUE, pattern = "\\.rds")
 nlp_results_df <- lapply(files, readRDS) %>%
   bind_rows()

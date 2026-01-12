@@ -77,7 +77,7 @@ dta_stratified_sample <- dta %>%
 
 
 # Učitavanje prethodno obrađenih lingvističkih podataka (štedi vrijeme)
-files <- list.files("C:/Users/lsikic/Luka C/HKS/Projekti/Digitalni Kat/SHKM/Podatci/Language model", full.names = TRUE, pattern = "\\.rds")
+files <- list.files("../../data/nlp", full.names = TRUE, pattern = "\\.rds")
 nlp_results_df <- lapply(files, readRDS) %>%
   bind_rows() %>%
   mutate(doc_id = as.integer(doc_id))
