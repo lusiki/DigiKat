@@ -1,6 +1,6 @@
 ---
 title: "Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru"
-subtitle: "Interdisciplinarni projekt računalnih društvenih znanosti"
+subtitle: "Interdisciplinarni projekt na Hrvatskom katoličkom sveučilištu"
 date: last-modified
 format: 
   html:
@@ -40,7 +40,7 @@ Koristeći napredne metode iz područja [računalnih društvenih znanosti](https
 
 Fokusirani smo na pet pitanja koja definiraju smjer istraživanja:
 
-1.  Kako se katolička tematika prikazuje i raspravlja u hrvatskom digitalnom medijskom prostoru?
+1.  Kako se katolička tematika prikazuje i kako se o njoj raspravlja u digitalnom medijskom prostoru?
 2.  Kakve su veze između katoličkih tema i drugih društvenih i političkih pitanja?
 3.  Koji su akteri i institucije najistaknutiji u tim raspravama?
 4.  Kako se narativi i sentiment mijenjaju ovisno o aktualnim događajima?
@@ -48,7 +48,7 @@ Fokusirani smo na pet pitanja koja definiraju smjer istraživanja:
 
 ## Metodologija
 
-Projekt integrira tehnike podatkovne znanosti s metodama društvenih znanosti. Naš metodološki okvir uključuje:
+Projekt integrira tehnike podatkovne znanosti s metodama računalnih društvenih znanosti. Metodološki okvir uključuje:
 
 * **Web scraping i API integracije:** Automatizirano prikupljanje velikih količina podataka s informativnih portala i društvenih mreža.
 * **Obrada prirodnog jezika (NLP):** Korištenje tematskog modeliranja, analize sentimenta i prepoznavanja imenovanih entiteta za strukturiranje tekstualnih podataka.
