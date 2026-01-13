@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
   message = FALSE,
   warning = FALSE,
   fig.width = 14,
-  fig.height = 9,
+  fig.height = 11,
   dpi = 200
 )
 ```
@@ -139,7 +139,7 @@ Ovaj vizualni sažetak odmah otkriva središnje entitete i koncepte koji čine s
 
 ```{r}
 #| label: plot-wordcloud
-#| fig-height: 10
+#| fig-height: 11
 #| fig-width: 14
 
 # Priprema teksta: Lematizacija i uklanjanje zaustavnih riječi
@@ -250,7 +250,7 @@ Analiza udjela svake tematske kategorije u ukupnom broju spominjanja otkriva rel
 ```{r}
 #| label: plot-topic-trends
 #| fig-width: 14
-#| fig-height: 9
+#| fig-height: 11
 
 topic_trends_guided <- dta_with_themes %>%
   select(year, DUHOVNOST_I_LITURGIJA:ODNOS_S_DRUGIM_RELIGIJAMA_I_POGLEDIMA) %>%
@@ -284,7 +284,7 @@ Teme s distribucijom pomaknutom udesno, poput Duhovnosti i liturgije, karakteriz
 ```{r}
 #| label: plot-topic-intensity
 #| fig-width: 14
-#| fig-height: 10
+#| fig-height: 11
 
 thematic_intensity_data <- dta_enriched %>%
   select(starts_with("norm_")) %>%
@@ -320,7 +320,7 @@ Ovaj obrazac upućuje na mehanizam prema kojem konflikt, kontroverza i krizni na
 ```{r}
 #| label: plot-engagement-by-topic
 #| fig-width: 14
-#| fig-height: 9
+#| fig-height: 11
 
 engagement_by_topic <- dta_enriched %>%
   filter(dominant_topic != "Nema Teme") %>%
@@ -351,7 +351,7 @@ Rezultati su jasni i konzistentni s prethodnim nalazima. Teme vezane za Duhovnos
 ```{r}
 #| label: plot-polarization-by-topic
 #| fig-width: 14
-#| fig-height: 9
+#| fig-height: 11
 
 polarization_by_topic <- dta_enriched %>%
   filter(TOTAL_REACTIONS_COUNT > 10) %>%
