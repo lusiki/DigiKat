@@ -197,11 +197,11 @@ dta_enriched <- bind_cols(dta_stratified_sample, theme_analysis_data)
 
 ## Uvod u analizu emocionalne i konfliktne strukture diskursa
 
-Nakon kartografiranja aktera i platformi te identifikacije tematskih kategorija, ova treća analitička faza usmjerava se na najsuptilniju, ali kritičnu dimenziju diskursa. Istraživanje se bavi pitanjem atmosfere komunikacijskog prostora, odnosno načina na koji se teme artikuliraju. Fokus je na emocionalnom tonalitetu, psihološkim apelima i intenzitetu konfliktnog jezika koji karakterizira različite narativne okvire.
+Nakon kartografiranja [aktera i platformi](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/mapa/mapa.html) te identifikacije [tematskih](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/mapa/mapa_stats.html) kategorija, ova treća analitička mapa usmjerava se na najsuptilniju  dimenziju diskursa. Analiza se bavi pitanjem atmosfere komunikacijskog prostora, odnosno načina na koji se teme artikuliraju. Fokus je na emocionalnom tonalitetu, psihološkim apelima i intenzitetu konfliktnog jezika koji karakterizira različite narativne okvire.
 
 Ovaj pristup nadilazi tradicionalne binarne klasifikacije sentimenta, uvodeći višeslojne, kontekstualno svjesne metrike koje omogućuju dubinsko razumijevanje komunikacijskih strategija. Analitički okvir strukturiran je u tri komponente.
 
-Prva komponenta obuhvaća dvoslojnu emocionalnu analizu koja razdvaja površinski tonalitet teksta od dubinskih psiholoških procesa koji se u njemu aktiviraju. Druga komponenta je Relativni indeks konflikta koji mjeri neočekivanu agresivnost jezika u odnosu na kontekstualne baseline karakteristike medija i teme. Treća komponenta uključuje Mrežu narativne atmosfere koja vizualizira kako se emocionalni tonalitet i intenzitet konflikta mijenjaju kada se različite tematske kategorije kombiniraju u šire narativne okvire.
+Prva komponenta obuhvaća dvoslojnu **emocionalnu analizu** koja razdvaja površinski tonalitet teksta od dubinskih psiholoških procesa koji se u njemu aktiviraju. Druga komponenta je **relativni indeks konflikta** koji mjeri neočekivanu agresivnost jezika u odnosu na kontekstualne osnovne (*baseline*) karakteristike medija i teme. Treća komponenta uključuje **mrežu narativne atmosfere** koja vizualizira kako se emocionalni tonalitet i intenzitet konflikta mijenjaju kada se različite tematske kategorije kombiniraju u šire narativne okvire.
 
 ---
 

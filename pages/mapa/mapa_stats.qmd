@@ -241,7 +241,7 @@ Riječi poput crkva i papa nisu samo statistički značajne. One evociraju svako
 
 ## Struktura tematskog pejzaža
 
-Prvi analitički korak obuhvaća razumijevanje opće strukture diskursa. Koje tematske kategorije prevladavaju prostorom, a koje zauzimaju marginalne pozicije? Kako se njihova zastupljenost mijenja kroz promatrano razdoblje? Koliko su te teme centralne za članke u kojima se pojavljuju?
+Prvi korak obuhvaća razumijevanje opće strukture diskursa. Koje tematske kategorije prevladavaju prostorom, a koje zauzimaju marginalne pozicije? Kako se njihova zastupljenost mijenja kroz promatrano razdoblje? Koliko su te teme centralne za članke u kojima se pojavljuju?
 
 ### Temporalna dinamika tematskih kategorija
 
@@ -392,7 +392,7 @@ Nakon identifikacije tematskih kategorija i mjerenja njihovog utjecaja, analiza 
 
 Svaka tematska kategorija ima svoje glavne protagoniste, odnosno aktere koji se najčešće spominju u kontekstu te teme. Analizom najfrekventnijih imenskih entiteta unutar svake dominantne teme dobiva se uvid u to koji su pojedinci i institucije nositelji specifičnih narativa.
 
-Rezultati pokazuju očekivanu ali važnu strukturu. Političari prevladavaju temama vezanim za Politiku i odnos s državom, gdje se najčešće spominju imena aktualnih političkih čelnika. Crkveni velikodostojnici prevladavaju institucionalnim temama i temama vezanim za Pape i Vatikan. Ova diferencijacija potvrđuje funkcionalne granice između različitih tematskih domena unutar medijskog prostora katoličke tematike.
+Rezultati pokazuju očekivanu ali važnu strukturu. Političari prevladavaju s temama vezanim za Politiku i odnos s državom, gdje se najčešće spominju imena aktualnih političkih čelnika. Crkveni velikodostojnici prevladavaju institucionalnim temama i temama vezanim za Pape i Vatikan. Ova diferencijacija potvrđuje funkcionalne granice između različitih tematskih domena unutar medijskog prostora katoličke tematike.
 
 ```{r}
 #| label: plot-actors-in-topics
@@ -486,12 +486,12 @@ topic_pairs %>%
 
 ## Sinteza i zaključci
 
-Ova dubinska analiza sadržaja razotkriva da medijski prostor katoličke tematike u Hrvatskoj nije monolitna cjelina. Diskurs je strukturiran oko različitih, djelomično autonomnih tematskih domena koje funkcioniraju prema različitim logikama i obraćaju se različitim publikama.
+Dubinska analiza sadržaja razotkriva da medijski prostor katoličke tematike u Hrvatskoj nije monolitna cjelina. Diskurs je strukturiran oko različitih, djelomično autonomnih tematskih domena koje funkcioniraju prema različitim logikama i obraćaju se različitim publikama.
 
-Identificirana je jasna segmentacija na dva primarna tematska svijeta. Prvi je **pastoralni svijet**, koji okuplja teme Duhovnosti i liturgije, Karitasa i socijalne pravde te Digitalne evangelizacije. Ovaj svijet fokusiran je na internu crkvenu praksu, duhovni razvoj i socijalni angažman. Karakterizira ga dominantno pozitivan prijem kod publike, s visokim udjelom Love reakcija. Ove teme rezoniraju sa zajedničarskim aspektima vjere i ne izazivaju značajnu polarizaciju.
+Identificirana je jasna segmentacija na dva primarna tematska svijeta. Prvi je **pastoralni svijet**, koji okuplja teme Duhovnosti i liturgije, Karitasa i socijalne pravde te Digitalne evangelizacije. Ovaj svijet fokusiran je na internu crkvenu praksu, duhovni razvoj i socijalni angažman. Karakterizira ga dominantno pozitivan prijem kod publike, s visokim udjelom Love reakcija. Ove teme rezoniraju sa aspektima vjere i zajedništva te ne izazivaju značajnu polarizaciju.
 
 Drugi je **društveno politički svijet**, gdje se isprepliću teme Politike i odnosa s državom, Povijesti i nacionalnog identiteta te Bioetike i kulturnih ratova. Ovaj svijet predstavlja prostor najintenzivnije društvene konfliktnosti. Ove teme generiraju najveći angažman publike, ali istovremeno i najsnažniju polarizaciju, s visokim udjelom Angry reakcija. One funkcioniraju kao žarišta svjetonazorskih sukoba koji karakteriziraju suvremeno hrvatsko društvo.
 
-Mreža povezanosti tematskih kategorija otkriva dodatnu kompleksnost. Ova mreža nije samo dijagram apstraktnih veza. Ona prikazuje kako se konkretne teme iz pastoralnog svijeta, poput Duhovnosti i liturgije, u specifičnim kontekstima prepliću s političkim temama. Primjer je rasprava o crkvenim stavovima prema izborima ili bioetičkim pitanjima, gdje se liturgijski autoritet instrumentalizira za političke svrhe. Ova prožimanja stvaraju bogat tapiserij koji odražava svu kompleksnost katoličkog života u Hrvatskoj, gdje se vjera istovremeno doživljava kao privatna duhovnost i javni identitetski marker.
+Mreža povezanosti tematskih kategorija otkriva dodatnu kompleksnost. Ova mreža nije samo dijagram apstraktnih veza. Ona prikazuje kako se konkretne teme iz pastoralnog svijeta, poput Duhovnosti i liturgije, u specifičnim kontekstima prepliću s političkim temama. Primjer je rasprava o crkvenim stavovima prema izborima ili bioetičkim pitanjima, gdje se liturgijski autoritet instrumentalizira za političke svrhe. Ova prožimanja stvaraju bogat sustav koji odražava kompleksnost katoličkog života u Hrvatskoj, gdje se vjera istovremeno doživljava kao privatna duhovnost i javni identitetski marker.
 
-Razumijevanje ove strukture, uključujući intenzitet, utjecaj i povezanost tematskih kategorija, predstavlja temelj za sve buduće analize narativa i sentimenta. Tek nakon kartografiranja što se govori, moguće je produbiti razumijevanje kako se govori i s kojim komunikacijskim namjerama, što će biti fokus sljedećih faza ovog istraživačkog projekta.
+Razumijevanje ove strukture, uključujući intenzitet, utjecaj i povezanost tematskih kategorija, predstavlja temelj za sve buduće analize narativa i sentimenta. Tek nakon kartografiranja onoga što se govori, moguće je produbiti razumijevanje kako se govori i s kojim komunikacijskim namjerama, što će biti fokus treće analitičke [mape](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/mapa/diskurs.html).
