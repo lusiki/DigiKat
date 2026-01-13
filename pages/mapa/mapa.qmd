@@ -38,9 +38,9 @@ library(ggrepel)
 
 ## Mapiranje digitalne medijske arene
 
-Ovaj dokument predstavlja prvu analitičku fazu projekta koji istražuje reprezentaciju katoličke tematike u digitalnom medijskom prostoru Hrvatske. Analiza obuhvaća korpus od preko 610.000 medijskih objava prikupljenih između 1. siječnja 2021. i 31. prosinca 2025. Cilj je stvoriti temeljni pregled arene u kojoj se odvijaju rasprave o katoličkim temama.
+Ovaj dokument predstavlja prvu analitičku mapu projekta koji istražuje reprezentaciju katoličke tematike u digitalnom medijskom prostoru Hrvatske. Analiza obuhvaća korpus od preko 610.000 medijskih objava prikupljenih između 1. siječnja 2021. i 31. prosinca 2025. Cilj je dati pregled arene u kojoj se odvijaju rasprave o katoličkim temama.
 
-Istraživanje primjenjuje kvantitativnu analizu medijskog sadržaja kako bi identificiralo strukturne karakteristike ekosustava. Analitički pristup strukturiran je u tri faze. Prva faza analizira platformske karakteristike prema volumenu produkcije, angažmanu publike i dosegu sadržaja. Druga faza identificira najproduktivnije i najutjecajnije medijske izvore. Treća faza sintetizira sve nalaze kroz sveobuhvatnu mapu utjecaja.
+Mapa koristi kvantitativnu analizu medijskog sadržaja kako bi se identificirale najvažnije karakteristike digitalnog katoličkog medijskog ekosustava. Analitički pristup strukturiran je u tri faze. Prva faza analizira platformske karakteristike prema volumenu produkcije, angažmanu publike i dosegu sadržaja. Druga faza identificira najproduktivnije i najutjecajnije medijske izvore. Treća faza sintetizira sve nalaze kroz sveobuhvatnu mapu utjecaja.
 
 Tri temeljna pitanja vode ovo istraživanje. Gdje se odvija rasprava? Ovdje analiziramo glavne platforme, uključujući web portale, YouTube, Facebook i druge digitalne prostore. Tko su glavni akteri? Identificiramo najproduktivnije i najutjecajnije medijske izvore. Kakva je dinamika utjecaja? Uspoređujemo doseg i angažman kako bismo razumjeli različite strategije komunikacijskog djelovanja.
 
@@ -169,9 +169,9 @@ platform_colors <- c(
 
 # Topografija digitalnog prostora
 
-Razumijevanje ekosustava počinje analizom glavnih platformi. Svaka platforma nudi specifične komunikacijske mogućnosti koje oblikuju način na koji akteri proizvode sadržaj i način na koji publika reagira. Ova sekcija ispituje tri temeljne metrike koje određuju digitalnu komunikaciju o katoličkoj tematici.
+Razumijevanje ekosustava počinje analizom glavnih platformi. Svaka platforma nudi specifične komunikacijske mogućnosti koje oblikuju način na koji akteri proizvode sadržaj i način na koji publika reagira. Ovaj segment ispituje tri važna pokazatelja digitalne komunikacije:
 
-## Distribucija produkcije sadržaja prema platformama
+## Distribucija sadržaja po platformama
 
 Grafikon koji slijedi prikazuje apsolutnu prevlast tradicionalnih web portala kao glavnih proizvođača sadržaja. Kroz sve promatrane godine web generira znatno više objava od svih ostalih platformi zajedno. Istovremeno je primjetan kontinuirani rast volumena sadržaja na YouTubeu, što upućuje na sve veću važnost video formata u komunikacijskim strategijama aktera.
 
@@ -210,9 +210,7 @@ print(plot_volume)
 
 Ova prevlast weba nije samo brojčana. Ona odražava ulogu tradicionalnih medija kao čuvara vijesti u hrvatskom društvu. Portali poput vecernji.hr brzo reagiraju na crkvene događaje, bilo da se radi o papinskim posjetima ili lokalnim blagdanima, stvarajući široku raspravu. Međutim, ta širina ponekad dolazi na račun dubine. Web portali postavljaju agendu za daljnju raspravu na drugim platformama i funkcioniraju kao primarni kanali distribucije informacija o katoličkoj tematici.
 
-Prelazak na analizu angažmana otkriva kako struktura ekosustava postaje složenija kada se fokus pomakne s produkcije na recepciju sadržaja.
-
-## Distribucija angažmana publike prema platformama
+## Distribucija angažmana publike po platformama
 
 Iako web i dalje vodi u apsolutnom iznosu interakcija, YouTube i Facebook zauzimaju značajno veći udio u angažmanu nego što imaju u volumenu objava. Ovaj nalaz predstavlja prvi pokazatelj važne asimetrije. Web proizvodi najviše sadržaja, ali društvene mreže i video platforme uspješnije potiču direktan angažman publike.
 
@@ -251,7 +249,7 @@ print(plot_interactions)
 
 Apsolutni brojevi korisni su za razumijevanje razmjera, ali relativni udjeli otkrivaju pravu dinamiku unutar ekosustava. Sljedeća vizualizacija stoga uspoređuje udio svake platforme u ukupnom broju objava, interakcija i dosega.
 
-## Relativna važnost platformi u ekosustavu
+## Relativna važnost platformi 
 
 Ova vizualizacija otkriva asimetriju utjecaja. Na lijevom panelu, koji prikazuje objave, web čini oko 80 posto svih objava. U srednjem panelu, koji prikazuje interakcije, udio weba pada na približno 70 do 75 posto, dok udio YouTubea raste i doseže gotovo 20 posto u 2023. godini. Na desnom panelu, koji prikazuje doseg, vidljiv je sličan trend gdje web gubi dio svoje prevlasti u korist društvenih i video platformi.
 
@@ -313,13 +311,13 @@ Nakon makro pregleda strukturnih karakteristika prelazimo na identifikaciju najv
 
 ## Rangiranje medijskih aktera prema metrikama angažmana
 
-Prvo rangiranje aktera provodimo prema najdirektnijoj mjeri angažmana publike, odnosno prema ukupnom broju interakcija. Rezultati otkrivaju jasnu podjelu prema platformskim karakteristikama.
+Prvo rangiranje aktera provodimo prema angažmanu publike, odnosno prema ukupnom broju interakcija. Rezultati pokazuju jasnu podjelu prema platformskim karakteristikama.
 
 Na web platformi prednjače veliki mainstream mediji poput vecernji.hr, jutarnji.hr i index.hr, uz specijalizirane vjerske portale kao što je bitno.net. Ovi portali spajaju visoku produktivnost sa širokim dosegom i postavljaju agendu javne rasprave o katoličkoj tematici.
 
-YouTube platformu karakteriziraju isključivo specijalizirani kanali. Među njima prednjače LaudatoTV i T Studio, uz značajnu prisutnost pojedinačnih svećenika i župa. Ovi akteri grade dugoročne odnose s publikom kroz redovitu video produkciju.
+YouTube platformu karakteriziraju isključivo specijalizirani kanali. Među njima prednjače LaudatoTV, uz značajnu prisutnost pojedinačnih svećenika i župa. Ovi akteri grade dugoročne odnose s publikom kroz redovitu video produkciju.
 
-Facebook scenu karakterizira mješavina mainstream medija i specijaliziranih stranica. To odražava hibridnu prirodu platforme koja spaja informativnu i zajedničarsku funkciju.
+Facebook scenu karakterizira mješavina mainstream medija i specijaliziranih stranica. To odražava hibridnu prirodu platforme koja spaja funkcije informiranja i povezivanja zajednice.
 
 Veličina točke na grafikonu predstavlja produktivnost aktera mjerenu brojem objava. Ovaj vizualni element otkriva različite komunikacijske strategije. Neki akteri objavljuju puno sadržaja s manjim prosječnim angažmanom po objavi. Drugi objavljuju rjeđe, ali s izraženim odjekom. Ne postoji jedinstvena formula uspjeha. Važna je prilagodba strategije specifičnostima platforme i publike.
 
