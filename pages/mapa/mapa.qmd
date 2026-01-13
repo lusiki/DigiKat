@@ -256,7 +256,7 @@ Ova vizualizacija otkriva asimetriju utjecaja. Na lijevom panelu, koji prikazuje
 ```{r}
 #| label: plot-shares
 #| fig-width: 18
-#| fig-height: 8
+#| fig-height: 11
 
 plot_share_posts <- proportions_summary %>%
   filter(!is.na(SOURCE_TYPE)) %>%
@@ -379,7 +379,7 @@ Osi grafikona prikazane su na logaritamskoj skali kako bi se bolje prikazao šir
 ```{r}
 #| label: plot-actor-map
 #| fig-width: 18
-#| fig-height: 8
+#| fig-height: 11
 
 create_actor_map_plot <- function(data, platform_name, platform_color) {
   if(nrow(data) < 2) { return(ggplot() + labs(title = paste("Nema dovoljno podataka za", platform_name)) + theme_void()) }
