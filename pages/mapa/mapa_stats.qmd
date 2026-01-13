@@ -125,17 +125,17 @@ dta_with_themes <- bind_cols(dta_stratified_sample, theme_analysis_data)
 
 ## Uvod u analizu sadržaja diskursa
 
-Nakon mapiranja glavnih aktera i platformi u našoj [prvoj analizi](https://lusiki.github.io/DigiKat/mapa.html), ovo istraživanje usmjerava analitički fokus na sadržajnu strukturu digitalnog diskursa. Primjenjujući metode obrade prirodnog jezika na korpusu od preko 610 tisuća medijskih objava u razdoblju 2021. do 2025., istraživanje premješta fokus s pitanja tko i gdje na temeljno pitanje o čemu se govori.
+Nakon analize glavnih aktera i platformi u [prvoj mapi](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/mapa/mapa.html), ovo istraživanje usmjerava analitički fokus na sadržaj digitalnog diskursa. Primjenjujući metode obrade prirodnog jezika na korpusu od preko 610 tisuća medijskih objava u razdoblju 2021. do 2025., analiza premješta fokus s pitanja tko i gdje na pitanje o čemu se govori.
 
-Cilj je stvoriti anatomiju diskursa koja obuhvaća tri analitičke razine. Prva razina uključuje identifikaciju glavnih tematskih kategorija koje strukturiraju raspravu. Druga razina obuhvaća mjerenje njihovog intenziteta, utjecaja i polarizacijskog potencijala. Treća razina otkriva obrasce međusobne povezanosti tema i njihove temporalne dinamike.
+Cilj je stvoriti anatomiju diskursa koja obuhvaća tri razine. Prva razina uključuje identifikaciju glavnih tematskih kategorija. Druga razina obuhvaća mjerenje njihovog intenziteta, utjecaja i polarizacijskog potencijala. Treća razina otkriva obrasce međusobne povezanosti tema i njihove temporalne dinamike.
 
-Istraživanje koristi vođeni pristup tematskom modeliranju. Na temelju teološke i komunikološke ekspertize definirano je 16 glavnih tematskih kategorija. Ovaj pristup omogućuje preciznu i interpretativnu klasifikaciju sadržaja, nadilažeći ograničenja isključivo strojnog učenja koje često generira tematske kategorije slabije interpretabilnosti.
+Analiza koristi vođeni pristup tematskom modeliranju. Na temelju teološke i komunikološke ekspertize definirano je 16 glavnih tematskih kategorija. Ovaj pristup omogućuje preciznu i interpretativnu klasifikaciju sadržaja, nadilažeći ograničenja isključivo strojnog učenja koje često generira tematske kategorije slabije interpretabilnosti.
 
 ## Leksička struktura korpusa
 
-Prije detaljne tematske analize, prezentiramo pogled iz široke perspektive na leksičku strukturu korpusa. Sljedeći oblak riječi prikazuje 100 najfrekventnijih smislenih riječi, odnosno imenica, pridjeva i glagola, u cjelokupnom korpusu od preko 250.000 medijskih objava. Veličina svake riječi proporcionalna je njenoj ukupnoj frekvenciji u korpusu.
+Prije detaljne tematske analize, prezentiramo pogled iz široke perspektive na leksičku strukturu korpusa. Sljedeći oblak riječi prikazuje 100 najfrekventnijih riječi, odnosno imenica, pridjeva i glagola, u cjelokupnom korpusu od preko 250.000 medijskih objava. Veličina svake riječi proporcionalna je njenoj ukupnoj frekvenciji u korpusu.
 
-Ovaj vizualni sažetak odmah otkriva središnje entitete i koncepte koji čine srž diskursa. Prednjače riječi crkva, papa, biskup, Hrvatska, život, godina, čovjek, vjera i molitva, što upućuje na temeljne koncepte i aktere katoličkog digitalnog prostora.
+Ovaj vizualni sažetak odmah otkriva središnje entitete i koncepte koji čine srž diskursa. Prednjače riječi crkva, papa, biskup, Hrvatska, život, godina, čovjek, vjera i molitva, što upućuje na glavne koncepte i aktere katoličkog digitalnog prostora.
 
 ```{r}
 #| label: plot-wordcloud
