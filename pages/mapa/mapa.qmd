@@ -188,12 +188,12 @@ Razumijevanje katoličkog medijskog ekosustava počinje analizom glavnih digital
 
 ## Distribucija sadržaja po platformama
 
-Grafikon koji slijedi prikazuje apsolutnu prevlast tradicionalnih web portala kao glavnih proizvođača sadržaja. Kroz sve promatrane godine web generira znatno više objava od svih ostalih platformi zajedno. Istovremeno je primjetan kontinuirani rast volumena sadržaja na YouTubeu, što upućuje na sve veću važnost video formata u komunikacijskim strategijama aktera.
+Grafikon koji slijedi prikazuje apsolutnu prevlast tradicionalnih web portala kao glavnih proizvođača sadržaja. Kroz sve promatrane godine web generira znatno više objava od svih ostalih platformi zajedno. Istovremeno je primjetan kontinuirani rast volumena sadržaja na YouTubeu, što upućuje na sve veću važnost video formata u komunikacijskim strategijama katoličkih kreatora.
 
 ```{r}
 #| label: plot-volume
 #| fig-width: 14
-#| fig-height: 9
+#| fig-height: 11
 
 plot_volume <- platform_summary %>%
   filter(!is.na(SOURCE_TYPE)) %>%
@@ -223,7 +223,7 @@ plot_volume <- platform_summary %>%
 print(plot_volume)
 ```
 
-Ova prevlast weba nije samo brojčana. Ona odražava ulogu tradicionalnih medija kao čuvara vijesti u hrvatskom društvu. Portali poput vecernji.hr brzo reagiraju na crkvene događaje, bilo da se radi o papinskim posjetima ili lokalnim blagdanima, stvarajući široku raspravu. Međutim, ta širina ponekad dolazi na račun dubine. Web portali postavljaju agendu za daljnju raspravu na drugim platformama i funkcioniraju kao primarni kanali distribucije informacija o katoličkoj tematici.
+Dominacija websadržaja nije samo brojčana. Ona odražava ulogu tradicionalnih medija kao čuvara vijesti u hrvatskom društvu. Njaveći portali poput index.hr, vecernji.hr i 24sata.hr  brzo reagiraju na crkvene događaje, bilo da se radi o papinskim posjetima ili lokalnim blagdanima, stvarajući široku raspravu. Međutim, ta širina ponekad dolazi na račun dubine. Web portali postavljaju agendu za daljnju raspravu na drugim platformama i funkcioniraju kao primarni kanali distribucije informacija o katoličkoj tematici.
 
 ## Distribucija angažmana publike po platformama
 
@@ -232,7 +232,7 @@ Iako web i dalje vodi u apsolutnom iznosu interakcija, YouTube i Facebook zauzim
 ```{r}
 #| label: plot-interaction
 #| fig-width: 14
-#| fig-height: 9
+#| fig-height: 11
 
 plot_interactions <- platform_summary %>%
   filter(!is.na(SOURCE_TYPE)) %>%
@@ -266,7 +266,7 @@ Apsolutni brojevi korisni su za razumijevanje razmjera, ali relativni udjeli otk
 
 ## Relativna važnost platformi 
 
-Ova vizualizacija otkriva asimetriju utjecaja. Na lijevom panelu, koji prikazuje objave, web čini oko 80 posto svih objava. U srednjem panelu, koji prikazuje interakcije, udio weba pada na približno 70 do 75 posto, dok udio YouTubea raste i doseže gotovo 20 posto u 2023. godini. Na desnom panelu, koji prikazuje doseg, vidljiv je sličan trend gdje web gubi dio svoje prevlasti u korist društvenih i video platformi.
+Ova vizualizacija daje dodatni uvid u asimetriju utjecaja različitih platformi. Na lijevom panelu, koji prikazuje objave, web čini oko 80 posto svih objava. U srednjem panelu, koji prikazuje interakcije, udio weba pada na približno 70 do 75 posto, dok udio YouTubea raste i doseže gotovo 20 posto u 2023. godini. Na desnom panelu, koji prikazuje doseg, vidljiv je sličan trend gdje web gubi dio svoje prevlasti u korist društvenih i video platformi.
 
 ```{r}
 #| label: plot-shares
@@ -322,11 +322,11 @@ S ovim razumijevanjem platformske dinamike, analiza se sada može usmjeriti na p
 
 # Najutjecajniji akteri u ekosustavu
 
-Nakon makro pregleda strukturnih karakteristika prelazimo na identifikaciju najvažnijih pojedinačnih aktera unutar tri glavna ekosustava. Fokus je na web portalima, YouTube kanalima i Facebook stranicama kao primarnim arenama produkcije i distribucije sadržaja o katoličkoj tematici.
+Nakon makro pregleda strukturnih karakteristika digitalnog medijskog prostora, analiza se premješta na identifikaciju najvažnijih aktera unutar tri glavna ekosustava. Fokus je na web portalima, YouTube kanalima i Facebook stranicama kao primarnim arenama produkcije i distribucije sadržaja o katoličkoj tematici.
 
-## Rangiranje medijskih aktera prema metrikama angažmana
+## Rangiranje medijskih aktera prema angažmanu
 
-Prvo rangiranje aktera provodimo prema angažmanu publike, odnosno prema ukupnom broju interakcija. Rezultati pokazuju jasnu podjelu prema platformskim karakteristikama.
+Prvo rangiranje aktera se provodi prema angažmanu publike, odnosno prema ukupnom broju interakcija. Rezultati pokazuju jasnu podjelu prema platformskim karakteristikama.
 
 Na web platformi prednjače veliki mainstream mediji poput vecernji.hr, jutarnji.hr i index.hr, uz specijalizirane vjerske portale kao što je bitno.net. Ovi portali spajaju visoku produktivnost sa širokim dosegom i postavljaju agendu javne rasprave o katoličkoj tematici.
 
@@ -339,7 +339,7 @@ Veličina točke na grafikonu predstavlja produktivnost aktera mjerenu brojem ob
 ```{r}
 #| label: plot-lollipops-interactions
 #| fig-width: 16
-#| fig-height: 12
+#| fig-height: 14
 
 create_top_source_plot <- function(data, platform_name, platform_color) {
   data <- data %>% arrange(total_interactions) %>% mutate(FROM = factor(FROM, levels = FROM))
@@ -394,7 +394,7 @@ Osi grafikona prikazane su na logaritamskoj skali kako bi se bolje prikazao šir
 ```{r}
 #| label: plot-actor-map
 #| fig-width: 18
-#| fig-height: 11
+#| fig-height: 14
 
 create_actor_map_plot <- function(data, platform_name, platform_color) {
   if(nrow(data) < 2) { return(ggplot() + labs(title = paste("Nema dovoljno podataka za", platform_name)) + theme_void()) }
