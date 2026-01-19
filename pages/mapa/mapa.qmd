@@ -184,7 +184,7 @@ platform_colors <- c(
 
 # Topografija digitalnog prostora
 
-Razumijevanje ekosustava počinje analizom glavnih platformi. Svaka platforma nudi specifične komunikacijske mogućnosti koje oblikuju način na koji akteri proizvode sadržaj i način na koji publika reagira. Ovaj segment ispituje tri važna pokazatelja digitalne komunikacije:
+Razumijevanje katoličkog medijskog ekosustava počinje analizom glavnih digitalnih platformi. Svaka platforma nudi specifične komunikacijske mogućnosti koje oblikuju način na koji akteri proizvode sadržaj i način na koji publika reagira. Ovaj dio mape analizira tri važna pokazatelja digitalne komunikacije:
 
 ## Distribucija sadržaja po platformama
 
