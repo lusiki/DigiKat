@@ -29,9 +29,9 @@ Dobrodošli na službenu stranicu projekta. Ovaj trogodišnji projekt (**2025.�
 Iako digitalni mediji predstavljaju dominantnu komponentu javnog prostora, u Hrvatskoj nedostaje sustavni pregled njihovih tematskih sastavnica. Ovaj projekt ispunjava tu prazninu fokusirajući se na specifičnu i društveno relevantnu nišu **sadržaja s katoličkom tematikom**.
 
 
-Koristeći napredne metode iz područja [računalnih društvenih znanosti](https://pure.rug.nl/ws/portalfiles/portal/140988937/Manifesto_of_computational_social_science.pdf), cilj nam je:
+Koristeći metode iz područja [računalnih društvenih znanosti](https://pure.rug.nl/ws/portalfiles/portal/140988937/Manifesto_of_computational_social_science.pdf), cilj nam je:
 
-1. Izgraditi sveobuhvatnu bazu podataka digitalnih objava.
+1. Izgraditi bazu podataka svih digitalnih objava.
 2. Analizirati značajke i narative objava.
 3. Utvrditi povezanost sa širim društvenim trendovima.
 
@@ -48,7 +48,7 @@ Fokusirani smo na pet pitanja koja definiraju smjer istraživanja:
 
 ## Metodologija
 
-Projekt integrira tehnike podatkovne znanosti s metodama računalnih društvenih znanosti. Metodološki okvir uključuje:
+Projekt koristi metode iz računalnih društvenih znanosti:
 
 * **Web scraping i API integracije:** Automatizirano prikupljanje velikih količina podataka s informativnih portala i društvenih mreža.
 * **Obradu prirodnog jezika (NLP):** Korištenje tematskog modeliranja, analize sentimenta i prepoznavanja imenovanih entiteta za strukturiranje tekstualnih podataka.
@@ -79,7 +79,7 @@ U projektu sudjeluje interdisciplinarni tim znanstvenika iz područja ekonomike,
 
 ## Rezultati i publikacije
 
-*Ova sekcija će se ažurirati poveznicama na recenzirane znanstvene radove, konferencijska izlaganja, izvještaje i podatkovne setove kako budu dostupni.*
+*Ova sekcija će se ažurirati poveznicama na recenzirane znanstvene radove, konferencijska izlaganja, izvještaje i podatkovne skupove kako budu dostupni.*
 
 
 ## Kako citirati

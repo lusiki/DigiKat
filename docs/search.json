@@ -151,7 +151,7 @@
     "href": "pages/index.html#o-projektu",
     "title": "Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
     "section": "O projektu",
-    "text": "O projektu\nDobrodošli na službenu stranicu projekta. Ovaj trogodišnji projekt (2025.–2027.) provodi se na Odjelu za komunikologiju Hrvatskog katoličkog sveučilišta.\nIako digitalni mediji predstavljaju dominantnu komponentu javnog prostora, u Hrvatskoj nedostaje sustavni pregled njihovih tematskih sastavnica. Ovaj projekt ispunjava tu prazninu fokusirajući se na specifičnu i društveno relevantnu nišu sadržaja s katoličkom tematikom.\nKoristeći napredne metode iz područja računalnih društvenih znanosti, cilj nam je:\n\nIzgraditi sveobuhvatnu bazu podataka digitalnih objava.\nAnalizirati značajke i narative objava.\nUtvrditi povezanost sa širim društvenim trendovima."
+    "text": "O projektu\nDobrodošli na službenu stranicu projekta. Ovaj trogodišnji projekt (2025.–2027.) provodi se na Odjelu za komunikologiju Hrvatskog katoličkog sveučilišta.\nIako digitalni mediji predstavljaju dominantnu komponentu javnog prostora, u Hrvatskoj nedostaje sustavni pregled njihovih tematskih sastavnica. Ovaj projekt ispunjava tu prazninu fokusirajući se na specifičnu i društveno relevantnu nišu sadržaja s katoličkom tematikom.\nKoristeći metode iz područja računalnih društvenih znanosti, cilj nam je:\n\nIzgraditi bazu podataka svih digitalnih objava.\nAnalizirati značajke i narative objava.\nUtvrditi povezanost sa širim društvenim trendovima."
   },
   {
     "objectID": "pages/index.html#istraživačka-pitanja",
@@ -165,7 +165,7 @@
     "href": "pages/index.html#metodologija",
     "title": "Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
     "section": "Metodologija",
-    "text": "Metodologija\nProjekt integrira tehnike podatkovne znanosti s metodama računalnih društvenih znanosti. Metodološki okvir uključuje:\n\nWeb scraping i API integracije: Automatizirano prikupljanje velikih količina podataka s informativnih portala i društvenih mreža.\nObradu prirodnog jezika (NLP): Korištenje tematskog modeliranja, analize sentimenta i prepoznavanja imenovanih entiteta za strukturiranje tekstualnih podataka.\nMrežnu analiza: Mapiranje odnosa između aktera, tema i medijskih izvora.\nStatističku analiza: Identifikacija trendova, korelacija i obrazaca unutar prikupljenih podataka.\n\n\n\n\n\n\n\nNoteOtvorena znanost\n\n\n\nSav programski kod i, gdje je to moguće, podaci bit će dostupni u skladu s FAIR principima za otvorenu znanost."
+    "text": "Metodologija\nProjekt koristi metode iz računalnih društvenih znanosti:\n\nWeb scraping i API integracije: Automatizirano prikupljanje velikih količina podataka s informativnih portala i društvenih mreža.\nObradu prirodnog jezika (NLP): Korištenje tematskog modeliranja, analize sentimenta i prepoznavanja imenovanih entiteta za strukturiranje tekstualnih podataka.\nMrežnu analiza: Mapiranje odnosa između aktera, tema i medijskih izvora.\nStatističku analiza: Identifikacija trendova, korelacija i obrazaca unutar prikupljenih podataka.\n\n\n\n\n\n\n\nNoteOtvorena znanost\n\n\n\nSav programski kod i, gdje je to moguće, podaci bit će dostupni u skladu s FAIR principima za otvorenu znanost."
   },
   {
     "objectID": "pages/index.html#projektni-tim",
@@ -179,7 +179,7 @@
     "href": "pages/index.html#rezultati-i-publikacije",
     "title": "Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
     "section": "Rezultati i publikacije",
-    "text": "Rezultati i publikacije\nOva sekcija će se ažurirati poveznicama na recenzirane znanstvene radove, konferencijska izlaganja, izvještaje i podatkovne setove kako budu dostupni."
+    "text": "Rezultati i publikacije\nOva sekcija će se ažurirati poveznicama na recenzirane znanstvene radove, konferencijska izlaganja, izvještaje i podatkovne skupove kako budu dostupni."
   },
   {
     "objectID": "pages/index.html#kako-citirati",
