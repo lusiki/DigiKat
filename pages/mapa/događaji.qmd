@@ -291,9 +291,9 @@ dta_final <- dta_temp %>%
 
 ## Uvod u dinamičku analizu 
 
-Nakon što su prethodne faze istraživanja mapirale strukturu aktera, identificirale tematske kategorije i analizirale emocionalnu i konfliktnu atmosferu, ova konačna analitička faza prelazi sa statičkog opisa na dinamičko modeliranje. Temeljna promjena perspektive sastoji se u razumijevanju digitalnog diskursa ne kao fiksne strukture, već kao živog ekosustava koji manifestira kompleksne reakcijske obrasce na vanjske podražaje, odnosno stvarne društvene, političke i vjerske događaje.
+Nakon što su prethodne faze istraživanja mapirale strukturu [aktera i platformi](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/mapa/mapa.html), identificirale [tematskie](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/mapa/mapa_stats.html) kategorije i analizirale [emocionalnu i konfliktnu atmosferu](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/mapa/doga%C4%91aji.html), ova zadnja analitička mapa prelazi sa statičkog opisa na dinamičko modeliranje. Temeljna promjena perspektive sastoji se u razumijevanju digitalnog diskursa ne kao fiksne strukture, već kao živog ekosustava koji manifestira kompleksne reakcijske obrasce na vanjske podražaje, odnosno stvarne društvene, političke i vjerske događaje.
 
-Ovaj pristup omogućuje odgovaranje na tri važna pitanja koja transcendiraju statičku analizu. Prvo pitanje ispituje mogućnost automatske i pouzdane detekcije trenutaka neuobičajene medijske aktivnosti koja signalizira značajne događaje. Drugo pitanje istražuje manifestiraju li različite vrste događaja prepoznatljive i distinktivne digitalne potpise u terminima volumena, konfliktnosti i tonaliteta diskursa. Treće pitanje analizira kako se dugoročni narativi o specifičnim temama ili ličnostima evolviraju i rekontekstualiziraju kroz vrijeme.
+Ovaj pristup omogućuje odgovog na tri važna pitanja koja transcendiraju statičku analizu. Prvo pitanje ispituje mogućnost automatske i pouzdane detekcije trenutaka neuobičajene medijske aktivnosti koja signalizira značajne događaje. Drugo pitanje istražuje manifestiraju li različite vrste događaja prepoznatljive i distinktivne digitalne potpise u terminima volumena, konfliktnosti i tonaliteta diskursa. Treće pitanje analizira kako se dugoročni narativi o specifičnim temama ili ličnostima evolviraju i rekontekstualiziraju kroz vrijeme.
 
 Istraživanje uvodi tri metodološke inovacije. Prva je digitalni seizmograf koji kvantitativno detektira dane ekstremnih odstupanja u medijskoj aktivnosti. Druga je narativni seizmograf koji vizualizira životni ciklus pojedinačnih događaja kroz simultano praćenje volumena, konfliktnosti i sentimenta. Treća je longitudinalna analiza narativne evolucije koja mjeri ne samo frekvenciju asocijacija već i atmosfersku valenciju tih asocijacija.
 
@@ -301,7 +301,7 @@ Istraživanje uvodi tri metodološke inovacije. Prva je digitalni seizmograf koj
 
 ## Digitalni seizmograf kao instrument detekcije najbitnijih događaja
 
-Za identifikaciju najvažnijih trenutaka u promatranom razdoblju, razvijen je digitalni seizmograf koji reprezentira metodološki pristup detekciji anomalija u vremenskim serijama medijskog diskursa. Seizmograf operira na principu standardiziranog odstupanja, gdje se za svaki dan izračunava Z score koji mjeri koliko standardnih devijacija vrijednost odstupa od prosjeka unutar godine.
+Za identifikaciju najvažnijih trenutaka u promatranom razdoblju, razvijen je digitalni seizmograf koji reprezentira metodološki pristup detekciji anomalija u vremenskim serijama medijskog diskursa. Seizmograf radi na principu standardiziranog odstupanja, gdje se za svaki dan izračunava Z score, koji mjeri koliko standardnih devijacija vrijednost odstupa od prosjeka unutar godine.
 
 Detektiraju se dva tipa anomalija. Prvi tip su vrhunci volumena produkcije, definirani kao dani kada je broj objava nadmašio prag od 99. percentila standardizirane distribucije. Drugi tip su vrhunci intenziteta konflikta, definirani kao dani kada je prosječna razina konfliktnog jezika premašila isti prag. Kombinacijom ova dva kriterija, seizmograf identificira trenutke kada diskurs nije samo intenzivniji, već i kvalitativno drugačiji od uobičajene medijske proizvodnje.
 
@@ -463,7 +463,7 @@ Pozitivan sentiment koji karakterizira Uskrs evocira toplinu tradicije u konteks
 
 ## Longitudinalna analiza evolucije narativa o blaženom Alojziju Stepincu
 
-Umjesto analize pojedinačnih trenutkovnih događaja, konačna faza istražuje kako se jedan dugotrajni i kompleksni narativ transformira kroz vrijeme. Analiza prati blaženog Alojzija Stepinca, ličnost koja okupira jedinstveno složenu poziciju u hrvatskom društvu, istovremeno reprezentirajući vjersku pobožnost, nacionalni identitet i povijesnu kontroverzu.
+Umjesto analize pojedinačnih događaja, konačna faza istražuje kako se jedan dugotrajni i kompleksni narativ transformira kroz vrijeme. Analiza prati blaženog Alojzija Stepinca, ličnost koja okupira jedinstveno složenu poziciju u hrvatskom društvu, istovremeno reprezentirajući vjersku pobožnost, nacionalni identitet i povijesnu kontroverzu.
 
 Metodologija identificira koje su se riječi najsnažnije asocirale s lematiziranom formom Stepinac u svakoj promatranoj godini, te mjeri prosječni tonalitet tekstova u kojima se te specifične narativne kombinacije pojavljuju. Ovo omogućuje praćenje ne samo frekvencije asocijacija, već i atmosferske valencije narativnih okvira.
 

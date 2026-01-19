@@ -336,9 +336,9 @@ Ljutnja u temama poput Politike i odnosa s državom nije samo statistička pojav
 
 ---
 
-## Relativni indeks konflikta kao kontekstualno prilagođena metrika
+## Relativni indeks konflikta  kao kontekstualno prilagođena metrika
 
-Tradicionalne metrike intenziteta konflikta ne uzimaju u obzir kontekstualne baseline karakteristike. Korištenje konfliktnog vokabulara u članku o povijesnim ratnim događajima nije ekvivalentno njegovoj uporabi u članku o liturgijskim praksama. Relativni indeks konflikta predstavlja metodološku inovaciju koja mjeri koliko je pojedini tekst neočekivano agresivniji ili pomirljiviji od *baseline* očekivanja temeljenog na prosječnom diskursu njegovog izvora i njegove tematske kategorije.
+Tradicionalne metrike intenziteta konflikta ne uzimaju u obzir kontekstualne baseline karakteristike. Korištenje konfliktnog vokabulara u članku o povijesnim ratnim događajima nije ekvivalentno njegovoj uporabi u članku o liturgijskim praksama. Relativni indeks konflikta (RIK) predstavlja metodološku inovaciju koja mjeri koliko je pojedini tekst neočekivano agresivniji ili pomirljiviji od *baseline* očekivanja temeljenog na prosječnom diskursu njegovog izvora i njegove tematske kategorije.
 
 ```{r}
 #| label: rci-calculation
@@ -371,7 +371,7 @@ dta_atmosphere_final <- dta_atmosphere %>%
 
 ### Tipologija medijskih strategija konfliktnog diskursa
 
-Sljedeći grafikon koristi Relativni indeks konflikta za identifikaciju i klasifikaciju medijskih strategija u korištenju konfliktnog jezika. Horizontalna os predstavlja prosječnu, baznu razinu konfliktnog jezika karakterističnu za svaki medij. Vertikalna os predstavlja varijabilnost u korištenju konfliktnog jezika, mjerenu standardnom devijacijom RCI vrijednosti. Veličina točke označava ukupnu prisutnost medija u korpusu.
+Sljedeći grafikon koristi RIK za identifikaciju i klasifikaciju medijskih strategija u korištenju konfliktnog jezika. Horizontalna os predstavlja prosječnu, baznu razinu konfliktnog jezika karakterističnu za svaki medij. Vertikalna os predstavlja varijabilnost u korištenju konfliktnog jezika, mjerenu standardnom devijacijom RCI vrijednosti. Veličina točke označava ukupnu prisutnost medija u korpusu.
 
 ```{r}
 #| label: plot-rci-strategy
@@ -420,9 +420,9 @@ Ova vizualizacija otkriva postojanje četiri fundamentalno različita modela kom
 
 ##  Mreža narativne atmosfere
 
-Konačna sinteza integrira sve analitičke dimenzije u jednu kompleksnu mrežnu vizualizaciju. Mreža prikazuje kako se različite tematske kategorije povezuju u šire narativne okvire, dok vizualne karakteristike svake veze otkrivaju atmosferske osobine tih narativnih kombinacija.
+Konačna sinteza integrira sve analitičke komponente u jednu kompleksnu mrežnu vizualizaciju. Mreža prikazuje kako se različite tematske kategorije povezuju u šire narativne okvire, dok vizualne karakteristike svake veze otkrivaju osobine tih narativnih kombinacija.
 
-Boja veze označava prosječni tonalitet, gdje plave nijanse označavaju pozitivno obojene narativne spojeve, a crvene nijanse negativno obojene. Debljina veze označava prosječni intenzitet konfliktnog jezika, gdje deblje linije upućuju na konfliktnije narative. Prozirnost veze označava pouzdanost veze, mjerenu brojem tekstova na kojima se temelji analiza, gdje tamnije linije predstavljaju statistički robusnije nalaze.
+Boja veze označava prosječni tonalitet, gdje plave nijanse označavaju pozitivno obojene narativne spojeve, a crne nijanse negativno obojene. Debljina veze označava prosječni intenzitet konfliktnog jezika, gdje deblje linije upućuju na konfliktnije narative. Prozirnost veze označava pouzdanost veze, mjerenu brojem tekstova na kojima se temelji analiza, gdje tamnije linije predstavljaju statistički robusnije nalaze.
 
 ```{r}
 #| label: plot-network
@@ -544,7 +544,7 @@ graph_from_data_frame(graph_data, directed = FALSE) %>%
     )
 ```
 
-Vizualizacija mreže otkriva temeljnu strukturu hrvatskog medijskog prostora katoličke tematike kroz prizmu atmosfere i konflikta.
+Vizualizacija mreže otkriva strukturu hrvatskog medijskog prostora katoličke tematike kroz prizmu atmosfere i konflikta.
 
 **Dva jasno razgraničena narativna svijeta.** Prvi je društveno politička arena, smještena u lijevom i donjem dijelu mreže. Ovaj prostor karakterizira gusta isprepletenost tematskih kategorija Politike i odnosa s državom, Povijesti i nacionalnog identiteta, Bioetike i kulturnih ratova te Unutarcrkvenih prijepora i ideologija. Veze između ovih kategorija manifestiraju izrazitu debljinu, što signalizira visok intenzitet konfliktnog jezika. Ovo predstavlja epicentar svih narativnih prijepora i kulturalnih ratova koji karakteriziraju hrvatski medijski prostor katoličke tematike.
 
@@ -558,7 +558,7 @@ Drugi narativni svijet je pastoralno institucionalna jezgra, pozicionirana u gor
 
 Dubinska analiza emocionalne i konfliktne strukture medijskog prostora katoličke tematike u Hrvatskoj razotkriva kompleksnu sliku koja transcendira jednostavne dihotomije. Rezultati istraživanja upućuju na postojanje sofisticiranih komunikacijskih strategija i dubinskih strukturnih obrazaca koji oblikuju način artikulacije vjere i Crkve u javnom diskursu.
 
-Tri fundamentalna nalaza izdvajaju se za razumijevanje atmosfere diskursa.
+Tri fundamentalna nalaza izdvajaju se za razumijevanje atmosfere diskursa:
 
 **Kontekstualno posredovano oblikovanje tonaliteta.** Istraživanje je empirijski verificiralo da tonalitet pojedine tematske kategorije nije inherentna karakteristika sadržaja, već rezultat strateškog emocionalnog uokvirivanja. Identičan sadržaj može biti artikuliran kao pozitivan ili negativan ovisno o psihološkim apelima koje medij aktivira, bilo da su to okviri Povjerenja i Radosti ili Ljutnje i Straha. Ovaj nalaz potvrđuje teorijsku poziciju da mediji ne funkcioniraju kao pasivni prenositelji informacija, već kao aktivni konstruktori atmosfere kroz stratešku selekciju emocionalnih registara.
 
@@ -568,4 +568,4 @@ Tri fundamentalna nalaza izdvajaju se za razumijevanje atmosfere diskursa.
 
 Ovi nalazi demonstriraju nužnost korištenja višeslojnih, kontekstualno prilagođenih analitičkih metoda koje mogu dekodirati suptilne komunikacijske strategije. Razumijevanje ovih strategija presudno je za interpretaciju javne percepcije Crkve i vjere u Hrvatskoj te za osmišljavanje učinkovitih komunikacijskih intervencija.
 
-Buduće faze istraživanja usmjerit će se na temporalnu dinamiku atmosfere kroz detekciju kritičnih događaja te na detaljniju analizu specifičnih fraza i narativnih struktura koje prevladavaju najkonfliktnijim tematskim kategorijama. Krajnji cilj ostaje stvaranje dinamičkog digitalnog opservatorija koji će omogućiti praćenje i analizu atmosfere medijskog prostora katoličke tematike u stvarnom vremenu, pružajući tako kontinuirani uvid u ove važne društvene procese.
+Zadnja analitička [mapa](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/mapa/doga%C4%91aji.html) usmjerit će se na temporalnu dinamiku atmosfere kroz detekciju kritičnih događaja te na detaljniju analizu specifičnih fraza i narativnih struktura koje prevladavaju izabranim tematskim kategorijama. Krajnji cilj ostaje stvaranje dinamičkog digitalnog opservatorija koji će omogućiti praćenje i analizu atmosfere medijskog prostora katoličke tematike u stvarnom vremenu, pružajući tako kontinuirani uvid u ove važne društvene procese.
