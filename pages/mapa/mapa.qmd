@@ -38,13 +38,28 @@ library(ggrepel)
 
 ## Mapiranje digitalne medijske arene
 
-Ovaj dokument predstavlja prvu analitičku mapu projekta koji istražuje reprezentaciju katoličke tematike u digitalnom medijskom prostoru Hrvatske. Analiza obuhvaća korpus od preko 610.000 medijskih objava prikupljenih između 1. siječnja 2021. i 31. prosinca 2025. Cilj je dati pregled arene u kojoj se odvijaju rasprave o katoličkim temama.
+Ovaj dokument predstavlja prvu analitičku mapu projekta. Analiza obuhvaća korpus od preko 610.000 medijskih objava prikupljenih između 1. siječnja 2021. i 31. prosinca 2025. Cilj mape je dati pregled katoličkog digitalnog medijskog prostora.
 
-Mapa koristi kvantitativnu analizu medijskog sadržaja kako bi se identificirale najvažnije karakteristike digitalnog katoličkog medijskog ekosustava. Analitički pristup strukturiran je u tri faze. Prva faza analizira platformske karakteristike prema volumenu produkcije, angažmanu publike i dosegu sadržaja. Druga faza identificira najproduktivnije i najutjecajnije medijske izvore. Treća faza sintetizira sve nalaze kroz sveobuhvatnu mapu utjecaja.
+Kvantitativna analiza medijskog sadržaja je provedena kako bi se identificirale najvažnije karakteristike digitalnog katoličkog medijskog ekosustava. Analitički pristup u ovoj mapi strukturiran je u tri dijela. Prvi analizira platformske karakteristike prema volumenu produkcije, angažmanu publike i dosegu sadržaja. Drugi identificira najproduktivnije i najutjecajnije medijske izvore. Treći sintetizira sve nalaze.
 
-Tri temeljna pitanja vode ovo istraživanje. Gdje se odvija rasprava? Ovdje analiziramo glavne platforme, uključujući web portale, YouTube, Facebook i druge digitalne prostore. Tko su glavni akteri? Identificiramo najproduktivnije i najutjecajnije medijske izvore. Kakva je dinamika utjecaja? Uspoređujemo doseg i angažman kako bismo razumjeli različite strategije komunikacijskog djelovanja.
+Tri glavna pitanja su u pozadini ove mape:
 
-Prije nego što nastavimo, potrebno je definirati temeljne metrike. Pod **volumenom** podrazumijevamo ukupan broj objava, što reflektira produktivnost aktera. **Angažman** označava ukupne interakcije, odnosno zbroj lajkova, komentara, dijeljenja i sličnih reakcija publike. **Doseg** (reach) predstavlja ukupan broj korisnika koji su potencijalno vidjeli sadržaj.
+* Gdje se odvija rasprava? Ovdje su analizirane glavne platforme, uključujući web portale, YouTube, Facebook i druge digitalne prostore. 
+
+* Tko su glavni akteri? Ovdje su identificirani najproduktivniji i najutjecajniji medijski izvori. 
+
+* Kakva je dinamika utjecaja? Ovdje su uspoređeni doseg i angažman u cilju razumijevanja različitih strategija komunikacijskog djelovanja.
+
+
+::: {.callout-note}
+## Prije nastavka, potrebno je definirati metrike koje se koriste u mapi.
+
+Pod **volumenom** podrazumijevamo ukupan broj objava, što reflektira produktivnost aktera. **Angažman** označava ukupne interakcije, odnosno zbroj lajkova, komentara, dijeljenja i sličnih reakcija publike. **Doseg** (reach) predstavlja ukupan broj korisnika koji su potencijalno vidjeli sadržaj.
+
+:::
+
+
+
 
 ```{r}
 #| label: data-preparation
