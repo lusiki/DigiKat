@@ -463,7 +463,7 @@ Pozitivan sentiment koji karakterizira Uskrs evocira toplinu tradicije u konteks
 
 ## Longitudinalna analiza evolucije narativa o blaženom Alojziju Stepincu
 
-Umjesto analize pojedinačnih događaja, konačna faza istražuje kako se jedan dugotrajni i kompleksni narativ transformira kroz vrijeme. Analiza prati blaženog Alojzija Stepinca, ličnost koja okupira jedinstveno složenu poziciju u hrvatskom društvu, istovremeno reprezentirajući vjersku pobožnost, nacionalni identitet i povijesnu kontroverzu.
+Umjesto analize pojedinačnih događaja, zadnji dio ove mape istražuje kako se jedan dugotrajni i kompleksni narativ transformira kroz vrijeme. Analiza prati blaženog Alojzija Stepinca, ličnost koja okupira jedinstveno složenu poziciju u hrvatskom društvu, istovremeno reprezentirajući vjersku pobožnost, nacionalni identitet i povijesnu kontroverzu.
 
 Metodologija identificira koje su se riječi najsnažnije asocirale s lematiziranom formom Stepinac u svakoj promatranoj godini, te mjeri prosječni tonalitet tekstova u kojima se te specifične narativne kombinacije pojavljuju. Ovo omogućuje praćenje ne samo frekvencije asocijacija, već i atmosferske valencije narativnih okvira.
 
@@ -534,7 +534,7 @@ Ovo predstavlja kvantitativnu evidenciju da veliki nacionalni i vjerski narativi
 
 Dinamička analiza utjecaja stvarnih događaja na digitalni diskurs razotkriva kako medijski prostor katoličke tematike funkcionira kao reaktivni ekosustav s prepoznatljivim obrascima odgovora na različite tipove vanjskih podražaja. Istraživanje je kvantitativno dokumentiralo mehanizme putem kojih se digitalni diskurs transformira u odgovoru na društvene, političke i vjerske događaje.
 
-Tri fundamentalna nalaza izdvajaju se za razumijevanje diskursne dinamike.
+Tri nalaza izdvajaju se za razumijevanje diskursne dinamike:
 
 **Validacija automatske detekcije kritičnih događaja.** Digitalni seizmograf demonstrirao je visoku preciznost u identifikaciji trenutaka neuobičajene medijske aktivnosti. Detektirani vrhunci medijske produkcije i intenziteta konflikta sustavno koincidiraju s poznatim važnim događajima, potvrđujući da su ekstremna odstupanja u diskursnim parametrima pouzdani indikatori društveno značajnih trenutaka. Ova metodološka validacija otvara mogućnost operacionalizacije automatiziranih sustava praćenja koji mogu u stvarnom vremenu signalizirati pojavu značajnih događaja.
 
