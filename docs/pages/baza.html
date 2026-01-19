@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-01-13">
+<meta name="dcterms.date" content="2026-01-19">
 
 <title>Baza podataka katoličkog digitalnog medijskog prostora (2021-2025) – DigiKat</title>
 <style>
@@ -279,7 +279,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 13, 2026</p>
+      <p class="date">January 19, 2026</p>
     </div>
   </div>
   
@@ -291,7 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Baza podataka sadrži <strong>612,065 zapisa</strong> medijskih objava prikupljenih tijekom 2021 - 2026 godina, fokusiranih na katoličke teme i sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za analizu medijskog diskursa, sentimenta i angažmana publike u domeni religijskih tema.</p>
+<p>Baza podataka sadrži <strong>612,065</strong> medijskih objava prikupljenih tijekom 2021 - 2026 godina, fokusiranih na katoličke teme i sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za analizu medijskog diskursa, sentimenta i angažmana publike u domeni katoličkih (religijskih) tema.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="table-responsive">
@@ -361,11 +361,11 @@ $ KEYWORD_NAME             : character 'opće' 'opće' 'opće' ...</code></pre>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped table-hover caption-top table-sm small">
-<caption>Broj zapisa po godinama</caption>
+<caption>Broj objava po godinama</caption>
 <thead>
 <tr class="header">
 <th style="text-align: right;" data-quarto-table-cell-role="th">Godina</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Broj zapisa</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Broj objava</th>
 </tr>
 </thead>
 <tbody>
@@ -1536,9 +1536,9 @@ $ KEYWORD_NAME             : character 'opće' 'opće' 'opće' ...</code></pre>
 </section>
 <section id="licence-i-citiranje" class="level1">
 <h1>Licence i citiranje</h1>
-<p>Molimo citirajte ovu bazu u svojim radovima koristeći sljedeći format</p>
+<p>Molimo citirajte ovu bazu u svojim radovima koristeći sljedeći format:</p>
 <blockquote class="blockquote">
-<p><strong>[Šikić, Luka/Hrvatsko katoličko sveučilište]</strong>. (2025). <em>Katolički digitalni medijski prostor u Hrvatskoj 2021-2025</em>. Dataset sadrži 612,065 medijskih objava iz hrvatskih medija. Pristupljeno 2026-01-13.</p>
+<p><strong>[Šikić, Luka/Hrvatsko katoličko sveučilište]</strong>. (2025). <em>Katolički digitalni medijski prostor u Hrvatskoj 2021-2025</em>. Dataset sadrži 612,065 medijskih objava iz hrvatskih medija. Pristupljeno 2026-01-19.</p>
 </blockquote>
 <section id="dodatni-resursi" class="level2">
 <h2 class="anchored" data-anchor-id="dodatni-resursi">Dodatni resursi</h2>
@@ -1549,7 +1549,7 @@ $ KEYWORD_NAME             : character 'opće' 'opće' 'opće' ...</code></pre>
 <li><strong>ORCID</strong> [0009-0006-3519-0272]</li>
 </ul>
 <hr>
-<p><strong>Zadnja ažurirana</strong> 2026-01-13<br>
+<p><strong>Zadnja ažurirana</strong> 2026-01-19<br>
 <strong>Verzija</strong> 2.0<br>
 <strong>R verzija</strong> R version 4.5.2 (2025-10-31 ucrt)</p>
 
@@ -2072,11 +2072,11 @@ $ KEYWORD_NAME             : character 'opće' 'opće' 'opće' ...</code></pre>
 <span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>  max_year <span class="ot">&lt;-</span> <span class="fu">max</span>(<span class="fu">year</span>(date_col), <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>  time_period <span class="ot">&lt;-</span> <span class="fu">paste0</span>(min_year, <span class="st">" - "</span>, max_year, <span class="st">" godina"</span>)</span>
 <span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>  time_period <span class="ot">&lt;-</span> <span class="st">"2021 - 2025 godina"</span></span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>  time_period <span class="ot">&lt;-</span> <span class="st">"2021.- 2025."</span></span>
 <span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>Baza podataka sadrži **`r n_records` zapisa** medijskih objava prikupljenih tijekom <span class="in">`r time_period`</span>, fokusiranih na katoličke teme i sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za analizu medijskog diskursa, sentimenta i angažmana publike u domeni religijskih tema.</span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>Baza podataka sadrži **`r n_records`** medijskih objava prikupljenih tijekom <span class="in">`r time_period`</span>, fokusiranih na katoličke teme i sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za analizu medijskog diskursa, sentimenta i angažmana publike u domeni katoličkih (religijskih) tema.</span>
 <span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: basic-info-table</span></span>
@@ -2136,8 +2136,8 @@ $ KEYWORD_NAME             : character 'opće' 'opće' 'opće' ...</code></pre>
 <span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a>  yearly_counts <span class="ot">&lt;-</span> dta[, .N, by <span class="ot">=</span> year][<span class="fu">order</span>(year)]</span>
 <span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable</span>(yearly_counts, </span>
-<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">"Broj zapisa po godinama"</span>,</span>
-<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a>        <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Godina"</span>, <span class="st">"Broj zapisa"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a>        <span class="at">caption =</span> <span class="st">"Broj objava po godinama"</span>,</span>
+<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a>        <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Godina"</span>, <span class="st">"Broj objava"</span>)) <span class="sc">%&gt;%</span></span>
 <span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>))</span>
 <span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
@@ -2720,7 +2720,7 @@ $ KEYWORD_NAME             : character 'opće' 'opće' 'opće' ...</code></pre>
 <span id="cb5-751"><a href="#cb5-751" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-752"><a href="#cb5-752" aria-hidden="true" tabindex="-1"></a><span class="fu"># Licence i citiranje</span></span>
 <span id="cb5-753"><a href="#cb5-753" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-754"><a href="#cb5-754" aria-hidden="true" tabindex="-1"></a>Molimo citirajte ovu bazu u svojim radovima koristeći sljedeći format</span>
+<span id="cb5-754"><a href="#cb5-754" aria-hidden="true" tabindex="-1"></a>Molimo citirajte ovu bazu u svojim radovima koristeći sljedeći format:</span>
 <span id="cb5-755"><a href="#cb5-755" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-756"><a href="#cb5-756" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **[Šikić, Luka/Hrvatsko katoličko sveučilište]**. (2025). *Katolički digitalni medijski prostor u Hrvatskoj 2021-2025*. Dataset sadrži </span><span class="in">`r n_records`</span><span class="at"> medijskih objava iz hrvatskih medija. Pristupljeno </span><span class="in">`r Sys.Date()`</span><span class="at">.</span></span>
 <span id="cb5-757"><a href="#cb5-757" aria-hidden="true" tabindex="-1"></a></span>

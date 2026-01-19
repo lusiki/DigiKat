@@ -59,11 +59,11 @@ if ("DATE" %in% names(dta)) {
   max_year <- max(year(date_col), na.rm = TRUE)
   time_period <- paste0(min_year, " - ", max_year, " godina")
 } else {
-  time_period <- "2021 - 2025 godina"
+  time_period <- "2021.- 2025."
 }
 ```
 
-Baza podataka sadrži **`r n_records` zapisa** medijskih objava prikupljenih tijekom `r time_period`, fokusiranih na katoličke teme i sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za analizu medijskog diskursa, sentimenta i angažmana publike u domeni religijskih tema.
+Baza podataka sadrži **`r n_records`** medijskih objava prikupljenih tijekom `r time_period`, fokusiranih na katoličke teme i sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za analizu medijskog diskursa, sentimenta i angažmana publike u domeni katoličkih (religijskih) tema.
 
 ```{r}
 #| label: basic-info-table
@@ -123,8 +123,8 @@ if ("DATE" %in% names(dta)) {
   yearly_counts <- dta[, .N, by = year][order(year)]
   
   kable(yearly_counts, 
-        caption = "Broj zapisa po godinama",
-        col.names = c("Godina", "Broj zapisa")) %>%
+        caption = "Broj objava po godinama",
+        col.names = c("Godina", "Broj objava")) %>%
     kable_styling(bootstrap_options = c("striped", "hover"))
 }
 ```
@@ -707,7 +707,7 @@ dta <- readRDS("../../data/merged_comprehensive.rds")
 
 # Licence i citiranje
 
-Molimo citirajte ovu bazu u svojim radovima koristeći sljedeći format
+Molimo citirajte ovu bazu u svojim radovima koristeći sljedeći format:
 
 > **[Šikić, Luka/Hrvatsko katoličko sveučilište]**. (2025). *Katolički digitalni medijski prostor u Hrvatskoj 2021-2025*. Dataset sadrži `r n_records` medijskih objava iz hrvatskih medija. Pristupljeno `r Sys.Date()`.
 

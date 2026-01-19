@@ -284,7 +284,7 @@
     "href": "pages/baza.html",
     "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "",
-    "text": "Baza podataka sadrži 612,065 zapisa medijskih objava prikupljenih tijekom 2021 - 2026 godina, fokusiranih na katoličke teme i sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za analizu medijskog diskursa, sentimenta i angažmana publike u domeni religijskih tema.\nOsnovne karakteristike dataseta\n\n\nKarakteristika\nVrijednost\n\n\n\n\nBroj zapisa\n612,065\n\n\nBroj varijabli\n47\n\n\nVremenski period\n2021 - 2026 godina\n\n\nFormat\nR data.table\n\n\nGlavni jezik\nHrvatski (hr)\n\n\nGeografski opseg\nHrvatska (HR)"
+    "text": "Baza podataka sadrži 612,065 medijskih objava prikupljenih tijekom 2021 - 2026 godina, fokusiranih na katoličke teme i sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za analizu medijskog diskursa, sentimenta i angažmana publike u domeni katoličkih (religijskih) tema.\nOsnovne karakteristike dataseta\n\n\nKarakteristika\nVrijednost\n\n\n\n\nBroj zapisa\n612,065\n\n\nBroj varijabli\n47\n\n\nVremenski period\n2021 - 2026 godina\n\n\nFormat\nR data.table\n\n\nGlavni jezik\nHrvatski (hr)\n\n\nGeografski opseg\nHrvatska (HR)"
   },
   {
     "objectID": "pages/baza.html#struktura-podataka",
@@ -298,7 +298,7 @@
     "href": "pages/baza.html#distribucija-po-godinama",
     "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "Distribucija po godinama",
-    "text": "Distribucija po godinama\n\n\n\nBroj zapisa po godinama\n\n\nGodina\nBroj zapisa\n\n\n\n\n2021\n90388\n\n\n2022\n84535\n\n\n2023\n83836\n\n\n2024\n114231\n\n\n2025\n236166\n\n\n2026\n2909"
+    "text": "Distribucija po godinama\n\n\n\nBroj objava po godinama\n\n\nGodina\nBroj objava\n\n\n\n\n2021\n90388\n\n\n2022\n84535\n\n\n2023\n83836\n\n\n2024\n114231\n\n\n2025\n236166\n\n\n2026\n2909"
   },
   {
     "objectID": "pages/baza.html#vremenske-varijable",
@@ -417,7 +417,7 @@
     "href": "pages/baza.html#dodatni-resursi",
     "title": "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)",
     "section": "Dodatni resursi",
-    "text": "Dodatni resursi\n\nGitHub repozitorij [https://github.com/lusiki/DigiKat]\nDokumentacija [https://lusiki.github.io/DigiKat/baza.html]\nKontakt [luka.sikic@unicath.hr]\nORCID [0009-0006-3519-0272]\n\n\nZadnja ažurirana 2026-01-13\nVerzija 2.0\nR verzija R version 4.5.2 (2025-10-31 ucrt)"
+    "text": "Dodatni resursi\n\nGitHub repozitorij [https://github.com/lusiki/DigiKat]\nDokumentacija [https://lusiki.github.io/DigiKat/baza.html]\nKontakt [luka.sikic@unicath.hr]\nORCID [0009-0006-3519-0272]\n\n\nZadnja ažurirana 2026-01-19\nVerzija 2.0\nR verzija R version 4.5.2 (2025-10-31 ucrt)"
   },
   {
     "objectID": "pages/mapa/diskurs.html",
