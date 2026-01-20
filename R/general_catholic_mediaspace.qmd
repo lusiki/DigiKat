@@ -1,0 +1,768 @@
+---
+title: "Hrvatski katolički digitalni medijski ekosustav"
+subtitle: "Sveobuhvatna strukturalna analiza"
+date: last-modified
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-location: left
+    toc-depth: 3
+    toc-expand: 2
+    smooth-scroll: true
+    code-fold: true
+    code-tools: false
+---
+
+
+<div style="text-align: center; margin-bottom: 30px;">
+  ![Status](https://img.shields.io/badge/status-aktivan-green)
+  ![Tip](https://img.shields.io/badge/tip-strukturalna_analiza-blue)
+  ![Verzija](https://img.shields.io/badge/verzija-3.0-lightgrey)
+</div>
+
+> **Sažetak:** Ovaj dokument pruža sveobuhvatnu strukturalnu analizu hrvatskog katoličkog  medijskog ekosustava sa posebnim naglaskom na njgov digitalni segment. Sintezom 173 godine izdavačke tradicije, analizom svih 17 biskupija, redovničkih zajednica, akademskih časopisa, pastorala mladih, 189 misija u dijaspori te utjecaja digitalne transformacije, dokument mapira ekosustav koji seže od župnih biltena do nacionalno licencirane televizije. Služi kao kontekstualni okvir za razumijevanje kvantitativnih nalaza iz četiri analitičke mape projekta DigiKat.
+
+---
+
+# I. DIO: POVIJESNI I INSTITUCIONALNI OKVIR
+
+## Uvod
+
+Hrvatski katolički medijski prostor predstavlja jedan od najrazvijenijih religijskih medijskih ekosustava u Europi, ukorijenjen u **173 godine izdavačke povijesti** i podržan vjerničkom populacijom koja čini **83% nacionalnog stanovništva**. Katolička Crkva u Hrvatskoj operira integriranu mrežu tiskanih, emitiranih i digitalnih medija koja seže od župnih biltena do nacionalno licencirane televizije. Ova infrastruktura oblikovana je jedinstvenom poviješću preživljavanja komunističke represije.
+
+Suvremeni katolički medijski sustav centriran je oko **Hrvatske katoličke mreže (HKM)**, uspostavljene 2018. godine radi integracije glavnih crkvenih medijskih resursa pod jedinstvenu koordinaciju. Podržan značajnim državnim financiranjem putem vatikanskih konkordata, približno **120 milijuna eura godišnje** usmjereno je prema vjerskim zajednicama, od čega oko 95% prima Katolička crkva. Hrvatski katolički mediji uživaju resurse neuobičajene za religijske medije u Europi.
+
+
+### Opseg analize
+
+Analiza pokriva sljedeće dimenzije katoličkog digitalnog prostora:
+
+1. **Povijesni razvoj:** Od 1849. do danas (173+ godina)
+2. **Biskupijska struktura:** Svih 17 biskupija s digitalnim strategijama
+3. **Redovničke zajednice:** Muške i ženske zajednice s medijskim aktivnostima
+4. **Akademski mediji:** Teološki časopisi s međunarodnom indeksacijom
+5. **Pastoral mladih:** SHKM, FRAMA, skauti i digitalne inicijative
+6. **Dijaspora:** 189 misija u 35+ zemalja
+7. **Digitalna transformacija:** Utjecaj na tradicionalne medije i komunikaciju
+
+---
+
+## Povijesni temelji
+
+### Od prvih izdanja do komunističke represije (1849.–1945.)
+
+Katoličko izdavaštvo u Hrvatskoj započinje **1849. godine** pokretanjem *Katoličkog lista* pod okriljem Zagrebačke nadbiskupije. Prvi hrvatski katolički kongres 1900. godine katalizirao je ekspanziju, uspostavljanjem Hrvatskog katoličkog tiskarskog društva i pokretanjem utjecajnih publikacija uključujući *Hrvatsku stražu* (1903.) i studentski časopis *Luč* (1905.). 
+
+Biskup **Antun Mahnić** iz Krka pojavio se kao pionirska figura, uspostavivši vlastitu tiskaru 1899. i prepoznavši da katolički tisak ima *odlučujuću ulogu u utjecaju na kulturu i društvo*. Hrvatski katolički pokret koji je uslijedio predstavljao je organizirani napor katoličkih laika za obranu i promicanje katoličkih vrijednosti u javnom životu, stvarajući institucionalne preduvjete za kasniji razvoj katoličkih medija.
+
+#### Kronologija ranog razdoblja
+
+| Godina | Događaj | Značaj |
+|--------|---------|--------|
+| 1849 | Pokretanje *Katoličkog lista* | Prvi katolički periodički tisak |
+| 1899 | Mahnićeva tiskara na Krku | Pionirski izdavački pothvat |
+| 1900 | Prvi hrvatski katolički kongres | Institucionalizacija pokreta |
+| 1903 | *Hrvatska straža* | Politički angažiran katolički tisak |
+| 1905 | Časopis *Luč* | Studentski katolički pokret |
+
+### Otpor i opstanak u jugoslavenskom razdoblju (1945.–1991.)
+
+Komunističko jugoslavensko razdoblje (1945.–1991.) predstavljalo je najtamnije i ujedno najdefinirajuće razdoblje za hrvatske katoličke medije. Gotovo sve katoličke publikacije pale su pod kontrolu Komunističke partije, katoličke škole su zatvorene, a Katolički bogoslovni fakultet izbačen je sa Sveučilišta u Zagrebu 1952. godine.
+
+Protiv ove represije, osnivanje **Glasa Koncila** 4. listopada 1962. postalo je prekretnica. Započevši kao umnoženi bilten koji je izvještavao o Drugom vatikanskom koncilu, pod urednicima poput legendarnog **Živka Kustića** (koji je zatvoren 1985. zbog *širenja dezinformacija*), *Glas Koncila* izrastao je u jedine katoličke novine u Jugoslaviji koje nisu bile pod kontrolom Komunističke partije. Tijekom 1970-ih, *Glas Koncila* dosegao je nakladu od približno **140.000 primjeraka tjedno**, čineći ga najčitanijim katoličkim periodom u cijeloj Jugoslaviji i simbolom otpora komunističkoj cenzuri.
+
+Ovo iskustvo otpora oblikovalo je identitet katoličkih medija kao glasa alternativnog javnog prostora, što ostaje relevantno za razumijevanje suvremene pozicije katoličkih medija u hrvatskom društvu.
+
+### Ekspanzija nakon neovisnosti (1991.–2018.)
+
+Neovisnost 1991. pokrenula je brzi razvoj katoličkih medija:
+
+| Godina | Događaj | Utjecaj |
+|--------|---------|---------|
+| 1993. (svibanj) | Formalno uspostavljanje Hrvatske biskupske konferencije | Institucionalna koordinacija |
+| 1993. (travanj) | Osnivanje Informativne katoličke agencije (IKA) | Profesionalno novinarstvo |
+| 1997. (svibanj) | Početak emitiranja Hrvatskog katoličkog radija (HKR) | Nacionalna radio mreža |
+| 2015. (Božić) | Lansiranje Laudato TV-a | Televizijska prisutnost |
+| 2018. | Uspostava Hrvatske katoličke mreže (HKM) | Digitalna integracija |
+| 2019. | Laudato TV najgledanija lokalna televizija | Mainstream uspjeh |
+| 2021. | Novi studijski kompleks Laudato TV (1.300 m²) | Infrastrukturni razvoj |
+
+---
+
+## Suvremena medijska infrastruktura
+
+### Hrvatska katolička mreža kao integracijska platforma
+
+Suvremeni katolički medijski ekosustav operira kroz nekoliko međusobno povezanih kanala pod općom koordinacijom Hrvatske biskupske konferencije (HBK). **Hrvatska katolička mreža (HKM)**, pod vodstvom ravnatelja doc. dr. Krunoslava Novaka (od 2022.), služi kao integrirana platforma koja kombinira IKA novinske usluge i Hrvatski katolički radio, s jedinstvenom web prisutnošću na hkm.hr.
+
+#### Najvažnije platforme katoličkog medijskog ekosustava
+
+| Platforma | Tip | Ključne karakteristike |
+|-----------|-----|------------------------|
+| **hkm.hr** | Web portal | Krovni portal HBK-a, integrira IKA vijesti i HKR sadržaj |
+| **ika.hkm.hr** | Novinska agencija | Službena katolička agencija, ~50 vijesti dnevno, 40+ novinara |
+| **bitno.net** | Web portal | Nezavisni portal, ~2,35 milijuna posjeta godišnje (2012.) |
+| **laudato.hr** | TV + streaming | EWTN afilijat, najgledanija lokalna TV (2019.) |
+| **HKR** | Radio | 1,5 milijuna redovitih slušatelja, 95% pokrivenost |
+| **glas-koncila.hr** | Tjednik + web | Najstarije katoličke novine, kontinuirano od 1962. |
+| **radiomarija.hr** | Radio | Mreža frekvencija, streaming, aplikacija |
+
+### Emitiranje kao okosnica komunikacije
+
+Za razliku od digitalno-nativnih medijskih ekosustava, hrvatski katolički medijski prostor ostaje **izrazito radio-centriran**. Hrvatski katolički radio, osnovan 17. svibnja 1997. blagoslovom kardinala Kuharića, operira pod nacionalnom koncesijom s pokrivenošću od 95% hrvatskog teritorija. S procijenjenih **1,5 milijuna redovitih slušatelja** u dobi od 30 do 60 godina, HKR predstavlja najznačajniju katoličku medijsku platformu u zemlji po dosegu publike.
+
+**Laudato TV**, lansiran na Božić 2015. i vođen od strane Ksenije Abramović, operira kao EWTN afilijat sa studijima u Zagrebu, Splitu i drugim gradovima. U svibnju 2021., kardinal Josip Bozanić blagoslovio je novi studijski kompleks od 1.300 četvornih metara. Programska ponuda uključuje:
+
+- Dnevne prijenose mise (7:00 iz Nacionalnog svetišta sv. Josipa ili Svetišta Majke Božje Remetske)
+- Izvještavanje iz Vatikana
+- Vijesti iz Svete zemlje (jedinstveno među hrvatskim televizijama)
+- Obiteljski i katehizacijski sadržaj
+- Emisija **"Generacija+"** za mlade
+
+### Izdavačka infrastruktura
+
+**Kršćanska sadašnjost**, osnovana 1968. dekretom nadbiskupa kardinala Franje Šepera, operira kao najveći crkveni izdavač u Hrvatskoj. Vlasnik približno 40 knjižnih serija i 6 periodičnih publikacija, ovaj izdavač u vlasništvu Zagrebačke nadbiskupije proizvodi liturgijske knjige, biblijsku literaturu, teološka djela i obiteljski časopis *Kana*. **Verbum** u Splitu objavio je preko 800 naslova i operira 11-13 knjižara diljem zemlje, pozicionirajući se kao *hrvatska knjižara za cijelu obitelj*.
+
+
+# II. DIO: BISKUPIJSKA STRUKTURA
+
+## Metropolitanske nadbiskupije
+
+Četiri metropolitanske nadbiskupije — Zagrebačka, Splitsko-makarska, Đakovačko-osječka i Riječka — čine okosnicu katoličkog digitalnog prostora u Hrvatskoj.
+
+### Zagrebačka nadbiskupija
+
+Zagrebačka nadbiskupija, pod vodstvom nadbiskupa Dražena Kutleše koji ujedno predsjeda HBK, predstavlja središnju instituciju hrvatskog katolicizma. Digitalna prisutnost uključuje:
+
+- **Web portal:** zg-nadbiskupija.hr s vijestima i pastoralnim kalendarom
+
+- **Instagram:** @zgnadbiskupija (2.325 pratitelja, 2.704 objave)
+
+- **YouTube:** Kanal sa 151 videom (666 pretplatnika, 191.410 pregleda)
+
+- **Facebook:** Prva biskupija na platformi (aktivan od 2013. godine)
+
+
+Nadbiskupija koordinira **50+ redovničkih zajednica** na svom području, uključujući franjevce, dominikance, isusovce i karmelićane. Ured za pastoral mladih "Ivan Pavao II." (mladicentar.org) vodi programe za mlade s aktivnom Instagram prisutnošću.
+
+### Splitsko-makarska nadbiskupija
+
+Splitsko-makarska nadbiskupija razvila je **mrežu župnih medijskih suradnika** kroz formativne susrete pokrenute 2025. godine. Nadbiskup Zdenko Križić vodi ovu drugu najveću hrvatsku nadbiskupiju.
+
+- **Web portal:** smn.hr s vijestima i dokumentima
+- **Instagram:** @smnadbiskupija (~950 pratitelja)
+- **YouTube:** Aktivni kanal s prijenosima
+- **Župni suradnici:** Mreža medijski educiranih laika
+
+
+### Đakovačko-osječka nadbiskupija
+
+Đakovačko-osječka nadbiskupija posjeduje jedinstveni **digitalizirani arhiv Vjesnika biskupije od 1873. do 2020.** — najopsežniji digitalni arhiv crkvene periodike u Hrvatskoj.
+
+- **Vjesnik biskupije:** 150+ godina digitalizirano
+- **Web portal:** djos.hr
+- **Akademska suradnja:** Institut Ivo Pilar proveo studiju o digitalnoj prisutnosti Crkve tijekom pandemije
+
+### Riječka nadbiskupija
+
+**Riječka nadbiskupija bila je prva u Hrvatskoj prisutna na društvenim mrežama**, demonstrirajući rani digitalni pionirski duh.
+
+
+---
+
+## Sufraganske biskupije
+
+Od 13 sufraganskih biskupija i eparhija, digitalna prisutnost značajno varira, od naprednih do bazičnih implementacija.
+
+### Biskupije s najsnažnijom digitalnom prisutnošću
+
+#### Požeška biskupija
+
+**Požeška biskupija demonstrira najsnažniju digitalnu prisutnost** među sufraganskim biskupijama:
+
+- **Instagram:** @pozeska_biskupija (1.112 pratitelja)
+- **YouTube:** Svakodnevni prijenosi misa
+- **Glasilo:** "Zajedništvo" digitalno dostupno
+- **SHKM 2026:** Domaćin sljedećeg Susreta (shkm2026.hr)
+
+#### Krčka biskupija
+
+Krčka biskupija osigurava **svakodnevne livestream prijenose** iz katedrale:
+
+- **Prijenos:** 8:00 i 18:00 sati
+- **Platforma:** biskupijakrk.hr/livestream
+- **YouTube:** Aktivni arhiv prijenosa
+
+#### Dubrovačka biskupija
+
+Dubrovačka biskupija razvila je jedinstven **"Biskupov blog"** s razmišljanjima uz nedjelje i blagdane:
+
+- **Portal:** db.hr
+- **Blog:** Osobna razmišljanja biskupa
+- **Uredi:** Digitalno koordinirani pastoralni uredi
+
+#### Varaždinska biskupija
+
+- **Mladi:** @mladi.varazdinske.biskupije (1.271 pratitelja)
+- **Web:** varazdinska-biskupija.hr
+- **Pastoral:** Aktivni programi za mlade
+
+### Kompletni pregled digitalnih kapaciteta svih biskupija
+
+| Biskupija | Web | Instagram | YouTube | Facebook | Livestream |
+|-----------|-----|-----------|---------|----------|------------|
+| Zagrebačka | ✓ | 2.325 | 666 | ✓ | ✓ |
+| Splitsko-makarska | ✓ | ~950 | ✓ | ✓ | ✓ |
+| Đakovačko-osječka | ✓ | — | ✓ | ✓ | ✓ |
+| Riječka | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Zadarska | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Požeška | ✓ | 1.112 | ✓ | ✓ | ✓ |
+| Krčka | ✓ | ✓ | ✓ | ✓ | 2x/dan |
+| Dubrovačka | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Varaždinska | ✓ | 1.271* | ✓ | ✓ | ✓ |
+| Gospićko-senjska | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Šibenska | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Hvarska | ✓ | — | — | ✓ | — |
+| Bjelovarsko-križevačka | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Sisačka | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Porečko-pulska | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Križevačka eparhija | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Vojni ordinarijat | ✓✓ | — | — | ✓ | — |
+
+*Napomena: Varaždinska ima profil @mladi.varazdinske.biskupije*
+
+---
+
+# III. DIO: REDOVNIČKE ZAJEDNICE
+
+Hrvatska broji desetke muških i ženskih redovničkih zajednica s bogatom tradicijom tiskanih i digitalnih medija. Centralni portal **redovnistvo.hr** okuplja sve zajednice pod okriljem Hrvatske redovničke konferencije.
+
+## Franjevačke zajednice
+
+Tri franjevačke provincije djeluju u Hrvatskoj, čineći najbrojniju redovničku obitelj:
+
+### Provincija Presvetog Otkupitelja (OFM, Split)
+
+**Najbrojnija muška redovnička zajednica** u Splitsko-makarskoj nadbiskupiji:
+
+- **Časopisi:** Marija, Služba Božja, Kačić, Panis Vitae
+- **Portal:** ofm.hr
+- **FRAMA:** Koordinacija franjevačke mladeži
+- **Samostani:** 30+ lokacija u Dalmaciji i Hercegovini
+
+### Franjevci konventualci (OFMConv)
+
+Od 1999. izdaju **časopis Veritas** (veritas.hr):
+
+- **Naklada:** ~7.000 primjeraka
+- **Web knjižara:** Online prodaja publikacija
+- **Samostani:** Zagreb (Sv. Antun), Šibenik, Pula
+
+### Kapucini (OFMCap)
+
+- **Blog:** "Ljudima prijatelj"
+- **Portal:** padrepio.hr (posvećen sv. Padre Piju)
+- **Samostani:** Zagreb, Split, Rijeka
+
+## Isusovci (Družba Isusova)
+
+Isusovci putem Filozofsko-teološkog instituta izdaju časopis **Obnovljeni život** od 1919. godine — jedan od najstarijih aktivnih znanstvenih časopisa u Hrvatskoj. Obnovljeni život slavi **105+ godina kontinuiranog izlaženja** (1919.-2025.), čineći ga jednim od najdugotrajnijih akademskih časopisa u Hrvatskoj.
+
+- **HRCAK:** Besplatan pristup svim brojevima
+- **SKAC:** Studentski katolički centar
+- **Gimnazija:** Isusovačka klasična gimnazija Osijek
+- **Duhovne vježbe:** ignacije.hr (2-6 mjeseci formati)
+- **Portal:** isusovci.hr
+
+## Dominikanci
+
+**Dominikanci prednjače u multiplatformskoj prisutnosti**, između ostalog su i jedinstveni primjer katoličke zajednice na TikToku u Hrvatskoj.
+
+## Salezijanci
+
+Salezijanci putem **donbosco.hr** nude duhovne sadržaje i oratorije za mlade:
+
+- **Mjesečnik:** "Don Bosco danas"
+- **Nova Eva:** YouTube kanal (~43.700 pretplatnika, 12 milijuna pregleda)
+- **Oratoriji:** Programi za djecu i mlade
+- **Ključne figure:** Don Damir Stojić, Don Tomislav Lukač
+
+## Benediktinci i trapisti
+
+- **Benediktinci Pašman:** samostan-cokovac.hr (jedini aktivni muški benediktinski samostan)
+- **Trapisti Banja Luka:** Nekada 230 članova, danas samo 2 redovnika
+
+---
+
+# IV. DIO: AKADEMSKI KATOLIČKI MEDIJI
+
+Hrvatski teološki časopisi postižu značajnu međunarodnu vidljivost kroz indeksaciju u prestižnim bazama podataka.
+
+## Časopisi s međunarodnom indeksacijom
+
+### Bogoslovska smotra
+
+**Bogoslovska smotra** (ISSN 0352-3101), pokrenuta 1910. na Katoličkom bogoslovnom fakultetu u Zagrebu, jedini je hrvatski teološki časopis indeksiran u **Web of Science Core Collection (ESCI)** i **Journal Citation Reports**.
+Bogoslovska smotra jedini je hrvatski teološki časopis s JCR faktorom utjecaja, što ga pozicionira među vodeće teološke publikacije u regiji.
+
+
+- **Izlaženje:** 5 brojeva godišnje
+- **DOI:** Svi članci imaju identifikatore
+- **Licenca:** CC BY-NC 4.0 otvoreni pristup
+- **HRCAK:** Potpuni arhiv dostupan
+- **Godina osnivanja:** 1910.
+
+### Obnovljeni život
+
+**Obnovljeni život** (ISSN 0351-3947) isusovačkog Filozofsko-teološkog instituta:
+
+- **Osnovan:** 1919. (105+ godina)
+- **Indeksacija:** SCOPUS, ERIH PLUS
+- **Pristup:** Besplatan na HRCAK-u
+- **Fokus:** Filozofija, teologija, duhovnost
+
+### Crkva u svijetu
+
+**Crkva u svijetu** (ISSN 0352-4000) iz Splita:
+
+- **Kategorija:** A1
+- **Izlaženje:** 4 broja godišnje od 1966.
+- **Indeksacija:** SCOPUS
+- **Izdavač:** Katolički bogoslovni fakultet Split
+
+### Diacovensia
+
+**Diacovensia** (ISSN 1330-2655) iz Đakova:
+
+- **Kategorija:** A1 (od 2017.)
+- **Indeksacija:** SCOPUS
+- **Fokus:** Teologija i društvene teme
+- **Izdavač:** Katolički bogoslovni fakultet Đakovo
+
+### Pregled svih akademskih časopisa
+
+| Časopis | God. osn. | WoS | SCOPUS | ERIH+ | HRCAK | Kategorija |
+|---------|-----------|-----|--------|-------|-------|------------|
+| Bogoslovska smotra | 1910 | ✓ ESCI/JCR | ✓ | ✓ | ✓ | A1 |
+| Obnovljeni život | 1919 | — | ✓ | ✓ | ✓ | A1 |
+| Crkva u svijetu | 1966 | — | ✓ | ✓ | ✓ | A1 |
+| Diacovensia | 1993 | — | ✓ | ✓ | ✓ | A1 |
+| Služba Božja | 1960 | — | — | ✓ | ✓ | A2 |
+| Riječki teološki časopis | 1993 | — | — | ✓ | ✓ | A2 |
+| Croatica Christiana Periodica | 1977 | — | — | ✓ | ✓ | A1 |
+
+## Hrvatsko katoličko sveučilište
+
+**Hrvatsko katoličko sveučilište** (unicath.hr), osnovano 2006., razvija značajnu digitalnu prisutnost:
+
+- **Instagram:** @unicath.hr (3.381 pratitelja)
+- **TikTok:** @unicath.hr (jedina institucija na TikToku)
+- **Pristup:** HRCAK, DOAJ, PERO portal
+- **Odjeli:** Komunikologija, sociologija, povijest, psihologija, pravo, računarstvo
+- **Projekt:** DigiKat (2025.-2027.)
+
+## Katolički bogoslovni fakultet Zagreb
+
+- **Teološka kultura:** Program cjeloživotnog obrazovanja s online komponentama
+- **Teološko-pastoralni tjedan:** Dostupan na YouTube kanalu
+- **Bogoslovska smotra:** Vodeći teološki časopis
+
+---
+
+# V. DIO: PASTORAL MLADIH
+
+Pastoral mladih gradi sofisticiranu digitalnu infrastrukturu za dosezanje nove generacije vjernika.
+
+## Susret hrvatske katoličke mladeži (SHKM)
+
+**SHKM** od 1996. okuplja 5.000-50.000 mladih svake dvije godine.
+
+### SHKM 2026 digitalna infrastruktura
+
+SHKM 2026 u Požegi ima profesionalnu digitalnu prisutnost:
+
+- **Web:** shkm2026.hr
+- **Facebook:** Aktivna stranica
+- **Instagram:** @shkm2026
+- **TikTok:** Prisutnost za mlade
+- **SHKM kvizaška liga:** Zoom s 74 ekipe
+- **Prijave:** E-župe platforma
+
+## FRAMA (Franjevačka mladež)
+
+**FRAMA**, osnovana 1992., okuplja 1.500-2.000 članova u 70-ak bratstava:
+
+- **Portal:** frama-portal.ofs.hr
+- **YouTube:** Aktivni kanal
+- **Formacija:** "Pismo duši" program
+- **Članstvo:** 1.500-2.000 mladih
+
+## Katolički skauti Hrvatske
+
+- **Osnivanje:** 2002. u Rijeci
+- **Prisutnost:** 8-9 biskupija
+- **Centar:** "Bl. Alojzije Stepinac" Drivenik
+- **Članstvo:** UIGSE-FSE (međunarodna federacija)
+
+## Taizé zajednica
+
+- **Zagreb 2006/07:** 29. Europski susret s 40.000 sudionika
+- **Koordinacija:** Putem župnih zajednica
+- **Online:** Prijenosi molitava
+
+## Medijski programi za mlade
+
+### Laudato TV — Generacija+
+
+Emisija **"Generacija+"** na Laudato TV okuplja mlade voditelje:
+
+- **Format:** Talk show s mladima
+- **Teme:** Vjera, društvo, aktualna pitanja
+- **Doseg:** 48.000+ Instagram pratitelja (@laudatotv)
+
+### Hrvatski katolički radio
+
+- **"Budimo mladi":** Emisija za mlade
+- **"Oni rokaju za Gospodina":** Glazbeni program
+- **Streaming:** hkr.hkm.hr
+
+---
+
+# VI. DIO: HRVATSKA KATOLIČKA DIJASPORA
+
+Hrvatska katolička dijaspora organizirana je u **189 župa, misija i centara** diljem svijeta.
+
+## Globalna struktura
+
+| Regija | Broj misija | Ključne lokacije |
+|--------|-------------|------------------|
+| Njemačka | 96-99 | Berlin, München, Frankfurt, Stuttgart |
+| Kanada | 17 | Toronto, Vancouver, Calgary |
+| SAD | 16 | Chicago, New York, Los Angeles |
+| Australija | 14 | Sydney, Melbourne, Perth |
+| Švicarska | 12 | Zürich, Basel, Bern |
+| Austrija | 8 | Beč, Graz, Salzburg |
+| Ostale | 42+ | Argentina, Čile, Novi Zeland... |
+
+### Pastoralno osoblje
+
+- **Svećenici:** 197 (63 dijecezanska, 134 redovnička)
+- **Redovnice:** 50
+- **Pastoralni suradnici:** 43
+
+## Digitalna prisutnost dijaspore
+
+### Njemačka
+
+- **Portal:** zivazajednica.de (koordinacija 96-99 misija)
+- **HKŽ München:** YouTube livestream od 2020.
+- **HKM Berlin:** hkm.hr/berlin s prijenosima
+
+### Švicarska
+
+- **Portal:** kroaten-missionen.ch
+- **Glasilo:** MOVIS
+- **Misije:** 12 aktivnih zajednica
+
+### Austrija
+
+- **HKM Beč:** Najposjećenija crkva u Beču
+- **Vodstvo:** Hrvatska franjevačka provincija od 1971.
+- **Web:** hkm-wien.at
+
+### Australija
+
+- **Portal:** hkc.com.au (14 centara)
+- **Aplikacija:** Croatian Catholic Radio APP
+- **Centri:** Sydney, Melbourne, Perth, Adelaide, Brisbane
+
+### SAD
+
+- **Chicago:** Bl. Alojzije Stepinac župa
+- **Radio:** Croatian Catholic Radio (WNDZ 750AM, subotom)
+- **New York:** Sv. Ćiril i Metod (od 1974.)
+
+### Koordinacija
+
+**Ravnateljstvo dušobrižništva za Hrvate u inozemstvu** pri HBK koordinira pastoralnu skrb s biskupijama podrijetla.
+
+---
+
+# VII. DIO: DIGITALNA PRISUTNOST
+
+## Web portali
+
+### Hijerarhija digitalnih platformi
+
+```{mermaid}
+%%| fig-width: 8
+flowchart TD
+    HBK[Hrvatska biskupska konferencija] --> HKM[Hrvatska katolička mreža<br/>hkm.hr]
+    HKM --> IKA[IKA<br/>ika.hkm.hr]
+    HKM --> HKR[Hrvatski katolički radio<br/>hkr.hkm.hr]
+    
+    NEZAVISNI[Nezavisni akteri] --> BITNO[Bitno.net<br/>~2.35M posjeta/god]
+    NEZAVISNI --> LAUDATO[Laudato TV<br/>laudato.hr]
+    NEZAVISNI --> GK[Glas Koncila<br/>glas-koncila.hr]
+    
+    BISKUPIJE[17 biskupija] --> DIJECEZANSKI[Biskupijski portali]
+    
+    style HBK fill:#1a365d,color:#fff
+    style HKM fill:#2c5282,color:#fff
+    style BITNO fill:#38a169,color:#fff
+    style LAUDATO fill:#38a169,color:#fff
+```
+
+Sve **17 hrvatskih biskupija** (16 rimskog obreda plus jedna bizantskog obreda grkokatolička) održavaju službene web stranice s redovitim ažuriranjima:
+
+**Metropolitanske nadbiskupije:**
+
+- Zagreb: zg-nadbiskupija.hr
+- Split-Makarska: smn.hr
+- Đakovo-Osijek: djos.hr
+- Rijeka: ri-nadbiskupija.hr
+- Zadar: zadarskanadbiskupija.hr
+
+## Društvene mreže
+
+**Instagram** se pojavio kao primarna platforma za katoličku digitalnu prisutnost. Analiza prisutnosti otkriva jasnu hijerarhiju između medijskih brendova, zajednica i institucionalnih računa:
+
+### Prisutnost na Instagramu (verificirani podaci)
+
+| Račun | Pratitelji | Objave | Tip |
+|-------|------------|--------|-----|
+| @laudatotv | **48.000** | 3.840 | Televizija |
+| @bitnonet | **48.000** | 1.616 | Portal |
+| @bozja.pobjeda | **37.000** | Aktivan | Zajednica |
+| @hkr_hkm | **24.000** | 1.401 | Radio |
+| @dondamirstojic | **32.000+** | Aktivan | Svećenik |
+| @glas_koncila | 3.486 | 2.932 | Tjednik |
+| @zgnadbiskupija | 2.325 | 2.704 | Institucija |
+| @smnadbiskupija | 950 | 543 | Institucija |
+
+
+Značajan jaz postoji između medijskih brendova (48.000 pratitelja) i institucionalnih računa biskupija (950-2.325 pratitelja), ukazujući na nedovoljno razvijenu institucionalnu strategiju za društvene mreže.
+
+**Twitter/X** prisutnost je ograničena ali uključuje aktivne račune za HKR (@hkr_radio s 2.200 pratitelja) i Laudato (@laudato_hr s 9.085+ objava). **LinkedIn** prisutnost je minimalna; samo Laudato TV održava stranicu tvrtke s 199 pratitelja.
+
+## YouTube i video sadržaj
+
+Video prostor otkriva jasnu podjelu između institucionalnih kanala sa skromnim praćenjem i evangelizacijski usmjerenih kanala sa znatno većom publikom:
+
+| Kanal | Pretplatnici | Ukupni pregledi | Videozapisi | Sadržaj |
+|-------|--------------|-----------------|-------------|---------|
+| **Nova Eva** (salezijanski) | ~43.700 | ~12 milijuna | Opsežan | Kateheza, homilije |
+| **HKM** (HBK) | 10.900 | 2,76 milijuna | 2.199 | Radio programi |
+| Zagrebačka nadbiskupija | 666 | 191.410 | 151 | Biskupijski događaji |
+| Laudato TV | ~30 | Minimalno | Ograničeno | Distribucija putem kabela |
+
+**Nova Eva**, koju je osnovala Hrvatska salezijanska provincija 2011., predstavlja najveći hrvatski katolički evangelizacijski YouTube kanal. Operira s približno 20 mladih kreatora sadržaja i često prikazuje istaknute svećenike poput don Damira Stojića.
+
+## TikTok kao nova granica
+
+Dok katolička prisutnost na TikToku ostaje nerazvijena u usporedbi s anglofonim tržištima, Don Tomislav Lukač (@dontomolukac) se pojavio kao tridesetjednogodišnji salezijanski svećenik iz Kaštela s preko **68.000 TikTok pratitelja** i više od **milijun lajkova**, čineći ga najpopularnijom hrvatskom katoličkom TikTok prisutnošću. Njegov sadržaj objašnjava katoličku vjeru kroz kratke video formate koji adresiraju pop kulturu, glazbu i mladenačke teme. Trenutno studira na Papinskom teološkom institutu Ivan Pavao II. za brak i obitelj u Rimu.
+
+
+**Hrvatsko katoličko sveučilište** (@unicath.hr) održava jedinu značajnu institucionalnu TikTok prisutnost.
+
+## Podcasti
+
+Za razliku od anglofonih tržišta gdje proliferiraju namjenske podcast platforme, hrvatski katolički audio sadržaj ostaje **radio-centriran**, distribuiran primarno putem tradicionalnog FM emitiranja s online streaming dopunama.
+
+Identificirani namjenski podcasti:
+
+| Podcast | Voditelji | Platforma | Fokus |
+|---------|-----------|-----------|-------|
+| Mladi za Domovinu | Gabrijel Lukić | Spotify, Apple, Google | Katolička mladež, nacionalni identitet |
+| Podcast Bitno.net-a | Anto Mikić, Ivo Džeba | Apple, Spotify, Podbean | Crkva, vjera i društvo |
+| Povijesna četvrt | dr. Trpimir Vedriš | Višestruke platforme | Kontroverzne povijesne teme |
+| BP Podcast | Božja pobjeda | Višestruke platforme | Duhovnost, svjedočanstva |
+
+## Mobilne aplikacije
+
+### Službene institucionalne aplikacije
+
+| Aplikacija | Razvojni programer | Preuzimanja | Ocjena | Ključne značajke |
+|------------|---------------------|-------------|--------|------------------|
+| eČasoslov | Kršćanska sadašnjost | 5.000+ | 5.0/5 | Službena Liturgija sati odobrena od HBK |
+| HKM | Enterwell d.o.o. | 1.000+ | 4.8/5 | Agregator vijesti za HKR i IKA |
+| Grkokatolički časoslov | AETÓS | 1.000+ | 5.0/5 | Molitva bizantskog obreda |
+| Radio Marija Hrvatska | Radio Maria A.P.S. | Dostupna | N/A | Streaming i raspored programa |
+
+### Biblijske aplikacije
+
+**Kršćanska sadašnjost** nudi **HR Biblija** s mjerodavnim hrvatskim prijevodom. Dodatne opcije uključuju *Katolička Biblija* (s pretvaranjem teksta u govor), *Biblijska tražilica* (offline pretraživač usklađen s vatikanskim smjernicama iz 2008.) i *Knjiga O Kristu* od Biblice (hrvatsko-engleski paralelni prikaz).
+
+### Molitvene i duhovne aplikacije
+
+| Aplikacija | Sadržaj | Preuzimanja |
+|------------|---------|-------------|
+| Nova Eva | Misna čitanja, brevijar, propovijedi | 5.000+ |
+| Krunica | Tajne dana, vodič | 1.000+ |
+| Katolički molitvenik | 100+ molitava | 5.000+ |
+| Biblija365 | Videi The Bible Project | 1.000+ |
+
+---
+
+# VIII. DIO: UTJECAJ DIGITALNE TRANSFORMACIJE
+
+## COVID-19 kao katalizator
+
+Pandemija COVID-19 označila je **prekretnicu u digitalnoj transformaciji** katoličkih medija u Hrvatskoj. Prije 2020., online prijenos mise bio je rijetka iznimka. Nakon pandemije, postao je standardna praksa u većini župnih zajednica.
+
+
+### Online prijenosi misa
+
+| Izvor | Format | Jezik/Doseg |
+|-------|--------|-------------|
+| Međugorje | Svakodnevno | 10 jezika (HR, DE, EN, IT, ES, FR, PL, SK, RU, AR) |
+| HKS | 12:00 dnevno | Hrvatski |
+| HRT | Nedjeljom 10:00 | Nacionalno |
+| Laudato TV | 7:00 i 10:30 | Nacionalno |
+| HKR | 7:00 dnevno | Radio + streaming |
+| Biskupije | Varijabilno | Lokalno |
+
+## Transformacija tiskanih medija
+
+### Glas Koncila
+
+Naklada je pala s ~140.000 (1970-e) na procijenjenih ~15.000 (2025.), reflektirajući globalni trend pada tiskanih medija.
+
+**Glas Koncila**, vodeći katolički tjednik, razvio je digitalni model:
+
+- **Print:** Kontinuirano od 1962.
+- **Digitalna pretplata:** 55 EUR godišnje
+- **PDF arhiv:** 53+ stranica tjedno
+- **Web:** glas-koncila.hr s vijestima
+
+
+
+## Digitalne platforme za župno poslovanje
+
+### E-župe sustav
+
+**E-župe** (e-zupe.com) digitalizira župno poslovanje:
+
+- **Prijave sakramenata:** Krštenje, pričest, krizma, vjenčanje
+- **Katekumeni:** Online prijave
+- **Blagoslov obitelji:** QR kod sustav
+- **Zaručnički tečajevi:** Online komponente
+- **Donacije:** Župne uplate
+- **GDPR:** Potpuna usklađenost
+
+### Virtualna hodočašća
+
+| Svetište | Platforma | Format |
+|----------|-----------|--------|
+| Marija Bistrica | HeritageCroatia.com | 360° interaktivna šetnja |
+| Trsat | HeritageCroatia.com | 50 panorama |
+| Gospa Sinjska | Google Play app | Mobilna aplikacija |
+| Međugorje | medjugorje.hr | Live streaming |
+
+
+---
+
+# IX. DIO: KLJUČNI AKTERI
+
+## Institucionalni akteri
+
+**Hrvatska biskupska konferencija** nadzire katoličke medije kroz nekoliko tijela:
+
+- **Povjerenstvo za društvene komunikacije** (predsjeda pomoćni biskup Mijo Gorski): uspostavlja medijske politike
+- **Tiskovni ured HBK-a** (glasnogovornik Zvonimir Ancić): službene komunikacije i odnosi s medijima
+- **IKA** (gl. urednik dr. Siniša Kovačić, v.d. ravnatelj vlč. Enco Rodinis): ~50 vijesti dnevno, 40+ novinara
+
+**Hrvatsko društvo katoličkih novinara (HDKN)**, koje predsjeda dr. Suzana Peran, provodi godišnje nagrade za Svjetski dan društvenih komunikacija i surađuje na projektu provjere činjenica **KAT** s Hrvatskim katoličkim sveučilištem i HKR-om, financiranom od EU.
+
+## Individualni akteri — svećenici na društvenim mrežama
+
+| Svećenik | Platforma | Pratitelji | Stil sadržaja |
+|----------|-----------|------------|---------------|
+| Don Tomislav Lukač | TikTok | **68.000+** | Kratki video formati, pop kultura |
+| Don Damir Stojić | Facebook/Instagram | **52.800 FB / 32.000+ IG** | Kateheza, aktualni događaji |
+| Fra Ivan D. Iličić | Facebook | ~14.040 | Motivacijski sadržaj |
+| Pater Ivan Ike Mandurić | Facebook | ~4.840 | Politički/društveni komentar |
+| Fra Ivo Pavić | — | — | Karizmatske obnove (80-120.000 hodočasnika/god) |
+
+**Don Damir Stojić**, salezijanski svećenik rođen u Kanadi s hercegovačkim podrijetlom, služio je kao studentski kapelan na Jarunu (2007.-2020.) prije nego što je postao župnik (2020.-2023.). Sada služi kao vojni kapelan na Hrvatskom vojnom učilištu. Ima najveći broj pratitelja među hrvatskim svećenicima.
+
+**Pater Ike Mandurić**, isusovac zaređen u dobi od 47 godina nakon studija arhitekture i vojne službe, vodi molitvenu zajednicu *Srce Isusovo* u Bazilici Srca Isusova u Zagrebu. Njegov Facebook profil višestruko je suspendiran zbog kontroverznih objava.
+
+## Laički influenceri
+
+| Osoba/Profil | Platforma | Pratitelji | Fokus |
+|--------------|-----------|------------|-------|
+| ChanceForWalk | Instagram | ~9.820 | Prve katoličke influencerice |
+| Marin Miletić | YouTube | ~5.250 | Vjeroučitelj, edukacija |
+| Bitno.net | Multi | 48.000 IG | Portal, podcasti |
+
+## Laičke zajednice i pokreti
+
+**Božja pobjeda**, katolička karizmatska zajednica osnovana 2007. u Zagrebu, održava preko 37.000 Instagram pratitelja i proizvodi BP Podcast. Ključne figure uključuju gitarista Petra Buljana (dobitnik Porina), tekstopisce Romanu Bilaver i basista Grgura Sesara. Zajednica se okuplja četvrtkom u crkvi Sveta Mati Slobode na Jarunu.
+
+- **Koncert 2022:** ~50.000 ljudi na stadionu Maksimir
+- **Albumi:** Tri studijska izdanja
+- **Nominacija:** Porin
+
+**Muževni budite**, osnovan 2019. kao prvi hrvatski portal za katoličke muškarce, narastao je na preko 9.260 Instagram pratitelja. Aktivnosti uključuju mjesečne javne molitve krunice u više gradova i godišnje konferencije *Budi muškarac*.
+
+## Katolička glazbena scena
+
+- **Alan Hržica** (~29.000 IG): Voditelj molitvene zajednice *Srce Isusovo*, dobitnik Porina za *Kamenita vrata live* (2016.)
+- **Ivana Husar Mlinac i Marija Husar Rimac** (sestre Husar): Vodeći ženski glasovi hrvatske duhovne glazbe
+- **Vanessa Mioč**: Pjevačica u usponu pod mentorstvom Alana Hržice
+
+---
+
+# X. DIO: FINANCIRANJE I ODRŽIVOST
+
+
+## Strukturni izazovi
+
+- **Pad tiraže**: Naklada dnevnih novina pala s 640.000 (2008.) na ~300.000 (2013.), s godišnjim padovima od 14-15%
+- **Digitalna transformacija**: Samo 9% Hrvata plaća za online vijesti
+- **Demografski trendovi**: Emigracija mlade radne populacije
+- **Ovisnost o državnom financiranju**: Podložnost političkim fluktuacijama
+- **Fragmentacija**: Mnogo malih platformi umjesto integriranih rješenja
+
+
+## Prednost povjerenja
+
+Katolički mediji profitiraju od značajne institucionalne prednosti povjerenja. Istraživanja pokazuju da Hrvati vjeruju Katoličkoj crkvi (**3,44 od 5**) više nego bilo kojoj drugoj instituciji, u usporedbi s povjerenjem u domaće medije (2,78/5) i novinare (2,73/5). Opće povjerenje u vijesti u Hrvatskoj palo je s 45% (2021.) na samo **32% (2024.)**, sugerirajući da institucionalna vjerodostojnost katoličkih medija može postati sve vrednija.
+
+
+---
+
+## Zaključak
+
+Hrvatski katolički medijski ekosustav ulazi u 2026. godinu na raskrižju. Njegovi povijesni temelji, izgrađeni kroz otpor komunističkoj eri i održani snažnim nacionalnim katoličkim identitetom, pružaju institucionalnu dubinu neuobičajenu za religijske medije. Konsolidacija 2018. u HKM predstavlja strateško prepoznavanje da je jedinstvena digitalna prisutnost neophodna za opstanak. Uspjeh Laudato TV-a kao najgledanije lokalne televizije u Hrvatskoj demonstrira apetit publike za sadržaj temeljen na vrijednostima.
+
+### Ključni nalazi
+
+1. **173 godine tradicije** — Od Katoličkog lista (1849.) do HKM (2018.)
+2. **Pionirski duh Riječke nadbiskupije** — prva na društvenim mrežama
+3. **Akademska izvrsnost** — Bogoslovska smotra u Web of Science
+4. **Uspješni modeli** — Laudato TV, Nova Eva, Bitno.net
+5. **Dijaspora povezana** — 189 misija s digitalnom infrastrukturom
+6. **COVID-19 ubrzanje** — Online mise postale standard
+
+### Strateški nedostaci
+
+1. **TikTok prostor ostaje neiskorišten** unatoč proof-of-concept uspjehu don Tomislava Lukača s 68.000 pratitelja
+2. **Namjenska podcast kultura je nerazvijena** u usporedbi s anglofonim katoličkim svijetom
+3. **Infrastruktura mobilnih aplikacija zaostaje** za potencijalom
+4. **Institucionalni deficit na Instagramu** — biskupije značajno zaostaju za medijskim brendovima
+
+
+---
+
+::: {.callout-note icon="false"}
+## Kako citirati
+
+Šikić, L. et al. (2026). Hrvatski katolički digitalni medijski ekosustav: Sveobuhvatna strukturalna analiza. U: *Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru*. Hrvatsko katoličko sveučilište. Dostupno na: [github.com/lusiki/DigiKat](https://github.com/lusiki/DigiKat)
+:::
+---
+title: "general_catholic_media"
+editor: visual
+---
