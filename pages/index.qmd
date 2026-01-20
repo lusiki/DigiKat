@@ -24,7 +24,7 @@ format:
 
 ## O projektu
 
-Dobrodošli na službenu stranicu projekta. Ovaj trogodišnji projekt (**2025.–2027.**) provodi se na [Odjelu za komunikologiju](https://www.unicath.hr/odjeli-i-fakulteti/komunikologija) [Hrvatskog katoličkog sveučilišta](https://www.unicath.hr/). Iako digitalni mediji predstavljaju dominantnu komponentu javnog prostora, u Hrvatskoj nedostaje sustavni pregled njihovih tematskih sastavnica. Ovaj projekt ispunjava tu prazninu fokusirajući se na specifičnu nišu **katoličkog medijskog prostora**. Koristeći metode iz područja [računalnih društvenih znanosti](https://pure.rug.nl/ws/portalfiles/portal/140988937/Manifesto_of_computational_social_science.pdf), cilj nam je:
+Dobrodošli na službenu stranicu projekta. Ovaj trogodišnji projekt (**2025.–2027.**) provodi se na [Odjelu za komunikologiju](https://www.unicath.hr/odjeli-i-fakulteti/komunikologija) [Hrvatskog katoličkog sveučilišta](https://www.unicath.hr/). Iako digitalni mediji predstavljaju dominantnu komponentu javnog prostora, u Hrvatskoj nedostaje sustavni pregled njihovih tematskih sastavnica. Ovaj projekt ispunjava tu prazninu fokusirajući se na specifičnu nišu [katoličkog medijskog prostora](https://raw.githack.com/lusiki/DigiKat/main/docs/R/general_catholic_mediaspace.html). Koristeći metode iz područja [računalnih društvenih znanosti](https://pure.rug.nl/ws/portalfiles/portal/140988937/Manifesto_of_computational_social_science.pdf), cilj nam je:
 
 1. Izgraditi bazu podataka svih digitalnih objava.
 2. Analizirati značajke i narative objava.
