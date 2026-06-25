@@ -1,0 +1,57 @@
+---
+title: "Podaci"
+pagetitle: "Podaci i kodna knjiga / Data & codebook — DigiKat"
+subtitle: "Otvoreni korpus, varijable i reprodukcijski materijali"
+toc: true
+page-layout: full
+---
+
+::: {.column-screen}
+<section class="dk-section dk-section--top">
+<div class="dk-container">
+<div class="dk-eyebrow">06 — Grafikoni / Chart frame</div>
+<h2 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:32px; line-height:1.12; margin:8px 0 8px; color:#14181d;">Dosljedan okvir za grafikone</h2>
+<p class="dk-lead" style="margin-bottom:40px;">A consistent chart frame — title, mono source line, plot and footnote — using the categorical palette, held visually distinct from the petrol brand accent. Drop a static figure here, or render one with Plotly / OJS / ggiraph using the <code>--dk-cat-*</code> CSS variables.</p>
+
+<div class="dk-chart">
+<div class="dk-chart__head">
+<div>
+<h3 class="dk-chart__title">Objave po temi</h3>
+<div class="dk-chart__sub">Posts by thematic category · top 8</div>
+</div>
+</div>
+<div class="dk-chart__body">
+<div class="dk-bar-row"><div style="font-size:13.5px; color:#2c3036; text-align:right;">Politika i država</div><div class="dk-bar-track"><div class="dk-bar-fill dk-fill-t01" style="width:100%;"></div></div><div class="dk-bar-val">92,340</div></div>
+<div class="dk-bar-row"><div style="font-size:13.5px; color:#2c3036; text-align:right;">Bioetika i život</div><div class="dk-bar-track"><div class="dk-bar-fill dk-fill-t02" style="width:77.1%;"></div></div><div class="dk-bar-val">71,200</div></div>
+<div class="dk-bar-row"><div style="font-size:13.5px; color:#2c3036; text-align:right;">Obitelj i brak</div><div class="dk-bar-track"><div class="dk-bar-fill dk-fill-t03" style="width:71.3%;"></div></div><div class="dk-bar-val">65,800</div></div>
+<div class="dk-bar-row"><div style="font-size:13.5px; color:#2c3036; text-align:right;">Odgoj i školstvo</div><div class="dk-bar-track"><div class="dk-bar-fill dk-fill-t04" style="width:58.6%;"></div></div><div class="dk-bar-val">54,100</div></div>
+<div class="dk-bar-row"><div style="font-size:13.5px; color:#2c3036; text-align:right;">Kler i skandali</div><div class="dk-bar-track"><div class="dk-bar-fill dk-fill-t05" style="width:53.0%;"></div></div><div class="dk-bar-val">48,900</div></div>
+<div class="dk-bar-row"><div style="font-size:13.5px; color:#2c3036; text-align:right;">Socijalna pravda</div><div class="dk-bar-track"><div class="dk-bar-fill dk-fill-t06" style="width:44.7%;"></div></div><div class="dk-bar-val">41,300</div></div>
+<div class="dk-bar-row"><div style="font-size:13.5px; color:#2c3036; text-align:right;">Sekularizam</div><div class="dk-bar-track"><div class="dk-bar-fill dk-fill-t07" style="width:40.7%;"></div></div><div class="dk-bar-val">37,600</div></div>
+<div class="dk-bar-row"><div style="font-size:13.5px; color:#2c3036; text-align:right;">Liturgija i pobožnost</div><div class="dk-bar-track"><div class="dk-bar-fill dk-fill-t08" style="width:32.3%;"></div></div><div class="dk-bar-val">29,800</div></div>
+</div>
+<div class="dk-chart__foot">
+<span>Izvor / Source: DigiKat korpus, n = 610,000</span>
+<span>Ilustrativni podaci / illustrative</span>
+</div>
+</div>
+</div>
+</section>
+:::
+
+::: {.column-screen}
+<section class="dk-section">
+<div class="dk-container">
+<div class="dk-eyebrow">Otvoreni podaci / Open data</div>
+<h2 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:32px; line-height:1.12; margin:8px 0 24px; color:#14181d;">Korpus, varijable i reprodukcija</h2>
+
+<div class="dk-grid dk-grid--3">
+<div class="dk-card"><h3 class="dk-card__title" style="font-size:1.05rem;">Kodna knjiga</h3><div class="dk-card__en">Codebook · 620 variables</div><p style="margin:14px 0 0; font-size:14px; color:#4f535a; line-height:1.5;">Full variable dictionary with definitions, coding rules and reliability notes.</p><div class="dk-card__foot"><a href="#" style="color:#0f4c5c; text-decoration:none;">Preuzmi / Download →</a></div></div>
+<div class="dk-card"><h3 class="dk-card__title" style="font-size:1.05rem;">Skup podataka</h3><div class="dk-card__en">Dataset · 2021–2025</div><p style="margin:14px 0 0; font-size:14px; color:#4f535a; line-height:1.5;">610,000 posts across six platforms, released under an open licence where permitted.</p><div class="dk-card__foot"><a href="#" style="color:#0f4c5c; text-decoration:none;">Repozitorij / Repository →</a></div></div>
+<div class="dk-card"><h3 class="dk-card__title" style="font-size:1.05rem;">Reprodukcijski kôd</h3><div class="dk-card__en">Replication code</div><p style="margin:14px 0 0; font-size:14px; color:#4f535a; line-height:1.5;">Pipelines for ingestion, classification and analysis, with environment specs.</p><div class="dk-card__foot"><a href="#" style="color:#0f4c5c; text-decoration:none;">GitHub →</a></div></div>
+</div>
+
+<div style="margin-top:24px; padding:14px 16px; background:#eaf0f2; border-radius:8px; font-size:13.5px; color:#2c5663; line-height:1.5;">Licenca / Licence: CC BY 4.0 where third-party terms allow. Some platform data may be shared only as derived features or aggregates.</div>
+</div>
+</section>
+:::

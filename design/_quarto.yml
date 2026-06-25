@@ -1,0 +1,80 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# DigiKat — Quarto website configuration
+# Computational social science · Croatian Catholic University
+#
+# Render:  quarto preview   /   quarto render
+# ─────────────────────────────────────────────────────────────────────────────
+
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "DigiKat"
+  description: "Mapiranje katoličkih tema u hrvatskome digitalnom medijskom prostoru / Mapping Catholic themes across the Croatian digital media space"
+  favicon: assets/favicon.svg
+  site-url: "https://digikat.unicath.hr"      # ← replace with the real URL
+  open-graph: true
+  twitter-card: true
+  reader-mode: false
+
+  navbar:
+    logo: assets/digikat-logo.svg
+    logo-alt: "DigiKat"
+    title: "DigiKat"
+    background: light          # cosmo light bar; styled by _digikat.scss
+    pinned: true
+    collapse-below: lg
+    left:
+      - text: "Projekt"
+        href: index.qmd
+      - text: "Metodologija"
+        href: metodologija.qmd
+      - text: "Studije"
+        href: studije.qmd
+      - text: "Podaci"
+        href: podaci.qmd
+      - text: "Tim"
+        href: tim.qmd
+    right:
+      # bilingual switch — point at the /en/ mirror once it exists
+      - text: "EN"
+        href: en/index.qmd
+        aria-label: "English version"
+      - icon: github
+        href: "https://github.com/digikat"   # ← replace
+        aria-label: "GitHub repository"
+
+  page-footer:
+    background: dark
+    border: false
+    left: |
+      Hrvatsko katoličko sveučilište · Croatian Catholic University
+    center:
+      - text: "Otvoreni podaci"
+        href: podaci.qmd
+      - text: "Metodologija"
+        href: metodologija.qmd
+      - text: "Kontakt"
+        href: "mailto:digikat@unicath.hr"
+    right: |
+      CC BY 4.0 · © 2021–2025 DigiKat
+
+format:
+  html:
+    theme:
+      - cosmo
+      - _digikat.scss
+    lang: hr                    # default language (per-page front matter can override to en)
+    toc: true
+    toc-title: "Na ovoj stranici"
+    toc-depth: 2
+    anchor-sections: true
+    smooth-scroll: true
+    code-copy: true
+    code-tools: false
+    grid:
+      body-width: 1180px        # matches the .dk-container token
+      margin-width: 220px
+    link-external-newwindow: true
+    link-external-icon: false

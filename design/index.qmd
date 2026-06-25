@@ -1,0 +1,59 @@
+---
+title: ""
+pagetitle: "DigiKat — Kartiranje katoličkih tema u hrvatskome digitalnom medijskom prostoru"
+toc: false
+page-layout: full
+anchor-sections: false
+---
+
+::: {.column-screen}
+<section class="dk-hero">
+<div class="dk-container">
+<div class="dk-eyebrow">Računalna društvena znanost · 2021–2025</div>
+<h1 class="dk-hero__title">Kartiranje katoličkih tema u hrvatskome digitalnom medijskom prostoru</h1>
+<p class="dk-hero__lead">Mapping Catholic themes across the Croatian digital media space — an empirical, open-science study of how religion is discussed online across portals, social platforms and forums.</p>
+
+<div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:38px;">
+<a href="podaci.html" style="display:inline-flex; align-items:center; gap:8px; background:#0f4c5c; color:#fff; text-decoration:none; font-weight:600; font-size:15px; padding:12px 22px; border-radius:6px;">Istraži podatke / Explore the data</a>
+<a href="metodologija.html" style="display:inline-flex; align-items:center; gap:8px; color:#14181d; text-decoration:none; font-weight:600; font-size:15px; padding:12px 22px; border-radius:6px; border:1px solid #cfccc2;">Metodologija / Methods</a>
+</div>
+
+<div class="dk-hero__figs">
+<div><div class="dk-hero__fig-num">610,000</div><div class="dk-hero__fig-lbl">objava / posts</div></div>
+<div><div class="dk-hero__fig-num">620</div><div class="dk-hero__fig-lbl">varijabli / variables</div></div>
+<div><div class="dk-hero__fig-num">6</div><div class="dk-hero__fig-lbl">platformi / platforms</div></div>
+</div>
+</div>
+</section>
+:::
+
+::: {.column-screen}
+<section class="dk-stats">
+<div class="dk-container">
+<div class="dk-stats__grid">
+<div class="dk-stats__item"><div class="dk-stats__num">610,000</div><div class="dk-stats__lbl">medijskih objava<br><span>media posts collected</span></div></div>
+<div class="dk-stats__item"><div class="dk-stats__num">620</div><div class="dk-stats__lbl">kodiranih varijabli<br><span>coded variables</span></div></div>
+<div class="dk-stats__item"><div class="dk-stats__num">5</div><div class="dk-stats__lbl">godina · 2021–2025<br><span>years of coverage</span></div></div>
+<div class="dk-stats__item"><div class="dk-stats__num">6</div><div class="dk-stats__lbl">platformi i izvora<br><span>platforms &amp; sources</span></div></div>
+</div>
+<div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:36px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:#aeb4b8;">
+<span style="border:1px solid rgba(255,255,255,0.18); border-radius:4px; padding:5px 10px;">Web portali</span>
+<span style="border:1px solid rgba(255,255,255,0.18); border-radius:4px; padding:5px 10px;">YouTube</span>
+<span style="border:1px solid rgba(255,255,255,0.18); border-radius:4px; padding:5px 10px;">Facebook</span>
+<span style="border:1px solid rgba(255,255,255,0.18); border-radius:4px; padding:5px 10px;">Twitter / X</span>
+<span style="border:1px solid rgba(255,255,255,0.18); border-radius:4px; padding:5px 10px;">Reddit</span>
+<span style="border:1px solid rgba(255,255,255,0.18); border-radius:4px; padding:5px 10px;">Forumi</span>
+</div>
+</div>
+</section>
+:::
+
+::: {.column-screen}
+<section class="dk-section">
+<div class="dk-container">
+<div class="dk-eyebrow">O projektu / About</div>
+<h2 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:32px; line-height:1.12; margin:8px 0 8px; color:#14181d; max-width:24ch;">Trogodišnji istraživački projekt</h2>
+<p class="dk-lead">DigiKat is a three-year research project at the Croatian Catholic University that uses computational social science to map Catholic themes across the Croatian digital media space. It analyses a corpus of more than 610,000 media posts (2021–2025) drawn from web portals, YouTube, Facebook, Twitter/X, Reddit and forums. The project is committed to open science and methodological rigor.</p>
+</div>
+</section>
+:::

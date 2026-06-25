@@ -1,0 +1,65 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Rscript *)",
+      "Bash(R -e *)",
+      "Bash(R CMD *)",
+      "Bash(quarto render)",
+      "Bash(quarto render *)",
+      "Bash(quarto preview)",
+      "Bash(quarto preview *)",
+      "Bash(quarto check*)",
+      "Bash(quarto --version)",
+      "Bash(git status)",
+      "Bash(git status *)",
+      "Bash(git diff)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push)",
+      "Bash(git pull *)",
+      "Bash(git fetch *)",
+      "Bash(git branch *)",
+      "Bash(git checkout -b *)",
+      "Bash(git switch *)",
+      "Bash(git stash *)",
+      "Bash(gh pr *)",
+      "Bash(gh issue *)",
+      "Bash(gh repo view *)",
+      "Read",
+      "Grep",
+      "Glob",
+      "Task",
+      "Skill"
+    ],
+    "deny": [
+      "Bash(git push --force *)",
+      "Bash(git push -f *)",
+      "Bash(git push --force-with-lease *)",
+      "Bash(git reset --hard *)",
+      "Bash(git clean -f*)",
+      "Bash(git clean -d*)",
+      "Bash(git clean -x*)",
+      "Bash(rm -rf *)",
+      "Bash(rm -fr *)"
+    ],
+    "defaultMode": "plan"
+  },
+  "plansDirectory": "quality_reports/plans",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/git_data_guard.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

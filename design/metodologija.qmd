@@ -1,0 +1,106 @@
+---
+title: "Metodologija"
+pagetitle: "Metodologija / Methodology — DigiKat"
+subtitle: "Analitički okvir, akteri i tematske kategorije"
+toc: true
+page-layout: full
+---
+
+::: {.column-screen}
+<section class="dk-section dk-section--top">
+<div class="dk-container">
+<div class="dk-eyebrow">02 — Analitički okvir / Framework</div>
+<h2 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:32px; line-height:1.12; margin:8px 0 8px; color:#14181d;">Četveroslojni analitički okvir</h2>
+<p class="dk-lead" style="margin-bottom:44px;">Four-layer analytical framework — the corpus is read from raw data upward to interpreted discourse, each layer feeding the next.</p>
+
+<div class="dk-layers">
+<div class="dk-layer">
+<div class="dk-layer__idx">01</div>
+<div><h3 class="dk-layer__title">Korpus i podaci</h3><div class="dk-layer__en">Corpus &amp; Data</div><p style="margin:0; color:#4f535a; font-size:15px; max-width:62ch;">Collection, de-duplication, language identification and cleaning of 610,000 posts from portals, social platforms and forums.</p></div>
+<div class="dk-layer__tags"><span class="dk-tag">ingest</span><span class="dk-tag">dedupe</span><span class="dk-tag">lang-id</span></div>
+</div>
+<div class="dk-layer">
+<div class="dk-layer__idx">02</div>
+<div><h3 class="dk-layer__title">Akteri</h3><div class="dk-layer__en">Actors</div><p style="margin:0; color:#4f535a; font-size:15px; max-width:62ch;">Who publishes — accounts and outlets are classified into four actor archetypes that shape how themes circulate.</p></div>
+<div class="dk-layer__tags"><span class="dk-tag">classify</span><span class="dk-tag">archetypes</span></div>
+</div>
+<div class="dk-layer">
+<div class="dk-layer__idx" style="background:#2c6f7e;">03</div>
+<div><h3 class="dk-layer__title">Teme</h3><div class="dk-layer__en">Themes</div><p style="margin:0; color:#4f535a; font-size:15px; max-width:62ch;">Content is assigned to 16 thematic categories through supervised classification and topic modeling.</p></div>
+<div class="dk-layer__tags"><span class="dk-tag">supervised</span><span class="dk-tag">topic-model</span></div>
+</div>
+<div class="dk-layer">
+<div class="dk-layer__idx" style="background:#5a949f;">04</div>
+<div><h3 class="dk-layer__title">Diskurs</h3><div class="dk-layer__en">Discourse</div><p style="margin:0; color:#4f535a; font-size:15px; max-width:62ch;">Framing, sentiment and network structure are analysed and interpreted to describe how Catholic discourse is constructed online.</p></div>
+<div class="dk-layer__tags"><span class="dk-tag">framing</span><span class="dk-tag">sentiment</span><span class="dk-tag">networks</span></div>
+</div>
+</div>
+</div>
+</section>
+:::
+
+::: {.column-screen}
+<section class="dk-section">
+<div class="dk-container">
+<div class="dk-eyebrow">03 — Akteri / Actor archetypes</div>
+<h2 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:32px; line-height:1.12; margin:8px 0 8px; color:#14181d;">Četiri arhetipa aktera</h2>
+<p class="dk-lead" style="margin-bottom:40px;">Four actor archetypes — the agents that produce and relay religious content.</p>
+
+<div class="dk-grid dk-grid--4">
+<div class="dk-card dk-card--actor">
+<svg width="26" height="26" viewBox="0 0 26 26" style="margin-bottom:16px;"><rect x="3" y="3" width="20" height="20" rx="2" fill="#0f4c5c"></rect></svg>
+<h3 class="dk-card__title">Institucija</h3><div class="dk-card__en">Institution</div>
+<p style="margin:14px 0 0; font-size:14px; color:#4f535a; line-height:1.5;">Official Church bodies, dioceses and Catholic outlets publishing in their own name.</p>
+<div class="dk-card__foot">~12% objava</div>
+</div>
+<div class="dk-card dk-card--actor">
+<svg width="26" height="26" viewBox="0 0 26 26" style="margin-bottom:16px;"><polygon points="13,3 23,22 3,22" fill="#0f4c5c"></polygon></svg>
+<h3 class="dk-card__title">Posrednik</h3><div class="dk-card__en">Amplifier</div>
+<p style="margin:14px 0 0; font-size:14px; color:#4f535a; line-height:1.5;">Secular media and aggregators that relay, reframe and amplify religious topics.</p>
+<div class="dk-card__foot">~34% objava</div>
+</div>
+<div class="dk-card dk-card--actor">
+<svg width="26" height="26" viewBox="0 0 26 26" style="margin-bottom:16px;"><rect x="13" y="2" width="15" height="15" transform="rotate(45 13 2)" fill="#0f4c5c"></rect></svg>
+<h3 class="dk-card__title">Kritičar</h3><div class="dk-card__en">Critic</div>
+<p style="margin:14px 0 0; font-size:14px; color:#4f535a; line-height:1.5;">Oppositional and secular voices contesting religious claims and institutions.</p>
+<div class="dk-card__foot">~19% objava</div>
+</div>
+<div class="dk-card dk-card--actor">
+<svg width="26" height="26" viewBox="0 0 26 26" style="margin-bottom:16px;"><circle cx="13" cy="13" r="10" fill="#0f4c5c"></circle></svg>
+<h3 class="dk-card__title">Sudionik</h3><div class="dk-card__en">Participant</div>
+<p style="margin:14px 0 0; font-size:14px; color:#4f535a; line-height:1.5;">Lay individuals — commenters and forum members discussing faith in everyday terms.</p>
+<div class="dk-card__foot">~35% objava</div>
+</div>
+</div>
+</div>
+</section>
+:::
+
+::: {.column-screen}
+<section class="dk-section">
+<div class="dk-container">
+<div class="dk-eyebrow">04 — Teme / Thematic categories</div>
+<h2 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:32px; line-height:1.12; margin:8px 0 8px; color:#14181d;">Šesnaest tematskih kategorija</h2>
+<p class="dk-lead" style="margin-bottom:40px;">Each category carries its categorical chart color, so a topic reads consistently across tables, cards and figures.</p>
+
+<div class="dk-grid dk-grid--themes">
+<div class="dk-theme-chip"><span style="display:flex; align-items:center; gap:8px;"><span class="dk-theme-chip__dot" style="background:#b5462f;"></span><span class="dk-mono" style="font-size:11px; color:#9a9ea6;">T01</span></span><div style="margin-top:8px;"><div style="font-weight:600; font-size:14.5px; color:#14181d;">Politika i država</div><div style="font-size:12.5px; color:#8a8e95;">Politics &amp; state</div></div></div>
+<div class="dk-theme-chip"><span style="display:flex; align-items:center; gap:8px;"><span class="dk-theme-chip__dot" style="background:#cf8324;"></span><span class="dk-mono" style="font-size:11px; color:#9a9ea6;">T02</span></span><div style="margin-top:8px;"><div style="font-weight:600; font-size:14.5px; color:#14181d;">Bioetika i život</div><div style="font-size:12.5px; color:#8a8e95;">Bioethics &amp; life</div></div></div>
+<div class="dk-theme-chip"><span style="display:flex; align-items:center; gap:8px;"><span class="dk-theme-chip__dot" style="background:#a98a1f;"></span><span class="dk-mono" style="font-size:11px; color:#9a9ea6;">T03</span></span><div style="margin-top:8px;"><div style="font-weight:600; font-size:14.5px; color:#14181d;">Obitelj i brak</div><div style="font-size:12.5px; color:#8a8e95;">Family &amp; marriage</div></div></div>
+<div class="dk-theme-chip"><span style="display:flex; align-items:center; gap:8px;"><span class="dk-theme-chip__dot" style="background:#6e8c3a;"></span><span class="dk-mono" style="font-size:11px; color:#9a9ea6;">T04</span></span><div style="margin-top:8px;"><div style="font-weight:600; font-size:14.5px; color:#14181d;">Odgoj i školstvo</div><div style="font-size:12.5px; color:#8a8e95;">Education &amp; schooling</div></div></div>
+<div class="dk-theme-chip"><span style="display:flex; align-items:center; gap:8px;"><span class="dk-theme-chip__dot" style="background:#2f8f6b;"></span><span class="dk-mono" style="font-size:11px; color:#9a9ea6;">T05</span></span><div style="margin-top:8px;"><div style="font-weight:600; font-size:14.5px; color:#14181d;">Kler i skandali</div><div style="font-size:12.5px; color:#8a8e95;">Clergy &amp; scandal</div></div></div>
+<div class="dk-theme-chip"><span style="display:flex; align-items:center; gap:8px;"><span class="dk-theme-chip__dot" style="background:#1f97a4;"></span><span class="dk-mono" style="font-size:11px; color:#9a9ea6;">T06</span></span><div style="margin-top:8px;"><div style="font-weight:600; font-size:14.5px; color:#14181d;">Socijalna pravda</div><div style="font-size:12.5px; color:#8a8e95;">Social justice</div></div></div>
+<div class="dk-theme-chip"><span style="display:flex; align-items:center; gap:8px;"><span class="dk-theme-chip__dot" style="background:#2f73b8;"></span><span class="dk-mono" style="font-size:11px; color:#9a9ea6;">T07</span></span><div style="margin-top:8px;"><div style="font-weight:600; font-size:14.5px; color:#14181d;">Sekularizam</div><div style="font-size:12.5px; color:#8a8e95;">Secularism</div></div></div>
+<div class="dk-theme-chip"><span style="display:flex; align-items:center; gap:8px;"><span class="dk-theme-chip__dot" style="background:#3f4fa0;"></span><span class="dk-mono" style="font-size:11px; color:#9a9ea6;">T08</span></span><div style="margin-top:8px;"><div style="font-weight:600; font-size:14.5px; color:#14181d;">Liturgija i pobožnost</div><div style="font-size:12.5px; color:#8a8e95;">Liturgy &amp; devotion</div></div></div>
+<div class="dk-theme-chip"><span style="display:flex; align-items:center; gap:8px;"><span class="dk-theme-chip__dot" style="background:#6e54a6;"></span><span class="dk-mono" style="font-size:11px; color:#9a9ea6;">T09</span></span><div style="margin-top:8px;"><div style="font-weight:600; font-size:14.5px; color:#14181d;">Mediji i komunikacija</div><div style="font-size:12.5px; color:#8a8e95;">Media &amp; communication</div></div></div>
+<div class="dk-theme-chip"><span style="display:flex; align-items:center; gap:8px;"><span class="dk-theme-chip__dot" style="background:#9b4d9e;"></span><span class="dk-mono" style="font-size:11px; color:#9a9ea6;">T10</span></span><div style="margin-top:8px;"><div style="font-weight:600; font-size:14.5px; color:#14181d;">Povijest i baština</div><div style="font-size:12.5px; color:#8a8e95;">History &amp; heritage</div></div></div>
+<div class="dk-theme-chip"><span style="display:flex; align-items:center; gap:8px;"><span class="dk-theme-chip__dot" style="background:#c0468a;"></span><span class="dk-mono" style="font-size:11px; color:#9a9ea6;">T11</span></span><div style="margin-top:8px;"><div style="font-weight:600; font-size:14.5px; color:#14181d;">Mladi i zvanja</div><div style="font-size:12.5px; color:#8a8e95;">Youth &amp; vocations</div></div></div>
+<div class="dk-theme-chip"><span style="display:flex; align-items:center; gap:8px;"><span class="dk-theme-chip__dot" style="background:#b23a52;"></span><span class="dk-mono" style="font-size:11px; color:#9a9ea6;">T12</span></span><div style="margin-top:8px;"><div style="font-weight:600; font-size:14.5px; color:#14181d;">Karitas i pomoć</div><div style="font-size:12.5px; color:#8a8e95;">Charity &amp; relief</div></div></div>
+<div class="dk-theme-chip"><span style="display:flex; align-items:center; gap:8px;"><span class="dk-theme-chip__dot" style="background:#8a6240;"></span><span class="dk-mono" style="font-size:11px; color:#9a9ea6;">T13</span></span><div style="margin-top:8px;"><div style="font-weight:600; font-size:14.5px; color:#14181d;">Međureligijski dijalog</div><div style="font-size:12.5px; color:#8a8e95;">Interfaith dialogue</div></div></div>
+<div class="dk-theme-chip"><span style="display:flex; align-items:center; gap:8px;"><span class="dk-theme-chip__dot" style="background:#5e7488;"></span><span class="dk-mono" style="font-size:11px; color:#9a9ea6;">T14</span></span><div style="margin-top:8px;"><div style="font-weight:600; font-size:14.5px; color:#14181d;">Pandemija i zdravlje</div><div style="font-size:12.5px; color:#8a8e95;">Pandemic &amp; health</div></div></div>
+<div class="dk-theme-chip"><span style="display:flex; align-items:center; gap:8px;"><span class="dk-theme-chip__dot" style="background:#4c9c5e;"></span><span class="dk-mono" style="font-size:11px; color:#9a9ea6;">T15</span></span><div style="margin-top:8px;"><div style="font-weight:600; font-size:14.5px; color:#14181d;">Migracije</div><div style="font-size:12.5px; color:#8a8e95;">Migration</div></div></div>
+<div class="dk-theme-chip"><span style="display:flex; align-items:center; gap:8px;"><span class="dk-theme-chip__dot" style="background:#c2702a;"></span><span class="dk-mono" style="font-size:11px; color:#9a9ea6;">T16</span></span><div style="margin-top:8px;"><div style="font-weight:600; font-size:14.5px; color:#14181d;">Umjetnost i kultura</div><div style="font-size:12.5px; color:#8a8e95;">Arts &amp; culture</div></div></div>
+</div>
+</div>
+</section>
+:::

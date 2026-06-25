@@ -1,0 +1,60 @@
+---
+title: "Studije"
+pagetitle: "Tematske studije / Thematic studies — DigiKat"
+subtitle: "Pet studija na zajedničkom korpusu i okviru"
+toc: false
+page-layout: full
+---
+
+::: {.column-screen}
+<section class="dk-section dk-section--top">
+<div class="dk-container">
+<div class="dk-eyebrow">05 — Studije / Thematic studies</div>
+<h2 style="font-family:'Source Serif 4',serif; font-weight:600; font-size:32px; line-height:1.12; margin:8px 0 8px; color:#14181d;">Pet tematskih studija</h2>
+<p class="dk-lead" style="margin-bottom:40px;">Five thematic studies — the project's published and ongoing outputs, each drawing on the shared corpus and framework.</p>
+
+<div class="dk-grid dk-grid--2">
+<div class="dk-card" style="display:flex; gap:22px;">
+<div class="dk-mono" style="font-weight:600; font-size:13px; color:#0f4c5c; padding-top:4px;">S1</div>
+<div>
+<h3 class="dk-card__title" style="line-height:1.2;">Mapiranje medijskog prostora</h3><div class="dk-card__en" style="margin-bottom:12px;">Mapping the mediascape</div>
+<p style="margin:0 0 16px; font-size:14.5px; color:#4f535a; line-height:1.5;">A descriptive baseline of the full corpus: volume, sources and thematic distribution over five years.</p>
+<div style="display:flex; flex-wrap:wrap; gap:7px; align-items:center;"><span class="dk-tag">descriptive</span><span class="dk-tag">corpus</span><span class="dk-status dk-status--ok" style="margin-left:auto;">● Objavljeno</span></div>
+</div>
+</div>
+<div class="dk-card" style="display:flex; gap:22px;">
+<div class="dk-mono" style="font-weight:600; font-size:13px; color:#0f4c5c; padding-top:4px;">S2</div>
+<div>
+<h3 class="dk-card__title" style="line-height:1.2;">Polarizacija oko bioetike</h3><div class="dk-card__en" style="margin-bottom:12px;">Polarization around bioethics</div>
+<p style="margin:0 0 16px; font-size:14.5px; color:#4f535a; line-height:1.5;">How life and bioethics debates split actors, and where the sharpest discursive divides appear.</p>
+<div style="display:flex; flex-wrap:wrap; gap:7px; align-items:center;"><span class="dk-tag">sentiment</span><span class="dk-tag">networks</span><span class="dk-status dk-status--progress" style="margin-left:auto;">● U tijeku</span></div>
+</div>
+</div>
+<div class="dk-card" style="display:flex; gap:22px;">
+<div class="dk-mono" style="font-weight:600; font-size:13px; color:#0f4c5c; padding-top:4px;">S3</div>
+<div>
+<h3 class="dk-card__title" style="line-height:1.2;">Crkva i pandemija</h3><div class="dk-card__en" style="margin-bottom:12px;">The Church during the pandemic</div>
+<p style="margin:0 0 16px; font-size:14.5px; color:#4f535a; line-height:1.5;">Religious discourse under COVID-19 — restrictions, trust and the shift of worship online.</p>
+<div style="display:flex; flex-wrap:wrap; gap:7px; align-items:center;"><span class="dk-tag">time-series</span><span class="dk-tag">topics</span><span class="dk-status dk-status--ok" style="margin-left:auto;">● Objavljeno</span></div>
+</div>
+</div>
+<div class="dk-card" style="display:flex; gap:22px;">
+<div class="dk-mono" style="font-weight:600; font-size:13px; color:#0f4c5c; padding-top:4px;">S4</div>
+<div>
+<h3 class="dk-card__title" style="line-height:1.2;">Povjerenje, kler i skandali</h3><div class="dk-card__en" style="margin-bottom:12px;">Trust, clergy and scandal</div>
+<p style="margin:0 0 16px; font-size:14.5px; color:#4f535a; line-height:1.5;">Coverage of clergy conduct and how scandal events reshape public trust signals online.</p>
+<div style="display:flex; flex-wrap:wrap; gap:7px; align-items:center;"><span class="dk-tag">events</span><span class="dk-tag">sentiment</span><span class="dk-status dk-status--progress" style="margin-left:auto;">● U tijeku</span></div>
+</div>
+</div>
+<div class="dk-card" style="display:flex; gap:22px; grid-column:1 / -1;">
+<div class="dk-mono" style="font-weight:600; font-size:13px; color:#0f4c5c; padding-top:4px;">S5</div>
+<div style="max-width:70ch;">
+<h3 class="dk-card__title" style="line-height:1.2;">Religija u političkom diskursu</h3><div class="dk-card__en" style="margin-bottom:12px;">Religion in political discourse</div>
+<p style="margin:0 0 16px; font-size:14.5px; color:#4f535a; line-height:1.5;">Where religious framing enters political debate — election cycles, value conflicts and the actors who bridge the two fields.</p>
+<div style="display:flex; flex-wrap:wrap; gap:7px; align-items:center;"><span class="dk-tag">framing</span><span class="dk-tag">networks</span><span class="dk-tag">classification</span><span class="dk-status dk-status--planned" style="margin-left:auto;">● Planirano</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+:::

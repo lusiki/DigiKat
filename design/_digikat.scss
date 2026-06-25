@@ -1,0 +1,204 @@
+/*-----------------------------------------------------------------------------
+  DigiKat — Quarto theme layer (Bootstrap 5 / cosmo)
+  Computational social science · Croatian Catholic University
+
+  USAGE in _quarto.yml:
+    format:
+      html:
+        theme: [cosmo, _digikat.scss]
+
+  Fonts are loaded via Google Fonts (see scss:uses below). All three families
+  carry full Latin Extended-A and render Croatian diacritics (č ć đ š ž).
+  Layouts use ch/rem and wrapping flex so long bilingual compound headings
+  never clip.
+-----------------------------------------------------------------------------*/
+
+/*-- scss:uses --*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+
+/*-- scss:defaults --*/
+
+// ─── Color tokens ──────────────────────────────────────────────────────────
+$dk-ink:          #0f1419;   // near-black text / dark bands
+$dk-ink-2:        #2c3036;
+$dk-paper:        #f5f4f0;   // warm page background
+$dk-surface:      #ffffff;   // cards
+$dk-muted:        #6b6f76;   // secondary text
+$dk-faint:        #9a9ea6;   // tertiary / captions
+$dk-line:         #e4e2da;   // hairline borders
+$dk-line-soft:    #eee9df;
+
+$dk-accent:       #0f4c5c;   // brand petrol — NOT a data color
+$dk-accent-700:   #0a3543;
+$dk-accent-050:   #eaf0f2;
+
+// status
+$dk-ok:           #2f8f6b;   // objavljeno / published
+$dk-progress:     #cf8324;   // u tijeku / ongoing
+$dk-planned:      $dk-faint; // planirano / planned
+
+// ─── Categorical chart palette (16 hues, distinct from $dk-accent) ───────────
+$dk-cat: (
+  "t01": #b5462f, "t02": #cf8324, "t03": #a98a1f, "t04": #6e8c3a,
+  "t05": #2f8f6b, "t06": #1f97a4, "t07": #2f73b8, "t08": #3f4fa0,
+  "t09": #6e54a6, "t10": #9b4d9e, "t11": #c0468a, "t12": #b23a52,
+  "t13": #8a6240, "t14": #5e7488, "t15": #4c9c5e, "t16": #c2702a
+);
+
+// ─── Bootstrap / cosmo overrides ─────────────────────────────────────────────
+$primary:        $dk-accent;
+$secondary:      $dk-muted;
+$success:        $dk-ok;
+$warning:        $dk-progress;
+$body-bg:        $dk-paper;
+$body-color:     $dk-ink-2;
+$link-color:     $dk-accent;
+$link-hover-color: $dk-accent-700;
+$border-color:   $dk-line;
+
+// Typography
+$font-family-sans-serif: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+$font-family-serif:      "Source Serif 4", Georgia, serif;
+$font-family-monospace:  "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+$headings-font-family:   $font-family-serif;
+$headings-font-weight:   600;
+$headings-color:         $dk-ink;
+$headings-line-height:   1.14;
+
+$font-size-base:         1rem;       // 16px
+$h1-font-size:           2.6rem;     // ~42px (hero overrides larger)
+$h2-font-size:           2rem;       // 32px
+$h3-font-size:           1.35rem;    // ~22px
+$h4-font-size:           1.15rem;
+$lead-font-size:         1.2rem;
+$line-height-base:       1.55;
+
+// Geometry
+$border-radius:          0.5rem;     // 8px
+$border-radius-sm:       0.375rem;
+$border-radius-lg:       0.625rem;
+$spacer:                 1rem;
+$card-border-color:      $dk-line;
+$card-bg:                $dk-surface;
+$card-cap-bg:            $dk-surface;
+
+
+/*-- scss:rules --*/
+
+:root {
+  // expose tokens to custom CSS, JS and chart libraries (Plotly/OJS/ggiraph)
+  --dk-accent: #{$dk-accent};
+  --dk-accent-700: #{$dk-accent-700};
+  --dk-accent-050: #{$dk-accent-050};
+  --dk-ink: #{$dk-ink};
+  --dk-paper: #{$dk-paper};
+  --dk-line: #{$dk-line};
+  --dk-muted: #{$dk-muted};
+  @each $k, $v in $dk-cat { --dk-cat-#{$k}: #{$v}; }
+}
+
+body { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
+::selection { background: $dk-accent; color: #fff; }
+
+// long bilingual compound headings must never clip
+h1, h2, h3, .dk-hero__title { text-wrap: balance; overflow-wrap: break-word; hyphens: auto; }
+
+// layout helpers — center content inside full-bleed (.column-screen) bands
+.dk-container { max-width: 1180px; margin-inline: auto; padding-inline: 40px; }
+.dk-section   { padding: 5rem 0; border-bottom: 1px solid $dk-line; }
+.dk-section--top { padding-top: 4rem; }
+@media (max-width: 640px) { .dk-container { padding-inline: 22px; } .dk-section { padding: 3rem 0; } }
+.dk-lead { color: #5a5e65; max-width: 64ch; }
+
+// numeric / label utility
+.dk-mono   { font-family: $font-family-monospace; }
+.dk-eyebrow {
+  font-family: $font-family-monospace; font-size: .75rem; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase; color: $dk-accent;
+  display: inline-flex; align-items: center; gap: .625rem;
+}
+.dk-eyebrow::before { content: ""; width: 18px; height: 1px; background: $dk-accent; }
+
+// ─── Hero ────────────────────────────────────────────────────────────────────
+.dk-hero { padding: 5.25rem 0 4.5rem; border-bottom: 1px solid $dk-line; }
+.dk-hero__title { font-family: $font-family-serif; font-weight: 600; font-size: clamp(2.2rem, 4vw, 3.25rem); line-height: 1.08; letter-spacing: -.015em; max-width: 17ch; color: $dk-ink; }
+.dk-hero__lead { font-size: 1.25rem; color: $dk-ink-2; max-width: 60ch; }
+.dk-hero__figs { display: flex; flex-wrap: wrap; gap: 2.5rem; margin-top: 3.5rem; padding-top: 1.875rem; border-top: 1px solid $dk-line; font-family: $font-family-monospace; }
+.dk-hero__fig-num { font-size: 1.875rem; font-weight: 600; color: $dk-ink; letter-spacing: -.01em; }
+.dk-hero__fig-lbl { font-size: .78rem; color: $dk-muted; margin-top: .25rem; }
+
+// ─── Statistics band ──────────────────────────────────────────────────────────
+.dk-stats { background: $dk-ink; color: #eef0f0; padding: 4rem 0; }
+.dk-stats__grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.dk-stats__item { padding: .25rem 2.25rem; border-right: 1px solid rgba(#fff, .12); }
+.dk-stats__item:first-child { padding-left: 0; }
+.dk-stats__item:last-child { border-right: 0; padding-right: 0; }
+.dk-stats__num { font-family: $font-family-monospace; font-weight: 600; font-size: 2.875rem; line-height: 1; letter-spacing: -.02em; color: #fff; }
+.dk-stats__lbl { font-size: .875rem; color: #aeb4b8; margin-top: .75rem; line-height: 1.4; }
+.dk-stats__lbl span { color: #7c8388; }
+@media (max-width: 768px) {
+  .dk-stats__grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .dk-stats__item { border-right: 0; padding: 0; }
+}
+
+// ─── Four-layer framework ──────────────────────────────────────────────────────
+.dk-layers { position: relative; padding-left: 3.5rem; }
+.dk-layers::before { content: ""; position: absolute; left: 19px; top: 22px; bottom: 22px; width: 2px; background: linear-gradient($dk-accent, #cfddE1); }
+.dk-layer { position: relative; display: grid; grid-template-columns: 1fr auto; gap: 1.5rem; background: $dk-surface; border: 1px solid $dk-line; border-radius: $border-radius-lg; padding: 1.5rem 1.625rem; margin-bottom: 1.125rem; }
+.dk-layer__idx { position: absolute; left: -3.5rem; top: 22px; width: 40px; height: 40px; border-radius: 50%; background: $dk-accent; color: #fff; display: flex; align-items: center; justify-content: center; font-family: $font-family-monospace; font-weight: 600; }
+.dk-layer__title { font-family: $font-family-serif; font-weight: 600; font-size: 1.31rem; color: $dk-ink; margin: 0; }
+.dk-layer__en { font-size: .875rem; color: $dk-faint; margin-bottom: .625rem; }
+.dk-layer__tags { display: flex; flex-direction: column; gap: .375rem; }
+.dk-tag { font-family: $font-family-monospace; font-size: .72rem; background: $dk-accent-050; color: #2c5663; padding: .25rem .56rem; border-radius: .25rem; }
+
+// ─── Actor / study / theme cards ──────────────────────────────────────────────
+.dk-card { background: $dk-surface; border: 1px solid $dk-line; border-radius: $border-radius-lg; padding: 1.5rem; }
+.dk-card--actor { border-top: 3px solid $dk-accent; }
+.dk-card__title { font-family: $font-family-serif; font-weight: 600; font-size: 1.19rem; color: $dk-ink; margin: 0; }
+.dk-card__en { font-size: .85rem; color: $dk-faint; }
+.dk-card__foot { font-family: $font-family-monospace; font-size: .75rem; color: $dk-accent; border-top: 1px solid $dk-line-soft; padding-top: .75rem; margin-top: 1rem; }
+
+.dk-theme-chip { background: $dk-surface; border: 1px solid $dk-line; border-radius: $border-radius; padding: .875rem 1rem; }
+.dk-theme-chip__dot { width: 11px; height: 11px; border-radius: 3px; flex: none; }
+
+.dk-grid { display: grid; gap: 1.125rem; }
+.dk-grid--2 { grid-template-columns: repeat(2, 1fr); }
+.dk-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.dk-grid--4 { grid-template-columns: repeat(4, 1fr); }
+.dk-grid--themes { grid-template-columns: repeat(4, 1fr); gap: .75rem; }
+@media (max-width: 992px) { .dk-grid--4, .dk-grid--themes { grid-template-columns: repeat(2, 1fr); } .dk-grid--3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .dk-grid--2, .dk-grid--3, .dk-grid--4, .dk-grid--themes { grid-template-columns: 1fr; } }
+
+.dk-status { font-family: $font-family-monospace; font-size: .72rem; }
+.dk-status--ok       { color: $dk-ok; }
+.dk-status--progress { color: $dk-progress; }
+.dk-status--planned  { color: $dk-planned; }
+
+// ─── Team ──────────────────────────────────────────────────────────────────────
+.dk-person { background: $dk-surface; border: 1px solid $dk-line; border-radius: $border-radius-lg; padding: 1.375rem; display: flex; gap: 1rem; align-items: center; }
+.dk-person__avatar { width: 56px; height: 56px; border-radius: 50%; background: $dk-accent-050; color: $dk-accent; display: flex; align-items: center; justify-content: center; font-family: $font-family-serif; font-weight: 600; font-size: 1.19rem; flex: none; }
+
+// ─── Chart frame ────────────────────────────────────────────────────────────────
+.dk-chart { background: $dk-surface; border: 1px solid $dk-line; border-radius: .75rem; overflow: hidden; }
+.dk-chart__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem; padding: 1.5rem 1.75rem 1.25rem; border-bottom: 1px solid $dk-line-soft; }
+.dk-chart__title { font-family: $font-family-serif; font-weight: 600; font-size: 1.19rem; color: $dk-ink; margin: 0 0 .25rem; }
+.dk-chart__sub { font-size: .85rem; color: $dk-faint; }
+.dk-chart__body { padding: 1.625rem 1.75rem .5rem; }
+.dk-chart__foot { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.75rem 1.375rem; border-top: 1px solid $dk-line-soft; margin-top: .75rem; font-family: $font-family-monospace; font-size: .72rem; color: $dk-faint; }
+.dk-bar-row { display: grid; grid-template-columns: 180px 1fr 84px; gap: 1rem; align-items: center; margin-bottom: .8rem; }
+.dk-bar-track { background: #f1efe9; border-radius: .25rem; height: 22px; overflow: hidden; }
+.dk-bar-fill { height: 100%; border-radius: .25rem; }  // width + background set inline per datum
+.dk-bar-val { font-family: $font-family-monospace; font-size: .78rem; color: $dk-ink-2; text-align: right; }
+
+// helper to color a chart series by category index: .dk-cat-t07 { fill / background }
+@each $k, $v in $dk-cat {
+  .dk-fill-#{$k} { background-color: $v !important; }
+  .dk-stroke-#{$k} { color: $v !important; }
+}
+
+// ─── Footer ──────────────────────────────────────────────────────────────────────
+.dk-footer { background: $dk-ink; color: #aeb4b8; }
+.dk-footer a { color: #c7ccce; text-decoration: none; }
+.dk-footer a:hover { color: #fff; }
