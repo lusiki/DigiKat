@@ -7,6 +7,10 @@
 # Quarto
 /.quarto/
 
+# Python (the .claude/hooks/ guards compile bytecode caches)
+__pycache__/
+*.pyc
+
 # Build artifacts
 *.log
 *.tex
@@ -50,3 +54,34 @@ quality_reports/session_logs/
 
 # Exploration sandbox outputs are throwaway (the explorations themselves ARE tracked)
 explorations/*/output/
+
+# ── Render output that must only ever live under docs/ (output-dir: docs) ──
+# A Quarto render run the wrong way (a single page from inside a source dir, or with the project
+# undetected) scatters HTML, site_libs/ and *_files/ beside the sources, and can even EMPTY docs/.
+# These patterns make that stray output un-stageable so it can never be committed or clutter
+# `git status`. They are scoped to the SOURCE dirs that hold renderable .qmd (pages/, R/, design/)
+# plus the repo root — and deliberately spare the real site output under docs/ AND the tracked
+# README.html / README_files/ / "design/DigiKat Design System.dc.html".
+#
+# pages/ — the main website sources
+/pages/**/*.html
+/pages/**/site_libs/
+/pages/**/*_files/
+# R/ — R/general_catholic_mediaspace.qmd scatters here if mis-rendered in place
+/R/*.html
+/R/site_libs/
+/R/**/*_files/
+# design/ — the design-system subproject (own _quarto.yml, output-dir: _site)
+/design/_site/
+/design/*.html
+!/design/DigiKat Design System.dc.html
+/design/site_libs/
+/design/**/*_files/
+# repo root — a project-level mis-render drops these at the top level (NOT README.html/README_files/)
+/site_libs/
+/index.html
+/search.json
+/sitemap.xml
+/robots.txt
+# transient Quarto intermediate — safe to ignore anywhere (never tracked, incl. under docs/)
+*.rmarkdown

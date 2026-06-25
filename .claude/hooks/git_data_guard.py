@@ -18,8 +18,10 @@ Portability: invoked as `python ...` (this machine has no `python3`). When Mac/L
 this repo, switch the settings.json command to a `python3 || python` wrapper (python3 may be the only one there).
 """
 import sys
+import os
 import json
 import re
+import subprocess
 
 # (regex, human reason). Matched case-insensitively against the command with backslashes -> slashes.
 RULES = [
@@ -48,6 +50,50 @@ RULES = [
 ]
 
 
+def _docs_html_deletions():
+    """Count distinct tracked docs/**/*.html files deleted — staged OR missing from the working
+    tree. Returns an int, or None on ANY error so the guard FAILS OPEN (never blocks git on a
+    tooling hiccup), consistent with the parse-error handling in main()."""
+    root = os.environ.get("CLAUDE_PROJECT_DIR") or None
+    gone = set()
+    for argv in (
+        ["git", "diff", "--cached", "--name-only", "--diff-filter=D"],  # staged for deletion
+        ["git", "ls-files", "--deleted"],                                # deleted in the worktree
+    ):
+        try:
+            res = subprocess.run(argv, cwd=root, capture_output=True, text=True, timeout=5)
+        except Exception:
+            return None
+        if res.returncode != 0:
+            return None
+        for line in res.stdout.splitlines():
+            f = line.strip().strip('"')
+            if f.startswith("docs/") and f.endswith(".html"):
+                gone.add(f)
+    return len(gone)
+
+
+def docs_wipe_reason(cmd):
+    """Block a `git commit` that would delete the published site. A mass docs/ HTML deletion is the
+    signature of a Quarto render that emptied docs/ (output scattered elsewhere) — NOT an intentional
+    page removal — and committing + pushing it takes the live GitHub Pages site down. Threshold of 3
+    spares a genuine single-page removal (1 .html). Counts BOTH staged and working-tree deletions, and
+    matches `git commit` anywhere in the command, so it deliberately OVER-blocks (e.g. a plain
+    `git commit -m` while docs/ is dirty but unstaged) rather than ever letting a wipe slip through —
+    fail-safe by design; the message documents the override."""
+    if not re.search(r"\bgit\s+commit\b", cmd, re.IGNORECASE):
+        return None
+    n = _docs_html_deletions()
+    if n is None or n < 3:
+        return None
+    return (
+        "this commit would DELETE %d docs/*.html page(s) — the published GitHub Pages site. "
+        "A mass docs/ deletion is the signature of a Quarto render that emptied docs/, not an "
+        "intentional page removal. Restore the site and re-render from the repo root:  "
+        "git restore --staged docs/ ; git checkout -- docs/ ; quarto render." % n
+    )
+
+
 def main():
     try:
         event = json.load(sys.stdin)
@@ -68,6 +114,14 @@ def main():
                 "(and back up data/merged_comprehensive.rds first)."
             )
             return 2
+    reason = docs_wipe_reason(norm)
+    if reason:
+        sys.stderr.write(
+            "BLOCKED by DigiKat git/data guard: " + reason +
+            "\nCommand: " + cmd.strip() +
+            "\nIf this is genuinely intended, run it manually outside Claude."
+        )
+        return 2
     return 0
 
 

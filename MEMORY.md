@@ -22,6 +22,11 @@
   normalization on both sides or join coverage collapses toward 0%.
 - [LEARN] Adding a religious root without its case/plural/derivation alternations silently UNDER-matches.
 - [LEARN] `pages/mapa/događaji.qmd` has a diacritic (đ) in its filename — don't rename casually; check `docs/` after.
+- [LEARN] Run `quarto` from the REPO ROOT, never `cd pages && quarto render x.qmd`. A render with the project
+  undetected scatters HTML / root `site_libs/` / `*_files/` beside the sources AND can EMPTY `docs/`; committing
+  that wipe + pushing takes the live site down. Recovery: `git checkout -- docs/`, then re-render from root.
+  Backstops added 2026-06-25: `.gitignore` makes the scattered output un-stageable, and `git_data_guard.py`
+  blocks any `git commit` that would delete ≥3 `docs/**/*.html` pages. Verify post-render anyway (quarto rule §8).
 
 ## Known repo issues (Phase 0 backlog — see WORKFLOW_SUGGESTIONS.md)
 - `R/text_analysis.R` reads the 3 sentiment lexicons from a phantom `./Codes/` dir → repoint to `resources/lexicons/`.
