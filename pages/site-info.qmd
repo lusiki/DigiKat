@@ -1,8 +1,34 @@
 ---
 title: "O stranici"
+subtitle: "Tehnička pozadina stranice"
+date: last-modified
+categories: ["Quarto", "Positron", "R"]
 ---
 
 Ova stranica je napravljena u [Quarto](https://quarto.org/) kroz [Positron](https://positron.posit.co/).
+
+<div class="card-grid">
+  <div class="info-card">
+    <div class="info-card-icon">📝</div>
+    <h4>Quarto</h4>
+    <p>Sustav za izradu znanstvenih i tehničkih publikacija koji povezuje tekst, kod i rezultate u jedinstveni web izvor.</p>
+  </div>
+  <div class="info-card">
+    <div class="info-card-icon">💻</div>
+    <h4>Positron</h4>
+    <p>Razvojno okruženje za rad s podacima u kojem je stranica napisana i izgrađena.</p>
+  </div>
+  <div class="info-card">
+    <div class="info-card-icon">📊</div>
+    <h4>R</h4>
+    <p>Programski jezik za statističku obradu i analizu podataka koji pokreće izračune na stranici.</p>
+  </div>
+  <div class="info-card">
+    <div class="info-card-icon">🌐</div>
+    <h4>GitHub Pages</h4>
+    <p>Platforma za objavu statičke web-stranice, gdje je projekt javno dostupan.</p>
+  </div>
+</div>
 
 ```{r}
 #| label: session-info

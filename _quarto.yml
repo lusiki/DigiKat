@@ -3,6 +3,11 @@ project:
   output-dir: docs
   resources:
     - assets/
+  # Only the real site pages render. Prevents auto-globbing root .md
+  # (CLAUDE.local.md, MEMORY.md, WORKFLOW_SUGGESTIONS*.md …) and the design/ mockup
+  # into the published docs/.
+  render:
+    - pages/**/*.qmd
 
 website:
   title: "DigiKat"
@@ -48,15 +53,41 @@ website:
         href: pages/site-info.qmd
       - icon: github
         href: https://github.com/lusiki/DigiKat
+  page-footer:
+    background: "#0f1419"
+    foreground: "#aeb4b8"
+    border: false
+    left: |
+      **DigiKat** · Hrvatsko katoličko sveučilište
+    center:
+      - text: "Baza podataka"
+        href: pages/baza.qmd
+      - text: "Metodologija"
+        href: pages/about.qmd
+      - text: "Resursi"
+        href: pages/resources.qmd
+      - text: "GitHub"
+        href: https://github.com/lusiki/DigiKat
+    right: |
+      CC BY 4.0 · © 2021–2025 DigiKat
 
 format:
   html:
-    theme: cosmo
-    css: 
-      - assets/css/style.css
+    theme:
+      - cosmo
       - assets/css/custom.scss
     toc: true
     toc-location: left
+    toc-depth: 3
+    smooth-scroll: true
     code-fold: show
     code-tools: true
-    mainfont: system-ui
+    code-copy: true
+    mainfont: "Source Sans 3"
+    monofont: "IBM Plex Mono"
+    fig-align: center
+    include-in-header:
+      - text: |
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">

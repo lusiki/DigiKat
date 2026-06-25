@@ -31,7 +31,22 @@ Thumbs.db
 # Large data files (too big for GitHub)
 data/*.rds
 data/merged_comprehensive.rds
+data/merged_comprehensive_backup_*.rds
 data/nlp/*.rds
 data/raw/*.xlsx
+data/raw/new/*.xlsx
+# NOTE: data/processed/*.rds and data/sample/*.rds ARE intentionally tracked (CC BY 4.0, no PII).
+# Do NOT broaden the pattern to data/**/*.rds — that would silently drop those shareable aggregates.
 
 **/*.quarto_ipynb
+
+# Claude Code workflow — local overrides (never commit machine paths / personal settings)
+# NOTE: the rest of .claude/ (settings.json, rules/, hooks/, skills/, agents/) IS committed & shared.
+CLAUDE.local.md
+.claude/settings.local.json
+
+# Claude Code — session logs are local; plans (quality_reports/plans/) ARE tracked
+quality_reports/session_logs/
+
+# Exploration sandbox outputs are throwaway (the explorations themselves ARE tracked)
+explorations/*/output/

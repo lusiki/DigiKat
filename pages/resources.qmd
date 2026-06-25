@@ -1,27 +1,45 @@
 ---
 title: "Resursi i korisni linkovi"
+subtitle: "Kurirana lista alata, literature i zajednica"
 date: last-modified
-format: 
-  html:
-    theme: cosmo
-    toc: true
-    toc-location: left
-    toc-depth: 3
-    toc-expand: 2
-    smooth-scroll: true
-    code-tools: false
+categories: ["Resursi", "R & Python", "Literatura"]
 ---
 
 ## Pregled
 
 Ovdje smo pripremili kuriranu listu resursa koja će vam pomoći da dublje zaronite u svijet računalnih društvenih znanosti, analize podataka i alata koje koristimo na ovom projektu.
 
+::: {.featured-box}
+### Od alata do zajednice
+Od programskih jezika i temeljne literature, preko izvora podataka, sve do blogova i zajednica za učenje. Svaki link vodi do provjerenog izvora koji možete koristiti za usavršavanje vlastitih vještina i razumijevanje metoda iza projekta.
+:::
+
+<p>
+  <span class="tag tag-primary">R</span>
+  <span class="tag tag-primary">Python</span>
+  <span class="tag">NLP</span>
+  <span class="tag">SQL</span>
+  <span class="tag">Git</span>
+</p>
 
 ---
 
 ## Uvod u alate i programske jezike
 
 Ovi resursi idealni su za sve koji žele naučiti ili usavršiti svoje vještine u programskim jezicima R i Python, koji su temelj našeg analitičkog rada.
+
+<div class="card-grid">
+  <div class="info-card">
+    <div class="info-card-icon">📊</div>
+    <h4>Za korisnike R</h4>
+    <p>Vodiči i knjige za analizu podataka i teksta u jeziku R, od osnova RStudio okruženja do tidy principa.</p>
+  </div>
+  <div class="info-card">
+    <div class="info-card-icon">🐍</div>
+    <h4>Za korisnike Pythona</h4>
+    <p>Službena dokumentacija i moderni tutorijali za obradu prirodnog jezika i opće programiranje u Pythonu.</p>
+  </div>
+</div>
 
 ### Za korisnike R
 
@@ -43,6 +61,24 @@ Ovi resursi idealni su za sve koji žele naučiti ili usavršiti svoje vještine
 
 Knjige i znanstveni radovi koji oblikuju područje kojim se bavimo.
 
+<div class="card-grid">
+  <div class="info-card">
+    <div class="info-card-icon">🧠</div>
+    <h4>Računalne društvene znanosti</h4>
+    <p>Ključne knjige i seminalni radovi koji definiraju polje i njegove izazove u digitalnom dobu.</p>
+  </div>
+  <div class="info-card">
+    <div class="info-card-icon">📝</div>
+    <h4>Analiza teksta kao podatka</h4>
+    <p>Sveobuhvatan okvir za primjenu metoda analize teksta u društvenim znanostima.</p>
+  </div>
+  <div class="info-card">
+    <div class="info-card-icon">📈</div>
+    <h4>Statistika i podaci</h4>
+    <p>Pristupačne knjige o razumijevanju podataka i prepoznavanju manipulacije statistikom.</p>
+  </div>
+</div>
+
 ### Računalne društvene znanosti
 
 *   **Bit by Bit Social Research in the Digital Age** Ključna knjiga Matthewa Salganika koja objašnjava kako digitalno doba transformira društvena istraživanja. [Link](https://www.bitbybitbook.com/)
@@ -63,6 +99,19 @@ Knjige i znanstveni radovi koji oblikuju područje kojim se bavimo.
 
 Linkovi na relevantne izvore podataka, časopise i organizacije koje se bave sličnim temama.
 
+<div class="card-grid">
+  <div class="info-card">
+    <div class="info-card-icon">🗄️</div>
+    <h4>Izvori podataka</h4>
+    <p>Pew Research Center kao jedan od najvažnijih izvora podataka i analiza o ulozi religije u društvu.</p>
+  </div>
+  <div class="info-card">
+    <div class="info-card-icon">📚</div>
+    <h4>Časopisi i organizacije</h4>
+    <p>Vodeći znanstveni časopisi i globalne organizacije na sjecištu medija, religije i digitalnih humanističkih znanosti.</p>
+  </div>
+</div>
+
 *   **Pew Research Center Religion & Public Life** Jedan od najvažnijih izvora podataka i analiza o ulozi religije u društvu. [Link](https://www.pewresearch.org/religion/)
 *   **Journal of Media and Religion** Vodeći znanstveni časopis koji objavljuje istraživanja na sjecištu medija i religije. [Link](https://www.tandfonline.com/journals/hmre20)
 *   **Alliance of Digital Humanities Organizations (ADHO)** Globalna organizacija koja promiče primjenu digitalnih tehnologija u humanističkim znanostima. [Link](https://adho.org/)
@@ -72,6 +121,24 @@ Linkovi na relevantne izvore podataka, časopise i organizacije koje se bave sli
 ## Blogovi, zajednice i platforme
 
 Mjesta za učenje, postavljanje pitanja i praćenje najnovijih trendova.
+
+<div class="card-grid">
+  <div class="info-card">
+    <div class="info-card-icon">✍️</div>
+    <h4>Učenje i članci</h4>
+    <p>Towards Data Science kao jedna od najvećih online publikacija o podatkovnoj znanosti, s tisućama tutorijala.</p>
+  </div>
+  <div class="info-card">
+    <div class="info-card-icon">💬</div>
+    <h4>Zajednice programera</h4>
+    <p>Stack Overflow za tehnička pitanja i odgovore, najvažnija zajednica za rješavanje problema u kodu.</p>
+  </div>
+  <div class="info-card">
+    <div class="info-card-icon">🌐</div>
+    <h4>Otvorena znanost</h4>
+    <p>GitHub i Zenodo kao ključne platforme za suradnju, dijeljenje koda i pohranu podataka po FAIR principima.</p>
+  </div>
+</div>
 
 *   **Towards Data Science** Jedna od najvećih online publikacija o podatkovnoj znanosti, s tisućama korisnih članaka i tutorijala. [Link](https://towardsdatascience.com/)
 *   **Stack Overflow** Najvažnija zajednica za programere. Ako imate tehnički problem, ovdje ćete najvjerojatnije pronaći odgovor. [Link](https://stackoverflow.com/)
@@ -130,7 +197,7 @@ Kurirana lista ključnih knjiga i radova organiziranih po metodološkim područj
 *   Rodriguez, P. L., & Spirling, A. (2022). Word embeddings What works, what doesn't, and how to tell the difference for applied research. The Journal of Politics.
 *   Torres, M., & Cantú, F. (2022). Learning to See Convolutional Neural Networks for the Analysis of Social Science Data. Political Analysis.
 
-    
+
 <br>
 <br>
 <br>

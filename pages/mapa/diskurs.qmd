@@ -1,16 +1,8 @@
 ---
 title: "Emocionalna i konfliktna mapa katoličkog digitalnog prostora (2021-2025)"
+subtitle: "Emocije i ton diskursa"
 date: last-modified
-format:
-  html:
-    theme: cosmo
-    toc: true
-    toc-location: left
-    toc-depth: 3
-    toc-expand: 2
-    smooth-scroll: true
-    code-fold: true
-    code-tools: false
+categories: ["Atmosfera diskursa", "Sentiment", "Emocije"]
 ---
 
 ```{r}
@@ -39,6 +31,7 @@ library(dplyr)
 library(tidytext)
 library(stringr)
 library(ggplot2)
+source("../../R/theme_digikat.R")
 library(forcats)
 library(tidyr)
 library(widyr)
@@ -197,6 +190,25 @@ dta_enriched <- bind_cols(dta_stratified_sample, theme_analysis_data)
 
 ## Uvod u analizu emocionalne i konfliktne strukture diskursa
 
+<div class="metric-grid">
+  <div class="metric-card">
+    <div class="metric-value">3</div>
+    <div class="metric-label">Leksikona sentimenta</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">8</div>
+    <div class="metric-label">Emocija (NRC)</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">2</div>
+    <div class="metric-label">Razine analize</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">2021.–2025.</div>
+    <div class="metric-label">Razdoblje</div>
+  </div>
+</div>
+
 Nakon kartografiranja [aktera i platformi](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/mapa/mapa.html) te identifikacije [tematskih](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/mapa/mapa_stats.html) kategorija, ova treća analitička mapa usmjerava se na najsuptilniju dimenziju digitalnog katoličkog diskursa. Mapa se bavi pitanjem atmosfere komunikacijskog prostora, odnosno načinima na koji se teme artikuliraju. Fokus je na emocionalnom tonalitetu, psihološkim apelima i intenzitetu konfliktnog jezika koji karakterizira različite narativne okvire. Ovaj pristup nadilazi tradicionalne binarne klasifikacije sentimenta, uvodeći višeslojne, kontekstualno svjesne metrike koje omogućuju dubinsko razumijevanje komunikacijskih strategija. Analitički okvir strukturiran je u tri komponente.
 
 Prva komponenta obuhvaća dvoslojnu **emocionalnu analizu** koja razdvaja površinski tonalitet teksta od dubinskih psiholoških procesa koji se u njemu aktiviraju. Druga komponenta je **relativni indeks konflikta** koji mjeri neočekivanu agresivnost jezika u odnosu na kontekstualne osnovne (*baseline*) karakteristike medija i teme. Treća komponenta uključuje **mrežu narativne atmosfere** koja vizualizira kako se emocionalni tonalitet i intenzitet konflikta mijenjaju kada se različite tematske kategorije kombiniraju u šire narativne okvire.
@@ -314,7 +326,7 @@ ggplot(heatmap_data, aes(x = dominant_emotion, y = dominant_topic, fill = avg_se
   geom_tile(color = "white", linewidth = 0.5) +
   geom_text(aes(label = round(avg_sentiment, 2)), size = 4, color = "black") +
   scale_fill_gradient2(low = "firebrick", mid = "white", high = "steelblue", midpoint = 0, name = "Prosj. Sentiment") +
-  theme_minimal(base_size = 16) +
+  theme_digikat(base_size = 16) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   labs(
     title = "Matrica tonaliteta prema tematskim kategorijama i psihološkim okvirima",
@@ -397,7 +409,7 @@ ggplot(media_strategy_data, aes(x = avg_cli, y = rci_sd, size = n_articles)) +
   scale_x_log10(labels = scales::number_format(accuracy = 0.1)) +
   scale_y_log10(labels = scales::number_format(accuracy = 0.1)) +
   scale_size_continuous(range = c(3, 12), name = "Broj članaka") +
-  theme_minimal(base_size = 16) +
+  theme_digikat(base_size = 16) +
   labs(
     title = "Tipologija medijskih strategija konfliktnog diskursa",
     subtitle = "Pozicija medija temeljena na prosječnoj razini i varijabilnosti konfliktnog jezika",

@@ -1,15 +1,8 @@
 ---
 title: "Mapa katoličkog digitalnog prostora u RH (2021-2025)"
+subtitle: "Mapiranje digitalne medijske arene"
 date: last-modified
-format:
-  html:
-    theme: cosmo
-    toc: true
-    toc-location: left
-    toc-depth: 3
-    toc-expand: 2
-    smooth-scroll: true
-    code-tools: false
+categories: ["Mapa ekosustava", "Akteri", "Doseg"]
 ---
 
 ```{r}
@@ -30,6 +23,7 @@ knitr::opts_chunk$set(
 #| label: libraries
 
 library(ggplot2)
+source("../../R/theme_digikat.R")
 library(dplyr)
 library(scales)
 library(patchwork)
@@ -50,6 +44,24 @@ Tri glavna pitanja su u pozadini ove mape:
 
 * Kakva je dinamika utjecaja? Ovdje su uspoređeni doseg i angažman u cilju razumijevanja različitih strategija komunikacijskog djelovanja.
 
+<div class="metric-grid">
+  <div class="metric-card">
+    <div class="metric-value">610.000+</div>
+    <div class="metric-label">Medijskih objava</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">6</div>
+    <div class="metric-label">Platformi</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">4</div>
+    <div class="metric-label">Arhetipa aktera</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">2021.–2025.</div>
+    <div class="metric-label">Razdoblje analize</div>
+  </div>
+</div>
 
 ::: {.callout-note}
 ## Prije nastavka, potrebno je definirati metrike koje se koriste u mapi.
@@ -205,7 +217,7 @@ plot_volume <- platform_summary %>%
   facet_wrap(~year, scales = "free_y") +
   scale_x_continuous(labels = label_number(suffix = " K", scale = 1e-3)) +
   scale_fill_manual(values = platform_colors) +
-  theme_minimal(base_size = 16) +
+  theme_digikat(base_size = 16) +
   theme(
     legend.position = "none",
     strip.text = element_text(face = "bold", size = 18),
@@ -245,7 +257,7 @@ plot_interactions <- platform_summary %>%
   facet_wrap(~year, scales = "free_y") +
   scale_x_continuous(labels = label_number(suffix = " M", scale = 1e-6)) +
   scale_fill_manual(values = platform_colors) +
-  theme_minimal(base_size = 16) +
+  theme_digikat(base_size = 16) +
   theme(
     legend.position = "none",
     strip.text = element_text(face = "bold", size = 18),
@@ -280,7 +292,7 @@ plot_share_posts <- proportions_summary %>%
   scale_y_continuous(labels = percent_format()) +
   scale_x_continuous(breaks = c(2021, 2022, 2023, 2024, 2025)) +
   scale_fill_manual(values = platform_colors) +
-  theme_minimal(base_size = 16) +
+  theme_digikat(base_size = 16) +
   labs(title = "Udio objava", x = "Godina", y = "Postotak")
 
 plot_share_interactions <- proportions_summary %>%
@@ -291,7 +303,7 @@ plot_share_interactions <- proportions_summary %>%
   scale_y_continuous(labels = percent_format()) +
   scale_x_continuous(breaks = c(2021, 2022, 2023, 2024, 2025)) +
   scale_fill_manual(values = platform_colors, guide = "none") +
-  theme_minimal(base_size = 16) +
+  theme_digikat(base_size = 16) +
   labs(title = "Udio interakcija", x = "Godina", y = "Postotak")
 
 plot_share_reach <- proportions_summary %>%
@@ -302,7 +314,7 @@ plot_share_reach <- proportions_summary %>%
   scale_y_continuous(labels = percent_format()) +
   scale_x_continuous(breaks = c(2021, 2022, 2023, 2024, 2025)) +
   scale_fill_manual(values = platform_colors, guide = "none") +
-  theme_minimal(base_size = 16) +
+  theme_digikat(base_size = 16) +
   labs(title = "Udio dosega", x = "Godina", y = "Postotak")
 
 plot_combined_share <- (plot_share_posts + plot_share_interactions + plot_share_reach) +
@@ -349,7 +361,7 @@ create_top_source_plot <- function(data, platform_name, platform_color) {
     coord_flip() +
     scale_y_continuous(labels = label_number(suffix = " K", scale = 1e-3)) +
     scale_size_continuous(range = c(3, 12), name = "Broj objava") +
-    theme_light(base_size = 14) +
+    theme_digikat(base_size = 14) +
     theme(
       panel.grid.major.y = element_blank(), panel.border = element_blank(),
       axis.ticks.y = element_blank(), legend.position = "bottom",
@@ -410,7 +422,7 @@ create_actor_map_plot <- function(data, platform_name, platform_color) {
     scale_x_log10(labels = label_number(big.mark = ".", suffix = " K", scale = 1e-3)) +
     scale_y_log10(labels = label_number(big.mark = ".", suffix = " M", scale = 1e-6)) +
     scale_size_continuous(range = c(3, 14), name = "Broj objava") +
-    theme_minimal(base_size = 14) +
+    theme_digikat(base_size = 14) +
     theme(legend.position = "bottom") +
     labs(
       title = platform_name, x = "Ukupne interakcije (Log)", y = "Ukupan doseg (Log)"

@@ -1,16 +1,318 @@
+/*-- scss:defaults --*/
+
+// =====================================================================
+// DigiKat design system  (editorial / academic)
+// Petrol accent · cream paper · Source Serif 4 / Source Sans 3 / IBM Plex Mono
+// =====================================================================
+
+// Brand & neutral tokens (from the DigiKat Design System reference)
+$dk-accent:      #0F4C5C;   // brand / petrol
+$dk-accent-700:  #0A3543;   // accent deep
+$dk-accent-300:  #2c6f7e;
+$dk-accent-200:  #5a949f;
+$dk-accent-050:  #EAF0F2;   // accent soft
+$dk-accent-ink:  #2c5663;   // text on accent-soft
+$dk-ink:         #0F1419;   // near-black
+$dk-paper:       #F5F4F0;   // page background (warm)
+$dk-muted:       #6B6F76;
+$dk-hairline:    #E4E2DA;   // hairline border
+$dk-hairline-2:  #eee9df;
+$dk-heading:     #14181d;
+$dk-body:        #1b1d21;
+$dk-body-2:      #4f535a;
+$dk-sub:         #8a8e95;
+$dk-faint:       #9a9ea6;
+
+// Fonts (web fonts are loaded via include-in-header in _quarto.yml)
+$font-family-sans-serif: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+$font-family-monospace:  "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+$headings-font-family:   "Source Serif 4", Georgia, "Times New Roman", serif;
+
+// Bootstrap / cosmo overrides
+$primary:               $dk-accent;
+$body-bg:               $dk-paper;
+$body-color:            $dk-body;
+$link-color:            $dk-accent;
+$link-hover-color:      $dk-accent-700;
+$headings-color:        $dk-heading;
+$headings-font-weight:  600;
+$border-color:          $dk-hairline;
+$border-radius:         0.375rem;   // 6px
+$border-radius-lg:      0.625rem;   // 10px
+$font-size-root:        16px;
+
+// Navbar -> light, cream, hairline (NOT dark)
+$navbar-light-color:        #44474d;
+$navbar-light-hover-color:  $dk-accent;
+$navbar-light-active-color: $dk-accent;
+
 /*-- scss:rules --*/
 
-// Darker gray header
+// ---------------------------------------------------------------------
+// Base typography
+// ---------------------------------------------------------------------
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  background: $dk-paper;
+  color: $dk-body;
+  line-height: 1.55;
+}
+h1, h2, h3, h4, h5, .quarto-title .title {
+  font-family: $headings-font-family;
+  color: $dk-heading;
+  letter-spacing: -0.01em;
+}
+h1 { font-weight: 600; line-height: 1.1; }
+h2 { font-weight: 600; line-height: 1.12; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+::selection { background: $dk-accent; color: #fff; }
+
+// ---------------------------------------------------------------------
+// Navbar — light, cream, sticky, hairline
+// ---------------------------------------------------------------------
 .navbar {
-  background-color: #343a40 !important;
-  border-bottom: 1px solid #23272b;
+  background-color: rgba(245, 244, 240, 0.92) !important;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid $dk-hairline;
+}
+.navbar .navbar-brand {
+  font-family: $headings-font-family;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: $dk-heading !important;
+}
+.navbar .nav-link {
+  color: #44474d !important;
+  font-size: 0.95rem;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .nav-link.active {
+  color: $dk-accent !important;
 }
 
-.navbar-brand,
-.navbar-nav .nav-link {
-  color: #f8f9fa !important;
+// ---------------------------------------------------------------------
+// Title block (inner pages) — serif title, mono category chips, hairline
+// ---------------------------------------------------------------------
+.quarto-title-block .quarto-title .title {
+  font-size: 2.4rem;
+  line-height: 1.1;
+}
+.quarto-title-block .subtitle {
+  color: $dk-body-2;
+  font-size: 1.2rem;
+}
+.quarto-title-block {
+  border-bottom: 1px solid $dk-hairline;
+  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
+}
+.quarto-categories { gap: 0.5rem; margin-top: 0.85rem; }
+.quarto-category {
+  font-family: $font-family-monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  background: $dk-accent-050;
+  color: $dk-accent-ink;
+  border: none;
+  border-radius: 4px;
+  padding: 0.25rem 0.6rem;
+  opacity: 1;
 }
 
-.navbar-nav .nav-link:hover {
-  color: #ffffff !important;
+// ---------------------------------------------------------------------
+// Eyebrow (mono uppercase label with a tick) — reusable on any page
+// ---------------------------------------------------------------------
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: $font-family-monospace;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $dk-accent;
+  margin: 0 0 12px;
+}
+.eyebrow::before {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: $dk-accent;
+  display: inline-block;
+}
+
+// ---------------------------------------------------------------------
+// Metric cards  (re-skinned to editorial: mono numbers, hairline cards)
+// ---------------------------------------------------------------------
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  margin: 1.75rem 0;
+}
+.metric-card {
+  background: #fff;
+  border: 1px solid $dk-hairline;
+  border-radius: $border-radius-lg;
+  padding: 1.25rem 1.35rem;
+  box-shadow: none;
+}
+.metric-value {
+  font-family: $font-family-monospace;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: $dk-ink;
+}
+.metric-label {
+  font-family: $font-family-monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: $dk-muted;
+  text-transform: none;
+  margin-top: 0.6rem;
+}
+
+// ---------------------------------------------------------------------
+// Generic content cards
+// ---------------------------------------------------------------------
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  margin: 1.75rem 0;
+}
+.info-card {
+  background: #fff;
+  border: 1px solid $dk-hairline;
+  border-radius: $border-radius-lg;
+  border-top: 3px solid $dk-accent;
+  padding: 1.4rem 1.5rem;
+  box-shadow: none;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.info-card:hover {
+  box-shadow: 0 8px 22px rgba(15, 76, 92, 0.08);
+  transform: translateY(-2px);
+}
+.info-card .info-card-icon { color: $dk-accent; font-size: 1.5rem; line-height: 1; margin-bottom: 0.6rem; }
+.info-card h3, .info-card h4 { margin-top: 0; color: $dk-heading; font-size: 1.15rem; }
+.info-card p:last-child { margin-bottom: 0; color: $dk-body-2; }
+
+// ---------------------------------------------------------------------
+// Tag / chip system  (mono, accent-soft)
+// ---------------------------------------------------------------------
+.tag, .tag-primary, .tag-secondary, .tag-success {
+  display: inline-block;
+  font-family: $font-family-monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  background: $dk-accent-050;
+  color: $dk-accent-ink;
+  border: none;
+  border-radius: 4px;
+  padding: 0.25rem 0.55rem;
+  margin: 0.15rem 0.2rem 0.15rem 0;
+}
+.tag-primary { background: $dk-accent; color: #fff; }
+.tag-success { background: #e3f0e8; color: #2f6f53; }
+
+// ---------------------------------------------------------------------
+// Featured / highlighted panel  (accent-soft)
+// ---------------------------------------------------------------------
+.featured-box {
+  background: $dk-accent-050;
+  border: none;
+  border-left: 3px solid $dk-accent;
+  border-radius: $border-radius-lg;
+  padding: 1.4rem 1.6rem;
+  margin: 1.75rem 0;
+  color: $dk-accent-ink;
+}
+.featured-box h3, .featured-box h4 { margin-top: 0; color: $dk-accent-700; }
+
+// ---------------------------------------------------------------------
+// Timeline  (left rail with petrol nodes) — schedule / news
+// ---------------------------------------------------------------------
+.timeline { position: relative; padding: 0.5rem 0 0.5rem 36px; margin: 1.5rem 0; }
+.timeline::before {
+  content: ""; position: absolute; left: 11px; top: 8px; bottom: 8px;
+  width: 2px; background: linear-gradient($dk-accent, #cfddE1);
+}
+.timeline-item {
+  position: relative; background: #fff; border: 1px solid $dk-hairline;
+  border-radius: $border-radius-lg; padding: 1.1rem 1.3rem; margin-bottom: 16px;
+}
+.timeline-item::before {
+  content: ""; position: absolute; left: -31px; top: 18px;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: $dk-accent; border: 3px solid $dk-paper;
+}
+.timeline-item > :first-child { margin-top: 0; }
+
+// ---------------------------------------------------------------------
+// Section header accent
+// ---------------------------------------------------------------------
+.section-header { border-left: 4px solid $dk-accent; padding-left: 0.85rem; margin: 2.75rem 0 1.25rem; }
+.section-header > :first-child { margin-top: 0; }
+
+// ---------------------------------------------------------------------
+// Callouts — align to brand
+// ---------------------------------------------------------------------
+.callout.callout-style-default { border-radius: $border-radius-lg; border-left-color: $dk-accent; }
+.callout-note { border-left-color: $dk-accent !important; }
+.callout-tip  { border-left-color: #2f8f6b !important; }
+
+// ---------------------------------------------------------------------
+// Tables — hairline editorial
+// ---------------------------------------------------------------------
+.table { border-color: $dk-hairline; }
+.table thead th, table thead th {
+  background: #fff;
+  color: $dk-heading;
+  font-family: $font-family-monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  border-bottom: 2px solid $dk-hairline;
+}
+
+// ---------------------------------------------------------------------
+// Buttons (used on the landing page)
+// ---------------------------------------------------------------------
+.dk-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: $dk-accent; color: #fff !important; text-decoration: none !important;
+  font-weight: 600; font-size: 0.95rem; padding: 0.7rem 1.3rem; border-radius: 6px;
+}
+.dk-btn:hover { background: $dk-accent-700; }
+.dk-btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: $dk-heading !important; text-decoration: none !important;
+  font-weight: 600; font-size: 0.95rem; padding: 0.7rem 1.3rem; border-radius: 6px;
+  border: 1px solid #cfccc2;
+}
+.dk-btn-outline:hover { border-color: $dk-accent; color: $dk-accent !important; }
+
+// ---------------------------------------------------------------------
+// Site-wide footer (Quarto page-footer) — dark editorial
+// ---------------------------------------------------------------------
+.nav-footer {
+  background: #0f1419 !important;
+  color: #aeb4b8;
+  border-top: none !important;
+  font-size: 0.85rem;
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+}
+.nav-footer a { color: #c7ccce !important; text-decoration: none; }
+.nav-footer a:hover { color: #fff !important; }
+.nav-footer .nav-footer-left strong { font-family: $headings-font-family; color: #fff; }
+.nav-footer .nav-footer-right {
+  font-family: $font-family-monospace;
+  font-size: 0.72rem;
+  color: #6b7176;
 }

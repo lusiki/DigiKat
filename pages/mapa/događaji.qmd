@@ -1,16 +1,8 @@
 ---
 title: "Dinamička analiza utjecaja stvarnih događaja na online diskurs (2021-2025)"
+subtitle: "Dinamika diskursa oko stvarnih događaja"
 date: last-modified
-format:
-  html:
-    theme: cosmo
-    toc: true
-    toc-location: left
-    toc-depth: 3
-    toc-expand: 2
-    smooth-scroll: true
-    code-fold: true
-    code-tools: false
+categories: ["Događaji", "Dinamika", "Sentiment"]
 ---
 
 ```{r}
@@ -39,6 +31,7 @@ library(dplyr)
 library(tidytext)
 library(stringr)
 library(ggplot2)
+source("../../R/theme_digikat.R")
 library(forcats)
 library(tidyr)
 library(lubridate)
@@ -297,6 +290,25 @@ Ovaj pristup omogućuje odgovog na tri važna pitanja koja transcendiraju stati�
 
 Istraživanje uvodi tri metodološke inovacije. Prva je digitalni seizmograf koji kvantitativno detektira dane ekstremnih odstupanja u medijskoj aktivnosti. Druga je narativni seizmograf koji vizualizira životni ciklus pojedinačnih događaja kroz simultano praćenje volumena, konfliktnosti i sentimenta. Treća je longitudinalna analiza narativne evolucije koja mjeri ne samo frekvenciju asocijacija već i atmosfersku valenciju tih asocijacija.
 
+<div class="metric-grid">
+  <div class="metric-card">
+    <div class="metric-value">4</div>
+    <div class="metric-label">Analitička sloja</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">8</div>
+    <div class="metric-label">Emocija</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">3</div>
+    <div class="metric-label">Metodološke inovacije</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">2021.–2025.</div>
+    <div class="metric-label">Razdoblje analize</div>
+  </div>
+</div>
+
 ---
 
 ## Digitalni seizmograf kao instrument detekcije najbitnijih događaja
@@ -354,7 +366,7 @@ p_volume_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_volume)) +
   geom_line(color = "grey") +
   geom_point(data = filter(spikes_detected_z, is_volume_spike), color = "red", size = 4) +
   geom_hline(yintercept = spike_threshold_z, linetype = "dashed", color = "red") +
-  theme_minimal(base_size = 16) +
+  theme_digikat(base_size = 16) +
   labs(
     title = "Anomalije u volumenu objava (Standardizirano odstupanje)",
     y = "Odstupanje od godišnjeg prosjeka (u standardnim devijacijama)",
@@ -365,7 +377,7 @@ p_cli_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_cli)) +
   geom_line(color = "grey") +
   geom_point(data = filter(spikes_detected_z, is_cli_spike), color = "red", size = 4) +
   geom_hline(yintercept = spike_threshold_z, linetype = "dashed", color = "red") +
-  theme_minimal(base_size = 16) +
+  theme_digikat(base_size = 16) +
   labs(
     title = "Anomalije u intenzitetu konflikta (Standardizirano odstupanje)",
     y = "Odstupanje od godišnjeg prosjeka (u standardnim devijacijama)",
@@ -439,7 +451,7 @@ ggplot(daily_duhovnost_dynamics, aes(x = date, y = duhovnost_share)) +
   scale_y_continuous(labels = percent_format()) +
   scale_color_gradient2(low = "firebrick", mid = "white", high = "steelblue", midpoint = 0, name="Prosječni sentiment") +
   scale_size_continuous(range = c(3, 14), name="Intenzitet konflikta") +
-  theme_minimal(base_size = 16) +
+  theme_digikat(base_size = 16) +
   labs(
     title = "Narativni seizmograf liturgijskog događaja Uskrs 2022",
     subtitle = "Linija predstavlja udio teme | Veličina točke predstavlja konfliktnost | Boja točke predstavlja tonalitet",
@@ -507,7 +519,7 @@ ggplot(top_associated_words_final, aes(x = total_cooccurrences, y = reorder_with
   scale_y_reordered() +
   scale_fill_gradient2(low = "firebrick", mid = "white", high = "steelblue", midpoint = 0, name="Prosječni sentiment\nnarativnog okvira") +
   facet_wrap(~ year, scales = "free_y") +
-  theme_minimal(base_size = 14) +
+  theme_digikat(base_size = 14) +
   theme(strip.text = element_text(face = "bold", size = 14)) +
   labs(
     title = "Longitudinalna evolucija narativa o blaženom Alojziju Stepincu",

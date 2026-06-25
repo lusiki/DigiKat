@@ -1,11 +1,8 @@
 ---
 title: "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)"
+subtitle: "Strukturirani korpus katoličkog digitalnog medijskog prostora"
 date: last-modified
-format: 
-  html:
-    theme: cosmo
-    toc: true
-    smooth-scroll: true
+categories: ["610.000+ objava", "620+ varijabli", "2021.–2025."]
 ---
 
 ```{r}
@@ -64,6 +61,25 @@ if ("DATE" %in% names(dta)) {
 ```
 
 Baza podataka sadrži **`r n_records`** medijskih objava prikupljenih tijekom `r time_period`, fokusiranih na katoličke teme i sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za analizu medijskog diskursa, sentimenta i angažmana publike u domeni katoličkih (religijskih) tema.
+
+<div class="metric-grid">
+  <div class="metric-card">
+    <div class="metric-value">`r n_records`</div>
+    <div class="metric-label">Medijskih objava</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">`r n_vars`</div>
+    <div class="metric-label">Varijabli</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">`r time_period`</div>
+    <div class="metric-label">Razdoblje</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">6</div>
+    <div class="metric-label">Platformi</div>
+  </div>
+</div>
 
 ```{r}
 #| label: basic-info-table

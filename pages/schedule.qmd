@@ -1,5 +1,8 @@
 ---
 title: "Projektni raspored"
+subtitle: "Šest faza kroz tri godine (2025.–2027.)"
+date: last-modified
+categories: ["2025.–2027.", "6 faza", "3 godine"]
 ---
 
 
@@ -7,9 +10,27 @@ title: "Projektni raspored"
 
 Projekt je strukturiran u šest faza kroz razdoblje od tri godine (2025.-2027.). Svaka faza ima specifične ciljeve i aktivnosti koje osiguravaju postupan i sustavan napredak.
 
+<div class="metric-grid">
+  <div class="metric-card">
+    <div class="metric-value">6</div>
+    <div class="metric-label">Faza</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">3</div>
+    <div class="metric-label">Godine (2025.–2027.)</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">3</div>
+    <div class="metric-label">Sistematizirane karte</div>
+  </div>
+</div>
+
 ---
 
 ### Godina 1: Postavljanje temelja i prva analiza (2025.)
+
+<div class="timeline">
+  <div class="timeline-item">
 
 **Faza 1: Izgradnja infrastrukture i povijesna analiza (Siječanj – Lipanj 2025.)**
 
@@ -22,6 +43,9 @@ Uspostaviti tehničke temelje projekta i prikupiti povijesne podatke.
 * **Izgradnja infrastrukture:** Postavljanje strukturirane baze podataka, projektnog [repozitorija](https://github.com/lusiki/DigiKat) i web [stranice](https://lusiki.github.io/DigiKat/index.html).
 * **Početak prikupljanja:** Aktiviranje sustava za prikupljanje podataka u realnom vremenu.
 
+  </div>
+  <div class="timeline-item">
+
 **Faza 2: Prva podjela podataka i definiranje istraživanja (Srpanj – Prosinac 2025.)**
 
 ::: {.callout-note}
@@ -32,9 +56,15 @@ Definirati prve smjerove tematskih istraživanja na temelju prikupljenih podatak
 * **Definiranje istraživanja:** Organizacija radionice s projektnim timom za definiranje i podjelu prvih tematskih cjelina.
 * **Kontinuirani rad:** Nastavak prikupljanja podataka, održavanje baze i kontrola kvalitete.
 
+  </div>
+</div>
+
 ---
 
 ### Godina 2: Dubinska analiza i razvoj (2026.)
+
+<div class="timeline">
+  <div class="timeline-item">
 
 **Faza 3: Prvi godišnji izvještaj i daljnji razvoj (Siječanj – Lipanj 2026.)**
 
@@ -47,6 +77,9 @@ Izraditi i prezentirati prvu sistematiziranu kartu medijskog prostora.
 * **Razvoj istraživanja:** Druga podjela podataka za nove ili produbljene tematske analize.
 * **Kontinuirani rad:** Prikupljanje, održavanje baze i kontrola kvalitete.
 
+  </div>
+  <div class="timeline-item">
+
 **Faza 4: Intenzivni istraživački rad (Srpanj – Prosinac 2026.)**
 
 ::: {.callout-note}
@@ -57,9 +90,15 @@ Fokus na provođenju definiranih tematskih istraživanja.
 * **Istraživanje:** Timski rad na analizi dodijeljenih tematskih cjelina i priprema prvih nacrta radova.
 * **Kontinuirani rad:** Prikupljanje, održavanje baze i kontrola kvalitete.
 
+  </div>
+</div>
+
 ---
 
 ### Godina 3: Sinteza i finalni rezultati (2027.)
+
+<div class="timeline">
+  <div class="timeline-item">
 
 **Faza 5: Drugi godišnji izvještaj i priprema za sintezu (Siječanj – Lipanj 2027.)**
 
@@ -71,6 +110,9 @@ Analizirati podatke iz prethodne godine i integrirati prve rezultate tematskih i
 * **Druga sistematizirana karta:** Obrada i analiza podataka za 2026. godinu te prezentacija novih uvida.
 * **Priprema publikacija:** Rad na znanstvenim člancima i konferencijskim izlaganjima.
 * **Kontinuirani rad:** Prikupljanje, održavanje baze i kontrola kvalitete.
+
+  </div>
+  <div class="timeline-item">
 
 **Faza 6: Finalna sinteza i zaključci (Srpanj – Prosinac 2027.)**
 
@@ -84,3 +126,6 @@ Predstaviti sveobuhvatne rezultate projekta.
     * Ključne rezultate svih provedenih tematskih istraživanja.
     * Preporuke za buduća istraživanja.
 * **Arhiviranje:** Finalizacija i arhiviranje baze podataka i koda za dugoročnu dostupnost.
+
+  </div>
+</div>

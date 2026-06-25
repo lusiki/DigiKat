@@ -1,16 +1,8 @@
 ---
 title: "Anatomija diskursa katoličkog digitalnog prostora u Hrvatskoj (2021-2025)"
+subtitle: "Tematske struje u korpusu"
 date: last-modified
-format:
-  html:
-    theme: cosmo
-    toc: true
-    toc-location: left
-    toc-depth: 3
-    toc-expand: 2
-    smooth-scroll: true
-    code-fold: true
-    code-tools: false
+categories: ["Tematske struje", "NLP", "16 kategorija"]
 ---
 
 ```{r}
@@ -41,6 +33,7 @@ library(dplyr)
 library(tidytext)
 library(stringr)
 library(ggplot2)
+source("../../R/theme_digikat.R")
 library(forcats)
 library(tidyr)
 library(ggridges)
@@ -128,6 +121,34 @@ dta_with_themes <- bind_cols(dta_stratified_sample, theme_analysis_data)
 Nakon pregleda glavnih aktera i platformi u [prvoj mapi](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/mapa/mapa.html), ova mapa usmjerava analitički fokus na sadržaj digitalnog diskursa. Primjenjujući metode obrade prirodnog jezika na korpusu od preko 610 tisuća medijskih objava u razdoblju 2021. do 2025., analiza premješta fokus s pitanja tko i gdje na pitanje o čemu se govori.
 
 Cilj mape je dati pregled diskursa u tri dijela Prvi dio uključuje identifikaciju glavnih tematskih kategorija. Drugi dio obuhvaća mjerenje njihovog intenziteta, utjecaja i polarizacijskog potencijala. Treći dio otkriva obrasce međusobne povezanosti tema i njihove temporalne dinamike. Analiza koristi vođeni pristup tematskom modeliranju. Na temelju teološke i komunikološke ekspertize definirano je 16 glavnih tematskih kategorija. Ovaj pristup omogućuje preciznu i interpretativnu klasifikaciju sadržaja, nadilažeći ograničenja isključivo strojnog učenja koje često generira tematske kategorije slabije interpretabilnosti.
+
+<div class="metric-grid">
+  <div class="metric-card">
+    <div class="metric-value">16</div>
+    <div class="metric-label">Tematskih kategorija</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">70+</div>
+    <div class="metric-label">Religijskih pojmova</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">610.000+</div>
+    <div class="metric-label">Medijskih objava</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">2021.–2025.</div>
+    <div class="metric-label">Razdoblje analize</div>
+  </div>
+</div>
+
+<p>
+  <span class="tag tag-primary">R</span>
+  <span class="tag tag-primary">UDPipe HR 2.5</span>
+  <span class="tag">NLP</span>
+  <span class="tag">Lematizacija</span>
+  <span class="tag">Tematsko modeliranje</span>
+  <span class="tag">Mrežna analiza</span>
+</p>
 
 ## Leksička struktura korpusa
 
@@ -267,7 +288,7 @@ ggplot(topic_trends_guided, aes(x = year, y = share, color = topic, group = topi
   scale_x_continuous(breaks = c(2021, 2022, 2023, 2024, 2025)) +
   labs(title = "Promjena zastupljenosti glavnih tema (iznad 5% udjela)",
        x = "Godina", y = "Udio spominjanja u korpusu", color = "Tema") +
-  theme_minimal(base_size = 16) +
+  theme_digikat(base_size = 16) +
   theme(legend.position = "bottom")
 ```
 
@@ -291,7 +312,7 @@ thematic_intensity_data <- dta_enriched %>%
 ggplot(thematic_intensity_data, aes(x = intensity, y = fct_reorder(topic, intensity, .fun = median))) +
   geom_density_ridges(scale = 2, fill = "#0072B2", color = "white", alpha = 0.8) +
   scale_x_log10(breaks = c(1, 10, 100, 1000), labels = c("1", "10", "100", "1000")) +
-  theme_minimal(base_size = 16) +
+  theme_digikat(base_size = 16) +
   labs(
     title = "Distribucija intenziteta tematskih kategorija",
     subtitle = "Koliko su teme centralne za tekstove u kojima se pojavljuju?",
@@ -331,7 +352,7 @@ ggplot(engagement_by_topic, aes(x = avg_interactions, y = reorder(dominant_topic
   geom_col(fill = "#0072B2", width=0.8) +
   geom_text(aes(label = round(avg_interactions)), hjust = -0.2, size=5) +
   expand_limits(x = max(engagement_by_topic$avg_interactions) * 1.1) +
-  theme_minimal(base_size = 16) +
+  theme_digikat(base_size = 16) +
   labs(title = "Angažman publike prema tematskim kategorijama",
        subtitle = "Prosječan broj interakcija po članku za svaku dominantnu temu",
        x = "Prosječne interakcije", y = "Dominantna tematska kategorija") +
@@ -368,7 +389,7 @@ ggplot(polarization_by_topic, aes(y = reorder(dominant_topic, angry_ratio))) +
   geom_col(aes(x = -love_ratio), fill = "steelblue", alpha = 0.8) +
   geom_vline(xintercept = 0, color="grey") +
   scale_x_continuous(labels = function(x) percent(abs(x)), name = "Udio u ukupnim reakcijama") +
-  theme_minimal(base_size = 16) +
+  theme_digikat(base_size = 16) +
   labs(title = "Emocionalna polarizacija prema tematskim kategorijama",
        subtitle = "Plavo = udio Love reakcija | Crveno = udio Angry reakcija",
        y = "Dominantna tematska kategorija")
@@ -431,7 +452,7 @@ ggplot(top_actors_in_top_topics, aes(x = n, y = reorder_within(lemma, n, dominan
     x = "Ukupan broj spominjanja",
     y = "Akter (lematizirana forma)"
   ) +
-  theme_minimal(base_size = 16) +
+  theme_digikat(base_size = 16) +
   theme(
     plot.title = element_text(face = "bold", size = 22, margin = margin(b = 5)),
     plot.subtitle = element_text(size = 16, color = "gray40", margin = margin(b = 20)),
@@ -481,6 +502,11 @@ topic_pairs %>%
 ## Sinteza i zaključci
 
 Analiza sadržaja razotkriva da medijski prostor katoličke tematike u Hrvatskoj nije monolitna cjelina. Diskurs je strukturiran oko različitih, djelomično autonomnih tematskih domena koje funkcioniraju prema različitim logikama i obraćaju se različitim publikama.
+
+::: {.featured-box}
+### Dva tematska svijeta
+Diskurs se dijeli na **pastoralni svijet** (duhovnost, karitas, evangelizacija) koji izaziva pozitivne reakcije i zajedništvo, te **društveno politički svijet** (politika, nacionalni identitet, bioetika) koji generira najveći angažman, ali i najsnažniju polarizaciju.
+:::
 
 Identificirana je jasna segmentacija na dva primarna tematska svijeta. Prvi je **pastoralni svijet**, koji okuplja teme Duhovnosti i liturgije, Karitasa i socijalne pravde te Digitalne evangelizacije. Ovaj svijet fokusiran je na internu crkvenu praksu, duhovni razvoj i socijalni angažman. Karakterizira ga dominantno pozitivan prijem kod publike, s visokim udjelom Love reakcija. Ove teme rezoniraju sa aspektima vjere i zajedništva te ne izazivaju značajnu polarizaciju.
 
