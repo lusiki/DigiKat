@@ -10,26 +10,26 @@ categories: ["Ciljevi", "Otvorena znanost", "Suradnja"]
 Naša misija je stvoriti sveobuhvatan uvid u digitalnu prisutnost katoličke tematike u Hrvatskoj. To ćemo postići kroz četiri cilja:
 
 <div class="card-grid">
-  <div class="info-card">
-    <div class="info-card-icon">🛰️</div>
-    <h4>Prikupljanje podataka</h4>
-    <p>Automatizirano prikupljanje medijskih objava u realnom vremenu, koristeći alate za <em>web scraping</em> i API integracije.</p>
-  </div>
-  <div class="info-card">
-    <div class="info-card-icon">🗄️</div>
-    <h4>Baza podataka</h4>
-    <p>Stvaranje strukturirane i javno dostupne baze podataka koja će služiti kao osnova za buduće znanstvene i javne analize.</p>
-  </div>
-  <div class="info-card">
-    <div class="info-card-icon">🧠</div>
-    <h4>Računalna analiza</h4>
-    <p>Primjena računalnih tehnika (obrada prirodnog jezika, strojno učenje) za otkrivanje obrazaca, trendova i narativa u prikupljenim podacima.</p>
-  </div>
-  <div class="info-card">
-    <div class="info-card-icon">📤</div>
-    <h4>Dijeljenje rezultata</h4>
-    <p>Dijeljenje rezultata kroz znanstvene publikacije, konferencije i radionice, uz objavu koda i metodologije na otvorenim repozitorijima.</p>
-  </div>
+<div class="info-card">
+<div class="info-card-icon">🛰️</div>
+<h4>Prikupljanje podataka</h4>
+<p>Automatizirano prikupljanje medijskih objava u realnom vremenu, koristeći alate za <em>web scraping</em> i API integracije.</p>
+</div>
+<div class="info-card">
+<div class="info-card-icon">🗄️</div>
+<h4>Baza podataka</h4>
+<p>Stvaranje strukturirane i javno dostupne baze podataka koja će služiti kao osnova za buduće znanstvene i javne analize.</p>
+</div>
+<div class="info-card">
+<div class="info-card-icon">🧠</div>
+<h4>Računalna analiza</h4>
+<p>Primjena računalnih tehnika (obrada prirodnog jezika, strojno učenje) za otkrivanje obrazaca, trendova i narativa u prikupljenim podacima.</p>
+</div>
+<div class="info-card">
+<div class="info-card-icon">📤</div>
+<h4>Dijeljenje rezultata</h4>
+<p>Dijeljenje rezultata kroz znanstvene publikacije, konferencije i radionice, uz objavu koda i metodologije na otvorenim repozitorijima.</p>
+</div>
 </div>
 
 ---
@@ -55,24 +55,15 @@ Sudionici projekta imat će priliku raditi s najnovijim računalnim tehnikama i 
 
 ### Otvorena znanost na djelu
 
-Posebna vrijednost projekta leži u njegovoj predanosti principima otvorenosti i transparentnosti.
-
-::: {.callout-note}
-## Manifest otvorene znanosti
-
-Naš rad temelji se na principima [otvorene znanosti](https://roadworkasia.com/wp-content/uploads/2023/04/Labour_of_Love_An_Open_Access_Manifesto.pdf) i [reproducibilnosti istraživanja](https://www.nature.com/articles/s41562-016-0021).
+Posebna vrijednost projekta leži u njegovoj predanosti principima otvorenosti i transparentnosti. Naš rad temelji se na principima [otvorene znanosti](https://roadworkasia.com/wp-content/uploads/2023/04/Labour_of_Love_An_Open_Access_Manifesto.pdf) i [reproducibilnosti istraživanja](https://www.nature.com/articles/s41562-016-0021).
 
 Svi alati, skripte i metodološki okviri bit će dostupni kao otvoreni kod na **[GitHubu](https://github.com/lusiki/DigiKat)**, omogućujući drugima da provjere, repliciraju i nadograde naš rad.
 
 Kroz ovakav pristup, potičemo suradnju, jačamo istraživačke profile mladih znanstvenika i aktivno doprinosimo stvaranju pouzdanije i inovativnije znanstvene kulture.
-:::
 
 ---
 
 ## Pridružite se našem istraživanju!
-
-::: {.callout-tip}
-## Otvoreni poziv za suradnju
 
 Tražimo motivirane istraživače i studente koji žele biti dio inovativnog projekta koji spaja društvene znanosti, podatkovnu analitiku i principe otvorene znanosti.
 
@@ -82,4 +73,3 @@ Tražimo motivirane istraživače i studente koji žele biti dio inovativnog pro
 * **Razvit ćete tehničke vještine** u područjima obrade prirodnog jezika (NLP), strojnog učenja i mrežne analize.
 * **Stvorit ćete vrijedan doprinos** znanosti čiji će rezultati biti javno dostupni i citirani.
 * **Postat ćete dio inicijative** koja aktivno promiče transparentnost, suradnju i inovacije u znanosti.
-:::

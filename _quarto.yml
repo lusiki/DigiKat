@@ -16,12 +16,12 @@ website:
     left:
       - text: "Osnovne informacije"
         href: pages/index.qmd
+      - text: "Baza podataka"
+        href: pages/baza.qmd
       - text: "O projektu"
         href: pages/about.qmd
       - text: "Projektni raspored"
         href: pages/schedule.qmd
-      - text: "Baza podataka"
-        href: pages/baza.qmd
       - text: "Mapa medijskog prostora"
         menu:
           - text: "Mapa ekosustava"
