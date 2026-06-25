@@ -1,5 +1,5 @@
 ---
-title: "Baza podataka katoličkog digitalnog medijskog prostora (2021-2025)"
+title: "Baza podataka katoličkog digitalnog medijskog prostora (2021.–2025.)"
 subtitle: "Strukturirani korpus katoličkog digitalnog medijskog prostora"
 date: last-modified
 categories: ["610.000+ objava", "620+ varijabli", "2021.–2025."]
@@ -46,7 +46,7 @@ if (!inherits(dta, "data.table")) {
 }
 
 # Izračun osnovnih statistika
-n_records <- format(nrow(dta), big.mark = ",")
+n_records <- format(nrow(dta), big.mark = ".")
 n_vars <- ncol(dta)
 
 # Određivanje vremenskog raspona
@@ -98,7 +98,7 @@ basic_info <- data.frame(
   )
 )
 
-kable(basic_info, caption = "Osnovne karakteristike dataseta") %>%
+kable(basic_info, caption = "Osnovne karakteristike baze podataka") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
 
@@ -242,7 +242,7 @@ kable(sentiment_vars, caption = "Sentiment analiza") %>%
 
 if ("AUTO_SENTIMENT" %in% names(dta)) {
   sentiment_dist <- dta[!is.na(AUTO_SENTIMENT), .N, by = AUTO_SENTIMENT][order(-N)]
-  sentiment_dist[, Postotak := round(N / sum(N) * 100, 1)]
+  sentiment_dist[, Postotak := formatC(N / sum(N) * 100, format = "f", digits = 1, decimal.mark = ",")]
   
   kable(sentiment_dist, 
         caption = "Distribucija automatskog sentimenta",
@@ -337,7 +337,8 @@ if (length(key_vars_exist) > 0) {
   )
   
   missing_data <- missing_data[order(-missing_data$Nedostaje), ]
-  
+  missing_data$Nedostaje <- formatC(missing_data$Nedostaje, format = "f", digits = 1, decimal.mark = ",")
+
   kable(missing_data, 
         caption = "Pregled nedostajućih vrijednosti u ključnim varijablama",
         col.names = c("Varijabla", "Nedostaje (%)", "Razlog"),
@@ -357,7 +358,8 @@ if (length(key_vars_exist) > 0) {
   )
   
   missing_data <- missing_data[order(-missing_data$Nedostaje), ]
-  
+  missing_data$Nedostaje <- formatC(missing_data$Nedostaje, format = "f", digits = 1, decimal.mark = ",")
+
   kable(missing_data, 
         caption = "Pregled nedostajućih vrijednosti",
         col.names = c("Varijabla", "Nedostaje (%)"),
@@ -426,7 +428,7 @@ if (length(numeric_vars_exist) > 0) {
           row.names = FALSE) %>%
       kable_styling(bootstrap_options = c("striped", "hover"))
   } else {
-    cat("Numeričke varijable nisu pronađene u datasetu.")
+    cat("Numeričke varijable nisu pronađene u skupu podataka.")
   }
 }
 ```
@@ -438,7 +440,7 @@ if (length(numeric_vars_exist) > 0) {
 
 if ("SOURCE_TYPE" %in% names(dta)) {
   source_dist <- dta[!is.na(SOURCE_TYPE), .N, by = SOURCE_TYPE][order(-N)]
-  source_dist[, Postotak := round(N / sum(N) * 100, 1)]
+  source_dist[, Postotak := formatC(N / sum(N) * 100, format = "f", digits = 1, decimal.mark = ",")]
   
   kable(head(source_dist, 10), 
         caption = "Top 10 izvora po broju zapisa",
@@ -608,7 +610,7 @@ technical_info <- data.frame(
     "UTF-8", 
     "Automatski detektirani",
     "NA",
-    "data.table  za brzu manipulaciju velikih dataset-a",
+    "data.table za brzu manipulaciju velikih skupova podataka",
     "dplyr  za čišću i čitljiviju sintaksu", 
     "ggplot2  za profesionalne vizualizacije",
     "lubridate  za rad s datumskim formatima",
@@ -629,7 +631,7 @@ technical_info <- data.frame(
 )
 
 kable(technical_info,
-      caption = "Tehnički detalji dataseta i preporučeni alati",
+      caption = "Tehnički detalji baze podataka i preporučeni alati",
       col.names = c("Kategorija", "Vrijednost/Opis", "Napomene")) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
   column_spec(2, width = "40%") %>%
@@ -689,14 +691,14 @@ all_vars <- data.frame(
   Varijabla = var_names,
   Tip = sapply(var_names, function(v) class(dta[[v]])[1]),
   N_jedinstvenih = sapply(var_names, function(v) length(unique(dta[[v]]))),
-  Nedostaje_pct = sapply(var_names, function(v) round(sum(is.na(dta[[v]])) / nrow(dta) * 100, 1)),
+  Nedostaje_pct = sapply(var_names, function(v) formatC(sum(is.na(dta[[v]])) / nrow(dta) * 100, format = "f", digits = 1, decimal.mark = ",")),
   stringsAsFactors = FALSE
 )
 
 rownames(all_vars) <- NULL
 
 kable(all_vars, 
-      caption = "Potpuni popis varijabli u datasetu",
+      caption = "Potpuni popis varijabli u bazi podataka",
       col.names = c("Br.", "Varijabla", "Tip", "N jedinstvenih", "Nedostaje (%)")) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
   scroll_box(width = "100%", height = "500px")

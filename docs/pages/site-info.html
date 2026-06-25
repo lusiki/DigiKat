@@ -170,11 +170,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Tematska istraživanja</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-tematska-istraživanja">    
-        <li class="dropdown-header">Analiza self-help sadržaja na YouTube-u</li>
-        <li class="dropdown-header">Hodočasnički turizam</li>
-        <li class="dropdown-header">Demokršćanstvo</li>
-        <li class="dropdown-header">Katoličko obrazovanje</li>
-        <li class="dropdown-header">Prikazivanje katoličkih svetaca i svetica</li>
+        <li>
+    <a class="dropdown-item" href="../pages/studije/self-help-youtube.html">
+ <span class="dropdown-text">Analiza self-help sadržaja na YouTube-u</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../pages/studije/hodocasnicki-turizam.html">
+ <span class="dropdown-text">Hodočasnički turizam</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../pages/studije/demokrscanstvo.html">
+ <span class="dropdown-text">Demokršćanstvo</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../pages/studije/katolicko-obrazovanje.html">
+ <span class="dropdown-text">Katoličko obrazovanje</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../pages/studije/katolicki-sveci-i-svetice.html">
+ <span class="dropdown-text">Prikazivanje katoličkih svetaca i svetica</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -207,7 +222,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#tehnička-bilješka-o-okruženju" id="toc-tehnička-bilješka-o-okruženju" class="nav-link active" data-scroll-target="#tehnička-bilješka-o-okruženju">Tehnička bilješka o okruženju</a></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -270,6 +291,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 &lt;p&gt;Platforma za objavu statičke web-stranice, gdje je projekt javno dostupan.&lt;/p&gt;</code></pre>
 </div>
 </div>
+<section id="tehnička-bilješka-o-okruženju" class="level3">
+<h3 class="anchored" data-anchor-id="tehnička-bilješka-o-okruženju">Tehnička bilješka o okruženju</h3>
+<p>Sljedeći zapis dokumentira okruženje u kojem je stranica izgrađena — verziju R-a, operacijski sustav i učitane pakete — radi reproducibilnosti i lakše replikacije.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.6.0 (2026-04-24 ucrt)
@@ -301,6 +325,7 @@ loaded via a namespace (and not attached):
 
 <!-- -->
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -803,12 +828,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>  &lt;/div&gt;</span>
 <span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>&lt;/div&gt;</span>
 <span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: session-info</span></span>
-<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span>
-<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a><span class="fu">### Tehnička bilješka o okruženju</span></span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>Sljedeći zapis dokumentira okruženje u kojem je stranica izgrađena — verziju R-a, operacijski sustav i učitane pakete — radi reproducibilnosti i lakše replikacije.</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: session-info</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

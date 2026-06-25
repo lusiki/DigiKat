@@ -1,5 +1,5 @@
 ---
-title: "Emocionalna i konfliktna mapa katoličkog digitalnog prostora (2021-2025)"
+title: "Emocionalna i konfliktna mapa katoličkog digitalnog prostora (2021.–2025.)"
 subtitle: "Emocije i ton diskursa"
 date: last-modified
 categories: ["Atmosfera diskursa", "Sentiment", "Emocije"]
@@ -197,7 +197,7 @@ dta_enriched <- bind_cols(dta_stratified_sample, theme_analysis_data)
   </div>
   <div class="metric-card">
     <div class="metric-value">8</div>
-    <div class="metric-label">Emocija (NRC)</div>
+    <div class="metric-label">Emocija (lilaHR)</div>
   </div>
   <div class="metric-card">
     <div class="metric-value">2</div>
@@ -209,7 +209,7 @@ dta_enriched <- bind_cols(dta_stratified_sample, theme_analysis_data)
   </div>
 </div>
 
-Nakon kartografiranja [aktera i platformi](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/mapa/mapa.html) te identifikacije [tematskih](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/mapa/mapa_stats.html) kategorija, ova treća analitička mapa usmjerava se na najsuptilniju dimenziju digitalnog katoličkog diskursa. Mapa se bavi pitanjem atmosfere komunikacijskog prostora, odnosno načinima na koji se teme artikuliraju. Fokus je na emocionalnom tonalitetu, psihološkim apelima i intenzitetu konfliktnog jezika koji karakterizira različite narativne okvire. Ovaj pristup nadilazi tradicionalne binarne klasifikacije sentimenta, uvodeći višeslojne, kontekstualno svjesne metrike koje omogućuju dubinsko razumijevanje komunikacijskih strategija. Analitički okvir strukturiran je u tri komponente.
+Nakon kartografiranja [aktera i platformi](mapa.html) te identifikacije [tematskih](mapa_stats.html) kategorija, ova treća analitička mapa — **Atmosfera diskursa** — usmjerava se na najsuptilniju dimenziju digitalnog katoličkog diskursa. Mapa se bavi pitanjem atmosfere komunikacijskog prostora, odnosno načinima na koji se teme artikuliraju. Fokus je na emocionalnom tonalitetu, psihološkim apelima i intenzitetu konfliktnog jezika koji karakterizira različite narativne okvire. Ovaj pristup nadilazi tradicionalne binarne klasifikacije sentimenta, uvodeći višeslojne, kontekstualno svjesne metrike koje omogućuju dubinsko razumijevanje komunikacijskih strategija. Analitički okvir strukturiran je u tri komponente.
 
 Prva komponenta obuhvaća dvoslojnu **emocionalnu analizu** koja razdvaja površinski tonalitet teksta od dubinskih psiholoških procesa koji se u njemu aktiviraju. Druga komponenta je **relativni indeks konflikta** koji mjeri neočekivanu agresivnost jezika u odnosu na kontekstualne osnovne (*baseline*) karakteristike medija i teme. Treća komponenta uključuje **mrežu narativne atmosfere** koja vizualizira kako se emocionalni tonalitet i intenzitet konflikta mijenjaju kada se različite tematske kategorije kombiniraju u šire narativne okvire.
 
@@ -217,7 +217,7 @@ Prva komponenta obuhvaća dvoslojnu **emocionalnu analizu** koja razdvaja površ
 
 ## Dvoslojna emocionalna analiza diskursa
 
-Za kvalitetno razumijevanje atmosfere potrebno je razlikovati dvije dimenzije. Prva se odnosi na tonalitet, odnosno pozitivnu ili negativnu valencija teksta mjerenu leksičkim sentimentom. Druga se odnosi na psihološke procese, odnosno emocionalne okvire poput straha, nade, povjerenja ili ljutnje kroz koje se poruka artikulira i koji aktiviraju specifične kognitivne i afektivne odgovore kod publike.
+Za kvalitetno razumijevanje atmosfere potrebno je razlikovati dvije dimenzije. Prva se odnosi na tonalitet, odnosno pozitivnu ili negativnu obojenost teksta mjerenu leksičkim sentimentom. Druga se odnosi na psihološke procese, odnosno emocionalne okvire poput straha, nade, povjerenja ili ljutnje kroz koje se poruka artikulira i koji aktiviraju specifične kognitivne i afektivne odgovore kod publike.
 
 ```{r}
 #| label: analyze-atmosphere
@@ -348,9 +348,9 @@ Ljutnja u temama poput Politike i odnosa s državom nije samo statistička pojav
 
 ---
 
-## Relativni indeks konflikta  kao kontekstualno prilagođena metrika
+## Relativni indeks konflikta kao kontekstualno prilagođena metrika
 
-Tradicionalne metrike intenziteta konflikta ne uzimaju u obzir kontekstualne baseline karakteristike. Korištenje konfliktnog vokabulara u članku o povijesnim ratnim događajima nije ekvivalentno njegovoj uporabi u članku o liturgijskim praksama. Relativni indeks konflikta (RIK) predstavlja metodološku inovaciju koja mjeri koliko je pojedini tekst neočekivano agresivniji ili pomirljiviji od *baseline* očekivanja temeljenog na prosječnom diskursu njegovog izvora i njegove tematske kategorije.
+Tradicionalne metrike intenziteta konflikta ne uzimaju u obzir kontekstualne *baseline* karakteristike. Korištenje konfliktnog vokabulara u članku o povijesnim ratnim događajima nije ekvivalentno njegovoj uporabi u članku o liturgijskim praksama. Relativni indeks konflikta (RIK) predstavlja metodološku inovaciju koja mjeri koliko je pojedini tekst neočekivano agresivniji ili pomirljiviji od *baseline* očekivanja temeljenog na prosječnom diskursu njegovog izvora i njegove tematske kategorije.
 
 ```{r}
 #| label: rci-calculation
@@ -383,7 +383,7 @@ dta_atmosphere_final <- dta_atmosphere %>%
 
 ### Tipologija medijskih strategija konfliktnog diskursa
 
-Sljedeći grafikon koristi RIK za identifikaciju i klasifikaciju medijskih strategija u korištenju konfliktnog jezika. Horizontalna os predstavlja prosječnu, baznu razinu konfliktnog jezika karakterističnu za svaki medij. Vertikalna os predstavlja varijabilnost u korištenju konfliktnog jezika, mjerenu standardnom devijacijom RCI vrijednosti. Veličina točke označava ukupnu prisutnost medija u korpusu.
+Sljedeći grafikon koristi RIK za identifikaciju i klasifikaciju medijskih strategija u korištenju konfliktnog jezika. Horizontalna os predstavlja prosječnu, baznu razinu konfliktnog jezika karakterističnu za svaki medij. Vertikalna os predstavlja varijabilnost u korištenju konfliktnog jezika, mjerenu standardnom devijacijom RIK vrijednosti. Veličina točke označava ukupnu prisutnost medija u korpusu.
 
 ```{r}
 #| label: plot-rci-strategy
@@ -406,8 +406,8 @@ media_strategy_data <- dta_atmosphere_final %>%
 ggplot(media_strategy_data, aes(x = avg_cli, y = rci_sd, size = n_articles)) +
   geom_jitter(color = "darkred", alpha = 0.7, width = 0.01, height = 0.01) + 
   geom_text_repel(aes(label = FROM), size = 4, max.overlaps = 15) +
-  scale_x_log10(labels = scales::number_format(accuracy = 0.1)) +
-  scale_y_log10(labels = scales::number_format(accuracy = 0.1)) +
+  scale_x_log10(labels = scales::number_format(accuracy = 0.1, decimal.mark = ",")) +
+  scale_y_log10(labels = scales::number_format(accuracy = 0.1, decimal.mark = ",")) +
   scale_size_continuous(range = c(3, 12), name = "Broj članaka") +
   theme_digikat(base_size = 16) +
   labs(
@@ -426,7 +426,7 @@ Ova vizualizacija otkriva postojanje četiri fundamentalno različita modela kom
 
 **Pragmatični promatrači** okupljaju tradicionalne medije poput vecernji.hr, slobodnadalmacija.hr i hrt.hr. Ovi mediji karakterizirani su umjerenom prosječnom razinom konfliktnosti, ali visokom nepredvidljivošću, što ukazuje na sposobnost fleksibilne prilagodbe tonaliteta ovisno o prirodi događaja. Zadržavaju kapacitet za intenzivnu eskalaciju konfliktnog diskursa kada procijene da to zahtijeva javni interes ili novinska vrijednost događaja.
 
-**Graditelji zajednice**, pozicionirani u donjem lijevom kvadrantu, pripadaju vjerskim medijima i specijaliziranim YouTube kanalima, uključujući hkm.hr, laudato.hr i LaudatoTV. Ovaj model manifestira dijametralno suprotnu strategiju od svih prethodnih, karakteriziranu dosljednom niskom razinom konfliktnosti i niskom varijabilnosti. Ovi mediji fokusirani su na informiranje, edukaciju i izgradnju zajednice, grade pozitivnu atmosferu kroz priče o duhovnom rastu, zajedništvu i pastoralnim aktivnostima, sustavno izbjegavajući konfrontirajući diskurs.
+**Pastoralni glasovi**, pozicionirani u donjem lijevom kvadrantu, pripadaju vjerskim medijima i specijaliziranim YouTube kanalima, uključujući hkm.hr, laudato.hr i LaudatoTV. Ovaj model manifestira dijametralno suprotnu strategiju od svih prethodnih, karakteriziranu dosljednom niskom razinom konfliktnosti i niskom varijabilnosti. Ovi mediji fokusirani su na informiranje, edukaciju i izgradnju zajednice, grade pozitivnu atmosferu kroz priče o duhovnom rastu, zajedništvu i pastoralnim aktivnostima, sustavno izbjegavajući konfrontirajući diskurs.
 
 ---
 
@@ -568,16 +568,16 @@ Drugi narativni svijet je pastoralno institucionalna jezgra, pozicionirana u gor
 
 ## Sinteza nalaza i zaključci
 
-Dubinska analiza emocionalne i konfliktne strukture medijskog prostora katoličke tematike u Hrvatskoj razotkriva kompleksnu sliku koja transcendira jednostavne dihotomije. Rezultati istraživanja upućuju na postojanje sofisticiranih komunikacijskih strategija i dubinskih strukturnih obrazaca koji oblikuju način artikulacije vjere i Crkve u javnom diskursu.
+Dubinska analiza emocionalne i konfliktne strukture medijskog prostora katoličke tematike u Hrvatskoj razotkriva kompleksnu sliku koja nadilazi jednostavne dihotomije. Rezultati istraživanja upućuju na postojanje sofisticiranih komunikacijskih strategija i dubinskih strukturnih obrazaca koji oblikuju način artikulacije vjere i Crkve u javnom diskursu.
 
 Tri fundamentalna nalaza izdvajaju se za razumijevanje atmosfere diskursa:
 
 **Kontekstualno posredovano oblikovanje tonaliteta.** Istraživanje je empirijski verificiralo da tonalitet pojedine tematske kategorije nije inherentna karakteristika sadržaja, već rezultat strateškog emocionalnog uokvirivanja. Identičan sadržaj može biti artikuliran kao pozitivan ili negativan ovisno o psihološkim apelima koje medij aktivira, bilo da su to okviri Povjerenja i Radosti ili Ljutnje i Straha. Ovaj nalaz potvrđuje teorijsku poziciju da mediji ne funkcioniraju kao pasivni prenositelji informacija, već kao aktivni konstruktori atmosfere kroz stratešku selekciju emocionalnih registara.
 
-**Tipologija medijskih strategija konfliktnog diskursa.** Istraživanje je identificiralo četiri fundamentalno različite komunikacijske strategije u korištenju konfliktnog jezika, koje grubo koreliraju s tipologijom medijskih izvora. Strateški eskalatori, reprezentativni za mainstream medije, prakticiraju sofisticirano doziranje konflikta. Dosljedni kritičari, karakteristični za aktivističke portale, koriste konfliktni diskurs kao temeljni identitetski marker. Pragmatični promatrači, karakteristični za tradicionalne medije, održavaju uravnotežen pristup uz kapacitet fleksibilne eskalacije. Graditelji zajednice, karakteristični za vjerske medije, sustavno izbjegavaju konfliktni diskurs fokusirajući se na informiranje i zajednicu.
+**Tipologija medijskih strategija konfliktnog diskursa.** Istraživanje je identificiralo četiri fundamentalno različite komunikacijske strategije u korištenju konfliktnog jezika, koje grubo koreliraju s tipologijom medijskih izvora. Strateški eskalatori, reprezentativni za mainstream medije, prakticiraju sofisticirano doziranje konflikta. Dosljedni kritičari, karakteristični za aktivističke portale, koriste konfliktni diskurs kao temeljni identitetski marker. Pragmatični promatrači, karakteristični za tradicionalne medije, održavaju uravnotežen pristup uz kapacitet fleksibilne eskalacije. Pastoralni glasovi, karakteristični za vjerske medije, sustavno izbjegavaju konfliktni diskurs fokusirajući se na informiranje i zajednicu.
 
-**Strukturna bifurkacija diskursnog prostora.** Najvažniji nalaz, vizualiziran kroz mrežu narativne atmosfere, jest postojanje dva strukturno i atmosferski razgraničena tematska svijeta. Prvi, društveno politički, karakteriziran visokim intenzitetom konflikta i isprepletanjem tema politike, povijesti i bioetike. Drugi, pastoralno institucionalni, karakteriziran niskim konfliktom i fokusom na duhovnost i unutarcrkvena pitanja. Ova bifurkacija nije apsolutna, već je posredovana mostovnim kategorijama koje omogućuju prelijevanje atmosfere između svjetova.
+**Strukturna bifurkacija diskursnog prostora.** Najvažniji nalaz, vizualiziran kroz mrežu narativne atmosfere, jest postojanje dva strukturno i atmosferski razgraničena tematska svijeta. Prvi, društveno-politički, karakteriziran visokim intenzitetom konflikta i isprepletanjem tema politike, povijesti i bioetike. Drugi, pastoralno institucionalni, karakteriziran niskim konfliktom i fokusom na duhovnost i unutarcrkvena pitanja. Ova bifurkacija nije apsolutna, već je posredovana mostovnim kategorijama koje omogućuju prelijevanje atmosfere između svjetova.
 
 Ovi nalazi demonstriraju nužnost korištenja višeslojnih, kontekstualno prilagođenih analitičkih metoda koje mogu dekodirati suptilne komunikacijske strategije. Razumijevanje ovih strategija presudno je za interpretaciju javne percepcije Crkve i vjere u Hrvatskoj te za osmišljavanje učinkovitih komunikacijskih intervencija.
 
-Zadnja analitička [mapa](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/mapa/doga%C4%91aji.html) usmjerit će se na temporalnu dinamiku atmosfere kroz detekciju kritičnih događaja te na detaljniju analizu specifičnih fraza i narativnih struktura koje prevladavaju izabranim tematskim kategorijama. Krajnji cilj ostaje stvaranje dinamičkog digitalnog opservatorija koji će omogućiti praćenje i analizu atmosfere medijskog prostora katoličke tematike u stvarnom vremenu, pružajući tako kontinuirani uvid u ove važne društvene procese.
+Zadnja analitička mapa, [Fokus na događaje](događaji.html), usmjerit će se na temporalnu dinamiku atmosfere kroz detekciju kritičnih događaja te na detaljniju analizu specifičnih fraza i narativnih struktura koje prevladavaju izabranim tematskim kategorijama. Krajnji cilj ostaje stvaranje dinamičkog digitalnog opservatorija koji će omogućiti praćenje i analizu atmosfere medijskog prostora katoličke tematike u stvarnom vremenu, pružajući tako kontinuirani uvid u ove važne društvene procese.

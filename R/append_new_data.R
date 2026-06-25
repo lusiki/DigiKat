@@ -68,8 +68,10 @@ cat("Loading master:", master_path, "...\n")
 master <- readRDS(master_path)
 cat("  Master rows:", nrow(master), " cols:", ncol(master), "\n")
 
-# religious_terms.R returns the data frame as its last expression
-religious_terms <- source(terms_path, local = TRUE)$value
+# religious_terms.R returns the data frame as its last expression.
+# Read it as UTF-8 explicitly so the diacritic regexes (kršćan…, križ…, svećen…, đakon…)
+# survive on an R session that has not gone native-UTF-8 (CP1250 default on older Windows R).
+religious_terms <- source(terms_path, local = TRUE, encoding = "UTF-8")$value
 religious_terms <- religious_terms |>
   mutate(
     term  = stringi::stri_trans_tolower(term),
@@ -87,6 +89,32 @@ cat("  New rows read:", nrow(new_data), "\n")
 if (!"FULL_TEXT" %in% names(new_data)) {
   stop("New data has no FULL_TEXT column; the religious filter cannot run.")
 }
+
+# --- type + encoding guards (SAFETY) -----------------------------------------
+# Force FULL_TEXT to character: read_excel can type a column as logical/NA if its
+# leading rows are blank, which would make the filter silently match nothing.
+new_data$FULL_TEXT <- as.character(new_data$FULL_TEXT)
+if (all(is.na(new_data$FULL_TEXT) | !nzchar(new_data$FULL_TEXT))) {
+  stop("FULL_TEXT is entirely empty/NA after read — likely a wrong sheet or a read_excel ",
+       "column-type inference problem. Aborting before the filter silently matches nothing.")
+}
+# Croatian diacritics must survive the read. Their TOTAL absence signals CP1250/Latin-1
+# mis-decoding, which would make the religious filter under-match and silently drop rows.
+diacritic_class <- "[čćžšđČĆŽŠĐ]"  # č ć ž š đ + caps
+if (!any(stringi::stri_detect_regex(new_data$FULL_TEXT, diacritic_class), na.rm = TRUE)) {
+  stop("No Croatian diacritics found anywhere in FULL_TEXT — the .xlsx was probably read as ",
+       "CP1250/Latin-1. Re-save the source as UTF-8 (or fix the locale) and retry.")
+}
+# 'year' is a known cross-edition type hazard: a character '2026' breaks bind_rows or makes the
+# new rows fail downstream numeric year filters (silently dropping them from every aggregate).
+if ("year" %in% names(new_data)) {
+  na_before     <- sum(is.na(new_data$year))
+  new_data$year <- suppressWarnings(as.numeric(new_data$year))
+  na_added      <- sum(is.na(new_data$year)) - na_before
+  if (na_added > 0) cat("NOTE: as.numeric(year) introduced", na_added,
+                        "NA(s); check the new export's year format.\n")
+}
+# -----------------------------------------------------------------------------
 if (!dedup_key %in% names(new_data)) {
   warning(
     "Dedup key '", dedup_key, "' missing from new data; ",
@@ -186,20 +214,39 @@ common_cols  <- intersect(names(master), names(new_filtered))
 new_to_bind  <- new_filtered |> select(all_of(common_cols))
 
 # =============================================================================
-# 6. DE-DUPLICATE AGAINST THE MASTER
-#    Only drop new rows whose dedup_key already exists in the SAME half
-#    (data_source == "filtered_religious") of the master.
+# 6. DE-DUPLICATE AGAINST THE MASTER  (SAFETY: whole master + normalized URL)
+#    Dedup against ALL master rows (both data_source strata), not just the
+#    "filtered_religious" half, so an article already present anywhere is never
+#    re-added. Compare on a CANONICALIZED URL so ?utm_…/#frag/trailing-slash
+#    variants of the same article are caught (the known query-string gap).
+#    Also dedup within the incoming batch. Rows with no usable URL are kept.
 # =============================================================================
+canonical_url <- function(u) {
+  u <- stringi::stri_trans_tolower(as.character(u))
+  u <- stringi::stri_replace_first_regex(u, "[?#].*$", "")  # drop query string + fragment
+  u <- stringi::stri_replace_last_regex(u, "/+$", "")       # drop trailing slash(es)
+  u
+}
+
 if (dedup_key %in% names(master) && dedup_key %in% names(new_to_bind)) {
-  existing_relig_keys <- master |>
-    filter(.data$data_source == "filtered_religious") |>
-    pull(.data[[dedup_key]])
-  before <- nrow(new_to_bind)
-  new_to_bind <- new_to_bind |>
-    filter(!.data[[dedup_key]] %in% existing_relig_keys)
-  cat("De-dup on", dedup_key, ": dropped",
-      before - nrow(new_to_bind), "row(s) already in master;",
-      nrow(new_to_bind), "remain to append.\n")
+  existing_keys <- unique(canonical_url(master[[dedup_key]]))   # WHOLE master, both strata
+  new_keys      <- canonical_url(new_to_bind[[dedup_key]])
+  before        <- nrow(new_to_bind)
+
+  has_key   <- !is.na(new_keys) & nzchar(new_keys)
+  in_master <- has_key & (new_keys %in% existing_keys)
+  in_batch  <- has_key & duplicated(new_keys)                  # 2nd+ copy within this batch
+  drop_rows <- in_master | in_batch
+
+  new_to_bind <- new_to_bind[!drop_rows, , drop = FALSE]
+  cat("De-dup on normalized ", dedup_key,
+      " (whole master + within-batch): dropped ", sum(in_master),
+      " already-in-master + ", sum(in_batch), " intra-batch; ",
+      nrow(new_to_bind), " of ", before, " remain to append.\n", sep = "")
+  if (any(!has_key)) {
+    cat("  (", sum(!has_key), " row(s) had no usable ", dedup_key,
+        " and were kept un-deduped.)\n", sep = "")
+  }
 } else {
   cat("De-dup skipped (key not available in both); appending all filtered rows.\n")
 }
@@ -210,16 +257,29 @@ if (nrow(new_to_bind) == 0) {
 }
 
 # =============================================================================
-# 7. BACKUP + SAVE
+# 7. BACKUP (VERIFIED) + SAVE
+#    Back up the master and CONFIRM the backup is on disk BEFORE building or
+#    overwriting anything — never overwrite the master without a good backup.
 # =============================================================================
-updated <- bind_rows(master, new_to_bind)
-
 # Timestamp is read from the OS clock at runtime (fine in plain Rscript).
 stamp <- format(Sys.time(), "%Y%m%d_%H%M%S", tz = "UTC")
 backup_path <- sub("\\.rds$", paste0("_backup_", stamp, ".rds"), master_path)
 
+if (file.exists(backup_path)) {
+  stop("Backup path already exists (", backup_path, "); refusing to proceed so an existing ",
+       "backup is never clobbered. Wait a second and re-run.")
+}
 cat("\nBacking up current master to:", backup_path, "\n")
-file.copy(master_path, backup_path, overwrite = FALSE)
+ok <- file.copy(master_path, backup_path, overwrite = FALSE)
+if (!isTRUE(ok) || !file.exists(backup_path) ||
+    file.size(backup_path) != file.size(master_path)) {
+  stop("Backup FAILED or is incomplete (file.copy returned ", ok, "). ",
+       "Aborting BEFORE touching the master. Check free disk space and permissions.")
+}
+cat("  Backup verified:", round(file.size(backup_path) / 1024^2), "MB\n")
+
+# Master is now safely backed up — build the combined table and overwrite.
+updated <- bind_rows(master, new_to_bind)
 
 cat("Saving updated master to:", master_path, "\n")
 saveRDS(updated, master_path)

@@ -43,17 +43,17 @@ Ovi resursi idealni su za sve koji žele naučiti ili usavršiti svoje vještine
 
 ### Za korisnike R
 
-*   **RStudio Finding Your Way To R** Službeni vodič za početnike koji pokriva osnove rada u RStudio okruženju. [Link](https://education.rstudio.com/learn/)
-*   **R for Data Science** Biblija za svakoga tko se bavi analizom podataka u R u. Autori su Hadley Wickham i Garrett Grolemund. [Link](https://r4ds.had.co.nz/)
-*   **Text Mining with R** Odlična knjiga za uvod u analizu teksta, s naglaskom na tidy principe. Autorice su Julia Silge i David Robinson. [Link](https://www.tidytextmining.com/)
-*   **CRAN Task View Social Sciences** Kurirana lista R paketa specifično namijenjenih za primjenu u društvenim znanostima. [Link](https://cran.r-project.org/web/views/SocialSciences.html)
-*   **R bloggers** Agregator najboljih blogova o R u, svakodnevno donosi nove tutorijale i studije slučaja. [Link](https://www.r-bloggers.com/)
+*   **RStudio Finding Your Way To R** Službeni vodič za početnike koji pokriva osnove rada u RStudio okruženju. [Poveznica](https://education.rstudio.com/learn/)
+*   **R for Data Science** Temeljni priručnik za analizu podataka u R-u. Autori su Hadley Wickham i Garrett Grolemund. [Poveznica](https://r4ds.had.co.nz/)
+*   **Text Mining with R** Knjiga za uvod u analizu teksta, s naglaskom na tidy principe. Autorice su Julia Silge i David Robinson. [Poveznica](https://www.tidytextmining.com/)
+*   **CRAN Task View Social Sciences** Kurirana lista R paketa specifično namijenjenih za primjenu u društvenim znanostima. [Poveznica](https://cran.r-project.org/web/views/SocialSciences.html)
+*   **R bloggers** Agregator blogova o R-u koji svakodnevno donosi nove tutorijale i studije slučaja. [Poveznica](https://www.r-bloggers.com/)
 
 ### Za korisnike Pythona
 
-*   **The Python Tutorial** Službena dokumentacija i najbolja polazna točka za učenje osnova Pythona. [Link](https://docs.python.org/3/tutorial/)
-*   **spaCy 101** Moderna i brza biblioteka za obradu prirodnog jezika (NLP). Njihov tečaj je odličan za početnike. [Link](https://course.spacy.io/)
-*   **Real Python** Visokokvalitetni tutorijali za sve razine znanja, od osnova do naprednih tema. [Link](https://realpython.com/)
+*   **The Python Tutorial** Službena dokumentacija i najbolja polazna točka za učenje osnova Pythona. [Poveznica](https://docs.python.org/3/tutorial/)
+*   **spaCy 101** Moderna i brza biblioteka za obradu prirodnog jezika (NLP). Njihov tečaj je odličan za početnike. [Poveznica](https://course.spacy.io/)
+*   **Real Python** Visokokvalitetni tutorijali za sve razine znanja, od osnova do naprednih tema. [Poveznica](https://realpython.com/)
 
 ---
 
@@ -81,17 +81,17 @@ Knjige i znanstveni radovi koji oblikuju područje kojim se bavimo.
 
 ### Računalne društvene znanosti
 
-*   **Bit by Bit Social Research in the Digital Age** Ključna knjiga Matthewa Salganika koja objašnjava kako digitalno doba transformira društvena istraživanja. [Link](https://www.bitbybitbook.com/)
-*   **Computational Social Science A Manifesto** Seminalni rad (Lazer i sur.) koji je definirao polje i njegove glavne izazove i prilike. [Link](https://www.science.org/doi/10.1126/science.1167742)
+*   **Bit by Bit Social Research in the Digital Age** Ključna knjiga Matthewa Salganika koja objašnjava kako digitalno doba transformira društvena istraživanja. [Poveznica](https://www.bitbybitbook.com/)
+*   **Computational Social Science A Manifesto** Seminalni rad (Lazer i sur.) koji je definirao polje i njegove glavne izazove i prilike. [Poveznica](https://www.science.org/doi/10.1126/science.1167742)
 
 ### Analiza teksta kao podatka
 
-*   **Text as Data A New Framework** Sveobuhvatan pregled metoda za analizu teksta u društvenim znanostima. Autori su Grimmer, Roberts i Stewart. [Link](https://textasdata.com/)
+*   **Text as Data A New Framework** Sveobuhvatan pregled metoda za analizu teksta u društvenim znanostima. Autori su Grimmer, Roberts i Stewart. [Poveznica](https://textasdata.com/)
 
 ### Statistika i razumijevanje podataka
 
-*   **How to Lie with Statistics** Klasična i zabavna knjiga Darrella Huffa o tome kako prepoznati manipulaciju statistikom. [Link](https://archive.org/details/how-to-lie-with-statistics-darrell-huff/page/n5/mode/2up)
-*   **The Art of Statistics Learning from Data** David Spiegelhalter na pristupačan način objašnjava kako statističari razmišljaju i kako učiti iz podataka. [Link](https://www.bookdepository.com/Art-Statistics-David-Spiegelhalter/9780241258767)
+*   **How to Lie with Statistics** Klasična knjiga Darrella Huffa o tome kako prepoznati manipulaciju statistikom. [Poveznica](https://archive.org/details/how-to-lie-with-statistics-darrell-huff/page/n5/mode/2up)
+*   **The Art of Statistics Learning from Data** David Spiegelhalter na pristupačan način objašnjava kako statističari razmišljaju i kako učiti iz podataka. [Poveznica](https://www.bookdepository.com/Art-Statistics-David-Spiegelhalter/9780241258767)
 
 ---
 
@@ -112,9 +112,9 @@ Linkovi na relevantne izvore podataka, časopise i organizacije koje se bave sli
   </div>
 </div>
 
-*   **Pew Research Center Religion & Public Life** Jedan od najvažnijih izvora podataka i analiza o ulozi religije u društvu. [Link](https://www.pewresearch.org/religion/)
-*   **Journal of Media and Religion** Vodeći znanstveni časopis koji objavljuje istraživanja na sjecištu medija i religije. [Link](https://www.tandfonline.com/journals/hmre20)
-*   **Alliance of Digital Humanities Organizations (ADHO)** Globalna organizacija koja promiče primjenu digitalnih tehnologija u humanističkim znanostima. [Link](https://adho.org/)
+*   **Pew Research Center Religion & Public Life** Jedan od najvažnijih izvora podataka i analiza o ulozi religije u društvu. [Poveznica](https://www.pewresearch.org/religion/)
+*   **Journal of Media and Religion** Vodeći znanstveni časopis koji objavljuje istraživanja na sjecištu medija i religije. [Poveznica](https://www.tandfonline.com/journals/hmre20)
+*   **Alliance of Digital Humanities Organizations (ADHO)** Globalna organizacija koja promiče primjenu digitalnih tehnologija u humanističkim znanostima. [Poveznica](https://adho.org/)
 
 ---
 
@@ -131,7 +131,7 @@ Mjesta za učenje, postavljanje pitanja i praćenje najnovijih trendova.
   <div class="info-card">
     <div class="info-card-icon">💬</div>
     <h4>Zajednice programera</h4>
-    <p>Stack Overflow za tehnička pitanja i odgovore, najvažnija zajednica za rješavanje problema u kodu.</p>
+    <p>Stack Overflow za tehnička pitanja i odgovore, ključna zajednica za rješavanje problema u kodu.</p>
   </div>
   <div class="info-card">
     <div class="info-card-icon">🌐</div>
@@ -140,10 +140,10 @@ Mjesta za učenje, postavljanje pitanja i praćenje najnovijih trendova.
   </div>
 </div>
 
-*   **Towards Data Science** Jedna od najvećih online publikacija o podatkovnoj znanosti, s tisućama korisnih članaka i tutorijala. [Link](https://towardsdatascience.com/)
-*   **Stack Overflow** Najvažnija zajednica za programere. Ako imate tehnički problem, ovdje ćete najvjerojatnije pronaći odgovor. [Link](https://stackoverflow.com/)
-*   **GitHub** Platforma na kojoj se nalazi ovaj projekt. Ključan alat za otvorenu znanost, suradnju i dijeljenje koda. [Link](https://github.com/)
-*   **Zenodo** Otvoreni repozitorij za pohranu znanstvenih podataka, softvera i publikacija, u skladu s FAIR principima. [Link](https://zenodo.org/)
+*   **Towards Data Science** Jedna od najvećih online publikacija o podatkovnoj znanosti, s tisućama korisnih članaka i tutorijala. [Poveznica](https://towardsdatascience.com/)
+*   **Stack Overflow** Ključna zajednica za programere. Ako imate tehnički problem, ovdje ćete najvjerojatnije pronaći odgovor. [Poveznica](https://stackoverflow.com/)
+*   **GitHub** Platforma na kojoj se nalazi ovaj projekt. Ključan alat za otvorenu znanost, suradnju i dijeljenje koda. [Poveznica](https://github.com/)
+*   **Zenodo** Otvoreni repozitorij za pohranu znanstvenih podataka, softvera i publikacija, u skladu s FAIR principima. [Poveznica](https://zenodo.org/)
 
 ---
 

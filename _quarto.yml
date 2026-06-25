@@ -35,15 +35,15 @@ website:
       - text: "Tematska istraživanja"
         menu:
           - text: "Analiza self-help sadržaja na YouTube-u"
-            href: ""
+            href: pages/studije/self-help-youtube.qmd
           - text: "Hodočasnički turizam"
-            href: ""
+            href: pages/studije/hodocasnicki-turizam.qmd
           - text: "Demokršćanstvo"
-            href: ""
+            href: pages/studije/demokrscanstvo.qmd
           - text: "Katoličko obrazovanje"
-            href: ""
+            href: pages/studije/katolicko-obrazovanje.qmd
           - text: "Prikazivanje katoličkih svetaca i svetica"
-            href: ""
+            href: pages/studije/katolicki-sveci-i-svetice.qmd
       - text: "Obavijesti"
         href: pages/news.qmd
       - text: "Resursi"

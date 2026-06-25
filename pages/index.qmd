@@ -12,22 +12,22 @@ toc: false
   <div style="max-width: 1180px; margin: 0 auto; padding: 72px 40px 64px;">
     <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #0f4c5c; margin-bottom: 26px;">
       <span style="width: 7px; height: 7px; background: #0f4c5c; border-radius: 50%;"></span>
-      Računalna društvena znanost · 2021–2025
+      Računalna društvena znanost · 2021.–2025.
     </div>
     <h1 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 52px; line-height: 1.08; letter-spacing: -0.015em; margin: 0; max-width: 19ch; color: #14181d; text-wrap: balance;">
       Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru
     </h1>
     <p style="font-size: 20px; line-height: 1.5; color: #4f535a; margin: 22px 0 0; max-width: 60ch;">
-      Mapping Catholic themes across the Croatian digital media space — an empirical, open-science study of how religion is discussed online across portals, social platforms and forums.
+      Mapiranje katoličke tematike u hrvatskom digitalnom medijskom prostoru — empirijsko istraživanje otvorene znanosti o tome kako se o religiji raspravlja na internetu, kroz portale, društvene platforme i forume.
     </p>
     <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 38px;">
-      <a href="baza.html" style="display: inline-flex; align-items: center; gap: 8px; background: #0f4c5c; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 6px;">Istraži podatke / Explore the data</a>
-      <a href="about.html" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #14181d; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 6px; border: 1px solid #cfccc2;">Metodologija / Methods</a>
+      <a href="baza.html" style="display: inline-flex; align-items: center; gap: 8px; background: #0f4c5c; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 6px;">Istraži podatke</a>
+      <a href="about.html" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #14181d; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 6px; border: 1px solid #cfccc2;">Metodologija</a>
     </div>
     <div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 56px; padding-top: 30px; border-top: 1px solid #e4e2da; font-family: 'IBM Plex Mono', monospace;">
-      <div><div style="font-size: 30px; font-weight: 600; color: #14181d; letter-spacing: -0.01em;">610&#8201;000</div><div style="font-size: 12.5px; color: #6b6f76; letter-spacing: .04em; margin-top: 4px;">objava / posts</div></div>
-      <div><div style="font-size: 30px; font-weight: 600; color: #14181d; letter-spacing: -0.01em;">620</div><div style="font-size: 12.5px; color: #6b6f76; letter-spacing: .04em; margin-top: 4px;">varijabli / variables</div></div>
-      <div><div style="font-size: 30px; font-weight: 600; color: #14181d; letter-spacing: -0.01em;">6</div><div style="font-size: 12.5px; color: #6b6f76; letter-spacing: .04em; margin-top: 4px;">platformi / platforms</div></div>
+      <div><div style="font-size: 30px; font-weight: 600; color: #14181d; letter-spacing: -0.01em;">610.000</div><div style="font-size: 12.5px; color: #6b6f76; letter-spacing: .04em; margin-top: 4px;">objava</div></div>
+      <div><div style="font-size: 30px; font-weight: 600; color: #14181d; letter-spacing: -0.01em;">620</div><div style="font-size: 12.5px; color: #6b6f76; letter-spacing: .04em; margin-top: 4px;">varijabli</div></div>
+      <div><div style="font-size: 30px; font-weight: 600; color: #14181d; letter-spacing: -0.01em;">6</div><div style="font-size: 12.5px; color: #6b6f76; letter-spacing: .04em; margin-top: 4px;">platformi</div></div>
     </div>
   </div>
 </section>
@@ -37,20 +37,20 @@ toc: false
   <div style="max-width: 1180px; margin: 0 auto; padding: 64px 40px;">
     <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;">
       <div style="padding: 4px 36px 4px 0; border-right: 1px solid rgba(255,255,255,0.12);">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 44px; line-height: 1; letter-spacing: -0.02em; color: #fff;">610&#8201;000</div>
-        <div style="font-size: 14px; color: #aeb4b8; margin-top: 12px; line-height: 1.4;">medijskih objava<br><span style="color: #7c8388;">media posts collected</span></div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 44px; line-height: 1; letter-spacing: -0.02em; color: #fff;">610.000</div>
+        <div style="font-size: 14px; color: #aeb4b8; margin-top: 12px; line-height: 1.4;">medijskih objava</div>
       </div>
       <div style="padding: 4px 36px; border-right: 1px solid rgba(255,255,255,0.12);">
         <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 44px; line-height: 1; letter-spacing: -0.02em; color: #fff;">620</div>
-        <div style="font-size: 14px; color: #aeb4b8; margin-top: 12px; line-height: 1.4;">kodiranih varijabli<br><span style="color: #7c8388;">coded variables</span></div>
+        <div style="font-size: 14px; color: #aeb4b8; margin-top: 12px; line-height: 1.4;">kodiranih varijabli</div>
       </div>
       <div style="padding: 4px 36px; border-right: 1px solid rgba(255,255,255,0.12);">
         <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 44px; line-height: 1; letter-spacing: -0.02em; color: #fff;">5</div>
-        <div style="font-size: 14px; color: #aeb4b8; margin-top: 12px; line-height: 1.4;">godina · 2021–2025<br><span style="color: #7c8388;">years of coverage</span></div>
+        <div style="font-size: 14px; color: #aeb4b8; margin-top: 12px; line-height: 1.4;">godina · 2021.–2025.</div>
       </div>
       <div style="padding: 4px 0 4px 36px;">
         <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 44px; line-height: 1; letter-spacing: -0.02em; color: #fff;">6</div>
-        <div style="font-size: 14px; color: #aeb4b8; margin-top: 12px; line-height: 1.4;">platformi i izvora<br><span style="color: #7c8388;">platforms &amp; sources</span></div>
+        <div style="font-size: 14px; color: #aeb4b8; margin-top: 12px; line-height: 1.4;">platformi i izvora</div>
       </div>
     </div>
     <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #aeb4b8;">
@@ -67,34 +67,34 @@ toc: false
 <!-- ============ FRAMEWORK ============ -->
 <section style="border-bottom: 1px solid #e4e2da;">
   <div style="max-width: 1180px; margin: 0 auto; padding: 80px 40px;">
-    <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #0f4c5c; margin-bottom: 12px;"><span style="width: 18px; height: 1px; background: #0f4c5c;"></span> 01 — Analitički okvir / Framework</div>
+    <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #0f4c5c; margin-bottom: 12px;"><span style="width: 18px; height: 1px; background: #0f4c5c;"></span> 01 — Analitički okvir</div>
     <h2 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 32px; line-height: 1.12; margin: 0 0 8px; color: #14181d;">Od medijske objave do analize — pet koraka</h2>
-    <p style="color: #5a5e65; max-width: 64ch; margin: 0 0 44px;">A five-stage pipeline — from a raw media post to interpreted discourse. Data is acquired, filtered into the corpus, consolidated into the master dataset, processed, and finally read across four analytical layers; each stage feeds the next.</p>
+    <p style="color: #5a5e65; max-width: 64ch; margin: 0 0 44px;">Proces u pet koraka — od sirove medijske objave do interpretiranog diskursa. Podaci se prikupljaju, filtriraju u korpus, objedinjuju u glavni skup podataka, obrađuju i naposljetku čitaju kroz četiri analitičke razine; svaki korak hrani sljedeći.</p>
     <div style="position: relative; padding-left: 56px;">
       <div style="position: absolute; left: 19px; top: 22px; bottom: 22px; width: 2px; background: linear-gradient(#0f4c5c, #cfddE1);"></div>
       <div style="position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; margin-bottom: 18px;">
         <div style="position: absolute; left: -56px; top: 22px; width: 40px; height: 40px; border-radius: 50%; background: #0f4c5c; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 15px;">01</div>
-        <div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Prikupljanje</h3><div style="font-size: 14px; color: #8a8e95; margin-bottom: 10px;">Acquisition</div><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Medijske objave s portala, društvenih platformi i foruma pristižu kao tablice — svaki redak jedna objava, s tekstom, izvorom, datumom i pokazateljima dosega i angažmana.</p></div>
+        <div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Prikupljanje</h3><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Medijske objave s portala, društvenih platformi i foruma pristižu kao tablice — svaki redak jedna objava, s tekstom, izvorom, datumom i pokazateljima dosega i angažmana.</p></div>
         <div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;"><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">xlsx</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">ingest</span></div>
       </div>
       <div style="position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; margin-bottom: 18px;">
         <div style="position: absolute; left: -56px; top: 22px; width: 40px; height: 40px; border-radius: 50%; background: #1a5b6b; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 15px;">02</div>
-        <div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Filtriranje</h3><div style="font-size: 14px; color: #8a8e95; margin-bottom: 10px;">Religious-term filter</div><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Objava ulazi u korpus samo ako sadrži najmanje dva različita podudaranja s popisom katoličkih i religijskih pojmova — ovo pravilo definira opseg korpusa.</p></div>
+        <div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Filtriranje</h3><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Objava ulazi u korpus samo ako sadrži najmanje dva različita podudaranja s popisom katoličkih i religijskih pojmova — ovo pravilo definira opseg korpusa.</p></div>
         <div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;"><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">regex</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">≥2 matches</span></div>
       </div>
       <div style="position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; margin-bottom: 18px;">
         <div style="position: absolute; left: -56px; top: 22px; width: 40px; height: 40px; border-radius: 50%; background: #2c6f7e; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 15px;">03</div>
-        <div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Korpus</h3><div style="font-size: 14px; color: #8a8e95; margin-bottom: 10px;">Master corpus</div><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Objave koje prođu filtar deduplicirane su i objedinjene u glavni skup podataka — oko 610.000 objava, koje čine jedinstveni izvor za sve analize.</p></div>
+        <div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Korpus</h3><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Objave koje prođu filtar deduplicirane su i objedinjene u glavni skup podataka — oko 610.000 objava, koje čine jedinstveni izvor za sve analize.</p></div>
         <div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;"><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">dedupe</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">master</span></div>
       </div>
       <div style="position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; margin-bottom: 18px;">
         <div style="position: absolute; left: -56px; top: 22px; width: 40px; height: 40px; border-radius: 50%; background: #3f8694; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 15px;">04</div>
-        <div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Obrada</h3><div style="font-size: 14px; color: #8a8e95; margin-bottom: 10px;">Processing</div><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Iz glavnog skupa izračunavaju se agregati po godini i platformi, a tekst se jezično obrađuje (tokenizacija i lematizacija) kako bi bio spreman za analizu.</p></div>
+        <div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Obrada</h3><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Iz glavnog skupa izračunavaju se agregati po godini i platformi, a tekst se jezično obrađuje (tokenizacija i lematizacija) kako bi bio spreman za analizu.</p></div>
         <div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;"><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">aggregate</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">udpipe</span></div>
       </div>
       <div style="position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px;">
         <div style="position: absolute; left: -56px; top: 22px; width: 40px; height: 40px; border-radius: 50%; background: #5a949f; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 15px;">05</div>
-        <div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Analiza</h3><div style="font-size: 14px; color: #8a8e95; margin-bottom: 10px;">Analysis</div><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Korpus se čita kroz četiri analitičke razine: mapa ekosustava (doseg i angažman), tematske struje (16 kategorija), atmosfera diskursa (sentiment i emocije) te fokus na događaje.</p></div>
+        <div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Analiza</h3><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Korpus se čita kroz četiri analitičke razine: mapa ekosustava (doseg i angažman), tematske struje (16 kategorija), atmosfera diskursa (sentiment i emocije) te fokus na događaje.</p></div>
         <div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;"><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">ecosystem</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">themes</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">sentiment</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">events</span></div>
       </div>
     </div>
@@ -104,7 +104,7 @@ toc: false
 <!-- ============ ISTRAŽIVAČKA PITANJA ============ -->
 <section style="border-bottom: 1px solid #e4e2da;">
   <div style="max-width: 1180px; margin: 0 auto; padding: 80px 40px;">
-    <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #0f4c5c; margin-bottom: 12px;"><span style="width: 18px; height: 1px; background: #0f4c5c;"></span> 02 — Istraživačka pitanja / Research questions</div>
+    <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #0f4c5c; margin-bottom: 12px;"><span style="width: 18px; height: 1px; background: #0f4c5c;"></span> 02 — Istraživačka pitanja</div>
     <h2 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 32px; line-height: 1.12; margin: 0 0 40px; color: #14181d;">Pet istraživačkih pitanja</h2>
     <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px;">
       <div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; display: flex; gap: 18px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px;">Q1</div><p style="margin: 0; font-size: 15px; color: #2c3036; line-height: 1.5;">Kako se katolička tematika prikazuje i kako se o njoj raspravlja u digitalnom medijskom prostoru?</p></div>
@@ -119,13 +119,13 @@ toc: false
 <!-- ============ TEAM ============ -->
 <section style="border-bottom: 1px solid #e4e2da;">
   <div style="max-width: 1180px; margin: 0 auto; padding: 80px 40px;">
-    <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #0f4c5c; margin-bottom: 12px;"><span style="width: 18px; height: 1px; background: #0f4c5c;"></span> 03 — Tim / Team</div>
+    <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #0f4c5c; margin-bottom: 12px;"><span style="width: 18px; height: 1px; background: #0f4c5c;"></span> 03 — Tim</div>
     <h2 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 32px; line-height: 1.12; margin: 0 0 36px; color: #14181d;">Istraživački tim</h2>
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;">
       <div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 22px; display: flex; gap: 16px; align-items: center;"><div style="width: 56px; height: 56px; border-radius: 50%; background: #eaf0f2; color: #0f4c5c; display: flex; align-items: center; justify-content: center; font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 18px; flex: none;">LŠ</div><div><div style="font-weight: 600; font-size: 16px; color: #14181d;">doc. dr. sc. Luka Šikić</div><div style="font-size: 13px; color: #4f535a; margin-top: 1px;">Voditelj projekta</div><div style="font-size: 12.5px; color: #8a8e95;">HKS · Komunikologija</div></div></div>
     </div>
     <details style="margin-top: 18px;">
-      <summary style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #0f4c5c; font-weight: 600; list-style: none;">Prikaži cijeli tim / Show full team <span style="font-size: 12px; color: #8a8e95;">(9)</span></summary>
+      <summary style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #0f4c5c; font-weight: 600; list-style: none;">Prikaži cijeli tim <span style="font-size: 12px; color: #8a8e95;">(9)</span></summary>
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 18px;">
         <div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 22px; display: flex; gap: 16px; align-items: center;"><div style="width: 56px; height: 56px; border-radius: 50%; background: #eaf0f2; color: #0f4c5c; display: flex; align-items: center; justify-content: center; font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 18px; flex: none;">AS</div><div><div style="font-weight: 600; font-size: 16px; color: #14181d;">izv. prof. dr. sc. Andreja Sršen</div><div style="font-size: 13px; color: #4f535a; margin-top: 1px;">Suradnica</div><div style="font-size: 12.5px; color: #8a8e95;">FHS · Sociologija</div></div></div>
         <div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 22px; display: flex; gap: 16px; align-items: center;"><div style="width: 56px; height: 56px; border-radius: 50%; background: #eaf0f2; color: #0f4c5c; display: flex; align-items: center; justify-content: center; font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 18px; flex: none;">IP</div><div><div style="font-weight: 600; font-size: 16px; color: #14181d;">izv. prof. dr. sc. Irena Palić</div><div style="font-size: 13px; color: #4f535a; margin-top: 1px;">Suradnica</div><div style="font-size: 12.5px; color: #8a8e95;">EFZG · Statistika</div></div></div>

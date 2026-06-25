@@ -72,6 +72,7 @@ R + the master dataset live on the PI's pipeline machine, NOT necessarily the ma
 - `plan-first-workflow.md` (always-on) — plan threshold + HARD GATE.
 - `data-pipeline-protocol.md` — R pipeline scripts + `data/**`.
 - `quarto-verification.md` — `.qmd` / `_quarto.yml`.
+- `voice-and-style.md` — house voice/style for all reader-visible site content (`pages/**/*.qmd`, `_quarto.yml`).
 - `croatian-encoding.md` — Croatian text (R, qmd, lexicons).
 - `exploration-folder-protocol.md` — `explorations/**` (sandbox rules).
 Agents (`.claude/agents/`): `verifier`, `r-reviewer`, `numeric-claim-verifier`, `croatian-nlp-reviewer`,

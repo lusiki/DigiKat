@@ -1,0 +1,26 @@
+---
+title: "Hodočasnički turizam"
+subtitle: "Prikaz hodočasničkih odredišta i putovanja u digitalnim medijima"
+date: last-modified
+categories: ["Tematsko istraživanje", "U pripremi"]
+---
+
+::: {.featured-box}
+### U pripremi
+Ovo tematsko istraživanje trenutačno je u pripremi. Stranica će biti dopunjena istraživačkim pitanjem,
+opisom korištenog isječka korpusa i nalazima čim analiza započne.
+:::
+
+## Istraživačko pitanje
+
+Kako se hodočasnička putovanja i odredišta (primjerice Međugorje, Marija Bistrica, Sinj) prikazuju i
+komentiraju u digitalnom medijskom prostoru te kako se religijski i turistički narativi isprepliću?
+
+## Isječak korpusa
+
+Objave povezane s hodočasničkim odredištima, marijanskim svetištima i organiziranim hodočasničkim putovanjima.
+
+## Status
+
+Faza: planiranje. Dio drugog izlaznog toka projekta (tematske studije i radovi) — vidi
+[Projektni raspored](../schedule.qmd).

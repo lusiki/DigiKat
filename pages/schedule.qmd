@@ -8,7 +8,7 @@ categories: ["2025.–2027.", "6 faza", "3 godine"]
 
 ### Vremenski plan projekta
 
-Projekt je strukturiran u šest faza kroz razdoblje od tri godine (2025.-2027.). Svaka faza ima specifične ciljeve i aktivnosti koje osiguravaju postupan i sustavan napredak.
+Projekt je strukturiran u šest faza kroz razdoblje od tri godine (2025.–2027.); empirijski korpus pritom pokriva razdoblje 2021.–2025. Svaka faza ima specifične ciljeve i aktivnosti koje osiguravaju postupan i sustavan napredak.
 
 <div class="metric-grid">
   <div class="metric-card">

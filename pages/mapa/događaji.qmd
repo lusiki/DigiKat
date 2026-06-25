@@ -1,5 +1,5 @@
 ---
-title: "Dinamička analiza utjecaja stvarnih događaja na online diskurs (2021-2025)"
+title: "Dinamička analiza utjecaja stvarnih događaja na online diskurs (2021.–2025.)"
 subtitle: "Dinamika diskursa oko stvarnih događaja"
 date: last-modified
 categories: ["Događaji", "Dinamika", "Sentiment"]
@@ -284,11 +284,11 @@ dta_final <- dta_temp %>%
 
 ## Uvod u dinamičku analizu 
 
-Nakon što su prethodne faze istraživanja mapirale strukturu [aktera i platformi](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/mapa/mapa.html), identificirale [tematskie](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/mapa/mapa_stats.html) kategorije i analizirale [emocionalnu i konfliktnu atmosferu](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/mapa/doga%C4%91aji.html), ova zadnja analitička mapa prelazi sa statičkog opisa na dinamičko modeliranje. Temeljna promjena perspektive sastoji se u razumijevanju digitalnog diskursa ne kao fiksne strukture, već kao živog ekosustava koji manifestira kompleksne reakcijske obrasce na vanjske podražaje, odnosno stvarne društvene, političke i vjerske događaje.
+Nakon što su prethodne faze istraživanja mapirale strukturu [aktera i platformi](mapa.html), identificirale [tematske](mapa_stats.html) kategorije i analizirale [emocionalnu i konfliktnu atmosferu](diskurs.html), ova zadnja analitička mapa — **Fokus na događaje** — prelazi sa statičkog opisa na dinamičko modeliranje. Temeljna promjena perspektive sastoji se u razumijevanju digitalnog diskursa ne kao fiksne strukture, već kao živog ekosustava koji manifestira kompleksne reakcijske obrasce na vanjske podražaje, odnosno stvarne društvene, političke i vjerske događaje.
 
-Ovaj pristup omogućuje odgovog na tri važna pitanja koja transcendiraju statičku analizu. Prvo pitanje ispituje mogućnost automatske i pouzdane detekcije trenutaka neuobičajene medijske aktivnosti koja signalizira značajne događaje. Drugo pitanje istražuje manifestiraju li različite vrste događaja prepoznatljive i distinktivne digitalne potpise u terminima volumena, konfliktnosti i tonaliteta diskursa. Treće pitanje analizira kako se dugoročni narativi o specifičnim temama ili ličnostima evolviraju i rekontekstualiziraju kroz vrijeme.
+Ovaj pristup omogućuje odgovor na tri važna pitanja koja nadilaze statičku analizu. Prvo pitanje ispituje mogućnost automatske i pouzdane detekcije trenutaka neuobičajene medijske aktivnosti koja signalizira značajne događaje. Drugo pitanje istražuje manifestiraju li različite vrste događaja prepoznatljive i distinktivne digitalne potpise u terminima volumena, konfliktnosti i tonaliteta diskursa. Treće pitanje analizira kako se dugoročni narativi o specifičnim temama ili ličnostima evolviraju i rekontekstualiziraju kroz vrijeme.
 
-Istraživanje uvodi tri metodološke inovacije. Prva je digitalni seizmograf koji kvantitativno detektira dane ekstremnih odstupanja u medijskoj aktivnosti. Druga je narativni seizmograf koji vizualizira životni ciklus pojedinačnih događaja kroz simultano praćenje volumena, konfliktnosti i sentimenta. Treća je longitudinalna analiza narativne evolucije koja mjeri ne samo frekvenciju asocijacija već i atmosfersku valenciju tih asocijacija.
+Istraživanje uvodi tri metodološke inovacije. Prva je digitalni seizmograf koji kvantitativno detektira dane ekstremnih odstupanja u medijskoj aktivnosti. Druga je narativni seizmograf koji vizualizira životni ciklus pojedinačnih događaja kroz simultano praćenje volumena, konfliktnosti i sentimenta. Treća je longitudinalna analiza narativne evolucije koja mjeri ne samo frekvenciju asocijacija već i atmosferski tonalitet tih asocijacija.
 
 <div class="metric-grid">
   <div class="metric-card">
@@ -415,13 +415,13 @@ Crvene točke na vizualizacijama označavaju trenutke koji su uzburkali digitaln
 
 Validacija putem mapiranja detektiranih vrhova na poznate događaje pokazuje visoku preciznost algoritma. Detektirani dani gotovo savršeno koincidiraju s događajima poput Hoda za život, Pride povorke, parlamentarnih izbora, važnih obljetnica i velikih liturgijskih blagdana. Ovo potvrđuje da digitalni seizmograf uspješno identificira trenutke od najvećeg društvenog i medijskog značaja.
 
-Ovi vrhunci nisu arbitrarni statistički artefakti. Oni odražavaju dublje društvene dinamike. Specifično, oni označavaju trenutke kada se katolička tematika aktivno suočava s pitanjima identiteta, vrijednosti i političke pozicije. Detektirane anomalije posebno su izražene oko blagdana i obljetnica, gdje medijski odjeci jačaju osjećaj zajedništva među vjernicima. Primjerice, masovno medijsko pokrivanje Uskrsa u hrvatskim medijima ne reprezentira samo novinarsku praksu, već i kolektivni ritual afirmacije zajedničkih vrijednosti i tradicija koji transcendira pojedinačne medijske narative i postaje trenutak simboličke kohezije vjerničke zajednice.
+Ovi vrhunci nisu arbitrarni statistički artefakti. Oni odražavaju dublje društvene dinamike. Specifično, oni označavaju trenutke kada se katolička tematika aktivno suočava s pitanjima identiteta, vrijednosti i političke pozicije. Detektirane anomalije posebno su izražene oko blagdana i obljetnica, gdje medijski odjeci jačaju osjećaj zajedništva među vjernicima. Primjerice, masovno medijsko pokrivanje Uskrsa u hrvatskim medijima ne reprezentira samo novinarsku praksu, već i kolektivni ritual afirmacije zajedničkih vrijednosti i tradicija koji nadilazi pojedinačne medijske narative i postaje trenutak simboličke kohezije vjerničke zajednice.
 
 ---
 
 ## Narativni seizmograf liturgijskog događaja (Uskrs 2022)
 
-Kako bi se istražile distinktivne digitalne potpise različitih tipova događaja, analiza se sada usmjerava na Uskrs 2022. godine, koji je slavljen 17. travnja. Za razliku od društveno politički kontroverznih događaja, Uskrs predstavlja primarno liturgijski i duhovni događaj, što se očekuje manifestirati kroz specifične obrasce u digitalnom diskursu.
+Kako bi se istražile distinktivne digitalne potpise različitih tipova događaja, analiza se sada usmjerava na Uskrs 2022. godine, koji je slavljen 17. travnja. Za razliku od društveno-politički kontroverznih događaja, Uskrs predstavlja primarno liturgijski i duhovni događaj, što se očekuje manifestirati kroz specifične obrasce u digitalnom diskursu.
 
 Narativni seizmograf konfiguriran je za praćenje tematske kategorije Duhovnost i liturgija kroz temporalni prozor od 14 dana prije i poslije događaja. Vizualizacija integrira tri dimenzije. Linija predstavlja udio ove teme u ukupnom dnevnom diskursu. Veličina točke predstavlja intenzitet konfliktnog jezika. Boja točke predstavlja prosječni tonalitet.
 
@@ -448,7 +448,7 @@ ggplot(daily_duhovnost_dynamics, aes(x = date, y = duhovnost_share)) +
   geom_line(color = "grey", linewidth=1.2) +
   geom_point(aes(size = avg_cli, color = avg_sentiment)) +
   geom_vline(xintercept = event_date_uskrs, linetype = "dashed", color = "black", linewidth=1) +
-  scale_y_continuous(labels = percent_format()) +
+  scale_y_continuous(labels = percent_format(decimal.mark = ",")) +
   scale_color_gradient2(low = "firebrick", mid = "white", high = "steelblue", midpoint = 0, name="Prosječni sentiment") +
   scale_size_continuous(range = c(3, 14), name="Intenzitet konflikta") +
   theme_digikat(base_size = 16) +
@@ -461,7 +461,7 @@ ggplot(daily_duhovnost_dynamics, aes(x = date, y = duhovnost_share)) +
 
 ### Anatomija pozitivno valentnog, nekonfliktnog događaja
 
-Seizmograf za Uskrs manifestira fundamentalno drugačiji obrazac od očekivanih obrazaca društveno politički kontroverznih događaja, potvrđujući postojanje distinktivnih digitalnih potpisa različitih tipova događaja.
+Seizmograf za Uskrs manifestira fundamentalno drugačiji obrazac od očekivanih obrazaca društveno-politički kontroverznih događaja, potvrđujući postojanje distinktivnih digitalnih potpisa različitih tipova događaja.
 
 **Temporalna koncentracija medijske pažnje.** Za razliku od očekivanih višestrukih valova karakterističnih za kontroverzne događaje, medijska pažnja za Uskrs je izrazito fokusirana na sam dan blagdana i neposredno prethodne dane Velikog Tjedna. Udio teme Duhovnost i liturgija doseže svoj apsolutni vrhunac točno na dan Uskrsa, manifestirajući oštar i jednoznačan signal bez prethodnih ili naknadnih valova.
 
@@ -477,7 +477,7 @@ Pozitivan sentiment koji karakterizira Uskrs evocira toplinu tradicije u konteks
 
 Umjesto analize pojedinačnih događaja, zadnji dio ove mape istražuje kako se jedan dugotrajni i kompleksni narativ transformira kroz vrijeme. Analiza prati blaženog Alojzija Stepinca, ličnost koja okupira jedinstveno složenu poziciju u hrvatskom društvu, istovremeno reprezentirajući vjersku pobožnost, nacionalni identitet i povijesnu kontroverzu.
 
-Metodologija identificira koje su se riječi najsnažnije asocirale s lematiziranom formom Stepinac u svakoj promatranoj godini, te mjeri prosječni tonalitet tekstova u kojima se te specifične narativne kombinacije pojavljuju. Ovo omogućuje praćenje ne samo frekvencije asocijacija, već i atmosferske valencije narativnih okvira.
+Metodologija identificira koje su se riječi najsnažnije asocirale s lematiziranom formom Stepinac u svakoj promatranoj godini, te mjeri prosječni tonalitet tekstova u kojima se te specifične narativne kombinacije pojavljuju. Ovo omogućuje praćenje ne samo frekvencije asocijacija, već i atmosferskog tonaliteta narativnih okvira.
 
 ```{r}
 #| label: narrative-biography-robust
@@ -523,7 +523,7 @@ ggplot(top_associated_words_final, aes(x = total_cooccurrences, y = reorder_with
   theme(strip.text = element_text(face = "bold", size = 14)) +
   labs(
     title = "Longitudinalna evolucija narativa o blaženom Alojziju Stepincu",
-    subtitle = "Boja stupca otkriva atmosfersku valencu specifičnog narativnog okvira",
+    subtitle = "Boja stupca otkriva atmosferski tonalitet specifičnog narativnog okvira",
     x = "Frekvencija zajedničkih pojavljivanja s lematiziranom formom Stepinac", y = "Asocirana leksička jedinica"
   )
 ```
@@ -550,10 +550,10 @@ Tri nalaza izdvajaju se za razumijevanje diskursne dinamike:
 
 **Validacija automatske detekcije kritičnih događaja.** Digitalni seizmograf demonstrirao je visoku preciznost u identifikaciji trenutaka neuobičajene medijske aktivnosti. Detektirani vrhunci medijske produkcije i intenziteta konflikta sustavno koincidiraju s poznatim važnim događajima, potvrđujući da su ekstremna odstupanja u diskursnim parametrima pouzdani indikatori društveno značajnih trenutaka. Ova metodološka validacija otvara mogućnost operacionalizacije automatiziranih sustava praćenja koji mogu u stvarnom vremenu signalizirati pojavu značajnih događaja.
 
-**Postojanje distinktivnih digitalnih potpisa različitih tipova događaja.** Komparativna analiza Uskrsa i drugih događaja dokumentirala je kako različiti tipovi događaja generiraju fundamentalno različite diskursne obrasce. Liturgijski događaji, reprezentativni u Uskrsu, manifestiraju temporalnu koncentraciju pažnje, izrazito pozitivan tonalitet i gotovo potpuno odsustvo konfliktnog diskursa. Nasuprot tome, društveno politički događaji generiraju kompleksnije temporalne obrasce s višestrukim valovima, višu konfliktnost i polariziranije narativne strukture. Ovo potvrđuje da digitalni prostor ne reagira uniformno na sve vanjske podražaje, već manifestira specifične odgovore ovisno o prirodi događaja.
+**Postojanje distinktivnih digitalnih potpisa različitih tipova događaja.** Komparativna analiza Uskrsa i drugih događaja dokumentirala je kako različiti tipovi događaja generiraju fundamentalno različite diskursne obrasce. Liturgijski događaji, reprezentativni u Uskrsu, manifestiraju temporalnu koncentraciju pažnje, izrazito pozitivan tonalitet i gotovo potpuno odsustvo konfliktnog diskursa. Nasuprot tome, društveno-politički događaji generiraju kompleksnije temporalne obrasce s višestrukim valovima, višu konfliktnost i polariziranije narativne strukture. Ovo potvrđuje da digitalni prostor ne reagira uniformno na sve vanjske podražaje, već manifestira specifične odgovore ovisno o prirodi događaja.
 
 **Dokumentacija temporalne evolucije narativa.** Longitudinalna analiza diskursa o blaženom Alojziju Stepincu empirijski je verificirala da se dugotrajni narativi o temeljnim ličnostima i temama sustavno rekontekstualiziraju kroz vrijeme. Isti narativni subjekt može biti artikuliran kroz fundamentalno različite tematske okvire, od ekumensko političkih preko povijesno medijskih do liturgijsko pobožnih, ovisno o trenutnim društvenim i komunikacijskim potrebama. Ova fluidnost narativne artikulacije demonstrira kako su digitalni diskursi dinamički konstrukti koji kontinuirano evoluiraju u dijalogu s širim društvenim kontekstom.
 
-Ovi nalazi otvaraju mogućnost razvoja naprednih sustava praćenja koji transcendiraju statičku analizu. Potencijalna aplikacija obuhvaća prediktivno modeliranje koje može anticipirati kada će se određene teme aktivirati u javnoj raspravi i kroz koje će okvire biti artikulirane. Takvi sustavi pružali bi vrijedne uvide za optimalizaciju komunikacijskih strategija, razumijevanje mehanizama oblikovanja javnog mnijenja i anticipaciju diskursnih transformacija.
+Ovi nalazi otvaraju mogućnost razvoja naprednih sustava praćenja koji nadilaze statičku analizu. Potencijalna aplikacija obuhvaća prediktivno modeliranje koje može anticipirati kada će se određene teme aktivirati u javnoj raspravi i kroz koje će okvire biti artikulirane. Takvi sustavi pružali bi vrijedne uvide za optimalizaciju komunikacijskih strategija, razumijevanje mehanizama oblikovanja javnog mnijenja i anticipaciju diskursnih transformacija.
 
 Buduće faze istraživanja trebale bi se usmjeriti na razradu prediktivnih modela koji integriraju temporalne, tematske i atmosferske dimenzije diskursa, omogućujući ne samo reaktivno praćenje već i proaktivno predviđanje diskursnih trendova. Krajnji cilj ostaje razvoj dinamičkog digitalnog opservatorija koji omogućuje kontinuirano praćenje i analizu medijskog prostora katoličke tematike u stvarnom vremenu, pružajući tako instrumentarij za dublje razumijevanje ovih kompleksnih društvenih procesa.

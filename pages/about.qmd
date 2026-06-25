@@ -7,7 +7,7 @@ categories: ["Ciljevi", "Otvorena znanost", "Suradnja"]
 
 ## Ciljevi projekta
 
-Naša misija je stvoriti sveobuhvatan uvid u digitalnu prisutnost katoličke tematike u Hrvatskoj. To ćemo postići kroz četiri cilja:
+Cilj nam je sustavno i empirijski istražiti digitalnu prisutnost katoličke tematike u Hrvatskoj. To ćemo postići kroz četiri cilja:
 
 <div class="card-grid">
 <div class="info-card">
@@ -59,7 +59,7 @@ Posebna vrijednost projekta leži u njegovoj predanosti principima otvorenosti i
 
 Svi alati, skripte i metodološki okviri bit će dostupni kao otvoreni kod na **[GitHubu](https://github.com/lusiki/DigiKat)**, omogućujući drugima da provjere, repliciraju i nadograde naš rad.
 
-Kroz ovakav pristup, potičemo suradnju, jačamo istraživačke profile mladih znanstvenika i aktivno doprinosimo stvaranju pouzdanije i inovativnije znanstvene kulture.
+Kroz ovakav pristup potičemo suradnju, jačamo istraživačke profile mladih znanstvenika i doprinosimo otvorenijoj i reproducibilnoj znanstvenoj praksi.
 
 ---
 

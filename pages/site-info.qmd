@@ -30,6 +30,10 @@ Ova stranica je napravljena u [Quarto](https://quarto.org/) kroz [Positron](http
   </div>
 </div>
 
+### Tehnička bilješka o okruženju
+
+Sljedeći zapis dokumentira okruženje u kojem je stranica izgrađena — verziju R-a, operacijski sustav i učitane pakete — radi reproducibilnosti i lakše replikacije.
+
 ```{r}
 #| label: session-info
 #| echo: false

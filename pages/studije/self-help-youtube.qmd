@@ -1,0 +1,27 @@
+---
+title: "Analiza self-help sadržaja na YouTube-u"
+subtitle: "Preplitanje duhovnosti i žanra samopomoći u videosadržaju"
+date: last-modified
+categories: ["Tematsko istraživanje", "U pripremi"]
+---
+
+::: {.featured-box}
+### U pripremi
+Ovo tematsko istraživanje trenutačno je u pripremi. Stranica će biti dopunjena istraživačkim pitanjem,
+opisom korištenog isječka korpusa i nalazima čim analiza započne.
+:::
+
+## Istraživačko pitanje
+
+Kako se duhovni i religijski motivi prepliću sa žanrom samopomoći (*self-help*) u hrvatskom i regionalnom
+YouTube sadržaju te koji ih akteri proizvode i kako ih publika prima?
+
+## Isječak korpusa
+
+YouTube objave i kanali iz korpusa kod kojih se religijska tematika preklapa sa sadržajem usmjerenim na
+osobni razvoj, motivaciju i samopomoć.
+
+## Status
+
+Faza: planiranje. Dio drugog izlaznog toka projekta (tematske studije i radovi) — vidi
+[Projektni raspored](../schedule.qmd).

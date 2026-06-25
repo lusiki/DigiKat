@@ -34,12 +34,12 @@ categories: ["Obavijesti", "2024.–2026."]
     <p><em>Definiranje smjerova istraživanja i podjela zaduženja unutar tima za prvu seriju tematskih analiza.</em></p>
   </div>
   <div class="timeline-item">
-    <p><strong>Kolovoz 2025</strong> Integracija analitičkih alata i dashboard aplikacije.</p>
-    <p><em>Implementiran interaktivni dashboard za praćenje ključnih metrika i trendova u prikupljenim podacima.</em></p>
+    <p><strong>Kolovoz 2025</strong> Integracija analitičkih alata i aplikacije nadzorne ploče.</p>
+    <p><em>Implementirana interaktivna nadzorna ploča za praćenje ključnih metrika i trendova u prikupljenim podacima.</em></p>
   </div>
   <div class="timeline-item">
     <p><strong>Srpanj 2025</strong> Objavljena baza podataka na Kaggle platformi.</p>
-    <p><em>Prvi javno dostupan dataset projekta objavljen je na Kaggle platformi, omogućavajući široj akademskoj zajednici pristup podacima.</em></p>
+    <p><em>Prvi javno dostupan skup podataka projekta objavljen je na Kaggle platformi, omogućavajući široj akademskoj zajednici pristup podacima.</em></p>
   </div>
   <div class="timeline-item">
     <p><strong>Lipanj 2025</strong> Uspješno uspostavljen sustav za prikupljanje podataka u realnom vremenu.</p>
@@ -55,7 +55,7 @@ categories: ["Obavijesti", "2024.–2026."]
   </div>
   <div class="timeline-item">
     <p><strong>Travanj 2025</strong> Završena prva faza prikupljanja povijesnih podataka.</p>
-    <p><em>Uspješno je prikupljen i obrađen korpus podataka iz razdoblja 2021 do 2024, čime je stvoren temelj za daljnje analize.</em></p>
+    <p><em>Uspješno je prikupljen i obrađen korpus podataka iz razdoblja 2021.–2024., čime je stvoren temelj za daljnje analize.</em></p>
   </div>
   <div class="timeline-item">
     <p><strong>Ožujak 2023</strong> Metodološka radionica tima.</p>

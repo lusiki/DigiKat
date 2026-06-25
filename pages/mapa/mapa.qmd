@@ -1,5 +1,5 @@
 ---
-title: "Mapa katoličkog digitalnog prostora u RH (2021-2025)"
+title: "Mapa katoličkog digitalnog prostora u RH (2021.–2025.)"
 subtitle: "Mapiranje digitalne medijske arene"
 date: last-modified
 categories: ["Mapa ekosustava", "Akteri", "Doseg"]
@@ -213,7 +213,7 @@ plot_volume <- platform_summary %>%
   mutate(SOURCE_TYPE_ordered = factor(SOURCE_TYPE, levels = unique(SOURCE_TYPE))) %>%
   ggplot(aes(x = total_posts, y = SOURCE_TYPE_ordered, fill = SOURCE_TYPE)) +
   geom_col() +
-  geom_text(aes(label = comma(total_posts, accuracy = 1)), hjust = -0.1, size = 4, color = "black") +
+  geom_text(aes(label = comma(total_posts, accuracy = 1, big.mark = ".")), hjust = -0.1, size = 4, color = "black") +
   facet_wrap(~year, scales = "free_y") +
   scale_x_continuous(labels = label_number(suffix = " K", scale = 1e-3)) +
   scale_fill_manual(values = platform_colors) +
@@ -225,7 +225,7 @@ plot_volume <- platform_summary %>%
     axis.text.x = element_text(angle = 45, hjust = 1)
   ) +
   labs(
-    title = "Broj objava po platformama (2021-2025)",
+    title = "Broj objava po platformama (2021.–2025.)",
     subtitle = "",
     x = "Ukupan broj objava (u tisućama)",
     y = "Tip platforme",
@@ -253,7 +253,7 @@ plot_interactions <- platform_summary %>%
   mutate(SOURCE_TYPE_ordered = factor(SOURCE_TYPE, levels = unique(SOURCE_TYPE))) %>%
   ggplot(aes(x = total_interactions, y = SOURCE_TYPE_ordered, fill = SOURCE_TYPE)) +
   geom_col() +
-  geom_text(aes(label = comma(total_interactions, accuracy = 1)), hjust = -0.1, size = 4, color = "black") +
+  geom_text(aes(label = comma(total_interactions, accuracy = 1, big.mark = ".")), hjust = -0.1, size = 4, color = "black") +
   facet_wrap(~year, scales = "free_y") +
   scale_x_continuous(labels = label_number(suffix = " M", scale = 1e-6)) +
   scale_fill_manual(values = platform_colors) +
@@ -265,7 +265,7 @@ plot_interactions <- platform_summary %>%
     axis.text.x = element_text(angle = 45, hjust = 1)
   ) +
   labs(
-    title = "Ukupan broj interakcija po platformama (2021–2025)",
+    title = "Ukupan broj interakcija po platformama (2021.–2025.)",
     x = "Interakcije (u milijunima)",
     y = "Tip platforme",
     caption = "Napomena: Stupci su sortirani po interakcijama. Prikazane su samo platforme s više od 0 interakcija."
@@ -278,7 +278,7 @@ Apsolutni brojevi korisni su za razumijevanje razmjera, ali relativni udjeli otk
 
 ## Relativna važnost platformi 
 
-Ova vizualizacija daje dodatni uvid u asimetriju utjecaja različitih platformi. Na lijevom panelu, koji prikazuje objave, web čini oko 80 posto svih objava. U srednjem panelu, koji prikazuje interakcije, udio weba pada na približno 70 do 75 posto, dok udio YouTubea raste i doseže gotovo 20 posto u 2023. godini. Na desnom panelu, koji prikazuje doseg, vidljiv je sličan trend gdje web gubi dio svoje prevlasti u korist društvenih i video platformi.
+Ova vizualizacija daje dodatni uvid u asimetriju utjecaja različitih platformi. Na lijevom panelu, koji prikazuje objave, web čini oko 80 % svih objava. U srednjem panelu, koji prikazuje interakcije, udio weba pada na približno 70 do 75 %, dok udio YouTubea raste i doseže gotovo 20 % u 2023. godini. Na desnom panelu, koji prikazuje doseg, vidljiv je sličan trend gdje web gubi dio svoje prevlasti u korist društvenih i video platformi.
 
 ```{r}
 #| label: plot-shares
@@ -289,7 +289,7 @@ plot_share_posts <- proportions_summary %>%
   filter(!is.na(SOURCE_TYPE)) %>%
   ggplot(aes(x = year, y = post_share, fill = SOURCE_TYPE)) +
   geom_col(position = "fill") +
-  scale_y_continuous(labels = percent_format()) +
+  scale_y_continuous(labels = percent_format(decimal.mark = ",")) +
   scale_x_continuous(breaks = c(2021, 2022, 2023, 2024, 2025)) +
   scale_fill_manual(values = platform_colors) +
   theme_digikat(base_size = 16) +
@@ -300,7 +300,7 @@ plot_share_interactions <- proportions_summary %>%
   filter(total_interactions > 0) %>%
   ggplot(aes(x = year, y = interaction_share, fill = SOURCE_TYPE)) +
   geom_col(position = "fill") +
-  scale_y_continuous(labels = percent_format()) +
+  scale_y_continuous(labels = percent_format(decimal.mark = ",")) +
   scale_x_continuous(breaks = c(2021, 2022, 2023, 2024, 2025)) +
   scale_fill_manual(values = platform_colors, guide = "none") +
   theme_digikat(base_size = 16) +
@@ -311,7 +311,7 @@ plot_share_reach <- proportions_summary %>%
   filter(total_reach > 0) %>%
   ggplot(aes(x = year, y = reach_share, fill = SOURCE_TYPE)) +
   geom_col(position = "fill") +
-  scale_y_continuous(labels = percent_format()) +
+  scale_y_continuous(labels = percent_format(decimal.mark = ",")) +
   scale_x_continuous(breaks = c(2021, 2022, 2023, 2024, 2025)) +
   scale_fill_manual(values = platform_colors, guide = "none") +
   theme_digikat(base_size = 16) +
@@ -320,7 +320,7 @@ plot_share_reach <- proportions_summary %>%
 plot_combined_share <- (plot_share_posts + plot_share_interactions + plot_share_reach) +
   plot_layout(guides = 'collect') +
   plot_annotation(
-    title    = "Struktura digitalnog ekosustava (2021–2025)",
+    title    = "Struktura digitalnog ekosustava (2021.–2025.)",
     subtitle = "Usporedba udjela platformi u ukupnom broju objava, interakcija i dosega.",
     caption  = "Web generira najviše sadržaja, ali YouTube i Facebook preuzimaju sve veći dio utjecaja."
   )
@@ -376,7 +376,7 @@ plot_facebook <- create_top_source_plot(top_facebook_sources, "Facebook stranice
 
 final_dashboard <- plot_web + plot_youtube + plot_facebook +
   plot_annotation(
-    title = "Top 20 profila u medijskom prostoru katoličke tematike (2021-2025)",
+    title = "Top 20 profila u medijskom prostoru katoličke tematike (2021.–2025.)",
     subtitle = "Rangirano prema ukupnim interakcijama. Veličina točke predstavlja ukupan broj objava.",
     caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
     theme = theme(plot.title = element_text(size = 22, face = "bold"))
@@ -435,7 +435,7 @@ plot_map_facebook <- create_actor_map_plot(facebook_actors, "Facebook Stranice",
 
 final_map_dashboard <- plot_map_web + plot_map_youtube + plot_map_facebook +
   plot_annotation(
-    title = "Mapa utjecaja najvećih profila u medijskom prostoru katoličke tematike (2021-2025)",
+    title = "Mapa utjecaja najvećih profila u medijskom prostoru katoličke tematike (2021.–2025.)",
     subtitle = "Usporedba dosega i angažmana. Veličina točke predstavlja produktivnost (broj objava).",
     caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru | Osi su prikazane na logaritamskoj skali.",
     theme = theme(plot.title = element_text(size = 22, face = "bold"))
@@ -456,4 +456,4 @@ Provedena analiza razotkriva kompleksnu arhitekturu digitalnog medijskog prostor
 
 **Višedimenzionalnost digitalne moći.** Promatranje isključivo jedne metrike ne reflektira kompleksnost utjecaja koji akteri ostvaruju kroz različite kombinacije dosega, angažmana i produktivnosti. Različiti akteri uspijevaju kroz različite strategije, od masovne produkcije mainstream medija do fokusirane izgradnje zajednice specijaliziranih kanala. Ne postoji jedinstvena formula uspjeha, već različiti putevi do utjecaja prilagođeni specifičnostima platforme, publike i ciljeva aktera.
 
-Nakon kartografiranja strukture ekosustava i identificiranja glavnih aktera, druga istraživačka [mapa](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/mapa/mapa_stats.html) usmjerava se na tematsku analizu sadržaja. To uključuje dubinsku analizu diskurzivnih obrazaca i sentimenta kako bi se rekonstruirali narativi koji oblikuju katoličku tematiku u hrvatskom digitalnom prostoru. Tematska analiza omogućit će razumijevanje ne samo tko govori i gdje, već i o čemu se govori, kako se tema razvija kroz vrijeme i koje perspektive prevladavaju u javnoj raspravi o katoličkim pitanjima u Hrvatskoj.
+Nakon kartografiranja strukture ekosustava i identificiranja glavnih aktera, druga istraživačka mapa, [Tematske struje](mapa_stats.html), usmjerava se na tematsku analizu sadržaja. To uključuje dubinsku analizu diskurzivnih obrazaca i sentimenta kako bi se rekonstruirali narativi koji oblikuju katoličku tematiku u hrvatskom digitalnom prostoru. Tematska analiza omogućit će razumijevanje ne samo tko govori i gdje, već i o čemu se govori, kako se tema razvija kroz vrijeme i koje perspektive prevladavaju u javnoj raspravi o katoličkim pitanjima u Hrvatskoj.
