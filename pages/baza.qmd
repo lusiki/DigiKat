@@ -62,22 +62,22 @@ if ("DATE" %in% names(dta)) {
 Baza podataka sadrži **`r n_records`** medijskih objava prikupljenih tijekom `r time_period`, fokusiranih na katoličke teme i sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za analizu medijskog diskursa, sentimenta i angažmana publike u domeni katoličkih (religijskih) tema.
 
 <div class="metric-grid">
-  <div class="metric-card">
-    <div class="metric-value">`r n_records`</div>
-    <div class="metric-label">Medijskih objava</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value">`r n_vars`</div>
-    <div class="metric-label">Varijabli</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value">`r time_period`</div>
-    <div class="metric-label">Razdoblje</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value">6</div>
-    <div class="metric-label">Platformi</div>
-  </div>
+<div class="metric-card">
+<div class="metric-value">`r n_records`</div>
+<div class="metric-label">Medijskih objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">`r n_vars`</div>
+<div class="metric-label">Varijabli</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">`r time_period`</div>
+<div class="metric-label">Razdoblje</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">6</div>
+<div class="metric-label">Platformi</div>
+</div>
 </div>
 
 ```{r}
