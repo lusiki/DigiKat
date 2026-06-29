@@ -1,6 +1,6 @@
 ---
 pagetitle: "DigiKat — Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru"
-page-layout: full
+page-layout: custom
 toc: false
 ---
 
