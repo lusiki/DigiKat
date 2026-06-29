@@ -71,6 +71,11 @@ website:
     right: |
       CC BY 4.0 · © 2021–2025 DigiKat
 
+# Reuse cached chunk executions; a full render only re-runs pages whose code
+# changed (the heavy analytical pages read the 1.2 GB master + data/nlp/).
+execute:
+  freeze: auto
+
 format:
   html:
     theme:
