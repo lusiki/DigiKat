@@ -6,6 +6,8 @@
 
 > Službeni repozitorij projekta koji primjenom metoda računalnih društvenih znanosti analizira prisutnost i karakteristike katoličke tematike u digitalnom medijskom prostoru Hrvatske.
 
+🌐 **Stranica projekta:** <https://lusiki.github.io/DigiKat/>
+
 ------------------------------------------------------------------------
 
 ### 🎯 Glavni ciljevi
