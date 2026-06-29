@@ -1,8 +1,8 @@
 ---
-title: "Baza podataka katoličkog digitalnog medijskog prostora (2021.–2025.)"
+title: "Baza podataka katoličkog digitalnog medijskog prostora (2021.–2026.)"
 subtitle: "Strukturirani korpus katoličkog digitalnog medijskog prostora"
 date: last-modified
-categories: ["610.000+ objava", "620+ varijabli", "2021.–2025."]
+categories: ["710.000+ objava", "620+ varijabli", "2021.–2026."]
 ---
 
 ```{r}
@@ -28,7 +28,6 @@ library(plotly)
 library(lubridate)
 library(stringr)
 library(corrplot)
-library(skimr)
 ```
 
 
@@ -56,7 +55,7 @@ if ("DATE" %in% names(dta)) {
   max_year <- max(year(date_col), na.rm = TRUE)
   time_period <- paste0(min_year, " - ", max_year, " godina")
 } else {
-  time_period <- "2021.- 2025."
+  time_period <- "2021.–2026."
 }
 ```
 
@@ -566,7 +565,7 @@ dta[, month := month(DATE)]
 dta[, yearmonth := floor_date(DATE, "month")]
 
 # Filtriranje po godinama
-dta_2024_2025 <- dta[year %in% c(2024, 2025)]
+dta_2025_2026 <- dta[year %in% c(2025, 2026)]
 
 # Agregacija po izvoru i sentimentu
 summary_table <- dta[, .(
@@ -727,7 +726,7 @@ dta <- readRDS("../../data/merged_comprehensive.rds")
 
 Molimo citirajte ovu bazu u svojim radovima koristeći sljedeći format:
 
-> **[Šikić, Luka/Hrvatsko katoličko sveučilište]**. (2025). *Katolički digitalni medijski prostor u Hrvatskoj 2021-2025*. Dataset sadrži `r n_records` medijskih objava iz hrvatskih medija. Pristupljeno `r Sys.Date()`.
+> **[Šikić, Luka/Hrvatsko katoličko sveučilište]**. (2026). *Katolički digitalni medijski prostor u Hrvatskoj 2021.–2026.* Dataset sadrži `r n_records` medijskih objava iz hrvatskih medija. Pristupljeno `r Sys.Date()`.
 
 ## Dodatni resursi
 
@@ -739,5 +738,5 @@ Molimo citirajte ovu bazu u svojim radovima koristeći sljedeći format:
 ---
 
 **Zadnja ažurirana** `r Sys.Date()`  
-**Verzija** 2.0  
+**Verzija** 2.1
 **R verzija** `r R.version.string`
