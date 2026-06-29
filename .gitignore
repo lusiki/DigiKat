@@ -39,6 +39,9 @@ data/merged_comprehensive_backup_*.rds
 data/nlp/*.rds
 data/raw/*.xlsx
 data/raw/new/*.xlsx
+# Stray drop-folder some scrapes land in (NOT the documented data/raw/new/) — holds raw
+# mentions(*).xlsx + a copy of the 1 GB master .rds; never commit. Ignore the whole folder.
+data/new/
 # NOTE: data/processed/*.rds and data/sample/*.rds ARE intentionally tracked (CC BY 4.0, no PII).
 # Do NOT broaden the pattern to data/**/*.rds — that would silently drop those shareable aggregates.
 
