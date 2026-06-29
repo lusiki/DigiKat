@@ -58,7 +58,7 @@ categories: ["Obavijesti", "2024.–2026."]
     <p><em>Uspješno je prikupljen i obrađen korpus podataka iz razdoblja 2021.–2024., čime je stvoren temelj za daljnje analize.</em></p>
   </div>
   <div class="timeline-item">
-    <p><strong>Ožujak 2023</strong> Metodološka radionica tima.</p>
+    <p><strong>Ožujak 2025</strong> Metodološka radionica tima.</p>
     <p><em>Održana je interna radionica o primjeni NLP tehnika i strojnog učenja za potrebe projekta.</em></p>
   </div>
   <div class="timeline-item">
@@ -75,11 +75,11 @@ categories: ["Obavijesti", "2024.–2026."]
 
 <div class="timeline">
   <div class="timeline-item">
-    <p><strong>Prosinac 2024</strong> Javno predstavljanje projekta na HKS u.</p>
+    <p><strong>Prosinac 2024</strong> Javno predstavljanje projekta na HKS-u.</p>
     <p><em>Projekt, njegovi ciljevi i metodologija službeno su predstavljeni akademskoj zajednici i javnosti. Pokrenuta je i službena web stranica projekta.</em></p>
   </div>
   <div class="timeline-item">
-    <p><strong>Studeni 2024</strong> <a href="https://www.unicath.hr/">Predstavljanje projekta na HKS u</a></p>
+    <p><strong>Studeni 2024</strong> <a href="https://www.unicath.hr/">Predstavljanje projekta na HKS-u</a></p>
     <p><em>Projektni ciljevi i metodologija predstavljeni su na internom seminaru Odjela za komunikologiju.</em></p>
   </div>
 </div>

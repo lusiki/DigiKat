@@ -80,8 +80,9 @@ format:
     toc-location: left
     toc-depth: 3
     smooth-scroll: true
-    code-fold: show
-    code-tools: true
+    echo: false
+    code-fold: false
+    code-tools: false
     code-copy: true
     mainfont: "Source Sans 3"
     monofont: "IBM Plex Mono"
