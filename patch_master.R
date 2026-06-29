@@ -1,0 +1,13 @@
+m <- readRDS("data/merged_comprehensive.rds")
+cat("Rows with NA year:", sum(is.na(m[["year"]])), "\n")
+na_rows <- is.na(m[["year"]])
+m[["year"]][na_rows] <- as.integer(substr(as.character(m[["DATE"]][na_rows]), 1, 4))
+m[["data_source"]][is.na(m[["data_source"]])] <- "filtered_religious"
+cat("year table:\n"); print(table(m[["year"]], useNA="always"))
+cat("data_source table:\n"); print(table(m[["data_source"]], useNA="always"))
+stamp <- format(Sys.time(), "%Y%m%d_%H%M%S", tz="UTC")
+backup <- paste0("data/merged_comprehensive_backup_patch_", stamp, ".rds")
+file.copy("data/merged_comprehensive.rds", backup, overwrite=FALSE)
+cat("Backup:", backup, "\n")
+saveRDS(m, "data/merged_comprehensive.rds")
+cat("Done. Total rows:", nrow(m), "\n")

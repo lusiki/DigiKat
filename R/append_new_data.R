@@ -26,7 +26,7 @@ suppressPackageStartupMessages({
 })
 
 # ---- Configuration ----------------------------------------------------------
-new_data_folder <- "data/raw/new"                 # drop NEW .xlsx files here
+new_data_folder <- "data/new"                     # drop NEW .xlsx files here
 master_path     <- "data/merged_comprehensive.rds"
 terms_path      <- "R/religious_terms.R"
 dedup_key       <- "URL"   # column used to detect rows already in the master
