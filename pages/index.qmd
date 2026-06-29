@@ -18,7 +18,7 @@ toc: false
       Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru
     </h1>
     <p style="font-size: 20px; line-height: 1.5; color: #4f535a; margin: 22px 0 0; max-width: 60ch;">
-      Mapiranje katoličke tematike u hrvatskom digitalnom medijskom prostoru — empirijsko istraživanje otvorene znanosti o tome kako se o religiji raspravlja na internetu, kroz portale, društvene platforme i forume.
+      Ovo je projekt Hrvatskog katoličkog sveučilišta mapiranja katoličke tematike u hrvatskom digitalnom medijskom prostoru. Projekt predstavlja empirijsko istraživanje otvorene znanosti o tome kako se o religiji raspravlja na internetu, kroz portale, društvene platforme i forume.
     </p>
     <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 38px;">
       <a href="baza.html" style="display: inline-flex; align-items: center; gap: 8px; background: #0f4c5c; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 6px;">Istraži podatke</a>
@@ -33,33 +33,41 @@ toc: false
 </section>
 
 <!-- ============ STATS BAND ============ -->
-<section style="background: #0f1419; color: #eef0f0;">
-  <div style="max-width: 1180px; margin: 0 auto; padding: 64px 40px;">
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;">
-      <div style="padding: 4px 36px 4px 0; border-right: 1px solid rgba(255,255,255,0.12);">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 44px; line-height: 1; letter-spacing: -0.02em; color: #fff;">610.000</div>
-        <div style="font-size: 14px; color: #aeb4b8; margin-top: 12px; line-height: 1.4;">medijskih objava</div>
+<section style="border-bottom: 1px solid #e4e2da;">
+  <div style="max-width: 1180px; margin: 0 auto; padding: 52px 40px;">
+    <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; align-items: start;">
+      <div style="padding: 4px 28px 4px 0; border-right: 1px solid #e4e2da;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">610.000</div>
+        <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">medijskih objava</div>
       </div>
-      <div style="padding: 4px 36px; border-right: 1px solid rgba(255,255,255,0.12);">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 44px; line-height: 1; letter-spacing: -0.02em; color: #fff;">620</div>
-        <div style="font-size: 14px; color: #aeb4b8; margin-top: 12px; line-height: 1.4;">kodiranih varijabli</div>
+      <div style="padding: 4px 28px; border-right: 1px solid #e4e2da;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">620</div>
+        <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">kodiranih varijabli</div>
       </div>
-      <div style="padding: 4px 36px; border-right: 1px solid rgba(255,255,255,0.12);">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 44px; line-height: 1; letter-spacing: -0.02em; color: #fff;">5</div>
-        <div style="font-size: 14px; color: #aeb4b8; margin-top: 12px; line-height: 1.4;">godina · 2021.–2025.</div>
+      <div style="padding: 4px 28px; border-right: 1px solid #e4e2da;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">5</div>
+        <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">godina · 2021.–2025.</div>
       </div>
-      <div style="padding: 4px 0 4px 36px;">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 44px; line-height: 1; letter-spacing: -0.02em; color: #fff;">6</div>
-        <div style="font-size: 14px; color: #aeb4b8; margin-top: 12px; line-height: 1.4;">platformi i izvora</div>
+      <div style="padding: 4px 28px; border-right: 1px solid #e4e2da;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">6</div>
+        <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">platformi i izvora</div>
+      </div>
+      <div style="padding: 4px 28px; border-right: 1px solid #e4e2da;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">16</div>
+        <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">tematskih kategorija</div>
+      </div>
+      <div style="padding: 4px 0 4px 28px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">4</div>
+        <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">analitičke razine</div>
       </div>
     </div>
-    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 36px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #aeb4b8;">
-      <span style="border: 1px solid rgba(255,255,255,0.18); border-radius: 4px; padding: 5px 10px;">Web portali</span>
-      <span style="border: 1px solid rgba(255,255,255,0.18); border-radius: 4px; padding: 5px 10px;">YouTube</span>
-      <span style="border: 1px solid rgba(255,255,255,0.18); border-radius: 4px; padding: 5px 10px;">Facebook</span>
-      <span style="border: 1px solid rgba(255,255,255,0.18); border-radius: 4px; padding: 5px 10px;">Twitter / X</span>
-      <span style="border: 1px solid rgba(255,255,255,0.18); border-radius: 4px; padding: 5px 10px;">Reddit</span>
-      <span style="border: 1px solid rgba(255,255,255,0.18); border-radius: 4px; padding: 5px 10px;">Forumi</span>
+    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e4e2da; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #4f535a;">
+      <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">Web portali</span>
+      <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">YouTube</span>
+      <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">Facebook</span>
+      <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">Twitter / X</span>
+      <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">Reddit</span>
+      <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">Forumi</span>
     </div>
   </div>
 </section>
@@ -68,8 +76,10 @@ toc: false
 <section style="border-bottom: 1px solid #e4e2da;">
   <div style="max-width: 1180px; margin: 0 auto; padding: 80px 40px;">
     <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #0f4c5c; margin-bottom: 12px;"><span style="width: 18px; height: 1px; background: #0f4c5c;"></span> 01 — Analitički okvir</div>
-    <h2 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 32px; line-height: 1.12; margin: 0 0 8px; color: #14181d;">Od medijske objave do analize — pet koraka</h2>
-    <p style="color: #5a5e65; max-width: 64ch; margin: 0 0 44px;">Proces u pet koraka — od sirove medijske objave do interpretiranog diskursa. Podaci se prikupljaju, filtriraju u korpus, objedinjuju u glavni skup podataka, obrađuju i naposljetku čitaju kroz četiri analitičke razine; svaki korak hrani sljedeći.</p>
+    <h2 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 32px; line-height: 1.12; margin: 0 0 8px; color: #14181d;">Od medijske objave do analize</h2>
+    <p style="color: #5a5e65; max-width: 64ch; margin: 0 0 44px;">Podaci se prikupljaju, filtriraju u korpus, objedinjuju u glavni skup podataka, obrađuju i naposljetku čitaju kroz četiri analitičke razine; svaki korak gradi na sljedećem.</p>
+    <details open>
+    <summary style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #0f4c5c; font-weight: 600; list-style: none; margin-bottom: 28px;">Prikaži korake <span style="font-size: 12px; color: #8a8e95;">(5)</span></summary>
     <div style="position: relative; padding-left: 56px;">
       <div style="position: absolute; left: 19px; top: 22px; bottom: 22px; width: 2px; background: linear-gradient(#0f4c5c, #cfddE1);"></div>
       <div style="position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; margin-bottom: 18px;">
@@ -98,6 +108,7 @@ toc: false
         <div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;"><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">ecosystem</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">themes</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">sentiment</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">events</span></div>
       </div>
     </div>
+    </details>
   </div>
 </section>
 
@@ -105,14 +116,20 @@ toc: false
 <section style="border-bottom: 1px solid #e4e2da;">
   <div style="max-width: 1180px; margin: 0 auto; padding: 80px 40px;">
     <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #0f4c5c; margin-bottom: 12px;"><span style="width: 18px; height: 1px; background: #0f4c5c;"></span> 02 — Istraživačka pitanja</div>
-    <h2 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 32px; line-height: 1.12; margin: 0 0 40px; color: #14181d;">Pet istraživačkih pitanja</h2>
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px;">
-      <div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; display: flex; gap: 18px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px;">Q1</div><p style="margin: 0; font-size: 15px; color: #2c3036; line-height: 1.5;">Kako se katolička tematika prikazuje i kako se o njoj raspravlja u digitalnom medijskom prostoru?</p></div>
-      <div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; display: flex; gap: 18px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px;">Q2</div><p style="margin: 0; font-size: 15px; color: #2c3036; line-height: 1.5;">Kakve su veze između katoličkih tema i drugih društvenih i političkih pitanja?</p></div>
-      <div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; display: flex; gap: 18px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px;">Q3</div><p style="margin: 0; font-size: 15px; color: #2c3036; line-height: 1.5;">Koji su akteri i institucije najistaknutiji u tim raspravama?</p></div>
-      <div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; display: flex; gap: 18px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px;">Q4</div><p style="margin: 0; font-size: 15px; color: #2c3036; line-height: 1.5;">Kako se narativi i sentiment mijenjaju ovisno o aktualnim događajima?</p></div>
-      <div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; display: flex; gap: 18px; grid-column: 1 / -1;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px;">Q5</div><p style="margin: 0; font-size: 15px; color: #2c3036; line-height: 1.5; max-width: 80ch;">Kakva je mrežna dinamika između različitih platformi i medija koji obrađuju ove teme?</p></div>
+    <h2 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 32px; line-height: 1.12; margin: 0 0 32px; color: #14181d;">Istraživačka pitanja</h2>
+    <div style="background: #fff; border: 1px solid #0f4c5c; border-radius: 10px; padding: 28px 30px; display: flex; gap: 18px; margin-bottom: 18px;">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px; flex: none;">Q1</div>
+      <p style="margin: 0; font-size: 17px; color: #14181d; line-height: 1.5; font-weight: 500;">Kako se katolička tematika prikazuje i kako se o njoj raspravlja u digitalnom medijskom prostoru?</p>
     </div>
+    <details>
+      <summary style="cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #0f4c5c; font-weight: 600; list-style: none; margin-bottom: 18px;">Ostala istraživačka pitanja <span style="font-size: 12px; color: #8a8e95;">(4)</span></summary>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 18px;">
+        <div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; display: flex; gap: 18px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px;">Q2</div><p style="margin: 0; font-size: 15px; color: #2c3036; line-height: 1.5;">Kakve su veze između katoličkih tema i drugih društvenih i političkih pitanja?</p></div>
+        <div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; display: flex; gap: 18px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px;">Q3</div><p style="margin: 0; font-size: 15px; color: #2c3036; line-height: 1.5;">Koji su akteri i institucije najistaknutiji u tim raspravama?</p></div>
+        <div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; display: flex; gap: 18px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px;">Q4</div><p style="margin: 0; font-size: 15px; color: #2c3036; line-height: 1.5;">Kako se narativi i sentiment mijenjaju ovisno o aktualnim događajima?</p></div>
+        <div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; display: flex; gap: 18px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px;">Q5</div><p style="margin: 0; font-size: 15px; color: #2c3036; line-height: 1.5;">Kakva je mrežna dinamika između različitih platformi i medija koji obrađuju ove teme?</p></div>
+      </div>
+    </details>
   </div>
 </section>
 
