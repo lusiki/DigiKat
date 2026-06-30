@@ -1,5 +1,5 @@
 ---
-title: "Mapa ekosustava — katolički digitalni prostor u RH (2021.–2025.)"
+title: "Mapa ekosustava — katolički digitalni prostor u RH (2021.–2026.)"
 subtitle: "Mapiranje digitalne medijske arene"
 date: last-modified
 categories: ["Mapa ekosustava", "Akteri", "Doseg"]
@@ -32,7 +32,7 @@ library(ggrepel)
 
 ## Pregled medijskog ekosustava
 
-Ovaj dokument predstavlja prvu analitičku mapu projekta. Analiza obuhvaća korpus od preko 610.000 medijskih objava prikupljenih između 1. siječnja 2021. i 31. prosinca 2025. Cilj mape je dati pregled katoličkog digitalnog medijskog prostora.
+Ovaj dokument predstavlja prvu analitičku mapu projekta. Analiza obuhvaća korpus od preko 710.000 medijskih objava prikupljenih u razdoblju 2021.–2026. Cilj mape je dati pregled katoličkog digitalnog medijskog prostora.
 
 Kvantitativna analiza medijskog sadržaja je provedena kako bi se identificirale najvažnije karakteristike digitalnog katoličkog medijskog ekosustava. Analitički pristup u ovoj mapi strukturiran je u tri dijela. Prvi analizira platformske karakteristike prema volumenu produkcije, angažmanu publike i dosegu sadržaja. Drugi identificira najproduktivnije i najutjecajnije medijske izvore. Treći sintetizira sve nalaze.
 
@@ -46,11 +46,11 @@ Tri glavna pitanja su u pozadini ove mape:
 
 <div class="metric-grid">
   <div class="metric-card">
-    <div class="metric-value">610.000+</div>
+    <div class="metric-value">710.000+</div>
     <div class="metric-label">Medijskih objava</div>
   </div>
   <div class="metric-card">
-    <div class="metric-value">6</div>
+    <div class="metric-value">9</div>
     <div class="metric-label">Platformi</div>
   </div>
   <div class="metric-card">
@@ -58,7 +58,7 @@ Tri glavna pitanja su u pozadini ove mape:
     <div class="metric-label">Arhetipa aktera</div>
   </div>
   <div class="metric-card">
-    <div class="metric-value">2021.–2025.</div>
+    <div class="metric-value">2021.–2026.</div>
     <div class="metric-label">Razdoblje analize</div>
   </div>
 </div>
@@ -75,8 +75,12 @@ Pod **volumenom** podrazumijevamo ukupan broj objava, što reflektira produktivn
 
 ```{r}
 #| label: data-preparation
-#| eval: true
+#| eval: false
 #| echo: false
+
+# Superseded by R/03_aggregate.R (run `Rscript R/03_aggregate.R` from the repo root).
+# Kept for reference only (eval:false): this page no longer reads the master or writes
+# data/processed/*.rds during render (CLAUDE.md principle 4).
 
 dta <- readRDS("../../data/merged_comprehensive.rds")
 # remove tiktok and missing SOURCE_TYPE
@@ -190,7 +194,8 @@ facebook_actors         <- readRDS("../../data/processed/facebook_actors.rds")
 # Definiramo paletu boja za konzistentnost
 platform_colors <- c(
   "web" = "#1f77b4", "youtube" = "#d62728", "facebook" = "#3b5998",
-  "twitter" = "#1DA1F2", "reddit" = "#FF4500", "forum" = "#7f7f7f", "comment" = "#bcbd22"
+  "twitter" = "#1DA1F2", "reddit" = "#FF4500", "forum" = "#7f7f7f", "comment" = "#bcbd22",
+  "instagram" = "#E4405F", "tiktok" = "#69C9D0"
 )
 ```
 
@@ -225,7 +230,7 @@ plot_volume <- platform_summary %>%
     axis.text.x = element_text(angle = 45, hjust = 1)
   ) +
   labs(
-    title = "Broj objava po platformama (2021.–2025.)",
+    title = "Broj objava po platformama (2021.–2026.)",
     subtitle = "",
     x = "Ukupan broj objava (u tisućama)",
     y = "Tip platforme",
@@ -265,7 +270,7 @@ plot_interactions <- platform_summary %>%
     axis.text.x = element_text(angle = 45, hjust = 1)
   ) +
   labs(
-    title = "Ukupan broj interakcija po platformama (2021.–2025.)",
+    title = "Ukupan broj interakcija po platformama (2021.–2026.)",
     x = "Interakcije (u milijunima)",
     y = "Tip platforme",
     caption = "Napomena: Stupci su sortirani po interakcijama. Prikazane su samo platforme s više od 0 interakcija."
@@ -278,7 +283,7 @@ Apsolutni brojevi korisni su za razumijevanje razmjera, ali relativni udjeli otk
 
 ## Relativna važnost platformi 
 
-Ova vizualizacija daje dodatni uvid u asimetriju utjecaja različitih platformi. Na lijevom panelu, koji prikazuje objave, web čini oko 80 % svih objava. U srednjem panelu, koji prikazuje interakcije, udio weba pada na približno 70 do 75 %, dok udio YouTubea raste i doseže gotovo 20 % u 2023. godini. Na desnom panelu, koji prikazuje doseg, vidljiv je sličan trend gdje web gubi dio svoje prevlasti u korist društvenih i video platformi.
+Ova vizualizacija daje dodatni uvid u asimetriju utjecaja različitih platformi. Na lijevom panelu, koji prikazuje objave, web čini približno tri četvrtine svih objava. U srednjem panelu, koji prikazuje interakcije, udio weba pada na približno dvije trećine, dok udio YouTubea i Facebooka zamjetno raste. Na desnom panelu, koji prikazuje doseg, vidljiv je sličan trend gdje web gubi dio svoje prevlasti u korist društvenih i video platformi.
 
 ```{r}
 #| label: plot-shares
@@ -290,7 +295,7 @@ plot_share_posts <- proportions_summary %>%
   ggplot(aes(x = year, y = post_share, fill = SOURCE_TYPE)) +
   geom_col(position = "fill") +
   scale_y_continuous(labels = percent_format(decimal.mark = ",")) +
-  scale_x_continuous(breaks = c(2021, 2022, 2023, 2024, 2025)) +
+  scale_x_continuous(breaks = c(2021, 2022, 2023, 2024, 2025, 2026)) +
   scale_fill_manual(values = platform_colors) +
   theme_digikat(base_size = 16) +
   labs(title = "Udio objava", x = "Godina", y = "Postotak")
@@ -301,7 +306,7 @@ plot_share_interactions <- proportions_summary %>%
   ggplot(aes(x = year, y = interaction_share, fill = SOURCE_TYPE)) +
   geom_col(position = "fill") +
   scale_y_continuous(labels = percent_format(decimal.mark = ",")) +
-  scale_x_continuous(breaks = c(2021, 2022, 2023, 2024, 2025)) +
+  scale_x_continuous(breaks = c(2021, 2022, 2023, 2024, 2025, 2026)) +
   scale_fill_manual(values = platform_colors, guide = "none") +
   theme_digikat(base_size = 16) +
   labs(title = "Udio interakcija", x = "Godina", y = "Postotak")
@@ -312,7 +317,7 @@ plot_share_reach <- proportions_summary %>%
   ggplot(aes(x = year, y = reach_share, fill = SOURCE_TYPE)) +
   geom_col(position = "fill") +
   scale_y_continuous(labels = percent_format(decimal.mark = ",")) +
-  scale_x_continuous(breaks = c(2021, 2022, 2023, 2024, 2025)) +
+  scale_x_continuous(breaks = c(2021, 2022, 2023, 2024, 2025, 2026)) +
   scale_fill_manual(values = platform_colors, guide = "none") +
   theme_digikat(base_size = 16) +
   labs(title = "Udio dosega", x = "Godina", y = "Postotak")
@@ -320,7 +325,7 @@ plot_share_reach <- proportions_summary %>%
 plot_combined_share <- (plot_share_posts + plot_share_interactions + plot_share_reach) +
   plot_layout(guides = 'collect') +
   plot_annotation(
-    title    = "Struktura digitalnog ekosustava (2021.–2025.)",
+    title    = "Struktura digitalnog ekosustava (2021.–2026.)",
     subtitle = "Usporedba udjela platformi u ukupnom broju objava, interakcija i dosega.",
     caption  = "Web generira najviše sadržaja, ali YouTube i Facebook preuzimaju sve veći dio utjecaja."
   )
@@ -376,7 +381,7 @@ plot_facebook <- create_top_source_plot(top_facebook_sources, "Facebook stranice
 
 final_dashboard <- plot_web + plot_youtube + plot_facebook +
   plot_annotation(
-    title = "Top 20 profila u medijskom prostoru katoličke tematike (2021.–2025.)",
+    title = "Top 20 profila u medijskom prostoru katoličke tematike (2021.–2026.)",
     subtitle = "Rangirano prema ukupnim interakcijama. Veličina točke predstavlja ukupan broj objava.",
     caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
     theme = theme(plot.title = element_text(size = 22, face = "bold"))
@@ -435,7 +440,7 @@ plot_map_facebook <- create_actor_map_plot(facebook_actors, "Facebook Stranice",
 
 final_map_dashboard <- plot_map_web + plot_map_youtube + plot_map_facebook +
   plot_annotation(
-    title = "Mapa utjecaja najvećih profila u medijskom prostoru katoličke tematike (2021.–2025.)",
+    title = "Mapa utjecaja najvećih profila u medijskom prostoru katoličke tematike (2021.–2026.)",
     subtitle = "Usporedba dosega i angažmana. Veličina točke predstavlja produktivnost (broj objava).",
     caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru | Osi su prikazane na logaritamskoj skali.",
     theme = theme(plot.title = element_text(size = 22, face = "bold"))
