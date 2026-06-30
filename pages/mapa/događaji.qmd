@@ -1,5 +1,5 @@
 ---
-title: "Fokus na događaje (2021.–2025.)"
+title: "Fokus na događaje (2021.–2026.)"
 subtitle: "Kako stvarni događaji oblikuju volumen, konfliktnost i tonalitet digitalnog diskursa kroz vrijeme"
 date: last-modified
 categories: ["Događaji", "Dinamika", "Tonalitet"]
@@ -147,38 +147,15 @@ nrc_lexicon_long <- nrc_lexicon_raw %>%
   mutate(emotion = recode(emotion, !!!emotion_translator_hr)) %>%
   select(word, emotion)
 
-dta <- readRDS("../../data/merged_comprehensive.rds") %>%
-  filter(SOURCE_TYPE != "tiktok", !is.na(SOURCE_TYPE)) %>%
-  filter(DATE >= as.Date("2021-01-01") & DATE <= as.Date("2025-12-31")) %>%
-  filter(year >= 2021 & year <= 2025)
-
-# Kreiranje stratificiranog uzorka od 5%
+# Uzorak (3%, sjeme 123, 2021.–2026.) i udpipe lingvističke anotacije s usklađenim doc_id-em
+# produciraju se skriptom R/04_nlp.R (`Rscript R/04_nlp.R` iz korijena repozitorija) — ova
+# stranica ih samo čita (nema ponovnog uzorkovanja ni čitanja matičnog skupa pri renderiranju).
 sample_proportion <- 0.03
-set.seed(123)
-dta_stratified_sample <- dta %>%
-  filter(nchar(FULL_TEXT) > 100) %>%
-  group_by(year, SOURCE_TYPE) %>%
-  slice_sample(prop = sample_proportion) %>%
-  ungroup() %>%
-  mutate(doc_id = row_number())
+dta_stratified_sample <- readRDS("../../data/nlp/dogadjaji_sample.rds")
 
-# Učitavanje i filtriranje lingvističkih podataka
-files <- list.files("../../data/nlp", 
-                    full.names = TRUE, pattern = "\\.rds")
-nlp_results_df <- lapply(files, readRDS) %>%
-  bind_rows()
-
-# Provjeri postoji li doc_id kolona, ako ne, kreiraj je
-if (!"doc_id" %in% names(nlp_results_df)) {
-  nlp_results_df <- nlp_results_df %>%
-    mutate(doc_id = row_number())
-} else {
-  nlp_results_df <- nlp_results_df %>%
-    mutate(doc_id = as.integer(doc_id))
-}
-
-nlp_results_df <- nlp_results_df %>%
-  filter(doc_id %in% dta_stratified_sample$doc_id)
+# Lingvističke anotacije (udpipe) za isti uzorak — usklađene preko doc_id-a.
+nlp_results_df <- readRDS("../../data/nlp/dogadjaji_tokens.rds") %>%
+  mutate(doc_id = as.integer(doc_id))
 
 # Tematska klasifikacija
 thematic_dictionaries_v3 <- list(
@@ -288,7 +265,7 @@ Nakon što su prethodne faze istraživanja mapirale strukturu [aktera i platform
 
 Ovaj pristup omogućuje odgovor na tri važna pitanja koja nadilaze statičku analizu. Prvo pitanje ispituje mogućnost automatske i pouzdane detekcije trenutaka neuobičajene medijske aktivnosti koja signalizira značajne događaje. Drugo pitanje istražuje manifestiraju li različite vrste događaja prepoznatljive i distinktivne digitalne potpise u terminima volumena, konfliktnosti i tonaliteta diskursa. Treće pitanje analizira kako se dugoročni narativi o specifičnim temama ili ličnostima evolviraju i rekontekstualiziraju kroz vrijeme.
 
-Istraživanje uvodi tri metodološke inovacije. Prva je digitalni seizmograf koji kvantitativno detektira dane ekstremnih odstupanja u medijskoj aktivnosti. Druga je narativni seizmograf koji vizualizira životni ciklus pojedinačnih događaja kroz simultano praćenje volumena, konfliktnosti i tonaliteta. Treća je longitudinalna analiza narativne evolucije koja mjeri ne samo frekvenciju asocijacija već i atmosferski tonalitet tih asocijacija.
+Istraživanje uvodi tri metodološke inovacije. Prva je digitalni seizmograf koji kvantitativno detektira dane ekstremnih odstupanja u medijskoj aktivnosti. Druga je narativni seizmograf koji vizualizira životni ciklus pojedinačnih događaja kroz simultano praćenje volumena, konfliktnosti i tonaliteta. Treća je longitudinalna analiza narativne evolucije koja mjeri ne samo frekvenciju asocijacija već i atmosferski tonalitet tih asocijacija. Analiza se provodi na stratificiranom uzorku od 3 % korpusa (uslojenom po godini i platformi) u razdoblju 2021.–2026.; 2026. je nepotpuna godina, pa vremenske usporedbe uključuju djelomično razdoblje.
 
 <div class="metric-grid">
 <div class="metric-card">
@@ -304,7 +281,7 @@ Istraživanje uvodi tri metodološke inovacije. Prva je digitalni seizmograf koj
 <div class="metric-label">Metodološke inovacije</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">2021.–2025.</div>
+<div class="metric-value">2021.–2026.</div>
 <div class="metric-label">Razdoblje analize</div>
 </div>
 </div>
