@@ -45,22 +45,22 @@ Tri glavna pitanja su u pozadini ove mape:
 * Kakva je dinamika utjecaja? Ovdje su uspoređeni doseg i angažman u cilju razumijevanja različitih strategija komunikacijskog djelovanja.
 
 <div class="metric-grid">
-  <div class="metric-card">
-    <div class="metric-value">710.000+</div>
-    <div class="metric-label">Medijskih objava</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value">9</div>
-    <div class="metric-label">Platformi</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value">4</div>
-    <div class="metric-label">Arhetipa aktera</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value">2021.–2026.</div>
-    <div class="metric-label">Razdoblje analize</div>
-  </div>
+<div class="metric-card">
+<div class="metric-value">710.000+</div>
+<div class="metric-label">Medijskih objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">9</div>
+<div class="metric-label">Platformi</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">4</div>
+<div class="metric-label">Arhetipa aktera</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">2021.–2026.</div>
+<div class="metric-label">Razdoblje analize</div>
+</div>
 </div>
 
 ::: {.callout-note}

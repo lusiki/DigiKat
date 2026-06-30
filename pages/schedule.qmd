@@ -11,18 +11,18 @@ categories: ["2025.–2027.", "6 faza", "3 godine"]
 Projekt je strukturiran u šest faza kroz razdoblje od tri godine (2025.–2027.); empirijski korpus pritom pokriva razdoblje 2021.–2026. Svaka faza ima specifične ciljeve i aktivnosti koje osiguravaju postupan i sustavan napredak.
 
 <div class="metric-grid">
-  <div class="metric-card">
-    <div class="metric-value">6</div>
-    <div class="metric-label">Faza</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value">3</div>
-    <div class="metric-label">Godine (2025.–2027.)</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value">3</div>
-    <div class="metric-label">Mape ekosustava</div>
-  </div>
+<div class="metric-card">
+<div class="metric-value">6</div>
+<div class="metric-label">Faza</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">3</div>
+<div class="metric-label">Godine (2025.–2027.)</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">3</div>
+<div class="metric-label">Mape ekosustava</div>
+</div>
 </div>
 
 ---

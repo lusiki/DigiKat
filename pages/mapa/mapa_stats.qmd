@@ -123,22 +123,22 @@ Nakon pregleda glavnih aktera i platformi u [Mapi ekosustava](mapa.html), ova an
 Cilj mape je dati pregled diskursa u tri dijela Prvi dio uključuje identifikaciju glavnih tematskih kategorija. Drugi dio obuhvaća mjerenje njihovog intenziteta, utjecaja i polarizacijskog potencijala. Treći dio otkriva obrasce međusobne povezanosti tema i njihove temporalne dinamike. Analiza koristi vođeni pristup tematskom modeliranju. Na temelju teološke i komunikološke ekspertize definirano je 16 glavnih tematskih kategorija. Ovaj pristup omogućuje preciznu i interpretativnu klasifikaciju sadržaja, nadilažeći ograničenja isključivo strojnog učenja koje često generira tematske kategorije slabije interpretabilnosti.
 
 <div class="metric-grid">
-  <div class="metric-card">
-    <div class="metric-value">16</div>
-    <div class="metric-label">Tematskih kategorija</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value">70+</div>
-    <div class="metric-label">Religijskih pojmova</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value">610.000+</div>
-    <div class="metric-label">Medijskih objava</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value">2021.–2025.</div>
-    <div class="metric-label">Razdoblje analize</div>
-  </div>
+<div class="metric-card">
+<div class="metric-value">16</div>
+<div class="metric-label">Tematskih kategorija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">70+</div>
+<div class="metric-label">Religijskih pojmova</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">610.000+</div>
+<div class="metric-label">Medijskih objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">2021.–2025.</div>
+<div class="metric-label">Razdoblje analize</div>
+</div>
 </div>
 
 <p>

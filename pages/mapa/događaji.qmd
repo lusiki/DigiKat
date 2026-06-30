@@ -291,22 +291,22 @@ Ovaj pristup omogućuje odgovor na tri važna pitanja koja nadilaze statičku an
 Istraživanje uvodi tri metodološke inovacije. Prva je digitalni seizmograf koji kvantitativno detektira dane ekstremnih odstupanja u medijskoj aktivnosti. Druga je narativni seizmograf koji vizualizira životni ciklus pojedinačnih događaja kroz simultano praćenje volumena, konfliktnosti i tonaliteta. Treća je longitudinalna analiza narativne evolucije koja mjeri ne samo frekvenciju asocijacija već i atmosferski tonalitet tih asocijacija.
 
 <div class="metric-grid">
-  <div class="metric-card">
-    <div class="metric-value">4</div>
-    <div class="metric-label">Analitička sloja</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value">8</div>
-    <div class="metric-label">Emocija</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value">3</div>
-    <div class="metric-label">Metodološke inovacije</div>
-  </div>
-  <div class="metric-card">
-    <div class="metric-value">2021.–2025.</div>
-    <div class="metric-label">Razdoblje analize</div>
-  </div>
+<div class="metric-card">
+<div class="metric-value">4</div>
+<div class="metric-label">Analitička sloja</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">8</div>
+<div class="metric-label">Emocija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">3</div>
+<div class="metric-label">Metodološke inovacije</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">2021.–2025.</div>
+<div class="metric-label">Razdoblje analize</div>
+</div>
 </div>
 
 ---
