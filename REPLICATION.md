@@ -17,7 +17,7 @@ See `DATA_AVAILABILITY.md`. The master corpus is gitignored and available on req
 ## 3. Dataset list
 | File | Role | In repo |
 |---|---|---|
-| `data/merged_comprehensive.rds` | master corpus (≈610k×620) | no (gitignored) |
+| `data/merged_comprehensive.rds` | master corpus (≈710k×47) | no (gitignored) |
 | `data/processed/*.rds` | 10 aggregates (platform/source/actor summaries) | yes |
 | `data/sample/merged_sample.rds` | synthetic ≈500-row sample | **PENDING** |
 | `resources/lexicons/*`, `resources/dictionaries/*` | sentiment + theme dictionaries | yes |

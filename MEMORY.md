@@ -4,7 +4,7 @@
 > Format: one-line `[LEARN]` entries. Replace the seeds below with real incidents as they occur.
 
 ## Key facts
-- `data/merged_comprehensive.rds` is gitignored (≈610k rows, ≈620 vars); NOT reproducible from a clean clone.
+- `data/merged_comprehensive.rds` is gitignored (≈710k rows / 710.307, 47 vars); NOT reproducible from a clean clone.
 - `data/processed/*.rds` IS tracked (10 small aggregates, no PII) and is produced ONLY by `R/03_aggregate.R`
   run against the master — NOT by rendering a page. Pages read them. `data/nlp/` output is gitignored.
 - Inclusion rule: a post enters the corpus only with ≥2 DISTINCT religious-term matches (`R/religious_terms.R`).

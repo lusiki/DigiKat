@@ -21,7 +21,7 @@ Status: Active
 
 ## Executive Summary
 
-DigiKat is a three year interdisciplinary research project that applies computational social science methods to systematically map, measure, and analyze the presence of Catholic themes across the Croatian digital media ecosystem. The project covers web portals, YouTube, Facebook, Twitter, Reddit, and online forums. Its empirical foundation is a structured database of over 610,000 media posts collected between 2021 and 2025, written primarily in Croatian and Bosnian. The project produces both a reusable open data infrastructure and a series of thematic studies on specific aspects of Catholic digital media presence.
+DigiKat is a three year interdisciplinary research project that applies computational social science methods to systematically map, measure, and analyze the presence of Catholic themes across the Croatian digital media ecosystem. The project covers web portals, YouTube, Facebook, Twitter, Reddit, and online forums. Its empirical foundation is a structured database of over 710,000 media posts collected between 2021 and 2026, written primarily in Croatian and Bosnian. The project produces both a reusable open data infrastructure and a series of thematic studies on specific aspects of Catholic digital media presence.
 
 The project sits at the intersection of communication studies, digital humanities, computational text analysis, and sociology of religion. It is committed to open science principles, with all code, methodological frameworks, and where possible data published openly under FAIR principles.
 
@@ -43,7 +43,7 @@ Fifth, what is the network dynamic between different platforms and media outlets
 
 ## Database
 
-The empirical core of the project is a large scale structured database stored as an R data.table object (merged_comprehensive.rds). The database contains over 610,000 records spanning 2021 to 2025, with more than 620 variables per record.
+The empirical core of the project is a large scale structured database stored as an R data.table object (merged_comprehensive.rds). The database contains over 710,000 records spanning 2021 to 2026, with 47 variables per record.
 
 ### Data Sources and Coverage
 
@@ -80,7 +80,7 @@ This layer uses natural language processing to decompose the corpus into themati
 
 Thematic classification employs a dictionary based scoring approach across 16 categories. These categories are spirituality and liturgy, theology, church governance, popes and the Vatican, church finances, global church and missions, politics, bioethics, charity and social justice, history and identity, science and faith, media and culture, digital evangelization, abuse and crisis, internal disputes, and interfaith relations.
 
-The analysis uses stratified sampling (2 to 5 percent of the total corpus) to manage computational costs while maintaining representativeness. Temporal dynamics track how these 16 themes rise and fall across the 2021 to 2025 period.
+The analysis uses stratified sampling (2 to 5 percent of the total corpus) to manage computational costs while maintaining representativeness. Temporal dynamics track how these 16 themes rise and fall across the 2021 to 2026 period.
 
 ### Layer 3: Discourse Atmosphere Analysis (Atmosfera diskursa)
 
@@ -175,7 +175,7 @@ The DigiKat methodology and analytical framework could be extended to other pred
 
 ## 2. Automated Narrative and Frame Detection Using Large Language Models
 
-The current thematic classification relies on dictionary based scoring across 16 predefined categories. A natural extension would incorporate transformer based language models fine tuned for Croatian (such as BERTić or CroSloEngual BERT) to perform more nuanced frame detection. Rather than counting term frequencies, these models could identify implicit framing devices, rhetorical strategies, and argumentative structures in the text. This would enable detection of how the same event is framed differently across outlets (for example, whether a church statement on social policy is framed as moral guidance, political interference, or cultural commentary). Integration with the existing pipeline would involve training classifiers on a manually annotated subset of the DigiKat corpus and using those classifiers to extend the analysis to the full 610,000 post dataset. The LLM approach could also improve the emotional analysis layer by capturing sarcasm, irony, and implicit sentiment that lexicon based methods miss.
+The current thematic classification relies on dictionary based scoring across 16 predefined categories. A natural extension would incorporate transformer based language models fine tuned for Croatian (such as BERTić or CroSloEngual BERT) to perform more nuanced frame detection. Rather than counting term frequencies, these models could identify implicit framing devices, rhetorical strategies, and argumentative structures in the text. This would enable detection of how the same event is framed differently across outlets (for example, whether a church statement on social policy is framed as moral guidance, political interference, or cultural commentary). Integration with the existing pipeline would involve training classifiers on a manually annotated subset of the DigiKat corpus and using those classifiers to extend the analysis to the full 710,000 post dataset. The LLM approach could also improve the emotional analysis layer by capturing sarcasm, irony, and implicit sentiment that lexicon based methods miss.
 
 
 ## 3. Network Analysis of Information Diffusion and Amplification
@@ -210,7 +210,7 @@ The digital media analysis could be triangulated with public opinion data on rel
 
 ## 9. Historical Digitization and Long Term Trend Analysis
 
-The current database covers 2021 to 2025, which captures a specific moment in Croatian digital media development. Extending the temporal scope backward by digitizing and coding earlier web content (through the Wayback Machine or national web archives) or by coding print media archives would enable analysis of how the digital transformation changed Catholic media presence. Was the shift to digital platforms accompanied by a secularization of tone? Did new actors emerge who had no presence in traditional media? How did the ratio of institutional to grassroots Catholic content change? This historical extension would position DigiKat within the longer trajectory of media and religion in post independence Croatia.
+The current database covers 2021 to 2026, which captures a specific moment in Croatian digital media development. Extending the temporal scope backward by digitizing and coding earlier web content (through the Wayback Machine or national web archives) or by coding print media archives would enable analysis of how the digital transformation changed Catholic media presence. Was the shift to digital platforms accompanied by a secularization of tone? Did new actors emerge who had no presence in traditional media? How did the ratio of institutional to grassroots Catholic content change? This historical extension would position DigiKat within the longer trajectory of media and religion in post independence Croatia.
 
 
 ## 10. Computational Sociology of Religion

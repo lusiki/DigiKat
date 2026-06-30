@@ -24,7 +24,7 @@
     slice (candidate: Study 3, christian-democracy). `scholar-design` refuses retrospective prereg — respect that.
 
 - **corpus_constraints:**
-  - size: ~610k posts (2021–2025), Croatian/Bosnian
+  - size: ~710k posts (2021–2026), Croatian/Bosnian
   - inclusion: ≥2 distinct Catholic root-term matches (`R/religious_terms.R`)
   - platforms: web portals (dominant) · YouTube · Facebook · Twitter · Reddit · forums
   - themes: 16 dictionary categories; sentiment via CroSentilex / CroSentilex Gold / lilaHR

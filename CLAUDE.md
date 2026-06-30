@@ -6,7 +6,7 @@
 **Repo:** github.com/lusiki/DigiKat · **Site:** https://lusiki.github.io/DigiKat/ (Quarto → `docs/` → GitHub Pages)
 
 DigiKat applies computational social science to map Catholic themes across the Croatian digital media
-ecosystem. Empirical core: a ≈610k-row corpus of media posts (2021–2025, Croatian/Bosnian). Two output
+ecosystem. Empirical core: a ≈710k-row corpus of media posts (2021–2026, Croatian/Bosnian). Two output
 streams: (1) reusable open-data infrastructure + the Quarto website; (2) thematic studies / papers.
 
 ## Core principles
@@ -24,7 +24,7 @@ streams: (1) reusable open-data infrastructure + the Quarto website; (2) themati
    produced by `R/03_aggregate.R` run against the master — never by rendering a page. Pages only READ them.
    (Today `mapa.qmd` still writes them mid-render — a Phase-0 fix; until then, treat any `processed/*.rds`
    change during a render as an accident: do not stage it.)
-5. **Protect the irreplaceable.** The master `.rds` (≈610k rows) is gitignored and not reproducible from a
+5. **Protect the irreplaceable.** The master `.rds` (≈710k rows) is gitignored and not reproducible from a
    clean clone. Back it up before any overwrite; never change the ≥2-match inclusion rule silently. The
    git/data guard hook + deny list enforce this.
 6. **Croatian correctness is a quality dimension.** Content/UI are Croatian (č ć ž š đ); project docs are
@@ -45,7 +45,7 @@ R + the master dataset live on the PI's pipeline machine, NOT necessarily the ma
 - `R/` — all R + Python pipeline scripts. (Numbered master `R/00_run_all.R` + `R/0X_*.R` to be built.)
 - `pages/`, `pages/mapa/` — Quarto site (`.qmd`); the project's published "outputs".
 - `data/raw/` — gitignored `.xlsx`; `data/raw/new/` — incremental drop-folder for appends.
-- `data/merged_comprehensive.rds` — master (≈610k × 620), **GITIGNORED**, not in repo.
+- `data/merged_comprehensive.rds` — master (≈710k × 47), **GITIGNORED**, not in repo.
 - `data/processed/*.rds` — **TRACKED** aggregates (no PII, CC BY 4.0); PI-produced, page-read-only.
 - `data/nlp/` — gitignored tokenized output. `resources/` — `lexicons/`, `dictionaries/`, `models/` (udpipe).
 - `docs/` — rendered site (GitHub Pages); generated — do not hand-edit.

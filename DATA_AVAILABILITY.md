@@ -8,7 +8,7 @@
 
 | Asset | In repo? | License | Redistributable? | How to get it |
 |---|---|---|---|---|
-| `data/merged_comprehensive.rds` (master, ≈610k×620) | **No** (gitignored) | — | **No** (full corpus) | On reasonable request to the PI (below) |
+| `data/merged_comprehensive.rds` (master, ≈710k×47) | **No** (gitignored) | — | **No** (full corpus) | On reasonable request to the PI (below) |
 | `data/processed/*.rds` (10 aggregates) | **Yes** (tracked) | CC BY 4.0 | **Yes** — aggregate, no PII | clone the repo |
 | `data/sample/merged_sample.rds` (synthetic ≈500-row) | Yes, once generated | CC BY 4.0 | **Yes** — scrubbed/synthetic | clone, or `Rscript R/make_sample.R` |
 | `data/raw/*.xlsx` (raw scrape / API dumps) | No (gitignored) | source-dependent | **No** | derived from MySQL `determ_all` / source platforms |
@@ -19,8 +19,8 @@
 | code (`R/**`, `pages/**`) | Yes | CC BY 4.0 _(code license — PI to confirm MIT vs CC)_ | **Yes** | clone |
 
 ## The master corpus
-- ≈610,000 media posts (2021–2025), Croatian/Bosnian, across web portals, YouTube, Facebook, Twitter,
-  Reddit, and forums; ≈620 variables. Stored as an R `.rds` (`data.table`).
+- ≈710,000 media posts (2021–2026), Croatian/Bosnian, across web portals, YouTube, Facebook, Twitter,
+  Reddit, and forums; 47 variables. Stored as an R `.rds` (`data.table`).
 - **Gitignored** and not in the repository (size + redistribution constraints of scraped/API content).
 - **Inclusion criterion:** a post is in the corpus iff it matches **≥ 2 DISTINCT** Catholic root terms
   (`R/religious_terms.R`).
