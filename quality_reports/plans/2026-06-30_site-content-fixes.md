@@ -44,10 +44,16 @@ Pages with no/minimal R chunks: `index`, `about`, `schedule`, `news`, `resources
 - `schedule.qmd`: canonical layer names (not "sistematizirana karta"/"medijski prostor"/"baza podataka"); dashes.
 - `studije/*`: minor subtitle/Croglish nits.
 
-### Phase 1B — data-page PROSE-only edits (freeze-cached; no chunk re-run)
-On `baza` + the four `mapa/*`, ONLY markdown/prose: canonical layer names in H1; `sentiment→tonalitet` in prose;
-RIK consistency in prose; `„…"` quotes; dash/ordinal formats in prose; `baza` Croglish + bracketed-URL→Markdown
-links + ASCII-quote fixes + caption/typo fixes; baza hardcoded 620→47 and 6→9. (Do NOT touch R chunks here.)
+### Phase 1B — data-page PROSE edits (SOURCE done 2026-06-30; render DEFERRED to Phase 2)
+On `baza` + the four `mapa/*`, ONLY markdown/prose: canonical layer names in the TITLE (not a body H1);
+`sentiment→tonalitet` in prose; RIK consistency; `„…"` quotes; dash/ordinal formats; `baza` Croglish +
+bracketed-URL→Markdown links + 620→47 + 6→9. (R chunks untouched.) **Source committed; docs NOT re-rendered.**
+
+⚠️ **EXECUTION FINDING (2026-06-30):** `freeze: auto` re-executes ALL chunks on ANY source edit, so rendering a
+data page after a prose edit is NOT cheap — it (a) re-runs heavy udpipe chunks, (b) makes `mapa.qmd` overwrite all
+`data/processed/*.rds` via its in-render `saveRDS()`, and (c) `mapa_stats.qmd` ERRORS on re-exec (`object 'doc_id'
+not found`). So Phase-1B data-page edits are committed as SOURCE only; their `docs/` regenerate in Phase 2's
+controlled render. The accidental `data/processed` mutation from the trial render was reverted (`git checkout`).
 
 ### Phase 2 — data-coupled (HARD GATE; re-runs chunks; needs R + master)
 - Build `R/03_aggregate.R` (extract aggregation from `mapa.qmd`) → run vs master → refresh `data/processed/*.rds`

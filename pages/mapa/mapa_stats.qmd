@@ -1,5 +1,5 @@
 ---
-title: "Anatomija diskursa katoličkog digitalnog prostora u Hrvatskoj (2021.–2025.)"
+title: "Tematske struje — anatomija diskursa katoličkog digitalnog prostora u Hrvatskoj (2021.–2025.)"
 subtitle: "Tematske struje u korpusu"
 date: last-modified
 categories: ["Tematske struje", "NLP", "16 kategorija"]
@@ -514,4 +514,4 @@ Drugi je **društveno-politički svijet**, gdje se isprepliću teme Politike i o
 
 Mreža povezanosti tematskih kategorija otkriva dodatnu kompleksnost. Ova mreža nije samo dijagram apstraktnih veza. Ona prikazuje kako se konkretne teme iz pastoralnog svijeta, poput Duhovnosti i liturgije, u specifičnim kontekstima prepliću s političkim temama. Primjer je rasprava o crkvenim stavovima prema izborima ili bioetičkim pitanjima, gdje se liturgijski autoritet instrumentalizira za političke svrhe. Ova prožimanja stvaraju bogat sustav koji odražava kompleksnost katoličkog života u Hrvatskoj, gdje se vjera istovremeno doživljava kao privatna duhovnost i javni identitetski marker.
 
-Razumijevanje ove strukture, uključujući intenzitet, utjecaj i povezanost tematskih kategorija, predstavlja temelj za sve buduće analize narativa i sentimenta. Nakon razumijevanja onoga što se govori, potrebno je produbiti razumijevanje kako se govori i s kojim komunikacijskim namjerama. Upravo to će biti fokus treće analitičke mape, [Atmosfere diskursa](diskurs.html).
+Razumijevanje ove strukture, uključujući intenzitet, utjecaj i povezanost tematskih kategorija, predstavlja temelj za sve buduće analize narativa i tonaliteta. Nakon razumijevanja onoga što se govori, potrebno je produbiti razumijevanje kako se govori i s kojim komunikacijskim namjerama. Upravo to će biti fokus treće analitičke mape, [Atmosfere diskursa](diskurs.html).

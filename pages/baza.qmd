@@ -2,7 +2,7 @@
 title: "Baza podataka katoličkog digitalnog medijskog prostora (2021.–2026.)"
 subtitle: "Strukturirani korpus katoličkog digitalnog medijskog prostora"
 date: last-modified
-categories: ["710.000+ objava", "620+ varijabli", "2021.–2026."]
+categories: ["710.000+ objava", "47 varijabli", "2021.–2026."]
 ---
 
 ```{r}
@@ -59,7 +59,7 @@ if ("DATE" %in% names(dta)) {
 }
 ```
 
-Baza podataka sadrži **`r n_records`** medijskih objava prikupljenih tijekom `r time_period`, fokusiranih na katoličke teme i sadržaje u hrvatskim medijima. Baza predstavlja sveobuhvatan korpus za analizu medijskog diskursa, sentimenta i angažmana publike u domeni katoličkih (religijskih) tema.
+Korpus sadrži **`r n_records`** medijskih objava prikupljenih tijekom `r time_period`, fokusiranih na katoličke teme i sadržaje u hrvatskim medijima. Korpus omogućuje analizu medijskog diskursa, tonaliteta i angažmana publike u domeni katoličkih (religijskih) tema.
 
 <div class="metric-grid">
 <div class="metric-card">
@@ -75,7 +75,7 @@ Baza podataka sadrži **`r n_records`** medijskih objava prikupljenih tijekom `r
 <div class="metric-label">Razdoblje</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">6</div>
+<div class="metric-value">9</div>
 <div class="metric-label">Platformi</div>
 </div>
 </div>
@@ -707,7 +707,7 @@ kable(all_vars,
 
 ## Preuzmi bazu podataka
 
-📊 **Kaggle Dataset** [Croatian Catholic Media Space 2021-2025](https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space/data)
+Baza podataka dostupna je na platformi Kaggle: [Hrvatski katolički digitalni medijski prostor 2021.–2026.](https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space/data)
 
 ```{r}
 #| label: download-example
@@ -730,13 +730,12 @@ Molimo citirajte ovu bazu u svojim radovima koristeći sljedeći format:
 
 ## Dodatni resursi
 
-- **GitHub repozitorij** [https://github.com/lusiki/DigiKat]
-- **Dokumentacija** [https://lusiki.github.io/DigiKat/baza.html] 
-- **Kontakt** [luka.sikic@unicath.hr]
-- **ORCID** [0009-0006-3519-0272]
+- **GitHub repozitorij** — [github.com/lusiki/DigiKat](https://github.com/lusiki/DigiKat)
+- **Dokumentacija** — [stranica baze podataka](https://lusiki.github.io/DigiKat/baza.html)
+- **Kontakt** — [luka.sikic@unicath.hr](mailto:luka.sikic@unicath.hr)
+- **ORCID** — [0009-0006-3519-0272](https://orcid.org/0009-0006-3519-0272)
 
 ---
 
-**Zadnja ažurirana** `r Sys.Date()`  
 **Verzija** 2.1
 **R verzija** `r R.version.string`

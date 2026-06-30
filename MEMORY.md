@@ -27,6 +27,14 @@
   that wipe + pushing takes the live site down. Recovery: `git checkout -- docs/`, then re-render from root.
   Backstops added 2026-06-25: `.gitignore` makes the scattered output un-stageable, and `git_data_guard.py`
   blocks any `git commit` that would delete ≥3 `docs/**/*.html` pages. Verify post-render anyway (quarto rule §8).
+- [LEARN] `freeze: auto` re-executes ALL R chunks on ANY source change (markdown/YAML included), not just code edits.
+  So a "prose-only" edit to a data page (`baza`, `pages/mapa/*`) STILL forces full re-execution on render — there is
+  no cheap text-only re-render. (2026-06-30: editing mapa-page prose triggered heavy udpipe re-runs.)
+- [LEARN] Rendering `pages/mapa/mapa.qmd` RE-RUNS its in-render `saveRDS()` and OVERWRITES all 10 tracked
+  `data/processed/*.rds` (clamped to 2025, no tiktok). Confirmed 2026-06-30. Recovery: `git checkout -- data/processed/`.
+  Do NOT render mapa.qmd until that side-effect is extracted into `R/03_aggregate.R`.
+- [LEARN] `pages/mapa/mapa_stats.qmd` currently FAILS on re-execution (`object 'doc_id' not found`) — render-blocked
+  in the current environment (likely a missing `data/nlp/` tokenized dependency). Fix before any Phase-2 full render.
 
 ## Known repo issues (Phase 0 backlog — see WORKFLOW_SUGGESTIONS.md)
 - `R/text_analysis.R` reads the 3 sentiment lexicons from a phantom `./Codes/` dir → repoint to `resources/lexicons/`.

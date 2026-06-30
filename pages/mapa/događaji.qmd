@@ -1,8 +1,8 @@
 ---
-title: "Dinamička analiza utjecaja stvarnih događaja na online diskurs (2021.–2025.)"
-subtitle: "Dinamika diskursa oko stvarnih događaja"
+title: "Fokus na događaje (2021.–2025.)"
+subtitle: "Kako stvarni događaji oblikuju volumen, konfliktnost i tonalitet digitalnog diskursa kroz vrijeme"
 date: last-modified
-categories: ["Događaji", "Dinamika", "Sentiment"]
+categories: ["Događaji", "Dinamika", "Tonalitet"]
 ---
 
 ```{r}
@@ -288,7 +288,7 @@ Nakon što su prethodne faze istraživanja mapirale strukturu [aktera i platform
 
 Ovaj pristup omogućuje odgovor na tri važna pitanja koja nadilaze statičku analizu. Prvo pitanje ispituje mogućnost automatske i pouzdane detekcije trenutaka neuobičajene medijske aktivnosti koja signalizira značajne događaje. Drugo pitanje istražuje manifestiraju li različite vrste događaja prepoznatljive i distinktivne digitalne potpise u terminima volumena, konfliktnosti i tonaliteta diskursa. Treće pitanje analizira kako se dugoročni narativi o specifičnim temama ili ličnostima evolviraju i rekontekstualiziraju kroz vrijeme.
 
-Istraživanje uvodi tri metodološke inovacije. Prva je digitalni seizmograf koji kvantitativno detektira dane ekstremnih odstupanja u medijskoj aktivnosti. Druga je narativni seizmograf koji vizualizira životni ciklus pojedinačnih događaja kroz simultano praćenje volumena, konfliktnosti i sentimenta. Treća je longitudinalna analiza narativne evolucije koja mjeri ne samo frekvenciju asocijacija već i atmosferski tonalitet tih asocijacija.
+Istraživanje uvodi tri metodološke inovacije. Prva je digitalni seizmograf koji kvantitativno detektira dane ekstremnih odstupanja u medijskoj aktivnosti. Druga je narativni seizmograf koji vizualizira životni ciklus pojedinačnih događaja kroz simultano praćenje volumena, konfliktnosti i tonaliteta. Treća je longitudinalna analiza narativne evolucije koja mjeri ne samo frekvenciju asocijacija već i atmosferski tonalitet tih asocijacija.
 
 <div class="metric-grid">
   <div class="metric-card">
@@ -467,9 +467,9 @@ Seizmograf za Uskrs manifestira fundamentalno drugačiji obrazac od očekivanih 
 
 **Gotovo potpuno odsustvo konfliktnosti.** Najvažniji nalaz je konstantno mala veličina točaka kroz cijelo promatrano razdoblje. Ovo predstavlja kvantitativni dokaz da je diskurs o Uskrsu gotovo u potpunosti lišen konfliktnog i polemičkog vokabulara, što ga fundamentalno razlikuje od diskursa o bioetičkim ili političkim temama.
 
-**Dominacija pozitivnog tonaliteta.** Sve točke na seizmografu manifestiraju izrazito plavu nijansu, što upućuje na visoko pozitivan sentiment karakterističan za medijsko izvještavanje. Diskurs je afirmativan, fokusiran na poruke nade, mira i duhovne obnove.
+**Dominacija pozitivnog tonaliteta.** Sve točke na seizmografu manifestiraju izrazito plavu nijansu, što upućuje na visoko pozitivan tonalitet karakterističan za medijsko izvještavanje. Diskurs je afirmativan, fokusiran na poruke nade, mira i duhovne obnove.
 
-Pozitivan sentiment koji karakterizira Uskrs evocira toplinu tradicije u kontekstu konkretnih društvenih praksi. Medijski narativi o obiteljskim okupljanjima, crkvenim slavljima i zajedničkim ritualima ne reprezentiraju samo izvještavanje o događaju, već aktiviraju kolektivnu memoriju i emocionalni rezonans povezan s tradicijom. Nizak intenzitet konflikta omogućuje fokus na poruke nade i duhovne obnove, kreirajući diskursni prostor u kojem dominiraju afirmativni i zajedničarski narativi umjesto polemičkih i konfrontacijskih.
+Pozitivan tonalitet koji karakterizira Uskrs evocira toplinu tradicije u kontekstu konkretnih društvenih praksi. Medijski narativi o obiteljskim okupljanjima, crkvenim slavljima i zajedničkim ritualima ne reprezentiraju samo izvještavanje o događaju, već aktiviraju kolektivnu memoriju i emocionalni rezonans povezan s tradicijom. Nizak intenzitet konflikta omogućuje fokus na poruke nade i duhovne obnove, kreirajući diskursni prostor u kojem dominiraju afirmativni i zajedničarski narativi umjesto polemičkih i konfrontacijskih.
 
 ---
 
@@ -532,11 +532,11 @@ ggplot(top_associated_words_final, aes(x = total_cooccurrences, y = reorder_with
 
 Vizualizacija razotkriva suptilne, ali analitički značajne transformacije u načinu artikulacije diskursa o blaženom Alojziju Stepincu. Premda je cjelokupan tonalitet diskursa, reprezentiran nijansama plave boje, konzistentno pozitivan kroz sve promatrane godine, fokus i kontekstualni okviri narativa manifestiraju dramatične promjene.
 
-Početna godina razdoblja (2021–2022) karakterizira se dominacijom termina povezanih s ekumenskom i političkom dimenzijom. Godina 2021. ukazuje na prevlast termina poput *sps* i *pravoslavan*, što upućuje na narativ primarno ukorijenjen u ekumensko-političkim odnosima sa Srpskom pravoslavnom crkvom i problematici kanonizacije, reflektirajući trenutak intenzivnih međunacionalnih i međureligijskih rasprava. Godina 2022. manifestira proširenje asocijativnog polja na termine *rat*, *crkva* i *emisija*, signalizirajući temeljni pomak prema povijesno-medijskom okviru, gdje se raspravlja o njegovoj ulozi u Drugom svjetskom ratu, često kroz medijske formate poput emisija, dokumentaraca i javnih tribina.
+Početna godina razdoblja (2021.–2022.) karakterizira se dominacijom termina povezanih s ekumenskom i političkom dimenzijom. Godina 2021. ukazuje na prevlast termina poput *sps* i *pravoslavan*, što upućuje na narativ primarno ukorijenjen u ekumensko-političkim odnosima sa Srpskom pravoslavnom crkvom i problematici kanonizacije, reflektirajući trenutak intenzivnih međunacionalnih i međureligijskih rasprava. Godina 2022. manifestira proširenje asocijativnog polja na termine *rat*, *crkva* i *emisija*, signalizirajući temeljni pomak prema povijesno-medijskom okviru, gdje se raspravlja o njegovoj ulozi u Drugom svjetskom ratu, često kroz medijske formate poput emisija, dokumentaraca i javnih tribina.
 
-Srednja godina razdoblja (2023) reprezentira radikalni diskursni preokret. Diskursom prevladavaju termini *molitva*, *veljača*, *krunica* i *devetnica*, što predstavlja jasan prijelaz na liturgijsko-pobožni okvir, najvjerojatnije potaknut komemoracijom obljetnice njegove smrti i intenzivnim vjerskim praksama vezanim uz njegovu pobožnu memoriju.
+Srednja godina razdoblja (2023.) reprezentira radikalni diskursni preokret. Diskursom prevladavaju termini *molitva*, *veljača*, *krunica* i *devetnica*, što predstavlja jasan prijelaz na liturgijsko-pobožni okvir, najvjerojatnije potaknut komemoracijom obljetnice njegove smrti i intenzivnim vjerskim praksama vezanim uz njegovu pobožnu memoriju.
 
-Novije godine (2024–2025) sugeriraju nastavak dinamičke rekontekstualizacije narativa, gdje se različite semantičke dimenzije kontinuirano aktiviraju u skladu s aktualnim društvenim i medijskim kontekstima. Longitudinalna struktura koju prikazuje analiza demonstrira da narativ o Stepincu nije monolitni konstrukt, već fluidni predmet kontinuirane reinterpretacije.
+Novije godine (2024.–2025.) sugeriraju nastavak dinamičke rekontekstualizacije narativa, gdje se različite semantičke dimenzije kontinuirano aktiviraju u skladu s aktualnim društvenim i medijskim kontekstima. Longitudinalna struktura koju prikazuje analiza demonstrira da narativ o Stepincu nije monolitni konstrukt, već fluidni predmet kontinuirane reinterpretacije.
 
 Ovaj pomak od ekumenskog preko povijesnog prema duhovnom nije samo statistička fluktuacija u leksičkom izboru. On odražava širi kontekst hrvatske društvene i političke dinamike. Mediji ne samo što mijenjaju teme. Oni prelaze iz političkih debata o međunacionalnim i međuvjerskim odnosima u pobožne priče o svecima i mučenicima, aktivno jačajući kulturnu baštinu kroz specifične narativne strategije. Ovaj proces rekontekstualizacije demonstrira kako se ista povijesna ličnost može funkcionalizirati za različite društvene svrhe, ovisno o trenutnim potrebama za političkom legitimacijom, povijesnom reinterpretacijom ili duhovnom mobilizacijom.
 
