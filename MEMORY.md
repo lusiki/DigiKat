@@ -30,15 +30,26 @@
 - [LEARN] `freeze: auto` re-executes ALL R chunks on ANY source change (markdown/YAML included), not just code edits.
   So a "prose-only" edit to a data page (`baza`, `pages/mapa/*`) STILL forces full re-execution on render — there is
   no cheap text-only re-render. (2026-06-30: editing mapa-page prose triggered heavy udpipe re-runs.)
-- [LEARN] Rendering `pages/mapa/mapa.qmd` RE-RUNS its in-render `saveRDS()` and OVERWRITES all 10 tracked
-  `data/processed/*.rds` (clamped to 2025, no tiktok). Confirmed 2026-06-30. Recovery: `git checkout -- data/processed/`.
-  Do NOT render mapa.qmd until that side-effect is extracted into `R/03_aggregate.R`.
-- [LEARN] `pages/mapa/mapa_stats.qmd` currently FAILS on re-execution (`object 'doc_id' not found`) — render-blocked
-  in the current environment (likely a missing `data/nlp/` tokenized dependency). Fix before any Phase-2 full render.
+- [LEARN] mapa.qmd's `data/processed`-writing side-effect is now EXTRACTED (2026-06-30): the in-render
+  `data-preparation` chunk is `#| eval: false` ("Superseded by `R/03_aggregate.R`") and the page only READS the
+  tracked aggregates in `load-data`. So rendering `pages/mapa/mapa.qmd` is now SAFE — it does NOT read the master
+  or write `data/processed/*.rds`. (Aggregates are (re)built by `Rscript R/03_aggregate.R` from the repo root.)
+  NB: the auto-mode guard may still block a `quarto render pages/mapa/mapa.qmd` because of the *old* warning text —
+  it is render-safe; verify `md5sum data/processed/*.rds` is unchanged afterward to confirm.
+- [LEARN] `pages/mapa/mapa_stats.qmd` now RENDERS CLEAN (2026-06-30, rc=0) — the earlier `object 'doc_id' not found`
+  failure is resolved now that `data/nlp/mapa_stats_{sample,tokens}.rds` exist (built by `R/04_nlp.R`). diskurs &
+  događaji also render clean from `data/nlp/`.
+- [LEARN] All `pages/mapa/*` figures share ONE ggplot theme — `R/theme_digikat.R` (sourced after `library(ggplot2)`,
+  `theme_set` as default). It exports: `dk_col` tokens (incl. `pos`/`neg`/`neutral`/`alert`, cream `paper`, white
+  `panel`), `dk_palette` (16-hue), `dk_platform_colors` (brand-harmonized per platform), `scale_fill/colour_digikat()`,
+  `scale_*_digikat_diverging()` (blue=+ / red=−, keeps the "plave/crvene nijanse" prose valid), and
+  `theme_digikat_void()` (cream-bg network/empty-plot variant). Do NOT hard-code figure colors/backgrounds or
+  `theme_void()`/`theme_graph()` — route through these so figures match the editorial design (cream paper, white panel).
 
 ## Known repo issues (Phase 0 backlog — see WORKFLOW_SUGGESTIONS.md)
 - `R/text_analysis.R` reads the 3 sentiment lexicons from a phantom `./Codes/` dir → repoint to `resources/lexicons/`.
 - `R/write_tokens.R` reads `rules.txt`/`transformations.txt` from a hardcoded Dropbox path → repoint to `resources/lexicons/`.
-- `pages/mapa/mapa.qmd` writes `data/processed/*.rds` during render → extract into `R/03_aggregate.R`.
+- ~~`pages/mapa/mapa.qmd` writes `data/processed/*.rds` during render → extract into `R/03_aggregate.R`.~~ DONE
+  (2026-06-30): data-prep chunk is `eval: false`; `R/03_aggregate.R` now produces the aggregates.
 - `thematic_dictionaries_v3` is copy-pasted across `mapa_stats`/`diskurs`/`događaji` → extract to `R/thematic_dictionaries.R`.
 - Duplicate 19 MB udpipe model at repo root AND `resources/models/` → keep `resources/models/` only.

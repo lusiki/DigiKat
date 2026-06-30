@@ -235,7 +235,7 @@ wordcloud(
   max.words = 100,
   random.order = FALSE,
   rot.per = 0.30,
-  colors = brewer.pal(8, "Dark2")
+  colors = dk_palette
 )
 ```
 
@@ -273,6 +273,7 @@ ggplot(topic_trends_guided, aes(x = year, y = share, color = topic, group = topi
   geom_point(size = 4) +
   scale_y_continuous(labels = scales::percent_format(decimal.mark = ",")) +
   scale_x_continuous(breaks = c(2021, 2022, 2023, 2024, 2025)) +
+  scale_colour_digikat() +
   labs(title = "Promjena zastupljenosti glavnih tema (iznad 5% udjela)",
        x = "Godina", y = "Udio spominjanja u korpusu", color = "Tema") +
   theme_digikat(base_size = 16) +
@@ -297,7 +298,7 @@ thematic_intensity_data <- dta_enriched %>%
   filter(intensity > 0)
 
 ggplot(thematic_intensity_data, aes(x = intensity, y = fct_reorder(topic, intensity, .fun = median))) +
-  geom_density_ridges(scale = 2, fill = "#0072B2", color = "white", alpha = 0.8) +
+  geom_density_ridges(scale = 2, fill = dk_col$accent, color = dk_col$panel, alpha = 0.85) +
   scale_x_log10(breaks = c(1, 10, 100, 1000), labels = c("1", "10", "100", "1000")) +
   theme_digikat(base_size = 16) +
   labs(
@@ -336,8 +337,8 @@ engagement_by_topic <- dta_enriched %>%
   arrange(desc(avg_interactions))
 
 ggplot(engagement_by_topic, aes(x = avg_interactions, y = reorder(dominant_topic, avg_interactions))) +
-  geom_col(fill = "#0072B2", width=0.8) +
-  geom_text(aes(label = round(avg_interactions)), hjust = -0.2, size=5) +
+  geom_col(fill = dk_col$accent, width=0.8) +
+  geom_text(aes(label = round(avg_interactions)), hjust = -0.2, size=5, color = dk_col$ink) +
   expand_limits(x = max(engagement_by_topic$avg_interactions) * 1.1) +
   theme_digikat(base_size = 16) +
   labs(title = "Angažman publike prema tematskim kategorijama",
@@ -372,9 +373,9 @@ polarization_by_topic <- dta_enriched %>%
   filter(total_reactions > 100)
 
 ggplot(polarization_by_topic, aes(y = reorder(dominant_topic, angry_ratio))) +
-  geom_col(aes(x = angry_ratio), fill = "firebrick", alpha = 0.8) +
-  geom_col(aes(x = -love_ratio), fill = "steelblue", alpha = 0.8) +
-  geom_vline(xintercept = 0, color="grey") +
+  geom_col(aes(x = angry_ratio), fill = dk_col$neg, alpha = 0.85) +
+  geom_col(aes(x = -love_ratio), fill = dk_col$pos, alpha = 0.85) +
+  geom_vline(xintercept = 0, color = dk_col$faint) +
   scale_x_continuous(labels = function(x) percent(abs(x), decimal.mark = ","), name = "Udio u ukupnim reakcijama") +
   theme_digikat(base_size = 16) +
   labs(title = "Emocionalna polarizacija prema tematskim kategorijama",
@@ -431,7 +432,7 @@ top_actors_in_top_topics <- entities_in_topics %>%
 ggplot(top_actors_in_top_topics, aes(x = n, y = reorder_within(lemma, n, dominant_topic), fill = dominant_topic)) +
   geom_col(show.legend = FALSE, width = 0.8) +
   scale_y_reordered() +
-  scale_fill_viridis_d() +
+  scale_fill_digikat() +
   facet_wrap(~ dominant_topic, scales = "free_y", ncol = 1) + 
   labs(
     title = "Protagonisti najzastupljenijih tematskih kategorija",
@@ -442,10 +443,10 @@ ggplot(top_actors_in_top_topics, aes(x = n, y = reorder_within(lemma, n, dominan
   theme_digikat(base_size = 16) +
   theme(
     plot.title = element_text(face = "bold", size = 22, margin = margin(b = 5)),
-    plot.subtitle = element_text(size = 16, color = "gray40", margin = margin(b = 20)),
+    plot.subtitle = element_text(size = 16, color = dk_col$muted, margin = margin(b = 20)),
     strip.text = element_text(face = "bold", size = 14, hjust = 0),
     panel.grid.major.y = element_blank(),
-    panel.grid.major.x = element_line(color = "#f0f0f0"),
+    panel.grid.major.x = element_line(color = dk_col$grid),
     panel.grid.minor = element_blank(),
     plot.margin = margin(20, 20, 20, 20)
   )
@@ -474,10 +475,10 @@ topic_pairs %>%
   filter(correlation > 0.1) %>%
   graph_from_data_frame() %>%
   ggraph(layout = "fr") +
-  geom_edge_link(aes(edge_alpha = correlation, edge_width = correlation), color = "lightblue") +
-  geom_node_point(color = "darkblue", size = 7) +
-  geom_node_text(aes(label = str_wrap(name, 20)), repel = TRUE, size = 5) +
-  theme_void() +
+  geom_edge_link(aes(edge_alpha = correlation, edge_width = correlation), color = dk_col$accent_200) +
+  geom_node_point(color = dk_col$accent, size = 7) +
+  geom_node_text(aes(label = str_wrap(name, 20)), repel = TRUE, size = 5, color = dk_col$ink) +
+  theme_digikat_void(base_size = 16) +
   labs(
     title = "Mreža povezanosti tematskih kategorija",
     subtitle = "Koje se teme najčešće pojavljuju zajedno u istim člancima?",

@@ -340,9 +340,9 @@ cli_spike_dates <- spikes_detected_z %>%
 
 # Vizualizacija standardiziranih vrijednosti
 p_volume_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_volume)) +
-  geom_line(color = "grey") +
-  geom_point(data = filter(spikes_detected_z, is_volume_spike), color = "red", size = 4) +
-  geom_hline(yintercept = spike_threshold_z, linetype = "dashed", color = "red") +
+  geom_line(color = dk_col$faint) +
+  geom_point(data = filter(spikes_detected_z, is_volume_spike), color = dk_col$alert, size = 4) +
+  geom_hline(yintercept = spike_threshold_z, linetype = "dashed", color = dk_col$alert) +
   theme_digikat(base_size = 16) +
   labs(
     title = "Anomalije u volumenu objava (Standardizirano odstupanje)",
@@ -351,9 +351,9 @@ p_volume_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_volume)) +
   )
 
 p_cli_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_cli)) +
-  geom_line(color = "grey") +
-  geom_point(data = filter(spikes_detected_z, is_cli_spike), color = "red", size = 4) +
-  geom_hline(yintercept = spike_threshold_z, linetype = "dashed", color = "red") +
+  geom_line(color = dk_col$faint) +
+  geom_point(data = filter(spikes_detected_z, is_cli_spike), color = dk_col$alert, size = 4) +
+  geom_hline(yintercept = spike_threshold_z, linetype = "dashed", color = dk_col$alert) +
   theme_digikat(base_size = 16) +
   labs(
     title = "Anomalije u intenzitetu konflikta (Standardizirano odstupanje)",
@@ -422,11 +422,11 @@ daily_duhovnost_dynamics <- dta_final %>%
   filter(date >= (event_date_uskrs - days(analysis_window_uskrs)) & date <= (event_date_uskrs + days(analysis_window_uskrs)))
 
 ggplot(daily_duhovnost_dynamics, aes(x = date, y = duhovnost_share)) +
-  geom_line(color = "grey", linewidth=1.2) +
+  geom_line(color = dk_col$faint, linewidth=1.2) +
   geom_point(aes(size = avg_cli, color = avg_sentiment)) +
-  geom_vline(xintercept = event_date_uskrs, linetype = "dashed", color = "black", linewidth=1) +
+  geom_vline(xintercept = event_date_uskrs, linetype = "dashed", color = dk_col$ink, linewidth=1) +
   scale_y_continuous(labels = percent_format(decimal.mark = ",")) +
-  scale_color_gradient2(low = "firebrick", mid = "white", high = "steelblue", midpoint = 0, name="Prosječni sentiment") +
+  scale_color_digikat_diverging(name="Prosječni sentiment") +
   scale_size_continuous(range = c(3, 14), name="Intenzitet konflikta") +
   theme_digikat(base_size = 16) +
   labs(
@@ -494,7 +494,7 @@ top_associated_words_final <- associated_words_atmosphere %>%
 ggplot(top_associated_words_final, aes(x = total_cooccurrences, y = reorder_within(lemma, total_cooccurrences, year), fill = avg_sentiment)) +
   geom_col() +
   scale_y_reordered() +
-  scale_fill_gradient2(low = "firebrick", mid = "white", high = "steelblue", midpoint = 0, name="Prosječni sentiment\nnarativnog okvira") +
+  scale_fill_digikat_diverging(name="Prosječni sentiment\nnarativnog okvira") +
   facet_wrap(~ year, scales = "free_y") +
   theme_digikat(base_size = 14) +
   theme(strip.text = element_text(face = "bold", size = 14)) +

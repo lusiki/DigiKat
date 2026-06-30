@@ -36,6 +36,11 @@ base <- readRDS(master_path) %>%
 message("  base rows (2021–2026, no tiktok): ", nrow(base))
 
 build_page <- function(prop, label) {
+  tok_path <- file.path(nlp_dir, sprintf("%s_tokens.rds", label))
+  if (file.exists(tok_path)) {
+    message(sprintf("  [%s] tokens already exist — skipping (delete %s to regenerate).", label, tok_path))
+    return(invisible())
+  }
   set.seed(SEED)
   samp <- base %>%
     filter(nchar(FULL_TEXT) > 100) %>%
@@ -58,4 +63,5 @@ build_page <- function(prop, label) {
 
 build_page(0.05, "mapa_stats")
 build_page(0.03, "dogadjaji")
+build_page(0.02, "diskurs")
 message("Done. Wrote per-page sample + token files to ", nlp_dir, "/")

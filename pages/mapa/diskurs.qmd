@@ -1,5 +1,5 @@
 ---
-title: "Atmosfera diskursa — emocionalna i konfliktna mapa katoličkog digitalnog prostora (2021.–2025.)"
+title: "Atmosfera diskursa — emocionalna i konfliktna mapa katoličkog digitalnog prostora (2021.–2026.)"
 subtitle: "Emocije i tonalitet diskursa"
 date: last-modified
 categories: ["Atmosfera diskursa", "Tonalitet", "Emocije"]
@@ -109,42 +109,15 @@ crosentilex_gold_prepared <- read.delim2("../../resources/lexicons/gs-sentiment-
 ```{r}
 #| label: data-preparation
 
-dta <- readRDS("../../data/merged_comprehensive.rds") %>%
-  filter(SOURCE_TYPE != "tiktok", !is.na(SOURCE_TYPE)) %>%
-  filter(DATE >= as.Date("2021-01-01") & DATE <= as.Date("2025-12-31")) %>%
-  filter(year >= 2021 & year <= 2025)
-
-# Kreiranje stratificiranog uzorka od 5%
+# Uzorak (2%, sjeme 123, 2021.–2026.) i udpipe lingvističke anotacije s usklađenim doc_id-em
+# produciraju se skriptom R/04_nlp.R (`Rscript R/04_nlp.R` iz korijena repozitorija) — ova
+# stranica ih samo čita (nema ponovnog uzorkovanja ni čitanja matičnog skupa pri renderiranju).
 sample_proportion <- 0.02
-set.seed(123)
-dta_stratified_sample <- dta %>%
-  filter(nchar(FULL_TEXT) > 100) %>%
-  group_by(year, SOURCE_TYPE) %>%
-  slice_sample(prop = sample_proportion) %>%
-  ungroup() %>%
-  mutate(doc_id = row_number())
+dta_stratified_sample <- readRDS("../../data/nlp/diskurs_sample.rds")
 
-# Učitavanje i filtriranje lingvističkih podataka (ako su dostupni)
-files <- list.files("../../data/nlp", full.names = TRUE, pattern = "\\.rds")
-if (length(files) > 0) {
-  nlp_results_df <- lapply(files, readRDS) %>%
-    bind_rows()
-} else {
-  nlp_results_df <- tibble(doc_id = integer(), upos = character(), lemma = character())
-}
-
-# Provjeri postoji li doc_id kolona, ako ne, kreiraj je
-if (!"doc_id" %in% names(nlp_results_df)) {
-  nlp_results_df <- nlp_results_df %>%
-    mutate(doc_id = row_number())
-} else {
-  nlp_results_df <- nlp_results_df %>%
-    mutate(doc_id = as.integer(doc_id))
-}
-
-# Filtriramo samo dokumente iz našeg uzorka
-nlp_results_df <- nlp_results_df %>%
-  filter(doc_id %in% dta_stratified_sample$doc_id)
+# Lingvističke anotacije (udpipe) za isti uzorak — usklađene preko doc_id-a.
+nlp_results_df <- readRDS("../../data/nlp/diskurs_tokens.rds") %>%
+  mutate(doc_id = as.integer(doc_id))
 
 # Tematska klasifikacija
 thematic_dictionaries_v3 <- list(
@@ -204,14 +177,14 @@ dta_enriched <- bind_cols(dta_stratified_sample, theme_analysis_data)
 <div class="metric-label">Razine analize</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">2021.–2025.</div>
+<div class="metric-value">2021.–2026.</div>
 <div class="metric-label">Razdoblje</div>
 </div>
 </div>
 
 Nakon kartografiranja [aktera i platformi](mapa.html) te identifikacije [tematskih](mapa_stats.html) kategorija, ova treća analitička mapa — **Atmosfera diskursa** — usmjerava se na najsuptilniju dimenziju digitalnog katoličkog diskursa. Mapa se bavi pitanjem atmosfere komunikacijskog prostora, odnosno načinima na koji se teme artikuliraju. Fokus je na emocionalnom tonalitetu, psihološkim apelima i intenzitetu konfliktnog jezika koji karakterizira različite narativne okvire. Ovaj pristup nadilazi tradicionalne binarne klasifikacije sentimenta, uvodeći višeslojne, kontekstualno svjesne metrike koje omogućuju dubinsko razumijevanje komunikacijskih strategija. Analitički okvir strukturiran je u tri komponente.
 
-Prva komponenta obuhvaća dvoslojnu **emocionalnu analizu** koja razdvaja površinski tonalitet teksta od dubinskih psiholoških procesa koji se u njemu aktiviraju. Druga komponenta je **Relativni indeks konflikta (RIK)** koji mjeri neočekivanu agresivnost jezika u odnosu na kontekstualne osnovne (*baseline*) karakteristike medija i teme. Treća komponenta uključuje **mrežu narativne atmosfere** koja vizualizira kako se emocionalni tonalitet i intenzitet konflikta mijenjaju kada se različite tematske kategorije kombiniraju u šire narativne okvire.
+Prva komponenta obuhvaća dvoslojnu **emocionalnu analizu** koja razdvaja površinski tonalitet teksta od dubinskih psiholoških procesa koji se u njemu aktiviraju. Druga komponenta je **Relativni indeks konflikta (RIK)** koji mjeri neočekivanu agresivnost jezika u odnosu na kontekstualne osnovne (*baseline*) karakteristike medija i teme. Treća komponenta uključuje **mrežu narativne atmosfere** koja vizualizira kako se emocionalni tonalitet i intenzitet konflikta mijenjaju kada se različite tematske kategorije kombiniraju u šire narativne okvire. Analiza se provodi na stratificiranom uzorku od 2 % korpusa (uslojenom po godini i platformi) u razdoblju 2021.–2026.; 2026. je nepotpuna godina, pa vremenske usporedbe uključuju djelomično razdoblje.
 
 ---
 
@@ -323,9 +296,9 @@ Sljedeća vizualizacija predstavlja dvodimenzionalnu matricu koja prikazuje inte
 #| fig-height: 9
 
 ggplot(heatmap_data, aes(x = dominant_emotion, y = dominant_topic, fill = avg_sentiment)) +
-  geom_tile(color = "white", linewidth = 0.5) +
-  geom_text(aes(label = round(avg_sentiment, 2)), size = 4, color = "black") +
-  scale_fill_gradient2(low = "firebrick", mid = "white", high = "steelblue", midpoint = 0, name = "Prosj. Sentiment") +
+  geom_tile(color = dk_col$panel, linewidth = 0.5) +
+  geom_text(aes(label = round(avg_sentiment, 2)), size = 4, color = dk_col$ink) +
+  scale_fill_digikat_diverging(name = "Prosj. Sentiment") +
   theme_digikat(base_size = 16) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   labs(
@@ -404,7 +377,7 @@ media_strategy_data <- dta_atmosphere_final %>%
   slice_max(order_by = n_articles, n = 30)
 
 ggplot(media_strategy_data, aes(x = avg_cli, y = rci_sd, size = n_articles)) +
-  geom_jitter(color = "darkred", alpha = 0.7, width = 0.01, height = 0.01) + 
+  geom_jitter(color = dk_col$accent, alpha = 0.7, width = 0.01, height = 0.01) +
   geom_text_repel(aes(label = FROM), size = 4, max.overlaps = 15) +
   scale_x_log10(labels = scales::number_format(accuracy = 0.1, decimal.mark = ",")) +
   scale_y_log10(labels = scales::number_format(accuracy = 0.1, decimal.mark = ",")) +
@@ -434,7 +407,7 @@ Ova vizualizacija otkriva postojanje četiri fundamentalno različita modela kom
 
 Konačna sinteza integrira sve analitičke komponente u jednu kompleksnu mrežnu vizualizaciju. Mreža prikazuje kako se različite tematske kategorije povezuju u šire narativne okvire, dok vizualne karakteristike svake veze otkrivaju osobine tih narativnih kombinacija.
 
-Boja veze označava prosječni tonalitet, gdje plave nijanse označavaju pozitivno obojene narativne spojeve, a crne nijanse negativno obojene. Debljina veze označava prosječni intenzitet konfliktnog jezika, gdje deblje linije upućuju na konfliktnije narative. Prozirnost veze označava pouzdanost veze, mjerenu brojem tekstova na kojima se temelji analiza, gdje tamnije linije predstavljaju statistički robusnije nalaze.
+Boja veze označava prosječni tonalitet, gdje plave nijanse označavaju pozitivno obojene narativne spojeve, a crvene nijanse negativno obojene. Debljina veze označava prosječni intenzitet konfliktnog jezika, gdje deblje linije upućuju na konfliktnije narative. Prozirnost veze označava pouzdanost veze, mjerenu brojem tekstova na kojima se temelji analiza, gdje tamnije linije predstavljaju statistički robusnije nalaze.
 
 ```{r}
 #| label: plot-network
@@ -535,10 +508,10 @@ graph_from_data_frame(graph_data, directed = FALSE) %>%
       ), 
       arrow = NULL
     ) +
-    geom_node_point(color = "black", size = 12) +
-    geom_node_text(aes(label = str_wrap(name, 15)), color = "black", size = 4) +
+    geom_node_point(color = dk_col$accent, size = 12) +
+    geom_node_text(aes(label = str_wrap(name, 15)), color = dk_col$ink, size = 4) +
     scale_edge_color_gradient2(
-      low = "firebrick", mid = "lightgrey", high = "steelblue", midpoint = 0, 
+      low = dk_col$neg, mid = dk_col$neutral, high = dk_col$pos, midpoint = 0,
       name="Prosječni sentiment\nnarativnog okvira"
     ) +
     scale_edge_width(
@@ -549,7 +522,7 @@ graph_from_data_frame(graph_data, directed = FALSE) %>%
       range = c(0.3, 1),
       name = "Broj članaka\n(Pouzdanost veze)"
     ) +
-    theme_graph(base_family = "sans") +
+    theme_digikat_void(base_size = 14) +
     labs(
       title = "Mreža narativne atmosfere",
       subtitle = "Boja veze = tonalitet | Debljina veze = konflikt | Prozirnost veze = pouzdanost"

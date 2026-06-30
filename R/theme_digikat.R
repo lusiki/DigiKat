@@ -30,17 +30,41 @@ dk_serif <- if (.dk_fonts_ok) "dk_serif" else "serif"
 dk_sans  <- if (.dk_fonts_ok) "dk_sans"  else "sans"
 dk_mono  <- if (.dk_fonts_ok) "dk_mono"  else "mono"
 
-# --- Design tokens ---
+# --- Design tokens (mirror assets/css/custom.scss) ---
 dk_col <- list(
-  accent = "#0F4C5C", accent_700 = "#0A3543", accent_050 = "#EAF0F2",
+  accent = "#0F4C5C", accent_700 = "#0A3543", accent_300 = "#2C6F7E",
+  accent_200 = "#5A949F", accent_050 = "#EAF0F2",
   ink = "#14181D", body = "#1B1D21", muted = "#6B6F76", faint = "#9A9EA6",
-  paper = "#F5F4F0", panel = "#FFFFFF", hairline = "#E4E2DA", grid = "#E9E7E0"
+  paper = "#F5F4F0", panel = "#FFFFFF", hairline = "#E4E2DA", grid = "#E9E7E0",
+  # Reference lines / lollipop stems / neutral marks
+  line = "#9A9EA6",
+  # Semantic encodings — kept on-brand. The diverging pair preserves the
+  # "plave nijanse = pozitivno · crvene nijanse = negativno" convention used in
+  # the pages' prose, so swapping firebrick/steelblue for these needs no text edits.
+  pos = "#2F73B8", neg = "#B5462F", neutral = "#F0ECE3",
+  # Anomaly / spike highlight (event detection)
+  alert = "#B5462F"
 )
 
 # 16-hue categorical palette (kept visually distinct from the brand accent)
 dk_palette <- c("#b5462f","#cf8324","#a98a1f","#6e8c3a","#2f8f6b","#1f97a4",
                 "#2f73b8","#3f4fa0","#6e54a6","#9b4d9e","#c0468a","#b23a52",
                 "#8a6240","#5e7488","#4c9c5e","#c2702a")
+
+# Platform identity colors, harmonized to the brand palette: each platform keeps
+# its hue family (web=petrol, YouTube=brick red, Facebook=blue …) but is tuned to
+# the editorial petrol/warm system instead of the bright Tableau defaults.
+dk_platform_colors <- c(
+  "web"       = "#0F4C5C",  # petrol (brand) — the dominant platform
+  "youtube"   = "#B5462F",  # brick red
+  "facebook"  = "#2F73B8",  # blue
+  "twitter"   = "#1F97A4",  # teal
+  "reddit"    = "#CF8324",  # amber
+  "forum"     = "#5E7488",  # slate
+  "comment"   = "#6E8C3A",  # olive
+  "instagram" = "#C0468A",  # magenta
+  "tiktok"    = "#3F4FA0"   # indigo
+)
 
 # --- The theme ---
 theme_digikat <- function(base_size = 13) {
@@ -65,10 +89,36 @@ theme_digikat <- function(base_size = 13) {
     )
 }
 
+# --- A "void" variant: keeps the cream paper + serif titles, drops the panel/axes.
+# For ggraph network plots and empty-data fallbacks (replaces theme_void()/theme_graph()
+# which strip the design background to plain white). ---
+theme_digikat_void <- function(base_size = 13) {
+  theme_digikat(base_size = base_size) +
+    ggplot2::theme(
+      panel.background = ggplot2::element_blank(),
+      panel.border     = ggplot2::element_blank(),
+      panel.grid       = ggplot2::element_blank(),
+      axis.text        = ggplot2::element_blank(),
+      axis.title       = ggplot2::element_blank(),
+      axis.ticks       = ggplot2::element_blank()
+    )
+}
+
 # --- Brand scales (use for categorical / thematic series) ---
 scale_fill_digikat   <- function(...) ggplot2::scale_fill_manual(values = dk_palette, ...)
 scale_colour_digikat <- function(...) ggplot2::scale_colour_manual(values = dk_palette, ...)
 scale_color_digikat  <- scale_colour_digikat
+
+# --- Diverging scales for signed values (sentiment / tonalitet around 0).
+# On-brand replacement for the firebrick/white/steelblue scales: red = negative,
+# blue = positive, cream-neutral midpoint. ---
+scale_fill_digikat_diverging <- function(..., midpoint = 0)
+  ggplot2::scale_fill_gradient2(low = dk_col$neg, mid = dk_col$neutral,
+                                high = dk_col$pos, midpoint = midpoint, ...)
+scale_colour_digikat_diverging <- function(..., midpoint = 0)
+  ggplot2::scale_colour_gradient2(low = dk_col$neg, mid = dk_col$neutral,
+                                  high = dk_col$pos, midpoint = midpoint, ...)
+scale_color_digikat_diverging <- scale_colour_digikat_diverging
 
 # Make it the default theme for any plot that doesn't set one explicitly
 ggplot2::theme_set(theme_digikat())

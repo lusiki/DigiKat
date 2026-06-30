@@ -191,12 +191,8 @@ web_actors              <- readRDS("../../data/processed/web_actors.rds")
 youtube_actors          <- readRDS("../../data/processed/youtube_actors.rds")
 facebook_actors         <- readRDS("../../data/processed/facebook_actors.rds")
 
-# Definiramo paletu boja za konzistentnost
-platform_colors <- c(
-  "web" = "#1f77b4", "youtube" = "#d62728", "facebook" = "#3b5998",
-  "twitter" = "#1DA1F2", "reddit" = "#FF4500", "forum" = "#7f7f7f", "comment" = "#bcbd22",
-  "instagram" = "#E4405F", "tiktok" = "#69C9D0"
-)
+# Paleta boja platformi — usklađena s dizajnom (definirana u R/theme_digikat.R)
+platform_colors <- dk_platform_colors
 ```
 
 # Topografija digitalnog prostora
@@ -218,7 +214,7 @@ plot_volume <- platform_summary %>%
   mutate(SOURCE_TYPE_ordered = factor(SOURCE_TYPE, levels = unique(SOURCE_TYPE))) %>%
   ggplot(aes(x = total_posts, y = SOURCE_TYPE_ordered, fill = SOURCE_TYPE)) +
   geom_col() +
-  geom_text(aes(label = comma(total_posts, accuracy = 1, big.mark = ".")), hjust = -0.1, size = 4, color = "black") +
+  geom_text(aes(label = comma(total_posts, accuracy = 1, big.mark = ".")), hjust = -0.1, size = 4, color = dk_col$ink) +
   facet_wrap(~year, scales = "free_y") +
   scale_x_continuous(labels = label_number(suffix = " K", scale = 1e-3)) +
   scale_fill_manual(values = platform_colors) +
@@ -258,7 +254,7 @@ plot_interactions <- platform_summary %>%
   mutate(SOURCE_TYPE_ordered = factor(SOURCE_TYPE, levels = unique(SOURCE_TYPE))) %>%
   ggplot(aes(x = total_interactions, y = SOURCE_TYPE_ordered, fill = SOURCE_TYPE)) +
   geom_col() +
-  geom_text(aes(label = comma(total_interactions, accuracy = 1, big.mark = ".")), hjust = -0.1, size = 4, color = "black") +
+  geom_text(aes(label = comma(total_interactions, accuracy = 1, big.mark = ".")), hjust = -0.1, size = 4, color = dk_col$ink) +
   facet_wrap(~year, scales = "free_y") +
   scale_x_continuous(labels = label_number(suffix = " M", scale = 1e-6)) +
   scale_fill_manual(values = platform_colors) +
@@ -328,7 +324,7 @@ plot_combined_share <- (plot_share_posts + plot_share_interactions + plot_share_
     title    = "Struktura digitalnog ekosustava (2021.–2026.)",
     subtitle = "Usporedba udjela platformi u ukupnom broju objava, interakcija i dosega.",
     caption  = "Web generira najviše sadržaja, ali YouTube i Facebook preuzimaju sve veći dio utjecaja."
-  )
+  ) & theme(plot.background = element_rect(fill = dk_col$paper, color = NA))
 
 print(plot_combined_share)
 ```
@@ -361,7 +357,7 @@ Veličina točke na grafikonu predstavlja produktivnost aktera mjerenu brojem ob
 create_top_source_plot <- function(data, platform_name, platform_color) {
   data <- data %>% arrange(total_interactions) %>% mutate(FROM = factor(FROM, levels = FROM))
   ggplot(data, aes(x = FROM, y = total_interactions)) +
-    geom_segment(aes(x = FROM, xend = FROM, y = 0, yend = total_interactions), color = "grey", linewidth = 0.5) +
+    geom_segment(aes(x = FROM, xend = FROM, y = 0, yend = total_interactions), color = dk_col$faint, linewidth = 0.5) +
     geom_point(aes(size = total_posts), color = platform_color, alpha = 0.8) +
     coord_flip() +
     scale_y_continuous(labels = label_number(suffix = " K", scale = 1e-3)) +
@@ -375,9 +371,9 @@ create_top_source_plot <- function(data, platform_name, platform_color) {
     labs(title = platform_name, x = "", y = "Ukupne interakcije (u tisućama)")
 }
 
-plot_web <- create_top_source_plot(top_web_sources, "Web portali", "#1f77b4")
-plot_youtube <- create_top_source_plot(top_youtube_sources, "YouTube kanali", "#d62728")
-plot_facebook <- create_top_source_plot(top_facebook_sources, "Facebook stranice", "#3b5998")
+plot_web <- create_top_source_plot(top_web_sources, "Web portali", dk_platform_colors[["web"]])
+plot_youtube <- create_top_source_plot(top_youtube_sources, "YouTube kanali", dk_platform_colors[["youtube"]])
+plot_facebook <- create_top_source_plot(top_facebook_sources, "Facebook stranice", dk_platform_colors[["facebook"]])
 
 final_dashboard <- plot_web + plot_youtube + plot_facebook +
   plot_annotation(
@@ -385,7 +381,7 @@ final_dashboard <- plot_web + plot_youtube + plot_facebook +
     subtitle = "Rangirano prema ukupnim interakcijama. Veličina točke predstavlja ukupan broj objava.",
     caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
     theme = theme(plot.title = element_text(size = 22, face = "bold"))
-  )
+  ) & theme(plot.background = element_rect(fill = dk_col$paper, color = NA))
 
 print(final_dashboard)
 ```
@@ -414,14 +410,14 @@ Osi grafikona prikazane su na logaritamskoj skali kako bi se bolje prikazao šir
 #| fig-height: 14
 
 create_actor_map_plot <- function(data, platform_name, platform_color) {
-  if(nrow(data) < 2) { return(ggplot() + labs(title = paste("Nema dovoljno podataka za", platform_name)) + theme_void()) }
-  
+  if(nrow(data) < 2) { return(ggplot() + labs(title = paste("Nema dovoljno podataka za", platform_name)) + theme_digikat_void()) }
+
   median_interactions <- median(data$total_interactions, na.rm = TRUE)
   median_reach <- median(data$total_reach, na.rm = TRUE)
 
   ggplot(data, aes(x = total_interactions, y = total_reach)) +
-    geom_vline(xintercept = median_interactions, linetype = "dashed", color = "grey70") +
-    geom_hline(yintercept = median_reach, linetype = "dashed", color = "grey70") +
+    geom_vline(xintercept = median_interactions, linetype = "dashed", color = dk_col$faint) +
+    geom_hline(yintercept = median_reach, linetype = "dashed", color = dk_col$faint) +
     geom_point(aes(size = total_posts), color = platform_color, alpha = 0.7) +
     geom_text_repel(aes(label = FROM), size = 4, max.overlaps = 15) +
     scale_x_log10(labels = label_number(big.mark = ".", suffix = " K", scale = 1e-3)) +
@@ -434,9 +430,9 @@ create_actor_map_plot <- function(data, platform_name, platform_color) {
     )
 }
 
-plot_map_web <- create_actor_map_plot(web_actors, "Web Portali", "#1f77b4")
-plot_map_youtube <- create_actor_map_plot(youtube_actors, "YouTube Kanali", "#d62728")
-plot_map_facebook <- create_actor_map_plot(facebook_actors, "Facebook Stranice", "#3b5998")
+plot_map_web <- create_actor_map_plot(web_actors, "Web Portali", dk_platform_colors[["web"]])
+plot_map_youtube <- create_actor_map_plot(youtube_actors, "YouTube Kanali", dk_platform_colors[["youtube"]])
+plot_map_facebook <- create_actor_map_plot(facebook_actors, "Facebook Stranice", dk_platform_colors[["facebook"]])
 
 final_map_dashboard <- plot_map_web + plot_map_youtube + plot_map_facebook +
   plot_annotation(
@@ -444,7 +440,7 @@ final_map_dashboard <- plot_map_web + plot_map_youtube + plot_map_facebook +
     subtitle = "Usporedba dosega i angažmana. Veličina točke predstavlja produktivnost (broj objava).",
     caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru | Osi su prikazane na logaritamskoj skali.",
     theme = theme(plot.title = element_text(size = 22, face = "bold"))
-  ) & theme(plot.background = element_rect(fill = "white", color = NA))
+  ) & theme(plot.background = element_rect(fill = dk_col$paper, color = NA))
 
 print(final_map_dashboard)
 ```
