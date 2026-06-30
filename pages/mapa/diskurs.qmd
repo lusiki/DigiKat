@@ -296,7 +296,7 @@ Sljedeća vizualizacija predstavlja dvodimenzionalnu matricu koja prikazuje inte
 #| fig-height: 9
 
 ggplot(heatmap_data, aes(x = dominant_emotion, y = dominant_topic, fill = avg_sentiment)) +
-  geom_tile(color = dk_col$panel, linewidth = 0.5) +
+  geom_tile(color = dk_col$paper, linewidth = 0.5) +
   geom_text(aes(label = round(avg_sentiment, 2)), size = 4, color = dk_col$ink) +
   scale_fill_digikat_diverging(name = "Prosj. Sentiment") +
   theme_digikat(base_size = 16) +

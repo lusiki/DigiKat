@@ -16,7 +16,10 @@ knitr::opts_chunk$set(
   warning = FALSE,
   fig.width = 14,
   fig.height = 11,
-  dpi = 200
+  dpi = 200,
+  # Cream device canvas so the base-graphics wordcloud (not a ggplot) also matches
+  # the page background; ggplots already fill plot.background via theme_digikat().
+  dev.args = list(bg = "#F5F4F0")
 )
 ```
 
@@ -298,7 +301,7 @@ thematic_intensity_data <- dta_enriched %>%
   filter(intensity > 0)
 
 ggplot(thematic_intensity_data, aes(x = intensity, y = fct_reorder(topic, intensity, .fun = median))) +
-  geom_density_ridges(scale = 2, fill = dk_col$accent, color = dk_col$panel, alpha = 0.85) +
+  geom_density_ridges(scale = 2, fill = dk_col$accent, color = dk_col$paper, alpha = 0.85) +
   scale_x_log10(breaks = c(1, 10, 100, 1000), labels = c("1", "10", "100", "1000")) +
   theme_digikat(base_size = 16) +
   labs(

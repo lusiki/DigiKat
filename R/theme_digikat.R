@@ -35,7 +35,7 @@ dk_col <- list(
   accent = "#0F4C5C", accent_700 = "#0A3543", accent_300 = "#2C6F7E",
   accent_200 = "#5A949F", accent_050 = "#EAF0F2",
   ink = "#14181D", body = "#1B1D21", muted = "#6B6F76", faint = "#9A9EA6",
-  paper = "#F5F4F0", panel = "#FFFFFF", hairline = "#E4E2DA", grid = "#E9E7E0",
+  paper = "#F5F4F0", panel = "#FFFFFF", hairline = "#E4E2DA", grid = "#E2DDD0",
   # Reference lines / lollipop stems / neutral marks
   line = "#9A9EA6",
   # Semantic encodings — kept on-brand. The diverging pair preserves the
@@ -70,10 +70,12 @@ dk_platform_colors <- c(
 theme_digikat <- function(base_size = 13) {
   ggplot2::theme_minimal(base_size = base_size, base_family = dk_sans) +
     ggplot2::theme(
+      # Whole figure shares the page's cream paper — plot AND panel — so charts
+      # dissolve into the page with no white box. No framing border (seamless).
       plot.background  = ggplot2::element_rect(fill = dk_col$paper, color = NA),
-      panel.background = ggplot2::element_rect(fill = dk_col$panel, color = NA),
-      panel.border     = ggplot2::element_rect(fill = NA, color = dk_col$hairline, linewidth = 0.5),
-      panel.grid.major = ggplot2::element_line(color = dk_col$grid, linewidth = 0.35),
+      panel.background = ggplot2::element_rect(fill = dk_col$paper, color = NA),
+      panel.border     = ggplot2::element_blank(),
+      panel.grid.major = ggplot2::element_line(color = dk_col$grid, linewidth = 0.4),
       panel.grid.minor = ggplot2::element_blank(),
       axis.ticks       = ggplot2::element_blank(),
       axis.text        = ggplot2::element_text(family = dk_mono, size = base_size * 0.78, color = dk_col$muted),
