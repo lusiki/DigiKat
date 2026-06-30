@@ -1,5 +1,5 @@
 ---
-title: "Resursi i korisni linkovi"
+title: "Resursi i korisne poveznice"
 subtitle: "Kurirana lista alata, literature i zajednica"
 date: last-modified
 categories: ["Resursi", "R & Python", "Literatura"]
@@ -11,7 +11,7 @@ Ovdje smo pripremili kuriranu listu resursa koja će vam pomoći da dublje zaron
 
 ::: {.featured-box}
 ### Od alata do zajednice
-Od programskih jezika i temeljne literature, preko izvora podataka, sve do blogova i zajednica za učenje. Svaki link vodi do provjerenog izvora koji možete koristiti za usavršavanje vlastitih vještina i razumijevanje metoda iza projekta.
+Od programskih jezika i temeljne literature, preko izvora podataka, sve do blogova i zajednica za učenje. Svaka poveznica vodi do provjerenog izvora koji možete koristiti za usavršavanje vlastitih vještina i razumijevanje metoda iza projekta.
 :::
 
 <p>
@@ -30,12 +30,12 @@ Ovi resursi idealni su za sve koji žele naučiti ili usavršiti svoje vještine
 
 <div class="card-grid">
   <div class="info-card">
-    <div class="info-card-icon">📊</div>
+    <div class="info-card-icon"><i class="bi bi-bar-chart-line"></i></div>
     <h4>Za korisnike R</h4>
     <p>Vodiči i knjige za analizu podataka i teksta u jeziku R, od osnova RStudio okruženja do tidy principa.</p>
   </div>
   <div class="info-card">
-    <div class="info-card-icon">🐍</div>
+    <div class="info-card-icon"><i class="bi bi-filetype-py"></i></div>
     <h4>Za korisnike Pythona</h4>
     <p>Službena dokumentacija i moderni tutorijali za obradu prirodnog jezika i opće programiranje u Pythonu.</p>
   </div>
@@ -63,17 +63,17 @@ Knjige i znanstveni radovi koji oblikuju područje kojim se bavimo.
 
 <div class="card-grid">
   <div class="info-card">
-    <div class="info-card-icon">🧠</div>
+    <div class="info-card-icon"><i class="bi bi-cpu"></i></div>
     <h4>Računalne društvene znanosti</h4>
     <p>Ključne knjige i seminalni radovi koji definiraju polje i njegove izazove u digitalnom dobu.</p>
   </div>
   <div class="info-card">
-    <div class="info-card-icon">📝</div>
+    <div class="info-card-icon"><i class="bi bi-file-text"></i></div>
     <h4>Analiza teksta kao podatka</h4>
-    <p>Sveobuhvatan okvir za primjenu metoda analize teksta u društvenim znanostima.</p>
+    <p>Temeljni okvir za primjenu metoda analize teksta u društvenim znanostima.</p>
   </div>
   <div class="info-card">
-    <div class="info-card-icon">📈</div>
+    <div class="info-card-icon"><i class="bi bi-graph-up"></i></div>
     <h4>Statistika i podaci</h4>
     <p>Pristupačne knjige o razumijevanju podataka i prepoznavanju manipulacije statistikom.</p>
   </div>
@@ -86,7 +86,7 @@ Knjige i znanstveni radovi koji oblikuju područje kojim se bavimo.
 
 ### Analiza teksta kao podatka
 
-*   **Text as Data A New Framework** Sveobuhvatan pregled metoda za analizu teksta u društvenim znanostima. Autori su Grimmer, Roberts i Stewart. [Poveznica](https://textasdata.com/)
+*   **Text as Data A New Framework** Cjelovit pregled metoda za analizu teksta u društvenim znanostima. Autori su Grimmer, Roberts i Stewart. [Poveznica](https://textasdata.com/)
 
 ### Statistika i razumijevanje podataka
 
@@ -97,16 +97,16 @@ Knjige i znanstveni radovi koji oblikuju područje kojim se bavimo.
 
 ## Podaci i resursi za tematska istraživanja
 
-Linkovi na relevantne izvore podataka, časopise i organizacije koje se bave sličnim temama.
+Poveznice na relevantne izvore podataka, časopise i organizacije koje se bave sličnim temama.
 
 <div class="card-grid">
   <div class="info-card">
-    <div class="info-card-icon">🗄️</div>
+    <div class="info-card-icon"><i class="bi bi-database"></i></div>
     <h4>Izvori podataka</h4>
     <p>Pew Research Center kao jedan od najvažnijih izvora podataka i analiza o ulozi religije u društvu.</p>
   </div>
   <div class="info-card">
-    <div class="info-card-icon">📚</div>
+    <div class="info-card-icon"><i class="bi bi-journals"></i></div>
     <h4>Časopisi i organizacije</h4>
     <p>Vodeći znanstveni časopisi i globalne organizacije na sjecištu medija, religije i digitalnih humanističkih znanosti.</p>
   </div>
@@ -124,17 +124,17 @@ Mjesta za učenje, postavljanje pitanja i praćenje najnovijih trendova.
 
 <div class="card-grid">
   <div class="info-card">
-    <div class="info-card-icon">✍️</div>
+    <div class="info-card-icon"><i class="bi bi-pencil"></i></div>
     <h4>Učenje i članci</h4>
     <p>Towards Data Science kao jedna od najvećih online publikacija o podatkovnoj znanosti, s tisućama tutorijala.</p>
   </div>
   <div class="info-card">
-    <div class="info-card-icon">💬</div>
+    <div class="info-card-icon"><i class="bi bi-chat-dots"></i></div>
     <h4>Zajednice programera</h4>
     <p>Stack Overflow za tehnička pitanja i odgovore, ključna zajednica za rješavanje problema u kodu.</p>
   </div>
   <div class="info-card">
-    <div class="info-card-icon">🌐</div>
+    <div class="info-card-icon"><i class="bi bi-globe"></i></div>
     <h4>Otvorena znanost</h4>
     <p>GitHub i Zenodo kao ključne platforme za suradnju, dijeljenje koda i pohranu podataka po FAIR principima.</p>
   </div>

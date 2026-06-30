@@ -1,6 +1,6 @@
 ---
 title: "Prikazivanje katoličkih svetaca i svetica"
-subtitle: "Prikazi svetosti i njihova rodna dimenzija"
+subtitle: "Najistaknutije figure svetosti i njihova rodna dimenzija"
 date: last-modified
 categories: ["Tematsko istraživanje", "U pripremi"]
 ---

@@ -36,7 +36,7 @@ toc: false
         <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">medijskih objava</div>
       </div>
       <div style="padding: 4px 28px; border-right: 1px solid #e4e2da;">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">620</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">47</div>
         <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">kodiranih varijabli</div>
       </div>
       <div style="padding: 4px 28px; border-right: 1px solid #e4e2da;">
@@ -44,7 +44,7 @@ toc: false
         <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">godina · 2021.–2026.</div>
       </div>
       <div style="padding: 4px 28px; border-right: 1px solid #e4e2da;">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">6</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">9</div>
         <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">platformi i izvora</div>
       </div>
       <div style="padding: 4px 28px; border-right: 1px solid #e4e2da;">
@@ -63,6 +63,9 @@ toc: false
       <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">Twitter / X</span>
       <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">Reddit</span>
       <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">Forumi</span>
+      <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">Instagram</span>
+      <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">Komentari</span>
+      <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">TikTok</span>
     </div>
   </div>
 </section>
@@ -99,7 +102,7 @@ toc: false
       </div>
       <div style="position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px;">
         <div style="position: absolute; left: -56px; top: 22px; width: 40px; height: 40px; border-radius: 50%; background: #5a949f; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 15px;">05</div>
-        <div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Analiza</h3><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Korpus se čita kroz četiri analitičke razine: mapa ekosustava (doseg i angažman), tematske struje (16 kategorija), atmosfera diskursa (sentiment i emocije) te fokus na događaje.</p></div>
+        <div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Analiza</h3><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Korpus se čita kroz četiri analitičke razine: mapa ekosustava (doseg i angažman), tematske struje (16 kategorija), atmosfera diskursa (tonalitet i emocije) te fokus na događaje.</p></div>
         <div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;"><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">ecosystem</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">themes</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">sentiment</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">events</span></div>
       </div>
     </div>

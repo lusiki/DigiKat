@@ -9,22 +9,22 @@ Ova stranica je napravljena u [Quarto](https://quarto.org/) kroz [Positron](http
 
 <div class="card-grid">
   <div class="info-card">
-    <div class="info-card-icon">📝</div>
+    <div class="info-card-icon"><i class="bi bi-file-text"></i></div>
     <h4>Quarto</h4>
     <p>Sustav za izradu znanstvenih i tehničkih publikacija koji povezuje tekst, kod i rezultate u jedinstveni web izvor.</p>
   </div>
   <div class="info-card">
-    <div class="info-card-icon">💻</div>
+    <div class="info-card-icon"><i class="bi bi-laptop"></i></div>
     <h4>Positron</h4>
     <p>Razvojno okruženje za rad s podacima u kojem je stranica napisana i izgrađena.</p>
   </div>
   <div class="info-card">
-    <div class="info-card-icon">📊</div>
+    <div class="info-card-icon"><i class="bi bi-bar-chart-line"></i></div>
     <h4>R</h4>
     <p>Programski jezik za statističku obradu i analizu podataka koji pokreće izračune na stranici.</p>
   </div>
   <div class="info-card">
-    <div class="info-card-icon">🌐</div>
+    <div class="info-card-icon"><i class="bi bi-globe"></i></div>
     <h4>GitHub Pages</h4>
     <p>Platforma za objavu statičke web-stranice, gdje je projekt javno dostupan.</p>
   </div>

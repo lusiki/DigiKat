@@ -2,12 +2,10 @@
 title: "Obavijesti"
 subtitle: "Novosti, koraci i najave projekta"
 date: last-modified
-categories: ["Obavijesti", "2024.–2026."]
+categories: ["Obavijesti", "2021.–2026."]
 ---
 
 ### Novosti i događanja
-
-(*Ovdje možete pratiti najnovije vijesti, korake i najave vezane uz projekt.*)
 
 ::: {.featured-box}
 ### Uskoro
@@ -26,8 +24,8 @@ categories: ["Obavijesti", "2024.–2026."]
 <p><em>Detaljno dokumentiran proces razvoja infrastrukture, algoritmi i tehnička rješenja objavljena su u internom dokumentu.</em></p>
 </div>
 <div class="timeline-item">
-<p><strong>Listopad 2025</strong> Provedena sentiment analiza na povijesnim podacima.</p>
-<p><em>Primijenjene su NLP tehnike za automatsku klasifikaciju tona i sentimenta u prikupljenim objavama.</em></p>
+<p><strong>Listopad 2025</strong> Provedena analiza tonaliteta na povijesnim podacima.</p>
+<p><em>Primijenjene su NLP tehnike za automatsku klasifikaciju tonaliteta u prikupljenim objavama.</em></p>
 </div>
 <div class="timeline-item">
 <p><strong>Rujan 2025</strong> Održana radionica za podjelu tematskih istraživanja.</p>

@@ -1,6 +1,6 @@
 ---
-title: "Analiza self-help sadržaja na YouTube-u"
-subtitle: "Preplitanje duhovnosti i žanra samopomoći u videosadržaju"
+title: "Analiza sadržaja samopomoći (*self-help*) na YouTubeu"
+subtitle: "Preplitanje duhovnosti i motivacijskoga žanra u videosadržaju"
 date: last-modified
 categories: ["Tematsko istraživanje", "U pripremi"]
 ---
