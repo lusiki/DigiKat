@@ -1,0 +1,40 @@
+---
+title: "Mapa medijskog prostora"
+subtitle: "Četiri analitičke razine i vremenski presjek katoličkoga digitalnog prostora"
+date: last-modified
+categories: ["Pregled", "Analitičke razine"]
+toc: false
+---
+
+Katolički digitalni prostor u Hrvatskoj čitamo kroz **četiri analitičke razine** — tko objavljuje, o čemu se govori, kako se govori i kada se govori — te **peti, vremenski presjek** koji prati kako se ekosustav mijenja. Sve se mape oslanjaju na isti korpus od približno 710.000 objava (2021.–2026.), koje u njega ulaze uz najmanje dva različita podudaranja s popisom religijskih pojmova.
+
+Svaka je mapa samostalna cjelina; zajedno daju slojevit prikaz digitalne medijske arene. Odaberite mapu za detaljan prikaz.
+
+::: {.card-grid}
+
+::: {.info-card}
+### [Mapa ekosustava](mapa.html)
+**Tko objavljuje i koliko odjekuje.** Volumen, doseg i angažman po platformama te tipologija aktera — Divovi, Graditelji zajednica, Megafoni i Specijalizirani akteri.
+:::
+
+::: {.info-card}
+### [Tematske struje](mapa_stats.html)
+**O čemu se govori.** Šesnaest tematskih kategorija identificiranih obradom prirodnog jezika (NLP) na stratificiranom uzorku korpusa.
+:::
+
+::: {.info-card}
+### [Atmosfera diskursa](diskurs.html)
+**Kako se govori.** Emocionalni tonalitet i osam emocija (leksikoni lilaHR, CroSentilex i CroSentilex Gold) te Relativni indeks konflikta (RIK).
+:::
+
+::: {.info-card}
+### [Fokus na događaje](događaji.html)
+**Kada se govori.** Kako stvarni događaji i kampanje oblikuju volumen, konfliktnost i tonalitet diskursa kroz vrijeme.
+:::
+
+::: {.info-card}
+### [Evolucija ekosustava](evolucija.html)
+**Kako se mijenja kroz vrijeme.** Rast volumena, migracija utjecaja među platformama i širenje kruga aktera u razdoblju 2021.–2026.
+:::
+
+:::

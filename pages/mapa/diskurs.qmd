@@ -186,6 +186,12 @@ Nakon kartografiranja [aktera i platformi](mapa.html) te identifikacije [tematsk
 
 Prva komponenta obuhvaća dvoslojnu **emocionalnu analizu** koja razdvaja površinski tonalitet teksta od dubinskih psiholoških procesa koji se u njemu aktiviraju. Druga komponenta je **Relativni indeks konflikta (RIK)** koji mjeri neočekivanu agresivnost jezika u odnosu na kontekstualne osnovne (*baseline*) karakteristike medija i teme. Treća komponenta uključuje **mrežu narativne atmosfere** koja vizualizira kako se emocionalni tonalitet i intenzitet konflikta mijenjaju kada se različite tematske kategorije kombiniraju u šire narativne okvire. Analiza se provodi na stratificiranom uzorku od 2 % korpusa (uslojenom po godini i platformi) u razdoblju 2021.–2026.; 2026. je nepotpuna godina, pa vremenske usporedbe uključuju djelomično razdoblje.
 
+::: {.callout-warning}
+## Promjena metode prikupljanja (oko 2024.) — oprez pri vremenskim usporedbama
+
+Korpus objedinjuje dva vremenski odvojena toka prikupljanja (`data_source`): kontinuirani medijski monitoring (pretežno 2021.–2024.) i naknadno religijsko filtriranje (2024.–2026.). Stratifikacija uzorka po platformi ublažava razlike u sastavu platformi, ali ne i promjenu same metode prikupljanja. Objedinjene osnovne (*baseline*) vrijednosti te međugodišnje usporedbe tonaliteta i konflikta stoga miješaju dva različito prikupljena razdoblja — razlike prije i poslije 2024. treba tumačiti oprezno, a ne nužno kao stvaran pomak u atmosferi diskursa.
+:::
+
 ---
 
 ## Dvoslojna emocionalna analiza diskursa

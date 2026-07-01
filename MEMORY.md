@@ -7,7 +7,20 @@
 - `data/merged_comprehensive.rds` is gitignored (≈710k rows / 710.307, 47 vars); NOT reproducible from a clean clone.
 - `data/processed/*.rds` IS tracked (10 small aggregates, no PII) and is produced ONLY by `R/03_aggregate.R`
   run against the master — NOT by rendering a page. Pages read them. `data/nlp/` output is gitignored.
-- Inclusion rule: a post enters the corpus only with ≥2 DISTINCT religious-term matches (`R/religious_terms.R`).
+- Inclusion rule: a post enters the corpus only with ≥2 DISTINCT religious-term matches (`R/religious_terms.R`,
+  which has **95** terms — not 93). `FOUND_KEYWORDS` is the vendor monitoring service's NOISY keyword field
+  (top value is the conjunction "i"/and), NOT the ≥2-filter evidence — the religious-match columns are not
+  retained in the master; describe it honestly, don't present it as filter provenance.
+- `data_source` splits the master into two TIME-SEGREGATED streams: `original_dta` (ongoing monitoring query,
+  ~269.6k) covers **2021–2024**; `filtered_religious` (≥2-filter backfill, ~440.7k) covers **2024–2026** (overlap
+  only in 2024; Instagram/TikTok appear only from 2024). So year-over-year VOLUME is CONFOUNDED by a
+  collection-method change ~2024 — the 2025 "surge" (236k) is largely an artifact, NOT rising media attention.
+  Do NOT read cross-year trends as real without conditioning on stream + platform (critical for
+  `pages/mapa/događaji.qmd` and the new `pages/mapa/evolucija.qmd` "Evolucija ekosustava" layer).
+- Corpus is TOPICAL, not source-based: it mixes confessional/Catholic outlets (hkm.hr is #1 at ~8%) and secular
+  mainstream media. Indicative outlet-composition (top-source labeling, ~53% classified): ≈27–28% clearly
+  confessional; secular/local-news majority; per-platform confessional share YouTube ~42% / Facebook ~37% /
+  web ~26% / forums-Reddit ~0%. Frame any such % as indicative (labeling is contestable — PI owns the labels).
 - The Quarto site publishes to `docs/` → GitHub Pages.
 
 ## Corrections log (seeds — replace with real incidents)

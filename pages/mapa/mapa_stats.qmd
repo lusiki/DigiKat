@@ -118,7 +118,7 @@ Cilj mape je dati pregled diskursa u tri dijela Prvi dio uključuje identifikaci
 <div class="metric-label">Tematskih kategorija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">70+</div>
+<div class="metric-value">95</div>
 <div class="metric-label">Religijskih pojmova</div>
 </div>
 <div class="metric-card">
@@ -226,7 +226,7 @@ words_to_remove <- c("godina", "moći")
 
 word_freq_for_cloud <- nlp_results_df %>%
   filter(upos %in% c("NOUN", "ADJ", "VERB")) %>%
-  filter(!lemma %in% stop_words_hr) %>%
+  filter(!lemma %in% all_stop_words$word) %>%
   filter(!lemma %in% words_to_remove) %>%
   count(lemma, sort = TRUE)
 
@@ -253,6 +253,12 @@ Prvi dio tematske analize usmjeren je prema razumijevanju opće strukture diskur
 ### Vremenska dinamika tematskih kategorija
 
 Analiza udjela pojedine tematske kategorije u ukupnom sadržaju otkriva relativno stabilnu strukturu, ali i suptilne promjene kroz promatrano razdoblje. Teme vezane za Duhovnost i liturgiju te Crkveno upravljanje i strukturu čine okosnicu diskursa. Značajan udio zauzimaju i teme koje povezuju Crkvu sa širim društvenim kontekstom, posebno Politika i odnos s državom te Bioetika i kulturni ratovi.
+
+::: {.callout-warning}
+## Promjena metode prikupljanja (oko 2024.) — oprez pri čitanju vremenskih udjela
+
+Korpus objedinjuje dva vremenski odvojena toka prikupljanja (`data_source`): kontinuirani medijski monitoring (pretežno 2021.–2024.) i naknadno religijsko filtriranje (2024.–2026.). Kako se oko 2024. mijenjaju i metoda prikupljanja i skup platformi (Instagram i TikTok ulaze tek od 2024.), **promjene u godišnjim udjelima tema nisu nužno stvaran tematski pomak** — dio ih je posljedica drukčijeg sastava korpusa prije i poslije 2024. Vremensku dinamiku stoga treba čitati kao okvirnu, uvjetovanu tokom prikupljanja i platformom.
+:::
 
 ```{r}
 #| label: plot-topic-trends

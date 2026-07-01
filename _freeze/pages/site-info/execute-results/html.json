@@ -1,0 +1,15 @@
+{
+  "hash": "74a7fce8ea96900e79eb96f6ac125058",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"O stranici\"\nsubtitle: \"Tehnička pozadina stranice\"\ndate: last-modified\ncategories: [\"Quarto\", \"Positron\", \"R\"]\n---\n\nOva stranica je napravljena u [Quarto](https://quarto.org/) kroz [Positron](https://positron.posit.co/).\n\n<div class=\"card-grid\">\n  <div class=\"info-card\">\n    <div class=\"info-card-icon\"><i class=\"bi bi-file-text\"></i></div>\n    <h4>Quarto</h4>\n    <p>Sustav za izradu znanstvenih i tehničkih publikacija koji povezuje tekst, kod i rezultate u jedinstveni web izvor.</p>\n  </div>\n  <div class=\"info-card\">\n    <div class=\"info-card-icon\"><i class=\"bi bi-laptop\"></i></div>\n    <h4>Positron</h4>\n    <p>Razvojno okruženje za rad s podacima u kojem je stranica napisana i izgrađena.</p>\n  </div>\n  <div class=\"info-card\">\n    <div class=\"info-card-icon\"><i class=\"bi bi-bar-chart-line\"></i></div>\n    <h4>R</h4>\n    <p>Programski jezik za statističku obradu i analizu podataka koji pokreće izračune na stranici.</p>\n  </div>\n  <div class=\"info-card\">\n    <div class=\"info-card-icon\"><i class=\"bi bi-globe\"></i></div>\n    <h4>GitHub Pages</h4>\n    <p>Platforma za objavu statičke web-stranice, gdje je projekt javno dostupan.</p>\n  </div>\n</div>\n\n### Tehnička bilješka o okruženju\n\nSljedeći zapis dokumentira okruženje u kojem je stranica izgrađena — verziju R-a, operacijski sustav i učitane pakete — radi reproducibilnosti i lakše replikacije.\n\n\n::: {.cell}\n::: {.cell-output .cell-output-stdout}\n\n```\nR version 4.4.1 (2024-06-14 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 26200)\n\nMatrix products: default\n\n\nlocale:\n[1] LC_COLLATE=English_United States.utf8 \n[2] LC_CTYPE=English_United States.utf8   \n[3] LC_MONETARY=English_United States.utf8\n[4] LC_NUMERIC=C                          \n[5] LC_TIME=English_United States.utf8    \n\ntime zone: Europe/Berlin\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.4.1    fastmap_1.2.0     cli_3.6.3        \n [5] tools_4.4.1       htmltools_0.5.8.1 yaml_2.3.10       rmarkdown_2.28   \n [9] knitr_1.48        jsonlite_1.8.9    xfun_0.47         digest_0.6.37    \n[13] rlang_1.1.4       evaluate_1.0.5   \n```\n\n\n:::\n:::\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

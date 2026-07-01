@@ -1,741 +1,410 @@
 ---
-title: "Baza podataka katoličkog digitalnog medijskog prostora (2021.–2026.)"
-subtitle: "Strukturirani korpus katoličkog digitalnog medijskog prostora"
+title: "Baza podataka: opis korpusa katoličkoga digitalnog medijskog prostora"
+subtitle: "Što korpus sadrži, kako je prikupljen i filtriran te tko su izvori — preko 710.000 objava (2021.–2026.)"
 date: last-modified
-categories: ["710.000+ objava", "47 varijabli", "2021.–2026."]
+categories: ["Korpus", "Metodologija", "Otvoreni podaci"]
 ---
 
 ```{r}
 #| label: setup
 #| include: false
 
-knitr::opts_chunk$set(
-  echo = FALSE,
-  warning = FALSE,
-  message = FALSE,
-  fig.width = 4,
-  fig.height = 3,
-  dpi = 300
-)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
-# Učitavanje potrebnih knjižnica
 library(data.table)
 library(dplyr)
-library(ggplot2)
-library(DT)
 library(kableExtra)
-library(plotly)
 library(lubridate)
-library(stringr)
-library(corrplot)
+
+# Pomoćne funkcije za hrvatski format brojeva
+fmt_int <- function(x) format(round(as.numeric(x)), big.mark = ".", scientific = FALSE, trim = TRUE)
+fmt_pct <- function(x, d = 1) paste0(formatC(as.numeric(x), format = "f", digits = d, decimal.mark = ","), " %")
+
+# Hrvatski nazivi mjeseci (genitiv) za datum presjeka
+mj_gen <- c("siječnja", "veljače", "ožujka", "travnja", "svibnja", "lipnja",
+            "srpnja", "kolovoza", "rujna", "listopada", "studenoga", "prosinca")
+
+# Broj religijskih pojmova iz filtra (izračunato, ne utipkano)
+n_terms <- tryCatch({
+  e <- new.env(); sys.source("../R/religious_terms.R", envir = e); nrow(e$religious_terms)
+}, error = function(err) 93L)
 ```
-
-
 
 ```{r}
 #| label: load-data
-#| echo: false
 
-# Učitavanje podataka
 dta <- readRDS("../data/merged_comprehensive.rds")
+if (!inherits(dta, "data.table")) dta <- as.data.table(dta)
 
-# Konverzija u data.table ako nije
-if (!inherits(dta, "data.table")) {
-  dta <- as.data.table(dta)
-}
+n_records <- nrow(dta)
+n_vars    <- ncol(dta)
 
-# Izračun osnovnih statistika
-n_records <- format(nrow(dta), big.mark = ".")
-n_vars <- ncol(dta)
+dta[, .date := as.Date(DATE)]
+snap      <- max(dta$.date, na.rm = TRUE)
+snap_str  <- paste0(mday(snap), ". ", mj_gen[month(snap)], " ", year(snap), ".")
+yr_min    <- year(min(dta$.date, na.rm = TRUE))
+yr_max    <- year(snap)
 
-# Određivanje vremenskog raspona
-if ("DATE" %in% names(dta)) {
-  date_col <- as.Date(dta$DATE)
-  min_year <- min(year(date_col), na.rm = TRUE)
-  max_year <- max(year(date_col), na.rm = TRUE)
-  time_period <- paste0(min_year, " - ", max_year, " godina")
-} else {
-  time_period <- "2021.–2026."
-}
+# Platforme
+plat <- dta[!is.na(SOURCE_TYPE), .N, by = SOURCE_TYPE][order(-N)]
+plat[, pct := 100 * N / sum(N)]
+n_platforms <- nrow(plat)
+web_share   <- plat[SOURCE_TYPE == "web", pct]
 ```
 
-Korpus sadrži **`r n_records`** medijskih objava prikupljenih tijekom `r time_period`, fokusiranih na katoličke teme i sadržaje u hrvatskim medijima. Korpus omogućuje analizu medijskog diskursa, tonaliteta i angažmana publike u domeni katoličkih (religijskih) tema.
+## Što je ovaj korpus
+
+**DigiKat** je strukturirani **korpus** od **`r fmt_int(n_records)`** medijskih objava (`r yr_min`.–`r yr_max`.)
+koje govore o **katoličkim i religijskim temama** u hrvatskom digitalnom medijskom prostoru. Jedinica promatranja
+je **jedna objava**, bilo da je riječ o članku na portalu, objavi na društvenoj mreži, videozapisu ili
+komentaru. Svaki redak baze jedna je objava.
+
+Ključno je razumjeti da je korpus prikupljen **prema sadržaju, a ne prema unaprijed odabranom popisu medija.**
+Objava ulazi u korpus jer *govori o katoličkim temama*, bez obzira na to objavljuje li je konfesionalni
+(katolički) ili sekularni (mainstream) medij. Zato korpus obuhvaća i jedne i druge, od crkvenih portala i
+župnih Facebook-stranica do najčitanijih općih news-portala.
+
+Korpus je empirijska osnova za četiri analitičke razine projekta: [Mapu ekosustava](mapa/mapa.html),
+[Tematske struje](mapa/mapa_stats.html), [Atmosferu diskursa](mapa/diskurs.html) i
+[Fokus na događaje](mapa/događaji.html).
+
+## Ključni pokazatelji
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">`r n_records`</div>
+<div class="metric-value">`r fmt_int(n_records)`</div>
 <div class="metric-label">Medijskih objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">`r n_vars`</div>
-<div class="metric-label">Varijabli</div>
+<div class="metric-value">`r yr_min`.–`r yr_max`.</div>
+<div class="metric-label">Razdoblje (2026. nepotpuna)</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">`r time_period`</div>
-<div class="metric-label">Razdoblje</div>
+<div class="metric-value">`r n_platforms`</div>
+<div class="metric-label">Platformi i izvora</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">9</div>
-<div class="metric-label">Platformi</div>
+<div class="metric-value">≥2 / `r n_terms`</div>
+<div class="metric-label">Prag uključivanja (religijskih pojmova)</div>
 </div>
 </div>
 
+Web-sadržaj čini **`r fmt_pct(web_share)`** korpusa. Ostatak dolazi s društvenih platformi i foruma. Presjek
+korpusa opisan na ovoj stranici zaključno je s datumom **`r snap_str`**.
+
+## Što korpus NIJE
+
+::: {.featured-box}
+Prije daljnjeg čitanja korpus treba jasno razgraničiti od onoga što nije. Korpus **nije** kurirani popis
+katoličkih medija, jer hvata teme, a ne institucije. On **nije** ni reprezentativan, vjerojatnosni uzorak svih
+hrvatskih medija, nego velik **opservacijski** korpus omeđen dosegom servisa za monitoring i pravilom
+uključivanja. Korpus **nije**, naposljetku, mjera religioznosti stanovništva ni stavova javnosti, nego **jest**
+tematski zahvat objava koje govore o katoličkim temama u razdoblju `r yr_min`.–`r yr_max`.
+:::
+
+## Kako je korpus definiran
+
+Članstvo u korpusu određuje jedno pravilo. Tekst svake objave prevede se u mala slova i pretraži popisom od
+**`r n_terms` hrvatskih religijskih pojmova** (biskup, misa, euharistija, hodočašće, enciklika, Sveta stolica…),
+zapisanih kao regularni izrazi koji pokrivaju padeže i množine. **Objava ulazi u korpus samo ako pogodi najmanje
+dva *različita* pojma** (`R/religious_terms.R`).
+
+Prag „≥2 različita pojma" bira **preciznost nad obuhvatom**: jedan usputan spomen („misa", „križ") ne kvalificira
+objavu, pa je korpus namjerno uži, ali čišći od lažnih pozitiva. Riječ je o **heuristici visoke preciznosti, a ne
+o ručno validiranom klasifikatoru**. Ona ima poznata ograničenja: homografi („Misa" kao ime i „misa" kao obred)
+te korijeni bez svih izvedenih oblika mogu podmašiti objavu. Preciznost i obuhvat filtra nisu formalno
+izmjereni, pa ih ne treba tumačiti kao točnu granicu.
+
+## Tko govori: sastav i tipologija izvora
+
 ```{r}
-#| label: basic-info-table
-#| echo: false
+#| label: outlet-typology
 
-# Dinamičko kreiranje osnovnih informacija
-basic_info <- data.frame(
-  Karakteristika = c("Broj zapisa", "Broj varijabli", "Vremenski period", "Format", "Glavni jezik", "Geografski opseg"),
-  Vrijednost = c(
-    n_records, 
-    as.character(n_vars), 
-    time_period, 
-    "R data.table", 
-    "Hrvatski (hr)", 
-    "Hrvatska (HR)"
-  )
-)
+dta[, FROM_l := tolower(trimws(FROM))]
 
-kable(basic_info, caption = "Osnovne karakteristike baze podataka") %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+conf_exact <- tolower(c(
+  "hkm.hr","laudato.hr","laudatotv","laudato","crovijesti.com","novizivot.net","bitno.net","narod.hr",
+  "djos.hr","croativ.net","hrvatskonebo.org","biskupija-varazdinska.hr","redovnistvo.hr","radio-medjugorje.com",
+  "glas-koncila.hr","ks.hr","zg-nadbiskupija.hr","ofm.hr","vjeraidjela.com","ssmi.hr","zupcica.hr","vjeronauk.hr",
+  "sestre-sv-kriza.hr","unicath.hr","hu-benedikt.hr","biskupijakrk.hr","radio-djakovo.hr","karmel.hr",
+  "zupa-zabok.org","czn.hr","vjeraufanjeljubav.com.hr","smn.hr","adventisti.hr","radio marija hrvatska",
+  "vjera u nama †","svjedočanstva & vjera","zagrebačka nadbiskupija","kapljice ljubavi božje",
+  "prihvati isusa krista","dijete vjere","vjera","kraljica mira","pod smokvom","omnia deo","nova eva",
+  "kršćanska proročka crkva isus je kralj!","gospa","vjera-ufanje-ljubav","isus i gospa vas vole","pulherissimus",
+  "hrana za dušu","sveti ante","sisačka biskupija","ravnateljstvo dušobrižništva za hrvate u inozemstvu",
+  "dijete vjere (child of faith)","@slavimoboga","glaslike.hr","hrvatski katolički radio","@hkr_radio",
+  "hkr_radio","radio samobor","hia.com.hr"))
+conf_pat <- paste0("(biskupij|nadbiskup|\\bzupa\\b|zupa-|-zupa|zupn|redovni|karmel|\\bofm\\b|franjev|salezij",
+  "|isusov|jezuit|benedikt|dominikan|\\bvjeron|kršćan|krscan|katolič|katolic|župa|župn|sestre|dušobri",
+  "|medjugorje|\\bkrist|\\bgospa|molitv|blagoslov|nadbiskupij)")
+sec_exact <- tolower(c(
+  "slobodnadalmacija.hr","slobodna dalmacija","vecernji.hr","večernji list","vecernji.ba","index.hr","novilist.hr",
+  "net.hr","jutarnji.hr","24sata.hr","24sata","tportal.hr","direktno.hr","glasistre.hr","hrt.hr","hrt vijesti",
+  "glas-slavonije.hr","dnevnik.hr","nacional.hr","nacional news magazin","dalmatinskiportal.hr","dalmacijadanas.hr",
+  "telegram.hr","zagreb.info","n1info.hr","n1info.com","rtl.hr","rtl danas","story.hr","hina.hr","gov.hr",
+  "aljazeera.net","poslovni.hr","seebiz.eu","geopolitika.news","dnevno.hr","7dnevno.hr","tvprofil.com","srednja.hr"))
+
+dta[, tip_izvora := fifelse(
+  FROM_l %in% conf_exact | grepl(conf_pat, FROM_l), "Konfesionalni / crkveni",
+  fifelse(FROM_l %in% sec_exact, "Sekularni / mainstream (identificirani)", "Ostalo / nerazvrstano"))]
+dta[SOURCE_TYPE %in% c("forum","reddit") |
+      FROM_l %in% c("forum.hr","youtube.com","anonymous_user","sportnet.hr","osijek031.com","croatia","bih","hrvatska"),
+    tip_izvora := "Zajednice i forumi"]
+
+conf_pct <- 100 * mean(dta$tip_izvora == "Konfesionalni / crkveni")
+class_pct <- 100 * mean(dta$tip_izvora != "Ostalo / nerazvrstano")
+
+comp <- dta[, .(`Broj objava` = .N), by = .(`Tip izvora` = tip_izvora)][order(-`Broj objava`)]
+comp[, `Udio` := fmt_pct(100 * `Broj objava` / n_records)]
+comp[, `Broj objava` := fmt_int(`Broj objava`)]
+
+# Udio konfesionalnih izvora unutar glavnih platformi
+plat_conf <- dta[SOURCE_TYPE %in% c("web","facebook","youtube","twitter"),
+                 .(`Udio konfesionalnih` = fmt_pct(100 * mean(tip_izvora == "Konfesionalni / crkveni"))),
+                 by = .(Platforma = SOURCE_TYPE)]
+plat_conf <- plat_conf[order(match(Platforma, c("web","facebook","youtube","twitter")))]
 ```
 
-## Struktura podataka
+Budući da je okvir tematski, korpus doslovno **miješa konfesionalne i sekularne izvore**. Najveći pojedinačni
+izvor jest konfesionalni **hkm.hr** (Hrvatska katolička mreža), no odmah uz njega stoje najčitaniji opći portali.
+Prema **indikativnoj** klasifikaciji izvora (opisanoj niže), iz jasno **konfesionalnih / crkvenih** medija dolazi
+najmanje **`r fmt_pct(conf_pct)`** objava. Ostatak nose sekularni, mainstream i lokalni news-mediji, uz manji
+udio zajednica i foruma.
 
 ```{r}
-#| label: data-structure
-
-# Prikaz prvih nekoliko varijabli i njihovih tipova
-var_types <- sapply(dta, class)
-var_types_simple <- sapply(var_types, function(x) x[1])
-
-# Prikaz strukture
-cat(paste0("Classes 'data.table' and 'data.frame': ", nrow(dta), " obs. of ", ncol(dta), " variables:\n"))
-
-# Prikaži prvih 10 varijabli
-for (i in seq_len(min(10, ncol(dta)))) {
-  var_name <- names(dta)[i]
-  var_type <- var_types_simple[i]
-  sample_vals <- head(dta[[var_name]], 3)
-  sample_str <- paste0("'", substr(as.character(sample_vals), 1, 25), "'", collapse = " ")
-  cat(paste0("$ ", var_name, paste(rep(" ", max(1, 25 - nchar(var_name))), collapse = ""), 
-             ": ", var_type, " ", sample_str, " ...\n"))
-}
-
-if (ncol(dta) > 10) {
-  cat(paste0("... [dodatnih ", ncol(dta) - 10, " varijabli]\n"))
-}
+#| label: outlet-typology-table
+kable(comp, caption = "Sastav korpusa prema tipu izvora (indikativno, na razini objave)",
+      align = c("l", "r", "r")) |>
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
-## Distribucija po godinama
+Sastav se **bitno razlikuje po platformi**: dok je web izvorno **mješovit**, društvene su platforme uporišta glasa
+Crkve, a forumi i Reddit gotovo su isključivo sekularni prostori zajednice.
+
+```{r}
+#| label: outlet-platform-table
+kable(plat_conf, caption = "Udio konfesionalnih izvora unutar glavnih platformi",
+      align = c("l", "r")) |>
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+::: {.callout-note}
+**Napomena o klasifikaciji.** Razvrstavanje izvora je **indikativno**: ručno je označen skup najčešćih izvora
+(uz obrasce za crkvene domene poput *biskupija*, *župa*, *franjev*), čime je razvrstano oko
+**`r fmt_pct(class_pct, 0)`** objava. Preostalo („Ostalo / nerazvrstano") uglavnom su sekularne **lokalne
+vijesti**. Tipologija je analitički presjek, a ne prirodna kategorija, pa navedene udjele treba čitati kao red
+veličine, a ne kao točne mjere.
+:::
+
+## Kako je prikupljen
+
+```{r}
+#| label: provenance
+
+src <- dta[, .N, by = data_source]
+n_fr  <- src[data_source == "filtered_religious", N]
+n_od  <- src[data_source == "original_dta", N]
+```
+
+Podaci su **izvezeni iz komercijalnog servisa za medijski monitoring** (koji objave prikuplja *web scrapingom* i
+platformskim API-jima) u obliku `.xlsx` tablica, koje su potom spojene i filtrirane u jedinstveni korpus.
+
+Korpus je **unija dvaju tokova prikupljanja** koji se vremenski gotovo ne preklapaju, pa ih treba tretirati kao
+heterogene slojeve. Tekući monitoring-upit (`r fmt_int(n_od)` objava) pokriva razdoblje **2021.–2024.**, dok
+religijski filtrirani backfill (`r fmt_int(n_fr)` objava) pokriva **2024.–2026.**
+
+Deduplikacija se provodi **isključivo po URL-u**. Ona **ne uklanja** `?utm_` i slične *tracking*-parametre, pa isti
+članak s različitim parametrima može ostati kao zaseban redak. Zbog toga je URL tek *de facto* ključ objave, a
+ukupan broj objava treba čitati kao **gornju granicu**. Pokrivenost je omeđena dosegom servisa za monitoring:
+riječ je o velikom **opservacijskom**, a ne vjerojatnosnom uzorku.
+
+## Opseg korpusa
+
+### Vremenska pokrivenost
 
 ```{r}
 #| label: yearly-distribution
-
-if ("DATE" %in% names(dta)) {
-  dta[, year := year(as.Date(DATE))]
-  yearly_counts <- dta[, .N, by = year][order(year)]
-  
-  kable(yearly_counts, 
-        caption = "Broj objava po godinama",
-        col.names = c("Godina", "Broj objava")) %>%
-    kable_styling(bootstrap_options = c("striped", "hover"))
-}
+yearly <- dta[!is.na(.date), .(N = .N), by = .(Godina = year(.date))][order(Godina)]
+n_2025 <- yearly[Godina == 2025, N]
+yearly_disp <- yearly[, .(Godina, `Broj objava` = fmt_int(N))]
+kable(yearly_disp, caption = "Broj objava po godinama", align = c("l", "r")) |>
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
-# Opis varijabli
+Broj objava raste prema kraju razdoblja, ali taj se rast **ne smije čitati kao puki porast medijske pažnje.**
+Skok u 2025. (`r fmt_int(n_2025)` objava) poklapa se s **prelaskom na obuhvatniji
+način prikupljanja** (religijski filtrirani backfill) i s uključivanjem novih platformi (Instagram i TikTok tek od
+2024.). Godina **2026. je nepotpuna** (do lipnja), pa je njezin manji broj artefakt presjeka, a ne pad. Usporedbe
+volumena kroz godine stoga su pouzdane samo unutar iste platforme i istoga toka prikupljanja.
 
-## Vremenske varijable
+### Platforme
 
 ```{r}
-#| label: temporal-vars
-
-# Dinamička provjera postojanja varijabli
-temporal_vars_list <- c("DATE", "TIME", "year")
-temporal_vars_exist <- temporal_vars_list[temporal_vars_list %in% names(dta)]
-
-temporal_vars <- data.frame(
-  Varijabla = c("DATE", "TIME", "year"),
-  Tip = c("character", "character", "numeric"),
-  Opis = c(
-    "Datum objave u formatu YYYY-MM-DD",
-    "Vrijeme objave u formatu HH:MM:SS", 
-    "Godina izvlučena iz datuma"
-  ),
-  Prisutno = c("DATE", "TIME", "year") %in% names(dta)
-)
-
-kable(temporal_vars[, 1:3], caption = "Vremenske varijable") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
+#| label: platform-distribution
+plat_disp <- plat[, .(Platforma = SOURCE_TYPE, `Broj objava` = fmt_int(N), Udio = fmt_pct(pct))]
+kable(plat_disp, caption = "Distribucija objava po platformama", align = c("l", "r", "r")) |>
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
-## Sadržaj i metapodaci
+Dominacija web-sadržaja (`r fmt_pct(web_share)`) nije samo brojčana. Ona odražava ulogu tradicionalnih medija kao
+čuvara vijesti u hrvatskom digitalnom prostoru. Društvene platforme (Facebook, YouTube) nose manji, ali sadržajno
+osobit dio korpusa u kojem, kako je pokazano, prevladava glas Crkve.
+
+### Jezik i geografija
 
 ```{r}
-#| label: content-vars
-
-content_vars <- data.frame(
-  Varijabla = c("TITLE", "FULL_TEXT", "MENTION_SNIPPET", "AUTHOR", "FROM", "URL", "URL_PHOTO"),
-  Tip = c("character", "character", "character", "character", "character", "character", "character"),
-  Opis = c(
-    "Naslov članka/objave",
-    "Potpuni tekst objave (dostupan isključivo na zahtjev)",
-    "Isječak teksta koji sadrži ključne riječi",
-    "Autor objave (ako je dostupan)",
-    "Izvor/domena web stranice",
-    "Potpuna URL adresa objave",
-    "URL fotografije povezane s objavom"
-  )
-)
-
-kable(content_vars, caption = "Sadržaj i metapodaci") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
+#| label: lang-geo
+pure_hr   <- sum(dta$LANGUAGES == "hr", na.rm = TRUE)
+any_bcs   <- sum(grepl("bs|sr|sl", dta$LANGUAGES), na.rm = TRUE)
+hr_only_loc <- sum(dta$LOCATIONS == "HR", na.rm = TRUE)
 ```
 
-## Kategorizacija i označavanje
+Jezik i geografija strojno su detektirani i **višeoznačni** (jedna objava može nositi više oznaka). Hrvatski
+dominira: **`r fmt_int(pure_hr)`** objava nosi isključivo oznaku `hr`. Korpus ipak sadrži i znatan
+**regionalni južnoslavenski** sadržaj (bosanski, srpski, slovenski) — oko **`r fmt_int(any_bcs)`** objava ima
+barem jednu takvu oznaku. Geografski je težište Hrvatska (**`r fmt_int(hr_only_loc)`** objava označeno je samo
+kao `HR`), uz prelijev prema Bosni i Hercegovini te ostatku regije. Filtriranje na `LANGUAGES == "hr"` stoga tiho
+izbacuje regionalni sadržaj. S time treba računati pri ponovnom korištenju.
 
-```{r}
-#| label: categorization-vars
+## Struktura podataka
 
-cat_vars <- data.frame(
-  Varijabla = c("SOURCE_TYPE", "GROUP_NAME", "KEYWORD_NAME", "FOUND_KEYWORDS", "TAGS", "LANGUAGES", "LOCATIONS"),
-  Tip = c("factor", "character", "character", "character", "logical", "character", "character"),
-  Opis = c(
-    "Tip izvora (web, youtube, facebook, twitter itd.)",
-    "Naziv grupe za praćenje",
-    "Naziv ključne riječi",
-    "Pronađene ključne riječi u tekstu",
-    "Dodatne oznake (trenutno prazno)",
-    "Jezik objave (hr, bs)",
-    "Geografska lokacija (HR)"
-  )
-)
+Korpus ima **`r n_vars` varijabli**, koje se grupiraju u šest funkcionalnih skupina: vremenske (`DATE`, `TIME`,
+`year`), sadržaj i tekst (`TITLE`, `FULL_TEXT`, `MENTION_SNIPPET`, `URL`, `URL_PHOTO`), izvor i akter (`FROM`,
+`AUTHOR`, `SOURCE_TYPE`), monitoring i podudaranje (`GROUP_NAME`, `KEYWORD_NAME`, `FOUND_KEYWORDS`, `LANGUAGES`,
+`LOCATIONS`, `data_source`), sentiment (`AUTO_SENTIMENT`, `MANUAL_SENTIMENT`) te angažman i doseg (`REACH`,
+`ENGAGEMENT_RATE`, `INTERACTIONS`, `VIEW_COUNT`, reakcije, `INFLUENCE_SCORE` i dr.). Potpuni popis s pripadajućom
+skupinom nalazi se u referentnoj tablici na dnu stranice.
 
-kable(cat_vars, caption = "Kategorizacija i označavanje") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
-```
+**Puni tekst objave (`FULL_TEXT`) nije dio javne distribucije** zbog autorskih prava. Javno se dijele metapodaci i
+isječci, a puni tekst dostupan je **na zahtjev** za istraživačke svrhe. Kontrolirane kategorije imaju zatvoren skup
+vrijednosti: `SOURCE_TYPE` ima `r n_platforms` razina, `AUTO_SENTIMENT` četiri (uključujući `undefined`), a
+`INFLUENCE_SCORE` `r length(unique(na.omit(dta$INFLUENCE_SCORE)))` razina. Polje `FOUND_KEYWORDS` dolazi iz servisa za monitoring i **šumovito** je
+(najčešća vrijednost je veznik „i"), pa ga ne treba tumačiti kao dokaz religijskog filtra.
 
-## Sentiment analiza
-
-```{r}
-#| label: sentiment-vars
-
-sentiment_vars <- data.frame(
-  Varijabla = c("AUTO_SENTIMENT", "MANUAL_SENTIMENT"),
-  Tip = c("character", "logical"),
-  Opis = c(
-    "Automatski detektirani sentiment (positive/neutral/negative)",
-    "Ručno označen sentiment (trenutno prazno)"
-  )
-)
-
-kable(sentiment_vars, caption = "Sentiment analiza") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
-```
-
-## Distribucija sentimenta
+## Signali i mjere: podrijetlo
 
 ```{r}
 #| label: sentiment-distribution
+sent <- dta[, .N, by = AUTO_SENTIMENT][order(-N)]
+sent_disp <- sent[, .(Sentiment = AUTO_SENTIMENT, `Broj objava` = fmt_int(N), Udio = fmt_pct(100 * N / sum(sent$N)))]
+kable(sent_disp, caption = "Distribucija automatskog (vendorskog) tonaliteta", align = c("l", "r", "r")) |>
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 
-if ("AUTO_SENTIMENT" %in% names(dta)) {
-  sentiment_dist <- dta[!is.na(AUTO_SENTIMENT), .N, by = AUTO_SENTIMENT][order(-N)]
-  sentiment_dist[, Postotak := formatC(N / sum(N) * 100, format = "f", digits = 1, decimal.mark = ",")]
-  
-  kable(sentiment_dist, 
-        caption = "Distribucija automatskog sentimenta",
-        col.names = c("Sentiment", "Broj zapisa", "Postotak (%)")) %>%
-    kable_styling(bootstrap_options = c("striped", "hover"))
-}
+manual_sent_missing_pct <- 100 * mean(is.na(dta$MANUAL_SENTIMENT))
 ```
 
-## Metrike angažmana
+Varijabla `AUTO_SENTIMENT` je **vendorska**: izračunava je servis za monitoring nepoznatom metodom i gruba je
+(tri razine + `undefined`). Ona je **distinktna** od projektnoga leksičkog tonaliteta koji se računa u sloju
+[Atmosfera diskursa](mapa/diskurs.html) i ne treba je s njime miješati. Ručno kodirani tonalitet
+(`MANUAL_SENTIMENT`) u ovom je izdanju **prazan po dizajnu** (`r fmt_pct(manual_sent_missing_pct, 0)` nedostaje).
+
+Mjere angažmana (`REACH`, `VIRALITY`, `ENGAGEMENT_RATE`, `INFLUENCE_SCORE`) također računa vendor pri zahvatu.
+Formule su neprozirne, **nisu usporedive među platformama** i ne osvježavaju se kako objava stari. Doseg je izrazito
+asimetričan (medijan je `r fmt_int(median(dta$REACH, na.rm = TRUE))`, a maksimum više milijuna), pa prosjek dosega
+lako zavara. `INFLUENCE_SCORE` je **ordinalna** ljestvica od `r length(unique(na.omit(dta$INFLUENCE_SCORE)))` razina i ne treba je prosjekovati.
+
+## Kvaliteta i ograničenja
 
 ```{r}
-#| label: engagement-vars
+#| label: availability-matrix
+eng <- c("REACH", "ENGAGEMENT_RATE", "VIEW_COUNT", "TOTAL_REACTIONS_COUNT", "FOLLOWERS_COUNT")
+avail <- dta[, lapply(.SD, function(x) round(100 * mean(!(is.na(x) | (is.character(x) & x == "")))) ),
+             by = .(Platforma = SOURCE_TYPE), .SDcols = eng]
+setnames(avail, eng, c("REACH", "ENGAGEMENT_RATE", "VIEW_COUNT", "REAKCIJE", "FOLLOWERS"))
+avail <- avail[order(match(Platforma, plat$SOURCE_TYPE))]
+kable(avail, caption = "Dostupnost ključnih metrika po platformi (% popunjeno)", align = c("l", rep("r", 5))) |>
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 
-engagement_vars <- data.frame(
-  Varijabla = c("REACH", "VIRALITY", "ENGAGEMENT_RATE", "INTERACTIONS", "FOLLOWERS_COUNT"),
-  Tip = c("numeric", "numeric", "numeric", "numeric", "numeric"),
-  Opis = c(
-    "Doseg objave (broj ljudi koji je vidjelo)",
-    "Indeks viralnosti",
-    "Stopa angažmana (%)",
-    "Ukupan broj interakcija",
-    "Broj pratitelja autora"
-  )
-)
-
-kable(engagement_vars, caption = "Metrike angažmana") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
+author_missing_pct <- 100 * mean(is.na(dta$AUTHOR) | (is.character(dta$AUTHOR) & dta$AUTHOR == ""))
 ```
 
-## Specifične reakcije (Facebook)
+Metrike angažmana **nisu popunjene za sve platforme**: `REACH` i reakcije postoje uglavnom za web i Facebook,
+`VIEW_COUNT` samo za video (YouTube, Instagram), a forumi, Reddit i komentari nose malo metrika. Zato prosjek preko
+platformi spaja strukturne praznine i vodi u pogrešan zaključak.
+
+Nedostajuće vrijednosti dolaze u **tri vrste**. Prva je **prazno po dizajnu**: `MANUAL_SENTIMENT`, `TAGS`,
+`TWEET_COUNT` i `COUNT` u potpunosti nedostaju u ovom izdanju. Druga je **platformski uvjetovana**: `VIEW_COUNT`,
+Facebook-reakcije i `REDDIT_SCORE` postoje samo na svojoj matičnoj platformi. Treća je **stvarno nedostajanje**,
+poput autora objave (`AUTHOR`), koji nedostaje u `r fmt_pct(author_missing_pct, 0)` slučajeva.
+
+::: {.callout-note}
+**Sigurni i nesigurni zaključci.** Iz korpusa je **pouzdano** čitati relativni tematski volumen kroz vrijeme
+*unutar iste platforme i toka*, distribuciju tonaliteta (uz vendorsku ogradu) i broj objava po izvoru. **Nije
+pouzdano** usporediti angažman ili doseg *među* platformama, čitati porast u 2025. ili pad u 2026. kao stvaran
+trend, niti prosjekovati `REACH` ili `INFLUENCE_SCORE`.
+:::
+
+## Kako se korpus koristi
+
+Referentna primjena korpusa jesu četiri analitičke razine projekta, koje iz istih podataka izvode volumen, teme,
+tonalitet i događaje. [Mapa ekosustava](mapa/mapa.html) prikazuje volumen, doseg i angažman te tipologiju
+aktera. [Tematske struje](mapa/mapa_stats.html) raspoređuju objave u 16 tematskih kategorija. [Atmosfera
+diskursa](mapa/diskurs.html) mjeri tonalitet i osam emocija, a [Fokus na događaje](mapa/događaji.html) prati
+pomake oko konkretnih događaja i kampanja.
+
+## Pristup, licencija i citiranje
+
+Korpus je otvoren pod licencijom **CC BY 4.0**. Baza podataka dostupna je na Kaggleu kao
+[Hrvatski katolički digitalni medijski prostor 2021.–2026.](https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space/data),
+a sav kod, uključujući filtar `R/religious_terms.R`, objavljen je na GitHubu na
+[github.com/lusiki/DigiKat](https://github.com/lusiki/DigiKat).
+
+**Kako je korpus nastao (reproducibilnost).** Sirove `.xlsx` izvoze → prijevod teksta u mala slova →
+`r n_terms`-pojmovni regex-filtar → zadrži objave s **≥2 različita podudaranja** → `merged_comprehensive.rds`.
+Master (oko 1,2 GB) nije u repozitoriju jer sadrži puni tekst. Javna distribucija sadrži **metapodatke i isječke**.
+
+**Osobni podaci.** Korpus sadrži javno dostupne metapodatke o izvorima i računima (npr. `FROM`, `AUTHOR`, nazivi
+javnih stranica, `FOLLOWERS_COUNT`). Redistribucija je ograničena na javne objave javnih računa. Puni tekst je
+izuzet iz javne distribucije.
+
+Preporučeni oblik citiranja:
+
+> Šikić, L. / Hrvatsko katoličko sveučilište (2026). *DigiKat: korpus katoličkoga digitalnog medijskog prostora u
+> Hrvatskoj (2021.–2026.)* [skup podataka]. Presjek: `r snap_str` (`r fmt_int(n_records)` objava). CC BY 4.0.
 
 ```{r}
-#| label: facebook-vars
-
-fb_vars <- data.frame(
-  Varijabla = c("LIKE_COUNT", "LOVE_COUNT", "WOW_COUNT", "HAHA_COUNT", "SAD_COUNT", "ANGRY_COUNT", "COMMENT_COUNT", "SHARE_COUNT", "TOTAL_REACTIONS_COUNT"),
-  Tip = rep("numeric", 9),
-  Opis = c(
-    "Broj 'like' reakcija",
-    "Broj 'love' reakcija", 
-    "Broj 'wow' reakcija",
-    "Broj 'haha' reakcija",
-    "Broj 'sad' reakcija",
-    "Broj 'angry' reakcija",
-    "Broj komentara",
-    "Broj dijeljenja",
-    "Ukupan broj svih reakcija"
-  )
-)
-
-kable(fb_vars, caption = "Specifične reakcije (Facebook)") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
-```
-
-# Kvaliteta i kompletnost podataka
-
-## Pregled nedostajućih vrijednosti
-
-```{r}
-#| label: missing-data
-
-# Dinamički izračun nedostajućih vrijednosti
-calc_missing <- function(x) {
-  round(sum(is.na(x) | x == "" | x == "NA") / length(x) * 100, 1)
-}
-
-# Odabir ključnih varijabli za provjeru
-key_vars <- c("AUTHOR", "TAGS", "MANUAL_SENTIMENT", "FOLLOWERS_COUNT", 
-              "REDDIT_SCORE", "VIEW_COUNT", "FULL_TEXT", "URL_PHOTO")
-key_vars_exist <- intersect(key_vars, names(dta))
-
-missing_reasons <- c(
-  AUTHOR = "Nije uvijek dostupno od izvora",
-  TAGS = "Funkcionalnost nije implementirana",
-  MANUAL_SENTIMENT = "Ručno označavanje nije provedeno",
-  FOLLOWERS_COUNT = "Ovisi o platformi i dostupnosti",
-  REDDIT_SCORE = "Specifično za Reddit objave",
-  VIEW_COUNT = "Specifično za video sadržaj",
-  FULL_TEXT = "Dostupno na zahtjev",
-  URL_PHOTO = "Nije dostupno za sve objave"
-)
-
-if (length(key_vars_exist) > 0) {
-  
-  missing_pct <- sapply(key_vars_exist, function(var) calc_missing(dta[[var]]))
-  
-  missing_data <- data.frame(
-    Varijabla = names(missing_pct),
-    Nedostaje = as.numeric(missing_pct),
-    Razlog = missing_reasons[names(missing_pct)],
-    stringsAsFactors = FALSE
-  )
-  
-  missing_data <- missing_data[order(-missing_data$Nedostaje), ]
-  missing_data$Nedostaje <- formatC(missing_data$Nedostaje, format = "f", digits = 1, decimal.mark = ",")
-
-  kable(missing_data, 
-        caption = "Pregled nedostajućih vrijednosti u ključnim varijablama",
-        col.names = c("Varijabla", "Nedostaje (%)", "Razlog"),
-        row.names = FALSE) %>%
-    kable_styling(bootstrap_options = c("striped", "hover"))
-  
-} else {
-  
-  # Prikaži nedostajuće vrijednosti za prvih 10 varijabli
-  first_vars <- head(names(dta), 10)
-  missing_pct <- sapply(first_vars, function(var) calc_missing(dta[[var]]))
-  
-  missing_data <- data.frame(
-    Varijabla = names(missing_pct),
-    Nedostaje = as.numeric(missing_pct),
-    stringsAsFactors = FALSE
-  )
-  
-  missing_data <- missing_data[order(-missing_data$Nedostaje), ]
-  missing_data$Nedostaje <- formatC(missing_data$Nedostaje, format = "f", digits = 1, decimal.mark = ",")
-
-  kable(missing_data, 
-        caption = "Pregled nedostajućih vrijednosti",
-        col.names = c("Varijabla", "Nedostaje (%)"),
-        row.names = FALSE) %>%
-    kable_styling(bootstrap_options = c("striped", "hover"))
-}
-```
-
-## Statistički sažetak numeričkih varijabli
-
-```{r}
-#| label: numeric-summary
-
-# Dinamički izračun statistika za numeričke varijable
-target_vars <- c("REACH", "INTERACTIONS", "ENGAGEMENT_RATE", "LIKE_COUNT", "INFLUENCE_SCORE")
-numeric_vars_exist <- intersect(target_vars, names(dta))
-
-if (length(numeric_vars_exist) > 0) {
-  
-  # Izračunaj statistike za svaku varijablu pojedinačno
-  stats_list <- lapply(numeric_vars_exist, function(var_name) {
-    x <- as.numeric(dta[[var_name]])
-    data.frame(
-      Varijabla = var_name,
-      Mean = mean(x, na.rm = TRUE),
-      Median = median(x, na.rm = TRUE),
-      SD = sd(x, na.rm = TRUE),
-      Min = min(x, na.rm = TRUE),
-      Max = max(x, na.rm = TRUE)
-    )
-  })
-  
-  numeric_summary <- do.call(rbind, stats_list)
-  
-  kable(numeric_summary, 
-        caption = "Statistički sažetak ključnih numeričkih varijabli",
-        digits = 1,
-        row.names = FALSE) %>%
-    kable_styling(bootstrap_options = c("striped", "hover"))
-  
-} else {
-  
-  # Pronađi bilo koje numeričke varijable u datasetu
-  all_numeric <- names(dta)[sapply(dta, is.numeric)]
-  
-  if (length(all_numeric) > 0) {
-    vars_to_use <- head(all_numeric, 5)
-    
-    stats_list <- lapply(vars_to_use, function(var_name) {
-      x <- as.numeric(dta[[var_name]])
-      data.frame(
-        Varijabla = var_name,
-        Mean = mean(x, na.rm = TRUE),
-        Median = median(x, na.rm = TRUE),
-        SD = sd(x, na.rm = TRUE),
-        Min = min(x, na.rm = TRUE),
-        Max = max(x, na.rm = TRUE)
-      )
-    })
-    
-    numeric_summary <- do.call(rbind, stats_list)
-    
-    kable(numeric_summary, 
-          caption = "Statistički sažetak numeričkih varijabli",
-          digits = 1,
-          row.names = FALSE) %>%
-      kable_styling(bootstrap_options = c("striped", "hover"))
-  } else {
-    cat("Numeričke varijable nisu pronađene u skupu podataka.")
-  }
-}
-```
-
-## Distribucija po izvorima
-
-```{r}
-#| label: source-distribution
-
-if ("SOURCE_TYPE" %in% names(dta)) {
-  source_dist <- dta[!is.na(SOURCE_TYPE), .N, by = SOURCE_TYPE][order(-N)]
-  source_dist[, Postotak := formatC(N / sum(N) * 100, format = "f", digits = 1, decimal.mark = ",")]
-  
-  kable(head(source_dist, 10), 
-        caption = "Top 10 izvora po broju zapisa",
-        col.names = c("Tip izvora", "Broj zapisa", "Postotak (%)")) %>%
-    kable_styling(bootstrap_options = c("striped", "hover"))
-}
-```
-
-# Primjeri korištenja
-
-## Osnovne analize
-
-```{r}
-#| label: basic-analysis-table
-
-# Kreiranje tablice osnovnih analiza
-basic_analyses <- data.frame(
-  `Tip analize` = c(
-    "Analiza sentimenta po izvorima",
-    "Trendovi kroz vrijeme", 
-    "Top izvori po angažmanu",
-    "Distribucija po godinama",
-    "Najčešće ključne riječi"
-  ),
-  `R kod` = c(
-    "sentiment_by_source <- dta[, .N, by = .(FROM, AUTO_SENTIMENT)]",
-    "temporal_trends <- dta[, .N, by = .(year, month = substr(DATE, 6, 7))]",
-    "top_sources <- dta[, .(avg_engagement = mean(ENGAGEMENT_RATE, na.rm = TRUE)), by = FROM]",
-    "yearly_dist <- dta[, .N, by = year][order(year)]",
-    "keyword_freq <- dta[, .N, by = KEYWORD_NAME][order(-N)]"
-  ),
-  `Rezultat` = c(
-    "Broj objava po izvoru i sentimentu",
-    "Broj objava po mjesecima", 
-    "Prosječni angažman po izvoru",
-    "Broj objava po godinama",
-    "Frekvencija ključnih riječi"
-  ),
-  `Sortiranje` = c(
-    "sentiment_by_source[order(-N)]",
-    "temporal_trends[order(year, month)]",
-    "top_sources[order(-avg_engagement)]",
-    "yearly_dist[order(year)]",
-    "keyword_freq[order(-N)]"
-  )
-)
-
-kable(basic_analyses, 
-      caption = "Osnovne analize - pregled kodova i rezultata",
-      col.names = c("Tip analize", "R kod", "Rezultat", "Sortiranje")) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
-  column_spec(2, width = "35%", extra_css = "font-family: monospace; font-size: 11px;") %>%
-  column_spec(4, width = "25%", extra_css = "font-family: monospace; font-size: 11px;")
-```
-
-## Napredne analize
-
-```{r}
-#| label: advanced-analysis-table
-
-# Kreiranje tablice naprednih analiza
-advanced_analyses <- data.frame(
-  `Analiza` = c(
-    "Tokenizacija teksta",
-    "Čišćenje stop riječi",
-    "Brojanje riječi po sentimentu", 
-    "Sentiment scoring",
-    "Wordcloud generiranje",
-    "Vremenska serija angažmana",
-    "Korelacijska analiza"
-  ),
-  `Potrebne biblioteke` = c(
-    "tidytext, dplyr",
-    "tidytext", 
-    "dplyr, tidytext",
-    "dplyr, case_when", 
-    "wordcloud, RColorBrewer",
-    "ggplot2, lubridate",
-    "corrplot"
-  ),
-  `Ključni kod` = c(
-    "unnest_tokens(word, TITLE)",
-    "anti_join(stop_words)",
-    "count(word, AUTO_SENTIMENT, sort = TRUE)",
-    "summarise(sentiment_score = sum(n * case_when(...)))",
-    "wordcloud(words, freq, colors = brewer.pal(8, 'Dark2'))",
-    "ggplot(aes(x = DATE, y = ENGAGEMENT_RATE)) + geom_smooth()",
-    "corrplot(cor(numeric_vars, use = 'complete.obs'))"
-  ),
-  `Očekivani output` = c(
-    "Pojedinačne riječi iz naslova",
-    "Filtrirane značajne riječi",
-    "Frekvencija riječi po sentimentu", 
-    "Numerički sentiment score",
-    "Vizualna reprezentacija",
-    "Trend angažmana kroz vrijeme",
-    "Matrica korelacija"
-  )
-)
-
-kable(advanced_analyses,
-      caption = "Napredne analize - detaljni pregled metoda",
-      col.names = c("Analiza", "Potrebne biblioteke", "Ključni kod", "Očekivani output")) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
-  column_spec(3, width = "30%", extra_css = "font-family: monospace; font-size: 10px;") %>%
-  scroll_box(width = "100%", height = "400px")
-```
-
-## Primjer koda za učitavanje i osnovnu obradu
-
-```{r}
-#| label: example-code
+#| label: how-to-load
 #| echo: true
 #| eval: false
 
-# Učitavanje podataka
-dta <- readRDS("../../data/merged_comprehensive.rds")
-
-# Konverzija datuma
-dta[, DATE := as.Date(DATE)]
-dta[, year := year(DATE)]
-dta[, month := month(DATE)]
-dta[, yearmonth := floor_date(DATE, "month")]
-
-# Filtriranje po godinama
-dta_2025_2026 <- dta[year %in% c(2025, 2026)]
-
-# Agregacija po izvoru i sentimentu
-summary_table <- dta[, .(
-  n_posts = .N,
-  avg_reach = mean(REACH, na.rm = TRUE),
-  avg_engagement = mean(ENGAGEMENT_RATE, na.rm = TRUE),
-  total_interactions = sum(INTERACTIONS, na.rm = TRUE)
-), by = .(SOURCE_TYPE, AUTO_SENTIMENT)]
-
-# Trend analiza
-monthly_trend <- dta[, .(
-  n_posts = .N,
-  avg_sentiment_positive = mean(AUTO_SENTIMENT == "positive", na.rm = TRUE)
-), by = yearmonth][order(yearmonth)]
+# Minimalno učitavanje (put prilagodite preuzetoj datoteci)
+dta <- readRDS("merged_comprehensive.rds")
 ```
 
-# Tehnički detalji
-
-## Izvorni format podataka
-
-```{r}
-#| label: technical-details-table
-
-# Tehnički detalji u tabličnom formatu
-technical_info <- data.frame(
-  `Kategorija` = c(
-    "Izvorne datoteke", 
-    "Format obrade",
-    "Kodiranje", 
-    "Separatori",
-    "Nedostajuće vrijednosti",
-    "Preporučena biblioteka  Manipulacija",
-    "Preporučena biblioteka  Sintaksa", 
-    "Preporučena biblioteka  Vizualizacija",
-    "Preporučena biblioteka  Datumi",
-    "Preporučena biblioteka  Tekst"
-  ),
-  `Vrijednost/Opis` = c(
-    "merged_comprehensive.rds",
-    "R data.table",
-    "UTF-8", 
-    "Automatski detektirani",
-    "NA",
-    "data.table za brzu manipulaciju velikih skupova podataka",
-    "dplyr  za čišću i čitljiviju sintaksu", 
-    "ggplot2  za profesionalne vizualizacije",
-    "lubridate  za rad s datumskim formatima",
-    "stringr  za manipulaciju i analizu teksta"
-  ),
-  `Napomene` = c(
-    "Svi podaci spojeni u jednu datoteku",
-    "Optimizirano za velike podatke",
-    "Podrška za hrvatske znakove", 
-    "RDS format automatski parsiran",
-    "Standardno R označavanje",
-    "Brzina: 10-100x brža od base R",
-    "Kompatibilnost s tidyverse ekosystemom", 
-    "Grammar of graphics pristup",
-    "Timezone aware operacije",
-    "Regex podrška za složene operacije"
-  )
-)
-
-kable(technical_info,
-      caption = "Tehnički detalji baze podataka i preporučeni alati",
-      col.names = c("Kategorija", "Vrijednost/Opis", "Napomene")) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
-  column_spec(2, width = "40%") %>%
-  column_spec(3, width = "35%") %>%
-  row_spec(1:5, background = "#f8f9fa") %>%
-  row_spec(6:10, background = "#e3f2fd")
-```
-
-## Napomene o performansama
-
-```{r}
-#| label: performance-notes
-
-performance_tips <- data.frame(
-  Operacija = c(
-    "Čitanje podataka", 
-    "Grupiranje i agregacija",
-    "Filtriranje velikih tekstova", 
-    "Sortiranje po datumu",
-    "Analiza sentimenta",
-    "Eksport u CSV"
-  ),
-  `Preporučeni pristup` = c(
-    "readRDS() za RDS format",
-    "data.table sintaksa [, .N, by=]", 
-    "Koristiti grep() s fixed=TRUE",
-    "Konvertirati DATE u Date klasu",
-    "Koristiti existirajuće AUTO_SENTIMENT",
-    "fwrite() za brzi eksport"
-  ),
-  `Očekivano vrijeme` = c(
-    "< 30 sekundi",
-    "< 5 sekundi", 
-    "10-60 sekundi",
-    "< 10 sekundi", 
-    "1-5 minuta",
-    "< 60 sekundi"
-  )
-)
-
-kable(performance_tips, 
-      caption = "Preporuke za optimalne performanse",
-      col.names = c("Operacija", "Preporučeni pristup", "Očekivano vrijeme")) %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
-```
-
-# Potpuni popis varijabli
+## Referenca: potpuni popis varijabli
 
 ```{r}
 #| label: full-variable-list
 
-# Dinamički popis svih varijabli u datasetu
-var_names <- names(dta)
+grp <- function(n) {
+  if (n %in% c("DATE", "TIME", "year")) return("Vremenske")
+  if (n %in% c("TITLE", "FULL_TEXT", "MENTION_SNIPPET", "URL", "URL_PHOTO")) return("Sadržaj i tekst")
+  if (n %in% c("FROM", "AUTHOR", "SOURCE_TYPE")) return("Izvor i akter")
+  if (n %in% c("GROUP_NAME", "KEYWORD_NAME", "FOUND_KEYWORDS", "LANGUAGES", "LOCATIONS", "TAGS", "data_source"))
+    return("Monitoring i podudaranje")
+  if (n %in% c("AUTO_SENTIMENT", "MANUAL_SENTIMENT")) return("Sentiment")
+  "Angažman i doseg"
+}
 
+vn <- setdiff(names(dta), c(".date", "FROM_l", "tip_izvora"))
 all_vars <- data.frame(
-  Redni_broj = seq_along(var_names),
-  Varijabla = var_names,
-  Tip = sapply(var_names, function(v) class(dta[[v]])[1]),
-  N_jedinstvenih = sapply(var_names, function(v) length(unique(dta[[v]]))),
-  Nedostaje_pct = sapply(var_names, function(v) formatC(sum(is.na(dta[[v]])) / nrow(dta) * 100, format = "f", digits = 1, decimal.mark = ",")),
-  stringsAsFactors = FALSE
+  Varijabla = vn,
+  Skupina   = vapply(vn, grp, character(1)),
+  Tip       = vapply(vn, function(v) class(dta[[v]])[1], character(1)),
+  `N jedinstvenih` = vapply(vn, function(v) fmt_int(length(unique(dta[[v]]))), character(1)),
+  `Nedostaje` = vapply(vn, function(v)
+    fmt_pct(100 * mean(is.na(dta[[v]]) | (is.character(dta[[v]]) & dta[[v]] == ""))), character(1)),
+  check.names = FALSE, stringsAsFactors = FALSE
 )
-
 rownames(all_vars) <- NULL
 
-kable(all_vars, 
-      caption = "Potpuni popis varijabli u bazi podataka",
-      col.names = c("Br.", "Varijabla", "Tip", "N jedinstvenih", "Nedostaje (%)")) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
+kable(all_vars, caption = paste0("Svih ", length(vn), " varijabli (ključ retka = URL)"),
+      align = c("l", "l", "l", "r", "r")) |>
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) |>
   scroll_box(width = "100%", height = "500px")
 ```
 
-
-
-## Preuzmi bazu podataka
-
-Baza podataka dostupna je na platformi Kaggle: [Hrvatski katolički digitalni medijski prostor 2021.–2026.](https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space/data)
-
-```{r}
-#| label: download-example
-#| eval: false
-
-# Direct download via Kaggle API
-library(pins)
-board <- board_kaggle()
-dataset <- pin_read(board, "https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space/data")
-
-# Alternativno, učitavanje lokalne verzije
-dta <- readRDS("../../data/merged_comprehensive.rds")
-```
-
-# Licence i citiranje
-
-Molimo citirajte ovu bazu u svojim radovima koristeći sljedeći format:
-
-> **[Šikić, Luka/Hrvatsko katoličko sveučilište]**. (2026). *Katolički digitalni medijski prostor u Hrvatskoj 2021.–2026.* Dataset sadrži `r n_records` medijskih objava iz hrvatskih medija. Pristupljeno `r Sys.Date()`.
-
-## Dodatni resursi
-
-- **GitHub repozitorij** — [github.com/lusiki/DigiKat](https://github.com/lusiki/DigiKat)
-- **Dokumentacija** — [stranica baze podataka](https://lusiki.github.io/DigiKat/baza.html)
-- **Kontakt** — [luka.sikic@unicath.hr](mailto:luka.sikic@unicath.hr)
-- **ORCID** — [0009-0006-3519-0272](https://orcid.org/0009-0006-3519-0272)
-
 ---
 
-**Verzija** 2.1
-**R verzija** `r R.version.string`
+**Kontakt:** [luka.sikic@unicath.hr](mailto:luka.sikic@unicath.hr) ·
+**ORCID:** [0009-0006-3519-0272](https://orcid.org/0009-0006-3519-0272)

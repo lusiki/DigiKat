@@ -286,6 +286,12 @@ Istraživanje uvodi tri metodološke inovacije. Prva je digitalni seizmograf koj
 </div>
 </div>
 
+::: {.callout-warning}
+## Promjena metode prikupljanja (oko 2024.) — oprez pri međugodišnjim usporedbama
+
+Korpus objedinjuje dva vremenski odvojena toka prikupljanja (`data_source`): kontinuirani medijski monitoring (pretežno 2021.–2024.) i naknadno religijsko filtriranje (2024.–2026.). Digitalni seizmograf standardizira odstupanja **unutar svake godine**, pa je detekcija dnevnih vrhunaca otporna na tu promjenu; no **usporedbe apsolutnog volumena i frekvencija spominjanja između godina** (primjerice broj spominjanja pojedine ličnosti po godini) miješaju dva različito prikupljena razdoblja. Instagram i TikTok u korpus ulaze tek od 2024. Međugodišnje razlike stoga treba tumačiti oprezno, uvjetovano tokom prikupljanja i platformom.
+:::
+
 ---
 
 ## Digitalni seizmograf kao instrument detekcije najbitnijih događaja

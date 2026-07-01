@@ -7,6 +7,7 @@ project:
   # (CLAUDE.local.md, MEMORY.md, WORKFLOW_SUGGESTIONS*.md …) and the design/ mockup
   # into the published docs/.
   render:
+    - index.qmd
     - pages/**/*.qmd
 
 website:
@@ -15,15 +16,15 @@ website:
   navbar:
     left:
       - text: "Osnovne informacije"
-        href: pages/index.qmd
-      - text: "Baza podataka"
-        href: pages/baza.qmd
+        href: index.qmd
       - text: "O projektu"
         href: pages/about.qmd
-      - text: "Projektni raspored"
-        href: pages/schedule.qmd
+      - text: "Baza podataka"
+        href: pages/baza.qmd
       - text: "Mapa medijskog prostora"
         menu:
+          - text: "Pregled mapa"
+            href: pages/mapa/index.qmd
           - text: "Mapa ekosustava"
             href: pages/mapa/mapa.qmd
           - text: "Tematske struje"
@@ -32,6 +33,8 @@ website:
             href: pages/mapa/diskurs.qmd
           - text: "Fokus na događaje i kampanje"
             href: pages/mapa/događaji.qmd
+          - text: "Evolucija ekosustava"
+            href: pages/mapa/evolucija.qmd
       - text: "Tematska istraživanja"
         menu:
           - text: "Analiza self-help sadržaja na YouTube-u"
@@ -44,6 +47,8 @@ website:
             href: pages/studije/katolicko-obrazovanje.qmd
           - text: "Prikazivanje katoličkih svetaca i svetica"
             href: pages/studije/katolicki-sveci-i-svetice.qmd
+      - text: "Projektni raspored"
+        href: pages/schedule.qmd
       - text: "Obavijesti"
         href: pages/news.qmd
       - text: "Resursi"

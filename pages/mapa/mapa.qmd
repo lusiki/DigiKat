@@ -70,6 +70,12 @@ Pod **volumenom** podrazumijevamo ukupan broj objava, što reflektira produktivn
 
 :::
 
+::: {.callout-warning}
+## Promjena metode prikupljanja (oko 2024.) — oprez pri čitanju vremenskih trendova
+
+Korpus objedinjuje dva vremenski odvojena toka prikupljanja (`data_source`): kontinuirani medijski monitoring, koji pokriva pretežno razdoblje 2021.–2024., i naknadno religijsko filtriranje, koje pokriva 2024.–2026. Kako se metoda prikupljanja mijenja oko 2024., **apsolutni volumen i udjeli po godinama nisu izravno usporedivi kroz cijelo razdoblje** — izražen porast broja objava od 2024./2025. dobrim je dijelom posljedica šireg zahvata prikupljanja, a ne nužno porasta medijske pažnje. Instagram i TikTok u korpus ulaze tek od 2024. Međugodišnje trendove stoga valja tumačiti oprezno, uvjetovano tokom prikupljanja i platformom; uz to, 2026. je u korpusu nepotpuna godina.
+:::
+
 
 
 
@@ -201,7 +207,7 @@ Razumijevanje katoličkog medijskog ekosustava počinje analizom glavnih digital
 
 ## Distribucija sadržaja po platformama
 
-Grafikon koji slijedi prikazuje apsolutnu prevlast tradicionalnih web portala kao glavnih proizvođača sadržaja. Kroz sve promatrane godine web generira znatno više objava od svih ostalih platformi zajedno. Istovremeno je primjetan kontinuirani rast volumena sadržaja na YouTubeu, što upućuje na sve veću važnost video formata u komunikacijskim strategijama katoličkih kreatora.
+Grafikon koji slijedi prikazuje apsolutnu prevlast tradicionalnih web portala kao glavnih proizvođača sadržaja. Kroz sve promatrane godine web generira znatno više objava od svih ostalih platformi zajedno. Istovremeno je primjetan rast volumena sadržaja na YouTubeu, što upućuje na sve veću važnost video formata u komunikacijskim strategijama katoličkih kreatora — pri čemu dio međugodišnjeg rasta valja pripisati i promjeni metode prikupljanja (vidi napomenu iznad), a ne isključivo porastu produkcije.
 
 ```{r}
 #| label: plot-volume

@@ -6,7 +6,7 @@
 #
 # Run from the REPO ROOT:   Rscript R/03_aggregate.R
 # Reads:  data/merged_comprehensive.rds  (master; gitignored)
-# Writes: data/processed/{platform_summary, proportions_summary, source_summary,
+# Writes: data/processed/{platform_summary, proportions_summary, platform_monthly, source_summary,
 #         top_sources_by_year, top_{web,youtube,facebook}_sources, {web,youtube,facebook}_actors}.rds
 #
 # Scope: corpus span 2021–2026, ALL source types present in the master
@@ -64,6 +64,24 @@ proportions_summary <- platform_summary %>%
   ungroup()
 saveRDS(proportions_summary, file.path(processed_dir, "proportions_summary.rds"))
 
+# 2b. platform_monthly (year-month × SOURCE_TYPE) ----------------------------
+# Monthly rollup for the longitudinal map (pages/mapa/evolucija.qmd) — enables the
+# annual-rhythm/seasonality view. NB: master DATE is a CHARACTER ISO date ("YYYY-MM-DD"),
+# NOT a Date object — so floor to month via the "YYYY-MM" prefix (format(DATE, ...) on a
+# character vector would misread the pattern as `trim=` and error). Surgical by design:
+# this does NOT touch the shared `dta`, so the 10 existing aggregates are unchanged.
+# Page only READS this; never written at render time.
+platform_monthly <- dta %>%
+  mutate(month = as.Date(paste0(substr(DATE, 1, 7), "-01"))) %>%
+  group_by(month, SOURCE_TYPE) %>%
+  summarise(
+    total_posts        = n(),
+    total_interactions = sum(INTERACTIONS, na.rm = TRUE),
+    total_reach        = sum(REACH, na.rm = TRUE),
+    .groups = "drop"
+  )
+saveRDS(platform_monthly, file.path(processed_dir, "platform_monthly.rds"))
+
 # 3. source_summary & top_sources_by_year ------------------------------------
 source_summary <- dta %>%
   filter(!is.na(FROM)) %>%
@@ -119,4 +137,4 @@ for (pl in c("web", "youtube", "facebook")) {
   saveRDS(get_top_actors(dta, pl), file.path(processed_dir, sprintf("%s_actors.rds", pl)))
 }
 
-message("Done. Wrote 10 aggregates to ", processed_dir, "/")
+message("Done. Wrote 11 aggregates to ", processed_dir, "/")
