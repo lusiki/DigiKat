@@ -199,6 +199,12 @@ facebook_actors         <- readRDS("../../data/processed/facebook_actors.rds")
 
 # Paleta boja platformi — usklađena s dizajnom (definirana u R/theme_digikat.R)
 platform_colors <- dk_platform_colors
+
+# Fiksni redoslijed platformi, isti u svim godinama/panelima (obrnut redoslijed
+# dk_platform_colors, tako da najstarije/dominantne platforme završe na vrhu
+# grafikona); nove platforme (Instagram, TikTok) dodaju se na kraj popisa, a ne
+# mijenjaju poredak postojećih.
+platform_levels <- rev(names(dk_platform_colors))
 ```
 
 # Topografija digitalnog prostora
@@ -216,8 +222,7 @@ Grafikon koji slijedi prikazuje apsolutnu prevlast tradicionalnih web portala ka
 
 plot_volume <- platform_summary %>%
   filter(!is.na(SOURCE_TYPE)) %>%
-  arrange(year, total_posts) %>%
-  mutate(SOURCE_TYPE_ordered = factor(SOURCE_TYPE, levels = unique(SOURCE_TYPE))) %>%
+  mutate(SOURCE_TYPE_ordered = factor(SOURCE_TYPE, levels = platform_levels)) %>%
   ggplot(aes(x = total_posts, y = SOURCE_TYPE_ordered, fill = SOURCE_TYPE)) +
   geom_col() +
   geom_text(aes(label = comma(total_posts, accuracy = 1, big.mark = ".")), hjust = -0.1, size = 4, color = dk_col$ink) +
@@ -236,7 +241,7 @@ plot_volume <- platform_summary %>%
     subtitle = "",
     x = "Ukupan broj objava (u tisućama)",
     y = "Tip platforme",
-    caption = "Napomena: Stupci su sortirani po volumenu."
+    caption = "Napomena: Platforme su u svakoj godini prikazane istim redoslijedom. Novije platforme (Instagram, TikTok) navedene su na kraju popisa."
   )
 
 print(plot_volume)
@@ -256,8 +261,7 @@ Iako web i dalje vodi u apsolutnom iznosu interakcija, YouTube i Facebook zauzim
 plot_interactions <- platform_summary %>%
   filter(!is.na(SOURCE_TYPE)) %>%
   filter(total_interactions > 0) %>%
-  arrange(year, total_interactions) %>%
-  mutate(SOURCE_TYPE_ordered = factor(SOURCE_TYPE, levels = unique(SOURCE_TYPE))) %>%
+  mutate(SOURCE_TYPE_ordered = factor(SOURCE_TYPE, levels = platform_levels)) %>%
   ggplot(aes(x = total_interactions, y = SOURCE_TYPE_ordered, fill = SOURCE_TYPE)) +
   geom_col() +
   geom_text(aes(label = comma(total_interactions, accuracy = 1, big.mark = ".")), hjust = -0.1, size = 4, color = dk_col$ink) +
@@ -275,7 +279,7 @@ plot_interactions <- platform_summary %>%
     title = "Ukupan broj interakcija po platformama (2021.–2026.)",
     x = "Interakcije (u milijunima)",
     y = "Tip platforme",
-    caption = "Napomena: Stupci su sortirani po interakcijama. Prikazane su samo platforme s više od 0 interakcija."
+    caption = "Napomena: Platforme su prikazane istim redoslijedom kao u prethodnom grafikonu, a novije platforme (Instagram, TikTok) nalaze se na kraju popisa. Prikazane su samo platforme s više od 0 interakcija."
   )
 
 print(plot_interactions)

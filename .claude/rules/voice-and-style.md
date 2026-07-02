@@ -82,6 +82,11 @@ with any L3 conflict-strategy group — give the L3 group a distinct name and st
 - **Approximation:** `≈` in display chrome, *oko* in prose. `≥` is fine for the inclusion rule (*"≥2 podudaranja"*).
 
 ## 8. Punctuation & typography
+- **Don't stack connectors.** At most **one** em-dash aside per paragraph, and never pair an em dash with a
+  semicolon in the same paragraph. Default to a full stop over `;` — reserve the semicolon for a single genuinely
+  tight coordinate clause, not a habitual paragraph joiner. If a sentence needs two dashes (or a dash plus a
+  semicolon) to hold together, it's doing too much — split it into two plain sentences instead. (Incident:
+  the `mapa/index.qmd` lead packed two em dashes and a semicolon into two sentences — reworked to zero.)
 - **Em dash `—` (spaced)** — appositives, title/subtitle joins, parenthetical asides.
 - **En dash `–`** — ranges only (`2021.–2025.`, `267–297`).
 - **Hyphen `-`** — compounds only; **hyphenate paired adjectives consistently** (*društveno-politički*, *ekumensko-politički*).
@@ -119,3 +124,4 @@ sentence per distribution.
 5. Right person for the page class; no leftover placeholder text; no marketing hype / jargon-fog.
 6. Every figure/table/code block has a Croatian framing sentence; analytical pages follow the §9 spine.
 7. Links relative & working; `„…"` quotes; no decorative emoji; proofread.
+8. No stacked connectors: ≤1 em dash per paragraph, never an em dash + semicolon together, `;` used sparingly.
