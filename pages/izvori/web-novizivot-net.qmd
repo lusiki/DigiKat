@@ -1,0 +1,54 @@
+---
+title: "novizivot.net"
+subtitle: "Web · Divovi"
+date: last-modified
+categories: ["Katalog izvora", "Web"]
+---
+
+Ova stranica sažima profil izvora **novizivot.net** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+
+## Što je
+
+Novi život — katolički portal
+
+## Profil
+
+Ključni pokazatelji ovog izvora u korpusu:
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">7.496</div>
+<div class="metric-label">Objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">3.796.197</div>
+<div class="metric-label">Interakcija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">46.764.999</div>
+<div class="metric-label">Doseg</div>
+</div>
+</div>
+
+Po volumenu objava, novizivot.net je na **9. mjestu** od 19 praćenih izvora na platformi Web. Prosječno ostvaruje **506 interakcija po objavi**.
+
+## Tipologija
+
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), novizivot.net pripada skupini **Divovi**: visok doseg i visok angažman — među vodećim akterima ekosustava.
+
+Uređivačka oznaka: **konfesionalni izvor** *(predloženo — potvrđuje PI)*
+
+## Povezano
+
+- [Pregled platforme Web](platforma-web.html)
+- Srodni akteri: [24sata.hr](web-24sata-hr.html), [tportal.hr](web-tportal-hr.html), [jutarnji.hr](web-jutarnji-hr.html)
+- [Katalog izvora — sve platforme](index.html)
+
+## Izvori podataka
+
+Podaci: `data/processed/web_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-02).
+
+::: {.callout-warning}
+Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno.
+:::
+

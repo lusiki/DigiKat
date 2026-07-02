@@ -1,0 +1,54 @@
+---
+title: "BOŽANSKA LJUBAV"
+subtitle: "YouTube · Graditelji zajednica"
+date: last-modified
+categories: ["Katalog izvora", "YouTube"]
+---
+
+Ova stranica sažima profil izvora **BOŽANSKA LJUBAV** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+
+## Što je
+
+Božanska ljubav — katolički YouTube kanal
+
+## Profil
+
+Ključni pokazatelji ovog izvora u korpusu:
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">152</div>
+<div class="metric-label">Objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">144.742</div>
+<div class="metric-label">Interakcija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">1.244.769</div>
+<div class="metric-label">Doseg</div>
+</div>
+</div>
+
+Po volumenu objava, BOŽANSKA LJUBAV je na **14. mjestu** od 19 praćenih izvora na platformi YouTube. Prosječno ostvaruje **952 interakcija po objavi**.
+
+## Tipologija
+
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), BOŽANSKA LJUBAV pripada skupini **Graditelji zajednica**: nizak doseg uz vrlo visok angažman — gradi dubok odnos s vjernom publikom.
+
+Uređivačka oznaka: **konfesionalni izvor** *(predloženo — potvrđuje PI)*
+
+## Povezano
+
+- [Pregled platforme YouTube](platforma-youtube.html)
+- Srodni akteri: [budiFRAjer](youtube-budifrajer.html), [Majko Marijo](youtube-majko-marijo.html), [Bog Je Tu](youtube-bog-je-tu.html)
+- [Katalog izvora — sve platforme](index.html)
+
+## Izvori podataka
+
+Podaci: `data/processed/youtube_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-02).
+
+::: {.callout-warning}
+Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno.
+:::
+

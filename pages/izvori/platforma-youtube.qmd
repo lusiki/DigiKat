@@ -1,0 +1,26 @@
+---
+title: "Izvori — YouTube"
+subtitle: "Praćeni akteri na platformi YouTube"
+date: last-modified
+categories: ["Katalog izvora", "YouTube"]
+---
+
+Ova stranica okuplja praćene izvore na platformi **YouTube** iz **Kataloga izvora**. Tipologija je izračunata jednako kao u [Mapi ekosustava](../mapa/mapa.html) — podjelom po medijanu angažmana i dosega. Poredano po volumenu objava.
+
+| Izvor | Tipologija | Objava | Interakcija | Doseg |
+|---|---|---:|---:|---:|
+| [pulherissimus](youtube-pulherissimus.html) | Divovi | 6.042 | 1.621.368 | 18.032.439 |
+| [LaudatoTV](youtube-laudatotv.html) | Divovi | 4.064 | 170.409 | 6.510.097 |
+| [Hrana za dušu](youtube-hrana-za-dusu.html) | Divovi | 3.457 | 462.317 | 8.035.216 |
+| [Dijete Vjere](youtube-dijete-vjere.html) | Graditelji zajednica | 1.934 | 444.695 | 3.444.021 |
+| [Pod Smokvom](youtube-pod-smokvom.html) | Graditelji zajednica | 1.522 | 589.626 | 3.889.465 |
+| [Nova Eva](youtube-nova-eva.html) | Megafoni | 667 | 94.921 | 4.147.258 |
+| [Stopama Padre Pija](youtube-stopama-padre-pija.html) | Specijalizirani akteri | 407 | 104.504 | 1.040.141 |
+| [RTL](youtube-rtl.html) | Specijalizirani akteri | 373 | 47.613 | 3.639.591 |
+| [Majko Marijo](youtube-majko-marijo.html) | Divovi | 333 | 266.210 | 9.386.044 |
+| [BOŽANSKA LJUBAV](youtube-bozanska-ljubav.html) | Graditelji zajednica | 152 | 144.742 | 1.244.769 |
+| [budiFRAjer](youtube-budifrajer.html) | Specijalizirani akteri | 152 | 118.891 | 3.397.741 |
+| [Bog Je Tu](youtube-bog-je-tu.html) | Specijalizirani akteri | 93 | 93.696 | 3.578.014 |
+
+[Natrag na katalog izvora](index.html) · [Mapa ekosustava](../mapa/mapa.html)
+

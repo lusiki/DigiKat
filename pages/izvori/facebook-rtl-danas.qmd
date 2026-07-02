@@ -1,0 +1,54 @@
+---
+title: "RTL Danas"
+subtitle: "Facebook · Megafoni"
+date: last-modified
+categories: ["Katalog izvora", "Facebook"]
+---
+
+Ova stranica sažima profil izvora **RTL Danas** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+
+## Što je
+
+RTL Danas — informativna emisija (Facebook)
+
+## Profil
+
+Ključni pokazatelji ovog izvora u korpusu:
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">798</div>
+<div class="metric-label">Objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">196.740</div>
+<div class="metric-label">Interakcija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">23.310.707</div>
+<div class="metric-label">Doseg</div>
+</div>
+</div>
+
+Po volumenu objava, RTL Danas je na **11. mjestu** od 19 praćenih izvora na platformi Facebook. Prosječno ostvaruje **247 interakcija po objavi**.
+
+## Tipologija
+
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), RTL Danas pripada skupini **Megafoni**: visok doseg uz nizak angažman — sadržaj doseže široku publiku bez intenzivne interakcije.
+
+Uređivačka oznaka: **sekularni izvor** *(predloženo — potvrđuje PI)*
+
+## Povezano
+
+- [Pregled platforme Facebook](platforma-facebook.html)
+- Srodni akteri: [Gospa](facebook-gospa.html), [Net.hr](facebook-net-hr.html), [Slobodna Dalmacija](facebook-slobodna-dalmacija.html)
+- [Katalog izvora — sve platforme](index.html)
+
+## Izvori podataka
+
+Podaci: `data/processed/facebook_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-02).
+
+::: {.callout-warning}
+Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno.
+:::
+

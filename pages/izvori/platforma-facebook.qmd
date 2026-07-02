@@ -1,0 +1,31 @@
+---
+title: "Izvori — Facebook"
+subtitle: "Praćeni akteri na platformi Facebook"
+date: last-modified
+categories: ["Katalog izvora", "Facebook"]
+---
+
+Ova stranica okuplja praćene izvore na platformi **Facebook** iz **Kataloga izvora**. Tipologija je izračunata jednako kao u [Mapi ekosustava](../mapa/mapa.html) — podjelom po medijanu angažmana i dosega. Poredano po volumenu objava.
+
+| Izvor | Tipologija | Objava | Interakcija | Doseg |
+|---|---|---:|---:|---:|
+| [VJERA U NAMA †](facebook-vjera-u-nama.html) | Graditelji zajednica | 5.326 | 255.466 | 18.600.039 |
+| [Bitno.net](facebook-bitno-net.html) | Divovi | 4.132 | 698.950 | 60.096.508 |
+| [Radio Marija Hrvatska](facebook-radio-marija-hrvatska.html) | Specijalizirani akteri | 3.481 | 191.275 | 11.052.053 |
+| [Laudato](facebook-laudato.html) | Divovi | 2.512 | 1.081.728 | 66.978.538 |
+| [Zagrebačka nadbiskupija](facebook-zagrebacka-nadbiskupija.html) | Graditelji zajednica | 2.251 | 285.393 | 12.957.939 |
+| [Kapljice ljubavi Božje](facebook-kapljice-ljubavi-bozje.html) | Graditelji zajednica | 1.894 | 399.514 | 22.119.358 |
+| [Kraljica Mira](facebook-kraljica-mira.html) | Specijalizirani akteri | 1.456 | 167.054 | 22.751.772 |
+| [VJERA](facebook-vjera.html) | Graditelji zajednica | 1.298 | 405.078 | 20.100.622 |
+| [Slobodna Dalmacija](facebook-slobodna-dalmacija.html) | Megafoni | 992 | 142.757 | 23.812.122 |
+| [Gospa](facebook-gospa.html) | Graditelji zajednica | 873 | 214.302 | 11.249.334 |
+| [RTL Danas](facebook-rtl-danas.html) | Megafoni | 798 | 196.740 | 23.310.707 |
+| [Net.hr](facebook-net-hr.html) | Megafoni | 764 | 145.782 | 36.039.046 |
+| [DNEVNIK.hr](facebook-dnevnik-hr.html) | Megafoni | 730 | 180.136 | 39.443.940 |
+| [Večernji list](facebook-vecernji-list.html) | Megafoni | 692 | 126.214 | 34.625.006 |
+| [24sata](facebook-24sata.html) | Divovi | 630 | 207.441 | 64.800.408 |
+| [Index.hr](facebook-index-hr.html) | Divovi | 365 | 227.035 | 29.604.869 |
+| [Jutarnji](facebook-jutarnji.html) | Specijalizirani akteri | 326 | 89.926 | 17.547.496 |
+
+[Natrag na katalog izvora](index.html) · [Mapa ekosustava](../mapa/mapa.html)
+

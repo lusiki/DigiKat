@@ -1,0 +1,42 @@
+---
+title: "Tko govori iz katoličkoga medijskog prostora"
+subtitle: "Narativni okviri razlikuju službena crkvena glasila od katolički orijentiranih portala"
+date: last-modified
+categories: ["Tematsko istraživanje", "U recenziji"]
+---
+
+Rad istražuje narativne okvire u hrvatskim katoličkim web medijima (2021.–2026.) i pokazuje da
+katolički medijski prostor nije narativno jedinstven — službena crkvena glasila i katolički
+orijentirani portali koriste kvalitativno različite komunikacijske strategije.
+
+## Istraživačko pitanje
+
+Razlikuju li se katolički mediji od ostalih medijskih tipova u uporabi narativnih okvira nakon
+kontrole duljine članka i razdoblja objave, koje se kombinacije okvira udružuju u prepoznatljive
+interpretativne pakete te u kojoj se mjeri razlikuju narativne strategije službenih crkvenih medija
+(npr. IKA, Glas Koncila) od katolički orijentiranih portala bez izravne uredničke odgovornosti prema
+crkvenoj hijerarhiji (npr. narod.hr, dnevno.hr).
+
+## Podaci i metode
+
+Korpus obuhvaća 443.138 web članaka iz 3.170 izvora (2021.–2026.), od čega 92.915 članaka iz
+katoličkih medija podijeljenih u četiri potkategorije. Osam narativnih okvira (moralno propadanje,
+vanjska prijetnja, institucionalno nepovjerenje, tradicionalne vrijednosti, suverenitet, zavjera,
+obrana vjere, medijska kritika) identificira se prilagodljivim rječničkim postupkom osjetljivim na
+hrvatsku morfologiju, validiranim na ručno kodiranom uzorku od 200 članaka.
+
+## Ključni nalaz
+
+Katolički mediji sustavno više koriste okvire obrane vjere, moralnog propadanja i tradicionalnih
+vrijednosti od ostalih medija, dok konspirativni i antagonistički okviri u agregiranom katoličkom
+prostoru nisu povišeni. Unutar samog katoličkog prostora katolički orijentirani portali znatno češće
+aktiviraju okvire zavjere, medijske kritike, suvereniteta i vanjske prijetnje od službenih crkvenih
+medija — a, suprotno očekivanju, tradicionalne vrijednosti češće aktiviraju upravo službeni crkveni
+mediji. Nalaz upućuje na to da orijentirani portali konzervativnu poziciju prevode u politički i
+antagonistički rječnik, dok službeni mediji zadržavaju izvorni jezik tradicije.
+
+## Status
+
+U recenziji (anonimizirano za potrebe recenzijskog postupka). Pun tekst dostupan je na
+[Poveznica](https://raw.githack.com/lusiki/Church-and-dezinfo/main/papers/03_framing_paper_2.html).
+Dio drugog izlaznog toka projekta (tematske studije i radovi) — vidi [Projektni raspored](../schedule.qmd).

@@ -1,0 +1,38 @@
+---
+title: "Medijska zastupljenost redovničkih zajednica"
+subtitle: "Ekonomija pažnje, spolna asimetrija i tipologija portala u izvještavanju o redovnicima i redovnicama"
+date: last-modified
+categories: ["Tematsko istraživanje", "Nacrt dostupan"]
+---
+
+Istraživanje analizira kako hrvatski digitalni mediji prikazuju redovničke zajednice kroz teorijski
+okvir ekonomije pažnje, testirajući devet hipoteza grupiranih u tri tematske cjeline.
+
+## Istraživačko pitanje
+
+Dobiva li mali broj redova većinu medijske pažnje, postoje li rodne asimetrije u izvještavanju o
+muškim i ženskim zajednicama te razlikuju li se obrasci izvještavanja između mainstream, religijskih,
+regionalnih i lokalnih portala. Devet hipoteza pokriva tri bloka: koncentraciju pažnje, spolne
+razlike i tipologiju portala.
+
+## Podaci i metode
+
+Iz DigiKat korpusa (2021.–2025.) identificirane su objave o 30-ak redovničkih zajednica pomoću
+rječnika specifičnih i generičkih pojmova (npr. franjevac, isusovac, benediktinka, časna sestra),
+grupiranih u obitelji redova i prema spolu. Portali su klasificirani u četiri tipa (mainstream
+nacionalni, religijski katolički, regionalni, lokalni). Koncentracija se mjeri Gini koeficijentom,
+Lorenzovom krivuljom i HHI indeksom; razlike u proporcijama i distribucijama testiraju se hi-kvadrat
+i Mann-Whitney U testovima.
+
+## Ključni nalaz
+
+Medijska pažnja nije ravnomjerno raspoređena — mali broj redova i portala kontrolira većinu
+vidljivosti, u skladu s predviđanjima ekonomije pažnje. Postoje rodne asimetrije koje odražavaju šire
+društvene obrasce u korist muških zajednica. Četiri tipa portala pokazuju različite uredničke logike
+i tonalitet u izvještavanju o redovničkim zajednicama.
+
+## Status
+
+Nacrt dostupan. Pun tekst dostupan je na
+[Poveznica](https://raw.githack.com/lusiki/Redovnicke-zajednice/main/R/analysis_v3.html).
+Dio drugog izlaznog toka projekta (tematske studije i radovi) — vidi [Projektni raspored](../schedule.qmd).

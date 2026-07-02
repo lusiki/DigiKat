@@ -1,0 +1,39 @@
+---
+title: "Katolički influenceri i institucionalni deficit pažnje"
+subtitle: "Strategije privlačenja pažnje u hrvatskom religijskom digitalnom prostoru"
+date: last-modified
+categories: ["Tematsko istraživanje", "Nacrt dostupan"]
+---
+
+Studija uspoređuje ekonomiju pažnje katoličkih influencera s digitalnom učinkovitošću institucionalnih
+crkvenih aktera, testirajući pet hipoteza proizašlih iz teorije ekonomije pažnje.
+
+## Istraživačko pitanje
+
+Postižu li katolički influenceri (digitalni akteri koji grade osobni ili zajednički brend oko
+religijskog sadržaja) veće stope angažmana od institucionalnih crkvenih komunikatora, slijedi li
+pažnja među njima distribuciju zakona potencije, razlikuju li se platformske strategije i tematska
+usmjerenost dvaju tipova aktera te predviđaju li uspjeh influencera učestalost objavljivanja i izbor
+platforme, a ne klerički status.
+
+## Podaci i metode
+
+Analiza koristi DigiKat bazu (preko 600.000 objava, 2021.–2025.) uz klasifikaciju aktera na
+influencere i institucionalne komunikatore. Nejednakost pažnje mjeri se Gini koeficijentom i
+regresijom potencijskog zakona, platformske strategije Cramerovim V, a tematska diferencijacija
+Jensen-Shannonovom divergencijom između distribucija tema dvaju tipova aktera.
+
+## Ključni nalaz
+
+Pažnja među katoličkim influencerima slijedi distribuciju potencijskog zakona s ekstremnom
+koncentracijom. Influenceri postižu značajno više stope angažmana od institucionalnih aktera, a
+platformske strategije dvaju tipova komunikatora znatno se razlikuju — influenceri su usmjereniji na
+društvene mreže, institucije zadržavaju jaču web prisutnost. Obrasci tematske specijalizacije otkrivaju
+različite niše: influenceri se fokusiraju na devocijski i inspirativni sadržaj, institucije na vijesti
+i administrativne informacije.
+
+## Status
+
+Nacrt dostupan. Pun tekst dostupan je na
+[Poveznica](https://lusiki.github.io/Katolicki_Influenceri/code/analysis_hr.html).
+Dio drugog izlaznog toka projekta (tematske studije i radovi) — vidi [Projektni raspored](../schedule.qmd).

@@ -1,0 +1,42 @@
+---
+title: "Tržišta pažnje u religijskim digitalnim medijima"
+subtitle: "Ekonomija pažnje primijenjena na cjelokupni DigiKat korpus — koncentracija, modaliteti angažmana i liturgijski ritam"
+date: last-modified
+categories: ["Tematsko istraživanje", "Nacrt u izradi"]
+---
+
+Rad primjenjuje okvir ekonomije pažnje na cjelokupni DigiKat korpus, nudeći sustavno mapiranje
+hrvatskog katoličkog digitalnog ekosustava kroz pet hipoteza o distribuciji i dinamici pažnje.
+
+## Istraživačko pitanje
+
+Kako se pažnja publike raspodjeljuje između institucionalnih i neovisnih katoličkih komunikatora,
+kakvu ulogu imaju emocionalni i vremenski (liturgijski) faktori u dinamici angažmana te razlikuje li
+se stupanj koncentracije pažnje ovisno o platformi. Rad testira pet hipoteza: distribuciju pažnje po
+zakonu potencije, kvalitativno drugačije modalitete angažmana institucionalnih aktera, spregu
+sentimenta i pažnje, utjecaj katoličkog liturgijskog kalendara te platformski specifičnu
+koncentraciju.
+
+## Podaci i metode
+
+Analiza obuhvaća 608.879 objava (2021.–2025.) na 8 platformi, uz klasifikaciju izvora u deset
+kategorija aktera (institucije, biskupije i župe, nezavisni mediji, redovničke zajednice, karizmatske
+zajednice, pojedinačni svećenici, mladežne organizacije, akademske institucije, laički influenceri i
+ostalo). Koriste se Gini koeficijent i Lorenzova krivulja za mjerenje koncentracije, dekompozicija
+Facebook angažmana na afektivni, deliberativni i distribucijski modalitet, Kruskal-Wallisov test za
+spregu sentimenta i angažmana te hijerarhijska regresija za liturgijsko vremensko strukturiranje.
+
+## Ključni nalaz
+
+Pažnja je ekstremno koncentrirana (Gini = 0,982): vodećih 10 % izvora akumulira 98,7 % ukupnog
+angažmana. Institucionalni akteri ne privlače samo manje pažnje, nego kvalitativno drugačiju vrstu
+pažnje — s većim udjelom komentara nasuprot lajkovima. Negativni sentiment je povezan s višim
+angažmanom, ali ta povezanost je izraženija kod neinstitucionalnih aktera. Katolički liturgijski
+kalendar dodatno strukturira ritam objavljivanja povrh sekularnih obrazaca, dok se koncentracija
+pažnje razlikuje po platformama bez jasnog obrasca prema stupnju algoritamskog kuriranja.
+
+## Status
+
+Nacrt (v7) u izradi — autori Luka Šikić, Petra Palić i Siniša Kovačić. Pun tekst dostupan je na
+[Poveznica](https://raw.githack.com/lusiki/Mapping-Catholic-Digital-Media-Space/main/paper/hr/drafts/attention_markets_paper_hr_v7.html).
+Dio drugog izlaznog toka projekta (tematske studije i radovi) — vidi [Projektni raspored](../schedule.qmd).

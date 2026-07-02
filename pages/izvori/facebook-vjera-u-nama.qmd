@@ -1,0 +1,54 @@
+---
+title: "VJERA U NAMA †"
+subtitle: "Facebook · Graditelji zajednica"
+date: last-modified
+categories: ["Katalog izvora", "Facebook"]
+---
+
+Ova stranica sažima profil izvora **VJERA U NAMA †** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+
+## Što je
+
+Vjera u nama — katolička Facebook zajednica
+
+## Profil
+
+Ključni pokazatelji ovog izvora u korpusu:
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">5.326</div>
+<div class="metric-label">Objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">255.466</div>
+<div class="metric-label">Interakcija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">18.600.039</div>
+<div class="metric-label">Doseg</div>
+</div>
+</div>
+
+Po volumenu objava, VJERA U NAMA † je na **1. mjestu** od 19 praćenih izvora na platformi Facebook. Prosječno ostvaruje **48 interakcija po objavi**.
+
+## Tipologija
+
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), VJERA U NAMA † pripada skupini **Graditelji zajednica**: nizak doseg uz vrlo visok angažman — gradi dubok odnos s vjernom publikom.
+
+Uređivačka oznaka: **konfesionalni izvor** *(predloženo — potvrđuje PI)*
+
+## Povezano
+
+- [Pregled platforme Facebook](platforma-facebook.html)
+- Srodni akteri: [Bitno.net](facebook-bitno-net.html), [Radio Marija Hrvatska](facebook-radio-marija-hrvatska.html), [Laudato](facebook-laudato.html)
+- [Katalog izvora — sve platforme](index.html)
+
+## Izvori podataka
+
+Podaci: `data/processed/facebook_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-02).
+
+::: {.callout-warning}
+Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno.
+:::
+

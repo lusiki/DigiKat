@@ -1,0 +1,54 @@
+---
+title: "Stopama Padre Pija"
+subtitle: "YouTube · Specijalizirani akteri"
+date: last-modified
+categories: ["Katalog izvora", "YouTube"]
+---
+
+Ova stranica sažima profil izvora **Stopama Padre Pija** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+
+## Što je
+
+Stopama Padre Pija — katolički YouTube kanal
+
+## Profil
+
+Ključni pokazatelji ovog izvora u korpusu:
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">407</div>
+<div class="metric-label">Objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">104.504</div>
+<div class="metric-label">Interakcija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">1.040.141</div>
+<div class="metric-label">Doseg</div>
+</div>
+</div>
+
+Po volumenu objava, Stopama Padre Pija je na **9. mjestu** od 19 praćenih izvora na platformi YouTube. Prosječno ostvaruje **257 interakcija po objavi**.
+
+## Tipologija
+
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Stopama Padre Pija pripada skupini **Specijalizirani akteri**: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.
+
+Uređivačka oznaka: **konfesionalni izvor** *(predloženo — potvrđuje PI)*
+
+## Povezano
+
+- [Pregled platforme YouTube](platforma-youtube.html)
+- Srodni akteri: [RTL](youtube-rtl.html), [Nova Eva](youtube-nova-eva.html), [Majko Marijo](youtube-majko-marijo.html)
+- [Katalog izvora — sve platforme](index.html)
+
+## Izvori podataka
+
+Podaci: `data/processed/youtube_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-02).
+
+::: {.callout-warning}
+Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno.
+:::
+

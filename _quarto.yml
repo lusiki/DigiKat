@@ -35,18 +35,22 @@ website:
             href: pages/mapa/događaji.qmd
           - text: "Evolucija ekosustava"
             href: pages/mapa/evolucija.qmd
+          - text: "Katalog izvora"
+            href: pages/izvori/index.qmd
+          - text: "Mreža izvora"
+            href: pages/izvori/mreza.qmd
       - text: "Tematska istraživanja"
         menu:
-          - text: "Analiza self-help sadržaja na YouTube-u"
-            href: pages/studije/self-help-youtube.qmd
-          - text: "Hodočasnički turizam"
+          - text: "Tržišta pažnje u religijskim digitalnim medijima"
+            href: pages/studije/trzista-paznje.qmd
+          - text: "Memorijalni okvir hrvatskih katoličkih odredišta"
             href: pages/studije/hodocasnicki-turizam.qmd
-          - text: "Demokršćanstvo"
-            href: pages/studije/demokrscanstvo.qmd
-          - text: "Katoličko obrazovanje"
-            href: pages/studije/katolicko-obrazovanje.qmd
-          - text: "Prikazivanje katoličkih svetaca i svetica"
-            href: pages/studije/katolicki-sveci-i-svetice.qmd
+          - text: "Medijska zastupljenost redovničkih zajednica"
+            href: pages/studije/redovnicke-zajednice.qmd
+          - text: "Katolički influenceri i institucionalni deficit pažnje"
+            href: pages/studije/katolicki-influenceri.qmd
+          - text: "Tko govori iz katoličkoga medijskog prostora"
+            href: pages/studije/crkva-i-dezinformacije.qmd
       - text: "Projektni raspored"
         href: pages/schedule.qmd
       - text: "Obavijesti"

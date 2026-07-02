@@ -1,0 +1,54 @@
+---
+title: "caritas.hr"
+subtitle: "Web · Specijalizirani akteri"
+date: last-modified
+categories: ["Katalog izvora", "Web"]
+---
+
+Ova stranica sažima profil izvora **caritas.hr** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+
+## Što je
+
+Caritas — karitativna ustanova Katoličke crkve
+
+## Profil
+
+Ključni pokazatelji ovog izvora u korpusu:
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">225</div>
+<div class="metric-label">Objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">580.472</div>
+<div class="metric-label">Interakcija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">9.162.909</div>
+<div class="metric-label">Doseg</div>
+</div>
+</div>
+
+Po volumenu objava, caritas.hr je na **18. mjestu** od 19 praćenih izvora na platformi Web. Prosječno ostvaruje **2.580 interakcija po objavi**.
+
+## Tipologija
+
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), caritas.hr pripada skupini **Specijalizirani akteri**: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.
+
+Uređivačka oznaka: **konfesionalni izvor** *(predloženo — potvrđuje PI)*
+
+## Povezano
+
+- [Pregled platforme Web](platforma-web.html)
+- Srodni akteri: [mnovine.hr](web-mnovine-hr.html), [telegram.hr](web-telegram-hr.html), [dalmatinskiportal.hr](web-dalmatinskiportal-hr.html)
+- [Katalog izvora — sve platforme](index.html)
+
+## Izvori podataka
+
+Podaci: `data/processed/web_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-02).
+
+::: {.callout-warning}
+Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno.
+:::
+

@@ -1,0 +1,54 @@
+---
+title: "jutarnji.hr"
+subtitle: "Web · Divovi"
+date: last-modified
+categories: ["Katalog izvora", "Web"]
+---
+
+Ova stranica sažima profil izvora **jutarnji.hr** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+
+## Što je
+
+Jutarnji list — nacionalni dnevni news-portal
+
+## Profil
+
+Ključni pokazatelji ovog izvora u korpusu:
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">8.977</div>
+<div class="metric-label">Objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">1.638.768</div>
+<div class="metric-label">Interakcija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">81.193.581</div>
+<div class="metric-label">Doseg</div>
+</div>
+</div>
+
+Po volumenu objava, jutarnji.hr je na **7. mjestu** od 19 praćenih izvora na platformi Web. Prosječno ostvaruje **183 interakcija po objavi**.
+
+## Tipologija
+
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), jutarnji.hr pripada skupini **Divovi**: visok doseg i visok angažman — među vodećim akterima ekosustava.
+
+Uređivačka oznaka: **sekularni izvor** *(predloženo — potvrđuje PI)*
+
+## Povezano
+
+- [Pregled platforme Web](platforma-web.html)
+- Srodni akteri: [net.hr](web-net-hr.html), [24sata.hr](web-24sata-hr.html), [index.hr](web-index-hr.html)
+- [Katalog izvora — sve platforme](index.html)
+
+## Izvori podataka
+
+Podaci: `data/processed/web_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-02).
+
+::: {.callout-warning}
+Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno.
+:::
+
