@@ -1,0 +1,8 @@
+﻿register,n,pct,label
+cost_relig_life,194,37.3,Cost of religious life
+institution,179,34.4,Church-as-institution
+charity,87,16.7,Charity/relief
+devotional,26,5,Devotional
+justice,15,2.9,Structural/CST justice
+disputed,12,2.3,Disputed
+other,7,1.3,Other

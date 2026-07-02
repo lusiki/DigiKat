@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>paper_v1</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="PAPER_v1_files/libs/clipboard/clipboard.min.js"></script>
+<script src="PAPER_v1_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="PAPER_v1_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="PAPER_v1_files/libs/quarto-html/popper.min.js"></script>
+<script src="PAPER_v1_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="PAPER_v1_files/libs/quarto-html/anchor.min.js"></script>
+<link href="PAPER_v1_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="PAPER_v1_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="PAPER_v1_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="PAPER_v1_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="PAPER_v1_files/libs/bootstrap/bootstrap-bb462d781dde1847d9e3ccf7736099dd.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="costlier-candles-quiet-prophets-how-religion-meets-inflation-in-the-croatian-digital-media-space-20212026" class="level1">
+<h1>Costlier Candles, Quiet Prophets: How Religion Meets Inflation in the Croatian Digital Media Space, 2021–2026</h1>
+<p><strong>Luka Šikić</strong> Catholic University of Croatia (Hrvatsko katoličko sveučilište), Zagreb — Department of Communication Studies <em>DigiKat project. Working manuscript, first complete version (2026-07-01). Authorship and order to be finalized.</em></p>
+<hr>
+<section id="abstract" class="level2">
+<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
+<p>Catholic Social Teaching (CST) assigns the Church a distinctive voice in economic hardship: to name inflation as an injustice that falls hardest on the poor. We ask what that voice actually sounds like in a national digital media space during a cost-of-living shock. Using the DigiKat corpus — 710,307 religion-salient Croatian/Bosnian media posts (January 2021–June 2026) — we isolate every post that mentions inflation and, crucially, distinguish <em>genuine</em> religion–inflation linkage from incidental co-occurrence. Most co-mentions prove incidental; after coding 1,450 proximity-selected candidates with three independent annotators (inter-annotator agreement 0.97) and setting aside foreign-country inflation, a measured domestic core of <strong>520 posts</strong> remains — 0.07% of the (web-portal-dominated) corpus and 6.5% of inflation-mentioning posts. Within it, religion meets inflation overwhelmingly as an <strong>economic object</strong>: a macro-register combining <em>the rising cost of religious life</em> and <em>the Church-as-institution</em> accounts for ≈72% (individually 37% and 34%, an ordering within coding noise). <em>Charity</em> accounts for 17%, while the <strong>structural / CST-justice register is marginal</strong> — 3% under strict coding, at most ≈8% if latent structural framing in adjacent posts is counted. We formalize and evaluate four theory-derived expectations. Media inflation-attention is strongly <strong>price-coupled</strong> (H1 supported: Pearson r ≈ 0.73 with the Croatian HICP within a confound-free window, with a 2.4-fold jump above the ≈4% attention threshold), yet the religious justice voice does not fill that attention (P3 disconfirmed); framing is episodic rather than thematic (P4 supported). We argue that the justice-centred frame CST foregrounds has <strong>low visibility in the digital public sphere</strong> — the Church surfaces as an institution whose services became more expensive, not as a prophetic voice — while cautioning that media-visibility is a weak proxy for the institution’s conduct. Beyond the substantive finding, the paper offers a transferable methodological caution: in keyword-filtered corpora, co-occurrence is not engagement, and linkage must be measured, not counted.</p>
+<p><strong>Keywords:</strong> digital religion; inflation salience; Catholic Social Teaching; media framing; agenda-setting; Croatia; computational text analysis.</p>
+<hr>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
+<p>Between 2021 and 2026 Croatia lived through the sharpest cost-of-living shock in a generation, compounded by the adoption of the euro on 1 January 2023. Catholic Social Teaching has an unusually explicit stance on such moments: from the “preferential option for the poor” to Pope Francis’s “this economy kills” (<em>ova ekonomija ubija</em>), doctrine frames economic hardship as a <em>structural</em> injustice the Church is called to name on behalf of the vulnerable. In a country where the Catholic Church is a dominant cultural institution and operates one of Europe’s more developed religious media ecosystems, one might expect the digital public sphere to carry an audible religious-economic voice when prices spike.</p>
+<p>This paper asks a deliberately simple question: <strong>when inflation surfaces in religion-salient Croatian digital discourse, who carries it, and in what register?</strong> We do not assume the Church is loud on the economy; we measure whether it is, and how. The answer turns out to be less about prophecy than about price lists.</p>
+<p>Three contributions follow. Substantively, we provide the first measurement of the religious register of inflation discourse across an entire national digital media space, and document a gap between CST’s normative promise and observed practice. We combine this description with four theory-derived hypotheses and propositions (§2.4): one — that media inflation-attention tracks real prices — is tested quantitatively against the Harmonised Index of Consumer Prices (HICP) and supported, while the CST-derived expectation of a prophetic justice voice is evaluated and disconfirmed. Methodologically, we show that the naïve approach — counting posts where religion and inflation co-occur — overstates genuine engagement by roughly an order of magnitude (≈8,000 co-mentions versus 520 measured), and we demonstrate a validated pipeline for measuring linkage rather than co-occurrence.</p>
+</section>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">2. Background</h2>
+<p>The study sits at the intersection of three literatures that are each well developed but rarely meet.</p>
+<p><strong>Inflation salience and media agenda-setting.</strong> Public and media attention to inflation is non-linear: it stays flat until inflation crosses a threshold of roughly 2–4%, then jumps (Korenok, Munro &amp; Chen, 2026; Pfäuti, 2024). Coverage is less about the headline rate than about <em>who is hurt</em> and <em>which component</em> — the “heating or eating” framing of food versus energy (Champagne et al., 2024) — and the European Central Bank now maintains a dictionary-based media inflation-attention index (Aarab et al., 2025). Agenda-setting theory (McCombs &amp; Shaw, 1972) is the backdrop, with an open question of whether media <em>set</em> or merely <em>reflect</em> attention (Wlezien &amp; Soroka, 2024). This literature is almost entirely secular and Anglophone/euro-area; it says nothing about the religious media sphere as an inflation channel.</p>
+<p><strong>CST economic framing.</strong> The theological distinction between <em>charity</em> (relieving symptoms) and <em>justice</em> (changing structures) maps closely onto Iyengar’s (1991) episodic-versus-thematic framing and gives us a measurable construct. The structural critique is not only a Francis-era phenomenon (Benedict XVI, 2009; Francis, 2013). But existing studies examine secular press coverage of poverty, not religious media as the storyteller.</p>
+<p><strong>Croatian Catholic media</strong> are well studied on identity, nation, and culture-war themes, but their coverage of the economy has never been measured, still less linked to a live cost-of-living shock.</p>
+<p><strong>The gap — and a fourth, methodological one.</strong> No work has asked what register religion takes when it meets inflation in a whole national digital space. And studies of “religion and X” in large corpora routinely equate co-occurrence with engagement; we show below why that is unsafe here.</p>
+<section id="hypotheses-and-propositions" class="level3">
+<h3 class="anchored" data-anchor-id="hypotheses-and-propositions">2.4 Hypotheses and propositions</h3>
+<p>The study is primarily descriptive, but prior theory licenses explicit, testable expectations. We state two directional <strong>hypotheses</strong> — where theory predicts a direction and the data permit a quantitative test — and two theory-derived <strong>propositions</strong>, evaluated by pattern-matching against the coded evidence in the interpretive tradition (Yin, 2018).</p>
+<ul>
+<li><strong>H1 (attention–price coupling).</strong> From inflation-salience and agenda-setting theory, media attention to inflation should rise with the real HICP and jump once inflation crosses a ≈4% threshold, with the food and energy components at least as salient as the headline rate. <em>Tested</em> against Croatian HICP (§4.6).</li>
+<li><strong>H2 (resonance, not setting).</strong> From the setter-versus-resonance debate, religious inflation coverage should <em>resonate with</em> real conditions rather than <em>lead</em> them — entering the discourse reactively, as an affected party. <em>Assessed</em> via the temporal pattern; a formal lead–lag test is left to future work.</li>
+<li><strong>P3 (prophetic-actor proposition).</strong> If the Church functions as a prophetic economic actor in the digital public sphere, the structural / CST-justice register should be non-trivial and should rise with hardship. <em>Evaluated</em> against the coded register distribution and its time path.</li>
+<li><strong>P4 (episodic over thematic; Iyengar, 1991).</strong> Religious framing of inflation should be predominantly <em>episodic</em> (relief, institutional, the price of services) rather than <em>thematic</em> (structural critique). <em>Evaluated</em> against the register distribution.</li>
+</ul>
+<p>We deliberately avoid inferential machinery the observational, batch-confounded data cannot bear: H1 is tested by correlation and a threshold contrast, the propositions by pattern-matching.</p>
+</section>
+</section>
+<section id="data-and-methods" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-methods">3. Data and methods</h2>
+<p><strong>Corpus.</strong> The DigiKat master is a topical corpus of <strong>710,307</strong> Croatian/Bosnian media posts (2021-01 → 2026-06) retained by a religious-content filter (≥2 distinct religious-term matches). It is <em>religion-salient posts across the whole media space</em>, not a Catholic-outlet archive: secular mainstream outlets dominate, and the core is 96% web-portal content (Facebook 2%, other platforms negligible). A provenance marker (<code>data_source</code>) reflects two collection streams — a monitoring query covering ≈2021–2024 and a filter-based backfill covering ≈2024–2026 — that are <strong>not comparable</strong> (see §4.4); we condition on it in all temporal analysis.</p>
+<p><strong>Inflation tagging.</strong> We tagged every post whose title or body matches an anchored inflation lexicon (<code>inflacij*</code>, <code>poskup*</code> “to become more expensive”, <code>rast/porast/skok cijen*</code> “price rises”, <code>trošak života</code> “cost of living”, <code>kupovna moć</code> “purchasing power”), deliberately excluding the bare word <code>cijena</code> “price” to avoid devotional false positives (e.g.&nbsp;“the price of salvation”). A metaphor guard removes figurative uses (“inflation of words/values”). This yields <strong>8,019</strong> clean inflation-mentioning posts (1.13% of the corpus).</p>
+<p><strong>Linkage, not co-occurrence.</strong> A long news article can mention inflation in one paragraph and a saint’s feast in another with no connection. We therefore measured, for each inflation post, whether a religious term (project lexicon of 95 terms, tightened for economic homonyms such as <em>gospodarstvo</em> “economy” vs <em>Gospa</em> “Our Lady”) appears within ±220 characters of an inflation mention. This proximity filter is deliberately recall-oriented (validated recall ≈0.89): it generates <strong>1,450 candidate</strong> linked posts while accepting false positives, which the coding stage removes. We code the full <em>linked</em> set (1,450) rather than the classifier’s narrower <em>domestic-linked</em> subset (1,103), because the automatic foreign/domestic flag is unreliable (held-out precision ≈0.39); the annotators, not the flag, decide foreign versus domestic.</p>
+<p><strong>Coding.</strong> All 1,450 candidates were coded by <strong>three independent annotators</strong> (large-language-model annotators applying a fixed codebook), majority-adjudicated; 1,447/1,450 were coded by all three. Each post was labelled on four axes: whether it is genuinely about inflation/cost of living; whether religion is genuinely linked to the inflation content (versus incidental, a geographic landmark, a metaphor, a hashtag, or a secular organisation containing a religious word, e.g.&nbsp;<em>Crveni križ</em> = Red Cross, <em>Papa-test</em> = Pap smear); whether the inflation is foreign or domestic; and, when linked, its <strong>register</strong>: <em>cost of religious life</em> (the price of religious goods/services rising), <em>Church-as-institution</em> (clergy/Pope/parish as actor or commentator), <em>structural / CST justice</em>, <em>charity</em> (Caritas/relief), <em>devotional</em>, or <em>other</em>.</p>
+<p><strong>Validation.</strong> On a stratified held-out sample of 80 posts (disjoint from any tuning data), inter-annotator agreement was high — infl 0.975, link 0.967, foreign 0.992 — confirming the constructs are reliably measurable; register is the harder judgement (held-out agreement 0.46). The proximity filter’s held-out precision for domestic linkage was modest (≈0.38–0.46) with recall ≈0.89 — i.e.&nbsp;a <em>filter</em>, not a labeller; the full-pool coding confirmed this (45% of candidates coded as genuinely linked). We therefore report coded figures throughout and never regex counts. Annotators are LLM-based, so the agreement is inter-model reliability rather than a human gold standard; a human double-coding pass is planned (§7).</p>
+<p><strong>Price data.</strong> Croatian HICP annual rate of change (monthly; all-items, food, energy) was obtained from Eurostat (<code>prc_hicp_manr</code>) for 2021–2025.</p>
+<p><strong>Analysis.</strong> We report the corpus-to-core funnel; the register distribution and its outlet, temporal, and tonal structure; and a test of H1 correlating monthly inflation-attention with HICP. Because the corpus changes collection instrument at 2024, all temporal analysis is conducted <em>within</em> the 2021–2024 monitoring stream and the batch-pooled series is reported only for completeness.</p>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">4. Results</h2>
+<section id="co-occurrence-is-not-engagement" class="level3">
+<h3 class="anchored" data-anchor-id="co-occurrence-is-not-engagement">4.1 Co-occurrence is not engagement</h3>
+<p>The path from corpus to measured core is steep (Table 1). Of 710,307 posts, 8,019 (1.13%) mention inflation. Of those, the recall-oriented filter flags 1,450 as candidate-linked; coding confirms only <strong>652</strong> as genuine religion–inflation linkage, of which <strong>132</strong> concern foreign inflation, leaving a <strong>domestic measured core of 520 posts — 0.07% of the corpus and 6.5% of inflation-mentioning posts.</strong> A naïve co-occurrence count would have reported the phenomenon as an order of magnitude larger than it is; even among the proximity-flagged candidates, just 45% survive coding.</p>
+<p><strong>Table 1. From corpus to measured core.</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Stage</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">% of corpus</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Full religion-filtered corpus</td>
+<td style="text-align: right;">710,307</td>
+<td style="text-align: right;">100.000</td>
+</tr>
+<tr class="even">
+<td>Mentions inflation (clean)</td>
+<td style="text-align: right;">8,019</td>
+<td style="text-align: right;">1.129</td>
+</tr>
+<tr class="odd">
+<td>Linked candidates (filter, recall ≈0.89)</td>
+<td style="text-align: right;">1,450</td>
+<td style="text-align: right;">0.204</td>
+</tr>
+<tr class="even">
+<td>Confirmed religion-linked (coded)</td>
+<td style="text-align: right;">652</td>
+<td style="text-align: right;">0.092</td>
+</tr>
+<tr class="odd">
+<td>… foreign inflation</td>
+<td style="text-align: right;">132</td>
+<td style="text-align: right;">0.019</td>
+</tr>
+<tr class="even">
+<td><strong>… domestic (measured core)</strong></td>
+<td style="text-align: right;"><strong>520</strong></td>
+<td style="text-align: right;"><strong>0.073</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="who-carries-it" class="level3">
+<h3 class="anchored" data-anchor-id="who-carries-it">4.2 Who carries it</h3>
+<p>Genuine religion×inflation discourse is overwhelmingly a <strong>secular-media</strong> phenomenon: 442 of 520 posts (85%) come from secular/mainstream outlets, 75 (14%) from Catholic outlets, and 3 from business press (Table 3). The single largest producer is the Catholic aggregator <em>hkm.hr</em> (56 posts), followed by mainstream titles (<em>slobodnadalmacija.hr</em> 17, <em>novilist.hr</em> 16, <em>24sata.hr</em> 12, <em>jutarnji.hr</em> 11, <em>večernji.hr</em> 10). The Church’s own outlets are not where this discourse mainly lives.</p>
+</section>
+<section id="the-register-of-religious-economic-discourse" class="level3">
+<h3 class="anchored" data-anchor-id="the-register-of-religious-economic-discourse">4.3 The register of religious-economic discourse</h3>
+<p>The central result is the register distribution (Table 2, Figure 1). Religion meets domestic inflation as, in order: the <strong>cost of religious life</strong> (37.3%), the <strong>Church-as-institution</strong> (34.4%), <strong>charity</strong> (16.7%), <strong>devotional</strong> framing (5.0%), and <strong>structural / CST justice</strong> at just <strong>2.9%</strong> (15 posts).</p>
+<p>Two cautions attach to this table. First, the two leading registers are close, share vocabulary (<em>crkva</em>, <em>biskup</em>), and register was the lowest-agreement coding axis (0.46), so their ordering is within coding noise; the robust statement is that together they form an <em>economic-object</em> macro-register of <strong>≈72%</strong> (373 posts). Second, the 3% justice figure is a strict-coding floor: broadening to posts in other registers whose text carries latent structural language (chiefly 18 charity posts, e.g.&nbsp;Caritas discussing structural poverty) raises the upper bound to <strong>≈8%</strong> (43 posts). Justice is marginal on either definition.</p>
+<p><strong>Table 2. Register of the domestic core (n = 520).</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Register</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cost of religious life</td>
+<td style="text-align: right;">194</td>
+<td style="text-align: right;">37.3</td>
+</tr>
+<tr class="even">
+<td>Church-as-institution</td>
+<td style="text-align: right;">179</td>
+<td style="text-align: right;">34.4</td>
+</tr>
+<tr class="odd">
+<td>Charity / relief</td>
+<td style="text-align: right;">87</td>
+<td style="text-align: right;">16.7</td>
+</tr>
+<tr class="even">
+<td>Devotional</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">5.0</td>
+</tr>
+<tr class="odd">
+<td>Structural / CST justice</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">2.9</td>
+</tr>
+<tr class="even">
+<td>Disputed (pending human tiebreak)</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">2.3</td>
+</tr>
+<tr class="odd">
+<td>Other</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">1.3</td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="output/fig_register_composition.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 1. Register composition of the measured core.</figcaption>
+</figure>
+</div>
+<p>The two dominant registers describe the Church as an <em>economic object</em>, not a moral voice: masses, church fees, weddings, funerals and pilgrimages that became more expensive (“cost of religious life”), and clergy or dioceses appearing in economic news as commentators or affected parties (“institution”).</p>
+<p>An outlet pattern is visible but must be read cautiously (Table 3, Figure 2). The “cost of religious life” register is almost entirely a <strong>secular</strong> story — 189 of 194 such posts are secular outlets reporting that the Church raised its prices. A tempting reading is that Catholic outlets, when they engage, tilt toward <em>charity</em> (27/75 = 36% of the Catholic core vs 58/442 = 13% of the secular core). We do not press this claim: the Catholic subsample is small (n = 75), 75% of it is the single aggregator <em>hkm.hr</em> (56 posts) whose own top register is <em>institution</em> (27), not charity (18), and stripping <em>hkm.hr</em> leaves just 19 posts. We therefore report the direction as a hypothesis for a larger Catholic-outlet sample, not a finding. What is robust across outlets is the near-absence of the justice register (10 secular, 5 Catholic).</p>
+<p><strong>Table 3. Register by outlet type (counts).</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Register</th>
+<th style="text-align: right;">Secular/other</th>
+<th style="text-align: right;">Catholic</th>
+<th style="text-align: right;">Business</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cost of religious life</td>
+<td style="text-align: right;">189</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td>Church-as-institution</td>
+<td style="text-align: right;">147</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td>Charity / relief</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td>Devotional</td>
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td>Structural / CST justice</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td>Other / disputed</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="output/fig_register_by_outlet.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 2. Register composition by outlet type (shares).</figcaption>
+</figure>
+</div>
+</section>
+<section id="temporal-dynamics-read-within-collection-stream" class="level3">
+<h3 class="anchored" data-anchor-id="temporal-dynamics-read-within-collection-stream">4.4 Temporal dynamics (read within collection stream)</h3>
+<p>An important caveat governs this section. The two collection streams are not comparable: at 2024, where they overlap, <strong>86%</strong> of <code>original_dta</code> candidates but only <strong>21%</strong> of <code>filtered_religious</code> candidates survive coding as genuine domestic linkage. Cross-year volume must therefore be read <em>within</em> a stream, not across the 2024 seam (Figure 3).</p>
+<p><strong>Within the clean 2021–2024 monitoring stream</strong>, the core rises sharply to a <strong>2022 peak (201 posts)</strong> — the height of the energy shock — and declines thereafter (2023: 100; 2024: 64). This within-instrument decline is genuine, not a collection artifact. The later backfill figures (2025: 66; 2026: 53) come from a different instrument and are <strong>not</strong> evidence of a continued decline.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="output/coded_core_by_stream.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 3. Measured core volume by collection stream (batch-confound check).</figcaption>
+</figure>
+</div>
+<p>Within that same window, the register composition shifts (Figure 4, Table 4): the <em>institution</em> register dominates the 2022 shock (105 posts) — clergy commenting on the crisis — and recedes (38 in 2023, 9 in 2024), while <em>cost-of-religious-life</em> rises (41 → 39 → 61), tracking the church-fee revisions around the euro changeover (1 January 2023). The discourse thus appears to migrate from acute-crisis commentary toward institutional price adjustment. We treat this register shift as suggestive rather than established: part of it spans the stream seam and awaits a stream-conditioned re-coding. At no point, in either stream, does the justice register gain traction.</p>
+<p><strong>Table 4. Register by year (counts, full core).</strong> 2021–2023 are entirely the monitoring stream; <strong>2024 mixes both streams</strong> (64 monitoring + 24 backfill = 88); 2025–2026 are entirely the backfill stream. Read across the 2024 seam with caution (§4.4); the within-stream monitoring series is 2021→12, 2022→201, 2023→100, 2024→64.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Year</th>
+<th style="text-align: right;">Institution</th>
+<th style="text-align: right;">Cost-relig-life</th>
+<th style="text-align: right;">Charity</th>
+<th style="text-align: right;">Devotional</th>
+<th style="text-align: right;">Justice</th>
+<th style="text-align: right;">Other/disputed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2021</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td>2022</td>
+<td style="text-align: right;">105</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="odd">
+<td>2023</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">39</td>
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td>2024</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">61</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td>2025</td>
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td>2026</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="output/coded_register_over_time.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 4. Register over time (monthly, measured core).</figcaption>
+</figure>
+</div>
+</section>
+<section id="tone" class="level3">
+<h3 class="anchored" data-anchor-id="tone">4.5 Tone</h3>
+<p>Vendor auto-sentiment (indicative only) splits meaningfully by register (Table 5, Figure 5). The core is 43% negative, 32% positive, 25% neutral overall, but “cost of religious life” is markedly negative (100 of 194, 51%), consistent with public grumbling about church price hikes, whereas “Church-as-institution” is the most positive register (83 of 179, 46%), consistent with pastoral or commentary framing. The rare justice posts lean negative (9 of 15).</p>
+<p><strong>Table 5. Auto-sentiment by register (counts; vendor labels, indicative).</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Register</th>
+<th style="text-align: right;">Negative</th>
+<th style="text-align: right;">Neutral</th>
+<th style="text-align: right;">Positive</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cost of religious life</td>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">56</td>
+<td style="text-align: right;">38</td>
+</tr>
+<tr class="even">
+<td>Church-as-institution</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">45</td>
+<td style="text-align: right;">83</td>
+</tr>
+<tr class="odd">
+<td>Charity / relief</td>
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">37</td>
+</tr>
+<tr class="even">
+<td>Devotional</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td>Structural / CST justice</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="output/fig_sentiment_by_register.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 5. Auto-sentiment by register (shares).</figcaption>
+</figure>
+</div>
+</section>
+<section id="h1-inflation-attention-tracks-real-prices" class="level3">
+<h3 class="anchored" data-anchor-id="h1-inflation-attention-tracks-real-prices">4.6 H1 — inflation attention tracks real prices</h3>
+<p>To test H1 we correlate monthly inflation-attention (the share of corpus posts mentioning inflation) with the Croatian HICP annual rate of change (headline, food, energy), within the clean 2021–2024 monitoring stream (39 months); the batch-pooled series is reported for completeness only. Within the clean window, attention tracks inflation strongly (Table 6, Figure 6): Pearson <strong>r = 0.73</strong> with headline HICP (p &lt; 0.001), <strong>0.72</strong> with food, and <strong>0.44</strong> with energy (Spearman ρ comparable). The threshold form of H1 also holds: mean attention is <strong>0.49%</strong> of posts in months with headline HICP below 4% and <strong>1.17%</strong> at or above — a 2.4-fold jump around the ≈4% attention threshold documented cross-nationally. <strong>H1 is supported</strong>, with one nuance: food inflation tracks attention as strongly as the headline, but <strong>energy does not</strong> (r = 0.44) — energy’s large, partly negative swings in 2023–2024 decouple it from attention, so the “food-and-energy” salience prediction holds for food but not energy here. The batch-pooled series attenuates the coupling (headline r = 0.63), consistent with the 2024 seam adding noise. The religion-linked core is too sparse for a monthly test, but its annual volume aligns with inflation (both peak in 2022).</p>
+<p><strong>Table 6. Inflation-attention vs HICP (monthly, within the 2021–2024 stream, n = 39).</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>HICP component</th>
+<th style="text-align: right;">Pearson r</th>
+<th style="text-align: right;">Spearman ρ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Headline</td>
+<td style="text-align: right;">0.73</td>
+<td style="text-align: right;">0.75</td>
+</tr>
+<tr class="even">
+<td>Food</td>
+<td style="text-align: right;">0.72</td>
+<td style="text-align: right;">0.74</td>
+</tr>
+<tr class="odd">
+<td>Energy</td>
+<td style="text-align: right;">0.44</td>
+<td style="text-align: right;">0.43</td>
+</tr>
+</tbody>
+</table>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="output/h1_attention_vs_hicp.png" class="img-fluid figure-img"></p>
+<figcaption>Figure 6. Inflation-attention vs HICP, 2021–2024 monitoring stream.</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">5. Discussion</h2>
+<p><strong>The Church as economic object, not moral voice.</strong> The dominant way religion meets inflation in Croatian digital discourse is not the pulpit but the price list. Seven in ten linked posts (the ≈72% economic-object macro-register) describe either the rising cost of religious life or the Church as an institution caught in economic news; charity adds a sixth; the structural-justice critique CST foregrounds is marginal (3% strict, ≤8% broad). We frame this as a claim about <strong>digital-public visibility, not the Church’s pastoral conduct</strong>: homilies, pastoral letters and Caritas fieldwork are structurally under-represented in a media-monitoring corpus of news posts, so the low visibility of the justice frame is weak evidence about institutional silence as such (§7). What the data support is that, in the national digital public sphere, the frame that surfaces around inflation is overwhelmingly the fee and the institution, not the prophecy.</p>
+<p><strong>Attention existed; a prophetic voice did not fill it.</strong> The two results interlock. H1 shows that media inflation-attention is real and price-coupled — the corpus registers the shock on cue with prices (§4.6). Yet within that attention, once linkage is measured, the <em>religious</em> engagement is small (§4.1) and, where present, non-prophetic (§4.3). The public conversation about inflation was there for a religious justice voice to enter; it largely did not.</p>
+<p><strong>A possible division of narrative labour (hypothesis).</strong> The register–outlet pattern hints at two storytellers: secular media supplying the “costlier candles” story — reporting, often critically and in negative tone, that the Church raised the price of masses, weddings and funerals around the euro changeover — and Catholic outlets leaning, in their thin non-aggregator tail, toward “quiet charity.” As §4.3 stresses, the Catholic subsample is too small and too aggregator-dominated to establish this contrast, so we advance it only as a hypothesis. What both kinds of outlet share is the near-absence of the prophetic, structural voice.</p>
+<p><strong>Mechanism and timing.</strong> Within the 2021–2024 stream, the pattern is consistent with an agenda-setting reading: the religious linkage flares during the acute 2022 shock (institutional commentary) and recedes as prices stabilise, while church-fee coverage rises around euro adoption. On this within-stream evidence the dynamic looks closer to <em>resonance</em> than to <em>setting</em> (H2, provisional) — religion enters inflation discourse reactively, as an affected party, not as an agenda-setter for economic justice.</p>
+<p><strong>Why it matters.</strong> For sociology of religion, the finding qualifies accounts of the Croatian Church as a strong public actor: on the economy, at least, its digital-public presence is thin and non-prophetic. For media studies, it extends inflation-salience research into the religious sphere and shows the “who is hurt” framing has a specifically institutional variant — “who charges more.” For CST scholarship, the absence poses the question: why the doctrinal justice frame does not travel into the national digital public sphere.</p>
+<p><strong>Hypothesis scorecard.</strong> H1 (attention–price coupling) <strong>supported</strong>; H2 (resonance not setting) <strong>provisionally consistent</strong>, pending a lead–lag test; P3 (prophetic actor) <strong>disconfirmed</strong>; P4 (episodic over thematic) <strong>supported</strong> (Appendix C).</p>
+</section>
+<section id="the-methodological-contribution-co-occurrence-engagement" class="level2">
+<h2 class="anchored" data-anchor-id="the-methodological-contribution-co-occurrence-engagement">6. The methodological contribution: co-occurrence ≠ engagement</h2>
+<p>Independent of the substantive story, the study is a cautionary demonstration. Had we counted co-occurrence, we would have reported thousands of “religious engagements with inflation.” Measured, genuine domestic linkage is 520 posts. The gap is not noise to tolerate but signal to remove: keyword-filtered corpora manufacture incidental co-mention at scale. Our pipeline — anchored lexicons with metaphor and homonym guards, a recall-oriented proximity filter, and multi-annotator coding with reported inter-annotator agreement — is a reusable template for any “religion and X” (or “A and B”) corpus study.</p>
+</section>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">7. Limitations</h2>
+<ul>
+<li><strong>Collection-batch confound.</strong> The corpus mixes two streams with very different confirmation rates at their 2024 overlap (0.86 vs 0.21). We read temporal trends <em>within</em> stream and do not claim a decline across the 2024 seam. A stream-conditioned re-coding is the single highest-value robustness check.</li>
+<li><strong>LLM annotators.</strong> Inter-annotator agreement is high (0.97), but this is inter-model reliability, not a human gold standard; a human double-coding of a ≥100-post slice (including the foreign/domestic boundary that defines the 520) is required before final publication, along with resolution of 12 “disputed” register cases.</li>
+<li><strong>Residual false positives.</strong> Even after majority coding, a few core posts are misclassified; a high-confidence subset (3/3 agreement, 518 posts) is available for sensitivity analysis.</li>
+<li><strong>Register ordering / justice floor.</strong> Register was the lowest-agreement axis; the 37% vs 34% ordering is within noise (we report the ≈72% macro-register), and 3% justice is a strict floor (≤8% broadly construed).</li>
+<li><strong>HICP scope.</strong> H1 is tested at the level of corpus-wide inflation-attention; a monthly HICP overlay on the religion-linked core specifically is too sparse to test, and the H2 lead–lag test against public search interest is future work.</li>
+<li><strong>No secular benchmark yet.</strong> Because the corpus is religion-filtered, we cannot yet say whether structural framing is rarer in religious than in secular inflation coverage; a benchmark on non-religious inflation posts is needed before any claim that the Church specifically underuses the justice frame.</li>
+<li><strong>Filtered baseline &amp; platform coverage.</strong> “Secular” here means secular outlets’ religion-adjacent output, not their full inflation coverage; and the core is 96% web, so claims generalize to the web-portal public sphere rather than to all platforms.</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">8. Conclusion</h2>
+<p>When prices rose in Croatia, religion did enter the digital conversation about inflation — but as an institution whose candles, masses and fees had become more expensive, and whose charities responded, far more than as a prophetic voice for the poor. Media attention to inflation tracked real prices closely; the religious structural-justice frame did not fill that attention. Costlier candles, quiet prophets. Whether this reflects a genuinely quiet Church or merely a low-visibility frame in the digital public sphere is the question the absence opens — and one the planned extensions (a secular benchmark, a lead–lag test, human validation) are designed to answer.</p>
+<hr>
+</section>
+<section id="data-and-code-availability" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-code-availability">Data and code availability</h2>
+<p>Tracked aggregates, coded outputs, tables and figures are in the study <code>output/</code> directory (<code>analysis_core_coded.csv</code>, the <code>tables/</code> folder, <code>hicp_hr.csv</code>). The underlying master corpus contains scraped post text and is not redistributable; analyses are reproducible from the numbered pipeline scripts (Appendix A) given access to the master. The measured-core file carries URLs and text excerpts and is held internally pending a statistical-disclosure review.</p>
+</section>
+<section id="ethics-and-disclosure" class="level2">
+<h2 class="anchored" data-anchor-id="ethics-and-disclosure">Ethics and disclosure</h2>
+<p>The corpus consists of publicly posted media content collected via a commercial monitoring service. The paper reports only aggregate counts and shares; no personal data, account identifiers, or verbatim private content are published. Outlet names are public publishers. A disclosure/PII screen is run before any data extract is shared.</p>
+</section>
+<section id="funding-and-acknowledgements" class="level2">
+<h2 class="anchored" data-anchor-id="funding-and-acknowledgements">Funding and acknowledgements</h2>
+<p>DigiKat project, Catholic University of Croatia (Hrvatsko katoličko sveučilište), Department of Communication Studies. Released under CC BY 4.0; open-science (FAIR) principles apply.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li>Aarab, I., Bańbura, M., Bobeica, E., &amp; Leguay, T. (2025). Tracking inflation attention. <em>ECB Economic Bulletin</em> 6/2025.</li>
+<li>Benedict XVI (2009). <em>Caritas in Veritate.</em></li>
+<li>Champagne, C., et al.&nbsp;(2024). “Heating or eating”: framing the cost-of-living crisis. <em>Social Science &amp; Medicine, 360</em>, 117312.</li>
+<li>Francis (2013). <em>Evangelii Gaudium.</em></li>
+<li>Geiß, S. (2022). Conditional agenda-setting. <em>Communication Research, 49</em>(2), 296–323.</li>
+<li>Gutiérrez, G. (1971/1973). <em>A Theology of Liberation.</em> Orbis.</li>
+<li>Iyengar, S. (1991). <em>Is Anyone Responsible?</em> University of Chicago Press.</li>
+<li>Korenok, O., Munro, D., &amp; Chen, J. (2026). Inflation and attention thresholds. <em>Review of Economics and Statistics, 108</em>(3), 842–850.</li>
+<li>Lamla, M. J., &amp; Maag, T. (2012). The role of media for inflation expectations. <em>Journal of Money, Credit and Banking, 44</em>(7), 1325–1350.</li>
+<li>McCombs, M. E., &amp; Shaw, D. L. (1972). The agenda-setting function of mass media. <em>Public Opinion Quarterly, 36</em>(2), 176–187.</li>
+<li>Pfäuti, O. (2024). The inflation attention threshold. arXiv:2308.09480.</li>
+<li>Wlezien, C., &amp; Soroka, S. (2024). Media and the public’s attention. <em>American Political Science Review, 118</em>(3), 1563–1569.</li>
+<li>Yin, R. K. (2018). <em>Case Study Research and Applications: Design and Methods</em> (6th ed.). Sage.</li>
+</ul>
+<p><em>Some literature entries remain to be verified against Hrčak / CrossRef before submission; see <code>LITERATURE.md</code>.</em> <strong>Data source:</strong> Croatian HICP annual rate of change (Eurostat <code>prc_hicp_manr</code>, all-items/food/energy, monthly), retrieved 2026-07-01 (<code>output/hicp_hr.csv</code>).</p>
+<hr>
+</section>
+<section id="appendix-a.-reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-a.-reproducibility">Appendix A. Reproducibility</h2>
+<p>Pipeline: <code>10_rerun_fixed.R</code> (tagging + linkage + fixes) → <code>13_make_coding_pool.R</code> (1,450-candidate pool + annotation batches) → the <code>code-candidate-pool</code> workflow (3 annotators × 20 batches, majority) → <code>14_finalize_coded.R</code> (measured core) → <code>15_paper_analysis.R</code> (register/outlet/sentiment tables + figures) → <code>16_review_response.R</code> (stream conditioning; hkm.hr decomposition; latent-justice bound) → <code>17_h1_hicp.R</code> (H1 test). Run against the master (R path in <code>CLAUDE.local.md</code>). Coded data: <code>output/analysis_core_coded.{rds,csv}</code>.</p>
+</section>
+<section id="appendix-b.-coding-protocol-and-validation" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-b.-coding-protocol-and-validation">Appendix B. Coding protocol and validation</h2>
+<p>Four axes (§3). Held-out validation (n = 80): inter-annotator agreement infl 0.975 / link 0.967 / foreign 0.992 / register 0.46; classifier held-out precision (domestic linkage) ≈0.38–0.46, recall ≈0.89; full-pool coding confirmed 45% of candidates as genuinely linked. Full log: <code>VALIDATION.md</code>, <code>REVIEW_RESPONSE.md</code>.</p>
+</section>
+<section id="appendix-c.-hypothesis-scorecard" class="level2">
+<h2 class="anchored" data-anchor-id="appendix-c.-hypothesis-scorecard">Appendix C. Hypothesis scorecard</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Statement</th>
+<th>Test</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>H1</td>
+<td>Attention rises with HICP; jumps above ≈4%; food/energy ≥ headline</td>
+<td>Correlation + threshold contrast (§4.6)</td>
+<td><strong>Supported</strong> (r ≈ 0.73; 0.49→1.17% at threshold; food ≈ headline &gt; energy)</td>
+</tr>
+<tr class="even">
+<td>H2</td>
+<td>Religious coverage resonates rather than leads</td>
+<td>Temporal pattern (§4.4, §5)</td>
+<td><strong>Provisionally consistent</strong>; lead–lag test pending</td>
+</tr>
+<tr class="odd">
+<td>P3</td>
+<td>If prophetic actor, justice register non-trivial and rises with hardship</td>
+<td>Pattern-matching (§4.3–4.4)</td>
+<td><strong>Disconfirmed</strong> (3% strict / ≤8% broad; no rise)</td>
+</tr>
+<tr class="even">
+<td>P4</td>
+<td>Framing episodic, not thematic</td>
+<td>Register distribution (§4.3)</td>
+<td><strong>Supported</strong> (episodic registers ≫ thematic justice)</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

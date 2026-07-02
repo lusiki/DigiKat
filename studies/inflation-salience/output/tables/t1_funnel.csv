@@ -1,0 +1,8 @@
+﻿stage,n,pct_of_corpus
+Full religion-filtered corpus,710307,100
+Mentions inflation (raw tag),8105,1.141
+… clean (metaphors removed),8019,1.129
+"Linked candidates (regex, recall~0.89)",1450,0.204
+Confirmed religion-linked (coded),652,0.092
+  … foreign inflation,132,0.019
+  … DOMESTIC (measured core),520,0.073
