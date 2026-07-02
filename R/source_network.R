@@ -142,7 +142,7 @@ source_network_widget <- function(sn, height = "760px", background = dk_col$pape
     visInteraction(dragNodes = TRUE, dragView = TRUE, zoomView = TRUE,
       hover = TRUE, tooltipDelay = 120, navigationButtons = FALSE) |>
     visOptions(highlightNearest = list(enabled = TRUE, degree = 1, hover = TRUE)) |>
-    visLegend(useGroups = FALSE, main = "Platforma", position = "right",
+    visLegend(useGroups = FALSE, position = "right",
       addNodes = data.frame(
         label = c("Web","YouTube","Facebook","Instagram","TikTok","Twitter"), shape = "dot",
         color = unname(sn$plat_cols[c("Web","YouTube","Facebook","Instagram","TikTok","Twitter")]),
