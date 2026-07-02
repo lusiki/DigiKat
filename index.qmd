@@ -12,13 +12,13 @@ toc: false
   <div style="max-width: 1180px; margin: 0 auto; padding: 72px 40px 64px;">
     <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #0f4c5c; margin-bottom: 26px;">
       <span style="width: 7px; height: 7px; background: #0f4c5c; border-radius: 50%;"></span>
-      Računalna društvena znanost · 2021.–2026.
+      Hrvatsko katoličko sveučilište · 2021.–2027.
     </div>
     <h1 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 52px; line-height: 1.08; letter-spacing: -0.015em; margin: 0; max-width: 19ch; color: #14181d; text-wrap: balance;">
       Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru
     </h1>
     <p style="font-size: 20px; line-height: 1.5; color: #4f535a; margin: 22px 0 0; max-width: 60ch;">
-      Ovo je projekt Hrvatskog katoličkog sveučilišta mapiranja katoličke tematike u hrvatskom digitalnom medijskom prostoru. Projekt predstavlja empirijsko istraživanje otvorene znanosti o tome kako se o religiji raspravlja na internetu, kroz portale, društvene platforme i forume.
+      Ovo je projekt Hrvatskog katoličkog sveučilišta koji mapira katoličku tematiku u hrvatskom digitalnom medijskom prostoru. Riječ je o empirijskom istraživanju provedenom prema načelima otvorene znanosti, usmjerenom na to kako se o religiji raspravlja na internetu — na portalima, društvenim platformama i forumima.
     </p>
     <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 38px;">
       <a href="pages/baza.html" style="display: inline-flex; align-items: center; gap: 8px; background: #0f4c5c; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 6px;">Istraži podatke</a>
@@ -67,16 +67,6 @@ toc: false
       <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">Komentari</span>
       <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">TikTok</span>
     </div>
-  </div>
-</section>
-
-<!-- ============ FRAMEWORK (teaser → O projektu) ============ -->
-<section style="border-bottom: 1px solid #e4e2da;">
-  <div style="max-width: 1180px; margin: 0 auto; padding: 80px 40px;">
-    <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #0f4c5c; margin-bottom: 12px;"><span style="width: 18px; height: 1px; background: #0f4c5c;"></span> 01 — Analitički okvir</div>
-    <h2 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 32px; line-height: 1.12; margin: 0 0 8px; color: #14181d;">Od medijske objave do analize</h2>
-    <p style="color: #5a5e65; max-width: 64ch; margin: 0 0 30px;">Podaci se prikupljaju, filtriraju u korpus, objedinjuju u glavni skup podataka, obrađuju i naposljetku čitaju kroz četiri analitičke razine; svaki se korak nadovezuje na prethodni. Cijeli analitički okvir, istraživačka pitanja i istraživački tim predstavljeni su na stranici o projektu.</p>
-    <a href="pages/about.html" style="display: inline-flex; align-items: center; gap: 8px; background: #0f4c5c; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 6px;">Cijeli analitički okvir i istraživanje</a>
   </div>
 </section>
 

@@ -1,5 +1,5 @@
 ---
-title: "Baza podataka: opis korpusa katoličkoga digitalnog medijskog prostora"
+title: "Baza podataka — opis korpusa katoličkoga digitalnog medijskog prostora"
 subtitle: "Što korpus sadrži, kako je prikupljen i filtriran te tko su izvori — preko 710.000 objava (2021.–2026.)"
 date: last-modified
 categories: ["Korpus", "Metodologija", "Otvoreni podaci"]
@@ -68,6 +68,9 @@ Korpus je empirijska osnova za četiri analitičke razine projekta: [Mapu ekosus
 [Tematske struje](mapa/mapa_stats.html), [Atmosferu diskursa](mapa/diskurs.html) i
 [Fokus na događaje](mapa/događaji.html).
 
+Baza je javno dostupna na Kaggleu kao [Hrvatski katolički digitalni medijski prostor
+2021.–2026.](https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space).
+
 ## Ključni pokazatelji
 
 <div class="metric-grid">
@@ -109,13 +112,7 @@ tematski zahvat objava koje govore o katoličkim temama u razdoblju `r yr_min`.�
 zapisanih kao regularni izrazi koji pokrivaju padeže i množine. **Objava ulazi u korpus samo ako pogodi najmanje
 dva *različita* pojma** (`R/religious_terms.R`).
 
-Prag „≥2 različita pojma" bira **preciznost nad obuhvatom**: jedan usputan spomen („misa", „križ") ne kvalificira
-objavu, pa je korpus namjerno uži, ali čišći od lažnih pozitiva. Riječ je o **heuristici visoke preciznosti, a ne
-o ručno validiranom klasifikatoru**. Ona ima poznata ograničenja: homografi („Misa" kao ime i „misa" kao obred)
-te korijeni bez svih izvedenih oblika mogu podmašiti objavu. Preciznost i obuhvat filtra nisu formalno
-izmjereni, pa ih ne treba tumačiti kao točnu granicu.
-
-## Tko govori: sastav i tipologija izvora
+## Sastav i tipologija izvora
 
 ```{r}
 #| label: outlet-typology
@@ -178,7 +175,7 @@ kable(comp, caption = "Sastav korpusa prema tipu izvora (indikativno, na razini 
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
-Sastav se **bitno razlikuje po platformi**: dok je web izvorno **mješovit**, društvene su platforme uporišta glasa
+Sastav se **bitno razlikuje po platformi** — dok je web izvorno **mješovit**, društvene su platforme uporišta glasa
 Crkve, a forumi i Reddit gotovo su isključivo sekularni prostori zajednice.
 
 ```{r}
@@ -189,7 +186,7 @@ kable(plat_conf, caption = "Udio konfesionalnih izvora unutar glavnih platformi"
 ```
 
 ::: {.callout-note}
-**Napomena o klasifikaciji.** Razvrstavanje izvora je **indikativno**: ručno je označen skup najčešćih izvora
+**Napomena o klasifikaciji.** Razvrstavanje izvora je **indikativno** — ručno je označen skup najčešćih izvora
 (uz obrasce za crkvene domene poput *biskupija*, *župa*, *franjev*), čime je razvrstano oko
 **`r fmt_pct(class_pct, 0)`** objava. Preostalo („Ostalo / nerazvrstano") uglavnom su sekularne **lokalne
 vijesti**. Tipologija je analitički presjek, a ne prirodna kategorija, pa navedene udjele treba čitati kao red
@@ -209,13 +206,16 @@ n_od  <- src[data_source == "original_dta", N]
 Podaci su **izvezeni iz komercijalnog servisa za medijski monitoring** (koji objave prikuplja *web scrapingom* i
 platformskim API-jima) u obliku `.xlsx` tablica, koje su potom spojene i filtrirane u jedinstveni korpus.
 
-Korpus je **unija dvaju tokova prikupljanja** koji se vremenski gotovo ne preklapaju, pa ih treba tretirati kao
-heterogene slojeve. Tekući monitoring-upit (`r fmt_int(n_od)` objava) pokriva razdoblje **2021.–2024.**, dok
-religijski filtrirani backfill (`r fmt_int(n_fr)` objava) pokriva **2024.–2026.**
+Korpus je sastavljen iz **dvaju uzastopnih, a ne usporednih tokova prikupljanja** — ne preklapaju se u vremenu,
+nego jedan nastavlja na drugi. Do 2024. objave dolaze iz **tekućeg monitoring-upita** (`r fmt_int(n_od)` objava,
+razdoblje **2021.–2024.**). Od 2024. taj je upit zamijenjen **religijski filtriranim prikupljanjem**
+(`r fmt_int(n_fr)` objava, razdoblje **2024.–2026.**) koje primjenjuje pravilo ≥2 pojma opisano gore. Riječ je,
+dakle, o **promjeni metode prikupljanja oko 2024.**, što je važno imati na umu pri svakoj usporedbi volumena kroz
+vrijeme (vidi *Vremenska pokrivenost* niže).
 
 Deduplikacija se provodi **isključivo po URL-u**. Ona **ne uklanja** `?utm_` i slične *tracking*-parametre, pa isti
 članak s različitim parametrima može ostati kao zaseban redak. Zbog toga je URL tek *de facto* ključ objave, a
-ukupan broj objava treba čitati kao **gornju granicu**. Pokrivenost je omeđena dosegom servisa za monitoring:
+ukupan broj objava treba čitati kao **gornju granicu**. Pokrivenost je omeđena dosegom servisa za monitoring —
 riječ je o velikom **opservacijskom**, a ne vjerojatnosnom uzorku.
 
 ## Opseg korpusa
@@ -260,7 +260,7 @@ hr_only_loc <- sum(dta$LOCATIONS == "HR", na.rm = TRUE)
 ```
 
 Jezik i geografija strojno su detektirani i **višeoznačni** (jedna objava može nositi više oznaka). Hrvatski
-dominira: **`r fmt_int(pure_hr)`** objava nosi isključivo oznaku `hr`. Korpus ipak sadrži i znatan
+dominira — **`r fmt_int(pure_hr)`** objava nosi isključivo oznaku `hr`. Korpus ipak sadrži i znatan
 **regionalni južnoslavenski** sadržaj (bosanski, srpski, slovenski) — oko **`r fmt_int(any_bcs)`** objava ima
 barem jednu takvu oznaku. Geografski je težište Hrvatska (**`r fmt_int(hr_only_loc)`** objava označeno je samo
 kao `HR`), uz prelijev prema Bosni i Hercegovini te ostatku regije. Filtriranje na `LANGUAGES == "hr"` stoga tiho
@@ -281,7 +281,7 @@ vrijednosti: `SOURCE_TYPE` ima `r n_platforms` razina, `AUTO_SENTIMENT` četiri 
 `INFLUENCE_SCORE` `r length(unique(na.omit(dta$INFLUENCE_SCORE)))` razina. Polje `FOUND_KEYWORDS` dolazi iz servisa za monitoring i **šumovito** je
 (najčešća vrijednost je veznik „i"), pa ga ne treba tumačiti kao dokaz religijskog filtra.
 
-## Signali i mjere: podrijetlo
+## Podrijetlo signala i mjera
 
 ```{r}
 #| label: sentiment-distribution
@@ -293,7 +293,7 @@ kable(sent_disp, caption = "Distribucija automatskog (vendorskog) tonaliteta", a
 manual_sent_missing_pct <- 100 * mean(is.na(dta$MANUAL_SENTIMENT))
 ```
 
-Varijabla `AUTO_SENTIMENT` je **vendorska**: izračunava je servis za monitoring nepoznatom metodom i gruba je
+Varijabla `AUTO_SENTIMENT` je **vendorska** — izračunava je servis za monitoring nepoznatom metodom i gruba je
 (tri razine + `undefined`). Ona je **distinktna** od projektnoga leksičkog tonaliteta koji se računa u sloju
 [Atmosfera diskursa](mapa/diskurs.html) i ne treba je s njime miješati. Ručno kodirani tonalitet
 (`MANUAL_SENTIMENT`) u ovom je izdanju **prazan po dizajnu** (`r fmt_pct(manual_sent_missing_pct, 0)` nedostaje).
@@ -318,12 +318,12 @@ kable(avail, caption = "Dostupnost ključnih metrika po platformi (% popunjeno)"
 author_missing_pct <- 100 * mean(is.na(dta$AUTHOR) | (is.character(dta$AUTHOR) & dta$AUTHOR == ""))
 ```
 
-Metrike angažmana **nisu popunjene za sve platforme**: `REACH` i reakcije postoje uglavnom za web i Facebook,
+Metrike angažmana **nisu popunjene za sve platforme** — `REACH` i reakcije postoje uglavnom za web i Facebook,
 `VIEW_COUNT` samo za video (YouTube, Instagram), a forumi, Reddit i komentari nose malo metrika. Zato prosjek preko
 platformi spaja strukturne praznine i vodi u pogrešan zaključak.
 
-Nedostajuće vrijednosti dolaze u **tri vrste**. Prva je **prazno po dizajnu**: `MANUAL_SENTIMENT`, `TAGS`,
-`TWEET_COUNT` i `COUNT` u potpunosti nedostaju u ovom izdanju. Druga je **platformski uvjetovana**: `VIEW_COUNT`,
+Nedostajuće vrijednosti dolaze u **tri vrste**. Prva je **prazno po dizajnu** — `MANUAL_SENTIMENT`, `TAGS`,
+`TWEET_COUNT` i `COUNT` u potpunosti nedostaju u ovom izdanju. Druga je **platformski uvjetovana** — `VIEW_COUNT`,
 Facebook-reakcije i `REDDIT_SCORE` postoje samo na svojoj matičnoj platformi. Treća je **stvarno nedostajanje**,
 poput autora objave (`AUTHOR`), koji nedostaje u `r fmt_pct(author_missing_pct, 0)` slučajeva.
 
@@ -345,7 +345,7 @@ pomake oko konkretnih događaja i kampanja.
 ## Pristup, licencija i citiranje
 
 Korpus je otvoren pod licencijom **CC BY 4.0**. Baza podataka dostupna je na Kaggleu kao
-[Hrvatski katolički digitalni medijski prostor 2021.–2026.](https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space/data),
+[Hrvatski katolički digitalni medijski prostor 2021.–2026.](https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space),
 a sav kod, uključujući filtar `R/religious_terms.R`, objavljen je na GitHubu na
 [github.com/lusiki/DigiKat](https://github.com/lusiki/DigiKat).
 
