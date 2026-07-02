@@ -8,6 +8,8 @@
 
 🌐 **Stranica projekta:** <https://lusiki.github.io/DigiKat/>
 
+📄 **Izvršni pregled projekta (HTML, 15 min čitanja):** <https://lusiki.github.io/DigiKat/pages/pregled/izvrsni-pregled.html>
+
 ------------------------------------------------------------------------
 
 ### 🎯 Glavni ciljevi
