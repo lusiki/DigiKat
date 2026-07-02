@@ -261,6 +261,57 @@ a:hover { text-decoration: underline; }
 .section-header > :first-child { margin-top: 0; }
 
 // ---------------------------------------------------------------------
+// Homepage "Mreža izvora" feature — two-column split (prose + network).
+// Mirrors the hero / stats bands in index.qmd (cream page, 1180px band).
+// ---------------------------------------------------------------------
+.home-network {
+  border-bottom: 1px solid $dk-hairline;
+
+  .hn-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 56px 40px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 44px;
+    align-items: center;
+  }
+
+  .hn-text {
+    h2 {
+      font-family: $headings-font-family;
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: $dk-heading;
+      margin: 0 0 16px;
+    }
+    p { font-size: 16px; line-height: 1.55; color: $dk-body-2; margin: 0 0 14px; }
+  }
+
+  .hn-links { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .hn-links a {
+    display: inline-flex; align-items: center;
+    font-weight: 600; font-size: 14px; text-decoration: none;
+    padding: 9px 16px; border-radius: 6px;
+  }
+  .hn-links a.hn-primary { background: $dk-accent; color: #fff; }
+  .hn-links a.hn-ghost { color: $dk-heading; border: 1px solid #cfccc2; }
+
+  .hn-viz {
+    border: 1px solid $dk-hairline;
+    border-radius: $border-radius-lg;
+    overflow: hidden;
+    background: $dk-paper;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-network .hn-inner { grid-template-columns: 1fr; gap: 28px; }
+}
+
+// ---------------------------------------------------------------------
 // Callouts — align to brand
 // ---------------------------------------------------------------------
 .callout.callout-style-default { border-radius: $border-radius-lg; border-left-color: $dk-accent; }

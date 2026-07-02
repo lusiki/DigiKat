@@ -1,0 +1,54 @@
+---
+title: "Mk.gee 🇪🇺"
+subtitle: "Twitter · Specijalizirani akteri"
+date: last-modified
+categories: ["Katalog izvora", "Twitter"]
+---
+
+Ova stranica sažima profil izvora **Mk.gee 🇪🇺** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+
+## Što je
+
+*Opis još nije potvrđen — uređuje PI.*
+
+## Profil
+
+Ključni pokazatelji ovog izvora u korpusu:
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">2</div>
+<div class="metric-label">Objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">905</div>
+<div class="metric-label">Interakcija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">13.752</div>
+<div class="metric-label">Doseg</div>
+</div>
+</div>
+
+Po volumenu objava, Mk.gee 🇪🇺 je na **18. mjestu** od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje **452 interakcija po objavi**.
+
+## Tipologija
+
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Mk.gee 🇪🇺 pripada skupini **Specijalizirani akteri**: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.
+
+Uređivačka oznaka: **ostalo** *(predloženo — potvrđuje PI)*
+
+## Povezano
+
+- [Pregled platforme Twitter](platforma-twitter.html)
+- Srodni akteri: [Neven Barkovic](twitter-neven-barkovic.html), [Laganica](twitter-laganica.html), [NORWEGIAN MAN](twitter-norwegian-man.html)
+- [Katalog izvora — sve platforme](index.html)
+
+## Izvori podataka
+
+Podaci: `data/processed/twitter_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-02).
+
+::: {.callout-warning}
+Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno.
+:::
+

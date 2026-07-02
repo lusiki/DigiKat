@@ -193,6 +193,27 @@ vijesti**. Tipologija je analitički presjek, a ne prirodna kategorija, pa naved
 veličine, a ne kao točne mjere.
 :::
 
+## Pojedinačni izvori: katalog i mreža
+
+Iza zbirnih brojki stoje konkretni akteri. Uz sastav po tipu izvora, korpus se može razgledati i **izvor po
+izvor**. [Katalog izvora](izvori/index.html) okuplja profile pojedinačnih medijskih aktera zastupljenih u
+korpusu: za svaki donosi volumen, angažman i doseg te pripadnost tipologiji (Divovi, Graditelji zajednica,
+Megafoni, Specijalizirani akteri), izračunatoj jednako kao u [Mapi ekosustava](mapa/mapa.html). Profili su
+razvrstani po platformama i međusobno povezani, pa se od jednog izvora lako prijeđe na srodne.
+
+Isti se katalog može sagledati i kao [mreža izvora](izvori/mreza.html): interaktivni graf u kojem je svaki izvor
+jedan čvor, obojen prema platformi i skaliran prema volumenu objava. Poveznice među čvorovima su **strukturne** —
+pripadnost izvora svojoj platformi te zajednički brend ili osoba prisutna na više platformi (primjerice Laudato
+ili Index). Struktura kataloga, inače vidljiva tek listanjem pojedinačnih stranica, tako se vidi odjednom i
+istražuje mišem.
+
+::: {.callout-warning}
+Mreža prikazuje **strukturu kataloga**, a ne izmjerene odnose među akterima. Poveznice **ne** znače zajedničku
+publiku, tematsko preklapanje ni utjecaj: riječ je isključivo o pripadnosti platformi i zajedničkom brendu.
+Katalog je **radna verzija** — uređivačke oznake (konfesionalni/sekularni izvor) prijedlozi su koje potvrđuje
+voditelj projekta, a brojke su indikativne.
+:::
+
 ## Kako je prikupljen
 
 ```{r}

@@ -1,0 +1,54 @@
+---
+title: "crovibes"
+subtitle: "TikTok · Specijalizirani akteri"
+date: last-modified
+categories: ["Katalog izvora", "TikTok"]
+---
+
+Ova stranica sažima profil izvora **crovibes** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+
+## Što je
+
+*Opis još nije potvrđen — uređuje PI.*
+
+## Profil
+
+Ključni pokazatelji ovog izvora u korpusu:
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">3</div>
+<div class="metric-label">Objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">5.728</div>
+<div class="metric-label">Interakcija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">79.832</div>
+<div class="metric-label">Doseg</div>
+</div>
+</div>
+
+Po volumenu objava, crovibes je na **13. mjestu** od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje **1.909 interakcija po objavi**.
+
+## Tipologija
+
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), crovibes pripada skupini **Specijalizirani akteri**: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.
+
+Uređivačka oznaka: **ostalo** *(predloženo — potvrđuje PI)*
+
+## Povezano
+
+- [Pregled platforme TikTok](platforma-tiktok.html)
+- Srodni akteri: [poslanik.gospodina](tiktok-poslanik-gospodina.html), [plenkovic_andrej](tiktok-plenkovic-andrej.html), [rtldirekt](tiktok-rtldirekt.html)
+- [Katalog izvora — sve platforme](index.html)
+
+## Izvori podataka
+
+Podaci: `data/processed/tiktok_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-02).
+
+::: {.callout-warning}
+Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno.
+:::
+

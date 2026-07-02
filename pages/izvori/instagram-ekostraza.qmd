@@ -1,0 +1,54 @@
+---
+title: "ekostraza"
+subtitle: "Instagram · Graditelji zajednica"
+date: last-modified
+categories: ["Katalog izvora", "Instagram"]
+---
+
+Ova stranica sažima profil izvora **ekostraza** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+
+## Što je
+
+Eko straža (Instagram)
+
+## Profil
+
+Ključni pokazatelji ovog izvora u korpusu:
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">1</div>
+<div class="metric-label">Objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">12.286</div>
+<div class="metric-label">Interakcija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">20.261</div>
+<div class="metric-label">Doseg</div>
+</div>
+</div>
+
+Po volumenu objava, ekostraza je na **15. mjestu** od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje **12.286 interakcija po objavi**.
+
+## Tipologija
+
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), ekostraza pripada skupini **Graditelji zajednica**: nizak doseg uz vrlo visok angažman — gradi dubok odnos s vjernom publikom.
+
+Uređivačka oznaka: **sekularni izvor** *(predloženo — potvrđuje PI)*
+
+## Povezano
+
+- [Pregled platforme Instagram](platforma-instagram.html)
+- Srodni akteri: [martinafilic](instagram-martinafilic.html), [klaskalica](instagram-klaskalica.html), [hns_cff](instagram-hns-cff.html)
+- [Katalog izvora — sve platforme](index.html)
+
+## Izvori podataka
+
+Podaci: `data/processed/instagram_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-02).
+
+::: {.callout-warning}
+Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno.
+:::
+

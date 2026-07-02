@@ -1,0 +1,33 @@
+---
+title: "Izvori — TikTok"
+subtitle: "Praćeni akteri na platformi TikTok"
+date: last-modified
+categories: ["Katalog izvora", "TikTok"]
+---
+
+Ova stranica okuplja praćene izvore na platformi **TikTok** iz **Kataloga izvora**. Tipologija je izračunata jednako kao u [Mapi ekosustava](../mapa/mapa.html) — podjelom po medijanu angažmana i dosega. Poredano po volumenu objava.
+
+| Izvor | Tipologija | Objava | Interakcija | Doseg |
+|---|---|---:|---:|---:|
+| [dnevnikhr](tiktok-dnevnikhr.html) | Divovi | 28 | 20.673 | 574.222 |
+| [24sata](tiktok-24sata.html) | Divovi | 27 | 28.162 | 618.739 |
+| [vecernjilist](tiktok-vecernjilist.html) | Divovi | 27 | 19.725 | 528.993 |
+| [hrvatska_radiotelevizija](tiktok-hrvatska-radiotelevizija.html) | Divovi | 26 | 50.002 | 627.573 |
+| [trtbalkanbhsc](tiktok-trtbalkanbhsc.html) | Divovi | 22 | 18.082 | 472.888 |
+| [slobodna.dalmacija](tiktok-slobodna-dalmacija.html) | Divovi | 14 | 45.133 | 592.031 |
+| [kristijanilicic](tiktok-kristijanilicic.html) | Divovi | 8 | 63.266 | 1.248.031 |
+| [index.hr](tiktok-index-hr.html) | Divovi | 6 | 33.151 | 419.341 |
+| [shkm2026](tiktok-shkm2026.html) | Specijalizirani akteri | 5 | 7.374 | 69.432 |
+| [mladifesthrvatska](tiktok-mladifesthrvatska.html) | Specijalizirani akteri | 4 | 10.870 | 111.250 |
+| [rtldirekt](tiktok-rtldirekt.html) | Divovi | 3 | 29.504 | 447.334 |
+| [poslanik.gospodina](tiktok-poslanik-gospodina.html) | Megafoni | 3 | 15.639 | 400.595 |
+| [crovibes](tiktok-crovibes.html) | Specijalizirani akteri | 3 | 5.728 | 79.832 |
+| [plenkovic_andrej](tiktok-plenkovic-andrej.html) | Specijalizirani akteri | 2 | 5.790 | 85.300 |
+| [dontomolukac](tiktok-dontomolukac.html) | Graditelji zajednica | 1 | 40.752 | 354.900 |
+| [kamenkrsislanina](tiktok-kamenkrsislanina.html) | Specijalizirani akteri | 1 | 13.400 | 185.300 |
+| [hypetelevizija.hr](tiktok-hypetelevizija-hr.html) | Specijalizirani akteri | 1 | 10.991 | 85.700 |
+| [mondo.zabava](tiktok-mondo-zabava.html) | Specijalizirani akteri | 1 | 6.268 | 279.700 |
+| [euforija.online](tiktok-euforija-online.html) | Specijalizirani akteri | 1 | 5.646 | 99.400 |
+
+[Natrag na katalog izvora](index.html) · [Mapa ekosustava](../mapa/mapa.html)
+

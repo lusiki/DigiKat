@@ -1,0 +1,54 @@
+---
+title: "euforija.online"
+subtitle: "TikTok · Specijalizirani akteri"
+date: last-modified
+categories: ["Katalog izvora", "TikTok"]
+---
+
+Ova stranica sažima profil izvora **euforija.online** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+
+## Što je
+
+Euforija online (TikTok)
+
+## Profil
+
+Ključni pokazatelji ovog izvora u korpusu:
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">1</div>
+<div class="metric-label">Objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">5.646</div>
+<div class="metric-label">Interakcija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">99.400</div>
+<div class="metric-label">Doseg</div>
+</div>
+</div>
+
+Po volumenu objava, euforija.online je na **19. mjestu** od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje **5.646 interakcija po objavi**.
+
+## Tipologija
+
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), euforija.online pripada skupini **Specijalizirani akteri**: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.
+
+Uređivačka oznaka: **sekularni izvor** *(predloženo — potvrđuje PI)*
+
+## Povezano
+
+- [Pregled platforme TikTok](platforma-tiktok.html)
+- Srodni akteri: [mondo.zabava](tiktok-mondo-zabava.html), [hypetelevizija.hr](tiktok-hypetelevizija-hr.html), [kamenkrsislanina](tiktok-kamenkrsislanina.html)
+- [Katalog izvora — sve platforme](index.html)
+
+## Izvori podataka
+
+Podaci: `data/processed/tiktok_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-02).
+
+::: {.callout-warning}
+Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno.
+:::
+

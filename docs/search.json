@@ -760,7 +760,7 @@
     "href": "pages/izvori/index.html",
     "title": "Katalog izvora",
     "section": "",
-    "text": "Katalog izvora pregled je pojedinačnih medijskih aktera zastupljenih u korpusu i dopuna je analitičkoj Mapi ekosustava. Za svaki izvor donosi volumen, angažman i doseg te pripadnost tipologiji (Divovi, Graditelji zajednica, Megafoni, Specijalizirani akteri), izračunatoj jednako kao u Mapi.\nCijeli se katalog može vidjeti i kao mreža izvora — čvorovi su izvori, a poveznice pripadnost platformi i zajednički brend."
+    "text": "Katalog izvora pregled je pojedinačnih medijskih aktera zastupljenih u korpusu. Dio je opisa Baze podataka, a tipologiju izvora dijeli s Mapom ekosustava. Za svaki izvor donosi volumen, angažman i doseg te pripadnost tipologiji (Divovi, Graditelji zajednica, Megafoni, Specijalizirani akteri), izračunatoj jednako kao u Mapi.\nCijeli se katalog može vidjeti i kao mreža izvora — čvorovi su izvori, a poveznice pripadnost platformi i zajednički brend."
   },
   {
     "objectID": "pages/izvori/index.html#web",
@@ -2853,6 +2853,2407 @@
     "href": "pages/izvori/mreza.html",
     "title": "Mreža izvora",
     "section": "",
-    "text": "Mreža izvora prikazuje Katalog izvora kao interaktivni graf: svaki je izvor jedan čvor, a poveznice među čvorovima one su koje i sam wiki bilježi. Struktura kataloga — inače vidljiva samo listanjem pojedinačnih stranica — tako se može sagledati odjednom i istraživati mišem. Mreža dopunjuje Mapu ekosustava i dijeli likovni jezik s tematskim mrežama.\n\n\n\n\n\n\nNoteKako čitati i koristiti mrežu\n\n\n\nČvorovi su pojedinačni izvori (47 objavljenih aktera), obojeni prema platformi; veličina čvora razmjerna je volumenu objava. Tri čvora u obliku romba su platforme (Web, YouTube, Facebook). Poveznice su dvojake: tanke sive spajaju izvor s njegovom platformom (pripadnost), a deblje plave spajaju isti brend prisutan na više platformi (primjerice Bitno.net ili Laudato).\nMreža je interaktivna: čvorove možete povlačiti mišem, prikaz zumirati i pomicati, a prelaskom preko čvora prikazuju se podaci o izvoru (tipologija, volumen, angažman, doseg). Klik na čvor ističe njegove izravne veze. Poveznice su strukturne — označavaju pripadnost i zajednički brend, a ne znače zajedničku publiku, zajedničke teme ni utjecaj.\n\n\n\n\n\n\n\n\nIzvor: data/processed/*_actors.rds; poveznice iz resources/dictionaries/source_labels.csv.\nMreža otkriva tri platformske konstelacije. Web i Facebook gusto su premošteni: isti mainstream brendovi (Index, Večernji list, 24sata, Jutarnji, Net.hr, Dnevnik) i katolički mediji (Bitno.net, Laudato) djeluju na objema platformama pa ih zajedničke poveznice povlače jedne k drugima. YouTube je uglavnom platformski zaseban — s ostatkom ga vežu tek Laudato i RTL. Nasuprot tomu, konfesionalni akteri bez inačice na drugim platformama — hkm.hr, Radio Marija Hrvatska, Zagrebačka nadbiskupija — vežu se samo uz vlastitu platformu, što ih obilježava kao platformski izvorne: prisutni su ondje gdje im je zajednica, a ne kao dio višekanalnoga medijskog brenda.\n\n\n\n\n\n\nWarning\n\n\n\nMreža prikazuje strukturu kataloga, ne izmjerene odnose među akterima. Poveznice su strukturne (pripadnost platformi i zajednički brend); ne predstavljaju zajedničku publiku, tematsko preklapanje ni utjecaj. Brojke i pripadnosti indikativne su (agregati 2021.–2025., bez Instagrama i TikToka; radna verzija). Bogatije semantičke veze — zajedničke teme ili preklapanje publike — zahtijevaju dodatne podatke i zasebnu validaciju te su predviđene za sljedeću inačicu."
+    "text": "Mreža izvora prikazuje Katalog izvora kao interaktivni graf preko šest platformi: svaki je izvor jedan čvor, a poveznice među čvorovima one su koje i sam wiki bilježi. Struktura kataloga — inače vidljiva samo listanjem pojedinačnih stranica — tako se može sagledati odjednom i istraživati mišem. Mreža dopunjuje Mapu ekosustava i dijeli likovni jezik s tematskim mrežama.\n\n\n\n\n\n\nNoteKako čitati i koristiti mrežu\n\n\n\nČvorovi su pojedinačni izvori (103 objavljenih aktera), obojeni prema platformi; veličina čvora razmjerna je volumenu objava. Šest najvećih čvorova (s podebljanim nazivom) su platforme (Web, YouTube, Facebook, Instagram, TikTok, Twitter). Poveznice su dvojake: tanke sive spajaju izvor s njegovom platformom (pripadnost), a deblje plave spajaju isti brend ili osobu prisutnu na više platformi (primjerice Laudato ili Index).\nMreža je interaktivna: čvorove možete povlačiti mišem, prikaz zumirati i pomicati, a prelaskom preko čvora prikazuju se podaci o izvoru (tipologija, volumen, angažman, doseg). Klik na čvor ističe njegove izravne veze. Poveznice su strukturne — pripadnost i zajednički brend/osoba, a ne znače zajedničku publiku, zajedničke teme ni utjecaj.\n\n\n\n\n\n\n\n\nIzvor: data/processed/*_actors.rds; poveznice iz resources/dictionaries/source_labels.csv.\nMreža obuhvaća šest platformi, a razlika među njima sama je po sebi nalaz. Web, YouTube i Facebook čine jezgru katoličkoga medijskog prostora — portali i kanali gusto premošteni zajedničkim brendovima (Index, Večernji list, 24sata, Bitno.net, Laudato). Instagram, TikTok i Twitter izgledaju bitno drukčije: među njihovim najaktivnijim akterima prevladavaju pojedinci — političari i privatne osobe te sadržaj koji je u korpus ušao usputnim podudaranjem, a ne katoličke institucije. Iznimke su rijetke, ali znakovite — shkm2026, Mladifest Hrvatska, Laudato TV i Zagrebačka nadbiskupija nose katoličku tematiku na nove platforme. Zajednički brendovi (Slobodna Dalmacija, RTL, Dnevnik) povezuju TikTok s webom i Facebookom, dok Twitter ostaje pretežno prostor političkih pojedinaca.\n\n\n\n\n\n\nWarning\n\n\n\nMreža prikazuje strukturu kataloga, ne izmjerene odnose među akterima. Poveznice su strukturne (pripadnost platformi te zajednički brend ili osoba); ne predstavljaju zajedničku publiku, tematsko preklapanje ni utjecaj. Uz institucije, na novijim platformama prikazani su i pojedinci (političari i privatne osobe) — na izričitu odluku voditelja projekta; svaki se akter može isključiti. Brojke i pripadnosti indikativne su (agregati 2021.–2025., radna verzija; mnogi akteri na novim platformama imaju tek nekoliko objava)."
+  },
+  {
+    "objectID": "pages/baza.html#pojedinačni-izvori-katalog-i-mreža",
+    "href": "pages/baza.html#pojedinačni-izvori-katalog-i-mreža",
+    "title": "Baza podataka — opis korpusa katoličkoga digitalnog medijskog prostora",
+    "section": "Pojedinačni izvori: katalog i mreža",
+    "text": "Pojedinačni izvori: katalog i mreža\nIza zbirnih brojki stoje konkretni akteri. Uz sastav po tipu izvora, korpus se može razgledati i izvor po izvor. Katalog izvora okuplja profile pojedinačnih medijskih aktera zastupljenih u korpusu: za svaki donosi volumen, angažman i doseg te pripadnost tipologiji (Divovi, Graditelji zajednica, Megafoni, Specijalizirani akteri), izračunatoj jednako kao u Mapi ekosustava. Profili su razvrstani po platformama i međusobno povezani, pa se od jednog izvora lako prijeđe na srodne.\nIsti se katalog može sagledati i kao mreža izvora: interaktivni graf u kojem je svaki izvor jedan čvor, obojen prema platformi i skaliran prema volumenu objava. Poveznice među čvorovima su strukturne — pripadnost izvora svojoj platformi te zajednički brend ili osoba prisutna na više platformi (primjerice Laudato ili Index). Struktura kataloga, inače vidljiva tek listanjem pojedinačnih stranica, tako se vidi odjednom i istražuje mišem.\n\n\n\n\n\n\nWarning\n\n\n\nMreža prikazuje strukturu kataloga, a ne izmjerene odnose među akterima. Poveznice ne znače zajedničku publiku, tematsko preklapanje ni utjecaj: riječ je isključivo o pripadnosti platformi i zajedničkom brendu. Katalog je radna verzija — uređivačke oznake (konfesionalni/sekularni izvor) prijedlozi su koje potvrđuje voditelj projekta, a brojke su indikativne."
+  },
+  {
+    "objectID": "pages/izvori/index.html#instagram",
+    "href": "pages/izvori/index.html#instagram",
+    "title": "Katalog izvora",
+    "section": "Instagram",
+    "text": "Instagram\nPraćeni izvori na platformi Instagram (poredano po volumenu). Cjeloviti pregled: Instagram.\n\n\n\nIzvor\nTipologija\nObjava\nInterakcija\n\n\n\n\ndnevniavaz\nDivovi\n51\n24.181\n\n\nlaudatotv\nDivovi\n42\n50.276\n\n\nivan.anusic.hr\nSpecijalizirani akteri\n13\n8.822\n\n\n_rina.rs\nDivovi\n6\n10.773\n\n\nhrvatskivojnik_magazin\nSpecijalizirani akteri\n6\n6.246\n\n\noslobodjenje.ba\nSpecijalizirani akteri\n4\n6.268\n\n\n24sata.hr\nMegafoni\n4\n6.157\n\n\ninsidebosnia\nGraditelji zajednica\n3\n9.715\n\n\nbuducnostsrbijeav\nMegafoni\n3\n9.341\n\n\nkristijanilicic\nDivovi\n2\n22.590\n\n\nsport.klub\nMegafoni\n2\n6.624\n\n\nhns_cff\nDivovi\n1\n52.022\n\n\nmartinafilic\nGraditelji zajednica\n1\n13.655\n\n\nekostraza\nGraditelji zajednica\n1\n12.286\n\n\nklaskalica\nGraditelji zajednica\n1\n10.238\n\n\nelladvornik\nMegafoni\n1\n7.510\n\n\nzenskisvijet\nSpecijalizirani akteri\n1\n6.928\n\n\nvannabojovic\nSpecijalizirani akteri\n1\n6.847"
+  },
+  {
+    "objectID": "pages/izvori/index.html#tiktok",
+    "href": "pages/izvori/index.html#tiktok",
+    "title": "Katalog izvora",
+    "section": "TikTok",
+    "text": "TikTok\nPraćeni izvori na platformi TikTok (poredano po volumenu). Cjeloviti pregled: TikTok.\n\n\n\nIzvor\nTipologija\nObjava\nInterakcija\n\n\n\n\ndnevnikhr\nDivovi\n28\n20.673\n\n\n24sata\nDivovi\n27\n28.162\n\n\nvecernjilist\nDivovi\n27\n19.725\n\n\nhrvatska_radiotelevizija\nDivovi\n26\n50.002\n\n\ntrtbalkanbhsc\nDivovi\n22\n18.082\n\n\nslobodna.dalmacija\nDivovi\n14\n45.133\n\n\nkristijanilicic\nDivovi\n8\n63.266\n\n\nindex.hr\nDivovi\n6\n33.151\n\n\nshkm2026\nSpecijalizirani akteri\n5\n7.374\n\n\nmladifesthrvatska\nSpecijalizirani akteri\n4\n10.870\n\n\nrtldirekt\nDivovi\n3\n29.504\n\n\nposlanik.gospodina\nMegafoni\n3\n15.639\n\n\ncrovibes\nSpecijalizirani akteri\n3\n5.728\n\n\nplenkovic_andrej\nSpecijalizirani akteri\n2\n5.790\n\n\ndontomolukac\nGraditelji zajednica\n1\n40.752\n\n\nkamenkrsislanina\nSpecijalizirani akteri\n1\n13.400\n\n\nhypetelevizija.hr\nSpecijalizirani akteri\n1\n10.991\n\n\nmondo.zabava\nSpecijalizirani akteri\n1\n6.268\n\n\neuforija.online\nSpecijalizirani akteri\n1\n5.646"
+  },
+  {
+    "objectID": "pages/izvori/index.html#twitter",
+    "href": "pages/izvori/index.html#twitter",
+    "title": "Katalog izvora",
+    "section": "Twitter",
+    "text": "Twitter\nPraćeni izvori na platformi Twitter (poredano po volumenu). Cjeloviti pregled: Twitter.\n\n\n\nIzvor\nTipologija\nObjava\nInterakcija\n\n\n\n\nZagrebačka nadbiskupija\nMegafoni\n75\n984\n\n\nPetar\nDivovi\n73\n2.247\n\n\nVlada Republike Hrvatske\nDivovi\n65\n2.599\n\n\nAndrej Plenković\nDivovi\n35\n3.928\n\n\nDarko Lesinger\nMegafoni\n15\n991\n\n\nHrvatski Kanal\nSpecijalizirani akteri\n15\n822\n\n\nStephen Nikola Bartulica\nDivovi\n14\n1.802\n\n\nPavel Gregoric\nDivovi\n12\n1.314\n\n\nMate Mijić 🇭🇷\nSpecijalizirani akteri\n9\n783\n\n\nIvan Anušić\nDivovi\n8\n1.249\n\n\nDominik Alpeza\nSpecijalizirani akteri\n6\n965\n\n\nDalija Orešković\nSpecijalizirani akteri\n6\n834\n\n\nVesna Rajnović 🌿\nSpecijalizirani akteri\n6\n767\n\n\nMarin Miletić\nSpecijalizirani akteri\n4\n850\n\n\nŽeljka Markić\nGraditelji zajednica\n3\n1.028\n\n\nNORWEGIAN MAN\nDivovi\n2\n1.509\n\n\nNeven Barkovic\nGraditelji zajednica\n2\n1.110\n\n\nMk.gee 🇪🇺\nSpecijalizirani akteri\n2\n905\n\n\nLaganica\nDivovi\n1\n3.385"
+  },
+  {
+    "objectID": "pages/izvori/instagram-24sata-hr.html",
+    "href": "pages/izvori/instagram-24sata-hr.html",
+    "title": "24sata.hr",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora 24sata.hr u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/instagram-24sata-hr.html#što-je",
+    "href": "pages/izvori/instagram-24sata-hr.html#što-je",
+    "title": "24sata.hr",
+    "section": "Što je",
+    "text": "Što je\n24sata — nacionalni news-portal"
+  },
+  {
+    "objectID": "pages/izvori/instagram-24sata-hr.html#profil",
+    "href": "pages/izvori/instagram-24sata-hr.html#profil",
+    "title": "24sata.hr",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n4\n\n\nObjava\n\n\n\n\n6.157\n\n\nInterakcija\n\n\n\n\n83.130\n\n\nDoseg\n\n\n\nPo volumenu objava, 24sata.hr je na 8. mjestu od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje 1.539 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/instagram-24sata-hr.html#tipologija",
+    "href": "pages/izvori/instagram-24sata-hr.html#tipologija",
+    "title": "24sata.hr",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), 24sata.hr pripada skupini Megafoni: visok doseg uz nizak angažman — sadržaj doseže široku publiku bez intenzivne interakcije.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-24sata-hr.html#povezano",
+    "href": "pages/izvori/instagram-24sata-hr.html#povezano",
+    "title": "24sata.hr",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Instagram\nSrodni akteri: oslobodjenje.ba, insidebosnia, hrvatskivojnik_magazin\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/instagram-24sata-hr.html#izvori-podataka",
+    "href": "pages/izvori/instagram-24sata-hr.html#izvori-podataka",
+    "title": "24sata.hr",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/instagram-buducnostsrbijeav.html",
+    "href": "pages/izvori/instagram-buducnostsrbijeav.html",
+    "title": "buducnostsrbijeav",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora buducnostsrbijeav u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/instagram-buducnostsrbijeav.html#što-je",
+    "href": "pages/izvori/instagram-buducnostsrbijeav.html#što-je",
+    "title": "buducnostsrbijeav",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/instagram-buducnostsrbijeav.html#profil",
+    "href": "pages/izvori/instagram-buducnostsrbijeav.html#profil",
+    "title": "buducnostsrbijeav",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n3\n\n\nObjava\n\n\n\n\n9.341\n\n\nInterakcija\n\n\n\n\n93.324\n\n\nDoseg\n\n\n\nPo volumenu objava, buducnostsrbijeav je na 10. mjestu od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje 3.114 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/instagram-buducnostsrbijeav.html#tipologija",
+    "href": "pages/izvori/instagram-buducnostsrbijeav.html#tipologija",
+    "title": "buducnostsrbijeav",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), buducnostsrbijeav pripada skupini Megafoni: visok doseg uz nizak angažman — sadržaj doseže široku publiku bez intenzivne interakcije.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-buducnostsrbijeav.html#povezano",
+    "href": "pages/izvori/instagram-buducnostsrbijeav.html#povezano",
+    "title": "buducnostsrbijeav",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Instagram\nSrodni akteri: insidebosnia, kristijanilicic, 24sata.hr\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/instagram-buducnostsrbijeav.html#izvori-podataka",
+    "href": "pages/izvori/instagram-buducnostsrbijeav.html#izvori-podataka",
+    "title": "buducnostsrbijeav",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/instagram-dnevniavaz.html",
+    "href": "pages/izvori/instagram-dnevniavaz.html",
+    "title": "dnevniavaz",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora dnevniavaz u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/instagram-dnevniavaz.html#što-je",
+    "href": "pages/izvori/instagram-dnevniavaz.html#što-je",
+    "title": "dnevniavaz",
+    "section": "Što je",
+    "text": "Što je\nDnevni avaz — bh. dnevnik (Instagram)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-dnevniavaz.html#profil",
+    "href": "pages/izvori/instagram-dnevniavaz.html#profil",
+    "title": "dnevniavaz",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n51\n\n\nObjava\n\n\n\n\n24.181\n\n\nInterakcija\n\n\n\n\n606.100\n\n\nDoseg\n\n\n\nPo volumenu objava, dnevniavaz je na 2. mjestu od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje 474 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/instagram-dnevniavaz.html#tipologija",
+    "href": "pages/izvori/instagram-dnevniavaz.html#tipologija",
+    "title": "dnevniavaz",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), dnevniavaz pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-dnevniavaz.html#povezano",
+    "href": "pages/izvori/instagram-dnevniavaz.html#povezano",
+    "title": "dnevniavaz",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Instagram\nSrodni akteri: laudatotv, ivan.anusic.hr, _rina.rs\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/instagram-dnevniavaz.html#izvori-podataka",
+    "href": "pages/izvori/instagram-dnevniavaz.html#izvori-podataka",
+    "title": "dnevniavaz",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/instagram-ekostraza.html",
+    "href": "pages/izvori/instagram-ekostraza.html",
+    "title": "ekostraza",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora ekostraza u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/instagram-ekostraza.html#što-je",
+    "href": "pages/izvori/instagram-ekostraza.html#što-je",
+    "title": "ekostraza",
+    "section": "Što je",
+    "text": "Što je\nEko straža (Instagram)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-ekostraza.html#profil",
+    "href": "pages/izvori/instagram-ekostraza.html#profil",
+    "title": "ekostraza",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n1\n\n\nObjava\n\n\n\n\n12.286\n\n\nInterakcija\n\n\n\n\n20.261\n\n\nDoseg\n\n\n\nPo volumenu objava, ekostraza je na 15. mjestu od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje 12.286 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/instagram-ekostraza.html#tipologija",
+    "href": "pages/izvori/instagram-ekostraza.html#tipologija",
+    "title": "ekostraza",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), ekostraza pripada skupini Graditelji zajednica: nizak doseg uz vrlo visok angažman — gradi dubok odnos s vjernom publikom.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-ekostraza.html#povezano",
+    "href": "pages/izvori/instagram-ekostraza.html#povezano",
+    "title": "ekostraza",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Instagram\nSrodni akteri: martinafilic, klaskalica, hns_cff\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/instagram-ekostraza.html#izvori-podataka",
+    "href": "pages/izvori/instagram-ekostraza.html#izvori-podataka",
+    "title": "ekostraza",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/instagram-elladvornik.html",
+    "href": "pages/izvori/instagram-elladvornik.html",
+    "title": "elladvornik",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora elladvornik u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/instagram-elladvornik.html#što-je",
+    "href": "pages/izvori/instagram-elladvornik.html#što-je",
+    "title": "elladvornik",
+    "section": "Što je",
+    "text": "Što je\nElla Dvornik — influencerica (Instagram)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-elladvornik.html#profil",
+    "href": "pages/izvori/instagram-elladvornik.html#profil",
+    "title": "elladvornik",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n1\n\n\nObjava\n\n\n\n\n7.510\n\n\nInterakcija\n\n\n\n\n52.625\n\n\nDoseg\n\n\n\nPo volumenu objava, elladvornik je na 17. mjestu od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje 7.510 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/instagram-elladvornik.html#tipologija",
+    "href": "pages/izvori/instagram-elladvornik.html#tipologija",
+    "title": "elladvornik",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), elladvornik pripada skupini Megafoni: visok doseg uz nizak angažman — sadržaj doseže široku publiku bez intenzivne interakcije.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-elladvornik.html#povezano",
+    "href": "pages/izvori/instagram-elladvornik.html#povezano",
+    "title": "elladvornik",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Instagram\nSrodni akteri: klaskalica, zenskisvijet, ekostraza\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/instagram-elladvornik.html#izvori-podataka",
+    "href": "pages/izvori/instagram-elladvornik.html#izvori-podataka",
+    "title": "elladvornik",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/instagram-hns-cff.html",
+    "href": "pages/izvori/instagram-hns-cff.html",
+    "title": "hns_cff",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora hns_cff u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/instagram-hns-cff.html#što-je",
+    "href": "pages/izvori/instagram-hns-cff.html#što-je",
+    "title": "hns_cff",
+    "section": "Što je",
+    "text": "Što je\nHrvatski nogometni savez (Instagram)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-hns-cff.html#profil",
+    "href": "pages/izvori/instagram-hns-cff.html#profil",
+    "title": "hns_cff",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n1\n\n\nObjava\n\n\n\n\n52.022\n\n\nInterakcija\n\n\n\n\n84.478\n\n\nDoseg\n\n\n\nPo volumenu objava, hns_cff je na 13. mjestu od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje 52.022 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/instagram-hns-cff.html#tipologija",
+    "href": "pages/izvori/instagram-hns-cff.html#tipologija",
+    "title": "hns_cff",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), hns_cff pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-hns-cff.html#povezano",
+    "href": "pages/izvori/instagram-hns-cff.html#povezano",
+    "title": "hns_cff",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Instagram\nSrodni akteri: sport.klub, martinafilic, kristijanilicic\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/instagram-hns-cff.html#izvori-podataka",
+    "href": "pages/izvori/instagram-hns-cff.html#izvori-podataka",
+    "title": "hns_cff",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/instagram-hrvatskivojnik-magazin.html",
+    "href": "pages/izvori/instagram-hrvatskivojnik-magazin.html",
+    "title": "hrvatskivojnik_magazin",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora hrvatskivojnik_magazin u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/instagram-hrvatskivojnik-magazin.html#što-je",
+    "href": "pages/izvori/instagram-hrvatskivojnik-magazin.html#što-je",
+    "title": "hrvatskivojnik_magazin",
+    "section": "Što je",
+    "text": "Što je\nHrvatski vojnik — magazin (Instagram)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-hrvatskivojnik-magazin.html#profil",
+    "href": "pages/izvori/instagram-hrvatskivojnik-magazin.html#profil",
+    "title": "hrvatskivojnik_magazin",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n6\n\n\nObjava\n\n\n\n\n6.246\n\n\nInterakcija\n\n\n\n\n3.573\n\n\nDoseg\n\n\n\nPo volumenu objava, hrvatskivojnik_magazin je na 6. mjestu od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje 1.041 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/instagram-hrvatskivojnik-magazin.html#tipologija",
+    "href": "pages/izvori/instagram-hrvatskivojnik-magazin.html#tipologija",
+    "title": "hrvatskivojnik_magazin",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), hrvatskivojnik_magazin pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-hrvatskivojnik-magazin.html#povezano",
+    "href": "pages/izvori/instagram-hrvatskivojnik-magazin.html#povezano",
+    "title": "hrvatskivojnik_magazin",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Instagram\nSrodni akteri: _rina.rs, oslobodjenje.ba, ivan.anusic.hr\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/instagram-hrvatskivojnik-magazin.html#izvori-podataka",
+    "href": "pages/izvori/instagram-hrvatskivojnik-magazin.html#izvori-podataka",
+    "title": "hrvatskivojnik_magazin",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/instagram-insidebosnia.html",
+    "href": "pages/izvori/instagram-insidebosnia.html",
+    "title": "insidebosnia",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora insidebosnia u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/instagram-insidebosnia.html#što-je",
+    "href": "pages/izvori/instagram-insidebosnia.html#što-je",
+    "title": "insidebosnia",
+    "section": "Što je",
+    "text": "Što je\nInside Bosnia (Instagram)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-insidebosnia.html#profil",
+    "href": "pages/izvori/instagram-insidebosnia.html#profil",
+    "title": "insidebosnia",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n3\n\n\nObjava\n\n\n\n\n9.715\n\n\nInterakcija\n\n\n\n\n23.193\n\n\nDoseg\n\n\n\nPo volumenu objava, insidebosnia je na 9. mjestu od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje 3.238 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/instagram-insidebosnia.html#tipologija",
+    "href": "pages/izvori/instagram-insidebosnia.html#tipologija",
+    "title": "insidebosnia",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), insidebosnia pripada skupini Graditelji zajednica: nizak doseg uz vrlo visok angažman — gradi dubok odnos s vjernom publikom.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-insidebosnia.html#povezano",
+    "href": "pages/izvori/instagram-insidebosnia.html#povezano",
+    "title": "insidebosnia",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Instagram\nSrodni akteri: 24sata.hr, buducnostsrbijeav, oslobodjenje.ba\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/instagram-insidebosnia.html#izvori-podataka",
+    "href": "pages/izvori/instagram-insidebosnia.html#izvori-podataka",
+    "title": "insidebosnia",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/instagram-ivan-anusic-hr.html",
+    "href": "pages/izvori/instagram-ivan-anusic-hr.html",
+    "title": "ivan.anusic.hr",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora ivan.anusic.hr u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/instagram-ivan-anusic-hr.html#što-je",
+    "href": "pages/izvori/instagram-ivan-anusic-hr.html#što-je",
+    "title": "ivan.anusic.hr",
+    "section": "Što je",
+    "text": "Što je\nIvan Anušić — političar (Instagram)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-ivan-anusic-hr.html#profil",
+    "href": "pages/izvori/instagram-ivan-anusic-hr.html#profil",
+    "title": "ivan.anusic.hr",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n13\n\n\nObjava\n\n\n\n\n8.822\n\n\nInterakcija\n\n\n\n\n10.664\n\n\nDoseg\n\n\n\nPo volumenu objava, ivan.anusic.hr je na 4. mjestu od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje 679 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/instagram-ivan-anusic-hr.html#tipologija",
+    "href": "pages/izvori/instagram-ivan-anusic-hr.html#tipologija",
+    "title": "ivan.anusic.hr",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), ivan.anusic.hr pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-ivan-anusic-hr.html#povezano",
+    "href": "pages/izvori/instagram-ivan-anusic-hr.html#povezano",
+    "title": "ivan.anusic.hr",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Instagram\nSrodni akteri: laudatotv, _rina.rs, dnevniavaz\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/instagram-ivan-anusic-hr.html#izvori-podataka",
+    "href": "pages/izvori/instagram-ivan-anusic-hr.html#izvori-podataka",
+    "title": "ivan.anusic.hr",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/instagram-klaskalica.html",
+    "href": "pages/izvori/instagram-klaskalica.html",
+    "title": "klaskalica",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora klaskalica u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/instagram-klaskalica.html#što-je",
+    "href": "pages/izvori/instagram-klaskalica.html#što-je",
+    "title": "klaskalica",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/instagram-klaskalica.html#profil",
+    "href": "pages/izvori/instagram-klaskalica.html#profil",
+    "title": "klaskalica",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n1\n\n\nObjava\n\n\n\n\n10.238\n\n\nInterakcija\n\n\n\n\n8.214\n\n\nDoseg\n\n\n\nPo volumenu objava, klaskalica je na 16. mjestu od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje 10.238 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/instagram-klaskalica.html#tipologija",
+    "href": "pages/izvori/instagram-klaskalica.html#tipologija",
+    "title": "klaskalica",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), klaskalica pripada skupini Graditelji zajednica: nizak doseg uz vrlo visok angažman — gradi dubok odnos s vjernom publikom.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-klaskalica.html#povezano",
+    "href": "pages/izvori/instagram-klaskalica.html#povezano",
+    "title": "klaskalica",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Instagram\nSrodni akteri: ekostraza, elladvornik, martinafilic\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/instagram-klaskalica.html#izvori-podataka",
+    "href": "pages/izvori/instagram-klaskalica.html#izvori-podataka",
+    "title": "klaskalica",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/instagram-kristijanilicic.html",
+    "href": "pages/izvori/instagram-kristijanilicic.html",
+    "title": "kristijanilicic",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora kristijanilicic u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/instagram-kristijanilicic.html#što-je",
+    "href": "pages/izvori/instagram-kristijanilicic.html#što-je",
+    "title": "kristijanilicic",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/instagram-kristijanilicic.html#profil",
+    "href": "pages/izvori/instagram-kristijanilicic.html#profil",
+    "title": "kristijanilicic",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n2\n\n\nObjava\n\n\n\n\n22.590\n\n\nInterakcija\n\n\n\n\n112.618\n\n\nDoseg\n\n\n\nPo volumenu objava, kristijanilicic je na 11. mjestu od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje 11.295 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/instagram-kristijanilicic.html#tipologija",
+    "href": "pages/izvori/instagram-kristijanilicic.html#tipologija",
+    "title": "kristijanilicic",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), kristijanilicic pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-kristijanilicic.html#povezano",
+    "href": "pages/izvori/instagram-kristijanilicic.html#povezano",
+    "title": "kristijanilicic",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Instagram\nSrodni akteri: buducnostsrbijeav, sport.klub, insidebosnia\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/instagram-kristijanilicic.html#izvori-podataka",
+    "href": "pages/izvori/instagram-kristijanilicic.html#izvori-podataka",
+    "title": "kristijanilicic",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/instagram-laudatotv.html",
+    "href": "pages/izvori/instagram-laudatotv.html",
+    "title": "laudatotv",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora laudatotv u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/instagram-laudatotv.html#što-je",
+    "href": "pages/izvori/instagram-laudatotv.html#što-je",
+    "title": "laudatotv",
+    "section": "Što je",
+    "text": "Što je\nLaudato TV (Instagram)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-laudatotv.html#profil",
+    "href": "pages/izvori/instagram-laudatotv.html#profil",
+    "title": "laudatotv",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n42\n\n\nObjava\n\n\n\n\n50.276\n\n\nInterakcija\n\n\n\n\n198.120\n\n\nDoseg\n\n\n\nPo volumenu objava, laudatotv je na 3. mjestu od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje 1.197 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/instagram-laudatotv.html#tipologija",
+    "href": "pages/izvori/instagram-laudatotv.html#tipologija",
+    "title": "laudatotv",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), laudatotv pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: konfesionalni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-laudatotv.html#povezano",
+    "href": "pages/izvori/instagram-laudatotv.html#povezano",
+    "title": "laudatotv",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Instagram\nSrodni akteri: dnevniavaz, ivan.anusic.hr, _rina.rs\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/instagram-laudatotv.html#izvori-podataka",
+    "href": "pages/izvori/instagram-laudatotv.html#izvori-podataka",
+    "title": "laudatotv",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/instagram-martinafilic.html",
+    "href": "pages/izvori/instagram-martinafilic.html",
+    "title": "martinafilic",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora martinafilic u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/instagram-martinafilic.html#što-je",
+    "href": "pages/izvori/instagram-martinafilic.html#što-je",
+    "title": "martinafilic",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/instagram-martinafilic.html#profil",
+    "href": "pages/izvori/instagram-martinafilic.html#profil",
+    "title": "martinafilic",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n1\n\n\nObjava\n\n\n\n\n13.655\n\n\nInterakcija\n\n\n\n\n14.329\n\n\nDoseg\n\n\n\nPo volumenu objava, martinafilic je na 14. mjestu od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje 13.655 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/instagram-martinafilic.html#tipologija",
+    "href": "pages/izvori/instagram-martinafilic.html#tipologija",
+    "title": "martinafilic",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), martinafilic pripada skupini Graditelji zajednica: nizak doseg uz vrlo visok angažman — gradi dubok odnos s vjernom publikom.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-martinafilic.html#povezano",
+    "href": "pages/izvori/instagram-martinafilic.html#povezano",
+    "title": "martinafilic",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Instagram\nSrodni akteri: hns_cff, ekostraza, sport.klub\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/instagram-martinafilic.html#izvori-podataka",
+    "href": "pages/izvori/instagram-martinafilic.html#izvori-podataka",
+    "title": "martinafilic",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/instagram-oslobodjenje-ba.html",
+    "href": "pages/izvori/instagram-oslobodjenje-ba.html",
+    "title": "oslobodjenje.ba",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora oslobodjenje.ba u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/instagram-oslobodjenje-ba.html#što-je",
+    "href": "pages/izvori/instagram-oslobodjenje-ba.html#što-je",
+    "title": "oslobodjenje.ba",
+    "section": "Što je",
+    "text": "Što je\nOslobođenje — bh. dnevnik (Instagram)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-oslobodjenje-ba.html#profil",
+    "href": "pages/izvori/instagram-oslobodjenje-ba.html#profil",
+    "title": "oslobodjenje.ba",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n4\n\n\nObjava\n\n\n\n\n6.268\n\n\nInterakcija\n\n\n\n\n9.854\n\n\nDoseg\n\n\n\nPo volumenu objava, oslobodjenje.ba je na 7. mjestu od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje 1.567 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/instagram-oslobodjenje-ba.html#tipologija",
+    "href": "pages/izvori/instagram-oslobodjenje-ba.html#tipologija",
+    "title": "oslobodjenje.ba",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), oslobodjenje.ba pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-oslobodjenje-ba.html#povezano",
+    "href": "pages/izvori/instagram-oslobodjenje-ba.html#povezano",
+    "title": "oslobodjenje.ba",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Instagram\nSrodni akteri: hrvatskivojnik_magazin, 24sata.hr, _rina.rs\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/instagram-oslobodjenje-ba.html#izvori-podataka",
+    "href": "pages/izvori/instagram-oslobodjenje-ba.html#izvori-podataka",
+    "title": "oslobodjenje.ba",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/instagram-rina-rs.html",
+    "href": "pages/izvori/instagram-rina-rs.html",
+    "title": "_rina.rs",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora **_rina.rs** u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/instagram-rina-rs.html#što-je",
+    "href": "pages/izvori/instagram-rina-rs.html#što-je",
+    "title": "_rina.rs",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/instagram-rina-rs.html#profil",
+    "href": "pages/izvori/instagram-rina-rs.html#profil",
+    "title": "_rina.rs",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n6\n\n\nObjava\n\n\n\n\n10.773\n\n\nInterakcija\n\n\n\n\n40.737\n\n\nDoseg\n\n\n\nPo volumenu objava, _rina.rs je na 5. mjestu od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje 1.796 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/instagram-rina-rs.html#tipologija",
+    "href": "pages/izvori/instagram-rina-rs.html#tipologija",
+    "title": "_rina.rs",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), _rina.rs pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-rina-rs.html#povezano",
+    "href": "pages/izvori/instagram-rina-rs.html#povezano",
+    "title": "_rina.rs",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Instagram\nSrodni akteri: ivan.anusic.hr, hrvatskivojnik_magazin, laudatotv\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/instagram-rina-rs.html#izvori-podataka",
+    "href": "pages/izvori/instagram-rina-rs.html#izvori-podataka",
+    "title": "_rina.rs",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/instagram-sport-klub.html",
+    "href": "pages/izvori/instagram-sport-klub.html",
+    "title": "sport.klub",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora sport.klub u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/instagram-sport-klub.html#što-je",
+    "href": "pages/izvori/instagram-sport-klub.html#što-je",
+    "title": "sport.klub",
+    "section": "Što je",
+    "text": "Što je\nSport Klub (Instagram)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-sport-klub.html#profil",
+    "href": "pages/izvori/instagram-sport-klub.html#profil",
+    "title": "sport.klub",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n2\n\n\nObjava\n\n\n\n\n6.624\n\n\nInterakcija\n\n\n\n\n45.990\n\n\nDoseg\n\n\n\nPo volumenu objava, sport.klub je na 12. mjestu od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje 3.312 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/instagram-sport-klub.html#tipologija",
+    "href": "pages/izvori/instagram-sport-klub.html#tipologija",
+    "title": "sport.klub",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), sport.klub pripada skupini Megafoni: visok doseg uz nizak angažman — sadržaj doseže široku publiku bez intenzivne interakcije.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-sport-klub.html#povezano",
+    "href": "pages/izvori/instagram-sport-klub.html#povezano",
+    "title": "sport.klub",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Instagram\nSrodni akteri: kristijanilicic, hns_cff, buducnostsrbijeav\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/instagram-sport-klub.html#izvori-podataka",
+    "href": "pages/izvori/instagram-sport-klub.html#izvori-podataka",
+    "title": "sport.klub",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/instagram-vannabojovic.html",
+    "href": "pages/izvori/instagram-vannabojovic.html",
+    "title": "vannabojovic",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora vannabojovic u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/instagram-vannabojovic.html#što-je",
+    "href": "pages/izvori/instagram-vannabojovic.html#što-je",
+    "title": "vannabojovic",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/instagram-vannabojovic.html#profil",
+    "href": "pages/izvori/instagram-vannabojovic.html#profil",
+    "title": "vannabojovic",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n1\n\n\nObjava\n\n\n\n\n6.847\n\n\nInterakcija\n\n\n\n\n7.661\n\n\nDoseg\n\n\n\nPo volumenu objava, vannabojovic je na 19. mjestu od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje 6.847 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/instagram-vannabojovic.html#tipologija",
+    "href": "pages/izvori/instagram-vannabojovic.html#tipologija",
+    "title": "vannabojovic",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), vannabojovic pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-vannabojovic.html#povezano",
+    "href": "pages/izvori/instagram-vannabojovic.html#povezano",
+    "title": "vannabojovic",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Instagram\nSrodni akteri: zenskisvijet, elladvornik, klaskalica\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/instagram-vannabojovic.html#izvori-podataka",
+    "href": "pages/izvori/instagram-vannabojovic.html#izvori-podataka",
+    "title": "vannabojovic",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/instagram-zenskisvijet.html",
+    "href": "pages/izvori/instagram-zenskisvijet.html",
+    "title": "zenskisvijet",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora zenskisvijet u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/instagram-zenskisvijet.html#što-je",
+    "href": "pages/izvori/instagram-zenskisvijet.html#što-je",
+    "title": "zenskisvijet",
+    "section": "Što je",
+    "text": "Što je\nŽenski svijet — magazin (Instagram)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-zenskisvijet.html#profil",
+    "href": "pages/izvori/instagram-zenskisvijet.html#profil",
+    "title": "zenskisvijet",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n1\n\n\nObjava\n\n\n\n\n6.928\n\n\nInterakcija\n\n\n\n\n8.804\n\n\nDoseg\n\n\n\nPo volumenu objava, zenskisvijet je na 18. mjestu od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje 6.928 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/instagram-zenskisvijet.html#tipologija",
+    "href": "pages/izvori/instagram-zenskisvijet.html#tipologija",
+    "title": "zenskisvijet",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), zenskisvijet pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/instagram-zenskisvijet.html#povezano",
+    "href": "pages/izvori/instagram-zenskisvijet.html#povezano",
+    "title": "zenskisvijet",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Instagram\nSrodni akteri: elladvornik, vannabojovic, klaskalica\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/instagram-zenskisvijet.html#izvori-podataka",
+    "href": "pages/izvori/instagram-zenskisvijet.html#izvori-podataka",
+    "title": "zenskisvijet",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/platforma-instagram.html",
+    "href": "pages/izvori/platforma-instagram.html",
+    "title": "Izvori — Instagram",
+    "section": "",
+    "text": "Ova stranica okuplja praćene izvore na platformi Instagram iz Kataloga izvora. Tipologija je izračunata jednako kao u Mapi ekosustava — podjelom po medijanu angažmana i dosega. Poredano po volumenu objava.\n\n\n\nIzvor\nTipologija\nObjava\nInterakcija\nDoseg\n\n\n\n\ndnevniavaz\nDivovi\n51\n24.181\n606.100\n\n\nlaudatotv\nDivovi\n42\n50.276\n198.120\n\n\nivan.anusic.hr\nSpecijalizirani akteri\n13\n8.822\n10.664\n\n\n_rina.rs\nDivovi\n6\n10.773\n40.737\n\n\nhrvatskivojnik_magazin\nSpecijalizirani akteri\n6\n6.246\n3.573\n\n\noslobodjenje.ba\nSpecijalizirani akteri\n4\n6.268\n9.854\n\n\n24sata.hr\nMegafoni\n4\n6.157\n83.130\n\n\ninsidebosnia\nGraditelji zajednica\n3\n9.715\n23.193\n\n\nbuducnostsrbijeav\nMegafoni\n3\n9.341\n93.324\n\n\nkristijanilicic\nDivovi\n2\n22.590\n112.618\n\n\nsport.klub\nMegafoni\n2\n6.624\n45.990\n\n\nhns_cff\nDivovi\n1\n52.022\n84.478\n\n\nmartinafilic\nGraditelji zajednica\n1\n13.655\n14.329\n\n\nekostraza\nGraditelji zajednica\n1\n12.286\n20.261\n\n\nklaskalica\nGraditelji zajednica\n1\n10.238\n8.214\n\n\nelladvornik\nMegafoni\n1\n7.510\n52.625\n\n\nzenskisvijet\nSpecijalizirani akteri\n1\n6.928\n8.804\n\n\nvannabojovic\nSpecijalizirani akteri\n1\n6.847\n7.661\n\n\n\nNatrag na katalog izvora · Mapa ekosustava"
+  },
+  {
+    "objectID": "pages/izvori/platforma-tiktok.html",
+    "href": "pages/izvori/platforma-tiktok.html",
+    "title": "Izvori — TikTok",
+    "section": "",
+    "text": "Ova stranica okuplja praćene izvore na platformi TikTok iz Kataloga izvora. Tipologija je izračunata jednako kao u Mapi ekosustava — podjelom po medijanu angažmana i dosega. Poredano po volumenu objava.\n\n\n\nIzvor\nTipologija\nObjava\nInterakcija\nDoseg\n\n\n\n\ndnevnikhr\nDivovi\n28\n20.673\n574.222\n\n\n24sata\nDivovi\n27\n28.162\n618.739\n\n\nvecernjilist\nDivovi\n27\n19.725\n528.993\n\n\nhrvatska_radiotelevizija\nDivovi\n26\n50.002\n627.573\n\n\ntrtbalkanbhsc\nDivovi\n22\n18.082\n472.888\n\n\nslobodna.dalmacija\nDivovi\n14\n45.133\n592.031\n\n\nkristijanilicic\nDivovi\n8\n63.266\n1.248.031\n\n\nindex.hr\nDivovi\n6\n33.151\n419.341\n\n\nshkm2026\nSpecijalizirani akteri\n5\n7.374\n69.432\n\n\nmladifesthrvatska\nSpecijalizirani akteri\n4\n10.870\n111.250\n\n\nrtldirekt\nDivovi\n3\n29.504\n447.334\n\n\nposlanik.gospodina\nMegafoni\n3\n15.639\n400.595\n\n\ncrovibes\nSpecijalizirani akteri\n3\n5.728\n79.832\n\n\nplenkovic_andrej\nSpecijalizirani akteri\n2\n5.790\n85.300\n\n\ndontomolukac\nGraditelji zajednica\n1\n40.752\n354.900\n\n\nkamenkrsislanina\nSpecijalizirani akteri\n1\n13.400\n185.300\n\n\nhypetelevizija.hr\nSpecijalizirani akteri\n1\n10.991\n85.700\n\n\nmondo.zabava\nSpecijalizirani akteri\n1\n6.268\n279.700\n\n\neuforija.online\nSpecijalizirani akteri\n1\n5.646\n99.400\n\n\n\nNatrag na katalog izvora · Mapa ekosustava"
+  },
+  {
+    "objectID": "pages/izvori/platforma-twitter.html",
+    "href": "pages/izvori/platforma-twitter.html",
+    "title": "Izvori — Twitter",
+    "section": "",
+    "text": "Ova stranica okuplja praćene izvore na platformi Twitter iz Kataloga izvora. Tipologija je izračunata jednako kao u Mapi ekosustava — podjelom po medijanu angažmana i dosega. Poredano po volumenu objava.\n\n\n\nIzvor\nTipologija\nObjava\nInterakcija\nDoseg\n\n\n\n\nZagrebačka nadbiskupija\nMegafoni\n75\n984\n34.407\n\n\nPetar\nDivovi\n73\n2.247\n49.498\n\n\nVlada Republike Hrvatske\nDivovi\n65\n2.599\n684.340\n\n\nAndrej Plenković\nDivovi\n35\n3.928\n190.758\n\n\nDarko Lesinger\nMegafoni\n15\n991\n25.008\n\n\nHrvatski Kanal\nSpecijalizirani akteri\n15\n822\n12.343\n\n\nStephen Nikola Bartulica\nDivovi\n14\n1.802\n27.900\n\n\nPavel Gregoric\nDivovi\n12\n1.314\n19.509\n\n\nMate Mijić 🇭🇷\nSpecijalizirani akteri\n9\n783\n13.740\n\n\nIvan Anušić\nDivovi\n8\n1.249\n16.830\n\n\nDominik Alpeza\nSpecijalizirani akteri\n6\n965\n14.923\n\n\nDalija Orešković\nSpecijalizirani akteri\n6\n834\n14.844\n\n\nVesna Rajnović 🌿\nSpecijalizirani akteri\n6\n767\n12.651\n\n\nMarin Miletić\nSpecijalizirani akteri\n4\n850\n13.631\n\n\nŽeljka Markić\nGraditelji zajednica\n3\n1.028\n16.060\n\n\nNORWEGIAN MAN\nDivovi\n2\n1.509\n20.051\n\n\nNeven Barkovic\nGraditelji zajednica\n2\n1.110\n14.670\n\n\nMk.gee 🇪🇺\nSpecijalizirani akteri\n2\n905\n13.752\n\n\nLaganica\nDivovi\n1\n3.385\n45.597\n\n\n\nNatrag na katalog izvora · Mapa ekosustava"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-24sata.html",
+    "href": "pages/izvori/tiktok-24sata.html",
+    "title": "24sata",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora 24sata u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-24sata.html#što-je",
+    "href": "pages/izvori/tiktok-24sata.html#što-je",
+    "title": "24sata",
+    "section": "Što je",
+    "text": "Što je\n24sata — news-portal (Facebook)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-24sata.html#profil",
+    "href": "pages/izvori/tiktok-24sata.html#profil",
+    "title": "24sata",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n27\n\n\nObjava\n\n\n\n\n28.162\n\n\nInterakcija\n\n\n\n\n618.739\n\n\nDoseg\n\n\n\nPo volumenu objava, 24sata je na 2. mjestu od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje 1.043 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-24sata.html#tipologija",
+    "href": "pages/izvori/tiktok-24sata.html#tipologija",
+    "title": "24sata",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), 24sata pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-24sata.html#povezano",
+    "href": "pages/izvori/tiktok-24sata.html#povezano",
+    "title": "24sata",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: dnevnikhr, vecernjilist, hrvatska_radiotelevizija\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-24sata.html#izvori-podataka",
+    "href": "pages/izvori/tiktok-24sata.html#izvori-podataka",
+    "title": "24sata",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-crovibes.html",
+    "href": "pages/izvori/tiktok-crovibes.html",
+    "title": "crovibes",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora crovibes u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-crovibes.html#što-je",
+    "href": "pages/izvori/tiktok-crovibes.html#što-je",
+    "title": "crovibes",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-crovibes.html#profil",
+    "href": "pages/izvori/tiktok-crovibes.html#profil",
+    "title": "crovibes",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n3\n\n\nObjava\n\n\n\n\n5.728\n\n\nInterakcija\n\n\n\n\n79.832\n\n\nDoseg\n\n\n\nPo volumenu objava, crovibes je na 13. mjestu od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje 1.909 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-crovibes.html#tipologija",
+    "href": "pages/izvori/tiktok-crovibes.html#tipologija",
+    "title": "crovibes",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), crovibes pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-crovibes.html#povezano",
+    "href": "pages/izvori/tiktok-crovibes.html#povezano",
+    "title": "crovibes",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: poslanik.gospodina, plenkovic_andrej, rtldirekt\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-crovibes.html#izvori-podataka",
+    "href": "pages/izvori/tiktok-crovibes.html#izvori-podataka",
+    "title": "crovibes",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-dnevnikhr.html",
+    "href": "pages/izvori/tiktok-dnevnikhr.html",
+    "title": "dnevnikhr",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora dnevnikhr u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-dnevnikhr.html#što-je",
+    "href": "pages/izvori/tiktok-dnevnikhr.html#što-je",
+    "title": "dnevnikhr",
+    "section": "Što je",
+    "text": "Što je\nDnevnik.hr (TikTok)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-dnevnikhr.html#profil",
+    "href": "pages/izvori/tiktok-dnevnikhr.html#profil",
+    "title": "dnevnikhr",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n28\n\n\nObjava\n\n\n\n\n20.673\n\n\nInterakcija\n\n\n\n\n574.222\n\n\nDoseg\n\n\n\nPo volumenu objava, dnevnikhr je na 1. mjestu od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje 738 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-dnevnikhr.html#tipologija",
+    "href": "pages/izvori/tiktok-dnevnikhr.html#tipologija",
+    "title": "dnevnikhr",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), dnevnikhr pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-dnevnikhr.html#povezano",
+    "href": "pages/izvori/tiktok-dnevnikhr.html#povezano",
+    "title": "dnevnikhr",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: 24sata, vecernjilist, hrvatska_radiotelevizija\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-dnevnikhr.html#izvori-podataka",
+    "href": "pages/izvori/tiktok-dnevnikhr.html#izvori-podataka",
+    "title": "dnevnikhr",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-dontomolukac.html",
+    "href": "pages/izvori/tiktok-dontomolukac.html",
+    "title": "dontomolukac",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora dontomolukac u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-dontomolukac.html#što-je",
+    "href": "pages/izvori/tiktok-dontomolukac.html#što-je",
+    "title": "dontomolukac",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-dontomolukac.html#profil",
+    "href": "pages/izvori/tiktok-dontomolukac.html#profil",
+    "title": "dontomolukac",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n1\n\n\nObjava\n\n\n\n\n40.752\n\n\nInterakcija\n\n\n\n\n354.900\n\n\nDoseg\n\n\n\nPo volumenu objava, dontomolukac je na 15. mjestu od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje 40.752 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-dontomolukac.html#tipologija",
+    "href": "pages/izvori/tiktok-dontomolukac.html#tipologija",
+    "title": "dontomolukac",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), dontomolukac pripada skupini Graditelji zajednica: nizak doseg uz vrlo visok angažman — gradi dubok odnos s vjernom publikom.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-dontomolukac.html#povezano",
+    "href": "pages/izvori/tiktok-dontomolukac.html#povezano",
+    "title": "dontomolukac",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: plenkovic_andrej, kamenkrsislanina, crovibes\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-dontomolukac.html#izvori-podataka",
+    "href": "pages/izvori/tiktok-dontomolukac.html#izvori-podataka",
+    "title": "dontomolukac",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-euforija-online.html",
+    "href": "pages/izvori/tiktok-euforija-online.html",
+    "title": "euforija.online",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora euforija.online u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-euforija-online.html#što-je",
+    "href": "pages/izvori/tiktok-euforija-online.html#što-je",
+    "title": "euforija.online",
+    "section": "Što je",
+    "text": "Što je\nEuforija online (TikTok)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-euforija-online.html#profil",
+    "href": "pages/izvori/tiktok-euforija-online.html#profil",
+    "title": "euforija.online",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n1\n\n\nObjava\n\n\n\n\n5.646\n\n\nInterakcija\n\n\n\n\n99.400\n\n\nDoseg\n\n\n\nPo volumenu objava, euforija.online je na 19. mjestu od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje 5.646 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-euforija-online.html#tipologija",
+    "href": "pages/izvori/tiktok-euforija-online.html#tipologija",
+    "title": "euforija.online",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), euforija.online pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-euforija-online.html#povezano",
+    "href": "pages/izvori/tiktok-euforija-online.html#povezano",
+    "title": "euforija.online",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: mondo.zabava, hypetelevizija.hr, kamenkrsislanina\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-euforija-online.html#izvori-podataka",
+    "href": "pages/izvori/tiktok-euforija-online.html#izvori-podataka",
+    "title": "euforija.online",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-hrvatska-radiotelevizija.html",
+    "href": "pages/izvori/tiktok-hrvatska-radiotelevizija.html",
+    "title": "hrvatska_radiotelevizija",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora hrvatska_radiotelevizija u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-hrvatska-radiotelevizija.html#što-je",
+    "href": "pages/izvori/tiktok-hrvatska-radiotelevizija.html#što-je",
+    "title": "hrvatska_radiotelevizija",
+    "section": "Što je",
+    "text": "Što je\nHRT — Hrvatska radiotelevizija (TikTok)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-hrvatska-radiotelevizija.html#profil",
+    "href": "pages/izvori/tiktok-hrvatska-radiotelevizija.html#profil",
+    "title": "hrvatska_radiotelevizija",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n26\n\n\nObjava\n\n\n\n\n50.002\n\n\nInterakcija\n\n\n\n\n627.573\n\n\nDoseg\n\n\n\nPo volumenu objava, hrvatska_radiotelevizija je na 4. mjestu od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje 1.923 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-hrvatska-radiotelevizija.html#tipologija",
+    "href": "pages/izvori/tiktok-hrvatska-radiotelevizija.html#tipologija",
+    "title": "hrvatska_radiotelevizija",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), hrvatska_radiotelevizija pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-hrvatska-radiotelevizija.html#povezano",
+    "href": "pages/izvori/tiktok-hrvatska-radiotelevizija.html#povezano",
+    "title": "hrvatska_radiotelevizija",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: vecernjilist, trtbalkanbhsc, 24sata\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-hrvatska-radiotelevizija.html#izvori-podataka",
+    "href": "pages/izvori/tiktok-hrvatska-radiotelevizija.html#izvori-podataka",
+    "title": "hrvatska_radiotelevizija",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-hypetelevizija-hr.html",
+    "href": "pages/izvori/tiktok-hypetelevizija-hr.html",
+    "title": "hypetelevizija.hr",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora hypetelevizija.hr u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-hypetelevizija-hr.html#što-je",
+    "href": "pages/izvori/tiktok-hypetelevizija-hr.html#što-je",
+    "title": "hypetelevizija.hr",
+    "section": "Što je",
+    "text": "Što je\nHype televizija (TikTok)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-hypetelevizija-hr.html#profil",
+    "href": "pages/izvori/tiktok-hypetelevizija-hr.html#profil",
+    "title": "hypetelevizija.hr",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n1\n\n\nObjava\n\n\n\n\n10.991\n\n\nInterakcija\n\n\n\n\n85.700\n\n\nDoseg\n\n\n\nPo volumenu objava, hypetelevizija.hr je na 17. mjestu od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje 10.991 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-hypetelevizija-hr.html#tipologija",
+    "href": "pages/izvori/tiktok-hypetelevizija-hr.html#tipologija",
+    "title": "hypetelevizija.hr",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), hypetelevizija.hr pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-hypetelevizija-hr.html#povezano",
+    "href": "pages/izvori/tiktok-hypetelevizija-hr.html#povezano",
+    "title": "hypetelevizija.hr",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: kamenkrsislanina, mondo.zabava, dontomolukac\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-hypetelevizija-hr.html#izvori-podataka",
+    "href": "pages/izvori/tiktok-hypetelevizija-hr.html#izvori-podataka",
+    "title": "hypetelevizija.hr",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-index-hr.html",
+    "href": "pages/izvori/tiktok-index-hr.html",
+    "title": "index.hr",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora index.hr u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-index-hr.html#što-je",
+    "href": "pages/izvori/tiktok-index-hr.html#što-je",
+    "title": "index.hr",
+    "section": "Što je",
+    "text": "Što je\nIndex.hr — nacionalni news-portal"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-index-hr.html#profil",
+    "href": "pages/izvori/tiktok-index-hr.html#profil",
+    "title": "index.hr",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n6\n\n\nObjava\n\n\n\n\n33.151\n\n\nInterakcija\n\n\n\n\n419.341\n\n\nDoseg\n\n\n\nPo volumenu objava, index.hr je na 8. mjestu od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje 5.525 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-index-hr.html#tipologija",
+    "href": "pages/izvori/tiktok-index-hr.html#tipologija",
+    "title": "index.hr",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), index.hr pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-index-hr.html#povezano",
+    "href": "pages/izvori/tiktok-index-hr.html#povezano",
+    "title": "index.hr",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: kristijanilicic, shkm2026, slobodna.dalmacija\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-index-hr.html#izvori-podataka",
+    "href": "pages/izvori/tiktok-index-hr.html#izvori-podataka",
+    "title": "index.hr",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-kamenkrsislanina.html",
+    "href": "pages/izvori/tiktok-kamenkrsislanina.html",
+    "title": "kamenkrsislanina",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora kamenkrsislanina u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-kamenkrsislanina.html#što-je",
+    "href": "pages/izvori/tiktok-kamenkrsislanina.html#što-je",
+    "title": "kamenkrsislanina",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-kamenkrsislanina.html#profil",
+    "href": "pages/izvori/tiktok-kamenkrsislanina.html#profil",
+    "title": "kamenkrsislanina",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n1\n\n\nObjava\n\n\n\n\n13.400\n\n\nInterakcija\n\n\n\n\n185.300\n\n\nDoseg\n\n\n\nPo volumenu objava, kamenkrsislanina je na 16. mjestu od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje 13.400 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-kamenkrsislanina.html#tipologija",
+    "href": "pages/izvori/tiktok-kamenkrsislanina.html#tipologija",
+    "title": "kamenkrsislanina",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), kamenkrsislanina pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-kamenkrsislanina.html#povezano",
+    "href": "pages/izvori/tiktok-kamenkrsislanina.html#povezano",
+    "title": "kamenkrsislanina",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: dontomolukac, hypetelevizija.hr, plenkovic_andrej\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-kamenkrsislanina.html#izvori-podataka",
+    "href": "pages/izvori/tiktok-kamenkrsislanina.html#izvori-podataka",
+    "title": "kamenkrsislanina",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-kristijanilicic.html",
+    "href": "pages/izvori/tiktok-kristijanilicic.html",
+    "title": "kristijanilicic",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora kristijanilicic u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-kristijanilicic.html#što-je",
+    "href": "pages/izvori/tiktok-kristijanilicic.html#što-je",
+    "title": "kristijanilicic",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-kristijanilicic.html#profil",
+    "href": "pages/izvori/tiktok-kristijanilicic.html#profil",
+    "title": "kristijanilicic",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n8\n\n\nObjava\n\n\n\n\n63.266\n\n\nInterakcija\n\n\n\n\n1.248.031\n\n\nDoseg\n\n\n\nPo volumenu objava, kristijanilicic je na 7. mjestu od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje 7.908 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-kristijanilicic.html#tipologija",
+    "href": "pages/izvori/tiktok-kristijanilicic.html#tipologija",
+    "title": "kristijanilicic",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), kristijanilicic pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-kristijanilicic.html#povezano",
+    "href": "pages/izvori/tiktok-kristijanilicic.html#povezano",
+    "title": "kristijanilicic",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: slobodna.dalmacija, index.hr, trtbalkanbhsc\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-kristijanilicic.html#izvori-podataka",
+    "href": "pages/izvori/tiktok-kristijanilicic.html#izvori-podataka",
+    "title": "kristijanilicic",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-mladifesthrvatska.html",
+    "href": "pages/izvori/tiktok-mladifesthrvatska.html",
+    "title": "mladifesthrvatska",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora mladifesthrvatska u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-mladifesthrvatska.html#što-je",
+    "href": "pages/izvori/tiktok-mladifesthrvatska.html#što-je",
+    "title": "mladifesthrvatska",
+    "section": "Što je",
+    "text": "Što je\nMladifest Hrvatska — katolički festival mladih (TikTok)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-mladifesthrvatska.html#profil",
+    "href": "pages/izvori/tiktok-mladifesthrvatska.html#profil",
+    "title": "mladifesthrvatska",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n4\n\n\nObjava\n\n\n\n\n10.870\n\n\nInterakcija\n\n\n\n\n111.250\n\n\nDoseg\n\n\n\nPo volumenu objava, mladifesthrvatska je na 10. mjestu od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje 2.718 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-mladifesthrvatska.html#tipologija",
+    "href": "pages/izvori/tiktok-mladifesthrvatska.html#tipologija",
+    "title": "mladifesthrvatska",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), mladifesthrvatska pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: konfesionalni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-mladifesthrvatska.html#povezano",
+    "href": "pages/izvori/tiktok-mladifesthrvatska.html#povezano",
+    "title": "mladifesthrvatska",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: shkm2026, rtldirekt, index.hr\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-mladifesthrvatska.html#izvori-podataka",
+    "href": "pages/izvori/tiktok-mladifesthrvatska.html#izvori-podataka",
+    "title": "mladifesthrvatska",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-mondo-zabava.html",
+    "href": "pages/izvori/tiktok-mondo-zabava.html",
+    "title": "mondo.zabava",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora mondo.zabava u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-mondo-zabava.html#što-je",
+    "href": "pages/izvori/tiktok-mondo-zabava.html#što-je",
+    "title": "mondo.zabava",
+    "section": "Što je",
+    "text": "Što je\nMondo zabava (TikTok)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-mondo-zabava.html#profil",
+    "href": "pages/izvori/tiktok-mondo-zabava.html#profil",
+    "title": "mondo.zabava",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n1\n\n\nObjava\n\n\n\n\n6.268\n\n\nInterakcija\n\n\n\n\n279.700\n\n\nDoseg\n\n\n\nPo volumenu objava, mondo.zabava je na 18. mjestu od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje 6.268 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-mondo-zabava.html#tipologija",
+    "href": "pages/izvori/tiktok-mondo-zabava.html#tipologija",
+    "title": "mondo.zabava",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), mondo.zabava pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-mondo-zabava.html#povezano",
+    "href": "pages/izvori/tiktok-mondo-zabava.html#povezano",
+    "title": "mondo.zabava",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: hypetelevizija.hr, euforija.online, kamenkrsislanina\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-mondo-zabava.html#izvori-podataka",
+    "href": "pages/izvori/tiktok-mondo-zabava.html#izvori-podataka",
+    "title": "mondo.zabava",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-plenkovic-andrej.html",
+    "href": "pages/izvori/tiktok-plenkovic-andrej.html",
+    "title": "plenkovic_andrej",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora plenkovic_andrej u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-plenkovic-andrej.html#što-je",
+    "href": "pages/izvori/tiktok-plenkovic-andrej.html#što-je",
+    "title": "plenkovic_andrej",
+    "section": "Što je",
+    "text": "Što je\nAndrej Plenković — predsjednik Vlade (TikTok)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-plenkovic-andrej.html#profil",
+    "href": "pages/izvori/tiktok-plenkovic-andrej.html#profil",
+    "title": "plenkovic_andrej",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n2\n\n\nObjava\n\n\n\n\n5.790\n\n\nInterakcija\n\n\n\n\n85.300\n\n\nDoseg\n\n\n\nPo volumenu objava, plenkovic_andrej je na 14. mjestu od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje 2.895 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-plenkovic-andrej.html#tipologija",
+    "href": "pages/izvori/tiktok-plenkovic-andrej.html#tipologija",
+    "title": "plenkovic_andrej",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), plenkovic_andrej pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-plenkovic-andrej.html#povezano",
+    "href": "pages/izvori/tiktok-plenkovic-andrej.html#povezano",
+    "title": "plenkovic_andrej",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: crovibes, dontomolukac, poslanik.gospodina\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-plenkovic-andrej.html#izvori-podataka",
+    "href": "pages/izvori/tiktok-plenkovic-andrej.html#izvori-podataka",
+    "title": "plenkovic_andrej",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-poslanik-gospodina.html",
+    "href": "pages/izvori/tiktok-poslanik-gospodina.html",
+    "title": "poslanik.gospodina",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora poslanik.gospodina u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-poslanik-gospodina.html#što-je",
+    "href": "pages/izvori/tiktok-poslanik-gospodina.html#što-je",
+    "title": "poslanik.gospodina",
+    "section": "Što je",
+    "text": "Što je\nPoslanik Gospodina — katolički sadržaj (TikTok)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-poslanik-gospodina.html#profil",
+    "href": "pages/izvori/tiktok-poslanik-gospodina.html#profil",
+    "title": "poslanik.gospodina",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n3\n\n\nObjava\n\n\n\n\n15.639\n\n\nInterakcija\n\n\n\n\n400.595\n\n\nDoseg\n\n\n\nPo volumenu objava, poslanik.gospodina je na 12. mjestu od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje 5.213 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-poslanik-gospodina.html#tipologija",
+    "href": "pages/izvori/tiktok-poslanik-gospodina.html#tipologija",
+    "title": "poslanik.gospodina",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), poslanik.gospodina pripada skupini Megafoni: visok doseg uz nizak angažman — sadržaj doseže široku publiku bez intenzivne interakcije.\nUređivačka oznaka: konfesionalni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-poslanik-gospodina.html#povezano",
+    "href": "pages/izvori/tiktok-poslanik-gospodina.html#povezano",
+    "title": "poslanik.gospodina",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: rtldirekt, crovibes, mladifesthrvatska\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-poslanik-gospodina.html#izvori-podataka",
+    "href": "pages/izvori/tiktok-poslanik-gospodina.html#izvori-podataka",
+    "title": "poslanik.gospodina",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-rtldirekt.html",
+    "href": "pages/izvori/tiktok-rtldirekt.html",
+    "title": "rtldirekt",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora rtldirekt u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-rtldirekt.html#što-je",
+    "href": "pages/izvori/tiktok-rtldirekt.html#što-je",
+    "title": "rtldirekt",
+    "section": "Što je",
+    "text": "Što je\nRTL Direkt (TikTok)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-rtldirekt.html#profil",
+    "href": "pages/izvori/tiktok-rtldirekt.html#profil",
+    "title": "rtldirekt",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n3\n\n\nObjava\n\n\n\n\n29.504\n\n\nInterakcija\n\n\n\n\n447.334\n\n\nDoseg\n\n\n\nPo volumenu objava, rtldirekt je na 11. mjestu od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje 9.835 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-rtldirekt.html#tipologija",
+    "href": "pages/izvori/tiktok-rtldirekt.html#tipologija",
+    "title": "rtldirekt",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), rtldirekt pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-rtldirekt.html#povezano",
+    "href": "pages/izvori/tiktok-rtldirekt.html#povezano",
+    "title": "rtldirekt",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: mladifesthrvatska, poslanik.gospodina, shkm2026\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-rtldirekt.html#izvori-podataka",
+    "href": "pages/izvori/tiktok-rtldirekt.html#izvori-podataka",
+    "title": "rtldirekt",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-shkm2026.html",
+    "href": "pages/izvori/tiktok-shkm2026.html",
+    "title": "shkm2026",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora shkm2026 u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-shkm2026.html#što-je",
+    "href": "pages/izvori/tiktok-shkm2026.html#što-je",
+    "title": "shkm2026",
+    "section": "Što je",
+    "text": "Što je\nSusret hrvatske katoličke mladeži 2026 (TikTok)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-shkm2026.html#profil",
+    "href": "pages/izvori/tiktok-shkm2026.html#profil",
+    "title": "shkm2026",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n5\n\n\nObjava\n\n\n\n\n7.374\n\n\nInterakcija\n\n\n\n\n69.432\n\n\nDoseg\n\n\n\nPo volumenu objava, shkm2026 je na 9. mjestu od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje 1.475 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-shkm2026.html#tipologija",
+    "href": "pages/izvori/tiktok-shkm2026.html#tipologija",
+    "title": "shkm2026",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), shkm2026 pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: konfesionalni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-shkm2026.html#povezano",
+    "href": "pages/izvori/tiktok-shkm2026.html#povezano",
+    "title": "shkm2026",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: index.hr, mladifesthrvatska, kristijanilicic\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-shkm2026.html#izvori-podataka",
+    "href": "pages/izvori/tiktok-shkm2026.html#izvori-podataka",
+    "title": "shkm2026",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-slobodna-dalmacija.html",
+    "href": "pages/izvori/tiktok-slobodna-dalmacija.html",
+    "title": "slobodna.dalmacija",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora slobodna.dalmacija u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-slobodna-dalmacija.html#što-je",
+    "href": "pages/izvori/tiktok-slobodna-dalmacija.html#što-je",
+    "title": "slobodna.dalmacija",
+    "section": "Što je",
+    "text": "Što je\nSlobodna Dalmacija (TikTok)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-slobodna-dalmacija.html#profil",
+    "href": "pages/izvori/tiktok-slobodna-dalmacija.html#profil",
+    "title": "slobodna.dalmacija",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n14\n\n\nObjava\n\n\n\n\n45.133\n\n\nInterakcija\n\n\n\n\n592.031\n\n\nDoseg\n\n\n\nPo volumenu objava, slobodna.dalmacija je na 6. mjestu od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje 3.224 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-slobodna-dalmacija.html#tipologija",
+    "href": "pages/izvori/tiktok-slobodna-dalmacija.html#tipologija",
+    "title": "slobodna.dalmacija",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), slobodna.dalmacija pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-slobodna-dalmacija.html#povezano",
+    "href": "pages/izvori/tiktok-slobodna-dalmacija.html#povezano",
+    "title": "slobodna.dalmacija",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: trtbalkanbhsc, kristijanilicic, hrvatska_radiotelevizija\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-slobodna-dalmacija.html#izvori-podataka",
+    "href": "pages/izvori/tiktok-slobodna-dalmacija.html#izvori-podataka",
+    "title": "slobodna.dalmacija",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-trtbalkanbhsc.html",
+    "href": "pages/izvori/tiktok-trtbalkanbhsc.html",
+    "title": "trtbalkanbhsc",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora trtbalkanbhsc u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-trtbalkanbhsc.html#što-je",
+    "href": "pages/izvori/tiktok-trtbalkanbhsc.html#što-je",
+    "title": "trtbalkanbhsc",
+    "section": "Što je",
+    "text": "Što je\nTRT Balkan (TikTok)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-trtbalkanbhsc.html#profil",
+    "href": "pages/izvori/tiktok-trtbalkanbhsc.html#profil",
+    "title": "trtbalkanbhsc",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n22\n\n\nObjava\n\n\n\n\n18.082\n\n\nInterakcija\n\n\n\n\n472.888\n\n\nDoseg\n\n\n\nPo volumenu objava, trtbalkanbhsc je na 5. mjestu od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje 822 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-trtbalkanbhsc.html#tipologija",
+    "href": "pages/izvori/tiktok-trtbalkanbhsc.html#tipologija",
+    "title": "trtbalkanbhsc",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), trtbalkanbhsc pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-trtbalkanbhsc.html#povezano",
+    "href": "pages/izvori/tiktok-trtbalkanbhsc.html#povezano",
+    "title": "trtbalkanbhsc",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: hrvatska_radiotelevizija, slobodna.dalmacija, vecernjilist\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-trtbalkanbhsc.html#izvori-podataka",
+    "href": "pages/izvori/tiktok-trtbalkanbhsc.html#izvori-podataka",
+    "title": "trtbalkanbhsc",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-vecernjilist.html",
+    "href": "pages/izvori/tiktok-vecernjilist.html",
+    "title": "vecernjilist",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora vecernjilist u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-vecernjilist.html#što-je",
+    "href": "pages/izvori/tiktok-vecernjilist.html#što-je",
+    "title": "vecernjilist",
+    "section": "Što je",
+    "text": "Što je\nVečernji list (TikTok)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-vecernjilist.html#profil",
+    "href": "pages/izvori/tiktok-vecernjilist.html#profil",
+    "title": "vecernjilist",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n27\n\n\nObjava\n\n\n\n\n19.725\n\n\nInterakcija\n\n\n\n\n528.993\n\n\nDoseg\n\n\n\nPo volumenu objava, vecernjilist je na 3. mjestu od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje 731 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/tiktok-vecernjilist.html#tipologija",
+    "href": "pages/izvori/tiktok-vecernjilist.html#tipologija",
+    "title": "vecernjilist",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), vecernjilist pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-vecernjilist.html#povezano",
+    "href": "pages/izvori/tiktok-vecernjilist.html#povezano",
+    "title": "vecernjilist",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: 24sata, hrvatska_radiotelevizija, dnevnikhr\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/tiktok-vecernjilist.html#izvori-podataka",
+    "href": "pages/izvori/tiktok-vecernjilist.html#izvori-podataka",
+    "title": "vecernjilist",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/twitter-andrej-plenkovic.html",
+    "href": "pages/izvori/twitter-andrej-plenkovic.html",
+    "title": "Andrej Plenković",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora Andrej Plenković u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/twitter-andrej-plenkovic.html#što-je",
+    "href": "pages/izvori/twitter-andrej-plenkovic.html#što-je",
+    "title": "Andrej Plenković",
+    "section": "Što je",
+    "text": "Što je\nAndrej Plenković — predsjednik Vlade (Twitter/X)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-andrej-plenkovic.html#profil",
+    "href": "pages/izvori/twitter-andrej-plenkovic.html#profil",
+    "title": "Andrej Plenković",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n35\n\n\nObjava\n\n\n\n\n3.928\n\n\nInterakcija\n\n\n\n\n190.758\n\n\nDoseg\n\n\n\nPo volumenu objava, Andrej Plenković je na 4. mjestu od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje 112 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/twitter-andrej-plenkovic.html#tipologija",
+    "href": "pages/izvori/twitter-andrej-plenkovic.html#tipologija",
+    "title": "Andrej Plenković",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), Andrej Plenković pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-andrej-plenkovic.html#povezano",
+    "href": "pages/izvori/twitter-andrej-plenkovic.html#povezano",
+    "title": "Andrej Plenković",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: Vlada Republike Hrvatske, Darko Lesinger, Petar\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/twitter-andrej-plenkovic.html#izvori-podataka",
+    "href": "pages/izvori/twitter-andrej-plenkovic.html#izvori-podataka",
+    "title": "Andrej Plenković",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/twitter-dalija-oreskovic.html",
+    "href": "pages/izvori/twitter-dalija-oreskovic.html",
+    "title": "Dalija Orešković",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora Dalija Orešković u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/twitter-dalija-oreskovic.html#što-je",
+    "href": "pages/izvori/twitter-dalija-oreskovic.html#što-je",
+    "title": "Dalija Orešković",
+    "section": "Što je",
+    "text": "Što je\nDalija Orešković — političarka (Twitter/X)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-dalija-oreskovic.html#profil",
+    "href": "pages/izvori/twitter-dalija-oreskovic.html#profil",
+    "title": "Dalija Orešković",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n6\n\n\nObjava\n\n\n\n\n834\n\n\nInterakcija\n\n\n\n\n14.844\n\n\nDoseg\n\n\n\nPo volumenu objava, Dalija Orešković je na 12. mjestu od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje 139 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/twitter-dalija-oreskovic.html#tipologija",
+    "href": "pages/izvori/twitter-dalija-oreskovic.html#tipologija",
+    "title": "Dalija Orešković",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), Dalija Orešković pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-dalija-oreskovic.html#povezano",
+    "href": "pages/izvori/twitter-dalija-oreskovic.html#povezano",
+    "title": "Dalija Orešković",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: Dominik Alpeza, Vesna Rajnović 🌿, Ivan Anušić\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/twitter-dalija-oreskovic.html#izvori-podataka",
+    "href": "pages/izvori/twitter-dalija-oreskovic.html#izvori-podataka",
+    "title": "Dalija Orešković",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/twitter-darko-lesinger.html",
+    "href": "pages/izvori/twitter-darko-lesinger.html",
+    "title": "Darko Lesinger",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora Darko Lesinger u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/twitter-darko-lesinger.html#što-je",
+    "href": "pages/izvori/twitter-darko-lesinger.html#što-je",
+    "title": "Darko Lesinger",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/twitter-darko-lesinger.html#profil",
+    "href": "pages/izvori/twitter-darko-lesinger.html#profil",
+    "title": "Darko Lesinger",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n15\n\n\nObjava\n\n\n\n\n991\n\n\nInterakcija\n\n\n\n\n25.008\n\n\nDoseg\n\n\n\nPo volumenu objava, Darko Lesinger je na 5. mjestu od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje 66 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/twitter-darko-lesinger.html#tipologija",
+    "href": "pages/izvori/twitter-darko-lesinger.html#tipologija",
+    "title": "Darko Lesinger",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), Darko Lesinger pripada skupini Megafoni: visok doseg uz nizak angažman — sadržaj doseže široku publiku bez intenzivne interakcije.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-darko-lesinger.html#povezano",
+    "href": "pages/izvori/twitter-darko-lesinger.html#povezano",
+    "title": "Darko Lesinger",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: Andrej Plenković, Hrvatski Kanal, Vlada Republike Hrvatske\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/twitter-darko-lesinger.html#izvori-podataka",
+    "href": "pages/izvori/twitter-darko-lesinger.html#izvori-podataka",
+    "title": "Darko Lesinger",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/twitter-dominik-alpeza.html",
+    "href": "pages/izvori/twitter-dominik-alpeza.html",
+    "title": "Dominik Alpeza",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora Dominik Alpeza u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/twitter-dominik-alpeza.html#što-je",
+    "href": "pages/izvori/twitter-dominik-alpeza.html#što-je",
+    "title": "Dominik Alpeza",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/twitter-dominik-alpeza.html#profil",
+    "href": "pages/izvori/twitter-dominik-alpeza.html#profil",
+    "title": "Dominik Alpeza",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n6\n\n\nObjava\n\n\n\n\n965\n\n\nInterakcija\n\n\n\n\n14.923\n\n\nDoseg\n\n\n\nPo volumenu objava, Dominik Alpeza je na 11. mjestu od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje 161 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/twitter-dominik-alpeza.html#tipologija",
+    "href": "pages/izvori/twitter-dominik-alpeza.html#tipologija",
+    "title": "Dominik Alpeza",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), Dominik Alpeza pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-dominik-alpeza.html#povezano",
+    "href": "pages/izvori/twitter-dominik-alpeza.html#povezano",
+    "title": "Dominik Alpeza",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: Ivan Anušić, Dalija Orešković, Mate Mijić 🇭🇷\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/twitter-dominik-alpeza.html#izvori-podataka",
+    "href": "pages/izvori/twitter-dominik-alpeza.html#izvori-podataka",
+    "title": "Dominik Alpeza",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/twitter-hrvatski-kanal.html",
+    "href": "pages/izvori/twitter-hrvatski-kanal.html",
+    "title": "Hrvatski Kanal",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora Hrvatski Kanal u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/twitter-hrvatski-kanal.html#što-je",
+    "href": "pages/izvori/twitter-hrvatski-kanal.html#što-je",
+    "title": "Hrvatski Kanal",
+    "section": "Što je",
+    "text": "Što je\nHrvatski Kanal (Twitter/X)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-hrvatski-kanal.html#profil",
+    "href": "pages/izvori/twitter-hrvatski-kanal.html#profil",
+    "title": "Hrvatski Kanal",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n15\n\n\nObjava\n\n\n\n\n822\n\n\nInterakcija\n\n\n\n\n12.343\n\n\nDoseg\n\n\n\nPo volumenu objava, Hrvatski Kanal je na 6. mjestu od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje 55 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/twitter-hrvatski-kanal.html#tipologija",
+    "href": "pages/izvori/twitter-hrvatski-kanal.html#tipologija",
+    "title": "Hrvatski Kanal",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), Hrvatski Kanal pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-hrvatski-kanal.html#povezano",
+    "href": "pages/izvori/twitter-hrvatski-kanal.html#povezano",
+    "title": "Hrvatski Kanal",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: Darko Lesinger, Stephen Nikola Bartulica, Andrej Plenković\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/twitter-hrvatski-kanal.html#izvori-podataka",
+    "href": "pages/izvori/twitter-hrvatski-kanal.html#izvori-podataka",
+    "title": "Hrvatski Kanal",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/twitter-ivan-anusic.html",
+    "href": "pages/izvori/twitter-ivan-anusic.html",
+    "title": "Ivan Anušić",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora Ivan Anušić u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/twitter-ivan-anusic.html#što-je",
+    "href": "pages/izvori/twitter-ivan-anusic.html#što-je",
+    "title": "Ivan Anušić",
+    "section": "Što je",
+    "text": "Što je\nIvan Anušić — političar (Twitter/X)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-ivan-anusic.html#profil",
+    "href": "pages/izvori/twitter-ivan-anusic.html#profil",
+    "title": "Ivan Anušić",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n8\n\n\nObjava\n\n\n\n\n1.249\n\n\nInterakcija\n\n\n\n\n16.830\n\n\nDoseg\n\n\n\nPo volumenu objava, Ivan Anušić je na 10. mjestu od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje 156 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/twitter-ivan-anusic.html#tipologija",
+    "href": "pages/izvori/twitter-ivan-anusic.html#tipologija",
+    "title": "Ivan Anušić",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), Ivan Anušić pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-ivan-anusic.html#povezano",
+    "href": "pages/izvori/twitter-ivan-anusic.html#povezano",
+    "title": "Ivan Anušić",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: Mate Mijić 🇭🇷, Dominik Alpeza, Pavel Gregoric\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/twitter-ivan-anusic.html#izvori-podataka",
+    "href": "pages/izvori/twitter-ivan-anusic.html#izvori-podataka",
+    "title": "Ivan Anušić",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/twitter-laganica.html",
+    "href": "pages/izvori/twitter-laganica.html",
+    "title": "Laganica",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora Laganica u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/twitter-laganica.html#što-je",
+    "href": "pages/izvori/twitter-laganica.html#što-je",
+    "title": "Laganica",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/twitter-laganica.html#profil",
+    "href": "pages/izvori/twitter-laganica.html#profil",
+    "title": "Laganica",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n1\n\n\nObjava\n\n\n\n\n3.385\n\n\nInterakcija\n\n\n\n\n45.597\n\n\nDoseg\n\n\n\nPo volumenu objava, Laganica je na 19. mjestu od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje 3.385 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/twitter-laganica.html#tipologija",
+    "href": "pages/izvori/twitter-laganica.html#tipologija",
+    "title": "Laganica",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), Laganica pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-laganica.html#povezano",
+    "href": "pages/izvori/twitter-laganica.html#povezano",
+    "title": "Laganica",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: Mk.gee 🇪🇺, Neven Barkovic, NORWEGIAN MAN\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/twitter-laganica.html#izvori-podataka",
+    "href": "pages/izvori/twitter-laganica.html#izvori-podataka",
+    "title": "Laganica",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/twitter-marin-miletic.html",
+    "href": "pages/izvori/twitter-marin-miletic.html",
+    "title": "Marin Miletić",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora Marin Miletić u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/twitter-marin-miletic.html#što-je",
+    "href": "pages/izvori/twitter-marin-miletic.html#što-je",
+    "title": "Marin Miletić",
+    "section": "Što je",
+    "text": "Što je\nMarin Miletić — političar (Twitter/X)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-marin-miletic.html#profil",
+    "href": "pages/izvori/twitter-marin-miletic.html#profil",
+    "title": "Marin Miletić",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n4\n\n\nObjava\n\n\n\n\n850\n\n\nInterakcija\n\n\n\n\n13.631\n\n\nDoseg\n\n\n\nPo volumenu objava, Marin Miletić je na 14. mjestu od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje 212 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/twitter-marin-miletic.html#tipologija",
+    "href": "pages/izvori/twitter-marin-miletic.html#tipologija",
+    "title": "Marin Miletić",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), Marin Miletić pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-marin-miletic.html#povezano",
+    "href": "pages/izvori/twitter-marin-miletic.html#povezano",
+    "title": "Marin Miletić",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: Vesna Rajnović 🌿, Željka Markić, Dalija Orešković\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/twitter-marin-miletic.html#izvori-podataka",
+    "href": "pages/izvori/twitter-marin-miletic.html#izvori-podataka",
+    "title": "Marin Miletić",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/twitter-mate-mijic.html",
+    "href": "pages/izvori/twitter-mate-mijic.html",
+    "title": "Mate Mijić 🇭🇷",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora Mate Mijić 🇭🇷 u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/twitter-mate-mijic.html#što-je",
+    "href": "pages/izvori/twitter-mate-mijic.html#što-je",
+    "title": "Mate Mijić 🇭🇷",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/twitter-mate-mijic.html#profil",
+    "href": "pages/izvori/twitter-mate-mijic.html#profil",
+    "title": "Mate Mijić 🇭🇷",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n9\n\n\nObjava\n\n\n\n\n783\n\n\nInterakcija\n\n\n\n\n13.740\n\n\nDoseg\n\n\n\nPo volumenu objava, Mate Mijić 🇭🇷 je na 9. mjestu od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje 87 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/twitter-mate-mijic.html#tipologija",
+    "href": "pages/izvori/twitter-mate-mijic.html#tipologija",
+    "title": "Mate Mijić 🇭🇷",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), Mate Mijić 🇭🇷 pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-mate-mijic.html#povezano",
+    "href": "pages/izvori/twitter-mate-mijic.html#povezano",
+    "title": "Mate Mijić 🇭🇷",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: Pavel Gregoric, Ivan Anušić, Stephen Nikola Bartulica\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/twitter-mate-mijic.html#izvori-podataka",
+    "href": "pages/izvori/twitter-mate-mijic.html#izvori-podataka",
+    "title": "Mate Mijić 🇭🇷",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/twitter-mk-gee.html",
+    "href": "pages/izvori/twitter-mk-gee.html",
+    "title": "Mk.gee 🇪🇺",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora Mk.gee 🇪🇺 u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/twitter-mk-gee.html#što-je",
+    "href": "pages/izvori/twitter-mk-gee.html#što-je",
+    "title": "Mk.gee 🇪🇺",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/twitter-mk-gee.html#profil",
+    "href": "pages/izvori/twitter-mk-gee.html#profil",
+    "title": "Mk.gee 🇪🇺",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n2\n\n\nObjava\n\n\n\n\n905\n\n\nInterakcija\n\n\n\n\n13.752\n\n\nDoseg\n\n\n\nPo volumenu objava, Mk.gee 🇪🇺 je na 18. mjestu od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje 452 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/twitter-mk-gee.html#tipologija",
+    "href": "pages/izvori/twitter-mk-gee.html#tipologija",
+    "title": "Mk.gee 🇪🇺",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), Mk.gee 🇪🇺 pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-mk-gee.html#povezano",
+    "href": "pages/izvori/twitter-mk-gee.html#povezano",
+    "title": "Mk.gee 🇪🇺",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: Neven Barkovic, Laganica, NORWEGIAN MAN\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/twitter-mk-gee.html#izvori-podataka",
+    "href": "pages/izvori/twitter-mk-gee.html#izvori-podataka",
+    "title": "Mk.gee 🇪🇺",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/twitter-neven-barkovic.html",
+    "href": "pages/izvori/twitter-neven-barkovic.html",
+    "title": "Neven Barkovic",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora Neven Barkovic u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/twitter-neven-barkovic.html#što-je",
+    "href": "pages/izvori/twitter-neven-barkovic.html#što-je",
+    "title": "Neven Barkovic",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/twitter-neven-barkovic.html#profil",
+    "href": "pages/izvori/twitter-neven-barkovic.html#profil",
+    "title": "Neven Barkovic",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n2\n\n\nObjava\n\n\n\n\n1.110\n\n\nInterakcija\n\n\n\n\n14.670\n\n\nDoseg\n\n\n\nPo volumenu objava, Neven Barkovic je na 17. mjestu od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje 555 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/twitter-neven-barkovic.html#tipologija",
+    "href": "pages/izvori/twitter-neven-barkovic.html#tipologija",
+    "title": "Neven Barkovic",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), Neven Barkovic pripada skupini Graditelji zajednica: nizak doseg uz vrlo visok angažman — gradi dubok odnos s vjernom publikom.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-neven-barkovic.html#povezano",
+    "href": "pages/izvori/twitter-neven-barkovic.html#povezano",
+    "title": "Neven Barkovic",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: NORWEGIAN MAN, Mk.gee 🇪🇺, Željka Markić\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/twitter-neven-barkovic.html#izvori-podataka",
+    "href": "pages/izvori/twitter-neven-barkovic.html#izvori-podataka",
+    "title": "Neven Barkovic",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/twitter-norwegian-man.html",
+    "href": "pages/izvori/twitter-norwegian-man.html",
+    "title": "NORWEGIAN MAN",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora NORWEGIAN MAN u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/twitter-norwegian-man.html#što-je",
+    "href": "pages/izvori/twitter-norwegian-man.html#što-je",
+    "title": "NORWEGIAN MAN",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/twitter-norwegian-man.html#profil",
+    "href": "pages/izvori/twitter-norwegian-man.html#profil",
+    "title": "NORWEGIAN MAN",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n2\n\n\nObjava\n\n\n\n\n1.509\n\n\nInterakcija\n\n\n\n\n20.051\n\n\nDoseg\n\n\n\nPo volumenu objava, NORWEGIAN MAN je na 16. mjestu od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje 754 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/twitter-norwegian-man.html#tipologija",
+    "href": "pages/izvori/twitter-norwegian-man.html#tipologija",
+    "title": "NORWEGIAN MAN",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), NORWEGIAN MAN pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-norwegian-man.html#povezano",
+    "href": "pages/izvori/twitter-norwegian-man.html#povezano",
+    "title": "NORWEGIAN MAN",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: Željka Markić, Neven Barkovic, Marin Miletić\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/twitter-norwegian-man.html#izvori-podataka",
+    "href": "pages/izvori/twitter-norwegian-man.html#izvori-podataka",
+    "title": "NORWEGIAN MAN",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/twitter-pavel-gregoric.html",
+    "href": "pages/izvori/twitter-pavel-gregoric.html",
+    "title": "Pavel Gregoric",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora Pavel Gregoric u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/twitter-pavel-gregoric.html#što-je",
+    "href": "pages/izvori/twitter-pavel-gregoric.html#što-je",
+    "title": "Pavel Gregoric",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/twitter-pavel-gregoric.html#profil",
+    "href": "pages/izvori/twitter-pavel-gregoric.html#profil",
+    "title": "Pavel Gregoric",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n12\n\n\nObjava\n\n\n\n\n1.314\n\n\nInterakcija\n\n\n\n\n19.509\n\n\nDoseg\n\n\n\nPo volumenu objava, Pavel Gregoric je na 8. mjestu od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje 110 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/twitter-pavel-gregoric.html#tipologija",
+    "href": "pages/izvori/twitter-pavel-gregoric.html#tipologija",
+    "title": "Pavel Gregoric",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), Pavel Gregoric pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-pavel-gregoric.html#povezano",
+    "href": "pages/izvori/twitter-pavel-gregoric.html#povezano",
+    "title": "Pavel Gregoric",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: Stephen Nikola Bartulica, Mate Mijić 🇭🇷, Hrvatski Kanal\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/twitter-pavel-gregoric.html#izvori-podataka",
+    "href": "pages/izvori/twitter-pavel-gregoric.html#izvori-podataka",
+    "title": "Pavel Gregoric",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/twitter-petar.html",
+    "href": "pages/izvori/twitter-petar.html",
+    "title": "Petar",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora Petar u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/twitter-petar.html#što-je",
+    "href": "pages/izvori/twitter-petar.html#što-je",
+    "title": "Petar",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/twitter-petar.html#profil",
+    "href": "pages/izvori/twitter-petar.html#profil",
+    "title": "Petar",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n73\n\n\nObjava\n\n\n\n\n2.247\n\n\nInterakcija\n\n\n\n\n49.498\n\n\nDoseg\n\n\n\nPo volumenu objava, Petar je na 2. mjestu od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje 31 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/twitter-petar.html#tipologija",
+    "href": "pages/izvori/twitter-petar.html#tipologija",
+    "title": "Petar",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), Petar pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-petar.html#povezano",
+    "href": "pages/izvori/twitter-petar.html#povezano",
+    "title": "Petar",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: Zagrebačka nadbiskupija, Vlada Republike Hrvatske, Andrej Plenković\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/twitter-petar.html#izvori-podataka",
+    "href": "pages/izvori/twitter-petar.html#izvori-podataka",
+    "title": "Petar",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/twitter-stephen-nikola-bartulica.html",
+    "href": "pages/izvori/twitter-stephen-nikola-bartulica.html",
+    "title": "Stephen Nikola Bartulica",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora Stephen Nikola Bartulica u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/twitter-stephen-nikola-bartulica.html#što-je",
+    "href": "pages/izvori/twitter-stephen-nikola-bartulica.html#što-je",
+    "title": "Stephen Nikola Bartulica",
+    "section": "Što je",
+    "text": "Što je\nStephen Bartulica — političar (Twitter/X)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-stephen-nikola-bartulica.html#profil",
+    "href": "pages/izvori/twitter-stephen-nikola-bartulica.html#profil",
+    "title": "Stephen Nikola Bartulica",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n14\n\n\nObjava\n\n\n\n\n1.802\n\n\nInterakcija\n\n\n\n\n27.900\n\n\nDoseg\n\n\n\nPo volumenu objava, Stephen Nikola Bartulica je na 7. mjestu od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje 129 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/twitter-stephen-nikola-bartulica.html#tipologija",
+    "href": "pages/izvori/twitter-stephen-nikola-bartulica.html#tipologija",
+    "title": "Stephen Nikola Bartulica",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), Stephen Nikola Bartulica pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-stephen-nikola-bartulica.html#povezano",
+    "href": "pages/izvori/twitter-stephen-nikola-bartulica.html#povezano",
+    "title": "Stephen Nikola Bartulica",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: Hrvatski Kanal, Pavel Gregoric, Darko Lesinger\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/twitter-stephen-nikola-bartulica.html#izvori-podataka",
+    "href": "pages/izvori/twitter-stephen-nikola-bartulica.html#izvori-podataka",
+    "title": "Stephen Nikola Bartulica",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/twitter-vesna-rajnovic.html",
+    "href": "pages/izvori/twitter-vesna-rajnovic.html",
+    "title": "Vesna Rajnović 🌿",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora Vesna Rajnović 🌿 u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/twitter-vesna-rajnovic.html#što-je",
+    "href": "pages/izvori/twitter-vesna-rajnovic.html#što-je",
+    "title": "Vesna Rajnović 🌿",
+    "section": "Što je",
+    "text": "Što je\nOpis još nije potvrđen — uređuje PI."
+  },
+  {
+    "objectID": "pages/izvori/twitter-vesna-rajnovic.html#profil",
+    "href": "pages/izvori/twitter-vesna-rajnovic.html#profil",
+    "title": "Vesna Rajnović 🌿",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n6\n\n\nObjava\n\n\n\n\n767\n\n\nInterakcija\n\n\n\n\n12.651\n\n\nDoseg\n\n\n\nPo volumenu objava, Vesna Rajnović 🌿 je na 13. mjestu od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje 128 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/twitter-vesna-rajnovic.html#tipologija",
+    "href": "pages/izvori/twitter-vesna-rajnovic.html#tipologija",
+    "title": "Vesna Rajnović 🌿",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), Vesna Rajnović 🌿 pripada skupini Specijalizirani akteri: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-vesna-rajnovic.html#povezano",
+    "href": "pages/izvori/twitter-vesna-rajnovic.html#povezano",
+    "title": "Vesna Rajnović 🌿",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: Dalija Orešković, Marin Miletić, Dominik Alpeza\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/twitter-vesna-rajnovic.html#izvori-podataka",
+    "href": "pages/izvori/twitter-vesna-rajnovic.html#izvori-podataka",
+    "title": "Vesna Rajnović 🌿",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/twitter-vlada-republike-hrvatske.html",
+    "href": "pages/izvori/twitter-vlada-republike-hrvatske.html",
+    "title": "Vlada Republike Hrvatske",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora Vlada Republike Hrvatske u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/twitter-vlada-republike-hrvatske.html#što-je",
+    "href": "pages/izvori/twitter-vlada-republike-hrvatske.html#što-je",
+    "title": "Vlada Republike Hrvatske",
+    "section": "Što je",
+    "text": "Što je\nVlada Republike Hrvatske (Twitter/X)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-vlada-republike-hrvatske.html#profil",
+    "href": "pages/izvori/twitter-vlada-republike-hrvatske.html#profil",
+    "title": "Vlada Republike Hrvatske",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n65\n\n\nObjava\n\n\n\n\n2.599\n\n\nInterakcija\n\n\n\n\n684.340\n\n\nDoseg\n\n\n\nPo volumenu objava, Vlada Republike Hrvatske je na 3. mjestu od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje 40 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/twitter-vlada-republike-hrvatske.html#tipologija",
+    "href": "pages/izvori/twitter-vlada-republike-hrvatske.html#tipologija",
+    "title": "Vlada Republike Hrvatske",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), Vlada Republike Hrvatske pripada skupini Divovi: visok doseg i visok angažman — među vodećim akterima ekosustava.\nUređivačka oznaka: sekularni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-vlada-republike-hrvatske.html#povezano",
+    "href": "pages/izvori/twitter-vlada-republike-hrvatske.html#povezano",
+    "title": "Vlada Republike Hrvatske",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: Petar, Andrej Plenković, Zagrebačka nadbiskupija\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/twitter-vlada-republike-hrvatske.html#izvori-podataka",
+    "href": "pages/izvori/twitter-vlada-republike-hrvatske.html#izvori-podataka",
+    "title": "Vlada Republike Hrvatske",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/twitter-zagrebacka-nadbiskupija.html",
+    "href": "pages/izvori/twitter-zagrebacka-nadbiskupija.html",
+    "title": "Zagrebačka nadbiskupija",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora Zagrebačka nadbiskupija u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/twitter-zagrebacka-nadbiskupija.html#što-je",
+    "href": "pages/izvori/twitter-zagrebacka-nadbiskupija.html#što-je",
+    "title": "Zagrebačka nadbiskupija",
+    "section": "Što je",
+    "text": "Što je\nZagrebačka nadbiskupija — službena stranica (Katolička crkva)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-zagrebacka-nadbiskupija.html#profil",
+    "href": "pages/izvori/twitter-zagrebacka-nadbiskupija.html#profil",
+    "title": "Zagrebačka nadbiskupija",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n75\n\n\nObjava\n\n\n\n\n984\n\n\nInterakcija\n\n\n\n\n34.407\n\n\nDoseg\n\n\n\nPo volumenu objava, Zagrebačka nadbiskupija je na 1. mjestu od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje 13 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/twitter-zagrebacka-nadbiskupija.html#tipologija",
+    "href": "pages/izvori/twitter-zagrebacka-nadbiskupija.html#tipologija",
+    "title": "Zagrebačka nadbiskupija",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), Zagrebačka nadbiskupija pripada skupini Megafoni: visok doseg uz nizak angažman — sadržaj doseže široku publiku bez intenzivne interakcije.\nUređivačka oznaka: konfesionalni izvor (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-zagrebacka-nadbiskupija.html#povezano",
+    "href": "pages/izvori/twitter-zagrebacka-nadbiskupija.html#povezano",
+    "title": "Zagrebačka nadbiskupija",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: Petar, Vlada Republike Hrvatske, Andrej Plenković\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/twitter-zagrebacka-nadbiskupija.html#izvori-podataka",
+    "href": "pages/izvori/twitter-zagrebacka-nadbiskupija.html#izvori-podataka",
+    "title": "Zagrebačka nadbiskupija",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
+  },
+  {
+    "objectID": "pages/izvori/twitter-zeljka-markic.html",
+    "href": "pages/izvori/twitter-zeljka-markic.html",
+    "title": "Željka Markić",
+    "section": "",
+    "text": "Ova stranica sažima profil izvora Željka Markić u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+  },
+  {
+    "objectID": "pages/izvori/twitter-zeljka-markic.html#što-je",
+    "href": "pages/izvori/twitter-zeljka-markic.html#što-je",
+    "title": "Željka Markić",
+    "section": "Što je",
+    "text": "Što je\nŽeljka Markić — aktivistica (Twitter/X)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-zeljka-markic.html#profil",
+    "href": "pages/izvori/twitter-zeljka-markic.html#profil",
+    "title": "Željka Markić",
+    "section": "Profil",
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu:\n\n\n\n3\n\n\nObjava\n\n\n\n\n1.028\n\n\nInterakcija\n\n\n\n\n16.060\n\n\nDoseg\n\n\n\nPo volumenu objava, Željka Markić je na 15. mjestu od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje 343 interakcija po objavi."
+  },
+  {
+    "objectID": "pages/izvori/twitter-zeljka-markic.html#tipologija",
+    "href": "pages/izvori/twitter-zeljka-markic.html#tipologija",
+    "title": "Željka Markić",
+    "section": "Tipologija",
+    "text": "Tipologija\nPrema tipologiji Mape ekosustava (podjela po medijanu angažmana i dosega unutar platforme), Željka Markić pripada skupini Graditelji zajednica: nizak doseg uz vrlo visok angažman — gradi dubok odnos s vjernom publikom.\nUređivačka oznaka: ostalo (predloženo — potvrđuje PI)"
+  },
+  {
+    "objectID": "pages/izvori/twitter-zeljka-markic.html#povezano",
+    "href": "pages/izvori/twitter-zeljka-markic.html#povezano",
+    "title": "Željka Markić",
+    "section": "Povezano",
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: Marin Miletić, NORWEGIAN MAN, Vesna Rajnović 🌿\nKatalog izvora — sve platforme"
+  },
+  {
+    "objectID": "pages/izvori/twitter-zeljka-markic.html#izvori-podataka",
+    "href": "pages/izvori/twitter-zeljka-markic.html#izvori-podataka",
+    "title": "Željka Markić",
+    "section": "Izvori podataka",
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-07-02).\n\n\n\n\n\n\nWarning\n\n\n\nBrojke su indikativne. Agregati su statični snimak razdoblja 2021.–2025. i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."
   }
 ]

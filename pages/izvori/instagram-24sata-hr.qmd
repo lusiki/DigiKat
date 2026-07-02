@@ -1,0 +1,54 @@
+---
+title: "24sata.hr"
+subtitle: "Instagram · Megafoni"
+date: last-modified
+categories: ["Katalog izvora", "Instagram"]
+---
+
+Ova stranica sažima profil izvora **24sata.hr** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+
+## Što je
+
+24sata — nacionalni news-portal
+
+## Profil
+
+Ključni pokazatelji ovog izvora u korpusu:
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">4</div>
+<div class="metric-label">Objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">6.157</div>
+<div class="metric-label">Interakcija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">83.130</div>
+<div class="metric-label">Doseg</div>
+</div>
+</div>
+
+Po volumenu objava, 24sata.hr je na **8. mjestu** od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje **1.539 interakcija po objavi**.
+
+## Tipologija
+
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), 24sata.hr pripada skupini **Megafoni**: visok doseg uz nizak angažman — sadržaj doseže široku publiku bez intenzivne interakcije.
+
+Uređivačka oznaka: **sekularni izvor** *(predloženo — potvrđuje PI)*
+
+## Povezano
+
+- [Pregled platforme Instagram](platforma-instagram.html)
+- Srodni akteri: [oslobodjenje.ba](instagram-oslobodjenje-ba.html), [insidebosnia](instagram-insidebosnia.html), [hrvatskivojnik_magazin](instagram-hrvatskivojnik-magazin.html)
+- [Katalog izvora — sve platforme](index.html)
+
+## Izvori podataka
+
+Podaci: `data/processed/instagram_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-02).
+
+::: {.callout-warning}
+Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno.
+:::
+

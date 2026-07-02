@@ -1,0 +1,32 @@
+---
+title: "Izvori — Instagram"
+subtitle: "Praćeni akteri na platformi Instagram"
+date: last-modified
+categories: ["Katalog izvora", "Instagram"]
+---
+
+Ova stranica okuplja praćene izvore na platformi **Instagram** iz **Kataloga izvora**. Tipologija je izračunata jednako kao u [Mapi ekosustava](../mapa/mapa.html) — podjelom po medijanu angažmana i dosega. Poredano po volumenu objava.
+
+| Izvor | Tipologija | Objava | Interakcija | Doseg |
+|---|---|---:|---:|---:|
+| [dnevniavaz](instagram-dnevniavaz.html) | Divovi | 51 | 24.181 | 606.100 |
+| [laudatotv](instagram-laudatotv.html) | Divovi | 42 | 50.276 | 198.120 |
+| [ivan.anusic.hr](instagram-ivan-anusic-hr.html) | Specijalizirani akteri | 13 | 8.822 | 10.664 |
+| [_rina.rs](instagram-rina-rs.html) | Divovi | 6 | 10.773 | 40.737 |
+| [hrvatskivojnik_magazin](instagram-hrvatskivojnik-magazin.html) | Specijalizirani akteri | 6 | 6.246 | 3.573 |
+| [oslobodjenje.ba](instagram-oslobodjenje-ba.html) | Specijalizirani akteri | 4 | 6.268 | 9.854 |
+| [24sata.hr](instagram-24sata-hr.html) | Megafoni | 4 | 6.157 | 83.130 |
+| [insidebosnia](instagram-insidebosnia.html) | Graditelji zajednica | 3 | 9.715 | 23.193 |
+| [buducnostsrbijeav](instagram-buducnostsrbijeav.html) | Megafoni | 3 | 9.341 | 93.324 |
+| [kristijanilicic](instagram-kristijanilicic.html) | Divovi | 2 | 22.590 | 112.618 |
+| [sport.klub](instagram-sport-klub.html) | Megafoni | 2 | 6.624 | 45.990 |
+| [hns_cff](instagram-hns-cff.html) | Divovi | 1 | 52.022 | 84.478 |
+| [martinafilic](instagram-martinafilic.html) | Graditelji zajednica | 1 | 13.655 | 14.329 |
+| [ekostraza](instagram-ekostraza.html) | Graditelji zajednica | 1 | 12.286 | 20.261 |
+| [klaskalica](instagram-klaskalica.html) | Graditelji zajednica | 1 | 10.238 | 8.214 |
+| [elladvornik](instagram-elladvornik.html) | Megafoni | 1 | 7.510 | 52.625 |
+| [zenskisvijet](instagram-zenskisvijet.html) | Specijalizirani akteri | 1 | 6.928 | 8.804 |
+| [vannabojovic](instagram-vannabojovic.html) | Specijalizirani akteri | 1 | 6.847 | 7.661 |
+
+[Natrag na katalog izvora](index.html) · [Mapa ekosustava](../mapa/mapa.html)
+

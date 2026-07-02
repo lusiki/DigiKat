@@ -1,0 +1,54 @@
+---
+title: "hrvatskivojnik_magazin"
+subtitle: "Instagram · Specijalizirani akteri"
+date: last-modified
+categories: ["Katalog izvora", "Instagram"]
+---
+
+Ova stranica sažima profil izvora **hrvatskivojnik_magazin** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+
+## Što je
+
+Hrvatski vojnik — magazin (Instagram)
+
+## Profil
+
+Ključni pokazatelji ovog izvora u korpusu:
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">6</div>
+<div class="metric-label">Objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">6.246</div>
+<div class="metric-label">Interakcija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">3.573</div>
+<div class="metric-label">Doseg</div>
+</div>
+</div>
+
+Po volumenu objava, hrvatskivojnik_magazin je na **6. mjestu** od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje **1.041 interakcija po objavi**.
+
+## Tipologija
+
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), hrvatskivojnik_magazin pripada skupini **Specijalizirani akteri**: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.
+
+Uređivačka oznaka: **sekularni izvor** *(predloženo — potvrđuje PI)*
+
+## Povezano
+
+- [Pregled platforme Instagram](platforma-instagram.html)
+- Srodni akteri: [_rina.rs](instagram-rina-rs.html), [oslobodjenje.ba](instagram-oslobodjenje-ba.html), [ivan.anusic.hr](instagram-ivan-anusic-hr.html)
+- [Katalog izvora — sve platforme](index.html)
+
+## Izvori podataka
+
+Podaci: `data/processed/instagram_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-02).
+
+::: {.callout-warning}
+Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno.
+:::
+

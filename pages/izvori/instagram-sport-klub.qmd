@@ -1,0 +1,54 @@
+---
+title: "sport.klub"
+subtitle: "Instagram · Megafoni"
+date: last-modified
+categories: ["Katalog izvora", "Instagram"]
+---
+
+Ova stranica sažima profil izvora **sport.klub** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+
+## Što je
+
+Sport Klub (Instagram)
+
+## Profil
+
+Ključni pokazatelji ovog izvora u korpusu:
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">2</div>
+<div class="metric-label">Objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">6.624</div>
+<div class="metric-label">Interakcija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">45.990</div>
+<div class="metric-label">Doseg</div>
+</div>
+</div>
+
+Po volumenu objava, sport.klub je na **12. mjestu** od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje **3.312 interakcija po objavi**.
+
+## Tipologija
+
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), sport.klub pripada skupini **Megafoni**: visok doseg uz nizak angažman — sadržaj doseže široku publiku bez intenzivne interakcije.
+
+Uređivačka oznaka: **sekularni izvor** *(predloženo — potvrđuje PI)*
+
+## Povezano
+
+- [Pregled platforme Instagram](platforma-instagram.html)
+- Srodni akteri: [kristijanilicic](instagram-kristijanilicic.html), [hns_cff](instagram-hns-cff.html), [buducnostsrbijeav](instagram-buducnostsrbijeav.html)
+- [Katalog izvora — sve platforme](index.html)
+
+## Izvori podataka
+
+Podaci: `data/processed/instagram_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-02).
+
+::: {.callout-warning}
+Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno.
+:::
+

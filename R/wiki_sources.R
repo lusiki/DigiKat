@@ -31,7 +31,10 @@ log_path <- file.path(out_dir, "_log.md")
 platforms <- list(
   web      = list(file = "web_actors.rds",      display = "Web",      hub = "platforma-web"),
   youtube  = list(file = "youtube_actors.rds",  display = "YouTube",  hub = "platforma-youtube"),
-  facebook = list(file = "facebook_actors.rds", display = "Facebook", hub = "platforma-facebook")
+  facebook  = list(file = "facebook_actors.rds",  display = "Facebook",  hub = "platforma-facebook"),
+  instagram = list(file = "instagram_actors.rds", display = "Instagram", hub = "platforma-instagram"),
+  tiktok    = list(file = "tiktok_actors.rds",    display = "TikTok",    hub = "platforma-tiktok"),
+  twitter   = list(file = "twitter_actors.rds",   display = "Twitter",   hub = "platforma-twitter")
 )
 
 if (!dir.exists(proc_dir)) stop("Missing ", proc_dir, " -- run from the repo root.")
@@ -98,7 +101,7 @@ for (col in names(side)) side[[col]] <- enc2utf8(ifelse(is.na(side[[col]]), "", 
 ## ---- clean previously generated pages (keep _schema.md / _log.md) ----------
 # Remove only the pages THIS script generates (index, hubs, actor pages); keep hand-authored
 # pages such as mreza.qmd and the .md schema/log.
-gen_pat <- "^(index|platforma-(web|youtube|facebook)|(web|youtube|facebook)-.*)\\.qmd$"
+gen_pat <- "^(index|platforma-(web|youtube|facebook|instagram|tiktok|twitter)|(web|youtube|facebook|instagram|tiktok|twitter)-.*)\\.qmd$"
 old <- list.files(out_dir, pattern = gen_pat, full.names = TRUE)
 if (length(old)) invisible(file.remove(old))
 
@@ -239,7 +242,8 @@ for (pkey in names(platforms)) {
   df$status      <- ifelse(is.na(idx), "", side$status[idx])
   df$description <- ifelse(is.na(idx), "", side$description[idx])
 
-  is_pub <- df$publish == "yes" & df$kind == "institution"
+  # publish gate: institutions AND individuals with publish=yes; only publish=no (noise/held) excluded
+  is_pub <- df$publish == "yes"
   pub <- df[is_pub, , drop = FALSE]
   pubs[[pkey]] <- pub
   counts_pub[pkey] <- nrow(pub)
@@ -293,13 +297,14 @@ idx_lines <- c(
   'title: "Katalog izvora"',
   'subtitle: "Profili pojedinačnih medijskih aktera"',
   "date: last-modified",
-  'categories: ["Katalog izvora", "Mapa ekosustava"]',
+  'categories: ["Katalog izvora", "Baza podataka"]',
   "---",
   "",
-  paste0("**Katalog izvora** pregled je pojedinačnih medijskih aktera zastupljenih u korpusu ",
-         "i dopuna je analitičkoj [Mapi ekosustava](../mapa/mapa.html). Za svaki izvor donosi ",
-         "volumen, angažman i doseg te pripadnost tipologiji (Divovi, Graditelji zajednica, ",
-         "Megafoni, Specijalizirani akteri), izračunatoj jednako kao u Mapi."),
+  paste0("**Katalog izvora** pregled je pojedinačnih medijskih aktera zastupljenih u korpusu. ",
+         "Dio je opisa [Baze podataka](../baza.html), a tipologiju izvora dijeli s ",
+         "[Mapom ekosustava](../mapa/mapa.html). Za svaki izvor donosi volumen, angažman i doseg ",
+         "te pripadnost tipologiji (Divovi, Graditelji zajednica, Megafoni, Specijalizirani akteri), ",
+         "izračunatoj jednako kao u Mapi."),
   "",
   paste0("Cijeli se katalog može vidjeti i kao [mreža izvora](mreza.html) — čvorovi su izvori, ",
          "a poveznice pripadnost platformi i zajednički brend."),
@@ -307,9 +312,10 @@ idx_lines <- c(
   "::: {.callout-note}",
   paste0("Podaci dolaze iz agregata `data/processed/*_actors.rds` (bez osobnih podataka). ",
          "Katalog je **radna verzija**: uređivačke oznake (konfesionalni/sekularni izvor) ",
-         "prijedlozi su koje potvrđuje voditelj projekta, a brojke su indikativne (agregati ",
-         "**2021.–2025.**, bez Instagrama i TikToka). Trenutno je objavljeno **", n_pub,
-         "** izvora; **", n_held, "** aktera zadržano je za uredničku provjeru."),
+         "prijedlozi su koje potvrđuje voditelj projekta, a brojke su indikativne (statični ",
+         "agregati; mnogi akteri na novim platformama imaju tek nekoliko objava). Trenutno je ",
+         "objavljeno **", n_pub, "** izvora; **", n_held,
+         "** aktera zadržano je za uredničku provjeru."),
   ":::",
   ""
 )

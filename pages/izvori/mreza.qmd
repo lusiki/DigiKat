@@ -1,6 +1,6 @@
 ---
 title: "Mreža izvora"
-subtitle: "Katalog izvora kao interaktivna mreža — akteri povezani platformom i zajedničkim brendom"
+subtitle: "Katalog izvora kao interaktivna mreža — šest platformi povezanih zajedničkim brendom"
 date: last-modified
 categories: ["Katalog izvora", "Mapa ekosustava"]
 ---
@@ -19,150 +19,65 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 library(dplyr)
 library(visNetwork)
 source("../../R/theme_digikat.R")
+source("../../R/source_network.R")
 ```
 
 ```{r}
 #| label: build-graph
 #| include: false
 
-# Reads the SAME aggregates + PI sidecar the generator uses (single source of truth);
-# no master, no data/nlp. Node metrics + typology come from the data, never hand-typed.
-
-platforms    <- c(web = "web_actors.rds", youtube = "youtube_actors.rds", facebook = "facebook_actors.rds")
-plat_display <- c(web = "Web", youtube = "YouTube", facebook = "Facebook")
-
-side <- read.csv("../../resources/dictionaries/source_labels.csv",
-                 fileEncoding = "UTF-8", stringsAsFactors = FALSE,
-                 colClasses = "character", na.strings = "NA")
-side[is.na(side)] <- ""
-for (col in names(side)) side[[col]] <- trimws(side[[col]])
-
-# Typology identical to mapa.qmd (per-platform median split).
-classify_typology <- function(df) {
-  mi <- median(df$total_interactions, na.rm = TRUE); mr <- median(df$total_reach, na.rm = TRUE)
-  ifelse(df$total_interactions >= mi & df$total_reach >= mr, "Divovi",
-  ifelse(df$total_interactions >= mi & df$total_reach <  mr, "Graditelji zajednica",
-  ifelse(df$total_interactions <  mi & df$total_reach >= mr, "Megafoni", "Specijalizirani akteri")))
-}
-
-actors <- lapply(names(platforms), function(pk) {
-  df <- as.data.frame(readRDS(file.path("../../data/processed", platforms[[pk]])), stringsAsFactors = FALSE)
-  df$FROM     <- enc2utf8(as.character(df$FROM))
-  df$typology <- classify_typology(df)
-  df$platform <- pk
-  idx <- match(df$FROM, side$from)
-  df$kind    <- ifelse(is.na(idx), "unclassified", side$kind[idx])
-  df$publish <- ifelse(is.na(idx), "no",           side$publish[idx])
-  df$entity  <- ifelse(is.na(idx), "",             side$entity[idx])
-  df[df$publish == "yes" & df$kind == "institution", ]
-}) %>% bind_rows()
-actors$node_id <- paste0(actors$platform, "::", actors$FROM)
-
-# ---- NODES: 47 actors + 3 platform hubs ----
-hub_nodes <- data.frame(
-  node_id = paste0("HUB::", names(plat_display)), label = unname(plat_display),
-  platform = names(plat_display), size = max(actors$total_posts, na.rm = TRUE),
-  is_hub = TRUE, stringsAsFactors = FALSE
-)
-actor_nodes <- data.frame(
-  node_id = actors$node_id, label = actors$FROM, platform = actors$platform,
-  size = actors$total_posts, is_hub = FALSE, stringsAsFactors = FALSE
-)
-nodes <- bind_rows(hub_nodes, actor_nodes)
-nodes$platform_disp <- unname(plat_display[nodes$platform])
-
-# ---- EDGES: the wiki's own links (structural only) ----
-edge_membership <- data.frame(from = actors$node_id, to = paste0("HUB::", actors$platform),
-                              type = "Pripadnost platformi", stringsAsFactors = FALSE)
-bridge <- actors[actors$entity != "", c("node_id", "platform", "entity")]
-bb <- merge(bridge, bridge, by = "entity")
-bb <- bb[bb$node_id.x < bb$node_id.y & bb$platform.x != bb$platform.y, ]
-edge_brand <- data.frame(from = bb$node_id.x, to = bb$node_id.y,
-                         type = "Isti brend", stringsAsFactors = FALSE)
-edges <- bind_rows(edge_membership, edge_brand)
+# Single source of truth: build_source_network() (R/source_network.R) reads the
+# SAME tracked aggregates + PI sidecar as the wiki generator; no master, no
+# data/nlp. Node metrics + typology come from the data, never hand-typed. The
+# homepage (index.qmd) reuses the exact same builder.
+sn <- build_source_network("../../data/processed",
+                           "../../resources/dictionaries/source_labels.csv")
 ```
 
-**Mreža izvora** prikazuje [Katalog izvora](index.html) kao **interaktivni graf**: svaki je izvor jedan
-čvor, a poveznice među čvorovima one su koje i sam wiki bilježi. Struktura kataloga — inače vidljiva samo
-listanjem pojedinačnih stranica — tako se može sagledati odjednom i istraživati mišem. Mreža dopunjuje
-[Mapu ekosustava](../mapa/mapa.html) i dijeli likovni jezik s [tematskim mrežama](../mapa/mapa_stats.html).
+**Mreža izvora** prikazuje [Katalog izvora](index.html) kao **interaktivni graf** preko **šest platformi**:
+svaki je izvor jedan čvor, a poveznice među čvorovima one su koje i sam wiki bilježi. Struktura kataloga —
+inače vidljiva samo listanjem pojedinačnih stranica — tako se može sagledati odjednom i istraživati mišem.
+Mreža dopunjuje [Mapu ekosustava](../mapa/mapa.html) i dijeli likovni jezik s
+[tematskim mrežama](../mapa/mapa_stats.html).
 
 ::: {.callout-note}
 ## Kako čitati i koristiti mrežu
 
-Čvorovi su pojedinačni izvori (47 objavljenih aktera), obojeni prema platformi; veličina čvora razmjerna je
-volumenu objava. Tri čvora u obliku romba su platforme (Web, YouTube, Facebook). Poveznice su dvojake:
-**tanke sive** spajaju izvor s njegovom platformom (pripadnost), a **deblje plave** spajaju isti brend
-prisutan na više platformi (primjerice Bitno.net ili Laudato).
+Čvorovi su pojedinačni izvori (`r sn$n_actors` objavljenih aktera), obojeni prema platformi; veličina čvora
+razmjerna je volumenu objava. Šest najvećih čvorova (s podebljanim nazivom) su platforme (Web, YouTube,
+Facebook, Instagram, TikTok, Twitter). Poveznice su dvojake: **tanke sive** spajaju izvor s njegovom
+platformom (pripadnost), a **deblje plave** spajaju isti brend ili osobu prisutnu na više platformi
+(primjerice Laudato ili Index).
 
 Mreža je **interaktivna**: čvorove možete **povlačiti mišem**, prikaz **zumirati** i pomicati, a prelaskom
 preko čvora prikazuju se podaci o izvoru (tipologija, volumen, angažman, doseg). Klik na čvor ističe njegove
-izravne veze. Poveznice su **strukturne** — označavaju pripadnost i zajednički brend, a **ne** znače
-zajedničku publiku, zajedničke teme ni utjecaj.
+izravne veze. Poveznice su **strukturne** — pripadnost i zajednički brend/osoba, a **ne** znače zajedničku
+publiku, zajedničke teme ni utjecaj.
 :::
 
 ```{r}
 #| label: plot-network
 
-plat_cols <- setNames(unname(dk_platform_colors[c("web", "youtube", "facebook")]),
-                      c("Web", "YouTube", "Facebook"))
-
-meta <- actors %>% select(node_id, typology, total_posts, total_interactions, total_reach)
-
-vis_nodes <- nodes %>%
-  left_join(meta, by = "node_id") %>%
-  mutate(
-    id          = node_id,
-    color       = unname(plat_cols[platform_disp]),
-    shape       = ifelse(is_hub, "diamond", "dot"),
-    value       = size,
-    borderWidth = ifelse(is_hub, 3, 1),
-    font.size   = ifelse(is_hub, 30, 18),
-    font.color  = dk_col$ink,
-    title = ifelse(is_hub,
-      paste0("<b>", label, "</b><br>Platforma"),
-      paste0("<b>", label, "</b> · ", platform_disp, "<br>", typology,
-             "<br>Volumen: ",  formatC(total_posts,        format = "d", big.mark = ".", decimal.mark = ","),
-             "<br>Angažman: ", formatC(total_interactions, format = "d", big.mark = ".", decimal.mark = ","),
-             "<br>Doseg: ",    formatC(total_reach,        format = "d", big.mark = ".", decimal.mark = ",")))
-  ) %>%
-  select(id, label, color, shape, value, borderWidth, font.size, font.color, title)
-
-vis_edges <- edges %>%
-  mutate(color = ifelse(type == "Isti brend", dk_col$accent_200, dk_col$faint),
-         width = ifelse(type == "Isti brend", 3, 1)) %>%
-  select(from, to, color, width)
-
-visNetwork(vis_nodes, vis_edges, width = "100%", height = "720px", background = "#F5F4F0") %>%
-  visNodes(scaling = list(min = 10, max = 46)) %>%
-  visEdges(smooth = FALSE) %>%
-  visLayout(randomSeed = 123) %>%
-  visPhysics(solver = "barnesHut",
-             barnesHut = list(gravitationalConstant = -9000, springLength = 130, springConstant = 0.02),
-             stabilization = list(iterations = 250)) %>%
-  visInteraction(dragNodes = TRUE, dragView = TRUE, zoomView = TRUE,
-                 hover = TRUE, tooltipDelay = 120, navigationButtons = TRUE) %>%
-  visOptions(highlightNearest = list(enabled = TRUE, degree = 1, hover = TRUE)) %>%
-  visLegend(useGroups = FALSE, main = "Platforma", position = "right",
-            addNodes = data.frame(label = c("Web", "YouTube", "Facebook"), shape = "dot",
-                                  color = unname(plat_cols[c("Web", "YouTube", "Facebook")]),
-                                  stringsAsFactors = FALSE))
+# Shared builder + widget (R/source_network.R) — same graph the homepage embeds.
+source_network_widget(sn, height = "760px")
 ```
 
 *Izvor: `data/processed/*_actors.rds`; poveznice iz `resources/dictionaries/source_labels.csv`.*
 
-Mreža otkriva tri **platformske konstelacije**. Web i Facebook gusto su premošteni: isti mainstream
-brendovi (Index, Večernji list, 24sata, Jutarnji, Net.hr, Dnevnik) i katolički mediji (Bitno.net, Laudato)
-djeluju na objema platformama pa ih zajedničke poveznice povlače jedne k drugima. **YouTube** je uglavnom
-platformski zaseban — s ostatkom ga vežu tek Laudato i RTL. Nasuprot tomu, konfesionalni akteri bez inačice
-na drugim platformama — hkm.hr, Radio Marija Hrvatska, Zagrebačka nadbiskupija — vežu se samo uz vlastitu
-platformu, što ih obilježava kao **platformski izvorne**: prisutni su ondje gdje im je zajednica, a ne kao
-dio višekanalnoga medijskog brenda.
+Mreža obuhvaća **šest platformi**, a razlika među njima sama je po sebi nalaz. **Web, YouTube i Facebook**
+čine jezgru katoličkoga medijskog prostora — portali i kanali gusto premošteni zajedničkim brendovima
+(Index, Večernji list, 24sata, Bitno.net, Laudato). **Instagram, TikTok i Twitter** izgledaju bitno
+drukčije: među njihovim najaktivnijim akterima prevladavaju **pojedinci — političari i privatne osobe** te
+sadržaj koji je u korpus ušao usputnim podudaranjem, a ne katoličke institucije. Iznimke su rijetke, ali
+znakovite — `shkm2026`, Mladifest Hrvatska, Laudato TV i Zagrebačka nadbiskupija nose katoličku tematiku na
+nove platforme. Zajednički brendovi (Slobodna Dalmacija, RTL, Dnevnik) povezuju TikTok s webom i Facebookom,
+dok Twitter ostaje pretežno prostor političkih pojedinaca.
 
 ::: {.callout-warning}
 Mreža prikazuje **strukturu kataloga**, ne izmjerene odnose među akterima. Poveznice su strukturne
-(pripadnost platformi i zajednički brend); ne predstavljaju zajedničku publiku, tematsko preklapanje ni
-utjecaj. Brojke i pripadnosti indikativne su (agregati **2021.–2025.**, bez Instagrama i TikToka; radna
-verzija). Bogatije semantičke veze — zajedničke teme ili preklapanje publike — zahtijevaju dodatne podatke
-i zasebnu validaciju te su predviđene za sljedeću inačicu.
+(pripadnost platformi te zajednički brend ili osoba); ne predstavljaju zajedničku publiku, tematsko
+preklapanje ni utjecaj. Uz institucije, na novijim platformama prikazani su i **pojedinci** (političari i
+privatne osobe) — na izričitu odluku voditelja projekta; svaki se akter može isključiti. Brojke i
+pripadnosti indikativne su (agregati **2021.–2025.**, radna verzija; mnogi akteri na novim platformama
+imaju tek nekoliko objava).
 :::

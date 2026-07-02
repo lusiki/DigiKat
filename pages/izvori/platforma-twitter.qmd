@@ -1,0 +1,33 @@
+---
+title: "Izvori — Twitter"
+subtitle: "Praćeni akteri na platformi Twitter"
+date: last-modified
+categories: ["Katalog izvora", "Twitter"]
+---
+
+Ova stranica okuplja praćene izvore na platformi **Twitter** iz **Kataloga izvora**. Tipologija je izračunata jednako kao u [Mapi ekosustava](../mapa/mapa.html) — podjelom po medijanu angažmana i dosega. Poredano po volumenu objava.
+
+| Izvor | Tipologija | Objava | Interakcija | Doseg |
+|---|---|---:|---:|---:|
+| [Zagrebačka nadbiskupija](twitter-zagrebacka-nadbiskupija.html) | Megafoni | 75 | 984 | 34.407 |
+| [Petar](twitter-petar.html) | Divovi | 73 | 2.247 | 49.498 |
+| [Vlada Republike Hrvatske](twitter-vlada-republike-hrvatske.html) | Divovi | 65 | 2.599 | 684.340 |
+| [Andrej Plenković](twitter-andrej-plenkovic.html) | Divovi | 35 | 3.928 | 190.758 |
+| [Darko Lesinger](twitter-darko-lesinger.html) | Megafoni | 15 | 991 | 25.008 |
+| [Hrvatski Kanal](twitter-hrvatski-kanal.html) | Specijalizirani akteri | 15 | 822 | 12.343 |
+| [Stephen Nikola Bartulica](twitter-stephen-nikola-bartulica.html) | Divovi | 14 | 1.802 | 27.900 |
+| [Pavel Gregoric](twitter-pavel-gregoric.html) | Divovi | 12 | 1.314 | 19.509 |
+| [Mate Mijić 🇭🇷](twitter-mate-mijic.html) | Specijalizirani akteri | 9 | 783 | 13.740 |
+| [Ivan Anušić](twitter-ivan-anusic.html) | Divovi | 8 | 1.249 | 16.830 |
+| [Dominik Alpeza](twitter-dominik-alpeza.html) | Specijalizirani akteri | 6 | 965 | 14.923 |
+| [Dalija Orešković](twitter-dalija-oreskovic.html) | Specijalizirani akteri | 6 | 834 | 14.844 |
+| [Vesna Rajnović 🌿](twitter-vesna-rajnovic.html) | Specijalizirani akteri | 6 | 767 | 12.651 |
+| [Marin Miletić](twitter-marin-miletic.html) | Specijalizirani akteri | 4 | 850 | 13.631 |
+| [Željka Markić](twitter-zeljka-markic.html) | Graditelji zajednica | 3 | 1.028 | 16.060 |
+| [NORWEGIAN MAN](twitter-norwegian-man.html) | Divovi | 2 | 1.509 | 20.051 |
+| [Neven Barkovic](twitter-neven-barkovic.html) | Graditelji zajednica | 2 | 1.110 | 14.670 |
+| [Mk.gee 🇪🇺](twitter-mk-gee.html) | Specijalizirani akteri | 2 | 905 | 13.752 |
+| [Laganica](twitter-laganica.html) | Divovi | 1 | 3.385 | 45.597 |
+
+[Natrag na katalog izvora](index.html) · [Mapa ekosustava](../mapa/mapa.html)
+

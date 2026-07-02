@@ -1,0 +1,54 @@
+---
+title: "shkm2026"
+subtitle: "TikTok · Specijalizirani akteri"
+date: last-modified
+categories: ["Katalog izvora", "TikTok"]
+---
+
+Ova stranica sažima profil izvora **shkm2026** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+
+## Što je
+
+Susret hrvatske katoličke mladeži 2026 (TikTok)
+
+## Profil
+
+Ključni pokazatelji ovog izvora u korpusu:
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">5</div>
+<div class="metric-label">Objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">7.374</div>
+<div class="metric-label">Interakcija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">69.432</div>
+<div class="metric-label">Doseg</div>
+</div>
+</div>
+
+Po volumenu objava, shkm2026 je na **9. mjestu** od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje **1.475 interakcija po objavi**.
+
+## Tipologija
+
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), shkm2026 pripada skupini **Specijalizirani akteri**: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.
+
+Uređivačka oznaka: **konfesionalni izvor** *(predloženo — potvrđuje PI)*
+
+## Povezano
+
+- [Pregled platforme TikTok](platforma-tiktok.html)
+- Srodni akteri: [index.hr](tiktok-index-hr.html), [mladifesthrvatska](tiktok-mladifesthrvatska.html), [kristijanilicic](tiktok-kristijanilicic.html)
+- [Katalog izvora — sve platforme](index.html)
+
+## Izvori podataka
+
+Podaci: `data/processed/tiktok_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-02).
+
+::: {.callout-warning}
+Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno.
+:::
+

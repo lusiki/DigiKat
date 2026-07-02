@@ -1,0 +1,54 @@
+---
+title: "Stephen Nikola Bartulica"
+subtitle: "Twitter · Divovi"
+date: last-modified
+categories: ["Katalog izvora", "Twitter"]
+---
+
+Ova stranica sažima profil izvora **Stephen Nikola Bartulica** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+
+## Što je
+
+Stephen Bartulica — političar (Twitter/X)
+
+## Profil
+
+Ključni pokazatelji ovog izvora u korpusu:
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">14</div>
+<div class="metric-label">Objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">1.802</div>
+<div class="metric-label">Interakcija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">27.900</div>
+<div class="metric-label">Doseg</div>
+</div>
+</div>
+
+Po volumenu objava, Stephen Nikola Bartulica je na **7. mjestu** od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje **129 interakcija po objavi**.
+
+## Tipologija
+
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Stephen Nikola Bartulica pripada skupini **Divovi**: visok doseg i visok angažman — među vodećim akterima ekosustava.
+
+Uređivačka oznaka: **ostalo** *(predloženo — potvrđuje PI)*
+
+## Povezano
+
+- [Pregled platforme Twitter](platforma-twitter.html)
+- Srodni akteri: [Hrvatski Kanal](twitter-hrvatski-kanal.html), [Pavel Gregoric](twitter-pavel-gregoric.html), [Darko Lesinger](twitter-darko-lesinger.html)
+- [Katalog izvora — sve platforme](index.html)
+
+## Izvori podataka
+
+Podaci: `data/processed/twitter_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-02).
+
+::: {.callout-warning}
+Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno.
+:::
+

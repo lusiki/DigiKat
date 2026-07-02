@@ -2,15 +2,15 @@
 title: "Katalog izvora"
 subtitle: "Profili pojedinačnih medijskih aktera"
 date: last-modified
-categories: ["Katalog izvora", "Mapa ekosustava"]
+categories: ["Katalog izvora", "Baza podataka"]
 ---
 
-**Katalog izvora** pregled je pojedinačnih medijskih aktera zastupljenih u korpusu i dopuna je analitičkoj [Mapi ekosustava](../mapa/mapa.html). Za svaki izvor donosi volumen, angažman i doseg te pripadnost tipologiji (Divovi, Graditelji zajednica, Megafoni, Specijalizirani akteri), izračunatoj jednako kao u Mapi.
+**Katalog izvora** pregled je pojedinačnih medijskih aktera zastupljenih u korpusu. Dio je opisa [Baze podataka](../baza.html), a tipologiju izvora dijeli s [Mapom ekosustava](../mapa/mapa.html). Za svaki izvor donosi volumen, angažman i doseg te pripadnost tipologiji (Divovi, Graditelji zajednica, Megafoni, Specijalizirani akteri), izračunatoj jednako kao u Mapi.
 
 Cijeli se katalog može vidjeti i kao [mreža izvora](mreza.html) — čvorovi su izvori, a poveznice pripadnost platformi i zajednički brend.
 
 ::: {.callout-note}
-Podaci dolaze iz agregata `data/processed/*_actors.rds` (bez osobnih podataka). Katalog je **radna verzija**: uređivačke oznake (konfesionalni/sekularni izvor) prijedlozi su koje potvrđuje voditelj projekta, a brojke su indikativne (agregati **2021.–2025.**, bez Instagrama i TikToka). Trenutno je objavljeno **47** izvora; **10** aktera zadržano je za uredničku provjeru.
+Podaci dolaze iz agregata `data/processed/*_actors.rds` (bez osobnih podataka). Katalog je **radna verzija**: uređivačke oznake (konfesionalni/sekularni izvor) prijedlozi su koje potvrđuje voditelj projekta, a brojke su indikativne (statični agregati; mnogi akteri na novim platformama imaju tek nekoliko objava). Trenutno je objavljeno **103** izvora; **11** aktera zadržano je za uredničku provjeru.
 :::
 
 ## Web
@@ -80,4 +80,81 @@ Praćeni izvori na platformi Facebook (poredano po volumenu). Cjeloviti pregled:
 | [24sata](facebook-24sata.html) | Divovi | 630 | 207.441 |
 | [Index.hr](facebook-index-hr.html) | Divovi | 365 | 227.035 |
 | [Jutarnji](facebook-jutarnji.html) | Specijalizirani akteri | 326 | 89.926 |
+
+## Instagram
+
+Praćeni izvori na platformi Instagram (poredano po volumenu). Cjeloviti pregled: [Instagram](platforma-instagram.html).
+
+| Izvor | Tipologija | Objava | Interakcija |
+|---|---|---:|---:|
+| [dnevniavaz](instagram-dnevniavaz.html) | Divovi | 51 | 24.181 |
+| [laudatotv](instagram-laudatotv.html) | Divovi | 42 | 50.276 |
+| [ivan.anusic.hr](instagram-ivan-anusic-hr.html) | Specijalizirani akteri | 13 | 8.822 |
+| [_rina.rs](instagram-rina-rs.html) | Divovi | 6 | 10.773 |
+| [hrvatskivojnik_magazin](instagram-hrvatskivojnik-magazin.html) | Specijalizirani akteri | 6 | 6.246 |
+| [oslobodjenje.ba](instagram-oslobodjenje-ba.html) | Specijalizirani akteri | 4 | 6.268 |
+| [24sata.hr](instagram-24sata-hr.html) | Megafoni | 4 | 6.157 |
+| [insidebosnia](instagram-insidebosnia.html) | Graditelji zajednica | 3 | 9.715 |
+| [buducnostsrbijeav](instagram-buducnostsrbijeav.html) | Megafoni | 3 | 9.341 |
+| [kristijanilicic](instagram-kristijanilicic.html) | Divovi | 2 | 22.590 |
+| [sport.klub](instagram-sport-klub.html) | Megafoni | 2 | 6.624 |
+| [hns_cff](instagram-hns-cff.html) | Divovi | 1 | 52.022 |
+| [martinafilic](instagram-martinafilic.html) | Graditelji zajednica | 1 | 13.655 |
+| [ekostraza](instagram-ekostraza.html) | Graditelji zajednica | 1 | 12.286 |
+| [klaskalica](instagram-klaskalica.html) | Graditelji zajednica | 1 | 10.238 |
+| [elladvornik](instagram-elladvornik.html) | Megafoni | 1 | 7.510 |
+| [zenskisvijet](instagram-zenskisvijet.html) | Specijalizirani akteri | 1 | 6.928 |
+| [vannabojovic](instagram-vannabojovic.html) | Specijalizirani akteri | 1 | 6.847 |
+
+## TikTok
+
+Praćeni izvori na platformi TikTok (poredano po volumenu). Cjeloviti pregled: [TikTok](platforma-tiktok.html).
+
+| Izvor | Tipologija | Objava | Interakcija |
+|---|---|---:|---:|
+| [dnevnikhr](tiktok-dnevnikhr.html) | Divovi | 28 | 20.673 |
+| [24sata](tiktok-24sata.html) | Divovi | 27 | 28.162 |
+| [vecernjilist](tiktok-vecernjilist.html) | Divovi | 27 | 19.725 |
+| [hrvatska_radiotelevizija](tiktok-hrvatska-radiotelevizija.html) | Divovi | 26 | 50.002 |
+| [trtbalkanbhsc](tiktok-trtbalkanbhsc.html) | Divovi | 22 | 18.082 |
+| [slobodna.dalmacija](tiktok-slobodna-dalmacija.html) | Divovi | 14 | 45.133 |
+| [kristijanilicic](tiktok-kristijanilicic.html) | Divovi | 8 | 63.266 |
+| [index.hr](tiktok-index-hr.html) | Divovi | 6 | 33.151 |
+| [shkm2026](tiktok-shkm2026.html) | Specijalizirani akteri | 5 | 7.374 |
+| [mladifesthrvatska](tiktok-mladifesthrvatska.html) | Specijalizirani akteri | 4 | 10.870 |
+| [rtldirekt](tiktok-rtldirekt.html) | Divovi | 3 | 29.504 |
+| [poslanik.gospodina](tiktok-poslanik-gospodina.html) | Megafoni | 3 | 15.639 |
+| [crovibes](tiktok-crovibes.html) | Specijalizirani akteri | 3 | 5.728 |
+| [plenkovic_andrej](tiktok-plenkovic-andrej.html) | Specijalizirani akteri | 2 | 5.790 |
+| [dontomolukac](tiktok-dontomolukac.html) | Graditelji zajednica | 1 | 40.752 |
+| [kamenkrsislanina](tiktok-kamenkrsislanina.html) | Specijalizirani akteri | 1 | 13.400 |
+| [hypetelevizija.hr](tiktok-hypetelevizija-hr.html) | Specijalizirani akteri | 1 | 10.991 |
+| [mondo.zabava](tiktok-mondo-zabava.html) | Specijalizirani akteri | 1 | 6.268 |
+| [euforija.online](tiktok-euforija-online.html) | Specijalizirani akteri | 1 | 5.646 |
+
+## Twitter
+
+Praćeni izvori na platformi Twitter (poredano po volumenu). Cjeloviti pregled: [Twitter](platforma-twitter.html).
+
+| Izvor | Tipologija | Objava | Interakcija |
+|---|---|---:|---:|
+| [Zagrebačka nadbiskupija](twitter-zagrebacka-nadbiskupija.html) | Megafoni | 75 | 984 |
+| [Petar](twitter-petar.html) | Divovi | 73 | 2.247 |
+| [Vlada Republike Hrvatske](twitter-vlada-republike-hrvatske.html) | Divovi | 65 | 2.599 |
+| [Andrej Plenković](twitter-andrej-plenkovic.html) | Divovi | 35 | 3.928 |
+| [Darko Lesinger](twitter-darko-lesinger.html) | Megafoni | 15 | 991 |
+| [Hrvatski Kanal](twitter-hrvatski-kanal.html) | Specijalizirani akteri | 15 | 822 |
+| [Stephen Nikola Bartulica](twitter-stephen-nikola-bartulica.html) | Divovi | 14 | 1.802 |
+| [Pavel Gregoric](twitter-pavel-gregoric.html) | Divovi | 12 | 1.314 |
+| [Mate Mijić 🇭🇷](twitter-mate-mijic.html) | Specijalizirani akteri | 9 | 783 |
+| [Ivan Anušić](twitter-ivan-anusic.html) | Divovi | 8 | 1.249 |
+| [Dominik Alpeza](twitter-dominik-alpeza.html) | Specijalizirani akteri | 6 | 965 |
+| [Dalija Orešković](twitter-dalija-oreskovic.html) | Specijalizirani akteri | 6 | 834 |
+| [Vesna Rajnović 🌿](twitter-vesna-rajnovic.html) | Specijalizirani akteri | 6 | 767 |
+| [Marin Miletić](twitter-marin-miletic.html) | Specijalizirani akteri | 4 | 850 |
+| [Željka Markić](twitter-zeljka-markic.html) | Graditelji zajednica | 3 | 1.028 |
+| [NORWEGIAN MAN](twitter-norwegian-man.html) | Divovi | 2 | 1.509 |
+| [Neven Barkovic](twitter-neven-barkovic.html) | Graditelji zajednica | 2 | 1.110 |
+| [Mk.gee 🇪🇺](twitter-mk-gee.html) | Specijalizirani akteri | 2 | 905 |
+| [Laganica](twitter-laganica.html) | Divovi | 1 | 3.385 |
 

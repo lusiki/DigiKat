@@ -1,0 +1,54 @@
+---
+title: "Vlada Republike Hrvatske"
+subtitle: "Twitter · Divovi"
+date: last-modified
+categories: ["Katalog izvora", "Twitter"]
+---
+
+Ova stranica sažima profil izvora **Vlada Republike Hrvatske** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+
+## Što je
+
+Vlada Republike Hrvatske (Twitter/X)
+
+## Profil
+
+Ključni pokazatelji ovog izvora u korpusu:
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">65</div>
+<div class="metric-label">Objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">2.599</div>
+<div class="metric-label">Interakcija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">684.340</div>
+<div class="metric-label">Doseg</div>
+</div>
+</div>
+
+Po volumenu objava, Vlada Republike Hrvatske je na **3. mjestu** od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje **40 interakcija po objavi**.
+
+## Tipologija
+
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Vlada Republike Hrvatske pripada skupini **Divovi**: visok doseg i visok angažman — među vodećim akterima ekosustava.
+
+Uređivačka oznaka: **sekularni izvor** *(predloženo — potvrđuje PI)*
+
+## Povezano
+
+- [Pregled platforme Twitter](platforma-twitter.html)
+- Srodni akteri: [Petar](twitter-petar.html), [Andrej Plenković](twitter-andrej-plenkovic.html), [Zagrebačka nadbiskupija](twitter-zagrebacka-nadbiskupija.html)
+- [Katalog izvora — sve platforme](index.html)
+
+## Izvori podataka
+
+Podaci: `data/processed/twitter_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-02).
+
+::: {.callout-warning}
+Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno.
+:::
+

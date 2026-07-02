@@ -1,0 +1,54 @@
+---
+title: "Zagrebačka nadbiskupija"
+subtitle: "Twitter · Megafoni"
+date: last-modified
+categories: ["Katalog izvora", "Twitter"]
+---
+
+Ova stranica sažima profil izvora **Zagrebačka nadbiskupija** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+
+## Što je
+
+Zagrebačka nadbiskupija — službena stranica (Katolička crkva)
+
+## Profil
+
+Ključni pokazatelji ovog izvora u korpusu:
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">75</div>
+<div class="metric-label">Objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">984</div>
+<div class="metric-label">Interakcija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">34.407</div>
+<div class="metric-label">Doseg</div>
+</div>
+</div>
+
+Po volumenu objava, Zagrebačka nadbiskupija je na **1. mjestu** od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje **13 interakcija po objavi**.
+
+## Tipologija
+
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Zagrebačka nadbiskupija pripada skupini **Megafoni**: visok doseg uz nizak angažman — sadržaj doseže široku publiku bez intenzivne interakcije.
+
+Uređivačka oznaka: **konfesionalni izvor** *(predloženo — potvrđuje PI)*
+
+## Povezano
+
+- [Pregled platforme Twitter](platforma-twitter.html)
+- Srodni akteri: [Petar](twitter-petar.html), [Vlada Republike Hrvatske](twitter-vlada-republike-hrvatske.html), [Andrej Plenković](twitter-andrej-plenkovic.html)
+- [Katalog izvora — sve platforme](index.html)
+
+## Izvori podataka
+
+Podaci: `data/processed/twitter_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-02).
+
+::: {.callout-warning}
+Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno.
+:::
+
