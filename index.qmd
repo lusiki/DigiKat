@@ -89,8 +89,8 @@ source("R/source_network.R")
 <div class="hn-inner">
 <div class="hn-text">
   <h2>Mreža izvora</h2>
-  <p>Iza brojki stoje konkretni akteri. <strong>Mreža izvora</strong> prikazuje sve praćene izvore kao interaktivni graf — svaki je čvor jedan izvor, obojen prema platformi i skaliran prema volumenu objava.</p>
-  <p>Poveznice su strukturne: pripadnost platformi te zajednički brend ili osoba prisutna na više platformi. Čvorove povucite mišem, prikaz zumirajte, a prelaskom preko čvora otkrijte tipologiju, volumen, angažman i doseg.</p>
+  <p>Iza brojki stoje konkretni akteri. <strong>Mreža izvora</strong> prikazuje sve praćene izvore kao interaktivni graf. Svaki je čvor jedan izvor, obojen prema platformi i skaliran prema volumenu objava.</p>
+  <p>Poveznice su strukturne: pripadnost platformi te zajednički brend ili osoba prisutna na više platformi. Graf je interaktivan — čvorove možete povlačiti i zumirati, a prelaskom preko čvora otkrivaju se tipologija, volumen, angažman i doseg.</p>
   <div class="hn-links">
     <a class="hn-primary" href="pages/izvori/mreza.html">Istraži mrežu</a>
     <a class="hn-ghost" href="pages/izvori/index.html">Katalog izvora</a>
