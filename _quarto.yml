@@ -47,6 +47,8 @@ website:
             href: pages/studije/katolicki-influenceri.qmd
           - text: "Tko govori iz katoličkoga medijskog prostora"
             href: pages/studije/crkva-i-dezinformacije.qmd
+          - text: "Poskupjele svijeće, tihi proroci"
+            href: pages/studije/inflacija-i-religija.qmd
       - text: "Projektni raspored"
         href: pages/schedule.qmd
       - text: "Obavijesti"

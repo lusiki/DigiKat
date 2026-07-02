@@ -1,0 +1,46 @@
+---
+title: "Poskupjele svijeće, tihi proroci"
+subtitle: "Kada se u digitalnom prostoru spomene inflacija, Crkva se u pravilu pojavljuje kao ustanova pogođena rastom cijena, a ne kao glas pravednosti"
+date: last-modified
+categories: ["Tematsko istraživanje", "Nacrt u izradi"]
+---
+
+Katolički socijalni nauk Crkvi namjenjuje prepoznatljiv glas u gospodarskim krizama — imenovati poskupljenje
+kao nepravdu koja najteže pogađa siromašne. Rad ispituje kako taj glas doista zvuči u hrvatskom digitalnom
+medijskom prostoru tijekom udara rasta troškova života, razlikujući stvarnu religijsko-ekonomsku poveznicu od
+slučajnog suspominjanja.
+
+## Istraživačko pitanje
+
+Kada se inflacija pojavi u religijski salijentnom hrvatskom digitalnom diskursu, tko o njoj govori i u kojem
+registru. Rad ne pretpostavlja da je Crkva glasna po pitanju gospodarstva, nego to mjeri: prati li medijska
+pažnja na inflaciju stvarno kretanje cijena, te ispunjava li religijski glas pravednosti tu pažnju kada se
+ona pojavi.
+
+## Podaci i metode
+
+Analiza obuhvaća korpus od 710.307 objava (siječanj 2021.–lipanj 2026.), od čega 8.019 objava (1,13 %) spominje
+inflaciju prema usidrenom leksikonu poskupljenja. Filtar blizine (±220 znakova oko spomena inflacije, projektni
+religijski leksikon od 95 pojmova, pooštren za ekonomske homonime poput *gospodarstvo* i *Gospa*) izdvaja 1.450
+kandidata za genuinu poveznicu. Tri neovisna anotatora kodiraju cijeli uzorak (međukodirateljska pouzdanost
+0,97), potvrđujući 652 stvarno povezane objave, od čega 520 domaćih — izmjerena jezgra od 0,07 % korpusa i
+6,5 % objava koje uopće spominju inflaciju. Test H1 korelira mjesečnu pažnju na inflaciju s hrvatskim
+harmoniziranim indeksom potrošačkih cijena (HICP, Eurostat).
+
+## Ključni nalaz
+
+Religija se s domaćom inflacijom susreće pretežito kao **ekonomski objekt**: makro-registar koji spaja trošak
+religijskog života i Crkvu-kao-instituciju čini ≈72 % izmjerene jezgre, dobrotvorni rad (Caritas) dodatnih
+17 %, dok je **strukturni, na pravednosti utemeljen registar marginalan** — 2,9 % strogim kodiranjem, do ≈8 %
+uz širu definiciju. Medijska pažnja na inflaciju snažno prati stvarne cijene (r ≈ 0,73 s HICP-om, 2,4 puta
+veća pažnja iznad praga od ≈4 % inflacije), no proročki glas pravednosti tu pažnju ne ispunjava. Metodološki,
+rad pokazuje da bi naivno brojanje suspominjanja precijenilo pojavu za red veličine (≈8.000 naspram 520
+mjereno potvrđenih objava) — suspominjanje nije angažman, nego se genuina poveznica mora mjeriti, ne brojati.
+
+## Status
+
+Radni nacrt (prva potpuna verzija, 2026-07-01) — autor Luka Šikić, autorstvo i redoslijed u fazi finalizacije.
+Pun tekst rada, *"Costlier Candles, Quiet Prophets: How Religion Meets Inflation in the Croatian Digital Media
+Space, 2021–2026"*, dostupan je na
+[Poveznica](https://raw.githack.com/lusiki/Katoliq_vs_inflation/master/paper/paper.html).
+Dio drugog izlaznog toka projekta (tematske studije i radovi) — vidi [Projektni raspored](../schedule.qmd).
