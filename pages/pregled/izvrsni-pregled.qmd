@@ -179,12 +179,12 @@ function setLang(l){
 
 ::: {.pregled-prose}
 ::: {.lang-hr}
-DigiKat je istraživanje Hrvatskoga katoličkog sveučilišta koje računalnim metodama društvenih znanosti mjeri kako se o katoličkoj tematici piše i raspravlja u hrvatskom digitalnom medijskom prostoru — na portalima, društvenim mrežama i forumima. Provedeno je prema načelima otvorene znanosti.
+DigiKat je istraživanje Hrvatskoga katoličkog sveučilišta koje računalnim metodama društvenih znanosti mjeri kako se o katoličkoj tematici piše i raspravlja u hrvatskom digitalnom medijskom prostoru, na portalima, društvenim mrežama i forumima. Provedeno je prema načelima otvorene znanosti.
 
 Ovaj pregled sažima cijeli projekt. Digitalni prostor čita se kroz pet analitičkih razina: prva pokazuje **tko** objavljuje i s kolikim učinkom, druga **o čemu** se govori, treća **kako** se govori, a četvrta i peta **kada** rasprava eruptira i **kako** se prostor mijenja kroz vrijeme. Zajedno one od raspršenoga korpusa objava grade jasnu kartu digitalnoga medijskog prostora katoličke tematike. Svaka razina ovdje je sažeta na najvažnije, a poveznica vodi na stranicu koja je razrađuje.
 :::
 ::: {.lang-en}
-DigiKat is a research project of the Catholic University of Croatia that uses computational social science to measure how Catholic topics are written about and discussed across Croatia's digital media space — on news portals, social networks and forums. It is conducted according to the principles of open science.
+DigiKat is a research project of the Catholic University of Croatia that uses computational social science to measure how Catholic topics are written about and discussed across Croatia's digital media space: on news portals, social networks and forums. It is conducted according to the principles of open science.
 
 This overview summarises the whole project. The digital space is read through five analytical layers: the first shows **who** publishes and to what effect, the second **what** is being discussed, the third **how** it is discussed, and the fourth and fifth **when** debate erupts and **how** the space changes over time. Together they turn a scattered corpus of posts into a clear map of the digital media space around Catholic topics. Each layer is distilled here to its essentials, with a link to the page that develops it in full.
 :::
@@ -220,7 +220,7 @@ This overview summarises the whole project. The digital space is read through fi
 <p><strong>Volumen</strong> je ukupan broj objava i mjeri produktivnost aktera. <strong>Angažman</strong> su ukupne interakcije, odnosno zbroj lajkova, komentara, dijeljenja i sličnih reakcija publike. <strong>Doseg</strong> je procijenjeni broj korisnika koji su objavu mogli vidjeti. Doseg je procjena pružatelja podataka, a ne broj stvarnih pregleda.</p>
 </div>
 <div class="lang-en">
-<p><strong>Volume</strong> is the total number of posts and measures how productive an actor is. <strong>Engagement</strong> is the sum of interactions — likes, comments, shares and similar audience reactions. <strong>Reach</strong> is the estimated number of users who could have seen a post. Reach is a data-provider estimate, not a count of actual views.</p>
+<p><strong>Volume</strong> is the total number of posts and measures how productive an actor is. <strong>Engagement</strong> is the sum of interactions: likes, comments, shares and similar audience reactions. <strong>Reach</strong> is the estimated number of users who could have seen a post. Reach is a data-provider estimate, not a count of actual views.</p>
 </div>
 </details>
 ```
@@ -247,14 +247,14 @@ This overview summarises the whole project. The digital space is read through fi
 ::: {.lang-hr}
 ### Nalaz 1 — platforme se funkcionalno specijaliziraju
 
-Web-portali proizvode `r fmt_pct(web_post_sh)` svih objava, ali drže `r fmt_pct(web_int_sh)` interakcija i tek `r fmt_pct(web_reach_sh)` dosega. Facebook s `r fmt_pct(fb_post_sh)` objava ostvaruje `r fmt_pct(fb_reach_sh)` dosega — gotovo koliko i web, uz `r round(web_post_sh / fb_post_sh)` puta manje objava. YouTube s `r fmt_pct(yt_post_sh)` objava preuzima `r fmt_pct(yt_int_sh)` interakcija. Najproduktivniji je pojedinačni izvor konfesionalni hkm.hr, s `r fmt_int(hkm_posts)` objava.
+Web-portali proizvode `r fmt_pct(web_post_sh)` svih objava, ali drže `r fmt_pct(web_int_sh)` interakcija i tek `r fmt_pct(web_reach_sh)` dosega. Facebook s `r fmt_pct(fb_post_sh)` objava ostvaruje `r fmt_pct(fb_reach_sh)` dosega, gotovo koliko i web, uz `r round(web_post_sh / fb_post_sh)` puta manje objava. YouTube s `r fmt_pct(yt_post_sh)` objava preuzima `r fmt_pct(yt_int_sh)` interakcija. Najproduktivniji je pojedinačni izvor konfesionalni hkm.hr, s `r fmt_int(hkm_posts)` objava.
 
 Dominacija web-sadržaja nije samo brojčana. Ona odražava ulogu tradicionalnih medija kao čuvara vijesti u hrvatskom društvu, dok društvene i video platforme uspješnije potiču izravan angažman publike.
 :::
 ::: {.lang-en}
 ### Finding 1 — platforms specialise by function
 
-Web portals produce `r fmt_pct_en(web_post_sh)` of all posts, yet hold `r fmt_pct_en(web_int_sh)` of interactions and only `r fmt_pct_en(web_reach_sh)` of reach. Facebook, with `r fmt_pct_en(fb_post_sh)` of posts, achieves `r fmt_pct_en(fb_reach_sh)` of reach — almost as much as web, with `r round(web_post_sh / fb_post_sh)` times fewer posts. YouTube, with `r fmt_pct_en(yt_post_sh)` of posts, takes `r fmt_pct_en(yt_int_sh)` of interactions. The single most productive source is the confessional portal hkm.hr, with `r fmt_int(hkm_posts)` posts.
+Web portals produce `r fmt_pct_en(web_post_sh)` of all posts, yet hold `r fmt_pct_en(web_int_sh)` of interactions and only `r fmt_pct_en(web_reach_sh)` of reach. Facebook, with `r fmt_pct_en(fb_post_sh)` of posts, achieves `r fmt_pct_en(fb_reach_sh)` of reach, almost as much as web, with `r round(web_post_sh / fb_post_sh)` times fewer posts. YouTube, with `r fmt_pct_en(yt_post_sh)` of posts, takes `r fmt_pct_en(yt_int_sh)` of interactions. The single most productive source is the confessional portal hkm.hr, with `r fmt_int(hkm_posts)` posts.
 
 The dominance of web content is not merely numerical. It reflects the role of traditional media as gatekeepers of news in Croatian society, while social and video platforms are more effective at prompting direct audience engagement.
 :::
@@ -310,10 +310,10 @@ ggplot(plot_df, aes(x = udio, y = metrika, fill = grupa)) +
 ```
 
 ::: {.lang-hr}
-Graf pokazuje kako se svaka od tri metrike dijeli među platformama. Svaki stupac zbraja se na 100 %. „Ostale platforme” obuhvaćaju Twitter/X, Reddit, forume, Instagram, TikTok i komentare zajedno — svaka od njih pojedinačno nosi manji udio.
+Graf pokazuje kako se svaka od tri metrike dijeli među platformama. Svaki stupac zbraja se na 100 %. „Ostale platforme” obuhvaćaju Twitter/X, Reddit, forume, Instagram, TikTok i komentare zajedno, a svaka od njih pojedinačno nosi manji udio.
 :::
 ::: {.lang-en}
-The chart shows how each of the three metrics is split among platforms. Each bar sums to 100 %. "Other platforms" groups Twitter/X, Reddit, forums, Instagram, TikTok and comments together — each of these individually carries a smaller share.
+The chart shows how each of the three metrics is split among platforms. Each bar sums to 100 %. "Other platforms" groups Twitter/X, Reddit, forums, Instagram, TikTok and comments together, and each of these individually carries a smaller share.
 :::
 
 <!-- ============================ NALAZ 2 — ARHETIPI ============================ -->
@@ -391,7 +391,7 @@ This is a qualitative pattern, not a single percentage. Two independent methods 
 
 ![](../../docs/pages/mapa/mapa_stats_files/figure-html/plot-topic-network-1.png){fig-alt="Mrežni graf šesnaest tematskih kategorija u kojem se teme grupiraju u dva klastera: pastoralni i društveno-politički."}
 
-<div class="izvor-caption"><span class="lang-hr">Mreža povezanosti tematskih kategorija: dvije jasno odvojene skupine tema — pastoralna i društveno-politička. Izvor:</span><span class="lang-en">Network of thematic-category links: two clearly separated groups of topics — pastoral and socio-political. Source:</span> <a href="https://lusiki.github.io/DigiKat/pages/mapa/mapa_stats.html">Tematske struje</a></div>
+<div class="izvor-caption"><span class="lang-hr">Mreža povezanosti tematskih kategorija: dvije jasno odvojene skupine tema, pastoralna i društveno-politička. Izvor:</span><span class="lang-en">Network of thematic-category links: two clearly separated groups of topics, pastoral and socio-political. Source:</span> <a href="https://lusiki.github.io/DigiKat/pages/mapa/mapa_stats.html">Tematske struje</a></div>
 
 <!-- ============================ RAZINE 4 i 5 ============================ -->
 
@@ -475,7 +475,7 @@ The project follows the principles of open science: the aggregates are public, a
 Uz podatkovni i analitički sloj, projekt ima i treći, manje vidljiv sloj: agentski. Dio razvojnog posla (pisanje koda, provjere kvalitete, priprema stranica) obavlja se uz pomoć agenata umjetne inteligencije (AI), ali ne slobodnom rukom. Središnja datoteka `CLAUDE.md` u javnom repozitoriju djeluje kao projektni ustav: svaki zahvat, ljudski ili strojni, podliježe istim pravilima.
 :::
 ::: {.lang-en}
-Alongside the data layer and the analytical layer, the project has a third, less visible one: the agentic layer. Part of the development work (writing code, quality checks, preparing pages) is done with the help of artificial-intelligence (AI) agents — but not freehand. The central file `CLAUDE.md` in the public repository acts as the project's constitution: every action, human or machine, is subject to the same rules.
+Alongside the data layer and the analytical layer, the project has a third, less visible one: the agentic layer. Part of the development work (writing code, quality checks, preparing pages) is done with the help of artificial-intelligence (AI) agents, but not freehand. The central file `CLAUDE.md` in the public repository acts as the project's constitution: every action, human or machine, is subject to the same rules.
 :::
 
 <div class="card-grid">
