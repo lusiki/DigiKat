@@ -249,14 +249,14 @@ This overview summarises the whole project. The digital space is read through fi
 
 Web-portali proizvode `r fmt_pct(web_post_sh)` svih objava, ali drže `r fmt_pct(web_int_sh)` interakcija i tek `r fmt_pct(web_reach_sh)` dosega. Facebook s `r fmt_pct(fb_post_sh)` objava ostvaruje `r fmt_pct(fb_reach_sh)` dosega, gotovo koliko i web, uz `r round(web_post_sh / fb_post_sh)` puta manje objava. YouTube s `r fmt_pct(yt_post_sh)` objava preuzima `r fmt_pct(yt_int_sh)` interakcija. Najproduktivniji je pojedinačni izvor konfesionalni hkm.hr, s `r fmt_int(hkm_posts)` objava.
 
-Dominacija web-sadržaja nije samo brojčana. Ona odražava ulogu tradicionalnih medija kao čuvara vijesti u hrvatskom društvu, dok društvene i video platforme uspješnije potiču izravan angažman publike.
+Dominacija web-sadržaja nije samo brojčana. Ona odražava ulogu tradicionalnih medija kao čuvara vijesti u hrvatskom društvu, dok društvene i video platforme uspješnije potiču izravan angažman publike. Iz perspektive kompleksnih sustava riječ je o funkcionalnoj specijalizaciji niša unutar jednog ekosustava: platforme se ne natječu za istu ulogu, nego zauzimaju različite — proizvodnju, doseg i angažman.
 :::
 ::: {.lang-en}
 ### Finding 1 — platforms specialise by function
 
 Web portals produce `r fmt_pct_en(web_post_sh)` of all posts, yet hold `r fmt_pct_en(web_int_sh)` of interactions and only `r fmt_pct_en(web_reach_sh)` of reach. Facebook, with `r fmt_pct_en(fb_post_sh)` of posts, achieves `r fmt_pct_en(fb_reach_sh)` of reach, almost as much as web, with `r round(web_post_sh / fb_post_sh)` times fewer posts. YouTube, with `r fmt_pct_en(yt_post_sh)` of posts, takes `r fmt_pct_en(yt_int_sh)` of interactions. The single most productive source is the confessional portal hkm.hr, with `r fmt_int(hkm_posts)` posts.
 
-The dominance of web content is not merely numerical. It reflects the role of traditional media as gatekeepers of news in Croatian society, while social and video platforms are more effective at prompting direct audience engagement.
+The dominance of web content is not merely numerical. It reflects the role of traditional media as gatekeepers of news in Croatian society, while social and video platforms are more effective at prompting direct audience engagement. Through a complex-systems lens this is functional niche specialisation within a single ecosystem: platforms do not compete for the same role but occupy different ones — production, reach and engagement.
 :::
 
 <div class="pull-stat"><span class="lang-hr">`r fmt_pct(fb_post_sh)` objava → `r fmt_pct(fb_reach_sh)` dosega</span><span class="lang-en">`r fmt_pct_en(fb_post_sh)` of posts → `r fmt_pct_en(fb_reach_sh)` of reach</span></div>
@@ -378,14 +378,14 @@ Prominent examples of sources include the confessional hkm.hr, index.hr and bitn
 
 Diskurs se dosljedno dijeli na dva svijeta. Pastoralni svijet (Duhovnost i liturgija, Karitas i socijalna pravda, Digitalna evangelizacija) prati pretežno pozitivan prijem. Društveno-politički svijet (Politika i odnos s državom, Povijest i nacionalni identitet, Bioetika i kulturni ratovi) nosi najviše angažmana, ali i najjaču polarizaciju: konflikt, kontroverza i krizni narativi glavni su pokretači interakcija.
 
-Riječ je o kvalitativnom obrascu, a ne o jednom postotku. Do istoga rascjepa neovisno dolaze dvije metode: supojavljivanje tema s reakcijama publike (Tematske struje) i mjerenje konfliktnog rječnika (Atmosfera diskursa). Upravo je ta konvergencija glavni razlog povjerenja u nalaz.
+Riječ je o kvalitativnom obrascu, a ne o jednom postotku. Do istoga rascjepa neovisno dolaze dvije metode: supojavljivanje tema s reakcijama publike (Tematske struje) i mjerenje konfliktnog rječnika (Atmosfera diskursa). Upravo je ta konvergencija glavni razlog povjerenja u nalaz. U rječniku kompleksnih sustava riječ je o polariziranom prostoru tema s dvama atraktorima, čiju robusnost jamči suglasje dviju neovisnih metoda.
 :::
 ::: {.lang-en}
 ### Finding 3 — two thematic worlds
 
 The discourse splits consistently into two worlds. The pastoral world (Spirituality and liturgy, Charity and social justice, Digital evangelisation) meets a largely positive reception. The socio-political world (Politics and relations with the state, History and national identity, Bioethics and culture wars) draws the most engagement but also the sharpest polarisation: conflict, controversy and crisis narratives are the main drivers of interaction.
 
-This is a qualitative pattern, not a single percentage. Two independent methods arrive at the same divide: the co-occurrence of themes with audience reactions (Thematic streams) and the measurement of conflictual vocabulary (Discourse atmosphere). That convergence is the main reason to trust the finding.
+This is a qualitative pattern, not a single percentage. Two independent methods arrive at the same divide: the co-occurrence of themes with audience reactions (Thematic streams) and the measurement of conflictual vocabulary (Discourse atmosphere). That convergence is the main reason to trust the finding. In complex-systems terms this is a polarised topic space with two attractors, whose robustness is underwritten by the agreement of two independent methods.
 :::
 :::
 
@@ -402,12 +402,12 @@ This is a qualitative pattern, not a single percentage. Two independent methods 
 <span class="layer-broj">04 · <span class="lang-hr">prag: 3 standardne devijacije</span><span class="lang-en">threshold: 3 std. deviations</span></span>
 <div class="lang-hr">
 <h3>Fokus na događaje</h3>
-<p>Četvrta razina prati kada rasprava eruptira: „digitalni seizmograf” označava dane u kojima dnevni volumen i konfliktnost premašuju tri standardne devijacije. Detektirani vrhunci sustavno koincidiraju s poznatim događajima, od smrti i pogreba pape Franje u travnju 2025. do Božića, Uskrsa i Velike Gospe.</p>
+<p>Četvrta razina prati kada rasprava eruptira: „digitalni seizmograf” označava dane u kojima dnevni volumen i konfliktnost premašuju tri standardne devijacije. Detektirani vrhunci sustavno koincidiraju s poznatim događajima, od smrti i pogreba pape Franje u travnju 2025. do Božića, Uskrsa i Velike Gospe. To je odziv sustava na egzogene šokove, prepoznat standardizacijom dnevnog signala unutar svake godine.</p>
 <p><a href="https://lusiki.github.io/DigiKat/pages/mapa/doga%C4%91aji.html">Fokus na događaje — cijela analiza</a></p>
 </div>
 <div class="lang-en">
 <h3>Focus on events</h3>
-<p>The fourth layer tracks when debate erupts: a "digital seismograph" flags the days on which daily volume and conflict exceed three standard deviations. The detected peaks systematically coincide with known events, from the death and funeral of Pope Francis in April 2025 to Christmas, Easter and the Feast of the Assumption.</p>
+<p>The fourth layer tracks when debate erupts: a "digital seismograph" flags the days on which daily volume and conflict exceed three standard deviations. The detected peaks systematically coincide with known events, from the death and funeral of Pope Francis in April 2025 to Christmas, Easter and the Feast of the Assumption. This is the system's response to exogenous shocks, detected by standardising the daily signal within each year.</p>
 <p><a href="https://lusiki.github.io/DigiKat/pages/mapa/doga%C4%91aji.html">Focus on events — full analysis</a></p>
 </div>
 </div>
@@ -425,6 +425,23 @@ This is a qualitative pattern, not a single percentage. Two independent methods 
 </div>
 </div>
 </div>
+
+::: {.featured-box}
+::: {.lang-hr}
+### Studija u fokusu — Tržišta pažnje
+
+Digitalna pažnja ponaša se kao tržište sklono koncentraciji i dinamici „pobjednik nosi sve”: mali broj aktera prikuplja nerazmjeran udio interakcija. Studija *Tržišta pažnje u religijskim digitalnim medijima* mjeri koliko je pažnja skoncentrirana i kako se ta koncentracija razvija — izravan pandan petoj razini, na kojoj se utjecaj kroz vrijeme raspršuje. Riječ je o gradivu za modele koncentracije pažnje i natjecanja za vidljivost.
+
+[Tržišta pažnje — cijela studija](https://lusiki.github.io/DigiKat/pages/studije/trzista-paznje.html)
+:::
+::: {.lang-en}
+### Study in focus — Attention markets
+
+Digital attention behaves like a market prone to concentration and winner-take-all dynamics: a small number of actors gather a disproportionate share of interactions. The study *Attention markets in religious digital media* measures how concentrated attention is and how that concentration evolves — a direct counterpart to the fifth layer, where influence disperses over time. This is material for models of attention concentration and competition for visibility.
+
+[Attention markets — full study](https://lusiki.github.io/DigiKat/pages/studije/trzista-paznje.html)
+:::
+:::
 
 <!-- ============================ PROIZVODNI LANAC ============================ -->
 
@@ -467,68 +484,51 @@ Projekt slijedi načela otvorene znanosti: agregati su javni, a baza podataka di
 The project follows the principles of open science: the aggregates are public, and the database is distributed under a CC BY 4.0 licence. The full text of posts is available on request. The [Database](https://lusiki.github.io/DigiKat/pages/baza.html) page has more on the data.
 :::
 
+::: {.lang-hr}
+Zbog toga korpus nije samo skup podataka nego otvorena istraživačka infrastruktura: cjelovit presjek jednoga nacionalnog medijskog sustava — `r n_platforms` platformi, `r last_year - first_year + 1` godina, jezik razmjerno malena govornog područja i slabo pokriven u računalnoj lingvistici — s javnim agregatima i punim tekstom na zahtjev. Za računalne društvene znanosti i znanost o kompleksnosti to je empirijski poligon: prostor na kojem se modeli dinamike mnijenja, polarizacije i širenja narativa mogu provjeriti na stvarnim podacima, a ne samo simulirati.
+:::
+::: {.lang-en}
+The corpus is therefore not merely a dataset but open research infrastructure: a complete cross-section of one national media system — `r n_platforms` platforms, `r last_year - first_year + 1` years, a language with relatively few speakers and thin coverage in computational linguistics — with public aggregates and full text on request. For computational social science and complexity science it is an empirical testbed: a setting in which models of opinion dynamics, polarisation and narrative spread can be validated against real data, not merely simulated.
+:::
+
 <!-- ============================ AGENTSKI SLOJ ============================ -->
 
 ## Agentski sloj — pravila po kojima projekt nastaje
 
+<!-- Napomena: „devet / nine" ugrađenih provjera = broj uvjeta u setup-chunk stopifnot(); zadržati usklađeno. -->
 ::: {.lang-hr}
-Uz podatkovni i analitički sloj, projekt ima i treći, manje vidljiv sloj: agentski. Dio razvojnog posla (pisanje koda, provjere kvalitete, priprema stranica) obavlja se uz pomoć agenata umjetne inteligencije (AI), ali ne slobodnom rukom. Središnja datoteka `CLAUDE.md` u javnom repozitoriju djeluje kao projektni ustav: svaki zahvat, ljudski ili strojni, podliježe istim pravilima.
+Uz podatkovni i analitički sloj, projekt ima i treći, manje vidljiv sloj: agentski. Dio razvojnog posla (pisanje koda, provjere kvalitete, priprema stranica) obavlja se uz pomoć agenata umjetne inteligencije (AI), ali ne slobodnom rukom. Središnja datoteka `CLAUDE.md` u javnom repozitoriju djeluje kao projektni ustav: svaki zahvat, ljudski ili strojni, prolazi kroz ista javna pravila, kodirane postupke (vještine), nezavisne provjere i tvrde brane.
+
+Za znanstvenu je publiku ključno da taj sloj jamči i podrijetlo brojki. Svaka je vrijednost u ovom pregledu deterministička funkcija javnih agregata, iznova izračunata pri svakom renderiranju, pa svatko može reproducirati (ili osporiti) bilo koju brojku iz istih javnih podataka. Generiranje i provjera su odvojeni: nezavisni agenti ponovno izvode figure i provjeravaju renderiranje, a najrizičnije su operacije „fail-closed”. Konkretno, ovaj se pregled pri svakom renderiranju odbija sagraditi ako ne prođe devet ugrađenih provjera — među njima da korpus i dalje ima točno `r fmt_int(corpus_total)` objava na `r n_platforms` platformi, da se udjeli po platformama zbrajaju na 100 % i da koncentracija utjecaja pada, a ne raste.
+
+Ograda je jasna i namjerna: agenti jamče unutarnju dosljednost, nikada znanstvenu valjanost — oznake, tumačenja i konačne odluke ostaju ljudski. Sam je postav pritom prenosiv predložak za otvorenu računalnu društvenu znanost uz pomoć umjetne inteligencije i može postati predmetom istraživanja.
+
+Kako je sloj ustrojen — ikonografski prikaz njegovih četiriju organa (pravila, vještine, provjere, zaštite), životni ciklus svakog zahvata i tvrde brane — razrađen je na zasebnoj stranici, dostupnoj i na engleskom.
 :::
 ::: {.lang-en}
-Alongside the data layer and the analytical layer, the project has a third, less visible one: the agentic layer. Part of the development work (writing code, quality checks, preparing pages) is done with the help of artificial-intelligence (AI) agents, but not freehand. The central file `CLAUDE.md` in the public repository acts as the project's constitution: every action, human or machine, is subject to the same rules.
+Alongside the data layer and the analytical layer, the project has a third, less visible one: the agentic layer. Part of the development work (writing code, quality checks, preparing pages) is done with the help of artificial-intelligence (AI) agents, but not freehand. The central file `CLAUDE.md` in the public repository acts as the project's constitution: every action, human or machine, passes through the same public rules, codified procedures (skills), independent checks and hard guards.
+
+For a scientific audience, what matters is that this layer also guarantees the provenance of the numbers. Every value in this overview is a deterministic function of the public aggregates, recomputed on each render, so anyone can reproduce (or falsify) any number from the same public data. Generation and verification are separated: independent agents recompute the figures and run the render checks, and the riskiest operations are fail-closed. Concretely, this overview refuses to build on each render unless nine built-in checks pass — among them that the corpus still holds exactly `r fmt_int(corpus_total)` posts across `r n_platforms` platforms, that the platform shares sum to 100 %, and that the concentration of influence falls rather than rises.
+
+The limit is clear and deliberate: the agents guarantee internal consistency, never scientific validity — the labels, interpretations and final decisions remain human. The setup itself is a transferable template for open computational social science under AI assistance, and could become an object of study in its own right.
+
+How the layer is built — an iconographic of its four organs (rules, skills, checks, guards), the life cycle of every change, and the hard guards — is set out on a dedicated page, also available in English.
 :::
 
-<div class="card-grid">
-<div class="info-card">
-<div class="lang-hr">
-<h4>Pravila</h4>
-<p>Automatski učitana pravila propisuju radni tok: plan prije svake netrivijalne izmjene, protokol podatkovnog cjevovoda, obvezna provjera renderiranja te očuvanje hrvatske dijakritike i kućnog stila u svakom objavljenom tekstu.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 1.5rem 0;">
+<a class="dk-btn lang-hr" href="agentski-sloj.html">Cijeli prikaz agentskog sloja</a>
+<a class="dk-btn lang-en" href="agentic-layer.html">The agentic layer — full view</a>
 </div>
-<div class="lang-en">
-<h4>Rules</h4>
-<p>Automatically loaded rules govern the workflow: a plan before every non-trivial change, a data-pipeline protocol, a mandatory render check, and preservation of Croatian diacritics and the house style in every published text.</p>
-</div>
-</div>
-<div class="info-card">
-<div class="lang-hr">
-<h4>Provjere</h4>
-<p>Specijalizirani agenti nezavisno provjeravaju rad: objavljene se brojke ponovno izvode iz javnih agregata, stranice se verificiraju nakon renderiranja, a analitički tekstovi prolaze domensku recenziju iz perspektive računalne lingvistike te sociologije religije i medija.</p>
-</div>
-<div class="lang-en">
-<h4>Checks</h4>
-<p>Specialised agents review the work independently: published numbers are re-derived from the public aggregates, pages are verified after rendering, and analytical texts undergo domain review from the perspective of computational linguistics and the sociology of religion and media.</p>
-</div>
-</div>
-<div class="info-card">
-<div class="lang-hr">
-<h4>Zaštite</h4>
-<p>Najrizičnije operacije imaju tvrde brane: glavni se skup ne prebrisuje bez sigurnosne kopije, agregati nastaju isključivo skriptom, pravilo uključivanja u korpus ne mijenja se prešutno, a izmjene koje bi oštetile objavljene stranice blokiraju se prije objave.</p>
-</div>
-<div class="lang-en">
-<h4>Safeguards</h4>
-<p>The riskiest operations have hard guardrails: the master dataset is never overwritten without a backup, aggregates are produced only by a script, the corpus-inclusion rule is never changed silently, and edits that would damage published pages are blocked before release.</p>
-</div>
-</div>
-</div>
-
-::: {.pregled-prose}
-::: {.lang-hr}
-Agentski sloj ne proizvodi ni podatke ni nalaze. On čuva prijelaze između faza proizvodnog lanca: od sirovih izvoza do korpusa, od korpusa do agregata, od agregata do stranica. U praksi to znači da brojke u tekstu moraju biti izračunate iz podataka, a ne upisane rukom. I ovaj je pregled nastao u tom sloju, uz plan pohranjen u repozitoriju i brojke koje se pri svakom renderiranju iznova računaju iz javnih agregata. Pravila su javna: [CLAUDE.md u repozitoriju projekta](https://github.com/lusiki/DigiKat/blob/main/CLAUDE.md).
-:::
-::: {.lang-en}
-The agentic layer produces neither data nor findings. It guards the transitions between stages of the production chain: from raw exports to the corpus, from the corpus to the aggregates, from the aggregates to the pages. In practice this means numbers in the text must be computed from the data, not typed by hand. This overview, too, was produced in that layer, with a plan stored in the repository and numbers recomputed from the public aggregates on every render. The rules are public: [CLAUDE.md in the project repository](https://github.com/lusiki/DigiKat/blob/main/CLAUDE.md).
-:::
-:::
 
 <!-- ============================ ZAVRŠETAK ============================ -->
 
 ## Gdje dalje
 
 ::: {.lang-hr}
-Cjelovite analize, interaktivna mreža izvora i otvorena baza podataka dostupni su na stranicama projekta. Mreža izvora prikazuje sve praćene izvore kao interaktivni graf. Poveznice su u njemu strukturne (pripadnost platformi i zajednički brend), a ne izmjereni odnosi.
+Cjelovite analize, interaktivna mreža izvora i otvorena baza podataka dostupni su na stranicama projekta. Mreža izvora prikazuje sve praćene izvore kao interaktivni graf. Poveznice su u njemu strukturne (pripadnost platformi i zajednički brend), a ne izmjereni odnosi. Sljedeći je korak na planu prijelaz na izmjerene mreže: supojavljivanje aktera oko događaja, širenje narativa među platformama i interakcije na razini komentara.
 :::
 ::: {.lang-en}
-The full analyses, the interactive source network and the open database are available on the project's pages. The source network shows every tracked source as an interactive graph. Its links are structural (platform membership and shared brand), not measured relationships.
+The full analyses, the interactive source network and the open database are available on the project's pages. The source network shows every tracked source as an interactive graph. Its links are structural (platform membership and shared brand), not measured relationships. The next step on the roadmap is a move toward measured networks: co-appearance of actors around events, narrative diffusion across platforms, and comment-level interaction.
 :::
 
 <div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 1.5rem 0;">
