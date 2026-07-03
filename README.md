@@ -10,6 +10,14 @@
 
 📄 **Izvršni pregled projekta (HTML, 15 min čitanja):** <https://lusiki.github.io/DigiKat/pages/pregled/izvrsni-pregled.html>
 
+<p align="left">
+  <a href="https://lusiki.github.io/DigiKat/pages/pregled/izvrsni-pregled.html">
+    <img src="assets/images/qr-izvrsni-pregled.png" alt="QR kod za izvršni pregled projekta" width="170">
+  </a>
+  <br>
+  <sub><em>Skenirajte za izvršni pregled projekta</em></sub>
+</p>
+
 ------------------------------------------------------------------------
 
 ### 🎯 Glavni ciljevi
