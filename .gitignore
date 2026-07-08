@@ -42,6 +42,10 @@ data/raw/new/*.xlsx
 # Stray drop-folder some scrapes land in (NOT the documented data/raw/new/) — holds raw
 # mentions(*).xlsx + a copy of the 1 GB master .rds; never commit. Ignore the whole folder.
 data/new/
+# Semantic-search (Level 3) store: local DuckDB vector store + its prepared input. Large, and it
+# holds raw post text + embeddings (NOT shareable). Machine-local only; rebuilt by R/semantic/*.
+# Also Dropbox-ignored (com.dropbox.ignored attr) — a synced .duckdb would file-lock (CLAUDE.local.md).
+data/semantic/
 # NOTE: data/processed/*.rds and data/sample/*.rds ARE intentionally tracked (CC BY 4.0, no PII).
 # Do NOT broaden the pattern to data/**/*.rds — that would silently drop those shareable aggregates.
 
@@ -57,6 +61,12 @@ quality_reports/session_logs/
 
 # Exploration sandbox outputs are throwaway (the explorations themselves ARE tracked)
 explorations/*/output/
+
+# Study working slices carry RAW post text (PII) and are large (~450 MB each) — NEVER commit.
+# Small aggregate tables/figures under studies/*/output/ stay trackable (no PII, CC BY 4.0);
+# run /disclosure-check before committing any of them.
+studies/*/output/*.rds
+studies/*/output/**/*.rds
 
 # ── Render output that must only ever live under docs/ (output-dir: docs) ──
 # A Quarto render run the wrong way (a single page from inside a source dir, or with the project
