@@ -1,0 +1,125 @@
+```{r}
+#| label: setup
+#| include: false
+
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+```
+
+```{r}
+#| label: libraries
+#| include: false
+
+library(dplyr)
+library(visNetwork)
+source("../../R/theme_digikat.R")
+```
+
+```{r}
+#| label: build-graph
+#| include: false
+
+# Reusable network partial ({{< include >}}d by mreza.qmd AND the generated index.qmd).
+# Reads the SAME aggregates + PI sidecar the generator uses (single source of truth).
+
+platforms <- c(web = "web_actors.rds", youtube = "youtube_actors.rds", facebook = "facebook_actors.rds",
+               instagram = "instagram_actors.rds", tiktok = "tiktok_actors.rds", twitter = "twitter_actors.rds")
+plat_display <- c(web = "Web", youtube = "YouTube", facebook = "Facebook",
+                  instagram = "Instagram", tiktok = "TikTok", twitter = "Twitter")
+
+side <- read.csv("../../resources/dictionaries/source_labels.csv",
+                 fileEncoding = "UTF-8", stringsAsFactors = FALSE,
+                 colClasses = "character", na.strings = "NA")
+side[is.na(side)] <- ""
+for (col in names(side)) side[[col]] <- trimws(side[[col]])
+
+classify_typology <- function(df) {
+  mi <- median(df$total_interactions, na.rm = TRUE); mr <- median(df$total_reach, na.rm = TRUE)
+  ifelse(df$total_interactions >= mi & df$total_reach >= mr, "Divovi",
+  ifelse(df$total_interactions >= mi & df$total_reach <  mr, "Graditelji zajednica",
+  ifelse(df$total_interactions <  mi & df$total_reach >= mr, "Megafoni", "Specijalizirani akteri")))
+}
+
+actors <- lapply(names(platforms), function(pk) {
+  df <- as.data.frame(readRDS(file.path("../../data/processed", platforms[[pk]])), stringsAsFactors = FALSE)
+  df$FROM     <- enc2utf8(as.character(df$FROM))
+  df$typology <- classify_typology(df)
+  df$platform <- pk
+  idx <- match(df$FROM, side$from)
+  df$kind    <- ifelse(is.na(idx), "unclassified", side$kind[idx])
+  df$publish <- ifelse(is.na(idx), "no",           side$publish[idx])
+  df$entity  <- ifelse(is.na(idx), "",             side$entity[idx])
+  df[df$publish == "yes", ]                       # institutions AND individuals with publish=yes
+}) %>% bind_rows()
+actors$node_id <- paste0(actors$platform, "::", actors$FROM)
+
+hub_nodes <- data.frame(
+  node_id = paste0("HUB::", names(plat_display)), label = unname(plat_display),
+  platform = names(plat_display), size = max(actors$total_posts, na.rm = TRUE) * 1.3,
+  is_hub = TRUE, stringsAsFactors = FALSE
+)
+actor_nodes <- data.frame(
+  node_id = actors$node_id, label = actors$FROM, platform = actors$platform,
+  size = actors$total_posts, is_hub = FALSE, stringsAsFactors = FALSE
+)
+nodes <- bind_rows(hub_nodes, actor_nodes)
+nodes$platform_disp <- unname(plat_display[nodes$platform])
+
+edge_membership <- data.frame(from = actors$node_id, to = paste0("HUB::", actors$platform),
+                              type = "Pripadnost platformi", stringsAsFactors = FALSE)
+bridge <- actors[actors$entity != "", c("node_id", "platform", "entity")]
+bb <- merge(bridge, bridge, by = "entity")
+bb <- bb[bb$node_id.x < bb$node_id.y & bb$platform.x != bb$platform.y, ]
+edge_brand <- data.frame(from = bb$node_id.x, to = bb$node_id.y,
+                         type = "Isti brend", stringsAsFactors = FALSE)
+edges <- bind_rows(edge_membership, edge_brand)
+```
+
+```{r}
+#| label: plot-network
+
+plat_cols <- setNames(unname(dk_platform_colors[c("web","youtube","facebook","instagram","tiktok","twitter")]),
+                      c("Web","YouTube","Facebook","Instagram","TikTok","Twitter"))
+
+meta <- actors %>% select(node_id, typology, total_posts, total_interactions, total_reach)
+
+vis_nodes <- nodes %>%
+  left_join(meta, by = "node_id") %>%
+  mutate(
+    id          = node_id,
+    color       = unname(plat_cols[platform_disp]),
+    shape       = "dot",
+    value       = size,
+    borderWidth = ifelse(is_hub, 4, 1),
+    font.size   = ifelse(is_hub, 30, 16),
+    font.color  = dk_col$ink,
+    title = ifelse(is_hub,
+      paste0("<b>", label, "</b><br>Platforma"),
+      paste0("<b>", label, "</b> · ", platform_disp, "<br>", typology,
+             "<br>Volumen: ",  formatC(total_posts,        format = "d", big.mark = ".", decimal.mark = ","),
+             "<br>Angažman: ", formatC(total_interactions, format = "d", big.mark = ".", decimal.mark = ","),
+             "<br>Doseg: ",    formatC(total_reach,        format = "d", big.mark = ".", decimal.mark = ",")))
+  ) %>%
+  select(id, label, color, shape, value, borderWidth, font.size, font.color, title)
+
+vis_edges <- edges %>%
+  mutate(color = ifelse(type == "Isti brend", dk_col$accent_200, dk_col$faint),
+         width = ifelse(type == "Isti brend", 3, 1)) %>%
+  select(from, to, color, width)
+
+visNetwork(vis_nodes, vis_edges, width = "100%", height = "760px", background = "#F5F4F0") %>%
+  visNodes(scaling = list(min = 8, max = 42)) %>%
+  visEdges(smooth = FALSE) %>%
+  visLayout(randomSeed = 123) %>%
+  visPhysics(solver = "barnesHut",
+             barnesHut = list(gravitationalConstant = -5500, centralGravity = 0.45,
+                              springLength = 85, springConstant = 0.03, damping = 0.3),
+             stabilization = list(iterations = 300)) %>%
+  visInteraction(dragNodes = TRUE, dragView = TRUE, zoomView = TRUE,
+                 hover = TRUE, tooltipDelay = 120, navigationButtons = TRUE) %>%
+  visOptions(highlightNearest = list(enabled = TRUE, degree = 1, hover = TRUE)) %>%
+  visLegend(useGroups = FALSE, main = "Platforma", position = "right",
+            addNodes = data.frame(
+              label = c("Web","YouTube","Facebook","Instagram","TikTok","Twitter"), shape = "dot",
+              color = unname(plat_cols[c("Web","YouTube","Facebook","Instagram","TikTok","Twitter")]),
+              stringsAsFactors = FALSE))
+```
