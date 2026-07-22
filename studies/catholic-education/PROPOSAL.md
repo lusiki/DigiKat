@@ -7,6 +7,17 @@
 > **Radni naslov (HR):** *Katolička mjesta sjećanja u hrvatskom digitalnom medijskom prostoru: obrazovanje kao
 > prostor prijenosa pamćenja, identiteta i vrijednosnog odgoja (2021.–2025.).*
 
+> **✅ Stage-A evidence in hand (2026-07-06) — see [FINDINGS_STAGEA.md](FINDINGS_STAGEA.md).** A full-master
+> detection run confirms the design: **176,312** education-spine posts; the construct-validity gate **passed**
+> (Stepinac genuine past-anchoring 0.239 ≫ odgoj foil 0.098, 2.44×); **69.4% of past co-occurrence is incidental**
+> (windowing vindicated, ≈ the sister study's 68%). **Emerging Q2 answer:** *Catholic education's institutions and
+> practices (vjeronauk 0.065, katoličke škole 0.071, odgoj 0.098) are mediated **present-tense**, not as memory
+> transmission; memory runs through the **figure (Stepinac)**, not the schools.* Non-obvious, and it could have gone
+> the other way — that is the paper. **Second pass: all four signals converge on Stepinac** — genuine past-anchoring
+> (#4) + recurring **February commemorative peak** (#2) + **most secular-shared** actor signature (Q2½) + a **conflict
+> affective register** (#3: highest anger/fear/sadness, lowest trust) — while the institutions are, on all four, a
+> present-tense value-political field with a *trust* register.
+
 ---
 
 ## 0. The one thing that makes or breaks this paper

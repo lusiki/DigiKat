@@ -2,7 +2,7 @@
 
 - **Slug:** `catholic-education`
 - **Owner:** memory-studies researcher (asistentica, *Mjesta sjećanja*; disertacija povijest × komunikologija)
-- **Status:** planned (proposal written, pre-data)
+- **Status:** analysis (Stage-A detection run on the full master — see [FINDINGS_STAGEA.md](FINDINGS_STAGEA.md))
 - **Created:** 2026-06-30
 
 ## Research question
@@ -60,4 +60,21 @@ Honesty guardrails (co-occurrence ≠ activation; homonym audit; provisional vs 
   full-corpus allow-list** (sample is a speed gate, not a candidacy gate); §6 adds **circularity + secular-frame +
   κ/incidental-rate** limits; §7 hedges the "first" claim and promotes **actor-decomposition** as co-equal novelty;
   §9 adds a **scope-honesty** note (four signals measure memorial framing; identity/values via Stage C).
-  Next: Stage-A `/data-analysis` on a REAL stratified sample (NOT the disclosure sample). `/lit-review` in parallel.
+- 2026-07-06 — **Stage-A detection RUN on the full 710k master** (verified, exit 0) → [FINDINGS_STAGEA.md](FINDINGS_STAGEA.md).
+  Headline: **Stepinac is the singular genuine *lieu de mémoire*** (windowed past-anchoring 0.239, 2.4–3.7× every other
+  entity); **Catholic education itself (vjeronauk/škole/odgoj ≤0.10) is mediated present-tense, not as memory
+  transmission** — the falsifiable Q2 answer. Construct-validity gate PASSED (stepinac 0.239 ≫ odgoj foil 0.098, 2.44×).
+  Methods result: **69.4% of past co-occurrence is incidental** (≈ sister study's 68%) — windowing essential.
+  `r-reviewer` caught a Critical per-entity-genuine bug → fixed + re-verified (finding survived, separation sharpened).
+  `isusov` homonym fixed: 63k "of-Jesus" false positives → true corpus **176,312** (32,430 dropped). Temporal
+  `data_source` confound confirmed stark (2025 = 100% filtered_religious artifact). Guardrail: `data/` untouched;
+  454 MB slices gitignored. Next: add 19c past-token register (rescue Strossmayer), `/data-analysis` for affect +
+  within-stream peaking + Q2½ actor map, hand-validate ~150 posts (κ). `/lit-review` in parallel.
+- 2026-07-06 — **Second analysis pass** (signal2_actors.R, conf_secular.R, signal3_affect.R). **All four signals now
+  computed; they converge on Stepinac as the singular *lieu*.** #2 peaking: Stepinac spikiest (CV 0.76) with a
+  **recurring February maximum (3/4 yrs)** = commemorative. Q2½ actors: distinct per-entity signatures — Stepinac the
+  **most secular-shared** memory anchor (62% confessional of classified; nationalist cluster narod/hercegbosna),
+  **vjeronauk uniquely on secular debate forums** (reddit/forum), odgoj most mainstream-secular. #3 affect (udpipe +
+  lexicons, 54.8% coverage): **polarity non-differentiating/artifactual — don't use it**; the **lilaHR emotion
+  profile** weakly separates — Stepinac = conflict register (highest anger/fear/sadness, lowest trust), institutions
+  = trust register, rituali = joy. See [FINDINGS_STAGEA.md](FINDINGS_STAGEA.md) §8–11. Guardrail: `data/` untouched.
