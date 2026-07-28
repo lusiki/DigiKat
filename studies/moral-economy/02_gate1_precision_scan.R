@@ -5,11 +5,13 @@
 # economic reference, and is the religion-in-window link genuine or incidental? These precision
 # estimates feed (a) the Q1 candidate-count correction and (b) the H2 corrected-linkage denominators.
 #
-#   "/c/Program Files/R/R-4.4.1/bin/Rscript.exe" studies/moral-economy/02_gate1_precision_scan.R
+#   Rscript studies/moral-economy/02_gate1_precision_scan.R
 suppressPackageStartupMessages({ library(here); library(dplyr) })
 source(here::here("studies/moral-economy/lexicon.R"))
 
 out_dir <- here::here("studies/moral-economy/output")
+private_dir <- file.path(out_dir, "private")
+dir.create(private_dir, recursive = TRUE, showWarnings = FALSE)
 ps_path <- file.path(out_dir, "stageA_precision_sample.rds")
 if (!file.exists(ps_path)) stop("Run 01_stageA_tag_linkage.R first (need stageA_precision_sample.rds).")
 ps <- readRDS(ps_path)
@@ -25,7 +27,7 @@ sheet <- ps %>%
             econ_true = NA_integer_, link_genuine = NA_integer_, note = "",
             window)
 
-scan_path <- file.path(out_dir, "gate1_precision_sheet.csv")
+scan_path <- file.path(private_dir, "gate1_precision_sheet.csv")
 write.csv(sheet, scan_path, row.names = FALSE, fileEncoding = "UTF-8")
 
 cat("== GATE 1 precision sheet ==\n")
@@ -40,7 +42,7 @@ cat("Then 02b (or reload here) computes per-domain precision = mean(econ_true) a
     " genuine-linkage precision = mean(link_genuine[link_flag==1]) with Wilson CIs.\n")
 
 # --- if the sheet has already been coded, summarise it (idempotent second run) -----------------
-coded_path <- file.path(out_dir, "gate1_precision_sheet_coded.csv")
+coded_path <- file.path(private_dir, "gate1_precision_sheet_coded.csv")
 if (file.exists(coded_path)) {
   cd <- read.csv(coded_path, fileEncoding = "UTF-8", stringsAsFactors = FALSE)
   wilson <- function(k,n,z=1.96){ if(!n||is.na(n))return(c(NA,NA)); p<-k/n; d<-1+z^2/n

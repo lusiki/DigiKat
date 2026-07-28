@@ -10,7 +10,7 @@ categories: ["Katalog izvora", "Baza podataka"]
 Cijeli se katalog može vidjeti i kao [mreža izvora](mreza.html) — čvorovi su izvori, a poveznice pripadnost platformi i zajednički brend.
 
 ::: {.callout-note}
-Podaci dolaze iz agregata `data/processed/*_actors.rds` (bez osobnih podataka). Katalog je **radna verzija**: uređivačke oznake (konfesionalni/sekularni izvor) prijedlozi su koje potvrđuje voditelj projekta, a brojke su indikativne (statični agregati; mnogi akteri na novim platformama imaju tek nekoliko objava). Trenutno je objavljeno **103** izvora; **11** aktera zadržano je za uredničku provjeru.
+Podaci dolaze iz agregata `data/processed/*_actors.rds` (bez osobnih podataka) i obuhvaćaju **710.307** objava u razdoblju **2021.–2026.**. Katalog je **radna verzija**: uređivačke oznake (konfesionalni/sekularni izvor) prijedlozi su koje potvrđuje voditelj projekta, a brojke su indikativne (statični agregati; mnogi akteri na novim platformama imaju tek nekoliko objava). Trenutno je objavljeno **103** izvora; **11** aktera zadržano je za uredničku provjeru.
 :::
 
 ## Web

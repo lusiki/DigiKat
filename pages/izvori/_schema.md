@@ -13,7 +13,9 @@ is regenerated (not re-derived per query) whenever the inputs change.
 
 ## Three layers
 
-1. **Raw sources (immutable).** `data/processed/{web,youtube,facebook}_actors.rds` — tracked, PII-free
+1. **Aggregate sources (immutable to the generator).**
+   `data/processed/{web,youtube,facebook,instagram,tiktok,twitter}_actors.rds` — tracked,
+   disclosure-reviewed aggregates
    aggregates (`FROM, total_posts, total_interactions, total_reach`). The wiki READS these; never writes them.
 2. **The wiki (generated).** Everything under `pages/izvori/*.qmd` — actor pages, platform hubs, `index.qmd`.
    Owned by the generator; do **not** hand-edit (edits are overwritten on the next run).
@@ -27,7 +29,7 @@ is regenerated (not re-derived per query) whenever the inputs change.
 | `R/wiki_sources.R` | generator | the "ingest" operation — reads inputs, writes the wiki, appends the log |
 | `resources/dictionaries/source_labels.csv` | **PI** | per-actor label / keep-decision sidecar (see columns below) |
 | `pages/izvori/index.qmd` | generator | catalog front door (per platform → per typology) |
-| `pages/izvori/platforma-{web,youtube,facebook}.qmd` | generator | platform hubs (mini-indexes + link targets) |
+| `pages/izvori/platforma-<platform>.qmd` | generator | platform hubs for the six actor platforms |
 | `pages/izvori/<platform>-<slug>.qmd` | generator | one page per published actor |
 | `pages/izvori/_schema.md` | human | this doc |
 | `pages/izvori/_log.md` | generator (append) | provenance + triage of held/excluded actors + lint notes |
@@ -45,9 +47,9 @@ is regenerated (not re-derived per query) whenever the inputs change.
 
 ## Operations
 
-- **Ingest / rebuild:** `Rscript R/wiki_sources.R` from the repo ROOT. Deletes and regenerates every
-  `pages/izvori/*.qmd`, then appends a timestamped entry to `_log.md`. Writes **only** under `pages/izvori/`
-  — never `data/processed/*.rds`.
+- **Ingest / rebuild:** `Rscript R/wiki_sources.R` from the repo root. Regenerates the managed actor
+  pages and catalog index, then appends a timestamped entry to `_log.md`. Writes **only** under
+  `pages/izvori/` — never `data/processed/*.rds`.
 - **Query:** browse the site section, or `grep` the `pages/izvori/*.qmd` frontmatter.
 - **Lint:** the generator flags thin actors and attribution anomalies into `_log.md`; a periodic manual pass
   checks for stale labels, held actors awaiting a PI decision, and aggregate staleness.
@@ -58,13 +60,14 @@ is regenerated (not re-derived per query) whenever the inputs change.
   (`big.mark="."`). Provenance + the source aggregate's own mtime are printed on each page.
 - **Typology** reuses `pages/mapa/mapa.qmd`'s Layer-1 rule verbatim: within each platform, split by the
   **median** of `total_interactions` (x) × `total_reach` (y) → **Divovi / Graditelji zajednica / Megafoni /
-  Specijalizirani akteri**. Computed over the full per-platform aggregate (all 19), so buckets match the map.
+  Specijalizirani akteri**. Computed over the full per-platform aggregate, so buckets match the map.
 - **Disclosure:** only `kind=institution` + `publish=yes` render. Individuals, noise, off-topic and
   duplicates are held and listed in `_log.md`.
 
-## Status caveats (v1)
+## Status caveats
 
-The aggregates are **stale** (built 2026-01-08; exclude Instagram/TikTok) and actor totals span
-**2021.–2025.** across the ~2024 collection-method change — so absolute volumes are **indicative**. Every
-page carries this caveat. Refresh path: rebuild the aggregates (needs `R/03_aggregate.R`), then re-run this
-generator.
+The current catalog reads all six actor aggregates and reports the production coverage dynamically:
+2021.–2026., with 2026 partial. Totals cross the approximate 2024 collection-method change and remain
+indicative for longitudinal comparison. Profiles with fewer than 20 posts are very thin; profiles below
+200 posts are provisional. Refresh path: preview and review `R/03_aggregate.R`, apply the complete
+aggregate generation only after authorization, then rerun `R/wiki_sources.R`.

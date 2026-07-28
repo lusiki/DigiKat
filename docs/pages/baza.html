@@ -2,14 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-07-02">
+<meta name="dcterms.date" content="2026-07-28">
 
 <title>Baza podataka — opis korpusa katoličkoga digitalnog medijskog prostora – DigiKat</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -68,15 +71,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0dcf8f6d1234aaca5fe2aa77993b3dcf.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-18eeef7e313107c10b6b051a6734352e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-226e436b96a9409dfa2b61b1abfbb8d6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3e9c78b8874cfce555a9a5df65ff4a4d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -109,8 +111,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&amp;family=Source+Sans+3:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
 
@@ -123,8 +123,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">DigiKat</span>
     </a>
@@ -202,6 +200,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../pages/studije/crkva-i-dezinformacije.html">
  <span class="dropdown-text">Tko govori iz katoličkoga medijskog prostora</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../pages/studije/inflacija-i-religija.html">
+ <span class="dropdown-text">Poskupjele svijeće, tihi proroci</span></a>
   </li>  
     </ul>
   </li>
@@ -291,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 2, 2026</p>
+      <p class="date">July 28, 2026</p>
     </div>
   </div>
   
@@ -308,7 +310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>DigiKat</strong> je strukturirani <strong>korpus</strong> od <strong>710.307</strong> medijskih objava (2021.–2026.) koje govore o <strong>katoličkim i religijskim temama</strong> u hrvatskom digitalnom medijskom prostoru. Jedinica promatranja je <strong>jedna objava</strong>, bilo da je riječ o članku na portalu, objavi na društvenoj mreži, videozapisu ili komentaru. Svaki redak baze jedna je objava.</p>
 <p>Ključno je razumjeti da je korpus prikupljen <strong>prema sadržaju, a ne prema unaprijed odabranom popisu medija.</strong> Objava ulazi u korpus jer <em>govori o katoličkim temama</em>, bez obzira na to objavljuje li je konfesionalni (katolički) ili sekularni (mainstream) medij. Zato korpus obuhvaća i jedne i druge, od crkvenih portala i župnih Facebook-stranica do najčitanijih općih news-portala.</p>
 <p>Korpus je empirijska osnova za četiri analitičke razine projekta: <a href="mapa/mapa.html">Mapu ekosustava</a>, <a href="mapa/mapa_stats.html">Tematske struje</a>, <a href="mapa/diskurs.html">Atmosferu diskursa</a> i <a href="mapa/događaji.html">Fokus na događaje</a>.</p>
-<p>Baza je javno dostupna na Kaggleu kao <a href="https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space">Hrvatski katolički digitalni medijski prostor 2021.–2026.</a>.</p>
+<p>Na Kaggleu je javno arhiviran <strong>stariji presjek</strong> baze (<a href="https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space">Croatian Catholic Digital Media Space</a>, 612.065 zapisa, ažurirano u siječnju 2026.). Taj presjek nije isto što i trenutačni interni master od 710.307 zapisa. U repozitoriju su otvoreni agregati i potpuno sintetički uzorak; pristup aktualnim redcima korpusa odobrava se zasebno.</p>
 </section>
 <section id="ključni-pokazatelji" class="level2">
 <h2 class="anchored" data-anchor-id="ključni-pokazatelji">Ključni pokazatelji</h2>
@@ -465,7 +467,7 @@ Warning
 <h2 class="anchored" data-anchor-id="kako-je-prikupljen">Kako je prikupljen</h2>
 <p>Podaci su <strong>izvezeni iz komercijalnog servisa za medijski monitoring</strong> (koji objave prikuplja <em>web scrapingom</em> i platformskim API-jima) u obliku <code>.xlsx</code> tablica, koje su potom spojene i filtrirane u jedinstveni korpus.</p>
 <p>Korpus je sastavljen iz <strong>dvaju uzastopnih, a ne usporednih tokova prikupljanja</strong> — ne preklapaju se u vremenu, nego jedan nastavlja na drugi. Do 2024. objave dolaze iz <strong>tekućeg monitoring-upita</strong> (269.583 objava, razdoblje <strong>2021.–2024.</strong>). Od 2024. taj je upit zamijenjen <strong>religijski filtriranim prikupljanjem</strong> (440.724 objava, razdoblje <strong>2024.–2026.</strong>) koje primjenjuje pravilo ≥2 pojma opisano gore. Riječ je, dakle, o <strong>promjeni metode prikupljanja oko 2024.</strong>, što je važno imati na umu pri svakoj usporedbi volumena kroz vrijeme (vidi <em>Vremenska pokrivenost</em> niže).</p>
-<p>Deduplikacija se provodi <strong>isključivo po URL-u</strong>. Ona <strong>ne uklanja</strong> <code>?utm_</code> i slične <em>tracking</em>-parametre, pa isti članak s različitim parametrima može ostati kao zaseban redak. Zbog toga je URL tek <em>de facto</em> ključ objave, a ukupan broj objava treba čitati kao <strong>gornju granicu</strong>. Pokrivenost je omeđena dosegom servisa za monitoring — riječ je o velikom <strong>opservacijskom</strong>, a ne vjerojatnosnom uzorku.</p>
+<p>Pri novim se dopunama deduplikacija provodi po <strong>kanoniziranom URL-u</strong>. Uklanjaju se samo poznati parametri praćenja (primjerice <code>utm_*</code> i <code>fbclid</code>), dok parametri koji određuju identitet objave ostaju sačuvani (primjerice YouTubeov <code>v</code>). URL ipak nije zajamčeno jedinstven ključ: povijesni dio korpusa nastao je prije uvođenja tog pravila, a jedan URL može predstavljati više zabilježenih jedinica monitoringa. Ukupan broj objava stoga treba čitati kao <strong>gornju granicu</strong>. Pokrivenost je omeđena dosegom servisa za monitoring — riječ je o velikom <strong>opservacijskom</strong>, a ne vjerojatnosnom uzorku.</p>
 </section>
 <section id="opseg-korpusa" class="level2">
 <h2 class="anchored" data-anchor-id="opseg-korpusa">Opseg korpusa</h2>
@@ -743,12 +745,12 @@ Note
 </section>
 <section id="pristup-licencija-i-citiranje" class="level2">
 <h2 class="anchored" data-anchor-id="pristup-licencija-i-citiranje">Pristup, licencija i citiranje</h2>
-<p>Korpus je otvoren pod licencijom <strong>CC BY 4.0</strong>. Baza podataka dostupna je na Kaggleu kao <a href="https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space">Hrvatski katolički digitalni medijski prostor 2021.–2026.</a>, a sav kod, uključujući filtar <code>R/religious_terms.R</code>, objavljen je na GitHubu na <a href="https://github.com/lusiki/DigiKat">github.com/lusiki/DigiKat</a>.</p>
-<p><strong>Kako je korpus nastao (reproducibilnost).</strong> Sirove <code>.xlsx</code> izvoze → prijevod teksta u mala slova → 95-pojmovni regex-filtar → zadrži objave s <strong>≥2 različita podudaranja</strong> → <code>merged_comprehensive.rds</code>. Master (oko 1,2 GB) nije u repozitoriju jer sadrži puni tekst. Javna distribucija sadrži <strong>metapodatke i isječke</strong>.</p>
-<p><strong>Osobni podaci.</strong> Korpus sadrži javno dostupne metapodatke o izvorima i računima (npr. <code>FROM</code>, <code>AUTHOR</code>, nazivi javnih stranica, <code>FOLLOWERS_COUNT</code>). Redistribucija je ograničena na javne objave javnih računa. Puni tekst je izuzet iz javne distribucije.</p>
+<p>Aktualni master s punim tekstom i URL-ovima nije javni repozitorijski artefakt. Javno su dostupni <strong>agregati bez teksta i URL-ova</strong> te potpuno sintetički testni uzorak, koje projekt označava licencijom <strong>CC BY 4.0</strong>. Kaggle zasebno čuva stariji javni presjek; prije uporabe treba provjeriti njegovu verziju, sadržaj i licenciju navedenu na samoj platformi. Kod i metodološki filtar <code>R/religious_terms.R</code> dostupni su na <a href="https://github.com/lusiki/DigiKat">GitHubu</a>, a potpuna matrica dostupnosti nalazi se u <a href="https://github.com/lusiki/DigiKat/blob/main/DATA_AVAILABILITY.md"><code>DATA_AVAILABILITY.md</code></a>.</p>
+<p><strong>Kako je korpus nastao (reproducibilnost).</strong> Sirove <code>.xlsx</code> izvoze → prijevod teksta u mala slova → 95-pojmovni regex-filtar → zadrži objave s <strong>≥2 različita podudaranja</strong> → <code>merged_comprehensive.rds</code>. Master (oko 1,2 GB) nije u repozitoriju jer sadrži puni tekst. Repozitorijska distribucija ne sadrži izvorne retke, tekstualne isječke ni URL-ove.</p>
+<p><strong>Osobni podaci.</strong> Korpus sadrži javno dostupne metapodatke o izvorima i računima (npr. <code>FROM</code>, <code>AUTHOR</code>, nazive javnih stranica i <code>FOLLOWERS_COUNT</code>). To što je objava javna ne uklanja obvezu ograničenja svrhe, sigurne pohrane i provjere otkrivanja. Redci, URL-ovi i puni tekst izuzeti su iz repozitorijske distribucije.</p>
 <p>Preporučeni oblik citiranja:</p>
 <blockquote class="blockquote">
-<p>Šikić, L. / Hrvatsko katoličko sveučilište (2026). <em>DigiKat: korpus katoličkoga digitalnog medijskog prostora u Hrvatskoj (2021.–2026.)</em> [skup podataka]. Presjek: 11. lipnja 2026. (710.307 objava). CC BY 4.0.</p>
+<p>Šikić, L. i sur. (2025.–2027.). <em>DigiKat: Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru.</em> Hrvatsko katoličko sveučilište. Presjek korpusa: 11. lipnja 2026. (710.307 objava). https://github.com/lusiki/DigiKat</p>
 </blockquote>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Minimalno učitavanje (put prilagodite preuzetoj datoteci)</span></span>
@@ -1544,7 +1546,7 @@ Note
 </ul>
     </div>
     <div class="nav-footer-right">
-<p>CC BY 4.0 · © 2021–2025 DigiKat</p>
+<p>CC BY 4.0 · © 2021–2026 DigiKat</p>
 </div>
   </div>
 </footer>

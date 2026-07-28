@@ -408,7 +408,7 @@ designed to answer.
 ## Data and code availability
 
 Tracked aggregates, coded outputs, tables and figures are in the study `output/` directory
-(`analysis_core_coded.csv`, the `tables/` folder, `hicp_hr.csv`). The underlying master corpus contains scraped
+(restricted `output/private/analysis_core_coded.csv`, the `tables/` folder, `hicp_hr.csv`). The underlying master corpus contains scraped
 post text and is not redistributable; analyses are reproducible from the numbered pipeline scripts (Appendix A)
 given access to the master. The measured-core file carries URLs and text excerpts and is held internally
 pending a statistical-disclosure review.
@@ -451,7 +451,8 @@ Pipeline: `10_rerun_fixed.R` (tagging + linkage + fixes) → `13_make_coding_poo
 annotation batches) → the `code-candidate-pool` workflow (3 annotators × 20 batches, majority) →
 `14_finalize_coded.R` (measured core) → `15_paper_analysis.R` (register/outlet/sentiment tables + figures) →
 `16_review_response.R` (stream conditioning; hkm.hr decomposition; latent-justice bound) → `17_h1_hicp.R`
-(H1 test). Run against the master (R path in `CLAUDE.local.md`). Coded data: `output/analysis_core_coded.{rds,csv}`.
+(H1 test). Run against the master (R path in `CLAUDE.local.md`). Restricted coded data:
+`output/private/analysis_core_coded.{rds,csv}`.
 
 ## Appendix B. Coding protocol and validation
 

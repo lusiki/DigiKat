@@ -5,7 +5,9 @@
 **Context:** Computational (NLP) reframing of a proposed mixed-methods study on how Catholic media
 construct the image of the welfare state (*socijalna država*) and social insurance, and how far that
 construction rests on Catholic Social Teaching (*Katolički socijalni nauk*, KSN).
-**Corpus:** DigiKat master — ≈610k posts, 2021–2025, religious-term-filtered (≥2 distinct matches).
+**Corpus:** current DigiKat master — 710,307 posts, January 2021–June 2026,
+religion-salience-filtered (≥2 distinct matches). The proposed study window remains the complete years
+2021–2025 unless explicitly extended.
 
 > This file consolidates the brainstorm so it's available on any device after `git pull`. It captures
 > (a) the original proposal in brief, (b) the computational reframing, (c) the grounding scan of the
@@ -33,7 +35,7 @@ insurance system, and to what extent is that image shaped by the principles of C
 
 ## 1. The core reframing (why go computational)
 
-The seed design is valid but does not use what DigiKat *is*: a 610k computational corpus with udpipe
+The seed design is valid but does not use what DigiKat *is*: a 710k computational corpus with udpipe
 lemmatization, a 16-category dictionary engine, sentiment lexicons (CroSentilex / CroSentilex Gold /
 lilaHR), an actor typology, and an event-study layer. The interesting move is to do this study
 **computationally at scale while preserving interpretive depth** — and the proposal's codebook
@@ -177,7 +179,7 @@ computational paper, and how much LLM-precision filtering is actually needed. Ro
 
 **Environment note:** the probe needs R + the master `.rds`. Run on the pipeline machine where R + data
 live (check `CLAUDE.local.md` for `R_AVAILABLE`); otherwise emit the script and hand off. Use
-`/data-analysis` (sample-first; never dumps 610k rows).
+`/data-analysis` (sample-first; never dumps the full corpus).
 
 ---
 

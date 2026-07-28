@@ -29,8 +29,8 @@ Projekt je strukturiran u šest faza kroz razdoblje od tri godine (2025.–2027.
 
 ### Godina 1: Postavljanje temelja i prva analiza (2025.)
 
-<div class="timeline">
-  <div class="timeline-item">
+::: {.timeline}
+::: {.timeline-item}
 
 **Faza 1: Izgradnja infrastrukture i povijesna analiza (siječanj – lipanj 2025.)**
 
@@ -43,8 +43,8 @@ Uspostaviti tehničke temelje projekta i prikupiti povijesne podatke.
 * **Izgradnja infrastrukture:** Postavljanje strukturirane baze podataka, projektnog [repozitorija](https://github.com/lusiki/DigiKat) i web [stranice](https://lusiki.github.io/DigiKat/index.html).
 * **Početak prikupljanja:** Aktiviranje sustava za prikupljanje podataka u realnom vremenu.
 
-  </div>
-  <div class="timeline-item">
+:::
+::: {.timeline-item}
 
 **Faza 2: Prva podjela podataka i definiranje istraživanja (srpanj – prosinac 2025.)**
 
@@ -56,15 +56,15 @@ Definirati prve smjerove tematskih istraživanja na temelju prikupljenih podatak
 * **Definiranje istraživanja:** Organizacija radionice s projektnim timom za definiranje i podjelu prvih tematskih cjelina.
 * **Kontinuirani rad:** Nastavak prikupljanja podataka, održavanje baze i kontrola kvalitete.
 
-  </div>
-</div>
+:::
+:::
 
 ---
 
 ### Godina 2: Dubinska analiza i razvoj (2026.)
 
-<div class="timeline">
-  <div class="timeline-item">
+::: {.timeline}
+::: {.timeline-item}
 
 **Faza 3: Prvi godišnji izvještaj i daljnji razvoj (siječanj – lipanj 2026.)**
 
@@ -77,8 +77,8 @@ Izraditi i prezentirati prvu Mapu ekosustava.
 * **Razvoj istraživanja:** Druga podjela podataka za nove ili produbljene tematske analize.
 * **Kontinuirani rad:** Prikupljanje, održavanje baze i kontrola kvalitete.
 
-  </div>
-  <div class="timeline-item">
+:::
+::: {.timeline-item}
 
 **Faza 4: Intenzivni istraživački rad (srpanj – prosinac 2026.)**
 
@@ -90,15 +90,15 @@ Fokus na provođenju definiranih tematskih istraživanja.
 * **Istraživanje:** Timski rad na analizi dodijeljenih tematskih cjelina i priprema prvih nacrta radova.
 * **Kontinuirani rad:** Prikupljanje, održavanje baze i kontrola kvalitete.
 
-  </div>
-</div>
+:::
+:::
 
 ---
 
 ### Godina 3: Sinteza i finalni rezultati (2027.)
 
-<div class="timeline">
-  <div class="timeline-item">
+::: {.timeline}
+::: {.timeline-item}
 
 **Faza 5: Drugi godišnji izvještaj i priprema za sintezu (siječanj – lipanj 2027.)**
 
@@ -111,8 +111,8 @@ Analizirati podatke iz prethodne godine i integrirati prve rezultate tematskih i
 * **Priprema publikacija:** Rad na znanstvenim člancima i konferencijskim izlaganjima.
 * **Kontinuirani rad:** Prikupljanje, održavanje baze i kontrola kvalitete.
 
-  </div>
-  <div class="timeline-item">
+:::
+::: {.timeline-item}
 
 **Faza 6: Finalna sinteza i zaključci (srpanj – prosinac 2027.)**
 
@@ -127,5 +127,5 @@ Predstaviti cjelovite rezultate projekta.
     * Preporuke za buduća istraživanja.
 * **Arhiviranje:** Finalizacija i arhiviranje baze podataka i koda za dugoročnu dostupnost.
 
-  </div>
-</div>
+:::
+:::

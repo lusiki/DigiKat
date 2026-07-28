@@ -11,7 +11,7 @@
 # re-read the ~1.2 GB master.
 #
 # >>> Run with Dropbox sync PAUSED (CLAUDE.local.md: cold master read + Dropbox => os error 32). <<<
-#   "/c/Program Files/R/R-4.4.1/bin/Rscript.exe" studies/moral-economy/01_stageA_tag_linkage.R
+#   Rscript studies/moral-economy/01_stageA_tag_linkage.R
 suppressPackageStartupMessages({ library(here); library(dplyr); library(stringr) })
 source(here::here("studies/moral-economy/lexicon.R"))
 

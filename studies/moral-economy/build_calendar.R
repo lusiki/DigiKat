@@ -4,7 +4,7 @@
 # with a secular_twin flag: events collinear with a secular economic-news date (1 May = Workers' Day,
 # Advent/Christmas = consumption/budget season) are FLAGGED so H3 can restrict to twin-free events
 # (Lent onset, Corpus Christi, World Day of the Poor) — the identification fix from the referee review.
-#   "/c/Program Files/R/R-4.4.1/bin/Rscript.exe" studies/moral-economy/build_calendar.R
+#   Rscript studies/moral-economy/build_calendar.R
 suppressPackageStartupMessages({ library(here) })
 out_dir <- here::here("studies/moral-economy/output"); dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 

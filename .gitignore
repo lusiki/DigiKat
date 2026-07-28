@@ -46,6 +46,7 @@ data/new/
 # holds raw post text + embeddings (NOT shareable). Machine-local only; rebuilt by R/semantic/*.
 # Also Dropbox-ignored (com.dropbox.ignored attr) — a synced .duckdb would file-lock (CLAUDE.local.md).
 data/semantic/
+data/private/
 # NOTE: data/processed/*.rds and data/sample/*.rds ARE intentionally tracked (CC BY 4.0, no PII).
 # Do NOT broaden the pattern to data/**/*.rds — that would silently drop those shareable aggregates.
 
@@ -58,6 +59,7 @@ CLAUDE.local.md
 
 # Claude Code — session logs are local; plans (quality_reports/plans/) ARE tracked
 quality_reports/session_logs/
+quality_reports/recovery/
 
 # Exploration sandbox outputs are throwaway (the explorations themselves ARE tracked)
 explorations/*/output/
@@ -67,29 +69,41 @@ explorations/*/output/
 # run /disclosure-check before committing any of them.
 studies/*/output/*.rds
 studies/*/output/**/*.rds
+studies/*/output/private/
+studies/*/output/intermediate/
+
+# Semantic exploration products are generated, local, and may contain sampled
+# post text or embeddings. Keep scripts/README tracked; keep their outputs out.
+/R/semantic/*.rds
+/R/semantic/*.png
+/R/semantic/*.csv
+/R/semantic/_cluster_samples_for_reading.md
+
+# Local previews and source-adjacent manuscript renders are not publication
+# targets. The canonical website render lives only in docs/.
+/preview/
+/studies/**/*.html
+/studies/**/*_files/
+/quality_reports/**/*.html
+/quality_reports/**/*_files/
+/README.html
+/README_files/
 
 # ── Render output that must only ever live under docs/ (output-dir: docs) ──
 # A Quarto render run the wrong way (a single page from inside a source dir, or with the project
 # undetected) scatters HTML, site_libs/ and *_files/ beside the sources, and can even EMPTY docs/.
 # These patterns make that stray output un-stageable so it can never be committed or clutter
-# `git status`. They are scoped to the SOURCE dirs that hold renderable .qmd (pages/, R/, design/)
-# plus the repo root — and deliberately spare the real site output under docs/ AND the tracked
-# README.html / README_files/ / "design/DigiKat Design System.dc.html".
+# `git status`. They are scoped to the active source dirs (pages/ and the repo root)
+# and deliberately spare the real site output under docs/.
 #
 # pages/ — the main website sources
 /pages/**/*.html
 /pages/**/site_libs/
 /pages/**/*_files/
-# R/ — R/general_catholic_mediaspace.qmd scatters here if mis-rendered in place
+# R/ — guard against accidental ad-hoc analysis renders
 /R/*.html
 /R/site_libs/
 /R/**/*_files/
-# design/ — the design-system subproject (own _quarto.yml, output-dir: _site)
-/design/_site/
-/design/*.html
-!/design/DigiKat Design System.dc.html
-/design/site_libs/
-/design/**/*_files/
 # repo root — a project-level mis-render drops these at the top level (NOT README.html/README_files/)
 /site_libs/
 /index.html

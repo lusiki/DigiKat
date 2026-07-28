@@ -1,75 +1,97 @@
-# Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru
+# DigiKat
 
-![](assets/images/photo_.png)
+![Status projekta](https://img.shields.io/badge/status-aktivan-green)
+![Institucija](https://img.shields.io/badge/Hrvatsko_katoličko_sveučilište-blue)
+[![Web](https://img.shields.io/badge/web-DigiKat-brightgreen)](https://lusiki.github.io/DigiKat/)
+![Projektni materijali](https://img.shields.io/badge/projektni_materijali-CC_BY_4.0-lightgrey)
 
-![Status Projekta](https://img.shields.io/badge/status-aktivan-green) ![Institucija](https://img.shields.io/badge/Institucija-Hrvatsko_katoličko_sveučilište-blue) [![Web stranica](https://img.shields.io/badge/web-stranica_projekta-brightgreen)](https://lusiki.github.io/DigiKat/) ![Licenca](https://img.shields.io/badge/Licenca-CC%20BY%204.0-lightgrey)
+**Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru** istraživački je projekt
+Hrvatskoga katoličkog sveučilišta (2025.–2027.). Projekt računalnim metodama opisuje prisutnost,
+aktere, teme i ton katoličkih sadržaja u hrvatskom digitalnom medijskom prostoru.
 
-> Službeni repozitorij projekta koji primjenom metoda računalnih društvenih znanosti analizira prisutnost i karakteristike katoličke tematike u digitalnom medijskom prostoru Hrvatske.
+- [Mrežna stranica projekta](https://lusiki.github.io/DigiKat/)
+- [Izvršni pregled](https://lusiki.github.io/DigiKat/pages/pregled/izvrsni-pregled.html)
+- [Opis baze i metodologije](https://lusiki.github.io/DigiKat/pages/baza.html)
 
-🌐 **Stranica projekta:** <https://lusiki.github.io/DigiKat/>
+## Trenutačni podatkovni opseg
 
-📄 **Izvršni pregled projekta (HTML, 15 min čitanja):** <https://lusiki.github.io/DigiKat/pages/pregled/izvrsni-pregled.html>
+Objavljeni agregati obuhvaćaju **710.307 zapisa**, od siječnja 2021. do lipnja 2026., u devet
+vrsta izvora: web, YouTube, Facebook, Twitter/X, Reddit, forumi, komentari, Instagram i TikTok.
+Glavna baza ima 47 varijabli. Godina 2026. nepotpuna je i ne smije se tumačiti kao cijela
+kalendarska godina.
 
-<p align="left">
-  <a href="https://lusiki.github.io/DigiKat/pages/pregled/izvrsni-pregled.html">
-    <img src="assets/images/qr-izvrsni-pregled.png" alt="QR kod za izvršni pregled projekta" width="170">
-  </a>
-  <br>
-  <sub><em>Skenirajte za izvršni pregled projekta</em></sub>
-</p>
+Puni tekstovi, URL-ovi i redci glavne baze nisu javni zbog veličine, autorskih prava i uvjeta
+izvornih platformi. Repozitorij zato sadrži:
 
-------------------------------------------------------------------------
+- 14 javnih agregatnih `.rds` datoteka u `data/processed/`;
+- potpuno sintetički testni uzorak od 2.700 redaka u `data/sample/`;
+- reproducibilni R kod, testove i Quarto izvore;
+- jezične resurse pod njihovim izvornim licencama.
 
-### 🎯 Glavni ciljevi
+Detaljna pravila dostupnosti nalaze se u [DATA_AVAILABILITY.md](DATA_AVAILABILITY.md), a upute za
+replikaciju u [REPLICATION.md](REPLICATION.md).
 
-Cilj ovog trogodišnjeg [projekta](https://raw.githack.com/lusiki/DigiKat/main/docs/pages/index.html) (2025.-2027.) je sustavno istražiti kako se katoličke teme predstavljaju na hrvatskim internetskim portalima i društvenim mrežama. Projekt ima dva ključna cilja:
+## Brzi početak
 
--   **Primarni cilj:** Izgradnja, održavanje i kontinuirano ažuriranje sveobuhvatne, strukturirane baze podataka o medijskim objavama s katoličkom tematikom. Ova baza služit će kao temelj za sva daljnja istraživanja.
--   **Sekundarni cilj:** Provođenje niza tematskih istraživanja koja će produbiti razumijevanje specifičnih aspekata, poput medijske reprezentacije klera, prikaza katoličkog obrazovanja ili hodočasničkog turizma.
+Preporučeno okruženje odgovara trenutačnom zaključanom stanju: R 4.6.0, Quarto 1.9.38 i Git.
 
-### 🔬 Metodologija i tehnologije
+```powershell
+git clone https://github.com/lusiki/DigiKat.git
+cd DigiKat
+Rscript -e "renv::restore()"
+Rscript tests/run_tests.R
+Rscript R/check_disclosure.R
+Rscript R/00_run_all.R --sample
+```
 
-Za prikupljanje i analizu podataka koristimo suvremene tehnike iz područja podatkovne znanosti, uključujući:
+Posljednja naredba izvodi cjelovit, nedestruktivan test na sintetičkim podacima. Ne mijenja glavnu
+bazu ni produkcijske agregate.
 
--   **Prikupljanje podataka:** Automatizirano preuzimanje podataka s internetskih stranica (**Web Scraping**) i korištenje API-ja društvenih mreža.
--   **Obrada prirodnog jezika (NLP):** Primjena algoritama za tematsko modeliranje, analizu sentimenta i prepoznavanje ključnih aktera i lokacija u tekstovima.
--   **Strojno učenje:** Korištenje modela za klasifikaciju sadržaja i prediktivnu analizu.
+## Siguran radni tijek
 
-Svi alati i programski kod razvijeni u sklopu projekta bit će javno dostupni u ovom repozitoriju, u skladu s principima otvorene znanosti.
+| Naredba | Zadano ponašanje |
+|---|---|
+| `Rscript R/00_run_all.R --sample` | sintetički test cijelog podatkovnog toka u privremenom direktoriju |
+| `Rscript R/00_run_all.R` | provjera postavki, testova, agregata, NLP-a i semantičkoga spremišta bez zamjene podataka |
+| `Rscript R/append_new_data.R` | samo pregled nove serije i JSON izvještaj |
+| `Rscript R/append_new_data.R --apply` | nakon pregleda izrađuje provjerenu sigurnosnu kopiju i zamjenjuje glavnu bazu |
+| `Rscript R/03_aggregate.R` | izrađuje i validira svih 14 agregata u privremenom direktoriju |
+| `Rscript R/compare_aggregates.R --candidate-dir=PUTANJA` | samo čita i uspoređuje kandidata s produkcijskim agregatima |
+| `Rscript R/03_aggregate.R --apply` | nakon izričite potvrde zamjenjuje `data/processed/` atomskom generacijom |
+| `Rscript R/04_nlp.R` | provjerava postojeću NLP generaciju i njezin manifest |
+| `quarto render` | gradi cijelu stranicu u `docs/`; pokreće se samo iz korijena repozitorija |
 
-### 📚 Tematska istraživanja
+Mutirajuće naredbe imaju zasebne zastavice kako pregled ili render ne bi slučajno prepisao glavnu bazu.
 
-Projekt će se fokusirati na nekoliko ključnih tematskih područja:
+## Struktura repozitorija
 
--   Reprezentacija klera i posvećenih osoba
--   Prikaz katoličkog obrazovanja i vjeronauka
--   Oglašavanje i sadržaj vezan uz hodočasnički turizam
--   Analiza djelovanja i utjecaja katoličkih influencera
--   Digitalna prisutnost i doseg katoličkih tiskanih medija
--   Medijsko praćenje demokršćanskih politika
+| Putanja | Namjena |
+|---|---|
+| `R/` | numerirani podatkovni tok, zajedničke biblioteke, provjere i generatori |
+| `pages/` | Quarto izvori mrežne stranice |
+| `data/processed/` | javni agregati koje stranice samo čitaju |
+| `data/sample/` | sintetička reprodukcijska fikstura i manifest |
+| `resources/` | rječnici, leksikoni, oznake izvora i UDPipe model |
+| `studies/` | samostalne tematske studije; redci s tekstom ostaju u `output/private/` |
+| `tests/` | regresijski testovi bez vanjskog testnog okvira |
+| `docs/` | generirana GitHub Pages stranica; ne uređuje se ručno |
+| `archive/` | povijesni prototipovi, nacrti i zamijenjene skripte |
 
-### 📂 Struktura repozitorija
+## Doprinos i prijava pogreške
 
-Ovaj repozitorij je organiziran na sljedeći način:
+Prije slanja promjene pokrenite testove, provjeru otkrivanja podataka i relevantni render. Pravila za
+prijedloge i rad s osjetljivim podacima opisana su u [CONTRIBUTING.md](CONTRIBUTING.md).
 
--   **/code**: Sadrži skripte (Python, R) za prikupljanje, obradu i analizu podataka.
--   **/data**: Ovdje će biti pohranjeni primjeri podataka (sample datasets) i agregirani podaci.
--   **/docs**: Službena dokumentacija projekta, uključujući prijavni obrazac i metodološke okvire.
--   **/publications**: Popis i poveznice na znanstvene radove, članke i konferencijska izlaganja proizašla iz projekta.
--   **/reports**: Godišnji izvještaji i druge analize namijenjene široj javnosti.
+Za pitanja o pristupu podacima ili suradnji:
 
-### 🤝 Doprinos projektu
+**doc. dr. sc. Luka Šikić**<br>
+Hrvatsko katoličko sveučilište<br>
+<luka.sikic@unicath.hr>
 
-Projekt provodi definirani istraživački tim, ali cijenimo svaki oblik suradnje i povratnih informacija. Ako uočite grešku, imate prijedlog ili pitanje, slobodno otvorite novi issue na ovom repozitoriju. 📞 Kontakt
+## Citiranje
 
-Za sve upite, molimo kontaktirajte voditelja projekta: doc. dr. sc. Luka Šikić \| luka.sikic\@unicath.hr
+> Šikić, L. i sur. (2025.–2027.). *Prikaz i analiza katoličke tematike u digitalnom medijskom
+> prostoru (DigiKat).* Hrvatsko katoličko sveučilište. https://github.com/lusiki/DigiKat
 
-### ✍️ Kako citirati
-
-Ako koristite podatke ili nalaze iz ovog projekta, molimo vas da nas citirate.
-
-Za citiranje projekta u cjelini: \> Šikić, L. i sur. (2025.-2027.). *Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru*. Repozitorij projekta. Hrvatsko katoličko sveučilište. URL: https://github.com/lusiki/DigiKat
-
-U BibTeX formatu:
-
-\`\`\`bibtex @misc{Sikic_DigiKat_2025, author = {Šikić, Luka and others}, title = {Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru}, year = {2025-2027}, publisher = {Hrvatsko katoličko sveučilište}, note = {Repozitorij projekta}, url = {https://github.com/lusiki/DigiKat} }
+Strojno čitljivi podaci za citiranje nalaze se u [CITATION.cff](CITATION.cff). Za jezične resurse
+potrebno je citirati i njihove izvorne autore; vidi [resources/README.md](resources/README.md).

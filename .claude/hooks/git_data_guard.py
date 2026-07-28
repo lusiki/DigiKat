@@ -3,7 +3,7 @@
 PreToolUse[Bash] guard for DigiKat.
 
 Blocks destructive operations on irreplaceable, gitignored, or generated assets:
-  - the master corpus            data/merged_comprehensive.rds   (gitignored, ~610k rows, not in repo)
+  - the master corpus            data/merged_comprehensive.rds   (gitignored, 710,307 rows, not in repo)
   - its timestamped backups      *_backup_*.rds                  (the ONLY undo for a bad append)
   - the data/ tree and docs/ site (recursive deletes)
   - bulk/unscoped git staging    git add -A | --all | . | *      (could sweep in the master / backups)

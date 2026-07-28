@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use DigiKat data, code, or findings, please cite the project and the specific language resources used."
+title: "DigiKat: Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru"
+type: software
+authors:
+  - family-names: "Šikić"
+    given-names: "Luka"
+    affiliation: "Hrvatsko katoličko sveučilište"
+repository-code: "https://github.com/lusiki/DigiKat"
+url: "https://lusiki.github.io/DigiKat/"
+license: "CC-BY-4.0"
+keywords:
+  - digital religion
+  - computational social science
+  - Croatian media
+  - natural language processing
+

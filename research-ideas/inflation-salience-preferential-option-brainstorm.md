@@ -6,7 +6,9 @@
 katoličkom medijskom prostoru"* (frequency + framing + KSN alignment of economic themes). This note
 develops **one** of several economic spin-off ideas: turning the corpus into a **media-attention index**
 and testing what drives inflation coverage — the headline number, or its incidence on the poor.
-**Corpus:** DigiKat master — ≈610k posts, 2021–2025, religious-term-filtered (≥2 distinct matches).
+**Corpus:** current DigiKat master — 710,307 posts, January 2021–June 2026,
+religion-salience-filtered (≥2 distinct matches). The proposed shock analysis uses 2021–2025 complete
+years unless the partial 2026 period is modeled explicitly.
 **Sibling note:** [[welfare-state-catholic-media-brainstorm]] (same corpus, welfare-state angle).
 
 > rev. 2 folds in the `/research-ideation` panel (theorist · methodologist · domain-expert · journal-editor ·
@@ -134,7 +136,8 @@ longer skippable: without it the mechanism claim is unfalsifiable (war hit both 
   too thin for monthly DV2, demote DV2 to a **two-regime contrast** (pre/post the 2022 food/energy spike).
 - **Every identifying event is inside 2021–2025** (inflation shock 2022–23, euro Jan 2023, energy crisis,
   war Feb 2022) → **no 2015–2020 backfill needed** for this paper. (Note: the base proposal says
-  2015–2025; the master is 2021–2025. The backfill serves the long-run *frequency* story, not these
+  2015–2025; the master is 2021–2026, while this design deliberately uses the complete 2021–2025 years.
+  The backfill serves the long-run *frequency* story, not these
   event-leveraged designs.)
 - **Environment:** needs R + the master `.rds`. Run on the pipeline machine (`CLAUDE.local.md` →
   `R_AVAILABLE`); otherwise emit the script and hand off. Use `/data-analysis` (sample-first).
@@ -331,7 +334,8 @@ and Religion** (decisive), accept-track **Medijska istraživanja**; lead with th
 NM&S tier. Two gates (§10) before any result.
 
 **Corpus slice (authoritative):**
-- **DV1 (attention):** full ≈610k corpus, 2021–2025, ≥2-term filter; regex-on-lemmas inflation
+- **DV1 (attention):** complete-year 2021–2025 subset of the 710,307-record corpus, ≥2-term filter;
+  regex-on-lemmas inflation
   sub-dictionary tagged on *all* posts; DV = inflation posts ÷ all religious-filtered posts (numerator &
   denominator reported separately).
 - **DV2 (framing):** **census (or near-census) of the inflation-tagged slice** — NOT the global 2–5% sample;

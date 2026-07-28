@@ -1,14 +1,14 @@
 # Analysis-ready base — religion × inflation (v3)
 
-**Date:** 2026-06-30 · **Status:** ✅ candidate pool CODED — **measured core ready** (`output/analysis_core_coded.csv`).
+**Date:** 2026-06-30 · **Status:** ✅ candidate pool CODED — **measured core ready** (`output/private/analysis_core_coded.csv`, restricted).
 **Validation:** [VALIDATION.md](VALIDATION.md).
 
 ## ✅ MEASURED CORE (coded by 3 independent annotators, majority-adjudicated, full coverage 1,450/1,450)
 The 1,450-candidate pool was coded (workflow `code-candidate-pool`, IAA ~0.97 on held-out). Results:
 - confirmed inflation **1,329 / 1,450 (92%)** · confirmed religion-linked **652** (→ classifier linkage
   precision ≈ 45%, matching the held-out estimate) · **132 foreign**, **520 DOMESTIC** (recall-corrected ≈ **584**).
-- **MEASURED DOMESTIC CORE = 520 posts** → `output/analysis_core_coded.{rds,csv}` (per-post: register, outlet,
-  date, sentiment, URL, window). Full coded pool in `coded_pool_full.csv`; raw labels in `coded_labels.csv`.
+- **MEASURED DOMESTIC CORE = 520 posts** → `output/private/analysis_core_coded.{rds,csv}` (per-post: register, outlet,
+  date, sentiment, URL, window). Full coded pool in `output/private/coded_pool_full.csv`; raw labels in `output/coded_labels.csv`.
 
 **Register of the 520 (this is the paper's central table):**
 | register | n | % |
@@ -46,14 +46,18 @@ candidates**, but **~half the candidates are false positives** and register is u
 > validated 3-annotator LLM workflow, IAA 0.97) to produce the measured core the paper reports.
 
 ## Files (`output/`)
+
+Row-level artifacts containing URLs, source identities, labels, or text excerpts belong in the gitignored
+`output/private/` directory. Only disclosure-reviewed aggregates, tables, figures, and non-identifying
+validation summaries may remain in tracked `output/`.
 | File | What |
 |---|---|
-| `analysis_core.csv` / `.rds` | **1,103 candidate** domestic religion×inflation posts — the pool to code |
-| `heldout_auto.csv`, `heldout_majority.csv` | held-out sample: classifier labels + 3-annotator truth |
-| `validation_merged.csv` | the in-sample 90 (classifier + my labels) |
+| `private/analysis_core.csv` / `.rds` | **1,103 candidate** domestic religion×inflation posts — restricted pool to code |
+| `private/heldout_auto.csv`, `heldout_majority.csv` | restricted classifier rows + disclosure-reviewed annotator truth |
+| `private/validation_merged.csv` | restricted in-sample rows with classifier and annotation labels |
 | `linkage_over_time_v3.png`, `register_by_year_v3.png` | provisional figures (auto labels — illustrative only) |
 
-`analysis_core.csv` columns: `rid, DATE, year, month, FROM, SOURCE_TYPE, otype, register, m_crl, m_charity,
+`output/private/analysis_core.csv` columns: `rid, DATE, year, month, FROM, SOURCE_TYPE, otype, register, m_crl, m_charity,
 m_struct, m_clergy, m_devot, AUTO_SENTIMENT, URL, TITLE, window`.
 ⚠️ **PII / do-not-share:** contains `URL`, `FROM`, and a `window` text excerpt. It is derived from the
 gitignored master — keep it untracked; run `/disclosure-check` before sharing any extract.
@@ -72,7 +76,7 @@ figures. Secular outlets carry ~88% of the volume; Catholic outlets link at the 
 ## Recommended path to "start the analysis"
 1. **Code the 1,103 candidates** → final measured core. Fastest reliable instrument: the 3-annotator LLM
    workflow (proven IAA 0.97), majority-adjudicated, with a human double-coding a ~100 slice for the record.
-   Output: `analysis_core_coded.csv` with validated `link`, `foreign`, `register`.
+   Output: `output/private/analysis_core_coded.csv` with validated `link`, `foreign`, `register`.
 2. **Descriptive analysis on the coded core:**
    - attention over time vs **Croatian HICP** (headline + food + energy) — acquire HICP (Eurostat/DZS).
    - register composition + its shift across the 2022 energy shock and the **Jan-2023 euro changeover**.

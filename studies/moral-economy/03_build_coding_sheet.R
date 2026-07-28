@@ -9,11 +9,13 @@
 # date shown, so register coding is not anchored on the outlet), and a KEY (rid -> metadata) joined
 # back AFTER coding. Logs the allocation + everything dropped (rare-cell honesty).
 #
-#   "/c/Program Files/R/R-4.4.1/bin/Rscript.exe" studies/moral-economy/03_build_coding_sheet.R [target_per_domain]
+#   Rscript studies/moral-economy/03_build_coding_sheet.R [target_per_domain]
 suppressPackageStartupMessages({ library(here); library(dplyr) })
 source(here::here("studies/moral-economy/lexicon.R"))
 
 out_dir <- here::here("studies/moral-economy/output")
+private_dir <- file.path(out_dir, "private")
+dir.create(private_dir, recursive = TRUE, showWarnings = FALSE)
 cand_path <- file.path(out_dir, "stageA_candidates.rds")
 if (!file.exists(cand_path)) stop("Run 01_stageA_tag_linkage.R first (need stageA_candidates.rds).")
 cand <- readRDS(cand_path)
@@ -78,13 +80,13 @@ coder <- pool %>% transmute(
   ax5_poverty_split = "",          # economic_poverty | doctrinal_poverty | mixed | NA  (poverty domain only)
   ax6_ksn_principle = "",          # solidarnost|supsidijarnost|opce_dobro|dostojanstvo_rada|opcija_siromasne|integralna_ekologija|univ_namjena|none (multi, ; sep)
   ax7_encyclical = "")             # named document | none
-write.csv(coder, file.path(out_dir, "coding_sheet.csv"), row.names = FALSE, fileEncoding = "UTF-8")
+write.csv(coder, file.path(private_dir, "coding_sheet.csv"), row.names = FALSE, fileEncoding = "UTF-8")
 
 # --- KEY (joined back after coding; withheld from annotators) -----------------------------------
 key <- pool %>% transmute(rid, domain, tier, DATE, year, month, FROM, SOURCE_TYPE, stream, label,
                           actor_only_caritas, foreign_hint, infl_metaphor_hint, confirmatory_eligible,
                           TITLE, URL)
-write.csv(key, file.path(out_dir, "coding_key.csv"), row.names = FALSE, fileEncoding = "UTF-8")
+write.csv(key, file.path(private_dir, "coding_key.csv"), row.names = FALSE, fileEncoding = "UTF-8")
 
 alloc <- bind_rows(alloc_rep)
 write.csv(alloc, file.path(out_dir, "coding_allocation.csv"), row.names = FALSE, fileEncoding = "UTF-8")
@@ -99,5 +101,6 @@ summ <- pool %>% group_by(domain, tier) %>%
 print(as.data.frame(summ), row.names = FALSE)
 cat("\nTOTAL coded core:", nrow(pool), "posts across", length(unique(pool$domain)), "domains\n")
 cat("Rare-cell note: domains where coded_n < target are pool-limited (report descriptively, PLAN §2).\n")
-cat("Files: coding_sheet.csv (BLIND) | coding_key.csv | coding_allocation.csv ->", out_dir, "\n")
-cat("Next: run the 3-annotator coding on coding_sheet.csv (CODEBOOK.md 7 axes), then 04_iaa_validation.R.\n")
+cat("Restricted files: coding_sheet.csv (BLIND) | coding_key.csv ->", private_dir, "\n")
+cat("Shareable allocation report: coding_allocation.csv ->", out_dir, "\n")
+cat("Next: run the 3-annotator coding on private/coding_sheet.csv (CODEBOOK.md 7 axes), then 04_iaa_validation.R.\n")

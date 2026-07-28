@@ -5,7 +5,7 @@
 
 ## Key facts
 - `data/merged_comprehensive.rds` is gitignored (≈710k rows / 710.307, 47 vars); NOT reproducible from a clean clone.
-- `data/processed/*.rds` IS tracked (10 small aggregates, no PII) and is produced ONLY by `R/03_aggregate.R`
+- `data/processed/*.rds` IS tracked (14 small aggregates, no PII) and is produced ONLY by `R/03_aggregate.R`
   run against the master — NOT by rendering a page. Pages read them. `data/nlp/` output is gitignored.
 - Inclusion rule: a post enters the corpus only with ≥2 DISTINCT religious-term matches (`R/religious_terms.R`,
   which has **95** terms — not 93). `FOUND_KEYWORDS` is the vendor monitoring service's NOISY keyword field
@@ -25,11 +25,11 @@
 
 ## Corrections log (seeds — replace with real incidents)
 - [LEARN] On Windows, R may default to CP1250; read `.xlsx`/`.txt` as UTF-8 explicitly and assume R ≥ 4.2
-  (native UTF-8) or set the locale — otherwise č/ć/ž/š/đ mangle on a second machine. (There is NO mojibake
-  bug in `R/stemmer.R`; that file is clean UTF-8.)
+  (native UTF-8) or set the locale — otherwise č/ć/ž/š/đ mangle on a second machine. The retired stemmer
+  implementation is preserved only under `archive/legacy-pipeline/`.
 - [LEARN] Lowercase with `stri_trans_tolower` BEFORE tokenizing, or "Misa"/"misa" split into different lemmas.
-- [LEARN] `append_new_data.R` dedups on the raw `URL` only — it does NOT strip `?utm_…` query strings, so the
-  same article with different tracking params survives as a duplicate. (Known gap — strip query strings.)
+- [LEARN] URL dedup now uses `canonicalize_url()` from `R/lib/digikat_utils.R`: known tracking parameters
+  are removed, while query parameters that can identify distinct content are retained.
 - [LEARN] Confirm the timestamped backup was written BEFORE the master is overwritten; restore on mid-run error.
 - [LEARN] Sentiment lexicons (CroSentilex / CroSentilex Gold / lilaHR) key on lemmas; match on the SAME
   normalization on both sides or join coverage collapses toward 0%.
@@ -59,10 +59,14 @@
   `theme_digikat_void()` (cream-bg network/empty-plot variant). Do NOT hard-code figure colors/backgrounds or
   `theme_void()`/`theme_graph()` — route through these so figures match the editorial design (cream paper, white panel).
 
-## Known repo issues (Phase 0 backlog — see WORKFLOW_SUGGESTIONS.md)
-- `R/text_analysis.R` reads the 3 sentiment lexicons from a phantom `./Codes/` dir → repoint to `resources/lexicons/`.
-- `R/write_tokens.R` reads `rules.txt`/`transformations.txt` from a hardcoded Dropbox path → repoint to `resources/lexicons/`.
-- ~~`pages/mapa/mapa.qmd` writes `data/processed/*.rds` during render → extract into `R/03_aggregate.R`.~~ DONE
-  (2026-06-30): data-prep chunk is `eval: false`; `R/03_aggregate.R` now produces the aggregates.
-- `thematic_dictionaries_v3` is copy-pasted across `mapa_stats`/`diskurs`/`događaji` → extract to `R/thematic_dictionaries.R`.
-- Duplicate 19 MB udpipe model at repo root AND `resources/models/` → keep `resources/models/` only.
+## Housekeeping resolution (2026-07-28)
+- [LEARN] Legacy NLP/stemmer scripts with phantom or hard-coded paths are archived under
+  `archive/legacy-pipeline/`; active code uses `resources/` and `R/lib/`.
+- [LEARN] `R/03_aggregate.R` is the only producer of the complete 14-file aggregate generation. Default
+  mode is a temporary preview; `--apply` is the production gate. Quarto pages are read-only consumers.
+- [LEARN] The 16-category dictionary has one canonical definition:
+  `R/lib/thematic_dictionaries.R`.
+- [LEARN] Only `resources/models/croatian-set-ud-2.5-191206.udpipe` is canonical; setup checks its SHA-256.
+- [LEARN] Study rows with URLs, titles, source identities, or text excerpts belong in ignored
+  `output/private/`, enforced by `R/check_disclosure.R` and CI.
+- [LEARN] Historical workflow proposals moved to `archive/roadmaps/`; they are not operational guidance.

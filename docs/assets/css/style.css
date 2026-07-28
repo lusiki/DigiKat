@@ -279,27 +279,27 @@
   .hero-section {
     page-break-after: avoid;
   }
-  
+
   .section-header {
     page-break-after: avoid;
   }
-  
+
   .info-card,
   .method-card,
   .question-card {
     page-break-inside: avoid;
   }
-  
+
   a {
     text-decoration: underline;
   }
-  
+
   a[href]:after {
     content: " (" attr(href) ")";
     font-size: 0.8rem;
     color: #475569;
   }
-  
+
   .badge {
     border: 1px solid #000;
   }
@@ -339,13 +339,13 @@ textarea:focus {
   .hero-section {
     border: 2px solid black;
   }
-  
+
   .info-card,
   .method-card,
   .question-card {
     border: 2px solid black;
   }
-  
+
   .btn {
     border: 2px solid currentColor;
   }

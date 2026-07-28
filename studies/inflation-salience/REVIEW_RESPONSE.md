@@ -5,8 +5,9 @@ from the coded data) and a **religion-media-domain-reviewer** (hostile peer revi
 what was done. Supporting re-analysis: `scratchpad/16_review_response.R`; new figure `output/coded_core_by_stream.png`.
 
 ## Numeric verification — outcome
-**All Table 1–6 numbers and all §4 numeric claims reproduce exactly** from `analysis_core_coded.csv` /
-`coded_pool_full.csv`. Three **stale narrative figures** (carried from the pre-coding pass) were **fixed**:
+**All Table 1–6 numbers and all §4 numeric claims reproduce exactly** from the restricted
+`output/private/analysis_core_coded.csv` / `output/private/coded_pool_full.csv`. Three **stale narrative
+figures** (carried from the pre-coding pass) were **fixed**:
 
 | Location | Was | Now | Status |
 |---|---|---|---|

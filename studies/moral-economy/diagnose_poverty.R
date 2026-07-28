@@ -2,12 +2,14 @@
 # Diagnostic: WHY is poverty_social an outlier (linkage 0.62, confessional 0.60)?
 # Pulls the actual ±220-char windows around the poverty match, with the religion term shown,
 # for a hand-eyeball sample — so we can categorize the mechanism BEFORE trusting any downstream
-# number. READ-ONLY; writes only studies/moral-economy/output/poverty_diagnosis_sample.csv.
+# number. READ-ONLY; writes only studies/moral-economy/output/private/poverty_diagnosis_sample.csv.
 suppressPackageStartupMessages({ library(here); library(dplyr); library(stringr) })
 
 src <- here::here("data/merged_comprehensive.rds")
 if (!file.exists(src)) stop("Need the master. See CLAUDE.local.md.")
 out_dir <- here::here("studies/moral-economy/output")
+private_dir <- file.path(out_dir, "private")
+dir.create(private_dir, recursive = TRUE, showWarnings = FALSE)
 
 # v2 poverty regex + religion probe (kept in sync with probe.R v2)
 poverty_rx <- "siroma[sš]|socijaln\\w+\\s+(pomo[cć]|skrb|ugro[zž]en)|be[sz]ku[cć]ni|\\bovrh|ovr[sš]n|du[zž]ni[kc]\\w*"
@@ -59,7 +61,7 @@ rows <- lapply(smp, function(i) {
 })
 res <- do.call(rbind, rows)
 linked <- res[!is.na(res$relig_term), ]
-write.csv(res, file.path(out_dir, "poverty_diagnosis_sample.csv"), row.names=FALSE, fileEncoding="UTF-8")
+write.csv(res, file.path(private_dir, "poverty_diagnosis_sample.csv"), row.names=FALSE, fileEncoding="UTF-8")
 
 cat("\n== poverty_social linkage diagnosis (n sampled =", nrow(res),
     "; linked =", nrow(linked), ") ==\n")
@@ -72,4 +74,4 @@ for (k in seq_len(min(20, nrow(linked)))) {
       linked$pov_term[k], linked$relig_term[k], linked$only_caritas[k],
       substr(linked$window[k], 1, 320)))
 }
-cat("\nFull sample ->", file.path(out_dir, "poverty_diagnosis_sample.csv"), "\n")
+cat("\nRestricted full sample ->", file.path(private_dir, "poverty_diagnosis_sample.csv"), "\n")

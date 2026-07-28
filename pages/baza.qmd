@@ -17,17 +17,25 @@ library(kableExtra)
 library(lubridate)
 
 # Pomoćne funkcije za hrvatski format brojeva
-fmt_int <- function(x) format(round(as.numeric(x)), big.mark = ".", scientific = FALSE, trim = TRUE)
+fmt_int <- function(x) {
+  format(
+    round(as.numeric(x)),
+    big.mark = ".",
+    decimal.mark = ",",
+    scientific = FALSE,
+    trim = TRUE
+  )
+}
 fmt_pct <- function(x, d = 1) paste0(formatC(as.numeric(x), format = "f", digits = d, decimal.mark = ","), " %")
 
 # Hrvatski nazivi mjeseci (genitiv) za datum presjeka
 mj_gen <- c("siječnja", "veljače", "ožujka", "travnja", "svibnja", "lipnja",
             "srpnja", "kolovoza", "rujna", "listopada", "studenoga", "prosinca")
 
-# Broj religijskih pojmova iz filtra (izračunato, ne utipkano)
-n_terms <- tryCatch({
-  e <- new.env(); sys.source("../R/religious_terms.R", envir = e); nrow(e$religious_terms)
-}, error = function(err) 93L)
+# Broj religijskih pojmova iz filtra (izračunato, ne utipkano; bez tihog fallbacka)
+e_terms <- new.env(parent = baseenv())
+sys.source("../R/religious_terms.R", envir = e_terms)
+n_terms <- nrow(e_terms$religious_terms)
 ```
 
 ```{r}
@@ -68,8 +76,11 @@ Korpus je empirijska osnova za četiri analitičke razine projekta: [Mapu ekosus
 [Tematske struje](mapa/mapa_stats.html), [Atmosferu diskursa](mapa/diskurs.html) i
 [Fokus na događaje](mapa/događaji.html).
 
-Baza je javno dostupna na Kaggleu kao [Hrvatski katolički digitalni medijski prostor
-2021.–2026.](https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space).
+Na Kaggleu je javno arhiviran **stariji presjek** baze
+([Croatian Catholic Digital Media Space](https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space),
+612.065 zapisa, ažurirano u siječnju 2026.). Taj presjek nije isto što i trenutačni interni master od
+710.307 zapisa. U repozitoriju su otvoreni agregati i potpuno sintetički uzorak; pristup aktualnim redcima
+korpusa odobrava se zasebno.
 
 ## Ključni pokazatelji
 
@@ -234,10 +245,12 @@ razdoblje **2021.–2024.**). Od 2024. taj je upit zamijenjen **religijski filtr
 dakle, o **promjeni metode prikupljanja oko 2024.**, što je važno imati na umu pri svakoj usporedbi volumena kroz
 vrijeme (vidi *Vremenska pokrivenost* niže).
 
-Deduplikacija se provodi **isključivo po URL-u**. Ona **ne uklanja** `?utm_` i slične *tracking*-parametre, pa isti
-članak s različitim parametrima može ostati kao zaseban redak. Zbog toga je URL tek *de facto* ključ objave, a
-ukupan broj objava treba čitati kao **gornju granicu**. Pokrivenost je omeđena dosegom servisa za monitoring —
-riječ je o velikom **opservacijskom**, a ne vjerojatnosnom uzorku.
+Pri novim se dopunama deduplikacija provodi po **kanoniziranom URL-u**. Uklanjaju se samo poznati parametri
+praćenja (primjerice `utm_*` i `fbclid`), dok parametri koji određuju identitet objave ostaju sačuvani
+(primjerice YouTubeov `v`). URL ipak nije zajamčeno jedinstven ključ: povijesni dio korpusa nastao je prije
+uvođenja tog pravila, a jedan URL može predstavljati više zabilježenih jedinica monitoringa. Ukupan broj objava
+stoga treba čitati kao **gornju granicu**. Pokrivenost je omeđena dosegom servisa za monitoring — riječ je o
+velikom **opservacijskom**, a ne vjerojatnosnom uzorku.
 
 ## Opseg korpusa
 
@@ -365,23 +378,27 @@ pomake oko konkretnih događaja i kampanja.
 
 ## Pristup, licencija i citiranje
 
-Korpus je otvoren pod licencijom **CC BY 4.0**. Baza podataka dostupna je na Kaggleu kao
-[Hrvatski katolički digitalni medijski prostor 2021.–2026.](https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space),
-a sav kod, uključujući filtar `R/religious_terms.R`, objavljen je na GitHubu na
-[github.com/lusiki/DigiKat](https://github.com/lusiki/DigiKat).
+Aktualni master s punim tekstom i URL-ovima nije javni repozitorijski artefakt. Javno su dostupni
+**agregati bez teksta i URL-ova** te potpuno sintetički testni uzorak, koje projekt označava licencijom
+**CC BY 4.0**. Kaggle zasebno čuva stariji javni presjek; prije uporabe treba provjeriti njegovu verziju,
+sadržaj i licenciju navedenu na samoj platformi. Kod i metodološki filtar `R/religious_terms.R` dostupni
+su na [GitHubu](https://github.com/lusiki/DigiKat), a potpuna matrica dostupnosti nalazi se u
+[`DATA_AVAILABILITY.md`](https://github.com/lusiki/DigiKat/blob/main/DATA_AVAILABILITY.md).
 
 **Kako je korpus nastao (reproducibilnost).** Sirove `.xlsx` izvoze → prijevod teksta u mala slova →
 `r n_terms`-pojmovni regex-filtar → zadrži objave s **≥2 različita podudaranja** → `merged_comprehensive.rds`.
-Master (oko 1,2 GB) nije u repozitoriju jer sadrži puni tekst. Javna distribucija sadrži **metapodatke i isječke**.
+Master (oko 1,2 GB) nije u repozitoriju jer sadrži puni tekst. Repozitorijska distribucija ne sadrži
+izvorne retke, tekstualne isječke ni URL-ove.
 
-**Osobni podaci.** Korpus sadrži javno dostupne metapodatke o izvorima i računima (npr. `FROM`, `AUTHOR`, nazivi
-javnih stranica, `FOLLOWERS_COUNT`). Redistribucija je ograničena na javne objave javnih računa. Puni tekst je
-izuzet iz javne distribucije.
+**Osobni podaci.** Korpus sadrži javno dostupne metapodatke o izvorima i računima (npr. `FROM`, `AUTHOR`,
+nazive javnih stranica i `FOLLOWERS_COUNT`). To što je objava javna ne uklanja obvezu ograničenja svrhe,
+sigurne pohrane i provjere otkrivanja. Redci, URL-ovi i puni tekst izuzeti su iz repozitorijske distribucije.
 
 Preporučeni oblik citiranja:
 
-> Šikić, L. / Hrvatsko katoličko sveučilište (2026). *DigiKat: korpus katoličkoga digitalnog medijskog prostora u
-> Hrvatskoj (2021.–2026.)* [skup podataka]. Presjek: `r snap_str` (`r fmt_int(n_records)` objava). CC BY 4.0.
+> Šikić, L. i sur. (2025.–2027.). *DigiKat: Prikaz i analiza katoličke tematike u digitalnom medijskom
+> prostoru.* Hrvatsko katoličko sveučilište. Presjek korpusa: `r snap_str`
+> (`r fmt_int(n_records)` objava). https://github.com/lusiki/DigiKat
 
 ```{r}
 #| label: how-to-load

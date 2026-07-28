@@ -1,293 +1,315 @@
-# =============================================================================
-# append_new_data.R
-# -----------------------------------------------------------------------------
-# Incrementally append a NEW batch of raw .xlsx files to the existing
-# merged_comprehensive.rds, running the new rows through the religious-terms
-# filter (>= 2 distinct term matches), de-duplicating against what is already
-# in the master file, and saving an updated master (with a timestamped backup).
+#!/usr/bin/env Rscript
+# Safely append a new XLSX batch to the protected DigiKat master.
 #
-# This does NOT rebuild from scratch. It only processes the files you drop into
-# the NEW-batch folder (default: data/raw/new/), so existing rows are untouched.
+# Default mode is a READ-ONLY preview:
+#   Rscript R/append_new_data.R
 #
-# USAGE
-#   1. Put ONLY the new .xlsx files in  data/raw/new/   (create the folder).
-#   2. Make sure  data/merged_comprehensive.rds  exists locally.
-#   3. From the project root, run:   Rscript R/append_new_data.R
-#      (or open in RStudio and source it).
+# Apply only after reviewing the JSON delta report:
+#   Rscript R/append_new_data.R --apply
 #
-# The script writes data/merged_comprehensive.rds and a backup copy
-# data/merged_comprehensive_backup_<UTC-timestamp>.rds before overwriting.
-# =============================================================================
+# Optional arguments:
+#   --new-dir=PATH       default: data/raw/new
+#   --master=PATH        default: data/merged_comprehensive.rds
+#   --report=PATH        custom JSON report path
+#   --allow-missing-dedup-key
+#
+# The >= 2 DISTINCT religious-term inclusion rule is unchanged.
 
 suppressPackageStartupMessages({
   library(readxl)
-  library(tidyverse)
+  library(dplyr)
   library(stringi)
 })
 
-# ---- Configuration ----------------------------------------------------------
-new_data_folder <- "data/new"                     # drop NEW .xlsx files here
-master_path     <- "data/merged_comprehensive.rds"
-terms_path      <- "R/religious_terms.R"
-dedup_key       <- "URL"   # column used to detect rows already in the master
-min_matches     <- 2L      # keep rows with >= this many distinct term matches
-batch_size      <- 5000L
+source("R/lib/digikat_utils.R", encoding = "UTF-8")
+source("R/lib/religious_filter.R", encoding = "UTF-8")
 
-# =============================================================================
-# 1. PRE-FLIGHT CHECKS
-# =============================================================================
+args <- commandArgs(trailingOnly = TRUE)
+if ("--help" %in% args) {
+  cat(paste(
+    "Usage: Rscript R/append_new_data.R [--apply] [--new-dir=PATH] [--master=PATH]",
+    "       [--report=PATH] [--allow-missing-dedup-key]",
+    "",
+    "Without --apply the script writes only a JSON preview report.",
+    sep = "\n"
+  ))
+  quit(save = "no", status = 0L)
+}
+
+apply_changes <- digikat_cli_flag(args, "--apply")
+new_data_folder <- digikat_cli_value(
+  args,
+  "--new-dir",
+  Sys.getenv("DIGIKAT_NEW_DATA_DIR", unset = "data/raw/new")
+)
+master_path <- digikat_cli_value(
+  args,
+  "--master",
+  Sys.getenv("DIGIKAT_MASTER_PATH", unset = "data/merged_comprehensive.rds")
+)
+allow_missing_dedup <- digikat_cli_flag(args, "--allow-missing-dedup-key")
+dedup_key <- "URL"
+terms_path <- "R/religious_terms.R"
+min_matches <- 2L
+batch_size <- 5000L
+stamp <- format(Sys.time(), "%Y%m%d_%H%M%S", tz = "UTC")
+report_path <- digikat_cli_value(
+  args,
+  "--report",
+  file.path("quality_reports", "ingestion", paste0("append-", stamp, ".json"))
+)
+cache_path <- file.path("data", "private", "cache", "master_url_keys.rds")
+
 if (!file.exists(master_path)) {
   stop(
     "Master file not found: ", master_path,
-    "\nThis script APPENDS to an existing master. Restore it first ",
-    "(it is gitignored and not in the repo)."
+    "\nThis script appends to an existing master; it never creates one from scratch.",
+    call. = FALSE
   )
 }
 if (!dir.exists(new_data_folder)) {
   stop(
     "New-data folder not found: ", new_data_folder,
-    "\nCreate it and drop ONLY the new .xlsx files into it."
+    "\nCreate data/raw/new/ and place only the new XLSX batch there.",
+    call. = FALSE
   )
 }
 
-new_files <- list.files(new_data_folder, pattern = "\\.xlsx$", full.names = TRUE)
-if (length(new_files) == 0) {
-  stop("No .xlsx files found in ", new_data_folder)
-}
+new_files <- sort(list.files(new_data_folder, pattern = "\\.xlsx$", full.names = TRUE))
+if (!length(new_files)) stop("No XLSX files found in ", new_data_folder, call. = FALSE)
 
-if (!file.exists(terms_path)) {
-  stop("Religious terms script not found: ", terms_path)
-}
-
+cat("Mode:", if (apply_changes) "APPLY" else "READ-ONLY PREVIEW", "\n")
 cat("Found", length(new_files), "new file(s) in", new_data_folder, "\n")
-
-# =============================================================================
-# 2. LOAD MASTER + RELIGIOUS TERMS
-# =============================================================================
 cat("Loading master:", master_path, "...\n")
 master <- readRDS(master_path)
-cat("  Master rows:", nrow(master), " cols:", ncol(master), "\n")
+master <- as.data.frame(master)
+digikat_require_columns(master, c("FULL_TEXT", dedup_key, "DATE", "year"), "master")
+master_rows_before <- nrow(master)
+cat("  Master rows:", master_rows_before, "| columns:", ncol(master), "\n")
 
-# religious_terms.R returns the data frame as its last expression.
-# Read it as UTF-8 explicitly so the diacritic regexes (kršćan…, križ…, svećen…, đakon…)
-# survive on an R session that has not gone native-UTF-8 (CP1250 default on older Windows R).
-religious_terms <- source(terms_path, local = TRUE, encoding = "UTF-8")$value
-religious_terms <- religious_terms |>
-  mutate(
-    term  = stringi::stri_trans_tolower(term),
-    regex = as.character(regex)
-  )
+religious_terms <- digikat_load_religious_terms(terms_path)
 
-# =============================================================================
-# 3. READ + MERGE THE NEW BATCH
-# =============================================================================
-cat("Reading new .xlsx files...\n")
-new_data <- map_df(new_files, read_excel)
-cat("  New rows read:", nrow(new_data), "\n")
-
-# --- schema sanity checks ---
-if (!"FULL_TEXT" %in% names(new_data)) {
-  stop("New data has no FULL_TEXT column; the religious filter cannot run.")
+read_one_xlsx <- function(path) {
+  result <- as.data.frame(readxl::read_excel(path), stringsAsFactors = FALSE)
+  result$.ingest_file <- basename(path)
+  result
 }
 
-# --- type + encoding guards (SAFETY) -----------------------------------------
-# Force FULL_TEXT to character: read_excel can type a column as logical/NA if its
-# leading rows are blank, which would make the filter silently match nothing.
+cat("Reading XLSX batch...\n")
+new_parts <- lapply(new_files, read_one_xlsx)
+new_data <- dplyr::bind_rows(new_parts)
+rm(new_parts)
+cat("  Incoming rows:", nrow(new_data), "| columns:", ncol(new_data), "\n")
+
+digikat_require_columns(new_data, c("FULL_TEXT", "DATE"), "incoming batch")
+if (!dedup_key %in% names(new_data) && !allow_missing_dedup) {
+  stop(
+    "Incoming batch has no ", dedup_key, " column. Refusing to append without deduplication.",
+    "\nUse --allow-missing-dedup-key only after a documented manual review.",
+    call. = FALSE
+  )
+}
+
 new_data$FULL_TEXT <- as.character(new_data$FULL_TEXT)
-if (all(is.na(new_data$FULL_TEXT) | !nzchar(new_data$FULL_TEXT))) {
-  stop("FULL_TEXT is entirely empty/NA after read — likely a wrong sheet or a read_excel ",
-       "column-type inference problem. Aborting before the filter silently matches nothing.")
-}
-# Croatian diacritics must survive the read. Their TOTAL absence signals CP1250/Latin-1
-# mis-decoding, which would make the religious filter under-match and silently drop rows.
-diacritic_class <- "[čćžšđČĆŽŠĐ]"  # č ć ž š đ + caps
-if (!any(stringi::stri_detect_regex(new_data$FULL_TEXT, diacritic_class), na.rm = TRUE)) {
-  stop("No Croatian diacritics found anywhere in FULL_TEXT — the .xlsx was probably read as ",
-       "CP1250/Latin-1. Re-save the source as UTF-8 (or fix the locale) and retry.")
-}
-# 'year' is a known cross-edition type hazard: a character '2026' breaks bind_rows or makes the
-# new rows fail downstream numeric year filters (silently dropping them from every aggregate).
-if ("year" %in% names(new_data)) {
-  na_before     <- sum(is.na(new_data$year))
-  new_data$year <- suppressWarnings(as.numeric(new_data$year))
-  na_added      <- sum(is.na(new_data$year)) - na_before
-  if (na_added > 0) cat("NOTE: as.numeric(year) introduced", na_added,
-                        "NA(s); check the new export's year format.\n")
-}
-# -----------------------------------------------------------------------------
-if (!dedup_key %in% names(new_data)) {
-  warning(
-    "Dedup key '", dedup_key, "' missing from new data; ",
-    "de-duplication against the master will be SKIPPED for new rows."
-  )
-}
-missing_cols <- setdiff(names(master), names(new_data))
-if (length(missing_cols) > 0) {
-  cat("NOTE:", length(missing_cols),
-      "column(s) present in master but absent in new data will be NA:\n  ",
-      paste(head(missing_cols, 20), collapse = ", "),
-      if (length(missing_cols) > 20) " ..." else "", "\n")
+if (all(is.na(new_data$FULL_TEXT) | !nzchar(trimws(new_data$FULL_TEXT)))) {
+  stop("FULL_TEXT is entirely empty/NA; check the input sheet and column types.", call. = FALSE)
 }
 
-# =============================================================================
-# 4. RELIGIOUS-TERMS FILTER (regex match, keep >= min_matches)
-#    (logic mirrors R/load_merge_filter_religious.R)
-# =============================================================================
-extract_match_details_regex <- function(txt, terms_df) {
-  if (is.na(txt) || txt == "") {
-    return(list(matched_terms = NA_character_, matched_words = NA_character_,
-                matched_sentences = NA_character_, match_count = 0L))
-  }
-  matched_terms <- character(); all_words <- character(); all_sents <- character()
-  sentences <- unlist(stringi::stri_split_regex(txt, "(?<=[.!?])\\s+"))
-  for (i in seq_len(nrow(terms_df))) {
-    pat <- terms_df$regex[i]
-    words <- unlist(stringi::stri_extract_all_regex(
-      txt, pat, opts_regex = list(case_insensitive = TRUE)))
-    words <- unique(words[!is.na(words) & nzchar(words)])
-    if (length(words) > 0) {
-      matched_terms <- c(matched_terms, terms_df$term[i])
-      all_words     <- c(all_words, words)
-      sents_i <- sentences[stringi::stri_detect_regex(
-        sentences, pat, opts_regex = list(case_insensitive = TRUE))]
-      all_sents <- c(all_sents, sents_i)
+diacritic_class <- "[čćžšđČĆŽŠĐ]"
+if (!any(stringi::stri_detect_regex(new_data$FULL_TEXT, diacritic_class), na.rm = TRUE)) {
+  stop(
+    "No Croatian diacritics were found anywhere in FULL_TEXT. ",
+    "Check the input encoding before continuing.",
+    call. = FALSE
+  )
+}
+
+incoming_date <- digikat_parse_date(new_data$DATE, name = "incoming DATE")
+incoming_year <- as.integer(format(incoming_date, "%Y"))
+year_mismatches <- integer()
+if ("year" %in% names(new_data)) {
+  upstream_year <- suppressWarnings(as.integer(as.character(new_data$year)))
+  year_mismatches <- which(
+    !is.na(upstream_year) & !is.na(incoming_year) & upstream_year != incoming_year
+  )
+}
+new_data$DATE <- if (inherits(master$DATE, "Date")) incoming_date else as.character(incoming_date)
+new_data$year <- incoming_year
+if (length(year_mismatches)) {
+  cat(
+    "  Normalized", length(year_mismatches),
+    "incoming year value(s) to the year derived from DATE.\n"
+  )
+}
+
+missing_from_incoming <- setdiff(names(master), names(new_data))
+extra_in_incoming <- setdiff(names(new_data), c(names(master), ".ingest_file"))
+if (length(missing_from_incoming)) {
+  cat(
+    "  Master columns absent from incoming data will be NA:",
+    paste(missing_from_incoming, collapse = ", "), "\n"
+  )
+}
+if (length(extra_in_incoming)) {
+  cat(
+    "  Incoming columns not present in the master will be reported but not appended:",
+    paste(extra_in_incoming, collapse = ", "), "\n"
+  )
+}
+
+cat("Applying the religious filter (>= ", min_matches, " distinct terms)...\n", sep = "")
+match_details <- digikat_match_religious(
+  new_data$FULL_TEXT,
+  religious_terms,
+  min_matches = min_matches,
+  include_details = TRUE,
+  batch_size = batch_size,
+  progress = TRUE
+)
+new_data <- dplyr::bind_cols(new_data, match_details)
+passes_filter <- new_data$root_match_count >= min_matches
+new_filtered <- new_data[passes_filter, , drop = FALSE]
+new_filtered$data_source <- "filtered_religious"
+cat(
+  "  Passed:", nrow(new_filtered), "of", nrow(new_data),
+  sprintf("(%.1f%%)\n", 100 * nrow(new_filtered) / max(1L, nrow(new_data)))
+)
+
+get_master_keys <- function() {
+  signature <- list(
+    path = digikat_normalize_path(master_path),
+    bytes = unname(file.info(master_path)$size),
+    modified = format(file.info(master_path)$mtime, tz = "UTC", usetz = TRUE)
+  )
+  if (file.exists(cache_path)) {
+    cache <- tryCatch(readRDS(cache_path), error = function(e) NULL)
+    if (is.list(cache) && identical(cache$signature, signature) && is.character(cache$keys)) {
+      cat("Using cached master URL keys:", cache_path, "\n")
+      return(cache$keys)
     }
   }
-  if (length(matched_terms) == 0) {
-    return(list(matched_terms = NA_character_, matched_words = NA_character_,
-                matched_sentences = NA_character_, match_count = 0L))
-  }
-  list(
-    matched_terms     = paste(unique(matched_terms), collapse = "; "),
-    matched_words     = paste(unique(all_words),     collapse = "; "),
-    matched_sentences = paste(unique(all_sents),     collapse = " | "),
-    match_count       = length(unique(matched_terms))
-  )
+  cat("Canonicalizing master URLs (first run may take a while)...\n")
+  keys <- unique(digikat_canonicalize_url(master[[dedup_key]]))
+  dir.create(dirname(cache_path), recursive = TRUE, showWarnings = FALSE)
+  saveRDS(list(signature = signature, keys = keys), cache_path)
+  keys
 }
 
-n_rows  <- nrow(new_data)
-txt_low <- stringi::stri_trans_tolower(new_data$FULL_TEXT)
-
-mt <- character(n_rows); mw <- character(n_rows)
-ms <- character(n_rows); mc <- integer(n_rows)
-
-n_batches <- ceiling(n_rows / batch_size)
-cat("Filtering", n_rows, "new rows in", n_batches, "batch(es)...\n")
-for (i in seq_len(n_batches)) {
-  s <- (i - 1) * batch_size + 1
-  e <- min(i * batch_size, n_rows)
-  for (j in s:e) {
-    r <- extract_match_details_regex(txt_low[j], religious_terms)
-    mt[j] <- r$matched_terms; mw[j] <- r$matched_words
-    ms[j] <- r$matched_sentences; mc[j] <- r$match_count
-  }
-  cat("\r  Batch", i, "/", n_batches, "-", round(100 * e / n_rows), "%   ")
-  flush.console()
-}
-cat("\n")
-
-new_data <- new_data |>
-  mutate(
-    root_match_count  = mc,
-    matched_terms     = mt,
-    matched_words     = mw,
-    matched_sentences = ms
-  )
-
-new_filtered <- new_data |> filter(root_match_count >= min_matches)
-cat("New rows passing religious filter (>=", min_matches, "matches):",
-    nrow(new_filtered), "of", n_rows,
-    " (", round(100 * nrow(new_filtered) / n_rows, 1), "%)\n", sep = "")
-
-if (nrow(new_filtered) == 0) {
-  cat("Nothing to append. Exiting without changes.\n")
-  quit(save = "no", status = 0)
-}
-
-# =============================================================================
-# 5. ALIGN COLUMNS + TAG SOURCE
-# =============================================================================
-new_filtered <- new_filtered |> mutate(data_source = "filtered_religious")
-
-# Keep only columns the master already has (so bind_rows stays clean).
-common_cols  <- intersect(names(master), names(new_filtered))
-new_to_bind  <- new_filtered |> select(all_of(common_cols))
-
-# =============================================================================
-# 6. DE-DUPLICATE AGAINST THE MASTER  (SAFETY: whole master + normalized URL)
-#    Dedup against ALL master rows (both data_source strata), not just the
-#    "filtered_religious" half, so an article already present anywhere is never
-#    re-added. Compare on a CANONICALIZED URL so ?utm_…/#frag/trailing-slash
-#    variants of the same article are caught (the known query-string gap).
-#    Also dedup within the incoming batch. Rows with no usable URL are kept.
-# =============================================================================
-canonical_url <- function(u) {
-  u <- stringi::stri_trans_tolower(as.character(u))
-  u <- stringi::stri_replace_first_regex(u, "[?#].*$", "")  # drop query string + fragment
-  u <- stringi::stri_replace_last_regex(u, "/+$", "")       # drop trailing slash(es)
-  u
-}
-
-if (dedup_key %in% names(master) && dedup_key %in% names(new_to_bind)) {
-  existing_keys <- unique(canonical_url(master[[dedup_key]]))   # WHOLE master, both strata
-  new_keys      <- canonical_url(new_to_bind[[dedup_key]])
-  before        <- nrow(new_to_bind)
-
-  has_key   <- !is.na(new_keys) & nzchar(new_keys)
-  in_master <- has_key & (new_keys %in% existing_keys)
-  in_batch  <- has_key & duplicated(new_keys)                  # 2nd+ copy within this batch
+dedup_already_master <- 0L
+dedup_inside_batch <- 0L
+unkeyed_rows <- 0L
+if (dedup_key %in% names(master) && dedup_key %in% names(new_filtered)) {
+  existing_keys <- get_master_keys()
+  new_keys <- digikat_canonicalize_url(new_filtered[[dedup_key]])
+  has_key <- !is.na(new_keys) & nzchar(new_keys)
+  in_master <- has_key & new_keys %in% existing_keys
+  in_batch <- has_key & duplicated(new_keys)
   drop_rows <- in_master | in_batch
-
-  new_to_bind <- new_to_bind[!drop_rows, , drop = FALSE]
-  cat("De-dup on normalized ", dedup_key,
-      " (whole master + within-batch): dropped ", sum(in_master),
-      " already-in-master + ", sum(in_batch), " intra-batch; ",
-      nrow(new_to_bind), " of ", before, " remain to append.\n", sep = "")
-  if (any(!has_key)) {
-    cat("  (", sum(!has_key), " row(s) had no usable ", dedup_key,
-        " and were kept un-deduped.)\n", sep = "")
-  }
+  dedup_already_master <- sum(in_master)
+  dedup_inside_batch <- sum(in_batch)
+  unkeyed_rows <- sum(!has_key)
+  new_to_bind <- new_filtered[!drop_rows, , drop = FALSE]
 } else {
-  cat("De-dup skipped (key not available in both); appending all filtered rows.\n")
+  warning("Deduplication was explicitly bypassed; all qualifying rows will remain.")
+  new_to_bind <- new_filtered
+  unkeyed_rows <- nrow(new_to_bind)
 }
 
-if (nrow(new_to_bind) == 0) {
-  cat("All new rows were already present. Nothing to append. Exiting.\n")
-  quit(save = "no", status = 0)
+rows_to_append <- nrow(new_to_bind)
+cat(
+  "Deduplication: ", dedup_already_master, " already in master; ",
+  dedup_inside_batch, " repeated inside batch; ",
+  rows_to_append, " rows remain.\n",
+  sep = ""
+)
+
+file_reports <- lapply(new_files, function(path) digikat_file_metadata(path, include_hash = TRUE))
+report <- list(
+  schema_version = 1L,
+  generated_utc = format(Sys.time(), tz = "UTC", usetz = TRUE),
+  mode = if (apply_changes) "apply" else "preview",
+  inclusion_rule = list(minimum_distinct_religious_terms = min_matches),
+  paths = list(
+    master = gsub("\\\\", "/", master_path),
+    incoming_directory = gsub("\\\\", "/", new_data_folder)
+  ),
+  input_files = file_reports,
+  columns = list(
+    missing_from_incoming = missing_from_incoming,
+    excluded_incoming_columns = extra_in_incoming
+  ),
+  rows = list(
+    master_before = master_rows_before,
+    incoming_read = nrow(new_data),
+    passed_religious_filter = nrow(new_filtered),
+    normalized_year_mismatches = length(year_mismatches),
+    already_in_master = dedup_already_master,
+    repeated_inside_batch = dedup_inside_batch,
+    without_usable_dedup_key = unkeyed_rows,
+    proposed_append = rows_to_append,
+    proposed_master_after = master_rows_before + rows_to_append
+  )
+)
+
+if (!apply_changes || rows_to_append == 0L) {
+  report$result <- if (rows_to_append == 0L) "nothing_to_append" else "preview_complete"
+  digikat_write_json_atomic(report, report_path)
+  cat("Wrote delta report:", report_path, "\n")
+  if (!apply_changes && rows_to_append > 0L) {
+    cat("No protected data changed. Review the report, then rerun with --apply.\n")
+  }
+  quit(save = "no", status = 0L)
 }
 
-# =============================================================================
-# 7. BACKUP (VERIFIED) + SAVE
-#    Back up the master and CONFIRM the backup is on disk BEFORE building or
-#    overwriting anything — never overwrite the master without a good backup.
-# =============================================================================
-# Timestamp is read from the OS clock at runtime (fine in plain Rscript).
-stamp <- format(Sys.time(), "%Y%m%d_%H%M%S", tz = "UTC")
+# Align exactly to the protected master schema. Filtering details remain in the
+# delta report; the scientific master schema does not drift during an append.
+for (missing_name in setdiff(names(master), names(new_to_bind))) {
+  new_to_bind[[missing_name]] <- NA
+}
+new_to_bind <- new_to_bind[, names(master), drop = FALSE]
+
 backup_path <- sub("\\.rds$", paste0("_backup_", stamp, ".rds"), master_path)
+if (identical(backup_path, master_path)) backup_path <- paste0(master_path, "_backup_", stamp, ".rds")
+if (file.exists(backup_path)) stop("Backup already exists: ", backup_path, call. = FALSE)
 
-if (file.exists(backup_path)) {
-  stop("Backup path already exists (", backup_path, "); refusing to proceed so an existing ",
-       "backup is never clobbered. Wait a second and re-run.")
+cat("Creating verified backup:", backup_path, "\n")
+if (!isTRUE(file.copy(master_path, backup_path, overwrite = FALSE))) {
+  stop("Could not create the master backup.", call. = FALSE)
 }
-cat("\nBacking up current master to:", backup_path, "\n")
-ok <- file.copy(master_path, backup_path, overwrite = FALSE)
-if (!isTRUE(ok) || !file.exists(backup_path) ||
-    file.size(backup_path) != file.size(master_path)) {
-  stop("Backup FAILED or is incomplete (file.copy returned ", ok, "). ",
-       "Aborting BEFORE touching the master. Check free disk space and permissions.")
+master_hash <- digikat_hash_file(master_path)
+backup_hash <- digikat_hash_file(backup_path)
+if (!identical(master_hash, backup_hash)) {
+  stop("Backup hash does not match the master; aborting before replacement.", call. = FALSE)
 }
-cat("  Backup verified:", round(file.size(backup_path) / 1024^2), "MB\n")
 
-# Master is now safely backed up — build the combined table and overwrite.
-updated <- bind_rows(master, new_to_bind)
+updated <- dplyr::bind_rows(master, new_to_bind)
+expected_rows <- master_rows_before + rows_to_append
+validate_updated <- function(value) {
+  if (nrow(value) != expected_rows) stop("Staged master has an unexpected row count.")
+  if (!identical(names(value), names(master))) stop("Staged master schema differs from the original.")
+  tail_rows <- utils::tail(value, rows_to_append)
+  tail_dates <- digikat_parse_date(tail_rows$DATE, name = "staged appended DATE")
+  tail_year <- as.integer(format(tail_dates, "%Y"))
+  if (any(tail_year != as.integer(tail_rows$year), na.rm = TRUE)) {
+    stop("Staged appended rows contain DATE/year mismatches.")
+  }
+  invisible(TRUE)
+}
 
-cat("Saving updated master to:", master_path, "\n")
-saveRDS(updated, master_path)
+cat("Staging and validating updated master...\n")
+staged <- digikat_stage_rds(updated, master_path, validate = validate_updated)
+digikat_atomic_replace_file(staged, master_path)
+if (file.exists(cache_path)) unlink(cache_path)
 
-cat("\n=== DONE ===\n")
-cat("Master rows before:", nrow(master), "\n")
-cat("Rows appended:     ", nrow(new_to_bind), "\n")
-cat("Master rows after: ", nrow(updated), "\n")
-cat("Backup saved at:   ", backup_path, "\n")
-cat("\nNEXT: re-render the map pages (pages/mapa/*.qmd) to refresh ",
-    "data/processed/*.rds. NLP-dependent maps also need tokenization re-run.\n", sep = "")
+report$result <- "applied"
+report$backup <- c(digikat_file_metadata(backup_path, include_hash = FALSE), sha256 = backup_hash)
+report$master_after <- digikat_file_metadata(master_path, include_hash = TRUE)
+digikat_write_json_atomic(report, report_path)
+
+cat("\nAppend complete.\n")
+cat("  Master rows before:", master_rows_before, "\n")
+cat("  Rows appended:     ", rows_to_append, "\n")
+cat("  Master rows after: ", expected_rows, "\n")
+cat("  Backup:            ", backup_path, "\n")
+cat("  Delta report:       ", report_path, "\n")
+cat("\nNEXT: validate and apply R/03_aggregate.R, rebuild invalidated NLP outputs, then render the site.\n")

@@ -9,7 +9,7 @@ paths:
 
 The house voice for everything **reader-visible** on the DigiKat website (Croatian content; this guide is
 English). Derived from a cross-page audit; it locks in what the strong analytical pages already do and resolves
-the drift elsewhere. When editing or writing any page, conform to this. The four `pages/mapa/*` analytical pages
+the drift elsewhere. When editing or writing any page, conform to this. The five `pages/mapa/*` analytical pages
 are the **gravitational center** — when in doubt, sound like them.
 
 ## 1. The voice in one sentence
@@ -47,7 +47,7 @@ Left column is mandatory in reader-visible Croatian prose; normalize the variant
 
 | Concept | **Canonical form** | Reject / normalize away |
 |---|---|---|
-| The ≈610k master corpus | **korpus** (formal: *glavni skup podataka*) | *baza podataka* (as the corpus), *dataset / dataseta / dataset-a*, bare *baza* |
+| The 710k master corpus | **korpus** (formal: *glavni skup podataka*) | *baza podataka* (as the corpus), *dataset / dataseta / dataset-a*, bare *baza* |
 | Distribution product (Kaggle/Zenodo) | **baza podataka** | (use only for the published product, not the empirical object) |
 | A single media item | **objava** (pl. *objave*) | *post*, *zapis* (use *zapis* only for a DB row distinct from a post) |
 | Channel / source | **platforma** | mixing *platforma*/*izvor* loosely (keep brand names as-is: web, YouTube, Facebook) |
@@ -75,10 +75,12 @@ with any L3 conflict-strategy group — give the L3 group a distinct name and st
 - The `index` numbered mono eyebrow (`01 — Analitički okvir`) is the one strong section-divider device — Croatian only. Analytical pages use plain sentence-case `##`/`###`; no numbered eyebrow needed.
 
 ## 7. Numbers & units (Croatian convention — identical in prose, valueboxes, figures)
-- **Large counts → period grouping: `610.000`** (and `≈610.000`, `610.000+`). Set `big.mark = "."` in **every** `scales`/`format`/`comma` call so figures match prose. **Reject** thin-space `610 000`, US-comma `610,000`, spelled `610 tisuća`.
+- **Large counts → period grouping: `710.307`** (and `≈710.000`, `710.000+`). Set `big.mark = "."` and
+  `decimal.mark = ","` in **every** `scales`/`format`/`comma` call so figures match prose. **Reject**
+  thin-space `710 000`, US-comma `710,000`, spelled `710 tisuća`.
 - **Compute, don't hand-type.** Drive every corpus figure from `data/processed/*.rds` via inline `` `r ` `` — never restate the same number in two formats on one page, never hardcode literals (per the project's no-hand-typed-numbers principle).
 - **Percentages → digit + `%`, decimal comma:** `12,3 %`. Reject narrating percentages in words off a chart (*"oko 80 posto"*) — compute and show the figure.
-- **Year ranges → en dash + Croatian ordinal periods: `2021.–2025.`** (no surrounding spaces), in YAML titles, chart titles and prose alike. Reject `2021-2025`, `2021.–2025.` with hyphen, `2021 do 2024`.
+- **Year ranges → en dash + Croatian ordinal periods: `2021.–2026.`** (no surrounding spaces), in YAML titles, chart titles and prose alike. Reject `2021-2026`, hyphenated ranges, or `2021 do 2026`.
 - **Approximation:** `≈` in display chrome, *oko* in prose. `≥` is fine for the inclusion rule (*"≥2 podudaranja"*).
 
 ## 8. Punctuation & typography
@@ -101,7 +103,9 @@ category badges using the canonical layer name, and ≥1 framing sentence before
 classes (`.metric-grid`/`.metric-card`, `.timeline`, `.featured-box`, `.card-grid`/`.info-card`).
 
 **Every ANALYTICAL page follows this fixed spine:**
-1. **Lead / abstract** — situates this layer vs the others (with in-site links), states scope (*"korpus od preko 610.000 objava… 2021.–2025."*) and goal, and names which research questions (Q1–Q5) it answers.
+1. **Lead / abstract** — situates this layer vs the others (with in-site links), states scope (*"korpus od
+   710.307 objava… 2021.–2026."*, noting that 2026 is partial) and goal, and names which research questions
+   (Q1–Q5) it answers.
 2. **Method note** — short, reader-visible: what was done, on what data, **state the real sample fraction in prose** (keep code and prose in sync), which lexicon/dictionary.
 3. **KPI metric grid** — `.metric-grid` of 4 cards, canon-formatted values, right after the lead.
 4. **Findings** — one section per movement: framing sentence → figure (title + subtitle + `Izvor:` caption) → interpretive read-out that *reads* the chart. **No chart without surrounding narrative.**
@@ -118,7 +122,8 @@ sentence per distribution.
 
 ## Pre-publish checklist
 1. Croatian-first, diacritics intact, no English-only prose, no Croglish.
-2. Numbers: `610.000` · `12,3 %` · `2021.–2025.` — computed, not hand-typed; figures use `big.mark="."`.
+2. Numbers: `710.307` · `12,3 %` · `2021.–2026.` — computed, not hand-typed; figures use
+   `big.mark="."`, `decimal.mark=","`.
 3. Terminology matches §5 canon (korpus / objava / tonalitet / RIK / canonical layer names); typology names unique.
 4. Sentence-case headings; H1 carries the canonical layer name; no title↔subtitle duplication.
 5. Right person for the page class; no leftover placeholder text; no marketing hype / jargon-fog.

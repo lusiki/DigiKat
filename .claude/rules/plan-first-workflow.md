@@ -15,7 +15,7 @@ task — especially anything that changes WHAT is in the corpus or mutates the m
 **HARD GATE — STOP and confirm with the user before:**
 - Overwriting `data/merged_comprehensive.rds`.
 - Deleting or moving any `*_backup_*.rds`.
-- Running `R/03_aggregate.R` (overwrites tracked `data/processed/*.rds`).
+- Running `R/03_aggregate.R --apply` (overwrites tracked `data/processed/*.rds`; preview mode is safe).
 - A FULL `quarto render` that overwrites `docs/`.
 - Any git history rewrite, force-push, or bulk `git add`.
 

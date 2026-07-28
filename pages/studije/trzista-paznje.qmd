@@ -1,12 +1,20 @@
 ---
 title: "Tržišta pažnje u religijskim digitalnim medijima"
-subtitle: "Ekonomija pažnje primijenjena na cjelokupni DigiKat korpus — koncentracija, modaliteti angažmana i liturgijski ritam"
+subtitle: "Ekonomija pažnje u ranijem analitičkom presjeku korpusa — koncentracija, modaliteti angažmana i liturgijski ritam"
 date: last-modified
 categories: ["Tematsko istraživanje", "Nacrt u izradi"]
 ---
 
-Rad primjenjuje okvir ekonomije pažnje na cjelokupni DigiKat korpus, nudeći sustavno mapiranje
+Rad primjenjuje okvir ekonomije pažnje na raniji analitički presjek DigiKat korpusa, nudeći sustavno mapiranje
 hrvatskog katoličkog digitalnog ekosustava kroz pet hipoteza o distribuciji i dinamici pažnje.
+
+::: {.callout-warning}
+## Verzija podataka
+
+Brojke i nalazi na ovoj stranici pripadaju presjeku od **608.879 objava iz razdoblja 2021.–2025.**
+na kojem je izrađen povezani nacrt rada. Ne opisuju automatski sadašnji glavni korpus od 710.307
+objava, koji se proteže do lipnja 2026. Procjene treba ponovno izračunati prije konačne objave rada.
+:::
 
 ## Istraživačko pitanje
 
@@ -19,7 +27,7 @@ koncentraciju.
 
 ## Podaci i metode
 
-Analiza obuhvaća 608.879 objava (2021.–2025.) na 8 platformi, uz klasifikaciju izvora u deset
+Analitički presjek obuhvaća 608.879 objava (2021.–2025.) na osam platformi, uz klasifikaciju izvora u deset
 kategorija aktera (institucije, biskupije i župe, nezavisni mediji, redovničke zajednice, karizmatske
 zajednice, pojedinačni svećenici, mladežne organizacije, akademske institucije, laički influenceri i
 ostalo). Koriste se Gini koeficijent i Lorenzova krivulja za mjerenje koncentracije, dekompozicija

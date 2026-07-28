@@ -1,0 +1,12 @@
+"domain","n_semantic","pct_of_economic","semantic_rank","keyword_rank","mean_sim"
+"poverty_social",1548,23.3,1,1,0.33
+"euro_changeover",1324,19.9,2,11,0.317
+"inflation_prices",1107,16.7,3,9,0.311
+"green_energy",832,12.5,4,8,0.316
+"housing",490,7.4,5,6,0.285
+"macro_aggregates",298,4.5,6,5,0.286
+"demography_econ",285,4.3,7,10,0.286
+"taxes_fiscal",272,4.1,8,3,0.288
+"wages_income",252,3.8,9,4,0.295
+"business_comp",158,2.4,10,2,0.248
+"unemployment",74,1.1,11,7,0.28

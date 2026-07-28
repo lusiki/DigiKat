@@ -61,9 +61,10 @@ Three bodies of work exist, and none of them meets the other two (see [LITERATUR
 
 ## 4. Data (we already have most of it)
 
-- **The corpus:** the DigiKat master — ≈610k Croatian/Bosnian media posts, 2021–2025, already filtered to
-  Catholic/religious content. We tag every post that mentions inflation. *(All of this exists; the inflation
-  tagging is the main new step.)*
+- **The corpus:** the current DigiKat master contains 710,307 Croatian/Bosnian media posts from January
+  2021 through June 2026, filtered for religion salience (≥2 distinct religious-term matches). This early
+  proposal uses the complete-year 2021–2025 subset; it should not be described as a Catholic-media-only
+  corpus. We tag every post that mentions inflation.
 - **Real price data (free, public, monthly):** Croatian inflation (HICP) — the **headline** number *and* the
   **food + energy** sub-indices. Optionally unemployment and Google Trends for "inflacija" as a public-mood
   check.

@@ -16,7 +16,7 @@
 # data/ or the global >=2-match religion filter.
 #
 # Run where R + the master live (see CLAUDE.local.md):
-#   "/c/Program Files/R/R-4.4.1/bin/Rscript.exe" studies/moral-economy/probe.R
+#   Rscript studies/moral-economy/probe.R
 suppressPackageStartupMessages({ library(here); library(dplyr); library(stringr) })
 
 USE_SAMPLE <- !file.exists(here::here("data/merged_comprehensive.rds"))

@@ -1,44 +1,117 @@
-# Data Availability — DigiKat
+# Data availability — DigiKat
 
-> Living document. DigiKat is committed to open science (FAIR) under CC BY 4.0, but its empirical core
-> includes scraped / API-collected media content that cannot be fully redistributed. This file states,
-> per asset, what is shared, what is not, and how to obtain access.
+DigiKat follows open-science principles while respecting copyright, platform terms, privacy, and the
+disclosure risks of row-level media data. “Present in the repository” does not mean that every asset
+shares one license; third-party language resources retain their upstream terms.
 
-## Summary
+## Availability matrix
 
-| Asset | In repo? | License | Redistributable? | How to get it |
-|---|---|---|---|---|
-| `data/merged_comprehensive.rds` (master, ≈710k×47) | **No** (gitignored) | — | **No** (full corpus) | On reasonable request to the PI (below) |
-| `data/processed/*.rds` (10 aggregates) | **Yes** (tracked) | CC BY 4.0 | **Yes** — aggregate, no PII | clone the repo |
-| `data/sample/merged_sample.rds` (synthetic ≈500-row) | Yes, once generated | CC BY 4.0 | **Yes** — scrubbed/synthetic | clone, or `Rscript R/make_sample.R` |
-| `data/raw/*.xlsx` (raw scrape / API dumps) | No (gitignored) | source-dependent | **No** | derived from MySQL `determ_all` / source platforms |
-| `resources/lexicons/*` (CroSentilex, CroSentilex Gold, lilaHR) | Yes | _TODO: verify upstream; cite originals_ | per upstream | clone; cite original authors |
-| `resources/dictionaries/*` (katolički_izrazi, lilaHR) | Yes | _TODO: verify_ | per upstream | clone |
-| `resources/models/croatian-set-ud-2.5-191206.udpipe` | Yes | _TODO: verify (UDPipe / Universal Dependencies)_ | per upstream | clone; or download from UDPipe |
-| `R/religious_terms.R` (Catholic root-term regexes) | Yes | CC BY 4.0 | **Yes** — citable methodology artifact | clone |
-| code (`R/**`, `pages/**`) | Yes | CC BY 4.0 _(code license — PI to confirm MIT vs CC)_ | **Yes** | clone |
+| Asset | Repository | Redistribution | Governing terms |
+|---|---|---|---|
+| `data/merged_comprehensive.rds` | no | restricted | source copyright and platform/API terms |
+| historical January 2026 Kaggle snapshot (612,065 rows) | external | public historical release | verify the version and license on Kaggle before reuse |
+| `data/raw/**` and incoming spreadsheets | no | restricted | source-dependent |
+| `data/processed/*.rds` | yes | open aggregate outputs | project-declared CC BY 4.0 |
+| `data/sample/merged_sample.rds` | yes | open, fully synthetic | project-declared CC BY 4.0 |
+| `data/nlp/**` | no | restricted/generated | contains sampled corpus text |
+| `data/semantic/**` | no | restricted/local | contains text and embeddings |
+| `studies/*/output/private/**` | no | restricted | row-level URLs, identities, excerpts, or coding |
+| disclosure-reviewed study tables/figures | yes | open when explicitly tracked | project-declared CC BY 4.0 |
+| `resources/**` | partly yes | resource-specific | see `resources/README.md` |
+| project-authored scripts and documentation | yes | public repository | repository declares CC BY 4.0; no separate code license has been adopted |
 
-## The master corpus
-- ≈710,000 media posts (2021–2026), Croatian/Bosnian, across web portals, YouTube, Facebook, Twitter,
-  Reddit, and forums; 47 variables. Stored as an R `.rds` (`data.table`).
-- **Gitignored** and not in the repository (size + redistribution constraints of scraped/API content).
-- **Inclusion criterion:** a post is in the corpus iff it matches **≥ 2 DISTINCT** Catholic root terms
-  (`R/religious_terms.R`).
-- **Provenance:** assembled from a MySQL database (`determ_all`) and Excel dumps; incremental updates via
-  `R/append_new_data.R`.
+Do not infer MIT licensing for the code. A future code-specific license requires an explicit project-owner
+decision and cannot be retroactively assumed.
 
-## How to request access
-Researchers may request access for non-commercial research use. Contact the PI:
-doc. dr. sc. Luka Šikić — luka.sikic@unicath.hr. Redistribution of full post text is constrained by
-source-platform terms; aggregate and derived data are shared openly (CC BY 4.0).
+## Restricted master corpus
 
-## Pinned dependency (for reproducibility)
-- udpipe model: `resources/models/croatian-set-ud-2.5-191206.udpipe`
-  - size: **19,236,607 bytes**
-  - sha256: `b8e0ad212bdc84c57366bd7267d21810e1fd3239c4d22ca5867f94e76c6cedc7`
-  - A byte-identical duplicate currently sits at the repo root — Phase-0 cleanup keeps only `resources/models/`.
+The current master contains **710,307 records and 47 columns**. The aggregate time span is January 2021
+through June 2026; 2026 is partial. It covers:
 
-## TODO before public release
-- Verify and state the exact upstream license for each lexicon/dictionary and the UD model; add citations.
-- Confirm the code license (CC BY 4.0 for data + content vs MIT for code).
-- Generate and commit `data/sample/merged_sample.rds` (`Rscript R/make_sample.R`), then run `/disclosure-check` on it.
+`web`, `youtube`, `facebook`, `twitter`, `reddit`, `forum`, `comment`, `instagram`, and `tiktok`.
+
+A record is retained only if its text matches at least **two distinct** canonical religious terms from
+`R/religious_terms.R`. Incoming data is deduplicated by a platform-aware canonical URL: tracking
+parameters are removed, but identity-bearing parameters such as the YouTube video ID are preserved.
+
+The master contains source text, URLs, account/source fields, and engagement metadata. It is gitignored
+and must not be copied into issues, pull requests, examples, or public study outputs.
+
+Authorized non-commercial research access may be requested from:
+
+**doc. dr. sc. Luka Šikić** — <luka.sikic@unicath.hr>
+
+Access is not automatic and may require a purpose statement, storage safeguards, and acceptance of
+source-platform restrictions.
+
+A separate [Kaggle release](https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space)
+contains an older January 2026 snapshot. It is not the current 710,307-row master. At the 2026-07-28
+inventory, Kaggle’s API-level license label and its narrative description were not consistent; users
+must resolve the governing terms on that release before redistribution.
+
+## Public aggregate generation
+
+`data/processed/` contains one complete 14-file generation:
+
+- `platform_summary.rds`
+- `platform_monthly.rds`
+- `proportions_summary.rds`
+- `source_summary.rds`
+- `top_sources_by_year.rds`
+- `top_web_sources.rds`
+- `top_youtube_sources.rds`
+- `top_facebook_sources.rds`
+- `web_actors.rds`
+- `youtube_actors.rds`
+- `facebook_actors.rds`
+- `instagram_actors.rds`
+- `tiktok_actors.rds`
+- `twitter_actors.rds`
+
+The canonical builder is `R/03_aggregate.R`. Its default mode recreates and validates the generation in
+a temporary directory. Production replacement requires `--apply`, a staged round-trip check, total
+reconciliation, and a generation manifest.
+
+Aggregates can still identify public media brands through `FROM`; they do not contain post text, URLs,
+or row-level user data.
+
+## Synthetic fixture
+
+`data/sample/merged_sample.rds` is a deterministic, **fully synthetic** dataset with:
+
+- 2,700 rows and the exact 47-column master schema;
+- 50 rows for every source-type/year stratum;
+- all nine source types and years 2021–2026;
+- only `example.invalid` URLs and synthetic text; and
+- SHA-256 `4c27aa2e422a4a371b80ceea64a745699830c2227a1f4af00214c77e0f98914c`.
+
+Its manifest is `data/sample/merged_sample_manifest.json`. Regenerate it with:
+
+```powershell
+Rscript R/make_sample.R
+```
+
+Regression tests reject unexpected hosts and schema drift.
+
+## Study-output disclosure boundary
+
+Study folders use:
+
+- `output/` for reviewed aggregates, figures, calendars, and de-identified summaries;
+- `output/private/` for URLs, titles, text windows, row-level source identities, and coding sheets; and
+- `output/intermediate/` for replaceable checkpoints.
+
+Both restricted directories are ignored. Run `Rscript R/check_disclosure.R` before committing. The
+automated check catches direct fields; a person must still review small cells and indirect identifiers.
+
+## Pinned language model
+
+`resources/models/croatian-set-ud-2.5-191206.udpipe`
+
+- size: 19,236,607 bytes;
+- SHA-256: `b8e0ad212bdc84c57366bd7267d21810e1fd3239c4d22ca5867f94e76c6cedc7`;
+- model family: UDPipe Universal Dependencies 2.5, release 2019-12-06;
+- upstream model terms: CC BY-NC-SA, with underlying treebank conditions also applicable; and
+- Croatian SET treebank terms: CC BY-SA 4.0.
+
+Only the copy under `resources/models/` is canonical.

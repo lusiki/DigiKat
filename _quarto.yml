@@ -3,12 +3,14 @@ project:
   output-dir: docs
   resources:
     - assets/
-  # Only the real site pages render. Prevents auto-globbing root .md
-  # (CLAUDE.local.md, MEMORY.md, WORKFLOW_SUGGESTIONS*.md …) and the design/ mockup
-  # into the published docs/.
+    - .nojekyll
+  # Only the active site sources render. Prevents auto-globbing root project
+  # documentation and archived prototypes into the published docs/.
   render:
     - index.qmd
     - pages/**/*.qmd
+  post-render:
+    - Rscript R/ensure_nojekyll.R
 
 website:
   title: "DigiKat"
@@ -76,7 +78,7 @@ website:
       - text: "GitHub"
         href: https://github.com/lusiki/DigiKat
     right: |
-      CC BY 4.0 · © 2021–2025 DigiKat
+      CC BY 4.0 · © 2021–2026 DigiKat
 
 # Reuse cached chunk executions; a full render only re-runs pages whose code
 # changed (the heavy analytical pages read the 1.2 GB master + data/nlp/).
@@ -101,6 +103,4 @@ format:
     fig-align: center
     include-in-header:
       - text: |
-          <link rel="preconnect" href="https://fonts.googleapis.com">
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
           <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">

@@ -80,7 +80,7 @@ media — see [LITERATURE.md](LITERATURE.md)), but the broadened unit adds a **f
    flag foreign-country inflation. ✅ done → **858 domestic genuine-link posts**.
 3. **Classify register** (institution / cost-of-religious-life / justice / charity) on the linked set.
    ✅ rough keyword pass done; ⬜ hand-validation pending.
-4. **Hand-validate** ~150 linked + ~50 incidental from `output/linkage_coding_sheet_v2.csv` → precision/
+4. **Hand-validate** ~150 linked + ~50 incidental from `output/private/linkage_coding_sheet_v2.csv` → precision/
    recall on both *linkage* and *register*. ⬜ next — this is the methods backbone.
 5. **Actor map** — tie the producers of genuine links to the project's actor typology. ⬜
 6. **Temporal** — plot domestic genuine-link volume against HICP (does the religious-inflation conversation
@@ -128,7 +128,7 @@ the Church as an *economic object*, not a moral *voice*. It deserves its own cod
   (existential, not economic) — strict tagging is not badly under-counting.
 - ✅ **Linkage tightening:** removed 1,422 false links (mostly `gospodarstvo`→Gospa).
 - ✅ **Validation + fixes + HELD-OUT re-validation** (→ [VALIDATION.md](VALIDATION.md), [ANALYSIS_READY.md](ANALYSIS_READY.md)).
-  All 5 fixes implemented and re-run on the master → **1,103 candidate** posts (`output/analysis_core.csv`).
+  All 5 fixes implemented and re-run on the master → **1,103 candidate** posts (`output/private/analysis_core.csv`, restricted).
   Honest **held-out** test (80 fresh posts, 3 independent annotators, IAA 0.97): inflation precision **85%**,
   linkage **recall 0.89** but **precision ~0.38**, foreign precision ~0.39, register agreement 0.46.
   **Conclusion: the regex classifier is a high-recall candidate generator, not an accurate labeller** — it
@@ -165,6 +165,6 @@ method now also fits a **digital-religion / computational-social-science methods
 
 ## 11. Next step
 
-Run **§5 step 4** — generate the hand-coding sample from `output/linkage_coding_sheet_v2.csv` and code it
+Run **§5 step 4** — generate the hand-coding sample from `output/private/linkage_coding_sheet_v2.csv` and code it
 (≈200 posts, an afternoon). That converts every "provisional" number above into a validated one and fixes the
 register taxonomy. Then acquire HICP and build the overlay. I can produce the coding sample on request.

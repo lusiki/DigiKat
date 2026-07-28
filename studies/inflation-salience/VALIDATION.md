@@ -4,7 +4,9 @@
 (40 auto domestic-linked, 22 auto linked-but-foreign, 28 auto incidental), drawn deterministically.
 **Procedure:** the annotator read a **text-only** sheet (auto-labels withheld), assigned labels
 (genuine inflation? religion genuinely linked? foreign? register?), then reconciled against the classifier.
-Artifacts: `output/validation_auto.csv`, `validation_human.csv`, `validation_merged.csv`.
+Artifacts: `output/private/validation_auto.csv`, `output/validation_human.csv`,
+`output/private/validation_merged.csv`. Row-level files carrying model output, URLs, or excerpts are
+restricted and intentionally gitignored.
 
 > ⚠️ **Limitation — this is not a human gold standard.** One LLM annotator, not blind to the task design,
 > n=90 (wide CIs; e.g. linkage precision ±~15pp). It is a serious *first* check that quantifies the error
@@ -71,7 +73,7 @@ the ~600 domestic-linked posts for register (small, feasible) — that becomes t
 All 5 fixes implemented (`scratchpad/10_rerun_fixed.R`): metaphor guard, foreign-flag rebuild (±90 adjacency +
 title + expanded gazetteer), `Crveni križ` strip, `trapist`-cheese drop, linkage window ±220, plus a
 `cost_relig_life` register detector. Re-run on the master → clean inflation **8,019**, **1,103** candidate
-domestic-linked posts (`output/analysis_core.{rds,csv}`).
+domestic-linked posts (`output/private/analysis_core.{rds,csv}`, restricted).
 
 **Two validations were run — and the gap between them is the headline lesson.**
 

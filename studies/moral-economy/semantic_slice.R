@@ -9,7 +9,7 @@
 #   (3) POVERTY economic-vs-doctrinal split — the fix for the keyword table's soft spot.
 #
 # Needs Ollama running (bge-m3) to embed the ~22 concept anchors; corpus vectors are already stored.
-#   "/c/Program Files/R/R-4.4.1/bin/Rscript.exe" studies/moral-economy/semantic_slice.R
+#   Rscript studies/moral-economy/semantic_slice.R
 suppressPackageStartupMessages({ library(here); library(DBI); library(duckdb); library(httr2) })
 
 STORE <- here::here("data/semantic/digikat.ragnar.duckdb")

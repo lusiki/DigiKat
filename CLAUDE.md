@@ -22,8 +22,7 @@ streams: (1) reusable open-data infrastructure + the Quarto website; (2) themati
    compute them from `data/processed/*.rds`.
 4. **Aggregate-production is an explicit step, NOT a render side-effect.** `data/processed/*.rds` are
    produced by `R/03_aggregate.R` run against the master — never by rendering a page. Pages only READ them.
-   (Today `mapa.qmd` still writes them mid-render — a Phase-0 fix; until then, treat any `processed/*.rds`
-   change during a render as an accident: do not stage it.)
+   The builder creates all 14 files as one validated generation; production replacement requires `--apply`.
 5. **Protect the irreplaceable.** The master `.rds` (≈710k rows) is gitignored and not reproducible from a
    clean clone. Back it up before any overwrite; never change the ≥2-match inclusion rule silently. The
    git/data guard hook + deny list enforce this.
@@ -41,8 +40,8 @@ R + the master dataset live on the PI's pipeline machine, NOT necessarily the ma
 - **Quarto:** content pages render anywhere; **data pages** (`baza.qmd`, `pages/mapa/*.qmd`) need R +
   aggregates/master — without them, verify statically (chunk syntax, `:::` div balance, diacritics in source).
 
-## Directory conventions (authoritative — README.md is OUTDATED; there is NO /code, /publications, /reports)
-- `R/` — all R + Python pipeline scripts. (Numbered master `R/00_run_all.R` + `R/0X_*.R` to be built.)
+## Directory conventions (authoritative)
+- `R/` — numbered pipeline, shared libraries, validators, semantic scripts, and generators.
 - `pages/`, `pages/mapa/` — Quarto site (`.qmd`); the project's published "outputs".
 - `data/raw/` — gitignored `.xlsx`; `data/raw/new/` — incremental drop-folder for appends.
 - `data/merged_comprehensive.rds` — master (≈710k × 47), **GITIGNORED**, not in repo.
@@ -51,6 +50,7 @@ R + the master dataset live on the PI's pipeline machine, NOT necessarily the ma
 - `docs/` — rendered site (GitHub Pages); generated — do not hand-edit.
 - `studies/` — thematic-study working folders (`_STUDY_TEMPLATE/` + one per study); published pages live in `pages/`.
 - `explorations/` — throwaway analyses (sandbox; `output/` gitignored). `references.bib` — shared bibliography.
+- `archive/` — historical prototypes, drafts, and replaced scripts; never source active code from it.
 
 ## Analytical layers (controlled vocabulary — use these names)
 1. **Mapa ekosustava** (`pages/mapa/mapa.qmd`) — volume / reach / engagement; actor typology
@@ -62,8 +62,11 @@ R + the master dataset live on the PI's pipeline machine, NOT necessarily the ma
 ## Key commands (Rscript path/availability is machine-specific — see CLAUDE.local.md)
 | Command | What |
 |---|---|
-| `Rscript R/00_run_all.R [--from=NN] [--sample]` | run/rebuild the numbered pipeline (where R + data live) |
-| `Rscript R/append_new_data.R` | append `data/raw/new/*.xlsx`; ≥2-match filter; URL dedup; timestamped backup |
+| `Rscript R/00_run_all.R [--from=NN] [--sample]` | non-destructive full validation or synthetic smoke pipeline |
+| `Rscript R/append_new_data.R` | preview incoming `data/raw/new/*.xlsx` and write a JSON delta report |
+| `Rscript R/append_new_data.R --apply` | verified backup, staged append, URL deduplication, atomic master replacement |
+| `Rscript R/03_aggregate.R` | build and reconcile all 14 aggregates in a temporary directory |
+| `Rscript R/03_aggregate.R --apply` | confirmation-gated production aggregate generation swap |
 | `quarto render pages/mapa/<page>.qmd` | render ONE page (fast; prefer during edits) |
 | `quarto render` | full site → `docs/` (before pushing site changes) |
 | `quarto preview` | live local preview |

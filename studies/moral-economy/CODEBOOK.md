@@ -1,7 +1,8 @@
 # Coding codebook v3 — moral-economy (religion × economy register coding)
 
 **Date:** 2026-07-07 · **Status:** design (pre-coding; supersedes the 5-register prose inherited from the sister study)
-**Anchors drawn from real corpus windows** (`output/poverty_diagnosis_sample.csv`, 2026-07-07 poverty hand-pass).
+**Anchors drawn from restricted real corpus windows**
+(`output/private/poverty_diagnosis_sample.csv`, 2026-07-07 poverty hand-pass).
 **Purpose:** the coding instrument for Stage B. This is the paper's *measured core* and its *weakest measured axis*
 (inherited held-out register agreement **0.46** — the number to beat). Every axis below is coded on the
 **hand-confirmed genuine-link set only**; auto-labels are withheld from annotators (sister-study procedure).

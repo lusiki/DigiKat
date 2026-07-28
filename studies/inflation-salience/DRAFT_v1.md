@@ -439,8 +439,9 @@ Social Teaching foregrounds is, in the measured record, almost silent.
 Pipeline scripts (run against the master; see `CLAUDE.local.md` for the R path):
 `10_rerun_fixed.R` (tagging + linkage + fixes) → `13_make_coding_pool.R` (1,450 candidate pool + batches) →
 coding workflow `code-candidate-pool` (3 annotators × 20 batches, majority) → `14_finalize_coded.R` (measured
-core) → `15_paper_analysis.R` (tables + figures). Coded data: `output/analysis_core_coded.{rds,csv}`
-(520 posts) and `output/coded_pool_full.csv` (1,450). Tables: `output/tables/`. The measured-core file carries
+core) → `15_paper_analysis.R` (tables + figures). Restricted coded data:
+`output/private/analysis_core_coded.{rds,csv}` (520 posts) and `output/private/coded_pool_full.csv` (1,450).
+Tables: `output/tables/`. The measured-core file carries
 `URL`/`FROM`/text excerpts and is kept untracked; run `/disclosure-check` before sharing.
 
 ## Appendix B. Coding protocol & validation

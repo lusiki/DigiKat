@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-07-28 07:26:34 UTC",
+  "generator": "R/04_nlp.R",
+  "provenance": "adopted_existing_after_membership_and_alignment_validation",
+  "inputs": {
+    "master": {
+      "path": "data/merged_comprehensive.rds",
+      "bytes": 1187912348,
+      "modified_utc": "2026-06-29 06:21:38 UTC",
+      "sha256": "789fdc6ff710b5f5289ec81444876c1af56ffc8d2d30f220335ec7b853c9e59f"
+    },
+    "model": {
+      "path": "resources/models/croatian-set-ud-2.5-191206.udpipe",
+      "bytes": 19236607,
+      "modified_utc": "2026-01-08 04:58:14 UTC",
+      "sha256": "b8e0ad212bdc84c57366bd7267d21810e1fd3239c4d22ca5867f94e76c6cedc7"
+    }
+  },
+  "parameters": {
+    "seed": 123,
+    "date_min": "2021-01-01",
+    "date_max": "2026-12-31",
+    "excluded_source_types": [
+      "tiktok"
+    ],
+    "minimum_text_characters": 101,
+    "strata": [
+      "year",
+      "SOURCE_TYPE"
+    ],
+    "page_proportions": {
+      "mapa_stats": 0.05,
+      "dogadjaji": 0.03,
+      "diskurs": 0.02
+    }
+  },
+  "pages": {
+    "mapa_stats": {
+      "sample_rows": 35225,
+      "token_rows": 23842036,
+      "token_documents": 35225,
+      "date_min": "2021-01-01",
+      "date_max": "2026-06-11",
+      "sample_sha256": "138e2c8ea47c1d9bc0c071c0d817882528267a66a0d50e5d32591f3076b81d6b",
+      "tokens_sha256": "b346b29bd0a1d5bab67ee460cbb18fd94f2fcff26d904f94b798a07ec04e437e"
+    },
+    "dogadjaji": {
+      "sample_rows": 21126,
+      "token_rows": 14368700,
+      "token_documents": 21126,
+      "date_min": "2021-01-01",
+      "date_max": "2026-06-11",
+      "sample_sha256": "00ed1e4c1f6221525ca76707e0043e73557cae8b4edb6269f67f4d2f86ac6556",
+      "tokens_sha256": "9446054cd37c80869c4c19918aba0954afecdd9cbb3aa1b548a6ad02cdd16ef5"
+    },
+    "diskurs": {
+      "sample_rows": 14080,
+      "token_rows": 9476415,
+      "token_documents": 14080,
+      "date_min": "2021-01-01",
+      "date_max": "2026-06-11",
+      "sample_sha256": "9e32f5471f87c6ac66fd3363b51e54a5ddbc62e2cbfc88e71a9af66348921aab",
+      "tokens_sha256": "36867e4531ff7229133a93849d433cfd66ff6faf0aa35b701b7215479c13bb48"
+    }
+  }
+}

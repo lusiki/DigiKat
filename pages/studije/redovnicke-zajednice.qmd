@@ -8,6 +8,11 @@ categories: ["Tematsko istraživanje", "Nacrt dostupan"]
 Istraživanje analizira kako hrvatski digitalni mediji prikazuju redovničke zajednice kroz teorijski
 okvir ekonomije pažnje, testirajući devet hipoteza grupiranih u tri tematske cjeline.
 
+::: {.callout-note}
+Ova stranica opisuje podatkovni presjek povezanog nacrta rada, zaključno s 2025. Ne treba ga
+poistovjetiti s kasnije proširenim glavnim DigiKat korpusom, koji uključuje i dio 2026.
+:::
+
 ## Istraživačko pitanje
 
 Dobiva li mali broj redova većinu medijske pažnje, postoje li rodne asimetrije u izvještavanju o

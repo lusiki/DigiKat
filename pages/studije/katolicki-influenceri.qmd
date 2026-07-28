@@ -8,6 +8,12 @@ categories: ["Tematsko istraživanje", "Nacrt dostupan"]
 Studija uspoređuje ekonomiju pažnje katoličkih influencera s digitalnom učinkovitošću institucionalnih
 crkvenih aktera, testirajući pet hipoteza proizašlih iz teorije ekonomije pažnje.
 
+::: {.callout-note}
+Ova stranica sažima podatkovni presjek povezanog nacrta rada (više od 600.000 objava,
+2021.–2025.). Glavni DigiKat korpus naknadno je proširen do lipnja 2026., pa se ovdje navedene
+procjene ne smiju automatski prenositi na njegovu sadašnju verziju.
+:::
+
 ## Istraživačko pitanje
 
 Postižu li katolički influenceri (digitalni akteri koji grade osobni ili zajednički brend oko

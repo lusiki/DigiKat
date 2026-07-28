@@ -27,8 +27,16 @@ classify <- function(name) {
   "Other"
 }
 example <- function(col) tryCatch({
-  if (is.numeric(col)) return(sprintf("range %s-%s", signif(min(col, na.rm = TRUE), 3), signif(max(col, na.rm = TRUE), 3)))
-  u <- unique(col[!is.na(col)])
+  nonmissing <- col[!is.na(col)]
+  if (!length(nonmissing)) return("(all values missing)")
+  if (is.numeric(col)) {
+    return(sprintf(
+      "range %s-%s",
+      signif(min(nonmissing), 3),
+      signif(max(nonmissing), 3)
+    ))
+  }
+  u <- unique(nonmissing)
   if (length(u) <= 6) paste(utils::head(u, 6), collapse = "; ") else paste0(length(u), " distinct")
 }, error = function(e) "")
 

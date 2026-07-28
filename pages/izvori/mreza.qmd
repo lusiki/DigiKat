@@ -78,6 +78,6 @@ Mreža prikazuje **strukturu kataloga**, ne izmjerene odnose među akterima. Pov
 (pripadnost platformi te zajednički brend ili osoba); ne predstavljaju zajedničku publiku, tematsko
 preklapanje ni utjecaj. Uz institucije, na novijim platformama prikazani su i **pojedinci** (političari i
 privatne osobe) — na izričitu odluku voditelja projekta; svaki se akter može isključiti. Brojke i
-pripadnosti indikativne su (agregati **2021.–2025.**, radna verzija; mnogi akteri na novim platformama
-imaju tek nekoliko objava).
+pripadnosti indikativne su (agregati **2021.–2026.**, pri čemu je 2026. nepotpuna; mnogi akteri na novim
+platformama imaju tek nekoliko objava).
 :::

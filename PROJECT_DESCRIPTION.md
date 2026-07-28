@@ -21,7 +21,13 @@ Status: Active
 
 ## Executive Summary
 
-DigiKat is a three year interdisciplinary research project that applies computational social science methods to systematically map, measure, and analyze the presence of Catholic themes across the Croatian digital media ecosystem. The project covers web portals, YouTube, Facebook, Twitter, Reddit, and online forums. Its empirical foundation is a structured database of over 710,000 media posts collected between 2021 and 2026, written primarily in Croatian and Bosnian. The project produces both a reusable open data infrastructure and a series of thematic studies on specific aspects of Catholic digital media presence.
+DigiKat is a three year interdisciplinary research project that applies computational social science
+methods to systematically map, measure, and analyze the presence of Catholic themes across the Croatian
+digital media ecosystem. It covers web portals, YouTube, Facebook, Twitter/X, Reddit, online forums,
+comments, Instagram, and TikTok. Its empirical foundation is a structured database of 710,307 media
+posts collected from January 2021 through June 2026, written primarily in Croatian and Bosnian. The
+project produces both reusable open aggregate infrastructure and thematic studies of Catholic digital
+media presence.
 
 The project sits at the intersection of communication studies, digital humanities, computational text analysis, and sociology of religion. It is committed to open science principles, with all code, methodological frameworks, and where possible data published openly under FAIR principles.
 
@@ -61,7 +67,9 @@ Inclusion in the database is determined by a dictionary based matching system. T
 
 ### Processed Data Outputs
 
-The project generates several aggregated analytical datasets. platform_summary.rds contains platform level statistics by year. proportions_summary.rds holds platform share analysis. source_summary.rds tracks media source productivity and engagement. Separate files store top performing sources on each platform (top_web_sources.rds, top_youtube_sources.rds, top_facebook_sources.rds) and actor mapping data for each platform (web_actors.rds, youtube_actors.rds, facebook_actors.rds).
+The project generates one validated 14-file aggregate generation. It includes platform-by-year and
+platform-by-month series, platform shares, source summaries, yearly source rankings, top-source tables
+for web/YouTube/Facebook, and actor maps for web, YouTube, Facebook, Instagram, TikTok, and Twitter/X.
 
 
 ## Analytical Framework
@@ -99,15 +107,21 @@ This layer examines how real world events create perturbations in the digital di
 
 ### Programming Languages and Environment
 
-The primary analytical language is R, with supporting Python scripts for specific NLP tasks. The project uses RStudio as its development environment and is structured as an R Project (DigiKat.Rproj).
+The active analytical language is R. The project is structured as an R Project (`DigiKat.Rproj`), but
+the command-line workflows do not require RStudio.
 
 ### Key R Packages and Tools
 
-Data manipulation relies on data.table for high performance operations on the large dataset. Text analysis uses the udpipe package for tokenization and lemmatization with the Croatian UD model (croatian-set-ud-2.5-191206.udpipe). Sentiment analysis is performed using custom lexicon matching against CroSentilex and lilaHR dictionaries. A custom Croatian stemmer is implemented in R (R/stemmer.R) with transformation rules and vowel checking functions adapted for Croatian morphology.
+Data manipulation relies on data.table, dplyr, and related packages pinned in `renv.lock`. Text analysis
+uses the udpipe package for tokenization and lemmatization with the checksum-pinned Croatian UD model
+(`resources/models/croatian-set-ud-2.5-191206.udpipe`). Sentiment analysis uses CroSentiLex and the LiLaH
+Croatian emotion lexicon. Canonical thematic and religious dictionaries are centralized under `R/lib/`
+and `R/religious_terms.R`.
 
-### Python Components
+### Historical Python component
 
-A Croatian stemmer implementation exists in Python (R/Croatian_stemmer.py) as an alternative to the R based version. This uses rule based transformations specific to Croatian morphological patterns.
+An experimental Croatian stemmer and its R counterpart are preserved under `archive/legacy-pipeline/`.
+They are not part of the active numbered pipeline.
 
 ### Web Presentation
 

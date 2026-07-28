@@ -4,13 +4,13 @@
 # -----------------------------------------------------------------------------
 # The "ingest" operation of the DigiKat Source Wiki (Karpathy LLM-wiki pattern).
 # Reads the tracked, PII-free per-platform actor aggregates + a PI-owned labels
-# sidecar, and WRITES one Quarto page per published actor, three platform hubs,
+# sidecar, and WRITES one Quarto page per published actor, six platform hubs,
 # and a catalog index, then appends a run entry to the log.
 #
-#   INPUTS  : data/processed/{web,youtube,facebook}_actors.rds   (read-only)
+#   INPUTS  : data/processed/{web,youtube,facebook,instagram,tiktok,twitter}_actors.rds
 #             resources/dictionaries/source_labels.csv           (PI-owned)
 #   OUTPUTS : pages/izvori/<platform>-<slug>.qmd                 (one per actor)
-#             pages/izvori/platforma-{web,youtube,facebook}.qmd  (hubs)
+#             pages/izvori/platforma-<platform>.qmd              (hubs)
 #             pages/izvori/index.qmd                             (catalog)
 #             pages/izvori/_log.md                               (append-only)
 #
@@ -40,9 +40,20 @@ platforms <- list(
 if (!dir.exists(proc_dir)) stop("Missing ", proc_dir, " -- run from the repo root.")
 if (!dir.exists(out_dir))  dir.create(out_dir, recursive = TRUE)
 if (!file.exists(sidecar)) stop("Missing sidecar ", sidecar)
+if (!file.exists(file.path(proc_dir, "platform_summary.rds"))) {
+  stop("Missing data/processed/platform_summary.rds; run the aggregate pipeline first.")
+}
 
 GEN_DATE <- format(Sys.Date(), "%Y-%m-%d")
 RUN_TS   <- format(Sys.time(), "%Y-%m-%d %H:%M")
+
+coverage <- as.data.frame(readRDS(file.path(proc_dir, "platform_summary.rds")))
+stopifnot(all(c("year", "SOURCE_TYPE", "total_posts") %in% names(coverage)))
+coverage_year_min <- min(as.integer(coverage$year), na.rm = TRUE)
+coverage_year_max <- max(as.integer(coverage$year), na.rm = TRUE)
+coverage_years_hr <- sprintf("%d.–%d.", coverage_year_min, coverage_year_max)
+coverage_platform_count <- length(unique(as.character(coverage$SOURCE_TYPE)))
+coverage_rows <- sum(as.numeric(coverage$total_posts), na.rm = TRUE)
 
 ## ---- helpers --------------------------------------------------------------
 # Bullet-proof UTF-8 writer (Windows-safe: explicit bytes, no locale surprises).
@@ -136,6 +147,31 @@ make_actor_page <- function(row, pkey, pub) {
   plat <- platforms[[pkey]]
   name <- row$FROM; ty <- row$typology
   ipp  <- if (row$total_posts > 0) round(row$total_interactions / row$total_posts) else 0
+  evidence_note <- if (row$total_posts < 20) {
+    c(
+      "::: {.callout-caution}",
+      paste0(
+        "Ovo je **vrlo tanak profil** temeljen na ", fmt_int(row$total_posts),
+        " objava. Prikazan je radi potpunosti kataloga, ali rang i tipologiju ne treba ",
+        "tumačiti kao stabilnu procjenu aktera."
+      ),
+      ":::",
+      ""
+    )
+  } else if (row$total_posts < 200) {
+    c(
+      "::: {.callout-note}",
+      paste0(
+        "Profil se temelji na ", fmt_int(row$total_posts),
+        " objava i zato ima status **provisionalnog profila**. Pokazatelji opisuju ",
+        "zabilježeni uzorak, a ne cjelokupno djelovanje aktera."
+      ),
+      ":::",
+      ""
+    )
+  } else {
+    character()
+  }
 
   desc_line <- if (row$description == "")
     "*Opis još nije potvrđen — uređuje PI.*" else row$description
@@ -169,6 +205,7 @@ make_actor_page <- function(row, pkey, pub) {
     "",
     metric_grid(row$total_posts, row$total_interactions, row$total_reach),
     "",
+    evidence_note,
     paste0("Po volumenu objava, ", name, " je na **", row$rank, ". mjestu** od ", row$n_platform,
            " praćenih izvora na platformi ", plat$display, ". Prosječno ostvaruje **",
            fmt_int(ipp), " interakcija po objavi**."),
@@ -192,9 +229,12 @@ make_actor_page <- function(row, pkey, pub) {
            "generirano skriptom `R/wiki_sources.R` (", GEN_DATE, ")."),
     "",
     "::: {.callout-warning}",
-    paste0("Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** ",
-           "i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode ",
-           "prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno."),
+    paste0(
+      "Brojke su **indikativne**. Agregati obuhvaćaju razdoblje **", coverage_years_hr,
+      "** i svih **", coverage_platform_count, "** vrsta izvora zastupljenih u korpusu, uključujući ",
+      "Instagram i TikTok; 2026. je nepotpuna godina. Volumen se zbraja preko promjene metode ",
+      "prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    ),
     ":::",
     ""
   )
@@ -242,9 +282,16 @@ for (pkey in names(platforms)) {
   df$status      <- ifelse(is.na(idx), "", side$status[idx])
   df$description <- ifelse(is.na(idx), "", side$description[idx])
 
-  # publish gate: institutions AND individuals with publish=yes; only publish=no (noise/held) excluded
+  # Editorial publish gate comes from the reviewed sidecar. Corpus volume does
+  # not silently delete a reviewed actor; instead, thin profiles are visibly
+  # tiered and caveated on their page.
   is_pub <- df$publish == "yes"
   pub <- df[is_pub, , drop = FALSE]
+  pub$evidence_tier <- ifelse(
+    pub$total_posts < 20,
+    "vrlo tanak",
+    ifelse(pub$total_posts < 200, "provisionalan", "stabilniji")
+  )
   pubs[[pkey]] <- pub
   counts_pub[pkey] <- nrow(pub)
 
@@ -310,7 +357,8 @@ idx_lines <- c(
          "a poveznice pripadnost platformi i zajednički brend."),
   "",
   "::: {.callout-note}",
-  paste0("Podaci dolaze iz agregata `data/processed/*_actors.rds` (bez osobnih podataka). ",
+  paste0("Podaci dolaze iz agregata `data/processed/*_actors.rds` (bez osobnih podataka) i obuhvaćaju **",
+         fmt_int(coverage_rows), "** objava u razdoblju **", coverage_years_hr, "**. ",
          "Katalog je **radna verzija**: uređivačke oznake (konfesionalni/sekularni izvor) ",
          "prijedlozi su koje potvrđuje voditelj projekta, a brojke su indikativne (statični ",
          "agregati; mnogi akteri na novim platformama imaju tek nekoliko objava). Trenutno je ",

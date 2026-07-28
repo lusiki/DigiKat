@@ -1,0 +1,9 @@
+archive/
+docs/
+_freeze/
+README_files/
+quality_reports/
+preview/
+studies/*/output/private/
+studies/*/output/intermediate/
+data/

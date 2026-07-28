@@ -1,0 +1,46 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  pipeline-and-site:
+    runs-on: windows-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: "4.6.0"
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-renv@v2
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Validate shared logic and the synthetic pipeline
+        shell: pwsh
+        run: |
+          Rscript tests/run_tests.R
+          Rscript R/check_sources.R
+          Rscript R/check_disclosure.R
+          Rscript R/00_setup.R
+          Rscript R/03_aggregate.R --master=data/sample/merged_sample.rds --output-dir="${{ runner.temp }}/processed"
+          Rscript R/04_nlp.R --build --master=data/sample/merged_sample.rds
+
+      - name: Render the full site
+        shell: pwsh
+        run: |
+          Copy-Item data/sample/merged_sample.rds data/merged_comprehensive.rds
+          quarto render
+
+      - name: Check rendered local links
+        shell: pwsh
+        run: Rscript R/check_site_links.R

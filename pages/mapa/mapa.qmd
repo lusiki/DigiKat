@@ -38,9 +38,9 @@ Kvantitativna analiza medijskog sadržaja je provedena kako bi se identificirale
 
 Tri glavna pitanja su u pozadini ove mape:
 
-* Gdje se odvija rasprava? Ovdje su analizirane glavne platforme, uključujući web portale, YouTube, Facebook i druge digitalne prostore. 
+* Gdje se odvija rasprava? Ovdje su analizirane glavne platforme, uključujući web portale, YouTube, Facebook i druge digitalne prostore.
 
-* Tko su glavni akteri? Ovdje su identificirani najproduktivniji i najutjecajniji medijski izvori. 
+* Tko su glavni akteri? Ovdje su identificirani najproduktivniji i najutjecajniji medijski izvori.
 
 * Kakva je dinamika utjecaja? Ovdje su uspoređeni doseg i angažman u cilju razumijevanja različitih strategija komunikacijskog djelovanja.
 
@@ -78,107 +78,6 @@ Korpus objedinjuje dva vremenski odvojena toka prikupljanja (`data_source`): kon
 
 
 
-
-```{r}
-#| label: data-preparation
-#| eval: false
-#| echo: false
-
-# Superseded by R/03_aggregate.R (run `Rscript R/03_aggregate.R` from the repo root).
-# Kept for reference only (eval:false): this page no longer reads the master or writes
-# data/processed/*.rds during render (CLAUDE.md principle 4).
-
-dta <- readRDS("../../data/merged_comprehensive.rds")
-# remove tiktok and missing SOURCE_TYPE
-dta <- dta %>%
-  filter(SOURCE_TYPE != "tiktok", !is.na(SOURCE_TYPE)) %>%
-  mutate(
-    SOURCE_TYPE = factor(SOURCE_TYPE, levels = c("web", "youtube", "facebook", "twitter", "reddit", "forum", "comment"))
-  ) %>%
-  # filter data from 2021-01-01 to 2025-12-31
-  filter(DATE >= as.Date("2021-01-01") & DATE <= as.Date("2025-12-31")) %>%
-  filter(year >= 2021 & year <= 2025)
-
-# 3. platform_summary
-platform_summary <- dta %>%
-  group_by(year, SOURCE_TYPE) %>%
-  summarise(
-    total_posts        = n(),
-    total_interactions = sum(INTERACTIONS, na.rm=TRUE),
-    total_reach        = sum(REACH, na.rm=TRUE)
-  ) %>%
-  ungroup()
-saveRDS(platform_summary, "../../data/processed/platform_summary.rds")
-
-# 4. proportions_summary
-proportions_summary <- platform_summary %>%
-  group_by(year) %>%
-  mutate(
-    post_share        = total_posts / sum(total_posts),
-    interaction_share = total_interactions / sum(total_interactions),
-    reach_share       = total_reach / sum(total_reach)
-  ) %>%
-  ungroup()
-saveRDS(proportions_summary, "../../data/processed/proportions_summary.rds")
-
-# 5. source_summary & top_sources_by_year
-source_summary <- dta %>%
-  filter(!is.na(FROM)) %>%
-  group_by(year, FROM) %>%
-  summarise(
-    productivity        = n(),
-    total_interactions  = sum(INTERACTIONS, na.rm=TRUE),
-    avg_engagement_rate = mean(ENGAGEMENT_RATE, na.rm=TRUE),
-    total_reach         = sum(REACH, na.rm=TRUE)
-  ) %>%
-  ungroup()
-saveRDS(source_summary, "../../data/processed/source_summary.rds")
-
-top_sources_by_year <- source_summary %>%
-  group_by(year) %>%
-  slice_max(order_by = total_interactions, n = 15) %>%
-  ungroup()
-
-saveRDS(top_sources_by_year, "../../data/processed/top_sources_by_year.rds")
-
-# 6. top_XX_sources for web/youtube/facebook
-for(pl in c("web","youtube","facebook")) {
-  df <- dta %>%
-    filter(SOURCE_TYPE == pl, !is.na(FROM)) %>%
-    group_by(FROM) %>%
-    summarise(
-      total_posts        = n(),
-      total_interactions = sum(INTERACTIONS, na.rm=TRUE),
-      total_reach        = sum(REACH, na.rm=TRUE)
-    ) %>%
-    ungroup() %>%
-    slice_max(order_by = total_interactions, n = 20)
-
-  saveRDS(df, file = sprintf("../../data/processed/top_%s_sources.rds", pl))
-}
-
-# 7. web_actors / youtube_actors / facebook_actors
-get_top_actors <- function(data, platform_filter) {
-  platform_data <- data %>%
-    filter(SOURCE_TYPE == platform_filter & !is.na(FROM)) %>%
-    group_by(FROM) %>%
-    summarise(
-      total_posts        = n(),
-      total_interactions = sum(INTERACTIONS, na.rm=TRUE),
-      total_reach        = sum(REACH, na.rm=TRUE)
-    ) %>% ungroup()
-
-  top_by_interactions <- slice_max(platform_data, order_by = total_interactions, n = 15)
-  top_by_reach        <- slice_max(platform_data, order_by = total_reach, n = 15)
-  bind_rows(top_by_interactions, top_by_reach) %>%
-    distinct(FROM, .keep_all = TRUE)
-}
-
-for(pl in c("web","youtube","facebook")) {
-  actors <- get_top_actors(dta, pl)
-  saveRDS(actors, file = sprintf("../../data/processed/%s_actors.rds", pl))
-}
-```
 
 ```{r}
 #| label: load-data
@@ -287,7 +186,7 @@ print(plot_interactions)
 
 Apsolutni brojevi korisni su za razumijevanje razmjera, ali relativni udjeli otkrivaju pravu dinamiku unutar ekosustava. Sljedeća vizualizacija stoga uspoređuje udio svake platforme u ukupnom broju objava, interakcija i dosega.
 
-## Relativna važnost platformi 
+## Relativna važnost platformi
 
 Ova vizualizacija daje dodatni uvid u asimetriju utjecaja različitih platformi. Na lijevom panelu, koji prikazuje objave, web čini približno tri četvrtine svih objava. U srednjem panelu, koji prikazuje interakcije, udio weba pada na približno dvije trećine, dok udio YouTubea i Facebooka zamjetno raste. Na desnom panelu, koji prikazuje doseg, vidljiv je sličan trend gdje web gubi dio svoje prevlasti u korist društvenih i video platformi.
 

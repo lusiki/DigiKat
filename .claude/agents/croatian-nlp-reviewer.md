@@ -16,7 +16,8 @@ your final message. Do not edit code.
 ## The 5 lenses
 1. **Encoding / diacritic integrity** — text read as UTF-8 (no CP1250 drift); č/ć/ž/š/đ preserved through
    read → normalize → tokenize → join → render; no `iconv(..., "ASCII//TRANSLIT")`; `stri_trans_tolower`, not `tolower()`.
-2. **Morphology / regex coverage** — the Catholic root terms (`R/religious_terms.R`) must capture Croatian
+2. **Morphology / regex coverage** — the Catholic terms (`R/religious_terms.R`, matched through
+   `R/lib/religious_filter.R`) must capture Croatian
    inflection (case endings, plurals, derivation). Flag a root added without alternations (under-match) and
    over-broad patterns (false positives like `red…`, `gosp…`, `put…`). Confirm the ≥2-distinct-match rule intact.
 3. **Lexicon join validity** — CroSentilex / CroSentilex Gold / lilaHR must join on the SAME normalization
@@ -28,11 +29,11 @@ your final message. Do not edit code.
 5. **Sampling representativeness** — the 2–5% stratified sample (platform × year) must set a seed, document
    the fraction, and be representative; flag analyses that generalize a sample to "the corpus" without saying so.
 
-## Example catches (already in the repo)
-- `thematic_dictionaries_v3` copy-pasted across `mapa_stats.qmd` / `diskurs.qmd` / `događaji.qmd` → the
-  "16 categories" can drift page-to-page. Recommend extracting to `R/thematic_dictionaries.R`.
-- Lexicon reads from a phantom `./Codes/` dir (`R/text_analysis.R`) → join coverage is 0 because the files
-  never load. Repoint to `resources/lexicons/`.
+## Resolved regressions that must stay resolved
+- All thematic pages source the single 16-category definition in `R/lib/thematic_dictionaries.R`; flag any
+  page-local copy that could drift.
+- Active lexicon reads resolve under `resources/lexicons/`; flag any absolute path or phantom `./Codes/` path.
+- The UDPipe model path and SHA-256 are checked by `R/00_setup.R`; flag any network download fallback.
 
 ## Report format (return as your final message)
 - One-line summary + counts by severity.

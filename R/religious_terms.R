@@ -20,7 +20,7 @@ religious_terms <- data.frame(
     "bolesničko pomazanje", "jezuiti", "papinstvo", "hostija", "vazmeno trodnevlje", "sveta krunica",
     "neokaljano srce", "zaređenje", "apostolsko nasljeđe", "nicejsko vjerovanje", "župnik"
   ),
-  
+
   root = c(
     "biskup", "đakon", "blagoslov", "kardinal", "biskup", "otac",
     "pap", "vatikan", "bazilik", "križ", "biskup", "mis",
@@ -39,7 +39,7 @@ religious_terms <- data.frame(
     "pomazan", "jezuit", "pap", "hostij", "trodnevlj", "krunic",
     "src", "zared", "nasljeđ", "vjerovan", "župnik"
   ),
-  
+
   regex = c(
     "biskup[aeiou]?[mnjstz]*",
     "đakon[aeiou]?[mnstz]*",
@@ -137,7 +137,7 @@ religious_terms <- data.frame(
     "nicejsk[aeiou][jmstz]*\\s+vjerovan[aeiou]?[jmstz]*",
     "župn[io][kč][aeiou]?[jmstz]*"
   ),
-  
+
   stringsAsFactors = FALSE
 )
 

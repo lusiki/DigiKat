@@ -1,0 +1,15 @@
+"entity","stream","n","n_months","peakedness_cv","modal_peak_month","years_peaking_that_month","n_years"
+"stepinac","original_dta",6832,43,0.76,2,3,4
+"stepinac","filtered_religious",2999,18,0.62,2,1,2
+"vjeronauk","original_dta",9739,43,0.48,3,2,4
+"vjeronauk","filtered_religious",5179,18,0.28,10,1,2
+"katolicka_skola","original_dta",14344,43,0.44,4,1,4
+"katolicka_skola","filtered_religious",7889,18,0.27,10,1,2
+"odgoj_vrijednosti","original_dta",36927,43,0.44,12,2,4
+"odgoj_vrijednosti","filtered_religious",45098,18,0.26,10,1,2
+"redovi_orders","original_dta",46545,43,0.42,6,2,4
+"redovi_orders","filtered_religious",33417,18,0.23,10,1,2
+"rituali","original_dta",14593,43,0.54,8,3,4
+"rituali","filtered_religious",9870,18,0.3,8,2,2
+"strossmayer","original_dta",2984,43,0.58,1,1,4
+"strossmayer","filtered_religious",2188,18,0.34,7,1,2

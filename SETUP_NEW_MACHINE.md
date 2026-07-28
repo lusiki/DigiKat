@@ -1,98 +1,137 @@
-# SETUP_NEW_MACHINE.md — continuing DigiKat on another computer
+# Setting up DigiKat on a new machine
 
-Practical checklist for picking up DigiKat work on a second machine. Written 2026-07-22.
-Companion to `CLAUDE.md` (project rules) and `CLAUDE.local.md` (machine paths — **not** in git; see §3).
+Use a normal local Git clone for code and transfer restricted data separately. Keeping `.git` inside a
+live Dropbox folder is discouraged because sync conflict resolution can corrupt Git objects and refs.
 
----
+## 1. Install prerequisites
 
-## 0. TL;DR — three transport channels
+- Git
+- R 4.2 or newer; the current lock was captured with R 4.6.0
+- Quarto; the current checked version is 1.9.38
+- Rtools matching the installed R version if a package must compile
+- optional semantic search: Ollama with the `bge-m3` model
 
-Files reach the new machine by **one of three routes**, and the big data does not travel by git:
+Verify the command locations instead of hard-coding a versioned path:
 
-| Route | Carries | Caveat |
-|---|---|---|
-| **GitHub** (`git clone/pull`) | all tracked code + docs: `R/**`, `pages/**`, `data/processed/*.rds` aggregates, the udpipe model | the master, backups, and the semantic store are **gitignored** |
-| **Dropbox** (folder sync) | everything in the repo folder Dropbox does not ignore — incl. the **1.2 GB master** and any git-untracked working files | only if the new clone sits in the **same Dropbox account**; `data/semantic/` is Dropbox-ignored so it does **not** sync |
-| **Manual copy** (USB / transfer) | **`data/semantic/digikat.ragnar.duckdb` (13.6 GB)** — the only artifact neither git nor Dropbox carries | copy it, or rebuild (§4) |
-
-**Decide first: does the new clone live inside the same Dropbox account, or outside it?**
-- *Inside Dropbox* → master + untracked files sync for free, but you inherit the `.git`-in-Dropbox hazard
-  (rewritten SHAs, render file-locks — see `CLAUDE.local.md`). Pause Dropbox before any full render / pipeline run.
-- *Outside Dropbox (recommended for a clean git history)* → clone from GitHub, then **manually copy** the master
-  and the semantic store.
-
----
-
-## 1. Get the code
-
+```powershell
+where.exe git
+where.exe Rscript
+where.exe quarto
+Rscript --version
+quarto --version
 ```
+
+## 2. Clone and restore
+
+```powershell
 git clone https://github.com/lusiki/DigiKat.git
 cd DigiKat
-git pull            # make sure you have the latest (incl. the study + semantic-script commits)
+Rscript -e "renv::restore()"
+Rscript R/00_setup.R
+Rscript tests/run_tests.R
+Rscript R/check_disclosure.R
+Rscript R/00_run_all.R --sample
 ```
 
-This brings all scripts, pages, tracked aggregates (`data/processed/*.rds`), and the udpipe model.
+This establishes a working public development environment without the restricted corpus.
 
-## 2. Move the two big data artifacts (neither is in git)
+`CLAUDE.local.md` is intentionally gitignored. Create it only if local automation needs machine paths
+or storage notes; do not put secrets in it.
 
-| File | Size | How to get it there |
+## 3. Transfer restricted assets
+
+An authorized pipeline machine may also need:
+
+| Asset | Destination | Required for |
 |---|---|---|
-| `data/merged_comprehensive.rds` (master, ≈710k×47) | 1.2 GB | Dropbox sync, or copy into `data/` |
-| `data/semantic/digikat.ragnar.duckdb` (vector store) | 13.6 GB | **manual copy** into `data/semantic/`, or rebuild (§4) |
+| master corpus | `data/merged_comprehensive.rds` | full validation, aggregate and NLP rebuilds |
+| raw/new input batches | `data/raw/new/` | incremental ingestion |
+| current NLP generation + manifest | `data/nlp/` | production analytical pages |
+| semantic prepared corpus + manifest | `data/semantic/` | store validation or rebuild |
+| Ragnar DuckDB + manifest | `data/semantic/` | semantic querying and validation |
+| private study outputs | `studies/<study>/output/private/` | authorized study continuation |
 
-Optional: `data/*_backup_*.rds` (master backups) — copy only if you want the safety net.
-Skip the `data/semantic/*_test*.duckdb` and `corpus_prepared.rds` — not needed to query.
+Transfer these through an approved encrypted channel. Do not add them to Git, email attachments,
+issues, or public cloud shares. File sizes can change; verify hashes rather than relying on a historical
+size.
 
-## 3. Recreate `CLAUDE.local.md` (it is gitignored — machine-specific)
+After transfer:
 
-It will **not** arrive via git. Copy this machine's version as a template and edit the paths for the new box:
-- `R_AVAILABLE`, and the `Rscript.exe` path (this machine: `C:\Program Files\R\R-4.4.1\bin\Rscript.exe`)
-- the Quarto path (this machine: RStudio-bundled `...\RStudio\resources\app\bin\quarto\bin\quarto.exe`)
-- master location + backup names
-- the Dropbox-hazard note if the new clone is inside Dropbox
-
-## 4. Semantic database (Level 3 meaning-search)
-
-**To QUERY the existing store** you need FOUR things (see `R/semantic/README.md`):
-1. the `.duckdb` file copied to `data/semantic/digikat.ragnar.duckdb` (§2)
-2. R packages: `ragnar`, `duckdb`, `ellmer`, `uwot`, `here`
-3. **Ollama installed + running + `ollama pull bge-m3`** — query text is embedded at search time, so the model
-   must be live at `localhost:11434` **even just to search** (not only to build)
-4. then: `source('R/semantic/12_query.R'); dk_retrieve('hodočašće u Mariju Bistricu')`
-
-**To REBUILD from scratch** (instead of copying the 13.6 GB file):
+```powershell
+Rscript R/00_run_all.R
 ```
-Rscript R/semantic/10_prep.R      # master → data/semantic/corpus_prepared.rds
-Rscript R/semantic/11_build.R     # embeds ~710k posts + builds index  (⚠ ~9–10 hours)
+
+This validates the full generation without replacing it.
+
+## 4. Semantic search
+
+Install and start Ollama, then:
+
+```powershell
+ollama pull bge-m3
+Rscript R/semantic/11_build.R
+Rscript -e "source('R/semantic/12_query.R'); print(dk_retrieve('hodočašće u Mariju Bistricu'))"
 ```
-→ **Copying the file beats rebuilding** unless you can't move it. Either way, Ollama + bge-m3 must be present.
 
-## 5. R environment
+The first R command is validation-only. If no store was transferred:
 
-There is **no `renv.lock`** yet, so package versions are not pinned — reinstall by hand:
-- **Semantic:** `ragnar`, `duckdb`, `ellmer`, `uwot`, `here`
-- **Pipeline / analysis:** `data.table`, `readxl`, `dplyr`, `tidyr`, `stringi`, `ggplot2`, `udpipe`
-- Prefer **R ≥ 4.2** (native UTF-8 on Windows) so Croatian diacritics (č ć ž š đ) round-trip (`croatian-encoding` rule).
+```powershell
+Rscript R/semantic/10_prep.R
+Rscript R/semantic/11_build.R --build
+```
 
-Consider running `/capture-environment` before/after the move to write `renv.lock` + `ENVIRONMENT.md` and pin versions.
+For replacement of an existing store use `--rebuild`. The builder writes a separate database, validates
+its schema, counts, IDs, and indexes, and only then retains the old store and activates the new one.
+Never place a live DuckDB database in a synchronized folder.
+
+## 5. Production data workflow
+
+Preview incoming data:
+
+```powershell
+Rscript R/append_new_data.R
+```
+
+Review the JSON report before:
+
+```powershell
+Rscript R/append_new_data.R --apply
+```
+
+Preview all aggregate outputs:
+
+```powershell
+Rscript R/03_aggregate.R
+```
+
+Only after review and explicit authorization:
+
+```powershell
+Rscript R/03_aggregate.R --apply
+Rscript R/04_nlp.R --build
+```
+
+These steps have independent gates by design; a site render never creates production aggregates.
 
 ## 6. Quarto
 
-Standalone install, or RStudio-bundled. **Always render from the REPO ROOT** (never `cd pages && quarto render`)
-— see the MEMORY.md hard-won lesson about scattering output and emptying `docs/`.
+Always render from the repository root:
 
-## 7. Data that stays local (not in git, by design)
+```powershell
+quarto render
+Rscript R/check_site_links.R
+```
 
-The following are **gitignored** (large and/or hold raw post text / URLs → disclosure risk on a public repo).
-They travel via **Dropbox only**, and are regenerable from the master + scripts:
-- study data outputs: `studies/*/output/*.rds`, most `output/*.csv` coding sheets and samples
-- `R/semantic/*_sample.rds`, sample figures
-- `data/nlp/`, `data/raw/` (`.xlsx`)
+The full render writes `docs/`. Do not render from inside `pages/`, do not hand-edit `docs/`, and do not
+publish a sample-NLP render as the production site.
 
-Aggregate, PII-free outputs that ARE shareable live in `data/processed/*.rds` (tracked) — never broaden the
-gitignore to drop those.
+## 7. Final machine check
 
----
-
-**Sanity check after setup:** `git status` clean · master loads in R · Ollama running · `dk_retrieve("test")`
-returns Croatian snippets with intact diacritics · a single `quarto render pages/<page>.qmd` builds from the root.
+- `git status --short` shows only intentional work.
+- `renv::status()` reports the project synchronized.
+- `R/00_run_all.R --sample` passes.
+- On authorized machines, `R/00_run_all.R` passes.
+- The model hash matches `ENVIRONMENT.md`.
+- Croatian text round-trips with `č ć ž š đ`.
+- Semantic queries work if that optional layer is installed.
+- Full site render and local-link crawl pass before publication.

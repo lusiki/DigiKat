@@ -5,10 +5,12 @@
 # pre-prereg reliability check that decides at which level H1/H4 are tested (CODEBOOK.md; the sister
 # study's register kappa was 0.46, the number to beat). Adjudicates majority labels -> coded_core.csv.
 #
-# Annotator files: output/coding_sheet_ann*.csv (>=2). Self-test: pass --selftest.
-#   "/c/Program Files/R/R-4.4.1/bin/Rscript.exe" studies/moral-economy/04_iaa_validation.R
+# Annotator files: output/private/coding_sheet_ann*.csv (>=2). Self-test: pass --selftest.
+#   Rscript studies/moral-economy/04_iaa_validation.R
 suppressPackageStartupMessages({ library(here); library(dplyr) })
 out_dir <- here::here("studies/moral-economy/output")
+private_dir <- file.path(out_dir, "private")
+dir.create(private_dir, recursive = TRUE, showWarnings = FALSE)
 
 AXES <- c("ax1_link_genuine","ax2_geography","ax3_actor_commentator",
           "ax4_register","ax5_poverty_split","ax6_ksn_principle","ax7_encyclical")
@@ -46,8 +48,8 @@ if ("--selftest" %in% commandArgs(trailingOnly = TRUE)) {
   cat("(expect 4-way ~0.6-0.75; 3-way >= 4-way since it merges the two object codes)\n"); quit(save = "no")
 }
 
-files <- list.files(out_dir, pattern = "^coding_sheet_ann.*\\.csv$", full.names = TRUE)
-if (length(files) < 2) stop("Need >=2 annotator files output/coding_sheet_ann*.csv. (Run coding first; or --selftest.)")
+files <- list.files(private_dir, pattern = "^coding_sheet_ann.*\\.csv$", full.names = TRUE)
+if (length(files) < 2) stop("Need >=2 annotator files output/private/coding_sheet_ann*.csv. (Run coding first; or --selftest.)")
 ann <- lapply(files, read.csv, fileEncoding = "UTF-8", stringsAsFactors = FALSE)
 cat("Annotators:", length(ann), "| rows:", nrow(ann[[1]]), "\n")
 ids <- ann[[1]]$rid

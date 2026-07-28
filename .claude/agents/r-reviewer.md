@@ -1,6 +1,6 @@
 ---
 name: r-reviewer
-description: Reviews DigiKat R code (and R chunks in .qmd) for reproducibility, path portability, silent data loss, performance on the ~610k-row data.table, and Croatian encoding hand-off. Use when R scripts or qmd analysis chunks are written or changed, or invoked by /data-analysis. Read-only; returns a prioritized findings report, applies no fixes.
+description: Reviews DigiKat R code (and R chunks in .qmd) for reproducibility, path portability, silent data loss, performance on the 710k-row corpus, and Croatian encoding hand-off. Use when R scripts or qmd analysis chunks are written or changed, or invoked by /data-analysis. Read-only; returns a prioritized findings report, applies no fixes.
 model: sonnet
 tools: ["Read", "Grep", "Glob", "Bash"]
 maxTurns: 15
@@ -14,9 +14,8 @@ reproducibility matter more than style. Produce a prioritized findings report; d
 Return the report as your final message.
 
 ## What to check
-1. **Path portability** — flag ANY absolute path (`C:/Users/...`, Dropbox), any `./Codes/...`, any
-   `setwd()`. Require repo-relative paths via `here::here()`. (Known offenders to confirm fixed:
-   `R/text_analysis.R` `./Codes/` lexicon reads; `R/write_tokens.R` Dropbox rules/transformations.)
+1. **Path portability** — flag ANY committed absolute path (`C:/Users/...`, Dropbox), any `./Codes/...`,
+   or any `setwd()`. Require repo-relative paths. Machine-only paths belong in ignored `CLAUDE.local.md`.
 2. **Reproducibility** — `set.seed(YYYYMMDD)` once at top of any script with sampling/randomness; flag a
    bare `set.seed(123)`; flag a missing seed where sampling occurs (the 2–5% stratified sample); flag
    missing `renv` pinning where relevant.
@@ -24,8 +23,8 @@ Return the report as your final message.
    silent row drops, especially in the religious filter and the qmd aggregation chunks.
 4. **Master safety** — flag any `saveRDS()` writing the master without a prior timestamped backup; flag
    any `saveRDS()` into `data/` from inside a `.qmd` (a render must not write data — the `mapa.qmd` issue).
-5. **Performance on 610k rows** — flag per-row loops over the corpus (e.g. the O(rows×terms) regex loop in
-   `load_merge_filter_religious.R`); prefer vectorized `stringi` / `data.table`. Flag loading the whole
+5. **Performance on 710k rows** — flag per-row loops over the corpus; prefer vectorized `stringi` /
+   `data.table`. The active filter is `R/01_filter.R` plus `R/lib/religious_filter.R`. Flag loading the whole
    master when a sample would do.
 6. **Encoding hand-off** — flag any `read.*` / `readLines` without explicit UTF-8 encoding; flag
    `tolower()` on Croatian text (use `stri_trans_tolower`); flag `iconv(..., "ASCII//TRANSLIT")` on corpus text.

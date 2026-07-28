@@ -1,69 +1,97 @@
-# R/semantic/ — Level 3: Meaning search
+# Semantic search — local Level 3
 
-Search the ≈710k-post corpus by **meaning**, not just keyword, and draw a 2D "meaning map"
-of themes. Every post becomes a vector (embedding) in a **local** DuckDB store; retrieval is
-hybrid vector + BM25 via [`ragnar`]. **All local — post text never leaves this machine.**
+This optional layer retrieves DigiKat records by meaning with a local `bge-m3` embedding model and a
+Ragnar DuckDB store. Post text and vectors stay on the machine running Ollama; do not replace the local
+provider with an external API for restricted corpus text.
 
-Roadmap context: `SEMANTIC-INFRASTRUCTURE-ROADMAP.md` (Level 3). Plan: `quality_reports/plans/2026-07-08_semantic-search-L3.md`.
+## Prerequisites
 
-## One-time prerequisites
-1. **Ollama** — install the Windows app (https://ollama.com/download), then in a terminal:
-   ```
-   ollama pull bge-m3
-   ```
-   Ollama must be **running** (it serves `http://localhost:11434`) whenever you build or query.
-   This is the only step Claude can't do for you (GUI installer + model download).
-2. **R packages** (already installed on this machine): `ragnar`, `duckdb`, `ellmer`, `uwot`.
-   *(Optional: `mirai` for parallel embedding — failed to compile here; not required, just slower.)*
+Restore the project R library, install Ollama, and pull the pinned model name:
 
-## Run order (from the REPO ROOT, where R + the master live)
+```powershell
+Rscript -e "renv::restore()"
+ollama pull bge-m3
 ```
-Rscript R/semantic/10_prep.R      # master  -> data/semantic/corpus_prepared.rds  (lean slice)
-Rscript R/semantic/11_build.R     # embed + store + BUILD INDEX -> data/semantic/digikat.ragnar.duckdb
+
+Ollama must be running while building or querying because query text also needs an embedding.
+
+Required R packages include `ragnar`, `duckdb`, `DBI`, `ellmer`, `dplyr`, `here`, and `digest`.
+`uwot` is needed only for a two-dimensional map.
+
+## Commands
+
+### Prepare the full corpus
+
+```powershell
+Rscript R/semantic/10_prep.R
+```
+
+The script reads the master without modifying it and stages:
+
+- `data/semantic/corpus_prepared.rds`
+- `data/semantic/corpus_prepared_manifest.json`
+
+It keeps stable hashed `doc_id`, platform, date, data-source, actor, URL, and text fields. It validates
+the staged output before replacement. Missing master data is an error; there is no silent sample fallback.
+
+For a synthetic check:
+
+```powershell
+Rscript R/semantic/10_prep.R --sample --output=<temporary-path>.rds
+```
+
+### Validate, adopt, build, or rebuild
+
+```powershell
+Rscript R/semantic/11_build.R                   # read-only validation
+Rscript R/semantic/11_build.R --adopt-existing  # fingerprint a reviewed legacy store
+Rscript R/semantic/11_build.R --build           # first build
+Rscript R/semantic/11_build.R --rebuild         # replace after separate successful build
+```
+
+`--build` and `--rebuild` write a `.building-*` database, checkpoint batches, build both vector and
+full-text indexes, validate schema/counts/document IDs, and then activate it. A prior usable database is
+moved to a timestamped `.previous-*` path only after the new store passes.
+
+For a bounded test:
+
+```powershell
+Rscript R/semantic/11_build.R --build --limit=1000
+```
+
+Use `DIGIKAT_EMBED_MODEL` and `DIGIKAT_SEMANTIC_BATCH` only when deliberately testing an alternative
+model or batch size. Boolean `DIGIKAT_SEMANTIC_REBUILD=0` is parsed as false.
+
+### Query
+
+```powershell
 Rscript -e "source('R/semantic/12_query.R'); print(dk_retrieve('hodočašće u Mariju Bistricu'))"
 ```
-- `10_prep.R` — reads the master READ-ONLY, keeps `doc_id | platform | date | data_source | actor | url | text`,
-  drops empty-text rows. Falls back to `data/sample/` if the master is absent.
-- `11_build.R` — embeds every post with `bge-m3`, inserts in 1000-row batches, then
-  **builds the index** (vss + fts). This is the step that is *silently fatal to skip*.
-  Long-running (710k embeddings). Refuses to clobber an existing store; to rebuild:
-  `DIGIKAT_SEMANTIC_REBUILD=1 Rscript R/semantic/11_build.R`.
-- `12_query.R` — **source it, don't run it.** Helpers:
-  - `dk_retrieve("question", top_k = 10)` → tidy tibble (doc_id, platform, date, data_source, similarity, snippet).
-  - `dk_umap(n = 20000)` → 2D map coords (reservoir-sampled; `n = Inf` for all) — ready to `ggplot`.
-  - `ragnar_store_atlas(dk_store())` → built-in interactive meaning-map at `http://localhost:3030`.
 
-## Guardrails / gotchas
-- `data/semantic/**` is **gitignored + Dropbox-ignored** — the `.duckdb` is large and a synced
-  DuckDB file file-locks (the Dropbox hazard in `CLAUDE.local.md`). Rebuild it locally; never commit it.
-- **Corpus caveat (MEMORY.md):** the ~2024 collection-method change confounds cross-year volume.
-  Before reading any trend from retrieved results or the map, group/colour by `data_source` + `platform`.
-- **Validation habit (roadmap §Validation):** hand-check a sample of retrievals and report retrieval
-  precision in any methods section — meaning-search is recall-friendly but not infallible.
-- Croatian diacritics (č ć ž š đ) round-trip correctly through the store (verified).
+`12_query.R` is sourced as a helper module:
 
-## What this unlocks (vs. the 16-category dictionary)
-Themes beyond the fixed categories · how far **comment discourse drifts from portal framing** ·
-**syndicated / reworded copies** (who feeds whom, with what delay) · a topic's **vocabulary migrating**
-(e.g. abortion: theological → political). *Claims about documents in bulk.*
+- `dk_retrieve(question, top_k = 10)` returns document metadata, similarity, and snippets.
+- `dk_umap(n = 20000)` creates a sampled two-dimensional coordinate table.
+- `ragnar_store_atlas(dk_store())` starts Ragnar’s local interactive atlas.
 
-## Embedding-input truncation (important methodological note)
-bge-m3's context is **8192 tokens**, and every token in one embedding batch must co-fit that window —
-so a batch packed with long portal articles is rejected by Ollama ("input length exceeds the context
-length"). `11_build.R` therefore truncates the **embed input** to the first **4000 chars** (~650 words)
-and uses embed `batch_size = 64` (the fastest batch that survives a worst-case all-longest batch,
-~21 rows/s). Consequences:
-- The **full post text is still stored** in the DuckDB `chunks.text` column and returned by
-  `dk_retrieve(..., full_text = TRUE)`; the `URL` column always links the source.
-- For the ~⅓ of posts longer than 4000 chars, only the **embedding vector** is built from the
-  lede+body. This is fine for topical/semantic retrieval; it can miss a topic that appears ONLY deep
-  in a long article — that's what chunking (below) fixes.
-- To trade time for more text, raise the truncation but LOWER the batch (measured-safe pairs:
-  `5000×48` ~16 rows/s, `6000×32` ~14 rows/s) — keep them together or long-doc batches will 400.
+## Storage and disclosure
 
-## Not yet wired (documented follow-ups)
-- **Category metadata** — the 16-cat labels aren't a stored master column (they're computed in
-  `R/04_nlp.R`); v1 store omits them. Add later by joining the dictionary tags into `10_prep.R`.
-- **Long-article chunking** — the full-fidelity fix for the truncation above: split long articles
-  with `markdown_chunk()` into a version-2 store so every part gets its own vector. Deferred; only
-  needed for a study that must retrieve deep-buried content from long articles.
+Everything under `data/semantic/` is gitignored. The directory contains corpus text, URLs, embeddings,
+and a large mutable database. Keep it on local, access-controlled storage and outside actively
+synchronized Dropbox/OneDrive directories.
+
+To move a validated store to another authorized machine, copy the database, prepared input, and both
+manifests through an approved encrypted channel. Verify with `Rscript R/semantic/11_build.R` after transfer.
+
+## Methodological constraints
+
+- The model accepts a finite context. The builder embeds the first 4,000 characters while retaining the
+  full text in the store. A topic appearing only deep in a long article can therefore be missed.
+- Retrieval is recall-friendly, not a gold label. Hand-check a documented sample and report precision
+  for any study that turns retrieval into a substantive claim.
+- Time comparisons must account for platform and `data_source`, especially around the approximate 2024
+  collection-method seam.
+- Meaning-search complements rather than replaces the shared 16-category dictionary.
+
+Long-article chunking and category metadata are intentionally future schema versions; they should not be
+added silently to the existing store because either change alters the unit of retrieval.

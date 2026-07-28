@@ -30,6 +30,10 @@ Ključni pokazatelji ovog izvora u korpusu:
 </div>
 </div>
 
+::: {.callout-caution}
+Ovo je **vrlo tanak profil** temeljen na 2 objava. Prikazan je radi potpunosti kataloga, ali rang i tipologiju ne treba tumačiti kao stabilnu procjenu aktera.
+:::
+
 Po volumenu objava, Neven Barkovic je na **17. mjestu** od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje **555 interakcija po objavi**.
 
 ## Tipologija
@@ -46,9 +50,9 @@ Uređivačka oznaka: **ostalo** *(predloženo — potvrđuje PI)*
 
 ## Izvori podataka
 
-Podaci: `data/processed/twitter_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-02).
+Podaci: `data/processed/twitter_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-28).
 
 ::: {.callout-warning}
-Brojke su **indikativne**. Agregati su statični snimak razdoblja **2021.–2025.** i ne uključuju Instagram i TikTok. Volumen se zbraja preko promjene metode prikupljanja (~2024.), pa apsolutne vrijednosti valja tumačiti oprezno.
+Brojke su **indikativne**. Agregati obuhvaćaju razdoblje **2021.–2026.** i svih **9** vrsta izvora zastupljenih u korpusu, uključujući Instagram i TikTok; 2026. je nepotpuna godina. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
 :::
 

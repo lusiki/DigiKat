@@ -35,7 +35,7 @@ Scripts: `scratchpad/0{0..4}_*.R` (ephemeral) → durable outputs in `output/`.
 
 ## §6 sanity checks
 - **Check #1 (precision): PASS.** 18-context eyeball = genuine price-rise references; **zero** "price of
-  salvation" false positives. Anchoring worked. (`output/fp_sample_60.csv` for the full hand-check.)
+  salvation" false positives. Anchoring worked. (`output/private/fp_sample_60.csv` for the restricted full hand-check.)
 - **Check #2 (do they cover it at all): the "absence" is real and survives an adversarial recall probe.**
   A deliberately broad cost-of-living net raised the Catholic rate 14× (→2.6%), **but** the extra hits are
   almost entirely the homonym **`egzistencija`** (existential, theological) — *not* economic. After
@@ -84,14 +84,15 @@ re-centering the design on Catholic outlets and treating the secular field as th
 > flag, genuine linkage fell **31.6% → 14.4%** (1,422 false links removed), foreign inflation = 31.6% of
 > inflation posts, and the clean core is **858 DOMESTIC religion-linked posts (10.6%)**. Registers among
 > those 858 (overlap): **clergy/Church 55%**, **everyday cost of religious life 41%**, **structural/CST 7%**,
-> **charity 8%**. Artifacts: `output/*_v2.{csv,png}`, `linkage_coding_sheet_v2.csv`. The pre-tightening
+> **charity 8%**. Artifacts: disclosure-reviewed `output/*_v2.{csv,png}` plus the restricted
+> `output/private/linkage_coding_sheet_v2.csv`. The pre-tightening
 > numbers below are kept only to show the size of the correction.
 
 **Unit:** the **religion × inflation intersection** — posts where religion is salient (≥2-match corpus)
 *and* inflation is discussed, wherever they occur. **RQ:** when inflation enters religion-salient Croatian
 digital discourse, (a) is the link genuine or incidental, (b) who carries it, (c) in what register?
 Religion side uses the project lexicon (`R/religious_terms.R`, 95 terms). Artifacts: `output/linkage_*`,
-`output/modes_by_year.*`, `output/linkage_coding_sheet.csv` (per-post sheet for hand-coding).
+`output/modes_by_year.*`, `output/private/linkage_coding_sheet.csv` (restricted per-post sheet for hand-coding).
 
 ## The pivotal measurement — genuine linkage vs incidental co-occurrence
 Of **8,105** inflation posts in the religion corpus, only **2,558 (31.6%)** have a religious term **within
@@ -123,7 +124,7 @@ and shock-responsive.
 
 ## Refined next steps (this direction)
 1. **Tighten the linkage detector** (drop `županija`/`papučar`/metaphor; geo-scope to Croatia) and re-run → clean linked set.
-2. **Hand-validate** ~150 linked + 50 incidental from `linkage_coding_sheet.csv` → precision/recall on linkage + register (the methods backbone).
+2. **Hand-validate** ~150 linked + 50 incidental from `output/private/linkage_coding_sheet.csv` → precision/recall on linkage + register (the methods backbone).
 3. **Add the 5th register** ("Church as economic actor/affected") to the codebook.
 4. **Actor map**: tie producers of genuine linkage to the project's actor typology (Giants/Community Builders/…).
 5. **HICP overlay** on genuine-linkage monthly volume (does the *linked* discourse track real food/energy prices?).

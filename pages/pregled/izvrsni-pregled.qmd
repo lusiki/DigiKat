@@ -7,7 +7,6 @@ toc: false
 categories: ["Izvršni pregled", "2021.–2026."]
 format:
   html:
-    embed-resources: true
     anchor-sections: false
 ---
 
@@ -34,7 +33,12 @@ source("../../R/theme_digikat.R")
 platform_summary <- readRDS("../../data/processed/platform_summary.rds")
 source_summary   <- readRDS("../../data/processed/source_summary.rds")
 
-fmt_int <- function(x) formatC(x, format = "d", big.mark = ".")
+fmt_int <- function(x) formatC(
+  x,
+  format = "d",
+  big.mark = ".",
+  decimal.mark = ","
+)
 fmt_pct <- function(x, d = 1) paste0(formatC(x, format = "f", digits = d, decimal.mark = ","), " %")
 # Engleska varijanta postotka (decimalna točka)
 fmt_pct_en <- function(x, d = 1) paste0(formatC(x, format = "f", digits = d, decimal.mark = "."), " %")
@@ -335,7 +339,7 @@ Prominent examples of sources include the confessional hkm.hr, index.hr and bitn
 :::
 :::
 
-![](../../docs/pages/mapa/mapa_files/figure-html/plot-actor-map-1.png){fig-alt="Trodijelna točkasta karta aktera po dosegu i angažmanu za web, YouTube i Facebook, s medijanskim linijama koje dijele četiri kvadranta arhetipova."}
+![](../mapa/mapa_files/figure-html/plot-actor-map-1.png){fig-alt="Trodijelna točkasta karta aktera po dosegu i angažmanu za web, YouTube i Facebook, s medijanskim linijama koje dijele četiri kvadranta arhetipova."}
 
 <div class="izvor-caption"><span class="lang-hr">Karta utjecaja aktera: doseg (okomito) i angažman (vodoravno), po platformama; veličina točke je broj objava. Izvor:</span><span class="lang-en">Actor influence map: reach (vertical) and engagement (horizontal), by platform; point size is the number of posts. Source:</span> <a href="https://lusiki.github.io/DigiKat/pages/mapa/mapa.html">Mapa ekosustava</a></div>
 
@@ -389,7 +393,7 @@ This is a qualitative pattern, not a single percentage. Two independent methods 
 :::
 :::
 
-![](../../docs/pages/mapa/mapa_stats_files/figure-html/plot-topic-network-1.png){fig-alt="Mrežni graf šesnaest tematskih kategorija u kojem se teme grupiraju u dva klastera: pastoralni i društveno-politički."}
+![](../mapa/mapa_stats_files/figure-html/plot-topic-network-1.png){fig-alt="Mrežni graf šesnaest tematskih kategorija u kojem se teme grupiraju u dva klastera: pastoralni i društveno-politički."}
 
 <div class="izvor-caption"><span class="lang-hr">Mreža povezanosti tematskih kategorija: dvije jasno odvojene skupine tema, pastoralna i društveno-politička. Izvor:</span><span class="lang-en">Network of thematic-category links: two clearly separated groups of topics, pastoral and socio-political. Source:</span> <a href="https://lusiki.github.io/DigiKat/pages/mapa/mapa_stats.html">Tematske struje</a></div>
 
