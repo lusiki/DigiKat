@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-07-28 07:26:34 UTC",
+  "generated_utc": "2026-07-28 10:06:36 UTC",
   "generator": "R/04_nlp.R",
   "provenance": "adopted_existing_after_membership_and_alignment_validation",
   "inputs": {
     "master": {
       "path": "data/merged_comprehensive.rds",
-      "bytes": 1187912348,
-      "modified_utc": "2026-06-29 06:21:38 UTC",
-      "sha256": "789fdc6ff710b5f5289ec81444876c1af56ffc8d2d30f220335ec7b853c9e59f"
+      "bytes": 1187912384,
+      "modified_utc": "2026-07-28 10:02:38 UTC",
+      "sha256": "dd671e45882e1379418a0844a237f74402856133fd432ec9d42b4a7a1c3f2d35"
     },
     "model": {
       "path": "resources/models/croatian-set-ud-2.5-191206.udpipe",

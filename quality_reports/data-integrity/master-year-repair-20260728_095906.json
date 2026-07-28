@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-07-28 09:59:42 UTC",
+  "generator": "R/repair_master_year.R",
+  "mode": "preview",
+  "master_before": {
+    "path": "data/merged_comprehensive.rds",
+    "bytes": 1187912348,
+    "modified_utc": "2026-06-29 06:21:38 UTC",
+    "sha256": "789fdc6ff710b5f5289ec81444876c1af56ffc8d2d30f220335ec7b853c9e59f"
+  },
+  "schema": {
+    "rows": 710307,
+    "columns": 47,
+    "names": ["DATE", "TIME", "TITLE", "FROM", "AUTHOR", "URL", "URL_PHOTO", "SOURCE_TYPE", "GROUP_NAME", "KEYWORD_NAME", "FOUND_KEYWORDS", "LANGUAGES", "LOCATIONS", "TAGS", "MANUAL_SENTIMENT", "AUTO_SENTIMENT", "MENTION_SNIPPET", "REACH", "VIRALITY", "ENGAGEMENT_RATE", "INTERACTIONS", "FOLLOWERS_COUNT", "LIKE_COUNT", "COMMENT_COUNT", "SHARE_COUNT", "TWEET_COUNT", "LOVE_COUNT", "WOW_COUNT", "HAHA_COUNT", "SAD_COUNT", "ANGRY_COUNT", "TOTAL_REACTIONS_COUNT", "FAVORITE_COUNT", "RETWEET_COUNT", "VIEW_COUNT", "DISLIKE_COUNT", "COUNT", "REPOST_COUNT", "REDDIT_TYPE", "REDDIT_SCORE", "INFLUENCE_SCORE", "TWEET_TYPE", "TWEET_SOURCE_NAME", "TWEET_SOURCE_URL", "FULL_TEXT", "year", "data_source"],
+    "classes": ["character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "character", "logical", "logical", "character", "character", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "logical", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "numeric", "logical", "numeric", "character", "numeric", "numeric", "character", "character", "character", "character", "numeric", "character"]
+  },
+  "mismatch_count": 987,
+  "mismatch_transitions": [
+    {
+      "stored": "2023",
+      "derived": "2022",
+      "Freq": 493
+    },
+    {
+      "stored": "2024",
+      "derived": "2023",
+      "Freq": 494
+    }
+  ],
+  "examples": [
+    {
+      "row": 257773,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    },
+    {
+      "row": 257774,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    },
+    {
+      "row": 257775,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    },
+    {
+      "row": 257776,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    },
+    {
+      "row": 257777,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    },
+    {
+      "row": 257778,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    },
+    {
+      "row": 257779,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    },
+    {
+      "row": 257780,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    },
+    {
+      "row": 257781,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    },
+    {
+      "row": 257782,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    },
+    {
+      "row": 257783,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    },
+    {
+      "row": 257784,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    },
+    {
+      "row": 257785,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    },
+    {
+      "row": 257786,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    },
+    {
+      "row": 257787,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    },
+    {
+      "row": 257788,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    },
+    {
+      "row": 257789,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    },
+    {
+      "row": 257790,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    },
+    {
+      "row": 257791,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    },
+    {
+      "row": 257792,
+      "DATE": "2022-12-31",
+      "stored_year": 2023,
+      "derived_year": 2022
+    }
+  ],
+  "invariant": "year is the integer calendar year derived from DATE",
+  "status": "preview_only"
+}

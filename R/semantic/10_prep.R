@@ -42,9 +42,6 @@ if (!file.exists(input)) {
     call. = FALSE
   )
 }
-if (!requireNamespace("digest", quietly = TRUE)) {
-  stop("Package 'digest' is required for stable document IDs.", call. = FALSE)
-}
 
 cat("Reading corpus:", input, if (use_sample) "(synthetic fixture)\n" else "(protected master)\n")
 corpus <- readRDS(input)
@@ -82,31 +79,12 @@ empty <- is.na(lean$text) | !nzchar(lean$text)
 if (any(empty)) cat("Dropping", sum(empty), "row(s) with empty FULL_TEXT.\n")
 lean <- lean[!empty, , drop = FALSE]
 
-cat("Creating stable semantic document IDs...\n")
-identity_material <- paste(
-  lean$platform,
-  as.character(lean$date),
-  ifelse(is.na(lean$url), "", lean$url),
-  ifelse(is.na(lean$actor), "", lean$actor),
-  substr(lean$text, 1L, 500L),
-  sep = "\u241F"
-)
-identity_hash <- vapply(
-  identity_material,
-  digest::digest,
-  character(1L),
-  algo = "xxhash64",
-  serialize = FALSE,
-  USE.NAMES = FALSE
-)
-occurrence <- ave(seq_along(identity_hash), identity_hash, FUN = seq_along)
-duplicate_identity <- duplicated(identity_hash) | duplicated(identity_hash, fromLast = TRUE)
-doc_id <- paste0("dk_", identity_hash)
-doc_id[duplicate_identity] <- paste0(
-  doc_id[duplicate_identity],
-  "_",
-  sprintf("%03d", occurrence[duplicate_identity])
-)
+cat("Creating store-compatible semantic document IDs...\n")
+# The production store was built with row-stable sequential IDs. The master is
+# append-only and the preparation step preserves row order, so retaining this
+# contract avoids a 710,307-document embedding rebuild after metadata-only
+# master corrections. A future ID migration must rebuild the store explicitly.
+doc_id <- sprintf("dk_%08d", seq_len(nrow(lean)))
 if (anyDuplicated(doc_id)) stop("Stable semantic document IDs are not unique.", call. = FALSE)
 
 lean$doc_id <- doc_id
@@ -138,7 +116,7 @@ manifest <- list(
   transformation = list(
     input_rows = input_rows,
     dropped_empty_text_rows = sum(empty),
-    stable_id_algorithm = "xxhash64(platform, date, url, actor, first_500_text_chars) + duplicate occurrence",
+    document_id_algorithm = "dk_ + zero-padded 8-digit prepared-row number (append-only row-order contract)",
     field_map = as.list(column_map)
   )
 )

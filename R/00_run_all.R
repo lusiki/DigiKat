@@ -76,9 +76,21 @@ if (use_sample) {
       )
     )
   }
+  if (from <= 5L) {
+    run_step(
+      "sample page-ready summaries",
+      "R/05_page_summaries.R",
+      c(
+        "--build",
+        paste0("--nlp-dir=", file.path(temporary_root, "nlp")),
+        paste0("--output-dir=", file.path(temporary_root, "page-ready"))
+      )
+    )
+  }
 } else {
   if (from <= 3L) run_step("aggregate preview", "R/03_aggregate.R")
   if (from <= 4L) run_step("NLP validation", "R/04_nlp.R")
+  if (from <= 5L) run_step("page-ready summary validation", "R/05_page_summaries.R")
   if (from <= 11L && file.exists("data/semantic/digikat.ragnar.duckdb")) {
     run_step("semantic-store validation", "R/semantic/11_build.R")
   }

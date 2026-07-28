@@ -24,125 +24,29 @@ knitr::opts_chunk$set(
 #| label: libraries
 #| include: false
 
-# Učitavanje svih potrebnih paketa
+# Učitavanje paketa potrebnih samo za prikaz već validiranih sažetaka
 library(scales)
-library(patchwork)
 library(dplyr)
-library(tidytext)
 library(stringr)
 library(ggplot2)
 source("../../R/theme_digikat.R")
-library(forcats)
-library(tidyr)
-library(widyr)
 library(ggraph)
 library(igraph)
-library(data.table)
-library(readxl)
 library(ggrepel)
 ```
 
 ```{r}
-#| label: load-lexicons
+#| label: load-page-summary
+#| include: false
 
-# FAZA 1: UČITAVANJE I PRIPREMA SVIH LEKSIKONA
-# Ovaj chunk učitava sve potrebne jezične resurse i pretvara ih u uredan (tidy)
-# format spreman za spajanje s lingvističkim podacima.
-# Ključni koraci su forsiranje UTF-8 kodiranja i standardizacija formata.
-
-# 1.1: CroSentilex (fina skala sentimenata)
-# Učitavamo pozitivne i negativne liste i odmah ih spajamo u jedan leksikon
-# sa standardiziranom numeričkom skalom.
-crosentilex_full <- bind_rows(
-  # Učitavanje negativnih riječi
-  read.delim("../../resources/lexicons/crosentilex-negatives.txt",
-             header = FALSE, sep = " ", stringsAsFactors = FALSE, fileEncoding = "UTF-8") %>%
-    rename(word = "V1", sentiment_value = "V2") %>%
-    mutate(sentiment_value = -sentiment_value), # Pretvaramo score u negativan
-
-  # Učitavanje pozitivnih riječi
-  read.delim("../../resources/lexicons/crosentilex-positives.txt",
-             header = FALSE, sep = " ", stringsAsFactors = FALSE, fileEncoding = "UTF-8") %>%
-    rename(word = "V1", sentiment_value = "V2") # Score je već pozitivan
-) %>%
-  as_tibble() # Pretvaramo u tibble radi bolje konzistentnosti
-
-# 1.2: CroSentilex-Gold (kategorički sentiment)
-# Učitavamo zlatni standard i pretvaramo tekstualne oznake u numeričku skalu
-crosentilex_gold_prepared <- read.delim2("../../resources/lexicons/gs-sentiment-annotations.txt",
-                                         header = FALSE, sep = " ", stringsAsFactors = FALSE, fileEncoding = "UTF-8") %>%
-  rename(word = "V1", sentiment_str = "V2") %>%
-  mutate(
-    sentiment_value = case_when(
-      sentiment_str == "+" ~ 1,
-      sentiment_str == "-" ~ -1,
-      TRUE ~ 0
-    )
-  ) %>%
-  select(word, sentiment_value) %>%
-  as_tibble()
-
-# 1.3: NRC Leksikon Emocija (za psihološke procese)
-# Učitavamo NRC leksikon, pretvaramo ga u dugi format i prevodimo na hrvatski.
- nrc_lexicon_raw <- read_excel("../../resources/dictionaries/lilaHR_clean.xlsx", sheet = "Sheet1") %>%
-                    select(-"...1") %>%
-                    rename(word = HR)
-
-# Rječnik za prevođenje engleskih naziva emocija
- emotion_translator_hr <- c(
-   "Anger" = "Ljutnja", "Anticipation" = "Iščekivanje", "Disgust" = "Gađenje",
-   "Fear" = "Strah", "Joy" = "Radost", "Sadness" = "Tuga",
-   "Surprise" = "Iznenađenje", "Trust" = "Povjerenje"
- )
-
- nrc_lexicon_long <- nrc_lexicon_raw %>%
-   pivot_longer(
-     cols = all_of(names(emotion_translator_hr)), # Koristimo samo 8 glavnih emocija
-     names_to = "emotion",
-     values_to = "value"
-   ) %>%
-   filter(value == 1) %>% # Zadržavamo samo postojeće veze riječ-emocija
-   mutate(emotion = recode(emotion, !!!emotion_translator_hr)) %>% # Prevodimo na hrvatski
-   select(word, emotion)
-```
-
-```{r}
-#| label: data-preparation
-
-# Uzorak (2%, sjeme 123, 2021.–2026.) i udpipe lingvističke anotacije s usklađenim doc_id-em
-# produciraju se skriptom R/04_nlp.R (`Rscript R/04_nlp.R` iz korijena repozitorija) — ova
-# stranica ih samo čita (nema ponovnog uzorkovanja ni čitanja matičnog skupa pri renderiranju).
-sample_proportion <- 0.02
-dta_stratified_sample <- readRDS("../../data/nlp/diskurs_sample.rds")
-
-# Lingvističke anotacije (udpipe) za isti uzorak — usklađene preko doc_id-a.
-nlp_results_df <- readRDS("../../data/nlp/diskurs_tokens.rds") %>%
-  mutate(doc_id = as.integer(doc_id))
-
-# Tematska klasifikacija
-source("../../R/lib/thematic_dictionaries.R", encoding = "UTF-8")
-thematic_dictionaries_v3 <- digikat_thematic_dictionaries
-
-# Definicija funkcije za izračun scoreova
-calculate_theme_scores <- function(text, dictionaries) {
-  text_lower <- tolower(text)
-  total_words <- str_count(text_lower, "\\w+")
-  if (total_words == 0) return(NULL)
-  scores <- purrr::map(dictionaries, ~sum(str_count(text_lower, .x)))
-  normalized_scores <- purrr::map(scores, ~(.x / total_words) * 1000)
-  names(normalized_scores) <- paste0("norm_", names(scores))
-  scores_vec <- unlist(scores)
-  if(all(scores_vec == 0)){
-    dominant_topic <- "Nema Teme"
-  } else {
-    dominant_topic <- names(scores)[which.max(scores_vec)]
-  }
-  return(c(as.list(scores), as.list(normalized_scores), dominant_topic = dominant_topic))
-}
-
-# Primjena funkcije i stvaranje finalnog obogaćenog dataseta
-theme_analysis_data <- purrr::map_dfr(dta_stratified_sample$FULL_TEXT, ~calculate_theme_scores(., thematic_dictionaries_v3))
-dta_enriched <- bind_cols(dta_stratified_sample, theme_analysis_data)
+# Teški izračuni nad uzorkom i 9,5 milijuna tokena izvode se jednom skriptom
+# R/05_page_summaries.R. Stranica čita samo provjerene ulaze za grafikone.
+source("../../R/lib/page_summaries.R", encoding = "UTF-8")
+digikat_load_page_summary(
+  "../../data/page-ready/diskurs.rds",
+  "diskurs",
+  envir = environment()
+)
 ```
 
 ## Uvod u analizu emocionalne i konfliktne strukture diskursa
@@ -182,100 +86,6 @@ Korpus objedinjuje dva vremenski odvojena toka prikupljanja (`data_source`): kon
 
 Za kvalitetno razumijevanje atmosfere potrebno je razlikovati dvije dimenzije. Prva se odnosi na tonalitet, odnosno pozitivnu ili negativnu obojenost teksta mjerenu leksičkim tonalitetom. Druga se odnosi na psihološke procese, odnosno emocionalne okvire poput straha, nade, povjerenja ili ljutnje kroz koje se poruka artikulira i koji aktiviraju specifične kognitivne i afektivne odgovore kod publike.
 
-```{r}
-#| label: analyze-atmosphere
-#| include: false
-
-# FAZA 3: ANALIZA ATMOSFERE (SVE NA JEDNOM MJESTU)
-# Ovaj chunk uzima obogaćene podatke iz prethodnog koraka i dodaje sve
-# metrike atmosfere: Sentiment, Dominantnu Emociju, CLI i RCI.
-# Rezultat je jedan, konačni dataframe dta_final za sve vizualizacije.
-
-# Izračun frekvencija riječi
-lemmatized_words_with_freq <- nlp_results_df %>%
-  count(doc_id, lemma, name = "word_frequency")
-
-# Izračun Sentiment Score-a (CroSentilex-Gold)
-sentiment_counts_gold <- lemmatized_words_with_freq %>%
-  inner_join(crosentilex_gold_prepared, by = c("lemma" = "word")) %>%
-  filter(sentiment_value != 0) %>%
-  count(doc_id, sentiment_value) %>%
-  pivot_wider(names_from = sentiment_value, values_from = n, values_fill = 0)
-
-if (!"1" %in% names(sentiment_counts_gold)) { sentiment_counts_gold <- sentiment_counts_gold %>% mutate(`1` = 0) }
-if (!"-1" %in% names(sentiment_counts_gold)) { sentiment_counts_gold <- sentiment_counts_gold %>% mutate(`-1` = 0) }
-
-document_sentiments_gold <- sentiment_counts_gold %>%
-  rename(positive_words = `1`, negative_words = `-1`) %>%
-  mutate(sentiment_score_gold = (positive_words - negative_words) / (positive_words + negative_words + 1e-6)) %>%
-  select(doc_id, sentiment_score_gold)
-
-# Izračun Dominantne Emocije (NRC)
-document_emotions <- lemmatized_words_with_freq %>%
-  inner_join(nrc_lexicon_long, by = c("lemma" = "word")) %>%
-  group_by(doc_id, emotion) %>%
-  summarise(total_freq = sum(word_frequency), .groups="drop") %>%
-  group_by(doc_id) %>%
-  slice_max(order_by = total_freq, n = 1, with_ties = FALSE) %>%
-  ungroup() %>%
-  select(doc_id, dominant_emotion = emotion)
-
-# Izračun Indeksa Konflikta (CLI i RCI)
-conflict_lexicon <- unique(c(
-  (nrc_lexicon_long %>% filter(emotion %in% c("Ljutnja", "Gađenje", "Strah")) %>% pull(word)),
-  (crosentilex_full %>% filter(sentiment_value <= -0.75) %>% pull(word)),
-  c("laž", "skandal", "napad", "radikalan", "ideologija", "licemjerje", "sramotno", "mržnja", "podjela", "raskol", "manipulacija", "propaganda", "ekstrem", "kontroverz", "sukob", "kriza")
-))
-
-cli_scores <- lemmatized_words_with_freq %>%
-  mutate(is_conflict = lemma %in% conflict_lexicon) %>%
-  group_by(doc_id) %>%
-  summarise(
-    total_words = sum(word_frequency),
-    conflict_words = sum(word_frequency[is_conflict])
-  ) %>%
-  mutate(cli = (conflict_words / total_words) * 1000) %>% ungroup()
-
-dta_temp <- dta_enriched %>%
-  left_join(document_sentiments_gold, by = "doc_id") %>%
-  left_join(document_emotions, by = "doc_id") %>%
-  left_join(cli_scores %>% select(doc_id, cli), by = "doc_id") %>%
-  mutate(
-    sentiment_score = ifelse(is.na(sentiment_score_gold), 0, sentiment_score_gold),
-    dominant_emotion = ifelse(is.na(dominant_emotion), "Neutralno", dominant_emotion),
-    cli = ifelse(is.na(cli), 0, cli)
-  )
-
-avg_cli_media <- dta_temp %>% group_by(FROM) %>% summarise(avg_cli_media = mean(cli))
-avg_cli_topic <- dta_temp %>% group_by(dominant_topic) %>% summarise(avg_cli_topic = mean(cli))
-
-dta_final <- dta_temp %>%
-  left_join(avg_cli_media, by = "FROM") %>%
-  left_join(avg_cli_topic, by = "dominant_topic") %>%
-  mutate(
-    expected_cli = 0.5 * avg_cli_media + 0.5 * avg_cli_topic,
-    rci = cli - expected_cli
-  )
-
-# Spajanje svega u jedan dataframe za vizualizacije
-dta_atmosphere <- dta_enriched %>%
-  left_join(document_sentiments_gold, by = "doc_id") %>%
-  left_join(document_emotions, by = "doc_id") %>%
-  mutate(
-    sentiment_score = ifelse(is.na(sentiment_score_gold), 0, sentiment_score_gold),
-    dominant_emotion = ifelse(is.na(dominant_emotion), "Neutralno", dominant_emotion)
-  )
-
-# Priprema podataka za vizualizaciju
-heatmap_data <- dta_atmosphere %>%
-  filter(dominant_topic != "Nema Teme") %>%
-  group_by(dominant_topic, dominant_emotion) %>%
-  summarise(avg_sentiment = mean(sentiment_score),
-            n_articles = n(), .groups = "drop") %>%
-  ungroup() %>%
-  filter(n_articles > 3)
-```
-
 ### Matrica tonaliteta i psiholoških procesa
 
 Sljedeća vizualizacija predstavlja dvodimenzionalnu matricu koja prikazuje interakciju između tematskih kategorija i psiholoških procesa. Boja svake ćelije označava prosječni tonalitet tekstova koji pripadaju kombinaciji određene teme i emocionalnog okvira. Plave nijanse označavaju pozitivan tonalitet, crvene nijanse negativan, dok desni stupac agregira prosječni tonalitet svake tematske kategorije.
@@ -288,12 +98,13 @@ Sljedeća vizualizacija predstavlja dvodimenzionalnu matricu koja prikazuje inte
 ggplot(heatmap_data, aes(x = dominant_emotion, y = dominant_topic, fill = avg_sentiment)) +
   geom_tile(color = dk_col$paper, linewidth = 0.5) +
   geom_text(aes(label = round(avg_sentiment, 2)), size = 4, color = dk_col$ink) +
-  scale_fill_digikat_diverging(name = "Prosj. Sentiment") +
+  scale_fill_digikat_diverging(name = "Prosj. tonalitet") +
+  scale_y_discrete(labels = digikat_topic_label) +
   theme_digikat(base_size = 16) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   labs(
     title = "Matrica tonaliteta prema tematskim kategorijama i psihološkim okvirima",
-    subtitle = "Boja ćelije predstavlja prosječni sentiment unutar svake kombinacije teme i dominantne emocije",
+    subtitle = "Boja ćelije predstavlja prosječni tonalitet unutar svake kombinacije teme i dominantne emocije",
     x = "Dominantni psihološki proces",
     y = "Dominantna tematska kategorija"
   )
@@ -315,35 +126,6 @@ Ljutnja u temama poput Politike i odnosa s državom nije samo statistička pojav
 
 Tradicionalne metrike intenziteta konflikta ne uzimaju u obzir kontekstualne *baseline* karakteristike. Korištenje konfliktnog vokabulara u članku o povijesnim ratnim događajima nije ekvivalentno njegovoj uporabi u članku o liturgijskim praksama. RIK predstavlja metodološku inovaciju koja mjeri koliko je pojedini tekst neočekivano agresivniji ili pomirljiviji od *baseline* očekivanja temeljenog na prosječnom diskursu njegovog izvora i njegove tematske kategorije.
 
-```{r}
-#| label: rci-calculation
-#| include: false
-
-# Izračun CLI-a
-cli_scores <- nlp_results_df %>%
-  mutate(is_conflict = lemma %in% conflict_lexicon) %>%
-  group_by(doc_id) %>%
-  summarise(
-    cli = (sum(is_conflict) / n()) * 1000
-  ) %>% ungroup()
-
-# Spajanje i izračun RCI-a
-dta_atmosphere <- dta_enriched %>%
-  left_join(cli_scores, by = "doc_id") %>%
-  mutate(cli = ifelse(is.na(cli), 0, cli))
-
-avg_cli_media <- dta_atmosphere %>% group_by(FROM) %>% summarise(avg_cli_media = mean(cli))
-avg_cli_topic <- dta_atmosphere %>% group_by(dominant_topic) %>% summarise(avg_cli_topic = mean(cli))
-
-dta_atmosphere_final <- dta_atmosphere %>%
-  left_join(avg_cli_media, by = "FROM") %>%
-  left_join(avg_cli_topic, by = "dominant_topic") %>%
-  mutate(
-    expected_cli = 0.5 * avg_cli_media + 0.5 * avg_cli_topic,
-    rci = cli - expected_cli
-  )
-```
-
 ### Tipologija medijskih strategija konfliktnog diskursa
 
 Sljedeći grafikon koristi RIK za identifikaciju i klasifikaciju medijskih strategija u korištenju konfliktnog jezika. Horizontalna os predstavlja prosječnu, baznu razinu konfliktnog jezika karakterističnu za svaki medij. Vertikalna os predstavlja varijabilnost u korištenju konfliktnog jezika, mjerenu standardnom devijacijom RIK vrijednosti. Veličina točke označava ukupnu prisutnost medija u korpusu.
@@ -354,17 +136,6 @@ Sljedeći grafikon koristi RIK za identifikaciju i klasifikaciju medijskih strat
 #| fig-height: 10
 #| warning: false
 #| message: false
-
-media_strategy_data <- dta_atmosphere_final %>%
-  group_by(FROM) %>%
-  summarise(
-    avg_cli = mean(cli, na.rm = TRUE),
-    rci_sd = sd(rci, na.rm = TRUE),
-    n_articles = n()
-  ) %>%
-  ungroup() %>%
-  filter(n_articles > 20, !is.na(rci_sd), rci_sd > 0) %>%
-  slice_max(order_by = n_articles, n = 30)
 
 ggplot(media_strategy_data, aes(x = avg_cli, y = rci_sd, size = n_articles)) +
   geom_jitter(color = dk_col$accent, alpha = 0.7, width = 0.01, height = 0.01) +
@@ -406,87 +177,6 @@ Boja veze označava prosječni tonalitet, gdje plave nijanse označavaju pozitiv
 #| warning: false
 #| message: false
 
-# Izračun frekvencija riječi
-lemmatized_words_with_freq <- nlp_results_df %>%
-  count(doc_id, lemma, name = "word_frequency")
-
-# Izračun Sentiment Score-a
-document_sentiments_gold <- lemmatized_words_with_freq %>%
-  inner_join(crosentilex_gold_prepared, by = c("lemma" = "word")) %>%
-  mutate(
-    sentiment_value = as.numeric(sentiment_value),
-    word_frequency = as.numeric(word_frequency)
-  ) %>%
-  group_by(doc_id) %>%
-  summarise(sentiment_score_gold = sum(sentiment_value * word_frequency, na.rm = TRUE)) %>%
-  ungroup()
-
-# Izračun Indeksa Konfliktnog Jezika (CLI)
-conflict_lexicon <- unique(c(
-  (nrc_lexicon_long %>% filter(emotion %in% c("Ljutnja", "Gađenje", "Strah")) %>% pull(word)),
-  (crosentilex_full %>% filter(sentiment_value <= -0.75) %>% pull(word)),
-  c("laž", "skandal", "napad", "radikalan", "ideologija", "licemjerje", "sramotno", "mržnja", "podjela", "raskol", "manipulacija", "propaganda", "ekstrem", "kontroverz", "sukob", "kriza")
-))
-
-cli_scores <- lemmatized_words_with_freq %>%
-  mutate(is_conflict = lemma %in% conflict_lexicon) %>%
-  group_by(doc_id) %>%
-  summarise(
-    total_words = sum(word_frequency),
-    conflict_words = sum(word_frequency[is_conflict])
-  ) %>%
-  mutate(cli = (conflict_words / total_words) * 1000) %>%
-  ungroup()
-
-# Spajanje svih metrika
-dta_final <- dta_enriched %>%
-  left_join(document_sentiments_gold, by = "doc_id") %>%
-  left_join(cli_scores %>% select(doc_id, cli), by = "doc_id") %>%
-  mutate(
-    sentiment_score_gold = ifelse(is.na(sentiment_score_gold), 0, sentiment_score_gold),
-    cli = ifelse(is.na(cli), 0, cli)
-  )
-
-# Izračun RCI
-avg_cli_media <- dta_final %>% group_by(FROM) %>% summarise(avg_cli_media = mean(cli))
-avg_cli_topic <- dta_final %>% group_by(dominant_topic) %>% summarise(avg_cli_topic = mean(cli))
-
-dta_final <- dta_final %>%
-  left_join(avg_cli_media, by = "FROM") %>%
-  left_join(avg_cli_topic, by = "dominant_topic") %>%
-  mutate(
-    expected_cli = 0.5 * avg_cli_media + 0.5 * avg_cli_topic,
-    rci = cli - expected_cli
-  )
-
-# Analiza mreže narativne atmosfere
-narrative_pair_data <- dta_final %>%
-  select(doc_id, sentiment_score_gold, rci, starts_with("norm_")) %>%
-  pivot_longer(
-    cols = starts_with("norm_"),
-    names_to = "topic",
-    values_to = "intensity"
-  ) %>%
-  mutate(topic = str_remove(topic, "norm_")) %>%
-  filter(intensity > 1.5) %>%
-  inner_join(., ., by = "doc_id") %>%
-  filter(topic.x < topic.y) %>%
-  select(doc_id,
-         item1 = topic.x,
-         item2 = topic.y,
-         sentiment_score = sentiment_score_gold.x,
-         rci = rci.x)
-
-graph_data <- narrative_pair_data %>%
-  group_by(item1, item2) %>%
-  summarise(
-    n = n(),
-    avg_sentiment = mean(sentiment_score, na.rm = TRUE),
-    avg_rci = mean(rci, na.rm = TRUE),
-    .groups = "drop"
-  ) %>%
-  filter(n > 10)
-
 set.seed(123)
 graph_from_data_frame(graph_data, directed = FALSE) %>%
   ggraph(layout = "fr") +
@@ -499,10 +189,14 @@ graph_from_data_frame(graph_data, directed = FALSE) %>%
       arrow = NULL
     ) +
     geom_node_point(color = dk_col$accent, size = 12) +
-    geom_node_text(aes(label = str_wrap(name, 15)), color = dk_col$ink, size = 4) +
+    geom_node_text(
+      aes(label = str_wrap(digikat_topic_label(name), 15)),
+      color = dk_col$ink,
+      size = 4
+    ) +
     scale_edge_color_gradient2(
       low = dk_col$neg, mid = dk_col$neutral, high = dk_col$pos, midpoint = 0,
-      name="Prosječni sentiment\nnarativnog okvira"
+      name="Prosječni tonalitet\nnarativnog okvira"
     ) +
     scale_edge_width(
       range = c(1, 5),

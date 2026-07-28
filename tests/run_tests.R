@@ -4,6 +4,7 @@
 source("R/lib/digikat_utils.R", encoding = "UTF-8")
 source("R/lib/religious_filter.R", encoding = "UTF-8")
 source("R/lib/thematic_dictionaries.R", encoding = "UTF-8")
+source("R/lib/page_summaries.R", encoding = "UTF-8")
 
 failures <- character()
 checks <- 0L
@@ -183,6 +184,37 @@ expect_equal(
   0L,
   "Analytical pages must source, not duplicate, the thematic dictionary"
 )
+direct_nlp_reads <- sum(vapply(
+  page_files,
+  function(path) {
+    lines <- readLines(path, encoding = "UTF-8", warn = FALSE)
+    sum(grepl("data/nlp|_tokens\\.rds|_sample\\.rds", lines))
+  },
+  integer(1L)
+))
+expect_equal(
+  direct_nlp_reads,
+  0L,
+  "Analytical pages must read compact page-ready summaries, not row-level NLP generations"
+)
+
+page_summary_schema <- digikat_page_summary_schema()
+expect_equal(
+  names(page_summary_schema),
+  c("mapa_stats", "diskurs", "dogadjaji"),
+  "Page-summary schema must cover the canonical three NLP pages"
+)
+for (page in names(page_summary_schema)) {
+  path <- file.path("data", "page-ready", paste0(page, ".rds"))
+  expect_true(file.exists(path), paste("Page-ready summary must exist:", page))
+  if (file.exists(path)) {
+    valid <- !inherits(
+      try(digikat_validate_page_summary(readRDS(path), page), silent = TRUE),
+      "try-error"
+    )
+    expect_true(valid, paste("Page-ready summary must validate:", page))
+  }
+}
 
 if (length(failures)) {
   cat("FAILED", length(failures), "of", checks, "checks:\n")

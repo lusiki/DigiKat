@@ -47,7 +47,8 @@ data/new/
 # Also Dropbox-ignored (com.dropbox.ignored attr) — a synced .duckdb would file-lock (CLAUDE.local.md).
 data/semantic/
 data/private/
-# NOTE: data/processed/*.rds and data/sample/*.rds ARE intentionally tracked (CC BY 4.0, no PII).
+# NOTE: data/processed/*.rds, data/page-ready/*.rds, and data/sample/*.rds ARE intentionally
+# tracked (CC BY 4.0, no row-level text/URLs/PII).
 # Do NOT broaden the pattern to data/**/*.rds — that would silently drop those shareable aggregates.
 
 **/*.quarto_ipynb

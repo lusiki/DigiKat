@@ -111,6 +111,13 @@ scale_fill_digikat   <- function(...) ggplot2::scale_fill_manual(values = dk_pal
 scale_colour_digikat <- function(...) ggplot2::scale_colour_manual(values = dk_palette, ...)
 scale_color_digikat  <- scale_colour_digikat
 
+# Human-readable labels for the canonical SCREAMING_SNAKE topic keys used in
+# analytical data. Keep machine keys in data; translate only at display time.
+digikat_topic_label <- function(value) {
+  label <- tolower(gsub("_", " ", as.character(value), fixed = TRUE))
+  paste0(toupper(substr(label, 1L, 1L)), substring(label, 2L))
+}
+
 # --- Diverging scales for signed values (sentiment / tonalitet around 0).
 # On-brand replacement for the firebrick/white/steelblue scales: red = negative,
 # blue = positive, cream-neutral midpoint. ---

@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-07-28 10:30:28 UTC",
+  "generator": "R/05_page_summaries.R",
+  "disclosure": "aggregate plot and table inputs only; no text, title, URL, or row-level record",
+  "inputs": {
+    "R/lib/thematic_dictionaries.R": {
+      "path": "R/lib/thematic_dictionaries.R",
+      "bytes": 3504,
+      "modified_utc": "2026-07-28 07:21:06 UTC",
+      "sha256": "a49c8b4db4b1d146aa19ff95025de47b7c6b1c8aee720db296e000e2e5e9e33e"
+    },
+    "R/lib/page_summaries.R": {
+      "path": "R/lib/page_summaries.R",
+      "bytes": 24856,
+      "modified_utc": "2026-07-28 10:26:17 UTC",
+      "sha256": "ba6eb66f2981ba32eb734652fc4dcedaf65ec30d049b221f3aadf14f113350f9"
+    },
+    "resources/lexicons/crosentilex-negatives.txt": {
+      "path": "resources/lexicons/crosentilex-negatives.txt",
+      "bytes": 642190,
+      "modified_utc": "2026-06-29 07:35:57 UTC",
+      "sha256": "93a52c91d71e4e37b6b921ac2cfff8e0fd99c50d53dcaf9a3ca61c6a4a41fe13"
+    },
+    "resources/lexicons/crosentilex-positives.txt": {
+      "path": "resources/lexicons/crosentilex-positives.txt",
+      "bytes": 641404,
+      "modified_utc": "2026-06-29 07:35:57 UTC",
+      "sha256": "7810531e2e4a55395a2c93ddef639ea62059faf5de3f7b9345bc0ebec4e7630a"
+    },
+    "resources/lexicons/gs-sentiment-annotations.txt": {
+      "path": "resources/lexicons/gs-sentiment-annotations.txt",
+      "bytes": 26629,
+      "modified_utc": "2026-06-29 07:35:57 UTC",
+      "sha256": "158e503a74fe38c130058201792b709eac8094e2d2427a951ff8dab85c354473"
+    },
+    "resources/dictionaries/lilaHR_clean.xlsx": {
+      "path": "resources/dictionaries/lilaHR_clean.xlsx",
+      "bytes": 400292,
+      "modified_utc": "2026-01-08 04:58:14 UTC",
+      "sha256": "b8fef0e9d0d69819b5b54b6f24db640e0f72f48edb36a7fc50de17371b24f143"
+    },
+    "data/nlp/manifest.json": {
+      "path": "data/nlp/manifest.json",
+      "bytes": 2189,
+      "modified_utc": "2026-07-28 10:06:39 UTC",
+      "sha256": "4abaa97928277c1c0eb23c0b7b191d03bfa481765c52ecd3ed77d0524b710ee5"
+    },
+    "data/nlp/mapa_stats_sample.rds": {
+      "path": "data/nlp/mapa_stats_sample.rds",
+      "bytes": 64166169,
+      "modified_utc": "2026-06-30 07:42:55 UTC",
+      "sha256": "138e2c8ea47c1d9bc0c071c0d817882528267a66a0d50e5d32591f3076b81d6b"
+    },
+    "data/nlp/mapa_stats_tokens.rds": {
+      "path": "data/nlp/mapa_stats_tokens.rds",
+      "bytes": 162229932,
+      "modified_utc": "2026-06-30 08:44:42 UTC",
+      "sha256": "b346b29bd0a1d5bab67ee460cbb18fd94f2fcff26d904f94b798a07ec04e437e"
+    },
+    "data/nlp/diskurs_sample.rds": {
+      "path": "data/nlp/diskurs_sample.rds",
+      "bytes": 25589032,
+      "modified_utc": "2026-06-30 09:52:02 UTC",
+      "sha256": "9e32f5471f87c6ac66fd3363b51e54a5ddbc62e2cbfc88e71a9af66348921aab"
+    },
+    "data/nlp/diskurs_tokens.rds": {
+      "path": "data/nlp/diskurs_tokens.rds",
+      "bytes": 64539550,
+      "modified_utc": "2026-06-30 10:17:56 UTC",
+      "sha256": "36867e4531ff7229133a93849d433cfd66ff6faf0aa35b701b7215479c13bb48"
+    },
+    "data/nlp/dogadjaji_sample.rds": {
+      "path": "data/nlp/dogadjaji_sample.rds",
+      "bytes": 38750086,
+      "modified_utc": "2026-06-30 08:44:58 UTC",
+      "sha256": "00ed1e4c1f6221525ca76707e0043e73557cae8b4edb6269f67f4d2f86ac6556"
+    },
+    "data/nlp/dogadjaji_tokens.rds": {
+      "path": "data/nlp/dogadjaji_tokens.rds",
+      "bytes": 97868237,
+      "modified_utc": "2026-06-30 09:23:53 UTC",
+      "sha256": "9446054cd37c80869c4c19918aba0954afecdd9cbb3aa1b548a6ad02cdd16ef5"
+    }
+  },
+  "pages": {
+    "mapa_stats": {
+      "bytes": 2161143,
+      "sha256": "86352d47f2fe6954e4d6860d6348b3c31cfb9fdbcb22e5b7b12a252684b41172",
+      "object_rows": [253373, 42, 187995, 16, 16, 50, 120],
+      "object_hashes": ["f4fad1c03ac97e8511070ba8ac0971e101443902b4aaeaa74b15118edee1999c", "4db1d55436fd803fda63dd82d9c316621c0bdd3da7630077dc744dec766f9cf8", "8e4366f1bc5e26e85ca237ec70d8022f305cb91c548446f4b3c6ef58944995db", "9cbe1a03cbb37ff7b0ef3724a45c9c66ce4649111c3a5be5c9e780e45cbf89e9", "2abed35d3740223f93423d15386e72fb1aca6600d0573f52a1a6fc2ea196e179", "f4de733dac0890144a714808c5f738c3ef79b45ff62325a660c25adc2126e4f7", "fd34155cca18b7a7a58a2a3c31321d7978b5efd29fc6523832adf03bcdcf9022"]
+    },
+    "diskurs": {
+      "bytes": 4891,
+      "sha256": "af4ccf13e148dfd800e8da555ca69de6ebe05620c4418e47bf2eab7b94e3c0ae",
+      "object_rows": [76, 30, 120],
+      "object_hashes": ["e5088b9606adf6037860859c11dfbe3e7fd517d570d94f0ec709579a9740e16b", "ca5dfc32544d0e23af200b4f5e9fca149c2d179ad65ddab4d52f31107064f9b6", "62b4cbee8816c1cee4084565b6040ee2f57b3b89061785999433a6f57a89bc6e"]
+    },
+    "dogadjaji": {
+      "bytes": 40511,
+      "sha256": "49c0d61e418d82d691e4d650281c30a811ed485ae53808ea19f2a4d57e372afe",
+      "object_rows": [1781, 16, 7, 29, 24],
+      "object_hashes": ["0e3df28b63dfab999ce5859ef776c24117df320beb72a72a1e05f0535571045a", "2f45af77eaac0958393a9f1ceeb8311da339bc204c9a17b1086f7f8f58062b00", "5d8fe6a3efdc14fea54694e3a2b0ff09c09d1fba6117be617ea6415b368ca68c", "fea12f5ea217c33e750a5750aec4fab99dddf2dfc4ea145320f83adad0bd1eaf", "9ed9835a0da1c1e5157437100fa75c5adc42f63e827050e09b28384e06860415"]
+    }
+  }
+}

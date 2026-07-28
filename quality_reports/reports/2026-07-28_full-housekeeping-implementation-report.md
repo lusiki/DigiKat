@@ -230,7 +230,8 @@ Fixture SHA-256:
 
 ### 3.7 Semantic store
 
-The semantic scripts now require explicit sample/full intent, use stable hashed document IDs, write manifests,
+The semantic scripts now require explicit sample/full intent, preserve the production store's append-only
+sequential document-ID contract, write manifests,
 checkpoint long builds, validate schema and ID alignment, and stage a build separately from the live store.
 
 The existing local store was adopted read-only after validation:

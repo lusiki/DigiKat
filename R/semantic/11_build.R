@@ -66,7 +66,8 @@ model_name <- Sys.getenv("DIGIKAT_EMBED_MODEL", unset = "bge-m3")
 insert_batch <- suppressWarnings(as.integer(Sys.getenv("DIGIKAT_SEMANTIC_BATCH", unset = "1000")))
 if (is.na(insert_batch) || insert_batch < 1L) stop("DIGIKAT_SEMANTIC_BATCH must be positive.", call. = FALSE)
 
-validate_store <- function(path, expected_rows = NULL, expected_doc_ids = NULL) {
+validate_store <- function(path, expected_rows = NULL, expected_doc_ids = NULL,
+                           expected_row_signature = NULL) {
   if (!file.exists(path)) stop("Semantic store not found: ", path, call. = FALSE)
   if (!requireNamespace("DBI", quietly = TRUE) || !requireNamespace("duckdb", quietly = TRUE)) {
     stop("Packages 'DBI' and 'duckdb' are required to validate the store.", call. = FALSE)
@@ -128,12 +129,27 @@ validate_store <- function(path, expected_rows = NULL, expected_doc_ids = NULL) 
 
   stored_doc_ids <- NULL
   if (!is.null(expected_doc_ids)) {
-    stored_doc_ids <- DBI::dbGetQuery(
+    stored_rows <- DBI::dbGetQuery(
       connection,
-      "SELECT doc_id FROM chunks ORDER BY chunk_id"
-    )$doc_id
+      paste(
+        "SELECT doc_id, platform, CAST(date AS VARCHAR) AS date,",
+        "length(text) AS text_characters",
+        "FROM chunks ORDER BY chunk_id"
+      )
+    )
+    stored_doc_ids <- stored_rows$doc_id
     if (!identical(as.character(stored_doc_ids), as.character(expected_doc_ids))) {
       stop("Semantic store document IDs do not exactly match the prepared corpus.", call. = FALSE)
+    }
+    if (!is.null(expected_row_signature)) {
+      stored_signature <- stored_rows[, c("platform", "date", "text_characters"), drop = FALSE]
+      stored_signature$date <- as.character(stored_signature$date)
+      if (!identical(stored_signature, expected_row_signature)) {
+        stop(
+          "Semantic store platform/date/text-length sequence does not match the prepared corpus.",
+          call. = FALSE
+        )
+      }
     }
   }
 
@@ -192,17 +208,24 @@ if (!is.na(limit)) prepared <- utils::head(prepared, limit)
 expected_rows <- nrow(prepared)
 
 if (adopt_existing) {
+  expected_row_signature <- data.frame(
+    platform = as.character(prepared$platform),
+    date = as.character(prepared$date),
+    text_characters = as.numeric(nchar(prepared$text, type = "chars")),
+    stringsAsFactors = FALSE
+  )
   result <- validate_store(
     store_path,
     expected_rows = expected_rows,
-    expected_doc_ids = prepared$doc_id
+    expected_doc_ids = prepared$doc_id,
+    expected_row_signature = expected_row_signature
   )
   store_info <- file.info(store_path)
   manifest <- list(
     schema_version = 1L,
     generated_utc = format(Sys.time(), tz = "UTC", usetz = TRUE),
     generator = "R/semantic/11_build.R",
-    provenance = "adopted_existing_after_exact_doc_id_and_index_validation",
+    provenance = "adopted_existing_after_exact_doc_id_row_signature_and_index_validation",
     input = c(
       digikat_file_metadata(input, include_hash = TRUE),
       list(manifest = if (file.exists(input_manifest)) gsub("\\\\", "/", input_manifest) else NULL)

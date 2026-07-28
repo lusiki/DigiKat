@@ -12,6 +12,7 @@ shares one license; third-party language resources retain their upstream terms.
 | historical January 2026 Kaggle snapshot (612,065 rows) | external | public historical release | verify the version and license on Kaggle before reuse |
 | `data/raw/**` and incoming spreadsheets | no | restricted | source-dependent |
 | `data/processed/*.rds` | yes | open aggregate outputs | project-declared CC BY 4.0 |
+| `data/page-ready/*.rds` | yes | disclosure-reviewed aggregate chart/table inputs | project-declared CC BY 4.0 |
 | `data/sample/merged_sample.rds` | yes | open, fully synthetic | project-declared CC BY 4.0 |
 | `data/nlp/**` | no | restricted/generated | contains sampled corpus text |
 | `data/semantic/**` | no | restricted/local | contains text and embeddings |
@@ -74,6 +75,16 @@ reconciliation, and a generation manifest.
 
 Aggregates can still identify public media brands through `FROM`; they do not contain post text, URLs,
 or row-level user data.
+
+## Page-ready analytical summaries
+
+`data/page-ready/` contains three compact RDS files for the NLP-backed analytical pages. They store only
+the aggregate inputs needed by published figures and tables. They contain no post text, titles, URLs, or
+row-level records. Public media brands and named public actors can appear in aggregate chart inputs.
+
+The canonical producer is `R/05_page_summaries.R`. It reads the restricted/generated NLP pairs, applies
+the same thematic, sentiment, emotion, and conflict calculations used in the original pages, validates
+the output schema, records input and object fingerprints, and installs all three files as one generation.
 
 ## Synthetic fixture
 

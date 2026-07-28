@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-07-28 08:54:49 UTC",
+  "generated_utc": "2026-07-28 10:09:00 UTC",
   "generator": "R/03_aggregate.R",
   "input": {
     "path": "data/merged_comprehensive.rds",
-    "bytes": 1187912348,
-    "modified_utc": "2026-06-29 06:21:38 UTC",
-    "sha256": "789fdc6ff710b5f5289ec81444876c1af56ffc8d2d30f220335ec7b853c9e59f"
+    "bytes": 1187912384,
+    "modified_utc": "2026-07-28 10:02:38 UTC",
+    "sha256": "dd671e45882e1379418a0844a237f74402856133fd432ec9d42b4a7a1c3f2d35"
   },
   "corpus": {
     "master_rows": 710307,
@@ -15,7 +15,7 @@
     "date_max": "2026-06-11",
     "year_min": 2021,
     "year_max": 2026,
-    "upstream_year_mismatches": 987,
+    "upstream_year_mismatches": 0,
     "source_counts": {
       "comment": 3649,
       "facebook": 89328,

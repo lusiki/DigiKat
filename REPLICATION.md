@@ -11,8 +11,9 @@ DigiKat:
 2. merges and deduplicates retained records by platform-aware canonical URL;
 3. produces 14 aggregate datasets;
 4. builds three sampled UDPipe token generations for analytical pages;
-5. renders a Quarto website; and
-6. optionally builds a local semantic-search store.
+5. reduces those generations to compact, validated page-ready summaries;
+6. renders a Quarto website; and
+7. optionally builds a local semantic-search store.
 
 The current aggregate generation covers 710,307 records, 47 master columns, nine source types, and
 2021 through June 2026. The public synthetic fixture has 2,700 records with the same 47-column schema.
@@ -24,6 +25,7 @@ The current aggregate generation covers 710,307 records, 47 master columns, nine
 | `data/sample/merged_sample.rds` | fully synthetic pipeline fixture | included |
 | `data/sample/merged_sample_manifest.json` | fixture schema, counts, and hash | included |
 | `data/processed/*.rds` | 14 disclosure-reviewed production aggregates | included |
+| `data/page-ready/*.rds` | three disclosure-reviewed NLP plot/table summaries | included |
 | `resources/**` | dictionaries, lexicons, labels, and pinned UDPipe model | included, upstream licenses apply |
 | `data/merged_comprehensive.rds` | restricted full corpus | excluded |
 | `data/raw/**` | source exports and incoming batches | excluded |
@@ -72,7 +74,8 @@ This run:
 - validates the environment and shared logic;
 - regenerates the 2,700-row deterministic synthetic fixture;
 - builds and reconciles all 14 aggregates in a temporary directory;
-- tokenizes deterministic 5%, 3%, and 2% stratified NLP samples; and
+- tokenizes deterministic 5%, 3%, and 2% stratified NLP samples;
+- builds and validates the corresponding page-ready summaries; and
 - deletes the temporary outputs after successful validation.
 
 It never reads or modifies the restricted master.
@@ -143,6 +146,17 @@ Rscript R/04_nlp.R --build       # stage, validate, and replace
 
 Each generation records input, model, sample, and token hashes. A stale manifest fails validation.
 
+### Build page-ready analytical summaries
+
+```powershell
+Rscript R/05_page_summaries.R
+Rscript R/05_page_summaries.R --build
+```
+
+The first command validates the current three-file generation. Build mode performs the expensive
+document/token calculations once and atomically installs compact chart/table inputs under
+`data/page-ready/`. Quarto pages never read `data/nlp/` directly.
+
 ### Build semantic search
 
 ```powershell
@@ -174,9 +188,10 @@ pipeline validation. Never hand-edit `docs/`.
 | `R/append_new_data.R` | preview/apply incremental ingestion with backup and URL deduplication |
 | `R/03_aggregate.R` | one canonical 14-output aggregate generation |
 | `R/04_nlp.R` | build/adopt/validate sampled UDPipe outputs |
+| `R/05_page_summaries.R` | build/validate compact inputs for the three NLP pages |
 | `R/05_codebook.R` | generate a schema-oriented codebook |
 | `R/lib/*.R` | shared CLI, hashing, URL, filter, and thematic-dictionary logic |
-| `R/semantic/10_prep.R` | prepare stable document IDs and semantic input |
+| `R/semantic/10_prep.R` | prepare store-compatible document IDs and semantic input |
 | `R/semantic/11_build.R` | stage, index, adopt, rebuild, or validate the Ragnar store |
 | `R/wiki_sources.R` | regenerate the source catalog from six actor aggregates |
 | `pages/**/*.qmd` | read-only analytical and narrative site sources |
@@ -186,9 +201,9 @@ pipeline validation. Never hand-edit `docs/`.
 | Site layer | Source | Main inputs |
 |---|---|---|
 | Mapa ekosustava | `pages/mapa/mapa.qmd` | 14 files in `data/processed/` |
-| Tematske struje | `pages/mapa/mapa_stats.qmd` | `mapa_stats_*` NLP pair + shared thematic dictionary |
-| Atmosfera diskursa | `pages/mapa/diskurs.qmd` | `diskurs_*` NLP pair + CroSentiLex/LiLaH |
-| Fokus na događaje | `pages/mapa/događaji.qmd` | `dogadjaji_*` NLP pair + shared thematic dictionary |
+| Tematske struje | `pages/mapa/mapa_stats.qmd` | `data/page-ready/mapa_stats.rds` |
+| Atmosfera diskursa | `pages/mapa/diskurs.qmd` | `data/page-ready/diskurs.rds` |
+| Fokus na događaje | `pages/mapa/događaji.qmd` | `data/page-ready/dogadjaji.rds` |
 | Katalog izvora | `pages/izvori/*.qmd` | six `*_actors.rds` aggregates + `source_labels.csv` |
 
 ## 9. Verification criteria

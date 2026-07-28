@@ -15,7 +15,7 @@ ollama pull bge-m3
 
 Ollama must be running while building or querying because query text also needs an embedding.
 
-Required R packages include `ragnar`, `duckdb`, `DBI`, `ellmer`, `dplyr`, `here`, and `digest`.
+Required R packages include `ragnar`, `duckdb`, `DBI`, `ellmer`, `dplyr`, and `here`.
 `uwot` is needed only for a two-dimensional map.
 
 ## Commands
@@ -31,8 +31,10 @@ The script reads the master without modifying it and stages:
 - `data/semantic/corpus_prepared.rds`
 - `data/semantic/corpus_prepared_manifest.json`
 
-It keeps stable hashed `doc_id`, platform, date, data-source, actor, URL, and text fields. It validates
-the staged output before replacement. Missing master data is an error; there is no silent sample fallback.
+It keeps the production store's sequential `doc_id` contract together with platform, date, data-source,
+actor, URL, and text fields. IDs remain stable while the master is append-only and row order is preserved.
+The script validates the staged output before replacement. Missing master data is an error; there is no
+silent sample fallback. A future change to content-derived IDs requires an explicit full store rebuild.
 
 For a synthetic check:
 
@@ -50,7 +52,8 @@ Rscript R/semantic/11_build.R --rebuild         # replace after separate success
 ```
 
 `--build` and `--rebuild` write a `.building-*` database, checkpoint batches, build both vector and
-full-text indexes, validate schema/counts/document IDs, and then activate it. A prior usable database is
+full-text indexes, validate schema/counts/document IDs, and then activate it. Adoption also verifies the
+complete platform/date/text-length row signature against the prepared corpus. A prior usable database is
 moved to a timestamped `.previous-*` path only after the new store passes.
 
 For a bounded test:

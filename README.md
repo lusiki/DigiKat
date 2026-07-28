@@ -24,6 +24,7 @@ Puni tekstovi, URL-ovi i redci glavne baze nisu javni zbog veličine, autorskih 
 izvornih platformi. Repozitorij zato sadrži:
 
 - 14 javnih agregatnih `.rds` datoteka u `data/processed/`;
+- tri javna, validirana sažetka za brzi prikaz NLP stranica u `data/page-ready/`;
 - potpuno sintetički testni uzorak od 2.700 redaka u `data/sample/`;
 - reproducibilni R kod, testove i Quarto izvore;
 - jezične resurse pod njihovim izvornim licencama.
@@ -58,6 +59,7 @@ bazu ni produkcijske agregate.
 | `Rscript R/03_aggregate.R` | izrađuje i validira svih 14 agregata u privremenom direktoriju |
 | `Rscript R/compare_aggregates.R --candidate-dir=PUTANJA` | samo čita i uspoređuje kandidata s produkcijskim agregatima |
 | `Rscript R/03_aggregate.R --apply` | nakon izričite potvrde zamjenjuje `data/processed/` atomskom generacijom |
+| `Rscript R/05_page_summaries.R --build` | jednom izračunava sažetke iz NLP uzoraka; stranice potom renderiraju bez učitavanja milijuna tokena |
 | `Rscript R/04_nlp.R` | provjerava postojeću NLP generaciju i njezin manifest |
 | `quarto render` | gradi cijelu stranicu u `docs/`; pokreće se samo iz korijena repozitorija |
 
@@ -70,6 +72,7 @@ Mutirajuće naredbe imaju zasebne zastavice kako pregled ili render ne bi sluča
 | `R/` | numerirani podatkovni tok, zajedničke biblioteke, provjere i generatori |
 | `pages/` | Quarto izvori mrežne stranice |
 | `data/processed/` | javni agregati koje stranice samo čitaju |
+| `data/page-ready/` | mali javni ulazi za grafikone i tablice na tri NLP stranice |
 | `data/sample/` | sintetička reprodukcijska fikstura i manifest |
 | `resources/` | rječnici, leksikoni, oznake izvora i UDPipe model |
 | `studies/` | samostalne tematske studije; redci s tekstom ostaju u `output/private/` |

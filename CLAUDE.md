@@ -46,6 +46,7 @@ R + the master dataset live on the PI's pipeline machine, NOT necessarily the ma
 - `data/raw/` — gitignored `.xlsx`; `data/raw/new/` — incremental drop-folder for appends.
 - `data/merged_comprehensive.rds` — master (≈710k × 47), **GITIGNORED**, not in repo.
 - `data/processed/*.rds` — **TRACKED** aggregates (no PII, CC BY 4.0); PI-produced, page-read-only.
+- `data/page-ready/*.rds` — **TRACKED** validated plot/table inputs for NLP pages; no row-level text or URLs.
 - `data/nlp/` — gitignored tokenized output. `resources/` — `lexicons/`, `dictionaries/`, `models/` (udpipe).
 - `docs/` — rendered site (GitHub Pages); generated — do not hand-edit.
 - `studies/` — thematic-study working folders (`_STUDY_TEMPLATE/` + one per study); published pages live in `pages/`.
@@ -67,6 +68,7 @@ R + the master dataset live on the PI's pipeline machine, NOT necessarily the ma
 | `Rscript R/append_new_data.R --apply` | verified backup, staged append, URL deduplication, atomic master replacement |
 | `Rscript R/03_aggregate.R` | build and reconcile all 14 aggregates in a temporary directory |
 | `Rscript R/03_aggregate.R --apply` | confirmation-gated production aggregate generation swap |
+| `Rscript R/05_page_summaries.R --build` | build and atomically install compact inputs for the three NLP pages |
 | `quarto render pages/mapa/<page>.qmd` | render ONE page (fast; prefer during edits) |
 | `quarto render` | full site → `docs/` (before pushing site changes) |
 | `quarto preview` | live local preview |

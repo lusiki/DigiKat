@@ -24,7 +24,7 @@ knitr::opts_chunk$set(
 #| label: libraries
 #| include: false
 
-# Učitavanje svih potrebnih paketa
+# Učitavanje paketa potrebnih samo za prikaz već validiranih sažetaka
 library(scales)
 library(patchwork)
 library(dplyr)
@@ -33,214 +33,20 @@ library(stringr)
 library(ggplot2)
 source("../../R/theme_digikat.R")
 library(forcats)
-library(tidyr)
-library(lubridate)
-library(widyr)
-library(data.table)
-library(readxl)
-library(textdata)
-library(readr)
 ```
 
 ```{r}
 #| label: data-preparation
 #| include: false
 
-# Učitavanje leksikona
-CroSentilex_n <- read.delim("../../resources/lexicons/crosentilex-negatives.txt",
-                            header = FALSE,
-                            sep = " ",
-                            stringsAsFactors = FALSE,
-                            fileEncoding = "UTF-8") %>%
-  rename(word = "V1", sentiment = "V2") %>%
-  mutate(brija = "NEG")
-
-CroSentilex_p <- read.delim("../../resources/lexicons/crosentilex-positives.txt",
-                            header = FALSE,
-                            sep = " ",
-                            stringsAsFactors = FALSE,
-                            fileEncoding = "UTF-8") %>%
-  rename(word = "V1", sentiment = "V2") %>%
-  mutate(brija = "POZ")
-
-crosentilex <- rbind(setDT(CroSentilex_n), setDT(CroSentilex_p))
-
-CroSentilex_Gold <- read.delim2("../../resources/lexicons/gs-sentiment-annotations.txt",
-                                header = FALSE,
-                                sep = " ",
-                                stringsAsFactors = FALSE) %>%
-  rename(word = "V1", sentiment = "V2")
-
-crosentilex_gold_prepared <- CroSentilex_Gold %>%
-  mutate(
-    sentiment_value = case_when(
-      sentiment == 2 ~ 1,
-      sentiment == 1 ~ -1,
-      TRUE ~ 0
-    )
-  ) %>%
-  select(word, sentiment_value)
-
-nrc_lexicon <- read_excel("../../resources/dictionaries/lilaHR_clean.xlsx", sheet = "Sheet1") %>%
-  select(-"...1")
-
-# Rječnik za prevođenje
-emotion_translator_hr <- c(
-  "Anger" = "Ljutnja",
-  "Anticipation" = "Iščekivanje",
-  "Disgust" = "Gađenje",
-  "Fear" = "Strah",
-  "Joy" = "Radost",
-  "Sadness" = "Tuga",
-  "Surprise" = "Iznenađenje",
-  "Trust" = "Povjerenje"
+# Teški izračuni nad uzorkom i 14,4 milijuna tokena izvode se jednom skriptom
+# R/05_page_summaries.R. Stranica čita samo provjerene ulaze za grafikone i tablice.
+source("../../R/lib/page_summaries.R", encoding = "UTF-8")
+digikat_load_page_summary(
+  "../../data/page-ready/dogadjaji.rds",
+  "dogadjaji",
+  envir = environment()
 )
-
-nrc_lexicon_long <- nrc_lexicon %>%
-  rename(word = HR) %>%
-  pivot_longer(
-    cols = -word,
-    names_to = "emotion",
-    values_to = "value"
-  ) %>%
-  filter(value == 1) %>%
-  select(word, emotion) %>%
-  filter(emotion != "Positive" & emotion != "Negative") %>%
-  mutate(emotion = recode(emotion, !!!emotion_translator_hr))
-
-crosentilex_full <- bind_rows(
-  read.delim("../../resources/lexicons/crosentilex-negatives.txt",
-             header = FALSE, sep = " ", stringsAsFactors = FALSE, fileEncoding = "UTF-8") %>%
-    rename(word = "V1", sentiment_value = "V2") %>%
-    mutate(sentiment_value = -sentiment_value),
-
-  read.delim("../../resources/lexicons/crosentilex-positives.txt",
-             header = FALSE, sep = " ", stringsAsFactors = FALSE, fileEncoding = "UTF-8") %>%
-    rename(word = "V1", sentiment_value = "V2")
-) %>%
-  as_tibble()
-
-crosentilex_gold_prepared <- read.delim2("../../resources/lexicons/gs-sentiment-annotations.txt",
-                                         header = FALSE, sep = " ", stringsAsFactors = FALSE, fileEncoding = "UTF-8") %>%
-  rename(word = "V1", sentiment_str = "V2") %>%
-  mutate(
-    sentiment_value = case_when(
-      sentiment_str == "+" ~ 1,
-      sentiment_str == "-" ~ -1,
-      TRUE ~ 0
-    )
-  ) %>%
-  select(word, sentiment_value) %>%
-  as_tibble()
-
-nrc_lexicon_raw <- read_excel("../../resources/dictionaries/lilaHR_clean.xlsx", sheet = "Sheet1") %>%
-  select(-"...1") %>%
-  rename(word = HR)
-
-nrc_lexicon_long <- nrc_lexicon_raw %>%
-  pivot_longer(
-    cols = all_of(names(emotion_translator_hr)),
-    names_to = "emotion",
-    values_to = "value"
-  ) %>%
-  filter(value == 1) %>%
-  mutate(emotion = recode(emotion, !!!emotion_translator_hr)) %>%
-  select(word, emotion)
-
-# Uzorak (3%, sjeme 123, 2021.–2026.) i udpipe lingvističke anotacije s usklađenim doc_id-em
-# produciraju se skriptom R/04_nlp.R (`Rscript R/04_nlp.R` iz korijena repozitorija) — ova
-# stranica ih samo čita (nema ponovnog uzorkovanja ni čitanja matičnog skupa pri renderiranju).
-sample_proportion <- 0.03
-dta_stratified_sample <- readRDS("../../data/nlp/dogadjaji_sample.rds")
-
-# Lingvističke anotacije (udpipe) za isti uzorak — usklađene preko doc_id-a.
-nlp_results_df <- readRDS("../../data/nlp/dogadjaji_tokens.rds") %>%
-  mutate(doc_id = as.integer(doc_id))
-
-# Tematska klasifikacija
-source("../../R/lib/thematic_dictionaries.R", encoding = "UTF-8")
-thematic_dictionaries_v3 <- digikat_thematic_dictionaries
-
-calculate_theme_scores <- function(text, dictionaries) {
-  text_lower <- tolower(text)
-  total_words <- str_count(text_lower, "\\w+")
-  if (total_words == 0) return(NULL)
-  scores <- purrr::map(dictionaries, ~sum(str_count(text_lower, .x)))
-  normalized_scores <- purrr::map(scores, ~(.x / total_words) * 1000)
-  names(normalized_scores) <- paste0("norm_", names(scores))
-  scores_vec <- unlist(scores)
-  if(all(scores_vec == 0)){
-    dominant_topic <- "Nema Teme"
-  } else {
-    dominant_topic <- names(scores)[which.max(scores_vec)]
-  }
-  return(c(as.list(scores), as.list(normalized_scores), dominant_topic = dominant_topic))
-}
-
-theme_analysis_data <- purrr::map_dfr(dta_stratified_sample$FULL_TEXT, ~calculate_theme_scores(., thematic_dictionaries_v3))
-dta_enriched <- bind_cols(dta_stratified_sample, theme_analysis_data)
-
-lemmatized_words_with_freq <- nlp_results_df %>%
-  count(doc_id, lemma, name = "word_frequency")
-
-sentiment_counts_gold <- lemmatized_words_with_freq %>%
-  inner_join(crosentilex_gold_prepared, by = c("lemma" = "word")) %>%
-  filter(sentiment_value != 0) %>%
-  count(doc_id, sentiment_value) %>%
-  pivot_wider(names_from = sentiment_value, values_from = n, values_fill = 0)
-
-if (!"1" %in% names(sentiment_counts_gold)) { sentiment_counts_gold <- sentiment_counts_gold %>% mutate(`1` = 0) }
-if (!"-1" %in% names(sentiment_counts_gold)) { sentiment_counts_gold <- sentiment_counts_gold %>% mutate(`-1` = 0) }
-
-document_sentiments_gold <- sentiment_counts_gold %>%
-  rename(positive_words = `1`, negative_words = `-1`) %>%
-  mutate(sentiment_score_gold = (positive_words - negative_words) / (positive_words + negative_words + 1e-6)) %>%
-  select(doc_id, sentiment_score_gold)
-
-document_emotions <- lemmatized_words_with_freq %>%
-  inner_join(nrc_lexicon_long, by = c("lemma" = "word")) %>%
-  group_by(doc_id, emotion) %>%
-  summarise(total_freq = sum(word_frequency), .groups="drop") %>%
-  group_by(doc_id) %>%
-  slice_max(order_by = total_freq, n = 1, with_ties = FALSE) %>%
-  ungroup() %>%
-  select(doc_id, dominant_emotion = emotion)
-
-conflict_lexicon <- unique(c(
-  (nrc_lexicon_long %>% filter(emotion %in% c("Ljutnja", "Gađenje", "Strah")) %>% pull(word)),
-  (crosentilex_full %>% filter(sentiment_value <= -0.75) %>% pull(word)),
-  c("laž", "skandal", "napad", "radikalan", "ideologija", "licemjerje", "sramotno", "mržnja", "podjela", "raskol", "manipulacija", "propaganda", "ekstrem", "kontroverz", "sukob", "kriza")
-))
-
-cli_scores <- lemmatized_words_with_freq %>%
-  mutate(is_conflict = lemma %in% conflict_lexicon) %>%
-  group_by(doc_id) %>%
-  summarise(
-    total_words = sum(word_frequency),
-    conflict_words = sum(word_frequency[is_conflict])
-  ) %>%
-  mutate(cli = (conflict_words / total_words) * 1000) %>% ungroup()
-
-dta_temp <- dta_enriched %>%
-  left_join(document_sentiments_gold, by = "doc_id") %>%
-  left_join(document_emotions, by = "doc_id") %>%
-  left_join(cli_scores %>% select(doc_id, cli), by = "doc_id") %>%
-  mutate(
-    sentiment_score = ifelse(is.na(sentiment_score_gold), 0, sentiment_score_gold),
-    dominant_emotion = ifelse(is.na(dominant_emotion), "Neutralno", dominant_emotion),
-    cli = ifelse(is.na(cli), 0, cli)
-  )
-
-avg_cli_media <- dta_temp %>% group_by(FROM) %>% summarise(avg_cli_media = mean(cli))
-avg_cli_topic <- dta_temp %>% group_by(dominant_topic) %>% summarise(avg_cli_topic = mean(cli))
-
-dta_final <- dta_temp %>%
-  left_join(avg_cli_media, by = "FROM") %>%
-  left_join(avg_cli_topic, by = "dominant_topic") %>%
-  mutate(
-    expected_cli = 0.5 * avg_cli_media + 0.5 * avg_cli_topic,
-    rci = cli - expected_cli
-  )
 ```
 
 ## Uvod u dinamičku analizu
@@ -287,46 +93,7 @@ Detektiraju se dva tipa anomalija. Prvi tip su vrhunci volumena produkcije, defi
 ```{r}
 #| label: standardized-anomaly-detection
 
-# Agregiramo podatke po danu
-daily_summary <- dta_final %>%
-  mutate(date = as.Date(DATE),
-         year = year(date)) %>%
-  group_by(date, year) %>%
-  summarise(
-    n_articles = n(),
-    avg_cli = mean(cli, na.rm = TRUE),
-    .groups = "drop"
-  )
-
-# Standardiziramo vrijednosti (računamo Z-score) unutar svake godine
-standardized_summary <- daily_summary %>%
-  group_by(year) %>%
-  mutate(
-    z_score_volume = (n_articles - mean(n_articles)) / sd(n_articles),
-    z_score_cli = (avg_cli - mean(avg_cli)) / sd(avg_cli)
-  ) %>%
-  ungroup()
-
-# Definiramo prag za šiljak
 spike_threshold_z <- 3
-
-# Identificiramo potrese
-spikes_detected_z <- standardized_summary %>%
-  mutate(
-    is_volume_spike = z_score_volume > spike_threshold_z,
-    is_cli_spike = z_score_cli > spike_threshold_z
-  )
-
-# Ispis datuma s anomalijama
-volume_spike_dates <- spikes_detected_z %>%
-  filter(is_volume_spike) %>%
-  select(date, n_articles, z_score_volume) %>%
-  arrange(desc(z_score_volume))
-
-cli_spike_dates <- spikes_detected_z %>%
-  filter(is_cli_spike) %>%
-  select(date, avg_cli, z_score_cli) %>%
-  arrange(desc(z_score_cli))
 
 # Vizualizacija standardiziranih vrijednosti
 p_volume_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_volume)) +
@@ -399,24 +166,13 @@ Narativni seizmograf konfiguriran je za praćenje tematske kategorije Duhovnost 
 #| message: false
 
 event_date_uskrs <- as.Date("2022-04-17")
-analysis_window_uskrs <- 14
-
-daily_duhovnost_dynamics <- dta_final %>%
-  mutate(date = as.Date(DATE)) %>%
-  group_by(date) %>%
-  summarise(
-    duhovnost_share = mean(dominant_topic == "DUHOVNOST_I_LITURGIJA", na.rm = TRUE),
-    avg_cli = mean(cli[dominant_topic == "DUHOVNOST_I_LITURGIJA"], na.rm = TRUE),
-    avg_sentiment = mean(sentiment_score[dominant_topic == "DUHOVNOST_I_LITURGIJA"], na.rm = TRUE)
-  ) %>%
-  filter(date >= (event_date_uskrs - days(analysis_window_uskrs)) & date <= (event_date_uskrs + days(analysis_window_uskrs)))
 
 ggplot(daily_duhovnost_dynamics, aes(x = date, y = duhovnost_share)) +
   geom_line(color = dk_col$faint, linewidth=1.2) +
   geom_point(aes(size = avg_cli, color = avg_sentiment)) +
   geom_vline(xintercept = event_date_uskrs, linetype = "dashed", color = dk_col$ink, linewidth=1) +
   scale_y_continuous(labels = percent_format(decimal.mark = ",")) +
-  scale_color_digikat_diverging(name="Prosječni sentiment") +
+  scale_color_digikat_diverging(name="Prosječni tonalitet") +
   scale_size_continuous(range = c(3, 14), name="Intenzitet konflikta") +
   theme_digikat(base_size = 16) +
   labs(
@@ -440,74 +196,40 @@ Pozitivan tonalitet koji karakterizira Uskrs evocira toplinu tradicije u konteks
 
 ---
 
-## Longitudinalna analiza evolucije narativa o blaženom Alojziju Stepincu
+## Usporedba dostupnih godišnjih narativa o blaženom Alojziju Stepincu
 
-Umjesto analize pojedinačnih događaja, zadnji dio ove mape istražuje kako se jedan dugotrajni i kompleksni narativ transformira kroz vrijeme. Analiza prati blaženog Alojzija Stepinca, ličnost koja okupira jedinstveno složenu poziciju u hrvatskom društvu, istovremeno reprezentirajući vjersku pobožnost, nacionalni identitet i povijesnu kontroverzu.
+Umjesto analize pojedinačnih događaja, zadnji dio ove mape uspoređuje dostupne godišnje presjeke jednog dugotrajnog i složenog narativa. Analiza prati blaženog Alojzija Stepinca, ličnost koja zauzima posebno složenu poziciju u hrvatskom društvu te istodobno predstavlja vjersku pobožnost, nacionalni identitet i povijesnu kontroverzu.
 
-Metodologija identificira koje su se riječi najsnažnije asocirale s lematiziranom formom Stepinac u svakoj promatranoj godini, te mjeri prosječni tonalitet tekstova u kojima se te specifične narativne kombinacije pojavljuju. Ovo omogućuje praćenje ne samo frekvencije asocijacija, već i atmosferskog tonaliteta narativnih okvira.
+Metodologija identificira riječi najsnažnije povezane s lematiziranom formom Stepinac i mjeri prosječni tonalitet tekstova u kojima se te kombinacije pojavljuju. Nakon filtriranja 3-postotnog uzorka dovoljno je primjera ostalo samo za 2023. i 2025. godinu. Grafikon je zato usporedba dvaju dostupnih presjeka, a ne potpuna longitudinalna serija.
 
 ```{r}
 #| label: narrative-biography-robust
 #| fig-height: 12
 #| fig-width: 14
 
-target_keyword <- "stepinac"
-docs_with_target <- nlp_results_df %>%
-  filter(lemma == target_keyword) %>%
-  distinct(doc_id) %>%
-  pull(doc_id)
-
-context_words <- nlp_results_df %>%
-  filter(doc_id %in% docs_with_target) %>%
-  filter(upos %in% c("NOUN", "ADJ")) %>%
-  filter(lemma != target_keyword) %>%
-  inner_join(dta_final %>% select(doc_id, year, sentiment_score), by = "doc_id")
-
-associated_words_atmosphere <- context_words %>%
-  group_by(year, lemma) %>%
-  summarise(
-    total_cooccurrences = n(),
-    avg_sentiment = mean(sentiment_score, na.rm = TRUE),
-    .groups = "drop"
-  )
-
-# Ensure all years in dataset are represented
-available_years <- sort(unique(associated_words_atmosphere$year))
-
-top_associated_words_final <- associated_words_atmosphere %>%
-  group_by(year) %>%
-  arrange(desc(total_cooccurrences)) %>%
-  slice_head(n = 12) %>%
-  ungroup() %>%
-  mutate(year = factor(year, levels = as.character(available_years)))
-
 ggplot(top_associated_words_final, aes(x = total_cooccurrences, y = reorder_within(lemma, total_cooccurrences, year), fill = avg_sentiment)) +
   geom_col() +
   scale_y_reordered() +
-  scale_fill_digikat_diverging(name="Prosječni sentiment\nnarativnog okvira") +
+  scale_fill_digikat_diverging(name="Prosječni tonalitet\nnarativnog okvira") +
   facet_wrap(~ year, scales = "free_y") +
   theme_digikat(base_size = 14) +
   theme(strip.text = element_text(face = "bold", size = 14)) +
   labs(
-    title = "Longitudinalna evolucija narativa o blaženom Alojziju Stepincu",
-    subtitle = "Boja stupca otkriva atmosferski tonalitet specifičnog narativnog okvira",
+    title = "Dostupni godišnji narativi o blaženom Alojziju Stepincu",
+    subtitle = "Usporedba 2023. i 2025.; boja stupca prikazuje tonalitet narativnog okvira",
     x = "Frekvencija zajedničkih pojavljivanja s lematiziranom formom Stepinac", y = "Asocirana leksička jedinica"
   )
 ```
 
-**Interpretacija temporalne evolucije narativa**
+**Interpretacija dostupnih godišnjih presjeka**
 
-Vizualizacija razotkriva suptilne, ali analitički značajne transformacije u načinu artikulacije diskursa o blaženom Alojziju Stepincu. Premda je cjelokupan tonalitet diskursa, reprezentiran nijansama plave boje, konzistentno pozitivan kroz sve promatrane godine, fokus i kontekstualni okviri narativa manifestiraju dramatične promjene.
+Vizualizacija pokazuje da je tonalitet u oba dostupna presjeka pretežno pozitivan, dok se leksički kontekst razlikuje. Zbog malog broja promatranih godina razlike se čitaju opisno i ne predstavljaju dokaz stabilnog vremenskog trenda.
 
-Početna godina razdoblja (2021.–2022.) karakterizira se dominacijom termina povezanih s ekumenskom i političkom dimenzijom. Godina 2021. ukazuje na prevlast termina poput *sps* i *pravoslavan*, što upućuje na narativ primarno ukorijenjen u ekumensko-političkim odnosima sa Srpskom pravoslavnom crkvom i problematici kanonizacije, reflektirajući trenutak intenzivnih međunacionalnih i međureligijskih rasprava. Godina 2022. manifestira proširenje asocijativnog polja na termine *rat*, *crkva* i *emisija*, signalizirajući temeljni pomak prema povijesno-medijskom okviru, gdje se raspravlja o njegovoj ulozi u Drugom svjetskom ratu, često kroz medijske formate poput emisija, dokumentaraca i javnih tribina.
+U presjeku za 2023. među istaknutim se izrazima pojavljuju *molitva*, *alojzija*, *blažen*, *krunica* i *devetnica*, uz pojmove poput *rat* i *lažan*. To upućuje na preplet pobožnog, povijesnog i polemičkog okvira unutar iste godine.
 
-Srednja godina razdoblja (2023.) reprezentira radikalni diskursni preokret. Diskursom prevladavaju termini *molitva*, *veljača*, *krunica* i *devetnica*, što predstavlja jasan prijelaz na liturgijsko-pobožni okvir, najvjerojatnije potaknut komemoracijom obljetnice njegove smrti i intenzivnim vjerskim praksama vezanim uz njegovu pobožnu memoriju.
+U presjeku za 2025. dominiraju *alojzija*, *dan*, *televizija*, *prijatelj*, *devetnica* i *crkva*, zajedno s oznakama `#stepinac` i `#izdvojiti`. Ova kombinacija pokazuje pobožni i komemorativni okvir koji se istodobno prilagođava televizijskim i društvenomrežnim formatima.
 
-Novije godine (2024.–2025.) sugeriraju nastavak dinamičke rekontekstualizacije narativa, gdje se različite semantičke dimenzije kontinuirano aktiviraju u skladu s aktualnim društvenim i medijskim kontekstima. Longitudinalna struktura koju prikazuje analiza demonstrira da narativ o Stepincu nije monolitni konstrukt, već fluidni predmet kontinuirane reinterpretacije.
-
-Ovaj pomak od ekumenskog preko povijesnog prema duhovnom nije samo statistička fluktuacija u leksičkom izboru. On odražava širi kontekst hrvatske društvene i političke dinamike. Mediji ne samo što mijenjaju teme. Oni prelaze iz političkih debata o međunacionalnim i međuvjerskim odnosima u pobožne priče o svecima i mučenicima, aktivno jačajući kulturnu baštinu kroz specifične narativne strategije. Ovaj proces rekontekstualizacije demonstrira kako se ista povijesna ličnost može funkcionalizirati za različite društvene svrhe, ovisno o trenutnim potrebama za političkom legitimacijom, povijesnom reinterpretacijom ili duhovnom mobilizacijom.
-
-Ovo predstavlja kvantitativnu evidenciju da veliki nacionalni i vjerski narativi nisu statični konstrukti. Oni se dinamički rekontekstualiziraju, prelažeći kroz višeslojne diskursne dimenzije, pri čemu svaka godina aktivira drugačije aspekte iste kompleksne ličnosti u skladu s trenutnim društvenim i komunikacijskim potrebama. Široki vremenski raspon podataka omogućuje uvid u ta transformacijska razdoblja kao dijelove većih društvenih, tehničkih i kulturnih struja koje kontinuirano oblikuju značenja koja se pripisuju temeljnim ličnostima i temama nacionalne baštine.
+Usporedba potvrđuje da se isti povijesni i vjerski akter može pojaviti u različitim leksičkim okruženjima. Ipak, uz samo dva dostupna godišnja presjeka nije moguće pouzdano utvrditi smjer ni kontinuitet promjene. Za punu longitudinalnu analizu potreban je veći namjenski uzorak objava o Stepincu.
 
 ## Sinteza nalaza
 
@@ -519,7 +241,7 @@ Tri nalaza izdvajaju se za razumijevanje diskursne dinamike:
 
 **Postojanje distinktivnih digitalnih potpisa različitih tipova događaja.** Komparativna analiza Uskrsa i drugih događaja dokumentirala je kako različiti tipovi događaja generiraju fundamentalno različite diskursne obrasce. Liturgijski događaji, reprezentativni u Uskrsu, manifestiraju temporalnu koncentraciju pažnje, izrazito pozitivan tonalitet i gotovo potpuno odsustvo konfliktnog diskursa. Nasuprot tome, društveno-politički događaji generiraju kompleksnije temporalne obrasce s višestrukim valovima, višu konfliktnost i polariziranije narativne strukture. Ovo potvrđuje da digitalni prostor ne reagira uniformno na sve vanjske podražaje, već manifestira specifične odgovore ovisno o prirodi događaja.
 
-**Dokumentacija temporalne evolucije narativa.** Longitudinalna analiza diskursa o blaženom Alojziju Stepincu empirijski je verificirala da se dugotrajni narativi o temeljnim ličnostima i temama sustavno rekontekstualiziraju kroz vrijeme. Isti narativni subjekt može biti artikuliran kroz fundamentalno različite tematske okvire, od ekumensko političkih preko povijesno medijskih do liturgijsko pobožnih, ovisno o trenutnim društvenim i komunikacijskim potrebama. Ova fluidnost narativne artikulacije demonstrira kako su digitalni diskursi dinamički konstrukti koji kontinuirano evoluiraju u dijalogu s širim društvenim kontekstom.
+**Indikativna razlika između godišnjih presjeka.** Usporedba dostupnih objava o blaženom Alojziju Stepincu pokazuje različita leksička okruženja u 2023. i 2025., ali veličina uzorka ne dopušta zaključak o kontinuiranoj temporalnoj evoluciji. Nalaz služi kao polazište za buduću namjensku longitudinalnu analizu.
 
 Ovi nalazi otvaraju mogućnost razvoja naprednih sustava praćenja koji nadilaze statičku analizu. Potencijalna aplikacija obuhvaća prediktivno modeliranje koje može anticipirati kada će se određene teme aktivirati u javnoj raspravi i kroz koje će okvire biti artikulirane. Takvi sustavi pružali bi vrijedne uvide za optimalizaciju komunikacijskih strategija, razumijevanje mehanizama oblikovanja javnog mnijenja i anticipaciju diskursnih transformacija.
 

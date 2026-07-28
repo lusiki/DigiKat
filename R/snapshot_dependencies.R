@@ -20,13 +20,13 @@ if (!requireNamespace("renv", quietly = TRUE)) {
 }
 
 active_packages <- c(
-  "DBI", "RColorBrewer", "av", "chromote", "data.table", "dbscan", "digest",
+  "DBI", "av", "chromote", "data.table", "dbscan", "digest",
   "dplyr", "duckdb", "ellmer", "forcats", "ggplot2", "ggraph", "ggrepel",
   "ggridges", "here", "httr2", "igraph", "jsonlite", "kableExtra", "knitr",
-  "lubridate", "patchwork", "purrr", "ragnar", "readr", "readxl", "renv",
+  "lubridate", "patchwork", "purrr", "ragnar", "readxl", "renv",
   "rmarkdown", "scales", "showtext", "stringi", "stringr", "sysfonts",
-  "textdata", "tidygraph", "tidyr", "tidytext", "udpipe", "uwot",
-  "visNetwork", "widyr", "wordcloud"
+  "tibble", "tidygraph", "tidyr", "tidytext", "udpipe", "uwot",
+  "visNetwork", "widyr", "wordcloud", "yaml"
 )
 discovered <- renv::dependencies(".", progress = FALSE, errors = "reported")
 base_packages <- rownames(installed.packages(priority = "base"))
