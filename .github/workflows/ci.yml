@@ -21,6 +21,14 @@ jobs:
           r-version: "4.6.0"
           use-public-rspm: true
 
+      # The semantic-search stack (duckdb + ragnar) powers the local, gitignored
+      # data/semantic/*.duckdb store only. CI never loads it, and duckdb has no CI
+      # binary so it compiles from source and fails. Drop both from the lockfile CI
+      # restores from; the tracked renv.lock is untouched (local semantic work still works).
+      - name: Drop local-only semantic packages from the CI lockfile
+        shell: bash
+        run: jq 'del(.Packages.duckdb, .Packages.ragnar)' renv.lock > renv.lock.tmp && mv renv.lock.tmp renv.lock
+
       - uses: r-lib/actions/setup-renv@v2
 
       - uses: quarto-dev/quarto-actions/setup@v2

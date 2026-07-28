@@ -1,5 +1,10 @@
 # DigiKat full-housekeeping implementation report
 
+> **Historical snapshot.** This report records the first housekeeping implementation pass. The later
+> page-performance, master-year repair, downstream-equivalence, and final visual-QA work is documented in
+> [`2026-07-28_page-speed-year-repair-qa-report.md`](2026-07-28_page-speed-year-repair-qa-report.md), which is
+> the authoritative description of the current project state.
+
 **Audit and implementation date:** 2026-07-28<br>
 **Workspace:** `DigiKat`<br>
 **Mode:** protected-production hard gates, applied only after explicit confirmation<br>
