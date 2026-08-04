@@ -1,0 +1,12 @@
+"domain","k","overlap","agreement","recall_gap","precision_gap"
+"business_comp",31416,7768,0.2473,0.7527,0.7527
+"demography_econ",1288,130,0.1009,0.8991,0.8991
+"euro_changeover",407,93,0.2285,0.7715,0.7715
+"green_energy",3425,1035,0.3022,0.6978,0.6978
+"housing",6106,1459,0.2389,0.7611,0.7611
+"inflation_prices",1607,405,0.252,0.748,0.748
+"macro_aggregates",7090,1267,0.1787,0.8213,0.8213
+"poverty_social",38232,8777,0.2296,0.7704,0.7704
+"taxes_fiscal",23375,3504,0.1499,0.8501,0.8501
+"unemployment",5849,711,0.1216,0.8784,0.8784
+"wages_income",13724,1658,0.1208,0.8792,0.8792

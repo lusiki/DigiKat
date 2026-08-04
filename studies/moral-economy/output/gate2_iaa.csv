@@ -1,0 +1,12 @@
+"axis","level","kappa","n_subjects"
+"ax1_link_genuine","raw (all 555)",0.941,555
+"ax2_geography","raw (all 555)",0.886,555
+"ax3_actor_commentator","raw (all 555)",0.786,555
+"ax4_register","raw (all 555)",0.738,555
+"ax5_poverty_split","raw (all 555)",0.849,555
+"ax6_ksn_principle","raw (all 555)",0.888,555
+"ax7_encyclical","raw (all 555)",1,555
+"ax4_register","raw, genuine-link subset",0.738,192
+"ax4_register","3way (justice/charity/object), genuine subset",0.844,192
+"ax4_register","binary (justice vs rest), genuine subset",0.904,192
+"ax5_poverty_split","3way, poverty domain only",0.891,166

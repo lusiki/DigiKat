@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-04 07:45:27 UTC",
+  "generator": "studies/moral-economy/07_s3_register_grid.R",
+  "store": {
+    "path": "data/semantic/digikat.ragnar.duckdb",
+    "model": "bge-m3",
+    "dim": 1024,
+    "truncation_chars": 4000
+  },
+  "seed": 20260804,
+  "inputs": {
+    "anchors": "output/semantic/anchors_v1.rds",
+    "scores": "output/semantic/scores_full.rds"
+  },
+  "outputs": {
+    "grid": "output/semantic/register_grid_v1.csv"
+  },
+  "anchor_version": "v1",
+  "delta_reg": 0.5,
+  "delta_p": 0.5,
+  "n_boot": 500,
+  "n_candidate_rows": 132519,
+  "ambiguous_share": 0.4145,
+  "provisional": false,
+  "note": "Anchors and margins fitted on the Stage V FIT half; agreement reported on VALIDATE."
+}

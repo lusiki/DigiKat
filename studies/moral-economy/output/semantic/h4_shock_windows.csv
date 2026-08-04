@@ -1,0 +1,12 @@
+"domain","n","justice_calm","justice_shock","chisq","p_raw","p_holm","sig"
+"business_comp",3061,0.123,0.119,0.09,0.764,1,FALSE
+"demography_econ",148,0.175,0.029,6.64,0.00997,0.0698,FALSE
+"euro_changeover",145,0.167,0.073,1.74,0.188,0.94,FALSE
+"green_energy",579,0.896,0.562,81.3,1.94e-19,2.13e-18,TRUE
+"housing",899,0.038,0.085,8.08,0.00448,0.0403,TRUE
+"inflation_prices",279,0.054,0.171,5.22,0.0223,0.134,FALSE
+"macro_aggregates",593,0.323,0.354,0.51,0.475,1,FALSE
+"poverty_social",6887,0.209,0.201,0.55,0.458,1,FALSE
+"taxes_fiscal",3147,0.233,0.236,0.02,0.887,1,FALSE
+"unemployment",942,0.334,0.157,35.12,3.11e-09,3.11e-08,TRUE
+"wages_income",2347,0.137,0.178,7.2,0.00728,0.0582,FALSE

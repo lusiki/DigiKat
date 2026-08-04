@@ -1,0 +1,67 @@
+{
+  "generated_utc": "2026-08-04 07:46:20 UTC",
+  "generator": "studies/moral-economy/09b_iaa_validate.R",
+  "n_coded": 555,
+  "n_annotators": 3,
+  "n_invalid_codes": 0,
+  "annotator_provenance": "three blind passes by one LLM family (Claude), differing framing emphasis; NOT independent human coders; no human double-code was performed (PI decision 2026-08-04)",
+  "external_data_exception": "555 blind post excerpts (no URL/outlet/date) were sent to an external model for coding, an explicit exception to R/semantic/README.md's local-only rule, authorised by the PI on 2026-08-04",
+  "register_level": "5way",
+  "delta_p_fitted": 1.45,
+  "v1_registers_rebuilt": [
+    "object_institution",
+    "charity",
+    "justice",
+    "devotional",
+    "economic_poverty",
+    "doctrinal_poverty"
+  ],
+  "gates": {
+    "G-V1_iaa_register_5way": {
+      "value": 0.738,
+      "floor": 0.6,
+      "pass": true
+    },
+    "G-V1b_iaa_register_3way": {
+      "value": 0.844,
+      "floor": 0.6,
+      "pass": true
+    },
+    "G-V1c_iaa_register_binary": {
+      "value": 0.904,
+      "floor": 0.6,
+      "pass": true
+    },
+    "G-V2_iaa_ax1_genuine": {
+      "value": 0.941,
+      "floor": 0.55,
+      "pass": true
+    },
+    "G-V3_iaa_ax5_3way": {
+      "value": 0.891,
+      "floor": 0.6,
+      "pass": true
+    },
+    "G-V4_retrieval_precision": {
+      "value": 0.385,
+      "floor": 0.7,
+      "pass": false,
+      "detail": "business_comp,demography_econ,euro_changeover,green_energy,inflation_prices,macro_aggregates,taxes_fiscal,unemployment,wages_income"
+    },
+    "G-V5_semantic_vs_human_register": {
+      "value": 0.717,
+      "floor": 0.4,
+      "pass": true
+    },
+    "G-V6_share_containment": {
+      "value": 6,
+      "floor": 4,
+      "pass": true
+    },
+    "G-V7_poverty_split_dev_pp": {
+      "value": 52.2,
+      "floor": 10,
+      "pass": false
+    }
+  }
+}

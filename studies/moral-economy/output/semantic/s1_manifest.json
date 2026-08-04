@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-04 06:38:48 UTC",
+  "generator": "studies/moral-economy/05_s1_anchor_calibration.R",
+  "store": {
+    "path": "data/semantic/digikat.ragnar.duckdb",
+    "model": "bge-m3",
+    "dim": 1024,
+    "truncation_chars": 4000
+  },
+  "seed": 20260804,
+  "inputs": {
+    "stageA_candidates": {
+      "path": "C:/Users/lsikic/Dropbox/HKS/Projekti/Digitalni Kat/SHKM/DigiKat/studies/moral-economy/output/stageA_candidates.rds",
+      "bytes": 18518082,
+      "modified_utc": "2026-07-08 14:39:38 UTC",
+      "sha256": "1960e07669349001281b8d712ac4076598b86f48203053bd6dd9189d0b2f2407"
+    }
+  },
+  "outputs": {
+    "anchors": "output/semantic/anchors.rds",
+    "diagnostics": "output/semantic/anchor_diagnostics.csv"
+  },
+  "n_seed_target": 400,
+  "holdout_frac": 0.25,
+  "n_background": 50000,
+  "corpus_mean_norm": 0.5958,
+  "anchors_failing_gate": [],
+  "gate_definition": "null-referenced: split_half >= 0.50 (domain anchors only), centroid_norm >= 5x permutation null, max_gram <= 0.85. The plan's absolute floors (0.85 / 0.15) were calibrated with raw-cosine intuition and are wrong for centred space, where the null cosine is ~0.",
+  "spearman_by_instrument": {
+    "exact_pilot": -0.3818,
+    "hand_raw": -0.0795,
+    "hand_cen": 0.0909,
+    "seed_raw": 0.9545,
+    "seed_cen": 0.9636
+  },
+  "euro_share_by_instrument": {
+    "exact_pilot": 0.0651,
+    "hand_raw": 0,
+    "hand_cen": 0.0186,
+    "seed_raw": 0.0073,
+    "seed_cen": 0.0132
+  },
+  "anchor_version": "v0 (registers/poverty are probe centroids; Stage V FIT half replaces them with v1)"
+}

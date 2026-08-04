@@ -1,0 +1,7 @@
+"stratum","n","genuine","rate","lo","hi"
+"domain_core",219,84,0.384,0.322,0.449
+"poverty_split",60,35,0.583,0.457,0.699
+"precision_gap",41,12,0.293,0.176,0.445
+"random_linked",28,9,0.321,0.179,0.507
+"recall_gap",88,9,0.102,0.055,0.183
+"register_cell",119,43,0.361,0.281,0.451

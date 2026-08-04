@@ -1,0 +1,12 @@
+"domain","n","precision","lo","hi","gate_GV4"
+"business_comp",20,0,0,0.161,FALSE
+"demography_econ",20,0.65,0.433,0.819,FALSE
+"euro_changeover",20,0.25,0.112,0.469,FALSE
+"green_energy",20,0.55,0.342,0.742,FALSE
+"housing",20,0.7,0.481,0.855,TRUE
+"inflation_prices",20,0.5,0.299,0.701,FALSE
+"macro_aggregates",20,0,0,0.161,FALSE
+"poverty_social",20,0.75,0.531,0.888,TRUE
+"taxes_fiscal",20,0.2,0.081,0.416,FALSE
+"unemployment",19,0.632,0.41,0.809,FALSE
+"wages_income",20,0,0,0.161,FALSE

@@ -1,0 +1,5 @@
+"claim","status","evidence"
+"H1 human-over-aggregate (coverage ranking)","SUPPORTED (both lenses, ρ = +0.982)","coverage_ranking_v2.csv"
+"H2 register flip (justice by domain)","NOT SUPPORTED AS STATED — ordering is anchor-version dependent","register_grid_v0/v1.csv + gates.json"
+"H3 the poor is mediated doctrinally","REFUTED — hand coding gives ~41% economic / ~39% doctrinal, not 73% doctrinal","poverty_split_validation.csv (G-V7 FAILED)"
+"Q_M cross-lens convergence","SPLIT — rankings converge (ρ +0.982), post selection does not (19.7% overlap)","gap_summary.csv + gap_strata_precision.csv"

@@ -1,0 +1,12 @@
+"domain","keyword_rank","exact_pilot_share","exact_pilot_rank","hand_raw_share","hand_raw_rank","hand_cen_share","hand_cen_rank","seed_raw_share","seed_raw_rank","seed_cen_share","seed_cen_rank"
+"business_comp",1,0.0095,10,0,5,0.0488,1,0.0918,3,0.083,2
+"demography_econ",10,0.0143,7,0,5,0.0174,7,0.0263,9,0.0235,9
+"euro_changeover",11,0.0651,2,0,1,0.0186,6,0.0073,11,0.0132,11
+"green_energy",8,0.0399,4,0,5,0.0163,8,0.0272,8,0.0294,8
+"housing",7,0.0258,5,0,1,0.035,2,0.0369,7,0.0369,6
+"inflation_prices",9,0.0554,3,0,5,0.0337,3,0.0195,10,0.016,10
+"macro_aggregates",5,0.0146,6,0,5,0.0233,5,0.0859,4,0.0724,4
+"poverty_social",2,0.0778,1,0,3,0.0262,4,0.17,1,0.1259,1
+"taxes_fiscal",3,0.0131,8,0,3,0.0157,9,0.098,2,0.0784,3
+"unemployment",6,0.0052,11,0,5,0.0127,10,0.0623,6,0.0343,7
+"wages_income",4,0.0114,9,0,5,0.0084,11,0.0771,5,0.0396,5

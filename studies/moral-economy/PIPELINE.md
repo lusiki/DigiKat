@@ -1,6 +1,11 @@
 # moral-economy — pipeline (scripts → plan stages)
 
-**Status:** scripts written + self-validated (2026-07-07); Stage A **not yet run** on the master.
+**Status (2026-08-04):** Stage A ran on the full master 2026-07-08 (132,519 linked candidates). The
+dual-lens stages S1–S3, Stage V validation and Stage C all ran 2026-08-04; see `PAPER_v1.md` for results
+and `quality_reports/plans/2026-08-04_moral-economy-dual-lens-run.md` for the full decision trail.
+The keyword-only Stage B coding route below (`02`–`04`) was **superseded** by the 555-post gold sample
+(`08`/`09a`/`09b`), which validates both lenses at once; `04_iaa_validation.R` survives as the kappa
+implementation that `sem_lib.R` reuses.
 Every script reads the corpus READ-ONLY and writes only to `output/`. Row-level coding sheets, URLs, source
 identities, and text windows go to gitignored `output/private/`; only disclosure-reviewed aggregates belong
 in tracked `output/`. The workflow never touches `data/` or the ≥2-match filter.
@@ -45,6 +50,27 @@ Rscript studies/moral-economy/build_calendar.R
 - **Gate 2 (before OSF prereg):** `04` reports register κ at 5-way and 3-way. Pre-declared fallback
   5-way → 3-way → binary; H1/H4 run at the first level clearing the prereg floor. If neither clears,
   H1/H4 → exploratory and the paper leans on the map.
+
+## Dual-lens stages (PROPOSAL_v3; all ran 2026-08-04)
+
+| Script | Stage | Reads | Writes | Master? |
+|---|---|---|---|---|
+| `sem_lib.R` | (shared module) | — | — | no |
+| `05_s1_anchor_calibration.R` | S1 anchors | store, `stageA_candidates.rds` | `semantic/anchors.rds`, `anchor_diagnostics.csv` | no |
+| `06_s2_corpus_scoring.R` | S2 scoring + gap audit | store, anchors | `scores_full.rds`, `coverage_ranking_v2.csv`, `gap_*.csv` | no |
+| `07_s3_register_grid.R` | S3 grid | scores, anchors | `register_grid_{v0,v1}.csv`, `poverty_split_*.csv` | no |
+| `08_build_gold_sheet.R` | V sheet | scores, anchors | `private/gold_sheet.csv` (blind), `private/gold_key.csv` | no |
+| `09a_annotate_prep.R` | V batches | blind sheet | `private/batches/*.md` | no |
+| `09b_iaa_validate.R` | V validation | 3 annotator files | `gate2_iaa.csv`, `gates.json`, `anchors_v1.rds` | no |
+| `10_stage_c_analyses.R` | C figures | gates.json + all above | `output/figures/*.png`, `h4_shock_windows.csv` | no |
+
+Run order: `05` → `06` → `07` → `08` → `09a` → *(3 blind coding passes)* → `09b` → `07 --anchors=v1` →
+`09b` (re-run, validates v1) → `10`. Note `07 --anchors=v1` **rescores** the corpus; swapping anchors
+without rescoring silently reuses the v0 numbers. CLI flags need the leading dashes
+(`digikat_cli_value` matches `--anchors`, not `anchors`).
+
+`10` is **fail-closed**: it reads `gates.json` and refuses to plot any quantity whose pre-declared gate
+failed. Two failed on this run (G-V4 retrieval precision, G-V7 poverty split) — see `PAPER_v1.md` §4.6.
 
 ## Not yet built (correctly deferred — depend on coded data)
 

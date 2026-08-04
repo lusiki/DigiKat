@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-04 07:05:12 UTC",
+  "generator": "studies/moral-economy/08_build_gold_sheet.R",
+  "store": {
+    "path": "data/semantic/digikat.ragnar.duckdb",
+    "model": "bge-m3",
+    "dim": 1024,
+    "truncation_chars": 4000
+  },
+  "seed": 20260804,
+  "inputs": {
+    "anchors": "output/semantic/anchors.rds",
+    "scores": "output/semantic/scores_full.rds"
+  },
+  "outputs": {
+    "sheet": "output/private/gold_sheet.csv (RESTRICTED)",
+    "key": "output/private/gold_key.csv (RESTRICTED)"
+  },
+  "n_posts": 555,
+  "text_chars": 800,
+  "strata": {
+    "domain_core": 219,
+    "poverty_split": 60,
+    "precision_gap": 41,
+    "random_linked": 28,
+    "recall_gap": 88,
+    "register_cell": 119
+  },
+  "n_fit": 276,
+  "n_validate": 279,
+  "seed_rids_excluded": 4288,
+  "blindness": "sheet carries rid, domain, window, text only — no outlet, date, URL, stratum, or machine label"
+}

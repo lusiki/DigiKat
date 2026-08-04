@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-04 07:01:09 UTC",
+  "generator": "studies/moral-economy/06_s2_corpus_scoring.R",
+  "store": {
+    "path": "data/semantic/digikat.ragnar.duckdb",
+    "model": "bge-m3",
+    "dim": 1024,
+    "truncation_chars": 4000
+  },
+  "seed": 20260804,
+  "inputs": {
+    "anchors": "output/semantic/anchors.rds",
+    "stageA": {
+      "path": "C:/Users/lsikic/Dropbox/HKS/Projekti/Digitalni Kat/SHKM/DigiKat/studies/moral-economy/output/stageA_candidates.rds",
+      "bytes": 18518082,
+      "modified_utc": "2026-07-08 14:39:38 UTC",
+      "sha256": "1960e07669349001281b8d712ac4076598b86f48203053bd6dd9189d0b2f2407"
+    }
+  },
+  "outputs": {
+    "scores": "output/semantic/scores_full.rds",
+    "coverage": "output/semantic/coverage_ranking_v2.csv"
+  },
+  "n_scored": 710307,
+  "engine": "sql",
+  "g3_max_abs_diff": 7.75e-07,
+  "spearman_wta": 0.9818,
+  "spearman_z3": -0.6818,
+  "spearman_tau80": 0.7364,
+  "spearman_wta_ci": [0.8518, 1],
+  "mean_agreement_matched_volume": 0.1973,
+  "pct_truncated": 30.41,
+  "spearman_short_subcorpus": 0.9636,
+  "operating_point": "NOT FIXED — three rules reported; the published cut is fitted on Stage V FIT half"
+}

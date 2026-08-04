@@ -1,0 +1,11 @@
+"domain","n","kappa","agree"
+"demography_econ",5,0,0.6
+"euro_changeover",1,NA,1
+"green_energy",5,NA,1
+"housing",7,0.767,0.857
+"inflation_prices",3,NA,1
+"macro_aggregates",1,NA,1
+"poverty_social",26,0.628,0.731
+"taxes_fiscal",2,1,1
+"unemployment",4,0.5,0.75
+"wages_income",11,0.625,0.727

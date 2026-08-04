@@ -265,7 +265,8 @@ digikat_atomic_replace_file <- function(staged, target) {
     stop("Could not install staged file at: ", target, call. = FALSE)
   }
 
-  if (had_target && file.exists(previous) && !unlink(previous)) {
+  # unlink() returns 0 on SUCCESS, so the warning must fire on a non-zero return.
+  if (had_target && file.exists(previous) && unlink(previous) != 0) {
     warning("Installed new file but could not remove temporary previous file: ", previous)
   }
   invisible(target)

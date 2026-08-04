@@ -1,0 +1,7 @@
+"register","human","human_lo","human_hi","machine","contained"
+"object_institution",0.185,0.092,0.292,0.123,TRUE
+"object_cost_relig_life",0.077,0.015,0.154,0.077,TRUE
+"charity",0.262,0.154,0.369,0.369,TRUE
+"justice",0.308,0.2,0.415,0.308,TRUE
+"devotional",0.154,0.077,0.246,0.123,TRUE
+"other",0.015,0,0.046,0,TRUE
