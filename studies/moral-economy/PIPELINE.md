@@ -63,6 +63,22 @@ Rscript studies/moral-economy/build_calendar.R
 | `09a_annotate_prep.R` | V batches | blind sheet | `private/batches/*.md` | no |
 | `09b_iaa_validate.R` | V validation | 3 annotator files | `gate2_iaa.csv`, `gates.json`, `anchors_v1.rds` | no |
 | `10_stage_c_analyses.R` | C figures | gates.json + all above | `output/figures/*.png`, `h4_shock_windows.csv` | no |
+| `viewer_lib.R` | (shared module) | — | — | no |
+| `11_gold_viewer.R` | (inspection) | gold sheet/key/core + `ann{1,2,3}/`, master (once) | `private/gold_viewer.html`, `private/gold_meta_cache.rds` | read-only, cached |
+| `13_wta_viewer.R` | (inspection) | `scores_full.rds`, `lexicon.R`, master (once) | `private/wta_viewer.html`, `private/wta_sample_cache.rds` | read-only, cached |
+
+`11` is an eyeball tool, not an analysis step: it renders the 555 gold posts as one local HTML page —
+title linked to its URL, outlet/date/stream, the ±220 window, the 800-char coder excerpt, the full text,
+and all three passes beside the majority verdict. Its output is **RESTRICTED** (row-level text, URLs,
+outlet identities) and lives in gitignored `private/` — local viewing only, never committed or published.
+The master is read READ-ONLY exactly once and cached to `private/gold_meta_cache.rds` (`--refresh-meta`
+rebuilds); the run asserts `rid` really is the master row index by matching URLs against the 490 rids Stage A
+recorded independently. Pause Dropbox for that first run.
+
+`13` makes PAPER_v1 §6.5's "not credible" 55.5% inspectable: it re-derives the winner-take-all assignment
+from `scores_full.rds` (asserting the total against `coverage_ranking_v2.csv`), samples 8 posts per domain ×
+margin band, and attaches the decisive diagnostic — whether the post contains any `lexicon.R` economic
+keyword for the domain the embedding assigned it. Both viewers share the HTML shell in `viewer_lib.R`.
 
 Run order: `05` → `06` → `07` → `08` → `09a` → *(3 blind coding passes)* → `09b` → `07 --anchors=v1` →
 `09b` (re-run, validates v1) → `10`. Note `07 --anchors=v1` **rescores** the corpus; swapping anchors
@@ -79,6 +95,37 @@ failed. Two failed on this run (G-V4 retrieval precision, G-V7 poverty split) �
 - The coding runner itself (the 3-annotator LLM workflow against `private/coding_sheet.csv`) — the one genuinely
   from-scratch component (PLAN §0). Its output schema is fixed:
   `private/coding_sheet_ann*.csv` = the blind sheet + filled 7 axes.
+
+## RSP paper stages (PROPOSAL_v5_rsp.md; 12–17 ran 2026-08-04, 19–25 the same day)
+
+| Script | Stage | Reads | Writes | Master? |
+|---|---|---|---|---|
+| `cst_lexicon.R` / `cst_core.R` | (shared modules) | — | `private/cst_core.rds` | no |
+| `12_cst_census.R` | corpus census | `corpus_prepared.rds` | `cst_census_*.csv` | no |
+| `14_cst_core_profile.R` | descriptive profile | core | `cst_core_*.csv`, figures | no |
+| `15_propose_source_labels.R` | outlet labels | core | `private/proposed_source_labels.csv` | no |
+| `16_cst_viewer.R` | inspection HTML | core | `private/cst_viewer.html` (28 MB) | no |
+| `17_cst_robustness.R` | 25 variants, gates G1/G1b/G2 | core, candidates | `cst_robustness_*.csv` | no |
+| `18_gold_reanalysis.R` | re-analysis of the 555 gold set | `private/gold_core.csv` | `gold_*.csv` | no |
+| **`19_r4_linkage_sample.R`** | **R4 sample** — 60 pairs × 11 domains, gold rids excluded | candidates, `corpus_prepared.rds` | `private/r4_{sheet,key}.csv`, `private/r4_batches/` | no |
+| **`20_r4_recompute.R`** | **R4** — per-domain linkage precision + corrected gradient | `private/r4_ann1.tsv` | `r4_linkage_precision.csv`, `cst_gradient_adjusted.csv` | no |
+| **`21_r1_precision_sample.R`** | **R1 sample** — 150 cards, era × outlet band | core | `private/r1_{sheet,key}.csv`, `private/r1_batches/` | no |
+| **`22_r1_recompute.R`** | **R1/R2** — numerator precision vs. the pre-declared rule | `private/r1_ann1.tsv` | `r1_numerator_precision.csv`, `r1_precision_by_era.csv` | no |
+| `rsp_labels.R` | (shared module) domain/term display names + RSP number formatting | — | — | no |
+| **`24_rsp_figures.R`** | four print figures, greyscale/Arial/300 dpi | adjusted gradient, robustness detail, era table, core terms | `figures/rsp_fig{1,2,3,4}_*.png` | no |
+| **`26_rsp_tables.R`** | the seven manuscript tables + every scalar the prose quotes | the `output/*.csv` above, gated core table | `tables/tab{1..7}_*.md`, `tables/rsp_derived.csv` | no |
+| **`25_paper_checks.R`** | limits, decimal comma, table fragments intact, every number re-derived | `PAPER_RSP_v1.md`, `output/*.csv`, `tables/*` | — (aborts on mismatch) | no |
+
+Tables are **generated, never typed**: `26_rsp_tables.R` writes each table as a markdown fragment and
+`25_paper_checks.R` asserts the fragment still appears in `PAPER_RSP_v1.md` byte-for-byte, plus that
+every scalar in `tables/rsp_derived.csv` is still printed somewhere in the text. Editing a number in the
+manuscript by hand therefore fails the check rather than surviving it. Run order at the end: `24` → `26`
+→ paste any changed fragment → `25`.
+
+`19` and `21` only *draw* samples; the coding step is manual (or a blind model pass) and lands in
+`private/r4_ann1.tsv` and `private/r1_ann1.tsv`. Both recompute scripts join the annotation to the
+sheet **on `item` and assert the `rid` agrees** — a mis-keyed rid would silently attach a coding
+decision to the wrong post and the wrong domain, and it caught two such errors on the first run.
 
 ## Reuse (from the machinery inventory)
 

@@ -1,0 +1,13 @@
+"era","stream","Freq"
+"benedict","filtered_religious",2
+"classical","filtered_religious",57
+"conciliar","filtered_religious",20
+"francis","filtered_religious",198
+"marker_only","filtered_religious",123
+"mixed","filtered_religious",62
+"benedict","original_dta",6
+"classical","original_dta",24
+"conciliar","original_dta",36
+"francis","original_dta",446
+"marker_only","original_dta",186
+"mixed","original_dta",38

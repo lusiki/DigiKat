@@ -1,0 +1,12 @@
+"domain","sampled","layer_pairs","sampling_fraction","layer_share"
+"business_comp",60,31416,0.00191,0.23707
+"demography_econ",60,1288,0.04658,0.00972
+"euro_changeover",60,407,0.14742,0.00307
+"green_energy",60,3425,0.01752,0.02585
+"housing",60,6106,0.00983,0.04608
+"inflation_prices",60,1607,0.03734,0.01213
+"macro_aggregates",60,7090,0.00846,0.0535
+"poverty_social",60,38232,0.00157,0.2885
+"taxes_fiscal",60,23375,0.00257,0.17639
+"unemployment",60,5849,0.01026,0.04414
+"wages_income",60,13724,0.00437,0.10356

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-04 14:34:43 UTC",
+  "generator": "studies/moral-economy/20_r4_recompute.R",
+  "store": {
+    "path": "data/semantic/digikat.ragnar.duckdb",
+    "model": "bge-m3",
+    "dim": 1024,
+    "truncation_chars": 4000
+  },
+  "seed": 20260804,
+  "inputs": {
+    "sheet": "output/private/r4_sheet.csv",
+    "annotation": "output/private/r4_ann1.tsv",
+    "candidates": "output/stageA_candidates.rds",
+    "core": "output/private/cst_core.rds"
+  },
+  "outputs": {
+    "precision": "output/r4_linkage_precision.csv",
+    "gradient": "output/cst_gradient_adjusted.csv"
+  },
+  "n_coded": 660,
+  "per_domain": 60,
+  "draws": 20000,
+  "adjustment": "denominator only; assumes doctrinal pairs are genuine links (R1 pending)"
+}

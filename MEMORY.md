@@ -59,6 +59,45 @@
   `theme_digikat_void()` (cream-bg network/empty-plot variant). Do NOT hard-code figure colors/backgrounds or
   `theme_void()`/`theme_graph()` — route through these so figures match the editorial design (cream paper, white panel).
 
+## moral-economy denominator lesson (2026-08-04)
+- [LEARN] A keyword-linkage layer is NOT a validated denominator. `stageA_candidates.rds`'s
+  "religion meets economics" layer is only **39,5%** genuine on a fresh random audit (26,8% under a
+  strict reading), and the rate ranges **21,7%–63,3%** across the 11 economic domains. Any rate of the
+  form `X / linked(domain)` must divide by that domain's coded precision before it is published;
+  `20_r4_recompute.R` does this and propagates the interval. The uncorrected "1 in 91" was wrong by a
+  factor of ~3.
+- [LEARN] Stratified sets do not answer questions they were not drawn for. The 555-item gold set's
+  per-domain genuine-link rates (3,1%–53,1%) looked alarming and **did not reproduce** on a random
+  draw — its `random_linked` stratum is n = 28. Draw fresh rather than re-slice.
+- [LEARN] When an annotation is transcribed item-by-item, join it back to the sheet on the item index
+  and **assert the id agrees**. That gate caught two mis-keyed rids in 810 coded items; without it each
+  would have attached a coding decision to the wrong post and the wrong domain.
+- [LEARN] Croatian homonym found by audit: `supsidijarna zaštita` (subsidiary protection — asylum
+  status) matches the doctrinal term `supsidijarnost`. 1 false match in 150 cards. Fixing it in
+  `cst_lexicon.R` would change the population and trip the `expect = 1198` gate in `cst_core.R`.
+- [LEARN] Paper TABLES are prose with a grid around them, so rule 3 applies to them too:
+  `26_rsp_tables.R` generates every table of `PAPER_RSP_v1.md` as a markdown fragment under
+  `output/tables/` plus `rsp_derived.csv` (every scalar the prose quotes), and `25_paper_checks.R`
+  fails unless each fragment still appears in the manuscript byte-for-byte and each scalar is still
+  printed in the text. Hand-editing a number in the paper now breaks the build instead of surviving.
+- [LEARN] Two numbers in the first RSP draft did not reproduce and were fixed by that check.
+  (a) *opcija za siromašne* is **33** posts corpus-wide (`cst_census_terms.csv`); the widely quoted
+  **29** is the count inside the religion-linked economic layer — state which layer. (b) The
+  confessional-enclosure pair "70,4% vs 43,3%" exists in no tracked output; the reproducible form is
+  55,2% of doctrinal pairs vs 21,7% of linked pairs (67,0% vs 43,0% among label-carrying pairs), all
+  derivable from `cst_robustness_{summary,detail}.csv`.
+- [LEARN] Report the invocation rate on **post–domain pairs** (1 949 / 132 519 = 1,47%), not posts
+  (1 198 / 108 966 = 1,10%), or the corrected headline silently mixes units: 3,73% ("1 in 27") is the
+  pair rate divided by the coded 39,5% linkage precision.
+- [LEARN] The corpus descriptor in the RSP paper is an EDITORIAL DECISION by the PI (2026-08-04), not a
+  drafting slip: the source line reads "the DigiKat corpus of 710 307 Croatian digital media posts" —
+  "and Bosnian" was deliberately dropped, and the ≥2-distinct-term inclusion rule is no longer stated
+  in the manuscript (it points to the database instead). The string lives in ONE place per generator,
+  `SRC()` in `26_rsp_tables.R` and the caption in `24_rsp_figures.R`; changing it means re-running both
+  and re-syncing the seven table blocks into the paper, or `25_paper_checks.R` fails byte-for-byte.
+  Two open flags for the PI: "Croatian" alone may understate BiH-sourced material, and a methods
+  referee will likely ask for the inclusion rule in-text.
+
 ## Housekeeping resolution (2026-07-28)
 - [LEARN] Legacy NLP/stemmer scripts with phantom or hard-coded paths are archived under
   `archive/legacy-pipeline/`; active code uses `resources/` and `R/lib/`.

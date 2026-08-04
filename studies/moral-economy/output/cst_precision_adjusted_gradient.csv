@@ -1,0 +1,12 @@
+"domain","linked","doctrinal","prec_rl","prec_all","raw_rate","adj_rate","adj_rate_allstrata"
+"green_energy",3425,245,50,35.3,7.15,14.31,20.26
+"macro_aggregates",7090,156,NA,3.1,2.2,NA,70.98
+"poverty_social",38232,727,42.9,51.2,1.9,4.43,3.71
+"taxes_fiscal",23375,346,50,19.4,1.48,2.96,7.63
+"demography_econ",1288,17,NA,48.4,1.32,NA,2.73
+"unemployment",5849,74,NA,41.9,1.27,NA,3.02
+"wages_income",13724,130,0,17.9,0.95,Inf,5.29
+"business_comp",31416,227,0,5.6,0.72,Inf,12.9
+"inflation_prices",1607,6,NA,34.4,0.37,NA,1.09
+"housing",6106,21,NA,53.1,0.34,NA,0.65
+"euro_changeover",407,0,NA,40,0,NA,0

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-04 14:18:50 UTC",
+  "generator": "studies/moral-economy/19_r4_linkage_sample.R",
+  "store": {
+    "path": "data/semantic/digikat.ragnar.duckdb",
+    "model": "bge-m3",
+    "dim": 1024,
+    "truncation_chars": 4000
+  },
+  "seed": 20260804,
+  "inputs": {
+    "candidates": "studies/moral-economy/output/stageA_candidates.rds",
+    "corpus": "data/semantic/corpus_prepared.rds"
+  },
+  "outputs": {
+    "sheet": "output/private/r4_sheet.csv (RESTRICTED, blind)",
+    "key": "output/private/r4_key.csv (RESTRICTED)",
+    "batches": "output/private/r4_batches/ (RESTRICTED)"
+  },
+  "unit": "(rid, domain) pair",
+  "per_domain_target": 60,
+  "n_drawn": 660,
+  "gold_rids_excluded": 555,
+  "text_chars": 400,
+  "axis": "ax1_link_genuine only",
+  "blindness": "sheet carries item, rid, domain, window, text only"
+}
