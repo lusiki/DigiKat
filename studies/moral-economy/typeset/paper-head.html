@@ -1,0 +1,16 @@
+<!-- The DigiKat webfont stack, matching the site's _quarto.yml include.
+
+     The link is attached at runtime rather than written as a <link> tag on purpose. This document
+     renders with `embed-resources: true`, which inlines every external stylesheet it can see, and
+     inlining the three font families as base64 took the file from 0,9 MB to 3,7 MB. Attaching the
+     stylesheet from script keeps the artefact light: the fonts are fetched when the reader is
+     online, and paper.css falls back to Georgia and Segoe UI when it is not. -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  (function () {
+    var l = document.createElement("link");
+    l.rel = "stylesheet";
+    l.href = "https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap";
+    document.head.appendChild(l);
+  })();
+</script>

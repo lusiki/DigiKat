@@ -140,11 +140,11 @@ claim the poor may make.
 
 The analysis uses the DigiKat corpus, which holds 710 307 Croatian digital media posts from 2021 to
 2026 and is assembled and maintained by the DigiKat project, an open science project mapping Catholic
-themes in the Croatian digital media space at https://lusiki.github.io/DigiKat/. It was built around
+themes in the Croatian digital media space at <https://lusiki.github.io/DigiKat/>. It was built around
 a topic rather than a list of sources, so confessional and secular outlets are present side by side,
 and the project publishes what the corpus contains, how it was collected and filtered and which
 sources it draws on in its open database documentation at
-https://lusiki.github.io/DigiKat/pages/baza.html. Coverage is overwhelmingly of the web, since
+<https://lusiki.github.io/DigiKat/pages/baza.html>. Coverage is overwhelmingly of the web, since
 97,6% of the analysed posts are web pages, so the digital public sphere observed here is the Croatian
 news portals rather than social media generally.
 

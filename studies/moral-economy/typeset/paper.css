@@ -1,106 +1,312 @@
 /* moral-economy — SCREEN AND PRINT STYLE FOR THE RSP MANUSCRIPT HTML.
-   Injected by 28_render_paper.R. Styles the artefact only; the manuscript stays plain markdown. */
+   Injected by 28_render_paper.R. Styles the artefact only; the manuscript stays plain markdown.
+
+   The tokens, fonts and components below are the DigiKat design system as defined in
+   assets/css/custom.scss, so the standalone paper reads as part of the site rather than as a
+   stray document. Quarto renders this file with `theme: none`, which emits a FLAT body — a
+   #title-block-header, a #TOC nav and then the content elements as direct siblings, with no
+   wrapper. Every layout rule below is written for that structure. */
 
 :root {
-  --ink: #1d1d1b;
-  --muted: #5b5b57;
-  --rule: #d8d3c8;
-  --accent: #7a2e1e;
-  --paper: #fffdf9;
-  --band: #f7f5f1;
+  --dk-accent:     #0F4C5C;   /* petrol */
+  --dk-accent-700: #0A3543;
+  --dk-accent-050: #EAF0F2;
+  --dk-accent-ink: #2c5663;
+  --dk-ink:        #0F1419;
+  --dk-heading:    #14181d;
+  --dk-body:       #1b1d21;
+  --dk-body-2:     #4f535a;
+  --dk-muted:      #6B6F76;
+  --dk-paper:      #F5F4F0;   /* warm cream page */
+  --dk-band:       #FAF9F7;
+  --dk-hairline:   #E4E2DA;
+  --dk-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --dk-sans:  "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --dk-mono:  "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
+
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: Cambria, Georgia, "Times New Roman", serif;
+  background: var(--dk-paper);
+  color: var(--dk-body);
+  font-family: var(--dk-sans);
   font-size: 1.02rem;
-  line-height: 1.62;
+  line-height: 1.65;
+  margin: 0;
+  padding: 0 1.25rem 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-#quarto-content, main.content {
-  max-width: 46rem;
+/* One centred measure for every content element, since there is no wrapper to constrain.
+   Every rule below must therefore set margin-top and margin-bottom as LONGHAND: a `margin:` shorthand
+   on a body child resets these auto side margins and drops that element back to the left edge. */
+body > * {
+  max-width: 44rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a { color: var(--dk-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+::selection { background: var(--dk-accent); color: #fff; }
+
+/* ---------------------------------------------------------------------
+   Top bar — the site navbar, reduced to a wordmark and two links.
+   --------------------------------------------------------------------- */
+.dk-topbar {
+  max-width: none;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  margin: 0 -1.25rem 2.5rem;
+  padding: 0 1.25rem;
+  background: rgba(245, 244, 240, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--dk-hairline);
+}
+.dk-topbar-inner {
+  max-width: 68rem;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem 6rem;
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding: 0.85rem 0;
 }
+.dk-brand {
+  font-family: var(--dk-serif);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
+  color: var(--dk-heading) !important;
+}
+.dk-topnav { margin-left: auto; display: flex; gap: 1.25rem; }
+.dk-topnav a { color: #44474d; font-size: 0.9rem; }
+.dk-topnav a:hover { color: var(--dk-accent); text-decoration: none; }
 
-/* Title block: the H1 and the H2 immediately under it read as one unit. */
-h1.title, main > h1:first-of-type {
-  font-family: "Segoe UI", system-ui, sans-serif;
-  font-size: 1.9rem;
-  line-height: 1.25;
+/* ---------------------------------------------------------------------
+   Title block — serif title, mono eyebrow, hairline rule.
+   --------------------------------------------------------------------- */
+#title-block-header {
+  border-bottom: 1px solid var(--dk-hairline);
+  padding-bottom: 1.25rem;
+  margin-bottom: 2.25rem;
+}
+#title-block-header::before {
+  content: "DigiKat working paper";
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--dk-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dk-accent);
+  margin-bottom: 14px;
+}
+h1.title {
+  font-family: var(--dk-serif);
+  font-size: 2.4rem;
   font-weight: 600;
-  color: var(--accent);
-  margin-bottom: .4rem;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--dk-heading);
+  margin: 0 0 0.6rem;
+}
+p.subtitle {
+  font-family: var(--dk-sans);
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--dk-body-2);
+  margin: 0;
 }
 
-h2, h3 {
-  font-family: "Segoe UI", system-ui, sans-serif;
+/* ---------------------------------------------------------------------
+   Headings
+   --------------------------------------------------------------------- */
+h2, h3, h4 {
+  font-family: var(--dk-serif);
   font-weight: 600;
-  letter-spacing: -.01em;
-  margin-top: 2.6rem;
-  margin-bottom: .8rem;
+  letter-spacing: -0.01em;
+  color: var(--dk-heading);
 }
-h2 { font-size: 1.22rem; color: var(--accent); }
-h3 { font-size: 1.05rem; color: var(--ink); }
+h2 { font-size: 1.6rem;  line-height: 1.15; margin-top: 3rem;   margin-bottom: 0.9rem; }
+h3 { font-size: 1.16rem; line-height: 1.25; margin-top: 2.2rem; margin-bottom: 0.7rem; }
+h4 { font-size: 1.02rem;                    margin-top: 1.8rem; margin-bottom: 0.6rem; }
 
-p { text-align: justify; hyphens: auto; }
+p { margin-top: 0; margin-bottom: 1.05rem; }
+hr { border: 0; border-top: 1px solid var(--dk-hairline); margin: 2.6rem auto; }
+strong { font-weight: 600; color: var(--dk-ink); }
 
-hr { border: 0; border-top: 1px solid var(--rule); margin: 2.4rem 0; }
+/* ---------------------------------------------------------------------
+   Contents — a bordered card on narrow screens, a fixed left rail on wide
+   ones, mirroring the site's left-hand table of contents.
+   --------------------------------------------------------------------- */
+nav#TOC {
+  background: #fff;
+  border: 1px solid var(--dk-hairline);
+  border-radius: 0.625rem;
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 2.5rem;
+}
+nav#TOC h2 {
+  font-family: var(--dk-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dk-accent);
+  margin: 0 0 0.7rem;
+}
+nav#TOC ul { list-style: none; margin: 0; padding: 0; }
+nav#TOC ul ul { padding-left: 0.9rem; }
+nav#TOC li { margin: 0.3rem 0; }
+nav#TOC a {
+  color: var(--dk-body-2);
+  font-size: 0.88rem;
+  line-height: 1.35;
+  display: block;
+}
+nav#TOC a:hover { color: var(--dk-accent); text-decoration: none; }
 
-/* Tables: booktabs rules, no vertical lines, zebra banding, and a horizontal scroll on narrow
-   screens so an eight-column table never forces the page to scroll sideways. */
-.table-wrap { overflow-x: auto; margin: 1rem 0 .6rem; }
+/* The rail is only pulled out of the flow once the viewport is wide enough to hold it clear of the
+   centred 44rem measure. Content occupies 50% ± 22rem, so the rail's right edge must land at
+   50% - 24,5rem, which needs 1 340px before it stops colliding with the text. */
+@media (min-width: 1340px) {
+  nav#TOC {
+    position: fixed;
+    top: 5.5rem;
+    left: max(1.25rem, calc(50% - 40rem));
+    width: 15.5rem;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+    margin-bottom: 0;
+    background: transparent;
+    border: 0;
+    border-left: 1px solid var(--dk-hairline);
+    border-radius: 0;
+    padding: 0.1rem 0 0.1rem 1rem;
+  }
+  nav#TOC a { font-size: 0.84rem; }
+}
+
+/* ---------------------------------------------------------------------
+   Tables — hairline editorial, mono headers, horizontal scroll when wide.
+   --------------------------------------------------------------------- */
+/* Tables are direct children of body, so they inherit the 44rem measure above. display:block plus
+   width:max-content sizes each grid to its content and centres it; the eight-column tables break out
+   past the text measure rather than clip, and scroll horizontally only once the viewport is genuinely
+   too narrow for them. */
 table {
-  font-family: "Segoe UI", system-ui, sans-serif;
-  font-size: .84rem;
+  display: block;
+  width: max-content;
+  max-width: min(68rem, 100%);
+  overflow-x: auto;
   border-collapse: collapse;
-  width: 100%;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  margin: 1.1rem auto 0.5rem;
 }
 thead th {
+  background: #fff;
+  color: var(--dk-heading);
+  font-family: var(--dk-mono);
+  font-size: 0.74rem;
   font-weight: 600;
+  letter-spacing: 0.03em;
   text-align: left;
-  border-top: 2px solid var(--ink);
-  border-bottom: 1px solid var(--muted);
-  padding: .5rem .55rem;
-  white-space: nowrap;
+  vertical-align: bottom;
+  border-top: 1px solid var(--dk-hairline);
+  border-bottom: 2px solid var(--dk-hairline);
+  padding: 0.55rem 0.6rem;
 }
-tbody td { padding: .38rem .55rem; border: 0; }
-tbody tr:nth-child(odd) { background: var(--band); }
-tbody tr:last-child td { border-bottom: 2px solid var(--ink); }
-td[align="right"], th[align="right"] { text-align: right; }
+tbody td { padding: 0.4rem 0.6rem; border: 0; }
+tbody tr:nth-child(odd) { background: var(--dk-band); }
+tbody tr:last-child td { border-bottom: 1px solid var(--dk-hairline); }
+/* Numeric cells never break: a confidence interval split across two lines reads as two numbers.
+   Pandoc right-aligns with an inline style attribute rather than the legacy align attribute, so the
+   selector has to match the style — `td[align="right"]` silently matches nothing here. */
+td[style*="right"], th[style*="right"] { white-space: nowrap; }
+tbody tr:last-child strong { color: var(--dk-accent-700); }
 
-/* The "*Source: …*" note under every table, and figure captions. */
+/* The "*Source: …*" note under every table, and standalone figure captions. */
 p > em:only-child {
   display: block;
-  font-family: "Segoe UI", system-ui, sans-serif;
-  font-size: .8rem;
+  font-family: var(--dk-sans);
+  font-size: 0.82rem;
   font-style: normal;
-  color: var(--muted);
-  line-height: 1.45;
-  margin: .2rem 0 2rem;
+  color: var(--dk-muted);
+  line-height: 1.5;
+  margin: 0.35rem 0 2.4rem;
 }
 
-figure { margin: 2rem 0; }
-figure img, p img { max-width: 100%; height: auto; }
+/* ---------------------------------------------------------------------
+   Figures
+   --------------------------------------------------------------------- */
+figure { margin-top: 2.2rem; margin-bottom: 2.2rem; }
+figure img, p img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid var(--dk-hairline);
+  border-radius: 0.625rem;
+}
 figcaption {
-  font-family: "Segoe UI", system-ui, sans-serif;
-  font-size: .8rem;
-  color: var(--muted);
-  margin-top: .4rem;
+  font-family: var(--dk-sans);
+  font-size: 0.82rem;
+  color: var(--dk-muted);
+  margin-top: 0.5rem;
 }
 
-/* References and declarations read as apparatus, not argument. */
-h2#references ~ ul li, h2#declarations ~ p { font-size: .94rem; }
+/* ---------------------------------------------------------------------
+   References read as apparatus, not argument.
+   --------------------------------------------------------------------- */
+h2#references ~ ul { list-style: none; padding: 0; }
+h2#references ~ ul li {
+  font-size: 0.93rem;
+  line-height: 1.5;
+  padding-left: 1.4rem;
+  text-indent: -1.4rem;
+  margin-bottom: 0.55rem;
+  color: var(--dk-body-2);
+}
+
+/* ---------------------------------------------------------------------
+   Footer — the site's dark editorial band.
+   --------------------------------------------------------------------- */
+.dk-footer {
+  max-width: none;
+  margin: 4.5rem -1.25rem 0;
+  padding: 1.6rem 1.25rem;
+  background: #0f1419;
+  color: #aeb4b8;
+  font-size: 0.85rem;
+}
+.dk-footer-inner {
+  max-width: 68rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+.dk-footer strong { font-family: var(--dk-serif); color: #fff; }
+.dk-footer a { color: #c7ccce; }
+.dk-footer a:hover { color: #fff; }
+.dk-footer-right {
+  margin-left: auto;
+  font-family: var(--dk-mono);
+  font-size: 0.72rem;
+  color: #6b7176;
+}
 
 @media print {
-  body { background: #fff; font-size: 10.5pt; }
-  #quarto-content, main.content { max-width: none; padding: 0; }
-  h2 { break-after: avoid; }
+  body { background: #fff; font-size: 10.5pt; padding: 0; }
+  body > * { max-width: none; }
+  .dk-topbar, .dk-footer, nav#TOC { display: none; }
+  h2, h3 { break-after: avoid; }
   table, figure { break-inside: avoid; }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root { --ink: #ece8e1; --muted: #a8a49c; --rule: #3a382f; --paper: #16150f; --band: #1e1c17; --accent: #e0a08c; }
-  body { background: var(--paper); color: var(--ink); }
+  table { display: table; width: 100%; }
 }

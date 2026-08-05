@@ -85,6 +85,8 @@ studies/*/output/intermediate/
 /preview/
 /studies/**/*.html
 /studies/**/*_files/
+# ...but the typeset/ includes are SOURCE for 28_render_paper.R, not render output.
+!/studies/*/typeset/*.html
 # Typeset manuscripts (28_render_paper.R) are rebuilt from the tracked .md, tables and figures.
 /studies/*/output/paper/
 /quality_reports/**/*.html
