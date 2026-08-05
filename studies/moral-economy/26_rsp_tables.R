@@ -83,26 +83,29 @@ CORE_PAIRS <- sum(g$doctrinal)
 
 pc <- function(n, d) rsp_num(100 * n / d, 2)
 write_tab("tab1_population.md",
-  "**Table 1.** Construction of the analysis population.",
-  c("Layer", "Posts", "% of corpus", "% of layer", "Pairs"),
+  "**Table 1.** How we get from the whole corpus down to the posts we analyse.",
+  c("Group of posts", "Posts", "% of corpus", "% of meeting posts", "Pairs"),
   c("l", "r", "r", "r", "r"),
   list(
-    c("Corpus", rsp_int(CORPUS_N), "100,00", "—", "—"),
-    c("Tier-1 vocabulary, corpus-wide", rsp_int(T1_CORPUS), pc(T1_CORPUS, CORPUS_N), "—", "—"),
-    c("**Religion-linked economic layer**", paste0("**", rsp_int(LINKED_POSTS), "**"),
+    c("All posts in the corpus", rsp_int(CORPUS_N), "100,00", "—", "—"),
+    c("Posts using a teaching word anywhere", rsp_int(T1_CORPUS), pc(T1_CORPUS, CORPUS_N), "—", "—"),
+    c("**Posts where religion and economics meet**", paste0("**", rsp_int(LINKED_POSTS), "**"),
       paste0("**", pc(LINKED_POSTS, CORPUS_N), "**"), "**100,00**",
       paste0("**", rsp_int(LINKED_PAIRS), "**")),
-    c("… with Tier-1 vocabulary", rsp_int(T1_LAYER), pc(T1_LAYER, CORPUS_N),
+    c("… of these, posts using a teaching word", rsp_int(T1_LAYER), pc(T1_LAYER, CORPUS_N),
       pc(T1_LAYER, LINKED_POSTS), "—"),
-    c("… **and adjacent: doctrinal population**", paste0("**", rsp_int(CORE_POSTS), "**"),
+    c("… **using it nearby, the teaching posts**", paste0("**", rsp_int(CORE_POSTS), "**"),
       paste0("**", pc(CORE_POSTS, CORPUS_N), "**"), paste0("**", pc(CORE_POSTS, LINKED_POSTS), "**"),
       paste0("**", rsp_int(CORE_PAIRS), "**")),
-    c("*Memo:* any CST vocabulary, Tier 1 or 2", rsp_int(ANY_LAYER), pc(ANY_LAYER, CORPUS_N),
+    c("*Memo.* Everyday political words counted too", rsp_int(ANY_LAYER), pc(ANY_LAYER, CORPUS_N),
       pc(ANY_LAYER, LINKED_POSTS), "—")),
-  SRC(paste0("A post joins the layer when a religious term falls within 220 characters of an ",
-             "economic term, and the doctrinal population when Tier-1 vocabulary is adjacent as ",
-             "well. That last condition removes ", rsp_int(T1_LAYER - CORE_POSTS), " posts. Tier 2 ",
-             "is ordinary political vocabulary and bounds the count from above.")))
+  SRC(paste0("Religion and economics count as meeting when a religious term falls within 220 ",
+             "characters of an economic term. A post becomes a teaching post when one of the ",
+             "Tier-1 teaching words listed in Table A1 is within 220 characters as well; that ",
+             "last condition ",
+             "removes ", rsp_int(T1_LAYER - CORE_POSTS), " posts. A pair is one post counted on one ",
+             "economic subject. The memo row adds the Tier-2 words, which are everyday political ",
+             "words we never count as teaching, and shows how high the count could possibly go.")))
 put("adjacency_cost", T1_LAYER - CORE_POSTS)
 put("linked_posts", LINKED_POSTS); put("linked_pairs", LINKED_PAIRS)
 put("core_posts", CORE_POSTS);     put("core_pairs", CORE_PAIRS)
@@ -121,28 +124,31 @@ k4 <- prec4$k[prec4$code == "ax1_link_genuine"]; n4 <- prec4$n[prec4$code == "ax
 CHISQ <- suppressWarnings(chisq.test(cbind(k4, n4 - k4))$statistic)
 
 r1 <- function(a) prec1[prec1$axis == a, ]
-band <- function(lo, hi) paste0(rsp_num(lo, 1), "–", rsp_num(hi, 1), " by domain")
+band <- function(lo, hi) paste0(rsp_num(lo, 1), "–", rsp_num(hi, 1), " by subject")
 write_tab("tab2_audits.md",
-  "**Table 2.** Hand-coded validation of the numerator and the denominator (%).",
-  c("Audit", "Coded units", "n", "Rate", "95% CI or range", "Set in advance"),
+  "**Table 2.** What we found when we read posts by hand to check the search.",
+  c("What we checked", "What was read", "n", "Rate (%)", "95% CI or range", "Set in advance"),
   c("l", "l", "r", "r", "r", "r"),
   list(
-    c("**R1** teaching genuinely invoked", "doctrinal posts", rsp_int(r1("r1_genuine")$n),
+    c("**Check 1.** The teaching is genuinely used", "teaching posts", rsp_int(r1("r1_genuine")$n),
       paste0("**", rsp_num(r1("r1_genuine")$rate, 1), "**"),
       rsp_ci(r1("r1_genuine")$lo, r1("r1_genuine")$hi, 1), "≥ 80"),
-    c("R1b vocabulary genuinely present", "same cards", rsp_int(r1("r1_not_false")$n),
+    c("Check 1b. The teaching word is really there", "same 150 posts", rsp_int(r1("r1_not_false")$n),
       rsp_num(r1("r1_not_false")$rate, 1), rsp_ci(r1("r1_not_false")$lo, r1("r1_not_false")$hi, 1), "—"),
-    c("R2 term genuinely economic", "same cards", rsp_int(r1("r2_econ_true")$n),
+    c("Check 2. The economic word is really economic", "same 150 posts", rsp_int(r1("r2_econ_true")$n),
       rsp_num(r1("r2_econ_true")$rate, 1), rsp_ci(r1("r2_econ_true")$lo, r1("r2_econ_true")$hi, 1), "—"),
-    c("R1 and R2 jointly", "same cards", rsp_int(r1("r1_and_r2")$n),
+    c("Checks 1 and 2 both passed", "same 150 posts", rsp_int(r1("r1_and_r2")$n),
       rsp_num(r1("r1_and_r2")$rate, 1), rsp_ci(r1("r1_and_r2")$lo, r1("r1_and_r2")$hi, 1), "—"),
-    c("**R4** religion and economics in contact", "linked pairs, 60 per domain", rsp_int(sum(n4)),
+    c("**Check 3.** Religion and economics really meet", "60 pairs per subject", rsp_int(sum(n4)),
       paste0("**", rsp_num(W_GEN, 1), "**"), band(min(p_gen), max(p_gen)), "—"),
-    c("R4 under the strict reading", "same pairs", rsp_int(sum(n4)), rsp_num(W_STR, 1),
+    c("Check 3 under the strict reading", "the same 660 pairs", rsp_int(sum(n4)), rsp_num(W_STR, 1),
       band(min(p_str), max(p_str)), "—")),
-  SRC(paste0("R4 is weighted by the size of each domain in the layer. Domains differ (χ²(10) = ",
-             rsp_num(CHISQ, 1), "). Intervals are Wilson intervals and express measurement, not ",
-             "sampling, uncertainty.")))
+  SRC(paste0("Each rate is the share of the posts or pairs read that passed the check, and the ",
+             "last column shows a threshold fixed before any coding began. Check 3 is ",
+             "weighted by how large each economic subject is, and subjects differ from one another ",
+             "(χ²(10) = ", rsp_num(CHISQ, 1), "). The strict reading also requires the economic ",
+             "word to carry a plainly economic sense. Intervals are Wilson intervals; they express ",
+             "how well the search rules match a human reading, not sampling uncertainty.")))
 put("w_gen", W_GEN); put("w_str", W_STR); put("chisq", as.numeric(CHISQ))
 put("prec_min", min(p_gen)); put("prec_max", max(p_gen))
 put("corrected_headline", 100 * CORE_PAIRS / (LINKED_PAIRS * W_GEN / 100))
@@ -156,18 +162,20 @@ rows3 <- lapply(o, function(i) {
     rsp_num(g$raw_rate[i], 2), rsp_ci(b$lo, b$hi, 2), rsp_num(g$precision[i], 1),
     rsp_num(g$adj_rate[i], 2), rsp_ci(g$adj_lo[i], g$adj_hi[i], 2))
 })
-rows3[[length(rows3) + 1]] <- c("**All domains**", paste0("**", rsp_int(sum(g$linked)), "**"),
+rows3[[length(rows3) + 1]] <- c("**All subjects**", paste0("**", rsp_int(sum(g$linked)), "**"),
   paste0("**", rsp_int(sum(g$doctrinal)), "**"),
   paste0("**", rsp_num(100 * sum(g$doctrinal) / sum(g$linked), 2), "**"), "—",
   paste0("**", rsp_num(W_GEN, 1), "**"),
   paste0("**", rsp_num(100 * sum(g$doctrinal) / (sum(g$linked) * W_GEN / 100), 2), "**"), "—")
 write_tab("tab3_gradient.md",
-  "**Table 3.** Doctrinal invocation by economic domain, as measured and corrected (%).",
-  c("Economic domain", "Linked", "Doctrinal", "Measured", "95% CI", "Genuine link", "Corrected", "95% CI"),
+  "**Table 3.** How often Church teaching is named, by economic subject, before and after correction.",
+  c("Economic subject", "Pairs", "With teaching", "Measured rate (%)", "95% CI",
+    "Genuine meetings (%)", "Corrected rate (%)", "95% CI"),
   c("l", "r", "r", "r", "r", "r", "r", "r"), rows3,
-  SRC(paste0("Ordered by the corrected rate. Counts are post–domain pairs. The corrected column ",
-             "divides each denominator by that domain's coded rate of genuine linkage (Table 2, R4, ",
-             "n = 60 per domain) and carries the coding interval through.")))
+  SRC(paste0("Ordered by the corrected rate. A pair is one post counted on one economic subject. ",
+             "The measured rate is the share of a subject's pairs that name teaching. The corrected ",
+             "rate divides instead by the pairs that hand coding found to be genuine meetings ",
+             "(Table 2, Check 3, 60 pairs per subject), and carries that coding interval through.")))
 sortadj <- sort(g$adj_rate, decreasing = TRUE)
 put("climate_raw", g$raw_rate[g$domain == "green_energy"])
 put("climate_adj", g$adj_rate[g$domain == "green_energy"])
@@ -190,11 +198,13 @@ rows4 <- lapply(dom_ord, function(d) {
     rsp_num(sh[4], 1), rsp_num(sh[5], 1), rsp_num(sh[6], 1))
 })
 write_tab("tab4_era.md",
-  "**Table 4.** Vintage of the documents named, by economic domain (% of the domain's pairs).",
-  c("Economic domain", "Pairs", "1891–1991", "Conciliar", "Benedict", "Francis", "Mixed", "None named"),
+  "**Table 4.** How old the documents named are, by economic subject (% of that subject's teaching pairs).",
+  c("Economic subject", "Pairs with teaching", "1891–1991", "Conciliar (1961–1971)", "Benedict XVI",
+    "Francis era", "Mixed eras", "No document named"),
   c("l", "r", "r", "r", "r", "r", "r", "r"), rows4,
-  SRC(paste0("Rows sum to 100. “None named” marks a post that carries a doctrinal principle but no ",
-             "document title. The euro changeover has no doctrinal pairs and is left out.")))
+  SRC(paste0("Rows sum to 100. “Mixed eras” marks a post that names documents from more than one ",
+             "era, and “no document named” a post that names a principle of the teaching but no ",
+             "document title. The euro changeover names no teaching at all and is left out.")))
 era_share <- function(d, e) 100 * sum(core_era$Freq[core_era$domain == d & core_era$era == e]) / tot[[d]]
 put("classical_green", era_share("green_energy", "classical"))
 put("classical_housing", era_share("housing", "classical"))
@@ -215,18 +225,20 @@ SECN_L <- summ$pairs[summ$variant == "secular_min"]
 CONF_D <- sum(det$doctrinal[det$variant == "confessional_only"])
 SECN_D <- sum(det$doctrinal[det$variant == "secular_min"])
 write_tab("tab5_boundary.md",
-  "**Table 5.** Doctrinal invocation inside Church media and secular media.",
-  c("Outlet subset", "Linked", "% of all", "Doctrinal", "% of all", "Climate", "Runner-up", "Ratio"),
+  "**Table 5.** How often teaching is named inside Church media and inside secular media.",
+  c("Group of outlets", "Pairs", "% of all pairs", "With teaching", "% of teaching pairs",
+    "Climate rate (%)", "Next highest subject (%)", "Ratio"),
   c("l", "r", "r", "r", "r", "r", "l", "r"),
-  list(sub_row("baseline", "Whole linked layer"),
+  list(sub_row("baseline", "All outlets together"),
        sub_row("confessional_only", "Church outlets"),
-       sub_row("secular_min", "Secular, labelled only"),
-       sub_row("secular_max", "Secular, widest reading")),
-  SRC(paste0("Counts are post–domain pairs. Rates are the share of each subset's pairs that invoke ",
-             "teaching. “Widest reading” counts every unlabelled outlet as secular. Among pairs ",
-             "whose outlet carries either label, Church outlets supply ",
-             rsp_num(100 * CONF_L / (CONF_L + SECN_L), 1), "% of the layer but ",
-             rsp_num(100 * CONF_D / (CONF_D + SECN_D), 1), "% of doctrinal pairs.")))
+       sub_row("secular_min", "Secular outlets, labelled only"),
+       sub_row("secular_max", "Secular outlets, widest reading")),
+  SRC(paste0("Each rate is the share of that group's pairs which name teaching, so the climate ",
+             "column can be read against the next highest subject beside it. “Widest reading” ",
+             "counts every outlet we could not label as secular. Among pairs whose outlet carries ",
+             "either label, Church outlets ",
+             "supply ", rsp_num(100 * CONF_L / (CONF_L + SECN_L), 1), "% of the pairs but ",
+             rsp_num(100 * CONF_D / (CONF_D + SECN_D), 1), "% of the pairs that name teaching.")))
 put("conf_share_linked", 100 * CONF_L / LINKED_PAIRS)
 put("conf_share_doctrinal", 100 * CONF_D / CORE_PAIRS)
 put("conf_share_linked_labelled", 100 * CONF_L / (CONF_L + SECN_L))
@@ -246,15 +258,20 @@ put("variants_disjoint", sum(summ$intervals_disjoint))
 ## ---- TABLE 6 — register probe ------------------------------------------------------------------
 r <- reg[reg$n >= 10, ]; r <- r[order(-r$n), ]
 write_tab("tab6_register.md",
-  "**Table 6.** How the link reads in the hand-coded gold set (% of coded links).",
-  c("Economic domain", "Links", "Church as object", "Charity", "Justice", "Devotional"),
+  "**Table 6.** What the meeting between religion and economics is about (% of hand-coded links).",
+  c("Economic subject", "Coded links", "Church as economic actor", "Charity, the language of help",
+    "Justice, the language of rights", "Devotional or other"),
   c("l", "r", "r", "r", "r", "r"),
   lapply(seq_len(nrow(r)), function(i)
     c(DOM[[r$domain[i]]], rsp_int(r$n[i]), rsp_num(r$object[i], 1), rsp_num(r$charity[i], 1),
       rsp_num(r$justice[i], 1), rsp_num(r$remainder[i], 1))),
-  SRC(paste0("Domains with fewer than ten coded links are left out. These links come from a ",
-             "stratified gold set rather than a random draw, and one model did the coding, so the ",
-             "table is convergent evidence and not a population estimate.")))
+  SRC(paste0("Rows sum to 100. “Church as economic actor” means the Church itself is the economic ",
+             "party in the story, such as a parish building or a diocesan sale, rather than a voice ",
+             "about the economy. “Devotional or other” covers economic words used in a spiritual ",
+             "sense and links that fit no other class. Subjects with fewer than ten coded links are ",
+             "left out. These links come from a stratified gold set rather than a random draw, and ",
+             "one model did the coding, so the table is convergent evidence, not a population ",
+             "estimate.")))
 put("poverty_charity", reg$charity[reg$domain == "poverty_social"])
 put("poverty_justice", reg$justice[reg$domain == "poverty_social"])
 put("poverty_remainder", reg$remainder[reg$domain == "poverty_social"])
@@ -269,8 +286,9 @@ put("gold_links_n", sum(reg$n))
 ct <- core_terms[order(-core_terms$n), ]
 kindlab <- c(document = "document", marker = "principle")
 write_tab("tab7_terms.md",
-  "**Table A1.** Every Tier-1 term detected, at three stages of the funnel.",
-  c("Term", "Type", "Vintage", "Corpus", "Linked", "Doctrinal", "% of terms"),
+  "**Table A1.** Every Tier-1 teaching word we detect, counted at the three stages of Table 1.",
+  c("Teaching word", "Type of word", "Era of the document", "In the corpus", "In meeting posts",
+    "In teaching posts", "% of all uses"),
   c("l", "l", "l", "r", "r", "r", "r"),
   lapply(seq_len(nrow(ct)), function(i) {
     e <- ct$era[i]; e <- if (e %in% names(ERA)) ERA[[e]] else "—"
@@ -278,10 +296,11 @@ write_tab("tab7_terms.md",
     c(TERM[[ct$term[i]]], kindlab[[ct$kind[i]]], e, rsp_int(cw$n_corpus),
       rsp_int(cw$n_linked_econ), rsp_int(ct$n[i]), rsp_num(ct$pct[i], 2))
   }),
-  SRC(paste0("Counts are posts carrying the term. The doctrinal population holds ",
-             rsp_int(sum(ct$n)), " term occurrences across ", rsp_int(CORE_POSTS),
-             " posts, since one post can carry several terms. The last column is the share of those ",
-             "occurrences, which is what Figure 4 plots.")))
+  SRC(paste0("Counts are posts carrying the word. “Type of word” separates the titles of Church ",
+             "documents from the names of principles, and a principle belongs to no single era. The ",
+             "teaching posts hold ", rsp_int(sum(ct$n)), " uses of these words across ",
+             rsp_int(CORE_POSTS), " posts, since one post can carry several. The last column is the ",
+             "share of those uses, which is what Figure 4 plots.")))
 put("opcija_core", core_terms$n[core_terms$term == "opcija_za_siromasne"])
 put("opcija_pct", core_terms$pct[core_terms$term == "opcija_za_siromasne"])
 put("opcija_corpus", cterm$n_corpus[cterm$term == "opcija_za_siromasne"])

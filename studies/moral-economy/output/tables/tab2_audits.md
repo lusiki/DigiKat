@@ -1,14 +1,17 @@
-**Table 2.** Hand-coded validation of the numerator and the denominator (%).
+**Table 2.** What we found when we read posts by hand to check the search.
 
-| Audit                                    | Coded units                 |   n |     Rate |     95% CI or range | Set in advance |
-|:-----------------------------------------|:----------------------------|----:|---------:|--------------------:|---------------:|
-| **R1** teaching genuinely invoked        | doctrinal posts             | 150 | **83,3** |        [76,6; 88,4] |           ≥ 80 |
-| R1b vocabulary genuinely present         | same cards                  | 150 |     99,3 |        [96,3; 99,9] |              — |
-| R2 term genuinely economic               | same cards                  | 150 |     76,0 |        [68,6; 82,1] |              — |
-| R1 and R2 jointly                        | same cards                  | 150 |     64,7 |        [56,7; 71,9] |              — |
-| **R4** religion and economics in contact | linked pairs, 60 per domain | 660 | **39,5** | 21,7–63,3 by domain |              — |
-| R4 under the strict reading              | same pairs                  | 660 |     26,8 | 16,7–53,3 by domain |              — |
+| What we checked                                 | What was read        |   n | Rate (%) |      95% CI or range | Set in advance |
+|:------------------------------------------------|:---------------------|----:|---------:|---------------------:|---------------:|
+| **Check 1.** The teaching is genuinely used     | teaching posts       | 150 | **83,3** |         [76,6; 88,4] |           ≥ 80 |
+| Check 1b. The teaching word is really there     | same 150 posts       | 150 |     99,3 |         [96,3; 99,9] |              — |
+| Check 2. The economic word is really economic   | same 150 posts       | 150 |     76,0 |         [68,6; 82,1] |              — |
+| Checks 1 and 2 both passed                      | same 150 posts       | 150 |     64,7 |         [56,7; 71,9] |              — |
+| **Check 3.** Religion and economics really meet | 60 pairs per subject | 660 | **39,5** | 21,7–63,3 by subject |              — |
+| Check 3 under the strict reading                | the same 660 pairs   | 660 |     26,8 | 16,7–53,3 by subject |              — |
 
 *Source: authors' calculation on the DigiKat corpus of 710 307 Croatian digital media posts,
-2021–2026. R4 is weighted by the size of each domain in the layer. Domains differ (χ²(10) = 51,1).
-Intervals are Wilson intervals and express measurement, not sampling, uncertainty.*
+2021–2026. Each rate is the share of the posts or pairs read that passed the check, and the last
+column shows a threshold fixed before any coding began. Check 3 is weighted by how large each
+economic subject is, and subjects differ from one another (χ²(10) = 51,1). The strict reading also
+requires the economic word to carry a plainly economic sense. Intervals are Wilson intervals; they
+express how well the search rules match a human reading, not sampling uncertainty.*

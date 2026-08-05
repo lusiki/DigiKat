@@ -45,7 +45,7 @@ a <- adj[adj$code == "ax1_link_genuine", ]
 f1 <- rbind(
   data.frame(domain = a$domain, panel = "As measured", rate = a$raw_rate,
              lo = NA_real_, hi = NA_real_),
-  data.frame(domain = a$domain, panel = "Corrected for linkage precision", rate = a$adj_rate,
+  data.frame(domain = a$domain, panel = "Corrected for genuine meetings", rate = a$adj_rate,
              lo = a$adj_lo, hi = a$adj_hi))
 # Wilson intervals for the raw panel come from the robustness detail, which is the gated source
 det <- read.csv(file.path(ME_OUT, "cst_robustness_detail.csv"), fileEncoding = "UTF-8")
@@ -55,21 +55,22 @@ f1$hi[f1$panel == "As measured"] <- b$hi[match(f1$domain[f1$panel == "As measure
 f1$label <- DOM[f1$domain]
 ord <- a$domain[order(a$raw_rate)]
 f1$label <- factor(f1$label, levels = DOM[ord])
-f1$panel <- factor(f1$panel, levels = c("As measured", "Corrected for linkage precision"))
+f1$panel <- factor(f1$panel, levels = c("As measured", "Corrected for genuine meetings"))
 
 p1 <- ggplot(f1, aes(label, rate)) +
   geom_col(aes(fill = panel), width = 0.68, colour = "grey20", linewidth = 0.25) +
   geom_errorbar(aes(ymin = lo, ymax = hi), width = 0.25, linewidth = 0.35, colour = "grey15") +
   scale_fill_manual(values = c("As measured" = "grey70",
-                               "Corrected for linkage precision" = "grey35"), guide = "none") +
+                               "Corrected for genuine meetings" = "grey35"), guide = "none") +
   facet_wrap(~ panel, scales = "free_x") +
   coord_flip() +
-  labs(x = NULL, y = "Linked pairs invoking magisterial doctrine (%)",
-       title = "Figure 1. Doctrinal invocation by economic domain",
+  labs(x = NULL, y = "Pairs that name Church teaching (%)",
+       title = "Figure 1. How often Church teaching is named, by economic subject",
        caption = paste0("Source: authors' calculation on the DigiKat corpus of 710 307 Croatian ",
-                        "digital media posts, 2021-2026.\nBars are per-domain rates; whiskers are ",
-                        "95% intervals. Right panel divides each denominator by that domain's\n",
-                        "hand-coded genuine-linkage rate (n = 60 linked pairs per domain)."))
+                        "digital media posts, 2021-2026.\nA pair is one post counted on one ",
+                        "subject. Bars are rates per subject and whiskers are 95% intervals. The\n",
+                        "right panel divides instead by the pairs that hand coding found to be ",
+                        "genuine meetings (60 read per subject)."))
 p1 <- p1 + theme_digikat_print()
 ggsave(file.path(FIGDIR, "rsp_fig1_gradient.png"), p1, width = 6.7, height = 4.1, dpi = DPI, bg = "white")
 
@@ -87,11 +88,11 @@ p2 <- ggplot(e, aes(label, share, fill = era)) +
   geom_col(position = position_dodge(width = 0.75), width = 0.68,
            colour = "grey20", linewidth = 0.25) +
   scale_fill_manual(values = c("grey25", "grey60", "grey88")) +
-  labs(x = NULL, y = "Share of the domain's doctrinal pairs (%)",
-       title = "Figure 2. Which vintage of doctrine surfaces where",
-       caption = paste0("Source: authors' calculation. Rows are the eras of the magisterial ",
-                        "documents named in each post; posts naming only a\ndoctrine marker and ",
-                        "no document are excluded from this figure and reported separately in the text.")) +
+  labs(x = NULL, y = "Share of the subject's teaching pairs (%)",
+       title = "Figure 2. How old the documents named are, by economic subject",
+       caption = paste0("Source: authors' calculation. Bars are the eras of the Church documents ",
+                        "named in each post. Posts that name a\nprinciple of the teaching but no ",
+                        "document are left out here and reported separately in the text.")) +
   theme_digikat_print() +
   theme(axis.text.x = element_text(angle = 20, hjust = 1))
 ggsave(file.path(FIGDIR, "rsp_fig2_era.png"), p2, width = 6.7, height = 3.9, dpi = DPI, bg = "white")
@@ -99,19 +100,20 @@ ggsave(file.path(FIGDIR, "rsp_fig2_era.png"), p2, width = 6.7, height = 3.9, dpi
 ## ---- FIGURE 3: the confessional / secular boundary --------------------------------------------
 v <- det[det$variant %in% c("confessional_only", "secular_min", "secular_max"), ]
 v$panel <- factor(v$variant, levels = c("confessional_only", "secular_min", "secular_max"),
-                  labels = c("Confessional outlets", "Secular outlets (narrow)",
-                             "Secular outlets (widest)"))
+                  labels = c("Church outlets", "Secular outlets (labelled only)",
+                             "Secular outlets (widest reading)"))
 v$label <- DOM[v$domain]
 v$label <- factor(v$label, levels = DOM[ord])
 p3 <- ggplot(v, aes(label, rate)) +
   geom_col(width = 0.68, fill = "grey60", colour = "grey20", linewidth = 0.25) +
   geom_errorbar(aes(ymin = lo, ymax = hi), width = 0.25, linewidth = 0.35, colour = "grey15") +
   facet_wrap(~ panel, nrow = 1) + coord_flip() +
-  labs(x = NULL, y = "Linked pairs invoking magisterial doctrine (%)",
-       title = "Figure 3. Topical selection happens at the confessional/secular boundary",
-       caption = paste0("Source: authors' calculation. 'Narrow' counts only outlets labelled ",
-                        "secular; 'widest' additionally counts every unlabelled\noutlet as secular, ",
-                        "the most hostile available assumption. Whiskers are 95% intervals.")) +
+  labs(x = NULL, y = "Pairs that name Church teaching (%)",
+       title = "Figure 3. The sorting by subject happens between Church media and secular media",
+       caption = paste0("Source: authors' calculation. 'Labelled only' counts the outlets we could ",
+                        "label as secular; 'widest reading' also\ncounts every outlet we could not ",
+                        "label, which is the assumption least kind to our own argument.\n",
+                        "Whiskers are 95% intervals.")) +
   theme_digikat_print()
 ggsave(file.path(FIGDIR, "rsp_fig3_boundary.png"), p3, width = 6.9, height = 4.3, dpi = DPI, bg = "white")
 
@@ -122,20 +124,20 @@ ggsave(file.path(FIGDIR, "rsp_fig3_boundary.png"), p3, width = 6.9, height = 4.3
 ct <- read.csv(file.path(ME_OUT, "cst_core_terms.csv"), fileEncoding = "UTF-8")
 ct$label <- factor(TERM_PLOT[ct$term], levels = TERM_PLOT[ct$term[order(ct$n)]])
 ct$kind <- factor(ct$kind, levels = c("document", "marker"),
-                  labels = c("Magisterial document", "Doctrinal principle"))
+                  labels = c("Title of a Church document", "Name of a principle"))
 p4 <- ggplot(ct, aes(label, n)) +
   geom_col(aes(fill = kind), width = 0.7, colour = "grey20", linewidth = 0.25) +
   geom_text(aes(label = n), hjust = -0.25, size = 2.6, colour = "grey15") +
-  scale_fill_manual(values = c("Magisterial document" = "grey35",
-                               "Doctrinal principle" = "grey78")) +
+  scale_fill_manual(values = c("Title of a Church document" = "grey35",
+                               "Name of a principle" = "grey78")) +
   scale_y_continuous(expand = expansion(mult = c(0, 0.12))) +
   coord_flip() +
-  labs(x = NULL, y = "Posts in the doctrinal population carrying the term",
-       title = "Figure 4. Which doctrinal vocabulary circulates",
-       caption = paste0("Source: authors' calculation. All 23 Tier-1 terms detected in the\n",
-                        "1 198-post doctrinal population; a post may carry more than one term.\n",
-                        "The preferential option for the poor - the tradition's own principle for\n",
-                        "the largest contact zone in the corpus - is carried by 29 posts.")) +
+  labs(x = NULL, y = "Teaching posts carrying the word",
+       title = "Figure 4. Which teaching words actually circulate",
+       caption = paste0("Source: authors' calculation. All 23 Tier-1 teaching words detected in ",
+                        "the\n1 198 teaching posts; one post may carry more than one word.\n",
+                        "The preferential option for the poor, the tradition's own principle for\n",
+                        "poverty, the largest subject in the corpus, is carried by 29 posts.")) +
   theme_digikat_print() +
   theme(panel.grid.major.x = element_line(colour = "grey88", linewidth = 0.3))
 ggsave(file.path(FIGDIR, "rsp_fig4_vocabulary.png"), p4, width = 7.0, height = 5.2, dpi = DPI, bg = "white")

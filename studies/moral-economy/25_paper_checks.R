@@ -11,12 +11,19 @@
 # 26_rsp_tables.R, so the fragments must still appear byte-for-byte, and every number quoted in the
 # prose must still match the scalar the same script derived from output/.
 #
-#   Rscript studies/moral-economy/25_paper_checks.R
+# The manuscript exists in two versions. v1 is the plain-language draft; v2 is the academic-structure
+# rewrite. Both are built from the SAME table fragments and the SAME derived scalars, so every check
+# below is identical and only the target file changes.
+#
+#   Rscript studies/moral-economy/25_paper_checks.R          # v1
+#   Rscript studies/moral-economy/25_paper_checks.R --v2     # v2
 suppressPackageStartupMessages({ library(here) })
 source(here::here("studies/moral-economy/sem_lib.R"))
 source(here::here("studies/moral-economy/rsp_labels.R"))
 
-PAPER  <- here::here("studies/moral-economy/PAPER_RSP_v1.md")
+VERSION <- if ("--v2" %in% commandArgs(trailingOnly = TRUE)) "v2" else "v1"
+PAPER  <- here::here(sprintf("studies/moral-economy/PAPER_RSP_%s.md", VERSION))
+if (!file.exists(PAPER)) stop("No such manuscript: ", PAPER, call. = FALSE)
 TABDIR <- file.path(ME_OUT, "tables")
 FIGDIR <- file.path(ME_OUT, "figures")
 txt <- readLines(PAPER, encoding = "UTF-8", warn = FALSE)
@@ -27,7 +34,7 @@ ok  <- function(cond, label, detail = "") {
   res <<- c(res, isTRUE(cond)); invisible(cond)
 }
 
-cat("=== RSP manuscript checks ===\n\n--- length ---\n")
+cat(sprintf("=== RSP manuscript checks (%s) ===\n\n--- length ---\n", basename(PAPER)))
 
 ## ---- abstract length -------------------------------------------------------------------------
 a0 <- grep("^## Abstract \\(English\\)", txt); a1 <- grep("^\\*\\*Keywords", txt)[1]

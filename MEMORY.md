@@ -98,6 +98,47 @@
   Two open flags for the PI: "Croatian" alone may understate BiH-sourced material, and a methods
   referee will likely ask for the inclusion rule in-text.
 
+## Manuscript prose style (PI, 2026-08-05)
+- [LEARN] Papers are written as FLOWING ACADEMIC PROSE. No bold or italic run-in headings inside a
+  section (`**The corpus.** …`, `*Mistake one: …*`), no label-then-explanation constructions, and no
+  em-dash appositives. Colons are effectively banned in the prose (source notes and the declaration
+  labels are the exception). Every term a first-time reader could miss must be explained where it is
+  first used, tables and figures included: prefer "posts where religion and economics meet" and
+  "economic subject" in the text over `religion-linked economic layer`, `doctrinal population`,
+  `domain`, `Tier-1 vocabulary`, which stay as the code's names.
+- [LEARN] RSP caps the manuscript at 50 000 characters INCLUDING tables, so clearer table headers and
+  source notes are paid for out of the prose budget. `25_paper_checks.R` measures it; after the
+  2026-08-05 clarity pass ≈ 759 characters remain, which is roughly what the Croatian abstract needs.
+  Any further addition has to be a swap.
+- [LEARN] Table fragments are installed into `PAPER_RSP_v1.md` by `27_sync_tables.R`, never by hand;
+  the loop is `26_rsp_tables.R` → `27_sync_tables.R` → `25_paper_checks.R`. `28_render_paper.R`
+  typesets the PDF (Typst, bundled with Quarto, no LaTeX) and a styled HTML into `output/paper/`,
+  building in a temp directory OUTSIDE the repo so a stray render can never touch `docs/`.
+
+## Two manuscript versions (PI, 2026-08-05)
+- [LEARN] `PAPER_RSP_v1.md` (plain-language) and `PAPER_RSP_v2.md` (conventional academic structure —
+  Introduction / Theoretical framework / Data and methods / Results / Discussion / Conclusion, with
+  numbered subsections, an explicit gap statement and stated expectations) are BOTH live and BOTH
+  reconcile against the SAME generated fragments and the same `rsp_derived.csv`. `25_paper_checks.R`,
+  `27_sync_tables.R` and `28_render_paper.R` all take `--v2` (sync also takes `--all`); default is v1.
+  Both pass 29/29. Do not fork the table generator — the fragments and their plain-language captions
+  are shared, which is the deliberate 2026-08-05 accessibility decision, not an oversight in v2.
+- [LEARN] The academic apparatus costs ~4 500 characters against RSP's 50 000 cap. v2 was drafted at
+  55 007 and reduced to **49 990** purely by tightening prose and deleting one redundant appendix grid
+  (the per-table provenance table, which the Reproduction paragraph already states); no table, figure,
+  number or reference was cut. That leaves **10 characters** for the Croatian abstract, so v2 is NOT
+  submittable as it stands. Closing the ~750-character gap needs a PI decision, and the cheapest
+  candidates are Table 4 (vintage, ≈2 300 characters; its five era shares are all quoted in §4.2 prose,
+  but dropping it means relaxing the seven-fragment gate in `25_paper_checks.R`), the remaining
+  appendix quantities paragraph (≈700), or Boukes 2022 (≈215).
+- [LEARN] The character gate counts hard-wrap newlines, roughly 550 of them, which do not exist in a
+  submitted `.docx`. The measure is therefore conservative by ~1% and should not be gamed by rewrapping.
+- [LEARN] References verified 2026-08-05 and cleared for citation, closing the two holes flagged in
+  `LITREVIEW_pilot_rsp.md` Part F: Kallunki, V. & Zrinščak, S. (2021) *Journal of Contemporary
+  Religion* 36(1), 123–142 (the Croatian church-and-welfare anchor); Stubbs, P. & Zrinščak, S. (2009)
+  *Social Policy & Administration* 43(2), 121–135; Boukes, M. (2022) *IJPP* 27(2), 374–395;
+  van Kersbergen & Manow (2009) Cambridge UP confirmed.
+
 ## Housekeeping resolution (2026-07-28)
 - [LEARN] Legacy NLP/stemmer scripts with phantom or hard-coded paths are archived under
   `archive/legacy-pipeline/`; active code uses `resources/` and `R/lib/`.

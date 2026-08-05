@@ -50,6 +50,8 @@ website:
             href: pages/studije/crkva-i-dezinformacije.qmd
           - text: "Poskupjele svijeće, tihi proroci"
             href: pages/studije/inflacija-i-religija.qmd
+          - text: "Socijalni nauk Crkve u raspravi o gospodarstvu"
+            href: pages/studije/socijalni-nauk-i-gospodarstvo.qmd
       - text: "Projektni raspored"
         href: pages/schedule.qmd
       - text: "Obavijesti"

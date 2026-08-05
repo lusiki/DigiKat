@@ -1,0 +1,79 @@
+---
+title: "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu"
+subtitle: "Nauk se u sekularne medije probija ondje gdje već postoji svjetovni argument koji ga može ponijeti, pa najviše dopire u temi klime, a najmanje u temama rada i plaća"
+date: last-modified
+categories: ["Tematsko istraživanje", "Socijalni nauk", "Rukopis za časopis"]
+---
+
+Katolički socijalni nauk o radu, plaćama, vlasništvu i siromaštvu piše od 1891. godine, no koliko toga
+doista dopre do javne rasprave o gospodarstvu i koji njegovi dijelovi dopiru, dosad nije bilo izmjereno.
+Istraživanje to mjeri na cijelom korpusu od 710.307 objava hrvatskoga digitalnog medijskog prostora
+(2021.–2026.) i pokazuje da odabir ne nastaje u crkvenoj komunikaciji, nego na granici prema sekularnim
+medijima.
+
+## Istraživačko pitanje
+
+Koji dijelovi socijalnog nauka ulaze u javnu raspravu o gospodarstvu, razlikuje li se to po gospodarskoj
+temi i gdje u medijskom sustavu ta razlika nastaje. Pitanje pripada socijalnoj politici, a ne sociologiji
+religije: socijalna se politika brani u javnosti, a obrana se vodi jezikom. Nije svejedno opisuju li se
+siromašni kao osobe kojima treba pomoći ili kao osobe kojima nešto pripada, jer prvi opis pomoć čini
+diskrecijskom, a drugi je čini zahtjevom.
+
+## Podaci i metode
+
+Religija i gospodarstvo susreću se u 108.966 objava, utvrđeno preko jedanaest gospodarskih tema i
+blizinskog filtra od ±220 znakova. U 1.198 objava uz gospodarski pojam stoji i izričaj službenoga nauka,
+prepoznat po ograničenom rječniku od šesnaest naslova crkvenih dokumenata i sedam izraza koji izvan
+crkvenog nauka nemaju značenje (*socijalni nauk*, *supsidijarnost*, *opcija za siromašne* i drugi).
+Jedinica analize je par objave i teme, jer jedna objava može otvoriti više gospodarskih tema.
+
+Mjerenje je provjereno na 810 ručno kodiranih jedinica. Nauk se doista koristi u 83,3 % pronađenih
+objava, no samo 39,5 % pronađenih susreta religije i gospodarstva stvarni su susreti, a ne slučajno
+suspominjanje. Nazivnik je zato ispravljen, čime se procjena približno utrostručuje u odnosu na
+neispravljeno brojanje.
+
+## Ključni nalazi
+
+Nauk se imenuje u približno **jednom od dvadeset i sedam stvarnih susreta** religije i gospodarstva. To
+je tanak tok kroz pet godina cijeloga nacionalnog medijskog sustava.
+
+Raspodjela po temama ide suprotno povijesti same tradicije. Klima i energetika vode s 14,80 %, dok su
+stanovanje, cijene i uvođenje eura pri dnu, a plaće su na 3,79 %. Tradicija je počela plaćama, a okoliš
+je dosegnula tek 2015. godine, pa tema o kojoj Crkva piše najdulje nije ona koja putuje.
+
+Odabir nastaje izvan Crkve. Unutar crkvenih medija teme su pokrivene razmjerno ujednačeno i klima vodi
+tek 1,40 puta, dok unutar sekularnih medija vodi 3,79 puta. Crkva o svojim temama govori podjednako
+često, a sekularni mediji biraju koju će od njih prenijeti. Objašnjenje da uredništva jednostavno biraju
+aktualnog papu provjereno je i ne stoji, jer se dokumenti iz Franjina razdoblja u sekularnim medijima
+pojavljuju u 21,2 % slučajeva, a stariji u 26,1 %.
+
+U temi siromaštva, koja je najveće dodirno područje, u optjecaju je rječnik pomoći, a ne rječnik prava.
+Načelo pisano upravo za tu temu, *opcija za siromašne*, pojavljuje se u 33 objave na 710.307, dok se
+opća namjena dobara, najoštrija tvrdnja tradicije o vlasništvu, pojavljuje u osam. Umjesto načela kruže
+opći nazivi, pa se *socijalni nauk* pojavljuje u 472 analizirane objave, a *Laudato si'* u 447.
+
+## Zašto je to važno
+
+U zemlji u kojoj je Crkva najveći pružatelj socijalne skrbi izvan države, a socijalna pomoć uska i
+dohodovno provjeravana, rječnik kojim se o siromaštvu raspravlja u javnosti pretežito je rječnik pomoći.
+Argumenti o velikodušnosti imaju poznatu slabost u trenutku donošenja proračuna jer se na njih može
+odgovoriti nabrajanjem već danoga, što s argumentima o pravima nije moguće. Nalaz nije prigovor Crkvi,
+jer se odabir događa u uredništvima, niti govori o vjerovanju, nego isključivo o tome koji izričaji
+dolaze do objavljenoga medijskog teksta.
+
+## Cijeli rad
+
+Rukopis *„Which parts of Catholic social teaching reach public argument about the economy? Church
+teaching, secular media and the language of poverty in Croatia, 2021–2026"* dostupan je u cijelosti:
+
+- [Rad u HTML formatu](../../assets/papers/socijalni-nauk-i-gospodarstvo.html)
+- [Rad u PDF formatu](../../assets/papers/socijalni-nauk-i-gospodarstvo.pdf)
+
+Sve tablice i slike u radu generiraju se skriptama iz javno dostupnih izlaznih datoteka studije, a opis
+korpusa, način prikupljanja i profil izvora objavljeni su na stranici
+[Baza podataka](../baza.qmd).
+
+## Status
+
+Radni rukopis (2026-08-05), autor Luka Šikić, priprema se za časopis. Dio drugog izlaznog toka projekta
+(tematske studije i radovi) — vidi [Projektni raspored](../schedule.qmd).

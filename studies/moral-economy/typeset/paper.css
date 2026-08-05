@@ -1,0 +1,106 @@
+/* moral-economy — SCREEN AND PRINT STYLE FOR THE RSP MANUSCRIPT HTML.
+   Injected by 28_render_paper.R. Styles the artefact only; the manuscript stays plain markdown. */
+
+:root {
+  --ink: #1d1d1b;
+  --muted: #5b5b57;
+  --rule: #d8d3c8;
+  --accent: #7a2e1e;
+  --paper: #fffdf9;
+  --band: #f7f5f1;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Cambria, Georgia, "Times New Roman", serif;
+  font-size: 1.02rem;
+  line-height: 1.62;
+}
+
+#quarto-content, main.content {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 6rem;
+}
+
+/* Title block: the H1 and the H2 immediately under it read as one unit. */
+h1.title, main > h1:first-of-type {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 1.9rem;
+  line-height: 1.25;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: .4rem;
+}
+
+h2, h3 {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  margin-top: 2.6rem;
+  margin-bottom: .8rem;
+}
+h2 { font-size: 1.22rem; color: var(--accent); }
+h3 { font-size: 1.05rem; color: var(--ink); }
+
+p { text-align: justify; hyphens: auto; }
+
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.4rem 0; }
+
+/* Tables: booktabs rules, no vertical lines, zebra banding, and a horizontal scroll on narrow
+   screens so an eight-column table never forces the page to scroll sideways. */
+.table-wrap { overflow-x: auto; margin: 1rem 0 .6rem; }
+table {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: .84rem;
+  border-collapse: collapse;
+  width: 100%;
+}
+thead th {
+  font-weight: 600;
+  text-align: left;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--muted);
+  padding: .5rem .55rem;
+  white-space: nowrap;
+}
+tbody td { padding: .38rem .55rem; border: 0; }
+tbody tr:nth-child(odd) { background: var(--band); }
+tbody tr:last-child td { border-bottom: 2px solid var(--ink); }
+td[align="right"], th[align="right"] { text-align: right; }
+
+/* The "*Source: …*" note under every table, and figure captions. */
+p > em:only-child {
+  display: block;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: .8rem;
+  font-style: normal;
+  color: var(--muted);
+  line-height: 1.45;
+  margin: .2rem 0 2rem;
+}
+
+figure { margin: 2rem 0; }
+figure img, p img { max-width: 100%; height: auto; }
+figcaption {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: .8rem;
+  color: var(--muted);
+  margin-top: .4rem;
+}
+
+/* References and declarations read as apparatus, not argument. */
+h2#references ~ ul li, h2#declarations ~ p { font-size: .94rem; }
+
+@media print {
+  body { background: #fff; font-size: 10.5pt; }
+  #quarto-content, main.content { max-width: none; padding: 0; }
+  h2 { break-after: avoid; }
+  table, figure { break-inside: avoid; }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root { --ink: #ece8e1; --muted: #a8a49c; --rule: #3a382f; --paper: #16150f; --band: #1e1c17; --accent: #e0a08c; }
+  body { background: var(--paper); color: var(--ink); }
+}

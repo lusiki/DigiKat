@@ -85,6 +85,8 @@ studies/*/output/intermediate/
 /preview/
 /studies/**/*.html
 /studies/**/*_files/
+# Typeset manuscripts (28_render_paper.R) are rebuilt from the tracked .md, tables and figures.
+/studies/*/output/paper/
 /quality_reports/**/*.html
 /quality_reports/**/*_files/
 /README.html
