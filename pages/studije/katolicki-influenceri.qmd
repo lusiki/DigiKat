@@ -1,6 +1,10 @@
 ---
 title: "Katolički influenceri i institucionalni deficit pažnje"
 subtitle: "Strategije privlačenja pažnje u hrvatskom religijskom digitalnom prostoru"
+author:
+  - name: "Projekt DigiKat"
+    url: "https://lusiki.github.io/DigiKat/"
+    affiliation: "Hrvatsko katoličko sveučilište"
 date: last-modified
 categories: ["Tematsko istraživanje", "Nacrt dostupan"]
 ---
@@ -38,8 +42,16 @@ društvene mreže, institucije zadržavaju jaču web prisutnost. Obrasci tematsk
 različite niše: influenceri se fokusiraju na devocijski i inspirativni sadržaj, institucije na vijesti
 i administrativne informacije.
 
+## Cijeli rad
+
+Pun tekst nacrta dostupan je u dva usklađena formata.
+
+::: {.study-paper-formats aria-label="Dostupni formati rada"}
+<a class="study-paper-format study-paper-format--primary" href="../../assets/papers/katolicki-influenceri.html"><span class="study-paper-format__type">HTML</span><span class="study-paper-format__label">Čitanje u pregledniku</span></a>
+<a class="study-paper-format" href="../../assets/papers/katolicki-influenceri.pdf"><span class="study-paper-format__type">PDF</span><span class="study-paper-format__label">Preuzimanje i ispis</span></a>
+:::
+
 ## Status
 
-Nacrt dostupan. Pun tekst dostupan je na
-[Poveznica](https://lusiki.github.io/Katolicki_Influenceri/code/analysis_hr.html).
+Nacrt dostupan.
 Dio drugog izlaznog toka projekta (tematske studije i radovi) — vidi [Projektni raspored](../schedule.qmd).

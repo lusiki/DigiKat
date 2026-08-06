@@ -1,6 +1,10 @@
 ---
 title: "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu"
 subtitle: "Nauk se u sekularne medije probija ondje gdje već postoji svjetovni argument koji ga može ponijeti, pa najviše dopire u temi klime, a najmanje u temama rada i plaća"
+author:
+  - name: "Luka Šikić"
+    url: "https://www.lukasikic.info/"
+    affiliation: "Hrvatsko katoličko sveučilište"
 date: last-modified
 categories: ["Tematsko istraživanje", "Socijalni nauk", "Rukopis za časopis"]
 ---
@@ -66,8 +70,10 @@ dolaze do objavljenoga medijskog teksta.
 Rukopis *„Which parts of Catholic social teaching reach public argument about the economy? Church
 teaching, secular media and the language of poverty in Croatia, 2021–2026"* dostupan je u cijelosti:
 
-- [Rad u HTML formatu](../../assets/papers/socijalni-nauk-i-gospodarstvo.html)
-- [Rad u PDF formatu](../../assets/papers/socijalni-nauk-i-gospodarstvo.pdf)
+::: {.study-paper-formats aria-label="Dostupni formati rada"}
+<a class="study-paper-format study-paper-format--primary" href="../../assets/papers/socijalni-nauk-i-gospodarstvo.html"><span class="study-paper-format__type">HTML</span><span class="study-paper-format__label">Čitanje u pregledniku</span></a>
+<a class="study-paper-format" href="../../assets/papers/socijalni-nauk-i-gospodarstvo.pdf"><span class="study-paper-format__type">PDF</span><span class="study-paper-format__label">Preuzimanje i ispis</span></a>
+:::
 
 Sve tablice i slike u radu generiraju se skriptama iz javno dostupnih izlaznih datoteka studije, a opis
 korpusa, način prikupljanja i profil izvora objavljeni su na stranici
@@ -75,5 +81,6 @@ korpusa, način prikupljanja i profil izvora objavljeni su na stranici
 
 ## Status
 
-Radni rukopis (2026-08-05), autor Luka Šikić, priprema se za časopis. Dio drugog izlaznog toka projekta
-(tematske studije i radovi) — vidi [Projektni raspored](../schedule.qmd).
+Radni rukopis (2026-08-05), autor [Luka Šikić](https://www.lukasikic.info/), priprema se za časopis.
+Dio drugog izlaznog toka projekta (tematske studije i radovi) — vidi
+[Projektni raspored](../schedule.qmd).

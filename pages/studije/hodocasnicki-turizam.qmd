@@ -1,6 +1,16 @@
 ---
 title: "Memorijalni okvir hrvatskih katoličkih odredišta"
 subtitle: "Treći registar u medijskoj reprezentaciji marijanskih svetišta — sjecište hodočašća i ratnog sjećanja"
+author:
+  - name: "Matea Topić Crnoja"
+    url: "https://www.unicath.hr/odjeli-i-fakultet/nastavnici/matea-topic-crnoja"
+    affiliation: "Hrvatsko katoličko sveučilište"
+  - name: "Petra Palić"
+    url: "https://www.unicath.hr/odjeli-i-fakultet/nastavnici/petra-palic"
+    affiliation: "Hrvatsko katoličko sveučilište"
+  - name: "Luka Šikić"
+    url: "https://www.lukasikic.info/"
+    affiliation: "Hrvatsko katoličko sveučilište"
 date: last-modified
 categories: ["Tematsko istraživanje", "Nacrt u izradi"]
 ---
@@ -33,9 +43,20 @@ zapadnoslavonskog masakra iz 1991., gdje mu pripada 42 % članaka — gotovo tro
 korpusnog prosjeka. Nalaz opstaje nakon kontrole za destinaciju, godinu, mjesec, platformu i
 blagdanski prozor.
 
+## Cijeli rad
+
+Pun tekst nacrta dostupan je u tri usklađena formata.
+
+::: {.study-paper-formats aria-label="Dostupni formati rada"}
+<a class="study-paper-format study-paper-format--primary" href="../../assets/papers/memorijalni-okvir.html"><span class="study-paper-format__type">HTML</span><span class="study-paper-format__label">Čitanje u pregledniku</span></a>
+<a class="study-paper-format" href="../../assets/papers/memorijalni-okvir.pdf"><span class="study-paper-format__type">PDF</span><span class="study-paper-format__label">Preuzimanje i ispis</span></a>
+<a class="study-paper-format" href="../../assets/papers/memorijalni-okvir.docx"><span class="study-paper-format__type">Word</span><span class="study-paper-format__label">Uređivi dokument</span></a>
+:::
+
 ## Status
 
-Nacrt u izradi — autorice/autor Matea Topić Crnoja, Petra Palić i Luka Šikić (Odjel za sociologiju,
-Hrvatsko katoličko sveučilište). Pun tekst dostupan je na
-[Poveznica](https://lusiki.github.io/Memorijalni-okvir/manuscript/manuscript_one.html).
+Nacrt u izradi — autorice/autor
+[Matea Topić Crnoja](https://www.unicath.hr/odjeli-i-fakultet/nastavnici/matea-topic-crnoja),
+[Petra Palić](https://www.unicath.hr/odjeli-i-fakultet/nastavnici/petra-palic) i
+[Luka Šikić](https://www.lukasikic.info/) (Odjel za sociologiju, Hrvatsko katoličko sveučilište).
 Dio drugog izlaznog toka projekta (tematske studije i radovi) — vidi [Projektni raspored](../schedule.qmd).

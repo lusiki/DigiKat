@@ -3,8 +3,10 @@ title: "Inflacija, informacije i odgođene promjene cijena"
 subtitle: "Inflation, Information, and Delayed Repricing"
 author:
   - name: "Luka Šikić"
+    url: "https://www.lukasikic.info/"
     affiliation: "Hrvatsko katoličko sveučilište"
   - name: "Petra Palić"
+    url: "https://www.unicath.hr/odjeli-i-fakultet/nastavnici/petra-palic"
     affiliation: "Hrvatsko katoličko sveučilište"
 date: last-modified
 categories: ["Tematsko istraživanje", "Ekonomija", "Rukopis za časopis"]
@@ -66,14 +68,18 @@ dok je izvještavanje o promjenama cijena raspodijeljeno između biskupija, bisk
 
 Potpuni rukopis dostupan je u tri formata:
 
-- [HTML — čitanje u pregledniku](../../assets/papers/inflation-information-delayed-repricing.html)
-- [PDF — preuzimanje i ispis](../../assets/papers/inflation-information-delayed-repricing.pdf)
-- [Word — uređiva dokumentacija](../../assets/papers/inflation-information-delayed-repricing.docx)
+::: {.study-paper-formats aria-label="Dostupni formati rada"}
+<a class="study-paper-format study-paper-format--primary" href="../../assets/papers/inflation-information-delayed-repricing.html"><span class="study-paper-format__type">HTML</span><span class="study-paper-format__label">Čitanje u pregledniku</span></a>
+<a class="study-paper-format" href="../../assets/papers/inflation-information-delayed-repricing.pdf"><span class="study-paper-format__type">PDF</span><span class="study-paper-format__label">Preuzimanje i ispis</span></a>
+<a class="study-paper-format" href="../../assets/papers/inflation-information-delayed-repricing.docx"><span class="study-paper-format__type">Word</span><span class="study-paper-format__label">Uređivi dokument</span></a>
+:::
 
 Sve tablice, slike i brojčani navodi generirani su iz arhiviranih izlaza studije. Opis korpusa i profil
 izvora dostupni su na stranici [Baza podataka](../baza.qmd).
 
 ## Status
 
-Radni rukopis Luke Šikića i Petre Palić, pripremljen u okviru projekta DigiKat na Hrvatskom katoličkom
-sveučilištu. Dio drugog izlaznog toka projekta — vidi [Projektni raspored](../schedule.qmd).
+Radni rukopis [Luke Šikića](https://www.lukasikic.info/) i
+[Petre Palić](https://www.unicath.hr/odjeli-i-fakultet/nastavnici/petra-palic), pripremljen u okviru
+projekta DigiKat na Hrvatskom katoličkom sveučilištu. Dio drugog izlaznog toka projekta — vidi
+[Projektni raspored](../schedule.qmd).

@@ -1,0 +1,494 @@
+/* DigiKat thematic-paper skin
+   --------------------------------------------------------------------------
+   One presentation layer for all full papers linked from Tematska istraživanja.
+   The scholarly HTML remains unchanged; this file only normalizes publication
+   chrome, typography, layout, tables, figures, navigation, and print output.
+   Tokens mirror assets/css/custom.scss, the website design source of truth. */
+
+:root {
+  --dk-accent: #0f4c5c;
+  --dk-accent-700: #0a3543;
+  --dk-accent-300: #2c6f7e;
+  --dk-accent-050: #eaf0f2;
+  --dk-accent-ink: #2c5663;
+  --dk-ink: #0f1419;
+  --dk-heading: #14181d;
+  --dk-body: #1b1d21;
+  --dk-body-2: #4f535a;
+  --dk-muted: #6b6f76;
+  --dk-sub: #8a8e95;
+  --dk-paper: #f5f4f0;
+  --dk-band: #faf9f7;
+  --dk-hairline: #e4e2da;
+  --dk-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --dk-sans: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --dk-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--dk-paper) !important;
+  color: var(--dk-body) !important;
+  font-family: var(--dk-sans) !important;
+  font-size: 1rem;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: var(--dk-accent);
+  text-decoration: none;
+}
+
+a:hover { color: var(--dk-accent-700); text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--dk-accent); outline-offset: 3px; }
+::selection { background: var(--dk-accent); color: #fff; }
+
+/* Publication bar --------------------------------------------------------- */
+.digikat-paper-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1050;
+  max-width: none !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 1.5rem;
+  background: rgba(245, 244, 240, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--dk-hairline);
+}
+
+.digikat-paper-nav__inner {
+  max-width: 76rem;
+  min-height: 3.4rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+.digikat-paper-nav__brand {
+  flex: none;
+  color: var(--dk-heading) !important;
+  font-family: var(--dk-serif);
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.digikat-paper-nav__context {
+  color: var(--dk-muted);
+  font-family: var(--dk-mono);
+  font-size: 0.69rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.digikat-paper-nav__links {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.digikat-paper-nav__links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.2rem 0.68rem;
+  border-radius: 0.35rem;
+  color: #44474d;
+  font-size: 0.84rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.digikat-paper-nav__links a:hover {
+  background: var(--dk-accent-050);
+  color: var(--dk-accent);
+  text-decoration: none;
+}
+
+.digikat-paper-nav__links a[data-format="html"] {
+  background: var(--dk-accent);
+  color: #fff;
+}
+
+.digikat-paper-nav__links a[data-format="html"]:hover {
+  background: var(--dk-accent-700);
+}
+
+/* Quarto document shell --------------------------------------------------- */
+#quarto-header { background: var(--dk-paper); }
+
+#quarto-content.quarto-container,
+.quarto-container.page-columns {
+  max-width: 82rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+main.content,
+#quarto-document-content {
+  max-width: 49rem;
+  color: var(--dk-body);
+}
+
+/* Older flat standalone papers have no main wrapper. */
+body > #title-block-header,
+body > nav#TOC,
+body > h1,
+body > h2,
+body > h3,
+body > h4,
+body > p,
+body > ul,
+body > ol,
+body > blockquote,
+body > section,
+body > div:not(.digikat-paper-nav):not(.digikat-paper-footer),
+body > table,
+body > figure {
+  max-width: 49rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Title and byline -------------------------------------------------------- */
+#title-block-header {
+  border-bottom: 1px solid var(--dk-hairline) !important;
+  padding-bottom: 1.5rem !important;
+  margin-bottom: 2.25rem !important;
+}
+
+#title-block-header::before {
+  content: "DigiKat · tematsko istraživanje" !important;
+  display: block;
+  margin: 0 0 0.8rem;
+  color: var(--dk-accent);
+  font-family: var(--dk-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+#title-block-header h1.title,
+h1.title {
+  margin-top: 0 !important;
+  margin-bottom: 0.7rem !important;
+  color: var(--dk-heading) !important;
+  font-family: var(--dk-serif) !important;
+  font-size: clamp(2rem, 4.4vw, 2.75rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.02em;
+}
+
+#title-block-header .subtitle,
+#title-block-header p.subtitle {
+  max-width: 44rem;
+  margin: 0.35rem 0 1rem !important;
+  color: var(--dk-body-2) !important;
+  font-family: var(--dk-sans) !important;
+  font-size: 1.14rem !important;
+  line-height: 1.42;
+}
+
+#title-block-header .quarto-title-meta,
+#title-block-header .quarto-title-meta-author {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--dk-hairline);
+  column-gap: 1.25rem;
+}
+
+#title-block-header .quarto-title-meta-heading,
+.digikat-paper-byline__label {
+  color: var(--dk-muted) !important;
+  font-family: var(--dk-mono) !important;
+  font-size: 0.68rem !important;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#title-block-header .quarto-title-meta-contents,
+#title-block-header p.author,
+#title-block-header p.affiliation,
+#title-block-header p.date {
+  color: var(--dk-body-2);
+  font-family: var(--dk-sans);
+  font-size: 0.91rem;
+}
+
+#title-block-header p.author { margin: 0.15rem 0; }
+#title-block-header p.affiliation { color: var(--dk-muted); }
+
+.digikat-author-link,
+.digikat-paper-byline a {
+  color: var(--dk-accent) !important;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(15, 76, 92, 0.3);
+  text-underline-offset: 0.2em;
+}
+
+.digikat-paper-byline {
+  margin-top: 1.15rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--dk-hairline);
+}
+
+.digikat-paper-byline__names { margin: 0.25rem 0 0; }
+.digikat-paper-byline__affiliation { margin: 0.15rem 0 0; color: var(--dk-muted); font-size: 0.86rem; }
+
+/* Typography -------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--dk-heading) !important;
+  font-family: var(--dk-serif) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em;
+}
+
+main h2, body > h2 { margin-top: 3rem; margin-bottom: 0.85rem; font-size: 1.62rem; line-height: 1.15; }
+main h3, body > h3 { margin-top: 2.15rem; margin-bottom: 0.65rem; font-size: 1.2rem; line-height: 1.24; }
+main h4, body > h4 { margin-top: 1.75rem; margin-bottom: 0.55rem; font-size: 1.04rem; }
+
+p { margin-top: 0; margin-bottom: 1.05rem; }
+strong { color: var(--dk-ink); font-weight: 600; }
+hr { border: 0; border-top: 1px solid var(--dk-hairline); margin-top: 2.5rem; margin-bottom: 2.5rem; }
+blockquote { border-left: 3px solid var(--dk-accent); padding-left: 1.25rem; color: var(--dk-body-2); }
+
+/* Contents --------------------------------------------------------------- */
+nav#TOC,
+#quarto-margin-sidebar nav[role="doc-toc"] {
+  color: var(--dk-body-2);
+  font-family: var(--dk-sans);
+}
+
+nav#TOC .toc-title,
+nav#TOC h2,
+#quarto-margin-sidebar .toc-title {
+  color: var(--dk-accent) !important;
+  font-family: var(--dk-mono) !important;
+  font-size: 0.68rem !important;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+nav#TOC a,
+#quarto-margin-sidebar nav a {
+  color: var(--dk-body-2) !important;
+  font-size: 0.84rem;
+  line-height: 1.34;
+}
+
+nav#TOC a:hover,
+nav#TOC a.active,
+#quarto-margin-sidebar nav a:hover,
+#quarto-margin-sidebar nav a.active {
+  color: var(--dk-accent) !important;
+  text-decoration: none;
+}
+
+body > nav#TOC {
+  margin-bottom: 2.4rem;
+  padding: 1rem 1.2rem;
+  background: #fff;
+  border: 1px solid var(--dk-hairline);
+  border-radius: 0.625rem;
+}
+
+/* Tables and figures ------------------------------------------------------ */
+table, .table {
+  width: 100%;
+  border-collapse: collapse;
+  border-color: var(--dk-hairline) !important;
+  color: var(--dk-body);
+  font-size: 0.84rem;
+  line-height: 1.43;
+}
+
+table thead th, .table thead th {
+  padding: 0.55rem 0.62rem;
+  background: #fff !important;
+  border-top: 1px solid var(--dk-hairline) !important;
+  border-bottom: 2px solid var(--dk-hairline) !important;
+  color: var(--dk-heading) !important;
+  font-family: var(--dk-mono);
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  vertical-align: bottom;
+}
+
+table tbody td, .table tbody td { padding: 0.43rem 0.62rem; border-color: var(--dk-hairline) !important; }
+table tbody tr:nth-child(odd), .table-striped > tbody > tr:nth-of-type(odd) > * { background: var(--dk-band); }
+
+.cell-output-display,
+.table-responsive { max-width: min(68rem, calc(100vw - 3rem)); overflow-x: auto; }
+
+figure { margin-top: 2.2rem; margin-bottom: 2.2rem; }
+figure img, p > img, .quarto-figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--dk-hairline);
+  border-radius: 0.625rem;
+  background: #fff;
+}
+
+figcaption, .figure-caption, .table-caption, caption {
+  color: var(--dk-muted) !important;
+  font-family: var(--dk-sans);
+  font-size: 0.82rem !important;
+  line-height: 1.45;
+}
+
+/* Supporting elements ---------------------------------------------------- */
+.callout { border-radius: 0.625rem !important; border-left-color: var(--dk-accent) !important; }
+.callout-header { color: var(--dk-heading); font-family: var(--dk-sans); }
+
+pre, code {
+  font-family: var(--dk-mono) !important;
+}
+
+pre {
+  border: 1px solid var(--dk-hairline) !important;
+  border-radius: 0.5rem !important;
+  background: var(--dk-band) !important;
+}
+
+#refs, .references, h2#references ~ ul { color: var(--dk-body-2); font-size: 0.91rem; line-height: 1.5; }
+.csl-entry { margin-bottom: 0.55rem; }
+
+.paper-format-unavailable {
+  color: var(--dk-sub);
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+}
+
+/* Footer ----------------------------------------------------------------- */
+.digikat-paper-footer {
+  max-width: none !important;
+  width: auto !important;
+  margin: 4.5rem 0 0 !important;
+  padding: 1.6rem 1.5rem;
+  background: #0f1419;
+  color: #aeb4b8;
+  font-size: 0.84rem;
+}
+
+.digikat-paper-footer__inner {
+  max-width: 76rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.8rem 1.15rem;
+}
+
+.digikat-paper-footer strong { color: #fff; font-family: var(--dk-serif); }
+.digikat-paper-footer a { color: #c7ccce; }
+.digikat-paper-footer__license { margin-left: auto; color: #777e83; font-family: var(--dk-mono); font-size: 0.7rem; }
+
+@media (min-width: 1340px) {
+  body > nav#TOC {
+    position: fixed;
+    top: 5.2rem;
+    left: max(1.25rem, calc(50% - 40rem));
+    width: 15rem;
+    max-height: calc(100vh - 7rem);
+    overflow-y: auto;
+    margin: 0;
+    padding: 0.25rem 0 0.25rem 1rem;
+    background: transparent;
+    border: 0;
+    border-left: 1px solid var(--dk-hairline);
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .digikat-paper-nav { padding: 0 1rem; }
+  .digikat-paper-nav__inner { min-height: 3.15rem; gap: 0.7rem; }
+  .digikat-paper-nav__context { display: none; }
+  .digikat-paper-nav__links { gap: 0.1rem; overflow-x: auto; }
+  .digikat-paper-nav__links a { padding: 0.2rem 0.5rem; font-size: 0.78rem; }
+  main.content, #quarto-document-content { padding-left: 0.85rem !important; padding-right: 0.85rem !important; }
+  body > #title-block-header,
+  body > nav#TOC,
+  body > h1,
+  body > h2,
+  body > h3,
+  body > h4,
+  body > p,
+  body > ul,
+  body > ol,
+  body > blockquote,
+  body > section,
+  body > div:not(.digikat-paper-nav):not(.digikat-paper-footer),
+  body > table,
+  body > figure { max-width: calc(100% - 2rem); }
+  .digikat-paper-footer__license { width: 100%; margin-left: 0; }
+
+  #title-block-header .quarto-title-meta-author {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    column-gap: 0.75rem !important;
+  }
+
+  #title-block-header .quarto-title-meta-author > * {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media print {
+  @page { size: A4; margin: 18mm 17mm 19mm; }
+
+  body {
+    background: #fff !important;
+    color: #111 !important;
+    font-size: 10.3pt;
+    line-height: 1.48;
+  }
+
+  .digikat-paper-nav,
+  .digikat-paper-footer,
+  #quarto-header,
+  #quarto-sidebar,
+  #quarto-margin-sidebar,
+  nav#TOC,
+  .sidebar,
+  .code-tools-button,
+  .code-folding-btn,
+  .anchorjs-link { display: none !important; }
+
+  #quarto-content,
+  .quarto-container.page-columns,
+  main.content,
+  #quarto-document-content,
+  body > * {
+    display: block !important;
+    width: auto !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  #title-block-header { margin-bottom: 1.5rem !important; }
+  #title-block-header h1.title, h1.title { font-size: 24pt !important; }
+  main h2, body > h2 { margin-top: 1.8rem; font-size: 16pt; }
+  main h3, body > h3 { margin-top: 1.3rem; font-size: 12.5pt; }
+  h1, h2, h3, h4 { break-after: avoid; }
+  figure, table, .callout { break-inside: avoid; }
+  table { display: table; width: 100%; font-size: 8pt; }
+  a { color: var(--dk-accent) !important; }
+}

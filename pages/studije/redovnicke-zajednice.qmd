@@ -1,6 +1,10 @@
 ---
 title: "Medijska zastupljenost redovničkih zajednica"
 subtitle: "Ekonomija pažnje, spolna asimetrija i tipologija portala u izvještavanju o redovnicima i redovnicama"
+author:
+  - name: "Projekt DigiKat"
+    url: "https://lusiki.github.io/DigiKat/"
+    affiliation: "Hrvatsko katoličko sveučilište"
 date: last-modified
 categories: ["Tematsko istraživanje", "Nacrt dostupan"]
 ---
@@ -36,8 +40,16 @@ vidljivosti, u skladu s predviđanjima ekonomije pažnje. Postoje rodne asimetri
 društvene obrasce u korist muških zajednica. Četiri tipa portala pokazuju različite uredničke logike
 i tonalitet u izvještavanju o redovničkim zajednicama.
 
+## Cijeli rad
+
+Pun tekst nacrta dostupan je u dva usklađena formata.
+
+::: {.study-paper-formats aria-label="Dostupni formati rada"}
+<a class="study-paper-format study-paper-format--primary" href="../../assets/papers/redovnicke-zajednice.html"><span class="study-paper-format__type">HTML</span><span class="study-paper-format__label">Čitanje u pregledniku</span></a>
+<a class="study-paper-format" href="../../assets/papers/redovnicke-zajednice.pdf"><span class="study-paper-format__type">PDF</span><span class="study-paper-format__label">Preuzimanje i ispis</span></a>
+:::
+
 ## Status
 
-Nacrt dostupan. Pun tekst dostupan je na
-[Poveznica](https://raw.githack.com/lusiki/Redovnicke-zajednice/main/R/analysis_v3.html).
+Nacrt dostupan.
 Dio drugog izlaznog toka projekta (tematske studije i radovi) — vidi [Projektni raspored](../schedule.qmd).

@@ -753,27 +753,35 @@ table, figure { break-inside: avoid; }
 table { display: table; width: 100%; }
 }
 </style>
+<!-- digikat-paper:head:start -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&amp;family=Source+Sans+3:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="digikat-paper.css" rel="stylesheet">
+<!-- digikat-paper:head:end -->
 </head>
 
 <body>
-
-<!-- Site header for the standalone manuscript. Links are absolute so they work from wherever the
-     file is opened, including a local copy or an emailed attachment. -->
-<div class="dk-topbar">
-  <div class="dk-topbar-inner">
-    <a class="dk-brand" href="https://lusiki.github.io/DigiKat/">DigiKat</a>
-    <nav class="dk-topnav">
-      <a href="https://lusiki.github.io/DigiKat/pages/studije/socijalni-nauk-i-gospodarstvo.html">Stranica studije</a>
-      <a href="https://lusiki.github.io/DigiKat/pages/baza.html">Baza podataka</a>
+<!-- digikat-paper:bar:start -->
+<div class="digikat-paper-nav" role="navigation" aria-label="Navigacija rada">
+  <div class="digikat-paper-nav__inner">
+    <a class="digikat-paper-nav__brand" href="https://lusiki.github.io/DigiKat/">DigiKat</a>
+    <span class="digikat-paper-nav__context">Tematsko istraživanje</span>
+    <nav class="digikat-paper-nav__links" aria-label="Rad i dostupni formati">
+      <a href="https://lusiki.github.io/DigiKat/pages/studije/socijalni-nauk-i-gospodarstvo.html">Profil rada</a>
+      <a data-format="html" aria-current="page" href="socijalni-nauk-i-gospodarstvo.html">HTML</a> <a data-format="pdf" href="socijalni-nauk-i-gospodarstvo.pdf">PDF</a>
     </nav>
   </div>
 </div>
+<!-- digikat-paper:bar:end -->
+
+
 
 <header id="title-block-header">
 <h1 class="title">Which parts of Catholic social teaching reach public argument about the economy?</h1>
 <p class="subtitle">Church teaching, secular media and the language of poverty in Croatia, 2021–2026</p>
 
-</header>
+<div class="digikat-paper-byline"><div class="digikat-paper-byline__label">Autor</div><p class="digikat-paper-byline__names"><a class="digikat-author-link" rel="author" href="https://www.lukasikic.info/">Luka Šikić</a></p><p class="digikat-paper-byline__affiliation">Hrvatsko katoličko sveučilište</p></div></header>
 
 <nav id="TOC" role="doc-toc">
     <h2 id="toc-title">Contents</h2>
@@ -1684,14 +1692,7 @@ table { display: table; width: 100%; }
 </table>
 <p><em>Source: authors’ calculation on the DigiKat corpus of 710 307 Croatian digital media posts, 2021–2026. Counts are posts carrying the word. “Type of word” separates the titles of Church documents from the names of principles, and a principle belongs to no single era. The teaching posts hold 1 990 uses of these words across 1 198 posts, since one post can carry several. The last column is the share of those uses, which is what Figure 4 plots.</em></p>
 
-<footer class="dk-footer">
-  <div class="dk-footer-inner">
-    <span><strong>DigiKat</strong> · Hrvatsko katoličko sveučilište</span>
-    <a href="https://lusiki.github.io/DigiKat/pages/baza.html">Baza podataka</a>
-    <a href="https://github.com/lusiki/DigiKat">GitHub</a>
-    <span class="dk-footer-right">CC BY 4.0 · © 2021–2026 DigiKat</span>
-  </div>
-</footer>
+
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -2117,4 +2118,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<!-- digikat-paper:footer:start -->
+<footer class="digikat-paper-footer">
+  <div class="digikat-paper-footer__inner">
+    <span><strong>DigiKat</strong> · Hrvatsko katoličko sveučilište</span>
+    <a href="https://lusiki.github.io/DigiKat/pages/baza.html">Baza podataka</a>
+    <a href="https://github.com/lusiki/DigiKat">GitHub</a>
+    <span class="digikat-paper-footer__license">CC BY 4.0 · © 2021.–2026. DigiKat</span>
+  </div>
+</footer>
+<!-- digikat-paper:footer:end -->
 </body></html>

@@ -1,6 +1,8 @@
 ---
 title: "Tko govori iz katoličkoga medijskog prostora"
 subtitle: "Narativni okviri razlikuju službena crkvena glasila od katolički orijentiranih portala"
+author:
+  - name: "Anonimizirano za recenziju"
 date: last-modified
 categories: ["Tematsko istraživanje", "U recenziji"]
 ---
@@ -35,8 +37,16 @@ medija — a, suprotno očekivanju, tradicionalne vrijednosti češće aktiviraj
 mediji. Nalaz upućuje na to da orijentirani portali konzervativnu poziciju prevode u politički i
 antagonistički rječnik, dok službeni mediji zadržavaju izvorni jezik tradicije.
 
+## Cijeli rad
+
+Anonimizirani rukopis dostupan je u dva usklađena formata.
+
+::: {.study-paper-formats aria-label="Dostupni formati rada"}
+<a class="study-paper-format study-paper-format--primary" href="../../assets/papers/crkva-i-dezinformacije.html"><span class="study-paper-format__type">HTML</span><span class="study-paper-format__label">Čitanje u pregledniku</span></a>
+<a class="study-paper-format" href="../../assets/papers/crkva-i-dezinformacije.pdf"><span class="study-paper-format__type">PDF</span><span class="study-paper-format__label">Preuzimanje i ispis</span></a>
+:::
+
 ## Status
 
-U recenziji (anonimizirano za potrebe recenzijskog postupka). Pun tekst dostupan je na
-[Poveznica](https://raw.githack.com/lusiki/Church-and-dezinfo/main/papers/03_framing_paper_2.html).
+U recenziji (anonimizirano za potrebe recenzijskog postupka).
 Dio drugog izlaznog toka projekta (tematske studije i radovi) — vidi [Projektni raspored](../schedule.qmd).

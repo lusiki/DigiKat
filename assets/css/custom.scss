@@ -348,6 +348,119 @@ a:hover { text-decoration: underline; }
 .dk-btn-outline:hover { border-color: $dk-accent; color: $dk-accent !important; }
 
 // ---------------------------------------------------------------------
+// Thematic-study profiles — linked bylines and one format selector
+// ---------------------------------------------------------------------
+.quarto-title-meta-author a,
+.quarto-title-meta-contents a[rel="author"] {
+  color: $dk-accent;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(15, 76, 92, 0.28);
+  text-underline-offset: 0.2em;
+}
+
+.quarto-title-meta-author a:hover,
+.quarto-title-meta-contents a[rel="author"]:hover {
+  color: $dk-accent-700;
+  text-decoration-color: currentColor;
+}
+
+.study-paper-formats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.75rem;
+  margin: 1.15rem 0 1.75rem;
+}
+
+// Pandoc groups adjacent inline HTML anchors in one paragraph. `display: contents`
+// promotes the links back into the grid without changing the accessible DOM.
+.study-paper-formats > p { display: contents; }
+
+.study-paper-format {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.85rem;
+  min-height: 4.25rem;
+  padding: 0.75rem 0.9rem;
+  background: #fff;
+  border: 1px solid $dk-hairline;
+  border-radius: $border-radius-lg;
+  color: $dk-heading !important;
+  text-decoration: none !important;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.study-paper-format:hover {
+  border-color: $dk-accent-200;
+  box-shadow: 0 7px 18px rgba(15, 76, 92, 0.08);
+  transform: translateY(-1px);
+}
+
+.study-paper-format--primary {
+  background: $dk-accent-050;
+  border-color: transparent;
+}
+
+.study-paper-format__type {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 2.15rem;
+  background: $dk-accent;
+  border-radius: 0.3rem;
+  color: #fff;
+  font-family: $font-family-monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.study-paper-format__label {
+  color: $dk-body-2;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+@media (max-width: 560px) {
+  .study-paper-formats { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 767px) {
+  .quarto-title-block .quarto-title .title {
+    max-width: 100%;
+    font-size: 2rem;
+    overflow-wrap: anywhere;
+  }
+
+  .quarto-title-block .subtitle {
+    max-width: 100%;
+    font-size: 1.05rem;
+    overflow-wrap: anywhere;
+  }
+
+  .quarto-title-meta-author {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    column-gap: 0.8rem !important;
+  }
+
+  .quarto-title-meta-author > * {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media print {
+  .study-paper-format {
+    break-inside: avoid;
+    border-color: $dk-hairline;
+    box-shadow: none;
+  }
+}
+
+// ---------------------------------------------------------------------
 // Site-wide footer (Quarto page-footer) — dark editorial
 // ---------------------------------------------------------------------
 .nav-footer {
