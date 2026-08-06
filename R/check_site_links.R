@@ -40,7 +40,7 @@ for (html_path in html_files) {
       errors,
       paste0(
         sub(
-          paste0("^", gsub("([.^$|()\\[\\]{}*+?\\\\])", "\\\\\\1", site_root), "/?"),
+          paste0("^", gsub("([.^$|()\\[\\]{}*+?\\\\])", "\\\\\\1", site_root, perl = TRUE), "/?"),
           "",
           digikat_normalize_path(html_path)
         ),
@@ -77,7 +77,7 @@ for (html_path in html_files) {
       errors <- c(
         errors,
         paste0(
-          sub(paste0("^", gsub("([.^$|()\\[\\]{}*+?\\\\])", "\\\\\\1", site_root), "/?"), "", digikat_normalize_path(html_path)),
+          sub(paste0("^", gsub("([.^$|()\\[\\]{}*+?\\\\])", "\\\\\\1", site_root, perl = TRUE), "/?"), "", digikat_normalize_path(html_path)),
           " -> ",
           reference
         )

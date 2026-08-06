@@ -52,6 +52,8 @@ website:
             href: pages/studije/inflacija-i-religija.qmd
           - text: "Socijalni nauk Crkve u raspravi o gospodarstvu"
             href: pages/studije/socijalni-nauk-i-gospodarstvo.qmd
+          - text: "Katoličko obrazovanje i Stepinac kao mjesta sjećanja"
+            href: pages/studije/katolicko-obrazovanje-i-stepinac.qmd
       - text: "Projektni raspored"
         href: pages/schedule.qmd
       - text: "Obavijesti"

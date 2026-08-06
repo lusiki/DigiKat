@@ -21,6 +21,7 @@ prints the styled document to PDF. Remote inputs are pinned to immutable Git com
 | `crkva-i-dezinformacije` | `Church-and-dezinfo` commit `6dffe79`, `03_framing_paper_2` | — |
 | `inflation-information-delayed-repricing` | local checked output `PAPER_EMIP_v2_full.html` | Word |
 | `socijalni-nauk-i-gospodarstvo` | local checked output `PAPER_RSP_v2.html` | — |
+| `katolicko-obrazovanje-i-stepinac` | local checked output `catholic-education-paper-v2.html` | Word |
 
 The church-media manuscript remains anonymous in all formats because it is under peer review. The author
 entry is therefore intentionally not linked. Broken Word links embedded in older HTML are rendered as

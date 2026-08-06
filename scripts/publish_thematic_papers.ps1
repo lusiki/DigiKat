@@ -17,6 +17,7 @@ $profiles = @{
   "crkva-i-dezinformacije" = "crkva-i-dezinformacije"
   "inflation-information-delayed-repricing" = "inflacija-i-religija"
   "socijalni-nauk-i-gospodarstvo" = "socijalni-nauk-i-gospodarstvo"
+  "katolicko-obrazovanje-i-stepinac" = "katolicko-obrazovanje-i-stepinac"
 }
 
 $papers = @(
@@ -89,6 +90,16 @@ $papers = @(
     SourceDocx = $null
     Authors = @(
       [pscustomobject]@{ Name = "Luka Šikić"; Url = "https://www.lukasikic.info/" }
+    )
+    InjectByline = $true
+    Affiliation = "Hrvatsko katoličko sveučilište"
+  },
+  [pscustomobject]@{
+    Stem = "katolicko-obrazovanje-i-stepinac"
+    SourceHtml = Join-Path $repoRoot "studies\catholic-education\output\paper\catholic-education-paper-v2.html"
+    SourceDocx = Join-Path $repoRoot "studies\catholic-education\output\paper\catholic-education-paper-v2.docx"
+    Authors = @(
+      [pscustomobject]@{ Name = "DigiKat projekt"; Url = "https://lusiki.github.io/DigiKat/" }
     )
     InjectByline = $true
     Affiliation = "Hrvatsko katoličko sveučilište"
@@ -172,10 +183,15 @@ function Update-EmbeddedFormatLinks([string]$Html, [string]$Stem, [bool]$HasWord
   return [regex]::Replace($Html, $anchorPattern, [Text.RegularExpressions.MatchEvaluator]{
     param($match)
     $href = $match.Groups['href'].Value
-    if ($href -match '(?i)\.pdf(?:[?#].*)?$') {
+    $labelText = [Net.WebUtility]::HtmlDecode(
+      [regex]::Replace($match.Groups['label'].Value, '(?is)<[^>]+>', ' ')
+    ).Trim()
+    $isPdf = ($href -match '(?i)\.pdf(?:[?#].*)?$') -or ($labelText -match '(?i)^(?:PDF|Typst)$')
+    $isWord = ($href -match '(?i)\.docx(?:[?#].*)?$') -or ($labelText -match '(?i)^(?:MS\s+Word|Word|DOCX)$')
+    if ($isPdf) {
       return '<a' + $match.Groups['attrs'].Value + 'href="' + $Stem + '.pdf"' + $match.Groups['tail'].Value + '>' + $match.Groups['label'].Value + '</a>'
     }
-    if ($href -match '(?i)\.docx(?:[?#].*)?$') {
+    if ($isWord) {
       if ($HasWord) {
         return '<a' + $match.Groups['attrs'].Value + 'href="' + $Stem + '.docx"' + $match.Groups['tail'].Value + '>' + $match.Groups['label'].Value + '</a>'
       }
