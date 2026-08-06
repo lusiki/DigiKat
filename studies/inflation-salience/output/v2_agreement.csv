@@ -1,0 +1,4 @@
+axis,n,unanimous,majority,pairwise_agreement,fleiss_kappa
+object,179,0.911,1,0.94,0.891
+voice,179,0.922,1,0.948,0.646
+unit,520,0.915,0.998,0.943,0.929

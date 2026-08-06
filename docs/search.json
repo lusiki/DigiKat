@@ -72,37 +72,58 @@
   {
     "objectID": "pages/studije/inflacija-i-religija.html",
     "href": "pages/studije/inflacija-i-religija.html",
-    "title": "Poskupjele svijeće, tihi proroci",
+    "title": "Inflacija, informacije i odgođene promjene cijena",
     "section": "",
-    "text": "Katolički socijalni nauk Crkvi namjenjuje prepoznatljiv glas u gospodarskim krizama — imenovati poskupljenje kao nepravdu koja najteže pogađa siromašne. Rad ispituje kako taj glas doista zvuči u hrvatskom digitalnom medijskom prostoru tijekom udara rasta troškova života, razlikujući stvarnu religijsko-ekonomsku poveznicu od slučajnog suspominjanja."
+    "text": "Istraživanja rigidnosti cijena uglavnom promatraju same cijene. Mnogo je teže utvrditi je li određivač cijene uočio inflacijski šok, ali je prilagodbu ipak odgodio. Ovaj rad koristi datirano medijsko izvještavanje kako bi proučio upravo taj slijed u hrvatskom vjerskom sektoru, za koji ne postoji službena cjenovna serija."
   },
   {
     "objectID": "pages/studije/inflacija-i-religija.html#istraživačko-pitanje",
     "href": "pages/studije/inflacija-i-religija.html#istraživačko-pitanje",
-    "title": "Poskupjele svijeće, tihi proroci",
+    "title": "Inflacija, informacije i odgođene promjene cijena",
     "section": "Istraživačko pitanje",
-    "text": "Istraživačko pitanje\nKada se inflacija pojavi u religijski salijentnom hrvatskom digitalnom diskursu, tko o njoj govori i u kojem registru. Rad ne pretpostavlja da je Crkva glasna po pitanju gospodarstva, nego to mjeri: prati li medijska pažnja na inflaciju stvarno kretanje cijena, te ispunjava li religijski glas pravednosti tu pažnju kada se ona pojavi."
+    "text": "Istraživačko pitanje\nRad razlikuje dva moguća objašnjenja nepromijenjene cijene. U prvom slučaju određivač cijene nije obradio relevantne informacije. U drugom je slučaju upoznat s rastom vlastitih troškova, ali cijenu ne mijenja zbog troška prilagodbe, sporog organizacijskog odlučivanja ili mogućeg otpora korisnika. Medijski zapisi ne otkrivaju privatno razmišljanje, ali pokazuju kada su informacije o troškovima i prihodima postale javno prisutne unutar sektora."
   },
   {
     "objectID": "pages/studije/inflacija-i-religija.html#podaci-i-metode",
     "href": "pages/studije/inflacija-i-religija.html#podaci-i-metode",
-    "title": "Poskupjele svijeće, tihi proroci",
+    "title": "Inflacija, informacije i odgođene promjene cijena",
     "section": "Podaci i metode",
-    "text": "Podaci i metode\nAnaliza obuhvaća korpus od 710.307 objava (siječanj 2021.–lipanj 2026.), od čega 8.019 objava (1,13 %) spominje inflaciju prema usidrenom leksikonu poskupljenja. Filtar blizine (±220 znakova oko spomena inflacije, projektni religijski leksikon od 95 pojmova, pooštren za ekonomske homonime poput gospodarstvo i Gospa) izdvaja 1.450 kandidata za genuinu poveznicu. Tri neovisna anotatora kodiraju cijeli uzorak (međukodirateljska pouzdanost 0,97), potvrđujući 652 stvarno povezane objave, od čega 520 domaćih — izmjerena jezgra od 0,07 % korpusa i 6,5 % objava koje uopće spominju inflaciju. Test H1 korelira mjesečnu pažnju na inflaciju s hrvatskim harmoniziranim indeksom potrošačkih cijena (HICP, Eurostat)."
+    "text": "Podaci i metode\nAnaliza polazi od 710.307 objava hrvatskoga digitalnog medijskog prostora od siječnja 2021. do lipnja 2026. Kodiranjem je izdvojeno 520 objava koje stvarno povezuju religiju s domaćom inflacijom. Objava je zatim razvrstana prema predmetu ekonomskog sadržaja, vrsti govornika, institucijskoj jedinici i vrsti odgovora: javnom govoru, promjeni cijena, dobrotvornoj pomoći ili normativnom tumačenju tereta inflacije.\nMedijski korpus koristi se kao registar događaja, a ne kao cjenovni indeks. Analiza zato mjeri datume, vrhunce, sastav izvještavanja i vremenske odmake. Ne procjenjuje razinu pojedine naknade, koeficijent prijenosa inflacije ni strukturnu stopu promjene cijena."
   },
   {
-    "objectID": "pages/studije/inflacija-i-religija.html#ključni-nalaz",
-    "href": "pages/studije/inflacija-i-religija.html#ključni-nalaz",
-    "title": "Poskupjele svijeće, tihi proroci",
-    "section": "Ključni nalaz",
-    "text": "Ključni nalaz\nReligija se s domaćom inflacijom susreće pretežito kao ekonomski objekt: makro-registar koji spaja trošak religijskog života i Crkvu-kao-instituciju čini ≈72 % izmjerene jezgre, dobrotvorni rad (Caritas) dodatnih 17 %, dok je strukturni, na pravednosti utemeljen registar marginalan — 2,9 % strogim kodiranjem, do ≈8 % uz širu definiciju. Medijska pažnja na inflaciju snažno prati stvarne cijene (r ≈ 0,73 s HICP-om, 2,4 puta veća pažnja iznad praga od ≈4 % inflacije), no proročki glas pravednosti tu pažnju ne ispunjava. Metodološki, rad pokazuje da bi naivno brojanje suspominjanja precijenilo pojavu za red veličine (≈8.000 naspram 520 mjereno potvrđenih objava) — suspominjanje nije angažman, nego se genuina poveznica mora mjeriti, ne brojati."
+    "objectID": "pages/studije/inflacija-i-religija.html#glavni-nalazi",
+    "href": "pages/studije/inflacija-i-religija.html#glavni-nalazi",
+    "title": "Inflacija, informacije i odgođene promjene cijena",
+    "section": "Glavni nalazi",
+    "text": "Glavni nalazi\nIzravan govor sektora o vlastitim troškovima ili prihodima pojavljuje se u 91 objavi i doseže vrhunac u listopadu 2022. Izvještavanje o promjenama cijena doseže vrhunac u lipnju 2024., dvadeset mjeseci poslije. Harmonizirana razina potrošačkih cijena tada je bila 25,7 % viša nego u lipnju 2021.\nČetiri imenovana crkvena tijela pojavljuju se i u govoru o vlastitom ekonomskom položaju i u kasnijem izvještavanju o promjeni cijena. U tri slučaja odmak je dulji od godine dana. Relevantne informacije bile su, dakle, javno prisutne prije nego što se izvještavanje o prilagodbi cijena koncentriralo.\nNalaz nije dovoljan za razdvajanje ograničenja pravednosti od sporoga organizacijskog odlučivanja. Pokazuje, međutim, da nepažnja prema vlastitim troškovima i fiksni tehnički trošak promjene cijena nisu potpuna objašnjenja opaženog slijeda."
+  },
+  {
+    "objectID": "pages/studije/inflacija-i-religija.html#vremenski-slijed",
+    "href": "pages/studije/inflacija-i-religija.html#vremenski-slijed",
+    "title": "Inflacija, informacije i odgođene promjene cijena",
+    "section": "Vremenski slijed",
+    "text": "Vremenski slijed\n\n\n\n\n\n\nSlika 1: Mjesečni javni govor, izravan govor o vlastitom ekonomskom položaju, izvještavanje o promjenama cijena i hrvatski HICP.\n\n\n\nSlika Slika 1 pokazuje da govor o vlastitim troškovima doseže vrhunac uz vrhunac inflacije, dok je najveća koncentracija izvještavanja o promjenama cijena zabilježena poslije pada inflacije."
+  },
+  {
+    "objectID": "pages/studije/inflacija-i-religija.html#institucijska-raspodjela",
+    "href": "pages/studije/inflacija-i-religija.html#institucijska-raspodjela",
+    "title": "Inflacija, informacije i odgođene promjene cijena",
+    "section": "Institucijska raspodjela",
+    "text": "Institucijska raspodjela\n\n\n\n\n\n\nSlika 2: Javni govor i izvještavanje o promjenama cijena prema institucijskoj jedinici.\n\n\n\nSlika Slika 2 pokazuje organizacijsku podjelu događaja. Biskupije dominiraju javnim govorom, dok je izvještavanje o promjenama cijena raspodijeljeno između biskupija, biskupske konferencije i župa."
+  },
+  {
+    "objectID": "pages/studije/inflacija-i-religija.html#cijeli-rad",
+    "href": "pages/studije/inflacija-i-religija.html#cijeli-rad",
+    "title": "Inflacija, informacije i odgođene promjene cijena",
+    "section": "Cijeli rad",
+    "text": "Cijeli rad\nPotpuni rukopis dostupan je u tri formata:\n\nHTML — čitanje u pregledniku\nPDF — preuzimanje i ispis\nWord — uređiva dokumentacija\n\nSve tablice, slike i brojčani navodi generirani su iz arhiviranih izlaza studije. Opis korpusa i profil izvora dostupni su na stranici Baza podataka."
   },
   {
     "objectID": "pages/studije/inflacija-i-religija.html#status",
     "href": "pages/studije/inflacija-i-religija.html#status",
-    "title": "Poskupjele svijeće, tihi proroci",
+    "title": "Inflacija, informacije i odgođene promjene cijena",
     "section": "Status",
-    "text": "Status\nRadni nacrt (prva potpuna verzija, 2026-07-01) — autor Luka Šikić, autorstvo i redoslijed u fazi finalizacije. Pun tekst rada, “Costlier Candles, Quiet Prophets: How Religion Meets Inflation in the Croatian Digital Media Space, 2021–2026”, dostupan je na Poveznica. Dio drugog izlaznog toka projekta (tematske studije i radovi) — vidi Projektni raspored."
+    "text": "Status\nRadni rukopis Luke Šikića i Petre Palić, pripremljen u okviru projekta DigiKat na Hrvatskom katoličkom sveučilištu. Dio drugog izlaznog toka projekta — vidi Projektni raspored."
   },
   {
     "objectID": "pages/studije/crkva-i-dezinformacije.html",

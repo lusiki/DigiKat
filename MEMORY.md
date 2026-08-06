@@ -139,6 +139,55 @@
   *Social Policy & Administration* 43(2), 121–135; Boukes, M. (2022) *IJPP* 27(2), 374–395;
   van Kersbergen & Manow (2009) Cambridge UP confirmed.
 
+## inflation-salience reconstruction and EMIP reframe (2026-08-05)
+- [LEARN] **`rid` in the inflation-salience study is the 1-based ROW INDEX of the master**, not a lost
+  key. At all 1 450 pooled row numbers both `URL` and `DATE` agree. `PAPER_v1` never said what it was
+  and `EMIP_EXECUTION.md` assumed it was unreconstructible and prescribed a `URL` join; six pooled
+  items share a URL with another row, so that join would have been ambiguous. `03_finalize_coded.R`
+  asserts the identity and stops if the master ever changes under it.
+- [LEARN] The measured core is `c_infl == 1 & c_link == 1 & c_foreign == 0`. Dropping the first
+  condition gives 532 rather than 520, because 13 items carry a linkage label while the annotators
+  judged them not to be about inflation at all. `coded_labels.csv` and `coded_pool_full.csv` agree on
+  every label; only the core rule distinguishes them.
+- [LEARN] Six posts dated **2022-12-31** were booked to 2023 by the June 2026 run, so `PAPER_v1`
+  Table 4 reads 2022 → 201 / 2023 → 100 where the dates say **207 / 94**. Derive the year from the
+  date, never from a stored `year` column.
+- [LEARN] A lost regex is not always recoverable, and the honest bound is worth measuring. The
+  rebuilt inflation lexicon lands 0.27% above the published count and the rebuilt proximity filter
+  17.5% above, recovering 94.5% of the coded pool. Fitting against the 39 MONTHLY counts in
+  `h1_attention_hicp_series.csv` rather than the single total is what got it that close (r = 0.9973,
+  identical denominators in every month). The `window` excerpts prove the original text normalization
+  is unrecoverable: most are not substrings of the master text.
+- [LEARN] Eurostat **closed `prc_hicp_manr` at 2025-12** on migration to ECOICOP ver.2. Current
+  monthly data is `prc_hicp_minr`, dimension `coicop18`, all-items code `TOTAL` not `CP00`. Food is
+  **`CP01`**, not the `FOOD` special aggregate, which folds in alcohol and tobacco and diverges by up
+  to 3.4 pp — `CP01` reproduces the June pull in all 60 overlapping months, `FOOD` in 3.
+- [LEARN] The instrument validates only where there is something to validate against. Media attention
+  tracks HICP at r = 0.75 in the 2021–2024 window (inflation sd 4.03) and not at all in 2024–2026
+  (sd 0.60, above the 4% threshold in 17 of 24 months). Report both; a flat regressor is uninformative,
+  not disconfirming. Attention also tracks the LEVEL of inflation, not month-on-month changes
+  (first differences t = 0.43).
+- [LEARN] `fread` reads a header of year numbers as data and names the columns V1…V7. Pass
+  `header = TRUE` whenever a generated CSV has numeric column names.
+- [LEARN] EMIP v2's decisive W1 split is not merely pastoral attention. Of 179 institution-register
+  posts, 91 are direct sector voice about the sector's own costs or revenues and 76 are direct sector
+  voice about household hardship (counting `both` in each relevant total). Household speech peaks in
+  2022-02, own-position speech in 2022-10, and repricing coverage in 2024-06, so the own-position to
+  repricing lag is 20 months. The defensible claim is public possession of relevant information before
+  late adjustment, not observed individual cognition.
+- [LEARN] EMIP v2 unit matching must require speech to precede repricing strictly (`lag_days > 0`) and
+  must keep exact unit names private. There are 32 named units, 22 with own-position speech, 14 with
+  repricing coverage, and four valid within-unit sequences; their lags are 1 to 1 505 days (median 669),
+  with three over one year. Only aggregate counts and unit types leave `output/private/`.
+- [LEARN] The event register supports dates, lags, composition and concentration, not fee levels or a
+  structural hazard. Repricing coverage peaks at 55 posts in 2024-06, 19 months after the 12.9% HICP
+  peak and at a chained price-level gap of 25.7% from 2021-06. Fairness and organisational decision
+  cost remain observationally equivalent and must be framed as consistency, not identification.
+- [LEARN] The v2 reproducibility route is `RUN_ALL.R --v2 --no-network`: 15 scripts completed in 7.4
+  minutes on 2026-08-05. The paper gate is 33/33 (nine byte-identical generated tables, all 152 derived
+  scalars present, both abstracts under 150 words, UTF-8 intact). Rendering produces full and blinded
+  Word files; replication produces 61 screened files and withholds corpus text and all private labels.
+
 ## Housekeeping resolution (2026-07-28)
 - [LEARN] Legacy NLP/stemmer scripts with phantom or hard-coded paths are archived under
   `archive/legacy-pipeline/`; active code uses `resources/` and `R/lib/`.
