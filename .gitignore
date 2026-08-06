@@ -89,6 +89,9 @@ studies/*/output/intermediate/
 !/studies/*/typeset/*.html
 # Typeset manuscripts (28_render_paper.R) are rebuilt from the tracked .md, tables and figures.
 /studies/*/output/paper/
+# Assembled by 12_replication.R from files already tracked elsewhere; it is a deposit
+# bundle for Zenodo, not a second copy of the study to keep in step by hand.
+/studies/*/output/replication/
 /quality_reports/**/*.html
 /quality_reports/**/*_files/
 /README.html

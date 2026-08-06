@@ -1,0 +1,7 @@
+stream,spec,n,estimate,se,t,note
+monitoring,"levels, Newey-West",37,0.0914,0.0102,8.94,HAC lag 3
+monitoring,first differences,35,0.0384,0.0895,0.43,p = 0.671
+monitoring,"negative binomial, volume offset",37,0.1027,0.0145,7.06,incidence ratio 1.108 per pp
+backfill,"levels, Newey-West",24,0.2879,0.194,1.48,HAC lag 2
+backfill,first differences,23,0.1437,0.2371,0.61,p = 0.551
+backfill,"negative binomial, volume offset",24,0.2205,0.13,1.7,incidence ratio 1.247 per pp

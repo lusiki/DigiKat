@@ -1,0 +1,521 @@
+rid,register,response,date,year,month,stream,otype,object,voice,unit,object_agree_n,voice_agree_n,unit_agree_n
+11689,justice,Normative response,2021-05-05,2021,2021-05,monitoring,Catholic,,,vatican,,,3
+11740,justice,Normative response,2021-05-05,2021,2021-05,monitoring,Catholic,,,vatican,,,3
+13350,institution,Public voice,2021-12-04,2021,2021-12,monitoring,Catholic,own,sector,diocese,3,3,3
+13372,institution,Public voice,2021-12-04,2021,2021-12,monitoring,Secular/other,own,sector,diocese,3,3,3
+46120,institution,Public voice,2021-10-16,2021,2021-10,monitoring,Secular/other,own,sector,diocese,3,3,3
+54046,institution,Public voice,2021-11-19,2021,2021-11,monitoring,Secular/other,own,sector,order,3,3,3
+63015,institution,Public voice,2021-10-22,2021,2021-10,monitoring,Secular/other,household,sector,diocese,2,2,3
+63155,institution,Public voice,2021-10-21,2021,2021-10,monitoring,Catholic,household,sector,diocese,2,3,3
+63197,institution,Public voice,2021-10-21,2021,2021-10,monitoring,Catholic,household,sector,diocese,2,2,3
+73775,institution,Public voice,2021-03-25,2021,2021-03,monitoring,Secular/other,own,outside,vatican,3,2,3
+83495,other,"",2021-12-28,2021,2021-12,monitoring,Secular/other,,,none,,,3
+90014,devotional,"",2021-11-01,2021,2021-11,monitoring,Catholic,,,none,,,3
+90627,other,"",2022-01-01,2022,2022-01,monitoring,Catholic,,,parish,,,3
+91428,institution,Public voice,2022-05-02,2022,2022-05,monitoring,Secular/other,own,sector,diocese,3,3,3
+93309,institution,Public voice,2022-02-03,2022,2022-02,monitoring,Catholic,household,sector,diocese,3,3,3
+93979,institution,Public voice,2022-03-03,2022,2022-03,monitoring,Secular/other,other,outside,diocese,3,2,2
+99304,institution,Public voice,2022-02-04,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+99388,institution,Public voice,2022-02-04,2022,2022-02,monitoring,Catholic,household,sector,diocese,3,3,3
+99921,institution,Public voice,2022-06-05,2022,2022-06,monitoring,Catholic,household,sector,vatican,3,3,3
+99940,institution,Public voice,2022-06-05,2022,2022-06,monitoring,Catholic,household,sector,vatican,3,3,3
+100023,institution,Public voice,2022-06-05,2022,2022-06,monitoring,Catholic,own,outside,parish,3,2,3
+105634,institution,Public voice,2022-03-06,2022,2022-03,monitoring,Secular/other,own,sector,parish,3,3,2
+107096,institution,Public voice,2022-10-07,2022,2022-10,monitoring,Catholic,own,sector,diocese,3,3,3
+108538,institution,Public voice,2022-04-07,2022,2022-04,monitoring,Secular/other,other,outside,none,3,3,2
+110519,charity,Charitable response,2022-02-09,2022,2022-02,monitoring,Secular/other,,,caritas,,,3
+110542,devotional,"",2022-02-09,2022,2022-02,monitoring,Catholic,,,parish,,,3
+111541,institution,Public voice,2022-06-09,2022,2022-06,monitoring,Catholic,own,sector,order,3,3,3
+114381,institution,Public voice,2022-05-10,2022,2022-05,monitoring,Secular/other,both,outside,conference,3,2,3
+114526,institution,Public voice,2022-05-10,2022,2022-05,monitoring,Secular/other,both,outside,conference,3,3,3
+115919,charity,Charitable response,2022-12-10,2022,2022-12,monitoring,Secular/other,,,caritas,,,3
+115940,charity,Charitable response,2022-12-10,2022,2022-12,monitoring,Secular/other,,,caritas,,,3
+115942,charity,Charitable response,2022-12-10,2022,2022-12,monitoring,Secular/other,,,caritas,,,3
+115951,charity,Charitable response,2022-12-10,2022,2022-12,monitoring,Catholic,,,caritas,,,3
+115952,charity,Charitable response,2022-12-10,2022,2022-12,monitoring,Catholic,,,caritas,,,3
+115953,charity,Charitable response,2022-12-10,2022,2022-12,monitoring,Secular/other,,,caritas,,,3
+115961,charity,Charitable response,2022-12-10,2022,2022-12,monitoring,Secular/other,,,caritas,,,3
+115977,charity,Charitable response,2022-12-10,2022,2022-12,monitoring,Catholic,,,caritas,,,3
+116803,charity,Charitable response,2022-02-10,2022,2022-02,monitoring,Secular/other,,,caritas,,,3
+117151,charity,Charitable response,2022-03-11,2022,2022-03,monitoring,Secular/other,,,caritas,,,3
+117771,institution,Public voice,2022-06-10,2022,2022-06,monitoring,Catholic,own,sector,order,3,3,3
+118966,other,"",2022-10-10,2022,2022-10,monitoring,Secular/other,,,none,,,3
+119019,other,"",2022-10-10,2022,2022-10,monitoring,Secular/other,,,none,,,3
+119646,devotional,"",2022-04-12,2022,2022-04,monitoring,Secular/other,,,none,,,3
+119743,devotional,"",2022-04-12,2022,2022-04,monitoring,Secular/other,,,order,,,2
+119767,devotional,"",2022-04-12,2022,2022-04,monitoring,Secular/other,,,order,,,2
+119819,devotional,"",2022-04-12,2022,2022-04,monitoring,Secular/other,,,none,,,3
+119843,devotional,"",2022-04-12,2022,2022-04,monitoring,Secular/other,,,none,,,3
+119901,devotional,"",2022-04-11,2022,2022-04,monitoring,Secular/other,,,none,,,3
+119902,devotional,"",2022-04-11,2022,2022-04,monitoring,Secular/other,,,none,,,3
+119903,devotional,"",2022-04-11,2022,2022-04,monitoring,Secular/other,,,none,,,3
+119922,institution,Public voice,2022-04-11,2022,2022-04,monitoring,Secular/other,household,sector,diocese,3,3,3
+119933,institution,Public voice,2022-04-11,2022,2022-04,monitoring,Secular/other,household,sector,diocese,3,3,3
+119934,devotional,"",2022-04-11,2022,2022-04,monitoring,Secular/other,,,none,,,3
+119957,institution,Public voice,2022-04-11,2022,2022-04,monitoring,Catholic,household,sector,diocese,3,3,3
+119963,justice,Normative response,2022-04-11,2022,2022-04,monitoring,Secular/other,,,diocese,,,3
+119975,institution,Public voice,2022-04-11,2022,2022-04,monitoring,Secular/other,household,sector,diocese,3,3,3
+119997,institution,Public voice,2022-04-11,2022,2022-04,monitoring,Secular/other,household,sector,diocese,3,3,3
+120003,institution,Public voice,2022-04-11,2022,2022-04,monitoring,Secular/other,household,sector,diocese,3,3,3
+120026,institution,Public voice,2022-04-11,2022,2022-04,monitoring,Secular/other,household,sector,diocese,3,3,3
+121530,charity,Charitable response,2022-12-12,2022,2022-12,monitoring,Secular/other,,,caritas,,,3
+121561,charity,Charitable response,2022-12-12,2022,2022-12,monitoring,Secular/other,,,none,,,3
+121719,charity,Charitable response,2022-12-12,2022,2022-12,monitoring,Secular/other,,,caritas,,,3
+121740,charity,Charitable response,2022-12-12,2022,2022-12,monitoring,Secular/other,,,caritas,,,3
+121781,charity,Charitable response,2022-12-11,2022,2022-12,monitoring,Secular/other,,,caritas,,,3
+121853,charity,Charitable response,2022-12-11,2022,2022-12,monitoring,Secular/other,,,caritas,,,3
+121896,charity,Charitable response,2022-12-11,2022,2022-12,monitoring,Secular/other,,,caritas,,,3
+123603,institution,Public voice,2022-07-13,2022,2022-07,monitoring,Secular/other,own,outside,order,3,3,3
+125229,institution,Public voice,2022-04-14,2022,2022-04,monitoring,Catholic,own,sector,diocese,3,3,3
+125232,institution,Public voice,2022-04-14,2022,2022-04,monitoring,Secular/other,own,sector,diocese,3,3,3
+125311,institution,Public voice,2022-04-14,2022,2022-04,monitoring,Secular/other,own,sector,diocese,3,3,3
+125313,institution,Public voice,2022-04-14,2022,2022-04,monitoring,Catholic,own,sector,diocese,3,3,3
+125323,institution,Public voice,2022-04-14,2022,2022-04,monitoring,Catholic,own,sector,diocese,3,3,3
+125481,institution,Public voice,2022-04-14,2022,2022-04,monitoring,Secular/other,household,sector,diocese,3,3,3
+125515,institution,Public voice,2022-04-14,2022,2022-04,monitoring,Secular/other,household,sector,diocese,3,3,3
+125621,institution,Public voice,2022-04-13,2022,2022-04,monitoring,Catholic,household,sector,diocese,3,3,3
+126396,disputed,"",2022-11-14,2022,2022-11,monitoring,Catholic,,,diocese,,,2
+126528,charity,Charitable response,2022-11-14,2022,2022-11,monitoring,Business,,,caritas,,,3
+126577,charity,Charitable response,2022-11-13,2022,2022-11,monitoring,Secular/other,,,caritas,,,3
+126601,charity,Charitable response,2022-11-13,2022,2022-11,monitoring,Secular/other,,,caritas,,,3
+127308,institution,Public voice,2022-02-15,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127422,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127446,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127448,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127452,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127462,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127469,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127479,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127480,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127487,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127489,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127493,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127502,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Catholic,household,sector,diocese,3,3,3
+127504,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127507,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127509,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127512,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127514,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127515,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127517,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127519,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Catholic,household,sector,diocese,3,3,3
+127521,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+127528,institution,Public voice,2022-02-14,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+130384,charity,Charitable response,2022-01-15,2022,2022-01,monitoring,Secular/other,,,caritas,,,3
+130671,charity,Charitable response,2022-04-16,2022,2022-04,monitoring,Secular/other,,,caritas,,,3
+130672,charity,Charitable response,2022-04-16,2022,2022-04,monitoring,Secular/other,,,caritas,,,3
+133944,institution,Public voice,2022-02-17,2022,2022-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+135410,devotional,"",2022-07-16,2022,2022-07,monitoring,Secular/other,,,diocese,,,3
+136829,charity,Charitable response,2022-01-17,2022,2022-01,monitoring,Catholic,,,caritas,,,3
+137200,institution,Public voice,2022-04-18,2022,2022-04,monitoring,Secular/other,household,sector,diocese,3,3,3
+137210,institution,Public voice,2022-04-18,2022,2022-04,monitoring,Secular/other,household,sector,diocese,3,3,3
+137283,institution,Public voice,2022-04-18,2022,2022-04,monitoring,Secular/other,household,sector,diocese,3,3,3
+137297,institution,Public voice,2022-04-17,2022,2022-04,monitoring,Catholic,household,sector,diocese,3,3,3
+137322,institution,Public voice,2022-04-17,2022,2022-04,monitoring,Secular/other,both,sector,diocese,2,3,3
+137345,institution,Public voice,2022-04-17,2022,2022-04,monitoring,Secular/other,both,sector,diocese,2,3,3
+140157,charity,Charitable response,2022-03-18,2022,2022-03,monitoring,Secular/other,,,caritas,,,3
+140231,charity,Charitable response,2022-03-18,2022,2022-03,monitoring,Catholic,,,caritas,,,3
+143034,institution,Public voice,2022-04-19,2022,2022-04,monitoring,Secular/other,household,sector,diocese,3,3,3
+143108,institution,Public voice,2022-04-19,2022,2022-04,monitoring,Secular/other,household,sector,diocese,3,3,3
+144784,charity,Charitable response,2022-12-19,2022,2022-12,monitoring,Secular/other,,,caritas,,,3
+146785,institution,Public voice,2022-10-21,2022,2022-10,monitoring,Secular/other,own,sector,conference,3,3,3
+146840,crl,Repricing,2022-10-21,2022,2022-10,monitoring,Catholic,,,parish,,,3
+148754,other,"",2022-08-22,2022,2022-08,monitoring,Catholic,,,none,,,3
+150074,charity,Charitable response,2022-12-21,2022,2022-12,monitoring,Catholic,,,caritas,,,3
+150592,crl,Repricing,2022-03-23,2022,2022-03,monitoring,Catholic,,,order,,,3
+151880,institution,Public voice,2022-10-23,2022,2022-10,monitoring,Secular/other,own,sector,conference,3,2,3
+151886,institution,Public voice,2022-10-23,2022,2022-10,monitoring,Secular/other,own,sector,conference,3,3,3
+151912,institution,Public voice,2022-10-23,2022,2022-10,monitoring,Secular/other,own,sector,conference,3,3,3
+151950,institution,Public voice,2022-10-23,2022,2022-10,monitoring,Secular/other,own,sector,conference,3,3,3
+151953,institution,Public voice,2022-10-23,2022,2022-10,monitoring,Secular/other,own,sector,conference,3,3,3
+151960,institution,Public voice,2022-10-23,2022,2022-10,monitoring,Secular/other,own,sector,conference,3,3,3
+151968,institution,Public voice,2022-10-23,2022,2022-10,monitoring,Secular/other,own,sector,conference,3,3,3
+151971,institution,Public voice,2022-10-23,2022,2022-10,monitoring,Secular/other,own,sector,conference,3,3,3
+151986,institution,Public voice,2022-10-23,2022,2022-10,monitoring,Secular/other,own,sector,conference,3,3,3
+151989,institution,Public voice,2022-10-23,2022,2022-10,monitoring,Secular/other,own,sector,conference,3,3,3
+152003,institution,Public voice,2022-10-23,2022,2022-10,monitoring,Secular/other,own,sector,conference,3,3,3
+152004,institution,Public voice,2022-10-23,2022,2022-10,monitoring,Secular/other,own,sector,conference,3,3,3
+152008,institution,Public voice,2022-10-23,2022,2022-10,monitoring,Secular/other,own,sector,conference,3,3,3
+152032,institution,Public voice,2022-10-23,2022,2022-10,monitoring,Secular/other,own,sector,conference,3,3,3
+152043,institution,Public voice,2022-10-22,2022,2022-10,monitoring,Secular/other,own,sector,conference,3,3,3
+152190,crl,Repricing,2022-10-22,2022,2022-10,monitoring,Secular/other,,,conference,,,3
+152211,institution,Public voice,2022-10-22,2022,2022-10,monitoring,Secular/other,own,sector,conference,3,3,3
+152225,crl,Repricing,2022-10-22,2022,2022-10,monitoring,Secular/other,,,conference,,,3
+154461,disputed,"",2022-11-23,2022,2022-11,monitoring,Secular/other,,,diocese,,,2
+154471,disputed,"",2022-11-23,2022,2022-11,monitoring,Secular/other,,,diocese,,,2
+154971,institution,Public voice,2022-12-24,2022,2022-12,monitoring,Secular/other,household,sector,diocese,3,3,3
+154998,institution,Public voice,2022-12-23,2022,2022-12,monitoring,Catholic,own,sector,diocese,3,3,3
+156669,devotional,"",2022-09-25,2022,2022-09,monitoring,Secular/other,,,parish,,,3
+156757,charity,Charitable response,2022-09-25,2022,2022-09,monitoring,Secular/other,,,caritas,,,3
+156775,charity,Charitable response,2022-09-25,2022,2022-09,monitoring,Secular/other,,,caritas,,,3
+157017,institution,Public voice,2022-09-24,2022,2022-09,monitoring,Secular/other,own,sector,order,3,3,3
+157433,institution,Public voice,2022-10-24,2022,2022-10,monitoring,Secular/other,own,sector,conference,3,3,3
+160079,charity,Charitable response,2022-12-26,2022,2022-12,monitoring,Secular/other,,,caritas,,,3
+160293,institution,Public voice,2022-12-25,2022,2022-12,monitoring,Secular/other,household,sector,diocese,2,3,3
+160508,institution,Public voice,2022-12-25,2022,2022-12,monitoring,Secular/other,household,sector,diocese,2,3,3
+160572,institution,Public voice,2022-12-25,2022,2022-12,monitoring,Secular/other,household,sector,diocese,2,3,3
+160638,institution,Public voice,2022-12-25,2022,2022-12,monitoring,Catholic,household,sector,diocese,2,3,3
+160639,institution,Public voice,2022-12-25,2022,2022-12,monitoring,Catholic,household,sector,diocese,2,3,3
+160803,institution,Public voice,2022-12-25,2022,2022-12,monitoring,Secular/other,own,sector,diocese,3,3,3
+162802,institution,Public voice,2022-01-28,2022,2022-01,monitoring,Secular/other,own,sector,order,3,3,3
+162820,institution,Public voice,2022-01-28,2022,2022-01,monitoring,Secular/other,own,sector,order,3,3,3
+163154,charity,Charitable response,2022-01-27,2022,2022-01,monitoring,Secular/other,,,caritas,,,3
+163160,institution,Public voice,2022-01-27,2022,2022-01,monitoring,Secular/other,own,outside,order,3,3,3
+166375,devotional,"",2022-03-29,2022,2022-03,monitoring,Secular/other,,,parish,,,2
+168632,institution,Public voice,2022-01-29,2022,2022-01,monitoring,Secular/other,both,outside,church,2,3,3
+168637,institution,Public voice,2022-01-29,2022,2022-01,monitoring,Secular/other,own,sector,order,3,2,3
+168654,institution,Public voice,2022-01-29,2022,2022-01,monitoring,Secular/other,own,sector,order,3,2,3
+169837,institution,Public voice,2022-08-30,2022,2022-08,monitoring,Secular/other,own,sector,diocese,3,3,3
+169843,institution,Public voice,2022-08-30,2022,2022-08,monitoring,Catholic,own,sector,diocese,3,3,3
+170192,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,parish,,,3
+170208,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,parish,,,3
+170211,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,diocese,,,3
+170216,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,parish,,,3
+170217,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,parish,,,3
+170227,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,parish,,,3
+170254,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,parish,,,3
+170255,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,diocese,,,3
+170257,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,church,,,3
+170258,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,conference,,,3
+170259,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,conference,,,3
+170272,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,parish,,,3
+170283,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,conference,,,3
+170285,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,conference,,,3
+170289,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,conference,,,3
+170292,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,diocese,,,3
+170294,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,diocese,,,3
+170298,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,diocese,,,3
+170299,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,diocese,,,3
+170304,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,diocese,,,3
+170308,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,conference,,,3
+170312,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,diocese,,,3
+170314,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,diocese,,,3
+170324,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,diocese,,,3
+170328,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,parish,,,3
+170329,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,diocese,,,2
+170330,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,diocese,,,2
+170331,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,parish,,,3
+170333,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,parish,,,2
+170337,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,parish,,,3
+170338,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,parish,,,2
+170351,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,church,,,3
+170352,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,parish,,,3
+170355,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Business,,,parish,,,3
+170366,crl,Repricing,2022-12-30,2022,2022-12,monitoring,Secular/other,,,parish,,,3
+170424,crl,Repricing,2022-12-29,2022,2022-12,monitoring,Secular/other,,,parish,,,3
+170499,crl,Repricing,2022-12-29,2022,2022-12,monitoring,Secular/other,,,conference,,,3
+172870,institution,Public voice,2022-02-01,2022,2022-02,monitoring,Secular/other,own,sector,order,3,3,3
+173034,institution,Public voice,2022-02-01,2022,2022-02,monitoring,Secular/other,own,sector,order,3,3,3
+173038,institution,Public voice,2022-02-01,2022,2022-02,monitoring,Secular/other,own,sector,order,3,3,3
+173058,institution,Public voice,2022-02-01,2022,2022-02,monitoring,Secular/other,own,sector,order,3,3,3
+173447,institution,Public voice,2022-06-01,2022,2022-06,monitoring,Secular/other,own,sector,parish,3,3,3
+173455,institution,Public voice,2022-06-01,2022,2022-06,monitoring,Secular/other,own,sector,parish,3,3,3
+174063,charity,Charitable response,2022-09-01,2022,2022-09,monitoring,Catholic,,,none,,,3
+174368,institution,Public voice,2022-08-31,2022,2022-08,monitoring,Secular/other,own,sector,diocese,3,3,3
+174725,crl,Repricing,2023-02-02,2023,2023-02,monitoring,Secular/other,,,church,,,3
+174790,crl,Repricing,2023-02-01,2023,2023-02,monitoring,Secular/other,,,none,,,3
+175201,institution,Public voice,2023-03-01,2023,2023-03,monitoring,Secular/other,own,outside,none,2,3,3
+177215,crl,Repricing,2023-01-03,2023,2023-01,monitoring,Secular/other,,,parish,,,2
+177961,justice,Normative response,2023-04-02,2023,2023-04,monitoring,Secular/other,,,none,,,3
+178955,crl,Repricing,2023-08-03,2023,2023-08,monitoring,Secular/other,,,church,,,1
+179270,justice,Normative response,2023-08-02,2023,2023-08,monitoring,Catholic,,,vatican,,,3
+179893,institution,Public voice,2023-12-03,2023,2023-12,monitoring,Secular/other,own,sector,diocese,3,3,3
+180323,institution,Public voice,2023-12-02,2023,2023-12,monitoring,Catholic,own,sector,diocese,3,3,3
+180397,institution,Public voice,2023-12-02,2023,2023-12,monitoring,Secular/other,own,sector,diocese,3,3,3
+180977,crl,Repricing,2023-02-03,2023,2023-02,monitoring,Secular/other,,,church,,,3
+183706,charity,Charitable response,2023-01-04,2023,2023-01,monitoring,Catholic,,,vatican,,,3
+184232,institution,Public voice,2023-04-04,2023,2023-04,monitoring,Secular/other,own,sector,parish,3,3,3
+184241,institution,Public voice,2023-04-04,2023,2023-04,monitoring,Secular/other,own,sector,parish,3,3,3
+184374,institution,Public voice,2023-04-04,2023,2023-04,monitoring,Secular/other,own,sector,parish,3,3,3
+184753,crl,Repricing,2023-05-04,2023,2023-05,monitoring,Secular/other,,,none,,,3
+186144,institution,Public voice,2023-12-04,2023,2023-12,monitoring,Secular/other,own,outside,none,3,3,2
+186687,charity,Charitable response,2023-03-06,2023,2023-03,monitoring,Secular/other,,,caritas,,,3
+186926,justice,Normative response,2023-03-05,2023,2023-03,monitoring,Secular/other,,,none,,,3
+193149,crl,Repricing,2023-06-07,2023,2023-06,monitoring,Secular/other,,,diocese,,,3
+194717,crl,Repricing,2023-01-09,2023,2023-01,monitoring,Secular/other,,,diocese,,,2
+194847,crl,Repricing,2023-01-09,2023,2023-01,monitoring,Secular/other,,,diocese,,,3
+194873,crl,Repricing,2023-01-09,2023,2023-01,monitoring,Secular/other,,,diocese,,,3
+200269,crl,Repricing,2023-01-10,2023,2023-01,monitoring,Secular/other,,,diocese,,,3
+200270,crl,Repricing,2023-01-10,2023,2023-01,monitoring,Secular/other,,,church,,,2
+200380,crl,Repricing,2023-01-10,2023,2023-01,monitoring,Secular/other,,,church,,,2
+205349,crl,Repricing,2023-01-12,2023,2023-01,monitoring,Secular/other,,,diocese,,,3
+208268,charity,Charitable response,2023-03-14,2023,2023-03,monitoring,Secular/other,,,caritas,,,3
+208363,charity,Charitable response,2023-03-14,2023,2023-03,monitoring,Catholic,,,caritas,,,3
+208890,justice,Normative response,2023-06-13,2023,2023-06,monitoring,Secular/other,,,none,,,3
+209060,crl,Repricing,2023-06-13,2023,2023-06,monitoring,Secular/other,,,none,,,3
+209605,institution,Public voice,2023-09-14,2023,2023-09,monitoring,Catholic,household,outside,none,2,2,3
+215166,institution,Public voice,2023-09-16,2023,2023-09,monitoring,Secular/other,own,sector,parish,3,3,3
+216304,crl,Repricing,2023-01-16,2023,2023-01,monitoring,Secular/other,,,church,,,3
+217296,institution,Public voice,2023-08-17,2023,2023-08,monitoring,Catholic,household,sector,diocese,3,3,3
+217666,devotional,"",2023-08-16,2023,2023-08,monitoring,Catholic,,,diocese,,,2
+217702,devotional,"",2023-08-16,2023,2023-08,monitoring,Secular/other,,,diocese,,,2
+221181,institution,Public voice,2023-01-19,2023,2023-01,monitoring,Secular/other,own,sector,conference,3,3,3
+221194,institution,Public voice,2023-01-19,2023,2023-01,monitoring,Secular/other,own,sector,conference,3,3,3
+226371,justice,Normative response,2023-10-19,2023,2023-10,monitoring,Secular/other,,,caritas,,,3
+227067,crl,Repricing,2023-04-20,2023,2023-04,monitoring,Secular/other,,,none,,,3
+228792,institution,Public voice,2023-02-22,2023,2023-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+230645,charity,Charitable response,2023-09-21,2023,2023-09,monitoring,Catholic,,,caritas,,,3
+231569,crl,Repricing,2023-04-23,2023,2023-04,monitoring,Secular/other,,,none,,,3
+231677,crl,Repricing,2023-04-23,2023,2023-04,monitoring,Secular/other,,,none,,,3
+236623,crl,Repricing,2023-01-25,2023,2023-01,monitoring,Secular/other,,,parish,,,3
+236638,institution,Public voice,2023-01-25,2023,2023-01,monitoring,Secular/other,own,sector,parish,3,3,3
+236647,institution,Public voice,2023-01-25,2023,2023-01,monitoring,Secular/other,own,sector,parish,3,3,3
+236660,institution,Public voice,2023-01-25,2023,2023-01,monitoring,Secular/other,own,sector,parish,3,3,3
+236699,institution,Public voice,2023-01-24,2023,2023-01,monitoring,Secular/other,own,sector,parish,3,3,3
+236995,charity,Charitable response,2023-04-25,2023,2023-04,monitoring,Catholic,,,caritas,,,3
+238908,crl,Repricing,2023-12-25,2023,2023-12,monitoring,Secular/other,,,parish,,,2
+239149,institution,Public voice,2023-12-25,2023,2023-12,monitoring,Secular/other,household,sector,caritas,3,3,2
+240006,institution,Public voice,2023-02-25,2023,2023-02,monitoring,Secular/other,household,sector,diocese,3,3,3
+240023,institution,Public voice,2023-02-25,2023,2023-02,monitoring,Catholic,household,sector,diocese,3,3,3
+241956,crl,Repricing,2023-10-26,2023,2023-10,monitoring,Secular/other,,,vatican,,,3
+241962,crl,Repricing,2023-10-26,2023,2023-10,monitoring,Secular/other,,,vatican,,,3
+241963,crl,Repricing,2023-10-26,2023,2023-10,monitoring,Secular/other,,,vatican,,,3
+242620,institution,Public voice,2023-01-26,2023,2023-01,monitoring,Secular/other,own,sector,parish,2,3,2
+242702,institution,Public voice,2023-01-26,2023,2023-01,monitoring,Secular/other,own,sector,parish,2,3,2
+242705,crl,Repricing,2023-01-26,2023,2023-01,monitoring,Secular/other,,,parish,,,3
+242815,charity,Charitable response,2023-04-27,2023,2023-04,monitoring,Secular/other,,,parish,,,3
+242901,charity,Charitable response,2023-04-27,2023,2023-04,monitoring,Catholic,,,parish,,,3
+244160,charity,Charitable response,2023-11-27,2023,2023-11,monitoring,Secular/other,,,caritas,,,3
+244591,crl,Repricing,2023-12-27,2023,2023-12,monitoring,Secular/other,,,parish,,,3
+244664,crl,Repricing,2023-12-27,2023,2023-12,monitoring,Secular/other,,,parish,,,3
+244681,disputed,"",2023-12-27,2023,2023-12,monitoring,Secular/other,,,parish,,,3
+244708,institution,Public voice,2023-12-27,2023,2023-12,monitoring,Secular/other,household,sector,caritas,3,3,3
+244769,crl,Repricing,2023-12-26,2023,2023-12,monitoring,Secular/other,,,parish,,,3
+244774,crl,Repricing,2023-12-26,2023,2023-12,monitoring,Secular/other,,,parish,,,3
+244775,crl,Repricing,2023-12-26,2023,2023-12,monitoring,Secular/other,,,parish,,,3
+245308,devotional,"",2023-02-27,2023,2023-02,monitoring,Secular/other,,,church,,,3
+245327,devotional,"",2023-02-27,2023,2023-02,monitoring,Secular/other,,,none,,,3
+248124,charity,Charitable response,2023-01-28,2023,2023-01,monitoring,Catholic,,,caritas,,,3
+248125,charity,Charitable response,2023-01-28,2023,2023-01,monitoring,Catholic,,,caritas,,,3
+250304,institution,Public voice,2023-12-29,2023,2023-12,monitoring,Catholic,own,sector,diocese,3,3,3
+250576,crl,Repricing,2023-12-28,2023,2023-12,monitoring,Secular/other,,,parish,,,3
+250902,institution,Public voice,2023-03-30,2023,2023-03,monitoring,Catholic,household,sector,diocese,3,3,3
+251966,crl,Repricing,2023-07-29,2023,2023-07,monitoring,Secular/other,,,none,,,3
+251982,disputed,"",2023-07-29,2023,2023-07,monitoring,Secular/other,,,none,,,3
+255509,institution,Public voice,2023-12-31,2023,2023-12,monitoring,Secular/other,own,sector,diocese,3,3,3
+255555,institution,Public voice,2023-12-31,2023,2023-12,monitoring,Secular/other,own,sector,diocese,3,3,3
+255604,institution,Public voice,2023-12-31,2023,2023-12,monitoring,Secular/other,own,sector,diocese,3,3,3
+255669,institution,Public voice,2023-12-30,2023,2023-12,monitoring,Secular/other,own,sector,diocese,3,3,3
+255679,institution,Public voice,2023-12-30,2023,2023-12,monitoring,Secular/other,own,sector,diocese,3,3,3
+255681,institution,Public voice,2023-12-30,2023,2023-12,monitoring,Secular/other,own,sector,diocese,3,3,3
+255756,institution,Public voice,2023-12-30,2023,2023-12,monitoring,Secular/other,own,sector,diocese,3,3,3
+255761,institution,Public voice,2023-12-30,2023,2023-12,monitoring,Secular/other,own,sector,diocese,3,3,3
+255767,institution,Public voice,2023-12-30,2023,2023-12,monitoring,Secular/other,own,sector,diocese,3,3,3
+255788,institution,Public voice,2023-12-30,2023,2023-12,monitoring,Secular/other,own,sector,diocese,3,3,3
+255789,institution,Public voice,2023-12-30,2023,2023-12,monitoring,Secular/other,own,sector,diocese,3,3,3
+256548,crl,Repricing,2023-08-01,2023,2023-08,monitoring,Secular/other,,,conference,,,3
+256558,crl,Repricing,2023-08-01,2023,2023-08,monitoring,Secular/other,,,conference,,,3
+257235,devotional,"",2023-11-01,2023,2023-11,monitoring,Secular/other,,,none,,,3
+257844,crl,Repricing,2022-12-31,2022,2022-12,monitoring,Secular/other,,,conference,,,2
+257945,institution,Public voice,2022-12-31,2022,2022-12,monitoring,Catholic,own,sector,parish,3,3,3
+258099,crl,Repricing,2022-12-31,2022,2022-12,monitoring,Secular/other,,,parish,,,3
+258223,crl,Repricing,2022-12-31,2022,2022-12,monitoring,Secular/other,,,parish,,,3
+258251,crl,Repricing,2022-12-31,2022,2022-12,monitoring,Secular/other,,,diocese,,,3
+258253,crl,Repricing,2022-12-31,2022,2022-12,monitoring,Secular/other,,,parish,,,3
+258346,crl,Repricing,2024-01-02,2024,2024-01,monitoring,Secular/other,,,conference,,,3
+258396,crl,Repricing,2024-01-02,2024,2024-01,monitoring,Secular/other,,,conference,,,3
+258397,crl,Repricing,2024-01-02,2024,2024-01,monitoring,Secular/other,,,conference,,,3
+258398,crl,Repricing,2024-01-02,2024,2024-01,monitoring,Secular/other,,,conference,,,3
+258413,crl,Repricing,2024-01-02,2024,2024-01,monitoring,Secular/other,,,conference,,,3
+261846,institution,Public voice,2024-06-05,2024,2024-06,monitoring,Secular/other,own,sector,diocese,3,3,3
+261970,institution,Public voice,2024-06-05,2024,2024-06,monitoring,Secular/other,own,sector,diocese,3,3,3
+263001,institution,Public voice,2024-06-07,2024,2024-06,monitoring,Secular/other,own,sector,diocese,3,3,3
+263027,institution,Public voice,2024-06-07,2024,2024-06,monitoring,Secular/other,own,sector,diocese,3,3,3
+265838,crl,Repricing,2024-06-18,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+265847,crl,Repricing,2024-06-18,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+265852,crl,Repricing,2024-06-18,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+265873,crl,Repricing,2024-06-18,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+265877,crl,Repricing,2024-06-18,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+265878,crl,Repricing,2024-06-18,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+265891,crl,Repricing,2024-06-18,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+265931,crl,Repricing,2024-06-18,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+265951,crl,Repricing,2024-06-18,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+265967,crl,Repricing,2024-06-18,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+265973,crl,Repricing,2024-06-18,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+265989,crl,Repricing,2024-06-18,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+265994,crl,Repricing,2024-06-18,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266028,crl,Repricing,2024-06-18,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266029,crl,Repricing,2024-06-18,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266065,crl,Repricing,2024-06-18,2024,2024-06,monitoring,Catholic,,,conference,,,3
+266095,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266104,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266108,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266112,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266118,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266129,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266131,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266132,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266134,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266143,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266146,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266152,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266160,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266164,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266166,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266180,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266181,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266182,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266185,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266186,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266192,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266194,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266196,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266204,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266206,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266210,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266218,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266233,crl,Repricing,2024-06-17,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266574,crl,Repricing,2024-06-20,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266715,crl,Repricing,2024-06-19,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266873,crl,Repricing,2024-06-19,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+266900,crl,Repricing,2024-06-19,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+267131,crl,Repricing,2024-06-22,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+267132,crl,Repricing,2024-06-22,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+267133,crl,Repricing,2024-06-22,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+267446,crl,Repricing,2024-06-24,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+267462,crl,Repricing,2024-06-24,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+267793,crl,Repricing,2024-06-23,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+267892,crl,Repricing,2024-06-23,2024,2024-06,monitoring,Secular/other,,,conference,,,3
+269813,charity,Charitable response,2025-01-12,2025,2025-01,backfill,Secular/other,,,caritas,,,3
+269814,charity,Charitable response,2025-01-12,2025,2025-01,backfill,Secular/other,,,caritas,,,3
+270223,charity,Charitable response,2025-01-11,2025,2025-01,backfill,Secular/other,,,caritas,,,3
+270227,charity,Charitable response,2025-01-11,2025,2025-01,backfill,Secular/other,,,caritas,,,3
+270270,charity,Charitable response,2025-01-11,2025,2025-01,backfill,Secular/other,,,caritas,,,3
+273135,disputed,"",2025-01-06,2025,2025-01,backfill,Secular/other,,,parish,,,3
+283308,institution,Public voice,2025-02-10,2025,2025-02,backfill,Secular/other,both,sector,parish,2,2,3
+285728,disputed,"",2025-02-06,2025,2025-02,backfill,Secular/other,,,none,,,3
+296648,charity,Charitable response,2025-03-06,2025,2025-03,backfill,Secular/other,,,caritas,,,3
+297049,devotional,"",2025-03-06,2025,2025-03,backfill,Secular/other,,,none,,,3
+297147,disputed,"",2025-03-05,2025,2025-03,backfill,Secular/other,,,church,,,2
+325977,crl,Repricing,2025-06-03,2025,2025-06,backfill,Secular/other,,,none,,,3
+335651,charity,Charitable response,2025-07-14,2025,2025-07,backfill,Secular/other,,,caritas,,,3
+335796,charity,Charitable response,2025-07-14,2025,2025-07,backfill,Catholic,,,caritas,,,3
+336180,charity,Charitable response,2025-07-14,2025,2025-07,backfill,Catholic,,,caritas,,,3
+337223,institution,Public voice,2025-07-12,2025,2025-07,backfill,Secular/other,own,sector,parish,3,3,3
+340952,devotional,"",2025-07-06,2025,2025-07,backfill,Secular/other,,,order,,,3
+344238,justice,Normative response,2024-08-11,2024,2024-08,backfill,Secular/other,,,none,,,3
+352510,devotional,"",2025-08-15,2025,2025-08,backfill,Secular/other,,,none,,,3
+352751,justice,Normative response,2025-08-15,2025,2025-08,backfill,Catholic,,,none,,,3
+354900,charity,Charitable response,2025-08-12,2025,2025-08,backfill,Catholic,,,caritas,,,3
+358113,charity,Charitable response,2025-08-06,2025,2025-08,backfill,Catholic,,,caritas,,,3
+359536,charity,Charitable response,2025-08-04,2025,2025-08,backfill,Catholic,,,caritas,,,3
+361345,charity,Charitable response,2025-08-01,2025,2025-08,backfill,Secular/other,,,caritas,,,3
+361807,charity,Charitable response,2025-08-01,2025,2025-08,backfill,Catholic,,,caritas,,,3
+364367,charity,Charitable response,2024-09-11,2024,2024-09,backfill,Secular/other,,,caritas,,,3
+364368,charity,Charitable response,2024-09-11,2024,2024-09,backfill,Secular/other,,,caritas,,,3
+364377,charity,Charitable response,2024-09-11,2024,2024-09,backfill,Catholic,,,caritas,,,3
+364743,charity,Charitable response,2024-09-10,2024,2024-09,backfill,Secular/other,,,caritas,,,3
+364744,charity,Charitable response,2024-09-10,2024,2024-09,backfill,Secular/other,,,caritas,,,3
+364866,charity,Charitable response,2024-09-10,2024,2024-09,backfill,Catholic,,,caritas,,,3
+366373,charity,Charitable response,2024-09-08,2024,2024-09,backfill,Secular/other,,,none,,,3
+382219,institution,Public voice,2025-10-06,2025,2025-10,backfill,Secular/other,household,outside,diocese,3,3,3
+393653,disputed,"",2024-11-06,2024,2024-11,backfill,Secular/other,,,parish,,,3
+396660,justice,Normative response,2025-11-16,2025,2025-11,backfill,Catholic,,,diocese,,,3
+398273,other,"",2025-11-14,2025,2025-11,backfill,Secular/other,,,none,,,3
+402482,other,"",2025-11-08,2025,2025-11,backfill,Secular/other,,,none,,,3
+407296,crl,Repricing,2025-11-01,2025,2025-11,backfill,Secular/other,,,none,,,3
+415420,institution,Public voice,2024-12-05,2024,2024-12,backfill,Secular/other,own,sector,diocese,3,3,3
+422379,crl,Repricing,2025-12-09,2025,2025-12,backfill,Secular/other,,,parish,,,2
+422565,charity,Charitable response,2025-12-09,2025,2025-12,backfill,Secular/other,,,none,,,2
+422655,crl,Repricing,2025-12-09,2025,2025-12,backfill,Secular/other,,,parish,,,2
+429670,disputed,"",2024-07-13,2024,2024-07,backfill,Secular/other,,,vatican,,,2
+432299,charity,Charitable response,2024-07-09,2024,2024-07,backfill,Secular/other,,,caritas,,,3
+433418,charity,Charitable response,2025-05-31,2025,2025-05,backfill,Secular/other,,,caritas,,,2
+438949,crl,Repricing,2025-05-22,2025,2025-05,backfill,Secular/other,,,none,,,3
+439062,crl,Repricing,2025-05-22,2025,2025-05,backfill,Secular/other,,,none,,,3
+455701,justice,Normative response,2024-08-15,2024,2024-08,backfill,Secular/other,,,none,,,3
+460645,charity,Charitable response,2025-01-28,2025,2025-01,backfill,Secular/other,,,none,,,3
+460800,charity,Charitable response,2025-01-27,2025,2025-01,backfill,Secular/other,,,none,,,3
+466223,crl,Repricing,2025-01-14,2025,2025-01,backfill,Secular/other,,,none,,,3
+466851,charity,Charitable response,2025-01-13,2025,2025-01,backfill,Secular/other,,,caritas,,,3
+467063,charity,Charitable response,2025-01-13,2025,2025-01,backfill,Catholic,,,caritas,,,3
+477505,charity,Charitable response,2025-10-17,2025,2025-10,backfill,Secular/other,,,caritas,,,3
+481777,charity,Charitable response,2024-10-30,2024,2024-10,backfill,Secular/other,,,caritas,,,3
+488167,charity,Charitable response,2024-10-18,2024,2024-10,backfill,Business,,,caritas,,,3
+488216,charity,Charitable response,2024-10-18,2024,2024-10,backfill,Secular/other,,,caritas,,,3
+490026,justice,Normative response,2024-10-15,2024,2024-10,backfill,Secular/other,,,church,,,2
+497870,charity,Charitable response,2025-09-25,2025,2025-09,backfill,Secular/other,,,caritas,,,3
+497937,charity,Charitable response,2025-09-25,2025,2025-09,backfill,Secular/other,,,caritas,,,3
+498244,charity,Charitable response,2025-09-24,2025,2025-09,backfill,Catholic,,,caritas,,,3
+498484,charity,Charitable response,2025-09-24,2025,2025-09,backfill,Catholic,,,caritas,,,3
+500181,devotional,"",2025-09-21,2025,2025-09,backfill,Secular/other,,,none,,,3
+501936,institution,Public voice,2025-09-18,2025,2025-09,backfill,Secular/other,other,sector,vatican,3,2,2
+507050,crl,Repricing,2025-12-28,2025,2025-12,backfill,Secular/other,,,diocese,,,3
+507230,crl,Repricing,2025-12-27,2025,2025-12,backfill,Secular/other,,,diocese,,,3
+507441,crl,Repricing,2025-12-27,2025,2025-12,backfill,Secular/other,,,parish,,,2
+507535,institution,Public voice,2025-12-27,2025,2025-12,backfill,Secular/other,household,sector,diocese,3,2,2
+508083,institution,Public voice,2025-12-26,2025,2025-12,backfill,Secular/other,household,sector,diocese,3,3,3
+508179,institution,Public voice,2025-12-26,2025,2025-12,backfill,Secular/other,household,sector,diocese,3,3,3
+508200,institution,Public voice,2025-12-26,2025,2025-12,backfill,Secular/other,household,sector,diocese,3,3,3
+508505,institution,Public voice,2025-12-25,2025,2025-12,backfill,Secular/other,household,sector,diocese,3,3,3
+508506,institution,Public voice,2025-12-25,2025,2025-12,backfill,Secular/other,household,sector,diocese,3,3,3
+508507,institution,Public voice,2025-12-25,2025,2025-12,backfill,Secular/other,household,sector,diocese,3,3,3
+508677,institution,Public voice,2025-12-25,2025,2025-12,backfill,Secular/other,household,sector,diocese,3,3,3
+508732,institution,Public voice,2025-12-25,2025,2025-12,backfill,Secular/other,household,sector,diocese,3,3,3
+508789,institution,Public voice,2025-12-25,2025,2025-12,backfill,Secular/other,household,sector,diocese,3,3,3
+513268,crl,Repricing,2025-12-20,2025,2025-12,backfill,Secular/other,,,diocese,,,3
+516971,crl,Repricing,2025-12-15,2025,2025-12,backfill,Secular/other,,,parish,,,2
+531147,charity,Charitable response,2024-12-25,2024,2024-12,backfill,Secular/other,,,caritas,,,3
+548041,charity,Charitable response,2025-02-17,2025,2025-02,backfill,Secular/other,,,caritas,,,3
+550292,institution,Public voice,2025-03-26,2025,2025-03,backfill,Secular/other,own,sector,parish,3,3,3
+558408,crl,Repricing,2025-11-29,2025,2025-11,backfill,Secular/other,,,none,,,3
+559382,institution,Public voice,2025-11-28,2025,2025-11,backfill,Secular/other,household,sector,parish,3,3,3
+576829,institution,Public voice,2024-11-30,2024,2024-11,backfill,Secular/other,own,sector,diocese,3,3,3
+576911,institution,Public voice,2024-11-29,2024,2024-11,backfill,Secular/other,own,sector,diocese,3,3,3
+577000,institution,Public voice,2024-11-29,2024,2024-11,backfill,Secular/other,own,sector,diocese,3,3,3
+577206,institution,Public voice,2024-11-29,2024,2024-11,backfill,Catholic,own,sector,diocese,3,3,3
+577845,crl,Repricing,2024-11-28,2024,2024-11,backfill,Secular/other,,,none,,,3
+578043,justice,Normative response,2024-11-28,2024,2024-11,backfill,Secular/other,,,none,,,2
+612327,crl,Repricing,2026-01-20,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+612368,crl,Repricing,2026-01-20,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+612433,crl,Repricing,2026-01-20,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+613037,crl,Repricing,2026-01-19,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+613041,crl,Repricing,2026-01-19,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+613143,crl,Repricing,2026-01-19,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+614268,institution,Public voice,2026-03-05,2026,2026-03,backfill,Secular/other,other,sector,none,3,2,2
+619566,charity,Charitable response,2026-01-22,2026,2026-01,backfill,Secular/other,,,caritas,,,3
+620330,crl,Repricing,2026-01-21,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+620332,crl,Repricing,2026-01-21,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+620346,crl,Repricing,2026-01-21,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+622751,crl,Repricing,2026-03-20,2026,2026-03,backfill,Secular/other,,,order,,,3
+628484,disputed,"",2026-04-23,2026,2026-04,backfill,Secular/other,,,none,,,3
+628521,disputed,"",2026-04-23,2026,2026-04,backfill,Secular/other,,,none,,,3
+631019,crl,Repricing,2026-05-12,2026,2026-05,backfill,Secular/other,,,none,,,3
+632742,institution,Public voice,2026-05-14,2026,2026-05,backfill,Secular/other,own,sector,none,3,3,2
+635936,crl,Repricing,2026-01-26,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+636174,crl,Repricing,2026-01-26,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+636201,crl,Repricing,2026-01-26,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+636207,crl,Repricing,2026-01-26,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+636209,crl,Repricing,2026-01-26,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+636242,crl,Repricing,2026-01-26,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+650144,charity,Charitable response,2026-03-29,2026,2026-03,backfill,Secular/other,,,caritas,,,3
+657630,institution,Public voice,2026-04-05,2026,2026-04,backfill,Catholic,household,sector,diocese,3,3,3
+658229,devotional,"",2026-04-05,2026,2026-04,backfill,Secular/other,,,caritas,,,2
+658303,devotional,"",2026-04-05,2026,2026-04,backfill,Catholic,,,diocese,,,3
+659790,devotional,"",2026-04-07,2026,2026-04,backfill,Secular/other,,,caritas,,,2
+664882,crl,Repricing,2026-04-18,2026,2026-04,backfill,Secular/other,,,none,,,3
+666632,crl,Repricing,2026-04-19,2026,2026-04,backfill,Secular/other,,,none,,,3
+666642,crl,Repricing,2026-04-19,2026,2026-04,backfill,Secular/other,,,none,,,3
+666764,crl,Repricing,2026-04-19,2026,2026-04,backfill,Secular/other,,,none,,,3
+667718,crl,Repricing,2026-04-21,2026,2026-04,backfill,Secular/other,,,none,,,3
+668667,crl,Repricing,2026-01-08,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+677479,crl,Repricing,2026-05-09,2026,2026-05,backfill,Secular/other,,,none,,,3
+681068,crl,Repricing,2026-01-09,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+681216,crl,Repricing,2026-01-09,2026,2026-01,backfill,Secular/other,,,none,,,3
+681291,charity,Charitable response,2026-01-09,2026,2026-01,backfill,Catholic,,,caritas,,,3
+681398,charity,Charitable response,2026-05-18,2026,2026-05,backfill,Catholic,,,caritas,,,3
+683137,justice,Normative response,2026-05-19,2026,2026-05,backfill,Secular/other,,,none,,,2
+683471,crl,Repricing,2026-05-19,2026,2026-05,backfill,Secular/other,,,none,,,2
+703903,crl,Repricing,2026-01-18,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+703909,crl,Repricing,2026-01-18,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+704032,crl,Repricing,2026-01-18,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+704144,crl,Repricing,2026-01-18,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+704153,crl,Repricing,2026-01-18,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+704191,crl,Repricing,2026-01-18,2026,2026-01,backfill,Catholic,,,diocese,,,3
+704198,crl,Repricing,2026-01-18,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+704199,crl,Repricing,2026-01-18,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+704203,crl,Repricing,2026-01-18,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+704207,crl,Repricing,2026-01-18,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+704242,crl,Repricing,2026-01-18,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+704259,crl,Repricing,2026-01-18,2026,2026-01,backfill,Secular/other,,,diocese,,,3
+704335,crl,Repricing,2026-01-17,2026,2026-01,backfill,Secular/other,,,diocese,,,3

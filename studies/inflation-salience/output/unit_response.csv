@@ -1,0 +1,38 @@
+unit,response,register,N
+caritas,"",devotional,2
+caritas,Charitable response,charity,78
+caritas,Normative response,justice,1
+caritas,Public voice,institution,2
+church,"",devotional,1
+church,"",disputed,1
+church,Normative response,justice,1
+church,Public voice,institution,1
+church,Repricing,crl,8
+conference,Public voice,institution,22
+conference,Repricing,crl,72
+diocese,"",devotional,4
+diocese,"",disputed,3
+diocese,Normative response,justice,2
+diocese,Public voice,institution,111
+diocese,Repricing,crl,52
+none,"",devotional,13
+none,"",disputed,4
+none,"",other,6
+none,Charitable response,charity,6
+none,Normative response,justice,8
+none,Public voice,institution,6
+none,Repricing,crl,23
+order,"",devotional,3
+order,Public voice,institution,14
+order,Repricing,crl,2
+parish,"",devotional,3
+parish,"",disputed,3
+parish,"",other,1
+parish,Charitable response,charity,2
+parish,Public voice,institution,19
+parish,Repricing,crl,34
+vatican,"",disputed,1
+vatican,Charitable response,charity,1
+vatican,Normative response,justice,3
+vatican,Public voice,institution,4
+vatican,Repricing,crl,3
