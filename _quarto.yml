@@ -38,6 +38,8 @@ website:
             href: pages/mapa/evolucija.qmd
       - text: "Tematska istraživanja"
         menu:
+          - text: "Pregled istraživanja"
+            href: pages/studije/index.qmd
           - text: "Tržišta pažnje u religijskim digitalnim medijima"
             href: pages/studije/trzista-paznje.qmd
           - text: "Memorijalni okvir hrvatskih katoličkih odredišta"
