@@ -1,5 +1,5 @@
 ---
-pagetitle: "DigiKat — Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru"
+pagetitle: "DigiKat — Katolička crkva u digitalnom medijskom prostoru"
 page-layout: custom
 toc: false
 ---
@@ -23,10 +23,11 @@ source("R/source_network.R")
   <div style="max-width: 1180px; margin: 0 auto; padding: 72px 40px 64px;">
     <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #0f4c5c; margin-bottom: 26px;">
       <span style="width: 7px; height: 7px; background: #0f4c5c; border-radius: 50%;"></span>
-      Hrvatsko katoličko sveučilište · 2021.–2027.
+      Hrvatsko katoličko sveučilište · 2021.–2027. ·
+      <a href="https://www.lukasikic.info/" target="_blank" rel="noopener" style="color: #0f4c5c; text-decoration: underline; text-underline-offset: 3px;">Luka Šikić</a>
     </div>
     <h1 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 52px; line-height: 1.08; letter-spacing: -0.015em; margin: 0; max-width: 19ch; color: #14181d; text-wrap: balance;">
-      Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru
+      Katolička crkva u digitalnom medijskom prostoru
     </h1>
     <p style="font-size: 20px; line-height: 1.5; color: #4f535a; margin: 22px 0 0; max-width: 60ch;">
       Ovo je projekt Hrvatskog katoličkog sveučilišta koji mapira katoličku tematiku u hrvatskom digitalnom medijskom prostoru. Riječ je o empirijskom istraživanju provedenom prema načelima otvorene znanosti, usmjerenom na to kako se o religiji raspravlja na internetu — na portalima, društvenim platformama i forumima.
