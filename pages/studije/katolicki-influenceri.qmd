@@ -2,8 +2,10 @@
 title: "Katolički influenceri i institucionalni deficit pažnje"
 subtitle: "Strategije privlačenja pažnje u hrvatskom religijskom digitalnom prostoru"
 author:
-  - name: "Projekt DigiKat"
-    url: "https://lusiki.github.io/DigiKat/"
+  - name: "Suzana Obrovac Lipar"
+    affiliation: "Hrvatsko katoličko sveučilište"
+  - name: "Luka Šikić"
+    url: "https://www.lukasikic.info/"
     affiliation: "Hrvatsko katoličko sveučilište"
 date: last-modified
 categories: ["Tematsko istraživanje", "Nacrt dostupan"]

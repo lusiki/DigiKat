@@ -5,6 +5,9 @@ author:
   - name: "Luka Šikić"
     url: "https://www.lukasikic.info/"
     affiliation: "Hrvatsko katoličko sveučilište"
+  - name: "Petra Palić"
+    url: "https://www.unicath.hr/odjeli-i-fakultet/nastavnici/petra-palic"
+    affiliation: "Hrvatsko katoličko sveučilište"
 date: last-modified
 categories: ["Tematsko istraživanje", "Socijalni nauk", "Rukopis za časopis"]
 ---
@@ -81,6 +84,6 @@ korpusa, način prikupljanja i profil izvora objavljeni su na stranici
 
 ## Status
 
-Radni rukopis (2026-08-05), autor [Luka Šikić](https://www.lukasikic.info/), priprema se za časopis.
+Radni rukopis (2026-08-05), autori [Luka Šikić](https://www.lukasikic.info/) i Petra Palić, priprema se za časopis.
 Dio drugog izlaznog toka projekta (tematske studije i radovi) — vidi
 [Projektni raspored](../schedule.qmd).
