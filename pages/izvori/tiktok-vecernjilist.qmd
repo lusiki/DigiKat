@@ -1,6 +1,6 @@
 ---
 title: "vecernjilist"
-subtitle: "TikTok · Divovi"
+subtitle: "TikTok · Specijalizirani akteri"
 date: last-modified
 categories: ["Katalog izvora", "TikTok"]
 ---
@@ -17,42 +17,42 @@ Ključni pokazatelji ovog izvora u korpusu:
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">27</div>
+<div class="metric-value">9</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">19.725</div>
+<div class="metric-value">8.688</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">528.993</div>
+<div class="metric-value">112.937</div>
 <div class="metric-label">Doseg</div>
 </div>
 </div>
 
-::: {.callout-note}
-Profil se temelji na 27 objava i zato ima status **provisionalnog profila**. Pokazatelji opisuju zabilježeni uzorak, a ne cjelokupno djelovanje aktera.
+::: {.callout-caution}
+Ovo je **vrlo tanak profil** temeljen na 9 objava. Prikazan je radi potpunosti kataloga, ali rang i tipologiju ne treba tumačiti kao stabilnu procjenu aktera.
 :::
 
-Po volumenu objava, vecernjilist je na **3. mjestu** od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje **731 interakcija po objavi**.
+Po volumenu objava, vecernjilist je na **5. mjestu** od 16 praćenih izvora na platformi TikTok. Prosječno ostvaruje **965 interakcija po objavi**.
 
 ## Tipologija
 
-Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), vecernjilist pripada skupini **Divovi**: visok doseg i visok angažman — među vodećim akterima ekosustava.
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), vecernjilist pripada skupini **Specijalizirani akteri**: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.
 
 Uređivačka oznaka: **sekularni izvor** *(predloženo — potvrđuje PI)*
 
 ## Povezano
 
 - [Pregled platforme TikTok](platforma-tiktok.html)
-- Srodni akteri: [24sata](tiktok-24sata.html), [hrvatska_radiotelevizija](tiktok-hrvatska-radiotelevizija.html), [dnevnikhr](tiktok-dnevnikhr.html)
+- Srodni akteri: [slobodna.dalmacija](tiktok-slobodna-dalmacija.html), [kristijanilicic](tiktok-kristijanilicic.html), [hrvatska_radiotelevizija](tiktok-hrvatska-radiotelevizija.html)
 - [Katalog izvora — sve platforme](index.html)
 
 ## Izvori podataka
 
-Podaci: `data/processed/tiktok_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-28).
+Podaci: `data/processed/tiktok_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-08-10).
 
 ::: {.callout-warning}
-Brojke su **indikativne**. Agregati obuhvaćaju razdoblje **2021.–2026.** i svih **9** vrsta izvora zastupljenih u korpusu, uključujući Instagram i TikTok; 2026. je nepotpuna godina. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
+Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
 :::
 

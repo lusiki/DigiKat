@@ -1,6 +1,6 @@
 ---
 title: "jutarnji.hr"
-subtitle: "Web · Divovi"
+subtitle: "Web · Megafoni"
 date: last-modified
 categories: ["Katalog izvora", "Web"]
 ---
@@ -17,38 +17,38 @@ Ključni pokazatelji ovog izvora u korpusu:
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">8.977</div>
+<div class="metric-value">2.828</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">1.638.768</div>
+<div class="metric-value">743.462</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">81.193.581</div>
+<div class="metric-value">29.739.897</div>
 <div class="metric-label">Doseg</div>
 </div>
 </div>
 
-Po volumenu objava, jutarnji.hr je na **7. mjestu** od 19 praćenih izvora na platformi Web. Prosječno ostvaruje **183 interakcija po objavi**.
+Po volumenu objava, jutarnji.hr je na **12. mjestu** od 16 praćenih izvora na platformi Web. Prosječno ostvaruje **263 interakcija po objavi**.
 
 ## Tipologija
 
-Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), jutarnji.hr pripada skupini **Divovi**: visok doseg i visok angažman — među vodećim akterima ekosustava.
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), jutarnji.hr pripada skupini **Megafoni**: visok doseg uz nizak angažman — sadržaj doseže široku publiku bez intenzivne interakcije.
 
 Uređivačka oznaka: **sekularni izvor** *(predloženo — potvrđuje PI)*
 
 ## Povezano
 
 - [Pregled platforme Web](platforma-web.html)
-- Srodni akteri: [net.hr](web-net-hr.html), [24sata.hr](web-24sata-hr.html), [index.hr](web-index-hr.html)
+- Srodni akteri: [24sata.hr](web-24sata-hr.html), [dnevnik.hr](web-dnevnik-hr.html), [dnevno.hr](web-dnevno-hr.html)
 - [Katalog izvora — sve platforme](index.html)
 
 ## Izvori podataka
 
-Podaci: `data/processed/web_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-28).
+Podaci: `data/processed/web_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-08-10).
 
 ::: {.callout-warning}
-Brojke su **indikativne**. Agregati obuhvaćaju razdoblje **2021.–2026.** i svih **9** vrsta izvora zastupljenih u korpusu, uključujući Instagram i TikTok; 2026. je nepotpuna godina. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
+Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
 :::
 

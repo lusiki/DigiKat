@@ -1,6 +1,6 @@
 ---
 title: "hypetelevizija.hr"
-subtitle: "TikTok · Specijalizirani akteri"
+subtitle: "TikTok · Graditelji zajednica"
 date: last-modified
 categories: ["Katalog izvora", "TikTok"]
 ---
@@ -34,25 +34,25 @@ Ključni pokazatelji ovog izvora u korpusu:
 Ovo je **vrlo tanak profil** temeljen na 1 objava. Prikazan je radi potpunosti kataloga, ali rang i tipologiju ne treba tumačiti kao stabilnu procjenu aktera.
 :::
 
-Po volumenu objava, hypetelevizija.hr je na **17. mjestu** od 19 praćenih izvora na platformi TikTok. Prosječno ostvaruje **10.991 interakcija po objavi**.
+Po volumenu objava, hypetelevizija.hr je na **14. mjestu** od 16 praćenih izvora na platformi TikTok. Prosječno ostvaruje **10.991 interakcija po objavi**.
 
 ## Tipologija
 
-Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), hypetelevizija.hr pripada skupini **Specijalizirani akteri**: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), hypetelevizija.hr pripada skupini **Graditelji zajednica**: nizak doseg uz vrlo visok angažman — gradi dubok odnos s vjernom publikom.
 
 Uređivačka oznaka: **sekularni izvor** *(predloženo — potvrđuje PI)*
 
 ## Povezano
 
 - [Pregled platforme TikTok](platforma-tiktok.html)
-- Srodni akteri: [kamenkrsislanina](tiktok-kamenkrsislanina.html), [mondo.zabava](tiktok-mondo-zabava.html), [dontomolukac](tiktok-dontomolukac.html)
+- Srodni akteri: [kamenkrsislanina](tiktok-kamenkrsislanina.html), [euforija.online](tiktok-euforija-online.html), [dontomolukac](tiktok-dontomolukac.html)
 - [Katalog izvora — sve platforme](index.html)
 
 ## Izvori podataka
 
-Podaci: `data/processed/tiktok_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-28).
+Podaci: `data/processed/tiktok_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-08-10).
 
 ::: {.callout-warning}
-Brojke su **indikativne**. Agregati obuhvaćaju razdoblje **2021.–2026.** i svih **9** vrsta izvora zastupljenih u korpusu, uključujući Instagram i TikTok; 2026. je nepotpuna godina. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
+Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
 :::
 

@@ -9,18 +9,18 @@ Ova stranica okuplja praćene izvore na platformi **YouTube** iz **Kataloga izvo
 
 | Izvor | Tipologija | Objava | Interakcija | Doseg |
 |---|---|---:|---:|---:|
-| [pulherissimus](youtube-pulherissimus.html) | Divovi | 6.042 | 1.621.368 | 18.032.439 |
-| [LaudatoTV](youtube-laudatotv.html) | Divovi | 4.064 | 170.409 | 6.510.097 |
-| [Hrana za dušu](youtube-hrana-za-dusu.html) | Divovi | 3.457 | 462.317 | 8.035.216 |
-| [Dijete Vjere](youtube-dijete-vjere.html) | Graditelji zajednica | 1.934 | 444.695 | 3.444.021 |
-| [Pod Smokvom](youtube-pod-smokvom.html) | Graditelji zajednica | 1.522 | 589.626 | 3.889.465 |
-| [Nova Eva](youtube-nova-eva.html) | Megafoni | 667 | 94.921 | 4.147.258 |
-| [Stopama Padre Pija](youtube-stopama-padre-pija.html) | Specijalizirani akteri | 407 | 104.504 | 1.040.141 |
-| [RTL](youtube-rtl.html) | Specijalizirani akteri | 373 | 47.613 | 3.639.591 |
+| [pulherissimus](youtube-pulherissimus.html) | Divovi | 6.031 | 1.620.448 | 18.017.818 |
+| [LaudatoTV](youtube-laudatotv.html) | Divovi | 3.537 | 143.208 | 5.642.997 |
+| [Pod Smokvom](youtube-pod-smokvom.html) | Divovi | 1.522 | 589.626 | 3.889.465 |
+| [Hrana za dušu](youtube-hrana-za-dusu.html) | Divovi | 1.476 | 177.424 | 3.976.961 |
+| [Dijete Vjere](youtube-dijete-vjere.html) | Specijalizirani akteri | 903 | 77.612 | 1.858.783 |
+| [Nova Eva](youtube-nova-eva.html) | Divovi | 666 | 93.953 | 4.123.158 |
+| [Stopama Padre Pija](youtube-stopama-padre-pija.html) | Graditelji zajednica | 404 | 103.281 | 1.007.332 |
 | [Majko Marijo](youtube-majko-marijo.html) | Divovi | 333 | 266.210 | 9.386.044 |
+| [RTL](youtube-rtl.html) | Megafoni | 298 | 39.403 | 2.984.782 |
 | [BOŽANSKA LJUBAV](youtube-bozanska-ljubav.html) | Graditelji zajednica | 152 | 144.742 | 1.244.769 |
-| [budiFRAjer](youtube-budifrajer.html) | Specijalizirani akteri | 152 | 118.891 | 3.397.741 |
-| [Bog Je Tu](youtube-bog-je-tu.html) | Specijalizirani akteri | 93 | 93.696 | 3.578.014 |
+| [budiFRAjer](youtube-budifrajer.html) | Divovi | 152 | 118.891 | 3.397.741 |
+| [Bog Je Tu](youtube-bog-je-tu.html) | Megafoni | 87 | 83.104 | 3.128.452 |
 
 [Natrag na katalog izvora](index.html) · [Mapa ekosustava](../mapa/mapa.html)
 

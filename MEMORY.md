@@ -188,6 +188,72 @@
   scalars present, both abstracts under 150 words, UTF-8 intact). Rendering produces full and blinded
   Word files; replication produces 61 screened files and withholds corpus text and all private labels.
 
+## Both eras under one rule — v4 + second pass (2026-08-10)
+
+- [LEARN] A vocabulary gate cannot filter a population that was itself selected by vocabulary. Applied
+  to `original_dta` (the 2021–2024 stream, cut from DetermDB by a keyword query), the v4 word list
+  accepts **87,6%** of rows and the second pass at 0,40 removes only 6,7% — against 65,3% / 6,5% on the
+  `filtered_religious` half. Result: 269 583 → **218 299** kept, measured **68,0% genuine [54,2–79,2]**
+  on 250 hand-read posts, against 87,0% for post-2024 cut by the identical rule. The 19-point gap is a
+  property of the two streams, not of either measurement.
+- [LEARN] The pre-2024 half is **56,6% genuine before any filtering**, not the ~70% carried in earlier
+  notes. The old figure re-sliced a stratified set drawn for another purpose; this one is a fresh random
+  draw against the actual output. Same lesson as the moral-economy denominator.
+- [LEARN] 0,40 is the wrong SHARED threshold. Adding the two eras' weighted curves
+  (`R/joint_threshold.R`), the united corpus peaks at **0,80** (88,0% clean, keeps 84,0%; F1 85,9)
+  against 0,40 (77,9% / 90,0%; 83,5), and the era gap narrows 19,0 → 10,2 points. Re-cutting is free —
+  the score is stored for every gate-1 passer — but it redefines the corpus, so it is a PI decision.
+- [LEARN] Sample-scaled VOLUMES from a 50-post kept stratum are ~7% low (one read post stands for
+  4 366). Take volumes from the decisions file and precision from the read sample; never mix them.
+- [LEARN] Tuning the gate-2 threshold PER ERA would equalise precision and reintroduce an era-dependent
+  inclusion rule — the exact confound the rebuild exists to remove. One threshold both sides, then
+  report what it costs each half.
+- [LEARN] The window defect is still live and now sized: **11 783** pre-2024 accepts (5,4%) pass gate 1
+  only on evidence past the 3 000 characters gate 2 and the coder see; 0 of the 4 that reached the read
+  sample are genuine, consistent with 0 of 18 in June. Never measured on the post-2024 half.
+- [LEARN] Source labels need normalising before any outlet ranking: 11 955 raw labels → 11 820 after
+  lowercasing and stripping `www.`; only `bitno.net` moves materially (13th → 3rd, 8 099 posts).
+  The united corpus also carries 7 736 duplicate canonical URLs, 478 of them across the era break.
+- [LEARN] One inclusion rule makes the halves **rule-comparable, not capture-comparable**. The kept
+  share still steps ~20 points down at the 2024 break (85,6% in 2023 → 61,6% in 2024); that is the
+  instrument change, untouched by any of this, and volume across it still must not be read as attention.
+
+## The official corpus — one rule, both eras (2026-08-10)
+- [LEARN] There are now TWO datasets and they are NOT interchangeable. `data/merged_comprehensive.rds`
+  is the **accumulator** (710 307 × 47, everything the vendor supplied, still written by
+  `R/append_new_data.R`). `data/digikat_corpus.rds` is **THE official corpus** (413 985 × 54), cut from
+  it by one inclusion rule applied identically to both collection eras. The SITE describes the corpus;
+  the COMPLETED PAPERS stay pinned to the accumulator by name (`studies/moral-economy`,
+  `studies/inflation-salience`, `studies/catholic-education`, `Church-and-dezinfo`), because repointing a
+  finished analysis silently changes numbers it already published. Resolve both via
+  `R/lib/digikat_paths.R`; never type either path.
+- [LEARN] The rule is: word list v4 (119 terms, ≥1 decisive and ≥2 total) **within the first 3 000
+  characters**, then the second-pass ensemble at **0,70** (PI decision 2026-08-10; 0,80 was the joint
+  curve's recommendation, 0,70 chosen as volume-leaning: ≈84,5% genuine at 87,2% recall, era gap 13,6
+  points). Re-cutting at another threshold is free — the score is stored for every gate-1 passer — but it
+  redefines the corpus, so it is a PI decision, not a default that drifts.
+- [LEARN] The window fix is now LIVE on both halves. Gate 1 previously read the whole text while gate 2
+  and the coder read only the first 3 000 characters; all 22 such posts read by hand were not Catholic
+  content. It costs 38 438 rows at gate 1, of which **16 895** (7 456 pre-2024 + 9 439 post-2024) would
+  otherwise have been kept at 0,70. The window-only rate is **5,4% in BOTH eras** — the defect was never
+  era-specific, only never measured on the post-2024 half. `R/backfill_window_flag.R` supplied the missing
+  flag; `post2024_decisions_v4.rds.bak` is the pre-backfill file.
+- [LEARN] The corpus manifest (`data/digikat_corpus_manifest.json`, TRACKED, no PII) is the ONLY place a
+  page should read corpus figures from: it carries rows, columns, span, platform counts, term counts,
+  threshold and the sha256 of the corpus itself, so a page renders on a machine with no data and cannot
+  drift from the file it describes. `index.qmd`, `baza.qmd` and `pages/mapa/*` now compute every corpus
+  number from it — none is typed.
+- [LEARN] `digikat_assert_aggregates_current()` fails CLOSED and will STOP a render while
+  `data/processed/` was built from a different dataset than the corpus manifest names. That is deliberate:
+  the failure mode it prevents is a page printing the current corpus size above charts summing to the old
+  one. Clearing it means regenerating in order — `R/03_aggregate.R` (preview, then `--apply`),
+  `R/04_nlp.R --build`, `R/05_page_summaries.R --build` — and only then rendering.
+- [LEARN] Inline `` `r ` `` DOES evaluate inside a ```` ```{=html} ```` raw block (verified 2026-08-10).
+  So a hand-styled HTML band can be driven from data without being rebuilt as a `cat()`-ing chunk.
+- [LEARN] In `dplyr::summarise`, a later expression sees the columns created EARLIER in the same call:
+  `summarise(kept = sum(kept), kept_pct = 100 * mean(kept))` silently computes the mean of the new
+  `kept` total, not of the logical flag. Name the intermediate differently and rename after.
+
 ## Housekeeping resolution (2026-07-28)
 - [LEARN] Legacy NLP/stemmer scripts with phantom or hard-coded paths are archived under
   `archive/legacy-pipeline/`; active code uses `resources/` and `R/lib/`.

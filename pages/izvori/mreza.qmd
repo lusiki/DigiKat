@@ -1,6 +1,6 @@
 ---
 title: "Mreža izvora"
-subtitle: "Katalog izvora kao interaktivna mreža — šest platformi povezanih zajedničkim brendom"
+subtitle: "Katalog izvora kao interaktivna mreža — šest platformi povezanih pripadnošću i zajedničkim brendom"
 date: last-modified
 categories: ["Katalog izvora", "Mapa ekosustava"]
 ---
@@ -20,6 +20,11 @@ library(dplyr)
 library(visNetwork)
 source("../../R/theme_digikat.R")
 source("../../R/source_network.R")
+source("../../R/lib/digikat_paths.R")
+digikat_assert_aggregates_current(
+  "../../data/processed/manifest.json",
+  "../../data/digikat_corpus_manifest.json"
+)
 ```
 
 ```{r}
@@ -34,9 +39,12 @@ sn <- build_source_network("../../data/processed",
                            "../../resources/dictionaries/source_labels.csv")
 ```
 
-**Mreža izvora** prikazuje [Katalog izvora](index.html) kao **interaktivni graf** preko **šest platformi**:
-svaki je izvor jedan čvor, a poveznice među čvorovima one su koje i sam wiki bilježi. Struktura kataloga —
-inače vidljiva samo listanjem pojedinačnih stranica — tako se može sagledati odjednom i istraživati mišem.
+**Mreža izvora** prikazuje [Katalog izvora](index.html) kao **interaktivni graf** preko **šest platformi**
+za koje katalog ima profile pojedinačnih aktera: svaki je objavljeni izvor jedan čvor, a poveznice među
+čvorovima one su koje i sam katalog bilježi. Službeni korpus obuhvaća devet vrsta izvora i platformi;
+Reddit, forumi i komentari prisutni su u korpusu, ali ovdje nisu profilirani kao pojedinačni akteri.
+Struktura kataloga — inače vidljiva samo listanjem pojedinačnih stranica — tako se može sagledati odjednom
+i istraživati mišem.
 Mreža dopunjuje [Mapu ekosustava](../mapa/mapa.html) i dijeli likovni jezik s
 [tematskim mrežama](../mapa/mapa_stats.html).
 
@@ -64,14 +72,14 @@ source_network_widget(sn, height = "760px")
 
 *Izvor: `data/processed/*_actors.rds`; poveznice iz `resources/dictionaries/source_labels.csv`.*
 
-Mreža obuhvaća **šest platformi**, a razlika među njima sama je po sebi nalaz. **Web, YouTube i Facebook**
-čine jezgru katoličkoga medijskog prostora — portali i kanali gusto premošteni zajedničkim brendovima
-(Index, Večernji list, 24sata, Bitno.net, Laudato). **Instagram, TikTok i Twitter** izgledaju bitno
-drukčije: među njihovim najaktivnijim akterima prevladavaju **pojedinci — političari i privatne osobe** te
-sadržaj koji je u korpus ušao usputnim podudaranjem, a ne katoličke institucije. Iznimke su rijetke, ali
-znakovite — `shkm2026`, Mladifest Hrvatska, Laudato TV i Zagrebačka nadbiskupija nose katoličku tematiku na
-nove platforme. Zajednički brendovi (Slobodna Dalmacija, RTL, Dnevnik) povezuju TikTok s webom i Facebookom,
-dok Twitter ostaje pretežno prostor političkih pojedinaca.
+Mreža obuhvaća **`r sn$n_actors` objavljenih profila na šest platformi**. Web, YouTube i Facebook nose
+najveće volumene u katalogu. Na Instagramu, TikToku i Twitteru uzorci pojedinačnih profila znatno su tanji
+i miješaju medijske brendove, institucije i pojedince, pa njihov položaj ne treba tumačiti kao cjelovit
+popis najvažnijih aktera tih platformi. TikTok u novom presjeku među najaktivnijim profilima ponajprije
+povezuje informativne brendove, uz `shkm2026` i Mladifest Hrvatska; Twitter spaja Zagrebačku nadbiskupiju,
+političke i privatne račune te medije. Najširi mostovi među platformama pripadaju brendovima Dnevnik.hr i
+Laudato, prisutnima na po četiri platforme, dok 24sata, Index, Slobodna Dalmacija i Večernji list povezuju
+po tri.
 
 ::: {.callout-warning}
 Mreža prikazuje **strukturu kataloga**, ne izmjerene odnose među akterima. Poveznice su strukturne

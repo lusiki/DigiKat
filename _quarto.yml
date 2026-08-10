@@ -9,6 +9,9 @@ project:
   render:
     - index.qmd
     - pages/**/*.qmd
+    # Dovršena tematska istraživanja ostaju na verzioniranim ulazima na kojima
+    # su objavljena; puni render žive stranice ne smije ih ponovno izračunati.
+    - "!pages/studije/**/*.qmd"
 
 lang: hr
 website:
@@ -39,23 +42,23 @@ website:
       - text: "Tematska istraživanja"
         menu:
           - text: "Pregled istraživanja"
-            href: pages/studije/index.qmd
+            href: pages/studije/index.html
           - text: "Tržišta pažnje u religijskim digitalnim medijima"
-            href: pages/studije/trzista-paznje.qmd
+            href: pages/studije/trzista-paznje.html
           - text: "Memorijalni okvir hrvatskih katoličkih odredišta"
-            href: pages/studije/hodocasnicki-turizam.qmd
+            href: pages/studije/hodocasnicki-turizam.html
           - text: "Medijska zastupljenost redovničkih zajednica"
-            href: pages/studije/redovnicke-zajednice.qmd
+            href: pages/studije/redovnicke-zajednice.html
           - text: "Katolički influenceri i institucionalni deficit pažnje"
-            href: pages/studije/katolicki-influenceri.qmd
+            href: pages/studije/katolicki-influenceri.html
           - text: "Tko govori iz katoličkoga medijskog prostora"
-            href: pages/studije/crkva-i-dezinformacije.qmd
+            href: pages/studije/crkva-i-dezinformacije.html
           - text: "Inflacija, informacije i odgođene promjene cijena"
-            href: pages/studije/inflacija-i-religija.qmd
+            href: pages/studije/inflacija-i-religija.html
           - text: "Socijalni nauk Crkve u raspravi o gospodarstvu"
-            href: pages/studije/socijalni-nauk-i-gospodarstvo.qmd
+            href: pages/studije/socijalni-nauk-i-gospodarstvo.html
           - text: "Katoličko obrazovanje i Stepinac kao mjesta sjećanja"
-            href: pages/studije/katolicko-obrazovanje-i-stepinac.qmd
+            href: pages/studije/katolicko-obrazovanje-i-stepinac.html
       - text: "Projektni raspored"
         href: pages/schedule.qmd
       - text: "Obavijesti"

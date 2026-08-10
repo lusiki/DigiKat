@@ -1,6 +1,6 @@
 ---
 title: "Nova Eva"
-subtitle: "YouTube · Megafoni"
+subtitle: "YouTube · Divovi"
 date: last-modified
 categories: ["Katalog izvora", "YouTube"]
 ---
@@ -17,38 +17,38 @@ Ključni pokazatelji ovog izvora u korpusu:
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">667</div>
+<div class="metric-value">666</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">94.921</div>
+<div class="metric-value">93.953</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">4.147.258</div>
+<div class="metric-value">4.123.158</div>
 <div class="metric-label">Doseg</div>
 </div>
 </div>
 
-Po volumenu objava, Nova Eva je na **7. mjestu** od 19 praćenih izvora na platformi YouTube. Prosječno ostvaruje **142 interakcija po objavi**.
+Po volumenu objava, Nova Eva je na **6. mjestu** od 20 praćenih izvora na platformi YouTube. Prosječno ostvaruje **141 interakcija po objavi**.
 
 ## Tipologija
 
-Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Nova Eva pripada skupini **Megafoni**: visok doseg uz nizak angažman — sadržaj doseže široku publiku bez intenzivne interakcije.
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Nova Eva pripada skupini **Divovi**: visok doseg i visok angažman — među vodećim akterima ekosustava.
 
 Uređivačka oznaka: **konfesionalni izvor** *(predloženo — potvrđuje PI)*
 
 ## Povezano
 
 - [Pregled platforme YouTube](platforma-youtube.html)
-- Srodni akteri: [Pod Smokvom](youtube-pod-smokvom.html), [Stopama Padre Pija](youtube-stopama-padre-pija.html), [Dijete Vjere](youtube-dijete-vjere.html)
+- Srodni akteri: [Dijete Vjere](youtube-dijete-vjere.html), [Hrana za dušu](youtube-hrana-za-dusu.html), [Pod Smokvom](youtube-pod-smokvom.html)
 - [Katalog izvora — sve platforme](index.html)
 
 ## Izvori podataka
 
-Podaci: `data/processed/youtube_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-28).
+Podaci: `data/processed/youtube_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-08-10).
 
 ::: {.callout-warning}
-Brojke su **indikativne**. Agregati obuhvaćaju razdoblje **2021.–2026.** i svih **9** vrsta izvora zastupljenih u korpusu, uključujući Instagram i TikTok; 2026. je nepotpuna godina. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
+Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
 :::
 

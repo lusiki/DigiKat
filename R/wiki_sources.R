@@ -22,6 +22,9 @@
 # Writes ONLY under pages/izvori/ -- never data/processed/*.rds.
 # =============================================================================
 
+source(file.path("R", "lib", "digikat_paths.R"))
+digikat_assert_aggregates_current(file.path("data", "processed", "manifest.json"))
+
 ## ---- config ---------------------------------------------------------------
 proc_dir <- file.path("data", "processed")
 out_dir  <- file.path("pages", "izvori")
@@ -53,6 +56,7 @@ coverage_year_min <- min(as.integer(coverage$year), na.rm = TRUE)
 coverage_year_max <- max(as.integer(coverage$year), na.rm = TRUE)
 coverage_years_hr <- sprintf("%d.–%d.", coverage_year_min, coverage_year_max)
 coverage_platform_count <- length(unique(as.character(coverage$SOURCE_TYPE)))
+catalog_platform_count <- length(platforms)
 coverage_rows <- sum(as.numeric(coverage$total_posts), na.rm = TRUE)
 
 ## ---- helpers --------------------------------------------------------------
@@ -230,9 +234,11 @@ make_actor_page <- function(row, pkey, pub) {
     "",
     "::: {.callout-warning}",
     paste0(
-      "Brojke su **indikativne**. Agregati obuhvaćaju razdoblje **", coverage_years_hr,
-      "** i svih **", coverage_platform_count, "** vrsta izvora zastupljenih u korpusu, uključujući ",
-      "Instagram i TikTok; 2026. je nepotpuna godina. Volumen se zbraja preko promjene metode ",
+      "Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **", coverage_years_hr,
+      "** s **", coverage_platform_count, "** vrsta izvora i platformi. Katalog profilira aktere na ",
+      "**", catalog_platform_count, "** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); ",
+      "Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. ",
+      "Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode ",
       "prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
     ),
     ":::",
@@ -361,7 +367,10 @@ idx_lines <- c(
          fmt_int(coverage_rows), "** objava u razdoblju **", coverage_years_hr, "**. ",
          "Katalog je **radna verzija**: uređivačke oznake (konfesionalni/sekularni izvor) ",
          "prijedlozi su koje potvrđuje voditelj projekta, a brojke su indikativne (statični ",
-         "agregati; mnogi akteri na novim platformama imaju tek nekoliko objava). Trenutno je ",
+         "agregati; mnogi akteri na novim platformama imaju tek nekoliko objava). Korpus ima **",
+         coverage_platform_count, "** vrsta izvora i platformi, a katalog profilira aktere na **",
+         catalog_platform_count, "** platformi; Reddit, forumi i komentari nisu profilirani kao ",
+         "pojedinačni akteri. Trenutno je ",
          "objavljeno **", n_pub, "** izvora; **", n_held,
          "** aktera zadržano je za uredničku provjeru."),
   ":::",

@@ -1,6 +1,6 @@
 ---
 title: "ivan.anusic.hr"
-subtitle: "Instagram · Specijalizirani akteri"
+subtitle: "Instagram · Graditelji zajednica"
 date: last-modified
 categories: ["Katalog izvora", "Instagram"]
 ---
@@ -17,42 +17,42 @@ Ključni pokazatelji ovog izvora u korpusu:
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">13</div>
+<div class="metric-value">9</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">8.822</div>
+<div class="metric-value">7.400</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">10.664</div>
+<div class="metric-value">7.724</div>
 <div class="metric-label">Doseg</div>
 </div>
 </div>
 
 ::: {.callout-caution}
-Ovo je **vrlo tanak profil** temeljen na 13 objava. Prikazan je radi potpunosti kataloga, ali rang i tipologiju ne treba tumačiti kao stabilnu procjenu aktera.
+Ovo je **vrlo tanak profil** temeljen na 9 objava. Prikazan je radi potpunosti kataloga, ali rang i tipologiju ne treba tumačiti kao stabilnu procjenu aktera.
 :::
 
-Po volumenu objava, ivan.anusic.hr je na **4. mjestu** od 19 praćenih izvora na platformi Instagram. Prosječno ostvaruje **679 interakcija po objavi**.
+Po volumenu objava, ivan.anusic.hr je na **4. mjestu** od 20 praćenih izvora na platformi Instagram. Prosječno ostvaruje **822 interakcija po objavi**.
 
 ## Tipologija
 
-Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), ivan.anusic.hr pripada skupini **Specijalizirani akteri**: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), ivan.anusic.hr pripada skupini **Graditelji zajednica**: nizak doseg uz vrlo visok angažman — gradi dubok odnos s vjernom publikom.
 
 Uređivačka oznaka: **ostalo** *(predloženo — potvrđuje PI)*
 
 ## Povezano
 
 - [Pregled platforme Instagram](platforma-instagram.html)
-- Srodni akteri: [laudatotv](instagram-laudatotv.html), [_rina.rs](instagram-rina-rs.html), [dnevniavaz](instagram-dnevniavaz.html)
+- Srodni akteri: [laudatotv](instagram-laudatotv.html), [dnevniavaz](instagram-dnevniavaz.html), [jutarnji.hr](instagram-jutarnji-hr.html)
 - [Katalog izvora — sve platforme](index.html)
 
 ## Izvori podataka
 
-Podaci: `data/processed/instagram_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-28).
+Podaci: `data/processed/instagram_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-08-10).
 
 ::: {.callout-warning}
-Brojke su **indikativne**. Agregati obuhvaćaju razdoblje **2021.–2026.** i svih **9** vrsta izvora zastupljenih u korpusu, uključujući Instagram i TikTok; 2026. je nepotpuna godina. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
+Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
 :::
 

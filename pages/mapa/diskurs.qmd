@@ -39,7 +39,7 @@ library(ggrepel)
 #| label: load-page-summary
 #| include: false
 
-# Teški izračuni nad uzorkom i 9,5 milijuna tokena izvode se jednom skriptom
+# Teški izračuni nad stratificiranim uzorkom izvode se jednom skriptom
 # R/05_page_summaries.R. Stranica čita samo provjerene ulaze za grafikone.
 source("../../R/lib/page_summaries.R", encoding = "UTF-8")
 digikat_load_page_summary(
@@ -47,48 +47,107 @@ digikat_load_page_summary(
   "diskurs",
   envir = environment()
 )
+
+# Grafikoni ove mape crtaju se iz pripremljenih agregata. Provjera prekida render ako oni nisu
+# izgrađeni iz aktualnog službenog korpusa (data/digikat_corpus.rds).
+source("../../R/lib/digikat_paths.R", encoding = "UTF-8")
+mf <- digikat_page_corpus("../..")
+n_objava <- digikat_hr_int(mf$corpus$rows)
+raspon <- paste0(mf$corpus$year_min, ".–", mf$corpus$year_max, ".")
+nlp_mf <- jsonlite::fromJSON("../../data/nlp/manifest.json", simplifyVector = TRUE)
+sample_n <- nlp_mf$pages$diskurs$sample_rows
+sample_target <- 100 * nlp_mf$parameters$page_proportions$diskurs
+
+fmt_list <- function(x) {
+  x <- unique(as.character(x))
+  if (length(x) == 0) return("")
+  if (length(x) == 1) return(x)
+  paste0(paste(x[-length(x)], collapse = ", "), " i ", x[length(x)])
+}
+
+fmt_topics <- function(x) fmt_list(unname(digikat_topic_label(x)))
+
+emotion_summary <- heatmap_data |>
+  filter(is.finite(avg_sentiment), is.finite(n_articles), n_articles > 0) |>
+  group_by(dominant_emotion) |>
+  summarise(
+    avg_sentiment = weighted.mean(avg_sentiment, n_articles),
+    n_articles = sum(n_articles),
+    .groups = "drop"
+  ) |>
+  arrange(desc(avg_sentiment))
+
+positive_emotions <- head(emotion_summary$dominant_emotion, 2)
+negative_emotions <- head(rev(emotion_summary$dominant_emotion), 2)
+
+topic_tonal_range <- heatmap_data |>
+  filter(is.finite(avg_sentiment)) |>
+  group_by(dominant_topic) |>
+  summarise(tonal_range = diff(range(avg_sentiment)), .groups = "drop") |>
+  arrange(desc(tonal_range))
+
+widest_topics <- head(topic_tonal_range$dominant_topic, 2)
+high_cli_sources <- media_strategy_data |> arrange(desc(avg_cli)) |> slice_head(n = 3) |> pull(FROM)
+low_cli_sources <- media_strategy_data |> arrange(avg_cli) |> slice_head(n = 3) |> pull(FROM)
+variable_sources <- media_strategy_data |> arrange(desc(rci_sd)) |> slice_head(n = 3) |> pull(FROM)
+
+pair_label <- function(item1, item2) {
+  paste0(unname(digikat_topic_label(item1)), " — ", unname(digikat_topic_label(item2)))
+}
+
+highest_rik_pairs <- graph_data |>
+  arrange(desc(avg_rci)) |>
+  slice_head(n = 3) |>
+  transmute(label = pair_label(item1, item2)) |>
+  pull(label)
+
+most_observed_pairs <- graph_data |>
+  arrange(desc(n)) |>
+  slice_head(n = 3) |>
+  transmute(label = pair_label(item1, item2)) |>
+  pull(label)
 ```
 
 ## Uvod u analizu emocionalne i konfliktne strukture diskursa
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">3</div>
-<div class="metric-label">Leksikona sentimenta</div>
+<div class="metric-value">`r length(c("CroSentilex", "CroSentilex Gold", "lilaHR"))`</div>
+<div class="metric-label">Leksikona tonaliteta</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">8</div>
-<div class="metric-label">Emocija (lilaHR)</div>
+<div class="metric-value">`r length(setdiff(unique(heatmap_data$dominant_emotion), "Neutralno"))`</div>
+<div class="metric-label">Emocionalnih kategorija (lilaHR)</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">2</div>
-<div class="metric-label">Razine analize</div>
+<div class="metric-value">`r digikat_hr_int(sample_n)`</div>
+<div class="metric-label">Dokumenata u uzorku</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">2021.–2026.</div>
+<div class="metric-value">`r raspon`</div>
 <div class="metric-label">Razdoblje</div>
 </div>
 </div>
 
-Nakon kartografiranja [aktera i platformi](mapa.html) te identifikacije [tematskih](mapa_stats.html) kategorija, ova treća analitička mapa — **Atmosfera diskursa** — usmjerava se na najsuptilniju dimenziju digitalnog katoličkog diskursa. Mapa se bavi pitanjem atmosfere komunikacijskog prostora, odnosno načinima na koji se teme artikuliraju. Fokus je na emocionalnom tonalitetu, psihološkim apelima i intenzitetu konfliktnog jezika koji karakterizira različite narativne okvire. Ovaj pristup nadilazi tradicionalne binarne klasifikacije sentimenta, uvodeći višeslojne, kontekstualno svjesne metrike koje omogućuju dubinsko razumijevanje komunikacijskih strategija. Analitički okvir strukturiran je u tri komponente.
+Nakon kartografiranja [aktera i platformi](mapa.html) te identifikacije [tematskih](mapa_stats.html) kategorija, ova treća analitička mapa — **Atmosfera diskursa** — opisuje kako se u odabranom uzorku zajedno pojavljuju tematske kategorije, leksički tonalitet, emocionalne oznake i konfliktni rječnik. Riječ je o automatiziranim leksičkim mjerama: one opisuju riječi u tekstu, ali same ne utvrđuju namjeru autora, reakciju publike ni komunikacijsku strategiju. Analitički okvir strukturiran je u tri komponente.
 
-Prva komponenta obuhvaća dvoslojnu **emocionalnu analizu** koja razdvaja površinski tonalitet teksta od dubinskih psiholoških procesa koji se u njemu aktiviraju. Druga komponenta je **Relativni indeks konflikta (RIK)** koji mjeri neočekivanu agresivnost jezika u odnosu na kontekstualne osnovne (*baseline*) karakteristike medija i teme. Treća komponenta uključuje **mrežu narativne atmosfere** koja vizualizira kako se emocionalni tonalitet i intenzitet konflikta mijenjaju kada se različite tematske kategorije kombiniraju u šire narativne okvire. Analiza se provodi na stratificiranom uzorku od 2 % korpusa (uslojenom po godini i platformi) u razdoblju 2021.–2026.; 2026. je nepotpuna godina, pa vremenske usporedbe uključuju djelomično razdoblje.
+Prva komponenta spaja leksički tonalitet i dominantnu emocionalnu kategoriju. Druga je **Relativni indeks konflikta (RIK)**, odnosno razlika između opažene gustoće konfliktnog rječnika i očekivanja izvedenog iz prosjeka izvora i teme. Treća je mreža supojavljivanja tematskih kategorija. Analiza polazi od `r n_objava` objava, a provodi se na `r digikat_hr_int(sample_n)` dokumenata: ciljanom `r format(sample_target, decimal.mark = ",")`-postotnom stratificiranom uzorku po godini i platformi među objavama s više od 100 znakova, bez TikToka. Godina 2026. nepotpuna je.
 
 ::: {.callout-warning}
 ## Promjena metode prikupljanja (oko 2024.) — oprez pri vremenskim usporedbama
 
-Korpus objedinjuje dva vremenski odvojena toka prikupljanja (`data_source`): kontinuirani medijski monitoring (pretežno 2021.–2024.) i naknadno religijsko filtriranje (2024.–2026.). Stratifikacija uzorka po platformi ublažava razlike u sastavu platformi, ali ne i promjenu same metode prikupljanja. Objedinjene osnovne (*baseline*) vrijednosti te međugodišnje usporedbe tonaliteta i konflikta stoga miješaju dva različito prikupljena razdoblja — razlike prije i poslije 2024. treba tumačiti oprezno, a ne nužno kao stvaran pomak u atmosferi diskursa.
+Korpus objedinjuje dva toka prikupljanja koji se smjenjuju u srpnju 2024., uz kratko tehničko preklapanje od 1. do 4. srpnja. Stratifikacija po platformi ne uklanja promjenu početnog obuhvata. Dobavljačev zapis od veljače do svibnja 2024. nema tekst, pa u korpusu nema objava iz tih mjeseci. Objedinjene osnovne vrijednosti i međugodišnje usporedbe zato miješaju dva različito prikupljena razdoblja. Razlike prije i poslije 2024. treba tumačiti uvjetovano tokom prikupljanja, a ne nužno kao stvaran pomak u atmosferi diskursa.
 :::
 
 ---
 
-## Dvoslojna emocionalna analiza diskursa
+## Tonalitet i emocionalne oznake
 
-Za kvalitetno razumijevanje atmosfere potrebno je razlikovati dvije dimenzije. Prva se odnosi na tonalitet, odnosno pozitivnu ili negativnu obojenost teksta mjerenu leksičkim tonalitetom. Druga se odnosi na psihološke procese, odnosno emocionalne okvire poput straha, nade, povjerenja ili ljutnje kroz koje se poruka artikulira i koji aktiviraju specifične kognitivne i afektivne odgovore kod publike.
+Analiza razlikuje dvije leksičke dimenzije. Prva je pozitivna ili negativna obojenost teksta prema rječnicima tonaliteta. Druga je dominantna emocionalna kategorija prema leksikonu lilaHR. Nazivi emocija označavaju prevladavajuće leksičke tragove u tekstu; nisu mjera emocionalnog stanja autora ili publike.
 
-### Matrica tonaliteta i psiholoških procesa
+### Matrica tonaliteta i emocionalnih kategorija
 
-Sljedeća vizualizacija predstavlja dvodimenzionalnu matricu koja prikazuje interakciju između tematskih kategorija i psiholoških procesa. Boja svake ćelije označava prosječni tonalitet tekstova koji pripadaju kombinaciji određene teme i emocionalnog okvira. Plave nijanse označavaju pozitivan tonalitet, crvene nijanse negativan, dok desni stupac agregira prosječni tonalitet svake tematske kategorije.
+Sljedeća vizualizacija prikazuje opažene kombinacije tematskih i dominantnih emocionalnih kategorija koje imaju više od tri teksta u uzorku. Boja svake ćelije označava njihov prosječni leksički tonalitet. Plave nijanse označavaju pozitivnije, a crvene negativnije vrijednosti.
 
 ```{r}
 #| label: plot-emotion-heatmap
@@ -97,38 +156,30 @@ Sljedeća vizualizacija predstavlja dvodimenzionalnu matricu koja prikazuje inte
 
 ggplot(heatmap_data, aes(x = dominant_emotion, y = dominant_topic, fill = avg_sentiment)) +
   geom_tile(color = dk_col$paper, linewidth = 0.5) +
-  geom_text(aes(label = round(avg_sentiment, 2)), size = 4, color = dk_col$ink) +
+  geom_text(aes(label = round(avg_sentiment, 2)), size = 5.5, color = dk_col$ink) +
   scale_fill_digikat_diverging(name = "Prosj. tonalitet") +
   scale_y_discrete(labels = digikat_topic_label) +
-  theme_digikat(base_size = 16) +
+  theme_digikat(base_size = 24) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   labs(
-    title = "Matrica tonaliteta prema tematskim kategorijama i psihološkim okvirima",
-    subtitle = "Boja ćelije predstavlja prosječni tonalitet unutar svake kombinacije teme i dominantne emocije",
-    x = "Dominantni psihološki proces",
+    title = "Matrica tonaliteta prema tematskim i emocionalnim kategorijama",
+    subtitle = "Boja ćelije predstavlja prosječni leksički tonalitet unutar kombinacije oznaka",
+    x = "Dominantna emocionalna kategorija",
     y = "Dominantna tematska kategorija"
   )
 ```
 
-Ova matrica otkriva sofisticirane mehanizme medijskog uokvirivanja i donosi nekoliko analitičkih uvida:
-
-**Kontekstualna ovisnost tonaliteta.** Tonalitet pojedine tematske kategorije nije inherentna karakteristika sadržaja, već rezultat strateškog izbora emocionalnog okvira. Gotovo sve tematske kategorije manifestiraju negativan tonalitet kada su artikulirane kroz psihološke okvire Ljutnje, Straha ili Tuge. Nasuprot tome, okviri Povjerenja, Radosti i Iščekivanja gotovo univerzalno proizvode pozitivan tonalitet. Ovo potvrđuje da mediji ne prenose neutralne informacije, već aktivno konstruiraju atmosferu strateškim odabirom emocionalnog registra.
-
-**Identifikacija kritičnih narativnih zona.** Tematske kategorije poput Pape i Vatikan te Politika i odnos s državom pokazuju najveći raspon tonaliteta, od izrazito negativnih do izrazito pozitivnih. Ove kategorije predstavljaju glavna bojna polja narativa gdje izbor emocionalnog okvira ima najsnažniji učinak na oblikovanje percepcije publike.
-
-**Paradoksalna uloga emocije Gađenja.** Analiza otkriva fascinantnu asimetriju. Kada je Gađenje usmjereno prema temi Politike i odnosa s državom, najvjerojatnije u kontekstu kritike političke korupcije ili nemoralnosti, rezultira pozitivnim tonalitetom koji signalizira moralnu osudu. Međutim, kada je ista emocija usmjerena prema temi Pape i Vatikana, u kontekstu unutarcrkvenih skandala ili problema, generira najnegativniji tonalitet u cijeloj matrici.
-
-Ljutnja u temama poput Politike i odnosa s državom nije samo statistička pojava. Ona odražava stvarne komunikacijske dinamike u hrvatskim medijima, posebno u raspravama oko crkvenih komentara na zakonske prijedloge ili političke odluke. Publika izražava frustraciju i neslaganje kroz specifične obrasce interakcije, uključujući kritičke komentare, dijeljenja sadržaja s negativnim tonalitetom i reakcije koje signaliziraju ljutnju. Ova ljutnja predstavlja manifestaciju dubljih društvenih tenzija oko odnosa između religijske i sekularne sfere, gdje crkveni stavovi prema političkim pitanjima često postaju katalizatori polarizacije.
+Matrica pokazuje da se prosječni leksički tonalitet razlikuje i među emocionalnim oznakama i među temama. Ponderirano brojem tekstova, najpozitivniji prosjek imaju oznake `r fmt_list(positive_emotions)`, a najnegativniji `r fmt_list(negative_emotions)`. Najširi raspon vrijednosti između emocionalnih oznaka bilježe teme `r fmt_topics(widest_topics)`. To su opisne razlike unutar uzorka. Budući da su i tonalitet i emocija izvedeni iz rječnika riječi, matrica ne može pokazati je li autor namjerno odabrao okvir niti kakav je učinak tekst imao na publiku.
 
 ---
 
 ## Relativni indeks konflikta kao kontekstualno prilagođena metrika
 
-Tradicionalne metrike intenziteta konflikta ne uzimaju u obzir kontekstualne *baseline* karakteristike. Korištenje konfliktnog vokabulara u članku o povijesnim ratnim događajima nije ekvivalentno njegovoj uporabi u članku o liturgijskim praksama. RIK predstavlja metodološku inovaciju koja mjeri koliko je pojedini tekst neočekivano agresivniji ili pomirljiviji od *baseline* očekivanja temeljenog na prosječnom diskursu njegovog izvora i njegove tematske kategorije.
+Gustoća konfliktnog rječnika broj je rječničkih podudaranja na tisuću tokena i ovisi o kontekstu: riječi povezane sa sukobom očekivanije su u nekim temama i izvorima nego u drugima. RIK zato od opažene gustoće oduzima očekivanu vrijednost, definiranu kao jednak ponder prosjeka izvora i prosjeka teme. Pozitivan RIK znači više takvih riječi od tog očekivanja, a negativan manje. Mjera ne razlikuje citat od autorskog glasa i nije mjera agresivnosti osobe ili medija.
 
-### Tipologija medijskih strategija konfliktnog diskursa
+### Profili izvora prema konfliktnom rječniku
 
-Sljedeći grafikon koristi RIK za identifikaciju i klasifikaciju medijskih strategija u korištenju konfliktnog jezika. Horizontalna os predstavlja prosječnu, baznu razinu konfliktnog jezika karakterističnu za svaki medij. Vertikalna os predstavlja varijabilnost u korištenju konfliktnog jezika, mjerenu standardnom devijacijom RIK vrijednosti. Veličina točke označava ukupnu prisutnost medija u korpusu.
+Sljedeći grafikon opisuje `r nrow(media_strategy_data)` izvora s najviše tekstova među izvorima koji imaju više od 20 uzorkovanih objava. Horizontalna os prikazuje njihovu prosječnu gustoću konfliktnog rječnika, a vertikalna standardnu devijaciju RIK-a među tekstovima. Veličina točke označava broj tekstova u uzorku. Grafikon nema unaprijed zadane kvadrante ni kategorije strategije.
 
 ```{r}
 #| label: plot-rci-strategy
@@ -139,36 +190,28 @@ Sljedeći grafikon koristi RIK za identifikaciju i klasifikaciju medijskih strat
 
 ggplot(media_strategy_data, aes(x = avg_cli, y = rci_sd, size = n_articles)) +
   geom_jitter(color = dk_col$accent, alpha = 0.7, width = 0.01, height = 0.01) +
-  geom_text_repel(aes(label = FROM), size = 4, max.overlaps = 15) +
+  geom_text_repel(aes(label = FROM), size = 5.5, max.overlaps = 15) +
   scale_x_log10(labels = scales::number_format(accuracy = 0.1, decimal.mark = ",")) +
   scale_y_log10(labels = scales::number_format(accuracy = 0.1, decimal.mark = ",")) +
   scale_size_continuous(range = c(3, 12), name = "Broj članaka") +
-  theme_digikat(base_size = 16) +
+  theme_digikat(base_size = 24) +
   labs(
-    title = "Tipologija medijskih strategija konfliktnog diskursa",
-    subtitle = "Pozicija medija temeljena na prosječnoj razini i varijabilnosti konfliktnog jezika",
-    x = "Prosječni indeks konfliktnog jezika (Bazna razina, logaritamska skala)",
-    y = "Standardna devijacija Relativnog indeksa konflikta (Nepredvidivost, logaritamska skala)"
+    title = "Profili izvora prema konfliktnom rječniku",
+    subtitle = paste0(nrow(media_strategy_data), " izvora s najviše uzorkovanih tekstova; položaj je opisna, a ne motivacijska mjera"),
+    x = "Prosječna gustoća konfliktnog rječnika (logaritamska skala)",
+    y = "Standardna devijacija Relativnog indeksa konflikta (logaritamska skala)"
   )
 ```
 
-Ova vizualizacija otkriva postojanje četiri fundamentalno različita modela komunikacijske strategije u hrvatskom digitalnom prostoru.
-
-**Strateški eskalatori**, pozicionirani u gornjem desnom kvadrantu, okupljaju gustu skupinu velikih mainstream medija, uključujući index.hr, 24sata.hr i dnevnik.hr. Ovaj model karakterizira visoka prosječna razina konfliktnog jezika kombinirana s visokom varijabilnosti. Ovi mediji prakticiraju sofisticirano doziranje konflikta, koristeći ga selektivno i intenzivno kada žele maksimizirati angažman publike, dok u drugim situacijama održavaju umjereniji tonalitet. Primjer je portal index.hr koji vješto koristi konfliktni diskurs za privlačenje pažnje kroz senzacionalizirane naslove o crkvenim skandalima ili kontroverznim izjavama crkvenih velikodostojnika, dok istovremeno objavljuje i umjerenije informativne sadržaje.
-
-**Dosljedni kritičari**, smješteni u donjem desnom kvadrantu, obuhvaćaju desno orijentirane i aktivističke portale poput narod.hr, dnevno.hr i dragovoljac.com. Njihova komunikacijska strategija karakterizirana je konstantno visokom razinom konfliktnosti uz nisku varijabilnost. Ovi mediji ne prakticiraju stratešku modulaciju tonaliteta, već održavaju dosljedan kritički i konfrontirajući diskurs kao temeljnu karakteristiku svog uređivačkog identiteta.
-
-**Pragmatični promatrači** okupljaju tradicionalne medije poput vecernji.hr, slobodnadalmacija.hr i hrt.hr. Ovi mediji karakterizirani su umjerenom prosječnom razinom konfliktnosti, ali visokom nepredvidljivošću, što ukazuje na sposobnost fleksibilne prilagodbe tonaliteta ovisno o prirodi događaja. Zadržavaju kapacitet za intenzivnu eskalaciju konfliktnog diskursa kada procijene da to zahtijeva javni interes ili novinska vrijednost događaja.
-
-**Pastoralni glasovi**, pozicionirani u donjem lijevom kvadrantu, pripadaju vjerskim medijima i specijaliziranim YouTube kanalima, uključujući hkm.hr, laudato.hr i LaudatoTV. Ovaj model manifestira dijametralno suprotnu strategiju od svih prethodnih, karakteriziranu dosljednom niskom razinom konfliktnosti i niskom varijabilnosti. Ovi mediji fokusirani su na informiranje, edukaciju i izgradnju zajednice, grade pozitivnu atmosferu kroz priče o duhovnom rastu, zajedništvu i pastoralnim aktivnostima, sustavno izbjegavajući konfrontirajući diskurs.
+Najvišu prosječnu gustoću konfliktnog rječnika među prikazanim izvorima imaju `r fmt_list(high_cli_sources)`, a najnižu `r fmt_list(low_cli_sources)`. Najveću varijabilnost RIK-a imaju `r fmt_list(variable_sources)`. Ti se poretci odnose samo na uzorkovane tekstove koji su ušli u ovu analizu. Ne pokazuju zašto izvor upotrebljava određene riječi, pripada li izvor određenom uredničkom tipu ni pokušava li povećati angažman.
 
 ---
 
-## Mreža narativne atmosfere
+## Mreža tematskih supojavljivanja, tonaliteta i RIK-a
 
-Konačna sinteza integrira sve analitičke komponente u jednu kompleksnu mrežnu vizualizaciju. Mreža prikazuje kako se različite tematske kategorije povezuju u šire narativne okvire, dok vizualne karakteristike svake veze otkrivaju osobine tih narativnih kombinacija.
+Mreža sažima parove tematskih kategorija koje se pojavljuju u istim tekstovima. Vizualne karakteristike veze opisuju prosjek tekstova u kojima se par pojavljuje.
 
-Boja veze označava prosječni tonalitet, gdje plave nijanse označavaju pozitivno obojene narativne spojeve, a crvene nijanse negativno obojene. Debljina veze označava prosječni intenzitet konfliktnog jezika, gdje deblje linije upućuju na konfliktnije narative. Prozirnost veze označava pouzdanost veze, mjerenu brojem tekstova na kojima se temelji analiza, gdje tamnije linije predstavljaju statistički robusnije nalaze.
+Boja veze označava prosječni ne-normalizirani CroSentilex-Gold zbroj u tekstovima, gdje plave nijanse označavaju pozitivniju leksičku bilancu, a crvene negativniju. Za razliku od matrice iznad, taj je zbroj osjetljiv na duljinu teksta i vrijednosti nisu izravno usporedive. Debljina veze označava prosječni RIK: deblje veze imaju višu relativnu zastupljenost konfliktnog rječnika. Prozirnost veze označava broj tekstova na kojima se prosjek temelji. Položaj čvorova služi čitljivosti mreže i nema samostalno sadržajno značenje.
 
 ```{r}
 #| label: plot-network
@@ -192,49 +235,31 @@ graph_from_data_frame(graph_data, directed = FALSE) %>%
     geom_node_text(
       aes(label = str_wrap(digikat_topic_label(name), 15)),
       color = dk_col$ink,
-      size = 4
+      size = 6
     ) +
     scale_edge_color_gradient2(
       low = dk_col$neg, mid = dk_col$neutral, high = dk_col$pos, midpoint = 0,
-      name="Prosječni tonalitet\nnarativnog okvira"
+      name="Prosječni CroSentilex-Gold\nzbroj"
     ) +
     scale_edge_width(
       range = c(1, 5),
-      name="Prosječni intenzitet konflikta"
+      name="Prosječni RIK"
     ) +
     scale_edge_alpha(
       range = c(0.3, 1),
-      name = "Broj članaka\n(Pouzdanost veze)"
+      name = "Broj tekstova"
     ) +
-    theme_digikat_void(base_size = 14) +
+    theme_digikat_void(base_size = 24) +
     labs(
-      title = "Mreža narativne atmosfere",
-      subtitle = "Boja veze = tonalitet | Debljina veze = konflikt | Prozirnost veze = pouzdanost"
+      title = "Mreža tematskih supojavljivanja, tonaliteta i RIK-a",
+      subtitle = "Boja veze = CroSentilex-Gold zbroj | Debljina = prosječni RIK | Prozirnost = broj tekstova"
     )
 ```
 
-Vizualizacija mreže otkriva strukturu hrvatskog medijskog prostora katoličke tematike kroz prizmu atmosfere i konflikta.
-
-**Dva jasno razgraničena narativna svijeta.** Prvi je društveno politička arena, smještena u lijevom i donjem dijelu mreže. Ovaj prostor karakterizira gusta isprepletenost tematskih kategorija Politike i odnosa s državom, Povijesti i nacionalnog identiteta, Bioetike i kulturnih ratova te Unutarcrkvenih prijepora i ideologija. Veze između ovih kategorija manifestiraju izrazitu debljinu, što signalizira visok intenzitet konfliktnog jezika. Ovo predstavlja epicentar svih narativnih prijepora i kulturalnih ratova koji karakteriziraju hrvatski medijski prostor katoličke tematike.
-
-Drugi narativni svijet je pastoralno institucionalna jezgra, pozicionirana u gornjem i desnom dijelu mreže. Ovdje se grupiraju teme Duhovnosti i liturgije, Teologije i doktrine te Crkvenog upravljanja i strukture. Veze unutar ovog klastera karakterizirane su znatno manjom debljinom, što upućuje na značajno nižu razinu konfliktnosti. Ovaj prostor predstavlja svijet unutarcrkvenih, doktrinalnih i duhovnih rasprava, vođenih primarno kroz informativni i edukativni diskurs.
-
-**Konfliktni jezik kao primarni diferencijator narativnih okvira.** Iznenađujući je gotovo potpun nedostatak negativno obojenih veza u mreži. To ne implicira odsutnost kritičkog diskursa, već sugerira da intenzitet konfliktnog jezika, vizualiziran debljinom veze, predstavlja važniju dimenziju razlikovanja narativa od tonaliteta. Najdeblje i najtamnije linije, koje predstavljaju najpouzdanije i najkonfliktnije narativne spojeve, jasno povezuju tematske kategorije Bioetike i kulturnih ratova, Politike i odnosa s državom, Pape i Vatikana te Povijesti i nacionalnog identiteta. Ovaj četverokut predstavlja primarno bojište narativnih prijepora gdje se odvijaju najintenzivnije medijske rasprave.
-
-**Tematske kategorije kao mostovi između narativnih svjetova.** Teme poput Crkvenog upravljanja i strukture te Digitalne evangelizacije i mladih pozicionirane su centralno u mreži i održavaju snažne veze prema objema stranama. Međutim, ova dva narativna svijeta nisu samo strukturno odvojena. Oni se aktivno dodiruju i prožimaju kroz ove mostovne kategorije. Konfliktni diskurs iz političkog i bioetičkog klastera može prelijevati se u pastoralni mir, ilustrirajući dinamičnost i fluidnost digitalnih rasprava u hrvatskom katoličkom prostoru. Primjerice, rasprave o crkvenom upravljanju često postaju arena gdje se politički konflikti i unutarcrkvene ideološke podjele manifestiraju, transformirajući nominalno institucionalnu temu u žarište prijepora. Ovi mostovi nisu samo pasivni prijelazi, već aktivna područja transformacije atmosfere gdje se narativni okviri rekonfiguriraju.
+U novim sažecima najviši prosječni RIK imaju parovi `r fmt_list(highest_rik_pairs)`. Najviše uzorkovanih tekstova podupire veze `r fmt_list(most_observed_pairs)`. Ta dva poretka ne moraju se podudarati: često opažena veza nije nužno veza s najvišom relativnom zastupljenošću konfliktnog rječnika. Mreža je deskriptivna mapa supojavljivanja, pa bez zasebnog modela ne dokazuje postojanje dvaju diskursnih “svjetova”, smjer utjecaja među temama ni prelijevanje atmosfere.
 
 ## Sinteza nalaza i zaključci
 
-Dubinska analiza emocionalne i konfliktne strukture medijskog prostora katoličke tematike u Hrvatskoj razotkriva kompleksnu sliku koja nadilazi jednostavne dihotomije. Rezultati istraživanja upućuju na postojanje sofisticiranih komunikacijskih strategija i dubinskih strukturnih obrazaca koji oblikuju način artikulacije vjere i Crkve u javnom diskursu.
+Tri se opisna nalaza izdvajaju. Prvo, prosječni tonalitet u uzorku mijenja se kroz kombinacije teme i dominantne emocionalne oznake. Drugo, izvori se razlikuju i po prosječnoj gustoći konfliktnog rječnika i po varijabilnosti RIK-a, ali iz tih položaja nije moguće zaključiti njihovu strategiju ili namjeru. Treće, parovi tema razlikuju se po učestalosti, tonalitetu i relativnoj zastupljenosti konfliktnog rječnika; mreža prikazuje kontinuirane razlike, a ne unaprijed zadanu podjelu prostora.
 
-Tri fundamentalna nalaza izdvajaju se za razumijevanje atmosfere diskursa:
-
-**Kontekstualno posredovano oblikovanje tonaliteta.** Istraživanje je empirijski verificiralo da tonalitet pojedine tematske kategorije nije inherentna karakteristika sadržaja, već rezultat strateškog emocionalnog uokvirivanja. Identičan sadržaj može biti artikuliran kao pozitivan ili negativan ovisno o psihološkim apelima koje medij aktivira, bilo da su to okviri Povjerenja i Radosti ili Ljutnje i Straha. Ovaj nalaz potvrđuje teorijsku poziciju da mediji ne funkcioniraju kao pasivni prenositelji informacija, već kao aktivni konstruktori atmosfere kroz stratešku selekciju emocionalnih registara.
-
-**Tipologija medijskih strategija konfliktnog diskursa.** Istraživanje je identificiralo četiri fundamentalno različite komunikacijske strategije u korištenju konfliktnog jezika, koje grubo koreliraju s tipologijom medijskih izvora. Strateški eskalatori, reprezentativni za mainstream medije, prakticiraju sofisticirano doziranje konflikta. Dosljedni kritičari, karakteristični za aktivističke portale, koriste konfliktni diskurs kao temeljni identitetski marker. Pragmatični promatrači, karakteristični za tradicionalne medije, održavaju uravnotežen pristup uz kapacitet fleksibilne eskalacije. Pastoralni glasovi, karakteristični za vjerske medije, sustavno izbjegavaju konfliktni diskurs fokusirajući se na informiranje i zajednicu.
-
-**Strukturna bifurkacija diskursnog prostora.** Najvažniji nalaz, vizualiziran kroz mrežu narativne atmosfere, jest postojanje dva strukturno i atmosferski razgraničena tematska svijeta. Prvi, društveno-politički, karakteriziran visokim intenzitetom konflikta i isprepletanjem tema politike, povijesti i bioetike. Drugi, pastoralno institucionalni, karakteriziran niskim konfliktom i fokusom na duhovnost i unutarcrkvena pitanja. Ova bifurkacija nije apsolutna, već je posredovana mostovnim kategorijama koje omogućuju prelijevanje atmosfere između svjetova.
-
-Ovi nalazi demonstriraju nužnost korištenja višeslojnih, kontekstualno prilagođenih analitičkih metoda koje mogu dekodirati suptilne komunikacijske strategije. Razumijevanje ovih strategija presudno je za interpretaciju javne percepcije Crkve i vjere u Hrvatskoj te za osmišljavanje učinkovitih komunikacijskih intervencija.
-
-Zadnja analitička mapa, [Fokus na događaje](događaji.html), usmjerit će se na temporalnu dinamiku atmosfere kroz detekciju kritičnih događaja te na detaljniju analizu specifičnih fraza i narativnih struktura koje prevladavaju izabranim tematskim kategorijama. Krajnji cilj ostaje stvaranje dinamičkog digitalnog opservatorija koji će omogućiti praćenje i analizu atmosfere medijskog prostora katoličke tematike u stvarnom vremenu, pružajući tako kontinuirani uvid u ove važne društvene procese.
+Rezultati ovise o automatskoj tematskoj klasifikaciji, leksikonima i stratificiranom uzorku. Osobito su oprezno potrebni rijetki parovi tema i usporedbe preko promjene prikupljanja 2024. Sljedeća mapa, [Fokus na događaje](događaji.html), premješta pogled na dnevna odstupanja i dvije ograničene studije slučaja.

@@ -8,7 +8,9 @@ shares one license; third-party language resources retain their upstream terms.
 
 | Asset | Repository | Redistribution | Governing terms |
 |---|---|---|---|
-| `data/merged_comprehensive.rds` | no | restricted | source copyright and platform/API terms |
+| `data/digikat_corpus.rds` (the official corpus) | no | restricted | source copyright and platform/API terms |
+| `data/digikat_corpus_manifest.json` | yes | open | project-declared CC BY 4.0; counts and cutting rule only, no rows |
+| `data/merged_comprehensive.rds` (accumulator) | no | restricted | source copyright and platform/API terms |
 | historical January 2026 Kaggle snapshot (612,065 rows) | external | public historical release | verify the version and license on Kaggle before reuse |
 | `data/raw/**` and incoming spreadsheets | no | restricted | source-dependent |
 | `data/processed/*.rds` | yes | open aggregate outputs | project-declared CC BY 4.0 |
@@ -24,19 +26,32 @@ shares one license; third-party language resources retain their upstream terms.
 Do not infer MIT licensing for the code. A future code-specific license requires an explicit project-owner
 decision and cannot be retroactively assumed.
 
-## Restricted master corpus
+## Restricted corpus and accumulator
 
-The current master contains **710,307 records and 47 columns**. The aggregate time span is January 2021
-through June 2026; 2026 is partial. It covers:
+Two restricted datasets exist and they are not interchangeable.
+
+`data/digikat_corpus.rds` is **the official DigiKat corpus** and what the website describes: **413,985
+records and 54 columns** (the accumulator's 47 plus seven `dk_*` provenance columns). It is cut by a
+single inclusion rule applied identically to both collection eras: the 119-term v4 word list within the
+first 3,000 characters of the text (at least one decisive term and at least two terms in total), then a
+second-pass classifier ensemble at a score of 0.70 or above. `data/digikat_corpus_manifest.json` records
+that rule, the resulting counts and the corpus checksum, and is tracked and public.
+
+`data/merged_comprehensive.rds` is the **accumulator** the corpus is cut from: **710,307 records and 47
+columns**, everything the monitoring service supplied. It remains the input the completed studies were
+computed from, and those studies stay pinned to it by name.
+
+The aggregate time span of both is January 2021 through June 2026; 2026 is partial. Both cover:
 
 `web`, `youtube`, `facebook`, `twitter`, `reddit`, `forum`, `comment`, `instagram`, and `tiktok`.
 
-A record is retained only if its text matches at least **two distinct** canonical religious terms from
-`R/religious_terms.R`. Incoming data is deduplicated by a platform-aware canonical URL: tracking
+Applying one rule to both eras makes them comparable in what counts as Catholic content. It does not make
+them comparable in how much was collected: the collection method changed in 2024, and a rise in post
+counts across that break is not a rise in media attention. Incoming data is deduplicated by a platform-aware canonical URL: tracking
 parameters are removed, but identity-bearing parameters such as the YouTube video ID are preserved.
 
-The master contains source text, URLs, account/source fields, and engagement metadata. It is gitignored
-and must not be copied into issues, pull requests, examples, or public study outputs.
+Both restricted datasets contain source text, URLs, account/source fields, and engagement metadata. They
+are gitignored and must not be copied into issues, pull requests, examples, or public study outputs.
 
 Authorized non-commercial research access may be requested from:
 
@@ -46,7 +61,8 @@ Access is not automatic and may require a purpose statement, storage safeguards,
 source-platform restrictions.
 
 A separate [Kaggle release](https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space)
-contains an older January 2026 snapshot. It is not the current 710,307-row master. At the 2026-07-28
+contains an older January 2026 snapshot. It is neither the current 413,985-row official corpus nor the
+710,307-row accumulator. At the 2026-07-28
 inventory, Kaggle’s API-level license label and its narrative description were not consistent; users
 must resolve the governing terms on that release before redistribution.
 
@@ -90,7 +106,7 @@ the output schema, records input and object fingerprints, and installs all three
 
 `data/sample/merged_sample.rds` is a deterministic, **fully synthetic** dataset with:
 
-- 2,700 rows and the exact 47-column master schema;
+- 2,700 rows and the exact 47-column accumulator schema;
 - 50 rows for every source-type/year stratum;
 - all nine source types and years 2021–2026;
 - only `example.invalid` URLs and synthetic text; and

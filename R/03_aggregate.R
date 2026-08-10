@@ -1,5 +1,10 @@
 #!/usr/bin/env Rscript
-# Build the complete, tracked DigiKat aggregate generation from the master.
+# Build the complete, tracked DigiKat aggregate generation from the official corpus.
+#
+# Input is data/digikat_corpus.rds — the posts one inclusion rule keeps across both collection eras
+# — NOT the accumulator it is cut from. Everything the website reports therefore describes the
+# corpus. To aggregate the accumulator instead (for a completed paper, or to compare the two), pass
+# --master=data/merged_comprehensive.rds explicitly.
 #
 # Safe preview (writes to a temporary directory and removes it after checks):
 #   Rscript R/03_aggregate.R
@@ -12,6 +17,7 @@
 
 suppressPackageStartupMessages(library(dplyr))
 source("R/lib/digikat_utils.R", encoding = "UTF-8")
+source("R/lib/digikat_paths.R", encoding = "UTF-8")
 
 args <- commandArgs(trailingOnly = TRUE)
 if ("--help" %in% args) {
@@ -26,11 +32,7 @@ if ("--help" %in% args) {
   quit(save = "no", status = 0L)
 }
 
-master_path <- digikat_cli_value(
-  args,
-  "--master",
-  Sys.getenv("DIGIKAT_MASTER_PATH", unset = "data/merged_comprehensive.rds")
-)
+master_path <- digikat_cli_value(args, "--master", digikat_corpus_path())
 requested_output <- digikat_cli_value(args, "--output-dir", "data/processed")
 apply_changes <- digikat_cli_flag(args, "--apply")
 production_dir <- "data/processed"

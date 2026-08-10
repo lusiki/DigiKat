@@ -11,6 +11,18 @@ format:
     anchor-sections: false
 ---
 
+```{r}
+#| label: corpus-manifest
+#| include: false
+
+source("../../R/lib/digikat_paths.R")
+agent_mf <- digikat_read_corpus_manifest("../../data/digikat_corpus_manifest.json")
+agent_rows <- digikat_hr_int(agent_mf$corpus$rows)
+agent_cols <- agent_mf$corpus$columns
+agent_terms <- agent_mf$rule$terms_count
+agent_threshold <- format(agent_mf$rule$threshold, nsmall = 2, decimal.mark = ",")
+```
+
 ```{=html}
 <p style="font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:#6B6F76;margin:0 0 1.6rem;">
 Jezik: <strong style="color:#0F4C5C;">Hrvatski</strong> · <a href="agentic-layer.html" style="color:#0F4C5C;">English version →</a>
@@ -229,17 +241,17 @@ Uz podatkovni i analitički sloj, DigiKat ima i treći, manje vidljiv sloj — *
     <ol class="flow">
       <li class="node">
         <div class="disc"><svg class="ic"><use href="#i-inbox"/></svg></div>
-        <div class="colwrap"><b>Prikupljanje</b><small>vendorski xlsx izvozi</small></div>
+        <div class="colwrap"><b>Prikupljanje</b><small>vendorski xlsx → akumulator</small></div>
       </li>
       <li class="link" title="prijelaz pod nadzorom"><span class="gate"><svg class="ic"><use href="#i-shield-sm"/></svg></span><span class="arrow"><svg class="ic"><use href="#i-arrow"/></svg></span></li>
       <li class="node">
         <div class="disc"><svg class="ic"><use href="#i-funnel"/></svg></div>
-        <div class="colwrap"><b>Filtriranje</b><small>≥2 pogotka od 95 pojmova</small></div>
+        <div class="colwrap"><b>Filtriranje</b><small>`r agent_terms` pojmova + model ≥`r agent_threshold`</small></div>
       </li>
       <li class="link" title="prijelaz pod nadzorom"><span class="gate"><svg class="ic"><use href="#i-shield-sm"/></svg></span><span class="arrow"><svg class="ic"><use href="#i-arrow"/></svg></span></li>
       <li class="node">
         <div class="disc"><svg class="ic"><use href="#i-db"/></svg></div>
-        <div class="colwrap"><b>Korpus</b><small>710.307 × 47</small><span class="ag-tag priv">gitignore · backup</span></div>
+        <div class="colwrap"><b>Službeni korpus</b><small>`r agent_rows` × `r agent_cols`</small><span class="ag-tag priv">gitignore · izveden</span></div>
       </li>
       <li class="link" title="prijelaz pod nadzorom"><span class="gate"><svg class="ic"><use href="#i-shield-sm"/></svg></span><span class="arrow"><svg class="ic"><use href="#i-arrow"/></svg></span></li>
       <li class="node">
@@ -268,7 +280,7 @@ Uz podatkovni i analitički sloj, DigiKat ima i treći, manje vidljiv sloj — *
         <span class="count">6 pravila · učitavaju se sama</span>
         <ul class="members">
           <li><span class="m-name">plan-first <span class="who">uvijek</span></span><span class="m-gloss">Plan prije svake netrivijalne izmjene; tvrda brana na operacije nad korpusom.</span></li>
-          <li><span class="m-name">data-pipeline <span class="who">R · data/</span></span><span class="m-gloss">Štiti korpus i pravilo uključivanja ≥2; backup i delta-izvještaj.</span></li>
+          <li><span class="m-name">data-pipeline <span class="who">R · data/</span></span><span class="m-gloss">Štiti akumulator, dvostupanjsko pravilo uključivanja i izvedeni korpus; backup i delta-izvještaj.</span></li>
           <li><span class="m-name">quarto-verification <span class="who">.qmd</span></span><span class="m-gloss">Renderiraj prije „gotovo"; render ne smije mijenjati podatke.</span></li>
           <li><span class="m-name">voice-and-style <span class="who">pages/</span></span><span class="m-gloss">Kućni glas, nazivlje, hrvatski format brojki.</span></li>
           <li><span class="m-name">croatian-encoding <span class="who">tekst</span></span><span class="m-gloss">UTF-8 disciplina; č ć ž š đ kroz cijeli lanac.</span></li>
@@ -302,7 +314,7 @@ Uz podatkovni i analitički sloj, DigiKat ima i treći, manje vidljiv sloj — *
         <ul class="members">
           <li><span class="m-name">verifier <span class="who">haiku</span></span><span class="m-gloss">Je li render/skripta stvarno uspjela; nije li render dirnuo podatke.</span></li>
           <li><span class="m-name">numeric-claim <span class="who">sonnet</span></span><span class="m-gloss">Svaku objavljenu brojku ponovno izvodi iz javnih agregata.</span></li>
-          <li><span class="m-name">r-reviewer <span class="who">sonnet</span></span><span class="m-gloss">R kod: putanje, sjeme, tihi gubitak redaka, brzina na 710k.</span></li>
+          <li><span class="m-name">r-reviewer <span class="who">sonnet</span></span><span class="m-gloss">R kod: putanje, sjeme, tihi gubitak redaka, brzina na `r agent_rows` objava.</span></li>
           <li><span class="m-name">croatian-nlp <span class="who">opus</span></span><span class="m-gloss">Kodiranje, morfologija, spoj leksikona, uzorkovanje.</span></li>
           <li><span class="m-name">religion-media <span class="who">opus</span></span><span class="m-gloss">Konstrukti, tvrdnja↔podatak, tipologija, recenzent-protivnik.</span></li>
         </ul>

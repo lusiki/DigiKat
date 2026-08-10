@@ -34,7 +34,7 @@ Ključni pokazatelji ovog izvora u korpusu:
 Profil se temelji na 152 objava i zato ima status **provisionalnog profila**. Pokazatelji opisuju zabilježeni uzorak, a ne cjelokupno djelovanje aktera.
 :::
 
-Po volumenu objava, BOŽANSKA LJUBAV je na **14. mjestu** od 19 praćenih izvora na platformi YouTube. Prosječno ostvaruje **952 interakcija po objavi**.
+Po volumenu objava, BOŽANSKA LJUBAV je na **15. mjestu** od 20 praćenih izvora na platformi YouTube. Prosječno ostvaruje **952 interakcija po objavi**.
 
 ## Tipologija
 
@@ -45,14 +45,14 @@ Uređivačka oznaka: **konfesionalni izvor** *(predloženo — potvrđuje PI)*
 ## Povezano
 
 - [Pregled platforme YouTube](platforma-youtube.html)
-- Srodni akteri: [budiFRAjer](youtube-budifrajer.html), [Majko Marijo](youtube-majko-marijo.html), [Bog Je Tu](youtube-bog-je-tu.html)
+- Srodni akteri: [budiFRAjer](youtube-budifrajer.html), [RTL](youtube-rtl.html), [Bog Je Tu](youtube-bog-je-tu.html)
 - [Katalog izvora — sve platforme](index.html)
 
 ## Izvori podataka
 
-Podaci: `data/processed/youtube_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-28).
+Podaci: `data/processed/youtube_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-08-10).
 
 ::: {.callout-warning}
-Brojke su **indikativne**. Agregati obuhvaćaju razdoblje **2021.–2026.** i svih **9** vrsta izvora zastupljenih u korpusu, uključujući Instagram i TikTok; 2026. je nepotpuna godina. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
+Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
 :::
 

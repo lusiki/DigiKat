@@ -1,6 +1,6 @@
 ---
 title: "Zagrebačka nadbiskupija"
-subtitle: "Twitter · Megafoni"
+subtitle: "Twitter · Divovi"
 date: last-modified
 categories: ["Katalog izvora", "Twitter"]
 ---
@@ -17,28 +17,28 @@ Ključni pokazatelji ovog izvora u korpusu:
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">75</div>
+<div class="metric-value">65</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">984</div>
+<div class="metric-value">935</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">34.407</div>
+<div class="metric-value">32.084</div>
 <div class="metric-label">Doseg</div>
 </div>
 </div>
 
 ::: {.callout-note}
-Profil se temelji na 75 objava i zato ima status **provisionalnog profila**. Pokazatelji opisuju zabilježeni uzorak, a ne cjelokupno djelovanje aktera.
+Profil se temelji na 65 objava i zato ima status **provisionalnog profila**. Pokazatelji opisuju zabilježeni uzorak, a ne cjelokupno djelovanje aktera.
 :::
 
-Po volumenu objava, Zagrebačka nadbiskupija je na **1. mjestu** od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje **13 interakcija po objavi**.
+Po volumenu objava, Zagrebačka nadbiskupija je na **2. mjestu** od 23 praćenih izvora na platformi Twitter. Prosječno ostvaruje **14 interakcija po objavi**.
 
 ## Tipologija
 
-Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Zagrebačka nadbiskupija pripada skupini **Megafoni**: visok doseg uz nizak angažman — sadržaj doseže široku publiku bez intenzivne interakcije.
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Zagrebačka nadbiskupija pripada skupini **Divovi**: visok doseg i visok angažman — među vodećim akterima ekosustava.
 
 Uređivačka oznaka: **konfesionalni izvor** *(predloženo — potvrđuje PI)*
 
@@ -50,9 +50,9 @@ Uređivačka oznaka: **konfesionalni izvor** *(predloženo — potvrđuje PI)*
 
 ## Izvori podataka
 
-Podaci: `data/processed/twitter_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-28).
+Podaci: `data/processed/twitter_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-08-10).
 
 ::: {.callout-warning}
-Brojke su **indikativne**. Agregati obuhvaćaju razdoblje **2021.–2026.** i svih **9** vrsta izvora zastupljenih u korpusu, uključujući Instagram i TikTok; 2026. je nepotpuna godina. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
+Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
 :::
 

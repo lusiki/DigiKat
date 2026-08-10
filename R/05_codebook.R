@@ -1,15 +1,24 @@
 #!/usr/bin/env Rscript
 # =============================================================================
 # R/05_codebook.R
-# Auto-generate CODEBOOK.md from the master (or the sample) schema: every
+# Auto-generate CODEBOOK.md from the official corpus (or the sample) schema: every
 # variable with type, % missing, and example values / levels, grouped heuristically.
 #
-# Run where the data lives:  Rscript R/05_codebook.R [--sample]
+# Documents data/digikat_corpus.rds, which is what the site publishes. That is the accumulator's
+# schema plus the dk_* provenance columns the inclusion rule adds. --accumulator documents
+# data/merged_comprehensive.rds instead.
+#
+# Run where the data lives:  Rscript R/05_codebook.R [--sample] [--accumulator]
 # =============================================================================
 suppressPackageStartupMessages({ library(here) })
+source(here::here("R/lib/digikat_paths.R"), encoding = "UTF-8")
 args       <- commandArgs(trailingOnly = TRUE)
 use_sample <- "--sample" %in% args
-path <- if (use_sample) here::here("data/sample/merged_sample.rds") else here::here("data/merged_comprehensive.rds")
+path <- here::here(
+  if (use_sample) "data/sample/merged_sample.rds"
+  else if ("--accumulator" %in% args) digikat_legacy_master_path()
+  else digikat_corpus_path()
+)
 if (!file.exists(path))
   stop("Not found: ", path, if (!use_sample) "\nRun on the pipeline machine, or use --sample." else "")
 

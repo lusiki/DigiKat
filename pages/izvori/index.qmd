@@ -10,7 +10,7 @@ categories: ["Katalog izvora", "Baza podataka"]
 Cijeli se katalog može vidjeti i kao [mreža izvora](mreza.html) — čvorovi su izvori, a poveznice pripadnost platformi i zajednički brend.
 
 ::: {.callout-note}
-Podaci dolaze iz agregata `data/processed/*_actors.rds` (bez osobnih podataka) i obuhvaćaju **710.307** objava u razdoblju **2021.–2026.**. Katalog je **radna verzija**: uređivačke oznake (konfesionalni/sekularni izvor) prijedlozi su koje potvrđuje voditelj projekta, a brojke su indikativne (statični agregati; mnogi akteri na novim platformama imaju tek nekoliko objava). Trenutno je objavljeno **103** izvora; **11** aktera zadržano je za uredničku provjeru.
+Podaci dolaze iz agregata `data/processed/*_actors.rds` (bez osobnih podataka) i obuhvaćaju **413.985** objava u razdoblju **2021.–2026.**. Katalog je **radna verzija**: uređivačke oznake (konfesionalni/sekularni izvor) prijedlozi su koje potvrđuje voditelj projekta, a brojke su indikativne (statični agregati; mnogi akteri na novim platformama imaju tek nekoliko objava). Korpus ima **9** vrsta izvora i platformi, a katalog profilira aktere na **6** platformi; Reddit, forumi i komentari nisu profilirani kao pojedinačni akteri. Trenutno je objavljeno **87** izvora; **27** aktera zadržano je za uredničku provjeru.
 :::
 
 ## Web
@@ -19,24 +19,22 @@ Praćeni izvori na platformi Web (poredano po volumenu). Cjeloviti pregled: [Web
 
 | Izvor | Tipologija | Objava | Interakcija |
 |---|---|---:|---:|
-| [hkm.hr](web-hkm-hr.html) | Divovi | 56.500 | 3.090.701 |
-| [slobodnadalmacija.hr](web-slobodnadalmacija-hr.html) | Divovi | 12.662 | 1.494.818 |
-| [laudato.hr](web-laudato-hr.html) | Specijalizirani akteri | 11.979 | 713.352 |
-| [vecernji.hr](web-vecernji-hr.html) | Divovi | 10.309 | 1.630.331 |
-| [index.hr](web-index-hr.html) | Divovi | 9.698 | 3.389.428 |
-| [net.hr](web-net-hr.html) | Megafoni | 9.167 | 793.686 |
-| [jutarnji.hr](web-jutarnji-hr.html) | Divovi | 8.977 | 1.638.768 |
-| [24sata.hr](web-24sata-hr.html) | Divovi | 7.992 | 1.745.424 |
-| [novizivot.net](web-novizivot-net.html) | Divovi | 7.496 | 3.796.197 |
-| [tportal.hr](web-tportal-hr.html) | Specijalizirani akteri | 6.340 | 187.988 |
-| [narod.hr](web-narod-hr.html) | Specijalizirani akteri | 6.205 | 620.369 |
-| [dnevno.hr](web-dnevno-hr.html) | Divovi | 5.752 | 3.289.102 |
-| [dnevnik.hr](web-dnevnik-hr.html) | Divovi | 5.551 | 959.448 |
-| [bitno.net](web-bitno-net.html) | Specijalizirani akteri | 4.485 | 820.025 |
-| [dalmatinskiportal.hr](web-dalmatinskiportal-hr.html) | Specijalizirani akteri | 4.096 | 507.926 |
-| [telegram.hr](web-telegram-hr.html) | Graditelji zajednica | 3.535 | 1.204.056 |
-| [mnovine.hr](web-mnovine-hr.html) | Specijalizirani akteri | 1.996 | 343.170 |
-| [caritas.hr](web-caritas-hr.html) | Specijalizirani akteri | 225 | 580.472 |
+| [hkm.hr](web-hkm-hr.html) | Divovi | 55.087 | 2.986.089 |
+| [laudato.hr](web-laudato-hr.html) | Specijalizirani akteri | 11.512 | 685.687 |
+| [novizivot.net](web-novizivot-net.html) | Divovi | 6.782 | 3.404.252 |
+| [slobodnadalmacija.hr](web-slobodnadalmacija-hr.html) | Divovi | 5.949 | 872.923 |
+| [index.hr](web-index-hr.html) | Divovi | 4.303 | 2.071.834 |
+| [bitno.net](web-bitno-net.html) | Graditelji zajednica | 4.261 | 787.274 |
+| [vecernji.hr](web-vecernji-hr.html) | Divovi | 4.098 | 945.747 |
+| [narod.hr](web-narod-hr.html) | Specijalizirani akteri | 3.991 | 359.402 |
+| [net.hr](web-net-hr.html) | Specijalizirani akteri | 3.879 | 408.042 |
+| [dnevno.hr](web-dnevno-hr.html) | Divovi | 3.634 | 2.980.574 |
+| [24sata.hr](web-24sata-hr.html) | Divovi | 3.270 | 971.429 |
+| [jutarnji.hr](web-jutarnji-hr.html) | Megafoni | 2.828 | 743.462 |
+| [dnevnik.hr](web-dnevnik-hr.html) | Specijalizirani akteri | 2.079 | 564.700 |
+| [dalmatinskiportal.hr](web-dalmatinskiportal-hr.html) | Specijalizirani akteri | 1.919 | 356.175 |
+| [telegram.hr](web-telegram-hr.html) | Specijalizirani akteri | 1.435 | 637.206 |
+| [caritas.hr](web-caritas-hr.html) | Specijalizirani akteri | 171 | 447.069 |
 
 ## YouTube
 
@@ -44,18 +42,18 @@ Praćeni izvori na platformi YouTube (poredano po volumenu). Cjeloviti pregled: 
 
 | Izvor | Tipologija | Objava | Interakcija |
 |---|---|---:|---:|
-| [pulherissimus](youtube-pulherissimus.html) | Divovi | 6.042 | 1.621.368 |
-| [LaudatoTV](youtube-laudatotv.html) | Divovi | 4.064 | 170.409 |
-| [Hrana za dušu](youtube-hrana-za-dusu.html) | Divovi | 3.457 | 462.317 |
-| [Dijete Vjere](youtube-dijete-vjere.html) | Graditelji zajednica | 1.934 | 444.695 |
-| [Pod Smokvom](youtube-pod-smokvom.html) | Graditelji zajednica | 1.522 | 589.626 |
-| [Nova Eva](youtube-nova-eva.html) | Megafoni | 667 | 94.921 |
-| [Stopama Padre Pija](youtube-stopama-padre-pija.html) | Specijalizirani akteri | 407 | 104.504 |
-| [RTL](youtube-rtl.html) | Specijalizirani akteri | 373 | 47.613 |
+| [pulherissimus](youtube-pulherissimus.html) | Divovi | 6.031 | 1.620.448 |
+| [LaudatoTV](youtube-laudatotv.html) | Divovi | 3.537 | 143.208 |
+| [Pod Smokvom](youtube-pod-smokvom.html) | Divovi | 1.522 | 589.626 |
+| [Hrana za dušu](youtube-hrana-za-dusu.html) | Divovi | 1.476 | 177.424 |
+| [Dijete Vjere](youtube-dijete-vjere.html) | Specijalizirani akteri | 903 | 77.612 |
+| [Nova Eva](youtube-nova-eva.html) | Divovi | 666 | 93.953 |
+| [Stopama Padre Pija](youtube-stopama-padre-pija.html) | Graditelji zajednica | 404 | 103.281 |
 | [Majko Marijo](youtube-majko-marijo.html) | Divovi | 333 | 266.210 |
+| [RTL](youtube-rtl.html) | Megafoni | 298 | 39.403 |
 | [BOŽANSKA LJUBAV](youtube-bozanska-ljubav.html) | Graditelji zajednica | 152 | 144.742 |
-| [budiFRAjer](youtube-budifrajer.html) | Specijalizirani akteri | 152 | 118.891 |
-| [Bog Je Tu](youtube-bog-je-tu.html) | Specijalizirani akteri | 93 | 93.696 |
+| [budiFRAjer](youtube-budifrajer.html) | Divovi | 152 | 118.891 |
+| [Bog Je Tu](youtube-bog-je-tu.html) | Megafoni | 87 | 83.104 |
 
 ## Facebook
 
@@ -63,23 +61,22 @@ Praćeni izvori na platformi Facebook (poredano po volumenu). Cjeloviti pregled:
 
 | Izvor | Tipologija | Objava | Interakcija |
 |---|---|---:|---:|
-| [VJERA U NAMA †](facebook-vjera-u-nama.html) | Graditelji zajednica | 5.326 | 255.466 |
-| [Bitno.net](facebook-bitno-net.html) | Divovi | 4.132 | 698.950 |
-| [Radio Marija Hrvatska](facebook-radio-marija-hrvatska.html) | Specijalizirani akteri | 3.481 | 191.275 |
-| [Laudato](facebook-laudato.html) | Divovi | 2.512 | 1.081.728 |
-| [Zagrebačka nadbiskupija](facebook-zagrebacka-nadbiskupija.html) | Graditelji zajednica | 2.251 | 285.393 |
-| [Kapljice ljubavi Božje](facebook-kapljice-ljubavi-bozje.html) | Graditelji zajednica | 1.894 | 399.514 |
-| [Kraljica Mira](facebook-kraljica-mira.html) | Specijalizirani akteri | 1.456 | 167.054 |
-| [VJERA](facebook-vjera.html) | Graditelji zajednica | 1.298 | 405.078 |
-| [Slobodna Dalmacija](facebook-slobodna-dalmacija.html) | Megafoni | 992 | 142.757 |
-| [Gospa](facebook-gospa.html) | Graditelji zajednica | 873 | 214.302 |
-| [RTL Danas](facebook-rtl-danas.html) | Megafoni | 798 | 196.740 |
-| [Net.hr](facebook-net-hr.html) | Megafoni | 764 | 145.782 |
-| [DNEVNIK.hr](facebook-dnevnik-hr.html) | Megafoni | 730 | 180.136 |
-| [Večernji list](facebook-vecernji-list.html) | Megafoni | 692 | 126.214 |
-| [24sata](facebook-24sata.html) | Divovi | 630 | 207.441 |
-| [Index.hr](facebook-index-hr.html) | Divovi | 365 | 227.035 |
-| [Jutarnji](facebook-jutarnji.html) | Specijalizirani akteri | 326 | 89.926 |
+| [VJERA U NAMA †](facebook-vjera-u-nama.html) | Divovi | 5.180 | 249.123 |
+| [Bitno.net](facebook-bitno-net.html) | Divovi | 3.552 | 595.434 |
+| [Radio Marija Hrvatska](facebook-radio-marija-hrvatska.html) | Graditelji zajednica | 2.959 | 151.195 |
+| [Zagrebačka nadbiskupija](facebook-zagrebacka-nadbiskupija.html) | Graditelji zajednica | 2.202 | 281.662 |
+| [Kapljice ljubavi Božje](facebook-kapljice-ljubavi-bozje.html) | Divovi | 1.840 | 383.278 |
+| [Laudato](facebook-laudato.html) | Divovi | 1.636 | 720.991 |
+| [Kraljica Mira](facebook-kraljica-mira.html) | Divovi | 1.244 | 126.499 |
+| [VJERA](facebook-vjera.html) | Graditelji zajednica | 1.172 | 320.460 |
+| [Gospa](facebook-gospa.html) | Graditelji zajednica | 857 | 209.117 |
+| [Slobodna Dalmacija](facebook-slobodna-dalmacija.html) | Megafoni | 750 | 118.144 |
+| [RTL Danas](facebook-rtl-danas.html) | Specijalizirani akteri | 533 | 107.870 |
+| [DNEVNIK.hr](facebook-dnevnik-hr.html) | Megafoni | 494 | 102.280 |
+| [Večernji list](facebook-vecernji-list.html) | Megafoni | 489 | 70.821 |
+| [24sata](facebook-24sata.html) | Megafoni | 452 | 124.136 |
+| [Net.hr](facebook-net-hr.html) | Specijalizirani akteri | 364 | 70.732 |
+| [Index.hr](facebook-index-hr.html) | Specijalizirani akteri | 222 | 125.004 |
 
 ## Instagram
 
@@ -87,24 +84,19 @@ Praćeni izvori na platformi Instagram (poredano po volumenu). Cjeloviti pregled
 
 | Izvor | Tipologija | Objava | Interakcija |
 |---|---|---:|---:|
-| [dnevniavaz](instagram-dnevniavaz.html) | Divovi | 51 | 24.181 |
-| [laudatotv](instagram-laudatotv.html) | Divovi | 42 | 50.276 |
-| [ivan.anusic.hr](instagram-ivan-anusic-hr.html) | Specijalizirani akteri | 13 | 8.822 |
-| [_rina.rs](instagram-rina-rs.html) | Divovi | 6 | 10.773 |
-| [hrvatskivojnik_magazin](instagram-hrvatskivojnik-magazin.html) | Specijalizirani akteri | 6 | 6.246 |
+| [dnevniavaz](instagram-dnevniavaz.html) | Divovi | 41 | 16.757 |
+| [laudatotv](instagram-laudatotv.html) | Divovi | 30 | 16.341 |
+| [ivan.anusic.hr](instagram-ivan-anusic-hr.html) | Graditelji zajednica | 9 | 7.400 |
+| [jutarnji.hr](instagram-jutarnji-hr.html) | Megafoni | 6 | 898 |
+| [_rina.rs](instagram-rina-rs.html) | Divovi | 5 | 8.099 |
+| [hrvatskivojnik_magazin](instagram-hrvatskivojnik-magazin.html) | Specijalizirani akteri | 5 | 5.730 |
 | [oslobodjenje.ba](instagram-oslobodjenje-ba.html) | Specijalizirani akteri | 4 | 6.268 |
-| [24sata.hr](instagram-24sata-hr.html) | Megafoni | 4 | 6.157 |
-| [insidebosnia](instagram-insidebosnia.html) | Graditelji zajednica | 3 | 9.715 |
-| [buducnostsrbijeav](instagram-buducnostsrbijeav.html) | Megafoni | 3 | 9.341 |
-| [kristijanilicic](instagram-kristijanilicic.html) | Divovi | 2 | 22.590 |
-| [sport.klub](instagram-sport-klub.html) | Megafoni | 2 | 6.624 |
+| [insidebosnia](instagram-insidebosnia.html) | Graditelji zajednica | 2 | 7.127 |
 | [hns_cff](instagram-hns-cff.html) | Divovi | 1 | 52.022 |
-| [martinafilic](instagram-martinafilic.html) | Graditelji zajednica | 1 | 13.655 |
-| [ekostraza](instagram-ekostraza.html) | Graditelji zajednica | 1 | 12.286 |
+| [kristijanilicic](instagram-kristijanilicic.html) | Divovi | 1 | 13.296 |
+| [ekostraza](instagram-ekostraza.html) | Divovi | 1 | 12.286 |
 | [klaskalica](instagram-klaskalica.html) | Graditelji zajednica | 1 | 10.238 |
-| [elladvornik](instagram-elladvornik.html) | Megafoni | 1 | 7.510 |
 | [zenskisvijet](instagram-zenskisvijet.html) | Specijalizirani akteri | 1 | 6.928 |
-| [vannabojovic](instagram-vannabojovic.html) | Specijalizirani akteri | 1 | 6.847 |
 
 ## TikTok
 
@@ -112,24 +104,20 @@ Praćeni izvori na platformi TikTok (poredano po volumenu). Cjeloviti pregled: [
 
 | Izvor | Tipologija | Objava | Interakcija |
 |---|---|---:|---:|
-| [dnevnikhr](tiktok-dnevnikhr.html) | Divovi | 28 | 20.673 |
-| [24sata](tiktok-24sata.html) | Divovi | 27 | 28.162 |
-| [vecernjilist](tiktok-vecernjilist.html) | Divovi | 27 | 19.725 |
-| [hrvatska_radiotelevizija](tiktok-hrvatska-radiotelevizija.html) | Divovi | 26 | 50.002 |
-| [trtbalkanbhsc](tiktok-trtbalkanbhsc.html) | Divovi | 22 | 18.082 |
-| [slobodna.dalmacija](tiktok-slobodna-dalmacija.html) | Divovi | 14 | 45.133 |
-| [kristijanilicic](tiktok-kristijanilicic.html) | Divovi | 8 | 63.266 |
-| [index.hr](tiktok-index-hr.html) | Divovi | 6 | 33.151 |
+| [dnevnikhr](tiktok-dnevnikhr.html) | Divovi | 16 | 12.437 |
+| [trtbalkanbhsc](tiktok-trtbalkanbhsc.html) | Divovi | 14 | 16.522 |
+| [hrvatska_radiotelevizija](tiktok-hrvatska-radiotelevizija.html) | Megafoni | 12 | 9.465 |
+| [slobodna.dalmacija](tiktok-slobodna-dalmacija.html) | Divovi | 11 | 41.703 |
+| [vecernjilist](tiktok-vecernjilist.html) | Specijalizirani akteri | 9 | 8.688 |
+| [kristijanilicic](tiktok-kristijanilicic.html) | Divovi | 6 | 57.511 |
 | [shkm2026](tiktok-shkm2026.html) | Specijalizirani akteri | 5 | 7.374 |
+| [index.hr](tiktok-index-hr.html) | Divovi | 4 | 32.775 |
 | [mladifesthrvatska](tiktok-mladifesthrvatska.html) | Specijalizirani akteri | 4 | 10.870 |
-| [rtldirekt](tiktok-rtldirekt.html) | Divovi | 3 | 29.504 |
-| [poslanik.gospodina](tiktok-poslanik-gospodina.html) | Megafoni | 3 | 15.639 |
 | [crovibes](tiktok-crovibes.html) | Specijalizirani akteri | 3 | 5.728 |
 | [plenkovic_andrej](tiktok-plenkovic-andrej.html) | Specijalizirani akteri | 2 | 5.790 |
-| [dontomolukac](tiktok-dontomolukac.html) | Graditelji zajednica | 1 | 40.752 |
-| [kamenkrsislanina](tiktok-kamenkrsislanina.html) | Specijalizirani akteri | 1 | 13.400 |
-| [hypetelevizija.hr](tiktok-hypetelevizija-hr.html) | Specijalizirani akteri | 1 | 10.991 |
-| [mondo.zabava](tiktok-mondo-zabava.html) | Specijalizirani akteri | 1 | 6.268 |
+| [dontomolukac](tiktok-dontomolukac.html) | Divovi | 1 | 40.752 |
+| [kamenkrsislanina](tiktok-kamenkrsislanina.html) | Divovi | 1 | 13.400 |
+| [hypetelevizija.hr](tiktok-hypetelevizija-hr.html) | Graditelji zajednica | 1 | 10.991 |
 | [euforija.online](tiktok-euforija-online.html) | Specijalizirani akteri | 1 | 5.646 |
 
 ## Twitter
@@ -138,23 +126,19 @@ Praćeni izvori na platformi Twitter (poredano po volumenu). Cjeloviti pregled: 
 
 | Izvor | Tipologija | Objava | Interakcija |
 |---|---|---:|---:|
-| [Zagrebačka nadbiskupija](twitter-zagrebacka-nadbiskupija.html) | Megafoni | 75 | 984 |
-| [Petar](twitter-petar.html) | Divovi | 73 | 2.247 |
-| [Vlada Republike Hrvatske](twitter-vlada-republike-hrvatske.html) | Divovi | 65 | 2.599 |
-| [Andrej Plenković](twitter-andrej-plenkovic.html) | Divovi | 35 | 3.928 |
-| [Darko Lesinger](twitter-darko-lesinger.html) | Megafoni | 15 | 991 |
-| [Hrvatski Kanal](twitter-hrvatski-kanal.html) | Specijalizirani akteri | 15 | 822 |
-| [Stephen Nikola Bartulica](twitter-stephen-nikola-bartulica.html) | Divovi | 14 | 1.802 |
-| [Pavel Gregoric](twitter-pavel-gregoric.html) | Divovi | 12 | 1.314 |
-| [Mate Mijić 🇭🇷](twitter-mate-mijic.html) | Specijalizirani akteri | 9 | 783 |
-| [Ivan Anušić](twitter-ivan-anusic.html) | Divovi | 8 | 1.249 |
-| [Dominik Alpeza](twitter-dominik-alpeza.html) | Specijalizirani akteri | 6 | 965 |
-| [Dalija Orešković](twitter-dalija-oreskovic.html) | Specijalizirani akteri | 6 | 834 |
-| [Vesna Rajnović 🌿](twitter-vesna-rajnovic.html) | Specijalizirani akteri | 6 | 767 |
-| [Marin Miletić](twitter-marin-miletic.html) | Specijalizirani akteri | 4 | 850 |
-| [Željka Markić](twitter-zeljka-markic.html) | Graditelji zajednica | 3 | 1.028 |
-| [NORWEGIAN MAN](twitter-norwegian-man.html) | Divovi | 2 | 1.509 |
-| [Neven Barkovic](twitter-neven-barkovic.html) | Graditelji zajednica | 2 | 1.110 |
-| [Mk.gee 🇪🇺](twitter-mk-gee.html) | Specijalizirani akteri | 2 | 905 |
-| [Laganica](twitter-laganica.html) | Divovi | 1 | 3.385 |
+| [Zagrebačka nadbiskupija](twitter-zagrebacka-nadbiskupija.html) | Divovi | 65 | 935 |
+| [Petar](twitter-petar.html) | Divovi | 51 | 1.724 |
+| [Vlada Republike Hrvatske](twitter-vlada-republike-hrvatske.html) | Divovi | 45 | 1.989 |
+| [Andrej Plenković](twitter-andrej-plenkovic.html) | Divovi | 30 | 3.509 |
+| [Hrvatski Kanal](twitter-hrvatski-kanal.html) | Graditelji zajednica | 12 | 722 |
+| [DNEVNIK.hr](twitter-dnevnik-hr.html) | Megafoni | 12 | 27 |
+| [Darko Lesinger](twitter-darko-lesinger.html) | Graditelji zajednica | 9 | 692 |
+| [Stephen Nikola Bartulica](twitter-stephen-nikola-bartulica.html) | Divovi | 8 | 1.161 |
+| [Ivan Anušić](twitter-ivan-anusic.html) | Graditelji zajednica | 7 | 1.176 |
+| [Pavel Gregoric](twitter-pavel-gregoric.html) | Graditelji zajednica | 7 | 1.145 |
+| [Mate Mijić 🇭🇷](twitter-mate-mijic.html) | Graditelji zajednica | 7 | 746 |
+| [Dominik Alpeza](twitter-dominik-alpeza.html) | Graditelji zajednica | 5 | 687 |
+| [Dalija Orešković](twitter-dalija-oreskovic.html) | Specijalizirani akteri | 4 | 647 |
+| [Vesna Rajnović 🌿](twitter-vesna-rajnovic.html) | Specijalizirani akteri | 4 | 616 |
+| [24sata](twitter-24sata.html) | Megafoni | 2 | 0 |
 

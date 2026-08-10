@@ -34,6 +34,11 @@ Thumbs.db
 
 # Large data files (too big for GitHub)
 data/*.rds
+# THE official DigiKat corpus (derived: one inclusion rule across both eras). Holds full text and
+# URLs, so it is never committed — but data/digikat_corpus_manifest.json IS tracked, and carries the
+# counts, spans and cutting rule that pages quote. Rebuild: Rscript R/build_corpus.R --apply
+data/digikat_corpus.rds
+# The accumulator the corpus is cut from — everything the vendor supplied.
 data/merged_comprehensive.rds
 data/merged_comprehensive_backup_*.rds
 data/nlp/*.rds

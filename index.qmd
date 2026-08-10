@@ -13,6 +13,43 @@ library(dplyr)
 library(visNetwork)
 source("R/theme_digikat.R")
 source("R/source_network.R")
+source("R/lib/digikat_paths.R")
+```
+
+```{r}
+#| label: brojke
+# Brojke u traci NISU utipkane. Čitaju se iz praćenog manifesta službenog korpusa
+# (data/digikat_corpus_manifest.json), koji nastaje uz sam korpus u R/build_corpus.R. Manifest ne
+# sadrži retke ni osobne podatke, pa se stranica renderira i na stroju bez podataka.
+mf <- digikat_read_corpus_manifest()
+
+# Traka brojki opisuje korpus, a mreža izvora ispod nje crta se iz agregata u data/processed/.
+# Ako agregati nisu izgrađeni iz aktualnog korpusa, stranica bi tvrdila jedno, a prikazivala drugo.
+# Provjera namjerno PREKIDA render umjesto da upozori — pogrešna stranica ne smije nastati slučajno.
+digikat_assert_aggregates_current()
+
+# Tematske kategorije: broj se izvodi iz jedinog kanonskog rječnika, ne prepisuje.
+e_dict <- new.env(parent = baseenv())
+sys.source("R/lib/thematic_dictionaries.R", envir = e_dict)
+n_kategorija <- length(e_dict$digikat_thematic_dictionaries)
+
+hr_broj <- function(x) formatC(x, big.mark = ".", decimal.mark = ",", format = "d")
+# Manifest nosi točan broj redaka službenog korpusa, pa ga naslovna stranica
+# prikazuje bez zaokruživanja.
+n_objava   <- hr_broj(mf$corpus$rows)
+n_varijabli <- mf$corpus$columns
+n_godina   <- mf$corpus$year_max - mf$corpus$year_min + 1
+raspon     <- paste0(mf$corpus$year_min, ".–", mf$corpus$year_max, ".")
+n_platformi <- mf$corpus$platforms
+
+# Oznake platformi prate manifest, pa se popis i brojač ne mogu razići.
+oznake <- c(web = "Web portali", youtube = "YouTube", facebook = "Facebook", twitter = "Twitter / X",
+            reddit = "Reddit", forum = "Forumi", instagram = "Instagram", comment = "Komentari",
+            tiktok = "TikTok")
+pl <- names(sort(unlist(mf$corpus$platform_counts), decreasing = TRUE))
+chips <- paste0(
+  '<span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">',
+  ifelse(is.na(oznake[pl]), pl, oznake[pl]), "</span>", collapse = "\n      ")
 ```
 
 ```{=html}
@@ -44,23 +81,23 @@ source("R/source_network.R")
   <div style="max-width: 1180px; margin: 0 auto; padding: 52px 40px;">
     <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; align-items: start;">
       <div style="padding: 4px 28px 4px 0; border-right: 1px solid #e4e2da;">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">710.000</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">`r n_objava`</div>
         <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">medijskih objava</div>
       </div>
       <div style="padding: 4px 28px; border-right: 1px solid #e4e2da;">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">47</div>
-        <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">kodiranih varijabli</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">`r n_varijabli`</div>
+        <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">stupca u korpusu</div>
       </div>
       <div style="padding: 4px 28px; border-right: 1px solid #e4e2da;">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">6</div>
-        <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">godina · 2021.–2026.</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">`r n_godina`</div>
+        <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">kalendarskih godina · `r raspon`</div>
       </div>
       <div style="padding: 4px 28px; border-right: 1px solid #e4e2da;">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">9</div>
-        <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">platformi i izvora</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">`r n_platformi`</div>
+        <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">vrsta izvora i platformi</div>
       </div>
       <div style="padding: 4px 28px; border-right: 1px solid #e4e2da;">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">16</div>
+        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">`r n_kategorija`</div>
         <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">tematskih kategorija</div>
       </div>
       <div style="padding: 4px 0 4px 28px;">
@@ -69,15 +106,7 @@ source("R/source_network.R")
       </div>
     </div>
     <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e4e2da; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #4f535a;">
-      <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">Web portali</span>
-      <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">YouTube</span>
-      <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">Facebook</span>
-      <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">Twitter / X</span>
-      <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">Reddit</span>
-      <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">Forumi</span>
-      <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">Instagram</span>
-      <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">Komentari</span>
-      <span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">TikTok</span>
+      `r chips`
     </div>
   </div>
 </section>
@@ -90,7 +119,8 @@ source("R/source_network.R")
 <div class="hn-inner">
 <div class="hn-text">
   <h2>Mreža izvora</h2>
-  <p>Iza brojki stoje konkretni akteri. <strong>Mreža izvora</strong> prikazuje sve praćene izvore kao interaktivni graf. Svaki je čvor jedan izvor, obojen prema platformi i skaliran prema volumenu objava.</p>
+  <p>Iza brojki stoje konkretni akteri. <strong>Mreža izvora</strong> prikazuje objavljene profile iz <strong>Kataloga izvora</strong> kao interaktivni graf. Svaki je čvor jedan izvor, obojen prema platformi i skaliran prema volumenu objava iz službenog korpusa.</p>
+  <p>Korpus obuhvaća devet vrsta izvora i platformi, dok katalog donosi profile aktera za šest platformi s usporedivim agregatima: web, YouTube, Facebook, Instagram, TikTok i Twitter.</p>
   <p>Poveznice su strukturne: pripadnost platformi te zajednički brend ili osoba prisutna na više platformi. Graf je interaktivan — čvorove možete povlačiti i zumirati, a prelaskom preko čvora otkrivaju se tipologija, volumen, angažman i doseg.</p>
   <div class="hn-links">
     <a class="hn-primary" href="pages/izvori/mreza.html">Istraži mrežu</a>

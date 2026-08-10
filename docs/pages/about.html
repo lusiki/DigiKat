@@ -142,6 +142,10 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-tematska-istraživanja">    
         <li>
+    <a class="dropdown-item" href="../pages/studije/index.html">
+ <span class="dropdown-text">Pregled istraživanja</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../pages/studije/trzista-paznje.html">
  <span class="dropdown-text">Tržišta pažnje u religijskim digitalnim medijima</span></a>
   </li>  
@@ -251,7 +255,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Objavljeno</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">7. kolovoza 2026.</p>
+      <p class="date">10. kolovoza 2026.</p>
     </div>
   </div>
   
@@ -286,7 +290,7 @@ Automatizirano prikupljanje medijskih objava u realnom vremenu, koristeći alate
 Baza podataka
 </h4>
 <p>
-Stvaranje strukturirane i javno dostupne baze podataka koja će služiti kao osnova za buduće znanstvene i javne analize.
+Stvaranje strukturiranoga korpusa s javnim manifestom, agregatima, kodom i metodologijom, uz kontroliran pristup retcima koji sadrže puni tekst.
 </p>
 </div>
 <div class="info-card">
@@ -363,7 +367,7 @@ Kakva je mrežna dinamika između različitih platformi i medija koji obrađuju 
 </section>
 <section id="od-medijske-objave-do-analize" class="level2">
 <h2 class="anchored" data-anchor-id="od-medijske-objave-do-analize">Od medijske objave do analize</h2>
-<p>Podaci se prikupljaju, filtriraju u korpus, objedinjuju u glavni skup podataka, obrađuju i naposljetku čitaju kroz četiri analitičke razine; svaki se korak nadovezuje na prethodni.</p>
+<p>Podaci se prikupljaju u akumulator, iz njega se jedinstvenim pravilom izrezuje službeni korpus, a zatim se obrađuju i čitaju kroz četiri analitičke razine te peti, vremenski presjek. Dovršena tematska istraživanja ostaju na verzioniranim ulazima na kojima su objavljena.</p>
 <div style="position: relative; padding-left: 56px; margin-top: 1.5rem;">
 <div style="position: absolute; left: 19px; top: 22px; bottom: 22px; width: 2px; background: linear-gradient(#0f4c5c, #cfddE1);">
 
@@ -393,11 +397,11 @@ Medijske objave s portala, društvenih platformi i foruma pristižu kao tablice 
 Filtriranje
 </h3>
 <p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">
-Objava ulazi u korpus samo ako sadrži najmanje dva različita podudaranja s popisom katoličkih i religijskih pojmova — ovo pravilo definira opseg korpusa.
+Objava najprije mora unutar prvih 3.000 znakova pogoditi najmanje jedan odlučan i dva različita pojma iz popisa od 119, a zatim dosegnuti ocjenu ansambla od najmanje 0,70. Isto pravilo vrijedi za cijelo razdoblje.
 </p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;">
-<span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">regex</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">≥2 matches</span>
+<span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">≥1 odlučan · ≥2 ukupno</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">model ≥0,70</span>
 </div>
 </div>
 <div style="position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; margin-bottom: 18px;">
@@ -406,14 +410,14 @@ Objava ulazi u korpus samo ako sadrži najmanje dva različita podudaranja s pop
 </div>
 <div>
 <h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;" class="anchored">
-Korpus
+Službeni korpus
 </h3>
 <p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">
-Objave koje prođu filtar deduplicirane su i objedinjene u glavni skup podataka — oko 710.000 objava, koje čine jedinstveni izvor za sve analize.
+Akumulator zadržava sve što je servis isporučio. Iz njega je izveden službeni korpus od 413.985 objava i 54 stupca, na kojem se grade žive stranice, mape i javni agregati. Dovršena tematska istraživanja nisu prebačena na novi ulaz.
 </p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;">
-<span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">dedupe</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">master</span>
+<span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">413.985 × 54</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">manifest + provenance</span>
 </div>
 </div>
 <div style="position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; margin-bottom: 18px;">
@@ -441,11 +445,11 @@ Iz glavnog skupa izračunavaju se agregati po godini i platformi, a tekst se jez
 Analiza
 </h3>
 <p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">
-Korpus se čita kroz četiri analitičke razine: mapa ekosustava (doseg i angažman), tematske struje (16 kategorija), atmosfera diskursa (tonalitet i emocije) te fokus na događaje.
+Službeni korpus čita se kroz četiri analitičke razine: mapu ekosustava, tematske struje, atmosferu diskursa i fokus na događaje. Peti prikaz daje vremenski presjek evolucije ekosustava, uz ogradu zbog promjene prikupljanja 2024.
 </p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;">
-<span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">ecosystem</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">themes</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">sentiment</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">events</span>
+<span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">ecosystem</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">themes</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">discourse</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">events + time</span>
 </div>
 </div>
 </div>

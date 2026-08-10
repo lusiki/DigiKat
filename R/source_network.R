@@ -103,7 +103,7 @@ build_source_network <- function(proc_dir = "data/processed",
     color       = unname(plat_cols[nd$platform_disp]),
     value       = nd$size,
     borderWidth = ifelse(nd$is_hub, 4, 1),
-    font.size   = ifelse(nd$is_hub, 22, 13),
+    font.size   = ifelse(nd$is_hub, 24, 15),
     font.face   = "IBM Plex Mono",
     font.color  = dk_col$ink,
     title = ifelse(nd$is_hub,
@@ -146,6 +146,6 @@ source_network_widget <- function(sn, height = "760px", background = dk_col$pape
       addNodes = data.frame(
         label = c("Web","YouTube","Facebook","Instagram","TikTok","Twitter"), shape = "dot",
         color = unname(sn$plat_cols[c("Web","YouTube","Facebook","Instagram","TikTok","Twitter")]),
-        size = 10, font.size = 12, font.face = "IBM Plex Mono", font.color = dk_col$ink,
+        size = 10, font.size = 14, font.face = "IBM Plex Mono", font.color = dk_col$ink,
         stringsAsFactors = FALSE))
 }

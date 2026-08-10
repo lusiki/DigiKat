@@ -6,8 +6,9 @@
 **Repo:** github.com/lusiki/DigiKat · **Site:** https://lusiki.github.io/DigiKat/ (Quarto → `docs/` → GitHub Pages)
 
 DigiKat applies computational social science to map Catholic themes across the Croatian digital media
-ecosystem. Empirical core: a ≈710k-row corpus of media posts (2021–2026, Croatian/Bosnian). Two output
-streams: (1) reusable open-data infrastructure + the Quarto website; (2) thematic studies / papers.
+ecosystem. Empirical core: a 413,985-row official corpus (2021–2026, Croatian/Bosnian), derived from a
+710,307-row accumulator. Two output streams: (1) reusable open-data infrastructure + the Quarto website;
+(2) thematic studies / papers.
 
 ## Core principles
 1. **Plan-first.** Enter plan mode and save a plan before any non-trivial task. The threshold and the
@@ -16,15 +17,19 @@ streams: (1) reusable open-data infrastructure + the Quarto website; (2) themati
    `.qmd` must `quarto render` clean (build + figures + Croatian diacritics intact); an R change must be
    sourced end-to-end. If R or the data is not on THIS machine, see **Environment** below — hand off, don't fake it.
 3. **Single source of truth — data flows ONE way:**
-   `data/raw/*.xlsx → religious filter (≥2 distinct matches) → data/merged_comprehensive.rds
+   `data/raw/*.xlsx → data/merged_comprehensive.rds (accumulator, everything supplied)
+   → inclusion rule v4 + second pass @0,70 + 3 000-char window → data/digikat_corpus.rds (THE corpus)
    → data/processed/*.rds → pages/**/*.qmd → docs/`.
    Never hand-edit a downstream artifact — fix upstream and re-derive. No hand-typed numbers in prose;
-   compute them from `data/processed/*.rds`.
+   compute them from `data/processed/*.rds` or `data/digikat_corpus_manifest.json`.
+   **Two datasets, not interchangeable:** the corpus is what the SITE describes; the accumulator is what
+   the COMPLETED PAPERS were computed from and stays pinned in `studies/**`. Resolve both through
+   `R/lib/digikat_paths.R` — never type either path.
 4. **Aggregate-production is an explicit step, NOT a render side-effect.** `data/processed/*.rds` are
-   produced by `R/03_aggregate.R` run against the master — never by rendering a page. Pages only READ them.
+   produced by `R/03_aggregate.R` run against the official corpus — never by rendering a page. Pages only READ them.
    The builder creates all 14 files as one validated generation; production replacement requires `--apply`.
-5. **Protect the irreplaceable.** The master `.rds` (≈710k rows) is gitignored and not reproducible from a
-   clean clone. Back it up before any overwrite; never change the ≥2-match inclusion rule silently. The
+5. **Protect the irreplaceable.** The accumulator `.rds` (≈710k rows) is gitignored and not reproducible from a
+   clean clone. Back it up before any overwrite; never change the official corpus inclusion rule silently. The
    git/data guard hook + deny list enforce this.
 6. **Croatian correctness is a quality dimension.** Content/UI are Croatian (č ć ž š đ); project docs are
    English. Read text as UTF-8 explicitly; assume a teammate's R may default to CP1250.
@@ -33,18 +38,21 @@ streams: (1) reusable open-data infrastructure + the Quarto website; (2) themati
 8. **[LEARN] tags.** When corrected: project-general → `MEMORY.md`; machine/path-specific → `CLAUDE.local.md`.
 
 ## Environment (where things run) — read CLAUDE.local.md
-R + the master dataset live on the PI's pipeline machine, NOT necessarily the machine you are on now.
-`CLAUDE.local.md` declares `R_AVAILABLE` and the master/model paths for THIS machine.
-- **R-running work** (append, aggregate, NLP, analysis): if R + master are present → run + verify; if not →
+R + the restricted datasets live on the PI's pipeline machine, NOT necessarily the machine you are on now.
+`CLAUDE.local.md` declares `R_AVAILABLE` and the corpus/accumulator/model paths for THIS machine.
+- **R-running work** (append, aggregate, NLP, analysis): if R + the required data are present → run + verify; if not →
   emit the exact command and hand it off ("run where R + data live, then commit refreshed aggregates / re-render").
 - **Quarto:** content pages render anywhere; **data pages** (`baza.qmd`, `pages/mapa/*.qmd`) need R +
-  aggregates/master — without them, verify statically (chunk syntax, `:::` div balance, diacritics in source).
+  aggregates/official corpus — without them, verify statically (chunk syntax, `:::` div balance, diacritics in source).
 
 ## Directory conventions (authoritative)
 - `R/` — numbered pipeline, shared libraries, validators, semantic scripts, and generators.
 - `pages/`, `pages/mapa/` — Quarto site (`.qmd`); the project's published "outputs".
 - `data/raw/` — gitignored `.xlsx`; `data/raw/new/` — incremental drop-folder for appends.
-- `data/merged_comprehensive.rds` — master (≈710k × 47), **GITIGNORED**, not in repo.
+- `data/merged_comprehensive.rds` — accumulator (≈710k × 47), **GITIGNORED**, not in repo.
+- `data/digikat_corpus.rds` — **THE official corpus** (≈414k × 54), **GITIGNORED**; derived by
+  `R/build_corpus.R`. `data/digikat_corpus_manifest.json` is **TRACKED** (no PII) and carries the counts,
+  spans and cutting rule that pages quote.
 - `data/processed/*.rds` — **TRACKED** aggregates (no PII, CC BY 4.0); PI-produced, page-read-only.
 - `data/page-ready/*.rds` — **TRACKED** validated plot/table inputs for NLP pages; no row-level text or URLs.
 - `data/nlp/` — gitignored tokenized output. `resources/` — `lexicons/`, `dictionaries/`, `models/` (udpipe).
@@ -65,7 +73,8 @@ R + the master dataset live on the PI's pipeline machine, NOT necessarily the ma
 |---|---|
 | `Rscript R/00_run_all.R [--from=NN] [--sample]` | non-destructive full validation or synthetic smoke pipeline |
 | `Rscript R/append_new_data.R` | preview incoming `data/raw/new/*.xlsx` and write a JSON delta report |
-| `Rscript R/append_new_data.R --apply` | verified backup, staged append, URL deduplication, atomic master replacement |
+| `Rscript R/append_new_data.R --apply` | verified backup, staged append, URL deduplication, atomic accumulator replacement |
+| `Rscript R/build_corpus.R [--apply] [--threshold=]` | preview / rebuild the official corpus from the accumulator |
 | `Rscript R/03_aggregate.R` | build and reconcile all 14 aggregates in a temporary directory |
 | `Rscript R/03_aggregate.R --apply` | confirmation-gated production aggregate generation swap |
 | `Rscript R/05_page_summaries.R --build` | build and atomically install compact inputs for the three NLP pages |

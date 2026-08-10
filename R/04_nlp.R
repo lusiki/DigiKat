@@ -1,6 +1,10 @@
 #!/usr/bin/env Rscript
 # Build or validate the per-page NLP sample/token generations.
 #
+# Input is data/digikat_corpus.rds — the official corpus, cut by one inclusion rule across both
+# collection eras — not the accumulator. Pass --master=data/merged_comprehensive.rds to work from
+# the accumulator instead.
+#
 # Safe validation (default):
 #   Rscript R/04_nlp.R
 #
@@ -15,6 +19,7 @@
 
 suppressPackageStartupMessages(library(dplyr))
 source("R/lib/digikat_utils.R", encoding = "UTF-8")
+source("R/lib/digikat_paths.R", encoding = "UTF-8")
 
 args <- commandArgs(trailingOnly = TRUE)
 if ("--help" %in% args) {
@@ -32,11 +37,7 @@ build <- digikat_cli_flag(args, "--build")
 adopt_existing <- digikat_cli_flag(args, "--adopt-existing")
 if (build && adopt_existing) stop("Choose either --build or --adopt-existing.", call. = FALSE)
 
-master_path <- digikat_cli_value(
-  args,
-  "--master",
-  Sys.getenv("DIGIKAT_MASTER_PATH", unset = "data/merged_comprehensive.rds")
-)
+master_path <- digikat_cli_value(args, "--master", digikat_corpus_path())
 model_path <- digikat_cli_value(
   args,
   "--model",

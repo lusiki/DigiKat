@@ -17,24 +17,24 @@ Ključni pokazatelji ovog izvora u korpusu:
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">6</div>
+<div class="metric-value">4</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">767</div>
+<div class="metric-value">616</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">12.651</div>
+<div class="metric-value">9.469</div>
 <div class="metric-label">Doseg</div>
 </div>
 </div>
 
 ::: {.callout-caution}
-Ovo je **vrlo tanak profil** temeljen na 6 objava. Prikazan je radi potpunosti kataloga, ali rang i tipologiju ne treba tumačiti kao stabilnu procjenu aktera.
+Ovo je **vrlo tanak profil** temeljen na 4 objava. Prikazan je radi potpunosti kataloga, ali rang i tipologiju ne treba tumačiti kao stabilnu procjenu aktera.
 :::
 
-Po volumenu objava, Vesna Rajnović 🌿 je na **13. mjestu** od 19 praćenih izvora na platformi Twitter. Prosječno ostvaruje **128 interakcija po objavi**.
+Po volumenu objava, Vesna Rajnović 🌿 je na **19. mjestu** od 23 praćenih izvora na platformi Twitter. Prosječno ostvaruje **154 interakcija po objavi**.
 
 ## Tipologija
 
@@ -45,14 +45,14 @@ Uređivačka oznaka: **ostalo** *(predloženo — potvrđuje PI)*
 ## Povezano
 
 - [Pregled platforme Twitter](platforma-twitter.html)
-- Srodni akteri: [Dalija Orešković](twitter-dalija-oreskovic.html), [Marin Miletić](twitter-marin-miletic.html), [Dominik Alpeza](twitter-dominik-alpeza.html)
+- Srodni akteri: [Dalija Orešković](twitter-dalija-oreskovic.html), [Dominik Alpeza](twitter-dominik-alpeza.html), [24sata](twitter-24sata.html)
 - [Katalog izvora — sve platforme](index.html)
 
 ## Izvori podataka
 
-Podaci: `data/processed/twitter_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-28).
+Podaci: `data/processed/twitter_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-08-10).
 
 ::: {.callout-warning}
-Brojke su **indikativne**. Agregati obuhvaćaju razdoblje **2021.–2026.** i svih **9** vrsta izvora zastupljenih u korpusu, uključujući Instagram i TikTok; 2026. je nepotpuna godina. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
+Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
 :::
 

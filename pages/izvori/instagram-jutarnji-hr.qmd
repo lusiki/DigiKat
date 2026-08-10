@@ -1,0 +1,57 @@
+---
+title: "jutarnji.hr"
+subtitle: "Instagram · Megafoni"
+date: last-modified
+categories: ["Katalog izvora", "Instagram"]
+---
+
+Ova stranica sažima profil izvora **jutarnji.hr** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+
+## Što je
+
+Jutarnji list — nacionalni dnevni news-portal
+
+## Profil
+
+Ključni pokazatelji ovog izvora u korpusu:
+
+<div class="metric-grid">
+<div class="metric-card">
+<div class="metric-value">6</div>
+<div class="metric-label">Objava</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">898</div>
+<div class="metric-label">Interakcija</div>
+</div>
+<div class="metric-card">
+<div class="metric-value">65.375</div>
+<div class="metric-label">Doseg</div>
+</div>
+</div>
+
+::: {.callout-caution}
+Ovo je **vrlo tanak profil** temeljen na 6 objava. Prikazan je radi potpunosti kataloga, ali rang i tipologiju ne treba tumačiti kao stabilnu procjenu aktera.
+:::
+
+Po volumenu objava, jutarnji.hr je na **6. mjestu** od 20 praćenih izvora na platformi Instagram. Prosječno ostvaruje **150 interakcija po objavi**.
+
+## Tipologija
+
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), jutarnji.hr pripada skupini **Megafoni**: visok doseg uz nizak angažman — sadržaj doseže široku publiku bez intenzivne interakcije.
+
+Uređivačka oznaka: **sekularni izvor** *(predloženo — potvrđuje PI)*
+
+## Povezano
+
+- [Pregled platforme Instagram](platforma-instagram.html)
+- Srodni akteri: [_rina.rs](instagram-rina-rs.html), [ivan.anusic.hr](instagram-ivan-anusic-hr.html), [hrvatskivojnik_magazin](instagram-hrvatskivojnik-magazin.html)
+- [Katalog izvora — sve platforme](index.html)
+
+## Izvori podataka
+
+Podaci: `data/processed/instagram_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-08-10).
+
+::: {.callout-warning}
+Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
+:::

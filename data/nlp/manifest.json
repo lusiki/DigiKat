@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-07-28 10:06:36 UTC",
+  "generated_utc": "2026-08-10 16:35:37 UTC",
   "generator": "R/04_nlp.R",
-  "provenance": "adopted_existing_after_membership_and_alignment_validation",
+  "provenance": "generated",
   "inputs": {
     "master": {
-      "path": "data/merged_comprehensive.rds",
-      "bytes": 1187912384,
-      "modified_utc": "2026-07-28 10:02:38 UTC",
-      "sha256": "dd671e45882e1379418a0844a237f74402856133fd432ec9d42b4a7a1c3f2d35"
+      "path": "data/digikat_corpus.rds",
+      "bytes": 524573828,
+      "modified_utc": "2026-08-10 13:10:19 UTC",
+      "sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a"
     },
     "model": {
       "path": "resources/models/croatian-set-ud-2.5-191206.udpipe",
@@ -37,31 +37,31 @@
   },
   "pages": {
     "mapa_stats": {
-      "sample_rows": 35225,
-      "token_rows": 23842036,
-      "token_documents": 35225,
+      "sample_rows": 20658,
+      "token_rows": 10477761,
+      "token_documents": 20658,
       "date_min": "2021-01-01",
       "date_max": "2026-06-11",
-      "sample_sha256": "138e2c8ea47c1d9bc0c071c0d817882528267a66a0d50e5d32591f3076b81d6b",
-      "tokens_sha256": "b346b29bd0a1d5bab67ee460cbb18fd94f2fcff26d904f94b798a07ec04e437e"
+      "sample_sha256": "951c72d199c2a82dcd7c38fc1b98160f8484905c8ff1bbe854e645c6b009187f",
+      "tokens_sha256": "0c2da2fbc0d5ce072288861bb5f33179a9376b23db04fe49809fb1a9a9185f89"
     },
     "dogadjaji": {
-      "sample_rows": 21126,
-      "token_rows": 14368700,
-      "token_documents": 21126,
+      "sample_rows": 12384,
+      "token_rows": 6402087,
+      "token_documents": 12384,
       "date_min": "2021-01-01",
       "date_max": "2026-06-11",
-      "sample_sha256": "00ed1e4c1f6221525ca76707e0043e73557cae8b4edb6269f67f4d2f86ac6556",
-      "tokens_sha256": "9446054cd37c80869c4c19918aba0954afecdd9cbb3aa1b548a6ad02cdd16ef5"
+      "sample_sha256": "0d79318ed61965ccd3e369d2fed2801451d1061a2d906a89b8d91c1a57b0ee53",
+      "tokens_sha256": "6029037723a003e541ebe0c9921eba84ead81a7c97afe308bb02b8922ed07edc"
     },
     "diskurs": {
-      "sample_rows": 14080,
-      "token_rows": 9476415,
-      "token_documents": 14080,
+      "sample_rows": 8250,
+      "token_rows": 4181342,
+      "token_documents": 8250,
       "date_min": "2021-01-01",
       "date_max": "2026-06-11",
-      "sample_sha256": "9e32f5471f87c6ac66fd3363b51e54a5ddbc62e2cbfc88e71a9af66348921aab",
-      "tokens_sha256": "36867e4531ff7229133a93849d433cfd66ff6faf0aa35b701b7215479c13bb48"
+      "sample_sha256": "d8f1eecdc7b62cd374e36a36852fff1778a45852eb818256a97da2bb246b8c0e",
+      "tokens_sha256": "173e8c054aaf872e7253c72363b433529772086a9305a139e177bd6de0bbfcf2"
     }
   }
 }

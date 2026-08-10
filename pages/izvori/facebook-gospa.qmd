@@ -17,20 +17,20 @@ Ključni pokazatelji ovog izvora u korpusu:
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">873</div>
+<div class="metric-value">857</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">214.302</div>
+<div class="metric-value">209.117</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">11.249.334</div>
+<div class="metric-value">11.019.978</div>
 <div class="metric-label">Doseg</div>
 </div>
 </div>
 
-Po volumenu objava, Gospa je na **10. mjestu** od 19 praćenih izvora na platformi Facebook. Prosječno ostvaruje **245 interakcija po objavi**.
+Po volumenu objava, Gospa je na **9. mjestu** od 19 praćenih izvora na platformi Facebook. Prosječno ostvaruje **244 interakcija po objavi**.
 
 ## Tipologija
 
@@ -41,14 +41,14 @@ Uređivačka oznaka: **konfesionalni izvor** *(predloženo — potvrđuje PI)*
 ## Povezano
 
 - [Pregled platforme Facebook](platforma-facebook.html)
-- Srodni akteri: [Slobodna Dalmacija](facebook-slobodna-dalmacija.html), [RTL Danas](facebook-rtl-danas.html), [VJERA](facebook-vjera.html)
+- Srodni akteri: [VJERA](facebook-vjera.html), [Slobodna Dalmacija](facebook-slobodna-dalmacija.html), [Kraljica Mira](facebook-kraljica-mira.html)
 - [Katalog izvora — sve platforme](index.html)
 
 ## Izvori podataka
 
-Podaci: `data/processed/facebook_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-28).
+Podaci: `data/processed/facebook_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-08-10).
 
 ::: {.callout-warning}
-Brojke su **indikativne**. Agregati obuhvaćaju razdoblje **2021.–2026.** i svih **9** vrsta izvora zastupljenih u korpusu, uključujući Instagram i TikTok; 2026. je nepotpuna godina. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
+Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
 :::
 

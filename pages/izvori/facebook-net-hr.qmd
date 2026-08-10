@@ -1,6 +1,6 @@
 ---
 title: "Net.hr"
-subtitle: "Facebook · Megafoni"
+subtitle: "Facebook · Specijalizirani akteri"
 date: last-modified
 categories: ["Katalog izvora", "Facebook"]
 ---
@@ -17,38 +17,38 @@ Ključni pokazatelji ovog izvora u korpusu:
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">764</div>
+<div class="metric-value">364</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">145.782</div>
+<div class="metric-value">70.732</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">36.039.046</div>
+<div class="metric-value">17.229.204</div>
 <div class="metric-label">Doseg</div>
 </div>
 </div>
 
-Po volumenu objava, Net.hr je na **12. mjestu** od 19 praćenih izvora na platformi Facebook. Prosječno ostvaruje **191 interakcija po objavi**.
+Po volumenu objava, Net.hr je na **15. mjestu** od 19 praćenih izvora na platformi Facebook. Prosječno ostvaruje **194 interakcija po objavi**.
 
 ## Tipologija
 
-Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Net.hr pripada skupini **Megafoni**: visok doseg uz nizak angažman — sadržaj doseže široku publiku bez intenzivne interakcije.
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Net.hr pripada skupini **Specijalizirani akteri**: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.
 
 Uređivačka oznaka: **sekularni izvor** *(predloženo — potvrđuje PI)*
 
 ## Povezano
 
 - [Pregled platforme Facebook](platforma-facebook.html)
-- Srodni akteri: [RTL Danas](facebook-rtl-danas.html), [DNEVNIK.hr](facebook-dnevnik-hr.html), [Gospa](facebook-gospa.html)
+- Srodni akteri: [24sata](facebook-24sata.html), [Index.hr](facebook-index-hr.html), [Večernji list](facebook-vecernji-list.html)
 - [Katalog izvora — sve platforme](index.html)
 
 ## Izvori podataka
 
-Podaci: `data/processed/facebook_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-07-28).
+Podaci: `data/processed/facebook_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-08-10).
 
 ::: {.callout-warning}
-Brojke su **indikativne**. Agregati obuhvaćaju razdoblje **2021.–2026.** i svih **9** vrsta izvora zastupljenih u korpusu, uključujući Instagram i TikTok; 2026. je nepotpuna godina. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
+Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno.
 :::
 

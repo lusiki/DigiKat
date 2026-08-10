@@ -11,6 +11,18 @@ format:
     anchor-sections: false
 ---
 
+```{r}
+#| label: corpus-manifest
+#| include: false
+
+source("../../R/lib/digikat_paths.R")
+agent_mf <- digikat_read_corpus_manifest("../../data/digikat_corpus_manifest.json")
+agent_rows <- formatC(agent_mf$corpus$rows, format = "d", big.mark = ",")
+agent_cols <- agent_mf$corpus$columns
+agent_terms <- agent_mf$rule$terms_count
+agent_threshold <- format(agent_mf$rule$threshold, nsmall = 2, decimal.mark = ".")
+```
+
 ```{=html}
 <p style="font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:#6B6F76;margin:0 0 1.6rem;">
 Language: <strong style="color:#0F4C5C;">English</strong> · <a href="agentski-sloj.html" style="color:#0F4C5C;">← Hrvatska verzija</a>
@@ -229,17 +241,17 @@ Beside its data and analytical layers, DigiKat has a third, less visible layer �
     <ol class="flow">
       <li class="node">
         <div class="disc"><svg class="ic"><use href="#i-inbox"/></svg></div>
-        <div class="colwrap"><b>Collection</b><small>vendor xlsx exports</small></div>
+        <div class="colwrap"><b>Collection</b><small>vendor xlsx → accumulator</small></div>
       </li>
       <li class="link" title="transition under watch"><span class="gate"><svg class="ic"><use href="#i-shield-sm"/></svg></span><span class="arrow"><svg class="ic"><use href="#i-arrow"/></svg></span></li>
       <li class="node">
         <div class="disc"><svg class="ic"><use href="#i-funnel"/></svg></div>
-        <div class="colwrap"><b>Filtering</b><small>≥2 hits of 95 terms</small></div>
+        <div class="colwrap"><b>Filtering</b><small>`r agent_terms` terms + model ≥`r agent_threshold`</small></div>
       </li>
       <li class="link" title="transition under watch"><span class="gate"><svg class="ic"><use href="#i-shield-sm"/></svg></span><span class="arrow"><svg class="ic"><use href="#i-arrow"/></svg></span></li>
       <li class="node">
         <div class="disc"><svg class="ic"><use href="#i-db"/></svg></div>
-        <div class="colwrap"><b>Corpus</b><small>710,307 × 47</small><span class="ag-tag priv">gitignored · backup</span></div>
+        <div class="colwrap"><b>Official corpus</b><small>`r agent_rows` × `r agent_cols`</small><span class="ag-tag priv">gitignored · derived</span></div>
       </li>
       <li class="link" title="transition under watch"><span class="gate"><svg class="ic"><use href="#i-shield-sm"/></svg></span><span class="arrow"><svg class="ic"><use href="#i-arrow"/></svg></span></li>
       <li class="node">
@@ -268,7 +280,7 @@ Beside its data and analytical layers, DigiKat has a third, less visible layer �
         <span class="count">6 rules · self-loading</span>
         <ul class="members">
           <li><span class="m-name">plan-first <span class="who">always</span></span><span class="m-gloss">A plan before every non-trivial change; a hard gate on corpus operations.</span></li>
-          <li><span class="m-name">data-pipeline <span class="who">R · data/</span></span><span class="m-gloss">Protects the corpus and the ≥2 inclusion rule; backup and delta report.</span></li>
+          <li><span class="m-name">data-pipeline <span class="who">R · data/</span></span><span class="m-gloss">Protects the accumulator, the two-stage inclusion rule and the derived corpus; backup and delta report.</span></li>
           <li><span class="m-name">quarto-verification <span class="who">.qmd</span></span><span class="m-gloss">Render before "done"; a render must not change data.</span></li>
           <li><span class="m-name">voice-and-style <span class="who">pages/</span></span><span class="m-gloss">House voice, terminology, number formatting.</span></li>
           <li><span class="m-name">croatian-encoding <span class="who">text</span></span><span class="m-gloss">UTF-8 discipline; č ć ž š đ through the whole chain.</span></li>
@@ -302,7 +314,7 @@ Beside its data and analytical layers, DigiKat has a third, less visible layer �
         <ul class="members">
           <li><span class="m-name">verifier <span class="who">haiku</span></span><span class="m-gloss">Did the render/script actually succeed; did a render touch data.</span></li>
           <li><span class="m-name">numeric-claim <span class="who">sonnet</span></span><span class="m-gloss">Re-derives every published number from the public aggregates.</span></li>
-          <li><span class="m-name">r-reviewer <span class="who">sonnet</span></span><span class="m-gloss">R code: paths, seed, silent row loss, speed on 710k.</span></li>
+          <li><span class="m-name">r-reviewer <span class="who">sonnet</span></span><span class="m-gloss">R code: paths, seed, silent row loss, speed on `r agent_rows` posts.</span></li>
           <li><span class="m-name">croatian-nlp <span class="who">opus</span></span><span class="m-gloss">Encoding, morphology, lexicon joins, sampling.</span></li>
           <li><span class="m-name">religion-media <span class="who">opus</span></span><span class="m-gloss">Constructs, claim↔data, typology, adversarial referee.</span></li>
         </ul>

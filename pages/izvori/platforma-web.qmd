@@ -9,24 +9,22 @@ Ova stranica okuplja praćene izvore na platformi **Web** iz **Kataloga izvora**
 
 | Izvor | Tipologija | Objava | Interakcija | Doseg |
 |---|---|---:|---:|---:|
-| [hkm.hr](web-hkm-hr.html) | Divovi | 56.500 | 3.090.701 | 42.572.040 |
-| [slobodnadalmacija.hr](web-slobodnadalmacija-hr.html) | Divovi | 12.662 | 1.494.818 | 56.200.758 |
-| [laudato.hr](web-laudato-hr.html) | Specijalizirani akteri | 11.979 | 713.352 | 8.906.712 |
-| [vecernji.hr](web-vecernji-hr.html) | Divovi | 10.309 | 1.630.331 | 65.587.791 |
-| [index.hr](web-index-hr.html) | Divovi | 9.698 | 3.389.428 | 139.508.946 |
-| [net.hr](web-net-hr.html) | Megafoni | 9.167 | 793.686 | 46.363.104 |
-| [jutarnji.hr](web-jutarnji-hr.html) | Divovi | 8.977 | 1.638.768 | 81.193.581 |
-| [24sata.hr](web-24sata-hr.html) | Divovi | 7.992 | 1.745.424 | 60.540.834 |
-| [novizivot.net](web-novizivot-net.html) | Divovi | 7.496 | 3.796.197 | 46.764.999 |
-| [tportal.hr](web-tportal-hr.html) | Specijalizirani akteri | 6.340 | 187.988 | 14.293.530 |
-| [narod.hr](web-narod-hr.html) | Specijalizirani akteri | 6.205 | 620.369 | 11.630.487 |
-| [dnevno.hr](web-dnevno-hr.html) | Divovi | 5.752 | 3.289.102 | 64.020.819 |
-| [dnevnik.hr](web-dnevnik-hr.html) | Divovi | 5.551 | 959.448 | 31.137.198 |
-| [bitno.net](web-bitno-net.html) | Specijalizirani akteri | 4.485 | 820.025 | 13.282.569 |
-| [dalmatinskiportal.hr](web-dalmatinskiportal-hr.html) | Specijalizirani akteri | 4.096 | 507.926 | 13.330.926 |
-| [telegram.hr](web-telegram-hr.html) | Graditelji zajednica | 3.535 | 1.204.056 | 24.255.006 |
-| [mnovine.hr](web-mnovine-hr.html) | Specijalizirani akteri | 1.996 | 343.170 | 13.875.030 |
-| [caritas.hr](web-caritas-hr.html) | Specijalizirani akteri | 225 | 580.472 | 9.162.909 |
+| [hkm.hr](web-hkm-hr.html) | Divovi | 55.087 | 2.986.089 | 41.080.542 |
+| [laudato.hr](web-laudato-hr.html) | Specijalizirani akteri | 11.512 | 685.687 | 8.550.486 |
+| [novizivot.net](web-novizivot-net.html) | Divovi | 6.782 | 3.404.252 | 42.241.140 |
+| [slobodnadalmacija.hr](web-slobodnadalmacija-hr.html) | Divovi | 5.949 | 872.923 | 28.694.499 |
+| [index.hr](web-index-hr.html) | Divovi | 4.303 | 2.071.834 | 71.284.584 |
+| [bitno.net](web-bitno-net.html) | Graditelji zajednica | 4.261 | 787.274 | 12.781.494 |
+| [vecernji.hr](web-vecernji-hr.html) | Divovi | 4.098 | 945.747 | 31.588.701 |
+| [narod.hr](web-narod-hr.html) | Specijalizirani akteri | 3.991 | 359.402 | 6.687.228 |
+| [net.hr](web-net-hr.html) | Specijalizirani akteri | 3.879 | 408.042 | 20.720.772 |
+| [dnevno.hr](web-dnevno-hr.html) | Divovi | 3.634 | 2.980.574 | 55.489.845 |
+| [24sata.hr](web-24sata-hr.html) | Divovi | 3.270 | 971.429 | 28.731.111 |
+| [jutarnji.hr](web-jutarnji-hr.html) | Megafoni | 2.828 | 743.462 | 29.739.897 |
+| [dnevnik.hr](web-dnevnik-hr.html) | Specijalizirani akteri | 2.079 | 564.700 | 15.146.586 |
+| [dalmatinskiportal.hr](web-dalmatinskiportal-hr.html) | Specijalizirani akteri | 1.919 | 356.175 | 9.374.376 |
+| [telegram.hr](web-telegram-hr.html) | Specijalizirani akteri | 1.435 | 637.206 | 12.459.948 |
+| [caritas.hr](web-caritas-hr.html) | Specijalizirani akteri | 171 | 447.069 | 7.056.738 |
 
 [Natrag na katalog izvora](index.html) · [Mapa ekosustava](../mapa/mapa.html)
 

@@ -1,6 +1,6 @@
 ---
 title: "Fokus na događaje (2021.–2026.)"
-subtitle: "Kako stvarni događaji oblikuju volumen, konfliktnost i tonalitet digitalnog diskursa kroz vrijeme"
+subtitle: "Dnevna odstupanja volumena, konfliktnog rječnika i tonaliteta u uzorku"
 date: last-modified
 categories: ["Događaji", "Dinamika", "Tonalitet"]
 ---
@@ -39,7 +39,7 @@ library(forcats)
 #| label: data-preparation
 #| include: false
 
-# Teški izračuni nad uzorkom i 14,4 milijuna tokena izvode se jednom skriptom
+# Teški izračuni nad stratificiranim uzorkom izvode se jednom skriptom
 # R/05_page_summaries.R. Stranica čita samo provjerene ulaze za grafikone i tablice.
 source("../../R/lib/page_summaries.R", encoding = "UTF-8")
 digikat_load_page_summary(
@@ -47,31 +47,95 @@ digikat_load_page_summary(
   "dogadjaji",
   envir = environment()
 )
+
+# Grafikoni ove mape crtaju se iz pripremljenih agregata. Provjera prekida render ako oni nisu
+# izgrađeni iz aktualnog službenog korpusa (data/digikat_corpus.rds).
+source("../../R/lib/digikat_paths.R", encoding = "UTF-8")
+mf <- digikat_page_corpus("../..")
+n_objava <- digikat_hr_int(mf$corpus$rows)
+raspon <- paste0(mf$corpus$year_min, ".–", mf$corpus$year_max, ".")
+nlp_mf <- jsonlite::fromJSON("../../data/nlp/manifest.json", simplifyVector = TRUE)
+sample_n <- nlp_mf$pages$dogadjaji$sample_rows
+sample_target <- 100 * nlp_mf$parameters$page_proportions$dogadjaji
+
+fmt_list <- function(x) {
+  x <- unique(as.character(x))
+  if (length(x) == 0) return("")
+  if (length(x) == 1) return(x)
+  paste0(paste(x[-length(x)], collapse = ", "), " i ", x[length(x)])
+}
+
+fmt_hr_date <- function(x) {
+  paste0(as.integer(format(x, "%d")), ". ", as.integer(format(x, "%m")), ". ", format(x, "%Y"), ".")
+}
+
+fmt_pct1 <- function(x) {
+  paste0(format(100 * x, digits = 1, nsmall = 1, decimal.mark = ","), " %")
+}
+
+spike_threshold_z <- 3
+top_volume_dates <- volume_spike_dates |>
+  arrange(desc(z_score_volume)) |>
+  slice_head(n = 3) |>
+  pull(date) |>
+  fmt_hr_date()
+top_cli_dates <- cli_spike_dates |>
+  arrange(desc(z_score_cli)) |>
+  slice_head(n = 3) |>
+  pull(date) |>
+  fmt_hr_date()
+
+event_date_uskrs <- as.Date("2022-04-17")
+easter_peak <- daily_duhovnost_dynamics |>
+  filter(is.finite(duhovnost_share)) |>
+  slice_max(duhovnost_share, n = 1, with_ties = FALSE)
+easter_day <- daily_duhovnost_dynamics |>
+  filter(date == event_date_uskrs) |>
+  slice_head(n = 1)
+easter_peak_n <- spikes_detected_z |>
+  filter(date == easter_peak$date) |>
+  pull(n_articles)
+easter_day_n <- spikes_detected_z |>
+  filter(date == event_date_uskrs) |>
+  pull(n_articles)
+easter_observed_days <- nrow(daily_duhovnost_dynamics)
+easter_sentiment_range <- range(daily_duhovnost_dynamics$avg_sentiment, na.rm = TRUE)
+easter_cli_range <- range(daily_duhovnost_dynamics$avg_cli, na.rm = TRUE)
+
+stepinac_years <- sort(unique(top_associated_words_final$year))
+stepinac_year_text <- fmt_list(stepinac_years)
+stepinac_terms <- top_associated_words_final |>
+  group_by(year) |>
+  slice_max(total_cooccurrences, n = 5, with_ties = FALSE) |>
+  summarise(terms = paste(lemma, collapse = ", "), .groups = "drop") |>
+  mutate(label = paste0(year, ".: ", terms)) |>
+  pull(label) |>
+  paste(collapse = "; ")
 ```
 
 ## Uvod u dinamičku analizu
 
-Nakon što su prethodne faze istraživanja mapirale strukturu [aktera i platformi](mapa.html), identificirale [tematske](mapa_stats.html) kategorije i analizirale [emocionalnu i konfliktnu atmosferu](diskurs.html), ova zadnja analitička mapa — **Fokus na događaje** — prelazi sa statičkog opisa na dinamičko modeliranje. Temeljna promjena perspektive sastoji se u razumijevanju digitalnog diskursa ne kao fiksne strukture, već kao živog ekosustava koji manifestira kompleksne reakcijske obrasce na vanjske podražaje, odnosno stvarne društvene, političke i vjerske događaje.
+Nakon što su prethodne faze mapirale [aktere i platforme](mapa.html), [tematske](mapa_stats.html) kategorije te [emocionalnu i konfliktnu atmosferu](diskurs.html), ova zadnja analitička mapa — **Fokus na događaje** — promatra dnevne promjene u uzorku. Ona označava neuobičajene dane i zatim opisuje dva ograničena slučaja: razdoblje oko Uskrsa 2022. i dostupne godišnje presjeke leksičkog okruženja Alojzija Stepinca.
 
-Ovaj pristup omogućuje odgovor na tri važna pitanja koja nadilaze statičku analizu. Prvo pitanje ispituje mogućnost automatske i pouzdane detekcije trenutaka neuobičajene medijske aktivnosti koja signalizira značajne događaje. Drugo pitanje istražuje manifestiraju li različite vrste događaja prepoznatljive i distinktivne digitalne potpise u terminima volumena, konfliktnosti i tonaliteta diskursa. Treće pitanje analizira kako se dugoročni narativi o specifičnim temama ili ličnostima evolviraju i rekontekstualiziraju kroz vrijeme.
+Prvi postupak ispituje koji dani snažno odstupaju od godišnjeg prosjeka volumena ili konfliktnog rječnika. Drugi prati udio jedne teme, tonalitet i konfliktni rječnik u prozoru oko unaprijed odabranog blagdana. Treći uspoređuje imenice i pridjeve u dokumentima s imenom Stepinca u godinama za koje uzorak daje primjere. Ni jedan od tih postupaka sam ne utvrđuje uzrok odstupanja.
 
-Istraživanje uvodi tri metodološke inovacije. Prva je digitalni seizmograf koji kvantitativno detektira dane ekstremnih odstupanja u medijskoj aktivnosti. Druga je narativni seizmograf koji vizualizira životni ciklus pojedinačnih događaja kroz simultano praćenje volumena, konfliktnosti i tonaliteta. Treća je longitudinalna analiza narativne evolucije koja mjeri ne samo frekvenciju asocijacija već i atmosferski tonalitet tih asocijacija. Analiza se provodi na stratificiranom uzorku od 3 % korpusa (uslojenom po godini i platformi) u razdoblju 2021.–2026.; 2026. je nepotpuna godina, pa vremenske usporedbe uključuju djelomično razdoblje.
+Postupci polaze od `r n_objava` objava, a provode se na `r digikat_hr_int(sample_n)` dokumenata: ciljanom `r format(sample_target, decimal.mark = ",")`-postotnom stratificiranom uzorku po godini i platformi među objavama s više od 100 znakova, bez TikToka. Gustoća konfliktnog rječnika znači broj rječničkih podudaranja na tisuću tokena. Godina 2026. nepotpuna je, a dnevne vrijednosti osjetljive su na mali broj uzorkovanih tekstova.
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">4</div>
-<div class="metric-label">Analitička sloja</div>
+<div class="metric-value">`r digikat_hr_int(sample_n)`</div>
+<div class="metric-label">Dokumenata u uzorku</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">8</div>
-<div class="metric-label">Emocija</div>
+<div class="metric-value">`r nrow(volume_spike_dates)`</div>
+<div class="metric-label">Vrhova volumena</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">3</div>
-<div class="metric-label">Metodološke inovacije</div>
+<div class="metric-value">`r nrow(cli_spike_dates)`</div>
+<div class="metric-label">Vrhova konfliktnog rječnika</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">2021.–2026.</div>
+<div class="metric-value">`r raspon`</div>
 <div class="metric-label">Razdoblje analize</div>
 </div>
 </div>
@@ -79,28 +143,26 @@ Istraživanje uvodi tri metodološke inovacije. Prva je digitalni seizmograf koj
 ::: {.callout-warning}
 ## Promjena metode prikupljanja (oko 2024.) — oprez pri međugodišnjim usporedbama
 
-Korpus objedinjuje dva vremenski odvojena toka prikupljanja (`data_source`): kontinuirani medijski monitoring (pretežno 2021.–2024.) i naknadno religijsko filtriranje (2024.–2026.). Digitalni seizmograf standardizira odstupanja **unutar svake godine**, pa je detekcija dnevnih vrhunaca otporna na tu promjenu; no **usporedbe apsolutnog volumena i frekvencija spominjanja između godina** (primjerice broj spominjanja pojedine ličnosti po godini) miješaju dva različito prikupljena razdoblja. Instagram i TikTok u korpus ulaze tek od 2024. Međugodišnje razlike stoga treba tumačiti oprezno, uvjetovano tokom prikupljanja i platformom.
+Korpus objedinjuje dva toka prikupljanja koji se smjenjuju u srpnju 2024., uz kratko tehničko preklapanje od 1. do 4. srpnja. Dobavljačev zapis od veljače do svibnja 2024. nema tekst, pa u korpusu nema objava iz tih mjeseci. Digitalni seizmograf standardizira odstupanja unutar svake godine, ali to ne čini dva toka jednako prikupljenima niti popunjava prazninu. **Usporedbe apsolutnog volumena i frekvencija između godina** zato ostaju uvjetovane tokom prikupljanja i platformom. Instagram i TikTok u korpus ulaze tek od 2024.
 :::
 
 ---
 
-## Digitalni seizmograf kao instrument detekcije najbitnijih događaja
+## Digitalni seizmograf za označavanje neuobičajenih dana
 
-Za identifikaciju najvažnijih trenutaka u promatranom razdoblju, razvijen je digitalni seizmograf koji reprezentira metodološki pristup detekciji anomalija u vremenskim serijama medijskog diskursa. Seizmograf radi na principu standardiziranog odstupanja, gdje se za svaki dan izračunava Z score, koji mjeri koliko standardnih devijacija vrijednost odstupa od prosjeka unutar godine.
+Digitalni seizmograf jednostavan je postupak detekcije anomalija u dnevnim nizovima. Za svaki dan računa se z-vrijednost, odnosno broj standardnih devijacija kojim dnevna vrijednost odstupa od prosjeka svoje godine. Standardizacija unutar godine umanjuje razliku u razinama između godina, ali ne uklanja promjenu obuhvata prikupljanja ni nestabilnost dana s malo tekstova.
 
-Detektiraju se dva tipa anomalija. Prvi tip su vrhunci volumena produkcije, definirani kao dani kada je broj objava nadmašio prag od 99. percentila standardizirane distribucije. Drugi tip su vrhunci intenziteta konflikta, definirani kao dani kada je prosječna razina konfliktnog jezika premašila isti prag. Kombinacijom ova dva kriterija, seizmograf identificira trenutke kada diskurs nije samo intenzivniji, već i kvalitativno drugačiji od uobičajene medijske proizvodnje.
+Označavaju se dva tipa anomalija. Vrh volumena dan je s brojem objava većim od godišnjeg prosjeka za više od `r spike_threshold_z` standardne devijacije. Vrh konfliktnog rječnika primjenjuje isti prag na dnevni prosjek te mjere. Prag nije 99. percentil i dva se kriterija čitaju odvojeno: velik volumen ne znači nužno visok konfliktni rječnik.
 
 ```{r}
 #| label: standardized-anomaly-detection
 
-spike_threshold_z <- 3
-
 # Vizualizacija standardiziranih vrijednosti
 p_volume_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_volume)) +
   geom_line(color = dk_col$faint) +
-  geom_point(data = filter(spikes_detected_z, is_volume_spike), color = dk_col$alert, size = 4) +
+  geom_point(data = filter(spikes_detected_z, is_volume_spike), color = dk_col$alert, size = 5) +
   geom_hline(yintercept = spike_threshold_z, linetype = "dashed", color = dk_col$alert) +
-  theme_digikat(base_size = 16) +
+  theme_digikat(base_size = 24) +
   labs(
     title = "Anomalije u volumenu objava (Standardizirano odstupanje)",
     y = "Odstupanje od godišnjeg prosjeka (u standardnim devijacijama)",
@@ -109,11 +171,11 @@ p_volume_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_volume)) +
 
 p_cli_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_cli)) +
   geom_line(color = dk_col$faint) +
-  geom_point(data = filter(spikes_detected_z, is_cli_spike), color = dk_col$alert, size = 4) +
+  geom_point(data = filter(spikes_detected_z, is_cli_spike), color = dk_col$alert, size = 5) +
   geom_hline(yintercept = spike_threshold_z, linetype = "dashed", color = dk_col$alert) +
-  theme_digikat(base_size = 16) +
+  theme_digikat(base_size = 24) +
   labs(
-    title = "Anomalije u intenzitetu konflikta (Standardizirano odstupanje)",
+    title = "Anomalije u gustoći konfliktnog rječnika (standardizirano odstupanje)",
     y = "Odstupanje od godišnjeg prosjeka (u standardnim devijacijama)",
     x = "Datum"
   )
@@ -125,10 +187,10 @@ p_cli_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_cli)) +
 knitr::kable(volume_spike_dates, caption = "Rangiranje datuma prema Z scoreu volumena objava.")
 ```
 
-### Dani ekstremnog intenziteta konfliktnog diskursa
+### Dani ekstremne gustoće konfliktnog rječnika
 
 ```{r}
-knitr::kable(cli_spike_dates, caption = "Rangiranje datuma prema Z scoreu intenziteta konflikta.")
+knitr::kable(cli_spike_dates, caption = "Rangiranje datuma prema z-vrijednosti gustoće konfliktnog rječnika.")
 ```
 
 ```{r}
@@ -143,21 +205,17 @@ p_volume_z
 p_cli_z
 ```
 
-**Interpretacija rezultata detekcije**
+Crvene točke označavaju `r nrow(volume_spike_dates)` dana s vrhom volumena i `r nrow(cli_spike_dates)` dana s vrhom konfliktnog rječnika. Tri najveća odstupanja volumena padaju na `r fmt_list(top_volume_dates)`, a tri najveća odstupanja konfliktnog rječnika na `r fmt_list(top_cli_dates)`. Tablice daju potpune popise i veličinu odstupanja.
 
-Crvene točke na vizualizacijama označavaju trenutke koji su uzburkali digitalni prostor, manifestirajući odstupanja od tri ili više standardnih devijacija od prosječne razine aktivnosti. Ove anomalije nisu stohastičke fluktuacije, već sustavno odgovaraju važnim društvenim, političkim i vjerskim događajima.
-
-Validacija putem mapiranja detektiranih vrhova na poznate događaje pokazuje visoku preciznost algoritma. Detektirani dani gotovo savršeno koincidiraju s događajima poput Hoda za život, Pride povorke, parlamentarnih izbora, važnih obljetnica i velikih liturgijskih blagdana. Ovo potvrđuje da digitalni seizmograf uspješno identificira trenutke od najvećeg društvenog i medijskog značaja.
-
-Ovi vrhunci nisu arbitrarni statistički artefakti. Oni odražavaju dublje društvene dinamike. Specifično, oni označavaju trenutke kada se katolička tematika aktivno suočava s pitanjima identiteta, vrijednosti i političke pozicije. Detektirane anomalije posebno su izražene oko blagdana i obljetnica, gdje medijski odjeci jačaju osjećaj zajedništva među vjernicima. Primjerice, masovno medijsko pokrivanje Uskrsa u hrvatskim medijima ne reprezentira samo novinarsku praksu, već i kolektivni ritual afirmacije zajedničkih vrijednosti i tradicija koji nadilazi pojedinačne medijske narative i postaje trenutak simboličke kohezije vjerničke zajednice.
+To su statističke zastavice, a ne automatski prepoznati događaji. Za tvrdnju o preciznosti trebalo bi unaprijed definirati neovisan popis događaja te izračunati koliko je označenih i neoznačenih dana pravilno klasificirano. Takva validacija ovdje nije provedena. Povezivanje pojedinog vrha s blagdanom, izborima ili drugim događajem zato zahtijeva naknadnu provjeru sadržaja objava toga dana.
 
 ---
 
-## Narativni seizmograf liturgijskog događaja (Uskrs 2022)
+## Tematski prozor oko Uskrsa 2022.
 
-Kako bi se istražile distinktivne digitalne potpise različitih tipova događaja, analiza se sada usmjerava na Uskrs 2022. godine, koji je slavljen 17. travnja. Za razliku od društveno-politički kontroverznih događaja, Uskrs predstavlja primarno liturgijski i duhovni događaj, što se očekuje manifestirati kroz specifične obrasce u digitalnom diskursu.
+Kao unaprijed odabrana studija slučaja uzima se Uskrs 2022., slavljen 17. travnja. Kalendarski prozor obuhvaća 29 dana, ali uzorak sadrži podatke za `r easter_observed_days` dana. Analiza ne uspoređuje Uskrs sa zasebnim uzorkom političkih ili drugih događaja.
 
-Narativni seizmograf konfiguriran je za praćenje tematske kategorije Duhovnost i liturgija kroz temporalni prozor od 14 dana prije i poslije događaja. Vizualizacija integrira tri dimenzije. Linija predstavlja udio ove teme u ukupnom dnevnom diskursu. Veličina točke predstavlja intenzitet konfliktnog jezika. Boja točke predstavlja prosječni tonalitet.
+Prikaz prati tematsku kategoriju Duhovnost i liturgija u prozoru od 14 dana prije i poslije blagdana. Linija predstavlja udio ove teme u ukupnom dnevnom uzorku. Veličina točke predstavlja prosječnu gustoću konfliktnog rječnika, a boja prosječni leksički tonalitet.
 
 ```{r}
 #| label: event-seismograph-uskrs
@@ -165,42 +223,34 @@ Narativni seizmograf konfiguriran je za praćenje tematske kategorije Duhovnost 
 #| fig-width: 14
 #| message: false
 
-event_date_uskrs <- as.Date("2022-04-17")
-
 ggplot(daily_duhovnost_dynamics, aes(x = date, y = duhovnost_share)) +
   geom_line(color = dk_col$faint, linewidth=1.2) +
   geom_point(aes(size = avg_cli, color = avg_sentiment)) +
   geom_vline(xintercept = event_date_uskrs, linetype = "dashed", color = dk_col$ink, linewidth=1) +
   scale_y_continuous(labels = percent_format(decimal.mark = ",")) +
   scale_color_digikat_diverging(name="Prosječni tonalitet") +
-  scale_size_continuous(range = c(3, 14), name="Intenzitet konflikta") +
-  theme_digikat(base_size = 16) +
+  scale_size_continuous(range = c(3, 14), name="Gustoća konfliktnog rječnika") +
+  theme_digikat(base_size = 24) +
   labs(
-    title = "Narativni seizmograf liturgijskog događaja Uskrs 2022",
-    subtitle = "Linija predstavlja udio teme | Veličina točke predstavlja konfliktnost | Boja točke predstavlja tonalitet",
+    title = "Tematski prozor oko Uskrsa 2022.",
+    subtitle = "Linija = udio teme | Veličina točke = konfliktni rječnik | Boja točke = leksički tonalitet",
     x = "Datum", y = "Udio teme Duhovnost i Liturgija u dnevnom diskursu"
   )
 ```
 
-### Anatomija pozitivno valentnog, nekonfliktnog događaja
+### Opis prozora oko Uskrsa 2022.
 
-Seizmograf za Uskrs manifestira fundamentalno drugačiji obrazac od očekivanih obrazaca društveno-politički kontroverznih događaja, potvrđujući postojanje distinktivnih digitalnih potpisa različitih tipova događaja.
+Udio teme **Duhovnost i liturgija** najveći je `r fmt_hr_date(easter_peak$date)` i tada iznosi `r fmt_pct1(easter_peak$duhovnost_share)`, ali nazivnik su samo `r easter_peak_n` uzorkovana dokumenta. Na sam Uskrs iznosi `r fmt_pct1(easter_day$duhovnost_share)` među `r easter_day_n` dokumenta. Prosječni leksički tonalitet tijekom prozora kreće se od `r format(easter_sentiment_range[1], digits = 2, decimal.mark = ",")` do `r format(easter_sentiment_range[2], digits = 2, decimal.mark = ",")`, a prosječna gustoća konfliktnog rječnika od `r format(easter_cli_range[1], digits = 2, decimal.mark = ",")` do `r format(easter_cli_range[2], digits = 2, decimal.mark = ",")`.
 
-**Temporalna koncentracija medijske pažnje.** Za razliku od očekivanih višestrukih valova karakterističnih za kontroverzne događaje, medijska pažnja za Uskrs je izrazito fokusirana na sam dan blagdana i neposredno prethodne dane Velikog Tjedna. Udio teme Duhovnost i liturgija doseže svoj apsolutni vrhunac točno na dan Uskrsa, manifestirajući oštar i jednoznačan signal bez prethodnih ili naknadnih valova.
-
-**Gotovo potpuno odsustvo konfliktnosti.** Najvažniji nalaz je konstantno mala veličina točaka kroz cijelo promatrano razdoblje. Ovo predstavlja kvantitativni dokaz da je diskurs o Uskrsu gotovo u potpunosti lišen konfliktnog i polemičkog vokabulara, što ga fundamentalno razlikuje od diskursa o bioetičkim ili političkim temama.
-
-**Dominacija pozitivnog tonaliteta.** Sve točke na seizmografu manifestiraju izrazito plavu nijansu, što upućuje na visoko pozitivan tonalitet karakterističan za medijsko izvještavanje. Diskurs je afirmativan, fokusiran na poruke nade, mira i duhovne obnove.
-
-Pozitivan tonalitet koji karakterizira Uskrs evocira toplinu tradicije u kontekstu konkretnih društvenih praksi. Medijski narativi o obiteljskim okupljanjima, crkvenim slavljima i zajedničkim ritualima ne reprezentiraju samo izvještavanje o događaju, već aktiviraju kolektivnu memoriju i emocionalni rezonans povezan s tradicijom. Nizak intenzitet konflikta omogućuje fokus na poruke nade i duhovne obnove, kreirajući diskursni prostor u kojem dominiraju afirmativni i zajedničarski narativi umjesto polemičkih i konfrontacijskih.
+Grafikon tako pokazuje kada se tema u uzorku pojačava i kako se dvije leksičke mjere kreću oko datuma blagdana. Ne pokazuje medijsku pažnju cijele populacije objava, osjećaje publike ni “potpis” svih liturgijskih događaja. Za takvu generalizaciju trebalo bi analizirati više unaprijed odabranih liturgijskih i neliturgijskih događaja istim postupkom.
 
 ---
 
-## Usporedba dostupnih godišnjih narativa o blaženom Alojziju Stepincu
+## Usporedba dostupnih godišnjih leksičkih okruženja Alojzija Stepinca
 
-Umjesto analize pojedinačnih događaja, zadnji dio ove mape uspoređuje dostupne godišnje presjeke jednog dugotrajnog i složenog narativa. Analiza prati blaženog Alojzija Stepinca, ličnost koja zauzima posebno složenu poziciju u hrvatskom društvu te istodobno predstavlja vjersku pobožnost, nacionalni identitet i povijesnu kontroverzu.
+Zadnji dio mape uspoređuje dostupne godišnje presjeke imenica i pridjeva u dokumentima koji sadržavaju lematiziranu formu *Stepinac*. Grafikon ne mjeri neposrednu blizinu riječi, ne klasificira stav prema Stepincu niti rekonstruira cjelovite narative.
 
-Metodologija identificira riječi najsnažnije povezane s lematiziranom formom Stepinac i mjeri prosječni tonalitet tekstova u kojima se te kombinacije pojavljuju. Nakon filtriranja 3-postotnog uzorka dovoljno je primjera ostalo samo za 2023. i 2025. godinu. Grafikon je zato usporedba dvaju dostupnih presjeka, a ne potpuna longitudinalna serija.
+Metodologija broji imenice i pridjeve u dokumentima s lematiziranom formom *Stepinac* i mjeri prosječni tonalitet tih dokumenata. Uzorak daje presjeke za godine `r stepinac_year_text`. Grafikon je zato usporedba dostupnih presjeka, a ne potpuna longitudinalna serija.
 
 ```{r}
 #| label: narrative-biography-robust
@@ -210,39 +260,23 @@ Metodologija identificira riječi najsnažnije povezane s lematiziranom formom S
 ggplot(top_associated_words_final, aes(x = total_cooccurrences, y = reorder_within(lemma, total_cooccurrences, year), fill = avg_sentiment)) +
   geom_col() +
   scale_y_reordered() +
-  scale_fill_digikat_diverging(name="Prosječni tonalitet\nnarativnog okvira") +
+  scale_fill_digikat_diverging(name="Prosječni leksički\ntonalitet tekstova") +
   facet_wrap(~ year, scales = "free_y") +
-  theme_digikat(base_size = 14) +
-  theme(strip.text = element_text(face = "bold", size = 14)) +
+  theme_digikat(base_size = 24) +
+  theme(strip.text = element_text(face = "bold", size = 18)) +
   labs(
-    title = "Dostupni godišnji narativi o blaženom Alojziju Stepincu",
-    subtitle = "Usporedba 2023. i 2025.; boja stupca prikazuje tonalitet narativnog okvira",
-    x = "Frekvencija zajedničkih pojavljivanja s lematiziranom formom Stepinac", y = "Asocirana leksička jedinica"
+    title = "Dostupna godišnja leksička okruženja Alojzija Stepinca",
+    subtitle = paste0("Dostupne godine: ", stepinac_year_text, "; boja stupca prikazuje prosječni tonalitet tekstova"),
+    x = "Broj pojavljivanja u dokumentima s lematiziranom formom Stepinac", y = "Leksička jedinica"
   )
 ```
 
 **Interpretacija dostupnih godišnjih presjeka**
 
-Vizualizacija pokazuje da je tonalitet u oba dostupna presjeka pretežno pozitivan, dok se leksički kontekst razlikuje. Zbog malog broja promatranih godina razlike se čitaju opisno i ne predstavljaju dokaz stabilnog vremenskog trenda.
-
-U presjeku za 2023. među istaknutim se izrazima pojavljuju *molitva*, *alojzija*, *blažen*, *krunica* i *devetnica*, uz pojmove poput *rat* i *lažan*. To upućuje na preplet pobožnog, povijesnog i polemičkog okvira unutar iste godine.
-
-U presjeku za 2025. dominiraju *alojzija*, *dan*, *televizija*, *prijatelj*, *devetnica* i *crkva*, zajedno s oznakama `#stepinac` i `#izdvojiti`. Ova kombinacija pokazuje pobožni i komemorativni okvir koji se istodobno prilagođava televizijskim i društvenomrežnim formatima.
-
-Usporedba potvrđuje da se isti povijesni i vjerski akter može pojaviti u različitim leksičkim okruženjima. Ipak, uz samo dva dostupna godišnja presjeka nije moguće pouzdano utvrditi smjer ni kontinuitet promjene. Za punu longitudinalnu analizu potreban je veći namjenski uzorak objava o Stepincu.
+Pet najučestalijih prikazanih riječi u dokumentima po dostupnoj godini jesu: `r stepinac_terms`. Razlike se čitaju opisno. Promjena riječi između presjeka nije sama po sebi promjena “narativa”, a bez potpunijeg namjenskog uzorka nije moguće pouzdano utvrditi smjer ni kontinuitet promjene.
 
 ## Sinteza nalaza
 
-Dinamička analiza utjecaja stvarnih događaja na digitalni diskurs razotkriva kako medijski prostor katoličke tematike funkcionira kao reaktivni ekosustav s prepoznatljivim obrascima odgovora na različite tipove vanjskih podražaja. Istraživanje je kvantitativno dokumentiralo mehanizme putem kojih se digitalni diskurs transformira u odgovoru na društvene, političke i vjerske događaje.
+Ova mapa daje tri ograničena rezultata. Dnevni postupak označio je `r nrow(volume_spike_dates)` vrhova volumena i `r nrow(cli_spike_dates)` vrhova konfliktnog rječnika, ali njihov događajni sadržaj tek treba ručno validirati. Prozor oko Uskrsa opisuje kretanje teme Duhovnost i liturgija te leksičkih mjera u jednom slučaju, bez usporedne skupine drugih događaja. Presjeci o Stepincu pokazuju dostupna leksička okruženja, ali ne čine kontinuiranu vremensku seriju.
 
-Tri nalaza izdvajaju se za razumijevanje diskursne dinamike:
-
-**Validacija automatske detekcije kritičnih događaja.** Digitalni seizmograf demonstrirao je visoku preciznost u identifikaciji trenutaka neuobičajene medijske aktivnosti. Detektirani vrhunci medijske produkcije i intenziteta konflikta sustavno koincidiraju s poznatim važnim događajima, potvrđujući da su ekstremna odstupanja u diskursnim parametrima pouzdani indikatori društveno značajnih trenutaka. Ova metodološka validacija otvara mogućnost operacionalizacije automatiziranih sustava praćenja koji mogu u stvarnom vremenu signalizirati pojavu značajnih događaja.
-
-**Postojanje distinktivnih digitalnih potpisa različitih tipova događaja.** Komparativna analiza Uskrsa i drugih događaja dokumentirala je kako različiti tipovi događaja generiraju fundamentalno različite diskursne obrasce. Liturgijski događaji, reprezentativni u Uskrsu, manifestiraju temporalnu koncentraciju pažnje, izrazito pozitivan tonalitet i gotovo potpuno odsustvo konfliktnog diskursa. Nasuprot tome, društveno-politički događaji generiraju kompleksnije temporalne obrasce s višestrukim valovima, višu konfliktnost i polariziranije narativne strukture. Ovo potvrđuje da digitalni prostor ne reagira uniformno na sve vanjske podražaje, već manifestira specifične odgovore ovisno o prirodi događaja.
-
-**Indikativna razlika između godišnjih presjeka.** Usporedba dostupnih objava o blaženom Alojziju Stepincu pokazuje različita leksička okruženja u 2023. i 2025., ali veličina uzorka ne dopušta zaključak o kontinuiranoj temporalnoj evoluciji. Nalaz služi kao polazište za buduću namjensku longitudinalnu analizu.
-
-Ovi nalazi otvaraju mogućnost razvoja naprednih sustava praćenja koji nadilaze statičku analizu. Potencijalna aplikacija obuhvaća prediktivno modeliranje koje može anticipirati kada će se određene teme aktivirati u javnoj raspravi i kroz koje će okvire biti artikulirane. Takvi sustavi pružali bi vrijedne uvide za optimalizaciju komunikacijskih strategija, razumijevanje mehanizama oblikovanja javnog mnijenja i anticipaciju diskursnih transformacija.
-
-Buduće faze istraživanja trebale bi se usmjeriti na razradu prediktivnih modela koji integriraju temporalne, tematske i atmosferske dimenzije diskursa, omogućujući ne samo reaktivno praćenje već i proaktivno predviđanje diskursnih trendova. Krajnji cilj ostaje razvoj dinamičkog digitalnog opservatorija koji omogućuje kontinuirano praćenje i analizu medijskog prostora katoličke tematike u stvarnom vremenu, pružajući tako instrumentarij za dublje razumijevanje ovih kompleksnih društvenih procesa.
+Sljedeći korak za ozbiljan događajni model bio bi unaprijed registriran popis događaja, odvojeni skup za provjeru, minimalan broj tekstova po danu i procjena preciznosti i odziva. Tek bi takav dizajn omogućio tvrdnje o pouzdanom automatskom prepoznavanju ili predviđanju događaja.
