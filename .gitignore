@@ -77,6 +77,11 @@ studies/*/output/*.rds
 studies/*/output/**/*.rds
 studies/*/output/private/
 studies/*/output/intermediate/
+# Editions own a directory (output/<year>/), so the guard has to match private/ and intermediate/ at
+# ANY depth under output/. Without these two lines the per-edition layout silently exposes every
+# row-level artifact: named sources, the actor panel and the populated manuscript.
+studies/*/output/**/private/
+studies/*/output/**/intermediate/
 
 # Semantic exploration products are generated, local, and may contain sampled
 # post text or embeddings. Keep scripts/README tracked; keep their outputs out.

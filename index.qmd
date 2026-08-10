@@ -72,6 +72,10 @@ chips <- paste0(
     <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 38px;">
       <a href="pages/baza.html" style="display: inline-flex; align-items: center; gap: 8px; background: #0f4c5c; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 6px;">Istraži podatke</a>
       <a href="pages/mapa/index.html" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #14181d; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 6px; border: 1px solid #cfccc2;">Mapa medijskog prostora</a>
+      <a href="assets/izvjestaji/godisnji-pregled-2025.html" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #14181d; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 6px; border: 1px solid #cfccc2;">Godišnji pregled 2025.</a>
+    </div>
+    <div style="margin-top: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6b6f76;">
+      Godišnji pregled dostupan je i za <a href="assets/izvjestaji/godisnji-pregled-2025.pdf" style="color: #0f4c5c;">preuzimanje i ispis (PDF)</a>.
     </div>
   </div>
 </section>

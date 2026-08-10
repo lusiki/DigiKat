@@ -265,3 +265,115 @@
 - [LEARN] Study rows with URLs, titles, source identities, or text excerpts belong in ignored
   `output/private/`, enforced by `R/check_disclosure.R` and CI.
 - [LEARN] Historical workflow proposals moved to `archive/roadmaps/`; they are not operational guidance.
+
+## Annual report, edition 1 — 2025 (2026-08-10)
+
+- [LEARN] **1–14 September 2025 carries no data at all.** Fourteen consecutive days with zero posts on
+  every platform. It is absent from the ACCUMULATOR too (checked in `data/rebuild/post2024_decisions_v4.rds`,
+  which lists every row considered), so it is a collection outage, not a corpus-rule artefact. Any 2025
+  analysis must: exclude those days from averages and z-score baselines; drop the same calendar days
+  from BOTH sides of any period comparison; and never draw them as zeros. Leaving them in moved the
+  within-stream web half-year change from +11,5 % to +2,3 % — the uncorrected figure compared 170
+  collected days against 184. The year's total, 124 346, is an undercount of roughly 3 948 posts
+  (fourteen days at the 282-post median of the surrounding four weeks).
+- [LEARN] The corpus rebuild (2026-08-10) silently invalidated Izvještaj 0: its headline "236 166 posts
+  in 2025" is the ACCUMULATOR's 2025 row count; the corpus has **124 346**. Any study pinned to
+  `data/processed/` inherits whichever dataset those aggregates were last built from — check
+  `data/processed/manifest.json`'s `input.sha256` against the corpus manifest before quoting anything.
+- [LEARN] `data/nlp/` was rebuilt FROM THE CORPUS on 2026-08-10 16:35 UTC (`manifest.json` now names
+  `data/digikat_corpus.rds`; the previous generation is at `data/private/nlp-backups/20260810_163539/`).
+  The sample shrank from 35 225 to 20 658 theme documents. `data/page-ready/` was rebuilt two minutes
+  later (16:37 UTC) from that same generation, so the whole NLP chain is now corpus-native. The swap also
+  DELETED the tracked `data/nlp/.gitkeep`, because `R/04_nlp.R` installs by renaming its staging
+  directory over the production one — `git status` shows it as a deletion after every NLP build.
+- [LEARN] The rebuild landed MID-SESSION, between two runs of the same script, and moved every theme and
+  tone figure (leading category 33,8 % → 33,6 %, tone 0,614 → 0,612). `R/04_nlp.R --build` stages into
+  `data/.nlp-stage-<pid>` and swaps by renaming the DIRECTORY, so the files keep their staging mtimes and
+  only the directory's own timestamp shows when production actually changed. Before quoting NLP numbers,
+  hash `data/nlp/manifest.json` and confirm it is stable.
+- [LEARN] When an NLP sample predates the corpus, matching its documents to the corpus on `URL` and
+  dropping non-members is a valid cheap fix: membership resolved for every row, and the surviving 2025
+  share (52,9 %) reproduced the corpus's own 2025 keep rate (52,7 %), leaving a random sample of the
+  corpus within each stratum. Keep that filter in the pipeline even once it is a no-op — it is what stops
+  an old generation from silently mixing two populations.
+- [LEARN] Events are better measured on the FULL corpus than on the 3 % sample: daily counts come free,
+  the calendar is complete, and the peak stops being "sample volume". 2025's peaks are 21 April
+  (2 825 posts, 12,0 sd — death of Pope Francis), 26 April (funeral), 15 August and 25 December. No
+  peak in the year comes from a dispute.
+- [LEARN] `showtext` rasterises text at a FIXED dpi set once. `R/theme_digikat.R` sets it to the site's
+  200; a script saving at `dpi = 300` gets labels a third too small unless it calls
+  `showtext::showtext_opts(dpi = 300)` after sourcing the theme.
+- [LEARN] U+2009 THIN SPACE is missing from IBM Plex Mono and renders as a tofu box in every figure axis
+  and value label. Use U+00A0 NO-BREAK SPACE as the thousands separator instead — it renders everywhere
+  and cannot break a number across a line. Same for the space before `%`. U+27F6 (⟶) is also missing;
+  U+2192 (→) is fine.
+- [LEARN] This machine has TWO Quartos: 1.9.38 in `C:\Program Files\Quarto` and an older per-user 1.6.43
+  that wins on PATH. `Sys.which("quarto")` therefore picks the old one, whose bundled Typst 0.11 cannot
+  compile a modern template. Resolve the Program Files path first and assert the version.
+- [LEARN] Quarto's Typst partial order is `definitions.typ` → `typst-template.typ` → `page.typ` →
+  `typst-show.typ`, so redefining `#let callout(...)` inside `typst-template.typ` restyles every callout
+  without copying Quarto's 256-line definitions file. Extra cover metadata needs a patched
+  `typst-show.typ` as well, plus tolerant `..rest` parameters on `article()` so an older Quarto that
+  passes `paper:` through the call does not error.
+
+## Annual report typesetting (2026-08-10)
+
+- [LEARN] Pandoc's Typst writer DROPS a fenced div's class: `::: {.source-note}` arrives as an
+  anonymous `#block[...]` that no show rule can reach, so it prints at full body size in the PDF while
+  looking correct in HTML. Only elements with their own Typst type survive. The two used here are a
+  **level-4 heading** (every figure and table title) and a **block quote** (every source note) — both
+  stylable by one show rule per format, which is what makes a figure title and a table title
+  identical objects in both outputs.
+- [LEARN] Do not bake titles, subtitles or captions into figure PNGs. Rasterised at 300 dpi in R's
+  font they can never match the page, they clip silently when the face is wider than expected, and
+  they are not selectable or searchable in the PDF. `03_report_assets.R` registers each figure's words
+  with `register_fig()` and emits them as a markdown fragment; the plot carries marks only.
+- [LEARN] Quarto's Typst partial order is `definitions.typ` → `typst-template.typ` → `page.typ` →
+  `typst-show.typ`. Redefining `#let callout(...)` in the template restyles every callout, but the
+  callout TYPE never reaches the function — only Quarto's per-type `icon_color` does. Reading red or
+  green off `icon_color.rgb().components()` is what lets one function render two box species.
+- [LEARN] `breakable: false` on a callout trades one defect for a worse one: it stops a stranded title
+  but pushes any box that does not fit onto a page of its own, leaving the previous page nine tenths
+  empty. `breakable: true` plus `block(sticky: true)` on the title solves both. Same trade applies to
+  tables — keep them breakable, Typst repeats the header row.
+- [LEARN] Palatino Linotype carries old-style figures, and `set text(number-type: "old-style")` in the
+  body with `"lining"` + `number-width: "tabular"` inside tables is the pairing that works: text
+  figures sit inside a sentence, tabular lining figures make a numeric column form a straight edge.
+- [LEARN] `theme_digikat()` sets `panel.grid.major` EXPLICITLY, so `theme_void()`-style clearing of the
+  parent `panel.grid` does not remove it — a "void" figure still draws gridlines. Blank
+  `panel.grid.major` and `panel.grid.minor` by name.
+
+## Annual report, edition 2 — 2024 back-edition (2026-08-10)
+
+- [LEARN] **2024 is not a complete year in the corpus.** 56 923 posts on **207 collected days of 366**,
+  with two interruptions: **9 January – 31 May** (144 days) and **16 – 30 September** (15 days). The
+  first contains **Easter, 31 March 2024** — the year's largest Catholic event is simply absent. The
+  annual total is a lower bound, never an estimate of the year, and both surviving attention arcs are
+  fixed feasts (Christmas 1 050 posts at 7,2 sd; Assumption 806 at 4,9 sd). No peak comes from a dispute.
+- [LEARN] The 2024 collection seam falls MID-YEAR, so the year splits into 6 710 posts on 38 collected
+  days (`pre2024`) and 50 213 on 169 days (`post2024`). Consequence: **2024 has no instrument-comparable
+  predecessor at all** — H2 2023 is on the far side of the seam, so edition 1's H2-vs-H2 comparison has
+  no 2024 counterpart. Do not manufacture one.
+- [LEARN] When a period comparison has unequal collected days, publish it as a RATE (posts per collected
+  day), not a count. 2024's Q3 loses fifteen days to the September interruption; the raw count would have
+  printed a real rise as a fall. `AR_STREAM_MODE` in `report_lib.R` derives which shape is available from
+  the corpus manifest's era spans and stage 01 emits the same columns either way.
+- [LEARN] A within-year quarter step carries the liturgical calendar inside it. Q3 → Q4 spans Advent and
+  Christmas, so it is reported in the chapter body and NOT promoted to a headline finding; 2024's tenth
+  summary finding is the collected-day count instead. Say the confound in the prose, the caption AND the
+  table note — a reader meets whichever one they reach first.
+- [LEARN] The annual-report chain is parameterised by `AR_YEAR` (default 2025), NOT forked per edition.
+  Each edition owns `studies/annual-report/output/<year>/`. Calendar length is computed (2024 has 366
+  days — the old hard-wired `365L` assertion would have failed), event names come from a date-keyed
+  registry rather than a positional vector, and each edition owns a `REPORT_TEMPLATE_<year>.qmd`. After
+  the refactor edition 1 was re-run and reproduces byte for byte: every aggregate, all 55 scalars and
+  both summaries identical.
+- [LEARN] The special chapter ROTATES by charter rule, so its study, registry path and quoted keys live
+  in `AR_SPECIAL_CHAPTERS`. Edition 2 uses `inflation-salience` (2021–2024 window, repricing peaks in
+  2024). Its scalars come from the ACCUMULATOR, not the corpus, and its registry writes human-formatted
+  values like "1 505" — parse with `ar_parse_value()` before any arithmetic, and say in the table note
+  that the denominators do not match the rest of the report.
+- [LEARN] `"\bcijen"` in R is a BACKSPACE followed by "cijen", not a word boundary — `05_report_checks.R`'s
+  "no pricing anywhere" guard has never actually matched anything. Escape it `"\b"` in a regex string.
+  Fixing it is not free: the 2024 edition legitimately discusses *cijene crkvenih usluga* as its special
+  chapter's subject, so the guard needs scoping to the sales sections, which is a PI decision.

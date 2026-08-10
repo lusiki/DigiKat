@@ -1,0 +1,10 @@
+- Zabilježili smo **56 923 objava** o katoličkim temama u 2024. godini.
+- Web je i dalje glavno mjesto rasprave i nosi **66,0 %** godišnjeg volumena.
+- Objave dolaze iz **3 398 različitih izvora**, što je vrlo raspršen prostor.
+- Ipak, samo **43 izvora** čini polovicu cjelogodišnjeg volumena.
+- Godinu vodi duhovnost i liturgija: vodeća je tema u **51,4 % objava** u tematskom uzorku.
+- Zlostavljanje i kriza povjerenja čine **1,0 %** svih tematskih spominjanja.
+- Najjači dan godine bio je Božić, s **1 050 objava**.
+- Pretežno pozitivan rječnik koristi **92,7 % objava** u tonskom uzorku.
+- Sekularni izvori nose **1,30×** više riječi sukoba od konfesionalnih.
+- Podatke smo bilježili **207 dana**; ostatak kalendara nema prikupljanja, pa ni Uskrsa nema u podacima.

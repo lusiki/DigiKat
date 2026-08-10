@@ -89,6 +89,7 @@ R + the restricted datasets live on the PI's pipeline machine, NOT necessarily t
 - `voice-and-style.md` — house voice/style for all reader-visible site content (`pages/**/*.qmd`, `_quarto.yml`).
 - `croatian-encoding.md` — Croatian text (R, qmd, lexicons).
 - `exploration-folder-protocol.md` — `explorations/**` (sandbox rules).
+- `annual-report-writing.md` — `studies/annual-report/**` (report voice, visual system, conversion design).
 Agents (`.claude/agents/`): `verifier`, `r-reviewer`, `numeric-claim-verifier`, `croatian-nlp-reviewer`,
 `religion-media-domain-reviewer`. Research config: `.claude/references/discipline-card-digikat.md`.
 (Keep this file < 150 lines; detail lives in rules.)

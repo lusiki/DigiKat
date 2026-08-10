@@ -1,0 +1,58 @@
+"key","value","display_hr","display_en","source","scope","unit","summary"
+"report_year","2024","2024","2024","report contract","annual","year",FALSE
+"baseline_year","2023","2023","2023","report contract","series rule","year",FALSE
+"corpus_rows","413985","413 985","413,985","data/digikat_corpus_manifest.json","all period","posts",FALSE
+"corpus_span","2021-01-01 2026-06-11","od 1. siječnja 2021. do 11. lipnja 2026.","1 January 2021 to 11 lipanj 2026","data/digikat_corpus_manifest.json","all period","span",FALSE
+"corpus_terms","119","119","119","data/digikat_corpus_manifest.json","inclusion rule","terms",FALSE
+"corpus_threshold","0.7","0,70","0.70","data/digikat_corpus_manifest.json","inclusion rule","score",FALSE
+"corpus_precision","84.5","84,5 %","84.5%","data/digikat_corpus_manifest.json","measured on hand-read samples","percent",FALSE
+"corpus_sha_short","15473a615bf3","15473a615bf3","15473a615bf3","data/digikat_corpus_manifest.json","fingerprint","sha256",FALSE
+"total_posts","56923","56 923","56,923","output/volume_platform.csv","2024","posts",TRUE
+"collected_days","207","207","207","output/coverage.csv","2024","days",TRUE
+"gap_days","159","159","159","output/coverage.csv","2024","days",FALSE
+"gap_span","2024-01-09..2024-05-31; 2024-09-16..2024-09-30","od 9. siječnja 2024. do 31. svibnja 2024. i od 16. rujna 2024. do 30. rujna 2024.","09 siječanj to 31 svibanj 2024 and 16 rujan to 30 rujan 2024","output/coverage_gaps.csv","2024","span",FALSE
+"gap_estimated_posts","37206","37 206","37,206","output/coverage.csv","2024","posts",FALSE
+"median_day","234","234","234","output/coverage.csv","days around the gap","posts",FALSE
+"web_share","65.9680621190029","66,0 %","66.0%","output/volume_platform.csv","2024","percent",TRUE
+"facebook_share","14.7532631800854","14,8 %","14.8%","output/volume_platform.csv","2024","percent",FALSE
+"youtube_share","14.9992094583912","15,0 %","15.0%","output/volume_platform.csv","2024","percent",FALSE
+"facebook_reach_share","42.1064815783674","42,1 %","42.1%","output/volume_platform.csv","2024","percent",FALSE
+"distinct_sources","3398","3 398","3,398","output/concentration.csv","2024","posts",TRUE
+"sources_to_half","43","43","43","output/concentration.csv","2024","sources",TRUE
+"top10_share","29.7296347697767","29,7 %","29.7%","output/concentration.csv","2024","percent",FALSE
+"classified_coverage","35.333696396887","35,3 %","35.3%","output/source_labels.csv","2024","percent",FALSE
+"confessional_share_classified","76.7662705712723","76,8 %","76.8%","output/source_labels.csv","classified posts","percent",FALSE
+"league_outlets","41","41","41","output/league_sources.csv","2024","posts",FALSE
+"league_share","37.7527537199374","37,8 %","37.8%","output/league_sources.csv","2024","percent",FALSE
+"actors_scored","507","507","507","output/actor_typology.csv","2024","actors",FALSE
+"lead_theme_docs","51.3913349771046","51,4 %","51.4%","output/themes.csv","theme sample","percent",TRUE
+"lead_theme_hr","Duhovnost i liturgija","Duhovnost i liturgija","spirituality and liturgy","output/themes.csv","theme sample","category",FALSE
+"lead_theme_mentions","33.5235013623978","33,5 %","33.5%","output/themes.csv","theme sample","percent",FALSE
+"abuse_share","1.02058193849747","1,0 %","1.0%","output/themes.csv","theme sample","percent",TRUE
+"disputes_share","0.147187621642663","0,1 %","0.1%","output/themes.csv","theme sample","percent",FALSE
+"theme_docs","2839","2 839","2,839","output/nlp_coverage.csv","theme sample","posts",FALSE
+"theme_rate","4.9874391722151","5,0 %","5.0%","output/nlp_coverage.csv","theme sample","percent",FALSE
+"tone_docs","1134","1 134","1,134","output/nlp_coverage.csv","tone sample","posts",FALSE
+"tone_rate","1.99216485427683","2,0 %","2.0%","output/nlp_coverage.csv","tone sample","percent",FALSE
+"tone_mean","0.643061739875715","0,64","0.64","output/tone_overall.csv","tone sample","score",FALSE
+"tone_positive_share","92.6807760141093","92,7 %","92.7%","output/tone_overall.csv","tone sample","percent",TRUE
+"cli_mean","72.558182393709","73","73","output/tone_overall.csv","tone sample","per 1000 words",FALSE
+"cli_confessional","71.288705300188","71","71","output/tone_by_label.csv","tone sample","per 1000 words",FALSE
+"cli_secular","92.3802139802809","92","92","output/tone_by_label.csv","tone sample","per 1000 words",FALSE
+"cli_ratio","1.29586045350774","1,30×","1.30×","output/tone_by_label.csv","tone sample","ratio",TRUE
+"peak_posts","1050","1 050","1,050","output/event_arcs.csv","peak day","posts",TRUE
+"peak_day","2024-12-25","25. prosinca 2024.","25 prosinac 2024","output/event_arcs.csv","peak day","date",FALSE
+"peak_z","7.18117275575406","7,2","7.2","output/event_arcs.csv","peak day","sd",FALSE
+"peak_arc_posts","1766","1 766","1,766","output/event_arcs.csv","peak arc","posts",FALSE
+"peak_arc_span","2024-12-24 2024-12-25","od 24. 12. 2024. do 25. 12. 2024.","24 prosinac to 25 prosinac 2024","output/event_arcs.csv","peak arc","span",FALSE
+"arcs_n","2","2","2","output/event_arcs.csv","2024","arcs",FALSE
+"web_stream_change","19.3766973396261","+19,4 %","+19.4%","output/stream_halfyear.csv","post-2024 stream","percent",FALSE
+"web_stream_sources_change","7.87269681742044","+7,9 %","+7.9%","output/stream_halfyear.csv","post-2024 stream","percent",FALSE
+"facebook_stream_change","98.5239545832179","+98,5 %","+98.5%","output/stream_halfyear.csv","post-2024 stream","percent",FALSE
+"facebook_stream_sources_change","85.5172413793103","+85,5 %","+85.5%","output/stream_halfyear.csv","post-2024 stream","percent",FALSE
+"stream_base_label","3. tromjesečje 2024.","3. tromjesečje 2024.","3. tromjesečje 2024.","output/stream_halfyear.csv","post-2024 stream","period",FALSE
+"stream_report_label","4. tromjesečje 2024.","4. tromjesečje 2024.","4. tromjesečje 2024.","output/stream_halfyear.csv","post-2024 stream","period",FALSE
+"special_linked","652","652","652","studies/inflation-salience","study period","posts",FALSE
+"special_core","520","520","520","studies/inflation-salience","study period","posts",FALSE
+"special_peak_posts","61","61","61","studies/inflation-salience","study period","posts",FALSE
+"special_lag_months","19","19","19","studies/inflation-salience","study period","months",FALSE

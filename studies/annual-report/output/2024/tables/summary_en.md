@@ -1,0 +1,10 @@
+- We recorded **56,923 posts** on Catholic themes during 2024.
+- The web remains the main venue and carries **66.0%** of annual volume.
+- The posts come from **3,398 distinct sources**, a highly dispersed space.
+- Even so, just **43 sources** account for half of the year's volume.
+- Spirituality and liturgy lead the year, dominant in **51.4% of posts** in the theme sample.
+- Abuse and the crisis of trust account for **1.0%** of all dictionary mentions.
+- The strongest day of the year was Christmas, with **1,050 posts**.
+- Predominantly positive vocabulary appears in **92.7% of posts** in the tone sample.
+- Secular sources carry **1.30×** as many conflict words as confessional ones.
+- Collection covered **207 days** of the year; the rest is an interruption, and Easter falls inside it.

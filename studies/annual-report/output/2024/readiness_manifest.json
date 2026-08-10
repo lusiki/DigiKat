@@ -1,0 +1,44 @@
+{
+  "schema_version": 2,
+  "generated_utc": "2026-08-10 18:38:48 UTC",
+  "reporting_year": 2024,
+  "dataset": {
+    "name": "digikat_corpus",
+    "path": "data/digikat_corpus.rds",
+    "rows": 413985,
+    "sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a",
+    "date_min": "2021-01-01",
+    "date_max": "2026-06-11",
+    "rule": "word list v4 within the first 3 000 characters (>=1 decisive, >=2 total), then the second-pass ensemble at 0.70",
+    "threshold": 0.7,
+    "terms_count": 119
+  },
+  "accumulator_opened": false,
+  "upstream": {
+    "corpus_manifest": {
+      "path": "data/digikat_corpus_manifest.json",
+      "sha256": "81a18609c2611c0ba544e0255df63c660a1fe174bedf7f1422584aea60b515be"
+    },
+    "processed_manifest": {
+      "path": "data/processed/manifest.json",
+      "sha256": "da2129f167145c5ea8f564fa224935f660a5faba9a5d6ec1ee84676088854683"
+    },
+    "nlp_manifest": {
+      "path": "data/nlp/manifest.json",
+      "sha256": "820dc1e54e8d315454bcad0fa2347093943779e4dbac4bec927bade1cb6899d9"
+    },
+    "source_labels": {
+      "path": "resources/dictionaries/source_labels.csv",
+      "sha256": "26a5a7d3b8382c05f41504dd106b17753c43234de2d89d9a1de0f46441279aaf"
+    }
+  },
+  "nlp_sampling": {
+    "generation_source": "corpus",
+    "strata": ["year", "SOURCE_TYPE"],
+    "theme_proportion": 0.05,
+    "tone_proportion": 0.02,
+    "excluded_source_types": "tiktok",
+    "minimum_text_characters": 101
+  },
+  "verdict": "READY_WITH_WARNINGS"
+}

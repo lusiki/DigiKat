@@ -1,0 +1,10 @@
+- Zabilježili smo **124 346 objava** o katoličkim temama u 2025. godini.
+- Web je i dalje glavno mjesto rasprave i nosi **54,0 %** godišnjeg volumena.
+- Objave dolaze iz **5 814 različitih izvora**, što je vrlo raspršen prostor.
+- Ipak, samo **56 izvora** čini polovicu cjelogodišnjeg volumena.
+- Godinu vodi duhovnost i liturgija: vodeća je tema u **50,4 % objava** u tematskom uzorku.
+- Zlostavljanje i kriza povjerenja čine **0,9 %** svih tematskih spominjanja.
+- Na dan smrti pape Franje zabilježili smo **2 825 objava**, najviše u cijeloj godini.
+- Pretežno pozitivan rječnik koristi **90,4 % objava** u tonskom uzorku.
+- Sekularni izvori nose **1,36×** više riječi sukoba od konfesionalnih.
+- Unutar istoga toka prikupljanja web je objavio **+11,5 %** više nego godinu prije.

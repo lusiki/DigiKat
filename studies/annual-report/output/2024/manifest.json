@@ -1,0 +1,335 @@
+{
+  "schema_version": 2,
+  "generated_utc": "2026-08-10 18:49:07 UTC",
+  "generator": "studies/annual-report/03_report_assets.R",
+  "reporting_year": 2024,
+  "indicator_version": "edition-1.0",
+  "dataset": {
+    "name": "digikat_corpus",
+    "path": "data/digikat_corpus.rds",
+    "rows": 413985,
+    "sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a",
+    "date_min": "2021-01-01",
+    "date_max": "2026-06-11",
+    "rule": "word list v4 within the first 3 000 characters (>=1 decisive, >=2 total), then the second-pass ensemble at 0.70",
+    "threshold": 0.7,
+    "terms_count": 119
+  },
+  "accumulator_opened": false,
+  "generator_sha256": {
+    "00_data_readiness.R": "94b173f02b64bb117e03a444c073ee73f67b3c071985c9e71df666f9a5673463",
+    "01_report_aggregates.R": "2085fa8d955bc4a0769c6131b18cfd7b98d9bdbca6b423a4d5b8ba3f5dc1f55f",
+    "02_nlp_layers.R": "fcb4c6125e2b98fc1de68330f281d4675f70332ded2dad94d1cc069baea886a8",
+    "03_report_assets.R": "3cc492bb2576701204fbf6e283c00c683dd298f523f6485c3a6dde091c510c90",
+    "04_sync_fragments.R": "11216a15e35c2e8379f86333d86810154674eac267d8f8bce8dc08e803a2e2b1",
+    "05_report_checks.R": "66e68b3945b5aaf1177418264f5584f756aa297c51f5f88a44c55a9f48bab524",
+    "06_render_report.R": "532b0fce0502436ae023ce550dbe02022652b07e14aec5b799411ca8df4c7cac",
+    "report_lib.R": "bdacd6221f72d4de97602e00c27a2cdc9ba0b3b6a32bd1283988d425d8285099",
+    "REPORT_TEMPLATE_2024.qmd": "a83655bc06898e5c6d27f98f85829f564e653902526c0b46e69addcdb8b147f3"
+  },
+  "upstream_sha256": {
+    "corpus_manifest": "81a18609c2611c0ba544e0255df63c660a1fe174bedf7f1422584aea60b515be",
+    "processed_manifest": "da2129f167145c5ea8f564fa224935f660a5faba9a5d6ec1ee84676088854683",
+    "nlp_manifest": "820dc1e54e8d315454bcad0fa2347093943779e4dbac4bec927bade1cb6899d9",
+    "source_labels": "26a5a7d3b8382c05f41504dd106b17753c43234de2d89d9a1de0f46441279aaf",
+    "thematic_dictionaries": "a49c8b4db4b1d146aa19ff95025de47b7c6b1c8aee720db296e000e2e5e9e33e",
+    "moral_economy_derived": "0723f01284d217222a0374593760cc11abb55a40cba3268708e6e7b5e7f5007d"
+  },
+  "outputs": [
+    {
+      "file": "output/2024/actor_typology.csv",
+      "bytes": 327,
+      "sha256": "2d430b872e7c6119ae54d2d8eb57b87f314bc759384c43213cf3e80aafc0edfc"
+    },
+    {
+      "file": "output/2024/annual_report_derived.csv",
+      "bytes": 6299,
+      "sha256": "f8f1ecdba6015c5657623a51ef209c66ee9a77f549d53183c510006d6d56f449"
+    },
+    {
+      "file": "output/2024/concentration.csv",
+      "bytes": 139,
+      "sha256": "071ef3b34374d7a1a7239402f3c2a88febac843f697282a93ff2fdf9e1f02581"
+    },
+    {
+      "file": "output/2024/coverage.csv",
+      "bytes": 178,
+      "sha256": "1c9f2d6b7c2e127fe7c33f230dcebb40c3c62168e86fd83a0725981aca1375f6"
+    },
+    {
+      "file": "output/2024/coverage_gaps.csv",
+      "bytes": 75,
+      "sha256": "efa8656f095dbf33e16538746a99ae5558eb5fc305b6902455b3187d3d9f8b65"
+    },
+    {
+      "file": "output/2024/engagement_benchmarks.csv",
+      "bytes": 1378,
+      "sha256": "0b896c63726a722e4211e8ab9e8e935c1a46917872edc040350109829b6a47f3"
+    },
+    {
+      "file": "output/2024/engagement_platform.csv",
+      "bytes": 275,
+      "sha256": "46c6c29cabcf067d3946464d3307d34679b350d1d2d7a1d9df846f0f8eef0897"
+    },
+    {
+      "file": "output/2024/event_arcs.csv",
+      "bytes": 213,
+      "sha256": "d59bba80be434039438118ecb4b95c02a40110800b170c84929c274a029e1de1"
+    },
+    {
+      "file": "output/2024/event_signature.csv",
+      "bytes": 721,
+      "sha256": "18d57425708129a221f423620ac61f4e150917c08b6d374d2e2e8a242e7dcabb"
+    },
+    {
+      "file": "output/2024/figures/cover_spark.png",
+      "bytes": 37265,
+      "sha256": "7577f04b45a3fb87deb6938f8c880f698c6dc89ea46f6ba4e967f68b96c743d9"
+    },
+    {
+      "file": "output/2024/figures/fig01_deset_brojeva.png",
+      "bytes": 193794,
+      "sha256": "7a2245ace864bd35c929d98b40e32a8258e4952ea09fd0b0e59fae32b3ae9461"
+    },
+    {
+      "file": "output/2024/figures/fig02_platforme.png",
+      "bytes": 87432,
+      "sha256": "615ea041c9756758bd4ab24c6b84b50c1b364d635191176cda97e7fcd2499485"
+    },
+    {
+      "file": "output/2024/figures/fig03_mjeseci.png",
+      "bytes": 124466,
+      "sha256": "da7b304627afd343d96d06d10c9c89ade7213b6d6e150c83849f68065f21954e"
+    },
+    {
+      "file": "output/2024/figures/fig04_godina.png",
+      "bytes": 120162,
+      "sha256": "4c614396ae2b8bf5a214ff03c2ff401a99354be3031cfc7acfb1116240210b11"
+    },
+    {
+      "file": "output/2024/figures/fig05_teme.png",
+      "bytes": 155168,
+      "sha256": "430e586394847e027980c695f88c2b543c971c7bb2717ae42fad584a50305dd4"
+    },
+    {
+      "file": "output/2024/figures/fig06_ton_teme.png",
+      "bytes": 64226,
+      "sha256": "824af529754c72d47c584fa4f9ba042909f157413f082180a1da6506a8450752"
+    },
+    {
+      "file": "output/2024/figures/fig07_ton_oznake.png",
+      "bytes": 49797,
+      "sha256": "efeb1804311cbf7e8de90e979f8712d2ad1f657b4f8216966fb18a98ee515844"
+    },
+    {
+      "file": "output/2024/figures/fig08_tok.png",
+      "bytes": 83319,
+      "sha256": "e2e38962d8bb822ea333ed9fe721f09094489b0049cf27b8cb1f6fcc04d36fbe"
+    },
+    {
+      "file": "output/2024/figures/fig09_koncentracija.png",
+      "bytes": 75429,
+      "sha256": "38707ea4a25014eaec44e51e63a074d34418d3bd840a71d9f0bfd8639eecfecc"
+    },
+    {
+      "file": "output/2024/indicator_status.csv",
+      "bytes": 1164,
+      "sha256": "36c8f99f6d781940347d1d0eea9921dac4b4d72f56d7f448ff6ff17ca8bcb1ca"
+    },
+    {
+      "file": "output/2024/league_sources.csv",
+      "bytes": 4799,
+      "sha256": "ec8131b5d08e05a2f4a4af548b2b29a85dd5e30cc972eb96930d8f997acada22"
+    },
+    {
+      "file": "output/2024/nlp_coverage.csv",
+      "bytes": 217,
+      "sha256": "579a7c3f82d57b3a69a8ba8d76ee7252f9835b428f1a4a5ed849326ebbd3ad8e"
+    },
+    {
+      "file": "output/2024/peaks.csv",
+      "bytes": 183,
+      "sha256": "b6b104287f44ec9a1c28838a20f738c2b0bb5648cb210de89d4a0267b0f3bb2e"
+    },
+    {
+      "file": "output/2024/press_release.md",
+      "bytes": 1112,
+      "sha256": "c367ef072c52eea7f2756d59b1df12df67fcc45c495964ba2c1e136bf4c0c634"
+    },
+    {
+      "file": "output/2024/readiness.csv",
+      "bytes": 3137,
+      "sha256": "a3dbfd41f1ff0f72437348604285d582769b639451372a25a927365c0346828c"
+    },
+    {
+      "file": "output/2024/reconciliation.csv",
+      "bytes": 197,
+      "sha256": "676e8d1237b7a6c22b2419e6912f1179a3f6e676df85774a0fd80752cbadc42b"
+    },
+    {
+      "file": "output/2024/source_labels.csv",
+      "bytes": 427,
+      "sha256": "318b4db3e1a1bac87f2dfed3b8cf622e46b8282f48ff4387a91fbddd4afe526f"
+    },
+    {
+      "file": "output/2024/special_chapter.csv",
+      "bytes": 215,
+      "sha256": "5ff20bef0cd9c2136352eefb7b4fc7e98b346bee47b86f3b615a52f58c91dd33"
+    },
+    {
+      "file": "output/2024/stream_halfyear.csv",
+      "bytes": 2101,
+      "sha256": "24956cf47165d52324713a37f820f09c843681cb1d2f26005a2be81cacdfb591"
+    },
+    {
+      "file": "output/2024/tables/block_fig01_deset_brojeva.md",
+      "bytes": 279,
+      "sha256": "4ccd92b083be19b0a7d592e81b3d7b53b23b86cc43c611d00796b52228b93acf"
+    },
+    {
+      "file": "output/2024/tables/block_fig02_platforme.md",
+      "bytes": 297,
+      "sha256": "5ec6a84ad8de37ebe7857a380f93747db0a9513e269de0f85e295eec60459692"
+    },
+    {
+      "file": "output/2024/tables/block_fig03_mjeseci.md",
+      "bytes": 538,
+      "sha256": "a18ed1b798fe519bedeaa6af32ced999aeb5cd76ffc5907658586fb4c89f00b1"
+    },
+    {
+      "file": "output/2024/tables/block_fig04_godina.md",
+      "bytes": 607,
+      "sha256": "8ec18c0ed6aa71c5c2229798a2d239c27a0b16415b8382803eb7fcab6891492d"
+    },
+    {
+      "file": "output/2024/tables/block_fig05_teme.md",
+      "bytes": 407,
+      "sha256": "6260b6fdff2c074c40f7369da4eca4c80fe45154711a2ad3e775a25b5bd33eb4"
+    },
+    {
+      "file": "output/2024/tables/block_fig06_ton_teme.md",
+      "bytes": 431,
+      "sha256": "ff343fb535fd103d819c922e6925d8190e60ab5ffa2c2f70affcb5a948caa3f6"
+    },
+    {
+      "file": "output/2024/tables/block_fig07_ton_oznake.md",
+      "bytes": 495,
+      "sha256": "ba9ae76a434ac632b9cd46a412b893062fe5eca92750e9d2d7a444b230ce2011"
+    },
+    {
+      "file": "output/2024/tables/block_fig08_tok.md",
+      "bytes": 753,
+      "sha256": "d75cfff231b0a99171dcd62a1df86c7809d592d2f083ff2dd78b9aa00224d139"
+    },
+    {
+      "file": "output/2024/tables/block_fig09_koncentracija.md",
+      "bytes": 301,
+      "sha256": "1f9ffe1d35d91789e79de0d589ae794992790d9f004c8f665ed7fcf6028ff39d"
+    },
+    {
+      "file": "output/2024/tables/summary_en.md",
+      "bytes": 796,
+      "sha256": "2d0507c535708c4789a6205fdade706a8dbdeb9e337b96b17afb4d96139f02b3"
+    },
+    {
+      "file": "output/2024/tables/summary_hr.md",
+      "bytes": 795,
+      "sha256": "3352582f0c79bc2cb59a3a92b6ebb4cd513cdc20c22755bf7400d1354a211e7a"
+    },
+    {
+      "file": "output/2024/tables/table_events.md",
+      "bytes": 559,
+      "sha256": "aee9cfef633b6aa06096796ad7ef1a4551446c7e6e32e317351aea4b285df35a"
+    },
+    {
+      "file": "output/2024/tables/table_indicators.md",
+      "bytes": 721,
+      "sha256": "3385f83dbf4b76df440dc3cb5bb815e3ee5f28c04975dfdbd2eab25326425364"
+    },
+    {
+      "file": "output/2024/tables/table_league.md",
+      "bytes": 1097,
+      "sha256": "8795576b9039f615f74b43ee2603af441bcf3510c2aa50be714b64c7bbde8bb2"
+    },
+    {
+      "file": "output/2024/tables/table_platform.md",
+      "bytes": 891,
+      "sha256": "01dbfd3c02825b13fd369d7200fe9c5e15d07bb20acaead61089994adc656d97"
+    },
+    {
+      "file": "output/2024/tables/table_special.md",
+      "bytes": 866,
+      "sha256": "ba0afcbf0d2e1bad1ed70a1f148d3818e47db658580d7523eeab5bb1acf74f51"
+    },
+    {
+      "file": "output/2024/tables/table_stream.md",
+      "bytes": 854,
+      "sha256": "3851ccbbe859ff9f07dc8e8834d14496ac723f2382da847e8a234b83e0be14e0"
+    },
+    {
+      "file": "output/2024/tables/table_themes.md",
+      "bytes": 1421,
+      "sha256": "ba17b110d9ed75f5ec468c00c4da4e9bc7af7c964230267151f1bb38700d46c5"
+    },
+    {
+      "file": "output/2024/tables/table_tone.md",
+      "bytes": 652,
+      "sha256": "e10ea84707ad61b00bc315e99e6fbbf82eddd924e890ce50a7c686231cff4869"
+    },
+    {
+      "file": "output/2024/tables/table_typology.md",
+      "bytes": 578,
+      "sha256": "2f4f738c1274ecc77f6f2097a5f59b74cbd6fb892cff5471555b45d1785e4bf7"
+    },
+    {
+      "file": "output/2024/themes.csv",
+      "bytes": 2428,
+      "sha256": "ec08c1c1acacbffbf8d50b997e60e7edcfe727927dd96489084b31d3c264f2bb"
+    },
+    {
+      "file": "output/2024/themes_coverage.csv",
+      "bytes": 146,
+      "sha256": "b12b2d7706e8822bdfb7578d43bb77ea453db5847253fefa3ac1c5022e7cc1e6"
+    },
+    {
+      "file": "output/2024/tone_by_label.csv",
+      "bytes": 675,
+      "sha256": "99bcc245000aec333359ef67a0333e9b61930bda11aa06f636486054f16e816c"
+    },
+    {
+      "file": "output/2024/tone_by_theme.csv",
+      "bytes": 2414,
+      "sha256": "a119b463b6f97e80ff1c0121ee8113c1d38d316708932db95b8ef8d9f33b604e"
+    },
+    {
+      "file": "output/2024/tone_emotions.csv",
+      "bytes": 345,
+      "sha256": "abb2626bbe92b47667aa39e1a030c90dc5af42cc8782665f40d2bdb8eb990a99"
+    },
+    {
+      "file": "output/2024/tone_overall.csv",
+      "bytes": 307,
+      "sha256": "710252b213181100f010fed63faabc53c129c1b2b31900eb556c3cb10bcc6e78"
+    },
+    {
+      "file": "output/2024/volume_daily.csv",
+      "bytes": 13737,
+      "sha256": "9ed4b5752db2c36a57231a7a53c30085c26e95b0d13f611b252139e1f0be2dad"
+    },
+    {
+      "file": "output/2024/volume_monthly.csv",
+      "bytes": 2442,
+      "sha256": "12f8b58c5b63b6c8b9dd12170cd83b819506c0bca1af1d203f4504e6548419a8"
+    },
+    {
+      "file": "output/2024/volume_platform.csv",
+      "bytes": 1187,
+      "sha256": "75655cbe5b0e1fbe58f67edd5eda0d075ce1d286baef715620b6f0dcb22b0f4a"
+    },
+    {
+      "file": "output/2024/year_series.csv",
+      "bytes": 135,
+      "sha256": "bc2065c8e247fecdd0c292c92b29413d7537883d28eec7f4516eb201ad14eb7b"
+    }
+  ]
+}
