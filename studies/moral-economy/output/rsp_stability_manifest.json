@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-11 08:12:12 UTC",
+  "generator": "studies/moral-economy/32_rsp_reuse_stability.R --score",
+  "database_sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a",
+  "coding_manifest_sha256": "7621851feef393ea12082cb40ae0806dd50f971be67d0d351268d8183c85065f",
+  "coding": {
+    "system": "OpenAI Codex bounded subagent",
+    "backend_model_identifier": "not exposed to this session",
+    "decoding_settings": "not exposed to this session",
+    "relation_to_main_pass": "same model workflow, separate blind repeat pass"
+  },
+  "sample": {
+    "key_sha256": "3157821303063a0c808473badab7c5600a3be12d7cded7214ccb896d6a4c241b",
+    "r4_n": 66,
+    "r1_n": 30,
+    "r4_per_domain": 6
+  },
+  "main_inputs": {
+    "r4_sheet_sha256": "2397de5b7f18c430f7e83593642c0f87c757b968435660388ab2f9c1280240b1",
+    "r1_sheet_sha256": "be735f0b6603889335fe736301fda7ccda21be229dafb649406de3f666ce46e3",
+    "r4_key_sha256": "645b83a69c890c8a8224407c2ab05905a63b5145ef52f7514ed127dca0f3083c",
+    "r1_key_sha256": "5017be971058c9b250dead9eaf11bb18ffd40cda7d68a7a1510a55459a13045d",
+    "r4_allocation_sha256": "82b0f3105d0ddb5201f836dc1d2e2e8fd0064cd50a1171df47c4515f74b695ff",
+    "r1_allocation_sha256": "c941e60e0db304eddce464e0d765bb532e495a3c9b8a0957739da06c7d1eae39",
+    "r4_annotation_sha256": "d79d7d6f3a6eb9c0725f4abd1a285be1b61b14eb54c5519b0ac11a21b2201d89",
+    "r1_annotation_sha256": "dc76305bf2b6b4515b32430d9e2c097c70c388933d04f3ca871c7df7733f3426"
+  },
+  "prompts": [
+    {
+      "file": "stability_batch_01.md",
+      "sha256": "8426f6ea7f72f756cc522a7252a61641c4504e07aa184bdc9519cf2ae5b7acac"
+    },
+    {
+      "file": "stability_batch_02.md",
+      "sha256": "40383dad9ca4653eae5957997ff3a907827d3ae6e33483417e78b63df8730678"
+    },
+    {
+      "file": "stability_batch_03.md",
+      "sha256": "49b45268252d00a47408d56b2d9630c3f8a4da30cc9e52fc760ba3bb3d753f7f"
+    }
+  ],
+  "annotations": [
+    {
+      "file": "stability_batch_01.tsv",
+      "sha256": "5a76fb3e008bbcd8d5e28800d482ed29d82a7378d8499a9cd83d6b79b28a5435"
+    },
+    {
+      "file": "stability_batch_02.tsv",
+      "sha256": "22e156111f7a526a4f795b9efa185f9fd3a1609809c520149d8f14ff372d1bdf"
+    },
+    {
+      "file": "stability_batch_03.tsv",
+      "sha256": "5798b46bf82cd022d715adcb8c27704ee0b70b3d0e05a02953e95af6271c5ee6"
+    }
+  ],
+  "outputs": {
+    "stability": {
+      "path": "output/rsp_annotation_stability.csv",
+      "sha256": "783814350076c342cb70bac95532dcd4b893f0518056c5a05ba6f5abe26b3b68"
+    },
+    "transitions": {
+      "path": "output/rsp_stability_transitions.csv",
+      "sha256": "e9a747f6e6aaae6b82292e2c513d266efabc8178ea1007ba22d62fc76ee5cd4c"
+    },
+    "r1_by_domain": {
+      "path": "output/rsp_stability_r1_by_domain.csv",
+      "sha256": "28c3f539e8d9de92f5f0cb66674268da5cbee1240cefac7e5297ed67b2d4d214"
+    }
+  },
+  "output_sha256": "783814350076c342cb70bac95532dcd4b893f0518056c5a05ba6f5abe26b3b68",
+  "gate": {
+    "threshold": 0.8,
+    "passed": false,
+    "failed_axes": [
+      {
+        "audit": "R1",
+        "axis": "r2_econ_true",
+        "agreement": 0.767,
+        "kappa": 0.42
+      }
+    ]
+  }
+}

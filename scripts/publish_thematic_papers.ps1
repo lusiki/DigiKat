@@ -90,6 +90,7 @@ $papers = @(
     SourceDocx = $null
     Authors = @(
       [pscustomobject]@{ Name = "Luka Šikić"; Url = "https://www.lukasikic.info/" }
+      [pscustomobject]@{ Name = "Petra Palić"; Url = "https://www.unicath.hr/odjeli-i-fakultet/nastavnici/petra-palic" }
     )
     InjectByline = $true
     Affiliation = "Hrvatsko katoličko sveučilište"

@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-11 07:50:34 UTC",
+  "generator": "studies/moral-economy/29_prepare_official_rerun.R",
+  "database": {
+    "path": "data/digikat_corpus.rds",
+    "sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a",
+    "rows": 413985,
+    "columns": 54,
+    "date_min": "2021-01-01",
+    "date_max": "2026-06-11",
+    "stable_id": "dk_master_row"
+  },
+  "relation": {
+    "type": "exact row subset of the accumulator",
+    "identity_checks": {
+      "URL": 413985,
+      "DATE": 413985,
+      "FULL_TEXT": 413985,
+      "SOURCE_TYPE": 413985,
+      "data_source": 413985,
+      "FROM": 413985,
+      "candidate_TITLE": 79439,
+      "candidate_current_label": 79439
+    },
+    "prepared_text_transform": "trimws(FULL_TEXT), matching R/semantic/10_prep.R",
+    "prepared_doc_id": "dk_<zero-padded dk_master_row>"
+  },
+  "source_inputs": {
+    "accumulator_prepared": {
+      "path": "data/semantic/corpus_prepared.rds",
+      "bytes": 1043413631,
+      "modified_utc": "2026-07-28 10:22:53 UTC",
+      "sha256": "3ef6edc9ee30d318b461b2f134e283054e71d3aaf207b5c7c14ca278ae0845d5"
+    },
+    "accumulator_stageA": {
+      "path": "studies/moral-economy/output/stageA_candidates.rds",
+      "bytes": 18518082,
+      "modified_utc": "2026-07-08 14:39:38 UTC",
+      "sha256": "1960e07669349001281b8d712ac4076598b86f48203053bd6dd9189d0b2f2407"
+    },
+    "current_source_labels": {
+      "path": "resources/dictionaries/source_labels.csv",
+      "bytes": 9550,
+      "modified_utc": "2026-07-03 04:52:28 UTC",
+      "sha256": "26a5a7d3b8382c05f41504dd106b17753c43234de2d89d9a1de0f46441279aaf"
+    },
+    "stageA_fingerprint_verified": {
+      "compiled_economic_and_religion_regexes": true,
+      "window": true,
+      "religious_terms_source_hash_matches": false,
+      "legacy_religious_terms_md5": "cda5065e7402c28572c50e0d3e4ad095",
+      "current_religious_terms_md5": "9b4e6de86be0ff6754803445e62b6f18"
+    }
+  },
+  "inputs": {
+    "prepared": {
+      "path": "studies/moral-economy/output/intermediate/corpus_prepared_official.rds",
+      "bytes": 441316154,
+      "modified_utc": "2026-08-11 07:50:24 UTC",
+      "sha256": "473afc5e358f377fc65959ca79d2fa65e9da8bb715d141ada47a1a860c303f03",
+      "rows": 413985
+    },
+    "candidates": {
+      "path": "studies/moral-economy/output/stageA_candidates_official.rds",
+      "bytes": 10813211,
+      "modified_utc": "2026-08-11 07:50:33 UTC",
+      "sha256": "4dd5e23d8465ae1c23be1bf36d42ba19f789ccc0212bb8fade255b0bac4abac6",
+      "rows": 79439,
+      "posts": 66374
+    }
+  },
+  "reconciliation": {
+    "accumulator_rows": 710307,
+    "official_rows": 413985,
+    "candidate_pairs_accumulator": 132519,
+    "candidate_pairs_official": 79439,
+    "candidate_posts_accumulator": 108966,
+    "candidate_posts_official": 66374
+  },
+  "legacy_gold_survival": {
+    "gold_old": 555,
+    "gold_retained": 296
+  },
+  "method_note": "Stage A is a row-independent deterministic transform. Because the official corpus is an exact stable-ID subset and retained URL/DATE/text identities passed, restricting its accumulator result is algebraically equivalent to rerunning it on the selected rows while preserving semantic-store IDs."
+}

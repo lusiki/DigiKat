@@ -1,0 +1,12 @@
+"domain","linked_pairs_main","core_pairs_main","pairs_added_if_tier1_enters_frame","core_pairs_inclusive","linked_pairs_inclusive","detected_rate_main","detected_rate_inclusive"
+"business_comp",13143,121,6,127,13149,0.9206,0.9659
+"demography_econ",567,3,0,3,567,0.5291,0.5291
+"euro_changeover",243,0,0,0,243,0,0
+"green_energy",1559,202,5,207,1564,12.957,13.2353
+"housing",2627,1,1,2,2628,0.0381,0.0761
+"inflation_prices",787,1,1,2,788,0.1271,0.2538
+"macro_aggregates",1938,94,7,101,1945,4.8504,5.1928
+"poverty_social",31354,586,30,616,31384,1.869,1.9628
+"taxes_fiscal",14110,208,6,214,14116,1.4741,1.516
+"unemployment",3335,30,2,32,3337,0.8996,0.9589
+"wages_income",9776,44,3,47,9779,0.4501,0.4806

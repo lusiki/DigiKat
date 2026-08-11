@@ -20,6 +20,8 @@
 # BOTH on random_linked alone (unbiased, small n) and on all strata (larger n, biased). Where they
 # disagree, the random_linked figure is the one that may be generalised.
 suppressPackageStartupMessages({ library(here); library(dplyr); library(tidyr) })
+source(here::here("studies/moral-economy/rsp_input.R"))
+source(here::here("studies/moral-economy/cst_core.R"))
 
 OUT <- here::here("studies/moral-economy/output"); PRIVATE <- file.path(OUT, "private")
 
@@ -33,10 +35,16 @@ wilson <- function(x, n, conf = 0.95) {
 
 gold <- utils::read.csv(file.path(PRIVATE, "gold_core.csv"), fileEncoding = "UTF-8",
                         stringsAsFactors = FALSE)
-cat("gold rows:", nrow(gold), "\n")
+cand <- readRDS(RSP_STAGEA_CANDIDATES)
+cand$rid <- as.integer(cand$rid)
+pair_key <- paste(cand$rid, cand$domain, sep = "\r")
+gold_key <- paste(as.integer(gold$rid), gold$domain, sep = "\r")
+n_legacy <- nrow(gold)
+gold <- gold[gold_key %in% pair_key, , drop = FALSE]
+cat("gold rows retained in the official linked layer:", nrow(gold), "of", n_legacy, "\n")
 cat("strata:\n"); print(table(gold$stratum))
-cat("\npooled genuine-link rate:", round(100 * mean(gold$ax1_link_genuine == "genuine"), 1),
-    "%  (PAPER_v1 reports 34.6%)\n")
+cat("\npooled retained-set genuine-link rate:",
+    round(100 * mean(gold$ax1_link_genuine == "genuine"), 1), "%\n")
 
 ## ---------------------------------------------------------- A. R4 by domain
 by_dom <- function(d, tag) {
@@ -73,11 +81,8 @@ cat("  INTERPRETATION: within this (non-random) sample the genuine-link rate var
 
 ## --------------------------------------------- precision-adjusted gradient
 cat("\n===== PRECISION-ADJUSTED GRADIENT (the R4 correction) =====\n")
-core <- readRDS(file.path(PRIVATE, "cst_core.rds"))
-core_long <- core |> dplyr::select(rid, domains) |>
-  tidyr::separate_rows(domains, sep = "\\s+") |>
-  dplyr::filter(nzchar(domains)) |> dplyr::rename(domain = domains) |> dplyr::distinct()
-cand <- readRDS(file.path(OUT, "stageA_candidates.rds"))
+core <- cst_build_core(verbose = FALSE)
+core_long <- cst_core_pairs(core) |> dplyr::select(rid, domain) |> dplyr::distinct()
 den <- cand |> dplyr::distinct(rid, domain) |> dplyr::count(domain, name = "linked")
 num <- dplyr::count(core_long, domain, name = "doctrinal")
 
@@ -133,7 +138,8 @@ if (all(dim(tt) == c(2, 2))) {
   cat("NB the precision interval is uselessly wide at n =", tp + fp, "- this is a WARNING SIGN, not an\n",
       "  estimate. R1 (a ~150-card stratified audit) is still required and is not substituted by this.\n")
 }
-cat("\noverlap of gold set with the 1198 doctrinal population:", sum(gold$in_core), "posts\n")
+cat("\noverlap of retained gold set with the", nrow(core),
+    "post doctrinal population:", sum(gold$in_core), "posts\n")
 
 ## ---------------------------------------------------------------- write out
 utils::write.csv(dplyr::bind_rows(a_rl, a_all), file.path(OUT, "gold_linkage_precision_by_domain.csv"),
@@ -143,4 +149,23 @@ utils::write.csv(dplyr::select(adj, -prec_lo, -prec_hi),
                  row.names = FALSE, fileEncoding = "UTF-8")
 utils::write.csv(pct, file.path(OUT, "gold_register_by_domain.csv"),
                  row.names = FALSE, fileEncoding = "UTF-8")
-cat("\nwrote output/{gold_linkage_precision_by_domain,cst_precision_adjusted_gradient,gold_register_by_domain}.csv\n")
+input_manifest <- rsp_read_input_manifest()
+gold_in_database <- if (!is.null(input_manifest$legacy_gold_survival$retained_in_official_database)) {
+  input_manifest$legacy_gold_survival$retained_in_official_database
+} else if (!is.null(input_manifest$legacy_gold_survival$gold_retained)) {
+  input_manifest$legacy_gold_survival$gold_retained
+} else if (!is.null(input_manifest$legacy_annotation_survival$gold_retained)) {
+  input_manifest$legacy_annotation_survival$gold_retained
+} else NA_integer_
+gold_summary <- data.frame(
+  legacy_rows = n_legacy,
+  official_database_rows = as.integer(gold_in_database),
+  official_linked_rows = nrow(gold),
+  genuine_links = nrow(gen),
+  displayed_n_ge_10 = sum(pct$n[pct$n >= 10]),
+  stringsAsFactors = FALSE
+)
+utils::write.csv(gold_summary, file.path(OUT, "gold_reanalysis_summary.csv"),
+                 row.names = FALSE, fileEncoding = "UTF-8")
+cat("\nwrote output/{gold_linkage_precision_by_domain,cst_precision_adjusted_gradient,",
+    "gold_register_by_domain,gold_reanalysis_summary}.csv\n", sep = "")

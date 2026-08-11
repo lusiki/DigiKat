@@ -20,7 +20,7 @@ and numerical claims consistently reflect that evidence.
   `studies/moral-economy/01_stageA_tag_linkage.R` is user-owned and must be incorporated rather than discarded.
 - Preserve the old manuscript and completed-paper artifacts until the refreshed run passes. Keep row-level text,
   URLs, source identities and coding sheets inside the gitignored private/intermediate output classes.
-- Reuse an old human-coded decision only after a stable-key join proves that it still refers to the same item and
+- Reuse an old model-coded decision only after a stable-key join proves that it still refers to the same item and
   coding question in the new corpus. Redraw or recode only where the changed target population makes reuse invalid.
 
 ## Execution

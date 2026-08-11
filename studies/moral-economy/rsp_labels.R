@@ -9,16 +9,16 @@
 # `digikat_format_integer()` in R/lib is Croatian house style (thousands dot) and is therefore the
 # wrong formatter here; `rsp_int()` below is the journal's.
 
-DOM <- c(green_energy = "Climate & energy", macro_aggregates = "Macro-economy",
-         poverty_social = "Poverty & social", taxes_fiscal = "Taxes & fiscal",
-         demography_econ = "Demography & labour supply", unemployment = "Unemployment",
-         wages_income = "Wages & income", business_comp = "Business & firms",
-         inflation_prices = "Inflation & prices", housing = "Housing",
+DOM <- c(green_energy = "Climate and energy", macro_aggregates = "Macroeconomics",
+         poverty_social = "Poverty and social policy", taxes_fiscal = "Taxes and fiscal policy",
+         demography_econ = "Demography and labour supply", unemployment = "Unemployment",
+         wages_income = "Wages and income", business_comp = "Business and firms",
+         inflation_prices = "Inflation and prices", housing = "Housing",
          euro_changeover = "Euro changeover")
 
-ERA <- c(classical = "Classical (1891–1991)", conciliar = "Conciliar (1961–1971)",
+ERA <- c(classical = "Non-conciliar classical line", conciliar = "Conciliar/development",
          benedict = "Benedict XVI", francis = "Francis era", mixed = "Mixed eras",
-         marker_only = "No document named")
+         marker_only = "No era-assigned document")
 
 # Tier-1 vocabulary as it should read in print: magisterial titles in Latin italics, Croatian
 # doctrinal coinages in italics with an English gloss. Keys are the detector's term ids.

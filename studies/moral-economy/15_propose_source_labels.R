@@ -8,9 +8,9 @@
 #   Rscript studies/moral-economy/15_propose_source_labels.R
 #
 # THIS DOES NOT TOUCH resources/dictionaries/source_labels.csv. Changing a tracked dictionary is
-# plan-gated (CLAUDE.md) and MEMORY.md records that these labels are contestable and PI-owned. The output
-# is a REVIEW SHEET. Promoting it into the dictionary is the PI's act, and requires re-running Stage A (or
-# an explicit re-join) for the labels to propagate.
+# plan-gated (CLAUDE.md), and these labels remain contestable and PI-owned. The output is an unratified
+# REVIEW SHEET. Script 17 uses it only in rows explicitly described as proposal-based sensitivity; it is
+# not an approved outlet dictionary and must not be presented as one.
 #
 # CONFIDENCE IS PART OF THE DATA, not a disclaimer:
 #   high      institutional identity is unambiguous — a diocese, an order, a national daily, the public
@@ -26,6 +26,7 @@
 suppressPackageStartupMessages({ library(here) })
 source(here::here("studies/moral-economy/sem_lib.R"))
 source(here::here("studies/moral-economy/cst_core.R"))
+rsp_assert_official_inputs()
 
 OUT <- file.path(ME_PRIVATE, "proposed_source_labels.csv")
 
@@ -122,7 +123,7 @@ print(table(prop$label, prop$confidence))
 
 # ---- what it buys -----------------------------------------------------------------------------------
 core <- cst_build_core(verbose = FALSE)
-cand <- readRDS(file.path(ME_OUT, "stageA_candidates.rds")); cand$rid <- as.integer(cand$rid)
+cand <- readRDS(RSP_STAGEA_CANDIDATES); cand$rid <- as.integer(cand$rid)
 cd   <- cand[!duplicated(cand$rid), c("rid", "FROM", "label")]
 existing <- read.csv(here::here("resources/dictionaries/source_labels.csv"),
                      fileEncoding = "UTF-8", stringsAsFactors = FALSE)

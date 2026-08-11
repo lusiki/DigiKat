@@ -1,0 +1,12 @@
+"domain","k","n","rate","lo","hi","n_eff"
+"macro_aggregates",6,6,100,61,100,6
+"euro_changeover",0,0,NA,NA,NA,NA
+"taxes_fiscal",6,25,22.6,10.5,42,24.9
+"business_comp",9,12,75.3,47,91.2,12
+"green_energy",21,22,95.5,78.2,99.2,22
+"housing",1,1,100,20.7,100,1
+"demography_econ",0,0,NA,NA,NA,NA
+"inflation_prices",0,0,NA,NA,NA,NA
+"unemployment",1,1,100,20.7,100,1
+"wages_income",6,8,74.5,40.3,92.7,7.9
+"poverty_social",66,75,88.1,78.8,93.6,74.1

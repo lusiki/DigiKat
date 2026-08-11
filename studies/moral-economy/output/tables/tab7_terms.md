@@ -1,33 +1,33 @@
-**Table A1.** Every Tier-1 teaching word we detect, counted at the three stages of Table 1.
+**Table A1.** Tier-1 document titles and doctrine-specific markers at each detection stage.
 
-| Teaching word                                       | Type of word | Era of the document   | In the corpus | In meeting posts | In teaching posts | % of all uses |
-|:----------------------------------------------------|:-------------|:----------------------|--------------:|-----------------:|------------------:|--------------:|
-| *socijalni nauk* (social teaching)                  | principle    | —                     |         1 825 |              969 |               472 |         23,72 |
-| *Laudato si'*                                       | document     | Francis era           |         1 135 |              773 |               447 |         22,46 |
-| *Fratelli tutti*                                    | document     | Francis era           |         1 220 |              600 |               243 |         12,21 |
-| *Evangelii gaudium*                                 | document     | Francis era           |           667 |              432 |               188 |          9,45 |
-| *Rerum novarum*                                     | document     | Classical (1891–1991) |           348 |              225 |               102 |          5,13 |
-| *supsidijarnost* (subsidiarity)                     | principle    | —                     |           426 |              246 |                89 |          4,47 |
-| *Gaudium et spes*                                   | document     | Conciliar (1961–1971) |           493 |              207 |                77 |          3,87 |
-| *integralna ekologija* (integral ecology)           | principle    | —                     |           108 |               81 |                52 |          2,61 |
-| *Centesimus annus*                                  | document     | Classical (1891–1991) |            93 |               67 |                47 |          2,36 |
-| *Laudate Deum*                                      | document     | Francis era           |            96 |               62 |                42 |          2,11 |
-| *Caritas in veritate*                               | document     | Benedict XVI          |           116 |               81 |                37 |          1,86 |
-| *opcija za siromašne* (option for the poor)         | principle    | —                     |            33 |               29 |                29 |          1,46 |
-| *Populorum progressio*                              | document     | Conciliar (1961–1971) |            68 |               43 |                29 |          1,46 |
-| *kompendij socijalnog nauka* (Compendium)           | principle    | —                     |            68 |               50 |                28 |          1,41 |
-| *Pacem in terris*                                   | document     | Conciliar (1961–1971) |           145 |               71 |                24 |          1,21 |
-| *Laborem exercens*                                  | document     | Classical (1891–1991) |            34 |               24 |                15 |          0,75 |
-| *Mater et magistra*                                 | document     | Conciliar (1961–1971) |            40 |               29 |                15 |          0,75 |
-| *Sollicitudo rei socialis*                          | document     | Classical (1891–1991) |            25 |               19 |                15 |          0,75 |
-| *socijalna doktrina* (social doctrine)              | principle    | —                     |            35 |               25 |                14 |          0,70 |
-| *Quadragesimo anno*                                 | document     | Classical (1891–1991) |            28 |               22 |                10 |          0,50 |
-| *Dignitas infinita*                                 | document     | Francis era           |           142 |               79 |                 9 |          0,45 |
-| *univerzalna namjena dobara* (destination of goods) | principle    | —                     |             8 |                7 |                 5 |          0,25 |
-| *Octogesima adveniens*                              | document     | Conciliar (1961–1971) |             3 |                1 |                 1 |          0,05 |
+| Marker                                              | Type                     | Pair-specific title category | Corpus posts | Stage-A posts | Adjacent term–post presences |
+|:----------------------------------------------------|:-------------------------|:-----------------------------|-------------:|--------------:|-----------------------------:|
+| *socijalni nauk* (social teaching)                  | Doctrine-specific marker | —                            |        1 582 |           887 |                          366 |
+| *Laudato si'*                                       | Document title           | Francis era                  |        1 074 |           733 |                          341 |
+| *Fratelli tutti*                                    | Document title           | Francis era                  |        1 163 |           575 |                          164 |
+| *Evangelii gaudium*                                 | Document title           | Francis era                  |          655 |           425 |                          127 |
+| *supsidijarnost* (subsidiarity)                     | Doctrine-specific marker | —                            |          297 |           206 |                           58 |
+| *Rerum novarum*                                     | Document title           | Non-conciliar classical line |          334 |           215 |                           48 |
+| *Gaudium et spes*                                   | Document title           | Conciliar/development        |          463 |           196 |                           44 |
+| *opcija za siromašne* (option for the poor)         | Doctrine-specific marker | —                            |           30 |            26 |                           26 |
+| *integralna ekologija* (integral ecology)           | Doctrine-specific marker | —                            |          106 |            79 |                           25 |
+| *Laudate Deum*                                      | Document title           | Francis era                  |           88 |            55 |                           23 |
+| *Populorum progressio*                              | Document title           | Conciliar/development        |           61 |            40 |                           20 |
+| *Caritas in veritate*                               | Document title           | Benedict XVI                 |          115 |            80 |                           17 |
+| *Centesimus annus*                                  | Document title           | Non-conciliar classical line |           80 |            57 |                           16 |
+| *Sollicitudo rei socialis*                          | Document title           | Non-conciliar classical line |           23 |            18 |                           10 |
+| *kompendij socijalnog nauka* (Compendium)           | Doctrine-specific marker | —                            |           66 |            49 |                            9 |
+| *socijalna doktrina* (social doctrine)              | Doctrine-specific marker | —                            |           26 |            18 |                            9 |
+| *Laborem exercens*                                  | Document title           | Non-conciliar classical line |           34 |            24 |                            8 |
+| *Pacem in terris*                                   | Document title           | Conciliar/development        |          139 |            68 |                            7 |
+| *Dignitas infinita*                                 | Document title           | Francis era                  |          140 |            77 |                            6 |
+| *Mater et magistra*                                 | Document title           | Conciliar/development        |           34 |            24 |                            5 |
+| *univerzalna namjena dobara* (destination of goods) | Doctrine-specific marker | —                            |            8 |             7 |                            4 |
+| *Quadragesimo anno*                                 | Document title           | Non-conciliar classical line |           27 |            21 |                            3 |
+| *Octogesima adveniens*                              | Document title           | Conciliar/development        |            2 |             1 |                            0 |
 
-*Source: authors' calculation on the DigiKat corpus of 710 307 Croatian digital media posts,
-2021–2026. Counts are posts carrying the word. “Type of word” separates the titles of Church
-documents from the names of principles, and a principle belongs to no single era. The teaching
-posts hold 1 990 uses of these words across 1 198 posts, since one post can carry several. The last
-column is the share of those uses, which is what Figure 4 plots.*
+*Source: authors' calculation on the official DigiKat corpus of 413 985 Croatian digital media
+posts, 2021–2026. Entries are numbers of posts carrying each term at the stated stage; the final
+column comprises 1 336 term–post presences across 1 093 teaching posts because one post may carry
+several terms. Counts are not numbers of quotations or repeated occurrences. The Compendium is
+treated as a doctrine-specific marker with no era-assigned document.*

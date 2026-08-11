@@ -1,0 +1,26 @@
+"specification","omitted_terms","retained_core_pairs","top_domain","top_rate","runner_up","runner_rate","green_rate","green_first"
+"baseline","none",1290,"green_energy",12.957,"macro_aggregates",4.8504,12.957,TRUE
+"leave_out_rerum_novarum","rerum_novarum",1264,"green_energy",12.957,"macro_aggregates",4.5924,12.957,TRUE
+"leave_out_quadragesimo_anno","quadragesimo_anno",1289,"green_energy",12.957,"macro_aggregates",4.8504,12.957,TRUE
+"leave_out_mater_et_magistra","mater_et_magistra",1290,"green_energy",12.957,"macro_aggregates",4.8504,12.957,TRUE
+"leave_out_pacem_in_terris","pacem_in_terris",1283,"green_energy",12.957,"macro_aggregates",4.8504,12.957,TRUE
+"leave_out_gaudium_et_spes","gaudium_et_spes",1248,"green_energy",12.957,"macro_aggregates",4.8504,12.957,TRUE
+"leave_out_populorum_progressio","populorum_progressio",1280,"green_energy",12.957,"macro_aggregates",4.6956,12.957,TRUE
+"leave_out_octogesima_adveniens","octogesima_adveniens",1290,"green_energy",12.957,"macro_aggregates",4.8504,12.957,TRUE
+"leave_out_laborem_exercens","laborem_exercens",1289,"green_energy",12.957,"macro_aggregates",4.8504,12.957,TRUE
+"leave_out_sollicitudo_rei_soc","sollicitudo_rei_soc",1285,"green_energy",12.957,"macro_aggregates",4.8504,12.957,TRUE
+"leave_out_centesimus_annus","centesimus_annus",1285,"green_energy",12.957,"macro_aggregates",4.7472,12.957,TRUE
+"leave_out_caritas_in_veritate","caritas_in_veritate",1282,"green_energy",12.957,"macro_aggregates",4.8504,12.957,TRUE
+"leave_out_evangelii_gaudium","evangelii_gaudium",1171,"green_energy",12.8929,"macro_aggregates",4.5408,12.8929,TRUE
+"leave_out_laudato_si","laudato_si",929,"macro_aggregates",3.6636,"green_energy",3.0148,3.0148,FALSE
+"leave_out_fratelli_tutti","fratelli_tutti",1165,"green_energy",12.8287,"macro_aggregates",4.7988,12.8287,TRUE
+"leave_out_laudate_deum","laudate_deum",1278,"green_energy",12.3797,"macro_aggregates",4.8504,12.3797,TRUE
+"leave_out_dignitas_infinita","dignitas_infinita",1284,"green_energy",12.957,"macro_aggregates",4.7988,12.957,TRUE
+"leave_out_socijalni_nauk","socijalni_nauk",969,"green_energy",12.3797,"macro_aggregates",3.1476,12.3797,TRUE
+"leave_out_socijalna_doktrina","socijalna_doktrina",1285,"green_energy",12.957,"macro_aggregates",4.8504,12.957,TRUE
+"leave_out_kompendij_ksn","kompendij_ksn",1290,"green_energy",12.957,"macro_aggregates",4.8504,12.957,TRUE
+"leave_out_supsidijarnost","supsidijarnost",1263,"green_energy",12.957,"macro_aggregates",4.7988,12.957,TRUE
+"leave_out_integralna_ekologija","integralna_ekologija",1279,"green_energy",12.8929,"macro_aggregates",4.8504,12.8929,TRUE
+"leave_out_univ_namjena_dobara","univ_namjena_dobara",1288,"green_energy",12.957,"macro_aggregates",4.8504,12.957,TRUE
+"leave_out_opcija_za_siromasne","opcija_za_siromasne",1276,"green_energy",12.957,"macro_aggregates",4.8504,12.957,TRUE
+"leave_out_ecology_markers","laudato_si laudate_deum integralna_ekologija",888,"macro_aggregates",3.5604,"green_energy",1.7319,1.7319,FALSE

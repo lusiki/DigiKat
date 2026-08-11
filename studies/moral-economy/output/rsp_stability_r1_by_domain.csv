@@ -1,0 +1,12 @@
+"domain","n","main_yes","repeat_yes","agreement","main_yes_repeat_no","main_no_repeat_yes"
+"macro_aggregates",3,3,3,1,0,0
+"euro_changeover",0,0,0,NA,0,0
+"taxes_fiscal",4,3,2,0.75,1,0
+"business_comp",3,2,2,1,0,0
+"green_energy",6,5,0,0.167,5,0
+"housing",0,0,0,NA,0,0
+"demography_econ",0,0,0,NA,0,0
+"inflation_prices",0,0,0,NA,0,0
+"unemployment",1,1,1,1,0,0
+"wages_income",1,1,1,1,0,0
+"poverty_social",12,11,10,0.917,1,0

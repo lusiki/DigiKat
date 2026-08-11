@@ -1,19 +1,18 @@
-**Table 4.** How old the documents named are, by economic subject (% of that subject's teaching pairs).
+**Table 4.** Pair-specific adjacent document-title categories by economic subject.
 
-| Economic subject           | Pairs with teaching | 1891–1991 | Conciliar (1961–1971) | Benedict XVI | Francis era | Mixed eras | No document named |
-|:---------------------------|--------------------:|----------:|----------------------:|-------------:|------------:|-----------:|------------------:|
-| Poverty & social           |                 727 |       5,5 |                   5,9 |          0,8 |        57,4 |       10,3 |              20,1 |
-| Taxes & fiscal             |                 346 |       5,8 |                   6,1 |          2,3 |        44,2 |        9,5 |              32,1 |
-| Climate & energy           |                 245 |       0,8 |                   1,2 |          0,0 |        88,2 |        7,3 |               2,4 |
-| Business & firms           |                 227 |      11,5 |                   2,2 |          0,0 |        40,5 |        9,7 |              36,1 |
-| Macro-economy              |                 156 |       7,7 |                   2,6 |          0,6 |        48,1 |       15,4 |              25,6 |
-| Wages & income             |                 130 |      13,1 |                   2,3 |          0,0 |        44,6 |       15,4 |              24,6 |
-| Unemployment               |                  74 |       6,8 |                   2,7 |          0,0 |        45,9 |        5,4 |              39,2 |
-| Housing                    |                  21 |      14,3 |                   9,5 |          0,0 |        38,1 |        4,8 |              33,3 |
-| Demography & labour supply |                  17 |       5,9 |                   0,0 |          0,0 |        29,4 |       11,8 |              52,9 |
-| Inflation & prices         |                   6 |      33,3 |                   0,0 |          0,0 |        50,0 |       16,7 |               0,0 |
+| Economic subject          | Benedict | Non-conciliar classical line | Conciliar/development | Francis era | No era-assigned document | Mixed | Total |
+|:--------------------------|---------:|-----------------------------:|----------------------:|------------:|-------------------------:|------:|------:|
+| Poverty and social policy |        5 |                           32 |                    38 |         344 |                      155 |    12 |   586 |
+| Taxes and fiscal policy   |        3 |                            8 |                    16 |          73 |                      106 |     2 |   208 |
+| Climate and energy        |        0 |                            1 |                     0 |         187 |                       10 |     4 |   202 |
+| Business and firms        |        0 |                            8 |                     1 |          44 |                       67 |     1 |   121 |
+| Macroeconomics            |        2 |                           13 |                     3 |          37 |                       38 |     1 |    94 |
+| Wages and income          |        0 |                           12 |                     2 |          13 |                       16 |     1 |    44 |
+| Unemployment              |        0 |                            3 |                     0 |           5 |                       22 |     0 |    30 |
 
-*Source: authors' calculation on the DigiKat corpus of 710 307 Croatian digital media posts,
-2021–2026. Rows sum to 100. “Mixed eras” marks a post that names documents from more than one era,
-and “no document named” a post that names a principle of the teaching but no document title. The
-euro changeover names no teaching at all and is left out.*
+*Source: authors' calculation on the official DigiKat corpus of 413 985 Croatian digital media
+posts, 2021–2026. Categories are assigned separately for each post–subject pair from its adjacent
+terms. They are mutually exclusive document-title sets, not contiguous calendar eras;
+doctrine-specific markers, including the Compendium convention, appear under “No era-assigned
+document.” Subjects with fewer than ten marked pairs are retained in the aggregate total but
+omitted from display.*

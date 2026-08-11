@@ -14,6 +14,12 @@
 suppressPackageStartupMessages({ library(here); library(ggplot2) })
 source(here::here("studies/moral-economy/sem_lib.R"))
 source(here::here("studies/moral-economy/rsp_labels.R"))   # DOM/TERM labels shared with the tables
+source(here::here("studies/moral-economy/rsp_input.R"))
+
+input_manifest <- rsp_read_input_manifest()
+CORPUS_N <- as.integer(input_manifest$database$rows)
+DATE_SPAN <- paste0(substr(input_manifest$database$date_min, 1, 4), "–",
+                    substr(input_manifest$database$date_max, 1, 4))
 
 FIGDIR <- file.path(ME_OUT, "figures"); dir.create(FIGDIR, showWarnings = FALSE, recursive = TRUE)
 DPI <- 300
@@ -39,38 +45,35 @@ GREY <- c("grey25", "grey55", "grey80")
 # The manuscript is English (IX.1), so labels are English. Domain and term names are translated
 # once, in rsp_labels.R, so the paper, its tables and its figures cannot drift apart.
 
-## ---- FIGURE 1: the gradient, raw and precision-corrected ------------------------------------
+## ---- FIGURE 1: detected gradient and denominator-only sensitivity ----------------------------
 adj <- read.csv(file.path(ME_OUT, "cst_gradient_adjusted.csv"), fileEncoding = "UTF-8")
 a <- adj[adj$code == "ax1_link_genuine", ]
 f1 <- rbind(
-  data.frame(domain = a$domain, panel = "As measured", rate = a$raw_rate,
+  data.frame(domain = a$domain, panel = "Detected marker rate", rate = a$raw_rate,
              lo = NA_real_, hi = NA_real_),
-  data.frame(domain = a$domain, panel = "Corrected for genuine meetings", rate = a$adj_rate,
+  data.frame(domain = a$domain, panel = "Denominator-only sensitivity", rate = a$adj_rate,
              lo = a$adj_lo, hi = a$adj_hi))
-# Wilson intervals for the raw panel come from the robustness detail, which is the gated source
 det <- read.csv(file.path(ME_OUT, "cst_robustness_detail.csv"), fileEncoding = "UTF-8")
-b <- det[det$variant == "baseline", ]
-f1$lo[f1$panel == "As measured"] <- b$lo[match(f1$domain[f1$panel == "As measured"], b$domain)]
-f1$hi[f1$panel == "As measured"] <- b$hi[match(f1$domain[f1$panel == "As measured"], b$domain)]
 f1$label <- DOM[f1$domain]
 ord <- a$domain[order(a$raw_rate)]
 f1$label <- factor(f1$label, levels = DOM[ord])
-f1$panel <- factor(f1$panel, levels = c("As measured", "Corrected for genuine meetings"))
+f1$panel <- factor(f1$panel, levels = c("Detected marker rate", "Denominator-only sensitivity"))
 
 p1 <- ggplot(f1, aes(label, rate)) +
   geom_col(aes(fill = panel), width = 0.68, colour = "grey20", linewidth = 0.25) +
-  geom_errorbar(aes(ymin = lo, ymax = hi), width = 0.25, linewidth = 0.35, colour = "grey15") +
-  scale_fill_manual(values = c("As measured" = "grey70",
-                               "Corrected for genuine meetings" = "grey35"), guide = "none") +
+  geom_errorbar(aes(ymin = lo, ymax = hi), width = 0.25, linewidth = 0.35,
+                colour = "grey15", na.rm = TRUE) +
+  scale_fill_manual(values = c("Detected marker rate" = "grey70",
+                               "Denominator-only sensitivity" = "grey35"), guide = "none") +
   facet_wrap(~ panel, scales = "free_x") +
   coord_flip() +
-  labs(x = NULL, y = "Pairs that name Church teaching (%)",
-       title = "Figure 1. How often Church teaching is named, by economic subject",
-       caption = paste0("Source: authors' calculation on the DigiKat corpus of 710 307 Croatian ",
-                        "digital media posts, 2021-2026.\nA pair is one post counted on one ",
-                        "subject. Bars are rates per subject and whiskers are 95% intervals. The\n",
-                        "right panel divides instead by the pairs that hand coding found to be ",
-                        "genuine meetings (60 read per subject)."))
+  labs(x = NULL, y = "Pairs carrying an explicit Tier-1 marker (%)",
+       title = "Figure 1. Explicit teaching markers by economic subject",
+       caption = paste0("Source: authors' calculation on the official DigiKat corpus of ",
+                        rsp_int(CORPUS_N), " Croatian digital media posts, ", DATE_SPAN,
+                        ".\nA pair is one post counted on one subject. The left panel is a fixed-corpus detected rate.\n",
+                        "The right panel divides by model-coded domain precision (60 fresh pairs per subject), ",
+                        "assuming every detected\nnumerator pair qualifies; whiskers propagate audit sampling only."))
 p1 <- p1 + theme_digikat_print()
 ggsave(file.path(FIGDIR, "rsp_fig1_gradient.png"), p1, width = 6.7, height = 4.1, dpi = DPI, bg = "white")
 
@@ -78,21 +81,20 @@ ggsave(file.path(FIGDIR, "rsp_fig1_gradient.png"), p1, width = 6.7, height = 4.1
 era <- read.csv(file.path(ME_OUT, "cst_core_domain_era.csv"), fileEncoding = "UTF-8")
 tot <- aggregate(Freq ~ domain, era, sum)
 era$share <- 100 * era$Freq / tot$Freq[match(era$domain, tot$domain)]
-keep <- c("green_energy", "poverty_social", "business_comp", "wages_income", "housing")
+keep <- c("green_energy", "macro_aggregates", "poverty_social", "business_comp", "wages_income")
 e <- era[era$domain %in% keep & era$era %in% c("classical", "conciliar", "francis"), ]
-e$label <- factor(DOM[e$domain], levels = DOM[c("green_energy", "poverty_social", "business_comp",
-                                                "wages_income", "housing")])
+e$label <- factor(DOM[e$domain], levels = DOM[c("green_energy", "macro_aggregates", "poverty_social",
+                                                "business_comp", "wages_income")])
 e$era <- factor(e$era, levels = c("classical", "conciliar", "francis"),
-                labels = c("Classical (1891-1991)", "Conciliar", "Francis era"))
+                labels = c("Non-conciliar classical line", "Conciliar", "Francis era"))
 p2 <- ggplot(e, aes(label, share, fill = era)) +
   geom_col(position = position_dodge(width = 0.75), width = 0.68,
            colour = "grey20", linewidth = 0.25) +
   scale_fill_manual(values = c("grey25", "grey60", "grey88")) +
   labs(x = NULL, y = "Share of the subject's teaching pairs (%)",
-       title = "Figure 2. How old the documents named are, by economic subject",
-       caption = paste0("Source: authors' calculation. Bars are the eras of the Church documents ",
-                        "named in each post. Posts that name a\nprinciple of the teaching but no ",
-                        "document are left out here and reported separately in the text.")) +
+       title = "Figure 2. Adjacent document eras by economic subject",
+       caption = paste0("Source: authors' calculation. Era is assigned to the Tier-1 term adjacent to each specific\n",
+                        "post-subject pair. Marker-only, Benedict XVI and mixed-era pairs are reported in Table 4.")) +
   theme_digikat_print() +
   theme(axis.text.x = element_text(angle = 20, hjust = 1))
 ggsave(file.path(FIGDIR, "rsp_fig2_era.png"), p2, width = 6.7, height = 3.9, dpi = DPI, bg = "white")
@@ -100,47 +102,44 @@ ggsave(file.path(FIGDIR, "rsp_fig2_era.png"), p2, width = 6.7, height = 3.9, dpi
 ## ---- FIGURE 3: the confessional / secular boundary --------------------------------------------
 v <- det[det$variant %in% c("confessional_only", "secular_min", "secular_max"), ]
 v$panel <- factor(v$variant, levels = c("confessional_only", "secular_min", "secular_max"),
-                  labels = c("Church outlets", "Secular outlets (labelled only)",
-                             "Secular outlets (widest reading)"))
+                  labels = c("Proposed confessional", "Proposed secular (minimum)",
+                             "Proposed secular (maximum)"))
 v$label <- DOM[v$domain]
 v$label <- factor(v$label, levels = DOM[ord])
 p3 <- ggplot(v, aes(label, rate)) +
   geom_col(width = 0.68, fill = "grey60", colour = "grey20", linewidth = 0.25) +
-  geom_errorbar(aes(ymin = lo, ymax = hi), width = 0.25, linewidth = 0.35, colour = "grey15") +
   facet_wrap(~ panel, nrow = 1) + coord_flip() +
-  labs(x = NULL, y = "Pairs that name Church teaching (%)",
-       title = "Figure 3. The sorting by subject happens between Church media and secular media",
-       caption = paste0("Source: authors' calculation. 'Labelled only' counts the outlets we could ",
-                        "label as secular; 'widest reading' also\ncounts every outlet we could not ",
-                        "label, which is the assumption least kind to our own argument.\n",
-                        "Whiskers are 95% intervals.")) +
+  labs(x = NULL, y = "Pairs carrying an explicit Tier-1 marker (%)",
+       title = "Figure 3. Subject profiles under proposed outlet classifications",
+       caption = paste0("Source: authors' calculation. Outlet labels proposed in step 15 are unratified and used only as\n",
+                        "a sensitivity. 'Widest reading' adds unlabelled and other outlets to the proposed secular group.")) +
   theme_digikat_print()
 ggsave(file.path(FIGDIR, "rsp_fig3_boundary.png"), p3, width = 6.9, height = 4.3, dpi = DPI, bg = "white")
 
-## ---- FIGURE 4: which doctrinal vocabulary actually circulates ---------------------------------
-# The paper's §6 claim is a comparison between terms, not a single count, so the whole detected
-# vocabulary is shown rather than the one term the argument turns on: a reader can see that the
-# option for the poor sits below eight encyclical titles without being told so.
-ct <- read.csv(file.path(ME_OUT, "cst_core_terms.csv"), fileEncoding = "UTF-8")
-ct$label <- factor(TERM_PLOT[ct$term], levels = TERM_PLOT[ct$term[order(ct$n)]])
-ct$kind <- factor(ct$kind, levels = c("document", "marker"),
-                  labels = c("Title of a Church document", "Name of a principle"))
-p4 <- ggplot(ct, aes(label, n)) +
-  geom_col(aes(fill = kind), width = 0.7, colour = "grey20", linewidth = 0.25) +
-  geom_text(aes(label = n), hjust = -0.25, size = 2.6, colour = "grey15") +
-  scale_fill_manual(values = c("Title of a Church document" = "grey35",
-                               "Name of a principle" = "grey78")) +
-  scale_y_continuous(expand = expansion(mult = c(0, 0.12))) +
-  coord_flip() +
-  labs(x = NULL, y = "Teaching posts carrying the word",
-       title = "Figure 4. Which teaching words actually circulate",
-       caption = paste0("Source: authors' calculation. All 23 Tier-1 teaching words detected in ",
-                        "the\n1 198 teaching posts; one post may carry more than one word.\n",
-                        "The preferential option for the poor, the tradition's own principle for\n",
-                        "poverty, the largest subject in the corpus, is carried by 29 posts.")) +
+## ---- FIGURE 4: construct sensitivity to the Tier-1 marker repertoire ---------------------------
+# This is the decisive construct check: keep the linked-pair denominators fixed, omit one or more
+# ecology-specific Tier-1 markers from the numerator, and compare the three leading subjects.
+lex <- read.csv(file.path(ME_OUT, "cst_lexicon_sensitivity.csv"), fileEncoding = "UTF-8")
+lex <- lex[lex$specification %in% c("baseline", "leave_out_laudato_si",
+                                    "leave_out_ecology_markers") &
+             lex$domain %in% c("green_energy", "macro_aggregates", "taxes_fiscal"), ]
+lex$spec <- factor(lex$specification,
+  levels = c("baseline", "leave_out_laudato_si", "leave_out_ecology_markers"),
+  labels = c("All Tier-1 markers", "Without Laudato si'", "Without ecology-specific markers"))
+lex$subject <- factor(DOM[lex$domain],
+  levels = DOM[c("green_energy", "macro_aggregates", "taxes_fiscal")])
+p4 <- ggplot(lex, aes(spec, detected_rate, fill = subject)) +
+  geom_col(position = position_dodge(width = 0.78), width = 0.7,
+           colour = "grey20", linewidth = 0.25) +
+  scale_fill_manual(values = c("grey25", "grey58", "grey82")) +
+  labs(x = NULL, y = "Pairs carrying a remaining Tier-1 marker (%)",
+       title = "Figure 4. The climate lead depends on ecology-specific markers",
+       caption = paste0("Source: authors' calculation. Denominators are fixed. A pair remains when at least one adjacent\n",
+                        "non-omitted Tier-1 term survives. Removing Laudato si' reverses the first two subjects.")) +
   theme_digikat_print() +
-  theme(panel.grid.major.x = element_line(colour = "grey88", linewidth = 0.3))
-ggsave(file.path(FIGDIR, "rsp_fig4_vocabulary.png"), p4, width = 7.0, height = 5.2, dpi = DPI, bg = "white")
+  theme(axis.text.x = element_text(angle = 14, hjust = 1))
+ggsave(file.path(FIGDIR, "rsp_fig4_lexicon_sensitivity.png"), p4,
+       width = 6.9, height = 4.2, dpi = DPI, bg = "white")
 
 cat("wrote:\n"); print(list.files(FIGDIR, pattern = "^rsp_fig", full.names = FALSE))
 cat("\nAll four are greyscale, white-backgrounded, Arial, 300 dpi, with a source line.\n")

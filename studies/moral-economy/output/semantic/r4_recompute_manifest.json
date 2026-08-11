@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-08-04 14:34:43 UTC",
+  "generated_utc": "2026-08-11 07:27:16 UTC",
   "generator": "studies/moral-economy/20_r4_recompute.R",
   "store": {
     "path": "data/semantic/digikat.ragnar.duckdb",
@@ -10,10 +10,10 @@
   },
   "seed": 20260804,
   "inputs": {
-    "sheet": "output/private/r4_sheet.csv",
-    "annotation": "output/private/r4_ann1.tsv",
-    "candidates": "output/stageA_candidates.rds",
-    "core": "output/private/cst_core.rds"
+    "sheet": "output/private/r4_sheet_official.csv",
+    "annotation": "output/private/r4_ann1_official.tsv",
+    "candidates": "output/stageA_candidates_official.rds",
+    "core": "output/private/cst_core_official.rds"
   },
   "outputs": {
     "precision": "output/r4_linkage_precision.csv",
@@ -22,5 +22,5 @@
   "n_coded": 660,
   "per_domain": 60,
   "draws": 20000,
-  "adjustment": "denominator only; assumes doctrinal pairs are genuine links (R1 pending)"
+  "adjustment": "denominator only; detected numerator evaluated separately by R1"
 }

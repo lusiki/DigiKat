@@ -1,18 +1,15 @@
-**Table 1.** How we get from the whole corpus down to the posts we analyse.
+**Table 1.** The nested official-corpus populations.
 
-| Group of posts                               |       Posts | % of corpus | % of meeting posts |       Pairs |
-|:---------------------------------------------|------------:|------------:|-------------------:|------------:|
-| All posts in the corpus                      |     710 307 |      100,00 |                  — |           — |
-| Posts using a teaching word anywhere         |       5 407 |        0,76 |                  — |           — |
-| **Posts where religion and economics meet**  | **108 966** |   **15,34** |         **100,00** | **132 519** |
-| … of these, posts using a teaching word      |       2 875 |        0,40 |               2,64 |           — |
-| … **using it nearby, the teaching posts**    |   **1 198** |    **0,17** |           **1,10** |   **1 949** |
-| *Memo.* Everyday political words counted too |      11 455 |        1,61 |              10,51 |           — |
+| Population                                     |   Posts | Post–subject pairs |
+|:-----------------------------------------------|--------:|-------------------:|
+| Official Catholic-topic corpus                 | 413 985 |                  — |
+| Main generic-religion Stage-A frame            |  66 374 |             79 439 |
+| Same-domain adjacent Tier-1 core               |   1 093 |              1 290 |
+| Inclusive Tier-1-as-religion frame sensitivity |  66 394 |             79 500 |
+| Inclusive adjacent Tier-1 core sensitivity     |   1 131 |              1 351 |
 
-*Source: authors' calculation on the DigiKat corpus of 710 307 Croatian digital media posts,
-2021–2026. Religion and economics count as meeting when a religious term falls within 220
-characters of an economic term. A post becomes a teaching post when one of the Tier-1 teaching
-words listed in Table A1 is within 220 characters as well; that last condition removes 1 677 posts.
-A pair is one post counted on one economic subject. The memo row adds the Tier-2 words, which are
-everyday political words we never count as teaching, and shows how high the count could possibly
-go.*
+*Source: authors' calculation on the official DigiKat corpus of 413 985 Croatian digital media
+posts, 2021–2026. Stage A requires a generic religion term within 220 characters of an economic
+expression. Core pairs additionally require a Tier-1 marker within 220 characters of an expression
+from that same economic subject. The inclusive rows are a frame sensitivity in which Tier 1 may
+also satisfy religion entry.*

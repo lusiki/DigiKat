@@ -23,9 +23,10 @@
 suppressPackageStartupMessages({ library(here); library(stringi) })
 source(here::here("studies/moral-economy/sem_lib.R"))
 source(here::here("studies/moral-economy/cst_lexicon.R"))   # terms, tiers, periodization, cst_detect()
+source(here::here("studies/moral-economy/rsp_input.R"))
 
-CORPUS <- here::here("data/semantic/corpus_prepared.rds")
-CAND   <- here::here("studies/moral-economy/output/stageA_candidates.rds")
+CORPUS <- RSP_CORPUS_PREPARED
+CAND   <- RSP_STAGEA_CANDIDATES
 CHUNK  <- 50000L
 
 # ---- 1. the census lexicon ---------------------------------------------------------------------
@@ -33,6 +34,7 @@ CHUNK  <- 50000L
 TERMS <- CST_TERMS; TIER <- CST_TIER; FIXED <- CST_FIXED
 # ---- 2. inputs ---------------------------------------------------------------------------------
 cat("Reading corpus...\n")
+rsp_assert_official_inputs()
 if (!file.exists(CORPUS)) stop("No prepared corpus at ", CORPUS, call. = FALSE)
 corpus <- readRDS(CORPUS)
 digikat_require_columns(corpus, c("doc_id", "text", "data_source", "platform"), "corpus_prepared")

@@ -1,0 +1,270 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-11 08:09:36 UTC",
+  "generator": "studies/moral-economy/31_assemble_rsp_annotations.R",
+  "database_sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a",
+  "sample": {
+    "r4_sheet_sha256": "2397de5b7f18c430f7e83593642c0f87c757b968435660388ab2f9c1280240b1",
+    "r1_sheet_sha256": "be735f0b6603889335fe736301fda7ccda21be229dafb649406de3f666ce46e3",
+    "r4_key_sha256": "645b83a69c890c8a8224407c2ab05905a63b5145ef52f7514ed127dca0f3083c",
+    "r1_key_sha256": "5017be971058c9b250dead9eaf11bb18ffd40cda7d68a7a1510a55459a13045d",
+    "r4_allocation_sha256": "82b0f3105d0ddb5201f836dc1d2e2e8fd0064cd50a1171df47c4515f74b695ff",
+    "r1_allocation_sha256": "c941e60e0db304eddce464e0d765bb532e495a3c9b8a0957739da06c7d1eae39",
+    "provenance_sha256": "2e9d4fedd6e7c45b015c1630574b8c81da48d9fc93139dc25b2d22a145d69004",
+    "r4_reused_sha256": "63d7d67b37e01df1a10ac817d25c380a02984cb1005732bc84dcc26daa4c3a41",
+    "r1_reused_sha256": "c5bc0298e3cade74477b96d3e8bc0a6d5b25409b94d0aacccb70ca4d16c5f1b0",
+    "refresh_manifest_sha256": "06b9206ebcfc55f6f5105810d49c08a27ff2367932e6c8e592f5b2bc11e431ff"
+  },
+  "coding": {
+    "system": "OpenAI Codex bounded subagents",
+    "backend_model_identifier": "not exposed to this session",
+    "decoding_settings": "not exposed to this session",
+    "date": "2026-08-11",
+    "passes": 1,
+    "independence": "two disjoint batch assignments; coders instructed to use only blind batch files",
+    "context_batches": {
+      "A": {
+        "r4": ["r4_official_batch_01", "r4_official_batch_02", "r4_official_batch_03", "r4_official_batch_04", "r4_official_batch_05", "r4_official_batch_06", "r4_official_batch_07", "r4_official_batch_08"],
+        "r1": ["r1_official_batch_01", "r1_official_batch_02"],
+        "r4_rows": 320,
+        "r1_rows": 80
+      },
+      "B": {
+        "r4": ["r4_official_batch_09", "r4_official_batch_10", "r4_official_batch_11", "r4_official_batch_12", "r4_official_batch_13", "r4_official_batch_14", "r4_official_batch_15", "r4_official_batch_16", "r4_official_batch_17"],
+        "r1": ["r1_official_batch_03", "r1_official_batch_04"],
+        "r4_rows": 340,
+        "r1_rows": 70
+      }
+    },
+    "raw_outputs_retained": "restricted per-batch TSV files in output/private",
+    "caveat": "Stable row IDs were visible and answer keys existed in the same restricted workspace; procedural blinding therefore depends on the enforced task instructions."
+  },
+  "prompts": {
+    "r4": [
+      {
+        "file": "r4_official_batch_01.md",
+        "bytes": 29364,
+        "sha256": "6d982808d6aa02576d68de7e1d24f1de9b8e48b0027e9c11e8ef45ae0675691a"
+      },
+      {
+        "file": "r4_official_batch_02.md",
+        "bytes": 29329,
+        "sha256": "92bd589f4ebaa79a1935c797c6c1e3f6d64ca2b4d101c8fc17143a4d6d89c795"
+      },
+      {
+        "file": "r4_official_batch_03.md",
+        "bytes": 29368,
+        "sha256": "93bf0cc0409bbcaa0e960c1a48e130919bd5bdb7e37325411b3f05ee9ae637c7"
+      },
+      {
+        "file": "r4_official_batch_04.md",
+        "bytes": 29061,
+        "sha256": "e395c750cfd9ea50ddb8679ef5b0d750f7eab6cbb3f1bb0d2a1c339a51b41dc5"
+      },
+      {
+        "file": "r4_official_batch_05.md",
+        "bytes": 28888,
+        "sha256": "1c571e6b5039ded43ff94881c18d90f4ebba789989c9f416f9a11c42fe395dc6"
+      },
+      {
+        "file": "r4_official_batch_06.md",
+        "bytes": 29206,
+        "sha256": "95c1fc1836dff98d2cfecf961a48dbd1f164a7e7b8d3a027458282f5bbb5aa5e"
+      },
+      {
+        "file": "r4_official_batch_07.md",
+        "bytes": 29137,
+        "sha256": "948ddc5a9e97ff45cf4e05cb6d33712d1a079777eb9b71bbd58c533d7c68d0fb"
+      },
+      {
+        "file": "r4_official_batch_08.md",
+        "bytes": 29713,
+        "sha256": "ce545322d1461773d10f18b2d0ffd78504057b6b51f771ef0d1910d3241eb576"
+      },
+      {
+        "file": "r4_official_batch_09.md",
+        "bytes": 28768,
+        "sha256": "377b9f3d546c704cbf54ee19c59956c8eb4d7b9e64b19c98881ab60b794cb96f"
+      },
+      {
+        "file": "r4_official_batch_10.md",
+        "bytes": 28909,
+        "sha256": "331d2231ba5731d58426fcb8048b8ed3e0bd32c5e12d75140f6fed597f119c3d"
+      },
+      {
+        "file": "r4_official_batch_11.md",
+        "bytes": 28493,
+        "sha256": "aba02a6bdcbf7ea74fd3d1985501d34ae86a611287bc7c545781b1438891ae06"
+      },
+      {
+        "file": "r4_official_batch_12.md",
+        "bytes": 27927,
+        "sha256": "9642f0b9d7f87f8be65b279a3c76ab36114990933ba0ba8725f23d67ebdc5387"
+      },
+      {
+        "file": "r4_official_batch_13.md",
+        "bytes": 29089,
+        "sha256": "abf719749d136a096633c89e408a5cc55c6416736dd7b6f45b53cbee91fd5000"
+      },
+      {
+        "file": "r4_official_batch_14.md",
+        "bytes": 28907,
+        "sha256": "4242bd9229ccec47237ab382e54d09252711c2b72f3d911ebb3f955a5f90c927"
+      },
+      {
+        "file": "r4_official_batch_15.md",
+        "bytes": 28869,
+        "sha256": "1ef368031c9b1b9ccda3525d1e8dbc379ba680fc321a74ad15085500dad6995d"
+      },
+      {
+        "file": "r4_official_batch_16.md",
+        "bytes": 28547,
+        "sha256": "287823aed6646686a90dad98d509c876a7346d6577d5e9c03c3df78db49e5089"
+      },
+      {
+        "file": "r4_official_batch_17.md",
+        "bytes": 15078,
+        "sha256": "ec8091c69e0ab74321f94b1ceb57ba086315b292e331d2f5eebd0a448debc9e1"
+      }
+    ],
+    "r1": [
+      {
+        "file": "r1_official_batch_01.md",
+        "bytes": 30069,
+        "sha256": "e08fb7094f9d7c3c49a9e9d171f94ad079582bab348b31f1b3dd85bf815e3daf"
+      },
+      {
+        "file": "r1_official_batch_02.md",
+        "bytes": 30224,
+        "sha256": "6107365b29ca30d6978f1b9c4a2441255e2365f818fd6df81ad2fc2de4e405a0"
+      },
+      {
+        "file": "r1_official_batch_03.md",
+        "bytes": 30286,
+        "sha256": "483617ebcb0d6a7f08e99b34823692f85432effd528a76afe100b0397895dc6c"
+      },
+      {
+        "file": "r1_official_batch_04.md",
+        "bytes": 22908,
+        "sha256": "907c04ec50a39ad677ba7e80b13ce0b229393fe70760f4debaf40bdd4ab1085c"
+      }
+    ]
+  },
+  "raw_annotations": {
+    "r4": [
+      {
+        "file": "r4_official_batch_01.tsv",
+        "bytes": 1181,
+        "sha256": "348fd6df839c7e6e7153196a9ee02408415fb984c4390fa0cf1acf533e314c92"
+      },
+      {
+        "file": "r4_official_batch_02.tsv",
+        "bytes": 1151,
+        "sha256": "5b89eccca3eb26eb4992ea82ef6a284948e2b8b62bacee3900f572c50a93650b"
+      },
+      {
+        "file": "r4_official_batch_03.tsv",
+        "bytes": 1171,
+        "sha256": "4eedc62cbd9274c60cd3819a2a9de5e467721217b79f86338bbdeb53386be727"
+      },
+      {
+        "file": "r4_official_batch_04.tsv",
+        "bytes": 1221,
+        "sha256": "64b0be9f91f6f83de9ec16a9dd481aa16c4207b15427d7a2c31cd076b265e98e"
+      },
+      {
+        "file": "r4_official_batch_05.tsv",
+        "bytes": 1253,
+        "sha256": "ed74d48c1489331639a3ae8851d4e0e1e7837a8ceee39950460ef0717f8e9bad"
+      },
+      {
+        "file": "r4_official_batch_06.tsv",
+        "bytes": 1251,
+        "sha256": "898da9f3d0b8d8d5d38db60172b2f9ff21c8b7449d0ec8cb8250872293a17108"
+      },
+      {
+        "file": "r4_official_batch_07.tsv",
+        "bytes": 1211,
+        "sha256": "41c72de97b9424c89a54cca6e6b3a659fb4a5bc086b0eb9b982fdcf50bf7ca2c"
+      },
+      {
+        "file": "r4_official_batch_08.tsv",
+        "bytes": 1212,
+        "sha256": "9b4434a3b95795d6ce45c39fdee52f9192eaa2cfe10e30b3bfe551c9dd522c0c"
+      },
+      {
+        "file": "r4_official_batch_09.tsv",
+        "bytes": 1190,
+        "sha256": "44c9cd65db57bf05ce260bd8809902a1e65de934731ccc74b73665de89e36ca5"
+      },
+      {
+        "file": "r4_official_batch_10.tsv",
+        "bytes": 1210,
+        "sha256": "3d912b0bd8fb93fae6894a4e8df078355801a94f1bc51969fce1733ff4a27ab5"
+      },
+      {
+        "file": "r4_official_batch_11.tsv",
+        "bytes": 1196,
+        "sha256": "b139886fe52bd5a9f4d0be28cb2847b9a1b5f8e316fc86e7e951234122535cb3"
+      },
+      {
+        "file": "r4_official_batch_12.tsv",
+        "bytes": 1210,
+        "sha256": "0883ea145c132fa67d909178b083ac713fd79f54b9860f28a2543787b708491b"
+      },
+      {
+        "file": "r4_official_batch_13.tsv",
+        "bytes": 1194,
+        "sha256": "18553410651ae5fcfcea317b0f512ab2788833db379badb2ce4032c362d71655"
+      },
+      {
+        "file": "r4_official_batch_14.tsv",
+        "bytes": 1200,
+        "sha256": "ad03537564ca1c62563d16646a447273c01d7834661527ceb3e10cbd4fe2c0f4"
+      },
+      {
+        "file": "r4_official_batch_15.tsv",
+        "bytes": 1181,
+        "sha256": "8973ba16985abdd472a5be8a886a9e1e7a74717fb8b372e6b0977e0c7720fe31"
+      },
+      {
+        "file": "r4_official_batch_16.tsv",
+        "bytes": 1218,
+        "sha256": "59ef09943aa548e996647196f3c389bae4f2f6c108e6779ae789f51becd9e999"
+      },
+      {
+        "file": "r4_official_batch_17.tsv",
+        "bytes": 608,
+        "sha256": "ecea979a23e1d42908167670f9830776129518a37161e69fe3a21d3188def6bd"
+      }
+    ],
+    "r1": [
+      {
+        "file": "r1_official_batch_01.tsv",
+        "bytes": 881,
+        "sha256": "903ba549867c915ab07c33cbc77ac1dc5582d8139f77bd6f81ef62fff889d952"
+      },
+      {
+        "file": "r1_official_batch_02.tsv",
+        "bytes": 898,
+        "sha256": "d5cdca56b70f0ed5e9178a016c0d117c6a66183862c4f47ebcdd0eb50a314442"
+      },
+      {
+        "file": "r1_official_batch_03.tsv",
+        "bytes": 907,
+        "sha256": "0480ffc600b98d83eb163ab94a15d643181e3c078187af847ae1e93616626325"
+      },
+      {
+        "file": "r1_official_batch_04.tsv",
+        "bytes": 712,
+        "sha256": "d374a9968bf6af667f164570f8507e51d66176f6d9e5cb476bb77f40a0ceb8c5"
+      }
+    ]
+  },
+  "assembled": {
+    "r4_rows": 660,
+    "r4_sha256": "d79d7d6f3a6eb9c0725f4abd1a285be1b61b14eb54c5519b0ac11a21b2201d89",
+    "r1_rows": 150,
+    "r1_sha256": "dc76305bf2b6b4515b32430d9e2c097c70c388933d04f3ca871c7df7733f3426"
+  }
+}

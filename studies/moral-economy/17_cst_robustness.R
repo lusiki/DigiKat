@@ -37,9 +37,11 @@
 suppressPackageStartupMessages({
   library(here); library(dplyr); library(tidyr); library(stringi)
 })
+source(here::here("studies/moral-economy/sem_lib.R"))
+source(here::here("studies/moral-economy/cst_core.R"))
 
-OUT     <- here::here("studies/moral-economy/output")
-PRIVATE <- file.path(OUT, "private")
+OUT     <- ME_OUT
+PRIVATE <- ME_PRIVATE
 stopifnot(dir.exists(OUT), dir.exists(PRIVATE))
 
 # Wilson score interval — same estimator as sem_lib::wilson(); reproduced locally so this script has
@@ -56,32 +58,23 @@ wilson <- function(x, n, conf = 0.95) {
 cat("== 17_cst_robustness.R ==\n")
 
 ## ---------------------------------------------------------------------- inputs
-cand <- readRDS(file.path(OUT, "stageA_candidates.rds"))
-core <- readRDS(file.path(PRIVATE, "cst_core.rds"))
+rsp_assert_official_inputs()
+cand <- readRDS(RSP_STAGEA_CANDIDATES)
+core <- cst_build_core(verbose = FALSE)
 cat("candidates:", nrow(cand), "rows /", dplyr::n_distinct(cand$rid), "posts\n")
 cat("core      :", nrow(core), "posts\n")
 
-# cst_core$domains is a SPACE-separated list ("green_energy poverty_social").
-core_long <- core |>
-  dplyr::select(rid, domains) |>
-  tidyr::separate_rows(domains, sep = "\\s+") |>
-  dplyr::mutate(domain = stringi::stri_trim_both(domains)) |>
-  dplyr::filter(nzchar(domain)) |>
+core_long <- cst_core_pairs(core) |>
   dplyr::select(rid, domain) |>
   dplyr::distinct()
 cat("core domain-mentions:", nrow(core_long), "\n")
 
 ## ------------------------------------------------------------------- gate G1
-published <- c(poverty_social = 727L, taxes_fiscal = 346L, green_energy = 245L, business_comp = 227L,
-               macro_aggregates = 156L, wages_income = 130L, unemployment = 74L, housing = 21L,
-               demography_econ = 17L, inflation_prices = 6L)
-got <- table(core_long$domain)
-chk <- vapply(names(published), function(d) { v <- got[d]; if (is.na(v)) 0L else as.integer(v) }, integer(1))
-if (!identical(chk, published)) {
-  print(data.frame(domain = names(published), published = published, got = chk))
-  stop("GATE G1 FAILED - exploded core does not reproduce the published domain counts.")
+if (nrow(core_long) < nrow(core) || !setequal(unique(core_long$rid), core$rid)) {
+  stop("GATE G1 FAILED - the pair view does not cover every core post.")
 }
-cat("GATE G1 ok - exploded core reproduces the published domain counts (", nrow(core_long), "mentions )\n")
+cat("GATE G1 ok - every stored pair has same-domain CST adjacency (",
+    nrow(core), "posts /", nrow(core_long), "pairs )\n")
 
 ## ------------------------------------------------------------------ gate G1b
 cand_pairs <- dplyr::distinct(cand, rid, domain)
@@ -111,14 +104,16 @@ post_keys <- cand |>
                    k_tit = k_tit[1], .groups = "drop")
 
 dup_report <- function(key) {
-  d <- post_keys |> dplyr::filter(nzchar(.data[[key]])) |> dplyr::count(.data[[key]], name = "cluster_size")
+  valid <- !is.na(post_keys[[key]]) & nzchar(post_keys[[key]])
+  d <- post_keys[valid, , drop = FALSE] |>
+    dplyr::count(.data[[key]], name = "cluster_size")
   list(dist = dplyr::count(d, cluster_size, name = "n_clusters"),
        n_multi = sum(d$cluster_size > 1), max = max(d$cluster_size),
        absorbed = sum(d$cluster_size) - nrow(d),
-       keep = post_keys |> dplyr::filter(nzchar(.data[[key]])) |>
+       keep = post_keys[valid, , drop = FALSE] |>
          dplyr::group_by(.data[[key]]) |> dplyr::slice_min(rid, n = 1, with_ties = FALSE) |>
          dplyr::ungroup() |> dplyr::pull(rid) |>
-         c(post_keys$rid[!nzchar(post_keys[[key]])]))
+         c(post_keys$rid[!valid]))
 }
 dw <- dup_report("k_win"); dt <- dup_report("k_tit")
 n_posts0 <- dplyr::n_distinct(cand$rid)
@@ -165,11 +160,15 @@ add <- function(name, cd) {
 ## ------------------------------------------------------------- baseline + G2
 add("baseline", cand)
 gb <- variants[["baseline"]]; gr <- gb[gb$domain == "green_energy", ]
-cat(sprintf("\nGATE G2 - baseline green %.2f%% [%.2f, %.2f]  (published 7.15%% [6.34, 8.07])\n",
-            100*gr$rate, 100*gr$lo, 100*gr$hi))
-if (abs(100*gr$rate - 7.15) > 0.02 || abs(100*gr$lo - 6.34) > 0.02 || abs(100*gr$hi - 8.07) > 0.02)
-  stop("GATE G2 FAILED - baseline does not reproduce the published green_energy rate/CI.")
-cat("GATE G2 ok\n")
+green_den <- sum(cand_pairs$domain == "green_energy")
+green_num <- sum(core_long$domain == "green_energy")
+cat(sprintf("\nGATE G2 - official baseline green %.2f%% [%0.2f, %.2f] (%d/%d pairs)\n",
+            100*gr$rate, 100*gr$lo, 100*gr$hi, green_num, green_den))
+if (nrow(gr) != 1L || gr$linked != green_den || gr$doctrinal != green_num ||
+    abs(gr$rate - green_num / green_den) > 1e-12) {
+  stop("GATE G2 FAILED - baseline does not reconcile to the official numerator/denominator pairs.")
+}
+cat("GATE G2 ok - independently counted official pairs reproduce the baseline\n")
 
 ## ---------------------------------------------------------------- R5 / R11 / R3
 add("dedup_window", dplyr::filter(cand, rid %in% dw$keep))
@@ -199,18 +198,22 @@ for (k in c(1, 3, 5, 10))
 ## ---------------------------------------------------------------------- R7 labels
 prop_path <- file.path(PRIVATE, "proposed_source_labels.csv")
 lab <- dplyr::mutate(cand, lab0 = as.character(label), lab1 = as.character(label))
-if (file.exists(prop_path)) {
-  pl  <- utils::read.csv(prop_path, fileEncoding = "UTF-8", stringsAsFactors = FALSE)
-  key <- intersect(c("FROM", "from", "source", "outlet", "actor"), names(pl))[1]
-  val <- intersect(c("label", "proposed_label", "label_proposed", "type"), names(pl))[1]
-  if (!is.na(key) && !is.na(val)) {
-    map <- stats::setNames(pl[[val]], pl[[key]])
-    lab <- lab |> dplyr::mutate(
-      lab1 = ifelse(lab0 %in% c("confessional", "secular"), lab0,
-                    ifelse(FROM %in% names(map), unname(map[FROM]), lab0)))
-    cat(sprintf("\nR7: joined %d proposed labels on '%s' -> '%s'\n", nrow(pl), key, val))
-  } else cat("\nR7: could not identify columns in proposed_source_labels.csv\n")
-} else cat("\nR7: proposed_source_labels.csv not found - labels remain pre-promotion\n")
+if (!file.exists(prop_path)) {
+  stop("R7 proposal-based outlet sensitivity requires: ", prop_path,
+       "\nRun 15_propose_source_labels.R first.", call. = FALSE)
+}
+pl  <- utils::read.csv(prop_path, fileEncoding = "UTF-8", stringsAsFactors = FALSE)
+key <- intersect(c("FROM", "from", "source", "outlet", "actor"), names(pl))[1]
+val <- intersect(c("label", "proposed_label", "label_proposed", "type"), names(pl))[1]
+if (is.na(key) || is.na(val) || anyDuplicated(pl[[key]])) {
+  stop("R7 proposal file is malformed or has duplicate outlet keys.", call. = FALSE)
+}
+map <- stats::setNames(pl[[val]], pl[[key]])
+lab <- lab |> dplyr::mutate(
+  lab1 = ifelse(lab0 %in% c("confessional", "secular"), lab0,
+                ifelse(FROM %in% names(map), unname(map[FROM]), lab0)))
+cat(sprintf("\nR7: joined %d unratified proposed labels on '%s' -> '%s' (sensitivity only)\n",
+            nrow(pl), key, val))
 lab_share <- round(100 * mean(lab$lab1 %in% c("confessional", "secular")), 1)
 cat("R7: share of candidate rows carrying a confessional/secular label:", lab_share, "%\n")
 

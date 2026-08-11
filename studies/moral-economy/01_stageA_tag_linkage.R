@@ -14,16 +14,20 @@
 #   Rscript studies/moral-economy/01_stageA_tag_linkage.R
 suppressPackageStartupMessages({ library(here); library(dplyr); library(stringr) })
 source(here::here("studies/moral-economy/lexicon.R"))
+source(here::here("R/lib/digikat_paths.R"))
 
 # PINNED to the accumulator (data/merged_comprehensive.rds), NOT the official corpus
 # data/digikat_corpus.rds. This analysis is complete and its published numbers were computed
 # from the accumulator; repointing it would silently change results a paper already reports.
 # See quality_reports/plans/2026-08-10_official-corpus-v1.md §4.
-src <- here::here("data/merged_comprehensive.rds")
+args <- commandArgs(trailingOnly = TRUE)
+OFFICIAL <- "--official" %in% args
+src <- here::here(if (OFFICIAL) digikat_corpus_path() else digikat_legacy_master_path())
 if (!file.exists(src)) stop("Stage A needs the master. See CLAUDE.local.md.")
 out_dir <- here::here("studies/moral-economy/output")
 dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
-CAND_PATH <- file.path(out_dir, "stageA_candidates.rds")
+SUFFIX <- if (OFFICIAL) "_official" else ""
+CAND_PATH <- file.path(out_dir, paste0("stageA_candidates", SUFFIX, ".rds"))
 
 relig <- me_build_religion_regex()
 cat(sprintf("Religion lexicon: %d terms, %d homonym tightenings applied.\n", relig$n_terms, length(relig$tightened)))
@@ -36,6 +40,8 @@ lab_path <- here::here("resources/dictionaries/source_labels.csv")
 fp <- list(econ = ME_ECON, relig = relig$with_caritas, infl_rx = ME_INFLATION_METAPHOR,
            foreign_rx = ME_FOREIGN_HINT, window = ME_WINDOW,
            mtime = as.character(file.info(src)$mtime), size = file.info(src)$size,
+           input_class = if (OFFICIAL) "official_corpus" else "legacy_accumulator",
+           id_contract = if (OFFICIAL) "dk_master_row" else "row_position",
            relterms_md5 = unname(tools::md5sum(here::here("R/religious_terms.R"))),
            label_mtime = if (file.exists(lab_path)) as.character(file.info(lab_path)$mtime) else NA)
 if (file.exists(CAND_PATH)) {
@@ -50,6 +56,11 @@ if (inherits(corpus, "data.table")) data.table::setDF(corpus) else corpus <- as.
 need <- c("FULL_TEXT", "DATE"); miss <- setdiff(need, names(corpus))
 if (length(miss)) stop("Master missing columns: ", paste(miss, collapse = ", "))
 N <- nrow(corpus)
+RID <- if (OFFICIAL) {
+  if (!"dk_master_row" %in% names(corpus) || anyNA(corpus$dk_master_row) || anyDuplicated(corpus$dk_master_row))
+    stop("Official corpus requires a complete unique dk_master_row key.", call. = FALSE)
+  as.integer(corpus$dk_master_row)
+} else seq_len(N)
 cat(sprintf("  %s rows in %.1f min\n", format(N, big.mark = ","), as.numeric(difftime(Sys.time(), t0, "mins"))))
 
 # optional metadata columns (present in this master; guard if absent)
@@ -135,7 +146,7 @@ WIN_PAD <- 40L   # extra context chars each side of the matched proximity span, 
 # saves after EVERY chunk (not just once at the very end) — an interruption loses at most one
 # chunk's work (~14 min), not the whole multi-hour pass. Resume picks up at the first incomplete chunk.
 na_safe <- function(x) { x[is.na(x)] <- FALSE; x }
-GLOBAL_PATH <- file.path(out_dir, "stageA_global_religion.rds")
+GLOBAL_PATH <- file.path(out_dir, paste0("stageA_global_religion", SUFFIX, ".rds"))
 CHUNK <- 25000L
 global_fp <- list(relig_wc = relig$with_caritas, relig_core = relig$core, foreign_rx = ME_FOREIGN_HINT,
                   mtime = fp$mtime, size = fp$size, relterms_md5 = fp$relterms_md5, chunk = CHUNK)
@@ -214,7 +225,7 @@ for (d in names(ME_ECON)) {
   if (length(lk)) {
     li <- matched[lk]
     cand_list[[d]] <- data.frame(
-      rid = li, domain = d, tier = ME_TIER[[d]],
+      rid = RID[li], domain = d, tier = ME_TIER[[d]],
       DATE = corpus$DATE[li], year = format(dparse[li], "%Y"), month = format(dparse[li], "%Y-%m"),
       FROM = FROM[li], SOURCE_TYPE = SOURCE_TYPE[li], stream = STREAM[li], label = label[li],
       actor_only_caritas = actor_only[lk], foreign_hint = foreign[lk], infl_metaphor_hint = metaphor[lk],
@@ -227,7 +238,7 @@ for (d in names(ME_ECON)) {
     ploc <- str_locate(txt[ps], IC(dom_rx))
     pa <- pmax(1L, ploc[,1]-ME_WINDOW); pb <- pmin(str_length(txt[ps]), ploc[,2]+ME_WINDOW)
     prec_list[[d]] <- data.frame(
-      rid = matched[ps], domain = d, matched = TRUE, linked = linked[ps],
+      rid = RID[matched[ps]], domain = d, matched = TRUE, linked = linked[ps],
       FROM = FROM[matched[ps]], stream = STREAM[matched[ps]], label = label[matched[ps]],
       window = str_replace_all(str_sub(txt[ps], pa, pb), "\\s+", " "), stringsAsFactors = FALSE)
   }
@@ -253,13 +264,15 @@ for (d in names(ME_ECON)) {
 candidates <- do.call(rbind, cand_list); rownames(candidates) <- NULL
 attr(candidates, "fingerprint") <- fp
 saveRDS(candidates, CAND_PATH)
-saveRDS(do.call(rbind, prec_list), file.path(out_dir, "stageA_precision_sample.rds"))
+saveRDS(do.call(rbind, prec_list), file.path(out_dir, paste0("stageA_precision_sample", SUFFIX, ".rds")))
 stats <- do.call(rbind, stat_list)
-write.csv(stats, file.path(out_dir, "stageA_domain_stats.csv"), row.names = FALSE, fileEncoding = "UTF-8")
+write.csv(stats, file.path(out_dir, paste0("stageA_domain_stats", SUFFIX, ".csv")),
+          row.names = FALSE, fileEncoding = "UTF-8")
 
 cat("\n== STAGE A complete — full-census linkage (N =", format(N, big.mark=","), ") ==\n")
 print(stats[, c("domain","tier","n_matched","n_linked","linkage","confessional_share")], row.names = FALSE)
 cat("\nLINKED candidate pool (Stage-B source):", format(nrow(candidates), big.mark=","), "rows across",
     length(unique(candidates$domain)), "domains\n")
-cat("Outputs: stageA_candidates.rds | stageA_precision_sample.rds | stageA_domain_stats.csv ->", out_dir, "\n")
+cat("Outputs:", basename(CAND_PATH), "| stageA_precision_sample", SUFFIX,
+    ".rds | stageA_domain_stats", SUFFIX, ".csv ->", out_dir, "\n", sep = " ")
 cat("Next: 02_gate1_precision_scan.R (hand-scan) then 03_build_coding_sheet.R (stratified sample).\n")

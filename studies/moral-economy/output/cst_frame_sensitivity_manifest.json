@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-11 08:15:28 UTC",
+  "generator": "studies/moral-economy/33_cst_frame_sensitivity.R",
+  "store": {
+    "path": "data/semantic/digikat.ragnar.duckdb",
+    "model": "bge-m3",
+    "dim": 1024,
+    "truncation_chars": 4000
+  },
+  "seed": 20260804,
+  "inputs": {
+    "database_sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a",
+    "candidates_sha256": "4dd5e23d8465ae1c23be1bf36d42ba19f789ccc0212bb8fade255b0bac4abac6",
+    "core_sha256": "59c34d299f96f18dcd727c86cca494168ee7196dd288523683248d18b5051130"
+  },
+  "outputs": {
+    "table": "output/cst_frame_sensitivity.csv",
+    "table_sha256": "7811a04068e2665269c4f967f6f654fb01d2a602e7a329c9a9b094b9f0af0f51"
+  },
+  "main": {
+    "linked_posts": 66374,
+    "linked_pairs": 79439,
+    "core_posts": 1093,
+    "core_pairs": 1290
+  },
+  "inclusive": {
+    "linked_posts": 66394,
+    "linked_pairs": 79500,
+    "core_posts": 1131,
+    "core_pairs": 1351
+  },
+  "boundary": {
+    "added_pairs": 61,
+    "added_posts_outside_main_frame": 20,
+    "main_frame_posts_with_only_a_different_qualifying_domain": 18
+  }
+}

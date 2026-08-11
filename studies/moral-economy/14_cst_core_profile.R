@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-# moral-economy — STEP 14: DESCRIPTIVE PROFILE OF THE CST CORE SET (n = 1,198).
+# moral-economy — STEP 14: DESCRIPTIVE PROFILE OF THE OFFICIAL-CORPUS CST CORE SET.
 #
 # The stage-setting report for the analysis. Answers four questions about the population defined in
 # cst_core.R — what is in it, what words it uses, where it is published, and what that implies for the
@@ -37,7 +37,7 @@ REPORT  <- file.path(ME_PRIVATE, "CST_CORE_PROFILE.md")
 MODEL   <- here::here("resources/models/croatian-set-ud-2.5-191206.udpipe")
 dir.create(FIGDIR, recursive = TRUE, showWarnings = FALSE)
 
-core <- cst_build_core(verbose = TRUE)
+core <- cst_build_core(refresh = REFRESH, verbose = TRUE)
 n    <- nrow(core)
 cat(sprintf("Core set: %d posts\n", n))
 
@@ -56,13 +56,9 @@ md <- function(d, digits = 2) {
 
 # ---- 1. structure -----------------------------------------------------------------------------------
 core$year <- format(core$date, "%Y")
-# a post may carry several economic domains; expand for domain-level counts and say so wherever used
-dom_long <- do.call(rbind, lapply(seq_len(n), function(i) {
-  d <- strsplit(core$domains[i], " ")[[1]]
-  if (!length(d)) return(NULL)
-  data.frame(rid = core$rid[i], domain = d, era = core$era[i], label = core$label[i],
-             stream = core$stream[i], stringsAsFactors = FALSE)
-}))
+# A post may carry several same-domain adjacency pairs; expand only the domains that passed that test.
+dom_long <- merge(cst_core_pairs(core)[, c("rid", "domain", "era")],
+                  core[, c("rid", "label", "stream")], by = "rid", sort = FALSE)
 dom_long$tier <- unname(ME_TIER[dom_long$domain])
 
 term_long <- do.call(rbind, lapply(seq_len(n), function(i) {
@@ -77,18 +73,25 @@ n_dom  <- tapply(dom_long$domain, dom_long$rid, length)
 n_term <- tapply(term_long$term, term_long$rid, length)
 
 # ---- 2. NLP: lemmatise the junction slices ------------------------------------------------------------
-ud_cache <- file.path(ME_PRIVATE, "cst_core_udpipe.rds")
+ud_cache <- file.path(ME_PRIVATE, "cst_core_official_udpipe.rds")
 model <- udpipe_load_model(MODEL)
 
 annotate <- function(txt, ids, cache, label) {
+  fp <- list(database = rsp_read_input_manifest()$database$sha256,
+             ids = digikat_hash_object(as.character(ids)),
+             text_sha256 = digikat_hash_object(as.character(txt)), label = label)
   if (!REFRESH && file.exists(cache)) {
     a <- readRDS(cache)
-    if (length(unique(a$doc_id)) == length(ids)) { cat("  [cached]", label, "\n"); return(a) }
+    if (identical(attr(a, "fingerprint"), fp) &&
+        setequal(as.character(unique(a$doc_id)), as.character(ids))) {
+      cat("  [cached]", label, "\n"); return(a)
+    }
   }
   cat("  annotating", label, "-", format(sum(nchar(txt)), big.mark = ","), "chars...\n")
   a <- as.data.frame(udpipe_annotate(model, x = txt, doc_id = ids, parser = "none"))
   # udpipe 0.8.16 exposes no character offsets, so downstream code must not ask for start/end.
   a <- a[, c("doc_id", "token_id", "token", "lemma", "upos")]
+  attr(a, "fingerprint") <- fp
   saveRDS(a, cache); a
 }
 
@@ -127,7 +130,7 @@ jwin <- stri_sub(core$slice,
                  pmax(1L, core$junction - ME_WINDOW),
                  pmin(stri_length(core$slice), core$junction + ME_WINDOW))
 jz <- annotate(jwin, as.character(core$rid),
-               file.path(ME_PRIVATE, "cst_core_junction_udpipe.rds"), "junction windows")
+               file.path(ME_PRIVATE, "cst_core_official_junction_udpipe.rds"), "junction windows")
 jz <- trim_edges(jz)
 jz$lemma <- stri_trans_tolower(jz$lemma)
 jz <- jz[jz$upos %in% CONTENT & stri_length(jz$lemma) > 2 &
@@ -135,8 +138,9 @@ jz <- jz[jz$upos %in% CONTENT & stri_length(jz$lemma) > 2 &
 
 # ---- 3. keyness vs a matched background ----------------------------------------------------------------
 # Both sides are stageA's +-220 linkage window: identical extraction, only membership differs.
-cand <- readRDS(file.path(ME_OUT, "stageA_candidates.rds"))
+cand <- readRDS(RSP_STAGEA_CANDIDATES)
 cand$rid <- as.integer(cand$rid)
+linked_posts <- length(unique(cand$rid))
 cw <- cand[!duplicated(cand$rid), c("rid", "window")]
 set.seed(ME_SEED)
 bg_pool <- setdiff(cw$rid, core$rid)
@@ -147,9 +151,9 @@ bg_w   <- cw$window[match(bg_rid,   cw$rid)]
 ok_c <- !is.na(core_w) & nzchar(core_w); ok_b <- !is.na(bg_w) & nzchar(bg_w)
 
 ann_cw <- annotate(core_w[ok_c], as.character(core$rid[ok_c]),
-                   file.path(ME_PRIVATE, "cst_core_window_udpipe.rds"), "core linkage windows")
+                   file.path(ME_PRIVATE, "cst_core_official_window_udpipe.rds"), "core linkage windows")
 ann_bw <- annotate(bg_w[ok_b], as.character(bg_rid[ok_b]),
-                   file.path(ME_PRIVATE, "cst_bg_window_udpipe.rds"), "background linkage windows")
+                   file.path(ME_PRIVATE, "cst_bg_official_window_udpipe.rds"), "background linkage windows")
 
 prep <- function(a) {
   a$lemma <- stri_trans_tolower(a$lemma)
@@ -236,6 +240,10 @@ pf   <- tbl(core$platform); names(pf)[1] <- "platform"
 st   <- tbl(core$stream); names(st)[1] <- "stream"
 yr   <- tbl(core$year); names(yr)[1] <- "year"
 er   <- tbl(core$era); names(er)[1] <- "era"
+census_path <- file.path(ME_OUT, "cst_census_summary.csv")
+census <- if (file.exists(census_path)) read.csv(census_path, fileEncoding = "UTF-8") else NULL
+t1_layer <- if (!is.null(census)) census$n_linked_econ[census$group == "tier1_strict"] else NA_integer_
+adjacency_cost <- if (length(t1_layer) == 1L && !is.na(t1_layer)) t1_layer - n else NA_integer_
 
 # proposed coding strata: era x tier, the two axes the paper's claims turn on
 core$dom_tier <- vapply(strsplit(core$domains, " "), function(d)
@@ -263,11 +271,13 @@ paste0("**n = ", n, " posts.** Generated ", format(Sys.time(), "%Y-%m-%d %H:%M")
 paste0("3. the **CST term is itself within ±", ME_WINDOW, " chars of an economic term**."),
 "",
 paste0("Condition 3 is what makes this an analysis population rather than a keyword bag: every member has ",
-       "doctrine genuinely adjacent to economics, not merely somewhere in the same article. It costs ",
-       "1,677 of the 2,875 posts that satisfy 1 and 2 alone."),
+       "doctrine genuinely adjacent to economics, not merely somewhere in the same article.",
+       if (!is.na(adjacency_cost)) paste0(" It removes ", adjacency_cost, " of the ", t1_layer,
+                                          " posts that satisfy conditions 1 and 2 alone.") else ""),
 "",
-paste0("**Scarcity, the headline:** ", n, " of 108,966 religion-linked economic posts — ",
-       pct(n / 108966, 2), ", about 1 in ", round(108966 / n), "."),
+paste0("**Scarcity, the headline:** ", n, " of ", linked_posts,
+       " religion-linked economic posts — ", pct(n / linked_posts, 2),
+       ", about 1 in ", round(linked_posts / n), "."),
 "",
 "## 1. How close is the doctrine to the economics?",
 "",
@@ -356,9 +366,10 @@ paste0("Log-odds with an informative Dirichlet prior (Monroe et al. 2008), again
 "**The paper has three moving parts, and this population serves the second and third.**",
 "",
 paste0("1. **Scarcity** needs the denominator, not this set: ", n,
-       " / 108,966. Do not compute it from here."),
+       " / ", linked_posts, ". Do not compute it from here."),
 "2. **Composition** — what doctrinal economic discourse looks like — is this set, described above.",
-"3. **Contrast** — the core against the other 107,768 — is the keyness table, extended to the",
+paste0("3. **Contrast** — the core against the other ", linked_posts - n,
+       " linked posts — is the keyness table, extended to the"),
 "   coded axes once coding exists.",
 "",
 paste0("**Proposed hand-coding sample (~400 of ", n, ").** Strata are doctrinal era × economic-domain ",
@@ -369,8 +380,8 @@ md(strata[order(-strata$Freq), c("era", "domain_tier", "Freq", "share", "draw_40
 "",
 "**Three things to settle before coding starts.**",
 "",
-paste0("- **The 82.** Posts with doctrine adjacent to economics that never entered the linked layer, ",
-       "because the 95-term religion lexicon contains no CST vocabulary. They are excluded here. ",
+paste0("- **Boundary cases.** Posts with doctrine adjacent to economics that never entered the linked layer, ",
+       "because the 95-term religion lexicon contains no CST vocabulary, are excluded here. ",
        "If they read as genuine, the fix is to add CST terms to the linkage lexicon and rebuild — ",
        "which changes the population, so decide now, not after coding."),
 "- **The human validation slice.** Still the blocking item for a sociology-of-religion venue: the",

@@ -8,8 +8,8 @@
 # share varies across domains the way it varies inside the 555-item gold set (3.1%-53.1%), the
 # gradient is an artefact of the denominator, not a fact about doctrine.
 #
-# 19_r4_linkage_sample.R drew 60 (rid, domain) pairs per domain at random from the layer and they
-# were coded on CODEBOOK.md Axis 1. This script turns that into a corrected gradient.
+# The official refresh draws and codes a fresh sample of 60 (rid, domain) pairs per subject. This
+# script uses those Axis-1 codes for a denominator-only sensitivity analysis.
 #
 #   Rscript studies/moral-economy/20_r4_recompute.R
 #
@@ -25,7 +25,7 @@
 # This is the invocation rate among GENUINELY religion-economy-linked pairs, and it assumes every
 # doctrinal pair is itself a genuine link. That assumption is favourable to the denominator
 # correction being large, i.e. it is the conservative direction for anyone defending the raw
-# gradient, and it is exactly what R1 (numerator precision) still has to test. Say so in the paper.
+# gradient. R1 evaluates the numerator separately; do not multiply post-level and pair-level audits.
 #
 # INTERVALS. Wilson intervals do not propagate through a ratio, so the adjusted rate's uncertainty
 # is obtained by Monte Carlo over Jeffreys posteriors for each domain's precision, with the census
@@ -33,6 +33,7 @@
 # not any single adjusted rate but P(green_energy ranks first after adjustment).
 suppressPackageStartupMessages({ library(here) })
 source(here::here("studies/moral-economy/sem_lib.R"))
+source(here::here("studies/moral-economy/rsp_input.R"))
 
 DRAWS <- 20000L
 OUT   <- ME_OUT
@@ -40,9 +41,9 @@ OUT   <- ME_OUT
 cat("=== R4 — precision-corrected invocation gradient ===\n")
 
 ## ---------------------------------------------------------------- gate R4a: annotation integrity
-sheet <- read.csv(file.path(ME_PRIVATE, "r4_sheet.csv"), fileEncoding = "UTF-8",
+sheet <- read.csv(RSP_R4_SHEET, fileEncoding = "UTF-8",
                   stringsAsFactors = FALSE)
-ann   <- read.delim(file.path(ME_PRIVATE, "r4_ann1.tsv"), fileEncoding = "UTF-8",
+ann   <- read.delim(RSP_R4_ANN, fileEncoding = "UTF-8",
                     stringsAsFactors = FALSE)
 
 # The annotation was transcribed item-by-item, so a mis-keyed rid is a live failure mode, not a
@@ -74,16 +75,14 @@ sem_gate_report("R4a annotation integrity",
                 TRUE, sprintf("%d items, rid matched to sheet, codes nested", nrow(ann)))
 
 ## ---------------------------------------------------------------- the census counts
-cand <- readRDS(file.path(OUT, "stageA_candidates.rds"))
+cand <- readRDS(RSP_STAGEA_CANDIDATES)
 cand$rid <- as.integer(cand$rid)
 den <- as.data.frame(table(unique(cand[, c("rid", "domain")])$domain), stringsAsFactors = FALSE)
 names(den) <- c("domain", "linked")
 
 source(here::here("studies/moral-economy/cst_core.R"))
 core <- cst_build_core(verbose = FALSE)
-core_long <- unique(data.frame(
-  rid    = rep(core$rid, lengths(strsplit(core$domains, "\\s+"))),
-  domain = unlist(strsplit(core$domains, "\\s+")), stringsAsFactors = FALSE))
+core_long <- cst_core_pairs(core)[, c("rid", "domain")]
 num <- as.data.frame(table(core_long$domain), stringsAsFactors = FALSE)
 names(num) <- c("domain", "doctrinal")
 
@@ -91,10 +90,13 @@ g <- merge(den, num, by = "domain", all.x = TRUE)
 g$doctrinal[is.na(g$doctrinal)] <- 0L
 g$raw_rate <- 100 * g$doctrinal / g$linked
 
-# G2-equivalent: the baseline must still reproduce the published headline before we correct it.
+# G2-equivalent: the baseline must reproduce the independently generated official robustness table.
 gr <- g$raw_rate[g$domain == "green_energy"]
-sem_gate_report("R4b baseline reproduction", abs(gr - 7.15) < 0.02,
-                sprintf("green_energy raw rate = %.2f%% (published 7.15%%)", gr))
+rob <- read.csv(file.path(OUT, "cst_robustness_detail.csv"), fileEncoding = "UTF-8")
+gr_expected <- rob$rate[rob$variant == "baseline" & rob$domain == "green_energy"]
+sem_gate_report("R4b baseline reproduction",
+                length(gr_expected) == 1L && abs(gr - gr_expected) < 0.002,
+                sprintf("green_energy raw rate = %.2f%% / robustness %.2f%%", gr, gr_expected))
 
 ## ---------------------------------------------------------------- per-domain linkage precision
 prec <- function(code) {
@@ -111,7 +113,7 @@ prec <- function(code) {
 p_cb <- prec("ax1_link_genuine")
 p_st <- prec("ax1_strict")
 
-cat("\n===== A. LINKAGE PRECISION BY DOMAIN (fresh random sample, n = 60 per domain) =====\n")
+cat("\n===== A. LINKAGE PRECISION BY DOMAIN (official probability sample, n = 60 per domain) =====\n")
 cat("\n-- codebook reading (`ax1_link_genuine`) --\n")
 print(p_cb[order(-p_cb$precision), c("domain", "k", "n", "precision", "lo", "hi")], row.names = FALSE)
 cat("\n-- strict reading (`ax1_strict`: economic referent required) --\n")
@@ -152,6 +154,8 @@ adjust <- function(p, label) {
 
   first <- colnames(R)[apply(R, 1, which.max)]
   tab <- sort(table(first), decreasing = TRUE) / DRAWS
+  d$rank_first_prob <- as.numeric(tab[match(d$domain, names(tab))])
+  d$rank_first_prob[is.na(d$rank_first_prob)] <- 0
   d <- d[order(-d$adj_rate), ]
   cat(sprintf("\n===== B. ADJUSTED GRADIENT — %s =====\n", label))
   print(d[, c("domain", "linked", "doctrinal", "raw_rate", "precision", "adj_rate", "adj_lo", "adj_hi")],
@@ -172,7 +176,7 @@ a_st <- adjust(p_st, "ax1_strict")
 # denominator was unvalidated. It now is, so the headline has to be restated rather than repeated.
 # Work in (rid, domain) pairs throughout: that is the unit the precision sample was drawn on, and
 # mixing pair-level precision with post-level counts is the error gate G1b exists to prevent.
-cat("\n===== C. THE HEADLINE RATE, RESTATED ON A VALIDATED DENOMINATOR =====\n")
+cat("\n===== C. DENOMINATOR-ONLY SENSITIVITY (ALL DETECTED NUMERATOR PAIRS ASSUMED GENUINE) =====\n")
 pairs_all <- sum(g$linked); pairs_doc <- sum(g$doctrinal)
 cat(sprintf("raw:            %s doctrinal / %s linked pairs = %.2f%%  (1 in %.0f)\n",
             digikat_format_integer(pairs_doc), digikat_format_integer(pairs_all),
@@ -183,7 +187,7 @@ for (r in list(list("codebook", lw(p_cb)), list("strict", lw(p_st)))) {
               r[[1]], digikat_format_integer(round(gen)), r[[2]],
               100 * pairs_doc / gen, gen / pairs_doc))
 }
-cat("NB this is an UPPER bound on invocation among genuine links until R1 validates the numerator.\n")
+cat("NB this is a denominator-only adjustment; R1 evaluates the detected numerator separately.\n")
 
 cat("\ngreen_energy vs runner-up, before and after adjustment:\n")
 for (a in list(list("raw", g[order(-g$raw_rate), "raw_rate"]),
@@ -196,16 +200,19 @@ for (a in list(list("raw", g[order(-g$raw_rate), "raw_rate"]),
 sem_write_shareable(rbind(p_cb, p_st)[, c("code", "domain", "k", "n", "precision", "lo", "hi")],
                     file.path(OUT, "r4_linkage_precision.csv"))
 sem_write_shareable(rbind(a_cb, a_st)[, c("code", "domain", "linked", "doctrinal", "raw_rate",
-                                          "precision", "adj_rate", "adj_lo", "adj_hi")],
+                                          "precision", "adj_rate", "adj_lo", "adj_hi",
+                                          "rank_first_prob")],
                     file.path(OUT, "cst_gradient_adjusted.csv"))
 digikat_write_json_atomic(sem_manifest(
   generator = "studies/moral-economy/20_r4_recompute.R",
-  inputs = list(sheet = "output/private/r4_sheet.csv", annotation = "output/private/r4_ann1.tsv",
-                candidates = "output/stageA_candidates.rds", core = "output/private/cst_core.rds"),
+  inputs = list(sheet = "output/private/r4_sheet_official.csv",
+                annotation = "output/private/r4_ann1_official.tsv",
+                candidates = "output/stageA_candidates_official.rds",
+                core = "output/private/cst_core_official.rds"),
   outputs = list(precision = "output/r4_linkage_precision.csv",
                  gradient = "output/cst_gradient_adjusted.csv"),
-  extra = list(n_coded = nrow(ann), per_domain = 60L, draws = DRAWS,
-               adjustment = "denominator only; assumes doctrinal pairs are genuine links (R1 pending)")
+  extra = list(n_coded = nrow(ann), per_domain = as.integer(min(table(ann$domain))), draws = DRAWS,
+               adjustment = "denominator only; detected numerator evaluated separately by R1")
 ), file.path(ME_SEM, "r4_recompute_manifest.json"))
 
 cat("\nwrote output/{r4_linkage_precision,cst_gradient_adjusted}.csv\n")

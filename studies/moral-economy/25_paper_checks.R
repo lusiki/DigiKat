@@ -1,8 +1,9 @@
 #!/usr/bin/env Rscript
 # moral-economy — MECHANICAL CHECKS ON THE RSP MANUSCRIPT.
 #
-# RSP enforces two hard limits and one formatting rule that are cheap to violate and expensive to
-# discover at desk-reject: the abstract is <= 1 000 CHARACTERS, the whole manuscript <= 50 000
+# These checks enforce the target journal's length and formatting constraints on the public manuscript.
+# They do not certify double-blind anonymisation; an anonymous submission copy remains a separate export.
+# The abstract is <= 1 000 CHARACTERS, the whole manuscript <= 50 000
 # characters including references and appendices, and numbers use a decimal comma with a space
 # thousands separator. PROPOSAL_v5 E3 records that an earlier abstract was ASSERTED at 986 characters
 # and actually measured 1 009. So this measures rather than asserts.
@@ -20,6 +21,8 @@
 suppressPackageStartupMessages({ library(here) })
 source(here::here("studies/moral-economy/sem_lib.R"))
 source(here::here("studies/moral-economy/rsp_labels.R"))
+source(here::here("studies/moral-economy/rsp_input.R"))
+source(here::here("studies/moral-economy/cst_core.R"))
 
 VERSION <- if ("--v2" %in% commandArgs(trailingOnly = TRUE)) "v2" else "v1"
 PAPER  <- here::here(sprintf("studies/moral-economy/PAPER_RSP_%s.md", VERSION))
@@ -34,6 +37,35 @@ ok  <- function(cond, label, detail = "") {
   res <<- c(res, isTRUE(cond)); invisible(cond)
 }
 
+## ---- sealed-run identity -----------------------------------------------------------------------
+FINAL_MANIFEST <- file.path(ME_OUT, "rsp_final_run_manifest.json")
+ok(file.exists(FINAL_MANIFEST), "final run manifest exists", basename(FINAL_MANIFEST))
+if (!file.exists(FINAL_MANIFEST)) stop("Run 36_rsp_final_run_manifest.R after syncing tables.", call. = FALSE)
+fm <- jsonlite::fromJSON(FINAL_MANIFEST, simplifyVector = FALSE)
+sealed_groups <- c("inputs", "restricted_audit_inputs", "public_analysis_outputs",
+                   "generated_tables", "generated_figures", "manuscripts_and_pipeline",
+                   "analysis_sources")
+hash_fail <- character(0); n_sealed <- 0L
+for (grp in sealed_groups) {
+  rr <- fm[[grp]]
+  if (!length(rr)) { hash_fail <- c(hash_fail, paste0(grp, ": empty")); next }
+  for (rec in rr) {
+    n_sealed <- n_sealed + 1L
+    p <- here::here(rec$path)
+    if (!file.exists(p)) hash_fail <- c(hash_fail, paste0(rec$path, " (missing)"))
+    else if (!identical(digikat_hash_file(p), as.character(rec$sha256)))
+      hash_fail <- c(hash_fail, paste0(rec$path, " (hash drift)"))
+  }
+}
+ok(!length(hash_fail), "all final-run files match sealed hashes",
+   if (length(hash_fail)) paste(hash_fail, collapse = "; ") else paste(n_sealed, "files"))
+failed_axes <- unlist(fm$gates$stability_failed_axes, use.names = FALSE)
+ok(identical(fm$status, "complete_with_reported_failed_measurement_gate") &&
+     identical(fm$gates$same_domain_core_reconciles, TRUE) &&
+     identical(fm$gates$stability_passed, FALSE) &&
+     identical(as.character(failed_axes), "r2_econ_true"),
+   "sealed gates retain the reported R2 failure", "r2_econ_true is the sole failed stability axis")
+
 cat(sprintf("=== RSP manuscript checks (%s) ===\n\n--- length ---\n", basename(PAPER)))
 
 ## ---- abstract length -------------------------------------------------------------------------
@@ -41,6 +73,11 @@ a0 <- grep("^## Abstract \\(English\\)", txt); a1 <- grep("^\\*\\*Keywords", txt
 abs_txt <- gsub("\\s+", " ", trimws(paste(trimws(txt[(a0 + 1):(a1 - 1)]), collapse = " ")))
 n <- nchar(abs_txt)
 ok(n <= 1000, "English abstract <= 1 000 characters", sprintf("%d characters, %d to spare", n, 1000 - n))
+
+h0 <- grep("^## Sažetak \\(hrvatski\\)", txt); h1 <- grep("^\\*\\*Ključne riječi", txt)[1]
+hr_txt <- gsub("\\s+", " ", trimws(paste(trimws(txt[(h0 + 1):(h1 - 1)]), collapse = " ")))
+nh <- nchar(hr_txt)
+ok(nh <= 1000, "Croatian abstract <= 1 000 characters", sprintf("%d characters, %d to spare", nh, 1000 - nh))
 
 ## ---- manuscript length -----------------------------------------------------------------------
 b0 <- grep("^## 1\\. ", txt); b1 <- grep("^## Appendix A", txt)
@@ -61,6 +98,7 @@ ok(total < 50000, "whole manuscript < 50 000 characters",
 # section numbers and the +-220 window are not decimals, so they are excluded rather than reported
 # as 40 false alarms.
 prose <- body[!grepl("^\\s*[|`!]|^\\s*&|^```|\\.md|\\.R\\b|\\.csv|\\.rds|\\.png", body)]
+prose <- gsub("https?://[^[:space:]]+", "", prose)
 hits <- unlist(regmatches(prose, gregexpr("[0-9]+\\.[0-9]+", prose)))
 hits <- hits[!grepl("^(1|2|3|4|5|6|7|8|9)\\.[0-9]$", hits)]   # section cross-references
 ok(length(hits) == 0, "decimal comma throughout the prose",
@@ -83,44 +121,64 @@ for (f in frags) {
      "matches the generated fragment")
 }
 figs <- c("rsp_fig1_gradient.png", "rsp_fig2_era.png", "rsp_fig3_boundary.png",
-          "rsp_fig4_vocabulary.png")
+          "rsp_fig4_lexicon_sensitivity.png")
 for (f in figs) {
-  ok(file.exists(file.path(FIGDIR, f)) && grepl(f, raw, fixed = TRUE),
-     paste0("figure present and referenced: ", f), "")
+  refs <- lengths(regmatches(raw, gregexpr(f, raw, fixed = TRUE)))
+  ok(file.exists(file.path(FIGDIR, f)) && refs == 1L,
+     paste0("figure present and referenced once: ", f), paste(refs, "reference(s)"))
 }
+ok(!grepl("rsp_fig4_vocabulary.png", raw, fixed = TRUE),
+   "obsolete vocabulary figure is not referenced", "clean")
 
 ## ---- re-derive the headline numbers from the output files --------------------------------------
 cat("\n--- numeric claims re-derived from output/ ---\n")
-chk <- function(label, claimed, actual, tol = 0.05) {
-  ok(abs(claimed - actual) <= tol, label,
-     sprintf("paper %s / file %s", format(claimed), format(round(actual, 3))))
-}
-p  <- read.csv(file.path(ME_OUT, "r1_numerator_precision.csv"), fileEncoding = "UTF-8")
-chk("R1 numerator precision (%)", 83.3, p$rate[p$axis == "r1_genuine"])
-chk("R1 detector non-error (%)", 99.3, p$rate[p$axis == "r1_not_false"])
-chk("R2 economic-term validity (%)", 76.0, p$rate[p$axis == "r2_econ_true"])
+p <- read.csv(file.path(ME_OUT, "r1_numerator_precision.csv"), fileEncoding = "UTF-8")
+ok(setequal(p$axis, c("r1_genuine", "r1_not_false", "r2_econ_true", "r1_and_r2")) &&
+     all(p$n == 150) && all(p$rate >= 0 & p$rate <= 100),
+   "R1/R2 output is complete and bounded", sprintf("%d rows; n=%s", nrow(p), paste(unique(p$n), collapse = ",")))
 
-g  <- read.csv(file.path(ME_OUT, "cst_gradient_adjusted.csv"), fileEncoding = "UTF-8")
+g <- read.csv(file.path(ME_OUT, "cst_gradient_adjusted.csv"), fileEncoding = "UTF-8")
 gc <- g[g$code == "ax1_link_genuine", ]
-chk("corrected climate rate (%)", 14.80, gc$adj_rate[gc$domain == "green_energy"])
-chk("raw climate rate (%)", 7.15, gc$raw_rate[gc$domain == "green_energy"])
-v <- sort(gc$adj_rate, decreasing = TRUE)
-chk("corrected ratio to runner-up", 1.91, v[1] / v[2], tol = 0.02)
-
 pr <- read.csv(file.path(ME_OUT, "r4_linkage_precision.csv"), fileEncoding = "UTF-8")
 pc <- pr[pr$code == "ax1_link_genuine", ]
-den <- gc$linked[match(pc$domain, gc$domain)]
-chk("layer-weighted linkage precision (%)", 39.5, sum(pc$precision * den) / sum(den))
-chk("min domain linkage precision (%)", 21.7, min(pc$precision))
-chk("max domain linkage precision (%)", 63.3, max(pc$precision))
-chk("corrected headline rate (%)", 3.73,
-    100 * sum(gc$doctrinal) / (sum(gc$linked) * sum(pc$precision * den) / sum(den) / 100))
+pm <- pc$precision[match(gc$domain, pc$domain)]
+raw_expected <- 100 * gc$doctrinal / gc$linked
+adj_expected <- 100 * gc$doctrinal / (gc$linked * pm / 100)
+expected_domains <- names(ME_ECON)
+complete_gradient <- nrow(gc) == length(expected_domains) && !anyDuplicated(gc$domain) &&
+  setequal(gc$domain, expected_domains) && !anyNA(pm) &&
+  all(is.finite(c(gc$linked, gc$doctrinal, gc$raw_rate, gc$precision, gc$adj_rate, pm)))
+ok(complete_gradient && max(abs(gc$raw_rate - raw_expected)) < 1e-8,
+   "raw gradient re-derives from official pair counts", sprintf("%d domains", nrow(gc)))
+ok(complete_gradient && max(abs(gc$precision - pm)) < 1e-8 &&
+     max(abs(gc$adj_rate - adj_expected)) < 1e-8,
+   "adjusted gradient re-derives from R4 precision", "all domains reconcile")
 
 d <- read.csv(file.path(ME_OUT, "cst_robustness_detail.csv"), fileEncoding = "UTF-8")
-chk("confessional climate rate (%)", 22.31,
-    d$rate[d$variant == "confessional_only" & d$domain == "green_energy"])
-chk("secular_max climate rate (%)", 5.16,
-    d$rate[d$variant == "secular_max" & d$domain == "green_energy"])
+base <- d[d$variant == "baseline", ]
+base_rate <- base$rate[match(gc$domain, base$domain)]
+ok(nrow(base) == length(expected_domains) && !anyNA(base_rate) && all(is.finite(base_rate)) &&
+     max(abs(gc$raw_rate - base_rate)) < 0.0011,
+   "gradient baseline matches robustness output", "rounded CSVs reconcile")
+
+core_now <- cst_build_core(verbose = FALSE)
+core_pairs_now <- cst_core_pairs(core_now)
+era_now <- read.csv(file.path(ME_OUT, "cst_core_domain_era.csv"), fileEncoding = "UTF-8")
+ok(sum(era_now$Freq) == nrow(core_pairs_now) && sum(gc$doctrinal) == nrow(core_pairs_now),
+   "pair-specific era and gradient totals equal core pairs",
+   sprintf("%d = %d = %d", sum(era_now$Freq), sum(gc$doctrinal), nrow(core_pairs_now)))
+
+im <- rsp_read_input_manifest()
+current_corpus <- digikat_read_corpus_manifest()$corpus
+ok(as.integer(im$database$rows) == as.integer(current_corpus$rows) &&
+     identical(as.character(im$database$sha256), as.character(current_corpus$sha256)),
+   "paper run is pinned to the current official corpus",
+   paste(im$database$rows, substr(im$database$sha256, 1, 12)))
+old_markers <- c("710 307", "108 966", "132 519", "1 198 teaching posts",
+                 "1 111", "1 797", "82,9%", "14,82%", "4,27%", "6,33%")
+stale <- old_markers[vapply(old_markers, function(x) grepl(x, raw, fixed = TRUE), logical(1))]
+ok(length(stale) == 0, "no legacy-accumulator headline survives",
+   if (length(stale)) paste("found:", paste(stale, collapse = ", ")) else "clean")
 
 ## ---- every derived scalar still appears in the manuscript as printed ---------------------------
 # 26_rsp_tables.R writes each quantity the article quotes; here we check the printed form is still
@@ -129,22 +187,32 @@ cat("\n--- derived scalars still present in the text ---\n")
 dv <- read.csv(file.path(TABDIR, "rsp_derived.csv"), fileEncoding = "UTF-8")
 val <- function(nm) dv$value[match(nm, dv$name)]
 want <- list(
+  c("corpus_n", "int"),
   c("linked_posts", "int"), c("linked_pairs", "int"), c("core_posts", "int"), c("core_pairs", "int"),
-  c("adjacency_cost", "int"), c("poverty_linked", "int"), c("term_occurrences", "int"),
-  c("gold_links_n", "int"), c("opcija_corpus", "int"), c("socnauk_core", "int"),
+  c("inclusive_frame_posts", "int"), c("inclusive_frame_pairs", "int"),
+  c("inclusive_core_posts", "int"), c("inclusive_core_pairs", "int"),
   c("raw_rate_pairs", "2"), c("corrected_headline", "2"), c("corrected_headline_strict", "2"),
-  c("tier2_ceiling", "2"), c("climate_raw", "2"), c("climate_adj", "2"), c("adj_ratio", "2"),
-  c("raw_ratio", "2"), c("euro_hi", "2"), c("opcija_pct", "2"),
+  c("raw_rate_posts", "2"), c("post_invocation_sensitivity", "2"), c("post_joint_sensitivity", "2"),
+  c("r1_genuine", "1"), c("r1_joint", "1"),
+  c("w_gen", "1"), c("w_str", "1"),
+  c("climate_raw", "2"), c("climate_adj", "2"), c("strict_macro", "2"),
+  c("no_laudato_climate_raw", "2"), c("no_laudato_top_raw", "2"),
+  c("no_ecology_climate_raw", "2"), c("no_ecology_top_raw", "2"),
+  c("no_laudato_climate_denom", "2"), c("no_laudato_top_denom", "2"),
+  c("no_ecology_climate_denom", "2"), c("no_ecology_top_denom", "2"),
   c("conf_climate", "2"), c("conf_next", "2"), c("conf_ratio", "2"),
   c("secmin_climate", "2"), c("secmin_next", "2"), c("secmin_ratio", "2"),
   c("secmax_climate", "2"), c("secmax_next", "2"), c("secmax_ratio", "2"),
-  c("w_gen", "1"), c("w_str", "1"), c("chisq", "1"), c("prec_min", "1"), c("prec_max", "1"),
-  c("rank_cor", "2"), c("conf_share_linked", "1"), c("conf_share_doctrinal", "1"),
-  c("conf_share_linked_labelled", "1"), c("conf_share_doctrinal_labelled", "1"),
-  c("classical_green", "1"), c("classical_business", "1"), c("classical_housing", "1"),
+  c("stability_agreement_min", "1"), c("stability_agreement_max", "1"),
+  c("stability_kappa_min", "3"), c("stability_kappa_max", "3"),
+  c("variants_first", "int"), c("variants_n", "int"), c("variants_disjoint", "int"),
+  c("classical_green", "1"), c("classical_business", "1"),
   c("classical_wages", "1"), c("francis_green", "1"),
-  c("poverty_share_pairs", "1"), c("poverty_charity", "1"), c("poverty_justice", "1"), c("poverty_remainder", "1"),
-  c("green_justice", "1"))
+  c("poverty_reg_n", "int"), c("poverty_charity", "1"), c("poverty_justice", "1"),
+  c("poverty_remainder", "1"), c("green_justice", "1"),
+  c("gold_links_n", "int"), c("gold_display_n", "int"), c("gold_database_n", "int"),
+  c("gold_linked_n", "int"), c("term_occurrences", "int"), c("socnauk_core", "int"),
+  c("opcija_corpus", "int"))
 miss <- character(0)
 for (w in want) {
   s <- if (w[2] == "int") rsp_int(val(w[1])) else rsp_num(val(w[1]), as.integer(w[2]))

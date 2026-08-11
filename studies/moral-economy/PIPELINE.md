@@ -1,134 +1,143 @@
-# moral-economy — pipeline (scripts → plan stages)
+# Moral-economy / RSP paper pipeline
 
-**Status (2026-08-04):** Stage A ran on the full master 2026-07-08 (132,519 linked candidates). The
-dual-lens stages S1–S3, Stage V validation and Stage C all ran 2026-08-04; see `PAPER_v1.md` for results
-and `quality_reports/plans/2026-08-04_moral-economy-dual-lens-run.md` for the full decision trail.
-The keyword-only Stage B coding route below (`02`–`04`) was **superseded** by the 555-post gold sample
-(`08`/`09a`/`09b`), which validates both lenses at once; `04_iaa_validation.R` survives as the kappa
-implementation that `sem_lib.R` reuses.
-Every script reads the corpus READ-ONLY and writes only to `output/`. Row-level coding sheets, URLs, source
-identities, and text windows go to gitignored `output/private/`; only disclosure-reviewed aggregates belong
-in tracked `output/`. The workflow never touches `data/` or the ≥2-match filter.
-See [PLAN_census.md](PLAN_census.md) for the stage design, [CODEBOOK.md](CODEBOOK.md) for the coding scheme, [PROPOSAL.md](PROPOSAL.md) for the argument.
+**Current status (11 August 2026).** The paper was rerun on the official 413,985-row DigiKat corpus
+(SHA-256 `15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a`), covering
+1 January 2021–11 June 2026. The main generic-religion/economics frame contains 66,374 posts and
+79,439 post–subject pairs. The corrected same-domain Tier-1 core contains 1,093 posts and 1,290 pairs.
+`PAPER_RSP_v2.md` is the authoritative public manuscript.
 
-## Files
+The analysis is complete **with a reported failed measurement gate**. The fresh R1 genuine-invocation
+estimate is 79.6%, below its predeclared 80% threshold; the R2 subject gate fails or is unevaluable; and
+the repeat-pass R1 economic-referent axis reaches 76.7% agreement (κ = .420), below 80%. These failures
+are results, not pipeline errors. They require conditional claims and prohibit presenting the one-sided
+denominator calculations as corrected prevalence.
 
-| Script | Plan stage | Reads | Writes | Master? |
-|---|---|---|---|---|
-| `lexicon.R` | (shared module) | `R/religious_terms.R` | — | no |
-| `probe.R` | Stage 0 (done) | master | `domains_summary.csv`, … | yes ✅ ran |
-| `diagnose_poverty.R` | Gate-1 seed (done) | master | `private/poverty_diagnosis_sample.csv` | yes ✅ ran |
-| `01_stageA_tag_linkage.R` | **Stage A** | master | `stageA_candidates.rds`, `stageA_precision_sample.rds`, `stageA_domain_stats.csv` | **yes** |
-| `02_gate1_precision_scan.R` | Gate 1 | `stageA_precision_sample.rds` | `private/gate1_precision_sheet.csv` → (coded) → `gate1_precision_by_domain.csv` | no |
-| `03_build_coding_sheet.R` | Stage B prep | `stageA_candidates.rds` | `private/coding_sheet.csv`, `private/coding_key.csv`, `coding_allocation.csv` | no |
-| `04_iaa_validation.R` | Gate 2 | `private/coding_sheet_ann*.csv` | `gate2_iaa.csv`, `coded_core.csv` | no |
-| `build_calendar.R` | Stage C (H3) | — | `liturgical_calendar.csv` | no ✅ ran |
+All row-level text, URLs, source identities, keys and annotation sheets remain under the gitignored
+`output/private/` tree. Only disclosure-reviewed aggregates, manifests, tables and figures are public.
+The corpus and semantic store are read-only.
 
-`lexicon.R` is the single source of truth — the 11 domain regexes + the economic-homonym-tightened
-95-term religion regex. Editing it re-fingerprints the Stage-A checkpoint (a stale cache can't masquerade as fresh).
+## Official input contract
 
-## Run order
+`rsp_input.R` defines every official path and the fail-closed input checks. Step 29:
+
+- verifies the official corpus file against its manifest;
+- proves exact stable-ID identity for URL, date, trimmed full text, actor, platform and collection stream
+  across all 413,985 rows;
+- proves exact title and current outlet-label identity for all 79,439 retained candidate pairs;
+- verifies the compiled economic and religion regexes and the 220-character window;
+- records that the religion source file's hash changed while its compiled Stage-A regex remained identical;
+- writes content hashes for the official prepared corpus and Stage-A derivative.
+
+The official database is an exact stable-ID subset of the earlier accumulator. Stage A is a row-independent
+transform, so restricting the accumulator result is algebraically equivalent to a fresh pass after the
+compiled regexes and retained-row identities have been proved equal. The run does not claim that a changed
+compiled lexicon could be handled this way.
+
+## Current RSP stages
+
+| Step | Purpose | Principal public output |
+|---|---|---|
+| `29_prepare_official_rerun.R` | install and hash the official prepared/frame derivatives | `rsp_input_manifest.json` |
+| `cst_core.R` | same-domain Tier-1 adjacency, pair gaps and pair-specific terms | restricted `cst_core_official.rds` |
+| `12_cst_census.R` | Tier-1/Tier-2 corpus census | `cst_census_*.csv` |
+| `14_cst_core_profile.R` | pair-safe era, term and language profiles | `cst_core_*.csv`, profile figures |
+| `15_propose_source_labels.R` | unratified outlet-group proposal | restricted review sheet |
+| `17_cst_robustness.R` | 25 fixed-lexicon corpus/outlet specifications | `cst_robustness_*.csv` |
+| `18_gold_reanalysis.R` | exploratory legacy register reanalysis | `gold_*.csv`, `gold_reanalysis_summary.csv` |
+| `30_refresh_rsp_audits.R` | draw entirely fresh R4 and R1 probability samples | sheets, keys, prompts, provenance manifest |
+| `31_assemble_rsp_annotations.R` | verify and assemble blind main-pass classifications | `rsp_coding_manifest.json` |
+| `20_r4_recompute.R` | R4 domain precision and denominator-only sensitivity | `r4_linkage_precision.csv`, `cst_gradient_adjusted.csv` |
+| `22_r1_recompute.R` | R1/R2 weighted post audit and nearest-domain gate | `r1_numerator_precision.csv`, `r1_precision_by_domain.csv` |
+| `32_rsp_reuse_stability.R` | separate blind repeat pass and 80% agreement gate | `rsp_annotation_stability.csv`, stability manifest/diagnostics |
+| `33_cst_frame_sensitivity.R` | independent full-corpus Tier-1-as-religion reconstruction | `cst_frame_sensitivity.csv` |
+| `34_cst_lexicon_sensitivity.R` | leave-one-marker-out and ecology-marker construct tests | `cst_lexicon_sensitivity*.csv` |
+| `24_rsp_figures.R` | four greyscale, 300-dpi paper figures | `figures/rsp_fig{1..4}_*.png` |
+| `26_rsp_tables.R` | seven deterministic paper tables and prose scalars | `tables/tab*.md`, `rsp_derived.csv` |
+| `27_sync_tables.R --v2` | mechanically install generated fragments | `PAPER_RSP_v2.md` |
+| `35_rsp_coder_context_diagnostics.R` | aggregate-only main-context and coder-specific sensitivity diagnostics | context diagnostic CSV/manifest |
+| `36_rsp_final_run_manifest.R` | seal inputs, private-file hashes, outputs, tables, figures and prose | `rsp_final_run_manifest.json` |
+| `25_paper_checks.R --v2` | verify sealed hashes, gates, journal limits, tables, figures and claims | read-only pass/fail |
+| `28_render_paper.R --v2` | typeset the checked manuscript | paper HTML/PDF |
+
+The R4 main sample is a fresh simple random sample of 60 pairs per subject (660 total) from the full
+79,439-pair frame. The R1 sample contains 150 fresh core posts, proportionally allocated across
+adjacent-term era category × current outlet-concentration band. No earlier annotation was reused.
+Both were blind Codex-model workflows rather than human coding; the exact backend identifier and decoding
+settings were not exposed. The coding manifest preserves prompts, batch mapping, restricted output hashes
+and the limits of procedural blinding.
+
+## Reproducible run order
+
+Run from the repository root with the project R environment active.
 
 ```powershell
-Rscript studies/moral-economy/lexicon.R                 # self-test: homonym guards
+Rscript studies/moral-economy/29_prepare_official_rerun.R
+Rscript studies/moral-economy/12_cst_census.R
+Rscript studies/moral-economy/14_cst_core_profile.R
+Rscript studies/moral-economy/15_propose_source_labels.R
 
-# >>> PAUSE DROPBOX SYNC before this — cold master read + Dropbox = os error 32 (CLAUDE.local.md) <<<
-Rscript studies/moral-economy/01_stageA_tag_linkage.R
+Rscript studies/moral-economy/30_refresh_rsp_audits.R
+# Fresh blind coding: fill only the declared R4/R1 batch TSVs in output/private/.
+Rscript studies/moral-economy/31_assemble_rsp_annotations.R
+Rscript studies/moral-economy/20_r4_recompute.R
+Rscript studies/moral-economy/22_r1_recompute.R
 
-Rscript studies/moral-economy/02_gate1_precision_scan.R
-Rscript studies/moral-economy/03_build_coding_sheet.R 1000
-# → code private/coding_sheet.csv; save private/coding_sheet_ann{1,2,3}.csv
-Rscript studies/moral-economy/04_iaa_validation.R
-Rscript studies/moral-economy/build_calendar.R
+Rscript studies/moral-economy/32_rsp_reuse_stability.R
+# Fresh blind repeat coding: fill only the three declared stability TSVs.
+Rscript studies/moral-economy/32_rsp_reuse_stability.R --score
+# Current run exits non-zero after preserving the failed R2 axis. Review it, then continue with
+# downgraded claims explicitly:
+Rscript studies/moral-economy/32_rsp_reuse_stability.R --score --allow-failed-gate
+
+Rscript studies/moral-economy/17_cst_robustness.R
+Rscript studies/moral-economy/18_gold_reanalysis.R
+Rscript studies/moral-economy/33_cst_frame_sensitivity.R
+Rscript studies/moral-economy/34_cst_lexicon_sensitivity.R
+Rscript studies/moral-economy/35_rsp_coder_context_diagnostics.R
+Rscript studies/moral-economy/24_rsp_figures.R
+Rscript studies/moral-economy/26_rsp_tables.R
+Rscript studies/moral-economy/27_sync_tables.R --v2
+Rscript studies/moral-economy/36_rsp_final_run_manifest.R
+Rscript studies/moral-economy/25_paper_checks.R --v2
+Rscript studies/moral-economy/28_render_paper.R --v2
 ```
 
-## Gates (do not skip)
+For the public site, run the thematic-paper publisher with
+`-Only socijalni-nauk-i-gospodarstvo`. Because `_quarto.yml` deliberately excludes thematic-study QMD
+files from the normal project render set, render this landing page to a temporary `--output-dir` and copy
+only the resulting HTML to `docs/pages/studije/`; rendering the excluded target directly against the
+project output directory can clean `docs/`.
 
-- **Gate 1 (after Stage A):** hand-code `private/gate1_precision_sheet.csv` (`econ_true`, `link_genuine`) → per-domain
-  tagger precision. Re-run `02` to summarise. Feeds Q1 correction + H2 corrected denominators. The
-  `croatian-nlp-reviewer` audit of `lexicon.R` happens here.
-- **Gate 2 (before OSF prereg):** `04` reports register κ at 5-way and 3-way. Pre-declared fallback
-  5-way → 3-way → binary; H1/H4 run at the first level clearing the prereg floor. If neither clears,
-  H1/H4 → exploratory and the paper leans on the map.
+Step 32's first mode must begin with fresh prompt/key/annotation locations. Its score mode must consume
+exactly the declared repeat sample. A failed agreement gate may be accepted only after inspection and only
+with downgraded claims; `--allow-failed-gate` does not turn failure into passage.
 
-## Dual-lens stages (PROPOSAL_v3; all ran 2026-08-04)
+## Interpretation gates
 
-| Script | Stage | Reads | Writes | Master? |
-|---|---|---|---|---|
-| `sem_lib.R` | (shared module) | — | — | no |
-| `05_s1_anchor_calibration.R` | S1 anchors | store, `stageA_candidates.rds` | `semantic/anchors.rds`, `anchor_diagnostics.csv` | no |
-| `06_s2_corpus_scoring.R` | S2 scoring + gap audit | store, anchors | `scores_full.rds`, `coverage_ranking_v2.csv`, `gap_*.csv` | no |
-| `07_s3_register_grid.R` | S3 grid | scores, anchors | `register_grid_{v0,v1}.csv`, `poverty_split_*.csv` | no |
-| `08_build_gold_sheet.R` | V sheet | scores, anchors | `private/gold_sheet.csv` (blind), `private/gold_key.csv` | no |
-| `09a_annotate_prep.R` | V batches | blind sheet | `private/batches/*.md` | no |
-| `09b_iaa_validate.R` | V validation | 3 annotator files | `gate2_iaa.csv`, `gates.json`, `anchors_v1.rds` | no |
-| `10_stage_c_analyses.R` | C figures | gates.json + all above | `output/figures/*.png`, `h4_shock_windows.csv` | no |
-| `viewer_lib.R` | (shared module) | — | — | no |
-| `11_gold_viewer.R` | (inspection) | gold sheet/key/core + `ann{1,2,3}/`, master (once) | `private/gold_viewer.html`, `private/gold_meta_cache.rds` | read-only, cached |
-| `13_wta_viewer.R` | (inspection) | `scores_full.rds`, `lexicon.R`, master (once) | `private/wta_viewer.html`, `private/wta_sample_cache.rds` | read-only, cached |
+- **Identified estimand:** 1,290 / 79,439 = 1.62% detected same-domain Tier-1 marker pairs in the observed
+  official corpus. It is a census ratio; no binomial interval is attached.
+- **R1:** 79.6% [72.4, 85.3], below 80%. The paper may report the raw detection rate and explicitly
+  conditional post-level diagnostics, not a validated pair correction.
+- **R2:** taxes fall below 70% and three domains are unsampled; the climate main-pass result is unstable in
+  the repeat subset. The subject gate fails or is unevaluable.
+- **R4:** 52.7% codebook and 44.0% strict layer-weighted denominator precision. The resulting 3.08% and
+  3.69% values assume every numerator pair qualifies and are denominator-only sensitivities.
+- **Repeatability:** R4 codebook, R4 strict and R1 invocation exceed 80%; R1 economic referent does not.
+- **Composition robustness:** climate is first in 25/25 fixed-marker specifications.
+- **Construct robustness:** climate loses first place when *Laudato si'* alone or the three ecology-specific
+  markers are removed. This construct dependence is the central finding.
+- **Outlet groups:** automated and unratified; descriptive association only, never a causal media boundary.
+- **Legacy register:** 555 original rows → 296 in the official database → 268 in the corrected frame →
+  148 genuine links; 126 displayed at n ≥ 10. The codebook does not measure rights or entitlements.
 
-`11` is an eyeball tool, not an analysis step: it renders the 555 gold posts as one local HTML page —
-title linked to its URL, outlet/date/stream, the ±220 window, the 800-char coder excerpt, the full text,
-and all three passes beside the majority verdict. Its output is **RESTRICTED** (row-level text, URLs,
-outlet identities) and lives in gitignored `private/` — local viewing only, never committed or published.
-The master is read READ-ONLY exactly once and cached to `private/gold_meta_cache.rds` (`--refresh-meta`
-rebuilds); the run asserts `rid` really is the master row index by matching URLs against the 490 rids Stage A
-recorded independently. Pause Dropbox for that first run.
+## Older dual-lens workflow
 
-`13` makes PAPER_v1 §6.5's "not credible" 55.5% inspectable: it re-derives the winner-take-all assignment
-from `scores_full.rds` (asserting the total against `coverage_ranking_v2.csv`), samples 8 posts per domain ×
-margin band, and attaches the decisive diagnostic — whether the post contains any `lexicon.R` economic
-keyword for the domain the embedding assigned it. Both viewers share the HTML shell in `viewer_lib.R`.
+Scripts `05`–`10`, the 555-row gold workflow (`08`, `09a`, `09b`) and the inspection viewers belong to the
+earlier accumulator-era dual-lens study documented in `PAPER_v1.md` and
+`quality_reports/plans/2026-08-04_moral-economy-dual-lens-run.md`. They are retained for provenance but are
+not inputs to the corrected RSP headline. Historical samplers `19` and `21` are likewise superseded by the
+fresh official-corpus sampling in step 30.
 
-Run order: `05` → `06` → `07` → `08` → `09a` → *(3 blind coding passes)* → `09b` → `07 --anchors=v1` →
-`09b` (re-run, validates v1) → `10`. Note `07 --anchors=v1` **rescores** the corpus; swapping anchors
-without rescoring silently reuses the v0 numbers. CLI flags need the leading dashes
-(`digikat_cli_value` matches `--anchors`, not `anchors`).
-
-`10` is **fail-closed**: it reads `gates.json` and refuses to plot any quantity whose pre-declared gate
-failed. Two failed on this run (G-V4 retrieval precision, G-V7 poverty split) — see `PAPER_v1.md` §4.6.
-
-## Not yet built (correctly deferred — depend on coded data)
-
-- `05_analysis.R` (Stage C: domain×register grid, actor decomposition, HICP overlay reusing
-  `../inflation-salience/output/hicp_hr.csv`, shock-window H4, H1 trend) — written after `coded_core.csv` exists.
-- The coding runner itself (the 3-annotator LLM workflow against `private/coding_sheet.csv`) — the one genuinely
-  from-scratch component (PLAN §0). Its output schema is fixed:
-  `private/coding_sheet_ann*.csv` = the blind sheet + filled 7 axes.
-
-## RSP paper stages (PROPOSAL_v5_rsp.md; 12–17 ran 2026-08-04, 19–25 the same day)
-
-| Script | Stage | Reads | Writes | Master? |
-|---|---|---|---|---|
-| `cst_lexicon.R` / `cst_core.R` | (shared modules) | — | `private/cst_core.rds` | no |
-| `12_cst_census.R` | corpus census | `corpus_prepared.rds` | `cst_census_*.csv` | no |
-| `14_cst_core_profile.R` | descriptive profile | core | `cst_core_*.csv`, figures | no |
-| `15_propose_source_labels.R` | outlet labels | core | `private/proposed_source_labels.csv` | no |
-| `16_cst_viewer.R` | inspection HTML | core | `private/cst_viewer.html` (28 MB) | no |
-| `17_cst_robustness.R` | 25 variants, gates G1/G1b/G2 | core, candidates | `cst_robustness_*.csv` | no |
-| `18_gold_reanalysis.R` | re-analysis of the 555 gold set | `private/gold_core.csv` | `gold_*.csv` | no |
-| **`19_r4_linkage_sample.R`** | **R4 sample** — 60 pairs × 11 domains, gold rids excluded | candidates, `corpus_prepared.rds` | `private/r4_{sheet,key}.csv`, `private/r4_batches/` | no |
-| **`20_r4_recompute.R`** | **R4** — per-domain linkage precision + corrected gradient | `private/r4_ann1.tsv` | `r4_linkage_precision.csv`, `cst_gradient_adjusted.csv` | no |
-| **`21_r1_precision_sample.R`** | **R1 sample** — 150 cards, era × outlet band | core | `private/r1_{sheet,key}.csv`, `private/r1_batches/` | no |
-| **`22_r1_recompute.R`** | **R1/R2** — numerator precision vs. the pre-declared rule | `private/r1_ann1.tsv` | `r1_numerator_precision.csv`, `r1_precision_by_era.csv` | no |
-| `rsp_labels.R` | (shared module) domain/term display names + RSP number formatting | — | — | no |
-| **`24_rsp_figures.R`** | four print figures, greyscale/Arial/300 dpi | adjusted gradient, robustness detail, era table, core terms | `figures/rsp_fig{1,2,3,4}_*.png` | no |
-| **`26_rsp_tables.R`** | the seven manuscript tables + every scalar the prose quotes | the `output/*.csv` above, gated core table | `tables/tab{1..7}_*.md`, `tables/rsp_derived.csv` | no |
-| **`25_paper_checks.R`** | limits, decimal comma, table fragments intact, every number re-derived | `PAPER_RSP_v1.md`, `output/*.csv`, `tables/*` | — (aborts on mismatch) | no |
-
-Tables are **generated, never typed**: `26_rsp_tables.R` writes each table as a markdown fragment and
-`25_paper_checks.R` asserts the fragment still appears in `PAPER_RSP_v1.md` byte-for-byte, plus that
-every scalar in `tables/rsp_derived.csv` is still printed somewhere in the text. Editing a number in the
-manuscript by hand therefore fails the check rather than surviving it. Run order at the end: `24` → `26`
-→ paste any changed fragment → `25`.
-
-`19` and `21` only *draw* samples; the coding step is manual (or a blind model pass) and lands in
-`private/r4_ann1.tsv` and `private/r1_ann1.tsv`. Both recompute scripts join the annotation to the
-sheet **on `item` and assert the `rid` agrees** — a mis-keyed rid would silently attach a coding
-decision to the wrong post and the wrong domain, and it caught two such errors on the first run.
-
-## Reuse (from the machinery inventory)
-
-- Religion lexicon: `R/religious_terms.R` (frozen) — tightened for economic homonyms inside `lexicon.R`.
-- HICP: lift `../inflation-salience/output/hicp_hr.csv` (Eurostat, monthly 2021–25) — no re-acquisition.
-- Coding schema mirrors the sister study's coded pool; the from-scratch part is the annotator instrument + IAA (built here as `04`).
+The public manuscript names DigiKat and the authors' institution. It is therefore a public/site version,
+not a double-blind submission file. An anonymised export must mask those identifiers and strip document
+metadata before journal submission; `25_paper_checks.R` does not certify anonymity.

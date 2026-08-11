@@ -1,0 +1,590 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-11 08:36:07 UTC",
+  "generator": "studies/moral-economy/36_rsp_final_run_manifest.R",
+  "status": "complete_with_reported_failed_measurement_gate",
+  "database_sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a",
+  "gates": {
+    "official_database_sha_matches": true,
+    "candidate_pairs_equal_manifest": true,
+    "candidate_posts_equal_manifest": true,
+    "core_posts": 1093,
+    "core_pairs": 1290,
+    "gradient_numerator_pairs": 1290,
+    "era_pairs": 1290,
+    "baseline_linked_pairs": 79439,
+    "baseline_linked_posts": 66374,
+    "same_domain_core_reconciles": true,
+    "baseline_frame_reconciles": true,
+    "annotations_match_coding_manifest": true,
+    "stability_output_matches_manifest": true,
+    "stability_threshold": 0.8,
+    "stability_passed": false,
+    "stability_failed_axes": "r2_econ_true"
+  },
+  "inputs": [
+    {
+      "path": "data/digikat_corpus.rds",
+      "bytes": 524573828,
+      "sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a"
+    },
+    {
+      "path": "data/digikat_corpus_manifest.json",
+      "bytes": 3041,
+      "sha256": "c163739c05dee508c0f235bd87a4b30b8427194e80c8a0f18dc7a17c08c10954"
+    },
+    {
+      "path": "studies/moral-economy/output/intermediate/corpus_prepared_official.rds",
+      "bytes": 441316154,
+      "sha256": "473afc5e358f377fc65959ca79d2fa65e9da8bb715d141ada47a1a860c303f03"
+    },
+    {
+      "path": "studies/moral-economy/output/private/cst_core_official.rds",
+      "bytes": 676472,
+      "sha256": "59c34d299f96f18dcd727c86cca494168ee7196dd288523683248d18b5051130"
+    },
+    {
+      "path": "studies/moral-economy/output/rsp_input_manifest.json",
+      "bytes": 3320,
+      "sha256": "406e3de965953b6dd4927c1b6e811fdcd9a5a0ad2e537ddee1497d2229f1beb4"
+    },
+    {
+      "path": "studies/moral-economy/output/stageA_candidates_official.rds",
+      "bytes": 10813211,
+      "sha256": "4dd5e23d8465ae1c23be1bf36d42ba19f789ccc0212bb8fade255b0bac4abac6"
+    }
+  ],
+  "restricted_audit_inputs": [
+    {
+      "path": "studies/moral-economy/output/private/r1_ann1_official.tsv",
+      "bytes": 3441,
+      "sha256": "dc76305bf2b6b4515b32430d9e2c097c70c388933d04f3ca871c7df7733f3426"
+    },
+    {
+      "path": "studies/moral-economy/output/private/r1_key_official.csv",
+      "bytes": 17160,
+      "sha256": "5017be971058c9b250dead9eaf11bb18ffd40cda7d68a7a1510a55459a13045d"
+    },
+    {
+      "path": "studies/moral-economy/output/private/r1_sheet_official.csv",
+      "bytes": 110028,
+      "sha256": "be735f0b6603889335fe736301fda7ccda21be229dafb649406de3f666ce46e3"
+    },
+    {
+      "path": "studies/moral-economy/output/private/r4_ann1_official.tsv",
+      "bytes": 19927,
+      "sha256": "d79d7d6f3a6eb9c0725f4abd1a285be1b61b14eb54c5519b0ac11a21b2201d89"
+    },
+    {
+      "path": "studies/moral-economy/output/private/r4_key_official.csv",
+      "bytes": 206869,
+      "sha256": "645b83a69c890c8a8224407c2ab05905a63b5145ef52f7514ed127dca0f3083c"
+    },
+    {
+      "path": "studies/moral-economy/output/private/r4_sheet_official.csv",
+      "bytes": 450384,
+      "sha256": "2397de5b7f18c430f7e83593642c0f87c757b968435660388ab2f9c1280240b1"
+    },
+    {
+      "path": "studies/moral-economy/output/private/rsp_stability_key_full_recode.tsv",
+      "bytes": 3005,
+      "sha256": "3157821303063a0c808473badab7c5600a3be12d7cded7214ccb896d6a4c241b"
+    }
+  ],
+  "public_analysis_outputs": [
+    {
+      "path": "studies/moral-economy/output/cst_census_summary.csv",
+      "bytes": 886,
+      "sha256": "cfad3bd1fb2c6e28c4876fdad86f1b33841a687bbfd5eb8ecec5ecc7f10d0e8b"
+    },
+    {
+      "path": "studies/moral-economy/output/cst_census_terms.csv",
+      "bytes": 1746,
+      "sha256": "7fcd712a892e6035c4af25fb45127f5abfddb048f7bb6114311f1b1435a3a908"
+    },
+    {
+      "path": "studies/moral-economy/output/cst_core_domain_era.csv",
+      "bytes": 1850,
+      "sha256": "7a0149a17f44804bbc69b6bd66cc0a0e3292daa587a73cf3152fddcb1c45f7f9"
+    },
+    {
+      "path": "studies/moral-economy/output/cst_core_domains.csv",
+      "bytes": 320,
+      "sha256": "5dca6d7c2b39a132ad634b8b6962c8e08f6d7d7ae17efc7c0e689c118facaeb6"
+    },
+    {
+      "path": "studies/moral-economy/output/cst_core_terms.csv",
+      "bytes": 1082,
+      "sha256": "259bebe5fa4a3bb979e290d1ac7d114d0a2ebf5b83b7fddd4117dc5709f30ee1"
+    },
+    {
+      "path": "studies/moral-economy/output/cst_duplicate_clusters.csv",
+      "bytes": 1325,
+      "sha256": "7d33f46032a6d864c91f79fdb577b46e3cefef58b35a8ab06a5a3edfc83bc37f"
+    },
+    {
+      "path": "studies/moral-economy/output/cst_frame_sensitivity.csv",
+      "bytes": 710,
+      "sha256": "7811a04068e2665269c4f967f6f654fb01d2a602e7a329c9a9b094b9f0af0f51"
+    },
+    {
+      "path": "studies/moral-economy/output/cst_frame_sensitivity_manifest.json",
+      "bytes": 1174,
+      "sha256": "23ecde2e01ec0ba8b64c126958a58b04e0d9e09c11d593924192c669f5b6414b"
+    },
+    {
+      "path": "studies/moral-economy/output/cst_gradient_adjusted.csv",
+      "bytes": 2678,
+      "sha256": "0ff90b42d075ca2b7d9ee3c4db43536e711b78926fd2452c4905ae0f35e06bc8"
+    },
+    {
+      "path": "studies/moral-economy/output/cst_lexicon_sensitivity.csv",
+      "bytes": 22045,
+      "sha256": "7f158b9df57a6fc1dece70d52cda4784448194063e6738cef8a503419a42a357"
+    },
+    {
+      "path": "studies/moral-economy/output/cst_lexicon_sensitivity_adjusted.csv",
+      "bytes": 56394,
+      "sha256": "a31227b429a813e85c6c4fd138af39d6314e0e6cb67d2d3f2892edfbdd1e5d66"
+    },
+    {
+      "path": "studies/moral-economy/output/cst_lexicon_sensitivity_adjusted_summary.csv",
+      "bytes": 5380,
+      "sha256": "a6ec5fa499e7ae167522a017546b4a6d6de5b0a3b44b472c2446e20adb2cee9a"
+    },
+    {
+      "path": "studies/moral-economy/output/cst_lexicon_sensitivity_manifest.json",
+      "bytes": 1519,
+      "sha256": "7cb249aab4c6effbdea9fd7f03344be507148d0a9d9e22cea78e42d9e1972392"
+    },
+    {
+      "path": "studies/moral-economy/output/cst_lexicon_sensitivity_summary.csv",
+      "bytes": 3000,
+      "sha256": "23e324482f96d100c5bb1ac198ada61f4f7e6ee7206c8f4a8d0beb1d687225f7"
+    },
+    {
+      "path": "studies/moral-economy/output/cst_robustness_detail.csv",
+      "bytes": 15014,
+      "sha256": "8225a3357c95dad2826b57ec9dbb75cf856e3d024468e43e4108941885141f04"
+    },
+    {
+      "path": "studies/moral-economy/output/cst_robustness_summary.csv",
+      "bytes": 2251,
+      "sha256": "b192af0221ee47af8b13e06134b0e635516235c1d6b7658e5042bad5bc7edc34"
+    },
+    {
+      "path": "studies/moral-economy/output/gold_reanalysis_summary.csv",
+      "bytes": 120,
+      "sha256": "77ad378f0c721d19f8ef49a5c17b1e4004e5912ab286c924b9c0cfbd2223708f"
+    },
+    {
+      "path": "studies/moral-economy/output/gold_register_by_domain.csv",
+      "bytes": 371,
+      "sha256": "8d84b3aa88804468c8aab122ced342aa90eac5f8f11c8cc682ee209a8933a4ae"
+    },
+    {
+      "path": "studies/moral-economy/output/r1_numerator_precision.csv",
+      "bytes": 215,
+      "sha256": "aa0996455819afa4a715645c671c09f216fe4f31a4b77eb2000bfd63d1f92a0b"
+    },
+    {
+      "path": "studies/moral-economy/output/r1_precision_by_domain.csv",
+      "bytes": 451,
+      "sha256": "4be0c86561f4b2885569024b14e0885a2d625a78875663f4f24d9851d634e456"
+    },
+    {
+      "path": "studies/moral-economy/output/r1_precision_by_era.csv",
+      "bytes": 245,
+      "sha256": "d196f9470ba691bf84e88c8c334937f72d5b3a1c0c64d312b0539d097c3d9bc6"
+    },
+    {
+      "path": "studies/moral-economy/output/r1_sample_allocation.csv",
+      "bytes": 737,
+      "sha256": "c941e60e0db304eddce464e0d765bb532e495a3c9b8a0957739da06c7d1eae39"
+    },
+    {
+      "path": "studies/moral-economy/output/r4_linkage_precision.csv",
+      "bytes": 1871,
+      "sha256": "23562702860637d84d22f16048b8df7c4427bb30538c00dcc2d0f64903f6f17d"
+    },
+    {
+      "path": "studies/moral-economy/output/r4_sample_allocation.csv",
+      "bytes": 496,
+      "sha256": "82b0f3105d0ddb5201f836dc1d2e2e8fd0064cd50a1171df47c4515f74b695ff"
+    },
+    {
+      "path": "studies/moral-economy/output/rsp_annotation_provenance.csv",
+      "bytes": 1190,
+      "sha256": "2e9d4fedd6e7c45b015c1630574b8c81da48d9fc93139dc25b2d22a145d69004"
+    },
+    {
+      "path": "studies/moral-economy/output/rsp_annotation_stability.csv",
+      "bytes": 186,
+      "sha256": "783814350076c342cb70bac95532dcd4b893f0518056c5a05ba6f5abe26b3b68"
+    },
+    {
+      "path": "studies/moral-economy/output/rsp_audit_refresh_manifest.json",
+      "bytes": 1148,
+      "sha256": "06b9206ebcfc55f6f5105810d49c08a27ff2367932e6c8e592f5b2bc11e431ff"
+    },
+    {
+      "path": "studies/moral-economy/output/rsp_coder_context_diagnostics.csv",
+      "bytes": 2617,
+      "sha256": "36c4608d5c4318ef636e7064ebe7f7638db9fb7371b81c53ede344ce6363421e"
+    },
+    {
+      "path": "studies/moral-economy/output/rsp_coder_context_manifest.json",
+      "bytes": 2257,
+      "sha256": "e25012797b9cc21f706eaa65abb5c0fcfbc45c108f5ad262ba500f46afa70034"
+    },
+    {
+      "path": "studies/moral-economy/output/rsp_coding_manifest.json",
+      "bytes": 10211,
+      "sha256": "7621851feef393ea12082cb40ae0806dd50f971be67d0d351268d8183c85065f"
+    },
+    {
+      "path": "studies/moral-economy/output/rsp_stability_manifest.json",
+      "bytes": 3268,
+      "sha256": "8486a8db40c657314c3d0b21f4bb8b5920369b97c90b873a67f3f11e3b68dab3"
+    },
+    {
+      "path": "studies/moral-economy/output/rsp_stability_r1_by_domain.csv",
+      "bytes": 430,
+      "sha256": "28c3f539e8d9de92f5f0cb66674268da5cbee1240cefac7e5297ed67b2d4d214"
+    },
+    {
+      "path": "studies/moral-economy/output/rsp_stability_transitions.csv",
+      "bytes": 951,
+      "sha256": "e9a747f6e6aaae6b82292e2c513d266efabc8178ea1007ba22d62fc76ee5cd4c"
+    }
+  ],
+  "generated_tables": [
+    {
+      "path": "studies/moral-economy/output/tables/rsp_derived.csv",
+      "bytes": 2304,
+      "sha256": "7421d7dcef36276b1c90e3aa06fef121e11216b463fedb5420fd79234762ac8c"
+    },
+    {
+      "path": "studies/moral-economy/output/tables/tab1_population.md",
+      "bytes": 1066,
+      "sha256": "df846f4dea16a37034069402243d2be9b565b0fefc6b8440bec76da2ff2e98a4"
+    },
+    {
+      "path": "studies/moral-economy/output/tables/tab2_audits.md",
+      "bytes": 1478,
+      "sha256": "e258e037e4932e1499b631e608d5dc1cf335483aad541105c9b4f023e58c3bf1"
+    },
+    {
+      "path": "studies/moral-economy/output/tables/tab3_gradient.md",
+      "bytes": 2068,
+      "sha256": "f2caa81599203b6cb07ba64f1d4e3f8fb5a0a5d5638fb06be302c125c19582c2"
+    },
+    {
+      "path": "studies/moral-economy/output/tables/tab4_era.md",
+      "bytes": 1977,
+      "sha256": "2ca120aedc51b3064fda90e5194bc422ddedd4a785038954a69efe13db06223f"
+    },
+    {
+      "path": "studies/moral-economy/output/tables/tab5_boundary.md",
+      "bytes": 954,
+      "sha256": "6442b696e62da35c5875095c15806669ff710caa9f0e917cb692ec87951bb23c"
+    },
+    {
+      "path": "studies/moral-economy/output/tables/tab6_register.md",
+      "bytes": 1620,
+      "sha256": "8985d4e769f787eb6140684d0ac3d49821aa5f948b0fcce907879d1d534710d5"
+    },
+    {
+      "path": "studies/moral-economy/output/tables/tab7_terms.md",
+      "bytes": 5003,
+      "sha256": "48ab37e93b1baf3691d250be08e20b37ac1177936b6ff567f3335536f92ac6ca"
+    }
+  ],
+  "generated_figures": [
+    {
+      "path": "studies/moral-economy/output/figures/rsp_fig1_gradient.png",
+      "bytes": 135383,
+      "sha256": "2355e3509b0db1fa75be3129f04e7ec3423fe4abf3fb2cc099bb47ed76240ed8"
+    },
+    {
+      "path": "studies/moral-economy/output/figures/rsp_fig2_era.png",
+      "bytes": 114663,
+      "sha256": "6cca41a710f60828611f2cef7d72e4ab23f0759dcbcbe600647422bb7762d73f"
+    },
+    {
+      "path": "studies/moral-economy/output/figures/rsp_fig3_boundary.png",
+      "bytes": 116950,
+      "sha256": "08e634afa99cc6fda054be4dd7fcbeb94fb400dac18ad6e6dc61f4ecfb205459"
+    },
+    {
+      "path": "studies/moral-economy/output/figures/rsp_fig4_lexicon_sensitivity.png",
+      "bytes": 99117,
+      "sha256": "89d54893cc913956adb824e60f03fbee3c8badcefd0743ab019d7a909c1fe9f3"
+    }
+  ],
+  "manuscripts_and_pipeline": [
+    {
+      "path": "pages/studije/socijalni-nauk-i-gospodarstvo.qmd",
+      "bytes": 11257,
+      "sha256": "ecaa1579014bf05b054f2e411463d40b65119ae4d0c09b4571bd3855b80ed5a5"
+    },
+    {
+      "path": "studies/moral-economy/PAPER_RSP_v2.md",
+      "bytes": 53634,
+      "sha256": "eec124fb06fb2e007cc1c2622edb106f51fb9948e997b2af4af9fcd60f47f5dd"
+    },
+    {
+      "path": "studies/moral-economy/PIPELINE.md",
+      "bytes": 9831,
+      "sha256": "853d45985c0bc8839b1339cfcbfc25d4b8a0caf45545e7a449b8ae84b80fea1f"
+    }
+  ],
+  "analysis_sources": [
+    {
+      "path": "R/religious_terms.R",
+      "bytes": 6326,
+      "sha256": "44058b4dad56cc7ed458cbc14f6cfe399bcfb0abde73cea8f8f4fd92c6a001b9"
+    },
+    {
+      "path": "resources/dictionaries/source_labels.csv",
+      "bytes": 9550,
+      "sha256": "26a5a7d3b8382c05f41504dd106b17753c43234de2d89d9a1de0f46441279aaf"
+    },
+    {
+      "path": "studies/moral-economy/01_stageA_tag_linkage.R",
+      "bytes": 18462,
+      "sha256": "79817cbb2830708aa38468b936f0a514636f087511233fac5f7601a0529abbcc"
+    },
+    {
+      "path": "studies/moral-economy/02_gate1_precision_scan.R",
+      "bytes": 3366,
+      "sha256": "56a8cdd3cb5a1a5188c114d617af2ee055ae3f0ec972c66c345da691f17dc3b3"
+    },
+    {
+      "path": "studies/moral-economy/03_build_coding_sheet.R",
+      "bytes": 6268,
+      "sha256": "54239b86c16b48f03202a042439337d334e54dc29f9d5f3b7f163cc3f53bd518"
+    },
+    {
+      "path": "studies/moral-economy/04_iaa_validation.R",
+      "bytes": 5380,
+      "sha256": "c8633ff71510803e7fb2fb6bc26031b971e9e1333ecbf81d979fab0d149de095"
+    },
+    {
+      "path": "studies/moral-economy/05_s1_anchor_calibration.R",
+      "bytes": 31999,
+      "sha256": "6dd4c707474ba8729f1cd3c8ca30a3680d596c09a0c9f848f86256bcd5f19dd2"
+    },
+    {
+      "path": "studies/moral-economy/06_s2_corpus_scoring.R",
+      "bytes": 14700,
+      "sha256": "b04ce4ba45cdc7498fcf023b754f343667606bbe65a40807116a8d23aba7afb6"
+    },
+    {
+      "path": "studies/moral-economy/07_s3_register_grid.R",
+      "bytes": 11789,
+      "sha256": "74668ff0f45ef1d57e3366220798283b2b707e3b04e171aec9edc409a9d400c3"
+    },
+    {
+      "path": "studies/moral-economy/08_build_gold_sheet.R",
+      "bytes": 9185,
+      "sha256": "91e87829e60ada82d5bc418688d7a9337cb8461c76dfa94804cf72cc38a02bd9"
+    },
+    {
+      "path": "studies/moral-economy/09a_annotate_prep.R",
+      "bytes": 2738,
+      "sha256": "6dfcb90c80e64b2a09cc4205dbe193f40ff19d15200607e417c3d7f43f386ce0"
+    },
+    {
+      "path": "studies/moral-economy/09b_iaa_validate.R",
+      "bytes": 19761,
+      "sha256": "3b7132eaeff936274da83dd51efe1097e9f6e0f6181697685a48fdc8a6b04781"
+    },
+    {
+      "path": "studies/moral-economy/10_stage_c_analyses.R",
+      "bytes": 14711,
+      "sha256": "6b88af78e2bb34ae6a1ed3e489fcc549f1a07130cd5e42364ca3f3c7f4192835"
+    },
+    {
+      "path": "studies/moral-economy/11_gold_viewer.R",
+      "bytes": 10747,
+      "sha256": "2eb4eb3077febb49e4cd1dcc171a37172752cd44f69b4798f0e9cd79137bc94b"
+    },
+    {
+      "path": "studies/moral-economy/12_cst_census.R",
+      "bytes": 7207,
+      "sha256": "1cbc61a69893477bad8bb179d83b980f3c36c5c0ea1557112a8fe7b234f1434b"
+    },
+    {
+      "path": "studies/moral-economy/13_wta_viewer.R",
+      "bytes": 11288,
+      "sha256": "d099c4eb8552abc01c88b8fa0864d47f659c3e867d5d7a936660f0dcdf6766f9"
+    },
+    {
+      "path": "studies/moral-economy/14_cst_core_profile.R",
+      "bytes": 21440,
+      "sha256": "b924f9378c757fcebc2e9882c6cb01eb39e2940503d3cd35f40c31b9d163da03"
+    },
+    {
+      "path": "studies/moral-economy/15_propose_source_labels.R",
+      "bytes": 12210,
+      "sha256": "de15f1c5f6d3f30f36bf531e81ebb6cddc0934588082115906b3ae15dab833df"
+    },
+    {
+      "path": "studies/moral-economy/16_cst_viewer.R",
+      "bytes": 18463,
+      "sha256": "d64373a431a53efc36b04115ab5a2a9fe5bba40c4dadb4728ff014c4f7832b66"
+    },
+    {
+      "path": "studies/moral-economy/17_cst_robustness.R",
+      "bytes": 13965,
+      "sha256": "dc3250867b4fdd098bc856b2d070cd70645ff1ab03e31d028e293c08c974d9eb"
+    },
+    {
+      "path": "studies/moral-economy/18_gold_reanalysis.R",
+      "bytes": 10342,
+      "sha256": "71b1072ae78f2b831a59ec71fd5350b17de346490f9e64624b17573c2a8032b6"
+    },
+    {
+      "path": "studies/moral-economy/19_r4_linkage_sample.R",
+      "bytes": 9798,
+      "sha256": "f05661e9f7568731a2bf631e604e49cedee6d230a59697234a632c9a102d6e47"
+    },
+    {
+      "path": "studies/moral-economy/20_r4_recompute.R",
+      "bytes": 12514,
+      "sha256": "e701a57543e7706d628ac3a1dd9e07b5ad2a3331f8f4b5e9a5f36cfad6d20267"
+    },
+    {
+      "path": "studies/moral-economy/21_r1_precision_sample.R",
+      "bytes": 6150,
+      "sha256": "8628705379c010c35d02e66589b63300cedc374557032b6ede1a2ef182bcf9f5"
+    },
+    {
+      "path": "studies/moral-economy/22_r1_recompute.R",
+      "bytes": 7428,
+      "sha256": "f27c8059795e53cf202f607b531471079bc3709023f9fce0de02214da3089176"
+    },
+    {
+      "path": "studies/moral-economy/24_rsp_figures.R",
+      "bytes": 9607,
+      "sha256": "99a49387c49acb25c8f174fcb6cefaed511b8c2cf3fff0f659b983a8be1f7c57"
+    },
+    {
+      "path": "studies/moral-economy/25_paper_checks.R",
+      "bytes": 13865,
+      "sha256": "8bcb583e5f9c80ee1b604eb7ac7138ad234b4976e013507626d973474d87058d"
+    },
+    {
+      "path": "studies/moral-economy/26_rsp_tables.R",
+      "bytes": 23296,
+      "sha256": "ba6568e8b4cb620308be5872500cc0f716af2bb97bd698c70637fe0c5cead672"
+    },
+    {
+      "path": "studies/moral-economy/27_sync_tables.R",
+      "bytes": 3351,
+      "sha256": "5bf744c1e7f35a013090bf534711cf1da48648a6c53e2cd09c6868529ee46645"
+    },
+    {
+      "path": "studies/moral-economy/28_render_paper.R",
+      "bytes": 6174,
+      "sha256": "a1207eafdf58c84c266e3be6896531e7b12180b29cf60b64bcd37b0e98fba2d1"
+    },
+    {
+      "path": "studies/moral-economy/29_prepare_official_rerun.R",
+      "bytes": 12292,
+      "sha256": "0ca32f52a1acbbe7822f0f96bdd1a999e598fbfe2e647c9b13c04794d3e3c992"
+    },
+    {
+      "path": "studies/moral-economy/30_refresh_rsp_audits.R",
+      "bytes": 12262,
+      "sha256": "1435a5aa8ffdc8916e633457972b1d5b629a09549daad3375c67df94810c2434"
+    },
+    {
+      "path": "studies/moral-economy/31_assemble_rsp_annotations.R",
+      "bytes": 13417,
+      "sha256": "03e716c3b49b5be1a1dfdf01e6c14c0fff3a3955269c0f0a711ecaa4701e5e80"
+    },
+    {
+      "path": "studies/moral-economy/32_rsp_reuse_stability.R",
+      "bytes": 20951,
+      "sha256": "f406fd01c697887e5ea1889c937309a776c562bb873a7b1e5aed4642866755dd"
+    },
+    {
+      "path": "studies/moral-economy/33_cst_frame_sensitivity.R",
+      "bytes": 5014,
+      "sha256": "6d454380dbf80558c2c056267e7a0058f02ee83fcd4d8489cc82a33b3f0506fd"
+    },
+    {
+      "path": "studies/moral-economy/34_cst_lexicon_sensitivity.R",
+      "bytes": 7521,
+      "sha256": "2873ac3d75f61be84486a0d97ead698114418e9e205657366f136475285e9a43"
+    },
+    {
+      "path": "studies/moral-economy/35_rsp_coder_context_diagnostics.R",
+      "bytes": 9204,
+      "sha256": "42c14aad496f83e04866d1d3ef3a67c98213e57d98dab350bdb8152634125335"
+    },
+    {
+      "path": "studies/moral-economy/36_rsp_final_run_manifest.R",
+      "bytes": 8102,
+      "sha256": "31d60de2291a2781a11b0f0da4e18b7dc9a7f3961223d4470cce79df32c9e430"
+    },
+    {
+      "path": "studies/moral-economy/build_calendar.R",
+      "bytes": 3299,
+      "sha256": "01628efd9c58494fb1be3148466d3b4c241d2f788540a1fa35c03bfef5229426"
+    },
+    {
+      "path": "studies/moral-economy/cst_core.R",
+      "bytes": 12166,
+      "sha256": "3142a15d7a8f1bc77a7662ddc6f2aa031da816d9d082676db4a8470e8707ff82"
+    },
+    {
+      "path": "studies/moral-economy/cst_lexicon.R",
+      "bytes": 5856,
+      "sha256": "354204f2e562f5c547cd7fe9cd5908b84a89f94e160bcd7d441f2df096aee8f0"
+    },
+    {
+      "path": "studies/moral-economy/diagnose_poverty.R",
+      "bytes": 4184,
+      "sha256": "b3356a884d116af61253f85549396a4ead75e11c9efa78ac281b0730065b884b"
+    },
+    {
+      "path": "studies/moral-economy/lexicon.R",
+      "bytes": 12040,
+      "sha256": "3b252301a85943d09d0a822be0c3d475eef3248932c3db3c3219084d14899f83"
+    },
+    {
+      "path": "studies/moral-economy/probe.R",
+      "bytes": 13739,
+      "sha256": "bacb7da41e3e7f4d426eea0a77005b911b19860f69c2085a8591955cf5f82df3"
+    },
+    {
+      "path": "studies/moral-economy/rsp_input.R",
+      "bytes": 4374,
+      "sha256": "6f9daf50b2fd7383de979d3a3d1b7b5dcca0c1be089008acf144f2602ed2647f"
+    },
+    {
+      "path": "studies/moral-economy/rsp_labels.R",
+      "bytes": 3192,
+      "sha256": "e8faa2d7393e33c2e1776d871179c348ef516a18a0b0bb92747ca2eb7550b9c4"
+    },
+    {
+      "path": "studies/moral-economy/sem_lib.R",
+      "bytes": 18070,
+      "sha256": "8f20d57174bfa5a84bc4699868b193c6769477d47247465607d149e0f64e8e65"
+    },
+    {
+      "path": "studies/moral-economy/semantic_slice.R",
+      "bytes": 8808,
+      "sha256": "b6a48b7a781fa151d4aa2c4f947c94d8a311b679e33bf7a70078d94166d93490"
+    },
+    {
+      "path": "studies/moral-economy/viewer_lib.R",
+      "bytes": 9063,
+      "sha256": "4bdc1d4e24bc9e3217e710a0cdc514af396e2ae97daa7f848f8908d4459a9ce9"
+    }
+  ],
+  "note": "Hashes of restricted files are shareable; their content is not. The run is complete, but the failed R2 repeatability gate is an analytic result and is retained as a limitation."
+}
