@@ -2,7 +2,7 @@
 
 - **Slug:** `catholic-education`
 - **Owner:** memory-studies researcher (asistentica, *Mjesta sjećanja*; disertacija povijest × komunikologija)
-- **Status:** analysis (Stage-A detection run on the full master — see [FINDINGS_STAGEA.md](FINDINGS_STAGEA.md))
+- **Status:** working paper refreshed from the official corpus (2026-08-11); accumulator-era findings are historical
 - **Created:** 2026-06-30
 
 ## Research question
@@ -20,28 +20,39 @@
 Full design, theory, and guardrails: [PROPOSAL.md](PROPOSAL.md).
 
 ## Corpus slice
-- **Platforms:** all (web portals dominant · YouTube · Facebook · Twitter · Reddit · forums).
-- **Terms / theme filter:** the global ≥2-match religion filter is **unchanged**; this study layers a *study-local*
-  education-and-memory **entity probe** on top (see PROPOSAL §4) and reuses the existing
-  `POVIJEST_I_NACIONALNI_IDENTITET` theme category for past-anchoring. **Does NOT redefine the corpus.**
+- **Input:** official `data/digikat_corpus.rds`, verified against its tracked SHA-256 manifest; 367,146 posts fall
+  in the paper's 2021–2025 window and 117,180 enter the education strand.
+- **Platforms:** all nine official-corpus platform types; web portals account for 84.1% of the strand.
+- **Terms / theme filter:** the official corpus inclusion rule is unchanged. The study adds a local
+  education-and-memory entity probe and a separately fingerprinted proximity register. It does not redefine the corpus.
 - **Date range:** 2021–2025.
-- **Sample:** **Stage A** = stratified 2–5 % (platform × year) for preliminary detection; **Stage B** = narrowed
-  evidence-driven set (the survivors' actual posts, full corpus) for qualitative coding.
+- **Analysis set:** full-corpus census for recurrence, proximity, timing and sources; deterministic 5,526-post
+  union sample for lemmatized affect analysis.
 
 ## Method
-Three stages (PROPOSAL §5): **A** computational detection (four-signal scoring → ranked candidate table) →
-**B** evidence-driven corpus selection → **C** qualitative discourse analysis with hand-validation + IAA.
-Honesty guardrails (co-occurrence ≠ activation; homonym audit; provisional vs validated numbers) per PROPOSAL §6.
+The paper compares recurrence, coverage-aware temporal peaking, affective register and anchor-specific local
+past linkage. The ±160-character measure is reported as a proximity proxy rather than semantic validation.
+The February–May 2024 vendor text gap is excluded from temporal exposure, and collection streams are checked
+separately. A two-coder semantic validation remains future work and is stated as a limitation.
 
 ## Outputs
-- working files in this folder; figures/tables/`slice.rds` in [`output/`](output/) (gitignored content).
-- published page (later): `pages/studije/catholic-education.qmd` — **not yet wired in `_quarto.yml`** (proposal stage).
+- Working files live in this folder. Aggregate figures and tables are under [`output/`](output/); row-level slices
+  remain ignored.
+- Manuscript: [`PAPER_v2.md`](PAPER_v2.md). Public profile:
+  [`pages/studije/katolicko-obrazovanje-i-stepinac.qmd`](../../pages/studije/katolicko-obrazovanje-i-stepinac.qmd).
+- Re-run from the repository root with `Rscript studies/catholic-education/run_analysis.R`.
 
 ## Declarations (on publication)
 - Data availability: see `/DATA_AVAILABILITY.md`
-- AI-use disclosure: Claude Code used in the analysis pipeline
+- AI-use disclosure: OpenAI Codex used for pipeline audit, execution, consistency checks and language revision
 
 ## Log
+- 2026-08-11 — Complete official-corpus rerun and manuscript rewrite. Input locked to the 413,985-row official
+  corpus by path, dimensions and SHA-256. The 2021–2025 education strand is now 117,180 posts. The central
+  separation survives: Stepinac local past linkage is 23.2%, compared with 5.6–9.0% for institutional anchors;
+  February is the annual peak in all four eligible years. Source-boundary language was weakened to a conditional
+  comparison because only 37.4% of Stepinac posts are classified. The inherited `rat*` ambiguity and missing-month
+  treatment were corrected. Manuscript tables, figures, standalone formats and the Croatian profile were rebuilt.
 - 2026-06-30 — Study scaffolded from a memory-studies proposal. Spine fixed to **education-as-memory-transmission**
   (figures/orders + rituals kept as secondary signals). RQ sharpened via `/research-ideation`; four-signal
   operationalization of *lieu de mémoire* adopted as the measurable construct.

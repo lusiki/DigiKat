@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-11 10:40:39 UTC",
+  "generator": "studies/catholic-education/slice.R",
+  "input": {
+    "source_kind": "official_digikat_corpus",
+    "sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a",
+    "rows": 413985,
+    "columns": 54,
+    "date_min": "2021-01-01",
+    "date_max": "2026-06-11",
+    "analysis_start": "2021-01-01",
+    "analysis_end": "2025-12-31",
+    "path": "data/digikat_corpus.rds",
+    "manifest_path": "data/digikat_corpus_manifest.json",
+    "inclusion_rule": "word list v4 within the first 3 000 characters (>=1 decisive, >=2 total), then the second-pass ensemble at 0.70"
+  },
+  "scope": {
+    "rows_in_input": 413985,
+    "rows_in_2021_2025": 367146,
+    "observed_months": 56,
+    "unobserved_months": ["2024-02", "2024-03", "2024-04", "2024-05"],
+    "education_strand_rows": 117180,
+    "cache_reused": false,
+    "proximity_window_characters": 160
+  },
+  "probe": {
+    "sha256": "1134214681c93f9c85315301d675fd777d703ef22c89809a5e500d32ad7ec992",
+    "primary_anchors": ["vjeronauk", "katolicka_skola", "odgoj_vrijednosti", "stepinac", "strossmayer", "stadler", "petkovic_marija", "redovi_orders"],
+    "secondary_anchor": "rituali"
+  },
+  "caveats": {
+    "instrument_change_2024": "One inclusion rule makes the two eras RULE-comparable, not CAPTURE-comparable. The collection method changed in 2024 and the kept share still steps about 20 points down at that break. A rise in post counts across it is not a rise in media attention.",
+    "text_gap": "February-May 2024 carries no text in the vendor feed, so neither era has rows there."
+  },
+  "outputs": {
+    "candidate_table": {
+      "path": "studies/catholic-education/output/candidate_sites_of_memory.csv",
+      "sha256": "e7145808effef344493d86aad57d89a9d4c2370bf92a5fd7edb8c4cf5c277b78"
+    },
+    "restricted_slice": {
+      "path": "studies/catholic-education/output/slice.rds",
+      "rows": 117180,
+      "columns": 67
+    }
+  }
+}

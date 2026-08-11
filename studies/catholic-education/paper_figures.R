@@ -12,6 +12,7 @@ suppressPackageStartupMessages({
 })
 
 source(here::here("R/theme_digikat.R"))
+source(here::here("studies/catholic-education/study_input.R"), encoding = "UTF-8")
 
 study_dir <- here::here("studies/catholic-education")
 out_dir <- file.path(study_dir, "output")
@@ -132,22 +133,22 @@ p_anchor <- ggplot(
   ) +
   scale_x_log10(
     labels = label_number(big.mark = ","),
-    breaks = c(300, 1000, 3000, 10000, 30000, 100000)
+    breaks = scales::breaks_log(n = 6)
   ) +
   scale_y_continuous(
     labels = label_percent(accuracy = 1),
-    limits = c(0.035, 0.265),
-    breaks = seq(0.05, 0.25, 0.05)
+    limits = c(0, max(candidates$past_anchor_genuine, na.rm = TRUE) * 1.16),
+    expand = expansion(mult = c(0, 0))
   ) +
   scale_fill_manual(values = family_fills, guide = "none") +
   scale_shape_manual(values = family_shapes) +
   labs(
-    title = "Frequency is not memory",
-    subtitle = "Stepinac appears less often than the institutions, but connects to the past much more strongly",
+    title = "Recurrence and local past linkage",
+    subtitle = "Frequent public topics need not be the anchors most closely connected to historical language",
     x = "Posts mentioning the anchor (log scale)",
-    y = "Posts with genuine anchoring",
+    y = "Posts with local past linkage",
     fill = NULL,
-    caption = "Genuine anchoring: a past-reference expression within ±160 characters of the anchor. DigiKat, 2021–2025."
+    caption = "Local past linkage: a past-reference expression within ±160 characters of the anchor. DigiKat, 2021–2025."
   ) +
   theme_paper_bw(base_size = 13) +
   guides(
@@ -166,18 +167,39 @@ ggsave(file.path(fig_dir, "paper_anchor_split.svg"), p_anchor, width = 11, heigh
 
 # Figure 2: pooled month-of-year profiles across the complete 2021–2025 strand.
 slice <- readRDS(file.path(out_dir, "slice.rds"))
+catholic_education_assert_slice_current(slice)
+coverage <- attr(slice, "corpus_month_coverage")
+if (is.null(coverage)) stop("Slice lacks corpus-month coverage metadata; re-run slice.R.", call. = FALSE)
+observed_calendar <- coverage |>
+  filter(observed) |>
+  transmute(
+    ym,
+    year = as.integer(substr(ym, 1, 4)),
+    month = as.integer(substr(ym, 6, 7))
+  )
 slice$date <- as.Date(slice$DATE)
 slice$month <- as.integer(format(slice$date, "%m"))
 slice$year <- as.integer(format(slice$date, "%Y"))
+slice$ym <- format(slice$date, "%Y-%m")
 
 season_keys <- c("stepinac", "vjeronauk", "katolicka_skola", "odgoj_vrijednosti", "rituali")
 seasonality <- bind_rows(lapply(season_keys, function(entity_name) {
-  slice |>
+  entity_months <- slice |>
     filter(.data[[paste0("probe_", entity_name)]] %in% TRUE, !is.na(month)) |>
-    count(month, name = "posts") |>
-    complete(month = 1:12, fill = list(posts = 0L)) |>
+    count(ym, name = "posts")
+  observed_calendar |>
+    left_join(entity_months, by = "ym") |>
+    mutate(posts = coalesce(posts, 0L)) |>
+    group_by(month) |>
+    summarise(
+      total_posts = sum(posts),
+      observed_periods = n(),
+      mean_monthly_posts = mean(posts),
+      .groups = "drop"
+    ) |>
     mutate(
-      share = posts / sum(posts),
+      posts = total_posts,
+      share = mean_monthly_posts / sum(mean_monthly_posts),
       entity = entity_name,
       label = unname(anchor_labels[entity_name])
     )
@@ -189,26 +211,26 @@ seasonality <- bind_rows(lapply(season_keys, function(entity_name) {
 temporal_summary <- bind_rows(lapply(c(season_keys, "redovi_orders", "strossmayer"), function(entity_name) {
   sub <- slice |>
     filter(.data[[paste0("probe_", entity_name)]] %in% TRUE, !is.na(date))
-  monthly <- sub |>
+  entity_months <- sub |>
     count(ym = format(date, "%Y-%m"), name = "posts") |>
-    complete(
-      ym = format(seq(as.Date("2021-01-01"), as.Date("2025-12-01"), by = "month"), "%Y-%m"),
-      fill = list(posts = 0L)
-    )
-  annual_peaks <- sub |>
-    count(year, month, name = "posts") |>
+    right_join(observed_calendar, by = "ym") |>
+    mutate(posts = coalesce(posts, 0L))
+  annual_peaks <- entity_months |>
+    select(year, month, posts) |>
     group_by(year) |>
     slice_max(posts, n = 1, with_ties = FALSE) |>
     ungroup()
   modal_month <- as.integer(names(sort(table(annual_peaks$month), decreasing = TRUE))[1])
+  eligible_years <- n_distinct(observed_calendar$year[observed_calendar$month == modal_month])
   tibble(
     entity = entity_name,
     label = unname(anchor_labels[entity_name]),
     recurrence_n = nrow(sub),
-    pooled_monthly_cv = round(sd(monthly$posts) / mean(monthly$posts), 2),
+    pooled_monthly_cv = round(sd(entity_months$posts) / mean(entity_months$posts), 2),
     modal_peak_month = modal_month,
     years_peaking_that_month = sum(annual_peaks$month == modal_month),
-    n_years = nrow(annual_peaks)
+    n_years = nrow(annual_peaks),
+    eligible_years_modal_month = eligible_years
   )
 }))
 
@@ -251,10 +273,10 @@ p_season <- ggplot(seasonality, aes(x = month, y = share)) +
   scale_fill_manual(values = c(`FALSE` = bw[["light"]], `TRUE` = bw[["ink"]])) +
   labs(
     title = "Different calendars of attention",
-    subtitle = "Black bars mark each anchor's peak: February for Stepinac and August for Catholic rituals",
+    subtitle = "Black bars mark each anchor's exposure-adjusted peak month",
     x = NULL,
     y = "Share of each anchor's posts",
-    caption = "Pooled month-of-year distribution across 2021–2025. Catholic rituals are included as a secondary calendar comparison."
+    caption = "Mean posts per observed month, normalized within each anchor. February–May 2024 are unobserved and excluded. Catholic rituals are a secondary comparison."
   ) +
   theme_paper_bw(base_size = 12.5) +
   theme(
@@ -333,8 +355,8 @@ p_sources <- ggplot(source_long, aes(x = share, y = label, fill = origin)) +
     "Non-confessional" = bw[["ink"]]
   )) +
   labs(
-    title = "Stepinac crosses the institutional boundary",
-    subtitle = "His source mix is more diverse than that of Catholic schools or religious instruction",
+    title = "Source origins across anchors",
+    subtitle = "Shares use only posts whose publisher is covered by the outlet-origin dictionary",
     x = "Share among posts with a classified outlet",
     y = NULL,
     fill = NULL,
@@ -366,6 +388,8 @@ overlap_summary <- tibble(
   mutate(share_label = percent(share, accuracy = 0.1))
 
 removed_share <- 1 - overlap_summary$share[2] / overlap_summary$share[1]
+overlap_ylim <- max(overlap_summary$share) * 1.24
+overlap_text_y <- overlap_summary$share[2] + 0.58 * diff(rev(overlap_summary$share))
 
 write.csv(
   overlap_summary,
@@ -384,7 +408,14 @@ profile_metrics <- tibble(
     "overlap_removed_share",
     "stepinac_confessional_share",
     "stepinac_non_confessional_share",
-    "stepinac_february_peak_years"
+    "stepinac_source_classified_coverage",
+    "stepinac_february_peak_years",
+    "stepinac_february_eligible_years",
+    "stepinac_pooled_monthly_cv",
+    "observed_months",
+    "unobserved_months",
+    "official_corpus_n",
+    "corpus_2021_2025_n"
   ),
   value = c(
     nrow(slice),
@@ -395,7 +426,14 @@ profile_metrics <- tibble(
     removed_share,
     source_profiles$confessional[source_profiles$entity == "stepinac"],
     source_profiles$non_confessional[source_profiles$entity == "stepinac"],
-    temporal_summary$years_peaking_that_month[temporal_summary$entity == "stepinac"]
+    source_profiles$classified_coverage[source_profiles$entity == "stepinac"],
+    temporal_summary$years_peaking_that_month[temporal_summary$entity == "stepinac"],
+    temporal_summary$eligible_years_modal_month[temporal_summary$entity == "stepinac"],
+    temporal_summary$pooled_monthly_cv[temporal_summary$entity == "stepinac"],
+    sum(coverage$observed),
+    sum(!coverage$observed),
+    attr(slice, "cache_fingerprint")$input$rows,
+    sum(coverage$corpus_posts)
   )
 )
 
@@ -430,7 +468,7 @@ p_overlap <- ggplot(overlap_summary, aes(x = stage, y = share, fill = stage)) +
   annotate(
     "text",
     x = 1.5,
-    y = 0.265,
+    y = overlap_text_y,
     label = paste0(percent(removed_share, accuracy = 0.1), " of apparent links\nremoved"),
     family = dk_serif,
     fontface = "bold",
@@ -444,8 +482,7 @@ p_overlap <- ggplot(overlap_summary, aes(x = stage, y = share, fill = stage)) +
   )) +
   scale_y_continuous(
     labels = label_percent(accuracy = 1),
-    limits = c(0, 0.44),
-    breaks = seq(0, 0.4, 0.1),
+    limits = c(0, overlap_ylim),
     expand = expansion(mult = c(0, 0))
   ) +
   labs(
@@ -470,19 +507,19 @@ ggsave(file.path(fig_dir, "paper_overlap_filter.svg"), p_overlap, width = 9.5, h
 candidates_hr <- candidates |>
   mutate(label = unname(anchor_labels_hr[entity]))
 
-p_anchor_hr <- p_anchor + candidates_hr +
+p_anchor_hr <- suppressWarnings(p_anchor + candidates_hr +
   scale_shape_manual(
     values = family_shapes,
     labels = c("Stepinac", "Obrazovne ustanove", "Ostale osobe")
   ) +
   labs(
-    title = "Učestalost nije isto što i sjećanje",
-    subtitle = "Stepinac se pojavljuje rjeđe od ustanova, ali je znatno snažnije povezan s prošlošću",
+    title = "Učestalost i lokalna veza s prošlošću",
+    subtitle = "Česte javne teme nisu nužno sidra koja se najviše povezuju s povijesnim jezikom",
     x = "Broj objava u kojima se sidro pojavljuje (logaritamska ljestvica)",
-    y = "Objave sa stvarnim sidrenjem u prošlosti",
+    y = "Objave s lokalnom vezom s prošlošću",
     fill = NULL,
-    caption = "Stvarno sidrenje: izraz povezan s prošlošću unutar ±160 znakova od sidra. DigiKat, 2021.–2025."
-  )
+    caption = "Lokalna veza: izraz povezan s prošlošću unutar ±160 znakova od sidra. DigiKat, 2021.–2025."
+  ))
 
 ggsave(file.path(fig_dir, "paper_anchor_split_hr.png"), p_anchor_hr, width = 11, height = 6.8, dpi = 300)
 
@@ -492,7 +529,7 @@ facet_labels_hr <- setNames(
 )
 month_labels_hr <- c("sij", "velj", "ožu", "tra", "svi", "lip", "srp", "kol", "ruj", "lis", "stu", "pro")
 
-p_season_hr <- p_season +
+p_season_hr <- suppressWarnings(p_season +
   facet_wrap(
     ~label,
     ncol = 3,
@@ -506,11 +543,11 @@ p_season_hr <- p_season +
   ) +
   labs(
     title = "Različiti kalendari pažnje",
-    subtitle = "Crni stupci označavaju vrhunac: veljaču za Stepinca i kolovoz za katoličke obrede",
+    subtitle = "Crni stupci označavaju vršni mjesec prilagođen broju opaženih mjeseci",
     x = NULL,
     y = "Udio objava za pojedino sidro",
-    caption = "Zajednička mjesečna raspodjela za 2021.–2025.; katolički obredi služe kao kalendarska usporedba."
-  )
+    caption = "Prosjek po opaženom mjesecu, normiran unutar sidra; veljača–svibanj 2024. izostavljeni su kao neopaženi."
+  ))
 
 ggsave(file.path(fig_dir, "paper_pooled_seasonality_hr.png"), p_season_hr, width = 11, height = 8, dpi = 300)
 
@@ -521,7 +558,7 @@ source_long_hr <- source_long |>
     share_label = percent(share, accuracy = 0.1, decimal.mark = ",")
   )
 
-p_sources_hr <- p_sources + source_long_hr +
+p_sources_hr <- suppressWarnings(p_sources + source_long_hr +
   scale_x_continuous(
     labels = label_percent(accuracy = 1, decimal.mark = ","),
     limits = c(0, 1),
@@ -532,14 +569,82 @@ p_sources_hr <- p_sources + source_long_hr +
     labels = c("Konfesionalni", "Nekonfesionalni")
   ) +
   labs(
-    title = "Stepinac prelazi institucijsku granicu",
-    subtitle = "Njegov je profil izvora raznolikiji od profila katoličkih škola i vjeronauka",
+    title = "Podrijetlo izvora po sidrima",
+    subtitle = "Udjeli se odnose samo na objave čiji je nakladnik obuhvaćen rječnikom izvora",
     x = "Udio među objavama s klasificiranim izvorom",
     y = NULL,
     fill = NULL,
     caption = "Podrijetlo izvora među klasificiranim objavama. DigiKat, 2021.–2025."
-  )
+  ))
 
 ggsave(file.path(fig_dir, "paper_source_boundary_hr.png"), p_sources_hr, width = 10.5, height = 6.2, dpi = 300)
+
+overlap_summary_hr <- overlap_summary |>
+  mutate(
+    stage = factor(
+      as.character(stage),
+      levels = c("Anywhere in the document", "Within ±160 characters"),
+      labels = c("Bilo gdje u objavi", "Unutar ±160 znakova")
+    ),
+    share_label = percent(share, accuracy = 0.1, decimal.mark = ",")
+  )
+
+p_overlap_hr <- ggplot(overlap_summary_hr, aes(x = stage, y = share, fill = stage)) +
+  geom_col(width = 0.56, colour = bw[["ink"]], linewidth = 0.45, show.legend = FALSE) +
+  geom_text(
+    aes(label = share_label),
+    family = dk_mono,
+    fontface = "bold",
+    size = 5,
+    vjust = -0.55,
+    colour = bw[["ink"]]
+  ) +
+  annotate(
+    "curve",
+    x = 1.12,
+    xend = 1.86,
+    y = overlap_summary$share[1] - 0.015,
+    yend = overlap_summary$share[2] + 0.018,
+    curvature = 0.08,
+    linewidth = 0.55,
+    colour = bw[["dark"]],
+    arrow = arrow(length = grid::unit(0.12, "inches"), type = "closed")
+  ) +
+  annotate(
+    "text",
+    x = 1.5,
+    y = overlap_text_y,
+    label = paste0(percent(removed_share, accuracy = 0.1, decimal.mark = ","),
+                   " prividnih veza\nuklonjeno"),
+    family = dk_serif,
+    fontface = "bold",
+    size = 4.7,
+    colour = bw[["ink"]],
+    lineheight = 0.95
+  ) +
+  scale_fill_manual(values = c(
+    "Bilo gdje u objavi" = bw[["light"]],
+    "Unutar ±160 znakova" = bw[["ink"]]
+  )) +
+  scale_y_continuous(
+    labels = label_percent(accuracy = 1, decimal.mark = ","),
+    limits = c(0, overlap_ylim),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  labs(
+    title = "Lokalni kontekst uklanja većinu prividnih veza",
+    subtitle = "Sidro i povijesni izraz moraju se susresti u tekstu, a ne samo u istoj objavi",
+    x = NULL,
+    y = "Udio objava u obrazovnoj struji",
+    caption = "Usporedba suspominjanja u cijeloj objavi i pravila blizine od ±160 znakova. DigiKat, 2021.–2025."
+  ) +
+  theme_paper_bw(base_size = 13) +
+  theme(
+    panel.grid.major.x = element_blank(),
+    axis.text.x = element_text(family = dk_sans, colour = bw[["ink"]]),
+    plot.margin = margin(14, 18, 12, 12)
+  )
+
+ggsave(file.path(fig_dir, "paper_overlap_filter_hr.png"), p_overlap_hr, width = 9.5, height = 6.2, dpi = 300)
 
 cat("Wrote publication figures and pooled temporal tables under", out_dir, "\n")

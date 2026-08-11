@@ -6,10 +6,12 @@
 #   (2/3) aggregate genuine-vs-incidental past-anchoring split (does the ~68% inflation lesson apply?)
 # Run AFTER slice.R:  Rscript studies/catholic-education/stageA_checks.R
 suppressPackageStartupMessages({ library(here); library(dplyr); library(stringr); library(ggplot2) })
+source(here::here("studies/catholic-education/study_input.R"), encoding = "UTF-8")
 
 slice_path <- here::here("studies/catholic-education/output/slice.rds")
 if (!file.exists(slice_path)) stop("Run slice.R first — no ", slice_path)
 slice   <- readRDS(slice_path)
+catholic_education_assert_slice_current(slice)
 out_dir <- here::here("studies/catholic-education/output")
 tab_dir <- file.path(out_dir, "tables"); fig_dir <- file.path(out_dir, "figures")
 for (d in c(tab_dir, fig_dir)) if (!dir.exists(d)) dir.create(d, recursive = TRUE)

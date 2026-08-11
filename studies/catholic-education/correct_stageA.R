@@ -26,7 +26,7 @@ probe <- list(
   stadler          = "\\bstadler\\b",
   petkovic_marija  = "marij\\w*\\s+petkovi[ćc]|bla[žz]en\\w*\\s+marij\\w*\\s+petkovi[ćc]|petkovi[ćc]\\w*\\s+(redovnic|sestr|milosrdnic)",
   redovi_orders    = "isusova[cč]\\w*|isusovc\\w*|dru[žz]b\\w*\\s+isusov|jezuit|franjev|dominikan|salezijan|[čc]asn\\w*\\s+sestr|samostan",
-  past_anchor      = "komunist|komuniz|sekular|jugoslavij|\\b1991\\b|domovinsk|[žz]rtv\\w*|\\brat\\w*|(po)?slijeratn|predratn|poratn",
+  past_anchor      = "komunist|komuniz|sekular|jugoslavij|\\b1991\\b|domovinsk|[žz]rtv\\w*|\\brat(?:\\b|a\\b|u\\b|om\\b|ov\\w*|n\\w*)|(po)?slijeratn|predratn|poratn",
   rituali          = "hod za [žz]ivot|\\bshkm\\b|progledaj srcem|antunovsk\\w*\\s+hod|procesij|hodo[čc]a[šs]"
 )
 spine_keys <- c("vjeronauk","katolicka_skola","odgoj_vrijednosti","stepinac",

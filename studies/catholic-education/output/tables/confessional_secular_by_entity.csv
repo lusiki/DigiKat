@@ -1,8 +1,8 @@
-"entity","n","confessional","secular","unlabeled","pct_classified","confessional_share_of_classified"
-"stepinac",9831,0.202,0.123,0.675,0.325,0.622
-"vjeronauk",14918,0.232,0.092,0.676,0.324,0.717
-"katolicka_skola",22233,0.354,0.091,0.556,0.444,0.796
-"odgoj_vrijednosti",82025,0.152,0.145,0.703,0.297,0.513
-"redovi_orders",79962,0.238,0.118,0.644,0.356,0.669
-"rituali",24463,0.279,0.092,0.629,0.371,0.753
-"strossmayer",5172,0.091,0.081,0.828,0.172,0.531
+"entity","n","n_confessional","n_non_confessional","n_unlabeled","confessional","non_confessional","unlabeled","pct_classified","confessional_share_of_classified","confessional_lower_bound_all","confessional_upper_bound_all"
+"stepinac",7384,1927,834,4623,0.261,0.113,0.626,0.374,0.698,0.261,0.887
+"vjeronauk",12598,3382,970,8246,0.268,0.077,0.655,0.345,0.777,0.268,0.923
+"katolicka_skola",19671,7681,1594,10396,0.39,0.081,0.528,0.472,0.828,0.39,0.919
+"odgoj_vrijednosti",40073,11919,4309,23845,0.297,0.108,0.595,0.405,0.734,0.297,0.892
+"redovi_orders",65468,18545,6950,39973,0.283,0.106,0.611,0.389,0.727,0.283,0.894
+"rituali",21507,6742,1810,12955,0.313,0.084,0.602,0.398,0.788,0.313,0.916
+"strossmayer",2460,451,128,1881,0.183,0.052,0.765,0.235,0.779,0.183,0.948

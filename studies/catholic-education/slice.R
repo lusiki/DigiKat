@@ -7,28 +7,30 @@
 # Reads the corpus READ-ONLY; writes ONLY into this study's output/. NEVER writes data/.
 # Does NOT touch the global >=2-match religion filter — it only sub-selects + scores.
 #
-# DESIGN NOTE (as-built): Stage A runs on the FULL corpus, not a 2–5% sample. Detection is
+# DESIGN NOTE (as-built): Stage A runs on the FULL official corpus, not a 2–5% sample. Detection is
 # recall-first and full-corpus scoring is what lets a RARE-but-real lieu survive (PROPOSAL §5
-# rare-lieu rescue). The master read is EXPENSIVE (~8 min: 1.2 GB compressed RDS), so the
-# filtered slice is CHECKPOINTED to output/_slice_raw.rds with a fingerprint of the probe;
-# re-runs resume in seconds, and a probe edit auto-invalidates the checkpoint (no silent stale).
+# rare-lieu rescue). The filtered slice is CHECKPOINTED to output/_slice_raw.rds with fingerprints
+# of both the probe and the official database; a probe or database change invalidates it.
 #
-# Run where R + the master live (see CLAUDE.local.md):
+# Run where R + the official corpus live (see CLAUDE.local.md):
 #   Rscript studies/catholic-education/slice.R
 suppressPackageStartupMessages({ library(here); library(dplyr); library(stringr) })
+source(here::here("studies/catholic-education/study_input.R"), encoding = "UTF-8")
 
-# PINNED to the accumulator (data/merged_comprehensive.rds), NOT the official corpus
-# data/digikat_corpus.rds. This analysis is complete and its published numbers were computed
-# from the accumulator; repointing it would silently change results a paper already reports.
-# See quality_reports/plans/2026-08-10_official-corpus-v1.md §4.
-USE_SAMPLE <- !file.exists(here::here("data/merged_comprehensive.rds"))
-src <- if (USE_SAMPLE) here::here("data/sample/merged_sample.rds") else here::here("data/merged_comprehensive.rds")
-if (!file.exists(src)) stop("No corpus found (need the master or data/sample/). See CLAUDE.local.md.")
+contract <- catholic_education_input_contract(verify_hash = TRUE)
+input_fingerprint <- contract$fingerprint
+CACHE_SCHEMA_VERSION <- 2L
+cat(
+  "Official input:", contract$path, "\n",
+  "  ", input_fingerprint$rows, "rows x", input_fingerprint$columns, "columns\n",
+  "  SHA-256", input_fingerprint$sha256, "\n"
+)
 
 # --- 1. the study-local ENTITY PROBE (constants; NOT a global-filter change) -------------------
 # Roots are intentionally loose for DETECTION; precision is fixed later by hand-validation (PROPOSAL §6).
 # HOMONYM WARNINGS (audit before reporting any number): skola->autoskola, red->red voznje,
-#   Petkovic = surname (disambiguated below), mladi ubiquitous, rat->ratar/ratarstvo (farming).
+#   Petkovic = surname (disambiguated below), mladi ubiquitous. The war token is restricted below
+#   so it does not match ratar/ratarstvo or other non-war rat* words.
 probe <- list(
   # --- spine: education / transmission ---
   vjeronauk        = "vjeronauk|vjerou[čc]itelj",
@@ -47,7 +49,7 @@ probe <- list(
   # HONEST SCOPE: a FOCUSED past-reference probe ALIGNED WITH (a subset of) POVIJEST_I_NACIONALNI_IDENTITET,
   # NOT that 16-cat category re-run (that version is compared in /data-analysis). NB: this token set is
   # tuned to the 20c communist/1991 rupture, so it UNDER-detects 19c memory (e.g. Strossmayer) — a limit.
-  past_anchor      = "komunist|komuniz|sekular|jugoslavij|\\b1991\\b|domovinsk|[žz]rtv\\w*|\\brat\\w*|(po)?slijeratn|predratn|poratn",
+  past_anchor      = "komunist|komuniz|sekular|jugoslavij|\\b1991\\b|domovinsk|[žz]rtv\\w*|\\brat(?:\\b|a\\b|u\\b|om\\b|ov\\w*|n\\w*)|(po)?slijeratn|predratn|poratn",
   # --- secondary: rituals (NOT the spine; reported as a signal, flagged 'secondary' in the table) ---
   rituali          = "hod za [žz]ivot|\\bshkm\\b|progledaj srcem|antunovsk\\w*\\s+hod|procesij|hodo[čc]a[šs]"
 )
@@ -55,31 +57,33 @@ spine_keys <- c("vjeronauk", "katolicka_skola", "odgoj_vrijednosti", "stepinac",
                 "strossmayer", "stadler", "petkovic_marija", "redovi_orders")
 spine_cols <- paste0("probe_", spine_keys)
 past_rx    <- probe$past_anchor
+cache_fingerprint <- list(
+  schema_version = CACHE_SCHEMA_VERSION,
+  input = input_fingerprint,
+  probe_sha256 = digikat_hash_object(probe)
+)
+
+out_dir <- here::here("studies/catholic-education/output")
+tab_dir <- file.path(out_dir, "tables")
+for (d in c(out_dir, tab_dir)) if (!dir.exists(d)) dir.create(d, recursive = TRUE)
 
 # --- 2. build (or resume) the education-spine slice; checkpoint is probe-fingerprinted ---------
 raw_path <- here::here("studies/catholic-education/output/_slice_raw.rds")
+cache_reused <- FALSE
 if (file.exists(raw_path)) {
   cached <- readRDS(raw_path)
-  if (!identical(attr(cached, "probe"), probe)) {
-    cat("Cached _slice_raw.rds was built with a DIFFERENT probe — ignoring it and re-reading the master.\n")
+  if (!identical(attr(cached, "cache_fingerprint"), cache_fingerprint)) {
+    cat("Cached _slice_raw.rds has a DIFFERENT probe/database fingerprint — rebuilding it.\n")
     slice <- NULL
   } else {
-    cat("Resuming from cached raw slice (probe matches):", raw_path, "\n")
+    cat("Resuming from cached raw slice (probe and official database match):", raw_path, "\n")
     slice <- cached
+    cache_reused <- TRUE
   }
 } else slice <- NULL
 
 if (is.null(slice)) {
-  corpus <- readRDS(src)
-  # master is a data.table; convert in place (setDF) — as.data.frame() would deep-copy ~all columns
-  # and briefly double peak RAM on the ~1.2 GB master (r-reviewer Major #3).
-  if (inherits(corpus, "data.table")) data.table::setDF(corpus) else corpus <- as.data.frame(corpus)
-  miss <- setdiff(c("FULL_TEXT", "DATE"), names(corpus))
-  if (length(miss)) stop("Master is missing required columns: ", paste(miss, collapse = ", "))
-
-  if (USE_SAMPLE && mean(grepl("REDACTED", corpus$FULL_TEXT, fixed = TRUE)) > 0.5)
-    stop("Sample FULL_TEXT is redacted (synthetic placeholder) — the entity probe needs real text.\n",
-         "  Run where the master lives, or against a REAL stratified sample (NOT data/sample/).")
+  corpus <- catholic_education_read_corpus(contract)
 
   # lowercase BEFORE matching (MEMORY.md); str_to_lower(locale='hr') is Croatian-diacritic-correct.
   txt   <- stringr::str_to_lower(corpus$FULL_TEXT, locale = "hr")
@@ -92,22 +96,61 @@ if (is.null(slice)) {
 
   # C1: DATE is a CHARACTER ISO "YYYY-MM-DD" in the master (03_aggregate.R). Parse + make BOTH drops
   # visible: NA/unparseable AND out-of-[2021,2025]-window (r-reviewer Major #4) — silent drops bias counts.
-  corpus$date_parsed <- as.Date(corpus$DATE)
+  corpus$date_parsed <- digikat_parse_date(corpus$DATE, name = "DATE", allow_missing = FALSE)
   n_bad_date <- sum(is.na(corpus$date_parsed) & corpus$spine_hit)
   n_out_win  <- sum(corpus$spine_hit & !is.na(corpus$date_parsed) &
                     (corpus$date_parsed < as.Date("2021-01-01") | corpus$date_parsed > as.Date("2025-12-31")))
   if (n_bad_date > 0) cat("NOTE:", n_bad_date, "education-spine rows have NA/unparseable DATE — dropped.\n")
   if (n_out_win  > 0) cat("NOTE:", n_out_win,  "education-spine rows fall OUTSIDE 2021–2025 — dropped (scope).\n")
-  slice <- dplyr::filter(corpus, spine_hit, !is.na(date_parsed),
-                         date_parsed >= as.Date("2021-01-01"), date_parsed <= as.Date("2025-12-31"))
-  slice$date_parsed <- NULL
-  rm(corpus, txt, flags); invisible(gc())
+  corpus_window <- dplyr::filter(
+    corpus,
+    date_parsed >= as.Date(input_fingerprint$analysis_start),
+    date_parsed <= as.Date(input_fingerprint$analysis_end)
+  ) |>
+    mutate(ym = format(date_parsed, "%Y-%m"))
+  month_counts <- corpus_window |>
+    count(ym, name = "corpus_posts")
+  month_stream_counts <- corpus_window |>
+    count(data_source, ym, name = "corpus_posts")
+  full_months <- data.frame(
+    ym = format(
+      seq(as.Date(input_fingerprint$analysis_start), as.Date("2025-12-01"), by = "month"),
+      "%Y-%m"
+    ),
+    stringsAsFactors = FALSE
+  )
+  coverage <- full_months |>
+    left_join(month_counts, by = "ym") |>
+    mutate(
+      corpus_posts = coalesce(corpus_posts, 0L),
+      observed = corpus_posts > 0L
+    )
 
-  attr(slice, "probe") <- probe   # fingerprint: a probe edit invalidates this checkpoint on next run
-  if (!dir.exists(dirname(raw_path))) dir.create(dirname(raw_path), recursive = TRUE)
+  slice <- dplyr::filter(corpus, spine_hit, !is.na(date_parsed),
+                         date_parsed >= as.Date(input_fingerprint$analysis_start),
+                         date_parsed <= as.Date(input_fingerprint$analysis_end))
+  slice$date_parsed <- NULL
+  rm(corpus, corpus_window, txt, flags); invisible(gc())
+
+  attr(slice, "probe") <- probe
+  attr(slice, "cache_fingerprint") <- cache_fingerprint
+  attr(slice, "corpus_month_coverage") <- coverage
+  attr(slice, "corpus_month_stream_counts") <- month_stream_counts
   saveRDS(slice, raw_path)
   cat("Cached raw education-spine slice (", nrow(slice), "rows) ->", raw_path, "\n")
 }
+
+coverage <- attr(slice, "corpus_month_coverage")
+month_stream_counts <- attr(slice, "corpus_month_stream_counts")
+if (is.null(coverage) || is.null(month_stream_counts)) {
+  stop("Raw slice lacks corpus coverage metadata; remove the checkpoint and rebuild.", call. = FALSE)
+}
+write.csv(
+  coverage,
+  file.path(tab_dir, "corpus_month_coverage.csv"),
+  row.names = FALSE,
+  fileEncoding = "UTF-8"
+)
 
 # --- 3. candidate table with PER-ENTITY windowed past-anchoring (PROPOSAL §3) -----------------
 # WINDOWED past-anchoring (review fix): whole-document co-occurrence is ~68% INCIDENTAL (sister study),
@@ -143,6 +186,17 @@ candidates <- do.call(rbind, lapply(c(spine_keys, "rituali"), function(e) {
 }))
 candidates <- candidates[order(-candidates$recurrence_n), ]
 
+# Slice-wide local linkage uses the nearest match to ANY primary anchor. Entity-specific candidate
+# shares above remain stricter and cannot borrow a neighbouring anchor's past reference.
+spine_rx <- paste0("(?:", paste(unlist(probe[spine_keys]), collapse = "|"), ")")
+combined_genuine <- logical(nrow(slice))
+combined_idx <- which(past_doc)
+if (length(combined_idx)) {
+  combined_genuine[combined_idx] <- vapply(
+    txt_slice[combined_idx], near_past_ent, logical(1), ent_rx = spine_rx
+  )
+}
+
 # --- 3b. construct-validity controls (PROPOSAL §3), now entity-true ---------------------------
 gv <- function(e) candidates$past_anchor_genuine[candidates$entity == e]
 cat("\n-- construct-validity controls (ENTITY-SPECIFIC genuine past-anchoring share) --\n")
@@ -152,14 +206,54 @@ cat("  => if positive <= foil, the four-signal construct does NOT separate memor
     "     revisit the construct (PROPOSAL §3) BEFORE any substantive Stage-B selection.\n")
 
 # --- 4. write ONLY into output/ --------------------------------------------------------------
-out_dir <- here::here("studies/catholic-education/output")
-if (!dir.exists(out_dir)) dir.create(out_dir, recursive = TRUE)
 slice$past_anchor_doc <- past_doc
+slice$past_anchor_genuine <- combined_genuine
 saveRDS(slice,        file.path(out_dir, "slice.rds"))
 write.csv(candidates, file.path(out_dir, "candidate_sites_of_memory.csv"), row.names = FALSE, fileEncoding = "UTF-8")
 
+run_manifest <- list(
+  schema_version = 1,
+  generated_utc = format(Sys.time(), tz = "UTC", usetz = TRUE),
+  generator = "studies/catholic-education/slice.R",
+  input = c(
+    input_fingerprint,
+    list(
+      path = gsub("\\\\", "/", contract$manifest$corpus$path),
+      manifest_path = "data/digikat_corpus_manifest.json",
+      inclusion_rule = contract$manifest$rule$description
+    )
+  ),
+  scope = list(
+    rows_in_input = input_fingerprint$rows,
+    rows_in_2021_2025 = sum(coverage$corpus_posts),
+    observed_months = sum(coverage$observed),
+    unobserved_months = coverage$ym[!coverage$observed],
+    education_strand_rows = nrow(slice),
+    cache_reused = cache_reused,
+    proximity_window_characters = WINDOW
+  ),
+  probe = list(
+    sha256 = cache_fingerprint$probe_sha256,
+    primary_anchors = spine_keys,
+    secondary_anchor = "rituali"
+  ),
+  caveats = contract$manifest$caveats,
+  outputs = list(
+    candidate_table = list(
+      path = "studies/catholic-education/output/candidate_sites_of_memory.csv",
+      sha256 = digikat_hash_file(file.path(out_dir, "candidate_sites_of_memory.csv"))
+    ),
+    restricted_slice = list(
+      path = "studies/catholic-education/output/slice.rds",
+      rows = nrow(slice),
+      columns = ncol(slice)
+    )
+  )
+)
+digikat_write_json_atomic(run_manifest, file.path(out_dir, "analysis_input_manifest.json"))
+
 cat("\nEducation-spine slice:", nrow(slice), "rows ->", file.path(out_dir, "slice.rds"),
-    if (USE_SAMPLE) "(FROM SAMPLE)" else "(full corpus)", "\n")
+    "(official corpus)", "\n")
 cat("Candidate table (per-entity recurrence + doc/windowed past-anchor + incidental) ->",
     file.path(out_dir, "candidate_sites_of_memory.csv"), "\n")
 cat("NOTE: PARTIAL screen — 2 of 4 signals. /data-analysis adds temporal-peaking (commemorative-vs-",

@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-11 11:03:20 UTC",
+  "generator": "studies/catholic-education/paper_checks.R",
+  "input": {
+    "kind": "official_digikat_corpus",
+    "sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a",
+    "rows": 413985,
+    "analysis_rows": 117180
+  },
+  "code": {
+    "study_input.R": {
+      "sha256": "66371a61e261181821253cc911c02e210795d7094ccfbc9f3864d27de9941214"
+    },
+    "slice.R": {
+      "sha256": "f9dfe572dbf34f89f9d15d151b54731ae56ea3b350b7e62c51c479a09ebb4b91"
+    },
+    "stageA_checks.R": {
+      "sha256": "d95accfafa5b2532ad802b4f3a8969d868ac6541e6486c9c0d5381577b4c8418"
+    },
+    "signal2_actors.R": {
+      "sha256": "cad9062cd8cb257453aeddbf7f98776fbb14e9426ee5fe576ddeb6927f1294a7"
+    },
+    "conf_secular.R": {
+      "sha256": "049fbf348beb9f04f19267b2d163e0a2b44dc8da38310268959a0fd33c3105e8"
+    },
+    "signal3_affect.R": {
+      "sha256": "f66fa683dc14b6b4ba46bc4185dd10c2da140f8e38bada49cc117e931cfc1c79"
+    },
+    "paper_figures.R": {
+      "sha256": "5e1dd92610e4241caa8bbddd7a4df38b80141095ebdd41a261bcad2cf7aeee69"
+    },
+    "paper_tables.R": {
+      "sha256": "f9c37e8d0e531835a304ddc73265d2ec3a54fdf9e66c2a3b3fead12fe34bd20d"
+    },
+    "paper_checks.R": {
+      "sha256": "e8d9f63d9c963e820496943abee4b396e3b40d02c9839ad67d901c614ee86725"
+    }
+  },
+  "manuscript": {
+    "path": "studies/catholic-education/PAPER_v2.md",
+    "sha256": "757970417c9a2ff5e322f8b257840ef842db7df7f0e15e6a5c4daf190e86d023",
+    "generated_table_match": true,
+    "numeric_claim_check": true,
+    "stale_claim_check": true,
+    "utf8_check": true,
+    "disclosure_check": true
+  }
+}

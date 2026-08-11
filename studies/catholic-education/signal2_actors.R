@@ -7,6 +7,7 @@
 #   Q2½ (actors) — WHO activates the memory anchor (Stepinac) vs the present-tense institutions (vjeronauk/škole)?
 #                top FROM sources per entity, platform mix, and the Divovi/Megafoni/Graditelji/Specijalizirani quadrant.
 suppressPackageStartupMessages({ library(here); library(dplyr); library(stringr); library(ggplot2); library(tidyr) })
+source(here::here("studies/catholic-education/study_input.R"), encoding = "UTF-8")
 
 out_dir <- here::here("studies/catholic-education/output")
 tab_dir <- file.path(out_dir, "tables"); fig_dir <- file.path(out_dir, "figures")
@@ -15,6 +16,13 @@ theme_ok <- tryCatch({ source(here::here("R/theme_digikat.R")); TRUE }, error = 
 if (!theme_ok) theme_set(theme_minimal(base_size = 12))
 
 slice <- readRDS(file.path(out_dir, "slice.rds"))
+catholic_education_assert_slice_current(slice)
+coverage <- attr(slice, "corpus_month_coverage")
+stream_coverage <- attr(slice, "corpus_month_stream_counts")
+if (is.null(coverage) || is.null(stream_coverage)) {
+  stop("Slice lacks corpus-month coverage metadata; re-run slice.R.", call. = FALSE)
+}
+observed_months <- coverage$ym[coverage$observed]
 slice$date  <- as.Date(slice$DATE)
 slice$month <- as.integer(format(slice$date, "%m"))
 slice$ym    <- format(slice$date, "%Y-%m")
@@ -29,16 +37,27 @@ peaking <- do.call(rbind, lapply(KEY, function(e) {
   do.call(rbind, lapply(unique(slice$data_source), function(ds) {
     sub <- slice[slice[[pcol(e)]] %in% TRUE & slice$data_source == ds & !is.na(slice$date), ]
     if (nrow(sub) < 30) return(NULL)
-    mm  <- sub |> count(ym) |> tidyr::complete(ym = format(seq(min(sub$date), max(sub$date), by = "month"), "%Y-%m"),
-                                               fill = list(n = 0))
+    stream_months <- stream_coverage |>
+      filter(data_source == ds, corpus_posts > 0L) |>
+      pull(ym)
+    calendar <- data.frame(ym = stream_months, stringsAsFactors = FALSE) |>
+      mutate(
+        y = substr(ym, 1, 4),
+        month = as.integer(substr(ym, 6, 7))
+      )
+    mm <- calendar |>
+      left_join(sub |> count(ym), by = "ym") |>
+      mutate(n = coalesce(n, 0L))
     cv  <- sd(mm$n) / mean(mm$n)
-    moy <- sub |> mutate(y = format(date, "%Y")) |> count(y, month)
+    moy <- mm |> select(y, month, n)
     peak_by_year <- moy |> group_by(y) |> slice_max(n, n = 1, with_ties = FALSE) |> ungroup()
     modal_peak_month <- as.integer(names(sort(table(peak_by_year$month), decreasing = TRUE))[1])
     recur <- sum(peak_by_year$month == modal_peak_month)   # in how many years is the modal month the annual max
+    eligible <- n_distinct(calendar$y[calendar$month == modal_peak_month])
     data.frame(entity = e, stream = ds, n = nrow(sub), n_months = nrow(mm),
                peakedness_cv = round(cv, 2), modal_peak_month = modal_peak_month,
-               years_peaking_that_month = recur, n_years = nrow(peak_by_year), stringsAsFactors = FALSE)
+               years_peaking_that_month = recur, n_years = nrow(peak_by_year),
+               eligible_years_modal_month = eligible, stringsAsFactors = FALSE)
   }))
 }))
 write.csv(peaking, file.path(tab_dir, "temporal_peaking_by_entity.csv"), row.names = FALSE, fileEncoding = "UTF-8")
@@ -47,7 +66,14 @@ cat("-- temporal peaking (within-stream) --\n"); print(peaking, row.names = FALS
 # Stepinac seasonality: month-of-year share (death 10 Feb 1960; beatification 3 Oct 1998). Does Feb/Oct recur?
 moy_share <- do.call(rbind, lapply(c("stepinac", "vjeronauk", "odgoj_vrijednosti"), function(e) {
   sub <- slice[slice[[pcol(e)]] %in% TRUE & !is.na(slice$month), ]
-  s <- sub |> count(month) |> mutate(share = n / sum(n), entity = e)
+  exposure <- data.frame(ym = observed_months, stringsAsFactors = FALSE) |>
+    mutate(month = as.integer(substr(ym, 6, 7))) |>
+    count(month, name = "observed_periods")
+  s <- sub |>
+    count(month) |>
+    right_join(exposure, by = "month") |>
+    mutate(n = coalesce(n, 0L), monthly_rate = n / observed_periods,
+           share = monthly_rate / sum(monthly_rate), entity = e)
   s
 }))
 p_seas <- ggplot(moy_share, aes(x = factor(month), y = share, fill = entity)) +
@@ -60,7 +86,11 @@ ggsave(file.path(fig_dir, "seasonality_month_of_year.png"), p_seas, width = 10, 
 
 # Stepinac monthly time series, faceted by stream (the peak-structure visual)
 st <- slice[slice$probe_stepinac %in% TRUE & !is.na(slice$date), ] |> count(data_source, ym)
-st$date <- as.Date(paste0(st$ym, "-01"))
+st <- stream_coverage |>
+  filter(corpus_posts > 0L) |>
+  select(data_source, ym) |>
+  left_join(st, by = c("data_source", "ym")) |>
+  mutate(n = coalesce(n, 0L), date = as.Date(paste0(ym, "-01")))
 p_ts <- ggplot(st, aes(x = date, y = n)) + geom_col() +
   facet_wrap(~data_source, scales = "free_x", ncol = 1) +
   labs(title = "Stepinac — mjesečni volumen objava po stream-u prikupljanja",

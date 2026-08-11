@@ -6,6 +6,7 @@
 # Reads slice READ-ONLY; writes output/ only. NB: lexicons key on LEMMAS -> udpipe lemmatize, lowercase both sides.
 suppressPackageStartupMessages({ library(here); library(dplyr); library(stringr); library(tidyr)
                                  library(readxl); library(udpipe); library(ggplot2) })
+source(here::here("studies/catholic-education/study_input.R"), encoding = "UTF-8")
 set.seed(20260706)
 
 out_dir <- here::here("studies/catholic-education/output")
@@ -25,7 +26,7 @@ crosentilex_full <- bind_rows(
 
 emotion_hr <- c(Anger = "Ljutnja", Anticipation = "Iščekivanje", Disgust = "Gađenje", Fear = "Strah",
                 Joy = "Radost", Sadness = "Tuga", Surprise = "Iznenađenje", Trust = "Povjerenje")
-nrc_raw  <- read_excel(file.path(dx, "lilaHR_clean.xlsx"), sheet = "Sheet1")
+nrc_raw  <- read_excel(file.path(dx, "lilaHR_clean.xlsx"), sheet = "Sheet1", .name_repair = "unique_quiet")
 if ("...1" %in% names(nrc_raw)) nrc_raw <- nrc_raw |> select(-"...1")
 nrc_long <- nrc_raw |> rename(word = HR) |>
   pivot_longer(cols = all_of(names(emotion_hr)), names_to = "emotion", values_to = "value") |>
@@ -35,6 +36,7 @@ cat("lexicons: crosentilex", nrow(crosentilex_full), "words | lilaHR", n_distinc
 
 # ---- sample-first: cap each entity, union, truncate for udpipe speed ------------------------
 slice <- readRDS(file.path(out_dir, "slice.rds"))
+catholic_education_assert_slice_current(slice)
 slice$doc_id <- paste0("d", seq_len(nrow(slice)))
 KEY <- c("stepinac", "vjeronauk", "katolicka_skola", "odgoj_vrijednosti", "redovi_orders", "rituali", "strossmayer")
 CAP <- 800L
@@ -57,13 +59,16 @@ cat("tokens:", nrow(tok), "| unique lemmas:", n_distinct(tok$lemma), "\n")
 pol <- tok |> left_join(crosentilex_full, by = c("lemma" = "word"))
 doc_pol <- pol |> group_by(doc_id) |>
   summarise(n_tok = n(), n_match = sum(!is.na(sentiment_value)),
-            mean_sent = mean(sentiment_value, na.rm = TRUE),
-            nonneutral = mean(abs(sentiment_value) > 0, na.rm = TRUE), .groups = "drop")
+            mean_sent = if (any(!is.na(sentiment_value))) mean(sentiment_value, na.rm = TRUE) else NA_real_,
+            nonneutral = if (any(!is.na(sentiment_value))) mean(abs(sentiment_value) > 0, na.rm = TRUE) else NA_real_,
+            .groups = "drop")
 coverage <- sum(doc_pol$n_match) / sum(doc_pol$n_tok)
-cat(sprintf("CroSentilex token coverage: %.1f%%\n", 100 * coverage))
+doc_coverage <- mean(doc_pol$n_match > 0)
+cat(sprintf("CroSentilex coverage: %.1f%% of tokens | %.1f%% of documents\n",
+            100 * coverage, 100 * doc_coverage))
 
 # ---- per-doc emotions (lilaHR) --------------------------------------------------------------
-emo <- tok |> inner_join(nrc_long, by = c("lemma" = "word")) |>
+emo <- tok |> inner_join(nrc_long, by = c("lemma" = "word"), relationship = "many-to-many") |>
   group_by(doc_id, emotion) |> summarise(k = n(), .groups = "drop") |>
   group_by(doc_id) |> mutate(share = k / sum(k)) |> ungroup()
 emo_wide <- emo |> select(doc_id, emotion, share) |> pivot_wider(names_from = emotion, values_from = share, values_fill = 0)
@@ -73,12 +78,29 @@ affect <- do.call(rbind, lapply(KEY, function(e) {
   docs <- samp$doc_id[samp[[paste0("probe_", e)]] %in% TRUE]
   dp <- doc_pol[doc_pol$doc_id %in% docs, ]
   em <- emo_wide[emo_wide$doc_id %in% docs, setdiff(names(emo_wide), "doc_id"), drop = FALSE]
+  n_emo <- nrow(em)
   data.frame(entity = e, n_sampled = length(docs),
+             polarity_docs = sum(dp$n_match > 0),
+             polarity_doc_coverage = round(mean(dp$n_match > 0), 3),
+             polarity_token_coverage = round(sum(dp$n_match) / sum(dp$n_tok), 3),
+             emotion_docs = n_emo,
+             emotion_doc_coverage = round(n_emo / length(docs), 3),
              mean_sentiment = round(mean(dp$mean_sent, na.rm = TRUE), 3),
              nonneutral_share = round(mean(dp$nonneutral, na.rm = TRUE), 3),
              as.list(round(colMeans(em, na.rm = TRUE), 3)), check.names = FALSE, stringsAsFactors = FALSE)
 }))
 write.csv(affect, file.path(tab_dir, "affect_by_entity.csv"), row.names = FALSE, fileEncoding = "UTF-8")
+write.csv(
+  data.frame(
+    metric = c("unique_posts", "token_count", "unique_lemmas", "crosentilex_token_coverage",
+               "crosentilex_document_coverage", "emotion_document_coverage"),
+    value = c(nrow(samp), nrow(tok), n_distinct(tok$lemma), coverage, doc_coverage,
+              mean(samp$doc_id %in% unique(emo$doc_id)))
+  ),
+  file.path(tab_dir, "affect_run_metrics.csv"),
+  row.names = FALSE,
+  fileEncoding = "UTF-8"
+)
 cat("\n-- affect per entity (mean polarity, non-neutral share, 8-emotion profile) --\n")
 print(affect, row.names = FALSE)
 

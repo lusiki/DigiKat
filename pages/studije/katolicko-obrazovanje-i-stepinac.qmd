@@ -31,25 +31,25 @@ fmt_pct <- function(x) paste0(
 )
 ```
 
-Katoličko obrazovanje prenosi tradiciju, ali se u digitalnim medijima najčešće pojavljuje kao tema
-sadašnjih rasprava. Ovaj rad uspoređuje vjeronauk, katoličke škole, redovničke zajednice i odgoj s
-imenovanim osobama povezanim s katoličkom poviješću. Rezultat pokazuje jasnu podjelu. Ustanove su vidljive
-kao pitanja sadašnjosti, dok se rad kulturnog sjećanja najviše okuplja oko Alojzija Stepinca.
+Kada hrvatski digitalni mediji govore o katoličkom obrazovanju, prenose li prošlost ili raspravljaju o
+sadašnjosti? Nova analiza službenoga korpusa uspoređuje vjeronauk, katoličke škole, redovničke zajednice i
+odgoj s osobama povezanima s katoličkom poviješću. Ustanove se ponajprije pojavljuju kao pitanja
+sadašnjosti. Povijesni jezik i komemorativni ritam najviše se okupljaju oko Alojzija Stepinca.
 
 ## Istraživačko pitanje
 
-Pitanje nije samo koliko se često pojedina tema pojavljuje, nego povezuje li ona sadašnji govor s prošlošću.
-Rad zato ispituje koja katolička obrazovna sidra pokazuju trajnost, kalendarsko ponavljanje, afektivno
-ulaganje i neposrednu tekstualnu vezu s povijesnim izrazima. Uspoređuje se i tko ta sidra objavljuje te
-prelaze li ona granicu između konfesionalnih i nekonfesionalnih medija.
+Pitanje nije samo koliko se često pojedina tema pojavljuje. Važno je povezuje li ona sadašnji govor s
+prošlošću. Rad zato ispituje koja katolička obrazovna sidra pokazuju trajnost, kalendarsko ponavljanje,
+jezik emocija i lokalnu tekstualnu vezu s povijesnim izrazima. Uspoređuje se i tko ta sidra objavljuje te
+prelaze li ona granicu između konfesionalnih i nekonfesionalnih izvora.
 
 ## Podaci i metode
 
-Analiza obuhvaća `r fmt_n(metric("education_strand_n"))` objava od 2021. do 2025. godine. U korpusu se
-prati osam glavnih sidara, a to su četiri skupine ustanova i praksi te četiri imenovane osobe. Učestalost se
-uspoređuje s mjesečnim ritmom, jezikom emocija, podrijetlom izvora i stvarnim sidrenjem u prošlosti.
-Posljednja mjera traži da se povijesni izraz pojavi unutar 160 znakova od promatranog sidra, čime se
-odvajaju lokalne veze od slučajnog suspominjanja u istoj objavi.
+Analiza obuhvaća `r fmt_n(metric("education_strand_n"))` objava od 2021. do 2025. godine. Prati se osam
+glavnih sidara. Četiri obuhvaćaju ustanove i prakse, a četiri imenovane osobe. Učestalost se uspoređuje s
+mjesečnim ritmom, jezikom emocija, podrijetlom izvora i lokalnom vezom s prošlošću. Posljednja mjera traži
+da se povijesni izraz pojavi unutar 160 znakova od promatranog sidra. Ona je pokazatelj tekstualne blizine,
+a ne potvrda značenja. Pojedinosti su dostupne u [Metodologiji](../metodologija.qmd).
 
 ::: {.metric-grid}
 ::: {.metric-card}
@@ -59,12 +59,12 @@ odvajaju lokalne veze od slučajnog suspominjanja u istoj objavi.
 
 ::: {.metric-card}
 <div class="metric-value">`r fmt_pct(metric("stepinac_genuine_share"))`</div>
-<div class="metric-label">Stepinčevih objava povezanih s prošlošću</div>
+<div class="metric-label">Stepinčevih objava s lokalnom vezom s prošlošću</div>
 :::
 
 ::: {.metric-card}
-<div class="metric-value">`r fmt_n(metric("stepinac_february_peak_years"))` / 5</div>
-<div class="metric-label">godina s vrhuncem u veljači</div>
+<div class="metric-value">`r fmt_n(metric("stepinac_february_peak_years"))` / `r fmt_n(metric("stepinac_february_eligible_years"))`</div>
+<div class="metric-label">opaženih veljača s godišnjim vrhuncem</div>
 :::
 
 ::: {.metric-card}
@@ -75,32 +75,34 @@ odvajaju lokalne veze od slučajnog suspominjanja u istoj objavi.
 
 ## Glavni nalazi
 
-Obrazovne teme pojavljuju se češće od Stepinca, ali su mnogo rjeđe neposredno povezane s prošlošću.
-Stepinac se javlja u `r fmt_n(metric("stepinac_n"))` objava, a stvarno sidrenje zabilježeno je u
+Obrazovne teme pojavljuju se češće od Stepinca, ali su mnogo rjeđe lokalno povezane s prošlošću. Stepinac
+se javlja u `r fmt_n(metric("stepinac_n"))` objava. Lokalna je veza zabilježena u
 `r fmt_pct(metric("stepinac_genuine_share"))` tih objava. Njegova manja učestalost stoga ne znači i manju
 ulogu u javnom sjećanju.
 
 ### Učestalost nije isto što i sjećanje
 
-Na slici je vidljivo da obrazovne ustanove zauzimaju područje velike učestalosti i slabe veze s prošlošću.
-Stepinac se odvaja u suprotnom smjeru. Pojavljuje se rjeđe, ali znatno češće otvara povijesni kontekst.
+Obrazovne ustanove zauzimaju područje velike učestalosti i slabe veze s prošlošću. Stepinac se odvaja u
+suprotnom smjeru. Pojavljuje se rjeđe, ali znatno češće otvara povijesni kontekst.
 
-![Odnos učestalosti i stvarnog sidrenja u prošlosti za osam glavnih sidara.](../../assets/papers/katolicko-obrazovanje-i-stepinac-anchor.png){#fig-education-anchor fig-alt="Crno-bijeli raspršeni grafikon pokazuje da je Stepinac mnogo snažnije povezan s prošlošću od češćih obrazovnih ustanova."}
+![Odnos učestalosti i lokalne veze s prošlošću za osam glavnih sidara.](../../assets/papers/katolicko-obrazovanje-i-stepinac-anchor.png){#fig-education-anchor fig-alt="Crno-bijeli raspršeni grafikon pokazuje da je Stepinac mnogo snažnije povezan s prošlošću od češćih obrazovnih ustanova."}
 
 ### Veljača daje Stepincu kalendar
 
-Stepinac doseže godišnji vrhunac u veljači u `r fmt_n(metric("stepinac_february_peak_years"))` od pet
-promatranih godina. Taj se ritam podudara sa Stepinčevom, dok obrazovne teme prate šire školske i medijske
-cikluse. Kolovoški vrhunac katoličkih obreda služi kao usporedni primjer drugog stabilnog kalendara.
+Stepinac doseže godišnji vrhunac u veljači u sve `r fmt_n(metric("stepinac_february_eligible_years"))`
+godine za koje je veljača opažena. Podaci nedostaju od veljače do svibnja 2024. godine pa se ta godina ne
+prikazuje kao nulta veljača. Ritam se podudara sa Stepinčevom, dok obrazovne teme prate šire školske i
+medijske cikluse. Kolovoški vrhunac katoličkih obreda služi kao usporedni primjer drugog kalendara.
 
 ![Mjesečna raspodjela objava pokazuje različite kalendare Stepinca, obrazovnih tema i katoličkih obreda.](../../assets/papers/katolicko-obrazovanje-i-stepinac-seasonality.png){#fig-education-seasonality fig-alt="Pet malih crno-bijelih stupčastih grafikona. Stepinac ima izražen vrhunac u veljači, katolički obredi u kolovozu, a obrazovne teme šire raspodjele."}
 
 ### Autorstvo prelazi institucijsku granicu
 
-Među objavama s klasificiranim izvorom `r fmt_pct(metric("stepinac_confessional_share"))` Stepinčevih
-objava dolazi iz konfesionalnih, a `r fmt_pct(metric("stepinac_non_confessional_share"))` iz
-nekonfesionalnih medija. Profil je raznolikiji nego kod katoličkih škola ili vjeronauka. Nalaz govori o
-zajedničkoj proizvodnji javnog simbola, a ne o zajedničkom tumačenju Stepinca.
+Rječnik podrijetla obuhvaća `r fmt_pct(metric("stepinac_source_classified_coverage"))` Stepinčevih objava.
+Unutar toga dijela `r fmt_pct(metric("stepinac_confessional_share"))` objava dolazi iz konfesionalnih, a
+`r fmt_pct(metric("stepinac_non_confessional_share"))` iz nekonfesionalnih izvora. Profil je raznolikiji
+nego kod katoličkih škola ili vjeronauka, ali razlika ostaje uvjetna zbog neklasificiranih izvora. Nalaz
+govori o zajedničkoj proizvodnji javnog simbola, a ne o zajedničkom tumačenju Stepinca.
 
 ![Konfesionalni i nekonfesionalni udjeli među objavama s klasificiranim izvorom.](../../assets/papers/katolicko-obrazovanje-i-stepinac-sources.png){#fig-education-sources fig-alt="Vodoravni složeni stupci pokazuju da Stepinac ima mješovitiji profil izvora od katoličkih škola i vjeronauka."}
 
