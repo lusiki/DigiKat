@@ -10,14 +10,18 @@ toc: false
 #| label: korpus
 #| include: false
 
-# Opseg korpusa dolazi iz manifesta službene baze, ne iz utipkane brojke.
+# Opseg korpusa dolazi iz manifesta službene baze, ne iz utipkane brojke. Pravilo uključivanja
+# (prozor, popis pojmova, prag) opisano je na stranici Metodologija i ovdje se više ne navodi.
 source("../../R/lib/digikat_paths.R", encoding = "UTF-8")
+source("../../R/lib/digikat_hr.R", encoding = "UTF-8")
 mf <- digikat_read_corpus_manifest(base_dir = "../../data")
 n_objava <- digikat_hr_int(mf$corpus$rows)
 raspon <- paste0(mf$corpus$year_min, ".–", mf$corpus$year_max, ".")
 ```
 
-Katolički digitalni prostor u Hrvatskoj čitamo kroz **četiri analitičke razine** (tko objavljuje, o čemu se govori, kako se govori i kada se govori) te **peti, vremenski presjek**, koji prati kako se ekosustav mijenja. Sve se mape oslanjaju na isti korpus od `r n_objava` objava (`r raspon`). U njega ulaze objave koje unutar prvih `r digikat_hr_int(mf$rule$window_chars)` znakova pogode najmanje jedan odlučan i dva različita religijska pojma, a zatim dosegnu ocjenu modela od najmanje `r format(mf$rule$threshold, nsmall = 2, decimal.mark = ",")`.
+Tko objavljuje o katoličkim temama, o čemu se pritom govori, kakvim se rječnikom i kada pažnja naraste? Na ta četiri pitanja odgovaraju **četiri analitičke razine**, a **peti, vremenski presjek** prati kako se sve to mijenja kroz godine.
+
+Sve mape računaju se na istom korpusu od `r digikat_hr_count(mf$corpus$rows, "objava")` (`r raspon`). Kako je taj korpus nastao i što se na njemu smije usporediti, opisano je u [Metodologiji](../metodologija.html).
 
 Svaka je mapa samostalna cjelina. Zajedno daju slojevit prikaz digitalne medijske arene. Odaberite mapu za detaljan prikaz.
 
@@ -30,7 +34,7 @@ Svaka je mapa samostalna cjelina. Zajedno daju slojevit prikaz digitalne medijsk
 
 ::: {.info-card}
 ### [Tematske struje](mapa_stats.html)
-**O čemu se govori.** Unaprijed definirane tematske kategorije, njihova učestalost, gustoća i supojavljivanje u stratificiranom uzorku korpusa.
+**O čemu se govori.** Unaprijed definirane tematske kategorije, njihova učestalost, gustoća i supojavljivanje na dijelu korpusa.
 :::
 
 ::: {.info-card}

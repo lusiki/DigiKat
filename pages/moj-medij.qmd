@@ -1,0 +1,275 @@
+---
+title: "Moj medij"
+subtitle: "Koliko vaš medij objavljuje o katoličkim temama i koliko toga odjekne"
+date: last-modified
+categories: ["Moj medij", "Katalog izvora", "Otvoreni podaci"]
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+
+# Podaci za pretraživanje precomputirani su u R/06_moj_medij.R i ovdje se samo ugrađuju u
+# stranicu. Stranica ne čita korpus, ne računa ništa i nema poslužitelj iza sebe.
+source("../R/lib/digikat_paths.R", encoding = "UTF-8")
+source("../R/lib/digikat_hr.R", encoding = "UTF-8")
+
+mm_path <- "../data/page-ready/moj_medij.json"
+if (!file.exists(mm_path)) {
+  stop("Nedostaje data/page-ready/moj_medij.json. Izgradi ga s: Rscript R/06_moj_medij.R --apply",
+       call. = FALSE)
+}
+mm_raw <- paste(readLines(mm_path, encoding = "UTF-8", warn = FALSE), collapse = "\n")
+mm <- jsonlite::fromJSON(mm_raw, simplifyVector = FALSE)
+
+# Podaci moraju potjecati iz istoga korpusa koji stranica opisuje. Ako ne potječu, render staje.
+mf <- digikat_page_corpus("..")
+if (!identical(mm$input$corpus_sha256, mf$corpus$sha256)) {
+  stop("data/page-ready/moj_medij.json izgrađen je iz drugog korpusa nego što ga manifest opisuje.\n",
+       "Ponovno pokreni: Rscript R/06_moj_medij.R --apply", call. = FALSE)
+}
+
+n_prikazano <- mm$totals$sources_listed
+n_zadrzano  <- mm$totals$sources_withheld
+n_ukupno    <- mm$totals$sources_in_corpus
+prag        <- mm$policy$min_posts
+raspon      <- paste0(mf$corpus$year_min, ".–", mf$corpus$year_max, ".")
+```
+
+Objavljujete o katoličkim temama i pitate se koliko toga doista dopre do ljudi? Ova stranica na to
+odgovara brojkama iz iste baze na kojoj se temelje sve ostale analize projekta. Upišite ime medija i
+dobit ćete koliko objavljuje, koliko reakcija skuplja, kako se to mijenjalo kroz godine i gdje stoji
+u odnosu na druge.
+
+Pretraživanje pokriva `r digikat_hr_count(n_prikazano, "izvor")` s najmanje
+`r digikat_hr_count(prag, "objava")` u razdoblju `r raspon` Za najveće izvore postoji i razrađen
+profil u [Katalogu izvora](izvori/index.html).
+
+```{r}
+#| label: mm-data
+#| output: asis
+
+# Podaci se ugrađuju u stranicu umjesto da se dohvaćaju zasebnim zahtjevom. Tako pretraživanje radi
+# i u lokalnom pregledu i na GitHub Pagesu, bez poslužitelja i bez dodatne datoteke u docs/.
+cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', sep = "")
+```
+
+```{=html}
+<div class="mm-app">
+  <label class="mm-label" for="mm-q">Ime medija, portala, kanala ili stranice</label>
+  <input id="mm-q" class="mm-input" type="search" autocomplete="off" spellcheck="false"
+         placeholder="npr. laudato.hr, Radio Marija, vecernji.hr"
+         aria-describedby="mm-hint" aria-controls="mm-results" />
+  <p id="mm-hint" class="mm-hint">Upišite barem dva znaka. Popis se sužava dok tipkate.</p>
+  <ul id="mm-results" class="mm-results" role="listbox" aria-label="Rezultati pretraživanja"></ul>
+  <div id="mm-detail" class="mm-detail" aria-live="polite"></div>
+</div>
+
+<style>
+.mm-app { margin: 1.5rem 0 2rem; }
+.mm-label { display:block; font-weight:600; font-size:.95rem; margin-bottom:.4rem; color:#14181d; }
+.mm-input { width:100%; max-width:560px; font-size:1.05rem; padding:.7rem .9rem;
+  border:1px solid #cfccc2; border-radius:8px; background:#fff; color:#14181d; }
+.mm-input:focus { outline:3px solid rgba(15,76,92,.35); outline-offset:1px; border-color:#0f4c5c; }
+.mm-hint { font-size:.85rem; color:#6b6f76; margin:.4rem 0 0; }
+.mm-results { list-style:none; padding:0; margin:.7rem 0 0; max-width:560px;
+  border:1px solid #e4e2da; border-radius:8px; overflow:hidden; display:none; background:#fff; }
+.mm-results.on { display:block; }
+.mm-results li { border-bottom:1px solid #f0eee8; }
+.mm-results li:last-child { border-bottom:0; }
+.mm-results button { width:100%; text-align:left; background:none; border:0; cursor:pointer;
+  padding:.6rem .9rem; font:inherit; color:#14181d; display:flex; justify-content:space-between; gap:1rem; }
+.mm-results button:hover, .mm-results button:focus { background:#eaf0f2; outline:none; }
+.mm-results .mm-r-meta { color:#6b6f76; font-size:.85rem; white-space:nowrap; }
+.mm-none { padding:.7rem .9rem; color:#6b6f76; font-size:.9rem; }
+.mm-detail:empty { display:none; }
+.mm-detail { margin-top:1.6rem; border:1px solid #e4e2da; border-radius:10px;
+  padding:1.4rem 1.5rem; background:#fff; }
+.mm-name { font-family:'Source Serif 4',serif; font-size:1.5rem; font-weight:600; margin:0; color:#14181d; }
+.mm-sub { color:#6b6f76; font-size:.9rem; margin:.25rem 0 1.1rem; }
+.mm-kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1rem;
+  border-top:1px solid #e4e2da; border-bottom:1px solid #e4e2da; padding:1rem 0; margin-bottom:1.2rem; }
+.mm-kpi-v { font-family:'IBM Plex Mono',monospace; font-size:1.5rem; font-weight:600; color:#14181d; }
+.mm-kpi-l { font-size:.8rem; color:#6b6f76; margin-top:.2rem; }
+.mm-h { font-size:1rem; font-weight:600; margin:1.3rem 0 .5rem; color:#14181d; }
+.mm-chart { width:100%; max-width:560px; height:auto; overflow-x:auto; }
+.mm-note { font-size:.85rem; color:#6b6f76; margin:.5rem 0 0; }
+.mm-pos { margin:.4rem 0 0; padding-left:1.1rem; }
+.mm-pos li { margin:.25rem 0; }
+.mm-tag { display:inline-block; background:#eaf0f2; color:#2c5663; border-radius:4px;
+  padding:.15rem .5rem; font-size:.8rem; font-family:'IBM Plex Mono',monospace; }
+@media (prefers-color-scheme: dark) {
+  .mm-input, .mm-results, .mm-detail { background:#1b1d21; color:#e8e6e1; border-color:#3a3d42; }
+  .mm-label, .mm-name, .mm-kpi-v, .mm-h, .mm-results button { color:#e8e6e1; }
+  .mm-results button:hover, .mm-results button:focus { background:#2a2d33; }
+}
+</style>
+
+<script>
+(function () {
+  var DATA = JSON.parse(document.getElementById('mm-data').textContent);
+  var q = document.getElementById('mm-q');
+  var results = document.getElementById('mm-results');
+  var detail = document.getElementById('mm-detail');
+
+  var PLATFORM = { web:'web', youtube:'YouTube', facebook:'Facebook',
+                   instagram:'Instagram', tiktok:'TikTok', twitter:'Twitter / X' };
+  var LABEL = { confessional:'konfesionalni izvor', secular:'sekularni izvor', other:'ostalo' };
+  var TYP = {
+    'Divovi':'visok doseg i visok angažman',
+    'Graditelji zajednica':'niži doseg uz vrlo visok angažman',
+    'Megafoni':'visok doseg uz niži angažman',
+    'Specijalizirani akteri':'umjeren doseg i angažman'
+  };
+
+  function int(n) { return Math.round(n).toLocaleString('hr-HR'); }
+  function dec(n, d) {
+    return n.toLocaleString('hr-HR', { minimumFractionDigits:d, maximumFractionDigits:d });
+  }
+  // Uspoređivanje bez dijakritike, da "vecernji" pronađe "Večernji".
+  function fold(s) {
+    return s.toLowerCase()
+      .replace(/č|ć/g,'c').replace(/ž/g,'z').replace(/š/g,'s').replace(/đ/g,'dj');
+  }
+  DATA.sources.forEach(function (s) { s._k = fold(s.n + ' ' + (s.t || '')); });
+
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c];
+    });
+  }
+
+  function search(term) {
+    var t = fold(term.trim());
+    if (t.length < 2) return null;
+    var starts = [], has = [];
+    for (var i = 0; i < DATA.sources.length; i++) {
+      var s = DATA.sources[i], p = s._k.indexOf(t);
+      if (p === 0) starts.push(s); else if (p > 0) has.push(s);
+    }
+    return starts.concat(has).slice(0, 25);
+  }
+
+  function renderResults(list) {
+    if (list === null) { results.className = 'mm-results'; results.innerHTML = ''; return; }
+    results.className = 'mm-results on';
+    if (!list.length) {
+      results.innerHTML = '<li class="mm-none">Nema izvora s tim imenom među prikazanima. ' +
+        'Moguće je da objavljuje manje od ' + int(DATA.policy.min_posts) +
+        ' objava ili da čeka uredničku provjeru.</li>';
+      return;
+    }
+    results.innerHTML = list.map(function (s, i) {
+      return '<li><button type="button" data-i="' + DATA.sources.indexOf(s) + '">' +
+        '<span>' + esc(s.n) + (s.t ? ' <span class="mm-r-meta">' + esc(s.t) + '</span>' : '') +
+        '</span><span class="mm-r-meta">' + int(s.p) + ' objava</span></button></li>';
+    }).join('');
+  }
+
+  // Stupčasti prikaz po godinama. Crta se kao SVG, bez ijedne vanjske knjižnice.
+  function chart(years, vals, title) {
+    var W = 560, H = 150, PADL = 8, PADB = 26, PADT = 18;
+    var max = Math.max.apply(null, vals.concat([1]));
+    var bw = (W - PADL * 2) / years.length;
+    var bars = years.map(function (g, i) {
+      var h = Math.max(1, (H - PADB - PADT) * (vals[i] / max));
+      var x = PADL + i * bw + bw * 0.18, y = H - PADB - h, w = bw * 0.64;
+      return '<rect x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + w.toFixed(1) +
+        '" height="' + h.toFixed(1) + '" fill="#0f4c5c" rx="2"><title>' + g + '. — ' +
+        int(vals[i]) + '</title></rect>' +
+        '<text x="' + (x + w / 2).toFixed(1) + '" y="' + (H - PADB + 14) +
+        '" text-anchor="middle" font-size="11" fill="#6b6f76">' + g + '.</text>' +
+        '<text x="' + (x + w / 2).toFixed(1) + '" y="' + (y - 4).toFixed(1) +
+        '" text-anchor="middle" font-size="10.5" fill="#4f535a">' + int(vals[i]) + '</text>';
+    }).join('');
+    return '<div class="mm-h">' + title + '</div><svg class="mm-chart" viewBox="0 0 ' + W + ' ' + H +
+      '" role="img" aria-label="' + title + ' po godinama">' + bars + '</svg>';
+  }
+
+  function ord(rank, total) {
+    return int(rank) + '. od ' + int(total);
+  }
+
+  function renderDetail(s) {
+    var h = '<h2 class="mm-name">' + esc(s.n) + '</h2>';
+    var bits = [];
+    if (s.t) bits.push(esc(s.t));
+    if (s.pl) bits.push(PLATFORM[s.pl] || s.pl);
+    if (s.lb) bits.push(LABEL[s.lb] || s.lb);
+    h += '<p class="mm-sub">' + (bits.length ? bits.join(' · ') : 'Izvor iz korpusa') + '</p>';
+
+    h += '<div class="mm-kpis">' +
+      '<div><div class="mm-kpi-v">' + int(s.p) + '</div><div class="mm-kpi-l">objava ukupno</div></div>' +
+      '<div><div class="mm-kpi-v">' + int(s.i) + '</div><div class="mm-kpi-l">zabilježenih interakcija</div></div>' +
+      '<div><div class="mm-kpi-v">' + int(s.x) + '</div><div class="mm-kpi-l">procijenjeni doseg</div></div>' +
+      '<div><div class="mm-kpi-v">' + dec(s.e, 1) + '</div><div class="mm-kpi-l">interakcija po objavi</div></div>' +
+      '</div>';
+
+    h += chart(s.y.g, s.y.p, 'Objave po godini');
+    h += chart(s.y.g, s.y.i, 'Zabilježene interakcije po godini');
+    h += '<p class="mm-note">Način prikupljanja podataka promijenio se tijekom 2024., pa razlika ' +
+      'u broju objava prije i poslije te godine nije mjera porasta ili pada pažnje. Godina ' +
+      DATA.years[DATA.years.length - 1] + '. nepotpuna je.</p>';
+
+    h += '<div class="mm-h">Gdje ovaj izvor stoji</div><ul class="mm-pos">';
+    h += '<li>Po broju objava ' + ord(s.rp, DATA.totals.sources_listed) +
+      ' među prikazanim izvorima, što je ' + dec(s.sp, 2) + ' % svih objava u bazi.</li>';
+    h += '<li>Po zabilježenim interakcijama ' + ord(s.ri, DATA.totals.sources_listed) +
+      ', a po procijenjenom dosegu ' + ord(s.rx, DATA.totals.sources_listed) + '.</li>';
+    if (s.rl) {
+      h += '<li>Među izvorima iste uredničke oznake (' + (LABEL[s.lb] || s.lb) +
+        ') po interakcijama je ' + ord(s.rl, s.nl) +
+        '. Oznaka je urednički prijedlog, ne mjerenje.</li>';
+    }
+    if (s.tp) {
+      h += '<li>U tipologiji aktera pripada skupini <strong>' + esc(s.tp) + '</strong> (' +
+        (TYP[s.tp] || '') + '), izračunatoj unutar platforme ' + (PLATFORM[s.pl] || s.pl) + '.</li>';
+    }
+    if (s.mp) {
+      h += '<li>Ovo se ime pojavljuje na više platformi, pa su gornje brojke njihov zbroj.</li>';
+    }
+    h += '</ul>';
+
+    if (s.pr) {
+      h += '<p class="mm-note"><a href="izvori/' + esc(s.pr) + '">Razrađen profil u Katalogu izvora</a></p>';
+    }
+    h += '<p class="mm-note">Interakcije i doseg vrijednosti su servisa za praćenje medija i ' +
+      'razlikuju se među platformama, pa ih valja uspoređivati unutar iste platforme. ' +
+      '<a href="metodologija.html">Metodologija</a> objašnjava kako su izmjereni.</p>';
+    detail.innerHTML = h;
+  }
+
+  q.addEventListener('input', function () { renderResults(search(q.value)); });
+  results.addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-i]');
+    if (!b) return;
+    renderDetail(DATA.sources[+b.dataset.i]);
+    results.className = 'mm-results';
+    detail.scrollIntoView({ behavior:'smooth', block:'nearest' });
+  });
+})();
+</script>
+```
+
+## Što ovaj pregled pokazuje, a što ne
+
+Brojke opisuju **prikupljeni korpus**, a ne cjelokupnu medijsku produkciju nekog izvora. U bazu ulaze
+samo objave koje govore o katoličkim temama, pa portal koji objavljuje o svemu ovdje ima znatno manje
+objava nego što ih doista ima.
+
+Interakcije i doseg vrijednosti su koje isporučuje servis za praćenje medija. Doseg je procjena, a ne
+izmjerena publika, i mjeri se drukčije na svakoj platformi. Usporedba između weba i YouTubea zato ne
+znači ono što bi se na prvi pogled činilo, dok je usporedba unutar iste platforme smislena.
+
+Prikazani su izvori s najmanje `r digikat_hr_count(prag, "objava")`, jer bi ispod toga poredak
+počivao na premalom broju objava. Uz njih `r digikat_hr_count(n_zadrzano, "izvor")` iznad istoga
+praga čeka uredničku provjeru i zasad se ne prikazuje; riječ je o računima za koje još nije
+potvrđeno predstavljaju li medij ili pojedinca. Korpus ukupno bilježi
+`r digikat_hr_count(n_ukupno, "izvor")`, od kojih velika većina ima tek nekoliko objava.
+
+Cijela baza otvorena je pod licencijom CC BY 4.0 i dostupna na
+[GitHubu](https://github.com/lusiki/DigiKat), pa se svaka brojka s ove stranice može provjeriti.
+Kako korpus nastaje i kako se mjere volumen, angažman i doseg, opisano je u
+[Metodologiji](metodologija.html).

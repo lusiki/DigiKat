@@ -24,8 +24,50 @@ kao čuvara vijesti u hrvatskom društvu."*
 - **Landing/content** (`index`, `schedule`, `news`, `site-info`): neutral-explanatory science-communication; confident, understated.
 - **Service pages** (`about` CTA, `resources`): warm, helpful, encouraging — but still grounded.
 
+### 2b. Two registers — field first, method behind
+The public pages address **the field first**: editors and journalists in Church and secular media, communications
+staff, lay media owners, anyone who publishes and wants to know whether they are reaching anybody. They open with
+a question that reader already has, answer it in plain Croatian, and **link** the machinery rather than reciting it.
+
+The **academic register** — the inclusion rule in full, sampling fractions, the lexicon inventory, the
+accumulator-versus-corpus distinction, the collection-instrument change, the reproducibility route — lives on
+`pages/metodologija.qmd`, in the papers, and in `studies/**`. One click away, never deleted, never on the front page.
+
+Both are house voice. Neither is a downgrade of the other, and the analytical pages do not become simpler: they
+keep every finding, figure, number and interpretive read-out. What moves is the machine vocabulary that used to
+surround them. **Do not restore a technical paragraph to a public page because it "reads as more rigorous"** — if
+it belongs to the method, it belongs on metodologija, and a review pass that reverses this is reversing a decision
+(PI, 2026-08-11), not fixing a lapse.
+
+**Front-of-house vocabulary** (applies wherever a reader outside the project can land):
+
+| Reject in public prose | Write instead |
+|---|---|
+| *web scraping*, API integracije | automatsko prikupljanje objava |
+| strojno učenje, NLP, tokenizacija, lematizacija | računalna obrada teksta (technical names kept on metodologija) |
+| Big Data, Text Mining | velike količine podataka (student-recruitment section only) |
+| ansambl, prag 0,70, prozor od 3.000 znakova | pravilo uključivanja, stated plainly, detail on metodologija |
+| stratificirani uzorak od 2–5 % | dio korpusa, with the exact fraction on metodologija |
+
+The §5 terminology canon is untouched by this. *Korpus*, *objava*, *doseg*, *angažman*, *tonalitet*, *RIK* and the
+layer names are already plain and stay exactly as they are; nothing in this pass renames a construct.
+
+### 2c. Capability register and the commerce boundary
+Where a finding supports action, an analytical page's **synthesis may close with one or two neutral sentences** on
+what someone who publishes could do with it — when conflict vocabulary climbs and around what, which fixed feasts
+reliably deliver attention and what that implies for timing. That is the **capability register**: a neutral
+read-out addressed to a practitioner, in the same measured third person as the rest of the page.
+
+It is not a pitch, and the boundary is a hard one. The words *usluga*, *ponuda*, *klijent*, *naručitelj*, any price,
+any menu of work, and any case study **never appear on a public analytical or content page**. DigiKat may
+*demonstrate* a capability; it never *sells* one. A dedicated knowledge-transfer page is the only artifact that
+could ever state that commissioned work exists, and it is **deferred as of 2026-08-11** — so today the answer is
+that no page does. If that page is ever built, everything commercial stays on it and in knowledge-transfer
+language, never sales language.
+
 **Out of bounds (reject):**
 - Marketing hype / superlatives: *"Biblija za svakoga", "Najvažnija zajednica", "sveobuhvatan uvid", "pouzdanije i inovativnije znanstvene kulture"*. Enthusiasm yes; slogans no.
+- Service, price or client vocabulary anywhere on the public site (§2c).
 - Latinate jargon-fog: *"transcendiraju", "bifurkacija", "rekonfiguriraju", "epicentar svih narativnih prijepora"*. Prefer plain Croatian verbs; **one evocative metaphor per section max**.
 - Un-read data/code dumps: every table, figure and code block gets ≥1 framing sentence in Croatian (no raw `sessionInfo()` wall, no untitled distribution tables).
 - Decorative emoji in body/analytical content (off-register for a research institution).
@@ -103,13 +145,19 @@ category badges using the canonical layer name, and ≥1 framing sentence before
 classes (`.metric-grid`/`.metric-card`, `.timeline`, `.featured-box`, `.card-grid`/`.info-card`).
 
 **Every ANALYTICAL page follows this fixed spine:**
-1. **Lead / abstract** — situates this layer vs the others (with in-site links), states scope (*"korpus od
-   710.307 objava… 2021.–2026."*, noting that 2026 is partial) and goal, and names which research questions
-   (Q1–Q5) it answers.
-2. **Method note** — short, reader-visible: what was done, on what data, **state the real sample fraction in prose** (keep code and prose in sync), which lexicon/dictionary.
+1. **Lead / abstract** — **question-led** (§2b): opens with the question a reader who publishes already has,
+   then situates this layer vs the others (with in-site links), states scope (*"korpus od 710.307 objava…
+   2021.–2026."*, noting that 2026 is partial), and names which research questions (Q1–Q5) it answers. Q1–Q5 keep
+   their formal wording; each gets a plain-language line beside it.
+2. **Method note** — one reader-visible sentence: what was measured, on what, plus a link to
+   [Metodologija](../metodologija.qmd), which carries the sample fraction, the lexicon inventory and the inclusion
+   rule. The fraction no longer has to be restated on each page. **The no-drift requirement survives the move**:
+   prose and code must still agree, and metodologija is now the single place that can drift, so it is the page to
+   re-check after any pipeline change.
 3. **KPI metric grid** — `.metric-grid` of 4 cards, canon-formatted values, right after the lead.
 4. **Findings** — one section per movement: framing sentence → figure (title + subtitle + `Izvor:` caption) → interpretive read-out that *reads* the chart. **No chart without surrounding narrative.**
-5. **Synthesis** — bolded headline findings + explicit forward-link to the next layer.
+5. **Synthesis** — bolded headline findings, an optional 1–2 sentence capability-register close (§2c), and an
+   explicit forward-link to the next layer.
 
 Use one shared theme (`theme_digikat()`) on **all** figures. Standardize figure captions on Quarto `fig-cap`/`tbl-cap`
 + `Izvor:` (source) / `Napomena:` (note). The data page (`baza`) keeps its codebook role but still gets ≥1 interpreting
@@ -128,5 +176,8 @@ sentence per distribution.
 4. Sentence-case headings; H1 carries the canonical layer name; no title↔subtitle duplication.
 5. Right person for the page class; no leftover placeholder text; no marketing hype / jargon-fog.
 6. Every figure/table/code block has a Croatian framing sentence; analytical pages follow the §9 spine.
+6b. Field register on public pages (§2b): the lead opens with the reader's question, no front-of-house
+   vocabulary from the §2b table, method detail linked to metodologija rather than recited. No service, price
+   or client language anywhere (§2c).
 7. Links relative & working; `„…"` quotes; no decorative emoji; proofread.
 8. No stacked connectors: ≤1 em dash per paragraph, never an em dash + semicolon together, `;` used sparingly.

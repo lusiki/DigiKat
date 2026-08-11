@@ -95,15 +95,23 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">Osnovne informacije</span></a>
+<span class="menu-text">Naslovnica</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../pages/about.html"> 
 <span class="menu-text">O projektu</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../../pages/moj-medij.html"> 
+<span class="menu-text">Moj medij</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../../pages/baza.html"> 
 <span class="menu-text">Baza podataka</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../pages/metodologija.html"> 
+<span class="menu-text">Metodologija</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mapa-medijskog-prostora" role="link" data-bs-toggle="dropdown" aria-expanded="false">
@@ -251,10 +259,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Tematske struje — anatomija diskursa katoličkog digitalnog prostora u Hrvatskoj (2021.–2026.)</h1>
-<p class="subtitle lead">Tematske struje u stratificiranom uzorku korpusa</p>
+<p class="subtitle lead">Tematske struje na dijelu korpusa</p>
   <div class="quarto-categories">
     <div class="quarto-category">Tematske struje</div>
-    <div class="quarto-category">NLP</div>
+    <div class="quarto-category">Računalna obrada teksta</div>
     <div class="quarto-category">16 kategorija</div>
   </div>
   </div>
@@ -281,8 +289,9 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="uvod-u-analizu-sadržaja-diskursa" class="level2">
 <h2 class="anchored" data-anchor-id="uvod-u-analizu-sadržaja-diskursa">Uvod u analizu sadržaja diskursa</h2>
-<p>Nakon pregleda glavnih aktera i platformi u <a href="mapa.html">Mapi ekosustava</a>, ova analitička mapa — <strong>Tematske struje</strong> — usmjerava fokus na sadržaj digitalnog diskursa. Polazi od korpusa s 413.985 objava u razdoblju 2021.–2026., a obradu prirodnog jezika provodi na 20.658 dokumenata. To je ciljani 5-postotni stratificirani uzorak po godini i platformi među objavama s više od 100 znakova, bez TikToka. Godina 2026. nepotpuna je, pa usporedbe po godinama uključuju djelomično razdoblje.</p>
-<p>Cilj mape jest dati pregled sadržaja u tri dijela. Prvi prikazuje učestalost i gustoću unaprijed definiranih tematskih rječnika. Drugi uspoređuje zabilježene interakcije te Facebookove reakcije Love i Angry među dominantnim temama. Treći prikazuje najčešće lematizirane vlastite imenice i supojavljivanje tematskih oznaka. 16 kategorija definirano je teološkom i komunikološkom ekspertizom; riječ je o vođenom rječničkom označavanju, a ne o neovisno validiranoj klasifikaciji cjelokupnog značenja teksta.</p>
+<p>O čemu se zapravo piše kada se piše o katoličkim temama, i koje teme izazovu najviše reakcija? Nakon pregleda glavnih aktera i platformi u <a href="mapa.html">Mapi ekosustava</a>, ova analitička mapa — <strong>Tematske struje</strong> — usmjerava fokus na sadržaj. Odgovara na istraživačka pitanja Q1 (što se objavljuje) i Q2 (uz koje se druge teme katoličke teme nalaze).</p>
+<p>Teme su prepoznate računalnom obradom teksta na dijelu korpusa od 413.985 objava, na 20.658 dokumenata iz razdoblja 2021.–2026. Veličina i način izvlačenja tog uzorka opisani su u <a href="../metodologija.html">Metodologiji</a>. Godina 2026. nepotpuna je, pa usporedbe po godinama uključuju djelomično razdoblje.</p>
+<p>Cilj mape jest dati pregled sadržaja u tri dijela. Prvi prikazuje učestalost i gustoću unaprijed definiranih tematskih rječnika. Drugi uspoređuje zabilježene interakcije te Facebookove reakcije Love i Angry među dominantnim temama. Treći prikazuje najčešće vlastite imenice i supojavljivanje tematskih oznaka. 16 kategorija definirano je teološkom i komunikološkom ekspertizom; riječ je o vođenom rječničkom označavanju, a ne o neovisno validiranoj klasifikaciji cjelokupnog značenja teksta.</p>
 <div class="metric-grid">
 <div class="metric-card">
 <div class="metric-value">
@@ -318,12 +327,12 @@ Razdoblje analize
 </div>
 </div>
 <p>
-<span class="tag tag-primary">R</span> <span class="tag tag-primary">UDPipe HR 2.5</span> <span class="tag">NLP</span> <span class="tag">Lematizacija</span> <span class="tag">Tematski rječnici</span> <span class="tag">Mrežna analiza</span>
+<span class="tag tag-primary">Računalna obrada teksta</span> <span class="tag">Tematski rječnici</span> <span class="tag">Mrežna analiza</span>
 </p>
 </section>
 <section id="leksička-struktura-uzorka" class="level2">
 <h2 class="anchored" data-anchor-id="leksička-struktura-uzorka">Leksička struktura uzorka</h2>
-<p>Prije tematskog označavanja, oblak prikazuje do 100 najčešćih lematiziranih imenica, pridjeva i glagola u analiziranom uzorku, uz minimalnu frekvenciju zadanu u grafikonu. Ne prikazuje sve 413.985 objave. Prema novom uzorku prednjače riječi svet, sav, sv., hrvatski, ljubav, riječ, prvi, obitelj i božji. Veličina riječi prikazuje frekvenciju, ali sama po sebi ne razlikuje temu, stav ni važnost riječi unutar pojedinoga dokumenta.</p>
+<p>Prije tematskog označavanja, oblak prikazuje do 100 najčešćih imenica, pridjeva i glagola u analiziranom dijelu korpusa, svedenih na osnovni oblik riječi, uz minimalnu frekvenciju zadanu u grafikonu. Ne prikazuje sve 413.985 objave. Prema novom uzorku prednjače riječi svet, sav, sv., hrvatski, ljubav, riječ, prvi, obitelj i božji. Veličina riječi prikazuje frekvenciju, ali sama po sebi ne razlikuje temu, stav ni važnost riječi unutar pojedinoga dokumenta.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -404,10 +413,10 @@ Razdoblje analize
 </section>
 <section id="vlastite-imenice-i-tematske-veze" class="level2">
 <h2 class="anchored" data-anchor-id="vlastite-imenice-i-tematske-veze">Vlastite imenice i tematske veze</h2>
-<p>Treći dio prikazuje najčešće lematizirane vlastite imenice uz dominantne teme i korelacije supojavljivanja tematskih oznaka. Automatsko izdvajanje ne utvrđuje ulogu imenovanog aktera ni postojanje širega narativnog okvira.</p>
+<p>Treći dio prikazuje najčešće vlastite imenice uz dominantne teme i korelacije supojavljivanja tematskih oznaka. Automatsko izdvajanje ne utvrđuje ulogu imenovanog aktera ni postojanje širega narativnog okvira.</p>
 <section id="najčešće-vlastite-imenice-prema-tematskim-kategorijama" class="level3">
 <h3 class="anchored" data-anchor-id="najčešće-vlastite-imenice-prema-tematskim-kategorijama">Najčešće vlastite imenice prema tematskim kategorijama</h3>
-<p>Grafikon prikazuje najčešće lematizirane vlastite imenice uz najzastupljenije dominantne teme. Riječ je o automatski izdvojenim spominjanjima, pa oznaka ne mora uvijek predstavljati osobu ili instituciju, a često spominjanje ne znači da je akter nositelj narativa.</p>
+<p>Grafikon prikazuje najčešće vlastite imenice, svedene na osnovni oblik, uz najzastupljenije dominantne teme. Riječ je o automatski izdvojenim spominjanjima, pa oznaka ne mora uvijek predstavljati osobu ili instituciju, a često spominjanje ne znači da je akter nositelj narativa.</p>
 <p>Poredak treba čitati kao kartu leksičke prisutnosti. On omogućuje provjeru razlikuju li se najčešća imena među temama, ali bez ručne validacije entiteta ne potvrđuje funkcionalne granice tematskih domena.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -443,6 +452,7 @@ Razdoblje analize
 </section>
 <p>Podaci podupiru uži zaključak o preklapajućim tematskim strujama, ne strogu podjelu diskursa na dva svijeta. Pojedine teme razlikuju se po frekvenciji, gustoći rječničkih podudaranja i zabilježenim reakcijama, dok mreža pokazuje da se oznake povezuju preko više kombinacija.</p>
 <p>Mreža dodaje relacijsku dimenziju: pokazuje koje rječničke oznake češće supostoje u istim dokumentima. Za tumačenje pojedinačnih veza kao političke instrumentalizacije, privatne duhovnosti ili javnoga identiteta trebalo bi pregledati pripadajuće tekstove, što ova agregirana stranica ne čini.</p>
+<p>Za uredništvo je najkorisnija razlika između najzastupljenijih i najodjekivanijih tema. One se ne poklapaju, pa tema koja zauzima najviše prostora nije nužno tema koja izaziva najviše reakcija, a tema s malo objava može imati visok prosjek po objavi. Tko planira sadržaj, iz toga može vidjeti gdje je prostor zasićen, a gdje ne.</p>
 <p>Sljedeća mapa, <a href="diskurs.html">Atmosfera diskursa</a>, istom uzorkovnom logikom analizira leksički tonalitet, emocije i konfliktni rječnik. Ni ona iz leksičkih pokazatelja ne izvodi komunikacijske namjere bez dodatne validacije.</p>
 
 
@@ -858,12 +868,17 @@ Razdoblje analize
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
+    <a class="nav-link" href="../../pages/moj-medij.html">
+<p>Moj medij</p>
+</a>
+  </li>  
+    <li class="nav-item">
     <a class="nav-link" href="../../pages/baza.html">
 <p>Baza podataka</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="../../pages/about.html">
+    <a class="nav-link" href="../../pages/metodologija.html">
 <p>Metodologija</p>
 </a>
   </li>  

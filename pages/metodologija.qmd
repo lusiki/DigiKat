@@ -1,0 +1,286 @@
+---
+title: "Metodologija"
+subtitle: "Kako nastaje korpus, što se na njemu mjeri i gdje su granice tih mjera"
+date: last-modified
+categories: ["Metodologija", "Otvorena znanost", "Reproducibilnost"]
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+library(dplyr)
+library(knitr)
+
+# Sve brojke na ovoj stranici čitaju se iz praćenih manifesta, nijedna nije utipkana.
+# Manifesti ne sadrže retke ni osobne podatke, pa se stranica renderira i bez samih podataka.
+source("../R/lib/digikat_paths.R", encoding = "UTF-8")
+source("../R/lib/digikat_hr.R", encoding = "UTF-8")
+mf <- digikat_page_corpus("..")
+
+hr_pct <- function(x, dec = 1) {
+  paste0(format(round(as.numeric(x), dec), nsmall = dec, decimal.mark = ",", trim = TRUE), " %")
+}
+hr_dec <- function(x, dec = 2) {
+  format(round(as.numeric(x), dec), nsmall = dec, decimal.mark = ",", trim = TRUE)
+}
+
+n_objava    <- digikat_hr_int(mf$corpus$rows)
+n_stupaca   <- mf$corpus$columns
+raspon      <- paste0(mf$corpus$year_min, ".–", mf$corpus$year_max, ".")
+n_platformi <- mf$corpus$platforms
+n_pojmova   <- mf$rule$terms_count
+n_odlucnih  <- mf$rule$terms_decisive
+n_dvojbenih <- mf$rule$terms_ambiguous
+prozor      <- digikat_hr_int(mf$rule$window_chars)
+prag        <- hr_dec(mf$rule$threshold)
+min_odlucnih <- mf$rule$min_decisive
+min_ukupno   <- mf$rule$min_total
+
+# Rečenica ispod slaže pridjev ("odlučan", "različita") uz ove dvije brojke. Pomoćnik za sklonidbu
+# rješava imenice, ali ne i pridjeve, pa bi promjena pravila tiho proizvela negramatičnu hrvatsku
+# rečenicu. Ako se pravilo ikad promijeni, render neka stane i neka se rečenica prepiše ručno.
+stopifnot(min_odlucnih == 1L, min_ukupno == 2L)
+
+akum_redaka  <- digikat_hr_int(mf$source$accumulator_rows)
+akum_stupaca <- mf$source$accumulator_columns
+
+# Mjerena preciznost postoji samo kao bilješka uz pravilo u manifestu. Vadi se regularnim
+# izrazom umjesto da se prepisuje, pa se ne može razići s onim što manifest tvrdi.
+nota <- mf$rule$measured_precision_note
+izvuci <- function(uzorak) {
+  m <- regmatches(nota, regexpr(uzorak, nota, perl = TRUE))
+  stopifnot(length(m) == 1L)
+  sub(uzorak, "\\1", m, perl = TRUE)
+}
+p_pre   <- izvuci("([0-9]+,[0-9])% genuinely Catholic pre-2024")
+p_post  <- izvuci("([0-9]+,[0-9])% post-2024")
+p_ukupno <- izvuci("roughly ([0-9]+,[0-9])% genuine")
+p_odziv  <- izvuci("at ([0-9]+,[0-9])% recall")
+n_citanih <- izvuci("on ([0-9]+) hand-read posts")
+
+# Tematske kategorije: broj se izvodi iz jedinog kanonskog rječnika.
+e_dict <- new.env(parent = baseenv())
+sys.source("../R/lib/thematic_dictionaries.R", envir = e_dict)
+n_kategorija <- length(e_dict$digikat_thematic_dictionaries)
+
+# Uzorci za jezičnu obradu opisani su vlastitim manifestom.
+nlp <- jsonlite::fromJSON("../data/nlp/manifest.json", simplifyVector = TRUE)
+udio <- function(stranica) hr_pct(100 * nlp$parameters$page_proportions[[stranica]])
+redaka <- function(stranica) digikat_hr_int(nlp$pages[[stranica]]$sample_rows)
+min_znakova <- nlp$parameters$minimum_text_characters
+sjeme <- nlp$parameters$seed
+slojevi <- nlp$parameters$strata
+iskljuceno <- nlp$parameters$excluded_source_types
+udpipe_model <- basename(nlp$inputs$model$path)
+
+# Slojevi uzorkovanja i isključene platforme u manifestu su nazivi stupaca u kodu. U tekst ulaze
+# samo hrvatski nazivi, pa se ključevi ovdje prevode umjesto da se ispisuju sirovi.
+slojevi_hr <- c(year = "godini", SOURCE_TYPE = "platformi")
+slojevi_txt <- digikat_hr_list(unname(ifelse(is.na(slojevi_hr[slojevi]), slojevi, slojevi_hr[slojevi])))
+iskljuceno_txt <- digikat_hr_list(digikat_platform_hr(iskljuceno))
+```
+
+Ova stranica okuplja tehnički dio projekta na jednom mjestu. Ostale stranice vode računa o tome što
+podaci pokazuju; ovdje piše kako su nastali, na čemu su mjereni i što se iz njih ne smije zaključiti.
+Namijenjena je čitatelju koji želi provjeriti postupak, ponoviti ga ili citirati.
+
+Svaka brojka na ovoj stranici izračunata je iz praćenih manifesta koji nastaju zajedno s podacima.
+Nijedna nije prepisana rukom.
+
+## Što ulazi u korpus
+
+Službeni korpus sadrži `r digikat_hr_count(mf$corpus$rows, "objava")` i
+`r digikat_hr_count(n_stupaca, "stupac")`, prikupljenih u razdoblju `r raspon` na
+`r digikat_hr_count(n_platformi, "vrsta")` izvora i platformi. U njega ulazi objava koja prođe dva
+uzastopna uvjeta.
+
+**Prvi uvjet je rječnički.** Objava mora unutar prvih `r prozor` znakova teksta pogoditi najmanje
+`r min_odlucnih` odlučan i najmanje `r min_ukupno` različita pojma s popisa od
+`r digikat_hr_count(n_pojmova, "pojam")`. Popis razlikuje `r digikat_hr_count(n_odlucnih, "pojam")`
+koji sami po sebi upućuju na katoličku tematiku i `r digikat_hr_count(n_dvojbenih, "pojam")` koji se u
+hrvatskom javljaju i izvan religijskog konteksta, pa ne mogu sami donijeti odluku.
+
+Ograničenje na prvih `r prozor` znakova nije tehnička sitnica. Ranije je rječnik čitao cijeli tekst, a
+drugi uvjet i ljudski koderi samo početak, pa su u korpus ulazile objave čiji je jedini religijski trag
+bio duboko u tekstu i tipično nije imao veze s temom. Od svih takvih objava koje su pročitane ručno
+nijedna nije bila katolički sadržaj, pa se pravilo sada na oba mjesta primjenjuje na isti prozor.
+
+**Drugi uvjet je modelski.** Objava koja prođe rječnik ocjenjuje se statističkim modelom uvježbanim na
+ručno označenim primjerima i ulazi u korpus samo ako dosegne ocjenu od najmanje `r prag`. Prag je
+odluka voditelja projekta iz kolovoza 2026. i namjerno je postavljen tako da zadrži volumen. Viši prag
+daje čišći, ali manji korpus.
+
+**Isto pravilo vrijedi za cijelo razdoblje.** To je bitno jer se metoda prikupljanja mijenjala, a
+pravilo uključivanja nije smjelo pratiti tu promjenu.
+
+### Koliko je korpus čist
+
+Preciznost je mjerena ručnim čitanjem `r n_citanih` objava po razdoblju. Na tako mjerenoj osnovici
+zajednička krivulja procjenjuje da je oko `r p_ukupno` % objava u korpusu doista katolički sadržaj, uz
+zadržanih oko `r p_odziv` % onoga što jest katolički sadržaj. Kvaliteta nije jednaka u oba razdoblja
+(`r p_pre` % prije 2024. i `r p_post` % poslije, mjereno pri nižem pragu), i ta je razlika svojstvo
+prikupljanja, a ne mjerenja.
+
+Drugim riječima, korpus je namjerno širok. Manji dio objava u njemu spominje katoličke pojmove, a nije
+o njima; ta razina šuma opisana je i mjerena, a ne prešućena.
+
+```{r}
+#| label: pravilo-tablica
+
+data.frame(
+  Stavka = c("Objava u korpusu", "Stupaca", "Razdoblje", "Vrsta izvora i platformi",
+             "Pojmova na popisu", "Prozor teksta", "Prag modela"),
+  Vrijednost = c(n_objava, as.character(n_stupaca), raspon, as.character(n_platformi),
+                 paste0(n_pojmova, " (", n_odlucnih, " odlučnih, ", n_dvojbenih, " dvojbenih)"),
+                 paste0("prvih ", prozor, " znakova"), prag)
+) |>
+  kable(caption = paste("Pravilo uključivanja u brojkama.",
+                        "Izvor: manifest službenoga korpusa, nastao uz korpus u R/build_corpus.R."),
+        align = c("l", "l"))
+```
+
+## Dva skupa podataka koja nisu zamjenjiva
+
+Projekt vodi dva odvojena skupa podataka i njihovo miješanje najčešći je način da se dobiju krive
+brojke.
+
+**Akumulator** (`r digikat_hr_count(mf$source$accumulator_rows, "redak")`,
+`r digikat_hr_count(akum_stupaca, "stupac")`) sve je što je servis za praćenje medija isporučio, bez
+ikakvog filtriranja. On raste sa svakom novom isporukom.
+
+**Službeni korpus** (`r digikat_hr_count(mf$corpus$rows, "objava")`) izrezan je iz akumulatora
+pravilom opisanim gore. Sve što opisuju stranice ovoga sjedišta, sve mape i svi javni agregati
+računaju se na njemu.
+
+Dovršena tematska istraživanja i dalje čitaju akumulator, imenom, jer su na njemu izračunata i
+objavljena. Prebacivanje gotove analize na novi ulaz tiho bi promijenilo brojke koje su već objavljene,
+pa se to ne radi. Svako istraživanje na stranici [Tematska istraživanja](studije/index.html) navodi na
+kojem je skupu izračunato.
+
+Praktična posljedica za čitatelja je jednostavna. Ako se brojka s neke stranice ne slaže s brojkom iz
+nekog istraživanja, prva provjera nije aritmetika nego to govore li o istom skupu podataka.
+
+## Promjena prikupljanja 2024. i što ona zabranjuje
+
+Tijekom 2024. promijenio se način na koji su objave prikupljane. Pravilo uključivanja ostalo je isto s
+obje strane te granice, pa su razdoblja usporediva po pravilu, ali nisu usporediva po zahvatu. Udio
+zadržanih objava skače za otprilike dvadeset postotnih bodova preko te granice, i to je svojstvo
+instrumenta, ne medijske stvarnosti.
+
+```{r}
+#| label: ere-tablica
+
+ere <- mf$eras
+data.frame(
+  Razdoblje = c("Prije promjene", "Poslije promjene"),
+  Raspon = c(ere$pre2024$span, ere$post2024$span),
+  `Objava u akumulatoru` = c(digikat_hr_int(ere$pre2024$rows_in), digikat_hr_int(ere$post2024$rows_in)),
+  `Zadržano u korpusu` = c(digikat_hr_int(ere$pre2024$kept), digikat_hr_int(ere$post2024$kept)),
+  `Udio zadržanih` = c(hr_pct(ere$pre2024$kept_pct), hr_pct(ere$post2024$kept_pct)),
+  check.names = FALSE
+) |>
+  kable(caption = paste("Dva razdoblja prikupljanja pod istim pravilom uključivanja.",
+                        "Izvor: manifest službenoga korpusa, odjeljak o razdobljima."),
+        align = c("l", "l", "r", "r", "r"))
+```
+
+Iz toga slijedi jedno ograničenje koje vrijedi na cijelom sjedištu. **Porast broja objava preko 2024.
+nije porast medijske pažnje.** Godišnji volumeni smiju se uspoređivati unutar istoga toka prikupljanja,
+a ne preko granice. Stranica [Evolucija ekosustava](mapa/evolucija.html) zato prikazuje opaženi volumen
+i tu ogradu drži uz svaki prikaz.
+
+Uz to, u vendorskom izvoru za razdoblje od veljače do svibnja 2024. nema teksta, pa nijedno razdoblje
+nema retke u tim mjesecima. Prikupljanje ima i kraćih prekida, koji su opisani na stranicama gdje
+utječu na izračun.
+
+```{r}
+#| label: godine-tablica
+
+god <- mf$years
+data.frame(
+  Godina = paste0(names(god), "."),
+  `U akumulatoru` = digikat_hr_int(vapply(god, function(x) x$rows_in, numeric(1))),
+  `U korpusu` = digikat_hr_int(vapply(god, function(x) x$kept, numeric(1))),
+  `Udio zadržanih` = hr_pct(100 * vapply(god, function(x) x$kept / x$rows_in, numeric(1))),
+  check.names = FALSE, row.names = NULL
+) |>
+  kable(caption = paste("Zadržane objave po godini. Godina 2026. obuhvaća razdoblje do lipnja.",
+                        "Izvor: manifest službenoga korpusa, odjeljak o godinama."),
+        align = c("l", "r", "r", "r"))
+```
+
+## Uzorci i rječnici
+
+Analize volumena, dosega i angažmana računaju se na cijelom korpusu. Analize teksta ne, jer jezična
+obrada cijeloga korpusa nije izvediva u razumnom vremenu, pa se one računaju na stratificiranim
+uzorcima. Svaki uzorak vučen je s fiksnim sjemenom slučajnosti (`r sjeme`), stratificiran po
+`r slojevi_txt`, ograničen na objave dulje od `r digikat_hr_count(min_znakova - 1, "znak")` i bez
+platforme `r iskljuceno_txt`.
+
+```{r}
+#| label: uzorci-tablica
+
+data.frame(
+  `Analitička razina` = c("Tematske struje", "Fokus na događaje", "Atmosfera diskursa"),
+  `Ciljani udio korpusa` = c(udio("mapa_stats"), udio("dogadjaji"), udio("diskurs")),
+  `Dokumenata u uzorku` = c(redaka("mapa_stats"), redaka("dogadjaji"), redaka("diskurs")),
+  check.names = FALSE
+) |>
+  kable(caption = "Stratificirani uzorci na kojima se računaju jezične analize.",
+        align = c("l", "r", "r"))
+```
+
+::: {.source-note}
+Izvor: `data/nlp/manifest.json`, nastao u `R/04_nlp.R`.
+:::
+
+Posljedica uzorkovanja je da su dnevne i rijetke vrijednosti nesigurne. Kada se neki nalaz oslanja na
+mali broj dokumenata, stranica na kojoj stoji navodi taj broj uz nalaz.
+
+**Jezična obrada.** Tekst se prije analize svodi na mala slova, dijeli na riječi i svodi na osnovne
+oblike modelom `r udpipe_model`, uvježbanim na hrvatskom. Bez toga bi se *Misa* i *misa* brojile kao
+dvije različite riječi.
+
+**Tematske kategorije.** Objave se razvrstavaju u unaprijed definirane tematske kategorije, a ima ih
+`r n_kategorija`. Razvrstavanje radi rječnik. Riječ je o pravilima, ne o modelu koji sam pronalazi teme, pa su kategorije
+stabilne kroz vrijeme i provjerljive, ali ne mogu prepoznati temu koju rječnik ne pokriva.
+
+**Rječnici tonaliteta i emocija.** Leksički tonalitet mjeri se rječnicima CroSentilex i CroSentilex
+Gold, a emocionalne oznake leksikonom lilaHR, koji razlikuje osam emocija. Svi rade na osnovnim
+oblicima riječi, pa se moraju spajati na jednako obrađen tekst.
+
+**Relativni indeks konflikta (RIK)** razlika je između opažene gustoće konfliktnog rječnika u tekstu i
+one koja bi se očekivala s obzirom na prosjek toga izvora i te teme. Mjeri odstupanje od očekivanog, ne
+apsolutnu razinu sukoba.
+
+::: {.callout-important}
+## Što ove mjere ne mjere
+
+Sve navedeno mjeri **riječi u tekstu**. Tonalitet nije osjećaj autora, emocionalna oznaka nije reakcija
+publike, a gustoća konfliktnog rječnika nije dokaz sukoba ni namjere. Doseg je vendorska procjena, ne
+izmjerena publika. Nalazi su opisni i takvima ih valja čitati.
+:::
+
+## Reproducibilnost
+
+Kod, pravila i agregati javni su na [GitHubu](https://github.com/lusiki/DigiKat) pod licencijom
+CC BY 4.0. Sam korpus i akumulator sadrže puni tekst objava i nisu javni, pa se pristup retcima
+odobrava zasebno; sve što se objavljuje izvedeno je iz njih bez osobnih podataka.
+
+Lanac obrade ide jednim smjerom i svaki korak zapisuje vlastiti manifest s otiskom ulaza iz kojega je
+nastao.
+
+1. Sirove isporuke ulaze u akumulator.
+2. Iz akumulatora se pravilom uključivanja izrezuje službeni korpus (`R/build_corpus.R`).
+3. Iz korpusa se računaju javni agregati (`R/03_aggregate.R`) i jezična obrada (`R/04_nlp.R`).
+4. Stranice čitaju agregate i manifeste. Nijedna stranica ne računa korpus iznova.
+
+Zato se sve brojke na ovom sjedištu mogu vezati uz otisak podataka iz kojega su nastale. Ako agregati
+nisu izgrađeni iz aktualnog korpusa, provjera u kodu prekida izradu stranice umjesto da objavi brojku
+koja ne odgovara prikazu ispod nje.
+
+Popis izvora, njihovih profila i uredničkih oznaka opisan je u
+[Katalogu izvora](izvori/index.html). Struktura same baze i značenje svakoga stupca opisani su na
+stranici [Baza podataka](baza.html).

@@ -19,12 +19,16 @@ website:
   site-url: https://lusiki.github.io/DigiKat/
   navbar:
     left:
-      - text: "Osnovne informacije"
+      - text: "Naslovnica"
         href: index.qmd
       - text: "O projektu"
         href: pages/about.qmd
+      - text: "Moj medij"
+        href: pages/moj-medij.qmd
       - text: "Baza podataka"
         href: pages/baza.qmd
+      - text: "Metodologija"
+        href: pages/metodologija.qmd
       - text: "Mapa medijskog prostora"
         menu:
           - text: "Pregled mapa"
@@ -77,10 +81,12 @@ website:
     left: |
       **DigiKat** · Hrvatsko katoličko sveučilište
     center:
+      - text: "Moj medij"
+        href: pages/moj-medij.qmd
       - text: "Baza podataka"
         href: pages/baza.qmd
       - text: "Metodologija"
-        href: pages/about.qmd
+        href: pages/metodologija.qmd
       - text: "Resursi"
         href: pages/resources.qmd
       - text: "GitHub"

@@ -38,6 +38,7 @@ library(ggrepel)
 # niže iz agregata u data/processed/. Ako agregati nisu izgrađeni iz tog korpusa, poziv PREKIDA
 # render — stranica koja tvrdi jedno, a crta drugo ne smije nastati slučajno.
 source("../../R/lib/digikat_paths.R", encoding = "UTF-8")
+source("../../R/lib/digikat_hr.R", encoding = "UTF-8")
 mf <- digikat_page_corpus("../..")
 n_objava <- digikat_hr_int(mf$corpus$rows)
 raspon   <- paste0(mf$corpus$year_min, ".–", mf$corpus$year_max, ".")
@@ -47,7 +48,9 @@ arhetipovi <- c("Divovi", "Graditelji zajednica", "Megafoni", "Specijalizirani a
 
 ## Pregled medijskog ekosustava
 
-Ovaj dokument predstavlja prvu analitičku mapu projekta. Analiza obuhvaća korpus od `r n_objava` medijskih objava prikupljenih u razdoblju `r raspon` U korpus ulaze objave koje unutar prvih `r digikat_hr_int(mf$rule$window_chars)` znakova pogode najmanje jedan odlučan i dva različita religijska pojma te dosegnu ocjenu modela od najmanje `r format(mf$rule$threshold, nsmall = 2, decimal.mark = ",")`. Cilj mape jest opisati strukturu prikupljenoga prostora prema platformama, zabilježenim interakcijama, vendorskoj procjeni dosega i izvorima.
+Tko u hrvatskom digitalnom prostoru objavljuje o katoličkim temama i čije objave doista odjeknu? Ova prva analitička mapa odgovara na to pitanje opisom strukture prikupljenoga prostora prema platformama, izvorima, zabilježenim interakcijama i procjeni dosega. Odgovara na istraživačka pitanja Q3 (tko se najviše čuje) i Q5 (kako se sadržaj kreće između platformi).
+
+Mjereno je na cijelom korpusu od `r digikat_hr_count(mf$corpus$rows, "objava")` iz razdoblja `r raspon`, bez uzorkovanja. Kako je korpus nastao i što se na njemu smije usporediti, opisano je u [Metodologiji](../metodologija.html).
 
 Analiza je strukturirana u tri dijela. Prvi uspoređuje platforme prema broju objava, zabilježenim interakcijama i procjeni dosega. Drugi rangira izvore prema objavama i interakcijama. Treći prikazuje odnos dosega i interakcija među najvećim izvorima unutar svake platforme.
 
@@ -423,4 +426,6 @@ Analiza daje tri opisna nalaza o prikupljenom prostoru.
 
 **Višedimenzionalnost vidljivosti.** Volumen, angažman i doseg ne rangiraju izvore jednako. Zbog toga se nijedna od tih mjera ne može sama poistovjetiti s digitalnim utjecajem, osobito kada su doseg i interakcije vendorski i platformski specifični.
 
-Druga istraživačka mapa, [Tematske struje](mapa_stats.html), prelazi sa strukture na rječnički opis sadržaja u stratificiranom uzorku: učestalost tematskih oznaka, njihovu gustoću, zabilježene reakcije i supojavljivanja.
+Za uredništvo to znači da odgovor na pitanje „koliko dobro stojimo" ovisi o tome koja se mjera gleda. Izvor koji je nisko po broju objava može biti visoko po interakcijama po objavi, i obrnuto, pa usporedba s drugima ima smisla tek unutar iste platforme i iste mjere. Kako pojedini izvor stoji po svakoj od tih mjera, može se provjeriti u pregledu [Moj medij](../moj-medij.html).
+
+Druga istraživačka mapa, [Tematske struje](mapa_stats.html), prelazi sa strukture na rječnički opis sadržaja na dijelu korpusa: učestalost tematskih oznaka, njihovu gustoću, zabilježene reakcije i supojavljivanja.

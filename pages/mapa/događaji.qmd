@@ -51,12 +51,12 @@ digikat_load_page_summary(
 # Grafikoni ove mape crtaju se iz pripremljenih agregata. Provjera prekida render ako oni nisu
 # izgrađeni iz aktualnog službenog korpusa (data/digikat_corpus.rds).
 source("../../R/lib/digikat_paths.R", encoding = "UTF-8")
+source("../../R/lib/digikat_hr.R", encoding = "UTF-8")
 mf <- digikat_page_corpus("../..")
 n_objava <- digikat_hr_int(mf$corpus$rows)
 raspon <- paste0(mf$corpus$year_min, ".–", mf$corpus$year_max, ".")
 nlp_mf <- jsonlite::fromJSON("../../data/nlp/manifest.json", simplifyVector = TRUE)
 sample_n <- nlp_mf$pages$dogadjaji$sample_rows
-sample_target <- 100 * nlp_mf$parameters$page_proportions$dogadjaji
 
 fmt_list <- function(x) {
   x <- unique(as.character(x))
@@ -115,11 +115,11 @@ stepinac_terms <- top_associated_words_final |>
 
 ## Uvod u dinamičku analizu
 
-Nakon što su prethodne faze mapirale [aktere i platforme](mapa.html), [tematske](mapa_stats.html) kategorije te [emocionalnu i konfliktnu atmosferu](diskurs.html), ova zadnja analitička mapa — **Fokus na događaje** — promatra dnevne promjene u uzorku. Ona označava neuobičajene dane i zatim opisuje dva ograničena slučaja: razdoblje oko Uskrsa 2022. i dostupne godišnje presjeke leksičkog okruženja Alojzija Stepinca.
+Kada pažnja naraste i što je pokrene? Nakon što su prethodne faze mapirale [aktere i platforme](mapa.html), [tematske](mapa_stats.html) kategorije te [emocionalnu i konfliktnu atmosferu](diskurs.html), ova zadnja analitička mapa — **Fokus na događaje** — promatra dnevne promjene. Odgovara na istraživačko pitanje Q4 o tome što se s temama i tonom dogodi kada se nešto važno dogodi. Ona označava neuobičajene dane i zatim opisuje dva ograničena slučaja: razdoblje oko Uskrsa 2022. i dostupne godišnje presjeke leksičkog okruženja Alojzija Stepinca.
 
 Prvi postupak ispituje koji dani snažno odstupaju od godišnjeg prosjeka volumena ili konfliktnog rječnika. Drugi prati udio jedne teme, tonalitet i konfliktni rječnik u prozoru oko unaprijed odabranog blagdana. Treći uspoređuje imenice i pridjeve u dokumentima s imenom Stepinca u godinama za koje uzorak daje primjere. Ni jedan od tih postupaka sam ne utvrđuje uzrok odstupanja.
 
-Postupci polaze od `r n_objava` objava, a provode se na `r digikat_hr_int(sample_n)` dokumenata: ciljanom `r format(sample_target, decimal.mark = ",")`-postotnom stratificiranom uzorku po godini i platformi među objavama s više od 100 znakova, bez TikToka. Gustoća konfliktnog rječnika znači broj rječničkih podudaranja na tisuću tokena. Godina 2026. nepotpuna je, a dnevne vrijednosti osjetljive su na mali broj uzorkovanih tekstova.
+Mjereno je na dijelu korpusa od `r digikat_hr_count(mf$corpus$rows, "objava")`, na `r digikat_hr_count(sample_n, "dokument")`. Veličina i način izvlačenja tog uzorka opisani su u [Metodologiji](../metodologija.html). Gustoća konfliktnog rječnika znači broj podudaranja s rječnikom na tisuću riječi. Godina 2026. nepotpuna je, a dnevne vrijednosti osjetljive su na mali broj uzorkovanih tekstova.
 
 <div class="metric-grid">
 <div class="metric-card">
@@ -242,9 +242,9 @@ Grafikon tako pokazuje kada se tema u uzorku pojačava i kako se dvije leksičke
 
 ## Usporedba dostupnih godišnjih leksičkih okruženja Alojzija Stepinca
 
-Zadnji dio mape uspoređuje dostupne godišnje presjeke imenica i pridjeva u dokumentima koji sadržavaju lematiziranu formu *Stepinac*. Grafikon ne mjeri neposrednu blizinu riječi, ne klasificira stav prema Stepincu niti rekonstruira cjelovite narative.
+Zadnji dio mape uspoređuje dostupne godišnje presjeke imenica i pridjeva u dokumentima koji spominju *Stepinca*, u bilo kojem obliku te riječi. Grafikon ne mjeri neposrednu blizinu riječi, ne klasificira stav prema Stepincu niti rekonstruira cjelovite narative.
 
-Metodologija broji imenice i pridjeve u dokumentima s lematiziranom formom *Stepinac* i mjeri prosječni tonalitet tih dokumenata. Uzorak daje presjeke za godine `r stepinac_year_text`. Grafikon je zato usporedba dostupnih presjeka, a ne potpuna longitudinalna serija.
+Postupak broji imenice i pridjeve u dokumentima koji spominju *Stepinca* i mjeri prosječni tonalitet tih dokumenata. Uzorak daje presjeke za godine `r stepinac_year_text`. Grafikon je zato usporedba dostupnih presjeka, a ne potpuna longitudinalna serija.
 
 ```{r}
 #| label: narrative-biography-robust
@@ -261,7 +261,7 @@ ggplot(top_associated_words_final, aes(x = total_cooccurrences, y = reorder_with
   labs(
     title = "Dostupna godišnja leksička okruženja Alojzija Stepinca",
     subtitle = paste0("Dostupne godine: ", stepinac_year_text, "; boja stupca prikazuje prosječni tonalitet tekstova"),
-    x = "Broj pojavljivanja u dokumentima s lematiziranom formom Stepinac", y = "Leksička jedinica"
+    x = "Broj pojavljivanja u dokumentima koji spominju Stepinca", y = "Leksička jedinica"
   )
 ```
 
@@ -274,3 +274,5 @@ Pet najučestalijih prikazanih riječi u dokumentima po dostupnoj godini jesu: `
 Ova mapa daje tri ograničena rezultata. Dnevni postupak označio je `r nrow(volume_spike_dates)` vrhova volumena i `r nrow(cli_spike_dates)` vrhova konfliktnog rječnika, ali njihov događajni sadržaj tek treba ručno validirati. Prozor oko Uskrsa opisuje kretanje teme Duhovnost i liturgija te leksičkih mjera u jednom slučaju, bez usporedne skupine drugih događaja. Presjeci o Stepincu pokazuju dostupna leksička okruženja, ali ne čine kontinuiranu vremensku seriju.
 
 Sljedeći korak za ozbiljan događajni model bio bi unaprijed registriran popis događaja, odvojeni skup za provjeru, minimalan broj tekstova po danu i procjena preciznosti i odziva. Tek bi takav dizajn omogućio tvrdnje o pouzdanom automatskom prepoznavanju ili predviđanju događaja.
+
+Ono što je i ovako vidljivo korisno je za planiranje. Najveći vrhovi pažnje vezani su uz datume koji se znaju unaprijed, a ne uz prijepore, pa se najveći dio godišnje pažnje može predvidjeti kalendarom. Tko planira objave, iz toga vidi koji su termini unaprijed zasićeni, a koji su slobodni.

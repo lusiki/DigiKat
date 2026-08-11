@@ -8,55 +8,59 @@ categories: ["Ciljevi", "Otvorena znanost", "Suradnja"]
 #| label: corpus-manifest
 #| include: false
 
+# Pravilo uključivanja (popis pojmova, prozor, prag) više se ne navodi ovdje nego na stranici
+# Metodologija. Ova stranica čita iz manifesta samo opseg korpusa.
 source("../R/lib/digikat_paths.R")
+source("../R/lib/digikat_hr.R", encoding = "UTF-8")
 about_mf <- digikat_read_corpus_manifest("../data/digikat_corpus_manifest.json")
 about_rows <- digikat_hr_int(about_mf$corpus$rows)
 about_cols <- about_mf$corpus$columns
-about_terms <- about_mf$rule$terms_count
-about_window <- digikat_hr_int(about_mf$rule$window_chars)
-about_threshold <- format(about_mf$rule$threshold, nsmall = 2, decimal.mark = ",")
 ```
 
 ## Ciljevi projekta
 
-Cilj nam je sustavno i empirijski istražiti digitalnu prisutnost katoličke tematike u Hrvatskoj. To ćemo postići kroz četiri cilja:
+O katoličkim se temama u hrvatskim medijima objavljuje svakodnevno, ali gotovo nitko ne zna koliko toga
+ima, tko to objavljuje i što od toga dopre do ljudi. DigiKat te odgovore mjeri i objavljuje. Rad
+projekta stoji na četiri cilja.
 
 <div class="card-grid">
 <div class="info-card">
 <div class="info-card-icon"><i class="bi bi-broadcast"></i></div>
-<h4>Prikupljanje podataka</h4>
-<p>Automatizirano prikupljanje medijskih objava u realnom vremenu, koristeći alate za <em>web scraping</em> i API integracije.</p>
+<h4>Prikupljanje objava</h4>
+<p>Svakodnevno i automatsko prikupljanje objava s portala, društvenih mreža i foruma, bez ručnog probiranja.</p>
 </div>
 <div class="info-card">
 <div class="info-card-icon"><i class="bi bi-database"></i></div>
 <h4>Baza podataka</h4>
-<p>Stvaranje strukturiranoga korpusa s javnim manifestom, agregatima, kodom i metodologijom, uz kontroliran pristup retcima koji sadrže puni tekst.</p>
+<p>Uređena baza s javnim popisom sadržaja, agregatima, kodom i metodologijom, uz kontroliran pristup punom tekstu objava.</p>
 </div>
 <div class="info-card">
 <div class="info-card-icon"><i class="bi bi-cpu"></i></div>
-<h4>Računalna analiza</h4>
-<p>Primjena računalnih tehnika (obrada prirodnog jezika, strojno učenje) za otkrivanje obrazaca, trendova i narativa u prikupljenim podacima.</p>
+<h4>Računalna obrada teksta</h4>
+<p>Računalna obrada svih tih objava odjednom, kako bi se vidjelo o čemu se piše, kakvim se rječnikom i kada pažnja raste.</p>
 </div>
 <div class="info-card">
 <div class="info-card-icon"><i class="bi bi-share"></i></div>
 <h4>Dijeljenje rezultata</h4>
-<p>Dijeljenje rezultata kroz znanstvene publikacije, konferencije i radionice, uz objavu koda i metodologije na otvorenim repozitorijima.</p>
+<p>Objava nalaza kroz radove, konferencije i radionice, uz otvoreno objavljen kod i metodologiju.</p>
 </div>
 </div>
+
+Postupak je u cijelosti opisan na stranici [Metodologija](metodologija.html).
 
 ---
 
 ## Istraživačka pitanja
 
-Projekt je organiziran oko jednog temeljnog i četiri izvedena istraživačka pitanja koja usmjeravaju prikupljanje i analizu korpusa.
+Projekt je organiziran oko jednog temeljnog i četiri izvedena istraživačka pitanja koja usmjeravaju prikupljanje i analizu korpusa. Uz svako je pitanje navedeno i što ono znači u svakodnevnom jeziku.
 
-<div style="background: #fff; border: 1px solid #0f4c5c; border-radius: 10px; padding: 28px 30px; display: flex; gap: 18px; margin: 1.5rem 0 18px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px; flex: none;">Q1</div><p style="margin: 0; font-size: 17px; color: #14181d; line-height: 1.5; font-weight: 500;">Kako se katolička tematika prikazuje i kako se o njoj raspravlja u digitalnom medijskom prostoru?</p></div>
+<div style="background: #fff; border: 1px solid #0f4c5c; border-radius: 10px; padding: 28px 30px; display: flex; gap: 18px; margin: 1.5rem 0 18px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px; flex: none;">Q1</div><div><p style="margin: 0; font-size: 17px; color: #14181d; line-height: 1.5; font-weight: 500;">Kako se katolička tematika prikazuje i kako se o njoj raspravlja u digitalnom medijskom prostoru?</p><p style="margin: 8px 0 0; font-size: 15px; color: #6b6f76; line-height: 1.5;">Što se zapravo objavljuje o Crkvi i kojim se rječnikom o tome govori?</p></div></div>
 
 <div class="card-grid">
-<div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; display: flex; gap: 18px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px;">Q2</div><p style="margin: 0; font-size: 15px; color: #2c3036; line-height: 1.5;">Kakve su veze između katoličkih tema i drugih društvenih i političkih pitanja?</p></div>
-<div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; display: flex; gap: 18px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px;">Q3</div><p style="margin: 0; font-size: 15px; color: #2c3036; line-height: 1.5;">Koji su akteri i institucije najistaknutiji u tim raspravama?</p></div>
-<div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; display: flex; gap: 18px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px;">Q4</div><p style="margin: 0; font-size: 15px; color: #2c3036; line-height: 1.5;">Kako se narativi i tonalitet mijenjaju ovisno o aktualnim događajima?</p></div>
-<div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; display: flex; gap: 18px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px;">Q5</div><p style="margin: 0; font-size: 15px; color: #2c3036; line-height: 1.5;">Kakva je mrežna dinamika između različitih platformi i medija koji obrađuju ove teme?</p></div>
+<div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; display: flex; gap: 18px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px;">Q2</div><div><p style="margin: 0; font-size: 15px; color: #2c3036; line-height: 1.5;">Kakve su veze između katoličkih tema i drugih društvenih i političkih pitanja?</p><p style="margin: 8px 0 0; font-size: 14px; color: #8a8e95; line-height: 1.5;">Uz koje se druge teme katoličke teme najčešće nađu?</p></div></div>
+<div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; display: flex; gap: 18px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px;">Q3</div><div><p style="margin: 0; font-size: 15px; color: #2c3036; line-height: 1.5;">Koji su akteri i institucije najistaknutiji u tim raspravama?</p><p style="margin: 8px 0 0; font-size: 14px; color: #8a8e95; line-height: 1.5;">Tko se u njima najviše čuje?</p></div></div>
+<div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; display: flex; gap: 18px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px;">Q4</div><div><p style="margin: 0; font-size: 15px; color: #2c3036; line-height: 1.5;">Kako se narativi i tonalitet mijenjaju ovisno o aktualnim događajima?</p><p style="margin: 8px 0 0; font-size: 14px; color: #8a8e95; line-height: 1.5;">Što se s temama i tonom dogodi kada se nešto važno dogodi?</p></div></div>
+<div style="background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; display: flex; gap: 18px;"><div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 13px; color: #0f4c5c; padding-top: 3px;">Q5</div><div><p style="margin: 0; font-size: 15px; color: #2c3036; line-height: 1.5;">Kakva je mrežna dinamika između različitih platformi i medija koji obrađuju ove teme?</p><p style="margin: 8px 0 0; font-size: 14px; color: #8a8e95; line-height: 1.5;">Kako sadržaj putuje između portala i društvenih mreža?</p></div></div>
 </div>
 
 ---
@@ -68,34 +72,15 @@ Podaci se prikupljaju u akumulator, iz njega se jedinstvenim pravilom izrezuje s
 <div style="position: relative; padding-left: 56px; margin-top: 1.5rem;">
 <div style="position: absolute; left: 19px; top: 22px; bottom: 22px; width: 2px; background: linear-gradient(#0f4c5c, #cfddE1);"></div>
 <div style="position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; margin-bottom: 18px;"><div style="position: absolute; left: -56px; top: 22px; width: 40px; height: 40px; border-radius: 50%; background: #0f4c5c; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 15px;">01</div><div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Prikupljanje</h3><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Medijske objave s portala, društvenih platformi i foruma pristižu kao tablice — svaki redak jedna objava, s tekstom, izvorom, datumom i pokazateljima dosega i angažmana.</p></div><div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;"><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">xlsx</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">ingest</span></div></div>
-<div style="position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; margin-bottom: 18px;"><div style="position: absolute; left: -56px; top: 22px; width: 40px; height: 40px; border-radius: 50%; background: #1a5b6b; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 15px;">02</div><div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Filtriranje</h3><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Objava najprije mora unutar prvih `r about_window` znakova pogoditi najmanje jedan odlučan i dva različita pojma iz popisa od `r about_terms`, a zatim dosegnuti ocjenu ansambla od najmanje `r about_threshold`. Isto pravilo vrijedi za cijelo razdoblje.</p></div><div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;"><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">≥1 odlučan · ≥2 ukupno</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">model ≥`r about_threshold`</span></div></div>
-<div style="position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; margin-bottom: 18px;"><div style="position: absolute; left: -56px; top: 22px; width: 40px; height: 40px; border-radius: 50%; background: #2c6f7e; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 15px;">03</div><div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Službeni korpus</h3><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Akumulator zadržava sve što je servis isporučio. Iz njega je izveden službeni korpus od `r about_rows` objava i `r about_cols` stupca, na kojem se grade žive stranice, mape i javni agregati. Dovršena tematska istraživanja nisu prebačena na novi ulaz.</p></div><div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;"><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">`r about_rows` × `r about_cols`</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">manifest + provenance</span></div></div>
-<div style="position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; margin-bottom: 18px;"><div style="position: absolute; left: -56px; top: 22px; width: 40px; height: 40px; border-radius: 50%; background: #3f8694; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 15px;">04</div><div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Obrada</h3><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Iz glavnog skupa izračunavaju se agregati po godini i platformi, a tekst se jezično obrađuje (tokenizacija i lematizacija) kako bi bio spreman za analizu.</p></div><div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;"><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">aggregate</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">udpipe</span></div></div>
-<div style="position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px;"><div style="position: absolute; left: -56px; top: 22px; width: 40px; height: 40px; border-radius: 50%; background: #5a949f; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 15px;">05</div><div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Analiza</h3><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Službeni korpus čita se kroz četiri analitičke razine: mapu ekosustava, tematske struje, atmosferu diskursa i fokus na događaje. Peti prikaz daje vremenski presjek evolucije ekosustava, uz ogradu zbog promjene prikupljanja 2024.</p></div><div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;"><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">ecosystem</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">themes</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">discourse</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">events + time</span></div></div>
+<div style="position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; margin-bottom: 18px;"><div style="position: absolute; left: -56px; top: 22px; width: 40px; height: 40px; border-radius: 50%; background: #1a5b6b; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 15px;">02</div><div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Filtriranje</h3><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Od svega prikupljenog zadržavaju se samo objave koje doista govore o katoličkim temama. Odluku donosi popis religijskih pojmova i, nakon njega, model uvježban na ručno pročitanim primjerima. Pravilo je isto za cijelo razdoblje, a u cijelosti je opisano u <a href="metodologija.html" style="color: #0f4c5c;">Metodologiji</a>.</p></div><div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;"><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">pravilo uključivanja</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">isto za sve godine</span></div></div>
+<div style="position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; margin-bottom: 18px;"><div style="position: absolute; left: -56px; top: 22px; width: 40px; height: 40px; border-radius: 50%; background: #2c6f7e; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 15px;">03</div><div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Službeni korpus</h3><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Akumulator zadržava sve što je servis isporučio. Iz njega je izveden službeni korpus od `r digikat_hr_count(about_mf$corpus$rows, "objava")` i `r digikat_hr_count(about_cols, "stupac")`, na kojem se grade žive stranice, mape i javni agregati. Dovršena tematska istraživanja nisu prebačena na novi ulaz.</p></div><div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;"><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">`r about_rows` × `r about_cols`</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">manifest + provenance</span></div></div>
+<div style="position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; margin-bottom: 18px;"><div style="position: absolute; left: -56px; top: 22px; width: 40px; height: 40px; border-radius: 50%; background: #3f8694; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 15px;">04</div><div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Obrada</h3><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Iz službenog korpusa računaju se pregledi po godini i platformi, a tekst se računalno obrađuje kako bi se riječi mogle pouzdano brojiti i uspoređivati.</p></div><div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;"><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">pregledi</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">obrada teksta</span></div></div>
+<div style="position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px;"><div style="position: absolute; left: -56px; top: 22px; width: 40px; height: 40px; border-radius: 50%; background: #5a949f; color: #fff; display: flex; align-items: center; justify-content: center; font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 15px;">05</div><div><h3 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 21px; margin: 0 0 3px; color: #14181d;">Analiza</h3><p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">Službeni korpus čita se kroz četiri analitičke razine: mapu ekosustava, tematske struje, atmosferu diskursa i fokus na događaje. Peti prikaz daje vremenski presjek evolucije ekosustava, uz ogradu zbog promjene prikupljanja 2024.</p></div><div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;"><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">ekosustav</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">teme</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">diskurs</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">događaji</span></div></div>
 </div>
 
 ---
 
-## Doprinos i vrijednost projekta
-
-Projekt donosi vrijednost na dvije razine — razvoj vještina sudionika i praksu otvorene znanosti.
-
-### Razvoj vještina
-
-Sudionici projekta imat će priliku raditi s najnovijim računalnim tehnikama i alatima. Kroz praktičan rad, razvijat će vještine u analizi velikih količina podataka (Big Data), rudarenju teksta (Text Mining) i statističkom modeliranju.
-
-<p>
-  <span class="tag tag-primary">Big Data</span>
-  <span class="tag tag-primary">Text Mining</span>
-  <span class="tag tag-primary">Statističko modeliranje</span>
-  <span class="tag tag-primary">R</span>
-  <span class="tag tag-primary">Python</span>
-  <span class="tag">NLP</span>
-  <span class="tag">Strojno učenje</span>
-  <span class="tag">Mrežna analiza</span>
-</p>
-
-### Otvorena znanost na djelu
+## Otvorena znanost na djelu
 
 Posebna vrijednost projekta leži u njegovoj predanosti principima otvorenosti i transparentnosti. Naš rad temelji se na principima [otvorene znanosti](https://roadworkasia.com/wp-content/uploads/2023/04/Labour_of_Love_An_Open_Access_Manifesto.pdf) i [reproducibilnosti istraživanja](https://www.nature.com/articles/s41562-016-0021).
 
@@ -130,7 +115,22 @@ Projekt vodi [doc. dr. sc. Luka Šikić](https://www.lukasikic.info/) (Hrvatsko 
 
 ## Pridružite se našem istraživanju!
 
-Tražimo motivirane istraživače i studente koji žele biti dio inovativnog projekta koji spaja društvene znanosti, podatkovnu analitiku i principe otvorene znanosti. Sudjelovanjem dobivate:
+Tražimo motivirane istraživače i studente koji žele biti dio inovativnog projekta koji spaja društvene znanosti, podatkovnu analitiku i principe otvorene znanosti.
+
+Kroz praktičan rad razvijate vještine u analizi velikih količina podataka, obradi teksta i statističkom modeliranju.
+
+<p>
+  <span class="tag tag-primary">Big Data</span>
+  <span class="tag tag-primary">Text Mining</span>
+  <span class="tag tag-primary">Statističko modeliranje</span>
+  <span class="tag tag-primary">R</span>
+  <span class="tag tag-primary">Python</span>
+  <span class="tag">NLP</span>
+  <span class="tag">Strojno učenje</span>
+  <span class="tag">Mrežna analiza</span>
+</p>
+
+Sudjelovanjem dobivate:
 
 <div class="card-grid">
 <div class="info-card">

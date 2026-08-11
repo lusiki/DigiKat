@@ -51,12 +51,12 @@ digikat_load_page_summary(
 # Grafikoni ove mape crtaju se iz pripremljenih agregata. Provjera prekida render ako oni nisu
 # izgrađeni iz aktualnog službenog korpusa (data/digikat_corpus.rds).
 source("../../R/lib/digikat_paths.R", encoding = "UTF-8")
+source("../../R/lib/digikat_hr.R", encoding = "UTF-8")
 mf <- digikat_page_corpus("../..")
 n_objava <- digikat_hr_int(mf$corpus$rows)
 raspon <- paste0(mf$corpus$year_min, ".–", mf$corpus$year_max, ".")
 nlp_mf <- jsonlite::fromJSON("../../data/nlp/manifest.json", simplifyVector = TRUE)
 sample_n <- nlp_mf$pages$diskurs$sample_rows
-sample_target <- 100 * nlp_mf$parameters$page_proportions$diskurs
 
 fmt_list <- function(x) {
   x <- unique(as.character(x))
@@ -129,9 +129,11 @@ most_observed_pairs <- graph_data |>
 </div>
 </div>
 
-Nakon kartografiranja [aktera i platformi](mapa.html) te identifikacije [tematskih](mapa_stats.html) kategorija, ova treća analitička mapa — **Atmosfera diskursa** — opisuje kako se u odabranom uzorku zajedno pojavljuju tematske kategorije, leksički tonalitet, emocionalne oznake i konfliktni rječnik. Riječ je o automatiziranim leksičkim mjerama: one opisuju riječi u tekstu, ali same ne utvrđuju namjeru autora, reakciju publike ni komunikacijsku strategiju. Analitički okvir strukturiran je u tri komponente.
+Kakvim se rječnikom govori o katoličkim temama, i uz koje se teme najčešće javlja oštar ton? Nakon kartografiranja [aktera i platformi](mapa.html) te identifikacije [tematskih](mapa_stats.html) kategorija, ova treća analitička mapa — **Atmosfera diskursa** — odgovara na to pitanje. Odgovara i na istraživačko pitanje Q4 o tome kako se ton mijenja. Riječ je o automatiziranim leksičkim mjerama: one opisuju riječi u tekstu, ali same ne utvrđuju namjeru autora, reakciju publike ni komunikacijsku strategiju.
 
-Prva komponenta spaja leksički tonalitet i dominantnu emocionalnu kategoriju. Druga je **Relativni indeks konflikta (RIK)**, odnosno razlika između opažene gustoće konfliktnog rječnika i očekivanja izvedenog iz prosjeka izvora i teme. Treća je mreža supojavljivanja tematskih kategorija. Analiza polazi od `r n_objava` objava, a provodi se na `r digikat_hr_int(sample_n)` dokumenata: ciljanom `r format(sample_target, decimal.mark = ",")`-postotnom stratificiranom uzorku po godini i platformi među objavama s više od 100 znakova, bez TikToka. Godina 2026. nepotpuna je.
+Analitički okvir strukturiran je u tri komponente. Prva spaja leksički tonalitet i dominantnu emocionalnu kategoriju. Druga je **Relativni indeks konflikta (RIK)**, odnosno razlika između opažene gustoće konfliktnog rječnika i očekivanja izvedenog iz prosjeka izvora i teme. Treća je mreža supojavljivanja tematskih kategorija.
+
+Mjereno je na dijelu korpusa od `r digikat_hr_count(mf$corpus$rows, "objava")`, na `r digikat_hr_count(sample_n, "dokument")`. Veličina i način izvlačenja tog uzorka te sami rječnici opisani su u [Metodologiji](../metodologija.html). Godina 2026. nepotpuna je.
 
 ---
 
@@ -256,4 +258,8 @@ U novim sažecima najviši prosječni RIK imaju parovi `r fmt_list(highest_rik_p
 
 Tri se opisna nalaza izdvajaju. Prvo, prosječni tonalitet u uzorku mijenja se kroz kombinacije teme i dominantne emocionalne oznake. Drugo, izvori se razlikuju i po prosječnoj gustoći konfliktnog rječnika i po varijabilnosti RIK-a, ali iz tih položaja nije moguće zaključiti njihovu strategiju ili namjeru. Treće, parovi tema razlikuju se po učestalosti, tonalitetu i relativnoj zastupljenosti konfliktnog rječnika; mreža prikazuje kontinuirane razlike, a ne unaprijed zadanu podjelu prostora.
 
-Rezultati ovise o automatskoj tematskoj klasifikaciji, leksikonima i stratificiranom uzorku. Osobito su oprezno potrebni rijetki parovi tema i usporedbe preko promjene prikupljanja 2024. Sljedeća mapa, [Fokus na događaje](događaji.html), premješta pogled na dnevna odstupanja i dvije ograničene studije slučaja.
+Rezultati ovise o automatskoj tematskoj klasifikaciji, rječnicima i tome što je mjereno na dijelu korpusa. Osobito su oprezno potrebni rijetki parovi tema i usporedbe preko promjene prikupljanja 2024.
+
+Za uredništvo je čitljiv nalaz to da oštrina rječnika nije svojstvo izvora nego kombinacije izvora i teme. Isti izvor piše mirno o jednoj temi i oštro o drugoj, pa tko prati vlastiti ton ima smisla gledati ga po temama, a ne kao jedan prosjek.
+
+Sljedeća mapa, [Fokus na događaje](događaji.html), premješta pogled na dnevna odstupanja i dvije ograničene studije slučaja.
