@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="floating nav-fixed quarto-light">
+<body class="floating nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -221,20 +221,13 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Na ovoj stranici</h2>
-   
-  <ul>
-  <li><a href="#što-ovaj-pregled-pokazuje-a-što-ne" id="toc-što-ovaj-pregled-pokazuje-a-što-ne" class="nav-link active" data-scroll-target="#što-ovaj-pregled-pokazuje-a-što-ne">Što ovaj pregled pokazuje, a što ne</a></li>
-  </ul>
-</nav>
+    
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -309,6 +302,15 @@ ul.task-list li input[type="checkbox"] {
 .mm-h { font-size:1rem; font-weight:600; margin:1.3rem 0 .5rem; color:#14181d; }
 .mm-chart { width:100%; max-width:560px; height:auto; overflow-x:auto; }
 .mm-note { font-size:.85rem; color:#6b6f76; margin:.5rem 0 0; }
+/* Napomene uz pregled. Namjerno su tiše od ostatka stranice: ostaju vidljive i potpune,
+   ali ne smiju izgledati kao dio samog alata. Zato su izvan hijerarhije naslova i izvan sadržaja. */
+.mm-aside { margin:3.2rem 0 0; padding:1.1rem 0 0; border-top:1px solid #e4e2da; max-width:640px; }
+.mm-aside-title { font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.1em;
+  text-transform:uppercase; color:#8a8e95; margin:0 0 .75rem; }
+.mm-aside p { font-size:.875rem; line-height:1.6; color:#6b6f76; margin:0 0 .65rem; }
+.mm-aside p:last-child { margin-bottom:0; }
+.mm-aside strong { color:#4f535a; font-weight:600; }
+.mm-aside a { color:#0f4c5c; }
 .mm-pos { margin:.4rem 0 0; padding-left:1.1rem; }
 .mm-pos li { margin:.25rem 0; }
 .mm-tag { display:inline-block; background:#eaf0f2; color:#2c5663; border-radius:4px;
@@ -317,6 +319,10 @@ ul.task-list li input[type="checkbox"] {
   .mm-input, .mm-results, .mm-detail { background:#1b1d21; color:#e8e6e1; border-color:#3a3d42; }
   .mm-label, .mm-name, .mm-kpi-v, .mm-h, .mm-results button { color:#e8e6e1; }
   .mm-results button:hover, .mm-results button:focus { background:#2a2d33; }
+  .mm-aside { border-top-color:#3a3d42; }
+  .mm-aside p { color:#9aa0a6; }
+  .mm-aside strong { color:#c4c8cd; }
+  .mm-aside a { color:#7fb3c2; }
 }
 </style>
 
@@ -464,15 +470,30 @@ ul.task-list li input[type="checkbox"] {
   });
 })();
 </script>
-<section id="što-ovaj-pregled-pokazuje-a-što-ne" class="level2">
-<h2 class="anchored" data-anchor-id="što-ovaj-pregled-pokazuje-a-što-ne">Što ovaj pregled pokazuje, a što ne</h2>
-<p>Brojke opisuju <strong>prikupljeni korpus</strong>, a ne cjelokupnu medijsku produkciju nekog izvora. U bazu ulaze samo objave koje govore o katoličkim temama, pa portal koji objavljuje o svemu ovdje ima znatno manje objava nego što ih doista ima.</p>
-<p>Interakcije i doseg vrijednosti su koje isporučuje servis za praćenje medija. Doseg je procjena, a ne izmjerena publika, i mjeri se drukčije na svakoj platformi. Usporedba između weba i YouTubea zato ne znači ono što bi se na prvi pogled činilo, dok je usporedba unutar iste platforme smislena.</p>
-<p>Prikazani su izvori s najmanje 100 objava, jer bi ispod toga poredak počivao na premalom broju objava. Uz njih 144 izvora iznad istoga praga čeka uredničku provjeru i zasad se ne prikazuje; riječ je o računima za koje još nije potvrđeno predstavljaju li medij ili pojedinca. Korpus ukupno bilježi 10.775 izvora, od kojih velika većina ima tek nekoliko objava.</p>
-<p>Cijela baza otvorena je pod licencijom CC BY 4.0 i dostupna na <a href="https://github.com/lusiki/DigiKat">GitHubu</a>, pa se svaka brojka s ove stranice može provjeriti. Kako korpus nastaje i kako se mjere volumen, angažman i doseg, opisano je u <a href="metodologija.html">Metodologiji</a>.</p>
+<aside class="mm-aside" aria-label="Napomene uz pregled">
+<p class="mm-aside-title">Napomene · što ovaj pregled pokazuje, a što ne</p>
+
+<p>Brojke opisuju <strong>prikupljeni korpus</strong>, a ne cjelokupnu medijsku produkciju nekog
+izvora. U bazu ulaze samo objave koje govore o katoličkim temama, pa portal koji objavljuje o svemu
+ovdje ima znatno manje objava nego što ih doista ima.</p>
+
+<p>Interakcije i doseg vrijednosti su koje isporučuje servis za praćenje medija. Doseg je procjena, a
+ne izmjerena publika, i mjeri se drukčije na svakoj platformi. Usporedba između weba i YouTubea zato
+ne znači ono što bi se na prvi pogled činilo, dok je usporedba unutar iste platforme smislena.</p>
+
+<p>Prikazani su izvori s najmanje 100 objava, jer bi ispod toga poredak
+počivao na premalom broju objava. Uz njih 144 izvora iznad istoga
+praga čeka uredničku provjeru i zasad se ne prikazuje; riječ je o računima za koje još nije potvrđeno
+predstavljaju li medij ili pojedinca. Korpus ukupno bilježi 10.775 izvora,
+od kojih velika većina ima tek nekoliko objava.</p>
+
+<p>Cijela baza otvorena je pod licencijom CC BY 4.0 i dostupna na
+<a href="https://github.com/lusiki/DigiKat">GitHubu</a>, pa se svaka brojka s ove stranice može
+provjeriti. Kako korpus nastaje i kako se mjere volumen, angažman i doseg, opisano je u
+<a href="metodologija.html">Metodologiji</a>.</p>
+</aside>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
