@@ -181,13 +181,7 @@ Prvi dio tematske analize usmjeren je prema razumijevanju opće strukture diskur
 
 ### Vremenska dinamika tematskih kategorija
 
-Prema ukupnom broju rječničkih podudaranja u uzorku najzastupljenije su teme `r top_topic_names`. Grafikon prikazuje samo teme koje u barem jednom prikazanom presjeku prelaze 5 % spominjanja. Razlike među godinama opisne su i treba ih čitati zajedno s upozorenjem o promjeni prikupljanja.
-
-::: {.callout-warning}
-## Promjena metode prikupljanja (oko 2024.) — oprez pri čitanju vremenskih udjela
-
-Korpus objedinjuje dva toka prikupljanja koji se smjenjuju u srpnju 2024., uz kratko tehničko preklapanje od 1. do 4. srpnja. Jedinstveno pravilo uključivanja primijenjeno je na oba toka, ali njihov početni obuhvat nije jednak. Dobavljačev zapis od veljače do svibnja 2024. nema tekst, pa u korpusu nema objava iz tih mjeseci. Budući da se mijenja i skup platformi, **promjene godišnjih udjela tema nisu nužno stvaran tematski pomak**. Vremensku dinamiku treba čitati uvjetovano tokom prikupljanja i platformom.
-:::
+Prema ukupnom broju rječničkih podudaranja u uzorku najzastupljenije su teme `r top_topic_names`. Grafikon prikazuje samo teme koje u barem jednom prikazanom presjeku prelaze 5 % spominjanja. Razlike među godinama opisne su.
 
 ```{r}
 #| label: plot-topic-trends

@@ -133,12 +133,6 @@ Nakon kartografiranja [aktera i platformi](mapa.html) te identifikacije [tematsk
 
 Prva komponenta spaja leksički tonalitet i dominantnu emocionalnu kategoriju. Druga je **Relativni indeks konflikta (RIK)**, odnosno razlika između opažene gustoće konfliktnog rječnika i očekivanja izvedenog iz prosjeka izvora i teme. Treća je mreža supojavljivanja tematskih kategorija. Analiza polazi od `r n_objava` objava, a provodi se na `r digikat_hr_int(sample_n)` dokumenata: ciljanom `r format(sample_target, decimal.mark = ",")`-postotnom stratificiranom uzorku po godini i platformi među objavama s više od 100 znakova, bez TikToka. Godina 2026. nepotpuna je.
 
-::: {.callout-warning}
-## Promjena metode prikupljanja (oko 2024.) — oprez pri vremenskim usporedbama
-
-Korpus objedinjuje dva toka prikupljanja koji se smjenjuju u srpnju 2024., uz kratko tehničko preklapanje od 1. do 4. srpnja. Stratifikacija po platformi ne uklanja promjenu početnog obuhvata. Dobavljačev zapis od veljače do svibnja 2024. nema tekst, pa u korpusu nema objava iz tih mjeseci. Objedinjene osnovne vrijednosti i međugodišnje usporedbe zato miješaju dva različito prikupljena razdoblja. Razlike prije i poslije 2024. treba tumačiti uvjetovano tokom prikupljanja, a ne nužno kao stvaran pomak u atmosferi diskursa.
-:::
-
 ---
 
 ## Tonalitet i emocionalne oznake

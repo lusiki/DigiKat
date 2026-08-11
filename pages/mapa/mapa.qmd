@@ -85,12 +85,6 @@ Pod **volumenom** podrazumijevamo ukupan broj objava, što opisuje produktivnost
 
 :::
 
-::: {.callout-warning}
-## Promjena metode prikupljanja (oko 2024.) — oprez pri čitanju vremenskih trendova
-
-Korpus objedinjuje dva toka prikupljanja koji se smjenjuju u srpnju 2024., uz kratko tehničko preklapanje od 1. do 4. srpnja. Raniji tok čini kontinuirani medijski monitoring, a kasniji religijski filtrirano prikupljanje. Jedinstveno pravilo uključivanja naknadno je primijenjeno na oba toka, ali ono ne izjednačava njihov početni obuhvat. Dobavljačev zapis od veljače do svibnja 2024. nema tekst, pa u korpusu nema objava iz tih mjeseci. Zato **apsolutni volumen i udjeli po godinama nisu izravno usporedivi kroz cijelo razdoblje**. Instagram i TikTok u korpus ulaze tek od 2024., a 2026. je nepotpuna godina. Međugodišnje razlike treba čitati uvjetovano tokom prikupljanja i platformom, a ne kao izravnu mjeru promjene medijske pažnje.
-:::
-
 
 
 

@@ -140,12 +140,6 @@ Postupci polaze od `r n_objava` objava, a provode se na `r digikat_hr_int(sample
 </div>
 </div>
 
-::: {.callout-warning}
-## Promjena metode prikupljanja (oko 2024.) — oprez pri međugodišnjim usporedbama
-
-Korpus objedinjuje dva toka prikupljanja koji se smjenjuju u srpnju 2024., uz kratko tehničko preklapanje od 1. do 4. srpnja. Dobavljačev zapis od veljače do svibnja 2024. nema tekst, pa u korpusu nema objava iz tih mjeseci. Digitalni seizmograf standardizira odstupanja unutar svake godine, ali to ne čini dva toka jednako prikupljenima niti popunjava prazninu. **Usporedbe apsolutnog volumena i frekvencija između godina** zato ostaju uvjetovane tokom prikupljanja i platformom. Instagram i TikTok u korpus ulaze tek od 2024.
-:::
-
 ---
 
 ## Digitalni seizmograf za označavanje neuobičajenih dana

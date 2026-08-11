@@ -197,12 +197,6 @@ cat('<div class="metric-grid">',
 Sve su brojke unaprijed izračunate iz agregiranih podataka, a ne iz sirovog korpusa pri izradi prikaza. Pod **volumenom** podrazumijevamo broj objava koje ulaze u korpus, dakle isječak, a ne cjelokupni hrvatski medijski prostor. **Interakcije** su vendorske, platformski specifične vrijednosti. Bilježe ih web, YouTube, Facebook, Instagram, TikTok i Twitter, dok reddit, forum i komentari u ovim podacima nemaju tu mjeru. Isti se brend na različitim platformama broji zasebno, a izvor može biti i pojedinačni račun. Godina `r last_year`. nepotpuna je, s podacima do `r cutoff_lbl`. Mjesečni prikazi uključuju samo stvarno prikupljene mjesece, bez procjene do kraja godine. Godišnja koncentracija za `r last_year`. prikazana je zasebno i ne uspoređuje se izravno s potpunim godinama.
 :::
 
-::: {.callout-warning}
-## Promjena metode prikupljanja (oko 2024.) — oprez pri čitanju rasta i raspodjele
-
-Korpus objedinjuje dva toka prikupljanja koji se smjenjuju u srpnju 2024., uz kratko tehničko preklapanje od 1. do 4. srpnja. Raniji tok čini kontinuirani medijski monitoring, a kasniji religijski filtrirano prikupljanje. Jedinstveno pravilo uključivanja čini tokove usporedivima po tome što se broji kao katolička tema, ali ne po tome koliko je sadržaja izvorno prikupljeno. Dobavljačev zapis od veljače do svibnja 2024. nema tekst, pa u korpusu nema objava iz tih mjeseci. Zato **opaženi rast volumena i broja izvora preko prijeloma 2024. nije mjera stvarnoga rasta medijske pažnje**. Veći obuhvat mehanički unosi više izvora i može smanjiti udio deset najvećih bez stvarne seobe pažnje. Instagram i TikTok u korpus ulaze tek od 2024. Nalazi su opis opaženoga korpusa, uvjetovan tokom prikupljanja i platformom.
-:::
-
 ---
 
 ## Opaženi volumen kroz vrijeme
