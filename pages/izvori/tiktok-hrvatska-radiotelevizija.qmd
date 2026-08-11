@@ -9,11 +9,11 @@ Ova stranica sažima profil izvora **hrvatska_radiotelevizija** u korpusu katoli
 
 ## Što je
 
-HRT — Hrvatska radiotelevizija (TikTok)
+HRT, Hrvatska radiotelevizija (TikTok)
 
 ## Profil
 
-Ključni pokazatelji ovog izvora u korpusu:
+Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
@@ -38,21 +38,21 @@ Po volumenu objava, hrvatska_radiotelevizija je na **3. mjestu** od 16 praćenih
 
 ## Tipologija
 
-Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), hrvatska_radiotelevizija pripada skupini **Megafoni**: visok doseg uz nizak angažman — sadržaj doseže široku publiku bez intenzivne interakcije.
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), hrvatska_radiotelevizija pripada skupini **Megafoni**, koju obilježava visok doseg uz nizak angažman, pa sadržaj doseže široku publiku bez intenzivne interakcije.
 
-Uređivačka oznaka: **sekularni izvor** *(predloženo — potvrđuje PI)*
+Uređivačka oznaka je **sekularni izvor** *(prijedlog koji potvrđuje voditelj projekta)*
 
 ## Povezano
 
 - [Pregled platforme TikTok](platforma-tiktok.html)
 - Srodni akteri: [trtbalkanbhsc](tiktok-trtbalkanbhsc.html), [slobodna.dalmacija](tiktok-slobodna-dalmacija.html), [dnevnikhr](tiktok-dnevnikhr.html)
-- [Katalog izvora — sve platforme](index.html)
+- [Katalog izvora, sve platforme](index.html)
 
 ## Izvori podataka
 
 Podaci: `data/processed/tiktok_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-08-11).
 
 ::: {.callout-warning}
-Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.
+Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.
 :::
 

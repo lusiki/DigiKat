@@ -83,7 +83,7 @@ iskljuceno_txt <- digikat_hr_list(digikat_platform_hr(iskljuceno))
 ```
 
 Ova stranica okuplja tehnički dio projekta na jednom mjestu. Ostale stranice vode računa o tome što
-podaci pokazuju; ovdje piše kako su nastali, na čemu su mjereni i što se iz njih ne smije zaključiti.
+podaci pokazuju. Ovdje piše kako su nastali, na čemu su mjereni i što se iz njih ne smije zaključiti.
 Namijenjena je čitatelju koji želi provjeriti postupak, ponoviti ga ili citirati.
 
 Svaka brojka na ovoj stranici izračunata je iz praćenih manifesta koji nastaju zajedno s podacima.
@@ -124,7 +124,7 @@ zadržanih oko `r p_odziv` % onoga što jest katolički sadržaj. Kvaliteta nije
 prikupljanja, a ne mjerenja.
 
 Drugim riječima, korpus je namjerno širok. Manji dio objava u njemu spominje katoličke pojmove, a nije
-o njima; ta razina šuma opisana je i mjerena, a ne prešućena.
+o njima. Ta razina šuma opisana je i mjerena, a ne prešućena.
 
 ```{r}
 #| label: pravilo-tablica
@@ -277,7 +277,7 @@ izmjerena publika. Nalazi su opisni i takvima ih valja čitati.
 
 Kod, pravila i agregati javni su na [GitHubu](https://github.com/lusiki/DigiKat) pod licencijom
 CC BY 4.0. Sam korpus i akumulator sadrže puni tekst objava i nisu javni, pa se pristup retcima
-odobrava zasebno; sve što se objavljuje izvedeno je iz njih bez osobnih podataka.
+odobrava zasebno. Sve što se objavljuje izvedeno je iz njih bez osobnih podataka.
 
 Lanac obrade ide jednim smjerom i svaki korak zapisuje vlastiti manifest s otiskom ulaza iz kojega je
 nastao.

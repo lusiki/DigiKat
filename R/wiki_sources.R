@@ -167,13 +167,13 @@ make_actor_page <- function(row, pkey, pub) {
   }
 
   desc_line <- if (row$description == "")
-    "*Opis još nije potvrđen — uređuje PI.*" else row$description
+    "*Opis još nije potvrdio voditelj projekta.*" else row$description
 
   if (row$label == "" || is.na(label_hr[row$label])) {
-    lab_line <- "*Uređivačka oznaka (konfesionalni/sekularni izvor) još nije određena — uređuje PI.*"
+    lab_line <- "*Uređivačku oznaku (konfesionalni ili sekularni izvor) još nije odredio voditelj projekta.*"
   } else {
-    suffix <- if (identical(row$status, "confirmed")) "" else " *(predloženo — potvrđuje PI)*"
-    lab_line <- paste0("Uređivačka oznaka: **", label_hr[[row$label]], "**", suffix)
+    suffix <- if (identical(row$status, "confirmed")) "" else " *(prijedlog koji potvrđuje voditelj projekta)*"
+    lab_line <- paste0("Uređivačka oznaka je **", label_hr[[row$label]], "**", suffix)
   }
 
   c(
@@ -194,7 +194,7 @@ make_actor_page <- function(row, pkey, pub) {
     "",
     "## Profil",
     "",
-    "Ključni pokazatelji ovog izvora u korpusu:",
+    "Ključni pokazatelji ovog izvora u korpusu.",
     "",
     metric_grid(row$total_posts, row$total_interactions, row$total_reach),
     "",
@@ -206,7 +206,7 @@ make_actor_page <- function(row, pkey, pub) {
     "## Tipologija",
     "",
     paste0("Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega ",
-           "unutar platforme), ", name, " pripada skupini **", ty, "**: ", typ_read[[ty]]),
+           "unutar platforme), ", name, " pripada skupini **", ty, "**, koju obilježava ", typ_read[[ty]]),
     "",
     lab_line,
     "",
@@ -214,7 +214,7 @@ make_actor_page <- function(row, pkey, pub) {
     "",
     paste0("- [Pregled platforme ", plat$display, "](", plat$hub, ".html)"),
     paste0("- Srodni akteri: ", neighbor_md(name, pub)),
-    "- [Katalog izvora — sve platforme](index.html)",
+    "- [Katalog izvora, sve platforme](index.html)",
     "",
     "## Izvori podataka",
     "",
@@ -225,7 +225,7 @@ make_actor_page <- function(row, pkey, pub) {
     paste0(
       "Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **", coverage_years_hr,
       "** s **", coverage_platform_count, "** vrsta izvora i platformi. Katalog profilira aktere na ",
-      "**", catalog_platform_count, "** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); ",
+      "**", catalog_platform_count, "** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). ",
       "Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. ",
       "Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno."
     ),
@@ -316,7 +316,7 @@ for (pkey in names(platforms)) {
     "",
     paste0("Ova stranica okuplja praćene izvore na platformi **", plat$display,
            "** iz **Kataloga izvora**. Tipologija je izračunata jednako kao u ",
-           "[Mapi ekosustava](../mapa/mapa.html) — podjelom po medijanu angažmana i dosega. ",
+           "[Mapi ekosustava](../mapa/mapa.html), podjelom po medijanu angažmana i dosega. ",
            "Poredano po volumenu objava."),
     "",
     hub_table(pub),
@@ -349,7 +349,7 @@ idx_lines <- c(
   paste0("Ovdje su razrađeni profili najvećih izvora. **Tražite određeni medij?** Pretraživanje ",
          "svih izvora s dovoljno objava nalazi se na stranici [Moj medij](../moj-medij.html)."),
   "",
-  paste0("Cijeli se katalog može vidjeti i kao [mreža izvora](mreza.html) — čvorovi su izvori, ",
+  paste0("Cijeli se katalog može vidjeti i kao [mreža izvora](mreza.html). Čvorovi su izvori, ",
          "a poveznice pripadnost platformi i zajednički brend."),
   "",
   "::: {.callout-note}",
@@ -361,7 +361,7 @@ idx_lines <- c(
          "Trenutno je objavljeno **", n_pub, "** izvora, dok je **", n_held,
          "** aktera zadržano za uredničku provjeru. Katalog profilira aktere na **",
          catalog_platform_count, "** platformi, a korpus ih ima **", coverage_platform_count,
-         "**; Reddit, forumi i komentari nisu profilirani kao pojedinačni akteri."),
+         "**. Reddit, forumi i komentari nisu profilirani kao pojedinačni akteri."),
   ":::",
   "",
   paste0("Brojke obuhvaćaju ", fmt_int(coverage_rows), " objava u razdoblju ", coverage_years_hr,
@@ -376,7 +376,7 @@ for (pkey in names(platforms)) {
     paste0("## ", plat$display),
     "",
     paste0("Praćeni izvori na platformi ", plat$display,
-           " (poredano po volumenu). Cjeloviti pregled: [", plat$display,
+           " (poredano po volumenu). Cjeloviti pregled donosi stranica [", plat$display,
            "](", plat$hub, ".html)."),
     "",
     actor_table(pubs[[pkey]]),

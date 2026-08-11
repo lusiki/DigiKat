@@ -115,7 +115,7 @@ stepinac_terms <- top_associated_words_final |>
 
 ## Uvod u dinamičku analizu
 
-Kada pažnja naraste i što je pokrene? Nakon što su prethodne faze mapirale [aktere i platforme](mapa.html), [tematske](mapa_stats.html) kategorije te [emocionalnu i konfliktnu atmosferu](diskurs.html), ova zadnja analitička mapa — **Fokus na događaje** — promatra dnevne promjene. Odgovara na istraživačko pitanje Q4 o tome što se s temama i tonom dogodi kada se nešto važno dogodi. Ona označava neuobičajene dane i zatim opisuje dva ograničena slučaja: razdoblje oko Uskrsa 2022. i dostupne godišnje presjeke leksičkog okruženja Alojzija Stepinca.
+Kada pažnja naraste i što je pokrene? Nakon što su prethodne faze mapirale [aktere i platforme](mapa.html), [tematske](mapa_stats.html) kategorije te [emocionalnu i konfliktnu atmosferu](diskurs.html), dnevne promjene promatra zadnja analitička mapa **Fokus na događaje**. Ona odgovara na istraživačko pitanje Q4 o tome što se s temama i tonom dogodi kada se nešto važno dogodi. Označava neuobičajene dane i zatim opisuje dva ograničena slučaja, razdoblje oko Uskrsa 2022. i dostupne godišnje presjeke leksičkog okruženja Alojzija Stepinca.
 
 Prvi postupak ispituje koji dani snažno odstupaju od godišnjeg prosjeka volumena ili konfliktnog rječnika. Drugi prati udio jedne teme, tonalitet i konfliktni rječnik u prozoru oko unaprijed odabranog blagdana. Treći uspoređuje imenice i pridjeve u dokumentima s imenom Stepinca u godinama za koje uzorak daje primjere. Ni jedan od tih postupaka sam ne utvrđuje uzrok odstupanja.
 
@@ -146,7 +146,7 @@ Mjereno je na dijelu korpusa od `r digikat_hr_count(mf$corpus$rows, "objava")`, 
 
 Digitalni seizmograf jednostavan je postupak detekcije anomalija u dnevnim nizovima. Za svaki dan računa se z-vrijednost, odnosno broj standardnih devijacija kojim dnevna vrijednost odstupa od prosjeka svoje godine. Standardizacija unutar godine umanjuje razliku u razinama između godina, ali ne uklanja nestabilnost dana s malo uzorkovanih tekstova.
 
-Označavaju se dva tipa anomalija. Vrh volumena dan je s brojem objava većim od godišnjeg prosjeka za više od `r spike_threshold_z` standardne devijacije. Vrh konfliktnog rječnika primjenjuje isti prag na dnevni prosjek te mjere. Prag nije 99. percentil i dva se kriterija čitaju odvojeno: velik volumen ne znači nužno visok konfliktni rječnik.
+Označavaju se dva tipa anomalija. Vrh volumena dan je s brojem objava većim od godišnjeg prosjeka za više od `r spike_threshold_z` standardne devijacije. Vrh konfliktnog rječnika primjenjuje isti prag na dnevni prosjek te mjere. Prag nije 99. percentil i dva se kriterija čitaju odvojeno, jer velik volumen ne znači nužno visok konfliktni rječnik.
 
 ```{r}
 #| label: standardized-anomaly-detection
@@ -267,7 +267,7 @@ ggplot(top_associated_words_final, aes(x = total_cooccurrences, y = reorder_with
 
 **Interpretacija dostupnih godišnjih presjeka**
 
-Pet najučestalijih prikazanih riječi u dokumentima po dostupnoj godini jesu: `r stepinac_terms`. Razlike se čitaju opisno. Promjena riječi između presjeka nije sama po sebi promjena “narativa”, a bez potpunijeg namjenskog uzorka nije moguće pouzdano utvrditi smjer ni kontinuitet promjene.
+Pet najučestalijih prikazanih riječi u dokumentima po dostupnoj godini jesu `r stepinac_terms`. Razlike se čitaju opisno. Promjena riječi između presjeka nije sama po sebi promjena “narativa”, a bez potpunijeg namjenskog uzorka nije moguće pouzdano utvrditi smjer ni kontinuitet promjene.
 
 ## Sinteza nalaza
 

@@ -45,8 +45,8 @@ Analiza polazi od službenoga korpusa s `r hr_broj("n_corpus")` religijski relev
 2021. do lipnja 2026. Jedinstveno pravilo relevantnosti primijenjeno je na oba razdoblja prikupljanja.
 Kodiranjem je izdvojeno `r hr_broj("n_core")` objava koje stvarno povezuju religiju s domaćom inflacijom.
 Objave su zatim razvrstane prema predmetu ekonomskog sadržaja, vrsti govornika, institucijskoj jedinici i
-vrsti odgovora: javnom govoru, promjeni cijena, dobrotvornoj pomoći ili normativnom tumačenju tereta
-inflacije.
+vrsti odgovora. Odgovor može biti javni govor, promjena cijena, dobrotvorna pomoć ili normativno
+tumačenje tereta inflacije.
 
 Većina kandidata zadržava ranije odluke triju neovisnih kodiranja. Novi korpus izdvaja još
 `r hr_broj("n_addendum_coded")` kandidata, koji su kodirani u zasebnom dodatku. Razlika u snazi anotacije
@@ -92,7 +92,7 @@ dok je izvještavanje o promjenama cijena raspodijeljeno između biskupija, bisk
 
 ## Cijeli rad
 
-Potpuni rukopis dostupan je u tri formata:
+Potpuni rukopis dostupan je u tri formata.
 
 ::: {.study-paper-formats aria-label="Dostupni formati rada"}
 <a class="study-paper-format study-paper-format--primary" href="../../assets/papers/inflation-information-delayed-repricing.html"><span class="study-paper-format__type">HTML</span><span class="study-paper-format__label">Čitanje u pregledniku</span></a>
@@ -107,5 +107,5 @@ izvora dostupni su na stranici [Baza podataka](../baza.qmd).
 
 Radni rukopis [Luke Šikića](https://www.lukasikic.info/) i
 [Petre Palić](https://www.unicath.hr/odjeli-i-fakultet/nastavnici/petra-palic), pripremljen u okviru
-projekta DigiKat na Hrvatskom katoličkom sveučilištu. Dio drugog izlaznog toka projekta — vidi
-[Projektni raspored](../schedule.qmd).
+projekta DigiKat na Hrvatskom katoličkom sveučilištu. Dio je drugoga izlaznog toka projekta, čiji je
+popis na stranici [Projektni raspored](../schedule.qmd).

@@ -18,19 +18,11 @@ categories: ["Tematsko istraživanje", "Nacrt u izradi"]
 Rad primjenjuje okvir ekonomije pažnje na raniji analitički presjek DigiKat korpusa, nudeći sustavno mapiranje
 hrvatskog katoličkog digitalnog ekosustava kroz pet hipoteza o distribuciji i dinamici pažnje.
 
-::: {.callout-warning}
-## Verzija podataka
-
-Brojke i nalazi na ovoj stranici pripadaju presjeku od **608.879 objava iz razdoblja 2021.–2025.**
-na kojem je izrađen povezani nacrt rada. Ne opisuju automatski sadašnji glavni korpus od 710.307
-objava, koji se proteže do lipnja 2026. Procjene treba ponovno izračunati prije konačne objave rada.
-:::
-
 ## Istraživačko pitanje
 
 Kako se pažnja publike raspodjeljuje između institucionalnih i neovisnih katoličkih komunikatora,
 kakvu ulogu imaju emocionalni i vremenski (liturgijski) faktori u dinamici angažmana te razlikuje li
-se stupanj koncentracije pažnje ovisno o platformi. Rad testira pet hipoteza: distribuciju pažnje po
+se stupanj koncentracije pažnje ovisno o platformi. Rad testira pet hipoteza. One obuhvaćaju distribuciju pažnje po
 zakonu potencije, kvalitativno drugačije modalitete angažmana institucionalnih aktera, spregu
 sentimenta i pažnje, utjecaj katoličkog liturgijskog kalendara te platformski specifičnu
 koncentraciju.
@@ -48,7 +40,7 @@ spregu sentimenta i angažmana te hijerarhijska regresija za liturgijsko vremens
 
 Pažnja je ekstremno koncentrirana (Gini = 0,982): vodećih 10 % izvora akumulira 98,7 % ukupnog
 angažmana. Institucionalni akteri ne privlače samo manje pažnje, nego kvalitativno drugačiju vrstu
-pažnje — s većim udjelom komentara nasuprot lajkovima. Negativni sentiment je povezan s višim
+pažnje, s većim udjelom komentara nasuprot lajkovima. Negativni sentiment je povezan s višim
 angažmanom, ali ta povezanost je izraženija kod neinstitucionalnih aktera. Katolički liturgijski
 kalendar dodatno strukturira ritam objavljivanja povrh sekularnih obrazaca, dok se koncentracija
 pažnje razlikuje po platformama bez jasnog obrasca prema stupnju algoritamskog kuriranja.
@@ -64,7 +56,7 @@ Pun tekst nacrta dostupan je u dva usklađena formata.
 
 ## Status
 
-Nacrt (v7) u izradi — autori [Luka Šikić](https://www.lukasikic.info/),
+Nacrt (v7) je u izradi. Potpisuju ga [Luka Šikić](https://www.lukasikic.info/),
 [Petra Palić](https://www.unicath.hr/odjeli-i-fakultet/nastavnici/petra-palic) i
 [Siniša Kovačić](https://vijesti.hrt.hr/hrvatska/sinisa-kovacic-izabran-za-novog-ravnatelja-hine-12346782).
-Dio drugog izlaznog toka projekta (tematske studije i radovi) — vidi [Projektni raspored](../schedule.qmd).
+Dio je drugoga izlaznog toka projekta, koji obuhvaća tematske studije i radove. Popis je na stranici [Projektni raspored](../schedule.qmd).

@@ -54,7 +54,7 @@ Mjereno je na cijelom korpusu od `r digikat_hr_count(mf$corpus$rows, "objava")` 
 
 Analiza je strukturirana u tri dijela. Prvi uspoređuje platforme prema broju objava, zabilježenim interakcijama i procjeni dosega. Drugi rangira izvore prema objavama i interakcijama. Treći prikazuje odnos dosega i interakcija među najvećim izvorima unutar svake platforme.
 
-Tri glavna pitanja su u pozadini ove mape:
+Tri su glavna pitanja u pozadini ove mape.
 
 * Na kojim je platformama sadržaj prikupljen i u kojem volumenu? Ovdje su analizirani web-portali, YouTube, Facebook i drugi digitalni prostori.
 
@@ -168,7 +168,7 @@ platform_levels <- rev(names(dk_platform_colors))
 
 # Topografija digitalnog prostora
 
-Pregled počinje platformama na kojima su objave prikupljene. Ovaj dio razdvaja tri pokazatelja: broj objava, zabilježene interakcije i procijenjeni doseg.
+Pregled počinje platformama na kojima su objave prikupljene. Ovaj dio razdvaja tri pokazatelja, a to su broj objava, zabilježene interakcije i procijenjeni doseg.
 
 ## Distribucija sadržaja po platformama
 
@@ -210,7 +210,7 @@ Brojčana prevlast web-sadržaja pokazuje da se katolička tematika u ovom korpu
 
 ## Distribucija zabilježenih interakcija po platformama
 
-U cjelokupnom razdoblju web bilježi najviše interakcija (`r fmt_pct1(web_interaction_share)`), ali njegov je udio manji od udjela u objavama (`r fmt_pct1(web_post_share)`). Facebook bilježi `r fmt_pct1(facebook_interaction_share)` interakcija uz `r fmt_pct1(facebook_post_share)` objava, a YouTube `r fmt_pct1(youtube_interaction_share)` interakcija uz `r fmt_pct1(youtube_post_share)` objava. To je deskriptivna asimetrija između volumena i zabilježenog angažmana; zbog različitih platformskih metrika ne predstavlja izravnu usporedbu komunikacijske učinkovitosti.
+U cjelokupnom razdoblju web bilježi najviše interakcija (`r fmt_pct1(web_interaction_share)`), ali njegov je udio manji od udjela u objavama (`r fmt_pct1(web_post_share)`). Facebook bilježi `r fmt_pct1(facebook_interaction_share)` interakcija uz `r fmt_pct1(facebook_post_share)` objava, a YouTube `r fmt_pct1(youtube_interaction_share)` interakcija uz `r fmt_pct1(youtube_post_share)` objava. To je deskriptivna asimetrija između volumena i zabilježenog angažmana. Zbog različitih platformskih metrika ne predstavlja izravnu usporedbu komunikacijske učinkovitosti.
 
 ```{r}
 #| label: plot-interaction
@@ -298,7 +298,7 @@ plot_combined_share <- (plot_share_posts + plot_share_interactions + plot_share_
 print(plot_combined_share)
 ```
 
-Asimetrija između volumena i interakcija pokazuje da se objave i zabilježeni odjek ne raspoređuju jednako. Ona je kompatibilna s razlikama u formatima i navikama korištenja platformi, ali ova agregirana analiza ne odvaja te mehanizme od razlika u načinu mjerenja. Zaključak je zato uži: platforme imaju različite profile volumena, interakcija i dosega.
+Asimetrija između volumena i interakcija pokazuje da se objave i zabilježeni odjek ne raspoređuju jednako. Ona je kompatibilna s razlikama u formatima i navikama korištenja platformi, ali ova agregirana analiza ne odvaja te mehanizme od razlika u načinu mjerenja. Zaključak je zato uži. Platforme imaju različite profile volumena, interakcija i dosega.
 
 Nakon platformskih udjela analiza prelazi na pojedinačne izvore zabilježene u korpusu.
 
@@ -414,7 +414,7 @@ final_map_dashboard <- plot_map_web + plot_map_youtube + plot_map_facebook +
 print(final_map_dashboard)
 ```
 
-Tipologija je relativna unutar svake platforme: isprekidane crte označavaju medijane samo prikazanih najvećih izvora. Zato isti apsolutni rezultat može zauzeti drukčiji kvadrant na drugoj platformi. Nazivi arhetipova služe čitanju kombinacija dosega i angažmana; ne mjere motive izvora, kvalitetu odnosa ni lojalnost publike.
+Tipologija je relativna unutar svake platforme, pa isprekidane crte označavaju medijane samo prikazanih najvećih izvora. Zato isti apsolutni rezultat može zauzeti drukčiji kvadrant na drugoj platformi. Nazivi arhetipova služe čitanju kombinacija dosega i angažmana. Oni ne mjere motive izvora, kvalitetu odnosa ni lojalnost publike.
 
 ## Zaključak i sljedeći koraci
 
@@ -422,10 +422,10 @@ Analiza daje tri opisna nalaza o prikupljenom prostoru.
 
 **Različiti platformski profili.** Web nosi `r fmt_pct1(web_post_share)` objava i `r fmt_pct1(web_interaction_share)` interakcija. Facebook i YouTube imaju veći udio interakcija nego objava, ali njihove metrike nisu izravno usporedive s webom. Podaci pokazuju asimetriju volumena i zabilježenog odjeka, a ne dokazuju agenda-setting ili veću učinkovitost platforme.
 
-**Mješovita struktura izvora.** Na vrhu weba pojavljuju se i specijalizirani i opći portali, dok na YouTubeu i Facebooku visoke pozicije zauzimaju specijalizirani kanali, stranice i pojedinci. Rangiranje opisuje zabilježene interakcije; ne mjeri dubinu odnosa s publikom ni komunikacijsku funkciju izvora.
+**Mješovita struktura izvora.** Na vrhu weba pojavljuju se i specijalizirani i opći portali, dok na YouTubeu i Facebooku visoke pozicije zauzimaju specijalizirani kanali, stranice i pojedinci. Rangiranje opisuje zabilježene interakcije i ne mjeri dubinu odnosa s publikom ni komunikacijsku funkciju izvora.
 
 **Višedimenzionalnost vidljivosti.** Volumen, angažman i doseg ne rangiraju izvore jednako. Zbog toga se nijedna od tih mjera ne može sama poistovjetiti s digitalnim utjecajem, osobito kada su doseg i interakcije vendorski i platformski specifični.
 
 Za uredništvo to znači da odgovor na pitanje „koliko dobro stojimo" ovisi o tome koja se mjera gleda. Izvor koji je nisko po broju objava može biti visoko po interakcijama po objavi, i obrnuto, pa usporedba s drugima ima smisla tek unutar iste platforme i iste mjere. Kako pojedini izvor stoji po svakoj od tih mjera, može se provjeriti u pregledu [Moj medij](../moj-medij.html).
 
-Druga istraživačka mapa, [Tematske struje](mapa_stats.html), prelazi sa strukture na rječnički opis sadržaja na dijelu korpusa: učestalost tematskih oznaka, njihovu gustoću, zabilježene reakcije i supojavljivanja.
+Druga istraživačka mapa, [Tematske struje](mapa_stats.html), prelazi sa strukture na rječnički opis sadržaja na dijelu korpusa. Prati učestalost tematskih oznaka, njihovu gustoću, zabilježene reakcije i supojavljivanja.

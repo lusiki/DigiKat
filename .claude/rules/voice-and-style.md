@@ -126,14 +126,30 @@ with any L3 conflict-strategy group — give the L3 group a distinct name and st
 - **Approximation:** `≈` in display chrome, *oko* in prose. `≥` is fine for the inclusion rule (*"≥2 podudaranja"*).
 
 ## 8. Punctuation & typography
-- **Don't stack connectors.** At most **one** em-dash aside per paragraph, and never pair an em dash with a
-  semicolon in the same paragraph. Default to a full stop over `;` — reserve the semicolon for a single genuinely
-  tight coordinate clause, not a habitual paragraph joiner. If a sentence needs two dashes (or a dash plus a
-  semicolon) to hold together, it's doing too much — split it into two plain sentences instead. (Incident:
-  the `mapa/index.qmd` lead packed two em dashes and a semicolon into two sentences — reworked to zero.)
-- **Em dash `—` (spaced)** — appositives, title/subtitle joins, parenthetical asides.
-- **En dash `–`** — ranges only (`2021.–2025.`, `267–297`).
-- **Hyphen `-`** — compounds only; **hyphenate paired adjectives consistently** (*društveno-politički*, *ekumensko-politički*).
+
+**The plain-sentence rule (PI, 2026-08-11).** Reader-visible Croatian prose runs on full stops. The colon,
+the semicolon and the em dash are **out of running prose**, because each one lets a sentence carry a second
+clause it has not earned, and three of them on a page turn an explanation into a list of asides. If a
+sentence needs one to hold together, it is doing too much. Split it.
+
+| Mark | In running prose | Still allowed |
+|---|---|---|
+| Colon `:` | **No.** Rewrite as two sentences, or turn the label into the subject. | Figure/table captions (`Izvor:`, `Napomena:`), metric-card labels, YAML, code |
+| Semicolon `;` | **No.** Always a full stop instead. | Code only |
+| Em dash `—` | **No** for appositives and asides. | Title/subtitle joins in YAML, and as a bullet lead-in glyph |
+| En dash `–` | Ranges only (`2021.–2025.`, `267–297`) | — |
+| Hyphen `-` | Compounds only. Hyphenate paired adjectives consistently (*društveno-politički*) | — |
+
+The three rewrites that cover almost every case:
+- **Appositive dash** → a second sentence. *"Web nosi 69,2 % objava — to je posljedica…"* becomes
+  *"Web nosi 69,2 % objava. To je posljedica…"*
+- **Label colon** → make the label the subject. *"Tri su nalaza: prvo…"* becomes
+  *"Izdvajaju se tri nalaza. Prvo…"*
+- **Semicolon join** → a full stop, or *a* / *dok* / *pa* where the contrast is doing real work.
+
+Do not swap one banned mark for another. A comma splice or a parenthesis pile is the same defect wearing a
+different hat. The target is a short declarative sentence that a reader outside the project understands on
+one pass (see §2b).
 - **Croatian quotation marks `„…"`** for any quoted term/title. Reject ASCII straight quotes. Pick one emphasis device: **bold** for constructs, *italic* for cited tokens.
 - **Slash `/`** — genuine either/or or brand pairs (*Twitter / X*) only; not a bilingual or label-stacking separator.
 - **Ampersand `&`** — write *i* in Croatian prose; keep `&` only in proper names/citations.
@@ -180,4 +196,4 @@ sentence per distribution.
    vocabulary from the §2b table, method detail linked to metodologija rather than recited. No service, price
    or client language anywhere (§2c).
 7. Links relative & working; `„…"` quotes; no decorative emoji; proofread.
-8. No stacked connectors: ≤1 em dash per paragraph, never an em dash + semicolon together, `;` used sparingly.
+8. Plain sentences (§8): no colon, semicolon or em dash in running prose. Captions keep `Izvor:` / `Napomena:`.

@@ -5,7 +5,7 @@ date: last-modified
 categories: ["Katalog izvora", "TikTok"]
 ---
 
-Ova stranica okuplja praćene izvore na platformi **TikTok** iz **Kataloga izvora**. Tipologija je izračunata jednako kao u [Mapi ekosustava](../mapa/mapa.html) — podjelom po medijanu angažmana i dosega. Poredano po volumenu objava.
+Ova stranica okuplja praćene izvore na platformi **TikTok** iz **Kataloga izvora**. Tipologija je izračunata jednako kao u [Mapi ekosustava](../mapa/mapa.html), podjelom po medijanu angažmana i dosega. Poredano po volumenu objava.
 
 | Izvor | Tipologija | Objava | Interakcija | Doseg |
 |---|---|---:|---:|---:|

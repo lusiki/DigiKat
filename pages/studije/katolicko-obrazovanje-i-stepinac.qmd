@@ -33,7 +33,7 @@ fmt_pct <- function(x) paste0(
 
 Katoličko obrazovanje prenosi tradiciju, ali se u digitalnim medijima najčešće pojavljuje kao tema
 sadašnjih rasprava. Ovaj rad uspoređuje vjeronauk, katoličke škole, redovničke zajednice i odgoj s
-imenovanim osobama povezanim s katoličkom poviješću. Rezultat pokazuje jasnu podjelu: ustanove su vidljive
+imenovanim osobama povezanim s katoličkom poviješću. Rezultat pokazuje jasnu podjelu. Ustanove su vidljive
 kao pitanja sadašnjosti, dok se rad kulturnog sjećanja najviše okuplja oko Alojzija Stepinca.
 
 ## Istraživačko pitanje
@@ -46,7 +46,7 @@ prelaze li ona granicu između konfesionalnih i nekonfesionalnih medija.
 ## Podaci i metode
 
 Analiza obuhvaća `r fmt_n(metric("education_strand_n"))` objava od 2021. do 2025. godine. U korpusu se
-prati osam glavnih sidara: četiri skupine ustanova i praksi te četiri imenovane osobe. Učestalost se
+prati osam glavnih sidara, a to su četiri skupine ustanova i praksi te četiri imenovane osobe. Učestalost se
 uspoređuje s mjesečnim ritmom, jezikom emocija, podrijetlom izvora i stvarnim sidrenjem u prošlosti.
 Posljednja mjera traži da se povijesni izraz pojavi unutar 160 znakova od promatranog sidra, čime se
 odvajaju lokalne veze od slučajnog suspominjanja u istoj objavi.
@@ -83,7 +83,7 @@ ulogu u javnom sjećanju.
 ### Učestalost nije isto što i sjećanje
 
 Na slici je vidljivo da obrazovne ustanove zauzimaju područje velike učestalosti i slabe veze s prošlošću.
-Stepinac se odvaja u suprotnom smjeru: pojavljuje se rjeđe, ali znatno češće otvara povijesni kontekst.
+Stepinac se odvaja u suprotnom smjeru. Pojavljuje se rjeđe, ali znatno češće otvara povijesni kontekst.
 
 ![Odnos učestalosti i stvarnog sidrenja u prošlosti za osam glavnih sidara.](../../assets/papers/katolicko-obrazovanje-i-stepinac-anchor.png){#fig-education-anchor fig-alt="Crno-bijeli raspršeni grafikon pokazuje da je Stepinac mnogo snažnije povezan s prošlošću od češćih obrazovnih ustanova."}
 
@@ -115,7 +115,7 @@ obavlja rad sjećanja.
 ## Cijeli rad
 
 Rukopis *„Faith in the present, memory in the martyr: Catholic education and the figure of Stepinac as
-sites of memory in Croatian digital media (2021–2025)"* dostupan je u tri formata:
+sites of memory in Croatian digital media (2021–2025)"* dostupan je u tri formata.
 
 ::: {.study-paper-formats aria-label="Dostupni formati rada"}
 <a class="study-paper-format study-paper-format--primary" href="../../assets/papers/katolicko-obrazovanje-i-stepinac.html"><span class="study-paper-format__type">HTML</span><span class="study-paper-format__label">Čitanje u pregledniku</span></a>
@@ -129,5 +129,5 @@ način prikupljanja i profil izvora dostupni su na stranici [Baza podataka](../b
 ## Status
 
 Radni rukopis projekta [DigiKat](../../index.qmd), pripremljen na Hrvatskom katoličkom sveučilištu. Dio je
-drugog izlaznog toka projekta, posvećenog tematskim studijama i znanstvenim radovima — vidi
-[Projektni raspored](../schedule.qmd).
+drugog izlaznog toka projekta, posvećenog tematskim studijama i znanstvenim radovima. Popis je na
+stranici [Projektni raspored](../schedule.qmd).

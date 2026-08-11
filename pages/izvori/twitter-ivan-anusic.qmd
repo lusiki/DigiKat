@@ -9,11 +9,11 @@ Ova stranica sažima profil izvora **Ivan Anušić** u korpusu katoličke temati
 
 ## Što je
 
-Ivan Anušić — političar (Twitter/X)
+Ivan Anušić, političar (Twitter/X)
 
 ## Profil
 
-Ključni pokazatelji ovog izvora u korpusu:
+Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
@@ -38,21 +38,21 @@ Po volumenu objava, Ivan Anušić je na **14. mjestu** od 23 praćenih izvora na
 
 ## Tipologija
 
-Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Ivan Anušić pripada skupini **Graditelji zajednica**: nizak doseg uz vrlo visok angažman — gradi dubok odnos s vjernom publikom.
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Ivan Anušić pripada skupini **Graditelji zajednica**, koju obilježava nizak doseg uz vrlo visok angažman, dakle dubok odnos s vjernom publikom.
 
-Uređivačka oznaka: **ostalo** *(predloženo — potvrđuje PI)*
+Uređivačka oznaka je **ostalo** *(prijedlog koji potvrđuje voditelj projekta)*
 
 ## Povezano
 
 - [Pregled platforme Twitter](platforma-twitter.html)
 - Srodni akteri: [Stephen Nikola Bartulica](twitter-stephen-nikola-bartulica.html), [Pavel Gregoric](twitter-pavel-gregoric.html), [Darko Lesinger](twitter-darko-lesinger.html)
-- [Katalog izvora — sve platforme](index.html)
+- [Katalog izvora, sve platforme](index.html)
 
 ## Izvori podataka
 
 Podaci: `data/processed/twitter_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-08-11).
 
 ::: {.callout-warning}
-Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.
+Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.
 :::
 

@@ -129,7 +129,7 @@ most_observed_pairs <- graph_data |>
 </div>
 </div>
 
-Kakvim se rječnikom govori o katoličkim temama, i uz koje se teme najčešće javlja oštar ton? Nakon kartografiranja [aktera i platformi](mapa.html) te identifikacije [tematskih](mapa_stats.html) kategorija, ova treća analitička mapa — **Atmosfera diskursa** — odgovara na to pitanje. Odgovara i na istraživačko pitanje Q4 o tome kako se ton mijenja. Riječ je o automatiziranim leksičkim mjerama: one opisuju riječi u tekstu, ali same ne utvrđuju namjeru autora, reakciju publike ni komunikacijsku strategiju.
+Kakvim se rječnikom govori o katoličkim temama, i uz koje se teme najčešće javlja oštar ton? Nakon kartografiranja [aktera i platformi](mapa.html) te identifikacije [tematskih](mapa_stats.html) kategorija, na to pitanje odgovara treća analitička mapa **Atmosfera diskursa**. Ona odgovara i na istraživačko pitanje Q4 o tome kako se ton mijenja. Riječ je o automatiziranim leksičkim mjerama. One opisuju riječi u tekstu, ali same ne utvrđuju namjeru autora, reakciju publike ni komunikacijsku strategiju.
 
 Analitički okvir strukturiran je u tri komponente. Prva spaja leksički tonalitet i dominantnu emocionalnu kategoriju. Druga je **Relativni indeks konflikta (RIK)**, odnosno razlika između opažene gustoće konfliktnog rječnika i očekivanja izvedenog iz prosjeka izvora i teme. Treća je mreža supojavljivanja tematskih kategorija.
 
@@ -139,7 +139,7 @@ Mjereno je na dijelu korpusa od `r digikat_hr_count(mf$corpus$rows, "objava")`, 
 
 ## Tonalitet i emocionalne oznake
 
-Analiza razlikuje dvije leksičke dimenzije. Prva je pozitivna ili negativna obojenost teksta prema rječnicima tonaliteta. Druga je dominantna emocionalna kategorija prema leksikonu lilaHR. Nazivi emocija označavaju prevladavajuće leksičke tragove u tekstu; nisu mjera emocionalnog stanja autora ili publike.
+Analiza razlikuje dvije leksičke dimenzije. Prva je pozitivna ili negativna obojenost teksta prema rječnicima tonaliteta. Druga je dominantna emocionalna kategorija prema leksikonu lilaHR. Nazivi emocija označavaju prevladavajuće leksičke tragove u tekstu i nisu mjera emocionalnog stanja autora ili publike.
 
 ### Matrica tonaliteta i emocionalnih kategorija
 
@@ -171,7 +171,7 @@ Matrica pokazuje da se prosječni leksički tonalitet razlikuje i među emociona
 
 ## Relativni indeks konflikta kao kontekstualno prilagođena metrika
 
-Gustoća konfliktnog rječnika broj je rječničkih podudaranja na tisuću tokena i ovisi o kontekstu: riječi povezane sa sukobom očekivanije su u nekim temama i izvorima nego u drugima. RIK zato od opažene gustoće oduzima očekivanu vrijednost, definiranu kao jednak ponder prosjeka izvora i prosjeka teme. Pozitivan RIK znači više takvih riječi od tog očekivanja, a negativan manje. Mjera ne razlikuje citat od autorskog glasa i nije mjera agresivnosti osobe ili medija.
+Gustoća konfliktnog rječnika broj je rječničkih podudaranja na tisuću tokena i ovisi o kontekstu, jer su riječi povezane sa sukobom očekivanije u nekim temama i izvorima nego u drugima. RIK zato od opažene gustoće oduzima očekivanu vrijednost, definiranu kao jednak ponder prosjeka izvora i prosjeka teme. Pozitivan RIK znači više takvih riječi od tog očekivanja, a negativan manje. Mjera ne razlikuje citat od autorskog glasa i nije mjera agresivnosti osobe ili medija.
 
 ### Profili izvora prema konfliktnom rječniku
 
@@ -207,7 +207,7 @@ Najvišu prosječnu gustoću konfliktnog rječnika među prikazanim izvorima ima
 
 Mreža sažima parove tematskih kategorija koje se pojavljuju u istim tekstovima. Vizualne karakteristike veze opisuju prosjek tekstova u kojima se par pojavljuje.
 
-Boja veze označava prosječni ne-normalizirani CroSentilex-Gold zbroj u tekstovima, gdje plave nijanse označavaju pozitivniju leksičku bilancu, a crvene negativniju. Za razliku od matrice iznad, taj je zbroj osjetljiv na duljinu teksta i vrijednosti nisu izravno usporedive. Debljina veze označava prosječni RIK: deblje veze imaju višu relativnu zastupljenost konfliktnog rječnika. Prozirnost veze označava broj tekstova na kojima se prosjek temelji. Položaj čvorova služi čitljivosti mreže i nema samostalno sadržajno značenje.
+Boja veze označava prosječni ne-normalizirani CroSentilex-Gold zbroj u tekstovima, gdje plave nijanse označavaju pozitivniju leksičku bilancu, a crvene negativniju. Za razliku od matrice iznad, taj je zbroj osjetljiv na duljinu teksta i vrijednosti nisu izravno usporedive. Debljina veze označava prosječni RIK, pa deblje veze imaju višu relativnu zastupljenost konfliktnog rječnika. Prozirnost veze označava broj tekstova na kojima se prosjek temelji. Položaj čvorova služi čitljivosti mreže i nema samostalno sadržajno značenje.
 
 ```{r}
 #| label: plot-network
@@ -252,11 +252,11 @@ graph_from_data_frame(graph_data, directed = FALSE) %>%
     )
 ```
 
-U novim sažecima najviši prosječni RIK imaju parovi `r fmt_list(highest_rik_pairs)`. Najviše uzorkovanih tekstova podupire veze `r fmt_list(most_observed_pairs)`. Ta dva poretka ne moraju se podudarati: često opažena veza nije nužno veza s najvišom relativnom zastupljenošću konfliktnog rječnika. Mreža je deskriptivna mapa supojavljivanja, pa bez zasebnog modela ne dokazuje postojanje dvaju diskursnih “svjetova”, smjer utjecaja među temama ni prelijevanje atmosfere.
+U novim sažecima najviši prosječni RIK imaju parovi `r fmt_list(highest_rik_pairs)`. Najviše uzorkovanih tekstova podupire veze `r fmt_list(most_observed_pairs)`. Ta dva poretka ne moraju se podudarati, jer često opažena veza nije nužno veza s najvišom relativnom zastupljenošću konfliktnog rječnika. Mreža je deskriptivna mapa supojavljivanja, pa bez zasebnog modela ne dokazuje postojanje dvaju diskursnih “svjetova”, smjer utjecaja među temama ni prelijevanje atmosfere.
 
 ## Sinteza nalaza i zaključci
 
-Tri se opisna nalaza izdvajaju. Prvo, prosječni tonalitet u uzorku mijenja se kroz kombinacije teme i dominantne emocionalne oznake. Drugo, izvori se razlikuju i po prosječnoj gustoći konfliktnog rječnika i po varijabilnosti RIK-a, ali iz tih položaja nije moguće zaključiti njihovu strategiju ili namjeru. Treće, parovi tema razlikuju se po učestalosti, tonalitetu i relativnoj zastupljenosti konfliktnog rječnika; mreža prikazuje kontinuirane razlike, a ne unaprijed zadanu podjelu prostora.
+Tri se opisna nalaza izdvajaju. Prvo, prosječni tonalitet u uzorku mijenja se kroz kombinacije teme i dominantne emocionalne oznake. Drugo, izvori se razlikuju i po prosječnoj gustoći konfliktnog rječnika i po varijabilnosti RIK-a, ali iz tih položaja nije moguće zaključiti njihovu strategiju ili namjeru. Treće, parovi tema razlikuju se po učestalosti, tonalitetu i relativnoj zastupljenosti konfliktnog rječnika. Mreža prikazuje kontinuirane razlike, a ne unaprijed zadanu podjelu prostora.
 
 Rezultati ovise o automatskoj tematskoj klasifikaciji, rječnicima i tome što je mjereno na dijelu korpusa. Osobito su oprezno potrebni rijetki parovi tema, koje podupire malo tekstova.
 

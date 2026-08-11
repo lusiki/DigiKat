@@ -4118,6 +4118,10 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQQkFTRVT/bggAAAHIAAAARkdERUbZP9lXAA
  <span class="dropdown-text">Mapa ekosustava</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../pages/mapa/evolucija.html">
+ <span class="dropdown-text">Evolucija ekosustava</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../pages/mapa/mapa_stats.html">
  <span class="dropdown-text">Tematske struje</span></a>
   </li>  
@@ -4128,10 +4132,6 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQQkFTRVT/bggAAAHIAAAARkdERUbZP9lXAA
         <li>
     <a class="dropdown-item" href="../../pages/mapa/događaji.html">
  <span class="dropdown-text">Fokus na događaje i kampanje</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../pages/mapa/evolucija.html">
- <span class="dropdown-text">Evolucija ekosustava</span></a>
   </li>  
     </ul>
   </li>
@@ -4238,7 +4238,7 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQQkFTRVT/bggAAAHIAAAARkdERUbZP9lXAA
     <div>
     <div class="quarto-title-meta-heading">Objavljeno</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">10. kolovoza 2026.</p>
+      <p class="date">11. kolovoza 2026.</p>
     </div>
   </div>
   
@@ -4253,7 +4253,7 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQQkFTRVT/bggAAAHIAAAARkdERUbZP9lXAA
 <p style="font-family:&#39;IBM Plex Mono&#39;,monospace;font-size:.78rem;color:#6B6F76;margin:0 0 1.6rem;">
 Jezik: <strong style="color:#0F4C5C;">Hrvatski</strong> · <a href="agentic-layer.html" style="color:#0F4C5C;">English version →</a>
 </p>
-<p>Uz podatkovni i analitički sloj, DigiKat ima i treći, manje vidljiv sloj — <strong>agentski</strong>. Dio razvojnog posla (pisanje koda, provjere kvalitete, priprema stranica) obavlja se uz pomoć agenata umjetne inteligencije, ali ne slobodnom rukom. Ova stranica razlaže od čega se taj sloj sastoji i kako je povezan; sažeti prikaz nalazi se u <a href="izvrsni-pregled.html">izvršnom pregledu</a>.</p>
+<p>Uz podatkovni i analitički sloj, DigiKat ima i treći, manje vidljiv sloj, <strong>agentski</strong>. Dio razvojnog posla (pisanje koda, provjere kvalitete, priprema stranica) obavlja se uz pomoć agenata umjetne inteligencije, ali ne slobodnom rukom. Ova stranica razlaže od čega se taj sloj sastoji i kako je povezan. Sažeti prikaz nalazi se u <a href="izvrsni-pregled.html">izvršnom pregledu</a>.</p>
 <style>
 .ag-wrap{
 --paper:#F7F3EA; --panel:#FFFFFF; --ink:#14181D;
@@ -4567,30 +4567,30 @@ display:flex; flex-wrap:wrap; gap:.3rem .6rem; }
 </div>
 <section id="kako-čitati-sliku" class="level2">
 <h2 data-anchor-id="kako-čitati-sliku">Kako čitati sliku</h2>
-<p>Slika prati jedan zahvat kroz njegov životni ciklus. Najprije se učita <strong>kontekst</strong> — tri projektne datoteke koje agentu govore što je projekt, na kojem stroju radi i što je tim dosad naučio. Zatim <strong>jednosmjeran lanac</strong> vodi podatke od sirovih izvoza do objavljenih stranica; strelice idu samo u jednom smjeru i nizvodni se artefakt nikad ne uređuje ručno. Iznad lanca stoji agentski sloj, koji <strong>nadgleda svaki prijelaz</strong> između faza. Naposljetku se petlja zatvara: ono što se pri radu nauči vraća se u zajednički dnevnik, pa se pravila s vremenom poboljšavaju.</p>
+<p>Slika prati jedan zahvat kroz njegov životni ciklus. Najprije se učita <strong>kontekst</strong>, tri projektne datoteke koje agentu govore što je projekt, na kojem stroju radi i što je tim dosad naučio. Zatim <strong>jednosmjeran lanac</strong> vodi podatke od sirovih izvoza do objavljenih stranica. Strelice idu samo u jednom smjeru i nizvodni se artefakt nikad ne uređuje ručno. Iznad lanca stoji agentski sloj, koji <strong>nadgleda svaki prijelaz</strong> između faza. Naposljetku se petlja zatvara. Ono što se pri radu nauči vraća se u zajednički dnevnik, pa se pravila s vremenom poboljšavaju.</p>
 </section>
 <section id="pet-dijelova-sloja" class="level2">
 <h2 data-anchor-id="pet-dijelova-sloja">Pet dijelova sloja</h2>
-<p><strong>Kontekst</strong> su tri datoteke koje se učitavaju u svakoj sjednici. <code>CLAUDE.md</code> je projektni ustav — načela, tok podataka i nazivlje koji vrijede za sve. <code>CLAUDE.local.md</code> opisuje pojedini stroj (je li dostupan R, gdje je korpus), pa se isti agent ispravno ponaša i na računalu bez podataka. <code>MEMORY.md</code> je zajednički dnevnik naučenoga.</p>
-<p><strong>Pravila</strong> su stalni nalozi koji oblikuju svaku izmjenu. Šest ih je: neka vrijede uvijek (plan prije netrivijalnog posla), a druga se aktiviraju prema tome koje se datoteke diraju — protokol podatkovnog cjevovoda za <code>R/</code> i <code>data/</code>, provjera renderiranja za <code>.qmd</code>, kućni glas i stil za stranice, te disciplina hrvatskog kodiranja za svaki tekst.</p>
-<p><strong>Vještine</strong> su kodirani postupci — na projektu ih je četrnaest — koje korisnik pokreće naredbom za operacije koje se ponavljaju. Grupiraju se u pet obitelji: objavljivanje i podaci (<code>/deploy</code>, <code>/render-page</code>, <code>/refresh-data</code>, <code>/commit</code>), analiza (<code>/data-analysis</code>, <code>/check-lexicon</code>, <code>/disclosure-check</code>), recenzija (<code>/review-page</code>, <code>/review-paper</code>), istraživanje (<code>/new-study</code>, <code>/lit-review</code>, <code>/research-ideation</code>) i održavanje (<code>/capture-environment</code>, <code>/context-status</code>). Svaka vještina za jedan zadatak povezuje prava pravila i prave agente — primjerice, sigurno dodavanje novih podataka ili objavljivanje stranice sa svim provjerama uključenima.</p>
-<p><strong>Provjere</strong> obavlja pet nezavisnih agenata koji samo čitaju: mehanička provjera da je render ili skripta stvarno uspjela, ponovno izvođenje svake objavljene brojke iz javnih agregata, recenzija R koda te dvije domenske recenzije — računalne lingvistike i sociologije religije i medija. Ključno je načelo da agent koji je radio posao nije onaj koji ga provjerava.</p>
+<p><strong>Kontekst</strong> su tri datoteke koje se učitavaju u svakoj sjednici. <code>CLAUDE.md</code> je projektni ustav s načelima, tokom podataka i nazivljem koji vrijede za sve. <code>CLAUDE.local.md</code> opisuje pojedini stroj (je li dostupan R, gdje je korpus), pa se isti agent ispravno ponaša i na računalu bez podataka. <code>MEMORY.md</code> je zajednički dnevnik naučenoga.</p>
+<p><strong>Pravila</strong> su stalni nalozi koji oblikuju svaku izmjenu. Šest ih je. Neka vrijede uvijek (plan prije netrivijalnog posla), a druga se aktiviraju prema tome koje se datoteke diraju, pa tako postoje protokol podatkovnog cjevovoda za <code>R/</code> i <code>data/</code>, provjera renderiranja za <code>.qmd</code>, kućni glas i stil za stranice, te disciplina hrvatskog kodiranja za svaki tekst.</p>
+<p><strong>Vještine</strong> su kodirani postupci, njih četrnaest, koje korisnik pokreće naredbom za operacije koje se ponavljaju. Grupiraju se u pet obitelji, a to su objavljivanje i podaci (<code>/deploy</code>, <code>/render-page</code>, <code>/refresh-data</code>, <code>/commit</code>), analiza (<code>/data-analysis</code>, <code>/check-lexicon</code>, <code>/disclosure-check</code>), recenzija (<code>/review-page</code>, <code>/review-paper</code>), istraživanje (<code>/new-study</code>, <code>/lit-review</code>, <code>/research-ideation</code>) i održavanje (<code>/capture-environment</code>, <code>/context-status</code>). Svaka vještina za jedan zadatak povezuje prava pravila i prave agente, primjerice za sigurno dodavanje novih podataka ili objavljivanje stranice sa svim provjerama uključenima.</p>
+<p><strong>Provjere</strong> obavlja pet nezavisnih agenata koji samo čitaju. To su mehanička provjera da je render ili skripta stvarno uspjela, ponovno izvođenje svake objavljene brojke iz javnih agregata, recenzija R koda te dvije domenske recenzije, računalne lingvistike i sociologije religije i medija. Ključno je načelo da agent koji je radio posao nije onaj koji ga provjerava.</p>
 <p><strong>Zaštite</strong> su tvrde brane koje ne izvodi model, nego obična skripta. Prije svake naredbe hook presreće rad i blokira brisanje korpusa ili sigurnosnih kopija, nekontrolirano dodavanje u git te commit koji bi obrisao objavljene stranice. Uz to, popis zabrana onemogućuje najopasnije naredbe, a svaka sjednica kreće u načinu plana.</p>
 </section>
 <section id="kako-je-sve-povezano" class="level2">
 <h2 data-anchor-id="kako-je-sve-povezano">Kako je sve povezano</h2>
 <p>Sloj se može čitati na tri načina, a sva su tri istovremeno točna.</p>
-<p><strong>Podjela ovlasti.</strong> Kontekst i pravila su zakon; glavni agent je izvršna vlast koja djeluje; agenti-provjeritelji su nezavisno sudstvo koje ne uređuje, nego prosuđuje; hookovi i popis zabrana su ustavne granice koje se u radu ne mogu ukinuti. Voditelj projekta je pritom posljednja instanca: nepovratne operacije traže njegovo osobno odobrenje.</p>
-<p><strong>Obrana u dubinu.</strong> Oko nezamjenjive jezgre — korpusa i žive stranice — stoje četiri koncentrična prstena: meko usmjeravanje (pravila), kodirani postupak (vještine), nezavisna recenzija (provjere) i deterministička brana (zaštite). Izmjena mora proći kroz sve. Vanjski prsten nije model, pa se ne može nagovoriti.</p>
-<p><strong>Upravljana petlja.</strong> Agentski sloj zrcali jednosmjeran tok podataka, ali za nadzor: čuva svaki prijelaz i zatvara krug tako da naučeno vraća u <code>MEMORY.md</code>. Time se sam ustav s vremenom poboljšava.</p>
+<p><strong>Podjela ovlasti.</strong> Kontekst i pravila su zakon. Glavni agent je izvršna vlast koja djeluje, agenti-provjeritelji su nezavisno sudstvo koje ne uređuje nego prosuđuje, a hookovi i popis zabrana ustavne su granice koje se u radu ne mogu ukinuti. Voditelj projekta je pritom posljednja instanca i nepovratne operacije traže njegovo osobno odobrenje.</p>
+<p><strong>Obrana u dubinu.</strong> Oko nezamjenjive jezgre, korpusa i žive stranice, stoje četiri koncentrična prstena. To su meko usmjeravanje (pravila), kodirani postupak (vještine), nezavisna recenzija (provjere) i deterministička brana (zaštite). Izmjena mora proći kroz sve. Vanjski prsten nije model, pa se ne može nagovoriti.</p>
+<p><strong>Upravljana petlja.</strong> Agentski sloj zrcali jednosmjeran tok podataka, ali za nadzor. Čuva svaki prijelaz i zatvara krug tako da naučeno vraća u <code>MEMORY.md</code>. Time se sam ustav s vremenom poboljšava.</p>
 </section>
 <section id="što-agentski-sloj-ne-radi" class="level2">
 <h2 data-anchor-id="što-agentski-sloj-ne-radi">Što agentski sloj ne radi</h2>
-<p>Sloj čuva <strong>postupak, a ne istinu</strong>. Jamči da su brojke izračunate, a ne upisane rukom, da je render provjeren i da korpus ima sigurnosnu kopiju — ali oznake, tumačenja i konačne odluke ostaju ljudske. Riječ je o disciplinirajućoj skeli, ne o samostalnom istraživaču. Zato su najosjetljiviji koraci (promjena pravila uključivanja, prebrisavanje korpusa, objava cijele stranice) izuzeti iz automatizma i vezani uz izričito odobrenje voditelja projekta.</p>
+<p>Sloj čuva <strong>postupak, a ne istinu</strong>. Jamči da su brojke izračunate, a ne upisane rukom, da je render provjeren i da korpus ima sigurnosnu kopiju, ali oznake, tumačenja i konačne odluke ostaju ljudske. Riječ je o disciplinirajućoj skeli, ne o samostalnom istraživaču. Zato su najosjetljiviji koraci (promjena pravila uključivanja, prebrisavanje korpusa, objava cijele stranice) izuzeti iz automatizma i vezani uz izričito odobrenje voditelja projekta.</p>
 </section>
 <section id="sve-je-javno" class="level2">
 <h2 data-anchor-id="sve-je-javno">Sve je javno</h2>
-<p>Cijeli je sloj dio otvorenog repozitorija. Pravila, agenti, vještine i zaštite žive u mapi <code>.claude/</code>, a projektni ustav u datoteci <a href="https://github.com/lusiki/DigiKat/blob/main/CLAUDE.md">CLAUDE.md</a>. I ova je stranica nastala u tom sloju — s planom pohranjenim u repozitoriju i uz automatske kontrole.</p>
+<p>Cijeli je sloj dio otvorenog repozitorija. Pravila, agenti, vještine i zaštite žive u mapi <code>.claude/</code>, a projektni ustav u datoteci <a href="https://github.com/lusiki/DigiKat/blob/main/CLAUDE.md">CLAUDE.md</a>. I ova je stranica nastala u tom sloju, s planom pohranjenim u repozitoriju i uz automatske kontrole.</p>
 
 
 </section>

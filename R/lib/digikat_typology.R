@@ -24,10 +24,10 @@ digikat_classify_typology <- function(df) {
 
 # Reader-visible gloss for each archetype, in the site's Croatian.
 DIGIKAT_TYPOLOGY_READ <- c(
-  "Divovi"                 = "visok doseg i visok angažman — među vodećim akterima ekosustava.",
-  "Graditelji zajednica"   = "nizak doseg uz vrlo visok angažman — gradi dubok odnos s vjernom publikom.",
-  "Megafoni"               = "visok doseg uz nizak angažman — sadržaj doseže široku publiku bez intenzivne interakcije.",
-  "Specijalizirani akteri" = "umjeren doseg i angažman — usmjeren na užu, specifičnu publiku."
+  "Divovi"                 = "visok doseg i visok angažman, što ga svrstava među vodeće aktere ekosustava.",
+  "Graditelji zajednica"   = "nizak doseg uz vrlo visok angažman, dakle dubok odnos s vjernom publikom.",
+  "Megafoni"               = "visok doseg uz nizak angažman, pa sadržaj doseže široku publiku bez intenzivne interakcije.",
+  "Specijalizirani akteri" = "umjeren doseg i angažman, usmjeren na užu i specifičnu publiku."
 )
 
 # Editorial label vocabulary from resources/dictionaries/source_labels.csv. The labels are the PI's

@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-08-10">
+<meta name="dcterms.date" content="2026-08-11">
 
 <title>The agentic layer — how the project is built under governance – DigiKat</title>
 <style>
@@ -4119,6 +4119,10 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQQkFTRVT/bggAAAHIAAAARkdERUbZP9lXAA
  <span class="dropdown-text">Mapa ekosustava</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../pages/mapa/evolucija.html">
+ <span class="dropdown-text">Evolucija ekosustava</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../pages/mapa/mapa_stats.html">
  <span class="dropdown-text">Tematske struje</span></a>
   </li>  
@@ -4129,10 +4133,6 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQQkFTRVT/bggAAAHIAAAARkdERUbZP9lXAA
         <li>
     <a class="dropdown-item" href="../../pages/mapa/događaji.html">
  <span class="dropdown-text">Fokus na događaje i kampanje</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../pages/mapa/evolucija.html">
- <span class="dropdown-text">Evolucija ekosustava</span></a>
   </li>  
     </ul>
   </li>
@@ -4239,7 +4239,7 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQQkFTRVT/bggAAAHIAAAARkdERUbZP9lXAA
     <div>
     <div class="quarto-title-meta-heading">Objavljeno</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 10, 2026</p>
+      <p class="date">August 11, 2026</p>
     </div>
   </div>
   
@@ -4254,7 +4254,7 @@ src: url(data:font/ttf;base64,AAEAAAARAQAABAAQQkFTRVT/bggAAAHIAAAARkdERUbZP9lXAA
 <p style="font-family:&#39;IBM Plex Mono&#39;,monospace;font-size:.78rem;color:#6B6F76;margin:0 0 1.6rem;">
 Language: <strong style="color:#0F4C5C;">English</strong> · <a href="agentski-sloj.html" style="color:#0F4C5C;">← Hrvatska verzija</a>
 </p>
-<p>Beside its data and analytical layers, DigiKat has a third, less visible layer — the <strong>agentic</strong> one. Part of the development work (writing code, quality checks, preparing pages) is done with the help of AI agents, but not free-hand. This page breaks down what that layer is made of and how it is bound together; a brief summary lives in the project’s <a href="izvrsni-pregled.html">executive overview</a> (in Croatian).</p>
+<p>Beside its data and analytical layers, DigiKat has a third and less visible layer, the <strong>agentic</strong> one. Part of the development work (writing code, quality checks, preparing pages) is done with the help of AI agents, but not free-hand. This page breaks down what that layer is made of and how it is bound together. A brief summary lives in the project’s <a href="izvrsni-pregled.html">executive overview</a> (in Croatian).</p>
 <style>
 .ag-wrap{
 --paper:#F7F3EA; --panel:#FFFFFF; --ink:#14181D;
@@ -4568,30 +4568,30 @@ display:flex; flex-wrap:wrap; gap:.3rem .6rem; }
 </div>
 <section id="how-to-read-the-diagram" class="level2">
 <h2 data-anchor-id="how-to-read-the-diagram">How to read the diagram</h2>
-<p>The diagram follows a single change through its life cycle. First the <strong>context</strong> loads — three project files that tell the agent what the project is, which machine it is running on, and what the team has learned so far. Then a <strong>one-way chain</strong> carries the data from raw exports to published pages; the arrows point in one direction only, and a downstream artifact is never hand-edited. Above the chain sits the agentic layer, which <strong>watches every transition</strong> between stages. Finally the loop closes: whatever is learned during the work returns to a shared log, so the rules improve over time.</p>
+<p>The diagram follows a single change through its life cycle. First the <strong>context</strong> loads, three project files that tell the agent what the project is, which machine it is running on, and what the team has learned so far. Then a <strong>one-way chain</strong> carries the data from raw exports to published pages. The arrows point in one direction only, and a downstream artifact is never hand-edited. Above the chain sits the agentic layer, which <strong>watches every transition</strong> between stages. Finally the loop closes. Whatever is learned during the work returns to a shared log, so the rules improve over time.</p>
 </section>
 <section id="the-five-parts-of-the-layer" class="level2">
 <h2 data-anchor-id="the-five-parts-of-the-layer">The five parts of the layer</h2>
-<p><strong>Context</strong> is three files loaded in every session. <code>CLAUDE.md</code> is the project constitution — the principles, data flow and terminology that apply to everyone. <code>CLAUDE.local.md</code> describes the individual machine (is R available, where the corpus lives), so the same agent behaves correctly even on a computer without the data. <code>MEMORY.md</code> is the shared log of lessons learned.</p>
-<p><strong>Rules</strong> are standing orders that shape every change. There are six: some always apply (a plan before non-trivial work), others activate according to which files are touched — the data-pipeline protocol for <code>R/</code> and <code>data/</code>, render verification for <code>.qmd</code>, house voice and style for pages, and Croatian-encoding discipline for every text.</p>
-<p><strong>Skills</strong> are codified procedures — fourteen of them — that the user invokes with a command for operations that recur. They group into five families: publishing and data (<code>/deploy</code>, <code>/render-page</code>, <code>/refresh-data</code>, <code>/commit</code>), analysis (<code>/data-analysis</code>, <code>/check-lexicon</code>, <code>/disclosure-check</code>), review (<code>/review-page</code>, <code>/review-paper</code>), research (<code>/new-study</code>, <code>/lit-review</code>, <code>/research-ideation</code>) and maintenance (<code>/capture-environment</code>, <code>/context-status</code>). Each skill wires the right rules to the right agents for one task — for example, safely appending new data, or publishing a page with all the checks switched on.</p>
-<p><strong>Checks</strong> are performed by five independent, read-only agents: a mechanical check that a render or script truly succeeded, a re-derivation of every published number from the public aggregates, an R-code review, and two domain reviews — computational linguistics, and sociology of religion and media. The key principle is that the agent which did the work is never the one that checks it.</p>
+<p><strong>Context</strong> is three files loaded in every session. <code>CLAUDE.md</code> is the project constitution, holding the principles, data flow and terminology that apply to everyone. <code>CLAUDE.local.md</code> describes the individual machine (is R available, where the corpus lives), so the same agent behaves correctly even on a computer without the data. <code>MEMORY.md</code> is the shared log of lessons learned.</p>
+<p><strong>Rules</strong> are standing orders that shape every change. There are six. Some always apply (a plan before non-trivial work), while others activate according to which files are touched, among them the data-pipeline protocol for <code>R/</code> and <code>data/</code>, render verification for <code>.qmd</code>, house voice and style for pages, and Croatian-encoding discipline for every text.</p>
+<p><strong>Skills</strong> are codified procedures, fourteen of them, that the user invokes with a command for operations that recur. They group into five families, namely publishing and data (<code>/deploy</code>, <code>/render-page</code>, <code>/refresh-data</code>, <code>/commit</code>), analysis (<code>/data-analysis</code>, <code>/check-lexicon</code>, <code>/disclosure-check</code>), review (<code>/review-page</code>, <code>/review-paper</code>), research (<code>/new-study</code>, <code>/lit-review</code>, <code>/research-ideation</code>) and maintenance (<code>/capture-environment</code>, <code>/context-status</code>). Each skill wires the right rules to the right agents for one task, for example safely appending new data, or publishing a page with all the checks switched on.</p>
+<p><strong>Checks</strong> are performed by five independent, read-only agents. These are a mechanical check that a render or script truly succeeded, a re-derivation of every published number from the public aggregates, an R-code review, and two domain reviews covering computational linguistics and the sociology of religion and media. The key principle is that the agent which did the work is never the one that checks it.</p>
 <p><strong>Guards</strong> are hard limits enforced not by a model but by a plain script. Before every command a hook intercepts the work and blocks deletion of the corpus or its backups, uncontrolled staging into git, and any commit that would delete published pages. A deny-list disables the most dangerous commands, and every session starts in plan mode.</p>
 </section>
 <section id="how-it-all-binds-together" class="level2">
 <h2 data-anchor-id="how-it-all-binds-together">How it all binds together</h2>
 <p>The layer can be read in three ways, all three true at once.</p>
-<p><strong>Separation of powers.</strong> Context and rules are the law; the main agent is the executive that acts; the reviewing agents are an independent judiciary that does not edit, only judges; the hooks and deny-list are constitutional limits that cannot be lifted at run time. The project lead is the final authority: irreversible operations require personal approval.</p>
-<p><strong>Defense in depth.</strong> Around the irreplaceable core — the corpus and the live site — stand four concentric rings: soft guidance (rules), codified procedure (skills), independent review (checks) and a deterministic block (guards). A change must pass through all of them. The outer ring is not a model, so it cannot be talked around.</p>
-<p><strong>A governed loop.</strong> The agentic layer mirrors the one-way data flow, but for oversight: it guards every transition and closes the circle by returning lessons to <code>MEMORY.md</code>. In this way the constitution itself improves over time.</p>
+<p><strong>Separation of powers.</strong> Context and rules are the law. The main agent is the executive that acts, the reviewing agents are an independent judiciary that does not edit but only judges, and the hooks and deny-list are constitutional limits that cannot be lifted at run time. The project lead is the final authority, so irreversible operations require personal approval.</p>
+<p><strong>Defense in depth.</strong> Around the irreplaceable core, the corpus and the live site, stand four concentric rings. These are soft guidance (rules), codified procedure (skills), independent review (checks) and a deterministic block (guards). A change must pass through all of them. The outer ring is not a model, so it cannot be talked around.</p>
+<p><strong>A governed loop.</strong> The agentic layer mirrors the one-way data flow, but for oversight. It guards every transition and closes the circle by returning lessons to <code>MEMORY.md</code>. In this way the constitution itself improves over time.</p>
 </section>
 <section id="what-the-agentic-layer-does-not-do" class="level2">
 <h2 data-anchor-id="what-the-agentic-layer-does-not-do">What the agentic layer does not do</h2>
-<p>The layer safeguards <strong>the process, not the truth</strong>. It guarantees that numbers are computed rather than typed by hand, that a render is verified, and that the corpus has a backup — but the labels, the interpretations and the final decisions remain human. It is disciplining scaffolding, not an autonomous researcher. That is why the most sensitive steps (changing the inclusion rule, overwriting the corpus, publishing the whole site) are exempt from automation and tied to the project lead’s explicit approval.</p>
+<p>The layer safeguards <strong>the process, not the truth</strong>. It guarantees that numbers are computed rather than typed by hand, that a render is verified, and that the corpus has a backup, but the labels, the interpretations and the final decisions remain human. It is disciplining scaffolding, not an autonomous researcher. That is why the most sensitive steps (changing the inclusion rule, overwriting the corpus, publishing the whole site) are exempt from automation and tied to the project lead’s explicit approval.</p>
 </section>
 <section id="everything-is-public" class="level2">
 <h2 data-anchor-id="everything-is-public">Everything is public</h2>
-<p>The entire layer is part of the open repository. Rules, agents, skills and guards live in the <code>.claude/</code> directory, and the project constitution in <a href="https://github.com/lusiki/DigiKat/blob/main/CLAUDE.md">CLAUDE.md</a>. This page, too, was built within that layer — with a plan stored in the repository and under automatic checks.</p>
+<p>The entire layer is part of the open repository. Rules, agents, skills and guards live in the <code>.claude/</code> directory, and the project constitution in <a href="https://github.com/lusiki/DigiKat/blob/main/CLAUDE.md">CLAUDE.md</a>. This page, too, was built within that layer, with a plan stored in the repository and under automatic checks.</p>
 
 
 </section>

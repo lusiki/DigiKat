@@ -29,7 +29,12 @@ Svaka je mapa samostalna cjelina. Zajedno daju slojevit prikaz digitalne medijsk
 
 ::: {.info-card}
 ### [Mapa ekosustava](mapa.html)
-**Tko objavljuje i koliko odjekuje.** Volumen, doseg i angažman po platformama te tipologija aktera — Divovi, Graditelji zajednica, Megafoni i Specijalizirani akteri.
+**Tko objavljuje i koliko odjekuje.** Volumen, doseg i angažman po platformama te tipologija aktera, koja razlikuje Divove, Graditelje zajednica, Megafone i Specijalizirane aktere.
+:::
+
+::: {.info-card}
+### [Evolucija ekosustava](evolucija.html)
+**Kako se mijenja kroz vrijeme.** Opaženi volumen, platformski udjeli interakcija i koncentracija među izvorima kroz cijelo razdoblje.
 :::
 
 ::: {.info-card}
@@ -45,11 +50,6 @@ Svaka je mapa samostalna cjelina. Zajedno daju slojevit prikaz digitalne medijsk
 ::: {.info-card}
 ### [Fokus na događaje](događaji.html)
 **Kada se govori.** Neuobičajeni dani u volumenu i konfliktnom rječniku te ograničene studije slučaja Uskrsa i Stepinca.
-:::
-
-::: {.info-card}
-### [Evolucija ekosustava](evolucija.html)
-**Kako se mijenja kroz vrijeme.** Opaženi volumen, platformski udjeli interakcija i koncentracija među izvorima kroz cijelo razdoblje.
 :::
 
 :::

@@ -17,58 +17,58 @@ Studije su poredane kako se pojavljuju u izborniku. Odaberite studiju za detalja
 
 ::: {.info-card}
 ### [Tržišta pažnje u religijskim digitalnim medijima](trzista-paznje.html)
-**Kako se raspodjeljuje pažnja.** Ekonomija pažnje na ranijem presjeku korpusa od 608.879 objava
-(2021.–2025.): koncentracija pažnje, modaliteti angažmana i liturgijski ritam objavljivanja.
-Autori: Luka Šikić, Petra Palić i Siniša Kovačić · nacrt u izradi.
+**Kako se raspodjeljuje pažnja.** Koncentracija pažnje, modaliteti angažmana i liturgijski ritam
+objavljivanja.
+Autori su Luka Šikić, Petra Palić i Siniša Kovačić · nacrt u izradi.
 :::
 
 ::: {.info-card}
 ### [Memorijalni okvir hrvatskih katoličkih odredišta](hodocasnicki-turizam.html)
 **Svetišta između hodočašća i sjećanja.** Uz religijski i turistički registar, u prikazu marijanskih
 svetišta postoji i treći, memorijalni registar, koji svetište povezuje s ratnim sjećanjem.
-Autorice i autor: Matea Topić Crnoja, Petra Palić i Luka Šikić · nacrt u izradi.
+Autorice i autor su Matea Topić Crnoja, Petra Palić i Luka Šikić · nacrt u izradi.
 :::
 
 ::: {.info-card}
 ### [Medijska zastupljenost redovničkih zajednica](redovnicke-zajednice.html)
 **Tko dobiva pažnju među redovima.** Koncentracija pažnje, spolna asimetrija i tipologija portala u
 izvještavanju o redovnicima i redovnicama (2021.–2025.).
-Autori: Hana Kilijan i Luka Šikić · nacrt dostupan.
+Autori su Hana Kilijan i Luka Šikić · nacrt dostupan.
 :::
 
 ::: {.info-card}
 ### [Katolički influenceri i institucionalni deficit pažnje](katolicki-influenceri.html)
 **Osobni brend nasuprot instituciji.** Usporedba angažmana katoličkih influencera i institucionalnih
 crkvenih komunikatora kroz pet hipoteza ekonomije pažnje.
-Autori: Suzana Obrovac Lipar i Luka Šikić · nacrt dostupan.
+Autori su Suzana Obrovac Lipar i Luka Šikić · nacrt dostupan.
 :::
 
 ::: {.info-card}
 ### [Tko govori iz katoličkoga medijskog prostora](crkva-i-dezinformacije.html)
 **Katolički mediji nisu jedno.** Narativni okviri razlikuju službena crkvena glasila od katolički
 orijentiranih portala u korpusu web članaka 2021.–2026.
-Autori: Luka Šikić i Andreja Sršen · u recenziji.
+Autori su Luka Šikić i Andreja Sršen · u recenziji.
 :::
 
 ::: {.info-card}
 ### [Inflacija, informacije i odgođene promjene cijena](inflacija-i-religija.html)
 **Kada sektor zna, a cijene čekaju.** Datirano medijsko izvještavanje kao trag javno dostupnih
 informacija prije odgođene prilagodbe cijena u hrvatskom vjerskom sektoru.
-Autori: Luka Šikić i Petra Palić · rukopis za časopis.
+Autori su Luka Šikić i Petra Palić · rukopis za časopis.
 :::
 
 ::: {.info-card}
 ### [Socijalni nauk Crkve u javnoj raspravi o gospodarstvu](socijalni-nauk-i-gospodarstvo.html)
 **Što od nauka dopre do rasprave.** Mjeri koji dijelovi socijalnog nauka ulaze u javnu raspravu o
 gospodarstvu i pokazuje da odabir nastaje na granici prema sekularnim medijima.
-Autori: Luka Šikić i Petra Palić · rukopis za časopis.
+Autori su Luka Šikić i Petra Palić · rukopis za časopis.
 :::
 
 ::: {.info-card}
 ### [Vjera u sadašnjosti, sjećanje u mučeniku](katolicko-obrazovanje-i-stepinac.html)
 **Podjela mnemoničkog rada.** Katoličko obrazovanje organizira raspravu o sadašnjosti, dok se
 kulturno sjećanje koncentrira u liku Alojzija Stepinca (2021.–2025.).
-Autori: Veronika Novoselac i Luka Šikić · radni rukopis.
+Autori su Veronika Novoselac i Luka Šikić · radni rukopis.
 :::
 
 :::

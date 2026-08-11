@@ -9,21 +9,21 @@ Tko su pojedinačni mediji iza brojki? **Katalog izvora** za svaki praćeni izvo
 
 Ovdje su razrađeni profili najvećih izvora. **Tražite određeni medij?** Pretraživanje svih izvora s dovoljno objava nalazi se na stranici [Moj medij](../moj-medij.html).
 
-Cijeli se katalog može vidjeti i kao [mreža izvora](mreza.html) — čvorovi su izvori, a poveznice pripadnost platformi i zajednički brend.
+Cijeli se katalog može vidjeti i kao [mreža izvora](mreza.html). Čvorovi su izvori, a poveznice pripadnost platformi i zajednički brend.
 
 ::: {.callout-note}
 ## Što ovaj katalog jest i što nije
 
 Katalog je **radna verzija**. Oznake konfesionalnog ili sekularnog izvora prijedlozi su koje potvrđuje voditelj projekta, pa ih valja čitati kao indikativne. Brojke su statične i mnogi akteri na novijim platformama imaju tek nekoliko objava, zbog čega njihovi poretci nisu stabilni.
 
-Trenutno je objavljeno **87** izvora, dok je **27** aktera zadržano za uredničku provjeru. Katalog profilira aktere na **6** platformi, a korpus ih ima **9**; Reddit, forumi i komentari nisu profilirani kao pojedinačni akteri.
+Trenutno je objavljeno **87** izvora, dok je **27** aktera zadržano za uredničku provjeru. Katalog profilira aktere na **6** platformi, a korpus ih ima **9**. Reddit, forumi i komentari nisu profilirani kao pojedinačni akteri.
 :::
 
 Brojke obuhvaćaju 413.985 objava u razdoblju 2021.–2026. i računaju se iz javnih agregata bez osobnih podataka. Kako su nastali i kako se mjere volumen, angažman i doseg, opisano je u [Metodologiji](../metodologija.html), a struktura same baze na stranici [Baza podataka](../baza.html).
 
 ## Web
 
-Praćeni izvori na platformi Web (poredano po volumenu). Cjeloviti pregled: [Web](platforma-web.html).
+Praćeni izvori na platformi Web (poredano po volumenu). Cjeloviti pregled donosi stranica [Web](platforma-web.html).
 
 | Izvor | Tipologija | Objava | Interakcija |
 |---|---|---:|---:|
@@ -46,7 +46,7 @@ Praćeni izvori na platformi Web (poredano po volumenu). Cjeloviti pregled: [Web
 
 ## YouTube
 
-Praćeni izvori na platformi YouTube (poredano po volumenu). Cjeloviti pregled: [YouTube](platforma-youtube.html).
+Praćeni izvori na platformi YouTube (poredano po volumenu). Cjeloviti pregled donosi stranica [YouTube](platforma-youtube.html).
 
 | Izvor | Tipologija | Objava | Interakcija |
 |---|---|---:|---:|
@@ -65,7 +65,7 @@ Praćeni izvori na platformi YouTube (poredano po volumenu). Cjeloviti pregled: 
 
 ## Facebook
 
-Praćeni izvori na platformi Facebook (poredano po volumenu). Cjeloviti pregled: [Facebook](platforma-facebook.html).
+Praćeni izvori na platformi Facebook (poredano po volumenu). Cjeloviti pregled donosi stranica [Facebook](platforma-facebook.html).
 
 | Izvor | Tipologija | Objava | Interakcija |
 |---|---|---:|---:|
@@ -88,7 +88,7 @@ Praćeni izvori na platformi Facebook (poredano po volumenu). Cjeloviti pregled:
 
 ## Instagram
 
-Praćeni izvori na platformi Instagram (poredano po volumenu). Cjeloviti pregled: [Instagram](platforma-instagram.html).
+Praćeni izvori na platformi Instagram (poredano po volumenu). Cjeloviti pregled donosi stranica [Instagram](platforma-instagram.html).
 
 | Izvor | Tipologija | Objava | Interakcija |
 |---|---|---:|---:|
@@ -108,7 +108,7 @@ Praćeni izvori na platformi Instagram (poredano po volumenu). Cjeloviti pregled
 
 ## TikTok
 
-Praćeni izvori na platformi TikTok (poredano po volumenu). Cjeloviti pregled: [TikTok](platforma-tiktok.html).
+Praćeni izvori na platformi TikTok (poredano po volumenu). Cjeloviti pregled donosi stranica [TikTok](platforma-tiktok.html).
 
 | Izvor | Tipologija | Objava | Interakcija |
 |---|---|---:|---:|
@@ -130,7 +130,7 @@ Praćeni izvori na platformi TikTok (poredano po volumenu). Cjeloviti pregled: [
 
 ## Twitter
 
-Praćeni izvori na platformi Twitter (poredano po volumenu). Cjeloviti pregled: [Twitter](platforma-twitter.html).
+Praćeni izvori na platformi Twitter (poredano po volumenu). Cjeloviti pregled donosi stranica [Twitter](platforma-twitter.html).
 
 | Izvor | Tipologija | Objava | Interakcija |
 |---|---|---:|---:|

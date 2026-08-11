@@ -5,7 +5,7 @@ resources/dictionaries/katolički_izrazi_small.xlsx,10455,ec44f1442f25be810e6f64
 resources/dictionaries/lilaHR_clean.xlsx,400292,b8fef0e9d0d69819b5b54b6f24db640e0f72f48edb36a7fc50de17371b24f143,yes,LiLaH transformed workbook,CC BY-NC-SA 4.0
 resources/dictionaries/lilaHR_clean_long.xlsx,435947,3b22f01807261b081c3f6fb31d4dd26569ac4941b9458bb26daa68d10b3a806a,no,LiLaH transformed workbook,CC BY-NC-SA 4.0
 resources/dictionaries/lilaHR_full.xlsx,644518,ed0568ebf4f30e2e4671a3a8f0a0f88c77d12c0fc4a28ad4bba4d9a702a0d6da,no,LiLaH transformed workbook,CC BY-NC-SA 4.0
-resources/dictionaries/source_labels.csv,9550,26a5a7d3b8382c05f41504dd106b17753c43234de2d89d9a1de0f46441279aaf,yes,DigiKat source catalog configuration,project-declared CC BY 4.0
+resources/dictionaries/source_labels.csv,9331,d183fb435bec1ba18b53b5691a26b8ccc013df43d0e79d35e77715332ab0a619,yes,DigiKat source catalog configuration,project-declared CC BY 4.0
 resources/lexicons/crosentilex-negatives.txt,642190,93a52c91d71e4e37b6b921ac2cfff8e0fd99c50d53dcaf9a3ca61c6a4a41fe13,yes,CroSentiLex,MIT per HR-CLARIN record
 resources/lexicons/crosentilex-positives.txt,641404,7810531e2e4a55395a2c93ddef639ea62059faf5de3f7b9345bc0ebec4e7630a,yes,CroSentiLex,MIT per HR-CLARIN record
 resources/lexicons/gs-sentiment-annotations.txt,26629,158e503a74fe38c130058201792b709eac8094e2d2427a951ff8dab85c354473,yes,CroSentiLex gold annotations,MIT per HR-CLARIN record

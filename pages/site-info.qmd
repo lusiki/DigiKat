@@ -32,7 +32,7 @@ Ova stranica je napravljena u [Quarto](https://quarto.org/) kroz [Positron](http
 
 ### Tehnička bilješka o okruženju
 
-Sljedeći zapis dokumentira okruženje u kojem je stranica izgrađena — verziju R-a, operacijski sustav i učitane pakete — radi reproducibilnosti i lakše replikacije.
+Sljedeći zapis dokumentira okruženje u kojem je stranica izgrađena, dakle verziju R-a, operacijski sustav i učitane pakete. Služi reproducibilnosti i lakšoj replikaciji.
 
 ```{r}
 #| label: session-info

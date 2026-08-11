@@ -9,11 +9,11 @@ Ova stranica sažima profil izvora **Stopama Padre Pija** u korpusu katoličke t
 
 ## Što je
 
-Stopama Padre Pija — katolički YouTube kanal
+Stopama Padre Pija, katolički YouTube kanal
 
 ## Profil
 
-Ključni pokazatelji ovog izvora u korpusu:
+Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
@@ -34,21 +34,21 @@ Po volumenu objava, Stopama Padre Pija je na **9. mjestu** od 20 praćenih izvor
 
 ## Tipologija
 
-Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Stopama Padre Pija pripada skupini **Graditelji zajednica**: nizak doseg uz vrlo visok angažman — gradi dubok odnos s vjernom publikom.
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Stopama Padre Pija pripada skupini **Graditelji zajednica**, koju obilježava nizak doseg uz vrlo visok angažman, dakle dubok odnos s vjernom publikom.
 
-Uređivačka oznaka: **konfesionalni izvor** *(predloženo — potvrđuje PI)*
+Uređivačka oznaka je **konfesionalni izvor** *(prijedlog koji potvrđuje voditelj projekta)*
 
 ## Povezano
 
 - [Pregled platforme YouTube](platforma-youtube.html)
 - Srodni akteri: [Majko Marijo](youtube-majko-marijo.html), [Nova Eva](youtube-nova-eva.html), [Dijete Vjere](youtube-dijete-vjere.html)
-- [Katalog izvora — sve platforme](index.html)
+- [Katalog izvora, sve platforme](index.html)
 
 ## Izvori podataka
 
 Podaci: `data/processed/youtube_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-08-11).
 
 ::: {.callout-warning}
-Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.
+Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.
 :::
 

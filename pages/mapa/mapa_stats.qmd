@@ -118,11 +118,11 @@ pair_labels <- topic_pairs %>%
 
 ## Uvod u analizu sadržaja diskursa
 
-O čemu se zapravo piše kada se piše o katoličkim temama, i koje teme izazovu najviše reakcija? Nakon pregleda glavnih aktera i platformi u [Mapi ekosustava](mapa.html), ova analitička mapa — **Tematske struje** — usmjerava fokus na sadržaj. Odgovara na istraživačka pitanja Q1 (što se objavljuje) i Q2 (uz koje se druge teme katoličke teme nalaze).
+O čemu se zapravo piše kada se piše o katoličkim temama, i koje teme izazovu najviše reakcija? Nakon pregleda glavnih aktera i platformi u [Mapi ekosustava](mapa.html), na sadržaj se usmjerava analitička mapa **Tematske struje**. Odgovara na istraživačka pitanja Q1 (što se objavljuje) i Q2 (uz koje se druge teme katoličke teme nalaze).
 
 Teme su prepoznate računalnom obradom teksta na dijelu korpusa od `r digikat_hr_count(mf$corpus$rows, "objava")`, na `r digikat_hr_count(sample_n, "dokument")` iz razdoblja `r raspon` Veličina i način izvlačenja tog uzorka opisani su u [Metodologiji](../metodologija.html). Godina 2026. nepotpuna je, pa usporedbe po godinama uključuju djelomično razdoblje.
 
-Cilj mape jest dati pregled sadržaja u tri dijela. Prvi prikazuje učestalost i gustoću unaprijed definiranih tematskih rječnika. Drugi uspoređuje zabilježene interakcije te Facebookove reakcije Love i Angry među dominantnim temama. Treći prikazuje najčešće vlastite imenice i supojavljivanje tematskih oznaka. `r nrow(engagement_by_topic)` kategorija definirano je teološkom i komunikološkom ekspertizom; riječ je o vođenom rječničkom označavanju, a ne o neovisno validiranoj klasifikaciji cjelokupnog značenja teksta.
+Cilj mape jest dati pregled sadržaja u tri dijela. Prvi prikazuje učestalost i gustoću unaprijed definiranih tematskih rječnika. Drugi uspoređuje zabilježene interakcije te Facebookove reakcije Love i Angry među dominantnim temama. Treći prikazuje najčešće vlastite imenice i supojavljivanje tematskih oznaka. `r nrow(engagement_by_topic)` kategorija definirano je teološkom i komunikološkom ekspertizom. Riječ je o vođenom rječničkom označavanju, a ne o neovisno validiranoj klasifikaciji cjelokupnog značenja teksta.
 
 <div class="metric-grid">
 <div class="metric-card">
@@ -176,7 +176,7 @@ Oblak zato služi kao leksička orijentacija. Česte crkvene, društvene i vreme
 
 ## Struktura tematskog pejzaža
 
-Prvi dio tematske analize usmjeren je prema razumijevanju opće strukture diskursa. U tom cilju odgovaramo na sljedeća pitanja: Koje tematske kategorije prevladavaju, a koje zauzimaju marginalne pozicije? Kako se njihova zastupljenost mijenja kroz promatrano razdoblje? Koliko su te teme centralne za članke u kojima se pojavljuju?
+Prvi dio tematske analize usmjeren je prema razumijevanju opće strukture diskursa. U tom cilju odgovaramo na tri pitanja. Koje tematske kategorije prevladavaju, a koje zauzimaju marginalne pozicije? Kako se njihova zastupljenost mijenja kroz promatrano razdoblje? Koliko su te teme centralne za članke u kojima se pojavljuju?
 
 ### Vremenska dinamika tematskih kategorija
 
@@ -232,7 +232,7 @@ Drugi dio uspoređuje prosječan broj zabilježenih interakcija te udjele dviju 
 
 ### Zabilježene interakcije prema tematskim kategorijama
 
-Najveći prosjek zabilježenih interakcija po dokumentu imaju `r top_engagement_names`. Poredak je deskriptivan: ne kontrolira platformu, veličinu izvora, godinu ni različite definicije interakcije.
+Najveći prosjek zabilježenih interakcija po dokumentu imaju `r top_engagement_names`. Poredak je deskriptivan i ne kontrolira platformu, veličinu izvora, godinu ni različite definicije interakcije.
 
 Zato se iz grafikona ne može izdvojiti konflikt kao uzročni pokretač angažmana. On pokazuje koje se tematske oznake u ovom uzorku pojavljuju uz više interakcija, a objašnjenje razlike zahtijevalo bi model koji odvaja platformu, izvor i vrijeme.
 
@@ -255,9 +255,9 @@ ggplot(engagement_by_topic, aes(x = avg_interactions, y = reorder(dominant_topic
 
 ### Udio reakcija Love i Angry prema tematskim kategorijama
 
-Facebookove reakcije Love i Angry ovdje se prikazuju kao dva odvojena signala među dokumentima s više od deset ukupnih reakcija; grafikon zadržava teme s više od sto ukupnih reakcija u tom podskupu. One ne predstavljaju cjelovitu emocionalnu obojenost publike ni svih platformi.
+Facebookove reakcije Love i Angry ovdje se prikazuju kao dva odvojena signala među dokumentima s više od deset ukupnih reakcija, a grafikon zadržava teme s više od sto ukupnih reakcija u tom podskupu. One ne predstavljaju cjelovitu emocionalnu obojenost publike ni svih platformi.
 
-Najveći udio reakcije Love imaju `r top_love_names`, a najveći udio reakcije Angry `r top_angry_names`. Ti omjeri opisuju zabilježene Facebookove reakcije uz dominantne teme; ne mjere izravno polarizaciju društva.
+Najveći udio reakcije Love imaju `r top_love_names`, a najveći udio reakcije Angry `r top_angry_names`. Ti omjeri opisuju zabilježene Facebookove reakcije uz dominantne teme i ne mjere izravno polarizaciju društva.
 
 ```{r}
 #| label: plot-polarization-by-topic
@@ -362,12 +362,12 @@ Analiza razlikuje `r nrow(engagement_by_topic)` rječnički definiranih tematski
 
 ::: {.featured-box}
 ### Tematske struje u novom uzorku
-Najzastupljenije su `r top_topic_names`; najveći prosjek interakcija imaju `r top_engagement_names`. Love i Angry reakcije daju dodatni, ali platformski ograničen signal recepcije.
+Najzastupljenije su `r top_topic_names`, a najveći prosjek interakcija imaju `r top_engagement_names`. Love i Angry reakcije daju dodatni, ali platformski ograničen signal recepcije.
 :::
 
 Podaci podupiru uži zaključak o preklapajućim tematskim strujama, ne strogu podjelu diskursa na dva svijeta. Pojedine teme razlikuju se po frekvenciji, gustoći rječničkih podudaranja i zabilježenim reakcijama, dok mreža pokazuje da se oznake povezuju preko više kombinacija.
 
-Mreža dodaje relacijsku dimenziju: pokazuje koje rječničke oznake češće supostoje u istim dokumentima. Za tumačenje pojedinačnih veza kao političke instrumentalizacije, privatne duhovnosti ili javnoga identiteta trebalo bi pregledati pripadajuće tekstove, što ova agregirana stranica ne čini.
+Mreža dodaje relacijsku dimenziju i pokazuje koje rječničke oznake češće supostoje u istim dokumentima. Za tumačenje pojedinačnih veza kao političke instrumentalizacije, privatne duhovnosti ili javnoga identiteta trebalo bi pregledati pripadajuće tekstove, što ova agregirana stranica ne čini.
 
 Za uredništvo je najkorisnija razlika između najzastupljenijih i najodjekivanijih tema. One se ne poklapaju, pa tema koja zauzima najviše prostora nije nužno tema koja izaziva najviše reakcija, a tema s malo objava može imati visok prosjek po objavi. Tko planira sadržaj, iz toga može vidjeti gdje je prostor zasićen, a gdje ne.
 

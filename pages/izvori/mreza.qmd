@@ -40,27 +40,27 @@ sn <- build_source_network("../../data/processed",
 ```
 
 **Mreža izvora** prikazuje [Katalog izvora](index.html) kao **interaktivni graf** preko **šest platformi**
-za koje katalog ima profile pojedinačnih aktera: svaki je objavljeni izvor jedan čvor, a poveznice među
-čvorovima one su koje i sam katalog bilježi. Službeni korpus obuhvaća devet vrsta izvora i platformi;
+za koje katalog ima profile pojedinačnih aktera. Svaki je objavljeni izvor jedan čvor, a poveznice među
+čvorovima one su koje i sam katalog bilježi. Službeni korpus obuhvaća devet vrsta izvora i platformi.
 Reddit, forumi i komentari prisutni su u korpusu, ali ovdje nisu profilirani kao pojedinačni akteri.
-Struktura kataloga — inače vidljiva samo listanjem pojedinačnih stranica — tako se može sagledati odjednom
-i istraživati mišem.
+Struktura kataloga inače je vidljiva samo listanjem pojedinačnih stranica, a ovdje se može sagledati
+odjednom i istraživati mišem.
 Mreža dopunjuje [Mapu ekosustava](../mapa/mapa.html) i dijeli likovni jezik s
 [tematskim mrežama](../mapa/mapa_stats.html).
 
 ::: {.callout-note}
 ## Kako čitati i koristiti mrežu
 
-Čvorovi su pojedinačni izvori (`r sn$n_actors` objavljenih aktera), obojeni prema platformi; veličina čvora
-razmjerna je volumenu objava. Šest najvećih čvorova (s podebljanim nazivom) su platforme (Web, YouTube,
-Facebook, Instagram, TikTok, Twitter). Poveznice su dvojake: **tanke sive** spajaju izvor s njegovom
-platformom (pripadnost), a **deblje plave** spajaju isti brend ili osobu prisutnu na više platformi
+Čvorovi su pojedinačni izvori (`r sn$n_actors` objavljenih aktera), obojeni prema platformi, a veličina
+čvora razmjerna je volumenu objava. Šest najvećih čvorova s podebljanim nazivom su platforme (Web, YouTube,
+Facebook, Instagram, TikTok, Twitter). Poveznice su dvojake. **Tanke sive** spajaju izvor s njegovom
+platformom, a **deblje plave** spajaju isti brend ili osobu prisutnu na više platformi
 (primjerice Laudato ili Index).
 
-Mreža je **interaktivna**: čvorove možete **povlačiti mišem**, prikaz **zumirati** i pomicati, a prelaskom
+Mreža je **interaktivna**. Čvorove možete **povlačiti mišem**, prikaz **zumirati** i pomicati, a prelaskom
 preko čvora prikazuju se podaci o izvoru (tipologija, volumen, angažman, doseg). Klik na čvor ističe njegove
-izravne veze. Poveznice su **strukturne** — pripadnost i zajednički brend/osoba, a **ne** znače zajedničku
-publiku, zajedničke teme ni utjecaj.
+izravne veze. Poveznice su **strukturne**, dakle pripadnost i zajednički brend ili osoba, i **ne** znače
+zajedničku publiku, zajedničke teme ni utjecaj.
 :::
 
 ```{r}
@@ -70,22 +70,22 @@ publiku, zajedničke teme ni utjecaj.
 source_network_widget(sn, height = "760px")
 ```
 
-*Izvor: `data/processed/*_actors.rds`; poveznice iz `resources/dictionaries/source_labels.csv`.*
+*Izvor: `data/processed/*_actors.rds`, uz poveznice iz `resources/dictionaries/source_labels.csv`.*
 
 Mreža obuhvaća **`r sn$n_actors` objavljenih profila na šest platformi**. Web, YouTube i Facebook nose
 najveće volumene u katalogu. Na Instagramu, TikToku i Twitteru uzorci pojedinačnih profila znatno su tanji
 i miješaju medijske brendove, institucije i pojedince, pa njihov položaj ne treba tumačiti kao cjelovit
 popis najvažnijih aktera tih platformi. TikTok u novom presjeku među najaktivnijim profilima ponajprije
-povezuje informativne brendove, uz `shkm2026` i Mladifest Hrvatska; Twitter spaja Zagrebačku nadbiskupiju,
+povezuje informativne brendove, uz `shkm2026` i Mladifest Hrvatska. Twitter spaja Zagrebačku nadbiskupiju,
 političke i privatne račune te medije. Najširi mostovi među platformama pripadaju brendovima Dnevnik.hr i
 Laudato, prisutnima na po četiri platforme, dok 24sata, Index, Slobodna Dalmacija i Večernji list povezuju
 po tri.
 
 ::: {.callout-warning}
 Mreža prikazuje **strukturu kataloga**, ne izmjerene odnose među akterima. Poveznice su strukturne
-(pripadnost platformi te zajednički brend ili osoba); ne predstavljaju zajedničku publiku, tematsko
-preklapanje ni utjecaj. Uz institucije, na novijim platformama prikazani su i **pojedinci** (političari i
-privatne osobe) — na izričitu odluku voditelja projekta; svaki se akter može isključiti. Brojke i
-pripadnosti indikativne su (agregati **2021.–2026.**, pri čemu je 2026. nepotpuna; mnogi akteri na novim
-platformama imaju tek nekoliko objava).
+(pripadnost platformi te zajednički brend ili osoba) i ne predstavljaju zajedničku publiku, tematsko
+preklapanje ni utjecaj. Uz institucije, na novijim platformama prikazani su i **pojedinci**, političari i
+privatne osobe, na izričitu odluku voditelja projekta. Svaki se akter može isključiti. Brojke i
+pripadnosti indikativne su. Agregati pokrivaju **2021.–2026.**, pri čemu je 2026. nepotpuna, a mnogi akteri
+na novim platformama imaju tek nekoliko objava.
 :::

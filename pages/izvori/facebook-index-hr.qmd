@@ -9,11 +9,11 @@ Ova stranica sažima profil izvora **Index.hr** u korpusu katoličke tematike. D
 
 ## Što je
 
-Index.hr — news-portal (Facebook)
+Index.hr, news-portal (Facebook)
 
 ## Profil
 
-Ključni pokazatelji ovog izvora u korpusu:
+Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
@@ -34,21 +34,21 @@ Po volumenu objava, Index.hr je na **16. mjestu** od 19 praćenih izvora na plat
 
 ## Tipologija
 
-Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Index.hr pripada skupini **Specijalizirani akteri**: umjeren doseg i angažman — usmjeren na užu, specifičnu publiku.
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Index.hr pripada skupini **Specijalizirani akteri**, koju obilježava umjeren doseg i angažman, usmjeren na užu i specifičnu publiku.
 
-Uređivačka oznaka: **sekularni izvor** *(predloženo — potvrđuje PI)*
+Uređivačka oznaka je **sekularni izvor** *(prijedlog koji potvrđuje voditelj projekta)*
 
 ## Povezano
 
 - [Pregled platforme Facebook](platforma-facebook.html)
 - Srodni akteri: [Net.hr](facebook-net-hr.html), [24sata](facebook-24sata.html), [Večernji list](facebook-vecernji-list.html)
-- [Katalog izvora — sve platforme](index.html)
+- [Katalog izvora, sve platforme](index.html)
 
 ## Izvori podataka
 
 Podaci: `data/processed/facebook_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-08-11).
 
 ::: {.callout-warning}
-Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.
+Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.
 :::
 

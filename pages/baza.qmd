@@ -77,7 +77,7 @@ web_share   <- plat[SOURCE_TYPE == "web", pct]
 Trebate podatke o tome kako hrvatski mediji pišu o katoličkim temama? Ova stranica opisuje bazu na
 kojoj počivaju sve analize projekta, redak po redak i stupac po stupac. Namijenjena je istraživačima,
 novinarima i studentima koji žele znati što točno u bazi jest, a što nije, prije nego što je
-upotrijebe. Podaci su otvoreni pod licencijom CC BY 4.0; pristup punom tekstu objava odobrava se
+upotrijebe. Podaci su otvoreni pod licencijom CC BY 4.0, a pristup punom tekstu objava odobrava se
 zasebno. Kraći opis postupka nalazi se u [Metodologiji](metodologija.html), a ovdje slijedi
 cjelovit popis sadržaja.
 
@@ -91,8 +91,8 @@ Objava ulazi u korpus jer *govori o katoličkim temama*, bez obzira na to objavl
 (katolički) ili sekularni (mainstream) medij. Zato korpus obuhvaća i jedne i druge, od crkvenih portala i
 župnih Facebook-stranica do najčitanijih općih news-portala.
 
-Korpus je empirijska osnova za četiri analitičke razine projekta: [Mapu ekosustava](mapa/mapa.html),
-[Tematske struje](mapa/mapa_stats.html), [Atmosferu diskursa](mapa/diskurs.html) i
+Korpus je empirijska osnova za četiri analitičke razine projekta, a to su [Mapa ekosustava](mapa/mapa.html),
+[Tematske struje](mapa/mapa_stats.html), [Atmosfera diskursa](mapa/diskurs.html) i
 [Fokus na događaje](mapa/događaji.html).
 
 Na Kaggleu je javno arhiviran **stariji presjek** baze
@@ -146,11 +146,11 @@ hrvatskih religijskih pojmova** (biskup, misa, euharistija, hodočašće, encikl
 regularni izrazi koji pokrivaju padeže i množine. Pojmovi su podijeljeni na **`r n_odlucnih` odlučnih**, koji sami
 po sebi upućuju na katolički sadržaj, i na preostale dvojbene, koji to čine tek u društvu drugih. Objava prolazi
 prvi korak ako pogodi **najmanje jedan odlučan i najmanje dva različita pojma ukupno**, i to unutar **prvih
-`r prozor` znakova** teksta — dakle unutar onoga što drugi korak i ljudski koder doista pročitaju. Riječ koja se
+`r prozor` znakova** teksta, dakle unutar onoga što drugi korak i ljudski koder doista pročitaju. Riječ koja se
 pojavi tek dublje u tekstu ne otvara vrata korpusu.
 
 Drugi je korak model. Objave koje su prošle popis riječi ocjenjuje ansambl klasifikatora izgrađen na ručno
-kodiranim objavama; ulaze one s ocjenom **`r prag` ili višom**. Popis riječi prepoznaje da se o religiji govori,
+kodiranim objavama, a ulaze one s ocjenom **`r prag` ili višom**. Popis riječi prepoznaje da se o religiji govori,
 a model prosuđuje govori li se o katoličkoj temi ili je riječ o prometnoj nesreći na Trgu svetog Florijana.
 
 Pravilo je isto za cijelo razdoblje. Zadržalo je **`r fmt_int(n_records)` od `r fmt_int(n_accumulator)` redaka**
@@ -220,7 +220,7 @@ kable(comp, caption = "Sastav korpusa prema tipu izvora (indikativno, na razini 
 ```
 
 Indikativno razvrstani udjeli razlikuju se po platformi. Tablica opisuje objave kojima je izvor bilo moguće
-označiti; ne predstavlja cjelovit popis aktera platforme niti dokazuje kakva je njezina ukupna publika.
+označiti. Ne predstavlja cjelovit popis aktera platforme niti dokazuje kakva je njezina ukupna publika.
 
 ```{r}
 #| label: outlet-platform-table
@@ -230,32 +230,32 @@ kable(plat_conf, caption = "Udio konfesionalnih izvora unutar glavnih platformi"
 ```
 
 ::: {.callout-note}
-**Napomena o klasifikaciji.** Razvrstavanje izvora je **indikativno** — ručno je označen skup najčešćih izvora
+**Napomena o klasifikaciji.** Razvrstavanje izvora je **indikativno**, jer je ručno označen skup najčešćih izvora
 (uz obrasce za crkvene domene poput *biskupija*, *župa*, *franjev*), čime je razvrstano oko
 **`r fmt_pct(class_pct, 0)`** objava. Preostalo („Ostalo / nerazvrstano") uglavnom su sekularne **lokalne
 vijesti**. Tipologija je analitički presjek, a ne prirodna kategorija, pa navedene udjele treba čitati kao red
 veličine, a ne kao točne mjere.
 :::
 
-## Pojedinačni izvori: katalog i mreža
+## Pojedinačni izvori, katalog i mreža
 
 Iza zbirnih brojki stoje konkretni akteri. [Katalog izvora](izvori/index.html) okuplja uređivački objavljene
-profile za šest platformi s usporedivim agregatima: web, YouTube, Facebook, Instagram, TikTok i Twitter.
+profile za šest platformi s usporedivim agregatima, a to su web, YouTube, Facebook, Instagram, TikTok i Twitter.
 Reddit, forumi i komentari prisutni su u korpusu, ali katalog ih ne profilira kao pojedinačne aktere. Za svaki
 objavljeni profil donosi volumen, interakcije i doseg te pripadnost opisnoj tipologiji (Divovi, Graditelji
 zajednica, Megafoni, Specijalizirani akteri), izračunatoj jednako kao u
 [Mapi ekosustava](mapa/mapa.html).
 
 Isti se katalog može sagledati i kao [mreža izvora](izvori/mreza.html): interaktivni graf u kojem je svaki izvor
-jedan čvor, obojen prema platformi i skaliran prema volumenu objava. Poveznice među čvorovima su **strukturne** —
+jedan čvor, obojen prema platformi i skaliran prema volumenu objava. Poveznice među čvorovima su **strukturne**, dakle
 pripadnost izvora svojoj platformi te zajednički brend ili osoba prisutna na više platformi (primjerice Laudato
 ili Index). Struktura kataloga, inače vidljiva tek listanjem pojedinačnih stranica, tako se vidi odjednom i
 istražuje mišem.
 
 ::: {.callout-warning}
 Mreža prikazuje **strukturu kataloga**, a ne izmjerene odnose među akterima. Poveznice **ne** znače zajedničku
-publiku, tematsko preklapanje ni utjecaj: riječ je isključivo o pripadnosti platformi i zajedničkom brendu.
-Katalog je **radna verzija** — uređivačke oznake (konfesionalni/sekularni izvor) prijedlozi su koje potvrđuje
+publiku, tematsko preklapanje ni utjecaj. Riječ je isključivo o pripadnosti platformi i zajedničkom brendu.
+Katalog je **radna verzija**. Uređivačke oznake (konfesionalni ili sekularni izvor) prijedlozi su koje potvrđuje
 voditelj projekta, a brojke su indikativne.
 :::
 
@@ -266,9 +266,9 @@ platformskim API-jima) u obliku `.xlsx` tablica, koje su potom spojene i filtrir
 
 Pri novim se dopunama deduplikacija provodi po **kanoniziranom URL-u**. Uklanjaju se samo poznati parametri
 praćenja (primjerice `utm_*` i `fbclid`), dok parametri koji određuju identitet objave ostaju sačuvani
-(primjerice YouTubeov `v`). URL ipak nije zajamčeno jedinstven ključ: povijesni dio korpusa nastao je prije
+(primjerice YouTubeov `v`). URL ipak nije zajamčeno jedinstven ključ, jer je povijesni dio korpusa nastao prije
 uvođenja tog pravila, a jedan URL može predstavljati više zabilježenih jedinica monitoringa. Ukupan broj objava
-stoga treba čitati kao **gornju granicu**. Pokrivenost je omeđena dosegom servisa za monitoring — riječ je o
+stoga treba čitati kao **gornju granicu**. Pokrivenost je omeđena dosegom servisa za monitoring, pa je riječ o
 velikom **opservacijskom**, a ne vjerojatnosnom uzorku.
 
 ## Opseg korpusa
@@ -299,7 +299,7 @@ kable(plat_disp, caption = "Distribucija objava po platformama", align = c("l", 
 ```
 
 Web-sadržaj čini `r fmt_pct(web_share)` službenoga korpusa. Taj udio opisuje sastav prikupljene građe i dostupnost
-izvora u monitoringu; sam po sebi ne mjeri preferencije publike, stvarni udio platforme u hrvatskom
+izvora u monitoringu. Sam po sebi ne mjeri preferencije publike, stvarni udio platforme u hrvatskom
 digitalnom prostoru ni komunikacijsku učinkovitost.
 
 ### Jezik i geografija
@@ -312,15 +312,15 @@ hr_only_loc <- sum(dta$LOCATIONS == "HR", na.rm = TRUE)
 ```
 
 Jezik i geografija strojno su detektirani i **višeoznačni** (jedna objava može nositi više oznaka). Hrvatski
-dominira — **`r fmt_int(pure_hr)`** objava nosi isključivo oznaku `hr`. Korpus ipak sadrži i znatan
-**regionalni južnoslavenski** sadržaj (bosanski, srpski, slovenski) — oko **`r fmt_int(any_bcs)`** objava ima
+dominira, pa **`r fmt_int(pure_hr)`** objava nosi isključivo oznaku `hr`. Korpus ipak sadrži i znatan
+**regionalni južnoslavenski** sadržaj (bosanski, srpski, slovenski), pa oko **`r fmt_int(any_bcs)`** objava ima
 barem jednu takvu oznaku. Geografski je težište Hrvatska (**`r fmt_int(hr_only_loc)`** objava označeno je samo
 kao `HR`), uz prelijev prema Bosni i Hercegovini te ostatku regije. Filtriranje na `LANGUAGES == "hr"` stoga tiho
 izbacuje regionalni sadržaj. S time treba računati pri ponovnom korištenju.
 
 ## Struktura podataka
 
-Korpus ima **`r n_vars` varijable**, koje se grupiraju u sedam funkcionalnih skupina: vremenske (`DATE`, `TIME`,
+Korpus ima **`r n_vars` varijable**, koje se grupiraju u sedam funkcionalnih skupina. To su vremenske (`DATE`, `TIME`,
 `year`), sadržaj i tekst (`TITLE`, `FULL_TEXT`, `MENTION_SNIPPET`, `URL`, `URL_PHOTO`), izvor i akter (`FROM`,
 `AUTHOR`, `SOURCE_TYPE`), monitoring i podudaranje (`GROUP_NAME`, `KEYWORD_NAME`, `FOUND_KEYWORDS`, `LANGUAGES`,
 `LOCATIONS`, `data_source`), tonalitet (`AUTO_SENTIMENT`, `MANUAL_SENTIMENT`), angažman i doseg (`REACH`,
@@ -331,7 +331,7 @@ pripadajućom skupinom nalazi se u referentnoj tablici na dnu stranice.
 
 **Redci službenoga korpusa, URL-ovi i puni tekst (`FULL_TEXT`) nisu dio repozitorijske distribucije.** Javno se
 dijele samo agregati bez teksta i URL-ova, manifest korpusa te potpuno sintetički uzorak. Pristup korpusu dostupan
-je **na zahtjev** za istraživačke svrhe. Kontrolirane kategorije imaju zatvoren skup vrijednosti: `SOURCE_TYPE`
+je **na zahtjev** za istraživačke svrhe. Kontrolirane kategorije imaju zatvoren skup vrijednosti. Tako `SOURCE_TYPE`
 ima `r n_platforms` razina, `AUTO_SENTIMENT` četiri (uključujući `undefined`), a
 `INFLUENCE_SCORE` `r length(unique(na.omit(dta$INFLUENCE_SCORE)))` razina. Polje `FOUND_KEYWORDS` dolazi iz servisa za monitoring i **šumovito** je
 (najčešća vrijednost je veznik „i"), pa ga ne treba tumačiti kao dokaz religijskog filtra.
@@ -348,7 +348,7 @@ kable(sent_disp, caption = "Distribucija automatskog (vendorskog) tonaliteta", a
 manual_sent_missing_pct <- 100 * mean(is.na(dta$MANUAL_SENTIMENT))
 ```
 
-Varijabla `AUTO_SENTIMENT` je **vendorska** — izračunava je servis za monitoring nepoznatom metodom i gruba je
+Varijabla `AUTO_SENTIMENT` je **vendorska**. Izračunava je servis za monitoring nepoznatom metodom i gruba je
 (tri razine + `undefined`). Ona je **distinktna** od projektnoga leksičkog tonaliteta koji se računa u sloju
 [Atmosfera diskursa](mapa/diskurs.html) i ne treba je s njime miješati. Ručno kodirani tonalitet
 (`MANUAL_SENTIMENT`) u ovom je izdanju **prazan po dizajnu** (`r fmt_pct(manual_sent_missing_pct, 0)` nedostaje).
@@ -373,12 +373,12 @@ kable(avail, caption = "Dostupnost ključnih metrika po platformi (% popunjeno)"
 author_missing_pct <- 100 * mean(is.na(dta$AUTHOR) | (is.character(dta$AUTHOR) & dta$AUTHOR == ""))
 ```
 
-Metrike angažmana **nisu popunjene za sve platforme** — `REACH` i reakcije postoje uglavnom za web i Facebook,
+Metrike angažmana **nisu popunjene za sve platforme**, pa `REACH` i reakcije postoje uglavnom za web i Facebook,
 `VIEW_COUNT` samo za video (YouTube, Instagram), a forumi, Reddit i komentari nose malo metrika. Zato prosjek preko
 platformi spaja strukturne praznine i vodi u pogrešan zaključak.
 
-Nedostajuće vrijednosti dolaze u **tri vrste**. Prva je **prazno po dizajnu** — `MANUAL_SENTIMENT`, `TAGS`,
-`TWEET_COUNT` i `COUNT` u potpunosti nedostaju u ovom izdanju. Druga je **platformski uvjetovana** — `VIEW_COUNT`,
+Nedostajuće vrijednosti dolaze u **tri vrste**. Prva je **prazno po dizajnu**, pa `MANUAL_SENTIMENT`, `TAGS`,
+`TWEET_COUNT` i `COUNT` u potpunosti nedostaju u ovom izdanju. Druga je **platformski uvjetovana**, pa `VIEW_COUNT`,
 Facebook-reakcije i `REDDIT_SCORE` postoje samo na svojoj matičnoj platformi. Treća je **stvarno nedostajanje**,
 poput autora objave (`AUTHOR`), koji nedostaje u `r fmt_pct(author_missing_pct, 0)` slučajeva.
 
@@ -404,7 +404,7 @@ su izračunana i zadržavaju već objavljene brojeve.
 
 Službeni korpus i akumulator iz kojega je izveden nisu javni repozitorijski artefakti. Javno su dostupni
 **agregati bez teksta i URL-ova** te potpuno sintetički testni uzorak, koje projekt označava licencijom
-**CC BY 4.0**. Kaggle zasebno čuva stariji javni presjek; prije uporabe treba provjeriti njegovu verziju,
+**CC BY 4.0**. Kaggle zasebno čuva stariji javni presjek. Prije uporabe treba provjeriti njegovu verziju,
 sadržaj i licenciju navedenu na samoj platformi. Kod i metodološki filtar `` `r mf$rule$terms_file` `` dostupni
 su na [GitHubu](https://github.com/lusiki/DigiKat), a potpuna matrica dostupnosti nalazi se u
 [`DATA_AVAILABILITY.md`](https://github.com/lusiki/DigiKat/blob/main/DATA_AVAILABILITY.md).
@@ -412,7 +412,7 @@ su na [GitHubu](https://github.com/lusiki/DigiKat), a potpuna matrica dostupnost
 **Kako je korpus nastao (reproducibilnost).** Sirove `.xlsx` izvoze → spajanje u akumulator
 `merged_comprehensive.rds` (sve što je servis isporučio) → popis od `r n_terms` pojmova unutar prvih
 `r prozor` znakova (≥1 odlučan, ≥2 ukupno) → ansambl drugog koraka uz prag `r prag` → **`digikat_corpus.rds`**,
-službeni korpus koji ova stranica opisuje. Ni akumulator ni korpus nisu u repozitoriju jer sadrže puni tekst;
+službeni korpus koji ova stranica opisuje. Ni akumulator ni korpus nisu u repozitoriju jer sadrže puni tekst, pa
 u njemu je `data/digikat_corpus_manifest.json`, koji bilježi opseg, raspon i točno pravilo rezanja. Repozitorijska
 distribucija ne sadrži izvorne retke, tekstualne isječke ni URL-ove.
 
@@ -420,7 +420,7 @@ distribucija ne sadrži izvorne retke, tekstualne isječke ni URL-ove.
 nazive javnih stranica i `FOLLOWERS_COUNT`). To što je objava javna ne uklanja obvezu ograničenja svrhe,
 sigurne pohrane i provjere otkrivanja. Redci, URL-ovi i puni tekst izuzeti su iz repozitorijske distribucije.
 
-Preporučeni oblik citiranja:
+Preporučeni oblik citiranja glasi ovako.
 
 > Šikić, L. i sur. (2025.–2027.). *DigiKat: Prikaz i analiza katoličke tematike u digitalnom medijskom
 > prostoru.* Hrvatsko katoličko sveučilište. Presjek korpusa: `r snap_str`
@@ -435,7 +435,7 @@ Preporučeni oblik citiranja:
 dta <- readRDS("digikat_corpus.rds")
 ```
 
-## Referenca: potpuni popis varijabli
+## Referenca s potpunim popisom varijabli
 
 ```{r}
 #| label: full-variable-list

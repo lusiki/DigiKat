@@ -16,8 +16,9 @@ categories: ["Tematsko istraživanje", "Nacrt u izradi"]
 ---
 
 Studija pokazuje da uobičajena binarna podjela medijskog diskursa o hrvatskim katoličkim odredištima
-na religijski i turistički registar previđa treći, kvantitativno značajan registar — memorijalni,
-u kojem se svetište ili hodočašće tematski povezuje sa žrtvama i ratnim sjećanjem.
+na religijski i turistički registar previđa treći, kvantitativno značajan registar. To je
+memorijalni registar, u kojem se svetište ili hodočašće tematski povezuje sa žrtvama i ratnim
+sjećanjem.
 
 ## Istraživačko pitanje
 
@@ -36,10 +37,10 @@ strukturalnim modelom tema za induktivnu validaciju rječničke klasifikacije.
 
 ## Ključni nalaz
 
-15,1 % članaka pripada religijsko-memorijalnom okviru — gotovo svaki sedmi tekst o promatranim
-odredištima govori jezikom spomena i žrtve, a ne (samo) duhovnosti ili turizma. Memorijalni je
+15,1 % članaka pripada religijsko-memorijalnom okviru. Gotovo svaki sedmi tekst o promatranim
+odredištima govori jezikom spomena i žrtve, a ne samo duhovnosti ili turizma. Memorijalni je
 registar raspoređen po svim tipovima odredišta, no izrazito koncentriran u Voćinu, mjestu
-zapadnoslavonskog masakra iz 1991., gdje mu pripada 42 % članaka — gotovo trostruko više od
+zapadnoslavonskog masakra iz 1991., gdje mu pripada 42 % članaka. To je gotovo trostruko više od
 korpusnog prosjeka. Nalaz opstaje nakon kontrole za destinaciju, godinu, mjesec, platformu i
 blagdanski prozor.
 
@@ -55,8 +56,8 @@ Pun tekst nacrta dostupan je u tri usklađena formata.
 
 ## Status
 
-Nacrt u izradi — autorice/autor
+Nacrt je u izradi. Potpisuju ga
 [Matea Topić Crnoja](https://www.unicath.hr/odjeli-i-fakultet/nastavnici/matea-topic-crnoja),
 [Petra Palić](https://www.unicath.hr/odjeli-i-fakultet/nastavnici/petra-palic) i
 [Luka Šikić](https://www.lukasikic.info/) (Odjel za sociologiju, Hrvatsko katoličko sveučilište).
-Dio drugog izlaznog toka projekta (tematske studije i radovi) — vidi [Projektni raspored](../schedule.qmd).
+Dio je drugoga izlaznog toka projekta, koji obuhvaća tematske studije i radove. Popis je na stranici [Projektni raspored](../schedule.qmd).

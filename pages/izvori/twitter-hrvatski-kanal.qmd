@@ -13,7 +13,7 @@ Hrvatski Kanal (Twitter/X)
 
 ## Profil
 
-Ključni pokazatelji ovog izvora u korpusu:
+Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
@@ -38,21 +38,21 @@ Po volumenu objava, Hrvatski Kanal je na **10. mjestu** od 23 praćenih izvora n
 
 ## Tipologija
 
-Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Hrvatski Kanal pripada skupini **Graditelji zajednica**: nizak doseg uz vrlo visok angažman — gradi dubok odnos s vjernom publikom.
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Hrvatski Kanal pripada skupini **Graditelji zajednica**, koju obilježava nizak doseg uz vrlo visok angažman, dakle dubok odnos s vjernom publikom.
 
-Uređivačka oznaka: **sekularni izvor** *(predloženo — potvrđuje PI)*
+Uređivačka oznaka je **sekularni izvor** *(prijedlog koji potvrđuje voditelj projekta)*
 
 ## Povezano
 
 - [Pregled platforme Twitter](platforma-twitter.html)
 - Srodni akteri: [DNEVNIK.hr](twitter-dnevnik-hr.html), [Darko Lesinger](twitter-darko-lesinger.html), [Stephen Nikola Bartulica](twitter-stephen-nikola-bartulica.html)
-- [Katalog izvora — sve platforme](index.html)
+- [Katalog izvora, sve platforme](index.html)
 
 ## Izvori podataka
 
 Podaci: `data/processed/twitter_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-08-11).
 
 ::: {.callout-warning}
-Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.
+Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.
 :::
 

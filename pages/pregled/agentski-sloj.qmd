@@ -29,7 +29,7 @@ Jezik: <strong style="color:#0F4C5C;">Hrvatski</strong> · <a href="agentic-laye
 </p>
 ```
 
-Uz podatkovni i analitički sloj, DigiKat ima i treći, manje vidljiv sloj — **agentski**. Dio razvojnog posla (pisanje koda, provjere kvalitete, priprema stranica) obavlja se uz pomoć agenata umjetne inteligencije, ali ne slobodnom rukom. Ova stranica razlaže od čega se taj sloj sastoji i kako je povezan; sažeti prikaz nalazi se u [izvršnom pregledu](izvrsni-pregled.html).
+Uz podatkovni i analitički sloj, DigiKat ima i treći, manje vidljiv sloj, **agentski**. Dio razvojnog posla (pisanje koda, provjere kvalitete, priprema stranica) obavlja se uz pomoć agenata umjetne inteligencije, ali ne slobodnom rukom. Ova stranica razlaže od čega se taj sloj sastoji i kako je povezan. Sažeti prikaz nalazi se u [izvršnom pregledu](izvrsni-pregled.html).
 
 ```{=html}
 <style>
@@ -358,17 +358,17 @@ Uz podatkovni i analitički sloj, DigiKat ima i treći, manje vidljiv sloj — *
 
 ## Kako čitati sliku
 
-Slika prati jedan zahvat kroz njegov životni ciklus. Najprije se učita **kontekst** — tri projektne datoteke koje agentu govore što je projekt, na kojem stroju radi i što je tim dosad naučio. Zatim **jednosmjeran lanac** vodi podatke od sirovih izvoza do objavljenih stranica; strelice idu samo u jednom smjeru i nizvodni se artefakt nikad ne uređuje ručno. Iznad lanca stoji agentski sloj, koji **nadgleda svaki prijelaz** između faza. Naposljetku se petlja zatvara: ono što se pri radu nauči vraća se u zajednički dnevnik, pa se pravila s vremenom poboljšavaju.
+Slika prati jedan zahvat kroz njegov životni ciklus. Najprije se učita **kontekst**, tri projektne datoteke koje agentu govore što je projekt, na kojem stroju radi i što je tim dosad naučio. Zatim **jednosmjeran lanac** vodi podatke od sirovih izvoza do objavljenih stranica. Strelice idu samo u jednom smjeru i nizvodni se artefakt nikad ne uređuje ručno. Iznad lanca stoji agentski sloj, koji **nadgleda svaki prijelaz** između faza. Naposljetku se petlja zatvara. Ono što se pri radu nauči vraća se u zajednički dnevnik, pa se pravila s vremenom poboljšavaju.
 
 ## Pet dijelova sloja
 
-**Kontekst** su tri datoteke koje se učitavaju u svakoj sjednici. `CLAUDE.md` je projektni ustav — načela, tok podataka i nazivlje koji vrijede za sve. `CLAUDE.local.md` opisuje pojedini stroj (je li dostupan R, gdje je korpus), pa se isti agent ispravno ponaša i na računalu bez podataka. `MEMORY.md` je zajednički dnevnik naučenoga.
+**Kontekst** su tri datoteke koje se učitavaju u svakoj sjednici. `CLAUDE.md` je projektni ustav s načelima, tokom podataka i nazivljem koji vrijede za sve. `CLAUDE.local.md` opisuje pojedini stroj (je li dostupan R, gdje je korpus), pa se isti agent ispravno ponaša i na računalu bez podataka. `MEMORY.md` je zajednički dnevnik naučenoga.
 
-**Pravila** su stalni nalozi koji oblikuju svaku izmjenu. Šest ih je: neka vrijede uvijek (plan prije netrivijalnog posla), a druga se aktiviraju prema tome koje se datoteke diraju — protokol podatkovnog cjevovoda za `R/` i `data/`, provjera renderiranja za `.qmd`, kućni glas i stil za stranice, te disciplina hrvatskog kodiranja za svaki tekst.
+**Pravila** su stalni nalozi koji oblikuju svaku izmjenu. Šest ih je. Neka vrijede uvijek (plan prije netrivijalnog posla), a druga se aktiviraju prema tome koje se datoteke diraju, pa tako postoje protokol podatkovnog cjevovoda za `R/` i `data/`, provjera renderiranja za `.qmd`, kućni glas i stil za stranice, te disciplina hrvatskog kodiranja za svaki tekst.
 
-**Vještine** su kodirani postupci — na projektu ih je četrnaest — koje korisnik pokreće naredbom za operacije koje se ponavljaju. Grupiraju se u pet obitelji: objavljivanje i podaci (`/deploy`, `/render-page`, `/refresh-data`, `/commit`), analiza (`/data-analysis`, `/check-lexicon`, `/disclosure-check`), recenzija (`/review-page`, `/review-paper`), istraživanje (`/new-study`, `/lit-review`, `/research-ideation`) i održavanje (`/capture-environment`, `/context-status`). Svaka vještina za jedan zadatak povezuje prava pravila i prave agente — primjerice, sigurno dodavanje novih podataka ili objavljivanje stranice sa svim provjerama uključenima.
+**Vještine** su kodirani postupci, njih četrnaest, koje korisnik pokreće naredbom za operacije koje se ponavljaju. Grupiraju se u pet obitelji, a to su objavljivanje i podaci (`/deploy`, `/render-page`, `/refresh-data`, `/commit`), analiza (`/data-analysis`, `/check-lexicon`, `/disclosure-check`), recenzija (`/review-page`, `/review-paper`), istraživanje (`/new-study`, `/lit-review`, `/research-ideation`) i održavanje (`/capture-environment`, `/context-status`). Svaka vještina za jedan zadatak povezuje prava pravila i prave agente, primjerice za sigurno dodavanje novih podataka ili objavljivanje stranice sa svim provjerama uključenima.
 
-**Provjere** obavlja pet nezavisnih agenata koji samo čitaju: mehanička provjera da je render ili skripta stvarno uspjela, ponovno izvođenje svake objavljene brojke iz javnih agregata, recenzija R koda te dvije domenske recenzije — računalne lingvistike i sociologije religije i medija. Ključno je načelo da agent koji je radio posao nije onaj koji ga provjerava.
+**Provjere** obavlja pet nezavisnih agenata koji samo čitaju. To su mehanička provjera da je render ili skripta stvarno uspjela, ponovno izvođenje svake objavljene brojke iz javnih agregata, recenzija R koda te dvije domenske recenzije, računalne lingvistike i sociologije religije i medija. Ključno je načelo da agent koji je radio posao nije onaj koji ga provjerava.
 
 **Zaštite** su tvrde brane koje ne izvodi model, nego obična skripta. Prije svake naredbe hook presreće rad i blokira brisanje korpusa ili sigurnosnih kopija, nekontrolirano dodavanje u git te commit koji bi obrisao objavljene stranice. Uz to, popis zabrana onemogućuje najopasnije naredbe, a svaka sjednica kreće u načinu plana.
 
@@ -376,16 +376,16 @@ Slika prati jedan zahvat kroz njegov životni ciklus. Najprije se učita **konte
 
 Sloj se može čitati na tri načina, a sva su tri istovremeno točna.
 
-**Podjela ovlasti.** Kontekst i pravila su zakon; glavni agent je izvršna vlast koja djeluje; agenti-provjeritelji su nezavisno sudstvo koje ne uređuje, nego prosuđuje; hookovi i popis zabrana su ustavne granice koje se u radu ne mogu ukinuti. Voditelj projekta je pritom posljednja instanca: nepovratne operacije traže njegovo osobno odobrenje.
+**Podjela ovlasti.** Kontekst i pravila su zakon. Glavni agent je izvršna vlast koja djeluje, agenti-provjeritelji su nezavisno sudstvo koje ne uređuje nego prosuđuje, a hookovi i popis zabrana ustavne su granice koje se u radu ne mogu ukinuti. Voditelj projekta je pritom posljednja instanca i nepovratne operacije traže njegovo osobno odobrenje.
 
-**Obrana u dubinu.** Oko nezamjenjive jezgre — korpusa i žive stranice — stoje četiri koncentrična prstena: meko usmjeravanje (pravila), kodirani postupak (vještine), nezavisna recenzija (provjere) i deterministička brana (zaštite). Izmjena mora proći kroz sve. Vanjski prsten nije model, pa se ne može nagovoriti.
+**Obrana u dubinu.** Oko nezamjenjive jezgre, korpusa i žive stranice, stoje četiri koncentrična prstena. To su meko usmjeravanje (pravila), kodirani postupak (vještine), nezavisna recenzija (provjere) i deterministička brana (zaštite). Izmjena mora proći kroz sve. Vanjski prsten nije model, pa se ne može nagovoriti.
 
-**Upravljana petlja.** Agentski sloj zrcali jednosmjeran tok podataka, ali za nadzor: čuva svaki prijelaz i zatvara krug tako da naučeno vraća u `MEMORY.md`. Time se sam ustav s vremenom poboljšava.
+**Upravljana petlja.** Agentski sloj zrcali jednosmjeran tok podataka, ali za nadzor. Čuva svaki prijelaz i zatvara krug tako da naučeno vraća u `MEMORY.md`. Time se sam ustav s vremenom poboljšava.
 
 ## Što agentski sloj ne radi
 
-Sloj čuva **postupak, a ne istinu**. Jamči da su brojke izračunate, a ne upisane rukom, da je render provjeren i da korpus ima sigurnosnu kopiju — ali oznake, tumačenja i konačne odluke ostaju ljudske. Riječ je o disciplinirajućoj skeli, ne o samostalnom istraživaču. Zato su najosjetljiviji koraci (promjena pravila uključivanja, prebrisavanje korpusa, objava cijele stranice) izuzeti iz automatizma i vezani uz izričito odobrenje voditelja projekta.
+Sloj čuva **postupak, a ne istinu**. Jamči da su brojke izračunate, a ne upisane rukom, da je render provjeren i da korpus ima sigurnosnu kopiju, ali oznake, tumačenja i konačne odluke ostaju ljudske. Riječ je o disciplinirajućoj skeli, ne o samostalnom istraživaču. Zato su najosjetljiviji koraci (promjena pravila uključivanja, prebrisavanje korpusa, objava cijele stranice) izuzeti iz automatizma i vezani uz izričito odobrenje voditelja projekta.
 
 ## Sve je javno
 
-Cijeli je sloj dio otvorenog repozitorija. Pravila, agenti, vještine i zaštite žive u mapi `.claude/`, a projektni ustav u datoteci [CLAUDE.md](https://github.com/lusiki/DigiKat/blob/main/CLAUDE.md). I ova je stranica nastala u tom sloju — s planom pohranjenim u repozitoriju i uz automatske kontrole.
+Cijeli je sloj dio otvorenog repozitorija. Pravila, agenti, vještine i zaštite žive u mapi `.claude/`, a projektni ustav u datoteci [CLAUDE.md](https://github.com/lusiki/DigiKat/blob/main/CLAUDE.md). I ova je stranica nastala u tom sloju, s planom pohranjenim u repozitoriju i uz automatske kontrole.

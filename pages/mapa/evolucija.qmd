@@ -168,13 +168,13 @@ stopifnot(length(posts_first) == 1, length(posts_lfy) == 1,
 
 ## Uvod u vremensku dinamiku ekosustava
 
-Mijenja li se tko dominira ovim prostorom i seli li se pažnja s portala na društvene mreže? Prethodne su mape opisale [aktere i platforme](mapa.html), [Tematske struje](mapa_stats.html), [Atmosferu diskursa](diskurs.html) te [Fokus na događaje](događaji.html). Ova peta analitička mapa, **Evolucija ekosustava**, prati promjene u opaženom korpusu od `r first_year`. do `r last_year`. godine: volumen objava, raspodjelu interakcija među platformama i koncentraciju interakcija među izvorima. Odgovara na istraživačko pitanje Q5 o odnosima među platformama.
+Mijenja li se tko dominira ovim prostorom i seli li se pažnja s portala na društvene mreže? Prethodne su mape opisale [aktere i platforme](mapa.html), [Tematske struje](mapa_stats.html), [Atmosferu diskursa](diskurs.html) te [Fokus na događaje](događaji.html). Ova peta analitička mapa, **Evolucija ekosustava**, prati promjene u opaženom korpusu od `r first_year`. do `r last_year`. godine. Prati volumen objava, raspodjelu interakcija među platformama i koncentraciju interakcija među izvorima. Odgovara na istraživačko pitanje Q5 o odnosima među platformama.
 
 Mjereno je na cijelom korpusu od `r fmt_int(corpus_total)` objava, bez uzorkovanja. Kako je korpus nastao i kako se čitaju godišnji volumeni, opisano je u [Metodologiji](../metodologija.html).
 
 Ova je mapa namjerno strukturna, a ne sadržajna. Ona broji objave te uspoređuje udjele i koncentraciju zabilježenih interakcija, ali ne analizira tonalitet, emocije ni pojedine događaje. Sadržajnom dinamikom oko konkretnih događaja bavi se [Fokus na događaje](događaji.html).
 
-Mapu vode tri opisna pitanja: kako se broj prikupljenih objava mijenja po platformama, kako se raspodjeljuju zabilježene interakcije među platformama i koliki udio tih interakcija pripada deset najvećih izvora u svakoj godini.
+Mapu vode tri opisna pitanja. Kako se broj prikupljenih objava mijenja po platformama, kako se raspodjeljuju zabilježene interakcije među platformama i koliki udio tih interakcija pripada deset najvećih izvora u svakoj godini.
 
 ```{r}
 #| label: kpi-grid
@@ -320,7 +320,7 @@ p +
   )
 ```
 
-U opaženom korpusu udio deset najvećih izvora pada s `r fmt_pct(conc_first)` svih interakcija u `r first_year`. na `r fmt_pct(top10_last)` u `r last_full_year`., dok broj izvora s barem jednom zabilježenom interakcijom raste s `r fmt_int(actor_first)` na `r fmt_int(actor_last)` (`r fmt_x(actor_growth)` puta). Od deset najvećih izvora u `r last_full_year`. njih `r new_entrants` nije bilo u vrhu `r first_year`. Ti podaci pokazuju `r conc_mag` smanjenje koncentracije unutar prikupljenoga korpusa, ali ne dokazuju stvarno širenje kruga glasova: najveći se pad vremenski poklapa s proširenjem obuhvata 2024., interakcije su platformski specifične, a isti se brend na različitim platformama može brojiti zasebno. Do `r cutoff_lbl` udio deset najvećih izvora u nepotpunoj `r last_year`. iznosi `r fmt_pct(top10_2026)` i ne uspoređuje se izravno s potpunim godinama.
+U opaženom korpusu udio deset najvećih izvora pada s `r fmt_pct(conc_first)` svih interakcija u `r first_year`. na `r fmt_pct(top10_last)` u `r last_full_year`., dok broj izvora s barem jednom zabilježenom interakcijom raste s `r fmt_int(actor_first)` na `r fmt_int(actor_last)` (`r fmt_x(actor_growth)` puta). Od deset najvećih izvora u `r last_full_year`. njih `r new_entrants` nije bilo u vrhu `r first_year`. Ti podaci pokazuju `r conc_mag` smanjenje koncentracije unutar prikupljenoga korpusa, ali ne dokazuju stvarno širenje kruga glasova. Interakcije su platformski specifične, a isti se brend na različitim platformama može brojiti zasebno. Do `r cutoff_lbl` udio deset najvećih izvora u nepotpunoj `r last_year`. iznosi `r fmt_pct(top10_2026)` i ne uspoređuje se izravno s potpunim godinama.
 
 ---
 
@@ -351,7 +351,7 @@ Među godinama s potpunom mjesečnom pokrivenošću (`r rhythm_years_lbl`) opaž
 ## Sinteza nalaza
 
 ::: {.featured-box}
-Promatrani korpus pokazuje tri obrasca između `r first_year`. i posljednje potpune, `r last_full_year`. godine: veći opaženi volumen, manji udio weba u zabilježenim interakcijama i nižu koncentraciju interakcija među deset najvećih izvora.
+Promatrani korpus pokazuje tri obrasca između `r first_year`. i posljednje potpune, `r last_full_year`. godine. To su veći opaženi volumen, manji udio weba u zabilježenim interakcijama i niža koncentracija interakcija među deset najvećih izvora.
 :::
 
 Sve tri promjene opisuju prikupljeni korpus, a ne cjelokupni hrvatski medijski prostor.
