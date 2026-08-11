@@ -15,6 +15,10 @@
 suppressPackageStartupMessages({ library(here); library(dplyr); library(stringr) })
 source(here::here("studies/moral-economy/lexicon.R"))
 
+# PINNED to the accumulator (data/merged_comprehensive.rds), NOT the official corpus
+# data/digikat_corpus.rds. This analysis is complete and its published numbers were computed
+# from the accumulator; repointing it would silently change results a paper already reports.
+# See quality_reports/plans/2026-08-10_official-corpus-v1.md §4.
 src <- here::here("data/merged_comprehensive.rds")
 if (!file.exists(src)) stop("Stage A needs the master. See CLAUDE.local.md.")
 out_dir <- here::here("studies/moral-economy/output")

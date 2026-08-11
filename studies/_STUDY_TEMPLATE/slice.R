@@ -5,6 +5,10 @@
 suppressPackageStartupMessages({ library(here); library(dplyr) })
 set.seed(20260625)  # set to the study's own start date (YYYYMMDD)
 
+# CHOOSE YOUR INPUT. digikat_corpus_path() gives the official DigiKat corpus (one inclusion rule
+# across both collection eras) and is what a NEW study should use. digikat_legacy_master_path()
+# gives the accumulator, everything the vendor supplied, which the completed papers are pinned to.
+# source(here::here("R/lib/digikat_paths.R"), encoding = "UTF-8")
 USE_SAMPLE <- !file.exists(here::here("data/merged_comprehensive.rds"))
 src <- if (USE_SAMPLE) here::here("data/sample/merged_sample.rds") else here::here("data/merged_comprehensive.rds")
 if (!file.exists(src)) stop("No corpus found (need the master or data/sample/). See CLAUDE.local.md.")

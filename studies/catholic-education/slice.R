@@ -17,6 +17,10 @@
 #   Rscript studies/catholic-education/slice.R
 suppressPackageStartupMessages({ library(here); library(dplyr); library(stringr) })
 
+# PINNED to the accumulator (data/merged_comprehensive.rds), NOT the official corpus
+# data/digikat_corpus.rds. This analysis is complete and its published numbers were computed
+# from the accumulator; repointing it would silently change results a paper already reports.
+# See quality_reports/plans/2026-08-10_official-corpus-v1.md §4.
 USE_SAMPLE <- !file.exists(here::here("data/merged_comprehensive.rds"))
 src <- if (USE_SAMPLE) here::here("data/sample/merged_sample.rds") else here::here("data/merged_comprehensive.rds")
 if (!file.exists(src)) stop("No corpus found (need the master or data/sample/). See CLAUDE.local.md.")
