@@ -59,14 +59,16 @@ digikat_assert_aggregates_current <- function(aggregate_manifest = "data/process
     msg <- paste0("Cannot check aggregate freshness: missing ",
                   if (!file.exists(aggregate_manifest)) aggregate_manifest else corpus_manifest)
     if (strict) stop(msg, call. = FALSE)
-    return(structure(FALSE, reason = msg))
+    return(invisible(structure(FALSE, reason = msg)))
   }
   agg <- jsonlite::fromJSON(aggregate_manifest, simplifyVector = TRUE)
   cor <- jsonlite::fromJSON(corpus_manifest, simplifyVector = TRUE)
   built_from <- if (is.null(agg$input$sha256)) NA_character_ else agg$input$sha256
   expected <- cor$corpus$sha256
 
-  if (!is.na(built_from) && identical(built_from, expected)) return(structure(TRUE, reason = "ok"))
+  # Invisible: the check is called at the top level of Quarto chunks, where a visible return value
+  # is PRINTED into the rendered page ("[1] TRUE / attr(,\"reason\")"). Assignment still works.
+  if (!is.na(built_from) && identical(built_from, expected)) return(invisible(structure(TRUE, reason = "ok")))
 
   msg <- paste0(
     "data/processed/ was NOT built from the current corpus.\n",
@@ -81,7 +83,7 @@ digikat_assert_aggregates_current <- function(aggregate_manifest = "data/process
     "  Rscript R/05_page_summaries.R --build"
   )
   if (strict) stop(msg, call. = FALSE)
-  structure(FALSE, reason = msg)
+  invisible(structure(FALSE, reason = msg))
 }
 
 # --- for Quarto pages -------------------------------------------------------------------------

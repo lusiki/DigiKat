@@ -188,7 +188,10 @@ direct_nlp_reads <- sum(vapply(
   page_files,
   function(path) {
     lines <- readLines(path, encoding = "UTF-8", warn = FALSE)
-    sum(grepl("data/nlp|_tokens\\.rds|_sample\\.rds", lines))
+    # The guard is about ROW-LEVEL generations: anything under data/nlp/ except its manifest, plus the
+    # _tokens/_sample files. data/nlp/manifest.json is metadata only (sample sizes and proportions the
+    # page prints), and reading it is what keeps those figures from being typed by hand.
+    sum(grepl("data/nlp(?!/manifest\\.json)|_tokens\\.rds|_sample\\.rds", lines, perl = TRUE))
   },
   integer(1L)
 ))

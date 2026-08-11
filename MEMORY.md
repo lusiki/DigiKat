@@ -377,3 +377,21 @@
   "no pricing anywhere" guard has never actually matched anything. Escape it `"\b"` in a regex string.
   Fixing it is not free: the 2024 edition legitimately discusses *cijene crkvenih usluga* as its special
   chapter's subject, so the guard needs scoping to the sales sections, which is a PI decision.
+
+## CI red on main — two independent defects (2026-08-11)
+
+- [LEARN] In a GitHub Actions `shell: pwsh` step only the LAST command's exit code decides the step's
+  outcome, so a batch of `Rscript` calls reports success while an earlier one fails. `tests/run_tests.R`
+  had been failing 1/38 silently since the corpus-site commit; the workflow now runs one script per step.
+- [LEARN] Excluding `pages/studije/**/*.qmd` from the render (so a site build can never recompute the
+  numbers the finished studies published) means a full `quarto render` DROPS `docs/pages/studije/*.html`
+  from the output directory — 999 broken nav references, one per remaining page × nine studies. The HTML
+  is versioned, so `git checkout -- docs/pages/studije` after any full render restores it; that step is
+  now in CI and in the `/deploy` skill. The live site was never affected — Pages serves the committed
+  `docs/`, and the deletions were never committed.
+- [LEARN] A page reading `data/nlp/manifest.json` is metadata, not a row-level NLP read. The guard in
+  `tests/run_tests.R` matched the bare string `data/nlp` and so failed the three mapa pages for quoting
+  their own sample size from the manifest; it now excludes the manifest and nothing else.
+- [LEARN] `digikat_assert_aggregates_current()` returned VISIBLY, so a top-level call in a Quarto chunk
+  printed `[1] TRUE / attr(,"reason") / [1] "ok"` into the rendered page — it was sitting in the top-left
+  corner of the landing page. Fixed at the function (`invisible()`), not per call site.

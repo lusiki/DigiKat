@@ -33,21 +33,49 @@ jobs:
 
       - uses: quarto-dev/quarto-actions/setup@v2
 
-      - name: Validate shared logic and the synthetic pipeline
+      # One script per step ON PURPOSE. In a pwsh step only the LAST command's exit code decides the
+      # step's outcome, so a batch of Rscript calls reports success while an earlier one is failing —
+      # which is exactly how a failing tests/run_tests.R went unnoticed until the link check went red.
+      - name: Unit and source checks
         shell: pwsh
-        run: |
-          Rscript tests/run_tests.R
-          Rscript R/check_sources.R
-          Rscript R/check_disclosure.R
-          Rscript R/00_setup.R
-          Rscript R/03_aggregate.R --master=data/sample/merged_sample.rds --output-dir="${{ runner.temp }}/processed"
-          Rscript R/04_nlp.R --build --master=data/sample/merged_sample.rds
+        run: Rscript tests/run_tests.R
+
+      - name: Source registry check
+        shell: pwsh
+        run: Rscript R/check_sources.R
+
+      - name: Disclosure check
+        shell: pwsh
+        run: Rscript R/check_disclosure.R
+
+      - name: Setup and resource validation
+        shell: pwsh
+        run: Rscript R/00_setup.R
+
+      - name: Aggregate preview against the synthetic sample
+        shell: pwsh
+        run: Rscript R/03_aggregate.R --master=data/sample/merged_sample.rds --output-dir="${{ runner.temp }}/processed"
+
+      - name: NLP build against the synthetic sample
+        shell: pwsh
+        run: Rscript R/04_nlp.R --build --master=data/sample/merged_sample.rds
 
       - name: Render the full site
         shell: pwsh
         run: |
           Copy-Item data/sample/merged_sample.rds data/merged_comprehensive.rds
           quarto render
+
+      # The finished thematic studies are excluded from the render in _quarto.yml, so that a live-site
+      # build can never recompute the numbers they published. Their HTML is versioned under docs/
+      # instead, and a full render drops output whose input is not in the render list — restore the
+      # nine published files from git so the link check crawls the site as it is actually served.
+      - name: Restore the versioned study pages the render does not produce
+        shell: pwsh
+        run: |
+          git checkout -- docs/pages/studije
+          $n = (Get-ChildItem docs/pages/studije -Filter *.html).Count
+          if ($n -lt 9) { throw "Expected 9 published study pages under docs/pages/studije, found $n" }
 
       - name: Check rendered local links
         shell: pwsh
