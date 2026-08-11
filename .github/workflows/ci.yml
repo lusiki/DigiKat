@@ -70,10 +70,15 @@ jobs:
       # build can never recompute the numbers they published. Their HTML is versioned under docs/
       # instead, and a full render drops output whose input is not in the render list — restore the
       # nine published files from git so the link check crawls the site as it is actually served.
-      - name: Restore the versioned study pages the render does not produce
+      #
+      # site_libs too: those nine pages were frozen against content-hashed CSS bundle names, and a
+      # different Quarto/dart-sass compiles the theme to a different hash, so this render's bundles do
+      # not carry the names they ask for. Restoring only ADDS the tracked bundles back beside the ones
+      # just rendered, so a page pointing at an asset that genuinely exists nowhere still fails.
+      - name: Restore the versioned output the render does not reproduce
         shell: pwsh
         run: |
-          git checkout -- docs/pages/studije
+          git checkout -- docs/pages/studije docs/site_libs
           $n = (Get-ChildItem docs/pages/studije -Filter *.html).Count
           if ($n -lt 9) { throw "Expected 9 published study pages under docs/pages/studije, found $n" }
 

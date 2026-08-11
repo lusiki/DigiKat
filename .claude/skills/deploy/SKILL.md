@@ -23,9 +23,12 @@ argument-hint: "(no args — renders the whole site)"
    hook backstop this, but verify anyway.)
    The nine finished studies in `docs/pages/studije/` are VERSIONED output with no live render — `_quarto.yml`
    excludes `pages/studije/**/*.qmd` so a site build can never recompute the numbers they published — and a full
-   render therefore drops them from `docs/`. After every full render run `git checkout -- docs/pages/studije`
-   and confirm the nine `.html` files are back BEFORE the link check; otherwise every page's nav points at
-   missing files.
+   render therefore drops them from `docs/`. After every full render run
+   `git checkout -- docs/pages/studije docs/site_libs` and confirm the nine `.html` files are back BEFORE
+   the link check; otherwise every page's nav points at missing files. `docs/site_libs` is in that restore
+   because those nine pages are frozen against content-hashed CSS bundle names: after a Quarto upgrade the
+   theme compiles to a different hash, the render prunes the bundle they name, and the studies lose their
+   styling on the live site. Restoring only ADDS tracked files back beside the freshly rendered ones.
 5. **Side-effect check (IMPORTANT).** `git status --short data/processed/` AFTER. If any aggregate changed,
    STOP and report — a page wrote into tracked data (the `mapa.qmd` saveRDS issue, a Phase-0 fix). Do NOT
    stage those changes.

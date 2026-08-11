@@ -403,3 +403,9 @@
   byte-identical to the literals before replacing them, per the croatian-encoding rule §6.
   `R/check_sources.R` also reported every finding twice: `list.files()` yields `./studies/x.R` and git
   yields `studies/x.R`, so `unique()` on the raw strings kept both. It now dedupes on the normalized path.
+- [LEARN] The restore has to cover `docs/site_libs` as well as `docs/pages/studije`. The nine frozen
+  study pages name CONTENT-HASHED CSS bundles (`bootstrap-<hash>.min.css`,
+  `quarto-syntax-highlighting-<hash>.css`); CI's Quarto compiles the theme to a different hash, so its
+  render prunes the bundles they ask for — 18 broken references, 2 per study. Restoring from git only
+  ADDS tracked files beside the newly rendered ones, so a genuinely missing asset still fails the check.
+  The same trap is waiting locally the first time Quarto is upgraded and the site is fully re-rendered.
