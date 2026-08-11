@@ -130,3 +130,9 @@ studies/*/output/**/intermediate/
 /robots.txt
 # transient Quarto intermediate — safe to ignore anywhere (never tracked, incl. under docs/)
 *.rmarkdown
+
+# Church-and-dezinfo is a SEPARATE project with its own remote
+# (github.com/lusiki/Church-and-dezinfo) that happens to live inside this working folder.
+# Committing it here would store a gitlink, not the files: the content would never reach
+# DigiKat's remote and the pointer would break on a fresh clone.
+/Church-and-dezinfo/
