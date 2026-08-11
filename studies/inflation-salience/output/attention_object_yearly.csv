@@ -4,21 +4,21 @@ backfill,2025,both,sector,"Own position, sector voice",1
 backfill,2025,own,sector,"Own position, sector voice",2
 backfill,2025,household,outside,"Household hardship, outside report",1
 backfill,2025,other,sector,Other,1
-backfill,2025,household,sector,"Household hardship, sector voice",11
+backfill,2025,household,sector,"Household hardship, sector voice",10
 backfill,2026,other,sector,Other,1
 backfill,2026,own,sector,"Own position, sector voice",1
 backfill,2026,household,sector,"Household hardship, sector voice",1
 monitoring,2021,own,sector,"Own position, sector voice",4
 monitoring,2021,household,sector,"Household hardship, sector voice",3
 monitoring,2021,own,outside,"Own position, outside report",1
-monitoring,2022,own,sector,"Own position, sector voice",45
+monitoring,2022,own,sector,"Own position, sector voice",39
 monitoring,2022,household,sector,"Household hardship, sector voice",51
-monitoring,2022,other,outside,Other,2
 monitoring,2022,own,outside,"Own position, outside report",3
-monitoring,2022,both,outside,"Own position, outside report",3
+monitoring,2022,other,outside,Other,1
+monitoring,2022,both,outside,"Own position, outside report",2
 monitoring,2022,both,sector,"Own position, sector voice",2
-monitoring,2023,own,outside,"Own position, outside report",2
-monitoring,2023,own,sector,"Own position, sector voice",27
+monitoring,2023,own,sector,"Own position, sector voice",26
+monitoring,2023,own,outside,"Own position, outside report",1
 monitoring,2023,household,outside,"Household hardship, outside report",1
 monitoring,2023,household,sector,"Household hardship, sector voice",7
-monitoring,2024,own,sector,"Own position, sector voice",4
+monitoring,2024,own,sector,"Own position, sector voice",3

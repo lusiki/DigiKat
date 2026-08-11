@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
-# 13_core_viewer.R — the 520 measured posts as one filterable local page.
+# 13_core_viewer.R — the refreshed measured set as one filterable local page.
 #
-# Every number in the paper rests on these 520 posts. A coding claim can only be believed
+# Every number in the paper rests on these posts. A coding claim can only be believed
 # if someone has looked at what was coded, so this renders each post as a card with its
 # date, outlet, coded category, the passage that put it in the set, and a link to the
 # original. The cost-of-living term is highlighted in blue and the religious term in
@@ -35,9 +35,10 @@ core  <- coded[domestic == 1L][order(date)]
 msg("measured posts: ", nrow(core))
 
 m <- readRDS(MASTER)
-title <- ifelse(is.na(m$TITLE[core$rid]), "", as.character(m$TITLE[core$rid]))
-body  <- ifelse(is.na(m$FULL_TEXT[core$rid]), "", as.character(m$FULL_TEXT[core$rid]))
-url   <- ifelse(is.na(m$URL[core$rid]), "", as.character(m$URL[core$rid]))
+row <- study_row_index(m, core$rid)
+title <- ifelse(is.na(m$TITLE[row]), "", as.character(m$TITLE[row]))
+body  <- ifelse(is.na(m$FULL_TEXT[row]), "", as.character(m$FULL_TEXT[row]))
+url   <- ifelse(is.na(m$URL[row]), "", as.character(m$URL[row]))
 rm(m); invisible(gc())
 
 # One whitespace-collapsed text per post, used for display and for locating matches, so the
@@ -178,7 +179,7 @@ mark.m2{background:rgba(46,107,69,.26);box-shadow:inset 0 -2px 0 var(--ok)}
 assign("VW_CSS", EXTRA_CSS, envir = globalenv())
 
 vw_page(OUT_HTML,
-        "inflation-salience — the 520 measured posts",
+        paste0("inflation-salience — the ", nrow(core), " measured posts"),
         subtitle, presets, tools, paste0(cards, collapse = ""),
         keys = c("response", "subject", "year", "method", "outlet", "tone"))
 

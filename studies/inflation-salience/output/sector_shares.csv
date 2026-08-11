@@ -1,25 +1,24 @@
 stream,year,response,N,share
-backfill,2024,Charitable response,12,54.5
-backfill,2024,Normative response,4,18.2
-backfill,2024,Public voice,5,22.7
-backfill,2024,Repricing,1,4.5
-backfill,2025,Charitable response,26,45.6
-backfill,2025,Normative response,2,3.5
-backfill,2025,Public voice,16,28.1
-backfill,2025,Repricing,13,22.8
-backfill,2026,Charitable response,4,8.3
-backfill,2026,Normative response,1,2.1
-backfill,2026,Public voice,3,6.2
-backfill,2026,Repricing,40,83.3
-monitoring,2021,Normative response,2,20
-monitoring,2021,Public voice,8,80
-monitoring,2022,Charitable response,34,18.2
-monitoring,2022,Normative response,1,0.5
-monitoring,2022,Public voice,106,56.7
-monitoring,2022,Repricing,46,24.6
-monitoring,2023,Charitable response,11,12.6
-monitoring,2023,Normative response,5,5.7
-monitoring,2023,Public voice,37,42.5
-monitoring,2023,Repricing,34,39.1
-monitoring,2024,Public voice,4,6.2
-monitoring,2024,Repricing,60,93.8
+backfill,2024,Charitable response,4,33.3
+backfill,2024,Normative response,3,25
+backfill,2024,Public voice,5,41.7
+backfill,2025,Charitable response,17,37.8
+backfill,2025,Normative response,2,4.4
+backfill,2025,Public voice,15,33.3
+backfill,2025,Repricing,11,24.4
+backfill,2026,Charitable response,2,4.7
+backfill,2026,Public voice,3,7
+backfill,2026,Repricing,38,88.4
+monitoring,2021,Normative response,2,18.2
+monitoring,2021,Public voice,8,72.7
+monitoring,2021,Repricing,1,9.1
+monitoring,2022,Charitable response,30,17.5
+monitoring,2022,Normative response,1,0.6
+monitoring,2022,Public voice,98,57.3
+monitoring,2022,Repricing,42,24.6
+monitoring,2023,Charitable response,10,12.2
+monitoring,2023,Normative response,5,6.1
+monitoring,2023,Public voice,35,42.7
+monitoring,2023,Repricing,32,39
+monitoring,2024,Public voice,3,4.8
+monitoring,2024,Repricing,60,95.2

@@ -25,7 +25,26 @@ for (d in c(OUT, PRIVATE, TABLES)) if (!dir.exists(d)) dir.create(d, recursive =
 
 stopifnot(dir.exists("data"), file.exists("R/religious_terms.R"))
 
-MASTER <- "data/merged_comprehensive.rds"
+# The August 2026 refresh is a new analysis, not a silent alteration of the completed
+# accumulator-based paper. New work uses the official corpus and its stable accumulator-row key.
+# `dk_master_row` lets the earlier blinded annotations be migrated without a URL join.
+source("R/lib/digikat_paths.R", encoding = "UTF-8")
+MASTER <- digikat_corpus_path()
+MASTER_MANIFEST <- digikat_read_corpus_manifest()
+
+study_row_id <- function(m) {
+  if ("dk_master_row" %in% names(m)) as.integer(m$dk_master_row) else seq_len(nrow(m))
+}
+
+study_row_index <- function(m, rid, fail = TRUE) {
+  z <- match(as.integer(rid), study_row_id(m))
+  if (fail && anyNA(z)) {
+    miss <- as.integer(rid)[is.na(z)]
+    stop(length(miss), " stable row id(s) are absent from ", MASTER, ": ",
+         paste(utils::head(miss, 12L), collapse = ", "), call. = FALSE)
+  }
+  z
+}
 
 ## ---------------------------------------------------------------- text -----
 
@@ -173,7 +192,7 @@ RESPONSE_OF_REGISTER <- c(
 fixture_report <- function(label, observed, expected, tol = 0L) {
   d <- observed - expected
   status <- if (abs(d) <= tol) "MATCH" else "MISMATCH"
-  cat(sprintf("  [%-8s] %-38s observed %7s | June 2026 run %7s | delta %+d\n",
+  cat(sprintf("  [%-8s] %-38s observed %7s | reference %7s | delta %+d\n",
               status, label, format(observed, big.mark = " "),
               format(expected, big.mark = " "), d))
   invisible(status == "MATCH")

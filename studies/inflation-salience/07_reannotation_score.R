@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-# 07_reannotation_score.R — score the blind re-annotation against the June labels.
+# 07_reannotation_score.R — score the retained blind re-annotation against prior labels.
 #
 # What this can and cannot establish. Both annotations were produced by large language
 # models, so what follows is inter-model reliability, not agreement with a human gold
@@ -15,7 +15,7 @@ source("studies/inflation-salience/_lib.R")
 
 rule("07_reannotation_score.R")
 
-key <- fread(file.path(PRIVATE, "reannotation_key.csv"), encoding = "UTF-8")
+key <- fread(file.path(PRIVATE, "reannotation_key_corpus.csv"), encoding = "UTF-8")
 bd  <- file.path(PRIVATE, "batches")
 fs  <- list.files(bd, pattern = "^labels[0-9]+\\.csv$", full.names = TRUE)
 if (!length(fs)) stop("no labels*.csv in ", bd, " — run the annotation first")
@@ -40,7 +40,8 @@ setnames(new, c("infl", "link", "foreign", "register"),
          c("n_infl2", "n_link2", "n_foreign2", "n_register2"), skip_absent = TRUE)
 new[, n_register2 := fifelse(n_register2 == "cost_relig_life", "crl", n_register2)]
 
-msg("batches read: ", length(fs), " | items returned: ", nrow(new), " | items expected: ", nrow(key))
+msg("batches read: ", length(fs), " | original items returned: ", nrow(new),
+    " | retained official-corpus items expected: ", nrow(key))
 miss <- setdiff(key$item, new$item)
 if (length(miss)) msg("  MISSING from the re-annotation: ", paste(miss, collapse = ", "))
 

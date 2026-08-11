@@ -74,14 +74,15 @@ md_table <- function(file, caption, header, align, rows, source_note) {
   msg("  wrote ", file.path(TABLES, file))
 }
 
-SRC_CORPUS <- paste0("author's calculations on the DigiKat corpus of ", n_fmt(710307),
-                     " Croatian digital media posts, January 2021 to June 2026")
+SRC_CORPUS <- paste0("authors' calculations on the official DigiKat corpus of ",
+                     n_fmt(MASTER_MANIFEST$corpus$rows),
+                     " religion-salient Croatian digital media posts, January 2021 to June 2026")
 
 ## --------------------------------------------- Table 1 — corpus to core -----
 
 # Values are stored in the form the prose prints them, spaces and all, because that is what
 # 10_paper_checks.R searches the manuscript for.
-n_corpus <- 710307L;                                          D("n_corpus", n_fmt(n_corpus))
+n_corpus <- as.integer(MASTER_MANIFEST$corpus$rows);          D("n_corpus", n_fmt(n_corpus))
 n_tag    <- nrow(readRDS(file.path(PRIVATE, "tagged_inflation.rds"))); D("n_tagged", n_fmt(n_tag))
 n_cand   <- nrow(core);                                       D("n_candidates", n_fmt(n_cand))
 n_link   <- D("n_linked", sum(core$linked))
@@ -91,6 +92,10 @@ D("pct_tagged", p_fmt(100 * n_tag / n_corpus, 2))
 D("pct_core_of_corpus", p_fmt(100 * n_core / n_corpus, 2))
 D("pct_core_of_tagged", p_fmt(100 * n_core / n_tag, 1))
 D("pct_candidates_surviving", p_fmt(100 * n_link / n_cand, 0))
+D("n_prior_coded", sum(core$coding_source == "prior_three_run_majority"))
+D("n_addendum_coded", sum(core$coding_source == "corpus_v1_addendum"))
+D("n_prior_domestic", sum(core$coding_source == "prior_three_run_majority" & core$domestic == 1L))
+D("n_addendum_domestic", sum(core$coding_source == "corpus_v1_addendum" & core$domestic == 1L))
 
 f1 <- c(
   sprintf("| All posts in the corpus | %s | %s |", n_fmt(n_corpus), "100.00"),
@@ -106,10 +111,10 @@ md_table("tab1_funnel.md",
          paste0(SRC_CORPUS, ". Posts are selected by a keyword filter and then read and coded ",
                 "one by one; only ", p_fmt(100 * n_link / n_cand, 0),
                 "% of the posts the filter selects turn out to connect religion to prices at all. ",
-                "The first two rows are produced by the current code. The set of ", n_fmt(n_cand),
-                " posts sent for coding was fixed when the coding was done and is carried forward ",
-                "unchanged, so the third row is that fixed set rather than a fresh selection; ",
-                "the appendix reports how closely a fresh selection reproduces it."))
+                n_fmt(sum(core$coding_source == "prior_three_run_majority")),
+                " candidates retain earlier three-run majority labels and ",
+                n_fmt(sum(core$coding_source == "corpus_v1_addendum")),
+                " newly selected candidates are coded in the official-corpus addendum."))
 
 ## ------------------------------------------- Table 2 — three responses -----
 
@@ -199,7 +204,7 @@ md_table("tab5_instrument.md",
          c("Period", "Months covered", "N", "Inflation ranged from", "All items",
            "Food", "Energy", "Above vs below 4%"),
          c(" --- ", " --- ", " ---: ", " ---: ", " ---: ", " ---: ", " ---: ", " ---: "), f5,
-         paste0("author's calculations; Croatian HICP annual rate of change from Eurostat ",
+         paste0("authors' calculations; Croatian HICP annual rate of change from Eurostat ",
                 "(prc_hicp_minr, all items, food and non-alcoholic beverages, energy), retrieved ",
                 "5 August 2026. Figures are correlations between the monthly share of corpus posts ",
                 "mentioning the cost of living and each price series. The last column is mean ",
@@ -229,7 +234,7 @@ md_table("tab6_robustness.md",
          "Table 6. The same relationship under three different specifications.",
          c("Period", "Specification", "N", "Estimate", "Standard error", "t"),
          c(" --- ", " --- ", " ---: ", " ---: ", " ---: ", " ---: "), unname(f6),
-         paste0("author's calculations. The dependent variable is the monthly share of corpus posts ",
+         paste0("authors' calculations. The dependent variable is the monthly share of corpus posts ",
                 "mentioning the cost of living, except in the third specification, where it is the ",
                 "monthly count with the log of total posts entered as an offset. ",
                 "Month-on-month changes use consecutive observed months only."))
@@ -246,7 +251,7 @@ if (have_reann) {
            "Table 7. Agreement between the original coding and an independent recoding.",
            c("Judgement", "Items", "Agreement", "Kappa"),
            c(" --- ", " ---: ", " ---: ", " ---: "), f7,
-           paste0("author's calculations on a stratified sample of ", sum(agree$n[1]),
+           paste0("authors' calculations on a stratified sample of ", sum(agree$n[1]),
                   " posts independently recoded from the same written protocol with the original ",
                   "labels withheld."))
   for (i in seq_len(nrow(agree))) {
@@ -279,10 +284,12 @@ if (V2) {
   }, character(1))
   md_table("tab8_attention_object.md",
            "Table 8. What the institution-register material attends to, and who speaks.",
-           c("Object of economic content", "Sector voice", "Outside report", "Posts", "% of 179"),
+           c("Object of economic content", "Sector voice", "Outside report", "Posts",
+             paste0("% of ", nrow(obj))),
            c(" --- ", " ---: ", " ---: ", " ---: ", " ---: "), f8,
-           paste0("author's recoding of the 179 posts previously classified as the sector acting ",
-                  "or speaking in economic coverage. Labels are three-model majorities. A sector ",
+           paste0("authors' recoding of the ", nrow(obj),
+                  " posts classified as the sector acting or speaking in economic coverage. ",
+                  "All of these retained labels are three-model majorities. A sector ",
                   "voice is a quotation, interview, homily, official statement or press release; ",
                   "an outside report contains no sector actor speaking."))
 
@@ -329,7 +336,11 @@ if (V2) {
            c("Institutional unit", "Direct own-position speech", "All public voice",
              "Repricing", "Charitable response", "Matched named units"),
            c(" --- ", " ---: ", " ---: ", " ---: ", " ---: ", " ---: "), f9,
-           paste0("author's recoding of all 520 posts. Named-unit matches require the same ",
+           paste0("authors' recoding of all ", nrow(v2full), " posts: ",
+                  sum(v2full$coding_source_v2 == "prior_three_run_majority"),
+                  " retained three-run majority labels and ",
+                  sum(v2full$coding_source_v2 == "corpus_v1_addendum"),
+                  " single-coded addendum labels. Named-unit matches require the same ",
                   "specific unit to speak about its own position before a later repricing report; ",
                   "identifying names remain in the private analysis files. Counts are coverage ",
                   "events, not a census of institutional actions."))

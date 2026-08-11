@@ -90,8 +90,6 @@ print(cr)
 rule("2.4  The normative response")
 nj <- sum(core$register == "justice")
 msg("  strict coding            : ", nj, " posts, ", sprintf("%.1f%%", 100 * nj / nrow(core)), " of the core")
-msg("  broad reading (<= 8%)    : the upper bound in PAPER_v1 counts latent structural")
-msg("                             language in adjacent charity posts; carried forward as a bound.")
 msg("  by year                  : ",
     paste(sprintf("%s:%d", core[register == "justice", .N, by = year][order(year)]$year,
                   core[register == "justice", .N, by = year][order(year)]$N), collapse = "  "))

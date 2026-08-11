@@ -1,7 +1,8 @@
 # Coding protocol — religion and the cost of living
 
 This is the fixed codebook applied to all 1 450 candidate items in June 2026 and re-applied
-unchanged in the blind re-annotation of August 2026. It is reproduced in the manuscript
+unchanged in the blind re-annotation of August 2026. The official-corpus refresh of 11 August
+2026 used the same rules for 32 newly selected candidates. It is reproduced in the manuscript
 appendix so that a referee can replicate the coding without access to the corpus.
 
 An annotator sees a date, an outlet type, a headline and an excerpt of roughly 800
@@ -93,17 +94,29 @@ quoted. If it reports the Church acting or speaking about the wider economy, it 
 One row per item: `item, infl, link, foreign, register, note`. `register` is `none` when
 `link = 0`. The note is one short clause, and is required whenever the answer was close.
 
+### Official-corpus addendum
+
+The refreshed selector retains 729 candidates from the original three-run pool and adds 32
+candidates not previously labelled. Those 32 receive one documented decision under the same
+four-step protocol in `output/coded_labels_corpus_addendum.csv`; they are not represented as
+three-run majorities. Ten become domestic measured items. This provenance remains attached to
+the analysis and is reported as a limitation.
+
 ---
 
 # Protocol addendum — attention object and institutional unit (August 2026)
 
-Applied to material already coded in June 2026; no new posts enter the pool. The addendum
-adds three decisions. The first two are made only on posts the June coding placed in the
+Originally applied to material already coded in June 2026. The addendum adds three decisions.
+The first two are made only on posts the coding placed in the
 `institution` register; the third is made on every post of the measured core. The same
 three-annotator majority design is used, and the annotator sees the same evidence as
 before: a date, an outlet type, a headline and an excerpt centred on the cost-of-living
 phrase, with no existing label shown. The June register is disclosed to the annotator only
 to the extent implied by which sheet the item is on.
+
+In the official-corpus refresh, 465 domestic items retain these three-run labels. The ten new
+domestic items receive the same extension in `output/v2_labels_corpus_addendum.csv`. None is in
+the institution register, so they add unit decisions but no new object or voice decisions.
 
 ## 5. `object` — what economic subject does the institution's appearance concern?
 

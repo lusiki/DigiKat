@@ -1,6 +1,6 @@
 ---
 title: "Inflacija, informacije i odgođene promjene cijena"
-subtitle: "Inflation, Information, and Delayed Repricing"
+subtitle: "Javni govor, inflacijski šok i vremenski odmak promjena cijena"
 author:
   - name: "Luka Šikić"
     url: "https://www.lukasikic.info/"
@@ -11,6 +11,20 @@ author:
 date: last-modified
 categories: ["Tematsko istraživanje", "Ekonomija", "Rukopis za časopis"]
 ---
+
+```{r}
+#| echo: false
+#| results: hide
+
+rez <- data.table::fread(
+  here::here("studies", "inflation-salience", "output", "derived_v2.csv"),
+  encoding = "UTF-8",
+  colClasses = "character"
+)
+v <- stats::setNames(rez$value, rez$name)
+hr_broj <- function(x) gsub(" ", ".", v[[x]], fixed = TRUE)
+hr_dec <- function(x) gsub(".", ",", v[[x]], fixed = TRUE)
+```
 
 Istraživanja rigidnosti cijena uglavnom promatraju same cijene. Mnogo je teže utvrditi je li određivač
 cijene uočio inflacijski šok, ali je prilagodbu ipak odgodio. Ovaj rad koristi datirano medijsko
@@ -27,10 +41,16 @@ prisutne unutar sektora.
 
 ## Podaci i metode
 
-Analiza polazi od 710.307 objava hrvatskoga digitalnog medijskog prostora od siječnja 2021. do lipnja
-2026. Kodiranjem je izdvojeno 520 objava koje stvarno povezuju religiju s domaćom inflacijom. Objava je
-zatim razvrstana prema predmetu ekonomskog sadržaja, vrsti govornika, institucijskoj jedinici i vrsti
-odgovora: javnom govoru, promjeni cijena, dobrotvornoj pomoći ili normativnom tumačenju tereta inflacije.
+Analiza polazi od službenoga korpusa s `r hr_broj("n_corpus")` religijski relevantnih objava od siječnja
+2021. do lipnja 2026. Jedinstveno pravilo relevantnosti primijenjeno je na oba razdoblja prikupljanja.
+Kodiranjem je izdvojeno `r hr_broj("n_core")` objava koje stvarno povezuju religiju s domaćom inflacijom.
+Objave su zatim razvrstane prema predmetu ekonomskog sadržaja, vrsti govornika, institucijskoj jedinici i
+vrsti odgovora: javnom govoru, promjeni cijena, dobrotvornoj pomoći ili normativnom tumačenju tereta
+inflacije.
+
+Većina kandidata zadržava ranije odluke triju neovisnih kodiranja. Novi korpus izdvaja još
+`r hr_broj("n_addendum_coded")` kandidata, koji su kodirani u zasebnom dodatku. Razlika u snazi anotacije
+zadržana je u analitičkim izlazima i navedena među ograničenjima rada.
 
 Medijski korpus koristi se kao registar događaja, a ne kao cjenovni indeks. Analiza zato mjeri datume,
 vrhunce, sastav izvještavanja i vremenske odmake. Ne procjenjuje razinu pojedine naknade, koeficijent
@@ -38,17 +58,23 @@ prijenosa inflacije ni strukturnu stopu promjene cijena.
 
 ## Glavni nalazi
 
-Izravan govor sektora o vlastitim troškovima ili prihodima pojavljuje se u 91 objavi i doseže vrhunac u
+Izravan govor sektora o vlastitim troškovima ili prihodima pojavljuje se u
+`r hr_broj("v2_direct_own_n")` objave i doseže vrhunac u
 listopadu 2022. Izvještavanje o promjenama cijena doseže vrhunac u lipnju 2024., dvadeset mjeseci poslije.
-Harmonizirana razina potrošačkih cijena tada je bila 25,7 % viša nego u lipnju 2021.
+Harmonizirana razina potrošačkih cijena tada je bila `r hr_dec("v2_price_gap")` % viša nego u lipnju 2021.
 
 Četiri imenovana crkvena tijela pojavljuju se i u govoru o vlastitom ekonomskom položaju i u kasnijem
 izvještavanju o promjeni cijena. U tri slučaja odmak je dulji od godine dana. Relevantne informacije bile
 su, dakle, javno prisutne prije nego što se izvještavanje o prilagodbi cijena koncentriralo.
 
-Nalaz nije dovoljan za razdvajanje ograničenja pravednosti od sporoga organizacijskog odlučivanja. Pokazuje,
-međutim, da nepažnja prema vlastitim troškovima i fiksni tehnički trošak promjene cijena nisu potpuna
-objašnjenja opaženog slijeda.
+Novi korpus daje oprezniju procjenu veze medijske pažnje i inflacije. U razdoblju glavnog šoka korelacija
+udjela objava o troškovima života i ukupnoga HICP-a iznosi `r hr_dec("r_monitoring_headline")`, dok mjesečne
+promjene ne pokazuju stabilnu vezu. Glavni argument rada zato počiva na vremenskom slijedu i podudaranju
+imenovanih tijela, a ne na snažnoj korelaciji pažnje i inflacije.
+
+Nalaz nije dovoljan za razdvajanje ograničenja pravednosti od sporoga organizacijskog odlučivanja. Pokazuje
+da nepažnja prema vlastitim troškovima nije potpuno objašnjenje opaženog slijeda, ali ne isključuje djelomičnu
+nepažnju ni troškove prilagodbe.
 
 ## Vremenski slijed
 
@@ -74,7 +100,7 @@ Potpuni rukopis dostupan je u tri formata:
 <a class="study-paper-format" href="../../assets/papers/inflation-information-delayed-repricing.docx"><span class="study-paper-format__type">Word</span><span class="study-paper-format__label">Uređivi dokument</span></a>
 :::
 
-Sve tablice, slike i brojčani navodi generirani su iz arhiviranih izlaza studije. Opis korpusa i profil
+Sve tablice, slike i brojčani navodi generirani su iz osvježenih izlaza studije. Opis korpusa i profil
 izvora dostupni su na stranici [Baza podataka](../baza.qmd).
 
 ## Status

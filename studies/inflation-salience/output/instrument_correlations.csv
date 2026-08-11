@@ -1,7 +1,7 @@
 stream,n,component,pearson,p,spearman
-monitoring,37,headline,0.75,1.18e-07,0.77
-monitoring,37,food,0.73,2.72e-07,0.75
-monitoring,37,energy,0.43,0.00744,0.46
-backfill,24,headline,0.32,0.124,0.33
-backfill,24,food,-0.52,0.00892,-0.48
-backfill,24,energy,0.67,0.000383,0.69
+monitoring,37,headline,0.48,0.00259,0.61
+monitoring,37,food,0.44,0.00586,0.57
+monitoring,37,energy,0.24,0.146,0.32
+backfill,24,headline,0.15,0.476,0.23
+backfill,24,food,-0.31,0.146,-0.19
+backfill,24,energy,0.32,0.126,0.31

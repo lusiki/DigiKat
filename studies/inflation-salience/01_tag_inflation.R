@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-# 01_tag_inflation.R — tag cost-of-living mentions across the master corpus.
+# 01_tag_inflation.R — tag cost-of-living mentions across the official corpus.
 #
 # Rebuilds the tagging stage of the lost scratchpad/10_rerun_fixed.R.
 # Run from the repository root:
@@ -9,15 +9,16 @@
 #   output/private/tagged_inflation.rds   restricted: rid, date, stream, outlet, title, url
 #   output/attention_monthly.csv          tracked aggregate: month, stream, n_total, n_infl, share
 #
-# Fixture check: the June 2026 run reported 8,105 raw / 8,019 clean inflation posts and a
-# 39-month monitoring-stream series in output/h1_attention_hicp_series.csv.
+# Baseline check: the August 2026 official corpus yields 1,537 raw / 1,486 clean mentions.
 
 source("studies/inflation-salience/_lib.R")
 
 rule("01_tag_inflation.R")
-msg("reading the master ...")
+msg("reading the official corpus ...")
 m <- readRDS(MASTER)
 msg("  ", format(nrow(m), big.mark = " "), " rows x ", ncol(m), " columns")
+if (nrow(m) != MASTER_MANIFEST$corpus$rows)
+  stop("corpus row count disagrees with data/digikat_corpus_manifest.json")
 
 txt <- dk_text(m$TITLE, m$FULL_TEXT)
 
@@ -26,16 +27,16 @@ raw   <- tag_inflation_raw(txt)
 clean <- tag_inflation(txt)
 stopifnot(all(clean <= raw))
 
-rule("Fixture check — corpus funnel")
-fixture_report("inflation posts, before guard", sum(raw),   8105L)
-fixture_report("inflation posts, after guard",  sum(clean), 8019L)
-fixture_report("removed by the metaphor guard", sum(raw) - sum(clean), 86L)
+rule("Baseline check — official-corpus funnel")
+fixture_report("inflation posts, before guard", sum(raw),   1537L)
+fixture_report("inflation posts, after guard",  sum(clean), 1486L)
+fixture_report("removed by the metaphor guard", sum(raw) - sum(clean), 51L)
 
 ## ------------------------------------------------------------ tagged set -----
 
 dates <- as.Date(m$DATE)
 tag <- data.table(
-  rid       = which(clean),
+  rid       = study_row_id(m)[clean],
   date      = dates[clean],
   month     = format(dates[clean], "%Y-%m"),
   year      = as.integer(format(dates[clean], "%Y")),
@@ -61,24 +62,22 @@ att[, share := 100 * n_infl / n_total]
 fwrite(att, file.path(OUT, "attention_monthly.csv"))
 msg("wrote ", file.path(OUT, "attention_monthly.csv"), " (", nrow(att), " month x stream cells)")
 
-## ------------------------------------- fixture check against the June series -----
+## ------------------------------------------ database-change audit -----
 
-rule("Fixture check — monthly series (monitoring stream, 2021-01 .. 2024-07)")
+rule("Database-change audit — old accumulator series against the official corpus")
 june <- fread(file.path(OUT, "h1_attention_hicp_series.csv"), encoding = "UTF-8")
 cmp <- merge(june[, .(month, n_total_june = n_total, n_infl_june = n_infl)],
              att[stream == "monitoring", .(month, n_total, n_infl)], by = "month")
 cmp[, `:=`(d_total = n_total - n_total_june, d_infl = n_infl - n_infl_june)]
 
 msg("  months compared            : ", nrow(cmp))
-msg("  n_total identical          : ", all(cmp$d_total == 0))
-msg("  n_infl mean absolute error : ", sprintf("%.2f posts/month", mean(abs(cmp$d_infl))))
-msg("  n_infl RMSE                : ", sprintf("%.2f posts/month", sqrt(mean(cmp$d_infl^2))))
-msg("  n_infl mean bias           : ", sprintf("%+.2f posts/month", mean(cmp$d_infl)))
-msg("  correlation of the shares  : ",
+msg("  denominator changed        : ", any(cmp$d_total != 0))
+msg("  cost-of-living count change: ", sprintf("%+.2f posts/month on average", mean(cmp$d_infl)))
+msg("  correlation of old/new shares: ",
     sprintf("%.4f", cor(cmp$n_infl_june / cmp$n_total_june, cmp$n_infl / cmp$n_total)))
 
-fwrite(cmp, file.path(OUT, "fixture_monthly_agreement.csv"))
-msg("\n  wrote ", file.path(OUT, "fixture_monthly_agreement.csv"))
+fwrite(cmp, file.path(OUT, "database_delta_monthly.csv"))
+msg("\n  wrote ", file.path(OUT, "database_delta_monthly.csv"))
 
 rule("Coverage of the full span")
 print(att[, .(months = .N, n_total = sum(n_total), n_infl = sum(n_infl),

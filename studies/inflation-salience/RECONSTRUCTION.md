@@ -1,10 +1,26 @@
 # Pipeline reconstruction — outcome and residuals
 
-> **V2 continuation, 2026-08-05.** This reconstruction remains the upstream provenance for
-> [`PAPER_EMIP_v2.md`](PAPER_EMIP_v2.md). The economic reframe adds scripts 14–16 and uses the
-> same fixed 1 450-item annotated pool and 520-item domestic core. A full
-> `RUN_ALL.R --v2 --no-network` rebuild completed successfully; the residual candidate-filter
-> mismatch documented below is unchanged and is disclosed in the v2 appendix.
+## Official-corpus refresh — 11 August 2026
+
+The paper was re-run on `data/digikat_corpus.rds` (413,985 rows; manifest generated 10 August
+2026). The corpus preserves the accumulator source row in `dk_master_row`, which makes it
+possible to migrate the earlier annotations without URL matching or dependence on row order.
+
+The refreshed selector yields 1,486 cost-of-living posts and 761 proximity candidates. Earlier
+three-run annotations cover 729 candidates; a separate single-coder addendum covers 32. The
+resulting domestic measured set contains 475 posts: 465 retained prior decisions and 10
+addendum decisions. The original 520-post outputs remain recoverable from version control, but
+the active EMIP v2 manuscript and generated assets now report the official-corpus analysis.
+
+The main timing result survives: direct own-position speech peaks in October 2022 and repricing
+coverage in June 2024. The early headline-HICP correlation weakens to 0.48. This shift is treated
+as a substantive finding, not tuned away. Scripts 01–17, the nine table fragments, both figures,
+the 154 manuscript scalars and the replication package were rebuilt end to end.
+
+> **Historical V2 reconstruction, 2026-08-05.** The account below documents the earlier
+> accumulator-based run with its fixed 1 450-item annotated pool and 520-item domestic core.
+> It remains provenance for the frozen labels, but the 11 August official-corpus refresh above
+> now supplies the active manuscript results.
 
 **Date:** 2026-08-05 · **Scripts:** `_lib.R`, `01_tag_inflation.R`, `02_linkage_candidates.R`,
 `03_finalize_coded.R` · **Fixtures:** `EMIP_EXECUTION.md` Step 1

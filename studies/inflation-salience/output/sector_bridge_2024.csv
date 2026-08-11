@@ -1,7 +1,6 @@
 stream,response,N,share
-monitoring,Repricing,60,93.8
-monitoring,Public voice,4,6.2
-backfill,Normative response,4,18.2
-backfill,Charitable response,12,54.5
-backfill,Public voice,5,22.7
-backfill,Repricing,1,4.5
+monitoring,Repricing,60,95.2
+monitoring,Public voice,3,4.8
+backfill,Normative response,3,25
+backfill,Charitable response,4,33.3
+backfill,Public voice,5,41.7

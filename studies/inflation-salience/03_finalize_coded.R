@@ -1,64 +1,90 @@
 #!/usr/bin/env Rscript
-# 03_finalize_coded.R — assemble the measured core from the surviving annotation.
+# 03_finalize_coded.R — assemble the refreshed measured set from stable annotations.
 #
-# Rebuilds the lost scratchpad/14_finalize_coded.R. The 1,450 annotation decisions
-# themselves survive in output/coded_labels.csv, so nothing here re-codes anything; the
-# script joins those labels back to the master and attaches the collection stream.
+# Earlier three-run majority decisions survive in output/coded_labels.csv. The new official
+# corpus selects 32 additional candidates, documented in coded_labels_corpus_addendum.csv.
+# This script keeps only candidates produced by the refreshed selector and joins both label
+# sources through the stable accumulator-row id `dk_master_row`.
 #
-# The join key. PAPER_v1 called it `rid` without saying what it was, and the execution
-# brief assumed it was lost. It is the 1-based row index of the master data frame: for all
-# 1,450 pooled items both the URL and the date at that row agree with the pool index. The
-# script asserts this before using it, so a changed master fails loudly instead of
-# silently attaching labels to the wrong posts. That matters because five pooled URLs are
-# duplicated in the master, so a URL join would be ambiguous for them.
+# `rid` is the accumulator's 1-based source-row id. The official corpus retains it in
+# `dk_master_row`, so the join does not depend on corpus ordering or duplicated URLs.
 #
 # Writes
 #   output/private/coded_core.rds      restricted: one row per coded item
 #   output/coded_core_stream.csv       tracked aggregate: register x year x stream counts
 #
-# Fixture check: 652 linked / 132 foreign / 520 domestic core.
+# Baseline counts are printed from the refreshed corpus and then locked by the manuscript
+# scalar checks.
 
 source("studies/inflation-salience/_lib.R")
 
 rule("03_finalize_coded.R")
 
-lab  <- fread(file.path(OUT, "coded_labels.csv"), encoding = "UTF-8")
-pool <- fread(file.path(PRIVATE, "coding_pool_index.csv"), encoding = "UTF-8")
-msg("annotation decisions: ", nrow(lab), " (", sum(lab$n == 3), " coded by all three annotators)")
+prior <- fread(file.path(OUT, "coded_labels.csv"), encoding = "UTF-8")
+add   <- fread(file.path(OUT, "coded_labels_corpus_addendum.csv"), encoding = "UTF-8")
+pool  <- fread(file.path(PRIVATE, "coding_pool_index.csv"), encoding = "UTF-8")
+cand  <- readRDS(file.path(PRIVATE, "linkage_candidates.rds"))
+
+need <- c("rid", "n", "infl", "link", "foreign", "register")
+if (!all(need %in% names(prior)) || !all(need %in% names(add)))
+  stop("coding label files do not share the required schema")
+new_ids <- setdiff(cand$rid, prior$rid)
+if (!setequal(new_ids, add$rid))
+  stop("the single-coder addendum does not exactly cover the refreshed candidates absent from the prior pool")
+if (anyDuplicated(cand$rid) || anyDuplicated(add$rid)) stop("duplicated stable ids in refreshed coding inputs")
+
+prior_use <- prior[rid %in% cand$rid, ..need]
+prior_use[, coding_source := "prior_three_run_majority"]
+add_use <- add[, ..need]
+add_use[, coding_source := "corpus_v1_addendum"]
+lab <- rbindlist(list(prior_use, add_use), use.names = TRUE)
+setorder(lab, rid)
+if (!setequal(lab$rid, cand$rid) || nrow(lab) != nrow(cand))
+  stop("one coding decision is required for every refreshed candidate")
+msg("refreshed annotation decisions: ", nrow(lab), " (", nrow(prior_use),
+    " prior three-run majorities; ", nrow(add_use), " addendum decisions)")
 
 m <- readRDS(MASTER)
 
 ## ------------------------------------------------------ assert the join key -----
 
-rule("Join-key assertion — rid is the master row index")
-stopifnot(all(lab$rid %in% pool$rid), nrow(lab) == nrow(pool))
-url_ok  <- sum(as.character(m$URL[pool$rid]) == pool$URL)
-date_ok <- sum(as.character(m$DATE[pool$rid]) == as.character(pool$DATE))
-msg("  URL agrees at rid  : ", url_ok,  " / ", nrow(pool))
-msg("  DATE agrees at rid : ", date_ok, " / ", nrow(pool))
-if (url_ok != nrow(pool) || date_ok != nrow(pool))
-  stop("rid no longer indexes the master — the master has changed; do not proceed.")
-msg("  duplicated URLs among pooled items (why a URL join would be unsafe): ",
+rule("Join-key assertion — rid maps through dk_master_row")
+row <- study_row_index(m, lab$rid)
+msg("  stable ids found in official corpus: ", sum(!is.na(row)), " / ", nrow(lab))
+msg("  duplicated URLs in the prior pool (why a URL join remains unsafe): ",
     sum(duplicated(pool$URL)) + sum(duplicated(pool$URL, fromLast = TRUE)))
 
 ## ------------------------------------------------------------ assemble -----
 
-dates <- as.Date(m$DATE)
+dates <- as.Date(m$DATE[row])
+
+# Preserve the historical outlet typology where the prior pool already classified the
+# exact row. For new rows, inherit the outlet's unambiguous prior classification; genuinely
+# new outlets default to secular/other and are listed in the provenance audit.
+otype_exact <- pool$otype[match(lab$rid, pool$rid)]
+otype_map <- unique(pool[, .(FROM, otype)])
+if (otype_map[, anyDuplicated(FROM)]) stop("an outlet has more than one prior outlet type")
+cur_outlet <- as.character(m$FROM[row])
+otype_inherit <- otype_map$otype[match(cur_outlet, otype_map$FROM)]
+otype <- fifelse(!is.na(otype_exact), otype_exact,
+                 fifelse(!is.na(otype_inherit), otype_inherit, "Secular/other"))
+
 coded <- data.table(
   rid       = lab$rid,
   n_ann     = lab$n,
   c_infl    = lab$infl,
   c_link    = lab$link,
   c_foreign = lab$foreign,
-  register  = lab$register
+  register  = lab$register,
+  coding_source = lab$coding_source
 )[, `:=`(
-  date      = dates[rid],
-  year      = as.integer(format(dates[rid], "%Y")),
-  month     = format(dates[rid], "%Y-%m"),
-  stream    = unname(STREAM_LABEL[m$data_source[rid]]),
-  outlet    = m$FROM[rid],
-  otype     = pool$otype[match(rid, pool$rid)],
-  sentiment = m$AUTO_SENTIMENT[rid]
+  date      = dates,
+  year      = as.integer(format(dates, "%Y")),
+  month     = format(dates, "%Y-%m"),
+  stream    = unname(STREAM_LABEL[m$data_source[row]]),
+  outlet    = cur_outlet,
+  otype     = otype,
+  sentiment = m$AUTO_SENTIMENT[row]
 )]
 coded[, register := fifelse(register == "cost_relig_life", "crl", register)]
 
@@ -75,46 +101,32 @@ msg("\nwrote ", file.path(PRIVATE, "coded_core.rds"), " (", nrow(coded), " rows)
 
 ## ------------------------------------------------------- fixture checks -----
 
-rule("Fixture check — the funnel")
-fixture_report("candidates coded",             nrow(coded),                    1450L)
-fixture_report("confirmed inflation",          sum(coded$c_infl == 1L),        1329L)
-fixture_report("confirmed religion-linked",    sum(coded$linked == 1L),         652L)
-fixture_report("... foreign inflation",        sum(coded$linked == 1L & coded$c_foreign == 1L), 132L)
-fixture_report("... domestic measured core",   sum(coded$domestic == 1L),       520L)
+rule("Refreshed funnel")
+msg("  candidates coded             : ", nrow(coded))
+msg("  confirmed literal inflation  : ", sum(coded$c_infl == 1L))
+msg("  confirmed religion-linked    : ", sum(coded$linked == 1L))
+msg("  ... foreign inflation        : ", sum(coded$linked == 1L & coded$c_foreign == 1L))
+msg("  ... domestic measured set    : ", sum(coded$domestic == 1L))
+print(coded[, .(candidates = .N, domestic = sum(domestic)), by = coding_source])
 
 core <- coded[domestic == 1L]
-rule("Fixture check — register of the domestic core (PAPER_v1 Table 2)")
-exp_reg <- c(crl = 194L, institution = 179L, charity = 87L, devotional = 26L,
-             justice = 15L, disputed = 12L, other = 7L)
-for (r in names(exp_reg)) fixture_report(REGISTER_LABEL[[r]], sum(core$register == r), exp_reg[[r]])
-
-rule("Fixture check — outlet type and year (PAPER_v1 sections 4.2, 4.4)")
-fixture_report("secular / other outlets", sum(core$otype == "Secular/other"), 442L)
-fixture_report("Catholic outlets",        sum(core$otype == "Catholic"),       75L)
-# Year targets are the June figures with one correction. Six posts carry the date
-# 2022-12-31 in both the master and the June core file, yet that file's own `year` column
-# says 2023 for them, so PAPER_v1 Table 4 reads 2022 -> 201 and 2023 -> 100. The date is
-# unambiguous and 2022 is right, which makes the corrected split 207 / 94. The check below
-# prints the corrected target and the size of the correction.
-june_year <- c(`2021` = 12L, `2022` = 201L, `2023` = 100L, `2024` = 88L,
-               `2025` = 66L, `2026` = 53L)
-corr_year <- c(`2021` = 12L, `2022` = 207L, `2023` =  94L, `2024` = 88L,
-               `2025` = 66L, `2026` = 53L)
-for (y in 2021:2026)
-  fixture_report(paste("core posts in", y), sum(core$year == y), corr_year[[as.character(y)]])
-msg("\n  posts dated 2022-12-31 that the June run booked to 2023: ",
-    sum(as.character(core$date) == "2022-12-31"))
-msg("  (June split 2022/2023 was ", june_year[["2022"]], " / ", june_year[["2023"]],
-    "; corrected ", corr_year[["2022"]], " / ", corr_year[["2023"]], ")")
+rule("Register, outlet type and year of the refreshed domestic set")
+print(core[, .N, by = register][order(-N)])
+print(core[, .N, by = otype][order(-N)])
+print(core[, .N, by = year][order(year)])
 
 ## ------------------------------- the stream label the execution brief wanted -----
 
 rule("Collection stream of the measured core")
-msg("The brief expected the stream to be recoverable for the 88 posts dated 2024 only.")
-msg("Because rid indexes the master, it is exact for all ", nrow(core), ".\n")
+msg("The stable row id makes the stream exact for all ", nrow(core), " refreshed items.\n")
 print(dcast(core[, .N, by = .(year, stream)], year ~ stream, value.var = "N", fill = 0L))
 
 agg <- core[, .N, by = .(year, stream, register)][order(year, stream, register)]
 fwrite(agg, file.path(OUT, "coded_core_stream.csv"))
+prov <- coded[, .(candidates = .N, literal_inflation = sum(c_infl == 1L),
+                  genuine_link = sum(linked), foreign = sum(linked == 1L & c_foreign == 1L),
+                  domestic = sum(domestic)), by = coding_source]
+fwrite(prov, file.path(OUT, "coding_provenance.csv"))
 msg("\nwrote ", file.path(OUT, "coded_core_stream.csv"))
+msg("wrote ", file.path(OUT, "coding_provenance.csv"))
 msg("\ndone.")

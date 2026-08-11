@@ -83,15 +83,18 @@ for (f in c("CODEBOOK.md", "RECONSTRUCTION.md", paper_file))
 ## ----------------------------------------------------------------- data -----
 
 rule("Data")
-ship <- c("coded_labels.csv", "hicp_hr.csv", "hicp_validation.csv", "derived.csv",
+ship <- c("coded_labels.csv", "coded_labels_corpus_addendum.csv",
+          "candidate_annotation_coverage.csv", "coding_provenance.csv",
+          "hicp_hr.csv", "hicp_validation.csv", "derived.csv",
           "attention_monthly.csv", "instrument_series.csv", "instrument_correlations.csv",
           "instrument_threshold.csv", "instrument_robustness.csv", "coded_core_stream.csv",
           "sector_responses.csv", "sector_shares.csv", "sector_seam_free.csv",
           "sector_bridge_2024.csv", "sector_outlets.csv", "reannotation_agreement.csv",
-          "reannotation_confusion.csv", "reannotation_by_stratum.csv",
-          "fixture_monthly_agreement.csv")
+          "reannotation_confusion.csv", "reannotation_by_stratum.csv", "reannotation_scope.csv",
+          "database_delta_monthly.csv")
 if (V2) ship <- unique(c(setdiff(ship, "derived.csv"),
-  "derived_v2.csv", "v2_labels.csv", "v2_analysis_core.csv", "v2_agreement.csv",
+  "derived_v2.csv", "v2_labels.csv", "v2_labels_corpus_addendum.csv",
+  "v2_analysis_core.csv", "v2_agreement.csv", "v2_coding_provenance.csv",
   "attention_object_monthly.csv", "attention_object_yearly.csv",
   "unit_response.csv", "unit_matched_summary.csv", "unit_matched_by_type.csv",
   "event_process.csv", "event_summary.csv", "detection_diagnostics.csv"))
@@ -133,7 +136,8 @@ readme <- c(
   "",
   "## What is not here, and why",
   "",
-  "The corpus of 710 307 posts is not included. It consists of scraped media text obtained",
+  paste0("The official corpus of ", format(MASTER_MANIFEST$corpus$rows, big.mark = " "),
+         " posts is not included. It consists of scraped media text obtained"),
   "through a commercial monitoring service and cannot be redistributed. Scripts 01 and 02",
   "need it; every other script runs from the files in `data/`.",
   "",
@@ -157,11 +161,11 @@ readme <- c(
   "",
   "## Reproducing it from the corpus",
   "",
-  paste0("With the corpus at `data/merged_comprehensive.rds`, run scripts 00 through ",
+  paste0("With the official corpus at `data/digikat_corpus.rds`, run scripts 00 through ",
          if (V2) "18" else "12", " in order"),
-  "from the repository root. Scripts 01, 02, 03, 04 and 06 read it; the rest do not.",
-  "Scripts 01 and 03 print a comparison against the figures published in the paper and",
-  "state which of them they reproduce exactly.",
+  "from the repository root. Scripts 01 through 03 read it; later scripts use derived",
+  "study files and frozen private annotation keys. The corpus manifest records the input",
+  "hash, row count, time span and inclusion rule used by the published analysis.",
   "",
   "## Software",
   "",

@@ -126,6 +126,13 @@ pdf_out <- render("typst", "pdf")
 html_out <- render("html", "html")
 setwd(old)
 
+# Keep the long-standing study-root HTML artifact in sync for collaborators who open it
+# directly. The standalone output embeds its resources, so the historical *_files folder is
+# not part of the active build.
+root_html <- file.path(STUDY, "PAPER_EMIP_v2.html")
+if (!file.copy(html_out, root_html, overwrite = TRUE)) stop("could not refresh ", root_html)
+msg("  refreshed ", root_html)
+
 stem <- "inflation-information-delayed-repricing"
 publish <- c(
   html_out,

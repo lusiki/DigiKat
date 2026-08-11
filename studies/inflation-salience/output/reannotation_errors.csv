@@ -2,7 +2,6 @@ item,rid,stratum,c_infl,n_infl2,c_link,n_link2,c_foreign,n_foreign2,register,n_r
 R001,11689,core: justice,1,1,1,1,0,1,justice,institution
 R002,11740,core: justice,1,0,1,0,0,0,justice,none
 R005,83495,core: other,1,1,1,0,0,0,other,none
-R006,86429,not linked,1,0,0,0,0,0,none,none
 R007,90627,core: other,1,1,1,1,0,0,other,devotional
 R010,115961,core: charity,1,1,1,1,0,0,charity,institution
 R011,118966,core: other,1,0,1,0,0,0,other,none
@@ -20,9 +19,6 @@ R036,154471,disputed,1,1,1,0,0,0,disputed,none
 R037,156669,core: devotional,1,1,1,1,0,0,devotional,institution
 R040,160638,core: institution,1,1,1,1,0,0,institution,devotional
 R041,164797,not linked,1,1,0,1,0,1,none,justice
-R052,173447,core: institution,1,1,1,1,0,0,institution,crl
-R053,173455,core: institution,1,1,1,1,0,0,institution,crl
-R054,173574,"linked, foreign",1,1,1,1,1,1,justice,institution
 R058,179270,core: justice,1,1,1,1,0,1,justice,institution
 R061,183706,core: charity,1,1,1,1,0,1,charity,charity
 R062,184374,core: institution,1,1,1,1,0,0,institution,crl
@@ -31,33 +27,16 @@ R070,217193,not linked,1,1,0,1,0,0,none,crl
 R075,244042,"linked, foreign",1,1,1,1,1,1,other,institution
 R077,244774,core: crl,1,1,1,1,0,0,crl,institution
 R078,245327,core: devotional,1,1,1,1,0,0,devotional,justice
-R080,251982,disputed,1,1,1,0,0,0,disputed,none
 R082,256548,core: crl,1,1,1,1,0,1,crl,crl
 R083,257945,core: institution,1,1,1,1,0,0,institution,crl
-R097,278574,"linked, foreign",1,1,1,1,1,1,other,justice
-R102,327043,not linked,1,1,0,1,0,0,none,justice
 R104,344238,core: justice,1,1,1,1,0,0,justice,institution
 R106,352751,core: justice,1,1,1,1,0,0,justice,devotional
-R107,354900,core: charity,1,0,1,0,0,0,charity,none
-R112,366373,core: charity,1,0,1,0,0,0,charity,none
 R113,370460,"linked, foreign",1,1,1,1,1,1,justice,institution
 R114,370741,"linked, foreign",1,1,1,1,1,1,justice,institution
-R115,379497,not linked,0,1,0,0,1,0,none,none
-R116,393653,disputed,1,1,1,1,0,1,disputed,institution
-R119,402482,core: other,1,1,1,1,0,0,other,institution
-R124,433418,core: charity,1,1,1,1,0,0,charity,justice
 R126,455701,core: justice,1,1,1,0,0,0,justice,none
-R132,505788,"linked, foreign",1,1,1,0,1,1,justice,none
 R135,508507,core: institution,1,1,1,1,0,0,institution,devotional
 R136,508732,core: institution,1,1,1,1,0,0,institution,devotional
-R138,530595,not linked,1,1,0,1,1,0,none,devotional
-R143,546979,not linked,1,0,0,0,0,0,none,none
-R144,553813,not linked,1,0,0,0,1,0,none,none
-R145,562554,not linked,0,1,1,1,0,0,devotional,devotional
 R151,628484,disputed,1,1,1,0,0,0,disputed,none
 R152,628521,disputed,1,1,1,0,0,0,disputed,none
 R158,666830,disputed,0,1,1,1,0,0,disputed,crl
 R162,679840,not linked,0,1,1,1,0,0,other,crl
-R164,686097,not linked,1,0,0,0,0,0,none,none
-R166,695902,"linked, foreign",1,1,1,0,1,0,institution,none
-R168,698895,"linked, foreign",1,1,1,0,1,0,institution,none

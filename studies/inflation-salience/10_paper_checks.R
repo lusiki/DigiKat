@@ -49,7 +49,7 @@ pages <- nch / CHARS_PER_PAGE
 words <- length(unlist(strsplit(paste(body, collapse = " "), "\\s+")))
 cat(sprintf("      body from section 1 to the end: %s words, %s characters\n",
             format(words, big.mark = " "), format(nch, big.mark = " ")))
-page_limit <- if (V2) 45 else 25
+page_limit <- 25
 ok(pages <= page_limit, paste0("estimated <= ", page_limit, " journal pages"),
    sprintf("%.1f pages at %d characters per page", pages, CHARS_PER_PAGE))
 

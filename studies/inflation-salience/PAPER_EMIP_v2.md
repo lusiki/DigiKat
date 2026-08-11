@@ -3,8 +3,8 @@
 ## Inflacija, informacije i odgođene promjene cijena
 
 **Luka Šikić** · **Petra Palić**
-Catholic University of Croatia, Department of Communication Studies, Zagreb (both authors)
-Corresponding author: luka.sikic@unicath.hr · Luka Šikić ORCID [to be completed at submission]
+Catholic University of Croatia, Department of Communication Studies, Zagreb
+Corresponding author: luka.sikic@unicath.hr
 
 **Category:** original scientific paper (izvorni znanstveni rad)
 **JEL classification:** E31 · D40 · L11 · D91 · C55 · Z12
@@ -13,13 +13,13 @@ Corresponding author: luka.sikic@unicath.hr · Luka Šikić ORCID [to be complet
 
 ## Abstract
 
-Studies of price rigidity observe prices but rarely show whether a price setter noticed the shock. This paper uses dated media coverage to study inflation and repricing in Croatia's religious sector, for which no official price series exists. Coding identifies 520 posts that connect religion to domestic inflation. Direct sector speech about its own costs or revenues appears in 91 posts and peaks in October 2022. Repricing coverage peaks 20 months later, in June 2024, when the harmonised price level was 25.7 per cent above June 2021. Four named bodies appear in both own-position speech and later repricing coverage; three lags exceed one year. Relevant information was therefore publicly present before adjustment became concentrated. The evidence is consistent with fairness constraints and slow organisational decision-making, but does not identify their separate effects.
+Price data reveal adjustment but rarely whether a price setter had already noticed the shock. We use dated media coverage to study this distinction in Croatia’s religious sector, for which no official fee index exists. The new official DigiKat database contains 413,985 religion-salient posts. Coding identifies 475 domestic religion–inflation connections. Direct sector speech about its own costs or revenues appears in 83 posts and peaks in October 2022. Repricing coverage peaks in June 2024, 20 months later, when the harmonised price level was 25.7 per cent above June 2021. Four named bodies appear first in own-position speech and later in repricing coverage; three lags exceed one year. The evidence rejects neither inattention nor menu costs, but shows that information about the relevant economic object was publicly available well before adjustment coverage became concentrated.
 
 **Keywords:** price rigidity; rational inattention; fairness; nonprofit pricing; media as data; Croatia
 
 ## Sažetak
 
-Istraživanja rigidnosti cijena promatraju cijene, ali rijetko pokazuju je li određivač cijene uočio šok. Ovaj rad koristi datirano medijsko izvještavanje za analizu inflacije i promjena cijena u hrvatskom vjerskom sektoru, za koji ne postoji službena cjenovna serija. Kodiranjem je utvrđeno 520 objava koje povezuju religiju s domaćom inflacijom. Izravan govor sektora o vlastitim troškovima ili prihodima pojavljuje se u 91 objavi i doseže vrhunac u listopadu 2022. Izvještavanje o promjenama cijena doseže vrhunac 20 mjeseci poslije, u lipnju 2024., kada je harmonizirana razina cijena bila 25,7 posto viša nego u lipnju 2021. Četiri imenovana tijela pojavljuju se i u govoru o vlastitom položaju i u kasnijem izvještavanju o promjeni cijena, a tri odmaka dulja su od godine dana. Relevantne su informacije, dakle, bile javno prisutne prije koncentracije prilagodbe. Nalaz je u skladu s ograničenjima pravednosti i sporim organizacijskim odlučivanjem, ali ne razdvaja njihove učinke.
+Podaci o cijenama otkrivaju prilagodbu, ali rijetko pokazuju je li određivač cijene već uočio šok. Datirano medijsko izvještavanje koristimo za analizu te razlike u hrvatskom vjerskom sektoru, za koji ne postoji službeni indeks naknada. Nova službena baza DigiKat sadrži 413.985 religijski relevantnih objava. Kodiranjem je utvrđeno 475 domaćih poveznica religije i inflacije. Izravan govor sektora o vlastitim troškovima ili prihodima pojavljuje se u 83 objave i doseže vrhunac u listopadu 2022. Izvještavanje o promjenama cijena doseže vrhunac 20 mjeseci poslije, u lipnju 2024., kada je harmonizirana razina cijena bila 25,7 posto viša nego u lipnju 2021. Četiri imenovana tijela najprije govore o vlastitom položaju, a poslije se pojavljuju u izvještajima o promjeni cijena; tri su odmaka dulja od godine dana.
 
 **Ključne riječi:** rigidnost cijena; racionalna nepažnja; pravednost; cijene neprofitnih organizacija; mediji kao podatak; Hrvatska
 
@@ -27,310 +27,298 @@ Istraživanja rigidnosti cijena promatraju cijene, ali rijetko pokazuju je li od
 
 ## 1. Introduction
 
-A fixed price can reflect two different situations. A seller may not have processed new information about costs or demand. Alternatively, the seller may know that the current price is too low but delay adjustment because changing it is costly, slow, or likely to upset customers. The observed price is the same, but the economic mechanism is different.
+An unchanged price is compatible with different economic mechanisms. A seller may not have acquired or processed new information. The seller may instead understand that costs have risen but postpone action because adjustment is administratively costly, organisationally slow or difficult to justify to customers. Observed prices alone do not distinguish these cases.
 
-This distinction is central to the literature on price rigidity. Sticky-information and rational-inattention models emphasise the cost of acquiring and processing information (Mankiw & Reis, 2002; Reis, 2006; Sims, 2003). Menu-cost models assume that sellers know their state but adjust only when the expected gain exceeds a fixed cost (Golosov & Lucas, 2007). Fairness models add the buyer's view of what constitutes a justified price increase (Kahneman et al., 1986). Standard price data rarely show which mechanism is operating.
+This paper uses public information to narrow that ambiguity. It studies the Croatian religious sector during the inflation shock that began in 2021 and surrounded the euro changeover in January 2023. Religious organisations provide services such as funerals, marriages, masses for intentions, pilgrimages and charitable assistance. Customary fees or expected contributions exist, yet no official index records when these amounts change. Dated media reports record a different part of the process: statements about household hardship, statements about institutional costs and revenues, and reports of repricing.
 
-This paper studies Croatia's religious sector, which provides marriages, funerals, masses for intentions, pilgrimages, charitable services and related activities. Users pay fees or make expected contributions, but no official index records these prices. Media coverage provides a second source of evidence: dated statements about household hardship, institutional costs and revenues, and changes in the price of religious services.
+The empirical design treats media coverage as an event register, not as a substitute price index. Three questions organise the analysis. First, does cost-of-living coverage inside religion-salient media content move with measured inflation? Second, did sector actors discuss their own economic position before repricing coverage became concentrated? Third, can the same named institutional bodies be observed in both kinds of event?
 
-The analysis treats media coverage as an event register rather than a price series. It asks whether the sector publicly discussed its own economic position before repricing coverage became concentrated. It then asks whether the same named bodies appear in both types of event. The design identifies dates, composition, concentration and lags. It does not estimate price levels, pass-through or a structural adjustment hazard.
+The new official DigiKat database changes the empirical base materially. It applies one religion-relevance rule to both collection eras and reduces the earlier broad accumulator to 413,985 posts. Re-running the complete selector yields 761 coding candidates and a measured domestic set of 475 posts. The smaller and more precise database weakens the early correlation between media attention and headline HICP to 0.48, but it does not alter the central sequence. Direct own-position speech peaks in October 2022. Repricing coverage peaks in June 2024, 20 months later. Four named bodies appear in both own-position speech and later repricing coverage, and three of those lags exceed one year.
 
-The main result is a clear ordering. Direct sector speech about its own costs or revenues peaks in October 2022. Repricing coverage peaks in June 2024, 20 months later. Four named bodies appear in both own-position speech and later repricing coverage, and three lags exceed one year. These findings make inattention to the relevant economic object an incomplete explanation. Fairness, governance and adjustment costs remain possible, and the present data cannot separate them.
+The contribution is deliberately bounded. Public speech cannot reveal private cognition, and a report of repricing need not coincide with the formal decision date. The evidence nevertheless shows that information about the sector’s own costs and revenues existed in public sector speech well before repricing reports became concentrated. Pure inattention to the relevant object is therefore insufficient as an aggregate account. Fairness constraints, dispersed governance and adjustment costs remain observationally compatible explanations.
 
-The paper contributes in three ways. First, it observes public information and delayed repricing in a sector without conventional price microdata. Second, it studies a setting in which nonprofit form, dispersed authority and close user relationships may slow adjustment. Third, it shows why connection coding matters for text-based economic measurement: of 1 450 plausible co-occurrences, 520 are genuine domestic religion-inflation connections.
+## 2. Information, adjustment and mission-based pricing
 
-## 2. Theoretical framework and institutional setting
+### 2.1 Inattention and sticky information
 
-### 2.1 Information and price adjustment
+Sticky-information models allow plans to remain internally coherent but based on old information because agents update intermittently (Mankiw & Reis, 2002; Reis, 2006). Rational-inattention models treat attention as scarce and predict that organisations allocate it to signals with the highest expected value (Sims, 2003; Maćkowiak & Wiederholt, 2009). These mechanisms make the object of attention important. Public concern about household budgets does not establish that a parish, diocese or religious order has processed its own energy bill, wage costs or revenue shortfall.
 
-Sticky-information models assume that agents update plans intermittently, so a price can be based on coherent but outdated information (Mankiw & Reis, 2002; Reis, 2006). Rational inattention treats information-processing capacity as scarce and allows firms to focus on signals that matter most for their own decisions (Sims, 2003; Maćkowiak & Wiederholt, 2009). This distinction matters here. Concern about household living costs does not show that a parish or diocese has assessed its own heating bill, wages or budget.
+The present data separate those objects. Household-hardship speech records the sector discussing burdens borne by families, pensioners or the poor. Own-position speech records direct sector statements about its heating, wages, maintenance, repairs, collections, fees, budgets or other finances. Only the second category is close to the state variable relevant for the sector’s own repricing.
 
-Menu-cost models start from a different point. The seller knows its economic state but pays a fixed cost to change the price. Larger shocks move more sellers across their adjustment thresholds, so adjustment generally becomes more frequent during high inflation (Golosov & Lucas, 2007). Micro evidence also shows substantial variation across sectors and inflation regimes (Bils & Klenow, 2004; Dhyne et al., 2006; Gagnon, 2009; Nakamura & Steinsson, 2008; Alvarez et al., 2019).
+This does not mean that public statements reproduce private beliefs. Statements may be strategic, incomplete or delegated to actors who do not hold price-setting authority. They are still useful because they place relevant information in the organisation’s public communication at a known date.
 
-These mechanisms can coexist. A seller may update infrequently and still face a cost of acting after an update. The evidence can nevertheless rule out complete explanations. Public discussion of the sector's own costs before later repricing weakens pure inattention to the relevant state. It leaves organisational transmission, adjustment costs and norms as competing explanations.
+### 2.2 Adjustment costs and fairness
 
-### 2.2 Fairness and public information
+Menu-cost models begin after information has been acquired. A seller changes price only when the expected gain exceeds a fixed adjustment cost. Larger shocks move more sellers across their thresholds and therefore tend to increase adjustment frequency (Golosov & Lucas, 2007). Micro-price evidence documents substantial heterogeneity across sectors and inflation regimes (Bils & Klenow, 2004; Dhyne et al., 2006; Gagnon, 2009; Nakamura & Steinsson, 2008; Alvarez et al., 2019).
 
-Firm surveys show that limited information and concern about customer reactions both contribute to slow price adjustment (Blinder et al., 1998; Coibion et al., 2018). Public statements add a contemporaneous measure. They are dated and were made without a researcher's prompt, although they may also be strategic.
+Fairness adds a relational constraint. Customers evaluate whether a price increase preserves a reference transaction and whether the seller is protecting a reference return or exploiting circumstances (Kahneman et al., 1986). Surveys of firms similarly indicate that information limits, administrative frictions and concern about customer reaction can coexist (Blinder et al., 1998; Coibion et al., 2018).
 
-The content of the statement therefore matters. General concern for households may reveal little about an institution's pricing decision. A statement about energy bills, wages, repairs or insufficient revenue is closer to the state variable relevant for repricing. It shows that information about the institution's own position was present in public sector speech.
-
-Fairness can still delay action after the shock is known. Under dual entitlement, customers retain a reference transaction while sellers retain a reference return. A cost increase can justify a higher price, but customers may resist increases that appear opportunistic (Kahneman et al., 1986). When inflation is highly visible, the reputational cost of adjustment may also be high. A seller may then wait even as the accumulated price gap grows. Slow annual budgets or hierarchical approval can produce the same timing, so the analysis tests whether the evidence is consistent with fairness; it does not identify a separate causal effect.
+For a mission-based organisation, highly visible inflation may strengthen rather than relax the reputational cost of repricing. Users may accept an increase justified by costs but resist one that appears inconsistent with the organisation’s public concern for households. Waiting until salience falls can then be privately rational even as the accumulated relative-price gap grows. Annual budgeting, hierarchical consultation and formal approval could generate the same timing. The analysis can identify a sequence consistent with these mechanisms but cannot separate their causal effects.
 
 ### 2.3 Why the religious sector is informative
 
-Nonprofit organisations cannot distribute residual earnings to owners, often cross-subsidise services, and may include mission directly in their objectives (Hansmann, 1980; Steinberg, 2006). Nonprofit form does not eliminate sluggish or strategic pricing (Jackson, 2014), but it can weaken the usual link between cost and price.
+Nonprofit organisations cannot distribute residual earnings to owners and often combine revenue, cross-subsidy and mission in one objective (Hansmann, 1980; Steinberg, 2006). Nonprofit status does not eliminate asymmetric or sluggish pricing (Jackson, 2014), but it can weaken the direct mapping from cost to price.
 
-Religious services provide a demanding case. A funeral or mass intention is not viewed as an ordinary market service even when a customary fee exists. There may be no close substitute, fees are not automatically indexed, and decision rights are spread across parishes, dioceses, religious orders and the bishops' conference. These features can slow both information transmission and formal approval.
+Religious services sharpen these features. A mass intention, funeral or marriage is not experienced as an ordinary market transaction even when a customary fee exists. Close substitutes may be absent, automatic indexation is unusual, and authority is dispersed among parishes, dioceses, religious orders, the bishops’ conference and the Vatican. Information can be available at one level without producing action at another.
 
-Catholic social teaching also makes household hardship and fairness part of the sector's public mission. The paper does not evaluate doctrine. It uses that public commitment to motivate the distinction between speech about households and speech about the sector's own economic position. This extends work that treats religious organisations as clubs or welfare providers by examining them as price setters (Iannaccone, 1998; Kallunki & Zrinščak, 2021; Stubbs & Zrinščak, 2009; van Kersbergen & Manow, 2009).
+Catholic social teaching also places household hardship and distributive fairness inside the sector’s stated public mission. We do not evaluate doctrine. We use this institutional setting to distinguish speech about others’ hardship from speech about the organisation’s own economic position, extending work on religious organisations as clubs and welfare providers to their role as price setters (Iannaccone, 1998; Kallunki & Zrinščak, 2021; Stubbs & Zrinščak, 2009; van Kersbergen & Manow, 2009).
 
 ## 3. Data and methods
 
-### 3.1 Corpus and event selection
+### 3.1 The new official database
 
-The DigiKat corpus contains 710 307 Croatian digital media posts published from January 2021 to June 2026. It includes web portals, social platforms and forums, as well as confessional and secular outlets. The target population is religion-salient media content, so the results are not extrapolated to Croatian media as a whole. All posts in the analysis were harmonised and processed with the same selection and coding rules. The 2026 data end in June.
+The official DigiKat corpus contains 413 985 religion-salient Croatian digital media posts published from 2021-01 through 2026-06. It includes web portals, social platforms and forums, and both confessional and secular publishers. The database is derived from a larger monitoring accumulator, but every retained post now passes the same inclusion rule: a version-four religious vocabulary is evaluated within the first 3,000 characters, requiring at least one decisive and two total matches, followed by a second-pass ensemble score of at least 0.70.
 
-A fixed vocabulary identifies literal references to inflation, rising prices, the cost of living and purchasing power. The general Croatian word for price is excluded because it produces many devotional false positives. A metaphor rule also removes expressions such as “inflation of words” while retaining posts that discuss actual prices. This step identifies 8 041 posts, or 1.13 per cent of the corpus.
+The collection instrument still changes over time. The monitoring stream covers the earlier period; a filter-based backfill supplies the later period. Both now use identical relevance criteria, but their capture processes are not identical. February through May 2024 contain no text in the vendor feed, January and July 2024 are partial months, and the two streams overlap only narrowly. Raw counts are therefore not treated as one uninterrupted exposure series. Temporal quantities are estimated within stream, while event dates are interpreted descriptively.
 
-The procedure then selects posts in which religious language appears within 220 characters of a cost-of-living expression. This broad rule creates a candidate set; it does not itself establish a substantive connection. Common homonyms and collisions are removed before coding.
+The target population is religion-salient digital content, not all Croatian media and not Catholic outlets alone. Results describe what becomes visible when religion and economic hardship meet in this monitored public record.
 
-The fixed coding pool contains 1 450 posts. Three independent model-based coding runs assessed whether a post concerned literal prices, whether religion was substantively connected, whether the inflation was domestic or foreign, and which subject dominated. Majority decisions identify 652 genuine connections. Of these, 132 concern another country and 520 concern Croatian inflation. The measured set is 0.07 per cent of the corpus and 6.5 per cent of all cost-of-living posts.
+### 3.2 Cost-of-living selection and substantive connection
+
+A fixed Croatian vocabulary identifies literal inflation, rising prices, cost-of-living pressure and purchasing power. The bare word for price is excluded because devotional texts frequently use it metaphorically. A separate guard removes expressions such as “inflation of words” while preserving a post that also discusses real prices.
+
+This rule finds 1 486 cost-of-living posts, 0.36 per cent of the official corpus. A proximity selector then requires religious language within 220 characters of a cost-of-living expression. It masks documented homonyms before measuring the distance. The procedure returns 761 candidates.
+
+Candidate status is not substantive evidence. Coders decide whether the price language is literal, whether religion is genuinely connected rather than juxtaposed, whether the inflation is domestic or foreign, and which of seven registers dominates. Of the 761 candidates, 729 retain decisions from the earlier three-run majority coding and 32 newly selected candidates receive a documented addendum decision. The prior labels yield 465 domestic items; the addendum yields 10. The mixed annotation strength is retained as provenance and treated as a limitation.
+
+This connection decision follows the central lesson of text-as-data research: a dictionary is a measurement instrument whose validity is specific to the intended construct, not a neutral retrieval device (Baker et al., 2016; Gentzkow et al., 2019; Grimmer & Stewart, 2013).
 
 **Table 1. From the whole corpus to the set of posts actually measured.**
 
 | Stage | Posts | % of corpus |
 | --- | ---: | ---: |
-| All posts in the corpus | 710 307 | 100.00 |
-| Mention the cost of living | 8 041 | 1.13 |
-| Selected for coding, religion near the mention | 1 450 | 0.20 |
-| Coded as a genuine connection | 652 | 0.09 |
-| ... about another country's inflation | 132 | 0.02 |
-| **... about Croatian inflation (the measured set)** | **520** | **0.07** |
+| All posts in the corpus | 413 985 | 100.00 |
+| Mention the cost of living | 1 486 | 0.36 |
+| Selected for coding, religion near the mention | 761 | 0.18 |
+| Coded as a genuine connection | 560 | 0.14 |
+| ... about another country's inflation | 85 | 0.02 |
+| **... about Croatian inflation (the measured set)** | **475** | **0.11** |
 
-*Source: author's calculations on the DigiKat corpus of 710 307 Croatian digital media posts, January 2021 to June 2026. Posts are selected by a keyword filter and then read and coded one by one; only 45% of the posts the filter selects turn out to connect religion to prices at all. The first two rows are produced by the current code. The set of 1 450 posts sent for coding was fixed when the coding was done and is carried forward unchanged, so the third row is that fixed set rather than a fresh selection; the appendix reports how closely a fresh selection reproduces it.*
+*Source: authors' calculations on the official DigiKat corpus of 413 985 religion-salient Croatian digital media posts, January 2021 to June 2026. Posts are selected by a keyword filter and then read and coded one by one; only 74% of the posts the filter selects turn out to connect religion to prices at all. 729 candidates retain earlier three-run majority labels and 32 newly selected candidates are coded in the official-corpus addendum.*
 
-Only 45 per cent of candidates survive the connection decision. A proximity count alone would therefore confuse topical adjacency with genuine economic content. Because the event is rare, this distinction materially changes the result.
+The final measured set contains 475 domestic posts: 32.0 per cent of all tagged cost-of-living posts and 0.11 per cent of the official corpus. A genuine religious connection is found in 560 candidates, or 74 per cent; 85 of those concern inflation outside Croatia. The higher survival rate than in the earlier broad accumulator reflects the new database’s stricter religion-relevance rule, not a relaxation of connection coding.
 
-### 3.2 Measures
+### 3.3 Response, object, voice and institutional unit
 
-The first coding scheme distinguishes seven subjects: the price of religious services, the sector as an economic actor, charitable relief, claims about who bears the burden, devotional material, other material and unresolved cases. Four subjects represent observable responses. Posts about the institution as an economic actor form *public voice*; posts about service prices form *repricing*; charity posts form *charitable response*; and burden-sharing claims form *normative response*.
+The seven substantive registers are the price of religious services, the sector as an economic actor, charitable relief, claims about who bears the burden, devotional material, other material and unresolved cases. Four registers become observable responses. The institution register forms public voice; the religious-service-price register forms repricing; charity forms charitable response; and burden-sharing claims form normative response.
 
 **Table 2. How the religious sector responded, by year.**
 
 | Response | 2021 | 2022 | 2023 | 2024 | 2025 | 2026 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Public voice | 8 | 106 | 37 | 9 | 16 | 3 |
-| Repricing | 0 | 46 | 34 | 61 | 13 | 40 |
-| Charitable response | 0 | 34 | 11 | 12 | 26 | 4 |
-| Normative response | 2 | 1 | 5 | 4 | 2 | 1 |
+| Public voice | 8 | 98 | 35 | 8 | 15 | 3 |
+| Repricing | 1 | 42 | 32 | 60 | 11 | 38 |
+| Charitable response | 0 | 30 | 10 | 4 | 17 | 2 |
+| Normative response | 2 | 1 | 5 | 3 | 2 | 0 |
 
-*Source: author's calculations on the DigiKat corpus of 710 307 Croatian digital media posts, January 2021 to June 2026. The 2026 column covers January to June.*
+*Source: authors' calculations on the official DigiKat corpus of 413 985 religion-salient Croatian digital media posts, January 2021 to June 2026. The 2026 column covers January to June.*
 
-Table 2 describes the timing and composition of the four responses. Public voice is most frequent in 2022, repricing in 2024, charitable response in 2022 and normative response in 2023. The 2026 column covers six months.
+Table 2 reports event counts, not numbers of unique actions. Multiple publishers can report the same episode. The 2026 column covers January through June.
 
-Table 3 compares public voice and repricing during 2021–2023, the period in which the main inflation shock occurred.
+For the 167 public-voice posts, an object label distinguishes the sector’s own costs or revenue, household hardship, both, and other economic content. A voice label distinguishes direct sector speech—a quotation, interview, homily, official statement or press release—from an outside report. Direct evidence that the relevant information was publicly present requires own or both together with sector voice.
 
-**Table 3. Public voice and repricing during the main inflation shock.**
+All 475 domestic posts also receive a unit label: parish, diocese, religious order, Caritas, bishops’ conference, Vatican, church in general, or no acting church unit. The retained three-run labels cover 465 posts; the addendum covers 10. Specific unit names remain private. Names are normalised conservatively, and multiple reports of the same unit, date and action are collapsed before matching.
 
-| Year | Speaking out | Repricing | Repricing as % of the two |
-| --- | ---: | ---: | ---: |
-| 2021 | 8 | 0 | 0.0 |
-| 2022 | 106 | 46 | 30.3 |
-| 2023 | 37 | 34 | 47.9 |
+### 3.4 External price anchor
 
-*Source: author's calculations on the DigiKat corpus of 710 307 Croatian digital media posts, January 2021 to June 2026, restricted to 2021–2023.*
+Monthly Croatian harmonised consumer-price inflation comes from Eurostat’s prc_hicp_minr table. We use all items, food and non-alcoholic beverages, and energy from January 2021 through June 2026. Headline HICP peaks at 12.9 per cent in 2022-11.
 
-The repricing share rises from 30.3 per cent in 2022 to 47.9 per cent in 2023. The underlying counts are 106 public-voice and 46 repricing posts in 2022, compared with 37 and 34 in 2023. Coverage therefore begins to move from speech toward repricing before the late 2024 concentration.
+The media indicator is the monthly share of official-corpus posts that mention the cost of living. A month enters a stream-specific model only when the stream contains at least 2,000 posts. This retains 37 monitoring months and all 24 backfill months. The monitoring window ranges from 3 454 to 7 978 posts per observed month. Correlations, a four-per-cent attention threshold and three regression specifications assess whether the event register responds to actual inflation.
 
-**Table 4. What the posts are about, and who published them.**
+The design builds on evidence that media attention, inflation expectations and inflation salience move nonlinearly with the underlying price environment (Čižmešija et al., 2017; Lamla & Maag, 2012; Pfäuti, 2024; Korenok et al., 2026; Aarab et al., 2025).
 
-| Subject of the post | Posts | % | Secular outlet | Catholic outlet | Business press |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| The price of religious services | 194 | 37.3 | 189 | 4 | 1 |
-| The sector as an economic actor | 179 | 34.4 | 147 | 32 | 0 |
-| Charitable relief | 87 | 16.7 | 58 | 27 | 2 |
-| Devotional | 26 | 5.0 | 22 | 4 | 0 |
-| Who bears the burden | 15 | 2.9 | 10 | 5 | 0 |
-| Unresolved | 12 | 2.3 | 11 | 1 | 0 |
-| Other | 7 | 1.3 | 5 | 2 | 0 |
+The levels model uses Newey–West standard errors. A first-difference model tests whether month-to-month changes move together, using only genuinely consecutive observed months. A negative-binomial count model uses the log of monthly corpus volume as an offset. These are instrument checks, not causal models of sector repricing.
 
-*Source: author's calculations on the DigiKat corpus of 710 307 Croatian digital media posts, January 2021 to June 2026, the 520 posts about Croatian inflation in which religion is genuinely involved. Deciding which of these a post is about was the least reliable of the four coding judgements, so the two largest categories should be read together rather than ranked against each other.*
+### 3.5 Reliability
 
-The price of religious services and the sector as an economic actor together account for 373 posts, or 72 per cent of the measured set. Secular outlets report 189 of 194 repricing posts. Across the full set, secular outlets publish 442 posts, or 85 per cent, and Catholic outlets publish 75, or 14 per cent. These figures describe the observation instrument; they do not estimate the behaviour of all outlets.
-
-### 3.3 External price anchor and robustness
-
-Annual Croatian harmonised index of consumer prices (HICP) rates come from Eurostat's `prc_hicp_minr` table. The series covers all items, food and non-alcoholic beverages, and energy from January 2021 to June 2026. All-items inflation peaks at 12.9 per cent in November 2022.
-
-An event register should respond to the underlying economic shock. The monthly share of corpus posts mentioning the cost of living is therefore compared with HICP. Results are shown for an early window containing the inflation surge and a later window with a narrower inflation range. This check follows research on media, inflation expectations and attention thresholds (Čižmešija et al., 2017; Lamla & Maag, 2012; Pfäuti, 2024; Korenok et al., 2026; Aarab et al., 2025).
-
-**Table 5. Does coverage of the cost of living track actual prices?**
-
-| Period | Months covered | N | Inflation ranged from | All items | Food | Energy | Above vs below 4% |
-| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 2021-01 to 2024-06 | 2021-01 to 2024-06 | 37 | 0.0 to 12.9 | 0.75 | 0.73 | 0.43 | 2.25 |
-| 2024-07 to 2026-06 | 2024-07 to 2026-06 | 24 | 3.0 to 5.4 | 0.32 | -0.52 | 0.67 | 0.98 |
-
-*Source: author's calculations; Croatian HICP annual rate of change from Eurostat (prc_hicp_minr, all items, food and non-alcoholic beverages, energy), retrieved 5 August 2026. Figures are correlations between the monthly share of corpus posts mentioning the cost of living and each price series. The last column is mean coverage in months when inflation was at or above 4% divided by mean coverage below it.*
-
-The early window contains 37 observed months. Coverage correlates 0.75 with all-items HICP, 0.73 with food and 0.43 with energy. Mean coverage is 0.51 per cent below 4 per cent inflation and 1.15 per cent at or above it, a ratio of 2.25. Monthly volume ranges from 4 970 to 12 860 posts.
-
-The later window contains 24 months. The corresponding correlations are 0.32, -0.52 and 0.67. Headline inflation varies only from 3.0 to 5.4 per cent, with a standard deviation of 0.60, compared with 4.03 in the early window. Its threshold ratio is 0.98: mean coverage is 1.26 per cent below 4 per cent and 1.24 per cent above it. The narrow range makes this period less informative about an attention threshold.
-
-**Table 6. The same relationship under three different specifications.**
-
-| Period | Specification | N | Estimate | Standard error | t |
-| --- | --- | ---: | ---: | ---: | ---: |
-| 2021-01 to 2024-06 | Levels, with standard errors robust to trend and persistence | 37 | 0.0914 | 0.0102 | 8.94 |
-| 2021-01 to 2024-06 | Month-on-month changes only | 35 | 0.0384 | 0.0895 | 0.43 |
-| 2021-01 to 2024-06 | Post counts, allowing for how much was collected | 37 | 0.1027 | 0.0145 | 7.06 |
-| 2024-07 to 2026-06 | Levels, with standard errors robust to trend and persistence | 24 | 0.2879 | 0.1940 | 1.48 |
-| 2024-07 to 2026-06 | Month-on-month changes only | 23 | 0.1437 | 0.2371 | 0.61 |
-| 2024-07 to 2026-06 | Post counts, allowing for how much was collected | 24 | 0.2205 | 0.1300 | 1.70 |
-
-*Source: author's calculations. The dependent variable is the monthly share of corpus posts mentioning the cost of living, except in the third specification, where it is the monthly count with the log of total posts entered as an offset. Month-on-month changes use consecutive observed months only.*
-
-In the early window, the levels estimate remains precise with standard errors robust to trend and persistence (t = 8.94). The count model with a volume offset gives a similar result (t = 7.06), while first differences are weak (t = 0.43). The corresponding later-window statistics are 1.48, 1.70 and 0.61. The evidence supports a long-cycle relationship between inflation and coverage, not a mechanical month-to-month response.
-
-### 3.4 Coding reliability and additional measures
-
-The original coding was assessed on 173 posts recoded blind with the same written protocol.
+The frozen independent recoding audit contains 173 items, of which 120 remain in the refreshed candidate set. The audit is stratified to stress linkage, foreign/domestic and register decisions rather than estimate population error. The 32 addendum candidates are outside this blind audit and are single-coded.
 
 **Table 7. Agreement between the original coding and an independent recoding.**
 
 | Judgement | Items | Agreement | Kappa |
 | --- | ---: | ---: | ---: |
-| is it about the cost of living | 173 | 0.931 | 0.299 |
-| is religion genuinely linked | 166 | 0.892 | 0.694 |
-| domestic or foreign inflation | 135 | 0.941 | 0.783 |
-| what the post is about | 122 | 0.656 | 0.577 |
+| is it about the cost of living | 120 | 0.967 | 0.483 |
+| is religion genuinely linked | 116 | 0.914 | 0.332 |
+| domestic or foreign inflation | 112 | 0.955 | 0.831 |
+| what the post is about | 102 | 0.696 | 0.619 |
 
-*Source: author's calculations on a stratified sample of 173 posts independently recoded from the same written protocol with the original labels withheld.*
+*Source: authors' calculations on a stratified sample of 120 posts independently recoded from the same written protocol with the original labels withheld.*
 
-Agreement is 0.931 for literal cost-of-living content, 0.892 for genuine religious linkage, 0.941 for domestic versus foreign inflation and 0.656 for the main subject. The corresponding kappa values are 0.299, 0.694, 0.783 and 0.577. The main subject is the least stable axis, so small adjacent categories are not compared. The author also inspected the coded material during analysis and found no systematic issue that would change the substantive conclusions.
+Literal-price agreement is 0.967 with kappa 0.483. Linkage agreement is 0.914 with kappa 0.332; foreign/domestic agreement is 0.955 with kappa 0.831; register agreement is 0.696 with kappa 0.619. Ten disputed items remain in the retained audit and all 10 receive a substantive label on independent recoding, but the production analysis preserves their original unresolved status.
 
-For the present analysis, the 179 public-voice posts receive two additional labels. *Object* records whether the content concerns the sector's own costs or revenues, household hardship, both, or another economic subject. *Voice* records whether a sector actor speaks directly. All 520 posts also receive an institutional-unit label: parish, diocese, religious order, Caritas, bishops' conference, Vatican, church in general, or no acting church unit.
-
-Three blind coding runs applied this extension independently. Pairwise agreement is 0.940 for object, 0.948 for voice and 0.943 for unit. Fleiss' kappa is 0.891, 0.646 and 0.929. Every object and voice item has a majority decision. One unit tie was resolved from the written rule.
-
-Monthly coverage is analysed as an event process. Public voice, own-position speech, HICP and repricing peaks are dated separately. The cumulative HICP price-level gap is reconstructed by chaining the annual rate for the same calendar month from 2021 onward. Named-unit matching requires the same normalised body to appear first in direct own-position speech and later in a repricing report. Duplicate reports of the same body, date and action are collapsed.
+For the retained extension, pairwise agreement and Fleiss’ kappa are 0.944 and 0.897 for object, 0.956 and 0.643 for voice, and 0.946 and 0.931 for unit. The weaker linkage kappa and lower register agreement require restraint: large adjacent registers are interpreted jointly, and small category differences are not treated as precise rankings.
 
 ## 4. Results
 
-### 4.1 The sector discussed its own economic position
+### 4.1 Response composition and the shift toward repricing
 
-The central test concerns the object of attention. Speech about household hardship does not show that an institution noticed pressure on its own relative price. Speech about heating, wages, repairs, revenue or finances does.
+Public voice is the largest recorded response in 2021, 2022 and 2023. Repricing is already visible in 2021 but becomes progressively more prominent during the main shock.
+
+**Table 3. Public voice and repricing during the main inflation shock.**
+
+| Year | Speaking out | Repricing | Repricing as % of the two |
+| --- | ---: | ---: | ---: |
+| 2021 | 8 | 1 | 11.1 |
+| 2022 | 98 | 42 | 30.0 |
+| 2023 | 35 | 32 | 47.8 |
+
+*Source: authors' calculations on the official DigiKat corpus of 413 985 religion-salient Croatian digital media posts, January 2021 to June 2026, restricted to 2021–2023.*
+
+Within the monitoring stream, the repricing share of public-voice plus repricing events rises from 30.0 per cent in 2022 to 47.8 per cent in 2023. The underlying counts change from 98 voice and 42 repricing events to 35 and 32. In 2024 the monitoring side contains 63 domestic items and the backfill side 15; the overlap is too instrument-dependent for a pooled rate comparison.
+
+**Table 4. What the posts are about, and who published them.**
+
+| Subject of the post | Posts | % | Secular outlet | Catholic outlet | Business press |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| The price of religious services | 184 | 38.7 | 179 | 4 | 1 |
+| The sector as an economic actor | 167 | 35.2 | 135 | 32 | 0 |
+| Charitable relief | 63 | 13.3 | 37 | 24 | 2 |
+| Devotional | 31 | 6.5 | 26 | 5 | 0 |
+| Who bears the burden | 13 | 2.7 | 8 | 5 | 0 |
+| Unresolved | 9 | 1.9 | 8 | 1 | 0 |
+| Other | 8 | 1.7 | 6 | 2 | 0 |
+
+*Source: authors' calculations on the official DigiKat corpus of 413 985 religion-salient Croatian digital media posts, January 2021 to June 2026, the 475 posts about Croatian inflation in which religion is genuinely involved. Deciding which of these a post is about was the least reliable of the four coding judgements, so the two largest categories should be read together rather than ranked against each other.*
+
+The price of religious services accounts for 184 posts and the sector as an economic actor for 167. Together they form 351 posts, or 74 per cent of the measured set. Charitable relief accounts for 63 posts, devotional material for 31, burden-sharing claims for 13, unresolved cases for 9 and other material for 8.
+
+Secular or other outlets publish 399 posts, 84 per cent of the measured set; Catholic outlets publish 73, or 15 per cent; business press publishes 3. Secular outlets carry 179 of 184 repricing reports. These are properties of the observation instrument, not estimates of outlet behaviour or sector action.
+
+### 4.2 The sector publicly discussed its own position
+
+The central information test asks what the institution-register material is about and whether a sector actor speaks directly.
 
 **Table 8. What the institution-register material attends to, and who speaks.**
 
-| Object of economic content | Sector voice | Outside report | Posts | % of 179 |
+| Object of economic content | Sector voice | Outside report | Posts | % of 167 |
 | --- | ---: | ---: | ---: | ---: |
-| The sector's own costs or revenue | 88 | 6 | 94 | 52.5 |
-| Household hardship | 73 | 2 | 75 | 41.9 |
-| Both own position and household hardship | 3 | 3 | 6 | 3.4 |
-| Other economic subject | 2 | 2 | 4 | 2.2 |
+| The sector's own costs or revenue | 80 | 5 | 85 | 50.9 |
+| Household hardship | 72 | 2 | 74 | 44.3 |
+| Both own position and household hardship | 3 | 2 | 5 | 3.0 |
+| Other economic subject | 2 | 1 | 3 | 1.8 |
 
-*Source: author's recoding of the 179 posts previously classified as the sector acting or speaking in economic coverage. Labels are three-model majorities. A sector voice is a quotation, interview, homily, official statement or press release; an outside report contains no sector actor speaking.*
+*Source: authors' recoding of the 167 posts classified as the sector acting or speaking in economic coverage. All of these retained labels are three-model majorities. A sector voice is a quotation, interview, homily, official statement or press release; an outside report contains no sector actor speaking.*
 
-The sector's own costs or revenues are the main object in 94 of 179 public-voice posts. Household hardship appears in 75 posts, both objects in 6 and another economic subject in 4. A sector actor speaks directly in 88 own-position posts and 3 both-object posts. This gives 91 direct own-position events, or 50.8 per cent of the set. Direct household-hardship speech appears in 76 posts.
+The sector’s own costs or revenue are the main object in 85 of 167 public-voice posts. Household hardship appears in 74, both objects in 5 and another subject in 3. Direct own-position speech consists of 80 own-object posts and 3 both-object posts, for 83 events or 49.7 per cent of the institution register. Direct household-hardship speech appears in 75 posts.
 
-Household-hardship speech peaks in February 2022 with 27 posts. Own-position speech peaks eight months later, in October 2022, with 19 posts. This is one month before the November 2022 HICP peak and 20 months before the repricing-coverage peak. Of the 91 direct own-position posts, 78 occur before June 2024.
+Household-hardship speech peaks in 2022-02 with 27 events. Own-position speech peaks eight months later, in 2022-10, with 18. The HICP peak follows in 2022-11. Repricing coverage peaks in 2024-06, 20 months after the own-position peak. Of the 83 direct own-position events, 71 occur before that repricing peak.
 
-**Figure 1. Public economic speech and repricing coverage, January 2021–June 2026.**
+**Figure 1. Public economic speech, own-position speech, repricing coverage and HICP.**
 
 ![Monthly public voice, direct own-position speech and repricing coverage](studies/inflation-salience/output/fig1_event_timeline.png){width=100%}
 
-*Source: author's calculations. Lines show monthly coverage events. Key dates are the public-voice and household peaks (2022-02), first repricing coverage (2022-03), own-position peak (2022-10), HICP peak (2022-11) and repricing peak (2024-06). The figure reports media coverage, not an official fee index. The 2026 series ends in June.*
+*Source: authors’ calculations. The upper panel reports monthly coverage events; the lower panel reports the Croatian headline HICP annual rate. The event register is not an official fee index, and the 2026 series ends in June.*
 
-Relevant information about the sector's own position was therefore publicly present before repricing coverage became concentrated. This rules out exclusive attention to household hardship as an aggregate explanation. It does not show that every price-setting unit received the same information or that public statements reproduce private beliefs.
+Information about the relevant economic object was therefore present in public sector speech before repricing coverage became concentrated. This finding is narrower than a claim about organisational knowledge. It cannot show that every local price setter received the information or that public statements match private expectations.
 
-### 4.2 Information and repricing in named bodies
+### 4.3 Timing and organisational location
 
-The unit analysis tests whether information and repricing were confined to different parts of the organisation. Public voice is concentrated in dioceses and the bishops' conference, while repricing is spread across the conference, dioceses and parishes.
+Repricing first appears in the refreshed event register in 2021-11. The result is therefore not that fees remained unchanged until 2024. It concerns the concentration of coverage. Overall public voice peaks in 2022-02 and repricing in 2024-06, a gap of 28 months. The repricing peak follows the HICP peak by 19 months.
+
+June 2024 contains 55 repricing events. They account for 29.9 per cent of all repricing coverage and 91.7 per cent of the 2024 repricing material. The same-month chained HICP price level stands 25.7 per cent above June 2021.
 
 **Table 9. Where speech and adjustment are located inside the sector.**
 
 | Institutional unit | Direct own-position speech | All public voice | Repricing | Charitable response | Matched named units |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Parish | 17 | 19 | 34 | 2 | 0 |
-| Diocese or archdiocese | 41 | 111 | 52 | 0 | 3 |
-| Religious order or monastery | 12 | 14 | 2 | 0 | 0 |
-| Caritas or relief body | 0 | 2 | 0 | 78 | 0 |
-| Bishops' conference | 20 | 22 | 72 | 0 | 1 |
+| Parish | 14 | 15 | 30 | 2 | 0 |
+| Diocese or archdiocese | 40 | 109 | 53 | 0 | 3 |
+| Religious order or monastery | 9 | 11 | 1 | 0 | 0 |
+| Caritas or relief body | 0 | 2 | 0 | 59 | 0 |
+| Bishops' conference | 19 | 20 | 72 | 0 | 1 |
 | Vatican or Pope | 0 | 4 | 3 | 1 | 0 |
-| Church, no specific unit | 0 | 1 | 8 | 0 | 0 |
-| No church unit acts | 1 | 6 | 23 | 6 | 0 |
+| Church, no specific unit | 0 | 1 | 7 | 0 | 0 |
+| No church unit acts | 1 | 5 | 18 | 1 | 0 |
 
-*Source: author's recoding of all 520 posts. Named-unit matches require the same specific unit to speak about its own position before a later repricing report; identifying names remain in the private analysis files. Counts are coverage events, not a census of institutional actions.*
+*Source: authors' recoding of all 475 posts: 465 retained three-run majority labels and 10 single-coded addendum labels. Named-unit matches require the same specific unit to speak about its own position before a later repricing report; identifying names remain in the private analysis files. Counts are coverage events, not a census of institutional actions.*
 
-Dioceses account for 111 public-voice and 52 repricing reports. The bishops' conference accounts for 22 and 72, while parishes account for 19 and 34. Religious orders account for 14 and 2. Caritas dominates charitable response with 78 posts and does not appear as a repricing unit.
+Public voice is concentrated in dioceses: they account for 109 public-voice events, 40 direct own-position events and 53 repricing reports. The bishops’ conference accounts for 20 voice events, 19 direct own-position events and 72 repricing reports. Parishes account for 15 voice events and 30 repricing reports. Religious orders account for 11 and 1. Caritas accounts for 59 of the 63 charitable-response posts and no repricing report.
 
 **Figure 2. Public voice and repricing coverage by institutional unit.**
 
 ![Distribution of public voice and repricing coverage across institutional units](studies/inflation-salience/output/fig2_unit_responses.png){width=100%}
 
-*Source: author's calculations on the 520-post measured set. Bars represent media coverage events, not a census of institutional actions.*
+*Source: authors’ calculations on the 475-post measured set. Bars are media coverage events, not a census of institutional actions.*
 
-At least one relevant event identifies 32 specific units. Of these, 22 appear in direct own-position speech and 14 in repricing coverage. Four named bodies appear in both, with speech first. Their lags range from 1 to 1 505 days and have a median of 669 days. Three matches exceed one year. The matched bodies are three diocesan units and one bishops' conference.
+At least one relevant event names 29 distinct bodies. Twenty appear in direct own-position speech and 13 in repricing coverage. Four named bodies appear in both, with speech first. Their lags range from 1 to 1 505 days, the median is 669 days, and 3 exceed one year. Three matches are diocesan and one is the bishops’ conference.
 
-The one-day match represents a contemporaneous discussion and adjustment. The other three provide stronger within-body sequences. They do not show that the same individual made both decisions, but they show that organisational separation cannot explain every observed delay.
+The one-day match is effectively contemporaneous. The other three show a within-body ordering that cannot be attributed entirely to different organisational units receiving different information. The small number of matches prevents sector-wide generalisation.
 
-### 4.3 Timing of repricing coverage
+### 4.4 Does the media indicator follow inflation?
 
-The register first records repricing coverage in March 2022, so the claim is not that every fee remained unchanged until 2024. The claim concerns timing and concentration. Public voice peaks in February 2022, own-position speech in October 2022, HICP in November 2022 and repricing coverage in June 2024. The last peak occurs 28 months after the overall public-voice peak and 19 months after the HICP peak.
+**Table 5. Does coverage of the cost of living track actual prices?**
 
-June 2024 contains 55 repricing posts. This is 28.4 per cent of all repricing coverage and 90.2 per cent of the 2024 repricing material. In that month, the chained HICP level is 25.7 per cent above June 2021.
+| Period | Months covered | N | Inflation ranged from | All items | Food | Energy | Above vs below 4% |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 2021-01 to 2024-06 | 2021-01 to 2024-06 | 37 | 0.0 to 12.9 | 0.48 | 0.44 | 0.24 | 1.96 |
+| 2024-07 to 2026-06 | 2024-07 to 2026-06 | 24 | 3.0 to 5.4 | 0.15 | -0.31 | 0.32 | 0.69 |
 
-Two checks reduce the risk that this pattern reflects reporting capacity alone. The register already captures 46 repricing posts in 2022 and 34 in 2023, so it could detect repricing before the peak. Secular outlets publish 189 of 194 repricing reports and had a strong incentive to report church price increases when inflation was most salient.
+*Source: authors' calculations; Croatian HICP annual rate of change from Eurostat (prc_hicp_minr, all items, food and non-alcoholic beverages, energy), retrieved 5 August 2026. Figures are correlations between the monthly share of corpus posts mentioning the cost of living and each price series. The last column is mean coverage in months when inflation was at or above 4% divided by mean coverage below it.*
 
-These checks cannot recover unreported fee schedules or determine the date on which a fee formally changed. The result is therefore stated as the timing of *repricing coverage*. Direct diocesan and parish fee schedules are needed to convert it into a price-duration estimate.
+The refreshed official database produces a positive but weaker early relationship than the broader accumulator. Across 37 monitoring months, the monthly cost-of-living share correlates 0.48 with headline HICP, 0.44 with food and 0.24 with energy. Headline inflation ranges from 0.0 to 12.9 per cent with a standard deviation of 4.03. Mean attention is 0.28 per cent below four-per-cent inflation and 0.55 per cent at or above it, a ratio of 1.96.
 
-### 4.4 Interpretation: fairness and organisational delay
+The later backfill window contains only a narrow inflation range, from 3.0 to 5.4 per cent with a standard deviation of 0.60. Its correlations are 0.15 with headline HICP, -0.31 with food and 0.32 with energy. Mean attention falls from 0.32 per cent below the threshold to 0.22 per cent above it, a ratio of 0.69. This period does not validate a stable attention threshold.
 
-The ordering is consistent with a fairness constraint. Household hardship becomes salient first, the sector then discusses its own costs near the inflation peak, and repricing coverage becomes concentrated after inflation and public voice have fallen. In a mission-based relationship, adjustment after public salience declines may be less costly than adjustment at the peak.
+**Table 6. The same relationship under three different specifications.**
 
-A fixed technical menu cost is unlikely to be the whole explanation. The HICP price level rose 25.7 per cent, and the sector publicly discussed the relevant information well before the repricing peak. This does not reject menu costs; it shows that another friction is also needed.
+| Period | Specification | N | Estimate | Standard error | t |
+| --- | --- | ---: | ---: | ---: | ---: |
+| 2021-01 to 2024-06 | Levels, with standard errors robust to trend and persistence | 37 | 0.0463 | 0.0107 | 4.33 |
+| 2021-01 to 2024-06 | Month-on-month changes only | 35 | 0.0454 | 0.0993 | 0.46 |
+| 2021-01 to 2024-06 | Post counts, allowing for how much was collected | 37 | 0.1082 | 0.0272 | 3.98 |
+| 2024-07 to 2026-06 | Levels, with standard errors robust to trend and persistence | 24 | 0.0377 | 0.0613 | 0.61 |
+| 2024-07 to 2026-06 | Month-on-month changes only | 23 | 0.0681 | 0.0887 | 0.77 |
+| 2024-07 to 2026-06 | Post counts, allowing for how much was collected | 24 | 0.1341 | 0.1758 | 0.76 |
 
-Organisational delay can produce the same ordering. Fee changes may require diocesan consultation, annual budgeting or coordination between national and local bodies. The data contain no variable that changes fairness while holding organisational cost fixed. The most defensible interpretation is therefore joint: the pattern is consistent with fairness constraints and slow governance, but their separate effects are not identified.
+*Source: authors' calculations. The dependent variable is the monthly share of corpus posts mentioning the cost of living, except in the third specification, where it is the monthly count with the log of total posts entered as an offset. Month-on-month changes use consecutive observed months only.*
 
-### 4.5 Public narratives and charitable response
+In the early window, the levels estimate remains positive with Newey–West standard errors (t = 4.33), and the count model with a volume offset is similar (t = 3.98). First differences are weak (t = 0.46). The later-window statistics are 0.61, 0.76 and 0.77. The official-corpus evidence therefore supports a medium-run association during the inflation surge, not a mechanical monthly response and not a stable relationship after the surge.
 
-The distributional category supplies a secondary result about public economic narratives. Claims that identify who bears the burden account for 15 of 520 posts, or 2.9 per cent. The annual counts are 2, 1, 5, 4, 2 and 1. A broader reading that includes adjacent structural language reaches at most 8 per cent.
+### 4.5 Charitable and normative responses
 
-This does not imply an absence of relief. Charitable response accounts for 87 posts, or 16.7 per cent, and appears throughout the period. Rather, structural explanations are scarce compared with coverage of pricing, institutional finances and relief. In the terms of narrative economics, the available stories organise how economic problems are understood (Shiller, 2017).
+Charitable response accounts for 63 posts, or 13.3 per cent, and is concentrated in Caritas and related relief bodies. Claims about who bears the burden account for 13 posts, or 2.7 per cent. Their annual counts are 2, 1, 5, 3, 2 and 0 from 2021 through the first half of 2026.
 
-The result applies to the national digital record. News coverage may miss homilies, pastoral letters and local action, so this finding remains secondary to the price-adjustment result.
+Relief is therefore more visible than structural diagnosis in the monitored public record. This does not imply that the sector failed to articulate such claims elsewhere. Homilies, pastoral letters and local activity may not enter the database, and register reliability is the weakest coding dimension. The finding is secondary to the timing evidence.
 
-### 4.6 Why connection coding matters
-
-Text-based economic indicators often begin from document frequency. Baker et al. (2016) demonstrate the value of newspaper counts when the concept and dictionary are carefully validated. Gentzkow et al. (2019) and Grimmer and Stewart (2013) emphasise that text measurements remain problem-specific and require validation against the intended construct.
-
-The cost-of-living vocabulary identifies 8 041 posts, and proximity to religious language selects 1 450. Only 652 contain a genuine connection, of which 520 concern Croatia. Long articles may mention the two subjects in separate passages, religious words may have secular meanings, and news feeds may combine unrelated items.
-
-Without connection coding, the timing analysis would mix genuine economic events with topical adjacency. Precision is therefore part of the economic measurement, not a cosmetic validation statistic.
+The imbalance nevertheless matters for narrative economics because recurring public stories help organise which causes and remedies become thinkable (Shiller, 2017).
 
 ## 5. Discussion
 
-### 5.1 What the event register establishes
+### 5.1 What changes with the new database
 
-The event register does not reveal private cognition, but it adds information that a price series cannot provide. Direct sector speech about its own economic position precedes the repricing concentration by 20 months. Four named bodies show the same sequence, and three lags exceed one year.
+The official corpus reduces the broad accumulator to a consistently filtered religion-salient database. Cost-of-living mentions fall to 1 486, the candidate pool to 761 and the domestic measured set to 475. The attention–HICP correlation during the main shock is 0.48 rather than the stronger relationship obtained from the broad input. This is a substantive revision: the new analysis gives less support to media attention as a high-fidelity proxy for inflation.
 
-Attention to household hardship alone cannot explain the aggregate pattern because own-position speech is slightly more common. Organisational separation remains important: parishes, dioceses and the bishops' conference have different decision rights, and most events cannot be matched to the same named body. The four matches nevertheless show that separation is not a complete explanation.
+The organisational timing result is more robust. The own-position peak remains 2022-10, repricing remains concentrated in 2024-06, and the 20-month gap remains. The four named-body sequences, the 669-day median and the three lags longer than one year also survive. The central claim should therefore rest on event ordering and within-body matches, not on a strong attention correlation.
 
-Once information about the sector's own position is publicly present, delayed action requires an additional friction. Fairness, governance and adjustment costs become part of the explanation. The analysis does not estimate their macroeconomic importance, but it narrows the set of plausible mechanisms.
+### 5.2 Implications for price adjustment
 
-### 5.2 A boundary condition for price adjustment
+Public own-position speech makes complete inattention to the relevant object an insufficient aggregate explanation. It does not eliminate partial inattention. Local price-setting units may update at different times, and national or diocesan public speech may not transmit to every parish.
 
-Most evidence on price duration comes from competitive retail goods and services (Dhyne et al., 2006; Klenow & Malin, 2010; Nakamura & Steinsson, 2008). The religious sector differs through weak competitive pressure, no automatic indexation, dispersed authority and relationships partly governed by norms. A long and concentrated adjustment does not contradict state-dependent pricing in general. It identifies a setting in which the usual positive link between inflation and adjustment frequency may weaken.
+A fixed technical menu cost is also unlikely to explain the entire pattern by itself. By the repricing peak, the comparable HICP price level was 25.7 per cent above its June 2021 level, and the sector had publicly discussed its own economic position for 20 months. Yet menu costs can combine with governance costs and fairness concerns.
 
-The accumulated gap is economically meaningful even without a sector price index. By June 2024, the HICP level was 25.7 per cent above June 2021. The paper cannot measure the sector's contribution to aggregate price dispersion, but it identifies a setting where relative-price adjustment may be large and statistically invisible.
+The most defensible interpretation is joint. Mission-based relationships can make repricing reputationally costly when household hardship is most salient. Dispersed authority can delay transmission and approval. The event register observes a sequence consistent with both mechanisms but contains no variation that isolates one while holding the other fixed.
 
-Croatia adopted the euro in January 2023, which may have created an occasion for some fee changes. Aggregate evidence finds no robust overall conversion effect and locates the main effects in selected goods and services (Falagiarda et al., 2023; Sorić, 2024). The observed sequence begins before conversion and continues long after it, so the euro changeover cannot explain the full October 2022–June 2024 interval.
+### 5.3 A boundary condition for conventional price data
 
-### 5.3 What media can and cannot measure
+Most evidence on price duration comes from retail goods and services with regular transaction data (Dhyne et al., 2006; Klenow & Malin, 2010; Nakamura & Steinsson, 2008). Religious services differ through weak competitive pressure, customary rather than indexed prices, and organisationally dispersed decision rights. A long reported adjustment interval does not contradict state-dependent pricing generally; it identifies a setting in which standard incentives may be attenuated.
 
-Media can provide an observation instrument for sectors outside official statistics. Similar gaps arise for informal providers, clubs, small family firms and organisations below reporting thresholds. A dated corpus can recover reported events and contemporaneous statements where administrative data do not exist.
+Croatia’s euro changeover may have provided an occasion to revise fees. Aggregate research finds no robust overall conversion effect and locates effects in selected products (Falagiarda et al., 2023; Sorić, 2024). The observed sequence begins before January 2023 and continues to June 2024, so conversion cannot explain the full interval.
 
-Coverage is nevertheless shaped by newsworthiness. Inflation can affect both the underlying event rate and the probability of reporting. A bishop's statement is easier to observe than a parish price list, and coverage may follow rather than coincide with a formal decision.
-
-The estimand must therefore remain narrow. The paper reports coverage events, dated peaks, chained aggregate price gaps and matched-unit sequences. It does not estimate a fee level, pass-through coefficient or structural hazard. Direct fee schedules would permit those stronger tests.
+Media event registers can make otherwise invisible stages observable in other sectors without price microdata: clubs, informal providers, small family firms and organisations below reporting thresholds. Their estimand must remain narrow. Coverage records reported events and public statements, not prices, pass-through or adjustment hazards.
 
 ### 5.4 Limitations
 
-Four limits define the claim. First, public speech can be strategic and does not certify private cognition. Second, named-unit matching is sparse: four matches cannot represent a sector with many local units. Third, coverage can lag the underlying price decision, and only external fee schedules can measure that lag. Fourth, the design cannot separate fairness from organisational decision costs.
+Five limitations define the claim. First, public speech may be strategic and does not certify private cognition. Second, newsworthiness affects both whether an event is covered and how often it is repeated. Third, coverage may lag the underlying decision; direct fee schedules are required to measure price duration. Fourth, only four named bodies can be matched across speech and repricing. Fifth, 32 refreshed candidates, including 10 domestic items, are single-coded addenda rather than three-run majorities.
 
-These limits narrow the causal interpretation, but standard price data would not show the object of public attention or its organisational location. The event register makes those distinctions visible and identifies the data needed for a stronger test.
+The collection change adds another constraint. Identical inclusion rules make the two eras rule-comparable, not capture-comparable. The monitoring and backfill streams differ in volume and acquisition method, and the 2024 text gap prevents a continuous exposure series. This is why the paper separates stream-specific instrument checks from descriptive event timing.
 
 ## 6. Conclusion
 
-A fixed price cannot show whether a seller failed to notice a shock or noticed it and delayed action. The Croatian religious sector provides a second observation channel through public speech and repricing coverage.
+An unchanged price cannot show whether a seller failed to notice a shock or noticed it and delayed action. The new official DigiKat database supplies a public-information channel for Croatia’s religious sector.
 
-The sequence is clear. Household-hardship speech peaks in February 2022, own-position speech in October 2022 and repricing coverage in June 2024. By the last date, the HICP price level was 25.7 per cent above June 2021. Four named bodies appear in both own-position speech and later repricing coverage, and three lags exceed one year.
+The refreshed analysis is both weaker and stronger than the earlier broad-data account. The association between cost-of-living coverage and headline HICP during the main shock is moderate at 0.48 and disappears in first differences. The organisational sequence is stable: household-hardship speech peaks in February 2022, own-position speech in October 2022 and repricing coverage in June 2024. Four named bodies exhibit speech before later repricing coverage, and three lags exceed one year.
 
-Relevant public information was therefore present before repricing coverage became concentrated. The pattern is consistent with fairness constraints operating through a slow hierarchy. Pure inattention to the relevant object and a fixed technical menu cost are incomplete explanations, although the data cannot separate fairness from organisational delay.
-
-The next step is to recover dated fee schedules from dioceses and parishes. Combining those prices with the public-information record would distinguish reporting delay from decision delay and allow direct estimates of price duration.
+Relevant information was publicly present before adjustment coverage became concentrated. This narrows the role of pure inattention but does not identify fairness, governance or menu costs separately. The next empirical step is to recover dated fee schedules from dioceses and parishes. Linking those prices to the event register would distinguish reporting delay from decision delay and permit direct estimates of price duration.
 
 ## References
 
@@ -402,18 +390,18 @@ van Kersbergen, K., & Manow, P. (Eds.). (2009). *Religion, class coalitions, and
 
 ## Appendix A. Reproduction
 
-The study runs from the repository root as a numbered R pipeline. Script 00 retrieves and validates Eurostat HICP. Scripts 01–03 reconstruct the cost-of-living tag, candidate pool and measured set. Scripts 04–07 produce the sector profile, instrument checks and independent recoding. Scripts 14–16 create the additional labels, unit matches and event-timing measures. Script 17 generates the figures, and Script 18 publishes the HTML, PDF and Word editions.
+The study runs from the repository root as a numbered R pipeline. The official corpus is resolved through the project path helper and each annotated item is joined by its stable accumulator-row id. Scripts 01–03 create the 1,486-post tag, 761-candidate pool and 475-post measured set. Scripts 04–07 produce response profiles, HICP checks and the retained 120-item blind reliability audit. Scripts 14–16 migrate the object, voice and unit labels, construct named-body matches and derive event timing. Script 17 generates both figures.
 
-Script 08 with `--v2` generates all nine manuscript tables and the scalar checks used in the text. Script 09 installs the table fragments, and Script 10 checks the tables, derived values, abstracts and encoding. Script 11 renders full and blinded Word files outside the repository. Script 12 assembles a disclosure-screened replication package. The end-to-end command is `Rscript studies/inflation-salience/RUN_ALL.R --v2 --no-network`.
+Script 08 with the v2 option generates all nine tables and 154 scalar checks. Script 09 installs the table fragments; Script 10 verifies tables, numbers, abstracts and encoding. Script 11 renders full and blinded Word manuscripts outside the repository. Script 12 creates a disclosure-screened replication package. The end-to-end command is:
 
-The original candidate-selection scripts were lost and reconstructed from the written specification. The reconstructed measured set reproduces all 520 final items and all seven Table 4 categories. A fresh proximity selection recovers 94.5 per cent of the fixed 1 450 coding pool while adding candidates of its own. No result reselects or changes the fixed pool.
+    Rscript studies/inflation-salience/RUN_ALL.R --v2 --no-network
+
+The corpus itself is not redistributed because it contains licensed media text. Aggregate and label-only outputs carry no URLs, headlines, outlet names or excerpts.
 
 ## Appendix B. Coding protocol
 
-For the original coding, each annotator saw a date, outlet type, headline and an excerpt centred on the cost-of-living phrase. No existing decision and no other annotator's label was visible. The four conditional decisions asked whether the item concerned literal prices, whether religion was genuinely linked rather than incidentally adjacent, whether the inflation was domestic or foreign, and which substantive register dominated. Majority voting across three runs produced the labels.
+Coders see the date, outlet type, headline and an excerpt centred on the cost-of-living expression. They do not see prior labels. Four conditional decisions ask whether the price language is literal, whether religion is substantively linked rather than incidentally adjacent, whether the inflation is domestic or foreign, and which register dominates.
 
-The version 2 addendum operates only on those already coded posts. For the 179 institution-register items, `object` is `own` when the economic content concerns the institution's heating, energy, wages, maintenance, insurance, building repair, collections, fees, finances, budgets, property or investment. It is `household` when the content concerns the cost of living borne by families, pensioners, households or the poor. `both` requires comparable weight, and `other` covers neither object. The decision concerns the object of economic content, not the speaker.
+For institution-register items, object is own when the economic content concerns institutional heating, energy, wages, maintenance, insurance, repairs, collections, fees, budgets, property or investments. It is household when the content concerns costs borne by families, pensioners, households or the poor. Both requires comparable weight. Voice is sector when a sector actor speaks directly and outside when the organisation is only written about.
 
-The `voice` label is `sector` when a sector actor speaks through a quotation, interview, homily, official statement or press release. It is `outside` when the sector is written about without a sector actor speaking. Direct evidence for relevant public information is `own` or `both` together with `sector`.
-
-Every one of the 520 posts receives a `unit` label. The unit is the body performing the reported economic action. Allowed values are parish, diocese, religious order, Caritas, bishops' conference, Vatican, church in general and none. The specific name is recorded exactly as written, kept private, normalised conservatively and used only for matching. A named match requires direct own-position sector speech to precede repricing coverage for the same normalised body. Aggregate matched counts leave the private directory; names do not.
+Every domestic item receives a unit label. The unit is the body performing the reported economic action: parish, diocese, religious order, Caritas, bishops’ conference, Vatican, church in general or none. A named match requires direct own-position speech to precede repricing coverage for the same conservatively normalised body. Names never leave the private analysis directory.

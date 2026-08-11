@@ -1,10 +1,10 @@
 #!/usr/bin/env Rscript
-# 15_v2_ingest.R — ingest the three blind v2 recodes and build W1/W2 results.
+# 15_v2_ingest.R — migrate the v2 labels to the refreshed official-corpus set.
 #
-# Reads one private labels.csv from each of a1/, a2/ and a3/. The tracked outputs contain
-# labels and aggregates only; excerpts, notes, and named institutional units remain under
-# output/private/. A three-way disagreement must be explicitly adjudicated in the private
-# v2_adjudication.csv before the script will continue.
+# Original three-run majority labels are joined by stable source-row id. The ten newly
+# coded domestic items are added explicitly. Agreement is recomputed on the retained
+# original items from the three untouched private annotation files; single-coded addendum
+# items are excluded from kappa and reported separately in v2_coding_provenance.csv.
 
 source("studies/inflation-salience/_lib.R")
 
@@ -12,81 +12,59 @@ rule("15_v2_ingest.R")
 
 BD <- file.path(PRIVATE, "batches", "v2")
 ann_files <- file.path(BD, paste0("a", 1:3), "labels.csv")
-if (any(!file.exists(ann_files))) {
-  stop("missing blind annotation file(s): ",
-       paste(ann_files[!file.exists(ann_files)], collapse = ", "), call. = FALSE)
-}
+base_path <- file.path(PRIVATE, "v2_majority_full.csv")
+add_path <- file.path(OUT, "v2_labels_corpus_addendum.csv")
+key_path <- file.path(PRIVATE, "v2_key.csv")
+need_files <- c(ann_files, base_path, add_path, key_path)
+if (any(!file.exists(need_files)))
+  stop("missing v2 input(s): ", paste(need_files[!file.exists(need_files)], collapse = ", "))
+
+key <- fread(key_path, encoding = "UTF-8", na.strings = c("", "NA"))
+base <- fread(base_path, encoding = "UTF-8", na.strings = c("", "NA"))
+add <- fread(add_path, encoding = "UTF-8", na.strings = c("", "NA"))
+
+keep <- c("rid", "object", "voice", "unit", "unit_name", "object_agree_n",
+          "voice_agree_n", "unit_agree_n")
+if (!all(keep %in% names(base)) || !all(keep %in% names(add)))
+  stop("original v2 labels and addendum do not share the required schema")
+
+base_use <- base[rid %in% key$rid, ..keep]
+base_use[, coding_source_v2 := "prior_three_run_majority"]
+add_use <- add[, ..keep]
+add_use[, coding_source_v2 := "corpus_v1_addendum"]
+labels <- rbindlist(list(base_use, add_use), use.names = TRUE, fill = TRUE)
+if (anyDuplicated(labels$rid) || !setequal(labels$rid, key$rid) || nrow(labels) != nrow(key))
+  stop("v2 labels must cover every refreshed domestic item exactly once")
+lab <- merge(key, labels, by = "rid", all.x = TRUE, sort = FALSE)
+setorder(lab, rid)
 
 object_domain <- c("own", "household", "both", "other")
-voice_domain  <- c("sector", "outside")
-unit_domain   <- c("parish", "diocese", "order", "caritas", "conference",
-                   "vatican", "church", "none")
+voice_domain <- c("sector", "outside")
+unit_domain <- c("parish", "diocese", "order", "caritas", "conference",
+                 "vatican", "church", "none")
+if (anyNA(lab$unit) || anyNA(lab[register == "institution"]$object) ||
+    anyNA(lab[register == "institution"]$voice)) stop("unresolved refreshed v2 labels")
+if (length(setdiff(na.omit(unique(lab$object)), object_domain)) ||
+    length(setdiff(na.omit(unique(lab$voice)), voice_domain)) ||
+    length(setdiff(unique(lab$unit), unit_domain))) stop("out-of-domain refreshed v2 label")
+
+## ------------------------------------------------ agreement on retained original items ----
 
 read_ann <- function(f, a) {
   x <- fread(f, encoding = "UTF-8", na.strings = c("", "NA"))
-  need <- c("item", "object", "voice", "unit", "unit_name", "note")
-  if (!all(need %in% names(x))) stop(f, " lacks: ", paste(setdiff(need, names(x)), collapse = ", "))
-  if (nrow(x) != 520L || uniqueN(x$item) != 520L) stop(f, " must contain 520 unique items")
-  if (sum(!is.na(x$object)) != 179L || sum(!is.na(x$voice)) != 179L)
-    stop(f, " must contain 179 object and voice decisions")
-  bad_o <- setdiff(na.omit(unique(x$object)), object_domain)
-  bad_v <- setdiff(na.omit(unique(x$voice)), voice_domain)
-  bad_u <- setdiff(na.omit(unique(x$unit)), unit_domain)
-  if (length(bad_o) || length(bad_v) || length(bad_u))
-    stop(f, " contains out-of-domain labels")
-  if (anyNA(x$unit)) stop(f, " has missing unit labels")
-  setnames(x, setdiff(names(x), "item"), paste0(setdiff(names(x), "item"), "_a", a))
-  x
+  need <- c("item", "object", "voice", "unit")
+  if (!all(need %in% names(x))) stop(f, " lacks required annotation columns")
+  setnames(x, setdiff(need, "item"), paste0(setdiff(need, "item"), "_a", a))
+  x[, c("item", paste0(c("object", "voice", "unit"), "_a", a)), with = FALSE]
 }
 
-L <- lapply(seq_along(ann_files), function(a) read_ann(ann_files[a], a))
-lab <- Reduce(function(x, y) merge(x, y, by = "item", all = TRUE, sort = FALSE), L)
-key <- fread(file.path(PRIVATE, "v2_key.csv"), encoding = "UTF-8")
-if (!setequal(lab$item, key$item)) stop("annotation items do not equal v2_key items")
-lab <- merge(key, lab, by = "item", all.x = TRUE, sort = FALSE)
-setorder(lab, rid)
-
-mode3 <- function(x) {
-  x <- na.omit(as.character(x))
-  if (!length(x)) return(NA_character_)
-  z <- sort(table(x), decreasing = TRUE)
-  if (z[1] < 2L) return(NA_character_)
-  names(z)[1]
-}
-
-for (axis in c("object", "voice", "unit")) {
-  cols <- paste0(axis, "_a", 1:3)
-  lab[, (axis) := apply(.SD, 1L, mode3), .SDcols = cols]
-  lab[, paste0(axis, "_agree_n") := apply(.SD, 1L, function(z) {
-    z <- na.omit(z); if (!length(z)) return(NA_integer_); max(tabulate(match(z, unique(z))))
-  }), .SDcols = cols]
-}
-
-## Three distinct labels have no majority. They are uncommon but may not be resolved silently.
-ties <- rbindlist(lapply(c("object", "voice", "unit"), function(axis) {
-  lab[is.na(get(axis)) & !is.na(get(paste0(axis, "_a1"))), .(item, axis)]
-}))
-ADJ <- file.path(PRIVATE, "v2_adjudication.csv")
-if (nrow(ties)) {
-  fwrite(ties, file.path(PRIVATE, "v2_threeway_ties.csv"))
-  if (!file.exists(ADJ)) stop(nrow(ties), " three-way ties written to ",
-                              file.path(PRIVATE, "v2_threeway_ties.csv"),
-                              "; create v2_adjudication.csv (item,axis,label)")
-  adj <- fread(ADJ, encoding = "UTF-8")
-  if (!all(c("item", "axis", "label") %in% names(adj))) stop("bad v2_adjudication.csv schema")
-  if (nrow(adj) != nrow(ties) || !all(paste(ties$item, ties$axis) %in% paste(adj$item, adj$axis)))
-    stop("v2_adjudication.csv does not resolve every current tie exactly once")
-  for (i in seq_len(nrow(adj))) lab[item == adj$item[i], (adj$axis[i]) := adj$label[i]]
-}
-
-if (anyNA(lab$unit) || anyNA(lab[register == "institution"]$object) ||
-    anyNA(lab[register == "institution"]$voice)) stop("unresolved majority labels")
-
-## --------------------------------------------------------- agreement ----
+raw_ann <- Reduce(function(x, y) merge(x, y, by = "item", all = TRUE, sort = FALSE),
+                  lapply(seq_along(ann_files), function(a) read_ann(ann_files[a], a)))
+raw_ann <- merge(base[, .(item, rid, register)], raw_ann, by = "item", all.x = TRUE)
+raw_ann <- raw_ann[rid %in% base_use$rid]
 
 fleiss_kappa <- function(m, domain) {
-  m <- as.matrix(m)
-  n <- nrow(m); k <- length(domain); nr <- ncol(m)
+  m <- as.matrix(m); n <- nrow(m); k <- length(domain); nr <- ncol(m)
   counts <- t(apply(m, 1L, function(z) tabulate(match(z, domain), nbins = k)))
   p_i <- (rowSums(counts^2) - nr) / (nr * (nr - 1))
   p_j <- colSums(counts) / (n * nr)
@@ -96,25 +74,24 @@ fleiss_kappa <- function(m, domain) {
 }
 
 agreement_row <- function(axis, domain, use) {
-  z <- lab[use, paste0(axis, "_a", 1:3), with = FALSE]
+  z <- raw_ann[use, paste0(axis, "_a", 1:3), with = FALSE]
   p12 <- mean(z[[1]] == z[[2]]); p13 <- mean(z[[1]] == z[[3]]); p23 <- mean(z[[2]] == z[[3]])
-  data.table(
-    axis = axis, n = nrow(z), unanimous = round(mean(apply(z, 1L, uniqueN) == 1L), 3),
-    majority = round(mean(apply(z, 1L, function(q) max(table(q))) >= 2L), 3),
-    pairwise_agreement = round(mean(c(p12, p13, p23)), 3),
-    fleiss_kappa = round(fleiss_kappa(z, domain), 3)
-  )
+  data.table(axis = axis, n = nrow(z),
+             unanimous = round(mean(apply(z, 1L, uniqueN) == 1L), 3),
+             majority = round(mean(apply(z, 1L, function(q) max(table(q))) >= 2L), 3),
+             pairwise_agreement = round(mean(c(p12, p13, p23)), 3),
+             fleiss_kappa = round(fleiss_kappa(z, domain), 3))
 }
 
 agree <- rbind(
-  agreement_row("object", object_domain, lab$register == "institution"),
-  agreement_row("voice",  voice_domain,  lab$register == "institution"),
-  agreement_row("unit",   unit_domain,   rep(TRUE, nrow(lab)))
+  agreement_row("object", object_domain, raw_ann$register == "institution"),
+  agreement_row("voice", voice_domain, raw_ann$register == "institution"),
+  agreement_row("unit", unit_domain, rep(TRUE, nrow(raw_ann)))
 )
 fwrite(agree, file.path(OUT, "v2_agreement.csv"))
 print(agree)
 
-## ----------------------------------------------------- private names ----
+## ------------------------------------------------ private names ----
 
 norm_name <- function(x) {
   x <- stri_trans_tolower(ifelse(is.na(x), "", x))
@@ -127,32 +104,23 @@ norm_name <- function(x) {
     paste(sort(unique(substr(tok, 1L, 7L))), collapse = " ")
   }, character(1))
 }
-
-for (a in 1:3) lab[, paste0("unit_norm_a", a) := norm_name(get(paste0("unit_name_a", a)))]
-lab[, unit_norm := apply(.SD, 1L, function(z) {
-  z <- z[nzchar(z)]; if (!length(z)) return("")
-  tt <- sort(table(z), decreasing = TRUE); names(tt)[1]
-}), .SDcols = paste0("unit_norm_a", 1:3)]
-lab[, unit_name := mapply(function(target, n1, n2, n3, r1, r2, r3) {
-  nn <- c(n1, n2, n3); rr <- c(r1, r2, r3)
-  hit <- rr[!is.na(rr) & nzchar(rr) & nn == target]
-  if (length(hit)) return(hit[1])
-  hit <- rr[!is.na(rr) & nzchar(rr)]
-  if (length(hit)) hit[1] else ""
-}, unit_norm, unit_norm_a1, unit_norm_a2, unit_norm_a3,
-unit_name_a1, unit_name_a2, unit_name_a3)]
+lab[, unit_norm := norm_name(unit_name)]
 
 private_keep <- c("item", "rid", "register", "response", "date", "year", "month", "stream",
                   "otype", "object", "voice", "unit", "unit_name", "unit_norm",
-                  "object_agree_n", "voice_agree_n", "unit_agree_n")
-fwrite(lab[, ..private_keep], file.path(PRIVATE, "v2_majority_full.csv"))
+                  "object_agree_n", "voice_agree_n", "unit_agree_n", "coding_source_v2")
+fwrite(lab[, ..private_keep], file.path(PRIVATE, "v2_majority_corpus.csv"))
 
-## The tracked file contains no text, source, URL, name, or note.
-tracked <- lab[, .(rid, object, voice, unit, object_agree_n, voice_agree_n, unit_agree_n)]
+# No text, URL, outlet, note or unit name enters the tracked outputs.
+tracked <- lab[, .(rid, object, voice, unit, object_agree_n, voice_agree_n,
+                   unit_agree_n, coding_source_v2)]
 fwrite(tracked, file.path(OUT, "v2_labels.csv"))
 analysis_core <- lab[, .(rid, register, response, date, year, month, stream, otype,
-                         object, voice, unit, object_agree_n, voice_agree_n, unit_agree_n)]
+                         object, voice, unit, object_agree_n, voice_agree_n,
+                         unit_agree_n, coding_source_v2)]
 fwrite(analysis_core, file.path(OUT, "v2_analysis_core.csv"))
+fwrite(lab[, .(items = .N, institution_items = sum(register == "institution")),
+           by = coding_source_v2], file.path(OUT, "v2_coding_provenance.csv"))
 
 ## --------------------------------------------------- W1 time series ----
 
@@ -165,32 +133,23 @@ obj[, attention_series := fcase(
   default = "Other"
 )]
 obj_month <- obj[, .N, by = .(stream, month, object, voice, attention_series)][order(stream, month)]
-obj_year  <- obj[, .N, by = .(stream, year, object, voice, attention_series)][order(stream, year)]
+obj_year <- obj[, .N, by = .(stream, year, object, voice, attention_series)][order(stream, year)]
 fwrite(obj_month, file.path(OUT, "attention_object_monthly.csv"))
-fwrite(obj_year,  file.path(OUT, "attention_object_yearly.csv"))
-
-rule("W1 — direct sector speech by attention object")
-direct <- obj[voice == "sector", .N, by = .(object, year)][order(object, year)]
-print(direct)
-peaks <- obj[voice == "sector" & object %in% c("own", "household", "both"),
-             .N, by = .(object, month)][order(object, -N, month), .SD[1], by = object]
-print(peaks)
+fwrite(obj_year, file.path(OUT, "attention_object_yearly.csv"))
 
 ## --------------------------------------------------- W2 unit matching ----
 
 unit_response <- lab[, .N, by = .(unit, response, register)][order(unit, response, register)]
 fwrite(unit_response, file.path(OUT, "unit_response.csv"))
 
-# Named units only. Multiple reports of the same unit/event are collapsed to unit × day × action.
 episodes <- unique(lab[nzchar(unit_norm), .(
   unit_norm, unit_name, unit, date,
   action = fcase(register == "crl", "repricing",
                  register == "institution" & voice == "sector" & object %in% c("own", "both"),
-  "own_speech", default = "other")
+                 "own_speech", default = "other")
 )][action != "other"])
-
 speech <- episodes[action == "own_speech"]
-price  <- episodes[action == "repricing"]
+price <- episodes[action == "repricing"]
 pairs <- merge(speech, price, by = "unit_norm", allow.cartesian = TRUE,
                suffixes = c("_speech", "_repricing"))
 pairs[, lag_days := as.integer(date_repricing - date_speech)]
@@ -199,10 +158,8 @@ if (nrow(pairs)) pairs <- pairs[order(unit_norm, lag_days, date_speech), .SD[1],
 fwrite(pairs, file.path(PRIVATE, "v2_matched_pairs.csv"))
 
 matched_summary <- data.table(
-  named_units = uniqueN(episodes$unit_norm),
-  own_speech_units = uniqueN(speech$unit_norm),
-  repricing_units = uniqueN(price$unit_norm),
-  matched_units = uniqueN(pairs$unit_norm),
+  named_units = uniqueN(episodes$unit_norm), own_speech_units = uniqueN(speech$unit_norm),
+  repricing_units = uniqueN(price$unit_norm), matched_units = uniqueN(pairs$unit_norm),
   matched_units_over_365_days = uniqueN(pairs[lag_days >= 365L]$unit_norm),
   median_lag_days = if (nrow(pairs)) round(median(pairs$lag_days)) else NA_real_,
   min_lag_days = if (nrow(pairs)) min(pairs$lag_days) else NA_integer_,
@@ -213,7 +170,9 @@ matched_by_type <- if (nrow(pairs)) {
   pairs[, .(matched_named_units = uniqueN(unit_norm)), by = .(unit = unit_speech)]
 } else data.table(unit = character(), matched_named_units = integer())
 fwrite(matched_by_type, file.path(OUT, "unit_matched_by_type.csv"))
-print(matched_summary)
 
-msg("\nwrote v2 labels, agreement, attention-object series, unit aggregates, and private matched pairs")
+rule("Refreshed v2 outputs")
+print(lab[, .N, by = coding_source_v2])
+print(matched_summary)
+msg("\nwrote refreshed v2 labels, agreement, attention-object series and unit aggregates")
 msg("done.")

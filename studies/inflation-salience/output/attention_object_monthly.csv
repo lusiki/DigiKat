@@ -6,7 +6,6 @@ backfill,2025-03,own,sector,"Own position, sector voice",1
 backfill,2025-07,own,sector,"Own position, sector voice",1
 backfill,2025-09,other,sector,Other,1
 backfill,2025-10,household,outside,"Household hardship, outside report",1
-backfill,2025-11,household,sector,"Household hardship, sector voice",1
 backfill,2025-12,household,sector,"Household hardship, sector voice",10
 backfill,2026-03,other,sector,Other,1
 backfill,2026-04,household,sector,"Household hardship, sector voice",1
@@ -16,31 +15,29 @@ monitoring,2021-10,own,sector,"Own position, sector voice",1
 monitoring,2021-10,household,sector,"Household hardship, sector voice",3
 monitoring,2021-11,own,sector,"Own position, sector voice",1
 monitoring,2021-12,own,sector,"Own position, sector voice",2
-monitoring,2022-01,own,sector,"Own position, sector voice",4
+monitoring,2022-01,own,sector,"Own position, sector voice",1
 monitoring,2022-01,own,outside,"Own position, outside report",1
 monitoring,2022-01,both,outside,"Own position, outside report",1
 monitoring,2022-02,household,sector,"Household hardship, sector voice",27
 monitoring,2022-02,own,sector,"Own position, sector voice",4
-monitoring,2022-03,other,outside,Other,1
 monitoring,2022-03,own,sector,"Own position, sector voice",1
 monitoring,2022-04,other,outside,Other,1
 monitoring,2022-04,household,sector,"Household hardship, sector voice",16
 monitoring,2022-04,own,sector,"Own position, sector voice",5
 monitoring,2022-04,both,sector,"Own position, sector voice",2
 monitoring,2022-05,own,sector,"Own position, sector voice",1
-monitoring,2022-05,both,outside,"Own position, outside report",2
+monitoring,2022-05,both,outside,"Own position, outside report",1
 monitoring,2022-06,household,sector,"Household hardship, sector voice",2
 monitoring,2022-06,own,outside,"Own position, outside report",1
-monitoring,2022-06,own,sector,"Own position, sector voice",4
+monitoring,2022-06,own,sector,"Own position, sector voice",2
 monitoring,2022-07,own,outside,"Own position, outside report",1
 monitoring,2022-08,own,sector,"Own position, sector voice",3
 monitoring,2022-09,own,sector,"Own position, sector voice",1
-monitoring,2022-10,own,sector,"Own position, sector voice",19
+monitoring,2022-10,own,sector,"Own position, sector voice",18
 monitoring,2022-12,household,sector,"Household hardship, sector voice",6
 monitoring,2022-12,own,sector,"Own position, sector voice",3
-monitoring,2023-01,own,sector,"Own position, sector voice",8
+monitoring,2023-01,own,sector,"Own position, sector voice",7
 monitoring,2023-02,household,sector,"Household hardship, sector voice",3
-monitoring,2023-03,own,outside,"Own position, outside report",1
 monitoring,2023-03,household,sector,"Household hardship, sector voice",1
 monitoring,2023-04,own,sector,"Own position, sector voice",3
 monitoring,2023-08,household,sector,"Household hardship, sector voice",1
@@ -49,4 +46,4 @@ monitoring,2023-09,own,sector,"Own position, sector voice",1
 monitoring,2023-12,own,sector,"Own position, sector voice",15
 monitoring,2023-12,own,outside,"Own position, outside report",1
 monitoring,2023-12,household,sector,"Household hardship, sector voice",2
-monitoring,2024-06,own,sector,"Own position, sector voice",4
+monitoring,2024-06,own,sector,"Own position, sector voice",3

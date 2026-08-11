@@ -54,10 +54,10 @@ for (s in unique(ser$stream)) {
               s, min(w$month), max(w$month), nrow(w),
               format(min(w$n_total), big.mark = " "), format(max(w$n_total), big.mark = " ")))
 }
-msg("\n  PAPER_v1 described the monitoring window as 2021-2024 and the June series carried")
-msg("  39 months. Three of those were partial: January 2024 at 1 911 posts and July 2024 at")
-msg("  436 against a normal seven thousand, and February to May 2024 do not exist at all.")
-msg("  The usable window is 2021-01 to 2024-06 with a four-month hole, 37 months.")
+msg("\n  The official-corpus monitoring stream carries 39 observed months. January 2024")
+msg("  has 1 363 posts and July 274, both below the common 2 000-post threshold; February")
+msg("  to May 2024 do not exist at all. The usable window is 2021-01 to 2024-06 with a")
+msg("  four-month hole, 37 months.")
 
 rule("How much price variation each window contains")
 rng <- ser[, .(months = .N,

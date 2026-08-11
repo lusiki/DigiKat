@@ -1,5 +1,5 @@
 stream,above,months,mean_share,below_4,at_or_above_4,ratio
-backfill,FALSE,7,1.26,1.26,1.24,0.98
-backfill,TRUE,17,1.24,1.26,1.24,0.98
-monitoring,FALSE,11,0.51,0.51,1.15,2.25
-monitoring,TRUE,26,1.15,0.51,1.15,2.25
+backfill,FALSE,7,0.32,0.32,0.22,0.69
+backfill,TRUE,17,0.22,0.32,0.22,0.69
+monitoring,FALSE,11,0.28,0.28,0.55,1.96
+monitoring,TRUE,26,0.55,0.28,0.55,1.96
