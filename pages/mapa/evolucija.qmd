@@ -42,9 +42,11 @@ source_summary      <- readRDS("../../data/processed/source_summary.rds")
 platform_monthly    <- readRDS("../../data/processed/platform_monthly.rds")
 
 # Grafikoni ove mape crtaju se iz pripremljenih agregata. Provjera prekida render ako oni nisu
-# izgrađeni iz aktualnog službenog korpusa (data/digikat_corpus.rds).
+# izgrađeni iz aktualnog službenog korpusa (data/digikat_corpus.rds). Pravilo uključivanja opisano
+# je na stranici Metodologija, pa ova stranica iz manifesta više ne čita nijednu vrijednost i poziv
+# se ovdje zadržava isključivo zbog te provjere.
 source("../../R/lib/digikat_paths.R", encoding = "UTF-8")
-mf <- digikat_page_corpus("../..")
+invisible(digikat_page_corpus("../.."))
 
 # Paleta platformi (konzistentno s Mapom ekosustava)
 platform_colors <- c(
@@ -166,7 +168,9 @@ stopifnot(length(posts_first) == 1, length(posts_lfy) == 1,
 
 ## Uvod u vremensku dinamiku ekosustava
 
-Prethodne su mape opisale [aktere i platforme](mapa.html), [Tematske struje](mapa_stats.html), [Atmosferu diskursa](diskurs.html) te [Fokus na događaje](događaji.html). Ova peta analitička mapa, **Evolucija ekosustava**, prati promjene u opaženom korpusu od `r first_year`. do `r last_year`. godine: volumen objava, raspodjelu interakcija među platformama i koncentraciju interakcija među izvorima. Analiza obuhvaća `r fmt_int(corpus_total)` objava koje su unutar prvih `r digikat_hr_int(mf$rule$window_chars)` znakova pogodile najmanje jedan odlučan i dva različita religijska pojma te dosegnule ocjenu modela od najmanje `r format(mf$rule$threshold, nsmall = 2, decimal.mark = ",")`.
+Mijenja li se tko dominira ovim prostorom i seli li se pažnja s portala na društvene mreže? Prethodne su mape opisale [aktere i platforme](mapa.html), [Tematske struje](mapa_stats.html), [Atmosferu diskursa](diskurs.html) te [Fokus na događaje](događaji.html). Ova peta analitička mapa, **Evolucija ekosustava**, prati promjene u opaženom korpusu od `r first_year`. do `r last_year`. godine: volumen objava, raspodjelu interakcija među platformama i koncentraciju interakcija među izvorima. Odgovara na istraživačko pitanje Q5 o odnosima među platformama.
+
+Mjereno je na cijelom korpusu od `r fmt_int(corpus_total)` objava, bez uzorkovanja. Kako je korpus nastao i zašto se volumen ne smije uspoređivati preko 2024., opisano je u [Metodologiji](../metodologija.html).
 
 Ova je mapa namjerno strukturna, a ne sadržajna. Ona broji objave te uspoređuje udjele i koncentraciju zabilježenih interakcija, ali ne analizira tonalitet, emocije ni pojedine događaje. Sadržajnom dinamikom oko konkretnih događaja bavi se [Fokus na događaje](događaji.html).
 
@@ -357,5 +361,7 @@ Sve tri promjene valja čitati kao opis prikupljenog korpusa: promjena metode ok
 **Raspodjela interakcija se mijenja.** Udio weba `r web_dir` s `r fmt_pct(web_ishare_first)` na `r fmt_pct(web_ishare_last)`, dok rastu udjeli Facebooka i YouTubea. To je promjena zabilježenog signala, ne izravna mjera seobe publike.
 
 **Opažena koncentracija pada.** Udio deset najvećih izvora smanjuje se s `r fmt_pct(conc_first)` na `r fmt_pct(top10_last)`, a broj izvora s interakcijama raste `r fmt_x(actor_growth)` puta. Promjena obuhvata ne dopušta da se taj nalaz bez ograde protumači kao stvarna pluralizacija prostora.
+
+Za onoga tko objavljuje, najvažnija je promjena raspodjele interakcija među platformama. Težište zabilježenog odjeka pomiče se s weba prema Facebooku i YouTubeu, pa strategija koja se oslanja samo na portal pokriva sve manji dio prostora. Istodobno pada koncentracija, što znači da uz nekoliko velikih izvora prostora ima i za manje. Obje su tvrdnje o prikupljenom korpusu, a ne mjera stvarne seobe publike.
 
 Ova mapa opisuje oblik ekosustava i njegovu promjenu, ali ne i njegov sadržaj. Za ono o čemu se u tim objavama govori i kako, odnosno koje teme prevladavaju i kakav je tonalitet, valja se vratiti na [Tematske struje](mapa_stats.html) i [Atmosferu diskursa](diskurs.html). Dinamikom oko konkretnih događaja bavi se [Fokus na događaje](događaji.html). Zajedno, pet mapa daju i presjek i putanju istog digitalnog prostora.

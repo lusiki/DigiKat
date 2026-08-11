@@ -74,6 +74,13 @@ web_share   <- plat[SOURCE_TYPE == "web", pct]
 
 ## Što je ovaj korpus
 
+Trebate podatke o tome kako hrvatski mediji pišu o katoličkim temama? Ova stranica opisuje bazu na
+kojoj počivaju sve analize projekta, redak po redak i stupac po stupac. Namijenjena je istraživačima,
+novinarima i studentima koji žele znati što točno u bazi jest, a što nije, prije nego što je
+upotrijebe. Podaci su otvoreni pod licencijom CC BY 4.0; pristup punom tekstu objava odobrava se
+zasebno. Kraći opis postupka nalazi se u [Metodologiji](metodologija.html), a ovdje slijedi
+cjelovit popis sadržaja.
+
 **DigiKat** je strukturirani **korpus** od **`r fmt_int(n_records)`** medijskih objava (`r yr_min`.–`r yr_max`.)
 koje govore o **katoličkim i religijskim temama** u hrvatskom digitalnom medijskom prostoru. Jedinica promatranja
 je **jedna objava**, bilo da je riječ o članku na portalu, objavi na društvenoj mreži, videozapisu ili

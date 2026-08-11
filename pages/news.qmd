@@ -25,7 +25,7 @@ categories: ["Obavijesti", "2021.–2026."]
 </div>
 <div class="timeline-item">
 <p><strong>Listopad 2025</strong> Provedena analiza tonaliteta na povijesnim podacima.</p>
-<p><em>Primijenjene su NLP tehnike za automatsku klasifikaciju tonaliteta u prikupljenim objavama.</em></p>
+<p><em>Računalnom obradom teksta automatski je određen tonalitet prikupljenih objava.</em></p>
 </div>
 <div class="timeline-item">
 <p><strong>Rujan 2025</strong> Održana radionica za podjelu tematskih istraživanja.</p>
@@ -57,11 +57,11 @@ categories: ["Obavijesti", "2021.–2026."]
 </div>
 <div class="timeline-item">
 <p><strong>Ožujak 2025</strong> Metodološka radionica tima.</p>
-<p><em>Održana je interna radionica o primjeni NLP tehnika i strojnog učenja za potrebe projekta.</em></p>
+<p><em>Održana je interna radionica o računalnoj obradi teksta za potrebe projekta.</em></p>
 </div>
 <div class="timeline-item">
 <p><strong>Veljača 2025</strong> Finaliziran kod za prikupljanje podataka (v1.0).</p>
-<p><em>Nakon višemjesečnog razvoja, prva stabilna verzija alata za web scraping i API integraciju je spremna za rad.</em></p>
+<p><em>Nakon višemjesečnog razvoja, prva stabilna verzija alata za automatsko prikupljanje objava spremna je za rad.</em></p>
 </div>
 <div class="timeline-item">
 <p><strong>Siječanj 2025</strong> Službeni početak projekta i konstituiranje tima!</p>

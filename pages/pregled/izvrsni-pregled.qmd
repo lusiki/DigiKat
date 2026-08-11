@@ -367,7 +367,7 @@ Both specialised and general-news outlets appear near the top of individual plat
 <span class="layer-broj">02 · <span class="lang-hr">16 tematskih kategorija</span><span class="lang-en">16 thematic categories</span></span>
 <div class="lang-hr">
 <h3>Tematske struje</h3>
-<p>Druga razina odgovara na pitanje o čemu se govori: lematizacija (udpipe) i rječnik od 16 tematskih kategorija primijenjeni su na stratificirani uzorak korpusa. Prikaz uspoređuje učestalost, gustoću rječničkih podudaranja, zabilježene reakcije i preklapanje oznaka.</p>
+<p>Druga razina odgovara na pitanje o čemu se govori: računalnom obradom teksta i rječnikom od 16 tematskih kategorija obrađen je dio korpusa. Prikaz uspoređuje učestalost, gustoću rječničkih podudaranja, zabilježene reakcije i preklapanje oznaka.</p>
 <p><a href="https://lusiki.github.io/DigiKat/pages/mapa/mapa_stats.html">Tematske struje — cijela analiza</a></p>
 </div>
 <div class="lang-en">

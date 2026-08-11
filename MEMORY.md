@@ -450,3 +450,63 @@
   render prunes the bundles they ask for — 18 broken references, 2 per study. Restoring from git only
   ADDS tracked files beside the newly rendered ones, so a genuinely missing asset still fails the check.
   The same trap is waiting locally the first time Quarto is upgraded and the site is fully re-rendered.
+
+## Field-first register split and „Moj medij" (2026-08-11)
+
+- [LEARN] **The public pages now address the field first, the method lives on one page.** PI decision
+  2026-08-11: `pages/metodologija.qmd` is the single academic-register page and carries the inclusion
+  rule, the sampling fractions, the lexicon inventory, the accumulator-versus-corpus distinction and
+  the 2024 instrument caveat. Public pages open with the reader's question and LINK it. This is
+  written into `.claude/rules/voice-and-style.md` as new §2b (two registers, with a front-of-house
+  vocabulary table) and an amended §9 spine item 2, so a later review pass that "restores rigour" by
+  putting the rule back on `about`/`mapa/index` is reversing a decision, not fixing a lapse.
+- [LEARN] New §2c is the commerce boundary. An analytical page's synthesis may close with 1–2 neutral
+  sentences on what a practitioner could do with the finding (the **capability register**), but the
+  words *usluga*, *ponuda*, *klijent*, *naručitelj*, any price and any case study never appear on a
+  public page. The knowledge-transfer page (`suradnja.qmd`) was **re-deferred by the PI on
+  2026-08-11**, so today no page states that commissioned work exists, and the two lead-magnet links
+  the plan described were not built.
+- [LEARN] Standing rules adopted from the PI's strategy resource, for whenever the services layer is
+  built OUTSIDE this repo: clients and subjects may check facts before publication but never veto a
+  finding, and unflattering results are published; no political portals as clients; any publication
+  touching a paid relationship discloses it.
+- [LEARN] **Croatian numeral agreement is now structural on the site too.** `R/lib/digikat_hr.R`
+  supplies `digikat_hr_count(n, noun)` over a registered noun table, plus `digikat_platform_hr()` and
+  `digikat_hr_list()`. Before it, generated numbers printed „9 vrste", „47 stupca" and „100 znaka",
+  and `data/nlp/manifest.json`'s raw strata keys reached the prose as „stratificiran po year i
+  SOURCE_TYPE". Never type a noun after a generated number. **Adjectives are NOT handled** — where a
+  sentence needs one (the rule's „1 odlučan i 2 različita pojma"), `metodologija.qmd` carries a
+  `stopifnot(min_decisive == 1, min_total == 2)` so a rule change stops the render instead of
+  printing ungrammatical Croatian.
+- [LEARN] The Layer-1 actor typology moved to `R/lib/digikat_typology.R` (`digikat_classify_typology`,
+  the per-platform median split) because three surfaces now read it off: `pages/mapa/mapa.qmd`,
+  `R/wiki_sources.R` and `R/06_moj_medij.R`. Regenerating the catalogue after the extraction changed
+  only `date:` lines in all 88 actor pages — that byte-level no-op IS the proof the refactor was
+  behaviour-preserving, and it is the check to repeat if the function is ever touched.
+- [LEARN] **`data/processed/source_summary.rds` has NO platform column** — it groups by `(year, FROM)`
+  only, so a handle active on both web and Facebook is SUMMED into one row. It therefore cannot carry
+  the per-platform typology, which needs a platform to take medians within. „Moj medij" resolves
+  platform and typology only for actors present in the six tiny `*_actors.rds` aggregates, which is
+  43 of its 356 listed sources; the rest are shown without a typology rather than with a corpus-wide
+  one that would disagree with the catalogue.
+- [LEARN] „Moj medij" disclosure policy (PI: ≥100 posts + publish flag). Of 10 775 sources, 500 clear
+  the floor and **356 are listed, 144 withheld** — 141 of those because they are non-domain handles
+  with no sidecar review, 2 not media actors, 1 held by editorial decision. A FROM that looks like an
+  internet domain is institutional by construction and clears the individual/institution question
+  without review; anything else needs `publish = yes` in `resources/dictionaries/source_labels.csv`.
+  `R/06_moj_medij.R` prints the 20 largest withheld sources on every run, so extending the sidecar
+  (Sisačka biskupija, Radio Samobor, Zadarski list … are all currently withheld) is a one-file PI
+  task that unlocks them.
+- [LEARN] `R/check_disclosure.R` scans `studies/**` ONLY, so it does not cover
+  `data/page-ready/moj_medij.json`. The gate therefore lives inside `R/06_moj_medij.R`: it asserts no
+  `http`, no text field and no key outside a fixed allow-list before writing, and refuses to write
+  otherwise. Default mode is preview; `--apply` installs.
+- [LEARN] The lookup JSON is EMBEDDED in the rendered page via a `<script type="application/json">`
+  block rather than fetched. `data/page-ready/` is not in `_quarto.yml`'s `project.resources`, so a
+  fetched file would 404 on GitHub Pages; embedding also makes it work in `quarto preview` and
+  offline. 84 KB for 356 sources. `pages/moj-medij.qmd` compares the JSON's stored corpus sha256
+  against the manifest and STOPS the render on a mismatch, the same fail-closed pattern as
+  `digikat_assert_aggregates_current()`.
+- [LEARN] On this machine Dropbox intermittently locks the freshly created `pages/**/<page>_files`
+  directory and Quarto fails with `os error 32`. It is transient and clears on retry (1–2 attempts);
+  it is NOT render scatter and NOT a code fault. Verify `docs/` afterwards anyway.

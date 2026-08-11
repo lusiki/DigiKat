@@ -88,24 +88,13 @@ slugify <- function(x) {
   x
 }
 
-# Per-platform typology, identical rule to pages/mapa/mapa.qmd (median split).
-classify_typology <- function(df) {
-  mi <- median(df$total_interactions, na.rm = TRUE)
-  mr <- median(df$total_reach, na.rm = TRUE)
-  hi_i <- df$total_interactions >= mi
-  hi_r <- df$total_reach >= mr
-  ifelse(hi_i & hi_r, "Divovi",
-  ifelse(hi_i & !hi_r, "Graditelji zajednica",
-  ifelse(!hi_i & hi_r, "Megafoni", "Specijalizirani akteri")))
-}
-
-typ_read <- c(
-  "Divovi"                 = "visok doseg i visok angažman — među vodećim akterima ekosustava.",
-  "Graditelji zajednica"   = "nizak doseg uz vrlo visok angažman — gradi dubok odnos s vjernom publikom.",
-  "Megafoni"               = "visok doseg uz nizak angažman — sadržaj doseže široku publiku bez intenzivne interakcije.",
-  "Specijalizirani akteri" = "umjeren doseg i angažman — usmjeren na užu, specifičnu publiku."
-)
-label_hr <- c(confessional = "konfesionalni izvor", secular = "sekularni izvor", other = "ostalo")
+# Per-platform typology, identical rule to pages/mapa/mapa.qmd (median split). The definition is
+# shared with R/06_moj_medij.R so the catalogue and the "Moj medij" lookup cannot disagree about
+# what archetype an outlet belongs to.
+source(file.path("R", "lib", "digikat_typology.R"), encoding = "UTF-8")
+classify_typology <- digikat_classify_typology
+typ_read <- DIGIKAT_TYPOLOGY_READ
+label_hr <- DIGIKAT_LABEL_HR
 
 ## ---- read sidecar ---------------------------------------------------------
 side <- read.csv(sidecar, fileEncoding = "UTF-8", stringsAsFactors = FALSE,
@@ -353,27 +342,33 @@ idx_lines <- c(
   'categories: ["Katalog izvora", "Baza podataka"]',
   "---",
   "",
-  paste0("**Katalog izvora** pregled je pojedinačnih medijskih aktera zastupljenih u korpusu. ",
-         "Dio je opisa [Baze podataka](../baza.html), a tipologiju izvora dijeli s ",
-         "[Mapom ekosustava](../mapa/mapa.html). Za svaki izvor donosi volumen, angažman i doseg ",
-         "te pripadnost tipologiji (Divovi, Graditelji zajednica, Megafoni, Specijalizirani akteri), ",
-         "izračunatoj jednako kao u Mapi."),
+  paste0("Tko su pojedinačni mediji iza brojki? **Katalog izvora** za svaki praćeni izvor donosi ",
+         "koliko objavljuje, koliko reakcija skuplja i do koliko ljudi dopire, te kojem tipu ",
+         "pripada (Divovi, Graditelji zajednica, Megafoni, Specijalizirani akteri). Tipologija je ",
+         "ista kao u [Mapi ekosustava](../mapa/mapa.html), pa se dva prikaza ne mogu razići."),
+  "",
+  paste0("Ovdje su razrađeni profili najvećih izvora. **Tražite određeni medij?** Pretraživanje ",
+         "svih izvora s dovoljno objava nalazi se na stranici [Moj medij](../moj-medij.html)."),
   "",
   paste0("Cijeli se katalog može vidjeti i kao [mreža izvora](mreza.html) — čvorovi su izvori, ",
          "a poveznice pripadnost platformi i zajednički brend."),
   "",
   "::: {.callout-note}",
-  paste0("Podaci dolaze iz agregata `data/processed/*_actors.rds` (bez osobnih podataka) i obuhvaćaju **",
-         fmt_int(coverage_rows), "** objava u razdoblju **", coverage_years_hr, "**. ",
-         "Katalog je **radna verzija**: uređivačke oznake (konfesionalni/sekularni izvor) ",
-         "prijedlozi su koje potvrđuje voditelj projekta, a brojke su indikativne (statični ",
-         "agregati; mnogi akteri na novim platformama imaju tek nekoliko objava). Korpus ima **",
-         coverage_platform_count, "** vrsta izvora i platformi, a katalog profilira aktere na **",
-         catalog_platform_count, "** platformi; Reddit, forumi i komentari nisu profilirani kao ",
-         "pojedinačni akteri. Trenutno je ",
-         "objavljeno **", n_pub, "** izvora; **", n_held,
-         "** aktera zadržano je za uredničku provjeru."),
+  paste0("## Što ovaj katalog jest i što nije", "\n\n",
+         "Katalog je **radna verzija**. Oznake konfesionalnog ili sekularnog izvora prijedlozi su ",
+         "koje potvrđuje voditelj projekta, pa ih valja čitati kao indikativne. Brojke su statične ",
+         "i mnogi akteri na novijim platformama imaju tek nekoliko objava, zbog čega njihovi ",
+         "poretci nisu stabilni.", "\n\n",
+         "Trenutno je objavljeno **", n_pub, "** izvora, dok je **", n_held,
+         "** aktera zadržano za uredničku provjeru. Katalog profilira aktere na **",
+         catalog_platform_count, "** platformi, a korpus ih ima **", coverage_platform_count,
+         "**; Reddit, forumi i komentari nisu profilirani kao pojedinačni akteri."),
   ":::",
+  "",
+  paste0("Brojke obuhvaćaju ", fmt_int(coverage_rows), " objava u razdoblju ", coverage_years_hr,
+         " i računaju se iz javnih agregata bez osobnih podataka. Kako su nastali i kako se ",
+         "mjere volumen, angažman i doseg, opisano je u [Metodologiji](../metodologija.html), ",
+         "a struktura same baze na stranici [Baza podataka](../baza.html)."),
   ""
 )
 for (pkey in names(platforms)) {
