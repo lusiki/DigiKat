@@ -1,0 +1,143 @@
+#!/usr/bin/env Rscript
+# Write the EXACT rule out of the frozen artifacts, so the specification cannot drift from what
+# actually ran. Produces:
+#   data/rebuild/RULE_SPECIFICATION.md   — the precise rule in full
+#   data/rebuild/rule_patterns.csv       — all 119 patterns with their tier
+suppressPackageStartupMessages({library(dplyr)})
+setwd("c:/Users/lsikic/Dropbox/HKS/Projekti/Digitalni Kat/SHKM/DigiKat")
+source("R/lib/digikat_utils.R", encoding = "UTF-8")
+source("R/lib/religious_filter.R", encoding = "UTF-8")
+source("R/lib/religious_filter_v2.R", encoding = "UTF-8")
+source("R/lib/second_pass.R", encoding = "UTF-8")
+OUT <- "data/rebuild"; dir.create(OUT, recursive = TRUE, showWarnings = FALSE)
+
+v3 <- digikat_load_religious_terms_v2("R/religious_terms_v3.R")
+sp <- digikat_load_second_pass()
+thr <- if (!is.null(sp$deployment_threshold)) sp$deployment_threshold else sp$threshold
+write.csv(v3[, c("term", "tier", "regex")], file.path(OUT, "rule_patterns.csv"),
+          row.names = FALSE, fileEncoding = "UTF-8")
+
+vocab_sizes <- vapply(sp$models, function(m) length(m$vocab), integer(1))
+nc <- length(sp$models[[1]]$coefficients)
+coefs <- round(rowMeans(vapply(sp$models, function(m) m$coefficients, numeric(nc))), 4)
+
+l <- c(
+"# The exact rule",
+"",
+sprintf("Generated %s from the frozen artifacts. Do not edit by hand.", format(Sys.Date())),
+"",
+"A post is KEPT only if it passes **both** gates. Failing either one discards it.",
+"",
+"---",
+"",
+"## Gate 1 — the word list",
+"",
+sprintf("The text searched is the post's **entire** `FULL_TEXT`. Matching is **case-insensitive**"),
+"and uses ICU regular expressions (Unicode-aware, so `č ć ž š đ` behave as letters).",
+"",
+sprintf("There are **%d patterns**, of which **%d are DECISIVE** and **%d are AMBIGUOUS**.",
+        nrow(v3), sum(v3$tier == "decisive"), sum(v3$tier == "ambiguous")),
+"Every pattern is counted **at most once**, however many times it occurs. Two different patterns",
+"firing on the same word (`nadbiskupija` matches four) each count separately.",
+"",
+"**The test:**",
+"",
+"```",
+"    decisive_matches >= 1   AND   total_matches >= 2",
+"```",
+"",
+sprintf("The %d ambiguous patterns are words that occur in ordinary Croatian, so on their own they",
+        sum(v3$tier == "ambiguous")),
+"are not evidence. They can only ever make up the second match, never the first:",
+"",
+paste0("`", paste(v3$term[v3$tier == "ambiguous"], collapse = "`, `"), "`"),
+"",
+"All 119 patterns are listed in `rule_patterns.csv`. The ambiguous ones in full:",
+"",
+"| term | pattern |",
+"|---|---|",
+paste0("| ", v3$term[v3$tier == "ambiguous"], " | `",
+       gsub("\\|", "\\\\|", v3$regex[v3$tier == "ambiguous"]), "` |"),
+"",
+"---",
+"",
+"## Gate 2 — the second step",
+"",
+sprintf("Applied **only** to posts that passed gate 1. It reads the **first %d characters** of the",
+        sp$text_cap),
+"post — exactly what the human coder saw on screen — and never more.",
+"",
+"**The six things it looks at:**",
+"",
+"| feature | what it is |",
+"|---|---|",
+"| `dec` | how many DECISIVE patterns matched (a count, 1 or more) |",
+"| `amb` | how many AMBIGUOUS patterns matched |",
+sprintf("| `len` | `log(1 + number of characters)` of the first %d characters |", sp$text_cap),
+"| `title_dec` | 1 if any decisive pattern matches the TITLE, else 0 |",
+"| `title_any` | 1 if any pattern at all matches the TITLE, else 0 |",
+sprintf("| `nb` | word-evidence score: the text is lowercased, every run of %d+ letters is taken as a",
+        3),
+sprintf("word and cut to its first **%d characters**; each distinct stem present contributes a", sp$stem_chars),
+"weight, and `nb` is their sum |",
+"",
+sprintf("A stem's weight is `log(P(stem | Catholic)) - log(P(stem | not Catholic))`, estimated on the"),
+sprintf("hand-coded posts with add-0,5 smoothing. Stems appearing in fewer than %d training posts are",
+        sp$min_df),
+sprintf("ignored. Vocabulary size ranges %d to %d stems across the ensemble.",
+        min(vocab_sizes), max(vocab_sizes)),
+"",
+sprintf("**The ensemble.** %d logistic regressions, each trained on a different %d%% of the %d",
+        length(sp$models), round(100 * sp$subsample), sp$n_train),
+"hand-coded posts that passed gate 1. A post's score is the **average** of their predicted",
+"probabilities. Average coefficients (each model has its own):",
+"",
+"```",
+paste0("  ", names(coefs), " = ", coefs, collapse = "\n"),
+"```",
+"",
+"**The test:**",
+"",
+"```",
+sprintf("    average_probability >= %.4f", thr),
+"```",
+"",
+sprintf("This threshold was **measured, not calibrated**. The original value of %.4f came from the",
+        sp$threshold),
+sprintf("coded training sample and was meant to keep %.0f%% of genuine posts; on the real post-2024",
+        100 * sp$keep_target),
+"population it kept only 84%, and performed slightly worse overall than using no second step at",
+sprintf("all. The current value of %.2f was chosen from **250 posts hand-read from the actual", thr),
+"output** (2026-08-10). Measured effect on the post-2024 half:",
+"",
+"| setting | posts | genuine | precision | recall |",
+"|---|---|---|---|---|",
+sprintf("| %.4f (original) | 216 971 | 186 595 | 86,0%% | 76,8%% |", sp$threshold),
+sprintf("| **%.2f (in use)** | **256 826** | **207 795** | **80,9%%** | **85,5%%** |", thr),
+"| none at all | 301 769 | 222 210 | 73,6% | 91,4% |",
+"",
+"**This value is calibrated for the post-2024 half only.** The raw feed is far dirtier, so the",
+"pre-2024 rebuild needs its own measurement before a threshold is chosen there.",
+"",
+"---",
+"",
+"## What this is not",
+"",
+"- It does **not** use the outlet, the platform, the date, or engagement. Deliberately: you cannot",
+"  study which outlets cover the Church with a filter that already assumes the answer.",
+"- It does **not** read past the first 3 000 characters.",
+"- It does **not** know about Orthodox, Muslim or other religious content except through the words",
+"  themselves; those posts are discarded by the coded examples, not by an explicit rule.",
+"",
+"## Honest limits",
+"",
+sprintf("- The second step was trained on %d hand-coded posts and has now been TESTED on 250 fresh", sp$n_train),
+"  posts drawn from the actual post-2024 output (2026-08-10). Measured precision of the kept",
+"  corpus: 86,0% at the original threshold, on 50 read posts, so the interval is wide [73,8-93,0].",
+"- The word list was written after looking at the round-1 and round-2 coded posts, so it is fitted",
+"  to them. Its behaviour on the output was measured only indirectly: what it rejects is 15%",
+"  genuine (100 posts read), which costs an estimated 20 800 real Catholic posts.",
+sprintf("- Model built %s from `%s`.", sp$built_utc, sp$terms_file)
+)
+writeLines(l, file.path(OUT, "RULE_SPECIFICATION.md"), useBytes = TRUE)
+cat("wrote", file.path(OUT, "RULE_SPECIFICATION.md"), "and rule_patterns.csv\n")
