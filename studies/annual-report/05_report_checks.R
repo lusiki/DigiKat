@@ -193,7 +193,16 @@ ok(all(nlp_cov$in_corpus_rows_year > 0) && all(nlp_cov$effective_rate > 0.01),
    paste(sprintf("%s %.1f%%", nlp_cov$layer, 100 * nlp_cov$effective_rate), collapse = "; "))
 
 ## --- Encoding and style -------------------------------------------------------------------------------
-mojibake <- c("Ã", "Â", "â€", "Å¡", "Ä‡")
+# The signatures are built from code points rather than typed as literals. R/check_sources.R scans
+# every tracked source for exactly these byte patterns, so a literal list here makes the repository's
+# mojibake guard fail on the mojibake guard - which is what turned CI red on 2026-08-11.
+mojibake <- c(
+  intToUtf8(0x00C3),                                # A-tilde
+  intToUtf8(0x00C2),                                # A-circumflex
+  paste0(intToUtf8(0x00E2), intToUtf8(0x20AC)),     # a-circumflex + euro sign
+  paste0(intToUtf8(0x00C5), intToUtf8(0x00A1)),     # A-ring + inverted exclamation  (s-caron misread)
+  paste0(intToUtf8(0x00C4), intToUtf8(0x2021))      # A-diaeresis + double dagger    (c-acute misread)
+)
 moji_hits <- mojibake[vapply(mojibake, grepl, logical(1), x = report, fixed = TRUE)]
 ok(!length(moji_hits), "no mojibake signature",
    if (length(moji_hits)) paste(moji_hits, collapse = ", ") else "clean")

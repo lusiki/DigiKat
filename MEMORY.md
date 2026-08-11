@@ -395,3 +395,11 @@
 - [LEARN] `digikat_assert_aggregates_current()` returned VISIBLY, so a top-level call in a Quarto chunk
   printed `[1] TRUE / attr(,"reason") / [1] "ok"` into the rendered page — it was sitting in the top-left
   corner of the landing page. Fixed at the function (`invisible()`), not per call site.
+- [LEARN] Splitting the CI step exposed a THIRD masked failure: `R/check_sources.R` scans every tracked
+  source for mojibake byte patterns, and two paper-gate scripts had those same patterns typed as
+  LITERALS because they are the thing being detected (`05_report_checks.R` line 196,
+  `10_paper_checks.R` line 97). The guard flagged the guard. Build such signatures from code points
+  with `intToUtf8()`, the way `R/check_sources.R` and `R/check_site_links.R` already do — verified
+  byte-identical to the literals before replacing them, per the croatian-encoding rule §6.
+  `R/check_sources.R` also reported every finding twice: `list.files()` yields `./studies/x.R` and git
+  yields `studies/x.R`, so `unique()` on the raw strings kept both. It now dedupes on the normalized path.

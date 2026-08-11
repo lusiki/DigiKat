@@ -58,9 +58,11 @@ trackable <- trackable[
   file.exists(trackable) &
     grepl("\\.(R|r|qmd|md|yml|yaml|cff)$", trackable)
 ]
-text_files <- unique(c(r_files, qmd_files, trackable))
+# Dedupe on the NORMALIZED path: list.files() returns "./studies/x.R" where git returns
+# "studies/x.R", so unique() on the raw strings keeps both and every finding is reported twice.
+text_files <- c(r_files, qmd_files, trackable)
 text_rel <- vapply(text_files, normalize_rel, character(1L))
-text_files <- unique(text_files[!grepl(excluded_prefix, text_rel)])
+text_files <- text_files[!grepl(excluded_prefix, text_rel) & !duplicated(text_rel)]
 mojibake_pattern <- paste(c(
   paste0(intToUtf8(0x00E2), intToUtf8(0x20AC)),
   paste0(intToUtf8(0x00C4), "[", paste0(intToUtf8(c(0x2021, 0x0164, 0x2018)), collapse = ""), "]"),
