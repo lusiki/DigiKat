@@ -1,4 +1,4 @@
-#### Koje institucije najviše objavljuju?
+#### Koji izvori najviše objavljuju?
 
 | # | Izvor | Objava | Udio godine | Oznaka |
 |---:|:---|---:|---:|:---|
@@ -15,4 +15,4 @@
 | 11 | Radio Marija Hrvatska | 1 345 | 1,08 % | konfesionalni |
 | 12 | Laudato | 1 139 | 0,92 % | konfesionalni |
 
-> Izvor: DigiKat, službeni korpus, uz PI-jev popis izvora. Imenujemo samo institucijske medije koje je urednik odobrio za objavu i koji su u godini imali najmanje pet objava; pojedinačni računi ne imenuju se nikada. Redoslijed mjeri količinu, ne kvalitetu ni utjecaj. Strelice promjene doći će s drugom edicijom — ovo je prva usporediva godina.
+> Izvor: DigiKat, službeni korpus. Imenuju se institucijski mediji s najmanje pet objava u godini, a pojedinačni računi nikada. Redoslijed mjeri količinu, a ne kvalitetu ni utjecaj.

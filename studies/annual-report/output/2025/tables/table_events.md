@@ -7,4 +7,4 @@
 | 15. 8. 2025. | Velika Gospa | 1 045 | 3,4 sd | 1 |
 | 25. 12. 2025. | Božić | 1 031 | 3,3 sd | 1 |
 
-> Izvor: DigiKat, službeni korpus, svi dani u godini. Odstupanje je udaljenost od prosječnog dana u godini, izražena u standardnim devijacijama; prag od tri postavljen je prije pregleda podataka. Nazivi dolaze iz javnog kalendara i potvrđeni su tematskim sastavom tih dana — vrh sam po sebi pokazuje datum, ne uzrok.
+> Izvor: DigiKat, službeni korpus, svi dani u godini. Odstupanje je udaljenost od prosječnog dana u godini, izražena u standardnim devijacijama; prag od tri postavljen je prije pregleda podataka. Nazivi dolaze iz javnog kalendara i potvrđeni su tematskim sastavom tih dana, jer vrh sam po sebi pokazuje datum, a ne uzrok.

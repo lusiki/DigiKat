@@ -88,13 +88,13 @@ ttl <- function(...) paste(strwrap(paste(...), width = 50), collapse = "\n")
 total_posts <- sum(platform$total_posts)
 sources_lab <- "Izvor: DigiKat, službeni korpus (%s objava, pravilo uključivanja v4 + drugi prolaz @0,70)."
 src_note_corpus <- sprintf("Izvor: DigiKat, službeni korpus. Kalendarska %d.", YEAR)
-src_note_theme <- sprintf(paste("Izvor: DigiKat, %s objava iz korpusa za %d. u tematskom uzorku",
+src_note_theme <- sprintf(paste("Izvor: DigiKat, %s iz korpusa za %d. u tematskom uzorku",
                                 "(%s posto korpusne godine; TikTok i tekstovi kraći od 101 znaka nisu obuhvaćeni)."),
-                          ar_fmt_int_hr(nlp_cov$in_corpus_rows_year[nlp_cov$layer == "teme"]), YEAR,
+                          ar_count_hr(nlp_cov$in_corpus_rows_year[nlp_cov$layer == "teme"], "objava"), YEAR,
                           ar_fmt_num_hr(100 * nlp_cov$effective_rate[nlp_cov$layer == "teme"], 1))
-src_note_tone <- sprintf(paste("Izvor: DigiKat, %s objava iz korpusa za %d. u tonskom uzorku",
+src_note_tone <- sprintf(paste("Izvor: DigiKat, %s iz korpusa za %d. u tonskom uzorku",
                                "(%s posto korpusne godine). Crte prikazuju 95-postotni interval."),
-                         ar_fmt_int_hr(nlp_cov$in_corpus_rows_year[nlp_cov$layer == "ton"]), YEAR,
+                         ar_count_hr(nlp_cov$in_corpus_rows_year[nlp_cov$layer == "ton"], "objava"), YEAR,
                          ar_fmt_num_hr(100 * nlp_cov$effective_rate[nlp_cov$layer == "ton"], 1))
 
 # Titles, measures and source notes no longer live inside the PNGs. Each figure registers its words
@@ -186,14 +186,16 @@ tiles <- data.frame(
             paste0(ar_fmt_num_hr(cli_ratio, 2), "×"),
             tile_last$value),
   label = wrap(c(
-    sprintf("objava o katoličkim temama zabilježeno je u %d. godini", YEAR),
+    sprintf("%s o katoličkim temama zabilježeno je u %d. godini",
+            ar_noun_hr(total_posts, "objava"), YEAR),
     "godišnjeg volumena nastalo je na webu, a ne na društvenim mrežama",
     "različitih izvora objavilo je barem jednu takvu objavu",
     "izvora čini polovicu cjelogodišnjeg volumena",
     "objava u tematskom uzorku vodi duhovnost i liturgija",
     "svih tematskih spominjanja odnosi se na zlostavljanje i krizu povjerenja",
-    ed(`2024` = "objava zabilježeno je na Božić, 25. prosinca — najviše u godini",
-       `2025` = "objava zabilježeno je 21. travnja, na dan smrti pape Franje — najviše u godini"),
+    paste(ar_noun_hr(peak$peak_posts, "objava"),
+          ed(`2024` = "zabilježeno je na Božić, 25. prosinca, najviše u cijeloj godini",
+             `2025` = "zabilježeno je 21. travnja, na dan smrti pape Franje, najviše u cijeloj godini")),
     "objava u tonskom uzorku koristi pretežno pozitivan rječnik",
     "više riječi sukoba nose sekularni nego konfesionalni izvori",
     tile_last$label
@@ -278,7 +280,7 @@ register_fig("fig03_mjeseci",
                                "ne prikazuje; rujan je nepotpun jer je prikupljanje stajalo od 16. do 30.",
                                "Nazivi platformi stoje uz krivulju, pa se čita i bez boje."),
                 `2025` = paste(src_note_corpus,
-                               "Rujan je nepotpun: prikupljanje je stajalo prvih četrnaest dana.",
+                               "Rujan je nepotpun jer je prikupljanje stajalo prvih četrnaest dana.",
                                "Nazivi platformi stoje uz krivulju, pa se čita i bez boje.")),
              "Krivulje mjesečnog broja objava za web, Facebook, YouTube i zbroj ostalih platformi.")
 
@@ -328,8 +330,8 @@ save_fig(p4, "fig04_godina", width = 7.4, height = 4.2)
 register_fig("fig04_godina",
              ed(`2024` = "Oba vrha godine su blagdani, a Uskrs je ostao izvan prikupljanja",
                 `2025` = "Godina ima jedan vrh, i on nije bio sporan"),
-             sprintf("Broj objava po danu, %d dana s prikupljanjem; označeni su dani iznad tri standardne devijacije.",
-                     coverage$collected_days),
+             sprintf("Broj objava po danu, %s s prikupljanjem; označeni su dani iznad tri standardne devijacije.",
+                     ar_count_hr(coverage$collected_days, "dan")),
              ed(`2024` = paste(src_note_corpus,
                                "Prag za vrhunac postavljen je prije pregleda podataka, a prosjek i",
                                "raspršenost računaju se samo nad danima s prikupljanjem. Uskrs 2024.",
@@ -639,8 +641,10 @@ special_source <- file.path("studies", special_spec$study)
 if (YEAR == 2025L) {
   add("special_linked", special_val("linked_posts"), ar_fmt_int_hr(special_val("linked_posts")),
       ar_fmt_int_en(special_val("linked_posts")), special_source, "study period", "posts")
+  # The corrected headline is a SHARE of post-domain pairs. Printed bare it read as a count of
+  # pairs in the sentence that quotes it, so the unit travels with the value.
   add("special_headline", special_val("corrected_headline"),
-      ar_fmt_num_hr(special_val("corrected_headline"), 2), ar_fmt_num_en(special_val("corrected_headline"), 2),
+      ar_fmt_pct_hr(special_val("corrected_headline"), 2), ar_fmt_pct_en(special_val("corrected_headline"), 2),
       special_source, "study period", "percent")
 } else {
   add("special_linked", special_val("n_linked"), ar_fmt_int_hr(special_val("n_linked")),
@@ -668,20 +672,21 @@ val <- function(key, lang = "hr") {
 
 ## === Summary: ten findings, one generated number each ============================================
 summary_hr <- c(
-  paste0("Zabilježili smo **", val("total_posts"), " objava** o katoličkim temama u ", YEAR, ". godini."),
+  paste0("Zabilježili smo **", ar_count_hr(total_posts, "objava"), "** o katoličkim temama u ", YEAR, ". godini."),
   paste0("Web je i dalje glavno mjesto rasprave i nosi **", val("web_share"), "** godišnjeg volumena."),
   paste0("Objave dolaze iz **", val("distinct_sources"), " različitih izvora**, što je vrlo raspršen prostor."),
-  paste0("Ipak, samo **", val("sources_to_half"), " izvora** čini polovicu cjelogodišnjeg volumena."),
-  paste0("Godinu vodi duhovnost i liturgija: vodeća je tema u **", val("lead_theme_docs"), " objava** u tematskom uzorku."),
+  paste0("Na samo **", ar_count_hr(concentration$sources_to_half, "izvor"),
+         "** otpada polovica cjelogodišnjeg volumena."),
+  paste0("Duhovnost i liturgija vode godinu i glavna su tema u **", val("lead_theme_docs"), " objava**."),
   paste0("Zlostavljanje i kriza povjerenja čine **", val("abuse_share"), "** svih tematskih spominjanja."),
-  ed(`2024` = paste0("Najjači dan godine bio je Božić, s **", val("peak_posts"), " objava**."),
-     `2025` = paste0("Na dan smrti pape Franje zabilježili smo **", val("peak_posts"),
-                     " objava**, najviše u cijeloj godini.")),
-  paste0("Pretežno pozitivan rječnik koristi **", val("tone_positive_share"), " objava** u tonskom uzorku."),
+  ed(`2024` = paste0("Najjači dan godine bio je Božić, s **", ar_count_hr(peak$peak_posts, "objava"), "**."),
+     `2025` = paste0("Na dan smrti pape Franje zabilježili smo **",
+                     ar_count_hr(peak$peak_posts, "objava"), "**, najviše u cijeloj godini.")),
+  paste0("Pretežno pozitivan rječnik koristi **", val("tone_positive_share"), " objava**."),
   paste0("Sekularni izvori nose **", val("cli_ratio"), "** više riječi sukoba od konfesionalnih."),
   ed(`2024` = paste0("Podatke smo bilježili **", val("collected_days"),
                      " dana**; ostatak kalendara nema prikupljanja, pa ni Uskrsa nema u podacima."),
-     `2025` = paste0("Unutar istoga toka prikupljanja web je objavio **", val("web_stream_change"),
+     `2025` = paste0("Web je u drugoj polovici godine objavio **", val("web_stream_change"),
                      "** više nego godinu prije."))
 )
 summary_en <- c(
@@ -698,7 +703,7 @@ summary_en <- c(
   paste0("Secular sources carry **", val("cli_ratio", "en"), "** as many conflict words as confessional ones."),
   ed(`2024` = paste0("Collection covered **", val("collected_days", "en"),
                      " days** of the year; the rest is an interruption, and Easter falls inside it."),
-     `2025` = paste0("Within the same collection stream, the web carried **",
+     `2025` = paste0("In the second half of the year the web carried **",
                      val("web_stream_change", "en"), "** more than a year earlier."))
 )
 # Each finding is its own bullet: run together as a paragraph, ten findings read as one blur.
@@ -722,14 +727,14 @@ ar_fragment(
     check.names = FALSE
   ), align = c(":---", "---:", "---:", "---:", "---:")),
   paste("Izvor: DigiKat, službeni korpus.",
-        "„Nije zabilježeno” znači da mjerenje na toj platformi ne postoji u prikupljenim podacima —",
-        "ne znači da interakcija ili dosega nije bilo. Objava, interakcija i doseg tri su različita pitanja i ne zbrajaju se.")
+        "„Nije zabilježeno” znači da mjerenje na toj platformi ne postoji u prikupljenim podacima,",
+        "a ne da interakcija ili dosega nije bilo. Objava, interakcija i doseg tri su različita pitanja i ne zbrajaju se.")
 )
 
 league_top <- head(league, 12L)
 ar_fragment(
   file.path(AR_TABLES, "table_league.md"),
-  "Koje institucije najviše objavljuju?",
+  "Koji izvori najviše objavljuju?",
   ar_md_table(data.frame(
     `#` = league_top$rank,
     Izvor = league_top$name_hr,
@@ -738,10 +743,9 @@ ar_fragment(
     Oznaka = ifelse(league_top$label == "confessional", "konfesionalni", "sekularni"),
     check.names = FALSE
   ), align = c("---:", ":---", "---:", "---:", ":---")),
-  paste("Izvor: DigiKat, službeni korpus, uz PI-jev popis izvora.",
-        "Imenujemo samo institucijske medije koje je urednik odobrio za objavu i koji su u godini imali najmanje pet objava;",
-        "pojedinačni računi ne imenuju se nikada. Redoslijed mjeri količinu, ne kvalitetu ni utjecaj.",
-        "Strelice promjene doći će s drugom edicijom — ovo je prva usporediva godina.")
+  paste("Izvor: DigiKat, službeni korpus.",
+        "Imenuju se institucijski mediji s najmanje pet objava u godini, a pojedinačni računi nikada.",
+        "Redoslijed mjeri količinu, a ne kvalitetu ni utjecaj.")
 )
 
 themes_tab <- themes |> arrange(rank)
@@ -795,7 +799,7 @@ ar_fragment(
   paste("Izvor: DigiKat, službeni korpus, svi dani u godini.",
         "Odstupanje je udaljenost od prosječnog dana u godini, izražena u standardnim devijacijama;",
         "prag od tri postavljen je prije pregleda podataka. Nazivi dolaze iz javnog kalendara i potvrđeni su",
-        "tematskim sastavom tih dana — vrh sam po sebi pokazuje datum, ne uzrok.")
+        "tematskim sastavom tih dana, jer vrh sam po sebi pokazuje datum, a ne uzrok.")
 )
 
 # The two period columns are named by the data, not by the calendar: the same table serves an edition
@@ -804,8 +808,8 @@ stream_tab <- stream |> filter(report_value >= stream_floor | base_value >= stre
   arrange(desc(report_value))
 ar_fragment(
   file.path(AR_TABLES, "table_stream.md"),
-  ed(`2024` = "Kako se kretalo unutar istoga toka prikupljanja?",
-     `2025` = "Što se promijenilo unutar istoga toka prikupljanja?"),
+  ed(`2024` = "Što je kroz godinu raslo, a što padalo?",
+     `2025` = "Što je raslo, a što padalo?"),
   ar_md_table(
     setNames(
       data.frame(
@@ -823,10 +827,10 @@ ar_fragment(
                     "Vrijednosti su objave po danu s prikupljanjem, pa rujanski prekid ne ulazi u usporedbu.",
                     "Ovo je kretanje unutar godine, a ne usporedba s prethodnom godinom, i u četvrtom",
                     "tromjesečju stoje advent i Božić. Zadnji stupac pokazuje mijenja li se broj praćenih",
-                    "izvora: kad volumen i broj izvora rastu zajedno, vjerojatnije je da se proširilo",
+                    "izvora. Kad volumen i broj izvora rastu zajedno, vjerojatnije je da se proširilo",
                     "praćenje nego sama rasprava."),
      `2025` = paste("Izvor: DigiKat, službeni korpus, tok prikupljanja koji teče od srpnja 2024.",
-                    "Zadnji stupac pokazuje mijenja li se broj praćenih izvora: kad volumen i broj izvora rastu zajedno,",
+                    "Zadnji stupac pokazuje mijenja li se broj praćenih izvora. Kad volumen i broj izvora rastu zajedno,",
                     "vjerojatnije je da se proširilo praćenje nego sama rasprava."))
 )
 
@@ -907,7 +911,7 @@ indicator_status <- data.frame(
 ar_write_csv(indicator_status, file.path(AR_OUT, "indicator_status.csv"))
 ar_fragment(
   file.path(AR_TABLES, "table_indicators.md"),
-  "Što ova edicija mjeri, a što još ne?",
+  "Što ovaj pregled već mjeri, a što dolazi?",
   ar_md_table(data.frame(
     Oznaka = indicator_status$id,
     Pokazatelj = indicator_status$name_hr,
@@ -925,26 +929,26 @@ ar_write_utf8(c(
                     "katoličkih tema u hrvatskom digitalnom prostoru za 2024. godinu."),
      `2025` = paste("**Zagreb — za objavu.** Hrvatsko katoličko sveučilište objavljuje prvi godišnji pregled",
                     "katoličkih tema u hrvatskom digitalnom prostoru.")), "",
-  paste0("**", val("total_posts"), " objava** o katoličkim temama zabilježeno je u ", YEAR,
+  paste0("**", ar_count_hr(total_posts, "objava"), "** o katoličkim temama zabilježeno je u ", YEAR,
          ". godini, iz ", val("distinct_sources"), " različitih izvora."),
   "",
   paste0("**", val("web_share"), " tog volumena nastalo je na webu**, a ne na društvenim mrežama; ",
          "Facebook nosi ", val("facebook_share"), ", YouTube ", val("youtube_share"), "."),
   "",
-  ed(`2024` = paste0("**Najjači dan godine bio je ", val("peak_day"), "**, s ", val("peak_posts"),
-                     " objava — Božić. Drugi vrhunac godine je Velika Gospa; oba su blagdani, i nijedan ",
+  ed(`2024` = paste0("**Najjači dan godine bio je Božić, ", val("peak_day"), "**, s ", val("peak_posts"),
+                     " objava. Drugi vrhunac godine je Velika Gospa, pa su oba blagdani i nijedan ",
                      "vrhunac nije nastao iz spora. Uskrs 2024. pada unutar prekida u prikupljanju, pa ga ",
                      "u podacima nema."),
-     `2025` = paste0("**Najjači dan godine bio je ", val("peak_day"), "**, s ", val("peak_posts"),
-                     " objava — dan smrti pape Franje. Preostala tri vrhunca godine su sprovod, Velika Gospa i Božić; ",
-                     "nijedan nije nastao iz spora.")),
+     `2025` = paste0("**Najjači dan godine bio je ", val("peak_day"), "**, dan smrti pape Franje, s ",
+                     val("peak_posts"), " objava. Preostala tri vrhunca godine su sprovod, Velika Gospa i Božić, ",
+                     "i nijedan nije nastao iz spora.")),
   "",
   "Izvještaj je dostupan u HTML i PDF obliku. Sve brojke izračunane su iz baze i mogu se ponoviti.",
   "",
   paste0("Kontakt: doc. dr. sc. Luka Šikić · luka.sikic@unicath.hr"), "",
-  paste0("*Metodološka napomena: brojke opisuju zabilježeni digitalni prostor, a ne cjelinu interneta. ",
+  paste0("*Metodološka napomena. Brojke opisuju zabilježeni digitalni prostor, a ne cjelinu interneta. ",
          "U ", YEAR, ". godini prikupljanje je stajalo ", val("gap_days"), " dana (", val("gap_span"),
-         "), što je u izvještaju označeno i isključeno iz svih prosjeka.*")
+         "), što je u pregledu označeno i isključeno iz svih prosjeka.*")
 ), file.path(AR_OUT, "press_release.md"))
 
 ## === Private annex: institutional mirror profiles =================================================

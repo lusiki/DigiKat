@@ -12,4 +12,4 @@
 | Komentari | 442 | 0,4 % | nije zabilježeno | nije zabilježeno |
 | TikTok | 130 | 0,1 % | 145 624 | 2 344 773 |
 
-> Izvor: DigiKat, službeni korpus. „Nije zabilježeno” znači da mjerenje na toj platformi ne postoji u prikupljenim podacima — ne znači da interakcija ili dosega nije bilo. Objava, interakcija i doseg tri su različita pitanja i ne zbrajaju se.
+> Izvor: DigiKat, službeni korpus. „Nije zabilježeno” znači da mjerenje na toj platformi ne postoji u prikupljenim podacima, a ne da interakcija ili dosega nije bilo. Objava, interakcija i doseg tri su različita pitanja i ne zbrajaju se.

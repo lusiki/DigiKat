@@ -343,6 +343,47 @@
   parent `panel.grid` does not remove it — a "void" figure still draws gridlines. Blank
   `panel.grid.major` and `panel.grid.minor` by name.
 
+## Annual report, edition 1 — flagship editorial pass (2026-08-11)
+
+- [LEARN] The report's purpose is a FLAGSHIP BAIT product (PI, 2026-08-11): informative at a surface
+  level, simple, catchy, serious, appealing, and carrying **no methodological detail in the findings
+  prose**. Caveats do not disappear, they move to Metodologija at the back. Deleted from the front in
+  this pass: the inclusion rule (119 terms / 0,70 / 84,5 %), the collection-gap arithmetic, the "why
+  we do not compare years" callout, and the sampling paragraph. The database is now claimed as
+  covering "hrvatski digitalni medijski prostor u cjelini" rather than described by its cutting rule.
+  `quality_reports/plans/2026-08-11_annual-report-2025-flagship-pass.md` holds the full decision list.
+- [LEARN] This CONFLICTS with `.claude/rules/annual-report-writing.md` "honesty guards", which
+  require the seam caveat, indicative-label hedging and gap panels in the findings prose. The rule
+  still needs amending to "caveats live in Metodologija, not in findings prose" — until it is, a
+  reviewer pass will try to restore the deleted paragraphs.
+- [LEARN] Colons and em-dashes are banned in the report's Croatian prose too, not just in papers.
+  The `Izvor:` prefix of a source note is the only exception. They live in TWO places — the template
+  AND the generated titles/measures/notes in `03_report_assets.R` — so a sweep must do both.
+- [LEARN] The nine figures and nine tables are structurally load-bearing: `05_report_checks.R`
+  requires **≥18** level-4 titles and ≥18 source notes, which is exactly 9 + 9. Dropping any fragment
+  from the template fails the build, so a chapter can be reordered but not emptied.
+- [LEARN] Every honesty guard is a FIXED-STRING grep against the whole manuscript, so it is satisfied
+  by keeping its trigger phrase anywhere, including the back matter (`prekid`, `dan* s prikupljanjem`,
+  `unutar istoga toka prikupljanja`, `status prijedloga`, `Vrh u podacima pokazuje`, `Kompozitni
+  indeks`, `Publika`). Moving a caveat to Metodologija therefore costs nothing mechanically.
+- [LEARN] Those greps ran against the HARD-WRAPPED manuscript, so an ordinary rewrap split
+  "Vrh u podacima pokazuje" across two lines and the guard reported a present caveat as missing.
+  The guards now match a whitespace-flattened copy (`report_flat`); do not reintroduce raw `report`.
+- [LEARN] Croatian numeral agreement was wrong wherever the count did not end in 5–0, and the count
+  changes every edition (351 → "351 dan", 207 → "207 dana"). Fixed structurally, not per instance:
+  `ar_plural_hr()` / `ar_noun_hr()` / `ar_count_hr()` in `report_lib.R` plus a
+  **`{{plural:key:noun}}`** token in `04_sync_fragments.R`. Registered nouns are objava, dan, izvor,
+  medij, akter. Never type a noun after a generated number again. Adjective and verb agreement are
+  NOT handled — phrase around them ("Na 56 izvora otpada polovica", not "56 izvora čini polovicu").
+- [LEARN] `special_headline` printed bare read as a COUNT of pairs ("u 3,73 parova"); it is a share.
+  It is now formatted with `ar_fmt_pct_hr`. When a registry entry's unit is percent, the display must
+  carry the sign — the prose cannot be trusted to supply it.
+- [LEARN] `06_render_report.R`'s docs/ fingerprint guard fired for a reason that had nothing to do
+  with the report: a CONCURRENT site render (live `quarto.exe`/`deno.exe`) rewrote eleven files under
+  `docs/` mid-run. The guard is correct and should not be softened. Note the rendered HTML/PDF are
+  copied BEFORE the fingerprint check, so a trip does not mean the outputs are missing — verify them
+  and re-run once the other job is quiet.
+
 ## Annual report, edition 2 — 2024 back-edition (2026-08-10)
 
 - [LEARN] **2024 is not a complete year in the corpus.** 56 923 posts on **207 collected days of 366**,

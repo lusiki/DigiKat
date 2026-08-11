@@ -1,4 +1,4 @@
-#### Što ova edicija mjeri, a što još ne?
+#### Što ovaj pregled već mjeri, a što dolazi?
 
 | Oznaka | Pokazatelj | Status |
 |:---|:---|:---|

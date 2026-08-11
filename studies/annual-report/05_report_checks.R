@@ -107,25 +107,34 @@ ok(alt_count == length(figure_paths), "every figure carries alternative text",
    paste(alt_count, "of", length(figure_paths)))
 
 ## --- Honesty guards -------------------------------------------------------------------------------
+# Phrase guards run against a whitespace-flattened copy. The manuscript is hard-wrapped, so a
+# required sentence can be split across two lines by an ordinary edit and the guard then reports the
+# caveat missing when it is present a few characters away.
+report_flat <- gsub("[[:space:]]+", " ", report)
+
 # The forbidden sentence is any growth claim measured across the collection seam. The baseline year
 # is derived, so a back-edition guards against ITS predecessor rather than against 2023 forever.
 unsafe <- c("porast u odnosu na 2021", "pad u odnosu na 2021", "raste od 2021", "od 2021. raste",
             "u odnosu na prošlu godinu",
             sprintf("u odnosu na %d", AR_BASELINE_YEAR),
             sprintf("u odnosu na %d", AR_BASELINE_YEAR - 1L))
-unsafe_hits <- unsafe[vapply(unsafe, grepl, logical(1), x = report, fixed = TRUE)]
+unsafe_hits <- unsafe[vapply(unsafe, grepl, logical(1), x = report_flat, fixed = TRUE)]
 ok(!length(unsafe_hits), "no comparison crosses the collection seam",
    if (length(unsafe_hits)) paste(unsafe_hits, collapse = "; ") else "clean")
-ok(grepl("unutar istoga toka prikupljanja", report, fixed = TRUE) ||
-     grepl("Unutar istoga toka prikupljanja", report, fixed = TRUE),
+ok(grepl("unutar istoga toka prikupljanja", report_flat, fixed = TRUE) ||
+     grepl("Unutar istoga toka prikupljanja", report_flat, fixed = TRUE),
    "the only comparison is named as within-stream")
-ok(grepl("prekid", report, fixed = TRUE) && grepl("dana s prikupljanjem", report, fixed = TRUE),
+# The noun agrees with the count, so the phrase is "351 dan" in one edition and "207 dana" in
+# another. Match any inflected form rather than one year's.
+ok(grepl("prekid", report_flat, fixed = TRUE) &&
+     grepl("dan[a-z]* s prikupljanjem", report_flat, perl = TRUE),
    "the collection interruption is disclosed in prose")
-ok(grepl("status prijedloga", report, fixed = TRUE) || grepl("prijedlog, a ne konačna", report, fixed = TRUE),
+ok(grepl("status prijedloga", report_flat, fixed = TRUE) ||
+     grepl("prijedlog, a ne konačna", report_flat, fixed = TRUE),
    "editorial source labels are marked as indicative")
-ok(grepl("Vrh u podacima pokazuje", report, fixed = TRUE),
+ok(grepl("Vrh u podacima pokazuje", report_flat, fixed = TRUE),
    "event naming states that a peak shows a date, not a cause")
-ok(grepl("Kompozitni indeks", report, fixed = TRUE) && grepl("Publika", report, fixed = TRUE),
+ok(grepl("Kompozitni indeks", report_flat, fixed = TRUE) && grepl("Publika", report_flat, fixed = TRUE),
    "missing measures appear as gap panels")
 
 ## --- The Wall -------------------------------------------------------------------------------------
@@ -138,7 +147,8 @@ sell_words <- c("naručena analiza", "naručenu analizu", "cijene na upit", "Cij
 # surviving conversion element is the single marked teaser line.
 demo_box <- regexpr("Primjer dubinske analize", report, fixed = TRUE)
 teaser <- regexpr(".teaser", report, fixed = TRUE)
-findings_prose <- substr(report, 1, if (teaser > 0) teaser - 1L else nchar(report))
+findings_prose <- gsub("[[:space:]]+", " ",
+                       substr(report, 1, if (teaser > 0) teaser - 1L else nchar(report)))
 leak <- sell_words[vapply(sell_words, grepl, logical(1), x = findings_prose, fixed = TRUE)]
 ok(!length(leak), "no promotional language before the first marked box",
    if (length(leak)) paste(leak, collapse = "; ") else "clean")

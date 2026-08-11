@@ -39,6 +39,18 @@ replacement <- function(token) {
     if (is.na(i)) stop("Unknown fragment token: ", token, call. = FALSE)
     return(paste(readLines(fragment_paths[i], encoding = "UTF-8", warn = FALSE), collapse = "\n"))
   }
+  # {{plural:key:noun}} prints the noun in the case the scalar's value requires. Croatian agreement
+  # depends on the count, and the count changes every edition, so a noun typed once into the
+  # template is wrong in whichever years the number lands in another class.
+  if (startsWith(token, "plural:")) {
+    parts <- strsplit(sub("^plural:", "", token), ":", fixed = TRUE)[[1]]
+    if (length(parts) != 2L) stop("A plural token reads {{plural:key:noun}}: ", token, call. = FALSE)
+    i <- match(parts[1], derived$key)
+    if (is.na(i)) stop("Unknown scalar in plural token: ", token, call. = FALSE)
+    n <- suppressWarnings(as.numeric(derived$value[i]))
+    if (is.na(n)) stop("Scalar is not countable in plural token: ", token, call. = FALSE)
+    return(ar_noun_hr(n, parts[2]))
+  }
   stop("Unknown token type: ", token, call. = FALSE)
 }
 

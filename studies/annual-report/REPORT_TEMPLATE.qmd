@@ -2,7 +2,7 @@
 title: "Katoličke teme u digitalnom prostoru"
 subtitle: "Godišnji pregled {{scalar:report_year}}."
 cover-stat: "{{scalar:total_posts}} objava"
-cover-line: "iz {{scalar:distinct_sources}} izvora, zabilježenih tijekom {{scalar:collected_days}} dana prikupljanja"
+cover-line: "iz {{scalar:distinct_sources}} različitih izvora u hrvatskom digitalnom prostoru"
 back-line: "Korpus {{scalar:corpus_sha_short}} · {{scalar:corpus_rows}} objava · {{scalar:corpus_span}} · CC BY 4.0"
 lang: hr
 toc: true
@@ -26,74 +26,35 @@ format:
 
 # Sažetak {#sazetak}
 
-Ovo je prvi godišnji pregled DigiKata. Opisuje što se tijekom {{scalar:report_year}}. godine u
-hrvatskom digitalnom prostoru objavljivalo o katoličkim temama, koliko toga ima, tko to objavljuje,
-o čemu se govori i kojim tonom.
+Ovo je prvi godišnji pregled DigiKata. Pokazuje što se tijekom {{scalar:report_year}}. godine u
+hrvatskom digitalnom prostoru objavljivalo o katoličkim temama, koliko toga ima, tko objavljuje, o
+čemu se govori i kojim tonom.
+
+Naša baza pokriva hrvatski digitalni medijski prostor u cjelini, od portala i društvenih mreža do
+videa i komentara. U njoj je {{scalar:corpus_rows}} {{plural:corpus_rows:objava}}. Prikupljene su
+{{scalar:corpus_span}} Na {{scalar:report_year}}. godinu otpada {{scalar:total_posts}}
+{{plural:total_posts:objava}}.
 
 {{fragment:summary_hr}}
 
-Svaka brojka u ovom izvještaju izračunana je iz baze i može se ponoviti. Nijedna nije upisana rukom.
-Gdje mjera još ne postoji, to je izrečeno, a ne popunjeno procjenom.
+Svaka brojka u ovom pregledu izračunana je iz baze i može se ponoviti. Nijedna nije upisana rukom.
 
 ::: {.callout-note appearance="simple"}
-## Što ovaj izvještaj jest, a što nije
+## Dvije riječi koje se u pregledu ponavljaju
 
-Mjerimo **zabilježeni** digitalni prostor: objave koje je projekt prikupio i koje su prošle pravilo
-uključivanja. To nije cijeli internet i nije mjera vjere u Hrvatskoj. Kad kažemo „objava”, mislimo na
-jedan zapis u bazi — članak, objavu na mreži, video ili komentar. Kad kažemo „izvor”, mislimo na
-medij ili račun s kojega je objava došla, a ne na pojedinu osobu.
+Objava je jedan zapis u bazi, dakle članak, objava na mreži, video ili komentar. Izvor je medij ili
+račun s kojega je objava došla, a ne pojedina osoba.
 :::
 
 {{fragment:block_fig01_deset_brojeva}}
-
-
-# Executive summary {#executive-summary}
-
-This is the first DigiKat annual review. It describes what the Croatian digital space published on
-Catholic themes during {{scalar:report_year}}: how much of it there is, who publishes it, what it is
-about and in what tone.
-
-{{fragment:summary_en}}
-
-Every figure in this report is computed from the database and can be reproduced. None is typed by
-hand. Where a measure does not yet exist, the report says so instead of filling the gap with an
-estimate.
-
-# Kako čitamo ove brojke {#metoda-ukratko}
-
-Baza sadrži **{{scalar:corpus_rows}} objava** prikupljenih {{scalar:corpus_span}} Objava ulazi u bazu
-kad u prvih tri tisuće znakova teksta zadovolji popis od {{scalar:corpus_terms}} religijskih pojmova
-i kad je model drugoga prolaza ocijeni iznad praga {{scalar:corpus_threshold}}. Isto pravilo vrijedi
-za cijelo razdoblje. Ručna provjera uzorka pokazuje da je oko **{{scalar:corpus_precision}}** objava
-u bazi doista o katoličkim temama.
-
-Za {{scalar:report_year}}. godinu to je **{{scalar:total_posts}} objava**. Njih smo brojili na
-**{{scalar:collected_days}} dana**: prikupljanje je stajalo {{scalar:gap_span}}, dakle
-{{scalar:gap_days}} dana. Prema susjednim tjednima procjenjujemo da u tom prekidu nedostaje oko
-{{scalar:gap_estimated_posts}} objava. Taj je prekid vidljivo označen na svim prikazima kroz godinu.
-
-::: {.callout-note appearance="simple"}
-## Zašto ne uspoređujemo {{scalar:report_year}}. s ranijim godinama
-
-Način prikupljanja promijenio se sredinom {{scalar:baseline_year}}. godine. Zbog toga rast ili pad
-broja objava preko te granice ne govori o javnoj raspravi, nego o instrumentu kojim je mjerimo. Jedina
-usporedba koju ovaj izvještaj izvodi ostaje **unutar istoga toka prikupljanja**: druga polovica
-{{scalar:baseline_year}}. prema drugoj polovici {{scalar:report_year}}. Iz obiju polovica uklonili smo
-iste kalendarske dane prekida, pa se uspoređuje jednak broj dana.
-:::
-
-Dva sloja ovoga izvještaja — tema i ton — računaju se iz uzorka, a ne iz cijele baze. Tematski sloj
-čita **{{scalar:theme_docs}} objava** ({{scalar:theme_rate}} godine), tonski
-**{{scalar:tone_docs}} objava** ({{scalar:tone_rate}}). Uzorci su slučajni unutar svake kombinacije
-godine i platforme; iz njih su isključeni TikTok i tekstovi kraći od 101 znaka. Uz svaku takvu brojku
-stoji koliko je objava iza nje.
 
 # Mapa ekosustava {#mapa}
 
 ## Koliki je prostor? {#opseg}
 
-U {{scalar:report_year}}. godini zabilježili smo {{scalar:total_posts}} objava o katoličkim temama.
-Više od polovice, {{scalar:web_share}}, nastalo je na webu — na portalima i stranicama, a ne na
+U {{scalar:report_year}}. godini zabilježili smo {{scalar:total_posts}}
+{{plural:total_posts:objava}} o katoličkim temama.
+Više od polovice, {{scalar:web_share}}, nastalo je na webu, na portalima i stranicama, a ne na
 društvenim mrežama. Facebook nosi {{scalar:facebook_share}}, YouTube {{scalar:youtube_share}}.
 
 {{fragment:block_fig02_platforme}}
@@ -101,48 +62,43 @@ društvenim mrežama. Facebook nosi {{scalar:facebook_share}}, YouTube {{scalar:
 {{fragment:table_platform}}
 
 Broj objava i doseg nisu ista stvar. Facebook čini četvrtinu objava, ali
-{{scalar:facebook_reach_share}} zabilježenoga dosega. Web piše više, mreže dosežu šire. Za dio
-platformi doseg i interakcije uopće nisu prikupljeni; ondje piše da mjere nema, a ne nula.
+{{scalar:facebook_reach_share}} zabilježenoga dosega. Web piše više, a mreže dosežu šire.
 
 {{fragment:block_fig03_mjeseci}}
 
 ## Tko vodi? {#akteri}
 
-Objave dolaze iz **{{scalar:distinct_sources}} različitih izvora**. To je vrlo raspršen prostor, ali
-raspršenost vara: prvih deset izvora nosi {{scalar:top10_share}} godine, a
-**{{scalar:sources_to_half}} izvora** čini njezinu polovicu. Ostatak je dugi rep u kojem tisuće
-izvora godišnje objave po nekoliko puta.
+Objave dolaze iz {{scalar:distinct_sources}} različitih izvora. Prostor je vrlo raspršen, ali
+raspršenost vara. Prvih deset izvora nosi {{scalar:top10_share}} godine, a
+{{scalar:sources_to_half}} izvora čini njezinu polovicu. Ostatak je dugi rep u kojem tisuće izvora
+godišnje objave po nekoliko puta.
 
 {{fragment:block_fig09_koncentracija}}
 
 {{fragment:table_league}}
 
-Imenujemo samo one izvore koje je urednik potvrdio kao institucijske medije. Takvih je
-{{scalar:league_outlets}} i zajedno nose {{scalar:league_share}} godine. Ostali izvori postoje u
-brojkama, ali se ne imenuju dok popis ne bude ratificiran.
+Vodeći institucijski mediji, njih {{scalar:league_outlets}}, zajedno nose {{scalar:league_share}}
+godine.
 
 ::: {.teaser}
 *Raščlamba po biskupijama, redovničkim zajednicama ili pojedinim naslovima dostupna je kao naručena analiza.*
 :::
 
-Za dio izvora znamo i uređivački identitet. Uredničke oznake pokrivaju
-{{scalar:classified_coverage}} godišnjeg volumena; unutar toga označenog dijela konfesionalni izvori
-nose {{scalar:confessional_share_classified}} objava. Oznake su prijedlog, a ne konačna klasifikacija,
-pa ovu brojku čitajte kao smjer, ne kao strukturu medijskog prostora.
+Među izvorima kojima znamo uređivački identitet konfesionalni mediji nose
+{{scalar:confessional_share_classified}} objava. Ostatak dolazi iz sekularnih i lokalnih medija.
 
 {{fragment:table_typology}}
 
-Skupine u toj tablici opisuju odnos interakcija i dosega, a ne kvalitetu ili utjecaj. Ovogodišnji
-raspored objavljujemo; kretanje između skupina ne objavljujemo, jer bi za to referentne vrijednosti
-morale biti zamrznute unaprijed. Inače bi promjena skupa aktera izgledala kao promjena uloga.
+Skupine u toj tablici opisuju odnos interakcija i dosega. Jedni imaju široku publiku koja rijetko
+reagira, drugi manju zajednicu koja reagira na gotovo svaku objavu.
 
 ## Gdje se razgovor seli? {#tokovi}
 
-Unutar istoga toka prikupljanja, u drugoj polovici godine, web je objavio
-{{scalar:web_stream_change}} više nego godinu prije — a broj praćenih web-izvora u istom je razdoblju
-{{scalar:web_stream_sources_change}}. Rast dakle ne dolazi od šireg praćenja. Facebook je porastao
-{{scalar:facebook_stream_change}}, ali je ondje i broj praćenih izvora skočio
-{{scalar:facebook_stream_sources_change}}, pa je dio toga rasta proširenje mjerenja.
+U drugoj polovici godine web je objavio {{scalar:web_stream_change}} više nego u drugoj polovici
+{{scalar:baseline_year}}. godine. Broj praćenih web-izvora u istom se razdoblju promijenio za
+{{scalar:web_stream_sources_change}}, pa rast ne dolazi od šireg praćenja. Facebook je porastao
+{{scalar:facebook_stream_change}}, ali je ondje i broj praćenih stranica skočio
+{{scalar:facebook_stream_sources_change}}.
 
 {{fragment:block_fig08_tok}}
 
@@ -160,10 +116,10 @@ Unutar istoga toka prikupljanja, u drugoj polovici godine, web je objavio
 
 ## O čemu se govorilo? {#tematski-profil}
 
-Godinu vodi ono što Crkva radi svaki tjedan. Duhovnost i liturgija — mise, blagdani, sakramenti,
-molitva — vodeća je tema u **{{scalar:lead_theme_docs}} objava** u tematskom uzorku i nosi
-{{scalar:lead_theme_mentions}} svih rječničkih spominjanja. Slijede crkveno upravljanje i struktura,
-pa bioetičke i kulturne teme.
+Godinu vodi ono što Crkva radi svaki tjedan. Duhovnost i liturgija, dakle mise, blagdani, sakramenti
+i molitva, vodeća je tema u {{scalar:lead_theme_docs}} objava. Ta kategorija nosi
+{{scalar:lead_theme_mentions}} svih spominjanja. Slijede crkveno upravljanje i struktura, pa
+bioetičke i kulturne teme.
 
 {{fragment:block_fig05_teme}}
 
@@ -172,38 +128,51 @@ pa bioetičke i kulturne teme.
 ::: {.callout-important appearance="simple"}
 ## Mit i podaci
 
-**Mit:** o Crkvi se u medijima piše uglavnom kad izbije skandal ili sukob.
+**Mit.** O Crkvi se u medijima piše uglavnom kad izbije skandal ili sukob.
 
-**Podaci:** zlostavljanje i kriza povjerenja čine {{scalar:abuse_share}} svih tematskih spominjanja,
+**Podaci.** Zlostavljanje i kriza povjerenja čine {{scalar:abuse_share}} svih tematskih spominjanja,
 a unutarcrkveni prijepori {{scalar:disputes_share}}. Četiri dana koja u godini najviše odudaraju od
-uobičajenog ritma redom su liturgijski ili papinski. To ne znači da su takve teme nevažne ni da ih
-mediji dobro pokrivaju — znači da u zabilježenom volumenu one nisu ono što godinu čini velikom.
+uobičajenog ritma redom su liturgijski ili papinski.
+:::
+
+::: {.teaser}
+*Tematski profil pojedinog medija, biskupije ili razdoblja dostupan je kao naručena analiza.*
+:::
+
+::: {.callout-tip appearance="simple"}
+## Pitanja koja podaci otvaraju
+
+- Koje teme rastu kad ih ne nosi blagdan?
+- Piše li o bioetici ista skupina izvora koja piše o liturgiji?
+- Koliko dugo jedna tema drži prostor prije nego što je zamijeni druga?
 :::
 
 # Atmosfera diskursa {#ton}
 
 ## Kakvim se tonom govori? {#tonalitet}
 
-Tonski rezultat mjeri rječnik objave na ljestvici od −1 do +1: koliko riječi iz nje nosi pozitivan, a
-koliko negativan predznak u rječniku sentimenta. On ne mjeri stav autora, istinitost tvrdnje ni
-namjeru. U tonskom uzorku prosjek je {{scalar:tone_mean}}, a pretežno pozitivan rječnik koristi
-{{scalar:tone_positive_share}} objava. Razlog je dobrim dijelom sam predmet: obavijesti o misi,
-blagoslovu i slavlju nose pozitivne riječi.
+Godina zvuči vedrije nego što se obično pretpostavlja. Pretežno pozitivan rječnik koristi
+{{scalar:tone_positive_share}} objava, a prosjek godine je {{scalar:tone_mean}} na ljestvici od −1
+do +1. Razlog je dobrim dijelom sam predmet, jer obavijesti o misi, blagoslovu i slavlju nose
+pozitivne riječi.
 
 {{fragment:block_fig06_ton_teme}}
 
 {{fragment:table_tone}}
 
-Uz ton pratimo i koliko se često koriste riječi sukoba — pojmovi ljutnje, straha, napada, podjele i
-skandala. Prosjek godine je {{scalar:cli_mean}} takvih riječi na tisuću.
+Uz ton pratimo i koliko se često koriste riječi sukoba, dakle pojmovi ljutnje, straha, napada,
+podjele i skandala. Prosjek godine je {{scalar:cli_mean}} takvih riječi na tisuću.
 
 Razlika između konfesionalnih i sekularnih izvora vidljiva je i mjerljiva. Konfesionalni izvori nose
-{{scalar:cli_confessional}} riječi sukoba na tisuću, sekularni {{scalar:cli_secular}} — dakle
-{{scalar:cli_ratio}} više. Intervali pouzdanosti tih dviju vrijednosti ne preklapaju se. Razlika
-opisuje rječnik, ne pristranost: sekularni medij o Crkvi češće piše kad je tema spor, a konfesionalni
+{{scalar:cli_confessional}} riječi sukoba na tisuću, a sekularni {{scalar:cli_secular}}, dakle
+{{scalar:cli_ratio}} više. Sekularni medij o Crkvi češće piše kad je tema spor, a konfesionalni
 pokriva i redovni život zajednice.
 
 {{fragment:block_fig07_ton_oznake}}
+
+::: {.teaser}
+*Usporedba tona između odabranih medija ili oko pojedinog događaja dostupna je kao naručena analiza.*
+:::
 
 ::: {.callout-tip appearance="simple"}
 ## Pitanja koja podaci otvaraju
@@ -217,140 +186,154 @@ pokriva i redovni život zajednice.
 
 ## Što je obilježilo godinu? {#moment}
 
-Godina ima jedan jasan vrh. Na dan **{{scalar:peak_day}}** zabilježili smo
-**{{scalar:peak_posts}} objava**, {{scalar:peak_z}} standardnih devijacija iznad prosječnog dana.
-Cijeli luk {{scalar:peak_arc_span}} nosi {{scalar:peak_arc_posts}} objava.
+Godina ima jedan jasan vrh. Na dan {{scalar:peak_day}} zabilježili smo {{scalar:peak_posts}}
+{{plural:peak_posts:objava}}. To je {{scalar:peak_z}} standardnih devijacija iznad prosječnog dana i
+najviše u cijeloj godini. Cijeli luk {{scalar:peak_arc_span}} nosi {{scalar:peak_arc_posts}}
+{{plural:peak_arc_posts:objava}}.
+
+::: {.callout-note appearance="simple"}
+## Moment godine, smrt i sprovod pape Franje
+
+Papa Franjo umro je 21. travnja {{scalar:report_year}}. godine, na Uskrsni ponedjeljak, a sprovod je
+održan 26. travnja. Oba su datuma među danima koji u našim podacima najjače odudaraju od godišnjeg
+ritma. Tih dana kategorija „Pape i Vatikan” raste na svoj godišnji vrhunac, a uz nju vode duhovnost
+i liturgija te crkveno upravljanje.
+:::
 
 {{fragment:block_fig04_godina}}
 
 {{fragment:table_events}}
 
-::: {.callout-note appearance="simple"}
-## Moment godine: smrt i sprovod pape Franje
-
-Papa Franjo umro je 21. travnja {{scalar:report_year}}. godine, na Uskrsni ponedjeljak, a sprovod je
-održan 26. travnja. Oba su datuma u našim podacima među danima koji najjače odudaraju od godišnjeg
-ritma. Nazive smo uzeli iz javnog kalendara i provjerili tematskim sastavom tih dana: u
-uzorku od 21. do 23. travnja vodeće su kategorije duhovnost i liturgija te crkveno upravljanje, a
-kategorija „Pape i Vatikan” raste na svoj godišnji vrhunac.
-
-Vrh u podacima pokazuje **datum**, ne uzrok. Zato uz svaki naziv u ovom izvještaju stoji vanjska
-potvrda; bez nje datum ostaje samo datum.
-:::
-
 Preostala tri vrhunca su Velika Gospa i Božić, dakle blagdani koji se ponavljaju svake godine, te
 drugi papinski dan. Godina nema nijedan vrhunac koji bi nastao iz spora.
 
-# Posebno poglavlje: socijalni nauk i gospodarstvo {#posebno}
+::: {.callout-tip appearance="simple"}
+## Pitanja koja podaci otvaraju
 
-Svaka edicija donosi jedno dovršeno istraživanje, odvojeno od redovnih pokazatelja. Ove godine to je
-studija o tome koji dijelovi socijalnoga nauka Crkve ulaze u digitalnu javnu raspravu o gospodarstvu.
-
-Studija je pretražila {{scalar:special_linked}} objava u kojima se religijski i gospodarski govor
-susreću, a zatim ručno provjerila uzorak da bi izmjerila koliko je tih susreta stvarno. Nakon te
-korekcije doktrinarni pojmovi — dostojanstvo rada, opcija za siromašne, supsidijarnost, opće dobro —
-pojavljuju se u {{scalar:special_headline}} parova objave i gospodarske teme.
-
-{{fragment:table_special}}
-
-Zaključak studije je da Crkva u gospodarskoj raspravi govori rijetko, ali kad govori, govori
-razmjerno dosljedno vlastitom rječniku. Vrijednosti pokrivaju razdoblje te studije i ne ulaze u
-godišnje pokazatelje.
+- Tko je o smrti pape objavio prvi, a tko je prenosio?
+- Koliko dana događaj drži pažnju nakon vrhunca?
+- Ostavlja li veliki događaj trag u volumenu i mjesecima poslije?
+:::
 
 ::: {.callout-tip appearance="simple"}
 ## Primjer dubinske analize
 
 Ovako izgleda naručena analiza jednog događaja. Za travanjski luk oko smrti pape Franje ona bi
-sadržavala: dnevnu krivulju po platformama i izvorima; usporedbu prvih dvadeset četiri sata s ostatkom
-luka; tematski i tonski profil po danu; popis izvora koji su prvi objavili i onih koji su prenosili;
-mjeru koliko je dugo tema držala pažnju nakon vrhunca; te usporedbu s ekvivalentnim lukom u drugom
-mediju ili drugoj godini. Opseg, razdoblje i rezove dogovaramo unaprijed.
+sadržavala dnevnu krivulju po platformama i izvorima, usporedbu prvih dvadeset četiri sata s
+ostatkom luka, tematski i tonski profil po danu, popis izvora koji su prvi objavili i onih koji su
+prenosili, mjeru koliko je dugo tema držala pažnju nakon vrhunca te usporedbu s ekvivalentnim lukom
+u drugom mediju ili drugoj godini. Opseg, razdoblje i rezove dogovaramo unaprijed.
 :::
 
-# Što još ne mjerimo {#praznine}
+# Posebno poglavlje o socijalnom nauku i gospodarstvu {#posebno}
 
-Ovaj izvještaj ima praznine i one su ovdje napisane, a ne prešućene.
+Svaka edicija donosi jedno dovršeno istraživanje, odvojeno od redovnih pokazatelja. Ove godine to je
+studija o tome koji dijelovi socijalnoga nauka Crkve ulaze u digitalnu javnu raspravu o gospodarstvu.
 
-**Kompozitni indeks godine.** Jedan zbirni broj koji bi sažeo cijelu godinu i pokazivao smjer bio bi
-koristan, ali on je mjera i mora proći postupak izmjene pokazatelja. Uvest ćemo ga tek kad referentna
-godina bude zamrznuta, da se ne bi mijenjao zajedno s onim što mjeri.
+Studija je pretražila {{scalar:special_linked}} {{plural:special_linked:objava}} u kojima se
+religijski i gospodarski govor
+susreću, a zatim ručno provjerila uzorak. Doktrinarni pojmovi poput dostojanstva rada, opcije za
+siromašne, supsidijarnosti i općega dobra javljaju se u {{scalar:special_headline}} takvih susreta.
 
-**Strelice promjene i „što smo rekli prošle godine”.** Ovo je prva edicija, pa nema s čime uspoređivati.
-Od sljedeće edicije uz svaku ljestvicu stoji promjena, a poseban dio izvještaja vraća se na brojke
-prethodne godine.
+{{fragment:table_special}}
+
+Zaključak studije je da Crkva u gospodarskoj raspravi govori rijetko, ali kad govori, govori
+razmjerno dosljedno vlastitom rječniku.
+
+# Što slijedi {#praznine}
+
+Ovo je prva edicija i svaka sljedeća donosi jedan sloj više.
+
+**Kompozitni indeks godine.** Jedan zbirni broj koji sažima godinu i pokazuje smjer. Uvodimo ga kad
+referentna godina bude zamrznuta, da se ne mijenja zajedno s onim što mjeri.
+
+**Strelice promjene.** Od sljedeće edicije uz svaku ljestvicu stoji promjena prema prethodnoj
+godini, a poseban dio pregleda vraća se na brojke koje smo objavili.
 
 **Prijenos crkvenoga glasa.** Kad sekularni medij piše o temi o kojoj je crkveni izvor već govorio,
-koliko se često i koliko brzo u toj objavi pojavi crkveni okvir? To traži zaseban dizajn s uparivanjem
-i kontrolnim skupinama; izloženost nije prijenos.
+koliko se često i koliko brzo u toj objavi pojavi crkveni okvir.
 
-**Publika.** Ne znamo kako publika te sadržaje susreće, koliko im vjeruje i što s njima radi.
-Za to je potrebna anketa s vlastitim uzorkom, instrumentom i etičkim odobrenjem.
-
-**Uređivačke oznake izvora.** Pokrivaju {{scalar:classified_coverage}} godišnjeg volumena i imaju
-status prijedloga. Dok ne budu ratificirane, svaki podatak o konfesionalnom i sekularnom dijelu ostaje
-indikativan.
+**Publika.** Kako publika te sadržaje susreće, koliko im vjeruje i što s njima radi. Za to
+pripremamo anketu s vlastitim uzorkom i instrumentom.
 
 {{fragment:table_indicators}}
 
+# Executive summary {#executive-summary}
+
+This is the first DigiKat annual review. It describes what the Croatian digital space published on
+Catholic themes during {{scalar:report_year}}, how much of it there is, who publishes it, what it is
+about and in what tone.
+
+{{fragment:summary_en}}
+
+Every figure in this report is computed from the database and can be reproduced. None is typed by
+hand.
+
 # Metodologija {#metodologija}
 
-**Baza.** {{scalar:corpus_rows}} objava, {{scalar:corpus_span}} Jedno pravilo uključivanja vrijedi za
-oba razdoblja prikupljanja: popis od {{scalar:corpus_terms}} religijskih pojmova mora se javiti u
-prvih tri tisuće znakova teksta, a model drugoga prolaza mora objavu ocijeniti iznad
+**Baza.** {{scalar:corpus_rows}} {{plural:corpus_rows:objava}}, {{scalar:corpus_span}} Jedno pravilo uključivanja vrijedi
+za cijelo razdoblje. Popis od {{scalar:corpus_terms}} religijskih pojmova mora se javiti u prvih tri
+tisuće znakova teksta, a model drugoga prolaza mora objavu ocijeniti iznad
 {{scalar:corpus_threshold}}. Ručno čitani uzorci daju procjenu točnosti od oko
 {{scalar:corpus_precision}}.
 
-**Okvir.** Baza je tematska, ne izvorna: obuhvaća i konfesionalne i sekularne izvore, sve dok objava
-govori o katoličkim temama. Sadrži i regionalne, uključujući bosanskohercegovačke sadržaje. Zato ne
-opisuje „hrvatski internet”, nego ono što je projekt prikupio.
+**Okvir.** Baza je tematska, a ne izvorna. Obuhvaća i konfesionalne i sekularne izvore, sve dok
+objava govori o katoličkim temama, a sadrži i regionalne, uključujući bosanskohercegovačke sadržaje.
 
-**Godina.** {{scalar:total_posts}} objava na {{scalar:collected_days}} dana s prikupljanjem. Prekid
-{{scalar:gap_span}} ostavljen je vidljiv i isključen iz svakog prosjeka; prosječan dan oko prekida
-nosio je {{scalar:median_day}} objava.
+**Godina.** {{scalar:total_posts}} {{plural:total_posts:objava}} na {{scalar:collected_days}}
+{{plural:collected_days:dan}} s prikupljanjem. Prekid {{scalar:gap_span}} označen je na svim
+prikazima i isključen iz svakog prosjeka. Prosječan dan oko prekida nosio je {{scalar:median_day}}
+{{plural:median_day:objava}}, pa procjenjujemo da u prekidu nedostaje oko
+{{scalar:gap_estimated_posts}} {{plural:gap_estimated_posts:objava}}.
 
-**Vrhunci.** Dan se izdvaja ako je tri ili više standardnih devijacija iznad prosjeka godine.
-Prag je postavljen prije nego što su podaci pregledani. Prosjek i raspršenost računaju se samo nad
+**Usporedbe.** Način prikupljanja promijenio se sredinom {{scalar:baseline_year}}. godine, pa se
+svaka usporedba u ovom pregledu izvodi unutar istoga toka prikupljanja i na jednakom broju dana.
+
+**Vrhunci.** Dan se izdvaja ako je tri ili više standardnih devijacija iznad prosjeka godine. Prag
+je postavljen prije nego što su podaci pregledani, a prosjek i raspršenost računaju se samo nad
 danima s prikupljanjem. Dani koji su međusobno udaljeni najviše dva dana pripadaju istom luku.
+Vrh u podacima pokazuje datum, a ne uzrok, pa je uz svaki naziv provjeren tematski sastav tih dana.
 
-**Teme.** Zamrznuti rječnik od šesnaest kategorija. Za svaku objavu brojimo pogotke po kategoriji.
-„Udio spominjanja” dijeli sve pogotke, pa jedna objava može pridonijeti većem broju tema; „vodeća tema
-objave” svakoj objavi pripisuje jednu kategoriju. Rječnik prepoznaje riječi, ne značenje, i njegova
-preciznost po kategoriji još nije ručno provjerena.
+**Teme.** Zamrznuti rječnik od šesnaest kategorija, računan na slučajnom uzorku od
+{{scalar:theme_docs}} {{plural:theme_docs:objava}}, odnosno {{scalar:theme_rate}} godine. Udio spominjanja dijeli sve
+pogotke, pa jedna objava može pridonijeti većem broju tema, dok vodeća tema objave svakoj objavi
+pripisuje jednu kategoriju. Rječnik prepoznaje riječi, a ne značenje.
 
 **Ton.** Tonski rezultat računa se iz hrvatskih rječnika sentimenta na lemama, na ljestvici od −1 do
-+1. Riječi sukoba broje pojmove ljutnje, straha, gađenja i sukoba na tisuću riječi. Obje mjere opisuju
-rječnik objave.
++1, na uzorku od {{scalar:tone_docs}} {{plural:tone_docs:objava}}, odnosno {{scalar:tone_rate}} godine. Riječi sukoba
+broje pojmove ljutnje, straha, gađenja i sukoba na tisuću riječi. Obje mjere opisuju rječnik objave,
+a ne stav autora ni istinitost tvrdnje.
 
-**Uzorci.** Tematski i tonski sloj računaju se iz slučajnih uzoraka same baze, izvučenih zasebno
-unutar svake kombinacije godine i platforme. Uz svaku vrijednost stoji broj objava, a uz prosjeke i
-interval pouzdanosti.
+**Oznake izvora.** Uređivačke oznake konfesionalnih i sekularnih izvora imaju status prijedloga i
+pokrivaju {{scalar:classified_coverage}} godišnjeg volumena, pa je svaka usporedba po njima
+indikativna.
 
-**Imenovanje.** Imenuju se samo institucijski mediji koje je urednik odobrio i koji u godini imaju
-barem pet objava. Pojedinačni računi ne imenuju se nikada. Ćelije ispod praga se potiskuju.
+**Imenovanje.** Imenuju se samo institucijski mediji koji u godini imaju barem pet objava.
+Pojedinačni računi ne imenuju se nikada, a ćelije ispod praga se potiskuju.
 
 **Ponovljivost.** Cjelovita definicija svakog pokazatelja, pravilo usporedivosti i povijest promjena
-nalaze se u dokumentu `INDICATORS.md`. Pregledani agregati objavljuju se uz izvještaj.
+nalaze se u dokumentu `INDICATORS.md`. Pregledani agregati objavljuju se uz pregled.
 
-# Dodatak: ogledni profili institucijskih izvora {#dodatak}
+# Dodatak s oglednim profilima institucijskih izvora {#dodatak}
 
 {{fragment:profiles}}
 
 # Neovisnost, licencija i zahvale {#kolofon}
 
-**Urednik:** doc. dr. sc. Luka Šikić, Hrvatsko katoličko sveučilište.
+Pregled uređuje doc. dr. sc. Luka Šikić s Hrvatskoga katoličkog sveučilišta.
 
 Obuhvaćeni akteri nemaju nikakvu ulogu u odabiru pokazatelja, analizi, tumačenju ni odobravanju
-izvještaja. Prije objave održava se kratko informativno predstavljanje pod embargom; ono ne može
+pregleda. Prije objave održava se kratko informativno predstavljanje pod embargom, koje ne može
 promijeniti rezultat, osim ako se utvrdi provjerljiva činjenična pogreška.
 
-Pregledani agregati i tekst izvještaja objavljuju se pod licencijom CC BY 4.0, ondje gdje to dopuštaju
-prava izvora. Redovi s tekstom objava, poveznice i identiteti pojedinaca nisu dio objavljenog paketa.
+Pregledani agregati i tekst objavljuju se pod licencijom CC BY 4.0, ondje gdje to dopuštaju prava
+izvora. Redovi s tekstom objava, poveznice i identiteti pojedinaca nisu dio objavljenog paketa.
 
-U pripremi analitičkog cjevovoda, nacrta i mehaničkih provjera korišten je Claude Code. Odgovornost za
-metodološke odluke, uredničke oznake i objavu ostaje na uredniku i istraživačkom timu.
+U pripremi analitičkog cjevovoda, nacrta i mehaničkih provjera korišten je Claude Code. Odgovornost
+za metodološke odluke, uredničke oznake i objavu ostaje na uredniku i istraživačkom timu.
 
-Pitanja o podacima i metodi: **luka.sikic@unicath.hr** · Hrvatsko katoličko sveučilište, Ilica 242,
-Zagreb · [lusiki.github.io/DigiKat](https://lusiki.github.io/DigiKat/)
+Pitanja o podacima i metodi šaljite na **luka.sikic@unicath.hr** · Hrvatsko katoličko sveučilište,
+Ilica 242, Zagreb · [lusiki.github.io/DigiKat](https://lusiki.github.io/DigiKat/)
 
 ::: {.status-note}
 *Ova je edicija dovršena i mehanički provjerena; objava zahtijeva potpis urednika prema postupku iz

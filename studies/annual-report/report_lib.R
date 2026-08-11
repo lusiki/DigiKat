@@ -123,6 +123,40 @@ ar_fmt_change_en <- function(x, digits = 1L) {
   paste0(ifelse(as.numeric(x) >= 0, "+", "−"), ar_fmt_pct_en(abs(as.numeric(x)), digits))
 }
 
+# Croatian numeral agreement. A count ending in 1 takes the nominative singular, one ending in 2, 3
+# or 4 the paucal, and everything else the genitive plural; the teens are the exception and always
+# take the genitive plural. A generated report cannot print one fixed form, because the count
+# changes every edition: 351 is "351 dan", 207 is "207 dana", and hard-wiring either is wrong in the
+# other year.
+ar_plural_hr <- function(n, forms) {
+  if (length(forms) != 3L) stop("A Croatian noun needs three forms (1 / 2-4 / 5+).", call. = FALSE)
+  n <- abs(as.integer(round(as.numeric(n))))
+  last_two <- n %% 100L
+  last <- n %% 10L
+  if (last_two >= 11L && last_two <= 14L) return(forms[3])
+  if (last == 1L) return(forms[1])
+  if (last >= 2L && last <= 4L) return(forms[2])
+  forms[3]
+}
+
+# The nouns the report counts. Keyed by the singular so a template reads {{plural:key:objava}}.
+AR_NOUN_HR <- list(
+  objava = c("objava", "objave", "objava"),
+  dan    = c("dan", "dana", "dana"),
+  izvor  = c("izvor", "izvora", "izvora"),
+  medij  = c("medij", "medija", "medija"),
+  akter  = c("akter", "aktera", "aktera")
+)
+
+ar_noun_hr <- function(n, noun) {
+  forms <- AR_NOUN_HR[[noun]]
+  if (is.null(forms)) stop("No Croatian forms registered for the noun '", noun, "'.", call. = FALSE)
+  ar_plural_hr(n, forms)
+}
+
+# The pairing a sentence almost always wants: the formatted count and its agreeing noun.
+ar_count_hr <- function(n, noun) paste(ar_fmt_int_hr(n), ar_noun_hr(n, noun))
+
 ar_month_hr <- c("siječnja", "veljače", "ožujka", "travnja", "svibnja", "lipnja",
                  "srpnja", "kolovoza", "rujna", "listopada", "studenoga", "prosinca")
 

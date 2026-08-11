@@ -7,4 +7,4 @@
 - On the day Pope Francis died we recorded **2,825 posts**, the most in the whole year.
 - Predominantly positive vocabulary appears in **90.4% of posts** in the tone sample.
 - Secular sources carry **1.36×** as many conflict words as confessional ones.
-- Within the same collection stream, the web carried **+11.5%** more than a year earlier.
+- In the second half of the year the web carried **+11.5%** more than a year earlier.

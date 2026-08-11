@@ -1,4 +1,4 @@
-#### Što se promijenilo unutar istoga toka prikupljanja?
+#### Što je raslo, a što padalo?
 
 | Platforma | 2. polovica 2024. | 2. polovica 2025. | Objave | Izvori |
 |:---|---:|---:|---:|---:|
@@ -10,4 +10,4 @@
 | Instagram | 644 | 588 | −8,7 % | −4,3 % |
 | Forumi | 55 | 424 | +670,9 % | +66,7 % |
 
-> Izvor: DigiKat, službeni korpus, tok prikupljanja koji teče od srpnja 2024. Zadnji stupac pokazuje mijenja li se broj praćenih izvora: kad volumen i broj izvora rastu zajedno, vjerojatnije je da se proširilo praćenje nego sama rasprava.
+> Izvor: DigiKat, službeni korpus, tok prikupljanja koji teče od srpnja 2024. Zadnji stupac pokazuje mijenja li se broj praćenih izvora. Kad volumen i broj izvora rastu zajedno, vjerojatnije je da se proširilo praćenje nego sama rasprava.
