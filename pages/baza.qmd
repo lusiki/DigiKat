@@ -153,41 +153,8 @@ Drugi je korak model. Objave koje su prošle popis riječi ocjenjuje ansambl kla
 kodiranim objavama; ulaze one s ocjenom **`r prag` ili višom**. Popis riječi prepoznaje da se o religiji govori,
 a model prosuđuje govori li se o katoličkoj temi ili je riječ o prometnoj nesreći na Trgu svetog Florijana.
 
-Pravilo je namjerno **jedno i isto na obje polovice korpusa**, iako su prikupljene različitim metodama. Time
-razdoblja postaju usporediva po tome *što se broji kao katolička tema*. Ne postaju usporediva po *količini
-prikupljenog*, o čemu niže.
-
-```{r}
-#| label: corpus-cut
-
-cut_summary <- data.frame(
-  `Tok prikupljanja` = c("Raniji tok", "Kasniji tok", "Ukupno"),
-  `Redaka u akumulatoru` = fmt_int(c(
-    mf$eras$pre2024$rows_in,
-    mf$eras$post2024$rows_in,
-    n_accumulator
-  )),
-  `Objava u korpusu` = fmt_int(c(
-    mf$eras$pre2024$kept,
-    mf$eras$post2024$kept,
-    n_records
-  )),
-  `Zadržano` = fmt_pct(c(
-    mf$eras$pre2024$kept_pct,
-    mf$eras$post2024$kept_pct,
-    retention_pct
-  )),
-  check.names = FALSE
-)
-
-kable(cut_summary, caption = "Primjena jedinstvenoga pravila uključivanja na dva toka prikupljanja",
-      align = c("l", "r", "r", "r")) |>
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
-```
-
-Jedinstveno pravilo zadržalo je **`r fmt_int(n_records)` od `r fmt_int(n_accumulator)` redaka** akumulatora
-(`r fmt_pct(retention_pct)`). Različiti udjeli između ranijega i kasnijega toka ne znače da se interes za
-katoličke teme smanjio. Oni pokazuju da je isto pravilo primijenjeno na građu prikupljenu različitim postupcima.
+Pravilo je isto za cijelo razdoblje. Zadržalo je **`r fmt_int(n_records)` od `r fmt_int(n_accumulator)` redaka**
+akumulatora (`r fmt_pct(retention_pct)`).
 
 ## Sastav i tipologija izvora
 
@@ -294,25 +261,8 @@ voditelj projekta, a brojke su indikativne.
 
 ## Kako je prikupljen
 
-```{r}
-#| label: provenance
-
-n_fr <- mf$eras$post2024$kept
-n_od <- mf$eras$pre2024$kept
-```
-
 Podaci su **izvezeni iz komercijalnog servisa za medijski monitoring** (koji objave prikuplja *web scrapingom* i
 platformskim API-jima) u obliku `.xlsx` tablica, koje su potom spojene i filtrirane u jedinstveni korpus.
-
-Korpus je sastavljen iz **dvaju tokova prikupljanja koji se smjenjuju 2024.**, uz kratko tehničko preklapanje od
-1. do 4. srpnja. Raniji tok čini **tekući monitoring-upit** (`r fmt_int(n_od)` objava u korpusu, razdoblje
-**2021.–2024.**), a kasniji **religijski filtrirano prikupljanje** (`r fmt_int(n_fr)` objava, razdoblje
-**2024.–2026.**). Ta promjena metode važna je pri svakoj usporedbi volumena kroz vrijeme (vidi *Vremenska
-pokrivenost* niže).
-
-Pravilo uključivanja opisano gore primijenjeno je na obje polovice **naknadno i jednako**, pa razlika među
-razdobljima više ne dolazi od različitih definicija katoličke teme. Ono što promjena metode prikupljanja jest
-promijenila — koliko je građe uopće zahvaćeno — ostaje netaknuto i nijedan naknadni filtar to ne popravlja.
 
 Pri novim se dopunama deduplikacija provodi po **kanoniziranom URL-u**. Uklanjaju se samo poznati parametri
 praćenja (primjerice `utm_*` i `fbclid`), dok parametri koji određuju identitet objave ostaju sačuvani
@@ -334,11 +284,10 @@ kable(yearly_disp, caption = "Broj objava po godinama", align = c("l", "r")) |>
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
-Broj objava raste prema kraju razdoblja, ali taj se rast **ne smije čitati kao puki porast medijske pažnje.**
-Skok u 2025. (`r fmt_int(n_2025)` objava) poklapa se s **prelaskom na obuhvatniji
-način prikupljanja** (religijski filtrirani backfill) i s uključivanjem novih platformi (Instagram i TikTok tek od
-2024.). Godina **2026. je nepotpuna** (do lipnja), pa je njezin manji broj artefakt presjeka, a ne pad. Usporedbe
-volumena kroz godine stoga su pouzdane samo unutar iste platforme i istoga toka prikupljanja.
+Najviše objava korpus bilježi u 2025. (`r fmt_int(n_2025)`). Godina **2026. je nepotpuna** (do lipnja), pa je
+njezin manji broj artefakt presjeka, a ne pad. Instagram i TikTok ulaze u korpus tek od 2024., pa ranije godine
+za te platforme nemaju objava. Kako čitati godišnje volumene opisano je u
+[Metodologiji](metodologija.html).
 
 ### Platforme
 
@@ -350,7 +299,7 @@ kable(plat_disp, caption = "Distribucija objava po platformama", align = c("l", 
 ```
 
 Web-sadržaj čini `r fmt_pct(web_share)` službenoga korpusa. Taj udio opisuje sastav prikupljene građe i dostupnost
-izvora u tokovima monitoringa; sam po sebi ne mjeri preferencije publike, stvarni udio platforme u hrvatskom
+izvora u monitoringu; sam po sebi ne mjeri preferencije publike, stvarni udio platforme u hrvatskom
 digitalnom prostoru ni komunikacijsku učinkovitost.
 
 ### Jezik i geografija
@@ -446,8 +395,7 @@ Referentna primjena službenoga korpusa jesu žive mape projekta. [Mapa ekosusta
 doseg i interakcije te platformske položaje aktera. [Tematske struje](mapa/mapa_stats.html) primjenjuju rječnik od
 16 kategorija, [Atmosfera diskursa](mapa/diskurs.html) leksički tonalitet, emocionalne oznake i konfliktni
 rječnik, a [Fokus na događaje](mapa/događaji.html) označava dnevna odstupanja i opisuje dvije ograničene studije
-slučaja. [Evolucija ekosustava](mapa/evolucija.html) daje vremenski presjek uz izričitu ogradu zbog promjene
-prikupljanja 2024.
+slučaja. [Evolucija ekosustava](mapa/evolucija.html) daje vremenski presjek ekosustava.
 
 Dovršena tematska istraživanja nisu prebačena na službeni korpus. Ona ostaju na verzioniranim ulazima na kojima
 su izračunana i zadržavaju već objavljene brojeve.

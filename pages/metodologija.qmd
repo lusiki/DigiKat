@@ -186,14 +186,24 @@ data.frame(
         align = c("l", "l", "r", "r", "r"))
 ```
 
-Iz toga slijedi jedno ograničenje koje vrijedi na cijelom sjedištu. **Porast broja objava preko 2024.
-nije porast medijske pažnje.** Godišnji volumeni smiju se uspoređivati unutar istoga toka prikupljanja,
-a ne preko granice. Stranica [Evolucija ekosustava](mapa/evolucija.html) zato prikazuje opaženi volumen
-i tu ogradu drži uz svaki prikaz.
+Iz toga slijedi jedno ograničenje koje vrijedi za sve prikaze na ovom sjedištu. **Porast broja objava
+preko 2024. nije porast medijske pažnje.** Godišnji volumeni smiju se uspoređivati unutar istoga toka
+prikupljanja, a ne preko granice. Najveća godina u korpusu, 2025. s
+`r digikat_hr_count(mf$years[["2025"]]$kept, "objava")`, dijelom je posljedica obuhvatnijega
+prikupljanja, a ne samo veće medijske pažnje. Instagram i TikTok ulaze u prikupljanje tek 2024., pa
+ranije godine za te platforme nemaju objava i platformski udjeli nisu usporedivi kroz cijelo
+razdoblje.
 
 Uz to, u vendorskom izvoru za razdoblje od veljače do svibnja 2024. nema teksta, pa nijedno razdoblje
-nema retke u tim mjesecima. Prikupljanje ima i kraćih prekida, koji su opisani na stranicama gdje
-utječu na izračun.
+nema retke u tim mjesecima. Prikupljanje ima i kraćih prekida.
+
+::: {.callout-important}
+## Ovo je jedino mjesto na kojem se ta ograda navodi
+
+Ostale stranice prikazuju volumene bez ponavljanja ove napomene, kako čitanje ne bi bilo opterećeno
+istim upozorenjem na svakom prikazu. Tko uspoređuje godine ili platforme kroz vrijeme, mjerodavan je
+ovaj odjeljak.
+:::
 
 ```{r}
 #| label: godine-tablica

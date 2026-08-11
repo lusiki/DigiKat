@@ -172,7 +172,7 @@ Pregled počinje platformama na kojima su objave prikupljene. Ovaj dio razdvaja 
 
 ## Distribucija sadržaja po platformama
 
-Grafikon koji slijedi prikazuje web-portale kao najveće proizvođače sadržaja. Web čini `r fmt_pct1(web_post_share)` svih objava, a njegov godišnji udio ni u jednoj promatranoj godini ne pada ispod `r fmt_pct1(web_min_post_share)`. YouTube čini `r fmt_pct1(youtube_post_share)` korpusa, dok je 2026. nepotpuna. Te razlike opisuju sastav prikupljenoga korpusa; zbog promjene metode 2024. ne dokazuju same po sebi rast platforme ni promjenu komunikacijske strategije.
+Grafikon koji slijedi prikazuje web-portale kao najveće proizvođače sadržaja. Web čini `r fmt_pct1(web_post_share)` svih objava, a njegov godišnji udio ni u jednoj promatranoj godini ne pada ispod `r fmt_pct1(web_min_post_share)`. YouTube čini `r fmt_pct1(youtube_post_share)` korpusa, dok je 2026. nepotpuna. Te razlike opisuju sastav prikupljenoga korpusa i ne dokazuju same po sebi rast platforme ni promjenu komunikacijske strategije.
 
 ```{r}
 #| label: plot-volume

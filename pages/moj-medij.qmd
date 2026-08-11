@@ -225,9 +225,9 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
 
     h += chart(s.y.g, s.y.p, 'Objave po godini');
     h += chart(s.y.g, s.y.i, 'Zabilježene interakcije po godini');
-    h += '<p class="mm-note">Način prikupljanja podataka promijenio se tijekom 2024., pa razlika ' +
-      'u broju objava prije i poslije te godine nije mjera porasta ili pada pažnje. Godina ' +
-      DATA.years[DATA.years.length - 1] + '. nepotpuna je.</p>';
+    h += '<p class="mm-note">Godina ' + DATA.years[DATA.years.length - 1] +
+      '. nepotpuna je. Kako se čitaju godišnji volumeni, opisano je u ' +
+      '<a href="metodologija.html">Metodologiji</a>.</p>';
 
     h += '<div class="mm-h">Gdje ovaj izvor stoji</div><ul class="mm-pos">';
     h += '<li>Po broju objava ' + ord(s.rp, DATA.totals.sources_listed) +

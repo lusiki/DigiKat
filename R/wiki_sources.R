@@ -227,8 +227,7 @@ make_actor_page <- function(row, pkey, pub) {
       "** s **", coverage_platform_count, "** vrsta izvora i platformi. Katalog profilira aktere na ",
       "**", catalog_platform_count, "** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); ",
       "Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. ",
-      "Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode ",
-      "prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+      "Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno."
     ),
     ":::",
     ""

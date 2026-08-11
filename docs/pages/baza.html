@@ -381,43 +381,7 @@ Prag uključivanja (pojmovi, pa model)
 <p>Članstvo u korpusu određuje jedno pravilo, isto za cijelo razdoblje, u dva koraka.</p>
 <p>Prvi je korak popis riječi. Tekst svake objave prevede se u mala slova i pretraži popisom od <strong>119 hrvatskih religijskih pojmova</strong> (biskup, misa, euharistija, hodočašće, enciklika, Sveta stolica…), zapisanih kao regularni izrazi koji pokrivaju padeže i množine. Pojmovi su podijeljeni na <strong>99 odlučnih</strong>, koji sami po sebi upućuju na katolički sadržaj, i na preostale dvojbene, koji to čine tek u društvu drugih. Objava prolazi prvi korak ako pogodi <strong>najmanje jedan odlučan i najmanje dva različita pojma ukupno</strong>, i to unutar <strong>prvih 3.000 znakova</strong> teksta — dakle unutar onoga što drugi korak i ljudski koder doista pročitaju. Riječ koja se pojavi tek dublje u tekstu ne otvara vrata korpusu.</p>
 <p>Drugi je korak model. Objave koje su prošle popis riječi ocjenjuje ansambl klasifikatora izgrađen na ručno kodiranim objavama; ulaze one s ocjenom <strong>0,70 ili višom</strong>. Popis riječi prepoznaje da se o religiji govori, a model prosuđuje govori li se o katoličkoj temi ili je riječ o prometnoj nesreći na Trgu svetog Florijana.</p>
-<p>Pravilo je namjerno <strong>jedno i isto na obje polovice korpusa</strong>, iako su prikupljene različitim metodama. Time razdoblja postaju usporediva po tome <em>što se broji kao katolička tema</em>. Ne postaju usporediva po <em>količini prikupljenog</em>, o čemu niže.</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-striped table-hover table-condensed caption-top table-sm small">
-<caption>Primjena jedinstvenoga pravila uključivanja na dva toka prikupljanja</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Tok prikupljanja</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Redaka u akumulatoru</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Objava u korpusu</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Zadržano</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Raniji tok</td>
-<td style="text-align: right;">269.583</td>
-<td style="text-align: right;">192.861</td>
-<td style="text-align: right;">71,5 %</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Kasniji tok</td>
-<td style="text-align: right;">440.724</td>
-<td style="text-align: right;">221.124</td>
-<td style="text-align: right;">50,2 %</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Ukupno</td>
-<td style="text-align: right;">710.307</td>
-<td style="text-align: right;">413.985</td>
-<td style="text-align: right;">58,3 %</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<p>Jedinstveno pravilo zadržalo je <strong>413.985 od 710.307 redaka</strong> akumulatora (58,3 %). Različiti udjeli između ranijega i kasnijega toka ne znače da se interes za katoličke teme smanjio. Oni pokazuju da je isto pravilo primijenjeno na građu prikupljenu različitim postupcima.</p>
+<p>Pravilo je isto za cijelo razdoblje. Zadržalo je <strong>413.985 od 710.307 redaka</strong> akumulatora (58,3 %).</p>
 </section>
 <section id="sastav-i-tipologija-izvora" class="level2">
 <h2 class="anchored" data-anchor-id="sastav-i-tipologija-izvora">Sastav i tipologija izvora</h2>
@@ -525,8 +489,6 @@ Upozorenje
 <section id="kako-je-prikupljen" class="level2">
 <h2 class="anchored" data-anchor-id="kako-je-prikupljen">Kako je prikupljen</h2>
 <p>Podaci su <strong>izvezeni iz komercijalnog servisa za medijski monitoring</strong> (koji objave prikuplja <em>web scrapingom</em> i platformskim API-jima) u obliku <code>.xlsx</code> tablica, koje su potom spojene i filtrirane u jedinstveni korpus.</p>
-<p>Korpus je sastavljen iz <strong>dvaju tokova prikupljanja koji se smjenjuju 2024.</strong>, uz kratko tehničko preklapanje od 1. do 4. srpnja. Raniji tok čini <strong>tekući monitoring-upit</strong> (192.861 objava u korpusu, razdoblje <strong>2021.–2024.</strong>), a kasniji <strong>religijski filtrirano prikupljanje</strong> (221.124 objava, razdoblje <strong>2024.–2026.</strong>). Ta promjena metode važna je pri svakoj usporedbi volumena kroz vrijeme (vidi <em>Vremenska pokrivenost</em> niže).</p>
-<p>Pravilo uključivanja opisano gore primijenjeno je na obje polovice <strong>naknadno i jednako</strong>, pa razlika među razdobljima više ne dolazi od različitih definicija katoličke teme. Ono što promjena metode prikupljanja jest promijenila — koliko je građe uopće zahvaćeno — ostaje netaknuto i nijedan naknadni filtar to ne popravlja.</p>
 <p>Pri novim se dopunama deduplikacija provodi po <strong>kanoniziranom URL-u</strong>. Uklanjaju se samo poznati parametri praćenja (primjerice <code>utm_*</code> i <code>fbclid</code>), dok parametri koji određuju identitet objave ostaju sačuvani (primjerice YouTubeov <code>v</code>). URL ipak nije zajamčeno jedinstven ključ: povijesni dio korpusa nastao je prije uvođenja tog pravila, a jedan URL može predstavljati više zabilježenih jedinica monitoringa. Ukupan broj objava stoga treba čitati kao <strong>gornju granicu</strong>. Pokrivenost je omeđena dosegom servisa za monitoring — riječ je o velikom <strong>opservacijskom</strong>, a ne vjerojatnosnom uzorku.</p>
 </section>
 <section id="opseg-korpusa" class="level2">
@@ -572,7 +534,7 @@ Upozorenje
 </table>
 </div>
 </div>
-<p>Broj objava raste prema kraju razdoblja, ali taj se rast <strong>ne smije čitati kao puki porast medijske pažnje.</strong> Skok u 2025. (124.346 objava) poklapa se s <strong>prelaskom na obuhvatniji način prikupljanja</strong> (religijski filtrirani backfill) i s uključivanjem novih platformi (Instagram i TikTok tek od 2024.). Godina <strong>2026. je nepotpuna</strong> (do lipnja), pa je njezin manji broj artefakt presjeka, a ne pad. Usporedbe volumena kroz godine stoga su pouzdane samo unutar iste platforme i istoga toka prikupljanja.</p>
+<p>Najviše objava korpus bilježi u 2025. (124.346). Godina <strong>2026. je nepotpuna</strong> (do lipnja), pa je njezin manji broj artefakt presjeka, a ne pad. Instagram i TikTok ulaze u korpus tek od 2024., pa ranije godine za te platforme nemaju objava. Kako čitati godišnje volumene opisano je u <a href="metodologija.html">Metodologiji</a>.</p>
 </section>
 <section id="platforme" class="level3">
 <h3 class="anchored" data-anchor-id="platforme">Platforme</h3>
@@ -637,7 +599,7 @@ Upozorenje
 </table>
 </div>
 </div>
-<p>Web-sadržaj čini 69,2 % službenoga korpusa. Taj udio opisuje sastav prikupljene građe i dostupnost izvora u tokovima monitoringa; sam po sebi ne mjeri preferencije publike, stvarni udio platforme u hrvatskom digitalnom prostoru ni komunikacijsku učinkovitost.</p>
+<p>Web-sadržaj čini 69,2 % službenoga korpusa. Taj udio opisuje sastav prikupljene građe i dostupnost izvora u monitoringu; sam po sebi ne mjeri preferencije publike, stvarni udio platforme u hrvatskom digitalnom prostoru ni komunikacijsku učinkovitost.</p>
 </section>
 <section id="jezik-i-geografija" class="level3">
 <h3 class="anchored" data-anchor-id="jezik-i-geografija">Jezik i geografija</h3>
@@ -801,7 +763,7 @@ Napomena
 </section>
 <section id="kako-se-korpus-koristi" class="level2">
 <h2 class="anchored" data-anchor-id="kako-se-korpus-koristi">Kako se korpus koristi</h2>
-<p>Referentna primjena službenoga korpusa jesu žive mape projekta. <a href="mapa/mapa.html">Mapa ekosustava</a> opisuje volumen, doseg i interakcije te platformske položaje aktera. <a href="mapa/mapa_stats.html">Tematske struje</a> primjenjuju rječnik od 16 kategorija, <a href="mapa/diskurs.html">Atmosfera diskursa</a> leksički tonalitet, emocionalne oznake i konfliktni rječnik, a <a href="mapa/događaji.html">Fokus na događaje</a> označava dnevna odstupanja i opisuje dvije ograničene studije slučaja. <a href="mapa/evolucija.html">Evolucija ekosustava</a> daje vremenski presjek uz izričitu ogradu zbog promjene prikupljanja 2024.</p>
+<p>Referentna primjena službenoga korpusa jesu žive mape projekta. <a href="mapa/mapa.html">Mapa ekosustava</a> opisuje volumen, doseg i interakcije te platformske položaje aktera. <a href="mapa/mapa_stats.html">Tematske struje</a> primjenjuju rječnik od 16 kategorija, <a href="mapa/diskurs.html">Atmosfera diskursa</a> leksički tonalitet, emocionalne oznake i konfliktni rječnik, a <a href="mapa/događaji.html">Fokus na događaje</a> označava dnevna odstupanja i opisuje dvije ograničene studije slučaja. <a href="mapa/evolucija.html">Evolucija ekosustava</a> daje vremenski presjek ekosustava.</p>
 <p>Dovršena tematska istraživanja nisu prebačena na službeni korpus. Ona ostaju na verzioniranim ulazima na kojima su izračunana i zadržavaju već objavljene brojeve.</p>
 </section>
 <section id="pristup-licencija-i-citiranje" class="level2">

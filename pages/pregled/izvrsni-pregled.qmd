@@ -434,12 +434,12 @@ Love and Angry are platform reaction labels whose meaning depends on content and
 <span class="layer-broj">05 · `r fmt_pct(conc_first)` → `r fmt_pct(conc_lfy)`</span>
 <div class="lang-hr">
 <h3>Evolucija ekosustava</h3>
-<p>Peta razina daje vremenski presjek: udio deset najvećih izvora u zabilježenim interakcijama pada s `r fmt_pct(conc_first)` (2021.) na `r fmt_pct(conc_lfy)` (2025.), dok se platformski udjeli mijenjaju. Budući da se 2024. promijenio obuhvat prikupljanja, taj obrazac ne dokazuje stvarnu seobu publike ni pluralizaciju prostora.</p>
+<p>Peta razina daje vremenski presjek: udio deset najvećih izvora u zabilježenim interakcijama pada s `r fmt_pct(conc_first)` (2021.) na `r fmt_pct(conc_lfy)` (2025.), dok se platformski udjeli mijenjaju. Taj obrazac opisuje prikupljeni korpus i sam po sebi ne dokazuje stvarnu seobu publike ni pluralizaciju prostora.</p>
 <p><a href="https://lusiki.github.io/DigiKat/pages/mapa/evolucija.html">Evolucija ekosustava — cijela analiza</a></p>
 </div>
 <div class="lang-en">
 <h3>Ecosystem evolution</h3>
-<p>The fifth layer offers a temporal cross-section: the share of the ten largest sources in recorded interactions falls from `r fmt_pct_en(conc_first)` (2021) to `r fmt_pct_en(conc_lfy)` (2025), while platform shares change. Because collection coverage changed in 2024, this pattern does not establish actual audience migration or pluralisation.</p>
+<p>The fifth layer offers a temporal cross-section: the share of the ten largest sources in recorded interactions falls from `r fmt_pct_en(conc_first)` (2021) to `r fmt_pct_en(conc_lfy)` (2025), while platform shares change. This pattern describes the collected corpus and does not in itself establish actual audience migration or pluralisation.</p>
 <p><a href="https://lusiki.github.io/DigiKat/pages/mapa/evolucija.html">Ecosystem evolution — full analysis</a></p>
 </div>
 </div>
@@ -508,10 +508,10 @@ The project follows open-science principles: the corpus manifest, text- and URL-
 :::
 
 ::: {.lang-hr}
-Korpus je istraživačka infrastruktura za opaženi dio hrvatskoga digitalnog prostora: `r n_platforms` vrsta izvora i platformi kroz `r last_year - first_year + 1` kalendarskih godina, uz promjenu načina prikupljanja 2024. i nepotpunu 2026. godinu. Nije cjelovit popis medija ni vjerojatnosni uzorak populacije, ali javni agregati omogućuju provjeru kodiranih opisnih nalaza i razvoj novih analiza uz jasno navedene granice.
+Korpus je istraživačka infrastruktura za opaženi dio hrvatskoga digitalnog prostora: `r n_platforms` vrsta izvora i platformi kroz `r last_year - first_year + 1` kalendarskih godina, uz nepotpunu 2026. godinu. Nije cjelovit popis medija ni vjerojatnosni uzorak populacije, ali javni agregati omogućuju provjeru kodiranih opisnih nalaza i razvoj novih analiza uz jasno navedene granice.
 :::
 ::: {.lang-en}
-The corpus is research infrastructure for an observed portion of Croatia's digital space: `r n_platforms` source and platform types across `r last_year - first_year + 1` calendar years, with a collection-method change in 2024 and an incomplete 2026. It is neither a complete media census nor a probability sample, but its public aggregates allow coded descriptive findings to be checked and new analyses to be developed within explicit limits.
+The corpus is research infrastructure for an observed portion of Croatia's digital space: `r n_platforms` source and platform types across `r last_year - first_year + 1` calendar years, with an incomplete 2026. It is neither a complete media census nor a probability sample, but its public aggregates allow coded descriptive findings to be checked and new analyses to be developed within explicit limits.
 :::
 
 <!-- ============================ AGENTSKI SLOJ ============================ -->

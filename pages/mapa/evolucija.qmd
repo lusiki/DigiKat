@@ -170,7 +170,7 @@ stopifnot(length(posts_first) == 1, length(posts_lfy) == 1,
 
 Mijenja li se tko dominira ovim prostorom i seli li se pažnja s portala na društvene mreže? Prethodne su mape opisale [aktere i platforme](mapa.html), [Tematske struje](mapa_stats.html), [Atmosferu diskursa](diskurs.html) te [Fokus na događaje](događaji.html). Ova peta analitička mapa, **Evolucija ekosustava**, prati promjene u opaženom korpusu od `r first_year`. do `r last_year`. godine: volumen objava, raspodjelu interakcija među platformama i koncentraciju interakcija među izvorima. Odgovara na istraživačko pitanje Q5 o odnosima među platformama.
 
-Mjereno je na cijelom korpusu od `r fmt_int(corpus_total)` objava, bez uzorkovanja. Kako je korpus nastao i zašto se volumen ne smije uspoređivati preko 2024., opisano je u [Metodologiji](../metodologija.html).
+Mjereno je na cijelom korpusu od `r fmt_int(corpus_total)` objava, bez uzorkovanja. Kako je korpus nastao i kako se čitaju godišnji volumeni, opisano je u [Metodologiji](../metodologija.html).
 
 Ova je mapa namjerno strukturna, a ne sadržajna. Ona broji objave te uspoređuje udjele i koncentraciju zabilježenih interakcija, ali ne analizira tonalitet, emocije ni pojedine događaje. Sadržajnom dinamikom oko konkretnih događaja bavi se [Fokus na događaje](događaji.html).
 
@@ -233,7 +233,7 @@ ggplot(rast_monthly, aes(x = month, y = total_posts, colour = SOURCE_TYPE)) +
   )
 ```
 
-Prikaz je mjesečan kako bi uključio stvarne podatke za nepotpunu `r last_year`. godinu, bez procjene do kraja godine. Opaženi broj objava iznosi `r fmt_int(posts_first)` u `r first_year`. i `r fmt_int(posts_lfy)` u posljednjoj potpunoj, `r last_full_year`. godini, odnosno `r fmt_x(growth_ratio)` puta više. Taj omjer nije procjena rasta medijske pažnje jer prelazi preko promjene prikupljanja 2024. Web ostaje najveća platforma po volumenu. Facebook i YouTube rastu brže od weba do 2025., ali s niže osnovice i unutar promijenjenoga obuhvata; Instagram i TikTok pojavljuju se tek u kasnijem toku prikupljanja.
+Prikaz je mjesečan kako bi uključio stvarne podatke za nepotpunu `r last_year`. godinu, bez procjene do kraja godine. Opaženi broj objava iznosi `r fmt_int(posts_first)` u `r first_year`. i `r fmt_int(posts_lfy)` u posljednjoj potpunoj, `r last_full_year`. godini, odnosno `r fmt_x(growth_ratio)` puta više. Web ostaje najveća platforma po volumenu. Facebook i YouTube rastu brže od weba do 2025., ali s niže osnovice, dok se Instagram i TikTok u korpusu pojavljuju tek od 2024.
 
 ---
 
@@ -272,7 +272,7 @@ ggplot(mig_monthly, aes(x = month, y = interaction_share, fill = SOURCE_TYPE)) +
   )
 ```
 
-Prikaz uključuje podatke do `r cutoff_lbl`. Udio weba u zabilježenim interakcijama `r web_dir` s `r fmt_pct(web_ishare_first)` u `r first_year`. na `r fmt_pct(web_ishare_last)` u posljednjoj potpunoj, `r last_full_year`. godini. Facebook i YouTube istodobno nose veći dio opaženih interakcija. Taj pomak nije moguće odvojiti od promjene prikupljanja, kasnijeg ulaska Instagrama i TikToka te niske početne osnovice Facebooka. Interakcije također nisu jednako definirane na svim platformama, pa grafikon prikazuje raspodjelu zabilježenog signala, a ne izravno usporedivu seobu publike. Doseg nije glavna mjera jer je za dio platformi nedostupan i metodološki neproziran.
+Prikaz uključuje podatke do `r cutoff_lbl`. Udio weba u zabilježenim interakcijama `r web_dir` s `r fmt_pct(web_ishare_first)` u `r first_year`. na `r fmt_pct(web_ishare_last)` u posljednjoj potpunoj, `r last_full_year`. godini. Facebook i YouTube istodobno nose veći dio opaženih interakcija. Na taj pomak utječu i kasniji ulazak Instagrama i TikToka te niska početna osnovica Facebooka. Interakcije nisu jednako definirane na svim platformama, pa grafikon prikazuje raspodjelu zabilježenog signala, a ne izravno usporedivu seobu publike. Doseg nije glavna mjera jer je za dio platformi nedostupan i metodološki neproziran.
 
 ---
 
@@ -354,13 +354,13 @@ Među godinama s potpunom mjesečnom pokrivenošću (`r rhythm_years_lbl`) opaž
 Promatrani korpus pokazuje tri obrasca između `r first_year`. i posljednje potpune, `r last_full_year`. godine: veći opaženi volumen, manji udio weba u zabilježenim interakcijama i nižu koncentraciju interakcija među deset najvećih izvora.
 :::
 
-Sve tri promjene valja čitati kao opis prikupljenog korpusa: promjena metode oko 2024. utječe na volumen, broj izvora i njihove udjele, pa se iz tih nizova ne izdvaja zasebna promjena cijeloga medijskog prostora.
+Sve tri promjene opisuju prikupljeni korpus, a ne cjelokupni hrvatski medijski prostor.
 
-**Opaženi volumen je veći.** U korpusu je `r fmt_x(growth_ratio)` puta više objava u `r last_full_year`. nego u `r first_year`., uz promjenu načina prikupljanja između tih godina.
+**Opaženi volumen je veći.** U korpusu je `r fmt_x(growth_ratio)` puta više objava u `r last_full_year`. nego u `r first_year`.
 
 **Raspodjela interakcija se mijenja.** Udio weba `r web_dir` s `r fmt_pct(web_ishare_first)` na `r fmt_pct(web_ishare_last)`, dok rastu udjeli Facebooka i YouTubea. To je promjena zabilježenog signala, ne izravna mjera seobe publike.
 
-**Opažena koncentracija pada.** Udio deset najvećih izvora smanjuje se s `r fmt_pct(conc_first)` na `r fmt_pct(top10_last)`, a broj izvora s interakcijama raste `r fmt_x(actor_growth)` puta. Promjena obuhvata ne dopušta da se taj nalaz bez ograde protumači kao stvarna pluralizacija prostora.
+**Opažena koncentracija pada.** Udio deset najvećih izvora smanjuje se s `r fmt_pct(conc_first)` na `r fmt_pct(top10_last)`, a broj izvora s interakcijama raste `r fmt_x(actor_growth)` puta.
 
 Za onoga tko objavljuje, najvažnija je promjena raspodjele interakcija među platformama. Težište zabilježenog odjeka pomiče se s weba prema Facebooku i YouTubeu, pa strategija koja se oslanja samo na portal pokriva sve manji dio prostora. Istodobno pada koncentracija, što znači da uz nekoliko velikih izvora prostora ima i za manje. Obje su tvrdnje o prikupljenom korpusu, a ne mjera stvarne seobe publike.
 

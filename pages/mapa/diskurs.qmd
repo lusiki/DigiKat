@@ -258,7 +258,7 @@ U novim sažecima najviši prosječni RIK imaju parovi `r fmt_list(highest_rik_p
 
 Tri se opisna nalaza izdvajaju. Prvo, prosječni tonalitet u uzorku mijenja se kroz kombinacije teme i dominantne emocionalne oznake. Drugo, izvori se razlikuju i po prosječnoj gustoći konfliktnog rječnika i po varijabilnosti RIK-a, ali iz tih položaja nije moguće zaključiti njihovu strategiju ili namjeru. Treće, parovi tema razlikuju se po učestalosti, tonalitetu i relativnoj zastupljenosti konfliktnog rječnika; mreža prikazuje kontinuirane razlike, a ne unaprijed zadanu podjelu prostora.
 
-Rezultati ovise o automatskoj tematskoj klasifikaciji, rječnicima i tome što je mjereno na dijelu korpusa. Osobito su oprezno potrebni rijetki parovi tema i usporedbe preko promjene prikupljanja 2024.
+Rezultati ovise o automatskoj tematskoj klasifikaciji, rječnicima i tome što je mjereno na dijelu korpusa. Osobito su oprezno potrebni rijetki parovi tema, koje podupire malo tekstova.
 
 Za uredništvo je čitljiv nalaz to da oštrina rječnika nije svojstvo izvora nego kombinacije izvora i teme. Isti izvor piše mirno o jednoj temi i oštro o drugoj, pa tko prati vlastiti ton ima smisla gledati ga po temama, a ne kao jedan prosjek.
 
