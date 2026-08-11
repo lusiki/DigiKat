@@ -105,6 +105,48 @@
     "text": "Novosti i događanja\n\n\nUskoro\nSiječanj 2026 Prezentacija rezultata prvog godišnjeg izvještaja.\n\n\nDogađanja u 2025. godini\n\n\n\nProsinac 2025 Interna radionica za planiranje aktivnosti u 2026. godini.\n\n\nTim je evaluirao rad u prvoj godini projekta i definirao prioritete za sljedeću fazu istraživanja.\n\n\n\n\nStudeni 2025 Objavljen prvi tehnički izvještaj o sustavu za prikupljanje podataka.\n\n\nDetaljno dokumentiran proces razvoja infrastrukture, algoritmi i tehnička rješenja objavljena su u internom dokumentu.\n\n\n\n\nListopad 2025 Provedena analiza tonaliteta na povijesnim podacima.\n\n\nRačunalnom obradom teksta automatski je određen tonalitet prikupljenih objava.\n\n\n\n\nRujan 2025 Održana radionica za podjelu tematskih istraživanja.\n\n\nDefiniranje smjerova istraživanja i podjela zaduženja unutar tima za prvu seriju tematskih analiza.\n\n\n\n\nKolovoz 2025 Integracija analitičkih alata i aplikacije nadzorne ploče.\n\n\nImplementirana interaktivna nadzorna ploča za praćenje ključnih metrika i trendova u prikupljenim podacima.\n\n\n\n\nSrpanj 2025 Objavljena baza podataka na Kaggle platformi.\n\n\nPrvi javno dostupan skup podataka projekta objavljen je na Kaggle platformi, omogućavajući široj akademskoj zajednici pristup podacima.\n\n\n\n\nLipanj 2025 Uspješno uspostavljen sustav za prikupljanje podataka u realnom vremenu.\n\n\nAutomatizirani sustav za praćenje digitalnih medija 24/7 postaje operativan.\n\n\n\n\nSvibanj 2025 Prezentacija preliminarnih rezultata na internom seminaru.\n\n\nTim je predstavio prve uvide iz povijesnih podataka i planove za tematske analize.\n\n\n\n\nTravanj 2025 Pokrenuta nova verzija web stranice projekta.\n\n\nPoboljšana verzija stranice postavljena je za testiranje i interne potrebe tima.\n\n\n\n\nTravanj 2025 Završena prva faza prikupljanja povijesnih podataka.\n\n\nUspješno je prikupljen i obrađen korpus podataka iz razdoblja 2021.–2024., čime je stvoren temelj za daljnje analize.\n\n\n\n\nOžujak 2025 Metodološka radionica tima.\n\n\nOdržana je interna radionica o računalnoj obradi teksta za potrebe projekta.\n\n\n\n\nVeljača 2025 Finaliziran kod za prikupljanje podataka (v1.0).\n\n\nNakon višemjesečnog razvoja, prva stabilna verzija alata za automatsko prikupljanje objava spremna je za rad.\n\n\n\n\nSiječanj 2025 Službeni početak projekta i konstituiranje tima!\n\n\nOdržan je početni (kick off) sastanak projektnog tima, usvojen je finalni plan rada te su potvrđene uloge i odgovornosti svih članova, čime je formaliziran rad nakon odobrenja financiranja krajem 2022. godine.\n\n\n\n\n\nDogađanja u 2024. godini\n\n\n\nProsinac 2024 Javno predstavljanje projekta na HKS-u.\n\n\nProjekt, njegovi ciljevi i metodologija službeno su predstavljeni akademskoj zajednici i javnosti. Pokrenuta je i službena web stranica projekta.\n\n\n\n\nStudeni 2024 Predstavljanje projekta na HKS-u\n\n\nProjektni ciljevi i metodologija predstavljeni su na internom seminaru Odjela za komunikologiju."
   },
   {
+    "objectID": "pages/metodologija.html",
+    "href": "pages/metodologija.html",
+    "title": "Metodologija",
+    "section": "",
+    "text": "Ova stranica okuplja tehnički dio projekta na jednom mjestu. Ostale stranice vode računa o tome što podaci pokazuju; ovdje piše kako su nastali, na čemu su mjereni i što se iz njih ne smije zaključiti. Namijenjena je čitatelju koji želi provjeriti postupak, ponoviti ga ili citirati.\nSvaka brojka na ovoj stranici izračunata je iz praćenih manifesta koji nastaju zajedno s podacima. Nijedna nije prepisana rukom."
+  },
+  {
+    "objectID": "pages/metodologija.html#što-ulazi-u-korpus",
+    "href": "pages/metodologija.html#što-ulazi-u-korpus",
+    "title": "Metodologija",
+    "section": "Što ulazi u korpus",
+    "text": "Što ulazi u korpus\nSlužbeni korpus sadrži 413.985 objava i 54 stupca, prikupljenih u razdoblju 2021.–2026. na 9 vrsta izvora i platformi. U njega ulazi objava koja prođe dva uzastopna uvjeta.\nPrvi uvjet je rječnički. Objava mora unutar prvih 3.000 znakova teksta pogoditi najmanje 1 odlučan i najmanje 2 različita pojma s popisa od 119 pojmova. Popis razlikuje 99 pojmova koji sami po sebi upućuju na katoličku tematiku i 20 pojmova koji se u hrvatskom javljaju i izvan religijskog konteksta, pa ne mogu sami donijeti odluku.\nOgraničenje na prvih 3.000 znakova nije tehnička sitnica. Ranije je rječnik čitao cijeli tekst, a drugi uvjet i ljudski koderi samo početak, pa su u korpus ulazile objave čiji je jedini religijski trag bio duboko u tekstu i tipično nije imao veze s temom. Od svih takvih objava koje su pročitane ručno nijedna nije bila katolički sadržaj, pa se pravilo sada na oba mjesta primjenjuje na isti prozor.\nDrugi uvjet je modelski. Objava koja prođe rječnik ocjenjuje se statističkim modelom uvježbanim na ručno označenim primjerima i ulazi u korpus samo ako dosegne ocjenu od najmanje 0,70. Prag je odluka voditelja projekta iz kolovoza 2026. i namjerno je postavljen tako da zadrži volumen. Viši prag daje čišći, ali manji korpus.\nIsto pravilo vrijedi za cijelo razdoblje. To je bitno jer se metoda prikupljanja mijenjala, a pravilo uključivanja nije smjelo pratiti tu promjenu.\n\nKoliko je korpus čist\nPreciznost je mjerena ručnim čitanjem 250 objava po razdoblju. Na tako mjerenoj osnovici zajednička krivulja procjenjuje da je oko 84,5 % objava u korpusu doista katolički sadržaj, uz zadržanih oko 87,2 % onoga što jest katolički sadržaj. Kvaliteta nije jednaka u oba razdoblja (68,0 % prije 2024. i 87,0 % poslije, mjereno pri nižem pragu), i ta je razlika svojstvo prikupljanja, a ne mjerenja.\nDrugim riječima, korpus je namjerno širok. Manji dio objava u njemu spominje katoličke pojmove, a nije o njima; ta razina šuma opisana je i mjerena, a ne prešućena.\n\n\n\nPravilo uključivanja u brojkama. Izvor: manifest službenoga korpusa, nastao uz korpus u R/build_corpus.R.\n\n\nStavka\nVrijednost\n\n\n\n\nObjava u korpusu\n413.985\n\n\nStupaca\n54\n\n\nRazdoblje\n2021.–2026.\n\n\nVrsta izvora i platformi\n9\n\n\nPojmova na popisu\n119 (99 odlučnih, 20 dvojbenih)\n\n\nProzor teksta\nprvih 3.000 znakova\n\n\nPrag modela\n0,70"
+  },
+  {
+    "objectID": "pages/metodologija.html#dva-skupa-podataka-koja-nisu-zamjenjiva",
+    "href": "pages/metodologija.html#dva-skupa-podataka-koja-nisu-zamjenjiva",
+    "title": "Metodologija",
+    "section": "Dva skupa podataka koja nisu zamjenjiva",
+    "text": "Dva skupa podataka koja nisu zamjenjiva\nProjekt vodi dva odvojena skupa podataka i njihovo miješanje najčešći je način da se dobiju krive brojke.\nAkumulator (710.307 redaka, 47 stupaca) sve je što je servis za praćenje medija isporučio, bez ikakvog filtriranja. On raste sa svakom novom isporukom.\nSlužbeni korpus (413.985 objava) izrezan je iz akumulatora pravilom opisanim gore. Sve što opisuju stranice ovoga sjedišta, sve mape i svi javni agregati računaju se na njemu.\nDovršena tematska istraživanja i dalje čitaju akumulator, imenom, jer su na njemu izračunata i objavljena. Prebacivanje gotove analize na novi ulaz tiho bi promijenilo brojke koje su već objavljene, pa se to ne radi. Svako istraživanje na stranici Tematska istraživanja navodi na kojem je skupu izračunato.\nPraktična posljedica za čitatelja je jednostavna. Ako se brojka s neke stranice ne slaže s brojkom iz nekog istraživanja, prva provjera nije aritmetika nego to govore li o istom skupu podataka."
+  },
+  {
+    "objectID": "pages/metodologija.html#promjena-prikupljanja-2024.-i-što-ona-zabranjuje",
+    "href": "pages/metodologija.html#promjena-prikupljanja-2024.-i-što-ona-zabranjuje",
+    "title": "Metodologija",
+    "section": "Promjena prikupljanja 2024. i što ona zabranjuje",
+    "text": "Promjena prikupljanja 2024. i što ona zabranjuje\nTijekom 2024. promijenio se način na koji su objave prikupljane. Pravilo uključivanja ostalo je isto s obje strane te granice, pa su razdoblja usporediva po pravilu, ali nisu usporediva po zahvatu. Udio zadržanih objava skače za otprilike dvadeset postotnih bodova preko te granice, i to je svojstvo instrumenta, ne medijske stvarnosti.\n\n\n\nDva razdoblja prikupljanja pod istim pravilom uključivanja. Izvor: manifest službenoga korpusa, odjeljak o razdobljima.\n\n\n\n\n\n\n\n\n\nRazdoblje\nRaspon\nObjava u akumulatoru\nZadržano u korpusu\nUdio zadržanih\n\n\n\n\nPrije promjene\n2021-01-01 -&gt; 2024-07-04\n269.583\n192.861\n71,5 %\n\n\nPoslije promjene\n2024-07-01 -&gt; 2026-06-11\n440.724\n221.124\n50,2 %\n\n\n\n\n\nIz toga slijedi jedno ograničenje koje vrijedi na cijelom sjedištu. Porast broja objava preko 2024. nije porast medijske pažnje. Godišnji volumeni smiju se uspoređivati unutar istoga toka prikupljanja, a ne preko granice. Stranica Evolucija ekosustava zato prikazuje opaženi volumen i tu ogradu drži uz svaki prikaz.\nUz to, u vendorskom izvoru za razdoblje od veljače do svibnja 2024. nema teksta, pa nijedno razdoblje nema retke u tim mjesecima. Prikupljanje ima i kraćih prekida, koji su opisani na stranicama gdje utječu na izračun.\n\n\n\nZadržane objave po godini. Godina 2026. obuhvaća razdoblje do lipnja. Izvor: manifest službenoga korpusa, odjeljak o godinama.\n\n\nGodina\nU akumulatoru\nU korpusu\nUdio zadržanih\n\n\n\n\n2021.\n90.388\n62.151\n68,8 %\n\n\n2022.\n84.535\n59.657\n70,6 %\n\n\n2023.\n83.836\n64.069\n76,4 %\n\n\n2024.\n114.231\n56.923\n49,8 %\n\n\n2025.\n236.166\n124.346\n52,7 %\n\n\n2026.\n101.151\n46.839\n46,3 %"
+  },
+  {
+    "objectID": "pages/metodologija.html#uzorci-i-rječnici",
+    "href": "pages/metodologija.html#uzorci-i-rječnici",
+    "title": "Metodologija",
+    "section": "Uzorci i rječnici",
+    "text": "Uzorci i rječnici\nAnalize volumena, dosega i angažmana računaju se na cijelom korpusu. Analize teksta ne, jer jezična obrada cijeloga korpusa nije izvediva u razumnom vremenu, pa se one računaju na stratificiranim uzorcima. Svaki uzorak vučen je s fiksnim sjemenom slučajnosti (123), stratificiran po godini i platformi, ograničen na objave dulje od 100 znakova i bez platforme TikTok.\n\n\n\nStratificirani uzorci na kojima se računaju jezične analize.\n\n\nAnalitička razina\nCiljani udio korpusa\nDokumenata u uzorku\n\n\n\n\nTematske struje\n5,0 %\n20.658\n\n\nFokus na događaje\n3,0 %\n12.384\n\n\nAtmosfera diskursa\n2,0 %\n8.250\n\n\n\n\n\n\nIzvor: data/nlp/manifest.json, nastao u R/04_nlp.R.\n\nPosljedica uzorkovanja je da su dnevne i rijetke vrijednosti nesigurne. Kada se neki nalaz oslanja na mali broj dokumenata, stranica na kojoj stoji navodi taj broj uz nalaz.\nJezična obrada. Tekst se prije analize svodi na mala slova, dijeli na riječi i svodi na osnovne oblike modelom croatian-set-ud-2.5-191206.udpipe, uvježbanim na hrvatskom. Bez toga bi se Misa i misa brojile kao dvije različite riječi.\nTematske kategorije. Objave se razvrstavaju u unaprijed definirane tematske kategorije, a ima ih 16. Razvrstavanje radi rječnik. Riječ je o pravilima, ne o modelu koji sam pronalazi teme, pa su kategorije stabilne kroz vrijeme i provjerljive, ali ne mogu prepoznati temu koju rječnik ne pokriva.\nRječnici tonaliteta i emocija. Leksički tonalitet mjeri se rječnicima CroSentilex i CroSentilex Gold, a emocionalne oznake leksikonom lilaHR, koji razlikuje osam emocija. Svi rade na osnovnim oblicima riječi, pa se moraju spajati na jednako obrađen tekst.\nRelativni indeks konflikta (RIK) razlika je između opažene gustoće konfliktnog rječnika u tekstu i one koja bi se očekivala s obzirom na prosjek toga izvora i te teme. Mjeri odstupanje od očekivanog, ne apsolutnu razinu sukoba.\n\n\n\n\n\n\nVažnoŠto ove mjere ne mjere\n\n\n\nSve navedeno mjeri riječi u tekstu. Tonalitet nije osjećaj autora, emocionalna oznaka nije reakcija publike, a gustoća konfliktnog rječnika nije dokaz sukoba ni namjere. Doseg je vendorska procjena, ne izmjerena publika. Nalazi su opisni i takvima ih valja čitati."
+  },
+  {
+    "objectID": "pages/metodologija.html#reproducibilnost",
+    "href": "pages/metodologija.html#reproducibilnost",
+    "title": "Metodologija",
+    "section": "Reproducibilnost",
+    "text": "Reproducibilnost\nKod, pravila i agregati javni su na GitHubu pod licencijom CC BY 4.0. Sam korpus i akumulator sadrže puni tekst objava i nisu javni, pa se pristup retcima odobrava zasebno; sve što se objavljuje izvedeno je iz njih bez osobnih podataka.\nLanac obrade ide jednim smjerom i svaki korak zapisuje vlastiti manifest s otiskom ulaza iz kojega je nastao.\n\nSirove isporuke ulaze u akumulator.\nIz akumulatora se pravilom uključivanja izrezuje službeni korpus (R/build_corpus.R).\nIz korpusa se računaju javni agregati (R/03_aggregate.R) i jezična obrada (R/04_nlp.R).\nStranice čitaju agregate i manifeste. Nijedna stranica ne računa korpus iznova.\n\nZato se sve brojke na ovom sjedištu mogu vezati uz otisak podataka iz kojega su nastale. Ako agregati nisu izgrađeni iz aktualnog korpusa, provjera u kodu prekida izradu stranice umjesto da objavi brojku koja ne odgovara prikazu ispod nje.\nPopis izvora, njihovih profila i uredničkih oznaka opisan je u Katalogu izvora. Struktura same baze i značenje svakoga stupca opisani su na stranici Baza podataka."
+  },
+  {
     "objectID": "pages/mapa/mapa.html",
     "href": "pages/mapa/mapa.html",
     "title": "Mapa ekosustava — katolički digitalni prostor u RH (2021.–2026.)",
@@ -284,7 +326,7 @@
     "href": "pages/izvori/youtube-rtl.html#izvori-podataka",
     "title": "RTL",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/youtube-pod-smokvom.html",
@@ -326,7 +368,7 @@
     "href": "pages/izvori/youtube-pod-smokvom.html#izvori-podataka",
     "title": "Pod Smokvom",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/youtube-majko-marijo.html",
@@ -368,7 +410,7 @@
     "href": "pages/izvori/youtube-majko-marijo.html#izvori-podataka",
     "title": "Majko Marijo",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/youtube-hrana-za-dusu.html",
@@ -410,7 +452,7 @@
     "href": "pages/izvori/youtube-hrana-za-dusu.html#izvori-podataka",
     "title": "Hrana za dušu",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/youtube-budifrajer.html",
@@ -452,7 +494,7 @@
     "href": "pages/izvori/youtube-budifrajer.html#izvori-podataka",
     "title": "budiFRAjer",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/youtube-bog-je-tu.html",
@@ -494,7 +536,7 @@
     "href": "pages/izvori/youtube-bog-je-tu.html#izvori-podataka",
     "title": "Bog Je Tu",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/web-telegram-hr.html",
@@ -536,7 +578,7 @@
     "href": "pages/izvori/web-telegram-hr.html#izvori-podataka",
     "title": "telegram.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/web-novizivot-net.html",
@@ -578,7 +620,7 @@
     "href": "pages/izvori/web-novizivot-net.html#izvori-podataka",
     "title": "novizivot.net",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/web-narod-hr.html",
@@ -620,7 +662,7 @@
     "href": "pages/izvori/web-narod-hr.html#izvori-podataka",
     "title": "narod.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/web-jutarnji-hr.html",
@@ -662,7 +704,7 @@
     "href": "pages/izvori/web-jutarnji-hr.html#izvori-podataka",
     "title": "jutarnji.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/web-hkm-hr.html",
@@ -704,7 +746,7 @@
     "href": "pages/izvori/web-hkm-hr.html#izvori-podataka",
     "title": "hkm.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/web-dnevnik-hr.html",
@@ -746,7 +788,7 @@
     "href": "pages/izvori/web-dnevnik-hr.html#izvori-podataka",
     "title": "dnevnik.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/web-caritas-hr.html",
@@ -788,7 +830,7 @@
     "href": "pages/izvori/web-caritas-hr.html#izvori-podataka",
     "title": "caritas.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/web-24sata-hr.html",
@@ -830,7 +872,7 @@
     "href": "pages/izvori/web-24sata-hr.html#izvori-podataka",
     "title": "24sata.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/twitter-vlada-republike-hrvatske.html",
@@ -872,7 +914,7 @@
     "href": "pages/izvori/twitter-vlada-republike-hrvatske.html#izvori-podataka",
     "title": "Vlada Republike Hrvatske",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/twitter-stephen-nikola-bartulica.html",
@@ -914,7 +956,7 @@
     "href": "pages/izvori/twitter-stephen-nikola-bartulica.html#izvori-podataka",
     "title": "Stephen Nikola Bartulica",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/twitter-pavel-gregoric.html",
@@ -956,7 +998,7 @@
     "href": "pages/izvori/twitter-pavel-gregoric.html#izvori-podataka",
     "title": "Pavel Gregoric",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/twitter-ivan-anusic.html",
@@ -998,7 +1040,7 @@
     "href": "pages/izvori/twitter-ivan-anusic.html#izvori-podataka",
     "title": "Ivan Anušić",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/twitter-dominik-alpeza.html",
@@ -1040,7 +1082,7 @@
     "href": "pages/izvori/twitter-dominik-alpeza.html#izvori-podataka",
     "title": "Dominik Alpeza",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/twitter-darko-lesinger.html",
@@ -1082,7 +1124,7 @@
     "href": "pages/izvori/twitter-darko-lesinger.html#izvori-podataka",
     "title": "Darko Lesinger",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/twitter-andrej-plenkovic.html",
@@ -1124,7 +1166,7 @@
     "href": "pages/izvori/twitter-andrej-plenkovic.html#izvori-podataka",
     "title": "Andrej Plenković",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/tiktok-vecernjilist.html",
@@ -1166,7 +1208,7 @@
     "href": "pages/izvori/tiktok-vecernjilist.html#izvori-podataka",
     "title": "vecernjilist",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/tiktok-slobodna-dalmacija.html",
@@ -1208,7 +1250,7 @@
     "href": "pages/izvori/tiktok-slobodna-dalmacija.html#izvori-podataka",
     "title": "slobodna.dalmacija",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/tiktok-plenkovic-andrej.html",
@@ -1250,7 +1292,7 @@
     "href": "pages/izvori/tiktok-plenkovic-andrej.html#izvori-podataka",
     "title": "plenkovic_andrej",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/tiktok-kristijanilicic.html",
@@ -1292,7 +1334,7 @@
     "href": "pages/izvori/tiktok-kristijanilicic.html#izvori-podataka",
     "title": "kristijanilicic",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/tiktok-index-hr.html",
@@ -1334,7 +1376,7 @@
     "href": "pages/izvori/tiktok-index-hr.html#izvori-podataka",
     "title": "index.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/tiktok-hrvatska-radiotelevizija.html",
@@ -1376,7 +1418,7 @@
     "href": "pages/izvori/tiktok-hrvatska-radiotelevizija.html#izvori-podataka",
     "title": "hrvatska_radiotelevizija",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/tiktok-dontomolukac.html",
@@ -1418,7 +1460,7 @@
     "href": "pages/izvori/tiktok-dontomolukac.html#izvori-podataka",
     "title": "dontomolukac",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/tiktok-crovibes.html",
@@ -1460,7 +1502,7 @@
     "href": "pages/izvori/tiktok-crovibes.html#izvori-podataka",
     "title": "crovibes",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/platforma-web.html",
@@ -1523,7 +1565,7 @@
     "href": "pages/izvori/instagram-zenskisvijet.html#izvori-podataka",
     "title": "zenskisvijet",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/instagram-oslobodjenje-ba.html",
@@ -1565,7 +1607,7 @@
     "href": "pages/izvori/instagram-oslobodjenje-ba.html#izvori-podataka",
     "title": "oslobodjenje.ba",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/instagram-kristijanilicic.html",
@@ -1607,7 +1649,7 @@
     "href": "pages/izvori/instagram-kristijanilicic.html#izvori-podataka",
     "title": "kristijanilicic",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/instagram-jutarnji-hr.html",
@@ -1649,7 +1691,7 @@
     "href": "pages/izvori/instagram-jutarnji-hr.html#izvori-podataka",
     "title": "jutarnji.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/instagram-insidebosnia.html",
@@ -1691,7 +1733,7 @@
     "href": "pages/izvori/instagram-insidebosnia.html#izvori-podataka",
     "title": "insidebosnia",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/instagram-hns-cff.html",
@@ -1733,7 +1775,7 @@
     "href": "pages/izvori/instagram-hns-cff.html#izvori-podataka",
     "title": "hns_cff",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/instagram-dnevniavaz.html",
@@ -1775,7 +1817,7 @@
     "href": "pages/izvori/instagram-dnevniavaz.html#izvori-podataka",
     "title": "dnevniavaz",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/facebook-zagrebacka-nadbiskupija.html",
@@ -1817,7 +1859,7 @@
     "href": "pages/izvori/facebook-zagrebacka-nadbiskupija.html#izvori-podataka",
     "title": "Zagrebačka nadbiskupija",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/facebook-vjera-u-nama.html",
@@ -1859,7 +1901,7 @@
     "href": "pages/izvori/facebook-vjera-u-nama.html#izvori-podataka",
     "title": "VJERA U NAMA †",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/facebook-slobodna-dalmacija.html",
@@ -1901,7 +1943,7 @@
     "href": "pages/izvori/facebook-slobodna-dalmacija.html#izvori-podataka",
     "title": "Slobodna Dalmacija",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/facebook-radio-marija-hrvatska.html",
@@ -1943,7 +1985,7 @@
     "href": "pages/izvori/facebook-radio-marija-hrvatska.html#izvori-podataka",
     "title": "Radio Marija Hrvatska",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/facebook-laudato.html",
@@ -1985,7 +2027,7 @@
     "href": "pages/izvori/facebook-laudato.html#izvori-podataka",
     "title": "Laudato",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/facebook-kapljice-ljubavi-bozje.html",
@@ -2027,7 +2069,7 @@
     "href": "pages/izvori/facebook-kapljice-ljubavi-bozje.html#izvori-podataka",
     "title": "Kapljice ljubavi Božje",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/facebook-gospa.html",
@@ -2069,7 +2111,7 @@
     "href": "pages/izvori/facebook-gospa.html#izvori-podataka",
     "title": "Gospa",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/facebook-bitno-net.html",
@@ -2111,7 +2153,7 @@
     "href": "pages/izvori/facebook-bitno-net.html#izvori-podataka",
     "title": "Bitno.net",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/baza.html",
@@ -2247,11 +2289,11 @@
     "text": "Od medijske objave do analize\nPodaci se prikupljaju u akumulator, iz njega se jedinstvenim pravilom izrezuje službeni korpus, a zatim se obrađuju i čitaju kroz četiri analitičke razine te peti, vremenski presjek. Dovršena tematska istraživanja ostaju na verzioniranim ulazima na kojima su objavljena.\n\n\n\n\n\n\n01\n\n\n\nPrikupljanje\n\n\nMedijske objave s portala, društvenih platformi i foruma pristižu kao tablice — svaki redak jedna objava, s tekstom, izvorom, datumom i pokazateljima dosega i angažmana.\n\n\n\nxlsxingest\n\n\n\n\n02\n\n\n\nFiltriranje\n\n\nOd svega prikupljenog zadržavaju se samo objave koje doista govore o katoličkim temama. Odluku donosi popis religijskih pojmova i, nakon njega, model uvježban na ručno pročitanim primjerima. Pravilo je isto za cijelo razdoblje, a u cijelosti je opisano u Metodologiji.\n\n\n\npravilo uključivanjaisto za sve godine\n\n\n\n\n03\n\n\n\nSlužbeni korpus\n\n\nAkumulator zadržava sve što je servis isporučio. Iz njega je izveden službeni korpus od 413.985 objava i 54 stupca, na kojem se grade žive stranice, mape i javni agregati. Dovršena tematska istraživanja nisu prebačena na novi ulaz.\n\n\n\n413.985 × 54manifest + provenance\n\n\n\n\n04\n\n\n\nObrada\n\n\nIz službenog korpusa računaju se pregledi po godini i platformi, a tekst se računalno obrađuje kako bi se riječi mogle pouzdano brojiti i uspoređivati.\n\n\n\npreglediobrada teksta\n\n\n\n\n05\n\n\n\nAnaliza\n\n\nSlužbeni korpus čita se kroz četiri analitičke razine: mapu ekosustava, tematske struje, atmosferu diskursa i fokus na događaje. Peti prikaz daje vremenski presjek evolucije ekosustava, uz ogradu zbog promjene prikupljanja 2024.\n\n\n\nekosustavtemediskursdogađaji"
   },
   {
-    "objectID": "pages/about.html#doprinos-i-vrijednost-projekta",
-    "href": "pages/about.html#doprinos-i-vrijednost-projekta",
+    "objectID": "pages/about.html#otvorena-znanost-na-djelu",
+    "href": "pages/about.html#otvorena-znanost-na-djelu",
     "title": "O projektu",
-    "section": "Doprinos i vrijednost projekta",
-    "text": "Doprinos i vrijednost projekta\nProjekt donosi vrijednost na dvije razine — razvoj vještina sudionika i praksu otvorene znanosti.\n\nRazvoj vještina\nSudionici projekta imat će priliku raditi s najnovijim računalnim tehnikama i alatima. Kroz praktičan rad, razvijat će vještine u analizi velikih količina podataka (Big Data), rudarenju teksta (Text Mining) i statističkom modeliranju.\n\nBig Data Text Mining Statističko modeliranje R Python NLP Strojno učenje Mrežna analiza\n\n\n\nOtvorena znanost na djelu\nPosebna vrijednost projekta leži u njegovoj predanosti principima otvorenosti i transparentnosti. Naš rad temelji se na principima otvorene znanosti i reproducibilnosti istraživanja.\nSvi alati, skripte i metodološki okviri bit će dostupni kao otvoreni kod na GitHubu, omogućujući drugima da provjere, repliciraju i nadograde naš rad.\nKroz ovakav pristup potičemo suradnju, jačamo istraživačke profile mladih znanstvenika i doprinosimo otvorenijoj i reproducibilnoj znanstvenoj praksi."
+    "section": "Otvorena znanost na djelu",
+    "text": "Otvorena znanost na djelu\nPosebna vrijednost projekta leži u njegovoj predanosti principima otvorenosti i transparentnosti. Naš rad temelji se na principima otvorene znanosti i reproducibilnosti istraživanja.\nSvi alati, skripte i metodološki okviri bit će dostupni kao otvoreni kod na GitHubu, omogućujući drugima da provjere, repliciraju i nadograde naš rad.\nKroz ovakav pristup potičemo suradnju, jačamo istraživačke profile mladih znanstvenika i doprinosimo otvorenijoj i reproducibilnoj znanstvenoj praksi."
   },
   {
     "objectID": "pages/about.html#voditelj-projekta",
@@ -2307,7 +2349,7 @@
     "href": "pages/izvori/facebook-24sata.html#izvori-podataka",
     "title": "24sata",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/facebook-dnevnik-hr.html",
@@ -2349,7 +2391,7 @@
     "href": "pages/izvori/facebook-dnevnik-hr.html#izvori-podataka",
     "title": "DNEVNIK.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/facebook-index-hr.html",
@@ -2391,7 +2433,7 @@
     "href": "pages/izvori/facebook-index-hr.html#izvori-podataka",
     "title": "Index.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/facebook-kraljica-mira.html",
@@ -2433,7 +2475,7 @@
     "href": "pages/izvori/facebook-kraljica-mira.html#izvori-podataka",
     "title": "Kraljica Mira",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/facebook-net-hr.html",
@@ -2475,7 +2517,7 @@
     "href": "pages/izvori/facebook-net-hr.html#izvori-podataka",
     "title": "Net.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/facebook-rtl-danas.html",
@@ -2517,7 +2559,7 @@
     "href": "pages/izvori/facebook-rtl-danas.html#izvori-podataka",
     "title": "RTL Danas",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/facebook-vecernji-list.html",
@@ -2559,7 +2601,7 @@
     "href": "pages/izvori/facebook-vecernji-list.html#izvori-podataka",
     "title": "Večernji list",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/facebook-vjera.html",
@@ -2601,7 +2643,7 @@
     "href": "pages/izvori/facebook-vjera.html#izvori-podataka",
     "title": "VJERA",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/index.html",
@@ -2692,7 +2734,7 @@
     "href": "pages/izvori/instagram-ekostraza.html#izvori-podataka",
     "title": "ekostraza",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/instagram-hrvatskivojnik-magazin.html",
@@ -2734,7 +2776,7 @@
     "href": "pages/izvori/instagram-hrvatskivojnik-magazin.html#izvori-podataka",
     "title": "hrvatskivojnik_magazin",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/instagram-ivan-anusic-hr.html",
@@ -2776,7 +2818,7 @@
     "href": "pages/izvori/instagram-ivan-anusic-hr.html#izvori-podataka",
     "title": "ivan.anusic.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/instagram-klaskalica.html",
@@ -2818,7 +2860,7 @@
     "href": "pages/izvori/instagram-klaskalica.html#izvori-podataka",
     "title": "klaskalica",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/instagram-laudatotv.html",
@@ -2860,7 +2902,7 @@
     "href": "pages/izvori/instagram-laudatotv.html#izvori-podataka",
     "title": "laudatotv",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/instagram-rina-rs.html",
@@ -2902,7 +2944,7 @@
     "href": "pages/izvori/instagram-rina-rs.html#izvori-podataka",
     "title": "_rina.rs",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/mreza.html",
@@ -2972,7 +3014,7 @@
     "href": "pages/izvori/tiktok-dnevnikhr.html#izvori-podataka",
     "title": "dnevnikhr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/tiktok-euforija-online.html",
@@ -3014,7 +3056,7 @@
     "href": "pages/izvori/tiktok-euforija-online.html#izvori-podataka",
     "title": "euforija.online",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/tiktok-hypetelevizija-hr.html",
@@ -3056,7 +3098,7 @@
     "href": "pages/izvori/tiktok-hypetelevizija-hr.html#izvori-podataka",
     "title": "hypetelevizija.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/tiktok-kamenkrsislanina.html",
@@ -3098,7 +3140,7 @@
     "href": "pages/izvori/tiktok-kamenkrsislanina.html#izvori-podataka",
     "title": "kamenkrsislanina",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/tiktok-mladifesthrvatska.html",
@@ -3140,7 +3182,7 @@
     "href": "pages/izvori/tiktok-mladifesthrvatska.html#izvori-podataka",
     "title": "mladifesthrvatska",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/tiktok-shkm2026.html",
@@ -3182,7 +3224,7 @@
     "href": "pages/izvori/tiktok-shkm2026.html#izvori-podataka",
     "title": "shkm2026",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/tiktok-trtbalkanbhsc.html",
@@ -3224,7 +3266,7 @@
     "href": "pages/izvori/tiktok-trtbalkanbhsc.html#izvori-podataka",
     "title": "trtbalkanbhsc",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/twitter-24sata.html",
@@ -3266,7 +3308,7 @@
     "href": "pages/izvori/twitter-24sata.html#izvori-podataka",
     "title": "24sata",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/twitter-dalija-oreskovic.html",
@@ -3308,7 +3350,7 @@
     "href": "pages/izvori/twitter-dalija-oreskovic.html#izvori-podataka",
     "title": "Dalija Orešković",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/twitter-dnevnik-hr.html",
@@ -3350,7 +3392,7 @@
     "href": "pages/izvori/twitter-dnevnik-hr.html#izvori-podataka",
     "title": "DNEVNIK.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/twitter-hrvatski-kanal.html",
@@ -3392,7 +3434,7 @@
     "href": "pages/izvori/twitter-hrvatski-kanal.html#izvori-podataka",
     "title": "Hrvatski Kanal",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/twitter-mate-mijic.html",
@@ -3434,7 +3476,7 @@
     "href": "pages/izvori/twitter-mate-mijic.html#izvori-podataka",
     "title": "Mate Mijić 🇭🇷",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/twitter-petar.html",
@@ -3476,7 +3518,7 @@
     "href": "pages/izvori/twitter-petar.html#izvori-podataka",
     "title": "Petar",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/twitter-vesna-rajnovic.html",
@@ -3518,7 +3560,7 @@
     "href": "pages/izvori/twitter-vesna-rajnovic.html#izvori-podataka",
     "title": "Vesna Rajnović 🌿",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/twitter-zagrebacka-nadbiskupija.html",
@@ -3560,7 +3602,7 @@
     "href": "pages/izvori/twitter-zagrebacka-nadbiskupija.html#izvori-podataka",
     "title": "Zagrebačka nadbiskupija",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/web-bitno-net.html",
@@ -3602,7 +3644,7 @@
     "href": "pages/izvori/web-bitno-net.html#izvori-podataka",
     "title": "bitno.net",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/web-dalmatinskiportal-hr.html",
@@ -3644,7 +3686,7 @@
     "href": "pages/izvori/web-dalmatinskiportal-hr.html#izvori-podataka",
     "title": "dalmatinskiportal.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/web-dnevno-hr.html",
@@ -3686,7 +3728,7 @@
     "href": "pages/izvori/web-dnevno-hr.html#izvori-podataka",
     "title": "dnevno.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/web-index-hr.html",
@@ -3728,7 +3770,7 @@
     "href": "pages/izvori/web-index-hr.html#izvori-podataka",
     "title": "index.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/web-laudato-hr.html",
@@ -3770,7 +3812,7 @@
     "href": "pages/izvori/web-laudato-hr.html#izvori-podataka",
     "title": "laudato.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/web-net-hr.html",
@@ -3812,7 +3854,7 @@
     "href": "pages/izvori/web-net-hr.html#izvori-podataka",
     "title": "net.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/web-slobodnadalmacija-hr.html",
@@ -3854,7 +3896,7 @@
     "href": "pages/izvori/web-slobodnadalmacija-hr.html#izvori-podataka",
     "title": "slobodnadalmacija.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/web-vecernji-hr.html",
@@ -3896,7 +3938,7 @@
     "href": "pages/izvori/web-vecernji-hr.html#izvori-podataka",
     "title": "vecernji.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/youtube-bozanska-ljubav.html",
@@ -3938,7 +3980,7 @@
     "href": "pages/izvori/youtube-bozanska-ljubav.html#izvori-podataka",
     "title": "BOŽANSKA LJUBAV",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/youtube-dijete-vjere.html",
@@ -3980,7 +4022,7 @@
     "href": "pages/izvori/youtube-dijete-vjere.html#izvori-podataka",
     "title": "Dijete Vjere",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/youtube-laudatotv.html",
@@ -4022,7 +4064,7 @@
     "href": "pages/izvori/youtube-laudatotv.html#izvori-podataka",
     "title": "LaudatoTV",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/youtube-nova-eva.html",
@@ -4064,7 +4106,7 @@
     "href": "pages/izvori/youtube-nova-eva.html#izvori-podataka",
     "title": "Nova Eva",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/youtube-pulherissimus.html",
@@ -4106,7 +4148,7 @@
     "href": "pages/izvori/youtube-pulherissimus.html#izvori-podataka",
     "title": "pulherissimus",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/youtube-stopama-padre-pija.html",
@@ -4148,7 +4190,7 @@
     "href": "pages/izvori/youtube-stopama-padre-pija.html#izvori-podataka",
     "title": "Stopama Padre Pija",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-10).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter); Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je. Volumen se zbraja preko promjene metode prikupljanja oko 2024., pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/mapa/događaji.html",
@@ -4249,6 +4291,20 @@
     "text": "Sinteza i zaključci\nAnaliza razlikuje 16 rječnički definiranih tematskih kategorija te njihove frekvencije, intenzitet, zabilježene reakcije i supojavljivanja. Te mjere opisuju različite profile tema, ali ne utvrđuju same po sebi zasebne publike ili autonomne diskursne domene.\n\nTematske struje u novom uzorku\nNajzastupljenije su Duhovnost i liturgija, Crkveno upravljanje i struktura i Bioetika i kulturni ratovi; najveći prosjek interakcija imaju Digitalna evangelizacija i mladi, Bioetika i kulturni ratovi i Teologija i doktrina. Love i Angry reakcije daju dodatni, ali platformski ograničen signal recepcije.\n\nPodaci podupiru uži zaključak o preklapajućim tematskim strujama, ne strogu podjelu diskursa na dva svijeta. Pojedine teme razlikuju se po frekvenciji, gustoći rječničkih podudaranja i zabilježenim reakcijama, dok mreža pokazuje da se oznake povezuju preko više kombinacija.\nMreža dodaje relacijsku dimenziju: pokazuje koje rječničke oznake češće supostoje u istim dokumentima. Za tumačenje pojedinačnih veza kao političke instrumentalizacije, privatne duhovnosti ili javnoga identiteta trebalo bi pregledati pripadajuće tekstove, što ova agregirana stranica ne čini.\nZa uredništvo je najkorisnija razlika između najzastupljenijih i najodjekivanijih tema. One se ne poklapaju, pa tema koja zauzima najviše prostora nije nužno tema koja izaziva najviše reakcija, a tema s malo objava može imati visok prosjek po objavi. Tko planira sadržaj, iz toga može vidjeti gdje je prostor zasićen, a gdje ne.\nSljedeća mapa, Atmosfera diskursa, istom uzorkovnom logikom analizira leksički tonalitet, emocije i konfliktni rječnik. Ni ona iz leksičkih pokazatelja ne izvodi komunikacijske namjere bez dodatne validacije."
   },
   {
+    "objectID": "pages/moj-medij.html",
+    "href": "pages/moj-medij.html",
+    "title": "Moj medij",
+    "section": "",
+    "text": "Objavljujete o katoličkim temama i pitate se koliko toga doista dopre do ljudi? Ova stranica na to odgovara brojkama iz iste baze na kojoj se temelje sve ostale analize projekta. Upišite ime medija i dobit ćete koliko objavljuje, koliko reakcija skuplja, kako se to mijenjalo kroz godine i gdje stoji u odnosu na druge.\nPretraživanje pokriva 356 izvora s najmanje 100 objava u razdoblju 2021.–2026. Za najveće izvore postoji i razrađen profil u Katalogu izvora."
+  },
+  {
+    "objectID": "pages/moj-medij.html#što-ovaj-pregled-pokazuje-a-što-ne",
+    "href": "pages/moj-medij.html#što-ovaj-pregled-pokazuje-a-što-ne",
+    "title": "Moj medij",
+    "section": "Što ovaj pregled pokazuje, a što ne",
+    "text": "Što ovaj pregled pokazuje, a što ne\nBrojke opisuju prikupljeni korpus, a ne cjelokupnu medijsku produkciju nekog izvora. U bazu ulaze samo objave koje govore o katoličkim temama, pa portal koji objavljuje o svemu ovdje ima znatno manje objava nego što ih doista ima.\nInterakcije i doseg vrijednosti su koje isporučuje servis za praćenje medija. Doseg je procjena, a ne izmjerena publika, i mjeri se drukčije na svakoj platformi. Usporedba između weba i YouTubea zato ne znači ono što bi se na prvi pogled činilo, dok je usporedba unutar iste platforme smislena.\nPrikazani su izvori s najmanje 100 objava, jer bi ispod toga poredak počivao na premalom broju objava. Uz njih 144 izvora iznad istoga praga čeka uredničku provjeru i zasad se ne prikazuje; riječ je o računima za koje još nije potvrđeno predstavljaju li medij ili pojedinca. Korpus ukupno bilježi 10.775 izvora, od kojih velika većina ima tek nekoliko objava.\nCijela baza otvorena je pod licencijom CC BY 4.0 i dostupna na GitHubu, pa se svaka brojka s ove stranice može provjeriti. Kako korpus nastaje i kako se mjere volumen, angažman i doseg, opisano je u Metodologiji."
+  },
+  {
     "objectID": "pages/pregled/agentic-layer.html",
     "href": "pages/pregled/agentic-layer.html",
     "title": "The agentic layer — how the project is built under governance",
@@ -4345,124 +4401,5 @@
     "title": "Projektni raspored",
     "section": "",
     "text": "Vremenski plan projekta\nProjekt je strukturiran u šest faza kroz razdoblje od tri godine (2025.–2027.); empirijski korpus pritom pokriva razdoblje 2021.–2026. Svaka faza ima specifične ciljeve i aktivnosti koje osiguravaju postupan i sustavan napredak.\n\n\n\n6\n\n\nFaza\n\n\n\n\n3\n\n\nGodine (2025.–2027.)\n\n\n\n\n3\n\n\nMape ekosustava\n\n\n\n\n\n\nGodina 1: Postavljanje temelja i prva analiza (2025.)\n\n\nFaza 1: Izgradnja infrastrukture i povijesna analiza (siječanj – lipanj 2025.)\n\n\n\n\n\n\nNapomenaGlavni cilj\n\n\n\nUspostaviti tehničke temelje projekta i prikupiti povijesne podatke.\n\n\n\nAnaliza povijesnih podataka: Prikupljanje i analiza objava iz razdoblja 2021.–2024. kako bi se definirali parametri za pretragu.\nIzgradnja infrastrukture: Postavljanje strukturirane baze podataka, projektnog repozitorija i web stranice.\nPočetak prikupljanja: Aktiviranje sustava za prikupljanje podataka u realnom vremenu.\n\n\n\nFaza 2: Prva podjela podataka i definiranje istraživanja (srpanj – prosinac 2025.)\n\n\n\n\n\n\nNapomenaGlavni cilj\n\n\n\nDefinirati prve smjerove tematskih istraživanja na temelju prikupljenih podataka.\n\n\n\nDefiniranje istraživanja: Organizacija radionice s projektnim timom za definiranje i podjelu prvih tematskih cjelina.\nKontinuirani rad: Nastavak prikupljanja podataka, održavanje baze i kontrola kvalitete.\n\n\n\n\n\n\nGodina 2: Dubinska analiza i razvoj (2026.)\n\n\nFaza 3: Prvi godišnji izvještaj i daljnji razvoj (siječanj – lipanj 2026.)\n\n\n\n\n\n\nNapomenaGlavni cilj\n\n\n\nIzraditi i prezentirati prvu Mapu ekosustava.\n\n\n\nPrva Mapa ekosustava: Obrada, analiza i vizualizacija podataka za 2025. godinu, uz prezentaciju rezultata.\nRazvoj istraživanja: Druga podjela podataka za nove ili produbljene tematske analize.\nKontinuirani rad: Prikupljanje, održavanje baze i kontrola kvalitete.\n\n\n\nFaza 4: Intenzivni istraživački rad (srpanj – prosinac 2026.)\n\n\n\n\n\n\nNapomenaGlavni cilj\n\n\n\nFokus na provođenju definiranih tematskih istraživanja.\n\n\n\nIstraživanje: Timski rad na analizi dodijeljenih tematskih cjelina i priprema prvih nacrta radova.\nKontinuirani rad: Prikupljanje, održavanje baze i kontrola kvalitete.\n\n\n\n\n\n\nGodina 3: Sinteza i finalni rezultati (2027.)\n\n\nFaza 5: Drugi godišnji izvještaj i priprema za sintezu (siječanj – lipanj 2027.)\n\n\n\n\n\n\nNapomenaGlavni cilj\n\n\n\nAnalizirati podatke iz prethodne godine i integrirati prve rezultate tematskih istraživanja.\n\n\n\nDruga Mapa ekosustava: Obrada i analiza podataka za 2026. godinu te prezentacija novih uvida.\nPriprema publikacija: Rad na znanstvenim člancima i konferencijskim izlaganjima.\nKontinuirani rad: Prikupljanje, održavanje baze i kontrola kvalitete.\n\n\n\nFaza 6: Finalna sinteza i zaključci (srpanj – prosinac 2027.)\n\n\n\n\n\n\nNapomenaGlavni cilj\n\n\n\nPredstaviti cjelovite rezultate projekta.\n\n\n\nZavršni izvještaj i prezentacija: Izrada treće, finalne Mape ekosustava (za 2027. godinu) i prezentacija koja objedinjuje:\n\nZbirni pregled ekosustava (2021.–2027.).\nKljučne rezultate svih provedenih tematskih istraživanja.\nPreporuke za buduća istraživanja.\n\nArhiviranje: Finalizacija i arhiviranje baze podataka i koda za dugoročnu dostupnost."
-  },
-  {
-    "objectID": "pages/studije/socijalni-nauk-i-gospodarstvo.html",
-    "href": "pages/studije/socijalni-nauk-i-gospodarstvo.html",
-    "title": "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu",
-    "section": "",
-    "text": "Socijalni nauk Crkve više od stoljeća govori o radu, plaćama, vlasništvu, siromaštvu i odgovornosti javne vlasti. Ovo istraživanje ne pita jesu li medijski argumenti spojivi s tim naukom, nego koliko često hrvatski digitalni mediji izrijekom navode njegove dokumente i prepoznatljive pojmove uz gospodarsku temu.\nAnaliza je u cijelosti ponovljena na novoj službenoj bazi DigiKat: 413.985 tematski odabranih objava od 1. siječnja 2021. do 11. lipnja 2026. Novi korpus mijenja veličinu i sastav analitičkog sloja, pa su ponovno izračunani svi popisi, provjere, tablice i slike rada."
-  },
-  {
-    "objectID": "pages/studije/socijalni-nauk-i-gospodarstvo.html#istraživačka-pitanja",
-    "href": "pages/studije/socijalni-nauk-i-gospodarstvo.html#istraživačka-pitanja",
-    "title": "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu",
-    "section": "Istraživačka pitanja",
-    "text": "Istraživačka pitanja\nRad ispituje koliko je eksplicitni socijalni nauk vidljiv u pronađenim susretima religije i gospodarstva, razlikuje li se stopa među jedanaest gospodarskih tema, kako je povezana sa starošću navedenih dokumenata te koliko se obrazac razlikuje između crkvenih i sekularnih medija.\nRiječ je o opisnom nacrtu. Obrazac može biti u skladu sa selektivnim prevođenjem religijskog jezika u sekularno razumljive teme, ali ne otkriva tko je u pojedinoj objavi odabrao izraz niti dokazuje urednički uzrok."
-  },
-  {
-    "objectID": "pages/studije/socijalni-nauk-i-gospodarstvo.html#podaci-i-mjerenje",
-    "href": "pages/studije/socijalni-nauk-i-gospodarstvo.html#podaci-i-mjerenje",
-    "title": "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu",
-    "section": "Podaci i mjerenje",
-    "text": "Podaci i mjerenje\nReligijski i gospodarski izraz pojavljuju se na udaljenosti do 220 znakova u 66.374 objave, odnosno 79.439 jedinstvenih parova objave i gospodarske teme. Izraz iz ograničenoga rječnika socijalnog nauka nalazi se uz gospodarski pojam u 1.111 objava i 1.797 parova.\nMjerenje je provjereno dvjema slijepim provjerama jednim modelom:\n\n150 pronađenih objava s naukom, stratificiranih prema razdoblju dokumenta i koncentraciji izvora;\n660 parova religije i gospodarstva, po 60 iz svake gospodarske teme.\n\nNije riječ o ručnom ni ljudskom kodiranju. Ponovljeno slijepo kodiranje zadržanih jedinica dalo je 80,3%–93,3% slaganja na četiri osi, uz Cohenovu kappu od 0,586 do 0,649. Ti rezultati pokazuju dosljednost primjene kodne knjige istom vrstom modela, ali ne zamjenjuju neovisnu ljudsku provjeru."
-  },
-  {
-    "objectID": "pages/studije/socijalni-nauk-i-gospodarstvo.html#glavni-nalazi",
-    "href": "pages/studije/socijalni-nauk-i-gospodarstvo.html#glavni-nalazi",
-    "title": "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu",
-    "section": "Glavni nalazi",
-    "text": "Glavni nalazi\nNeprilagođena stopa iznosi 2,26%: 1.797 parova s naukom među 79.439 pronađenih parova religije i gospodarstva. Budući da modelska provjera kao stvarne susrete ocjenjuje 53,0% nazivnika, prilagođena stopa parova s izričajem nauka iznosi 4,27%. Strože čitanje, koje zahtijeva nedvojbeno gospodarsko značenje, daje 6,33%. Točkasta procjena brojnika nalazi 82,9% stvarnih zaziva i prelazi unaprijed postavljeni prag od 80%; interval pouzdanosti ipak se proteže ispod praga.\nKlima i energetika vode prije i poslije provjere nazivnika. Neprilagođena stopa iznosi 14,82%, a prilagođena 17,10%. Slijedi makroekonomija s prilagođenih 10,84%. Klima ostaje prva u svih 25 provjera robusnosti, uključujući uklanjanje najvećih izvora, uklanjanje dupliciranih tekstova, odvojene tokove prikupljanja i različita razgraničenja sekularnih medija.\nRazlika je najmanja unutar crkvenih medija: 22,63% za klimu prema 17,13% za makroekonomiju (omjer 1,32). U samo izrijekom označenim sekularnim medijima omjer je 2,46, a u najširem obuhvatu sekularnih medija 3,48. Taj je raspored u skladu s pretpostavkom da se tematski odabir pojačava na granici crkvenih i sekularnih medija, ali ne dokazuje urednički mehanizam."
-  },
-  {
-    "objectID": "pages/studije/socijalni-nauk-i-gospodarstvo.html#što-se-promijenilo-u-zaključku-o-siromaštvu",
-    "href": "pages/studije/socijalni-nauk-i-gospodarstvo.html#što-se-promijenilo-u-zaključku-o-siromaštvu",
-    "title": "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu",
-    "section": "Što se promijenilo u zaključku o siromaštvu",
-    "text": "Što se promijenilo u zaključku o siromaštvu\nSiromaštvo i socijalna politika najveće su dodirno područje s 31.354 para. Ipak, načelo opcije za siromašne pojavljuje se samo 30 puta u cijelom službenom korpusu i 26 puta u užem sloju nauka.\nRanija verzija rada iz toga je i iz stratificiranoga skupa za provjeru izvela tvrdnju da u javnoj raspravi prevladava jezik pomoći nad jezikom prava. Nova analiza tu tvrdnju ne zadržava. Među 77 zadržanih siromašnih poveznica model je 26,0% označio kao pomoć, 19,5% kao pravdu, a 48,1% kao pobožno ili drugo. Uzorak nije izvučen za procjenu zastupljenosti registara, a oznake je dao jedan model. Nalaz je zato samo poticaj za novu reprezentativnu i neovisno ljudski kodiranu provjeru."
-  },
-  {
-    "objectID": "pages/studije/socijalni-nauk-i-gospodarstvo.html#ograničenja",
-    "href": "pages/studije/socijalni-nauk-i-gospodarstvo.html#ograničenja",
-    "title": "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu",
-    "section": "Ograničenja",
-    "text": "Ograničenja\nSlužbeni DigiKat korpus tematski je filtriran korpus katoličkoga sadržaja, a ne slučajni uzorak svih hrvatskih medija ili cijele javne sfere. Metoda pronalazi izričita imena dokumenata i pojmova, ne sve argumente koji bi mogli biti u skladu sa socijalnim naukom. Provjere mjere preciznost, ali ne potpuni odziv rječnika, a modelska nesigurnost nije obuhvaćena intervalima.\nNačin prikupljanja promijenjen je 2024., a od veljače do svibnja te godine nema uporabljivog teksta u vendorskom toku. Rad zato ne donosi vremenske trendove. Godina 2026. obuhvaća samo razdoblje do lipnja."
-  },
-  {
-    "objectID": "pages/studije/socijalni-nauk-i-gospodarstvo.html#cijeli-rad",
-    "href": "pages/studije/socijalni-nauk-i-gospodarstvo.html#cijeli-rad",
-    "title": "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu",
-    "section": "Cijeli rad",
-    "text": "Cijeli rad\nPrerađeni rukopis “Selective visibility of Catholic social teaching in public economic debate: Evidence from Croatia’s official DigiKat corpus, 2021–2026” dostupan je u cijelosti:\n\nHTMLČitanje u pregledniku PDFPreuzimanje i ispis\n\nSve tablice i slike u radu generiraju se iz javno dostupnih agregatnih izlaza studije. Sadržaj korpusa, način prikupljanja, pravilo uključivanja i profil izvora opisani su na stranici Baza podataka."
-  },
-  {
-    "objectID": "pages/studije/socijalni-nauk-i-gospodarstvo.html#status",
-    "href": "pages/studije/socijalni-nauk-i-gospodarstvo.html#status",
-    "title": "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu",
-    "section": "Status",
-    "text": "Status\nPrerađeni radni rukopis (2026-08-11), autori Luka Šikić i Petra Palić, priprema se za časopis. Dio je drugog izlaznog toka projekta (tematske studije i radovi); vidi Projektni raspored."
-  },
-  {
-    "objectID": "pages/metodologija.html",
-    "href": "pages/metodologija.html",
-    "title": "Metodologija",
-    "section": "",
-    "text": "Ova stranica okuplja tehnički dio projekta na jednom mjestu. Ostale stranice vode računa o tome što podaci pokazuju; ovdje piše kako su nastali, na čemu su mjereni i što se iz njih ne smije zaključiti. Namijenjena je čitatelju koji želi provjeriti postupak, ponoviti ga ili citirati.\nSvaka brojka na ovoj stranici izračunata je iz praćenih manifesta koji nastaju zajedno s podacima. Nijedna nije prepisana rukom."
-  },
-  {
-    "objectID": "pages/metodologija.html#što-ulazi-u-korpus",
-    "href": "pages/metodologija.html#što-ulazi-u-korpus",
-    "title": "Metodologija",
-    "section": "Što ulazi u korpus",
-    "text": "Što ulazi u korpus\nSlužbeni korpus sadrži 413.985 objava i 54 stupca, prikupljenih u razdoblju 2021.–2026. na 9 vrsta izvora i platformi. U njega ulazi objava koja prođe dva uzastopna uvjeta.\nPrvi uvjet je rječnički. Objava mora unutar prvih 3.000 znakova teksta pogoditi najmanje 1 odlučan i najmanje 2 različita pojma s popisa od 119 pojmova. Popis razlikuje 99 pojmova koji sami po sebi upućuju na katoličku tematiku i 20 pojmova koji se u hrvatskom javljaju i izvan religijskog konteksta, pa ne mogu sami donijeti odluku.\nOgraničenje na prvih 3.000 znakova nije tehnička sitnica. Ranije je rječnik čitao cijeli tekst, a drugi uvjet i ljudski koderi samo početak, pa su u korpus ulazile objave čiji je jedini religijski trag bio duboko u tekstu i tipično nije imao veze s temom. Od svih takvih objava koje su pročitane ručno nijedna nije bila katolički sadržaj, pa se pravilo sada na oba mjesta primjenjuje na isti prozor.\nDrugi uvjet je modelski. Objava koja prođe rječnik ocjenjuje se statističkim modelom uvježbanim na ručno označenim primjerima i ulazi u korpus samo ako dosegne ocjenu od najmanje 0,70. Prag je odluka voditelja projekta iz kolovoza 2026. i namjerno je postavljen tako da zadrži volumen. Viši prag daje čišći, ali manji korpus.\nIsto pravilo vrijedi za cijelo razdoblje. To je bitno jer se metoda prikupljanja mijenjala, a pravilo uključivanja nije smjelo pratiti tu promjenu.\n\nKoliko je korpus čist\nPreciznost je mjerena ručnim čitanjem 250 objava po razdoblju. Na tako mjerenoj osnovici zajednička krivulja procjenjuje da je oko 84,5 % objava u korpusu doista katolički sadržaj, uz zadržanih oko 87,2 % onoga što jest katolički sadržaj. Kvaliteta nije jednaka u oba razdoblja (68,0 % prije 2024. i 87,0 % poslije, mjereno pri nižem pragu), i ta je razlika svojstvo prikupljanja, a ne mjerenja.\nDrugim riječima, korpus je namjerno širok. Manji dio objava u njemu spominje katoličke pojmove, a nije o njima; ta razina šuma opisana je i mjerena, a ne prešućena.\n\n\n\nPravilo uključivanja u brojkama. Izvor: manifest službenoga korpusa, nastao uz korpus u R/build_corpus.R.\n\n\nStavka\nVrijednost\n\n\n\n\nObjava u korpusu\n413.985\n\n\nStupaca\n54\n\n\nRazdoblje\n2021.–2026.\n\n\nVrsta izvora i platformi\n9\n\n\nPojmova na popisu\n119 (99 odlučnih, 20 dvojbenih)\n\n\nProzor teksta\nprvih 3.000 znakova\n\n\nPrag modela\n0,70"
-  },
-  {
-    "objectID": "pages/metodologija.html#dva-skupa-podataka-koja-nisu-zamjenjiva",
-    "href": "pages/metodologija.html#dva-skupa-podataka-koja-nisu-zamjenjiva",
-    "title": "Metodologija",
-    "section": "Dva skupa podataka koja nisu zamjenjiva",
-    "text": "Dva skupa podataka koja nisu zamjenjiva\nProjekt vodi dva odvojena skupa podataka i njihovo miješanje najčešći je način da se dobiju krive brojke.\nAkumulator (710.307 redaka, 47 stupaca) sve je što je servis za praćenje medija isporučio, bez ikakvog filtriranja. On raste sa svakom novom isporukom.\nSlužbeni korpus (413.985 objava) izrezan je iz akumulatora pravilom opisanim gore. Sve što opisuju stranice ovoga sjedišta, sve mape i svi javni agregati računaju se na njemu.\nDovršena tematska istraživanja i dalje čitaju akumulator, imenom, jer su na njemu izračunata i objavljena. Prebacivanje gotove analize na novi ulaz tiho bi promijenilo brojke koje su već objavljene, pa se to ne radi. Svako istraživanje na stranici Tematska istraživanja navodi na kojem je skupu izračunato.\nPraktična posljedica za čitatelja je jednostavna. Ako se brojka s neke stranice ne slaže s brojkom iz nekog istraživanja, prva provjera nije aritmetika nego to govore li o istom skupu podataka."
-  },
-  {
-    "objectID": "pages/metodologija.html#promjena-prikupljanja-2024.-i-što-ona-zabranjuje",
-    "href": "pages/metodologija.html#promjena-prikupljanja-2024.-i-što-ona-zabranjuje",
-    "title": "Metodologija",
-    "section": "Promjena prikupljanja 2024. i što ona zabranjuje",
-    "text": "Promjena prikupljanja 2024. i što ona zabranjuje\nTijekom 2024. promijenio se način na koji su objave prikupljane. Pravilo uključivanja ostalo je isto s obje strane te granice, pa su razdoblja usporediva po pravilu, ali nisu usporediva po zahvatu. Udio zadržanih objava skače za otprilike dvadeset postotnih bodova preko te granice, i to je svojstvo instrumenta, ne medijske stvarnosti.\n\n\n\nDva razdoblja prikupljanja pod istim pravilom uključivanja. Izvor: manifest službenoga korpusa, odjeljak o razdobljima.\n\n\n\n\n\n\n\n\n\nRazdoblje\nRaspon\nObjava u akumulatoru\nZadržano u korpusu\nUdio zadržanih\n\n\n\n\nPrije promjene\n2021-01-01 -&gt; 2024-07-04\n269.583\n192.861\n71,5 %\n\n\nPoslije promjene\n2024-07-01 -&gt; 2026-06-11\n440.724\n221.124\n50,2 %\n\n\n\n\n\nIz toga slijedi jedno ograničenje koje vrijedi na cijelom sjedištu. Porast broja objava preko 2024. nije porast medijske pažnje. Godišnji volumeni smiju se uspoređivati unutar istoga toka prikupljanja, a ne preko granice. Stranica Evolucija ekosustava zato prikazuje opaženi volumen i tu ogradu drži uz svaki prikaz.\nUz to, u vendorskom izvoru za razdoblje od veljače do svibnja 2024. nema teksta, pa nijedno razdoblje nema retke u tim mjesecima. Prikupljanje ima i kraćih prekida, koji su opisani na stranicama gdje utječu na izračun.\n\n\n\nZadržane objave po godini. Godina 2026. obuhvaća razdoblje do lipnja. Izvor: manifest službenoga korpusa, odjeljak o godinama.\n\n\nGodina\nU akumulatoru\nU korpusu\nUdio zadržanih\n\n\n\n\n2021.\n90.388\n62.151\n68,8 %\n\n\n2022.\n84.535\n59.657\n70,6 %\n\n\n2023.\n83.836\n64.069\n76,4 %\n\n\n2024.\n114.231\n56.923\n49,8 %\n\n\n2025.\n236.166\n124.346\n52,7 %\n\n\n2026.\n101.151\n46.839\n46,3 %"
-  },
-  {
-    "objectID": "pages/metodologija.html#uzorci-i-rječnici",
-    "href": "pages/metodologija.html#uzorci-i-rječnici",
-    "title": "Metodologija",
-    "section": "Uzorci i rječnici",
-    "text": "Uzorci i rječnici\nAnalize volumena, dosega i angažmana računaju se na cijelom korpusu. Analize teksta ne, jer jezična obrada cijeloga korpusa nije izvediva u razumnom vremenu, pa se one računaju na stratificiranim uzorcima. Svaki uzorak vučen je s fiksnim sjemenom slučajnosti (123), stratificiran po godini i platformi, ograničen na objave dulje od 100 znakova i bez platforme TikTok.\n\n\n\nStratificirani uzorci na kojima se računaju jezične analize.\n\n\nAnalitička razina\nCiljani udio korpusa\nDokumenata u uzorku\n\n\n\n\nTematske struje\n5,0 %\n20.658\n\n\nFokus na događaje\n3,0 %\n12.384\n\n\nAtmosfera diskursa\n2,0 %\n8.250\n\n\n\n\n\n\nIzvor: data/nlp/manifest.json, nastao u R/04_nlp.R.\n\nPosljedica uzorkovanja je da su dnevne i rijetke vrijednosti nesigurne. Kada se neki nalaz oslanja na mali broj dokumenata, stranica na kojoj stoji navodi taj broj uz nalaz.\nJezična obrada. Tekst se prije analize svodi na mala slova, dijeli na riječi i svodi na osnovne oblike modelom croatian-set-ud-2.5-191206.udpipe, uvježbanim na hrvatskom. Bez toga bi se Misa i misa brojile kao dvije različite riječi.\nTematske kategorije. Objave se razvrstavaju u unaprijed definirane tematske kategorije, a ima ih 16. Razvrstavanje radi rječnik. Riječ je o pravilima, ne o modelu koji sam pronalazi teme, pa su kategorije stabilne kroz vrijeme i provjerljive, ali ne mogu prepoznati temu koju rječnik ne pokriva.\nRječnici tonaliteta i emocija. Leksički tonalitet mjeri se rječnicima CroSentilex i CroSentilex Gold, a emocionalne oznake leksikonom lilaHR, koji razlikuje osam emocija. Svi rade na osnovnim oblicima riječi, pa se moraju spajati na jednako obrađen tekst.\nRelativni indeks konflikta (RIK) razlika je između opažene gustoće konfliktnog rječnika u tekstu i one koja bi se očekivala s obzirom na prosjek toga izvora i te teme. Mjeri odstupanje od očekivanog, ne apsolutnu razinu sukoba.\n\n\n\n\n\n\nVažnoŠto ove mjere ne mjere\n\n\n\nSve navedeno mjeri riječi u tekstu. Tonalitet nije osjećaj autora, emocionalna oznaka nije reakcija publike, a gustoća konfliktnog rječnika nije dokaz sukoba ni namjere. Doseg je vendorska procjena, ne izmjerena publika. Nalazi su opisni i takvima ih valja čitati."
-  },
-  {
-    "objectID": "pages/metodologija.html#reproducibilnost",
-    "href": "pages/metodologija.html#reproducibilnost",
-    "title": "Metodologija",
-    "section": "Reproducibilnost",
-    "text": "Reproducibilnost\nKod, pravila i agregati javni su na GitHubu pod licencijom CC BY 4.0. Sam korpus i akumulator sadrže puni tekst objava i nisu javni, pa se pristup retcima odobrava zasebno; sve što se objavljuje izvedeno je iz njih bez osobnih podataka.\nLanac obrade ide jednim smjerom i svaki korak zapisuje vlastiti manifest s otiskom ulaza iz kojega je nastao.\n\nSirove isporuke ulaze u akumulator.\nIz akumulatora se pravilom uključivanja izrezuje službeni korpus (R/build_corpus.R).\nIz korpusa se računaju javni agregati (R/03_aggregate.R) i jezična obrada (R/04_nlp.R).\nStranice čitaju agregate i manifeste. Nijedna stranica ne računa korpus iznova.\n\nZato se sve brojke na ovom sjedištu mogu vezati uz otisak podataka iz kojega su nastale. Ako agregati nisu izgrađeni iz aktualnog korpusa, provjera u kodu prekida izradu stranice umjesto da objavi brojku koja ne odgovara prikazu ispod nje.\nPopis izvora, njihovih profila i uredničkih oznaka opisan je u Katalogu izvora. Struktura same baze i značenje svakoga stupca opisani su na stranici Baza podataka."
-  },
-  {
-    "objectID": "pages/about.html#otvorena-znanost-na-djelu",
-    "href": "pages/about.html#otvorena-znanost-na-djelu",
-    "title": "O projektu",
-    "section": "Otvorena znanost na djelu",
-    "text": "Otvorena znanost na djelu\nPosebna vrijednost projekta leži u njegovoj predanosti principima otvorenosti i transparentnosti. Naš rad temelji se na principima otvorene znanosti i reproducibilnosti istraživanja.\nSvi alati, skripte i metodološki okviri bit će dostupni kao otvoreni kod na GitHubu, omogućujući drugima da provjere, repliciraju i nadograde naš rad.\nKroz ovakav pristup potičemo suradnju, jačamo istraživačke profile mladih znanstvenika i doprinosimo otvorenijoj i reproducibilnoj znanstvenoj praksi."
-  },
-  {
-    "objectID": "pages/moj-medij.html",
-    "href": "pages/moj-medij.html",
-    "title": "Moj medij",
-    "section": "",
-    "text": "Objavljujete o katoličkim temama i pitate se koliko toga doista dopre do ljudi? Ova stranica na to odgovara brojkama iz iste baze na kojoj se temelje sve ostale analize projekta. Upišite ime medija i dobit ćete koliko objavljuje, koliko reakcija skuplja, kako se to mijenjalo kroz godine i gdje stoji u odnosu na druge.\nPretraživanje pokriva 356 izvora s najmanje 100 objava u razdoblju 2021.–2026. Za najveće izvore postoji i razrađen profil u Katalogu izvora."
-  },
-  {
-    "objectID": "pages/moj-medij.html#što-ovaj-pregled-pokazuje-a-što-ne",
-    "href": "pages/moj-medij.html#što-ovaj-pregled-pokazuje-a-što-ne",
-    "title": "Moj medij",
-    "section": "Što ovaj pregled pokazuje, a što ne",
-    "text": "Što ovaj pregled pokazuje, a što ne\nBrojke opisuju prikupljeni korpus, a ne cjelokupnu medijsku produkciju nekog izvora. U bazu ulaze samo objave koje govore o katoličkim temama, pa portal koji objavljuje o svemu ovdje ima znatno manje objava nego što ih doista ima.\nInterakcije i doseg vrijednosti su koje isporučuje servis za praćenje medija. Doseg je procjena, a ne izmjerena publika, i mjeri se drukčije na svakoj platformi. Usporedba između weba i YouTubea zato ne znači ono što bi se na prvi pogled činilo, dok je usporedba unutar iste platforme smislena.\nPrikazani su izvori s najmanje 100 objava, jer bi ispod toga poredak počivao na premalom broju objava. Uz njih 144 izvora iznad istoga praga čeka uredničku provjeru i zasad se ne prikazuje; riječ je o računima za koje još nije potvrđeno predstavljaju li medij ili pojedinca. Korpus ukupno bilježi 10.775 izvora, od kojih velika većina ima tek nekoliko objava.\nCijela baza otvorena je pod licencijom CC BY 4.0 i dostupna na GitHubu, pa se svaka brojka s ove stranice može provjeriti. Kako korpus nastaje i kako se mjere volumen, angažman i doseg, opisano je u Metodologiji."
   }
 ]
