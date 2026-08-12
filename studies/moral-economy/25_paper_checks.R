@@ -127,6 +127,18 @@ for (f in figs) {
   ok(file.exists(file.path(FIGDIR, f)) && refs == 1L,
      paste0("figure present and referenced once: ", f), paste(refs, "reference(s)"))
 }
+# A figure's title and source note are typeset on the page, not drawn into the PNG, so they are
+# generated text and drift the same way a table does. 24_rsp_figures.R writes them; they must still
+# appear here exactly as generated.
+figfrags <- list.files(FIGDIR, pattern = "^fig[0-9].*\\.md$", full.names = TRUE)
+ok(length(figfrags) == 4, "four generated figure fragments exist", sprintf("%d found", length(figfrags)))
+for (f in figfrags) {
+  frag <- paste(readLines(f, encoding = "UTF-8", warn = FALSE), collapse = "\n")
+  ok(grepl(trimws(frag), raw, fixed = TRUE), paste0("figure caption intact: ", basename(f)),
+     "matches the generated fragment")
+}
+ok(!grepl("![Figure ", raw, fixed = TRUE),
+   "no figure carries its title inside the image", "captions are typeset on the page")
 ok(!grepl("rsp_fig4_vocabulary.png", raw, fixed = TRUE),
    "obsolete vocabulary figure is not referenced", "clean")
 

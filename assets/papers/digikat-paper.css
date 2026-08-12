@@ -492,3 +492,48 @@ pre {
   table { display: table; width: 100%; font-size: 8pt; }
   a { color: var(--dk-accent) !important; }
 }
+
+/* Table and figure apparatus ----------------------------------------------
+   A manuscript whose captions and source notes are generated text marks them up as a level-4
+   heading carrying `.paper-caption` and a block quote inside `.paper-note`. Those are the two
+   constructs that survive Pandoc's Typst writer with a type of their own, so the same words are one
+   styleable object in a paper's PDF and in its HTML.
+
+   Both rules are class-scoped on purpose. The generic `h1..h6` rule above is `!important`, and a
+   caption has to opt out of serif-600 without restyling headings in the papers that do not use this
+   convention; likewise a source note must lose the accent rule that marks a real pull quote. */
+.paper-caption {
+  font-family: var(--dk-sans) !important;
+  font-weight: 400 !important;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--dk-body) !important;
+  margin-top: 2.1rem;
+  margin-bottom: 0.45rem;
+}
+.paper-caption strong { font-weight: 600 !important; color: var(--dk-heading); }
+
+.paper-note blockquote {
+  font-family: var(--dk-sans);
+  font-size: 0.85rem;
+  font-style: normal;
+  line-height: 1.5;
+  color: var(--dk-muted);
+  border-left: 0;
+  padding-left: 0;
+  /* A browser gives blockquote a 40px side margin; a source note sits on the table's own edge. */
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0.4rem;
+  margin-bottom: 2.4rem;
+}
+.paper-note blockquote p { margin: 0; }
+
+/* Display maths is embedded and pre-rendered by KaTeX, but a wide fraction still needs somewhere
+   to go on a narrow screen. */
+.katex-display { margin: 1.3rem 0; overflow-x: auto; overflow-y: hidden; }
+
+@media print {
+  .paper-caption { break-after: avoid; break-inside: avoid; }
+  .paper-note { break-before: avoid; break-inside: avoid; }
+}

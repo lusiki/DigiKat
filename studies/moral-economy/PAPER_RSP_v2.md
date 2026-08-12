@@ -93,14 +93,14 @@ expression. Core pairs additionally require a Tier-1 marker within 220 character
 from that same economic subject. The inclusive rows are a frame sensitivity in which Tier 1 may
 also satisfy religion entry.*
 
-The headline estimand for domain \(d\) is
+The headline estimand for domain $d$ is
 
-\[
-D_d = \frac{\text{same-domain adjacent Tier-1 pairs in }d}
-{\text{generic-religion Stage-A pairs in }d}.
-\]
+$$
+D_d = \frac{\text{same-domain adjacent Tier-1 pairs in}\, d}
+{\text{generic-religion Stage-A pairs in}\, d}.
+$$
 
-Both counts are a census of the observed official corpus. We therefore report no binomial or Wilson interval around \(D_d\). Sampling intervals below describe only the audit samples, conditional on their model classifications.
+Both counts are a census of the observed official corpus. We therefore report no binomial or Wilson interval around $D_d$. Sampling intervals below describe only the audit samples, conditional on their model classifications.
 
 ### 3.3 Fresh blind model audits
 
@@ -140,12 +140,12 @@ settings were unavailable.*
 
 The raw census ratio is the identified quantity. For comparability with the audit design, we also calculate a denominator-only sensitivity
 
-\[
-S_d = \frac{N_{\text{detected},d}}
-{N_{\text{Stage A},d}\widehat p_d},
-\]
+$$
+S_d = \frac{N_{\text{detected},\, d}}
+{N_{\text{Stage A},\, d} \times \widehat{p}_d},
+$$
 
-where \(\widehat p_d\) is R4 linkage precision. This calculation assumes every detected numerator pair is a genuine link. That assumption is contradicted at the post level by R1 and cannot be verified pair-by-pair because R2 fails or is unevaluable. We therefore call \(S_d\) a sensitivity ratio, not corrected or validated prevalence. Conditional Monte Carlo draws propagate the R4 audit-sample classification rate while holding census counts fixed; they do not represent sampling uncertainty in the corpus and do not include model, lexicon or recall uncertainty.
+where $\widehat{p}_d$ is R4 linkage precision. This calculation assumes every detected numerator pair is a genuine link. That assumption is contradicted at the post level by R1 and cannot be verified pair-by-pair because R2 fails or is unevaluable. We therefore call $S_d$ a sensitivity ratio, not corrected or validated prevalence. Conditional Monte Carlo draws propagate the R4 audit-sample classification rate while holding census counts fixed; they do not represent sampling uncertainty in the corpus and do not include model, lexicon or recall uncertainty.
 
 Three other sensitivity families answer distinct questions. First, 25 fixed-lexicon specifications change duplicate handling, title deduplication, foreign-content exclusion, metaphor and Caritas exclusions, collection stream, leading-outlet removal and outlet-group bounds. They ask whether composition alone creates the ranking. Second, an independent frame reconstruction asks what happens when Tier 1 may satisfy religion entry. Third, construct tests remove each Tier-1 term in turn and remove the three ecology-specific markers together. These last tests are essential because corpus robustness cannot compensate for an outcome defined by one unusually topic-specific title.
 
@@ -197,15 +197,29 @@ interval. The sensitivity divides the detected numerator by an R4-estimated genu
 denominator and assumes every numerator pair qualifies; because R1/R2 do not pass, it is not
 corrected prevalence.*
 
-![Figure 1](output/figures/rsp_fig1_gradient.png)
+**Figure 1.** Explicit teaching markers by economic subject.
+
+![](output/figures/rsp_fig1_gradient.png)
+
+*Source: authors' calculation on the official DigiKat corpus of 413 985 Croatian digital media
+posts, 2021–2026. A pair is one post counted on one subject. The left panel is a fixed-corpus
+detected rate. The right panel divides by model-coded domain precision, 60 fresh pairs per
+subject, assuming every detected numerator pair qualifies; whiskers propagate audit sampling
+only.*
 
 Figure 1 separates the identified census ratio from the denominator-only calculation. The important comparison is not a confidence test on census counts, but the different effect of R4 denominator precision across subjects.
 
 Holding all 23 Tier-1 terms fixed, climate and energy ranks first in the baseline and in all 24 additional corpus/outlet specifications: 25 of 25 in total. Its raw rate remains 13,28% after near-duplicate-window deduplication, 13,00% after title deduplication, 13,39% after foreign-flagged posts are removed and between 9,57% and 15,43% in the two collection streams. The ranking also survives exclusions for metaphor and Caritas mentions and cumulative removal of the ten largest outlets. This establishes robustness to the tested composition choices under a fixed marker repertoire.
 
-It does not establish robustness to the construct. Removing any individual term other than *Laudato si'* leaves climate first. Removing *Laudato si'* reduces climate to 3,01% and makes macroeconomics first at 3,66%. Removing all three ecology-specific markers—*Laudato si'*, *Laudate Deum* and *integralna ekologija*—reduces climate to 1,73%, while macroeconomics leads at 3,56%. The denominator-only analogues tell the same story: without *Laudato si'*, macroeconomics is first at 5,50% and climate is 3,41%; without all ecology markers, macroeconomics is 5,34% and climate 1,96%.
+It does not establish robustness to the construct. Removing any individual term other than *Laudato si'* leaves climate first. Removing *Laudato si'* reduces climate to 3,01% and makes macroeconomics first at 3,66%. Removing all three ecology-specific markers (*Laudato si'*, *Laudate Deum* and *integralna ekologija*) reduces climate to 1,73%, while macroeconomics leads at 3,56%. The denominator-only analogues tell the same story: without *Laudato si'*, macroeconomics is first at 5,50% and climate is 3,41%; without all ecology markers, macroeconomics is 5,34% and climate 1,96%.
 
-![Figure 4](output/figures/rsp_fig4_lexicon_sensitivity.png)
+**Figure 4.** The climate lead depends on ecology-specific markers.
+
+![](output/figures/rsp_fig4_lexicon_sensitivity.png)
+
+*Source: authors' calculation. Denominators are fixed. A pair remains when at least one
+adjacent non-omitted Tier-1 term survives. Removing Laudato si' reverses the first two
+subjects.*
 
 Figure 4 is therefore the central construct check. The climate lead is real for the predeclared explicit-marker repertoire, but it is carried largely by the visibility of a named ecological document. It should not be paraphrased as greater substantive use of the entire social-teaching tradition in environmental argument.
 
@@ -234,7 +248,12 @@ doctrine-specific markers, including the Compendium convention, appear under “
 document.” Subjects with fewer than ten marked pairs are retained in the aggregate total but
 omitted from display.*
 
-![Figure 2](output/figures/rsp_fig2_era.png)
+**Figure 2.** Adjacent document eras by economic subject.
+
+![](output/figures/rsp_fig2_era.png)
+
+*Source: authors' calculation. Era is assigned to the Tier-1 term adjacent to each specific
+post-subject pair. Marker-only, Benedict XVI and mixed-era pairs are reported in Table 4.*
 
 Figure 2 makes the composition result visible: the leading environmental row is overwhelmingly tied to Francis-era titles, whereas older economic subjects contain more marker-only and non-conciliar classical references. This pattern is compatible with recency and label availability. It cannot distinguish between them causally.
 
@@ -255,11 +274,17 @@ posts, 2021–2026. Automated, unratified outlet-label proposals. “Secular min
 explicitly proposed secular sources; “secular maximum” also includes unlabelled sources. Values are
 descriptive detected-marker rates, not causal effects or validated outlet classifications.*
 
-![Figure 3](output/figures/rsp_fig3_boundary.png)
+**Figure 3.** Subject profiles under proposed outlet classifications.
+
+![](output/figures/rsp_fig3_boundary.png)
+
+*Source: authors' calculation. Outlet labels are automated proposals, unratified, and used only
+as a sensitivity. The secular maximum adds unlabelled and other outlets to the proposed
+secular group.*
 
 The climate-to-macro contrast is flatter in the proposed confessional set and steeper under both secular bounds. This association is consistent with a portable environmental label, but several alternatives remain: outlet mix, source material, syndication, event coverage and label error. Because the groups are proposals and the design is observational, Figure 3 does not demonstrate boundary selection or editorial translation.
 
-### 4.5 What the legacy register set can—and cannot—show
+### 4.5 What the legacy register set can and cannot show
 
 The 148 genuine links retained from the legacy set are distributed unevenly across subjects. Restricting display to domains with at least ten links leaves 126 cases. Among 77 poverty and social-policy links, 26,0% are coded as relief/action, 19,5% as structural critique or CST principles, 6,5% as the Church acting economically and 48,1% as devotional/residual. Among eleven climate links, all are coded structural/CST-principles; the small, purposefully assembled set does not make that a population estimate.
 
@@ -284,7 +309,7 @@ The large poverty residual and the validation-oriented allocation defeat any cla
 
 ## 5. Discussion
 
-### 5.1 The substantive result is narrower—and more informative—than a topic ranking
+### 5.1 The substantive result is narrower and more informative than a topic ranking
 
 The rerun does not show that CST generally appears most often in environmental reasoning. It shows that selected explicit markers occur most often in climate pairs in this corpus: stable across composition choices, but not after removing the label most closely bound to environmental teaching.
 

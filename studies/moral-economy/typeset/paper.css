@@ -125,7 +125,7 @@ p.subtitle {
 /* ---------------------------------------------------------------------
    Headings
    --------------------------------------------------------------------- */
-h2, h3, h4 {
+h2, h3 {
   font-family: var(--dk-serif);
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -133,7 +133,20 @@ h2, h3, h4 {
 }
 h2 { font-size: 1.6rem;  line-height: 1.15; margin-top: 3rem;   margin-bottom: 0.9rem; }
 h3 { font-size: 1.16rem; line-height: 1.25; margin-top: 2.2rem; margin-bottom: 0.7rem; }
-h4 { font-size: 1.02rem;                    margin-top: 1.8rem; margin-bottom: 0.6rem; }
+
+/* Level 4 is a table or figure caption and nothing else. 28_render_paper.R rewrites every
+   "**Table 1.** …" paragraph into one, so that the same words are one styleable object in both
+   outputs: a caption cannot be styled as a paragraph without also catching ordinary prose. */
+.paper-caption {
+  font-family: var(--dk-sans);
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--dk-body);
+  margin-top: 2.1rem;
+  margin-bottom: 0.45rem;
+}
+.paper-caption strong { font-weight: 600; color: var(--dk-heading); }
 
 p { margin-top: 0; margin-bottom: 1.05rem; }
 hr { border: 0; border-top: 1px solid var(--dk-hairline); margin: 2.6rem auto; }
@@ -230,16 +243,29 @@ tbody tr:last-child td { border-bottom: 1px solid var(--dk-hairline); }
 td[style*="right"], th[style*="right"] { white-space: nowrap; }
 tbody tr:last-child strong { color: var(--dk-accent-700); }
 
-/* The "*Source: …*" note under every table, and standalone figure captions. */
-p > em:only-child {
-  display: block;
+/* The "Source: …" note under every table and figure. It arrives as a block quote because that is
+   one of the two constructs Pandoc's Typst writer keeps as its own type, so the note is the same
+   object in the PDF and here.
+
+   It replaces a `p > em:only-child` rule, which was wrong in a way that only showed on the page:
+   :only-child counts ELEMENT children and ignores text nodes, so `<p>text <em>Laudato si’</em>
+   text</p>` matched it too. Both abstracts and several paragraphs of the introduction were being
+   cut into three blocks mid-sentence, with the italic phrase stranded on its own line in grey. */
+.paper-note blockquote {
   font-family: var(--dk-sans);
   font-size: 0.82rem;
   font-style: normal;
   color: var(--dk-muted);
   line-height: 1.5;
-  margin: 0.35rem 0 2.4rem;
+  border: 0;
+  padding: 0;
+  /* A browser gives blockquote a 40px side margin; a source note sits on the table's own edge. */
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0.4rem;
+  margin-bottom: 2.4rem;
 }
+.paper-note blockquote p { margin: 0; }
 
 /* ---------------------------------------------------------------------
    Figures
@@ -302,11 +328,18 @@ h2#references ~ ul li {
   color: #6b7176;
 }
 
+/* Display maths. KaTeX is embedded rather than fetched, so it is laid out before the headless
+   browser prints; a long fraction still has to be allowed to scroll on a narrow screen. */
+.katex-display { margin: 1.3rem 0; overflow-x: auto; overflow-y: hidden; }
+
 @media print {
   body { background: #fff; font-size: 10.5pt; padding: 0; }
   body > * { max-width: none; }
   .dk-topbar, .dk-footer, nav#TOC { display: none; }
   h2, h3 { break-after: avoid; }
+  /* A caption must never be the last thing on a page, and a source note must never be the first. */
+  .paper-caption { break-after: avoid; break-inside: avoid; }
+  .paper-note { break-before: avoid; break-inside: avoid; }
   table, figure { break-inside: avoid; }
   table { display: table; width: 100%; }
 }

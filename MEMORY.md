@@ -510,3 +510,49 @@
 - [LEARN] On this machine Dropbox intermittently locks the freshly created `pages/**/<page>_files`
   directory and Quarto fails with `os error 32`. It is transient and clears on retry (1–2 attempts);
   it is NOT render scatter and NOT a code fault. Verify `docs/` afterwards anyway.
+
+## RSP paper typesetting repair (2026-08-12)
+
+- [LEARN] `p > em:only-child` does NOT mean "a paragraph that is entirely italic". `:only-child`
+  counts ELEMENT children and ignores text nodes, so `<p>text <em>Laudato si’</em> text</p>` matched
+  it too. In `typeset/paper.css` that rule was styling source notes, and it was silently shattering
+  both abstracts and several introduction paragraphs of the published CST paper into three blocks
+  with the italic phrase stranded on its own grey line. There is no CSS selector for "only text plus
+  this element"; mark the construct instead. Source notes are now a block quote inside
+  `::: {.paper-note}` and captions a level-4 heading with `{.paper-caption}`.
+- [LEARN] Pandoc's markdown does NOT enable `tex_math_single_backslash`, so `\[ … \]` and `\( … \)`
+  print as literal text in every output. The two display formulas of `PAPER_RSP_v2.md` were reaching
+  the PDF as `[ D_d = {d}. ]`. Use `$$ … $$` and `$ … $`; the Typst writer then emits native maths
+  and the HTML gets KaTeX. Set `html-math-method: katex` for anything that will be printed by
+  headless Chrome — it renders on load, whereas MathJax is still typesetting when the print fires.
+- [LEARN] A thousands separator written as an ASCII space is what "the spacing looks wrong" means.
+  Justification stretches it to word width, so `413 985` reads as two numbers, and a line may break
+  inside it. `rsp_int()` must keep the plain space (the journal asks for it, and `25_paper_checks.R`
+  greps 62 scalars in that exact form), so the substitution to U+00A0 happens in the THROWAWAY
+  typeset copy in `28_render_paper.R`, never in the manuscript. Pandoc turns U+00A0 into Typst `~`.
+- [LEARN] In R, `"\1"` inside a `gsub` replacement is an OCTAL ESCAPE, not a backreference — it
+  emitted control characters that printed as tofu boxes in the PDF (`(n = 660)` became `(⍰ 660)`).
+  It must be `"\1"`. Related: `\b` inside a PCRE LOOKAHEAD silently makes the whole pattern fail to
+  match in R's PCRE build (`(?=(?:January|…)\b)` matches nothing; drop the `\b`).
+- [LEARN] Typst: `set par(hanging-indent: …)` inside a block is silently ignored — the paragraph the
+  block creates does not pick it up. The FUNCTION form does apply:
+  `par(hanging-indent: 1.5em, justify: false, body)`. That is what turns the reference list from a
+  bulleted, justified, gap-ridden list into a proper hanging-indent one. Verify by measuring line
+  `bbox[0]` in the PDF, not by eye.
+- [LEARN] `#set text(hyphenate: true)` also hyphenates the CENTRED title block, which is how the
+  subtitle came to read "1 Jan-/uary 2021". Keep hyphenation OFF at document level in
+  `typeset/paper.typ` and switch it back on with a raw typst block injected as the first body
+  element. The same mechanism sets `lang: "hr"` around the Croatian abstract, which is what stops it
+  setting with visibly stretched lines under English hyphenation patterns.
+- [LEARN] The two-Quarto trap bit again and is now closed at the source: `28_render_paper.R` resolves
+  `C:/Program Files/Quarto` FIRST and asserts >= 1.7, because the per-user 1.6.43 on PATH bundles a
+  Typst that fails with `unexpected argument: sticky` and names nothing useful.
+- [LEARN] Figure titles and source notes are no longer drawn into the RSP PNGs. `24_rsp_figures.R`
+  registers them and writes `output/figures/figN_*.md`; `27_sync_tables.R` installs them into the
+  manuscript exactly as it does a table; `25_paper_checks.R` gates them byte-for-byte; `36_…R` seals
+  them. Cost 1 196 characters of the 50 000 cap, leaving 498. The site page
+  `pages/studije/socijalni-nauk-i-gospodarstvo.qmd` embeds the same PNGs with its own CROATIAN
+  captions, so removing the baked-in English titles fixed that page too.
+- [LEARN] `25_paper_checks.R` CRASHES on `PAPER_RSP_v1.md` (pre-existing): v1 has no
+  `## Sažetak (hrvatski)`, so `h0` is empty and `(h0 + 1):(h1 - 1)` errors. v1 also still references
+  the obsolete `rsp_fig4_vocabulary.png`. Only v2 is published and sealed; v1 needs a decision.

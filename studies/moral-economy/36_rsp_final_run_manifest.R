@@ -113,7 +113,10 @@ table_paths <- c(file.path(OUT, "tables", sprintf("tab%d_%s.md", 1:7,
   file.path(OUT, "tables", "rsp_derived.csv"))
 figure_paths <- file.path(OUT, "figures", c(
   "rsp_fig1_gradient.png", "rsp_fig2_era.png", "rsp_fig3_boundary.png",
-  "rsp_fig4_lexicon_sensitivity.png"))
+  "rsp_fig4_lexicon_sensitivity.png",
+  # Each figure's caption and source note are generated text installed into the manuscript, so they
+  # are sealed alongside the image they describe.
+  "fig1_gradient.md", "fig2_era.md", "fig3_boundary.md", "fig4_lexicon_sensitivity.md"))
 script_paths <- c(
   list.files(RSP_STUDY, pattern = "\\.R$", full.names = TRUE),
   here::here("R/religious_terms.R"),
