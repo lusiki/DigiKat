@@ -1,6 +1,6 @@
 ---
 title: "Katolički influenceri i institucionalni deficit pažnje"
-subtitle: "Usporedba kreatorskih i službenih crkvenih izvora u DigiKat korpusu, 2021.–2026."
+subtitle: "Usporedba kreatorskih i službenih crkvenih izvora u hrvatskom digitalnom medijskom prostoru, 2021.–2026."
 author:
   - name: "Suzana Obrovac Lipar"
     affiliation: "Hrvatsko katoličko sveučilište"
@@ -15,14 +15,14 @@ format:
     toc: true
     toc-depth: 3
     number-sections: true
-    code-fold: true
-    code-summary: "Prikaži kod"
     theme: cosmo
     fig-cap-location: bottom
+    tbl-cap-location: top
   docx:
     toc: true
     number-sections: true
     fig-cap-location: bottom
+    tbl-cap-location: top
 execute:
   echo: false
   warning: false
@@ -47,6 +47,8 @@ p_text <- function(x) {
   x <- as.numeric(x)
   if (x < .001) "p < 0,001" else paste0("p = ", hr_num(x, 3))
 }
+en_num <- function(x, digits = 3) formatC(as.numeric(x), format = "f", digits = digits, big.mark = ",")
+en_int <- function(x) formatC(as.numeric(x), format = "d", big.mark = ",")
 ci_text <- function(low, high, digits = 3) {
   paste0("[", hr_num(low, digits), "; ", hr_num(high, digits), "]")
 }
@@ -55,74 +57,151 @@ ci_text <- function(low, high, digits = 3) {
 # Sažetak {.unnumbered}
 
 Institucionalni autoritet ne jamči digitalnu pažnju, ali usporedba crkvenih institucija i religijskih
-kreatora lako zamijeni razliku među akterima razlikom među platformama. Ova studija analizira službeni
-DigiKat korpus od `r hr_int(results$corpus$rows_official)` objava prikupljenih od 1. siječnja 2021. do
-11. lipnja 2026. Primarni analitički skup obuhvaća `r hr_int(results$sample$primary_posts)` objava i
-`r hr_int(results$sample$primary_sources)` pouzdano klasificiranih oznaka izvora. Kreatorski izvori
-obuhvaćaju laičke religijske kanale, pojedinačne svećenike i karizmatske zajednice. Institucionalni
-izvori obuhvaćaju službene komunikatore, biskupijske i župne kanale te akademske ustanove. Pažnja je
-izrazito koncentrirana među kreatorskim izvorima. Gini koeficijent iznosi
-`r hr_num(results$h1$gini)` uz 95-postotni bootstrap interval
-`r ci_text(results$h1$gini_ci_low, results$h1$gini_ci_high)`. Među izvorima s najmanje pet objava
-medijan interakcija po objavi iznosi `r hr_num(results$h2$medians$Influencer, 1)` za kreatorske i
-`r hr_num(results$h2$medians$Institutional, 1)` za institucionalne izvore. Razlika ostaje pozitivna u
-usporedbi ograničenoj na YouTube i prilagođenoj za broj objava i vrijeme prikupljanja. Platformski su
-profili snažno različiti, dok se tematski profili razlikuju ponajprije u naglascima. Gotovo svi
-prihvatljivi kreatorski izvori primarno su na YouTubeu, pa se ne može odvojeno procijeniti učinak
-primarne platforme. Rezultati podupiru precizno ograničen institucionalni deficit zabilježenih
-interakcija, ali ne dokazuju opću komunikacijsku nadmoć kreatora niti uzročni učinak njihova stila.
+kreatora lako zamijeni razliku među akterima razlikom među platformama. Rad analizira
+`r hr_int(results$corpus$rows_official)` objava prikupljenih u hrvatskom digitalnom medijskom prostoru
+od 1. siječnja 2021. do 11. lipnja 2026. Primarni analitički skup obuhvaća
+`r hr_int(results$sample$primary_posts)` objava i `r hr_int(results$sample$primary_sources)` pouzdano
+klasificiranih oznaka izvora, od čega `r hr_int(results$sample$primary_influencer_sources)` kreatorskih
+i `r hr_int(results$sample$primary_institutional_sources)` institucionalnih. Zabilježena pažnja unutar
+kreatorskoga sloja izrazito je koncentrirana, s Gini koeficijentom
+`r hr_num(results$h1$gini)` i udjelom deset vodećih oznaka od `r hr_pct(results$h1$cr10)`. Među
+izvorima s najmanje pet objava medijan interakcija po objavi iznosi
+`r hr_num(results$h2$medians$Influencer, 1)` za kreatorske i
+`r hr_num(results$h2$medians$Institutional, 1)` za institucionalne izvore. Razlika ostaje velika i
+statistički razlučiva u usporedbi ograničenoj na YouTube i prilagođenoj za broj objava i vrijeme
+prikupljanja, gdje procijenjeni omjer iznosi `r hr_num(results$h2$youtube_adjusted_ratio, 2)`.
+Platformski se profili dviju skupina snažno razlikuju, dok tematski profili dijele zajedničku jezgru
+i razlikuju se ponajprije u naglascima, s jačim devocijskim naglaskom kreatora i jačim
+institucionalnim naglaskom crkvenih ustanova. Rezultati podupiru precizno ograničen institucionalni
+deficit zabilježenih interakcija, ali ne dokazuju opću komunikacijsku nadmoć kreatora niti uzročni
+učinak njihova stila.
 
 **Ključne riječi.** Ekonomija pažnje, religijski kreatori, digitalni mediji, Katolička crkva,
 Hrvatska, platformska komunikacija
 
+# Abstract {.unnumbered}
+
+Institutional authority does not guarantee digital attention, yet comparisons between Church
+institutions and religious creators easily mistake a difference between actors for a difference
+between platforms. This study analyses `r en_int(results$corpus$rows_official)` posts collected in the
+Croatian digital media space between 1 January 2021 and 11 June 2026. The primary analytical set
+covers `r en_int(results$sample$primary_posts)` posts and
+`r en_int(results$sample$primary_sources)` high-confidence source labels,
+`r en_int(results$sample$primary_influencer_sources)` of them creator sources and
+`r en_int(results$sample$primary_institutional_sources)` institutional ones. Recorded attention within
+the creator layer is highly concentrated, with a Gini coefficient of
+`r en_num(results$h1$gini)` and a top-ten share of
+`r paste0(en_num(100 * results$h1$cr10, 1), "%")`. Among sources with at least five posts, the median
+number of interactions per post is `r en_num(results$h2$medians$Influencer, 1)` for creator sources and
+`r en_num(results$h2$medians$Institutional, 1)` for institutional ones. The difference remains large
+and statistically distinguishable in a within-YouTube comparison adjusted for posting activity and
+collection timing, where the estimated ratio is `r en_num(results$h2$youtube_adjusted_ratio, 2)`.
+Platform profiles differ sharply, while thematic profiles share a common core and differ mainly in
+emphasis, with a stronger devotional accent among creators and a stronger institutional accent among
+Church bodies. The findings support a narrowly bounded institutional deficit in recorded interaction
+rather than a general communicative superiority of creators or a causal effect of their style.
+
+**Keywords.** Attention economy, religious creators, digital media, Catholic Church, Croatia,
+platform communication
+
 # Uvod
 
-Digitalne platforme dovode službene crkvene kanale, zajednice i pojedinačne kreatore u isti prostor
-vidljivosti, ali ih ne dovode u jednake uvjete. Institucionalni izvori često objavljuju priopćenja,
-arhivske zapise i servisne informacije. Kreatorski izvori češće djeluju kroz osobni glas, video i
-izravno obraćanje publici. Zabilježena razlika u interakcijama zato može odražavati privlačnost
-sadržaja, platformsku infrastrukturu, različite komunikacijske ciljeve ili način mjerenja. Empirijski
-izazov nije samo utvrditi postoji li razlika, nego pokazati na kojoj se razini pojavljuje i gdje
-prestaje biti usporediva.
+Digitalne platforme dovode službene crkvene kanale, redovničke i laičke zajednice te pojedinačne
+kreatore u isti prostor vidljivosti, ali ih ne dovode u jednake uvjete. Institucionalni izvori
+objavljuju priopćenja, arhivske zapise, liturgijske obavijesti i servisne informacije, a kreatorski
+izvori češće djeluju kroz osobni glas, video format i izravno obraćanje publici. Uz to, dvije skupine
+nisu jednako raspoređene po platformama, a platforme ne bilježe reakciju publike na isti način.
+Zabilježena razlika u interakcijama zato može odražavati privlačnost sadržaja, platformsku
+infrastrukturu, različite komunikacijske ciljeve ili sam način mjerenja. Empirijski izazov nije samo
+utvrditi postoji li razlika, nego pokazati na kojoj se razini pojavljuje i gdje prestaje biti
+usporediva.
 
-Naziv *katolički influencer* u ovom radu označava analitičku skupinu, a ne zanimanje, samoodređenje ili
-prag broja pratitelja. Skupina uključuje pouzdano prepoznate laičke religijske kanale, pojedinačne
-svećenike i karizmatske zajednice. Zbog te širine u analitičkom se tekstu koristi precizniji izraz
-**kreatorski izvori**. Institucionalna skupina uključuje službene crkvene komunikatore, biskupijske i
+Rasprava o odnosu crkvenih institucija i religijskih kreatora u javnosti se najčešće vodi na temelju
+pojedinačnih primjera vrlo uspješnih kanala. Takvi primjeri pokazuju da je kreatorska vidljivost
+moguća, ali ne govore koliko je česta, koliko je ravnomjerno raspoređena među kreatorima i vrijedi li
+usporedba kada se dvije skupine promatraju na istoj platformi. Sustavno mjerenje na razini cijeloga
+medijskog prostora rijetko je, osobito za male jezike i nacionalne religijske scene, pa se opća ocjena
+o zaostajanju crkvene komunikacije oslanja na dojam prije nego na raspodjelu.
+
+Ovaj rad tu prazninu popunjava opsežnim opservacijskim mjerenjem. Analizira se korpus objava iz
+hrvatskoga digitalnog medijskog prostora u razdoblju od 2021. do sredine 2026. godine, unutar kojega
+se identificiraju i uspoređuju dvije skupine religijskih aktera. Doprinos rada trostruk je. Prvo,
+umjesto pojedinačnih primjera daje se raspodjela zabilježene pažnje unutar cijeloga kreatorskog sloja.
+Drugo, glavna se usporedba dviju skupina ponavlja unutar jedne platforme, čime se uklanja
+najjednostavnije alternativno objašnjenje razlike. Treće, tvrdnje o platformskim profilima, tematskim
+naglascima i unutarnjoj strukturi kreatorskoga sloja odvajaju se od glavnoga nalaza i ograničavaju na
+ono što struktura podataka doista može procijeniti.
+
+Naziv *katolički influencer* u ovom radu označava analitičku skupinu, a ne zanimanje, samoodređenje
+ili prag broja pratitelja. Skupina uključuje pouzdano prepoznate laičke religijske kanale, pojedinačne
+svećenike i karizmatske zajednice. Zbog te se širine u analitičkom tekstu koristi precizniji izraz
+kreatorski izvori. Institucionalna skupina uključuje službene crkvene komunikatore, biskupijske i
 župne izvore te katoličke akademske ustanove. Nezavisni katolički mediji, redovničke zajednice,
 organizacije mladih, svjetovni mediji i nejasno klasificirani izvori nisu dio primarne usporedbe.
 
-Rad unapređuje raniju verziju analize na tri načina. Prvo, inferencija se oslanja na klasifikaciju
-visoke pouzdanosti, dok se širi skup naziva koristi samo za provjeru osjetljivosti. Drugo, usporedba
-interakcija provodi se i unutar YouTubea, jedine platforme s dovoljno kreatorskih i institucionalnih
-izvora za smislen zajednički oslonac. Treće, tvrdnje o platformi, temama i svećeničkom statusu odvajaju
-se od glavnog nalaza i ograničavaju na ono što struktura podataka doista može procijeniti.
+Rad postavlja pet istraživačkih pitanja.
 
-Analiza odgovara na pet pitanja.
+1. Koliko su zabilježene interakcije nejednako raspodijeljene među kreatorskim izvorima (P1)?
+2. Imaju li kreatorski izvori više interakcija po objavi od institucionalnih izvora i ostaje li
+   razlika unutar zajedničke platforme (P2)?
+3. Razlikuje li se raspodjela objava kreatorskih i institucionalnih izvora među platformama (P3)?
+4. Razlikuju li se skupine po relativnoj zastupljenosti šest unaprijed određenih tematskih obitelji
+   (P4)?
+5. Jesu li učestalost objavljivanja i vrsta kreatorskoga izvora povezane s interakcijama po objavi te
+   može li se procijeniti samostalan učinak primarne platforme (P5)?
 
-1. **P1. Koncentracija pažnje.** Koliko su zabilježene interakcije nejednako raspodijeljene među
-   kreatorskim izvorima?
-2. **P2. Institucionalni deficit pažnje.** Imaju li kreatorski izvori više interakcija po objavi od
-   institucionalnih izvora i ostaje li razlika unutar zajedničke platforme?
-3. **P3. Platformski profil.** Razlikuje li se raspodjela objava kreatorskih i institucionalnih izvora
-   među platformama?
-4. **P4. Tematski profil.** Razlikuju li se skupine po relativnoj zastupljenosti šest unaprijed
-   određenih tematskih obitelji?
-5. **P5. Razlike unutar kreatorskoga sloja.** Jesu li učestalost objavljivanja i vrsta kreatorskoga
-   izvora povezane s interakcijama po objavi te može li se procijeniti samostalan učinak primarne
-   platforme?
+# Teorijski okvir
+
+Okvir rada namjerno je sažet i oslanja se na tri općeprihvaćene ideje koje su dovoljne da se izvedu
+očekivanja provjerena u analizi. Detaljnija razrada svake od njih ostaje otvorena za daljnji rad.
+
+Prva je ideja ekonomija pažnje. U okruženju u kojem je informacija obilna, oskudan je resurs pažnja
+publike, pa se komunikacijski uspjeh mjeri sposobnošću privlačenja te oskudice (Simon, 1971;
+Goldhaber, 1997; Davenport i Beck, 2001). Kada je pažnja oskudna i kumulativna, njezina raspodjela
+među izvorima ne teži prosjeku nego koncentraciji, jer vidljivost povećava vjerojatnost daljnje
+vidljivosti (Webster, 2014). Iz toga slijedi očekivanje da kreatorski sloj neće biti homogena skupina
+uspješnih kanala, nego skupina s malim brojem vrlo vidljivih izvora i dugim repom slabo vidljivih.
+
+Druga je ideja platformsko posredovanje. Platforme nisu neutralni prijenosnici sadržaja, nego
+infrastrukture s vlastitom logikom vrednovanja, preporuke i mjerenja (van Dijck, Poell i de Waal,
+2018; Gillespie, 2018; Bucher, 2018). Ta logika nagrađuje osobni glas, prepoznatljivost i redovitu
+prisutnost, što su obilježja kreatorske komunikacije (Marwick, 2013; Abidin, 2018), dok se
+institucionalna komunikacija često oblikuje prema zahtjevima točnosti, službenosti i arhivske
+trajnosti. Iz toga slijede dva očekivanja. Kreatorski izvori trebali bi bilježiti više reakcija po
+objavi, ali i biti nejednako raspoređeni po platformama, pa razlika u pažnji može biti posljedica
+platformskoga profila jednako kao i obilježja samih aktera. Zato usporedba unutar iste platforme nije
+tehnička dodatna provjera, nego uvjet smislenosti nalaza.
+
+Treća je ideja promjena religijskoga autoriteta u digitalnom okruženju. Istraživanja digitalne
+religije pokazuju da mrežni prostor ne ukida institucionalni autoritet, ali ga izlaže usporedbi s
+glasovima koji svoju vjerodostojnost grade na osobnom svjedočenju i dostupnosti (Campbell, 2007;
+Hjarvard, 2008; Campbell, 2013; Cheong, 2014). Ako je tako, dvije bi se skupine trebale razlikovati
+više po naglasku nego po odvojenim tematskim svjetovima, pri čemu bi kreatorski izvori bili bliži
+devocijskom i osobnom registru, a institucionalni izvori sadržaju vezanom uz ustroj, dokumente i
+službena događanja.
+
+Ta tri očekivanja usmjeravaju analizu, ali ne određuju njezin doseg. Mjera koja se ovdje koristi
+bilježi reakciju na objavu, a ne doseg, povjerenje ni ostvarenje pastoralne svrhe, pa se očekivanja
+provjeravaju u granicama onoga što takva mjera može pokazati.
 
 # Podaci i metode
 
 ## Dizajn i ulazni korpus
 
-Studija je opservacijska analiza digitalnih objava. Ulaz je `data/digikat_corpus.rds`, službeni
-DigiKat korpus izgrađen jedinstvenim pravilom uključivanja za cijelo razdoblje. Analitički kod prije
-rada provjerava SHA-256 ulaza prema praćenom manifestu. Korpus obuhvaća razdoblje od 2021. do
-11. lipnja 2026. Promjena instrumenta prikupljanja tijekom 2024. ograničava izravne usporedbe volumena
-između razdoblja, a 2026. je nepotpuna godina. Analiza ne tumači vremensku promjenu količine objava.
+Studija je opservacijska analiza digitalnih objava. Ulazni je korpus izgrađen jedinstvenim pravilom
+uključivanja primijenjenim identično na cijelo razdoblje, čime se izbjegava da promjena kriterija
+uključivanja sama proizvede razliku među razdobljima. Korpus obuhvaća
+`r hr_int(results$corpus$rows_official)` objava od 1. siječnja 2021. do 11. lipnja 2026. i pokriva web,
+YouTube, Facebook, Instagram, Twitter/X, forume i komentarske prostore.
 
-Tok od službenoga korpusa do primarnoga analitičkog skupa prikazan je u @tbl-sample-flow.
+Promjena instrumenta prikupljanja tijekom 2024. ograničava izravne usporedbe volumena između
+razdoblja, a 2026. je nepotpuna godina. Analiza zato ne tumači vremensku promjenu količine objava.
+Sve procjene odnose se na razdoblje u cjelini, a ondje gdje bi razlika u starosti objava mogla
+utjecati na broj zabilježenih interakcija, prosječno vrijeme prikupljanja uključeno je u model.
+
+Tok od cjelovitoga korpusa do primarnoga analitičkog skupa prikazan je u @tbl-sample-flow. TikTok je
+isključen iz studijskoga obuhvata jer klasifikator aktera nije definiran za tu platformu. Isključenje
+obuhvaća `r hr_int(results$sample$excluded_tiktok)` objava, odnosno manje od jednoga promila korpusa.
 
 ```{r}
 #| label: tbl-sample-flow
@@ -137,231 +216,308 @@ flow[, .(`Korak analize` = stage, Objave, `Oznake izvora`)] |>
   kable(align = c("l", "r", "r"))
 ```
 
-TikTok je isključen iz studijskoga obuhvata jer naslijeđeni klasifikator nije definiran za tu
-platformu. Isključenje obuhvaća `r hr_int(results$sample$excluded_tiktok)` objava i ne mijenja službeni
-korpus. Od preostalih objava, `r hr_pct(results$sample$primary_interaction_coverage)` ima zabilježenu
-vrijednost varijable interakcija u primarnom skupu.
+## Klasifikacija aktera i jedinica analize
 
-## Klasifikacija i jedinica analize
+Akteri se prepoznaju na razini oznake izvora, koja može predstavljati domenu, kanal, stranicu ili
+drugi naziv pod kojim se sadržaj objavljuje. Klasifikacija se provodi u tri koraka. Najprije se
+primjenjuje unaprijed sastavljen popis poznatih naziva i kratica hrvatskih katoličkih aktera. Zatim se
+prepoznaju jednoznačni biskupijski, župni i svećenički obrasci u nazivu. Naposljetku se izdvajaju
+svjetovni i nereligijski izvori, koji ostaju izvan usporedbe.
 
-Klasifikator radi na oznaci `FROM`, koja može predstavljati domenu, kanal, stranicu ili drugi naziv
-izvora. Najprije primjenjuje unaprijed sastavljen popis poznatih naziva i kratica. Zatim prepoznaje
-jasne biskupijske, župne i svećeničke obrasce. Primarni skup zadržava samo takve oznake visoke
-pouzdanosti. Šira provjera osjetljivosti uključuje i nazive prepoznate devocijskim ili zajedničkim
-jezičnim obrascem. Taj širi sloj povećava obuhvat, ali ne može pouzdano utvrditi katolički identitet
-svakoga izvora.
+Primarni analitički skup zadržava samo oznake visoke pouzdanosti, dobivene ručnim popisom ili
+jednoznačnim institucionalnim obrascem. Širi skup dodatno uključuje nazive prepoznate devocijskim ili
+zajedničkim jezičnim obrascem. Taj širi sloj povećava obuhvat, ali ne može pouzdano utvrditi katolički
+identitet svakoga izvora, pa se koristi isključivo kao provjera osjetljivosti. Razlika između dvaju
+skupova nije tehnička sitnica. Prijelaz s širega na primarni skup uklanja najveći dio nazivno
+prepoznatih, ali identitetski neprovjerenih devocijskih izvora, i pritom mijenja procjene, što je
+prikazano u @tbl-robustness.
 
 Jedinica analize nije nužno jedinstvena pravna osoba ili pojedinac. Isti stvarni akter može imati više
-oznaka, a jedna oznaka može objediniti više platformskih prisutnosti. Zato se rezultati dosljedno
-odnose na **oznake izvora**. Privatna tablica s nazivima služi autorskoj provjeri klasifikacije i ne
-ulazi u javne rezultate.
+oznaka, a jedna oznaka može objediniti više platformskih prisutnosti. Rezultati se zato dosljedno
+odnose na oznake izvora, a ne na potpuno razriješene aktere. Popis naziva korišten je za autorsku
+provjeru klasifikacije i ne ulazi u javne rezultate.
 
 ## Mjera pažnje
 
-Pažnja se operacionalizira brojem zabilježenih interakcija u trenutku vendorskoga zahvata. Interakcije
-uključuju platformi svojstvene reakcije, komentare, dijeljenja i srodne signale. Varijabla nije broj
-jedinstvenih korisnika, doseg, broj pratitelja ni stopa angažmana normalizirana izloženošću. Njezino
-značenje i trenutak bilježenja nisu jednaki na svim platformama. Nulte vrijednosti mogu označavati
-izostanak interakcija ili izostanak zabilježenoga signala. Glavna međugrupna inferencija zato se
-ponavlja unutar YouTubea, gdje se uspoređuje ista platformska vrsta zapisa.
+Pažnja se operacionalizira brojem zabilježenih interakcija u trenutku prikupljanja podataka.
+Interakcije uključuju platformi svojstvene reakcije, komentare, dijeljenja i srodne signale.
+Varijabla nije broj jedinstvenih korisnika, doseg, broj pratitelja ni stopa angažmana normalizirana
+izloženošću. Njezino značenje i trenutak bilježenja nisu jednaki na svim platformama, a nulte
+vrijednosti mogu označavati izostanak interakcija ili izostanak zabilježenoga signala. U primarnom
+skupu vrijednost varijable zabilježena je za `r hr_pct(results$sample$primary_interaction_coverage)`
+objava, pa gubitak zbog nezabilježenih vrijednosti ne oblikuje rezultate.
 
-Za usporedbu po izvoru računa se prosječan broj interakcija po objavi s opaženom vrijednošću. Izvori s
-manje od pet takvih objava isključuju se iz glavne usporedbe P2 i eksplorativnoga modela P5 kako
-pojedinačna objava ne bi određivala prosjek cijeloga izvora. Pragovi od jedne, deset i dvadeset objava
-koriste se u provjerama osjetljivosti.
+Ta ograničenja imaju izravnu metodološku posljedicu. Glavna se međugrupna usporedba ponavlja unutar
+YouTubea, gdje se uspoređuje ista platformska vrsta zapisa i ista vrsta korisničke radnje. Za usporedbu
+po izvoru računa se prosječan broj interakcija po objavi s opaženom vrijednošću, čime svaki izvor u
+usporedbu ulazi jednom, neovisno o tome koliko je objavljivao. Izvori s manje od pet takvih objava
+isključuju se iz glavne usporedbe i iz eksplorativnoga modela kako pojedinačna objava ne bi odredila
+prosjek cijeloga izvora. Pragovi od jedne, deset i dvadeset objava koriste se u provjerama
+osjetljivosti.
 
-## Analitička strategija
+## Tematsko kodiranje
 
-Za P1 interakcije se zbrajaju po pouzdano klasificiranoj kreatorskoj oznaci izvora. Prikazuju se Gini
-koeficijent, udio deset vodećih izvora i Lorenzova krivulja. Nesigurnost Gini koeficijenta procjenjuje
-se s `r hr_int(results$run$bootstrap_repetitions)` ponovljenih uzoraka izvora. Logaritamska regresija
-ukupnih interakcija na rang koristi se samo kao opis oblika raspodjele. Nije formalni test
-potencijskoga zakona.
+Tematski profil mjeri se višestrukim rječnikom šest obitelji, koje obuhvaćaju devocijsku, liturgijsku,
+institucionalnu, socijalnu, političku i zajedničku tematiku. Jedna objava može dobiti više oznaka jer
+se sadržaji redovito preklapaju, primjerice kada liturgijska obavijest ujedno poziva na zajedničko
+okupljanje. Rječnik je opisni instrument koji mjeri prisutnost jezika pojedine obitelji, a ne nadzirani
+klasifikator, model tema ni ocjena stava prema temi.
 
-Za P2 raspodjele izvorskih prosjeka uspoređuju se medijanima, bootstrap intervalom razlike medijana,
+## Analitički postupci
+
+Za P1 se interakcije zbrajaju po kreatorskoj oznaci izvora, a raspodjela se opisuje Gini
+koeficijentom, udjelom deset vodećih izvora i Lorenzovom krivuljom. Nesigurnost Gini koeficijenta
+procjenjuje se s `r hr_int(results$run$bootstrap_repetitions)` ponovljenih uzoraka izvora. Logaritamska
+regresija ukupnih interakcija na rang izvora koristi se samo kao opis oblika raspodjele i nije formalni
+test potencijskoga zakona.
+
+Za P2 se raspodjele izvorskih prosjeka uspoređuju medijanima, bootstrap intervalom razlike medijana,
 Wilcoxonovim testom i rang-biserijalnom korelacijom. Glavna prilagođena procjena ograničena je na
-YouTube izvore s najmanje pet objava. Linearni model za `log(1 + prosječne interakcije)` uključuje
-skupinu izvora, logaritam broja objava i prosječno vrijeme prikupljanja. Intervali i testovi temelje se
-na HC3 heteroskedastički robusnim standardnim pogreškama.
+YouTube izvore s najmanje pet objava. Linearni model za logaritamski transformiran prosjek interakcija
+po objavi uključuje skupinu izvora, logaritam broja objava i prosječno vrijeme prikupljanja, a
+intervali i testovi temelje se na heteroskedastički robusnim standardnim pogreškama tipa HC3.
 
-P3 se procjenjuje raspodjelom objava po platformi i Cramerovim V. Kako bi se smanjila dominacija
-vrlo produktivnih izvora, dodatno se računa prosječni platformski udio tako da svaka oznaka izvora ima
-jednaku težinu. Interval razlike društvenih platformi dobiva se bootstrapom izvora.
+Za P3 se raspodjela objava po platformi opisuje udjelima i Cramerovim V. Kako bi se smanjila dominacija
+vrlo produktivnih izvora, dodatno se računa prosječni platformski udio u kojem svaka oznaka izvora ima
+jednaku težinu, a interval razlike dobiva se bootstrapom izvora.
 
-P4 koristi višestruki rječnik šest obitelji. To su devocijska, liturgijska, institucionalna,
-socijalna, politička i zajednička tematika. Jedna objava može dobiti više oznaka. Razlika profila sažima
-se Jensen-Shannonovom divergencijom, a nesigurnost divergencije i pojedinačnih razlika procjenjuje se
-bootstrapom izvora. Rječnik je opisni instrument, a ne nadzirani klasifikator ili model tema.
+Za P4 se razlika tematskih profila sažima Jensen-Shannonovom divergencijom, a nesigurnost divergencije
+i pojedinačnih razlika procjenjuje se bootstrapom izvora, čime se nesigurnost veže uz to koji su izvori
+promatrani, a ne uz broj objava.
 
-Za P5 se unutar kreatorskoga sloja modelira `log(1 + prosječne interakcije)` pomoću logaritma broja
-objava te pokazatelja svećeničkih izvora i karizmatskih zajednica. Laički kreatorski izvori čine
-referentnu skupinu. Primarna platforma nije uključena ako u prihvatljivom uzorku nema najmanje pet
-izvora u svakoj njezinoj kategoriji. P5 je eksplorativan, a koeficijenti se ne tumače uzročno.
+Za P5 se unutar kreatorskoga sloja modelira logaritamski transformiran prosjek interakcija po objavi
+pomoću logaritma broja objava te pokazatelja svećeničkih izvora i karizmatskih zajednica, uz laičke
+kreatorske izvore kao referentnu skupinu. Primarna platforma nije uključena jer u prihvatljivom uzorku
+nema najmanje pet izvora u svakoj njezinoj kategoriji. Taj se model tumači eksplorativno i njegovi se
+koeficijenti ne čitaju uzročno.
 
 # Rezultati
 
-## Analitički obuhvat
+## Sastav analitičkoga skupa
 
-Primarni skup sadrži `r hr_int(results$sample$primary_influencer_sources)` kreatorskih i
-`r hr_int(results$sample$primary_institutional_sources)` institucionalnih oznaka izvora. One zajedno
-proizvode `r hr_int(results$sample$primary_posts)` objava. Nakon praga od pet objava, usporedba P2
-obuhvaća `r hr_int(results$h2$influencer_sources)` kreatorska i
-`r hr_int(results$h2$institutional_sources)` institucionalnih izvora. Razlika između punoga
-klasificiranog skupa i primarnoga skupa nije tehnička sitnica. Ona uklanja najveći dio nazivno
-prepoznatih, ali identitetski neprovjerenih devocijskih izvora.
+Primarni skup sadrži `r hr_int(results$sample$primary_sources)` oznaka izvora visoke pouzdanosti, od
+kojih je `r hr_int(results$sample$primary_influencer_sources)` kreatorskih i
+`r hr_int(results$sample$primary_institutional_sources)` institucionalnih. One zajedno proizvode
+`r hr_int(results$sample$primary_posts)` objava, gotovo podjednako raspoređenih između dviju skupina, s
+`r hr_int(results$sample$primary_influencer_posts)` kreatorskih i
+`r hr_int(results$sample$primary_institutional_posts)` institucionalnih objava. Sastav skupina po vrsti
+aktera prikazan je u @tbl-composition.
 
-## P1. Pažnja je izrazito koncentrirana
+```{r}
+#| label: tbl-composition
+#| tbl-cap: "Sastav primarnoga analitičkog skupa prema vrsti aktera"
+
+comp <- fread("output/tables/actor_counts.csv", encoding = "UTF-8")
+comp <- comp[classification_confidence == "high" & Actor_Group %in% c("Influencer", "Institutional")]
+type_label <- c(
+  "Lay Influencers" = "Laički kreatorski kanali",
+  "Individual Priests" = "Pojedinačni svećenici",
+  "Charismatic Communities" = "Karizmatske zajednice",
+  "Diocesan" = "Biskupijski i župni izvori",
+  "Institutional Official" = "Službeni crkveni komunikatori",
+  "Academic" = "Katoličke akademske ustanove"
+)
+comp[, `:=`(
+  Skupina = fifelse(Actor_Group == "Influencer", "Kreatorski izvori", "Institucionalni izvori"),
+  `Vrsta aktera` = unname(type_label[ACTOR_TYPE])
+)]
+setorder(comp, Skupina, -posts)
+comp[, .(
+  Skupina,
+  `Vrsta aktera`,
+  `Oznake izvora` = vapply(sources, hr_int, character(1)),
+  Objave = vapply(posts, hr_int, character(1)),
+  `Zabilježene interakcije` = vapply(total_recorded_interactions, hr_int, character(1))
+)] |>
+  kable(align = c("l", "l", "r", "r", "r"))
+```
+
+Sastav pokazuje da dvije skupine nisu zrcalne slike jedna druge. Kreatorski sloj počiva na razmjerno
+malom broju laičkih kanala koji nose gotovo sve objave i gotovo sve zabilježene interakcije te skupine,
+dok institucionalni sloj čini razgranata mreža biskupijskih i župnih izvora uz mali broj središnjih
+komunikatora. Ta asimetrija sama po sebi upućuje na to da usporedba prosjeka dviju skupina ne bi bila
+dovoljna te da raspodjelu unutar kreatorskoga sloja treba analizirati prvu.
+
+## Koncentracija zabilježene pažnje
 
 Analiza koncentracije obuhvaća `r hr_int(results$h1$sources)` kreatorskih oznaka izvora s barem jednom
 opaženom vrijednošću. Na `r hr_int(results$h1$observed_posts)` objava zabilježeno je ukupno
 `r hr_int(results$h1$total_interactions)` interakcija. Gini koeficijent iznosi
-`r hr_num(results$h1$gini)`, a njegov 95-postotni bootstrap interval
+`r hr_num(results$h1$gini)`, uz 95-postotni bootstrap interval
 `r ci_text(results$h1$gini_ci_low, results$h1$gini_ci_high)`. Deset vodećih oznaka izvora prikuplja
-`r hr_pct(results$h1$cr10)` svih zabilježenih interakcija. Koncentracija ostaje vrlo visoka i u široj
-klasifikaciji, u kojoj Gini iznosi `r hr_num(results$h1$broad_gini)`.
+`r hr_pct(results$h1$cr10)` svih zabilježenih interakcija, a gornjih deset posto izvora
+`r hr_pct(results$h1$cr_top10pct)`. Koncentracija ostaje vrlo visoka i u široj klasifikaciji, u kojoj
+Gini iznosi `r hr_num(results$h1$broad_gini)`, pa nalaz ne ovisi o tome koliko je klasifikacija
+restriktivna.
 
-@fig-h1-lorenz prikazuje koliko se kumulativna raspodjela udaljava od potpune jednakosti. Površina
+@fig-h1-lorenz pokazuje koliko se kumulativna raspodjela udaljava od potpune jednakosti. Površina
 između dijagonale i krivulje nije dokaz posebne distribucijske porodice, ali jasno pokazuje da
-„kreatorski sloj” nije homogena skupina uspješnih računa.
+kreatorski sloj nije homogena skupina uspješnih računa. Većina oznaka izvora nalazi se u području u
+kojem kumulativni udio pažnje ostaje blizu nule.
 
-![Lorenzova krivulja zabilježenih interakcija među kreatorskim oznakama izvora visoke pouzdanosti. Dijagonala označava jednaku raspodjelu. Izvor: autorska analiza DigiKat korpusa.](output/figures/h1_lorenz.png){#fig-h1-lorenz}
+![Lorenzova krivulja zabilježenih interakcija među kreatorskim oznakama izvora visoke pouzdanosti. Dijagonala označava jednaku raspodjelu. Izvor: autorska analiza korpusa.](output/figures/h1_lorenz.png){#fig-h1-lorenz}
 
-Opisna regresija ranga ima koeficijent determinacije `r hr_num(results$h1$rank_r2)`. To je snažna
-linearna prilagodba na logaritamskim skalama, ali nije dovoljna za tvrdnju da podaci slijede
-potencijski zakon. @fig-h1-rank zato služi kao dijagnostički prikaz, ne kao test distribucije.
+Opisna regresija ukupnih interakcija na rang izvora ima koeficijent determinacije
+`r hr_num(results$h1$rank_r2)` i nagib `r hr_num(results$h1$rank_slope, 2)`. Riječ je o snažnoj
+linearnoj prilagodbi na logaritamskim skalama, kakva se redovito pojavljuje u raspodjelama pažnje, ali
+ta prilagodba nije dovoljna za tvrdnju da podaci slijede potencijski zakon. @fig-h1-rank zato služi kao
+dijagnostički prikaz oblika, a ne kao test distribucije.
 
-![Odnos ranga izvora i ukupnih interakcija na logaritamskim skalama. Pravac je opisna prilagodba. Izvor: autorska analiza DigiKat korpusa.](output/figures/h1_rank_size.png){#fig-h1-rank}
+![Odnos ranga izvora i ukupnih interakcija na logaritamskim skalama. Pravac je opisna prilagodba. Izvor: autorska analiza korpusa.](output/figures/h1_rank_size.png){#fig-h1-rank}
 
-## P2. Deficit interakcija ostaje u usporedbi unutar YouTubea
+## Razlika u interakcijama po objavi
 
-Među izvorima s najmanje pet objava, kreatorski medijan iznosi
-`r hr_num(results$h2$medians$Influencer, 1)` interakcija po objavi, a institucionalni
+Među izvorima s najmanje pet objava usporedba obuhvaća `r hr_int(results$h2$influencer_sources)`
+kreatorska i `r hr_int(results$h2$institutional_sources)` institucionalnih izvora. Kreatorski medijan
+iznosi `r hr_num(results$h2$medians$Influencer, 1)` interakcija po objavi, a institucionalni
 `r hr_num(results$h2$medians$Institutional, 1)`. Procijenjena razlika medijana iznosi
 `r hr_num(results$h2$median_difference, 1)`, uz 95-postotni bootstrap interval
 `r ci_text(results$h2$median_difference_ci_low, results$h2$median_difference_ci_high, 1)`. Wilcoxonov
-test daje W = `r hr_num(results$h2$wilcoxon_w, 1)` i `r p_text(results$h2$wilcoxon_p)`. Rang-biserijalna
-korelacija od `r hr_num(results$h2$rank_biserial)` pokazuje veliku raspodjelnu razliku u korist
-kreatorskih izvora.
+test daje W = `r hr_num(results$h2$wilcoxon_w, 1)` uz `r p_text(results$h2$wilcoxon_p)`, a
+rang-biserijalna korelacija od `r hr_num(results$h2$rank_biserial)` pokazuje veliku raspodjelnu razliku
+u korist kreatorskih izvora.
 
-@tbl-engagement-descriptives prikazuje broj izvora i interkvartilni raspon na kojima se temelji
-usporedba medijana.
+@tbl-engagement-descriptives prikazuje broj izvora, medijan, aritmetičku sredinu i interkvartilni
+raspon na kojima se usporedba temelji. Razmak između medijana i aritmetičke sredine unutar obiju
+skupina potvrđuje asimetričnost raspodjela i opravdava oslanjanje na medijan.
 
 ```{r}
 #| label: tbl-engagement-descriptives
-#| tbl-cap: "Interakcije po objavi prema skupini izvora"
+#| tbl-cap: "Interakcije po objavi prema skupini izvora, izvori s najmanje pet objava"
 
 eng_desc <- fread("output/tables/h2_group_summary.csv", encoding = "UTF-8")
 eng_desc[, Skupina := fifelse(
   actor_group == "Influencer", "Kreatorski izvori", "Institucionalni izvori"
 )]
+setorder(eng_desc, -median)
 eng_desc[, `:=`(
   `Broj izvora` = vapply(sources, hr_int, character(1)),
+  Objave = vapply(posts, hr_int, character(1)),
   Medijan = vapply(median, hr_num, character(1), digits = 1),
+  `Aritmetička sredina` = vapply(mean, hr_num, character(1), digits = 1),
   `Interkvartilni raspon` = paste0(
     vapply(q1, hr_num, character(1), digits = 1), "–",
     vapply(q3, hr_num, character(1), digits = 1)
   )
 )]
-eng_desc[, .(Skupina, `Broj izvora`, Medijan, `Interkvartilni raspon`)] |>
-  kable(align = c("l", "r", "r", "r"))
+eng_desc[, .(Skupina, `Broj izvora`, Objave, Medijan, `Aritmetička sredina`,
+             `Interkvartilni raspon`)] |>
+  kable(align = c("l", "r", "r", "r", "r", "r"))
 ```
 
-@fig-h2-engagement pokazuje i veliku heterogenost unutar obje skupine. Nalaz nije rezultat samo nekoliko
-ekstremnih vrijednosti jer je razlika vidljiva i u medijanima, ali rasponi upozoravaju da naziv skupine
-ne određuje uspjeh pojedinačnoga izvora.
+@fig-h2-engagement pokazuje i veliku heterogenost unutar obiju skupina. Nalaz nije rezultat samo
+nekoliko ekstremnih vrijednosti jer je razlika vidljiva i u medijanima i u kvartilima, ali rasponi
+upozoravaju da pripadnost skupini ne određuje uspjeh pojedinačnoga izvora. Najuspješniji institucionalni
+izvori nadmašuju velik dio kreatorskoga sloja.
 
-![Prosječne interakcije po zabilježenoj objavi za izvore visoke pouzdanosti s najmanje pet objava. Okomita os koristi pseudo-logaritamsku transformaciju koja zadržava nulu. Izvor: autorska analiza DigiKat korpusa.](output/figures/h2_interactions_per_post.png){#fig-h2-engagement}
+![Prosječne interakcije po zabilježenoj objavi za izvore visoke pouzdanosti s najmanje pet objava. Okomita os koristi pseudo-logaritamsku transformaciju koja zadržava nulu. Izvor: autorska analiza korpusa.](output/figures/h2_interactions_per_post.png){#fig-h2-engagement}
 
-Usporedba unutar YouTubea obuhvaća `r hr_int(results$h2$youtube_influencer_sources)` kreatorski i
+Usporedba ograničena na YouTube obuhvaća `r hr_int(results$h2$youtube_influencer_sources)` kreatorski i
 `r hr_int(results$h2$youtube_institutional_sources)` institucionalnih izvora. Nakon prilagodbe za broj
 objava i prosječno vrijeme prikupljanja, koeficijent kreatorske skupine iznosi
 `r hr_num(results$h2$youtube_adjusted_estimate)`, uz 95-postotni HC3 interval
 `r ci_text(results$h2$youtube_adjusted_ci_low, results$h2$youtube_adjusted_ci_high)` i
 `r p_text(results$h2$youtube_adjusted_p)`. Eksponencirani koeficijent iznosi
-`r hr_num(results$h2$youtube_adjusted_ratio, 2)`. Na transformiranoj ljestvici procijenjeni odnos kreće
-se od `r hr_num(results$h2$youtube_adjusted_ratio_ci_low, 2)` do
+`r hr_num(results$h2$youtube_adjusted_ratio, 2)`, a na transformiranoj se ljestvici procijenjeni odnos
+kreće od `r hr_num(results$h2$youtube_adjusted_ratio_ci_low, 2)` do
 `r hr_num(results$h2$youtube_adjusted_ratio_ci_high, 2)`. Time se glavni nalaz ne oslanja na izravnu
-usporedbu weba i društvenih platformi. Koeficijent ostaje pozitivan uz pragove od jedne, deset i
-dvadeset objava. Najmanja procjena iznosi `r hr_num(results$h2$youtube_sensitivity_min_estimate)`, a
-najveća p-vrijednost `r p_text(results$h2$youtube_sensitivity_max_p)`.
+usporedbu weba i društvenih platformi, koje bilježe različite vrste korisničkih radnji.
 
-Izraz **institucionalni deficit pažnje** opravdan je samo u ovom ograničenom smislu. Riječ je o manjem
-broju zabilježenih interakcija po objavi, uključujući usporedive YouTube izvore. Nalaz ne pokazuje
-koliko je ljudi sadržaj vidjelo, koliko mu vjeruje, je li ispunio institucionalnu svrhu ili kakav je
-duhovni i društveni učinak imao.
-
-## P3. Platformski profili snažno se razlikuju
+## Platformski profili
 
 Kreatorski izvori objavljuju `r hr_pct(results$h3$social_share_influencer)` sadržaja na Facebooku,
-Instagramu, YouTubeu i Twitteru/X, dok je odgovarajući institucionalni udio
+Instagramu, YouTubeu i Twitteru/X, dok odgovarajući institucionalni udio iznosi
 `r hr_pct(results$h3$social_share_institutional)`. Web čini
-`r hr_pct(results$h3$web_share_institutional)` institucionalnih objava i
-`r hr_pct(results$h3$web_share_influencer, 2)` kreatorskih objava. Cramerov V na razini objava iznosi
-`r hr_num(results$h3$post_cramers_v)`, a na razini prisutnosti izvora na platformi
-`r hr_num(results$h3$source_presence_cramers_v)`.
+`r hr_pct(results$h3$web_share_institutional)` institucionalnih objava i tek
+`r hr_pct(results$h3$web_share_influencer, 2)` kreatorskih. Povezanost skupine i platforme vrlo je
+snažna, s Cramerovim V od `r hr_num(results$h3$post_cramers_v)` na razini objava i
+`r hr_num(results$h3$source_presence_cramers_v)` na razini prisutnosti izvora na platformi.
 
 Razlika nije samo posljedica najproduktivnijih izvora. Kada svaka oznaka izvora dobije jednaku težinu,
-prosječan udio društvenih platformi iznosi `r hr_pct(results$h3$source_weighted_social_share_influencer)`
-za kreatorske i `r hr_pct(results$h3$source_weighted_social_share_institutional)` za institucionalne
-izvore. Razlika iznosi `r hr_pp(results$h3$source_weighted_social_difference)`, uz 95-postotni bootstrap
-interval od `r hr_pp(results$h3$source_weighted_social_difference_ci_low)` do
+prosječan udio društvenih platformi iznosi
+`r hr_pct(results$h3$source_weighted_social_share_influencer)` za kreatorske i
+`r hr_pct(results$h3$source_weighted_social_share_institutional)` za institucionalne izvore. Razlika
+iznosi `r hr_pp(results$h3$source_weighted_social_difference)`, uz 95-postotni bootstrap interval od
+`r hr_pp(results$h3$source_weighted_social_difference_ci_low)` do
 `r hr_pp(results$h3$source_weighted_social_difference_ci_high)`.
 
-@fig-h3-platform prikazuje postotke objava, a ne procijenjenu publiku. Stoga opisuje alokaciju sadržaja
-u promatranom korpusu. Ne identificira namjeru aktera niti algoritamsku distribuciju.
+@fig-h3-platform prikazuje postotke objava, a ne procijenjenu publiku, pa opisuje alokaciju sadržaja u
+promatranom korpusu. Prikaz ne identificira namjeru aktera niti algoritamsku distribuciju. Njegova je
+glavna implikacija metodološka. Budući da se dvije skupine gotovo ne susreću izvan YouTubea, svaka
+usporedba pažnje koja ne fiksira platformu mjeri i razliku među akterima i razliku među metrikama.
 
-![Raspodjela objava po platformi i skupini u primarnom skupu visoke pouzdanosti. Izvor: autorska analiza DigiKat korpusa.](output/figures/h3_platform_mix.png){#fig-h3-platform}
+![Raspodjela objava po platformi i skupini u primarnom skupu visoke pouzdanosti. Izvor: autorska analiza korpusa.](output/figures/h3_platform_mix.png){#fig-h3-platform}
 
-## P4. Skupine dijele tematsku jezgru, ali različito naglašavaju njezine dijelove
+## Tematski profili
 
 Rječnik je dodijelio barem jednu oznaku za `r hr_int(results$h4$coded_posts)` od
-`r hr_int(results$h4$posts_with_text)` objava s tekstom. To je pokrivenost od
-`r hr_pct(results$h4$coverage)`. Jensen-Shannonova divergencija između profila iznosi
-`r hr_num(results$h4$js)`. Njezin 95-postotni izvorski bootstrap interval kreće se od
-`r hr_num(results$h4$js_ci_low)` do `r hr_num(results$h4$js_ci_high)`. Procjena je viša od rezultata
-šire klasifikacije od `r hr_num(results$h4$broad_js)`, što potvrđuje da izbor izvora utječe na veličinu
-tematske razlike.
+`r hr_int(results$h4$posts_with_text)` objava s tekstom, što je pokrivenost od
+`r hr_pct(results$h4$coverage)`, uz ukupno `r hr_int(results$h4$assignments)` dodijeljenih oznaka.
+Jensen-Shannonova divergencija između dvaju profila iznosi `r hr_num(results$h4$js)`, uz 95-postotni
+izvorski bootstrap interval od `r hr_num(results$h4$js_ci_low)` do `r hr_num(results$h4$js_ci_high)`.
+Procjena je viša od rezultata šire klasifikacije, koja daje `r hr_num(results$h4$broad_js)`, što
+potvrđuje da izbor izvora utječe na veličinu izmjerene tematske razlike.
 
-Devocijske oznake imaju `r hr_pp(results$h4$devotional_difference)` veći udio u kreatorskom profilu.
-Bootstrap interval kreće se od `r hr_pp(results$h4$devotional_ci_low)` do
+Vrijednost divergencije razmjerno je niska, što znači da profili dijele zajedničku jezgru. Razlike se
+koncentriraju u dvjema obiteljima. Devocijske oznake imaju `r hr_pp(results$h4$devotional_difference)`
+veći udio u kreatorskom profilu, uz interval od `r hr_pp(results$h4$devotional_ci_low)` do
 `r hr_pp(results$h4$devotional_ci_high)`. Institucionalne oznake imaju
 `r hr_pp(abs(results$h4$institutional_difference))` veći udio u institucionalnom profilu, uz interval
-razlike kreatora prema institucijama od `r hr_pp(results$h4$institutional_ci_low)` do
-`r hr_pp(results$h4$institutional_ci_high)`.
+razlike kreatorskih prema institucionalnim izvorima od `r hr_pp(results$h4$institutional_ci_low)` do
+`r hr_pp(results$h4$institutional_ci_high)`. Cjelovita raspodjela prikazana je u @tbl-themes.
 
-@fig-h4-theme pokazuje da se jasni devocijski i institucionalni naglasci pojavljuju unutar profila
-koji i dalje dijele liturgijske, socijalne i zajedničke teme. Zato podaci više podupiru diferencijaciju
-naglaska nego tvrdnju o odvojenim tematskim svjetovima.
+```{r}
+#| label: tbl-themes
+#| tbl-cap: "Udio tematskih oznaka po skupini izvora i razlika s 95-postotnim bootstrap intervalom"
 
-![Razlika u udjelu tematskih oznaka. Pozitivne vrijednosti označavaju veći udio među kreatorskim izvorima. Crte prikazuju 95-postotne izvorske bootstrap intervale. Izvor: autorska analiza DigiKat korpusa.](output/figures/h4_theme_difference.png){#fig-h4-theme}
+themes <- fread("output/tables/h4_theme_distribution.csv", encoding = "UTF-8")
+setorder(themes, -difference)
+themes[, .(
+  `Tematska obitelj` = theme,
+  `Kreatorski izvori` = vapply(Influencer, hr_pct, character(1)),
+  `Institucionalni izvori` = vapply(Institutional, hr_pct, character(1)),
+  Razlika = vapply(difference, hr_pct, character(1)),
+  `95 % CI` = paste0(
+    "[", vapply(ci_low, hr_pct, character(1)), "; ",
+    vapply(ci_high, hr_pct, character(1)), "]"
+  )
+)] |>
+  kable(align = c("l", "r", "r", "r", "r"))
+```
 
-## P5. Platformski učinak nije procjenjiv, a razlike po vrsti izvora ostaju eksplorativne
+@fig-h4-theme pokazuje da se jasni devocijski i institucionalni naglasci pojavljuju unutar profila koji
+i dalje dijele liturgijske, socijalne i zajedničke teme. Politička je razlika po smjeru u korist
+kreatorskih izvora, ali njezin interval obuhvaća nulu, pa se ne tumači. Podaci stoga više podupiru
+diferencijaciju naglaska nego tvrdnju o odvojenim tematskim svjetovima.
 
-Eksplorativni model obuhvaća `r hr_int(results$h5$sources)` kreatorskih izvora s najmanje pet objava.
-Među njima je `r hr_int(results$h5$primary_youtube_sources)` primarno na YouTubeu. Takav nedostatak
+![Razlika u udjelu tematskih oznaka. Pozitivne vrijednosti označavaju veći udio među kreatorskim izvorima. Crte prikazuju 95-postotne izvorske bootstrap intervale. Izvor: autorska analiza korpusa.](output/figures/h4_theme_difference.png){#fig-h4-theme}
+
+## Struktura kreatorskoga sloja
+
+Eksplorativni model obuhvaća `r hr_int(results$h5$sources)` kreatorskih izvora s najmanje pet objava,
+među kojima je `r hr_int(results$h5$primary_youtube_sources)` primarno na YouTubeu. Takav nedostatak
 preklapanja onemogućuje odvojenu procjenu učinka primarne platforme. Izostavljanje platformskoga
-koeficijenta nije negativan nalaz, nego identifikacijsko ograničenje.
+koeficijenta nije negativan nalaz, nego identifikacijsko ograničenje, jer u ovom korpusu platforma nije
+jedan od nekoliko ravnomjerno dostupnih izbora kreatora.
 
-Model interakcija po objavi uključuje `r hr_int(results$h5$lay_sources)` laičkih izvora,
+Model uključuje `r hr_int(results$h5$lay_sources)` laičkih izvora,
 `r hr_int(results$h5$priest_sources)` svećeničkih izvora i
-`r hr_int(results$h5$charismatic_sources)` karizmatskih zajednica. Učestalost objavljivanja nije
-povezana s prosjekom interakcija po objavi. Koeficijent iznosi
-`r hr_num(results$h5$activity_estimate)` uz `r p_text(results$h5$activity_p)`. To razlikuje učinkovitost
-pojedinačne objave od aritmetičke činjenice da više objava stvara više prilika za interakciju.
+`r hr_int(results$h5$charismatic_sources)` karizmatskih zajednica te objašnjava
+`r hr_pct(results$h5$adjusted_r2)` varijance uz prilagodbu za broj prediktora. Učestalost objavljivanja
+nije povezana s prosjekom interakcija po objavi, uz koeficijent `r hr_num(results$h5$activity_estimate)`
+i `r p_text(results$h5$activity_p)`. Taj nalaz razlikuje učinkovitost pojedinačne objave od aritmetičke
+činjenice da više objava stvara više prilika za interakciju, pa produktivnost sama po sebi ne
+poboljšava odaziv po objavi.
 
-Svećenički izvori imaju nižu procijenjenu vrijednost od laičkih izvora. Koeficijent iznosi
+Svećenički izvori imaju nižu procijenjenu vrijednost od laičkih. Koeficijent iznosi
 `r hr_num(results$h5$priest_estimate)`, uz 95-postotni HC3 interval
-`r ci_text(results$h5$priest_ci_low, results$h5$priest_ci_high)` i
-`r p_text(results$h5$priest_p)`. Procijenjeni omjer na transformiranoj ljestvici iznosi
-`r hr_num(results$h5$priest_ratio, 2)`. Koeficijent karizmatskih zajednica nije statistički razlučiv
-od laičke skupine (`r p_text(results$h5$charismatic_p)`). @fig-h5-model prikazuje veliku nesigurnost
-procjena za manje skupine.
+`r ci_text(results$h5$priest_ci_low, results$h5$priest_ci_high)` i `r p_text(results$h5$priest_p)`, a
+procijenjeni omjer na transformiranoj ljestvici iznosi `r hr_num(results$h5$priest_ratio, 2)`.
+Koeficijent karizmatskih zajednica nije statistički razlučiv od laičke skupine
+(`r p_text(results$h5$charismatic_p)`). @fig-h5-model prikazuje veliku nesigurnost procjena za manje
+skupine, a @tbl-models objedinjuje glavne modelske procjene.
 
-![Koeficijenti eksplorativnoga modela interakcija po objavi s 95-postotnim HC3 intervalima. Referentna skupina za vrste izvora jesu laički kreatorski izvori. Izvor: autorska analiza DigiKat korpusa.](output/figures/h5_coefficients.png){#fig-h5-model}
-
-Glavne modelske procjene objedinjene su u @tbl-models. Eksponencirani koeficijenti odnose se na
-transformirani ishod `log(1 + prosječne interakcije)` i ne treba ih zamijeniti neprilagođenim omjerom
-aritmetičkih prosjeka.
+![Koeficijenti eksplorativnoga modela interakcija po objavi s 95-postotnim HC3 intervalima. Referentna skupina za vrste izvora jesu laički kreatorski izvori. Izvor: autorska analiza korpusa.](output/figures/h5_coefficients.png){#fig-h5-model}
 
 ```{r}
 #| label: tbl-models
@@ -396,119 +552,168 @@ model_table[, .(
   kable(align = c("l", "l", "r", "r", "r", "r"))
 ```
 
-Niži koeficijent svećeničkih izvora ne može se pripisati svećeničkom statusu kao uzroku. Skupina je
-mala, sadržajno heterogena i gotovo potpuno vezana uz jednu platformu. Razlika može odražavati format,
-publiku, starost objava, intenzitet kanala ili druge neopažene značajke. Nalaz ostaje sličan uz pragove
-od jedne i deset objava, ali pri pragu od dvadeset objava ostaju samo dva svećenička izvora i interval
-obuhvaća nulu.
+Eksponencirani koeficijenti odnose se na logaritamski transformiran ishod i ne treba ih zamijeniti
+neprilagođenim omjerom aritmetičkih prosjeka. Niži koeficijent svećeničkih izvora ne može se pripisati
+svećeničkom statusu kao uzroku. Skupina je mala, sadržajno heterogena i gotovo potpuno vezana uz jednu
+platformu, pa razlika može odražavati format, publiku, starost objava, intenzitet kanala ili druge
+neopažene značajke.
 
-## Sažetak empirijskih odgovora
+## Provjere robusnosti
+
+Glavni nalaz o razlici u interakcijama po objavi provjeren je uz četiri kombinacije klasifikacijskoga
+skupa i minimalnoga broja objava, prikazane u @tbl-robustness. Koeficijent kreatorske skupine ostaje
+pozitivan i statistički razlučiv u svim kombinacijama. Njegova je veličina najveća u primarnom skupu,
+a manja u širem skupu, što je očekivano jer širi skup uključuje mnogo slabo vidljivih devocijskih
+naziva čija pripadnost katoličkim akterima nije provjerena. Restriktivnija klasifikacija dakle ne
+proizvodi nalaz, nego ga izoštrava.
+
+```{r}
+#| label: tbl-robustness
+#| tbl-cap: "Procijenjena razlika kreatorskih i institucionalnih izvora prema klasifikacijskom skupu i pragu broja objava"
+
+rob <- fread("output/tables/h2_robustness.csv", encoding = "UTF-8")
+rob[, .(
+  Specifikacija = specification,
+  `Kreatorski izvori` = vapply(influencer_sources, hr_int, character(1)),
+  `Institucionalni izvori` = vapply(institutional_sources, hr_int, character(1)),
+  `β` = vapply(estimate, hr_num, character(1), digits = 3),
+  `95 % CI` = paste0(
+    "[", vapply(ci_low, hr_num, character(1), digits = 3), "; ",
+    vapply(ci_high, hr_num, character(1), digits = 3), "]"
+  ),
+  `e^β` = vapply(ratio, hr_num, character(1), digits = 2),
+  `p` = vapply(p, p_text, character(1))
+)] |>
+  kable(align = c("l", "r", "r", "r", "r", "r", "r"))
+```
+
+Usporedba unutar YouTubea provjerena je uz pragove od jedne, deset i dvadeset objava. Koeficijent
+ostaje pozitivan u svim specifikacijama, s najmanjom procjenom
+`r hr_num(results$h2$youtube_sensitivity_min_estimate)` i najvećom p-vrijednošću
+`r p_text(results$h2$youtube_sensitivity_max_p)` pri najstrožem pragu, gdje uzorak pada na manje od
+polovice izvora. Nalaz o svećeničkim izvorima ostaje sličan uz pragove od jedne i deset objava, ali pri
+pragu od dvadeset objava u uzorku ostaju samo dva takva izvora i interval obuhvaća nulu, pa se ta
+razlika ne može smatrati utvrđenom.
+
+## Sinteza nalaza
 
 @tbl-findings razdvaja čvrste opisne nalaze, usporedbu sa zajedničkom platformom i eksplorativne
-rezultate. Time se izbjegava objedinjavanje svih pitanja u jednu potvrdnu priču.
+rezultate. Razdvajanje je nužno jer se pet pitanja ne oslanja na jednako jaku evidenciju, pa bi
+njihovo objedinjavanje u jednu potvrdnu priču precijenilo doseg slabijih procjena.
 
 ```{r}
 #| label: tbl-findings
-#| tbl-cap: "Sažetak empirijskih odgovora"
+#| tbl-cap: "Sinteza empirijskih odgovora prema snazi dokaza"
 
 findings <- fread("output/tables/findings_summary.csv", encoding = "UTF-8")
 status_label <- c(
   robust_descriptive = "Robustan opisni nalaz",
-  supported_within_youtube = "Poduprto unutar YouTubea",
+  supported_within_youtube = "Poduprto unutar zajedničke platforme",
   modest_divergence = "Razlika naglasaka; široka nesigurnost",
   exploratory_limited_overlap = "Eksplorativno; ograničeno preklapanje"
 )
-findings[, `Status dokaza` := unname(status_label[inferential_status])]
-findings[, .(Pitanje = question, Nalaz = finding, `Status dokaza`)] |>
+findings[, `Snaga dokaza` := unname(status_label[inferential_status])]
+findings[, .(Pitanje = question, Nalaz = finding, `Snaga dokaza`)] |>
   kable(align = c("l", "l", "l"))
 ```
 
 # Rasprava
 
-## Glavni nalaz
+## Doseg glavnoga nalaza
 
-Najčvršći rezultat rada nije opća tvrdnja da su influenceri uspješniji od institucija. Rezultat je
-uži. Pouzdano prepoznati kreatorski izvori prikupljaju više zabilježenih interakcija po objavi od
+Najčvršći rezultat rada nije opća tvrdnja da su influenceri uspješniji od institucija. Rezultat je uži.
+Pouzdano prepoznati kreatorski izvori prikupljaju više zabilježenih interakcija po objavi od
 institucionalnih izvora, a razlika ostaje velika i kada se usporedba ograniči na YouTube. Time se
-isključuje najjednostavnije objašnjenje prema kojem je cijeli deficit samo posljedica usporedbe
-platformi s različitim metrikama.
+isključuje najjednostavnije alternativno objašnjenje prema kojem je cijeli deficit samo posljedica
+usporedbe platformi s različitim metrikama. Ta je provjera bila nužna jer podaci pokazuju gotovo
+potpunu platformsku razdvojenost dviju skupina izvan YouTubea.
 
-Ipak, zajednička platforma ne stvara eksperimentalne uvjete. Kreatorski i institucionalni YouTube
-izvori mogu se razlikovati po formatu, publici, trajanju videa, temama, starosti kanala i ciljevima.
-Procjena zato opisuje uvjetovanu povezanost, ne učinak kreatorskoga identiteta. Izraz deficit pažnje
-koristan je samo ako ostane vezan uz zabilježene reakcije na objavu.
+Zajednička platforma ipak ne stvara eksperimentalne uvjete. Kreatorski i institucionalni YouTube izvori
+mogu se razlikovati po formatu, publici, trajanju videa, temama, starosti kanala i komunikacijskim
+ciljevima. Procjena zato opisuje uvjetovanu povezanost, a ne učinak kreatorskoga identiteta. Izraz
+institucionalni deficit pažnje koristan je samo dok ostaje vezan uz zabilježene reakcije na objavu.
+Nalaz ne pokazuje koliko je ljudi sadržaj vidjelo, koliko mu vjeruje, je li ispunio institucionalnu
+svrhu ili kakav je duhovni i društveni učinak imao.
 
-## Koncentracija unutar kreatorskoga sloja
+## Koncentracija mijenja smisao prosječne prednosti
 
-Visoka koncentracija mijenja interpretaciju prosječne prednosti kreatorskih izvora. Digitalna pažnja
-nije ravnomjerno raspoređena među alternativnim glasovima. Nekoliko oznaka izvora prikuplja gotovo sve
-zabilježene interakcije, dok većina ostaje na periferiji. Institucionalni komunikator zato ne konkurira
-apstraktnoj skupini „influencera”, nego malom broju iznimno vidljivih kanala i dugom repu slabo vidljivih
-izvora.
+Visoka koncentracija bitno mijenja interpretaciju kreatorske prednosti. Digitalna pažnja nije
+ravnomjerno raspoređena među alternativnim glasovima. Nekoliko oznaka izvora prikuplja gotovo sve
+zabilježene interakcije, dok velika većina ostaje na periferiji vidljivosti. Institucionalni
+komunikator zato ne konkurira apstraktnoj skupini influencera, nego malom broju iznimno vidljivih
+kanala i dugom repu slabo vidljivih izvora. Taj je nalaz u skladu s očekivanjem izvedenim iz ekonomije
+pažnje, prema kojem vidljivost djeluje kumulativno.
 
-Takva raspodjela ima i metodološku posljedicu. Prosjek skupine snažno ovisi o vodećim izvorima, dok
-medijan bolje opisuje tipičnu oznaku izvora. Ovaj rad zato izvještava obje vrste sažetka i daje prednost
-medijanu u glavnoj međugrupnoj usporedbi.
+Iz toga slijedi i praktična posljedica za tumačenje javne rasprave. Uspješni kreatorski kanali nisu
+reprezentativni za kreatorski sloj, pa se iz njihova primjera ne može izvesti zaključak o tome što
+općenito funkcionira u religijskoj digitalnoj komunikaciji. Metodološka je posljedica jednaka. Prosjek
+skupine snažno ovisi o vodećim izvorima, dok medijan bolje opisuje tipičnu oznaku izvora, zbog čega
+ovaj rad izvještava obje vrste sažetka i daje prednost medijanu.
 
 ## Platformska podjela rada
 
 Kreatorski je sloj gotovo potpuno usmjeren na društvene platforme, ponajprije YouTube, dok institucije
 kombiniraju web, Facebook i YouTube. To nije samo distribucijski detalj. Web stranica može služiti
 autoritativnoj objavi, arhivi i pretraživosti, a društvena platforma neposrednoj reakciji i ponovnoj
-distribuciji. Manji broj interakcija zato ne znači nužno da institucionalni kanal nije ostvario svrhu.
+distribuciji. Manji broj interakcija zato ne znači nužno da institucionalni kanal nije ostvario svoju
+svrhu, jer dio institucionalne komunikacije uopće nije oblikovan za izazivanje reakcije.
 
-Nalaz ipak pokazuje da institucionalne organizacije ne mogu procjenjivati digitalni odaziv samo prema
-volumenu objavljivanja. Platformski specifični cilj, usporediva skupina izvora i konzistentna metrika
-potrebni su prije zaključka o uspjehu. Za YouTube to znači uspoređivati reakcije po objavi s drugim
-kanalima slične veličine i razdoblja, a ne s web-produkcijom iste institucije.
+Nalaz ipak pokazuje da institucionalne organizacije ne mogu procjenjivati digitalni odaziv prema
+volumenu objavljivanja. Za smislenu ocjenu potrebni su platformski specifičan cilj, usporediva skupina
+izvora i konzistentna metrika. Za YouTube to znači uspoređivati reakcije po objavi s drugim kanalima
+slične veličine i razdoblja, a ne s web-produkcijom iste institucije. Podatak da učestalost
+objavljivanja nije povezana s odazivom po objavi dodatno upućuje na to da povećanje količine sadržaja
+nije samo po sebi komunikacijska strategija.
 
 ## Tematska blizina i razlika naglaska
 
 Tematski rezultat ne podupire sliku dvaju odvojenih religijskih svjetova. Obje skupine sudjeluju u
 zajedničkom repertoaru, ali mu daju različite težine. Kreatorski izvori više naglašavaju devocijski
-sadržaj, dok institucionalni izvori više bilježe hijerarhiju, dokumente i službena događanja. Razlika
-je komunikacijska specijalizacija unutar zajedničkoga polja, a ne potpuna tematska segmentacija.
+sadržaj, dok institucionalni izvori više bilježe hijerarhiju, dokumente i službena događanja. Riječ je
+o komunikacijskoj specijalizaciji unutar zajedničkoga polja, a ne o tematskoj segmentaciji, što
+odgovara očekivanju da digitalno okruženje mijenja registar i vjerodostojnost religijskoga glasa prije
+nego njegov predmet.
 
-Rječnički rezultat ne govori jesu li teme obrađene afirmativno, kritički ili informativno. Ne pokazuje
-ni proizvodi li devocijski naglasak više interakcija. Za takav bi zaključak bilo potrebno validirano
-kodiranje sadržaja i dizajn koji povezuje temu pojedinačne objave s platformski usporedivom pažnjom.
+Rječnički rezultat ne govori jesu li teme obrađene afirmativno, kritički ili informativno, niti
+pokazuje proizvodi li devocijski naglasak više interakcija. Za takav bi zaključak bilo potrebno
+validirano kodiranje sadržaja i dizajn koji povezuje temu pojedinačne objave s platformski usporedivom
+mjerom pažnje. To je jedan od najizravnijih smjerova daljnjega rada.
 
-## Razlike unutar kreatorskoga sloja
+## Unutarnja struktura kreatorskoga sloja
 
 Eksplorativna negativna povezanost svećeničkih izvora s interakcijama po objavi važna je upravo zato
-što ne potvrđuje pretpostavku da osobni klerikalni autoritet automatski donosi digitalnu pažnju. No
-uzorak je premalen za čvrstu tipologiju. Svećenički kanal može biti arhiva propovijedi, podcast,
+što ne potvrđuje pretpostavku da osobni klerikalni autoritet automatski donosi digitalnu pažnju.
+Uzorak je ipak premalen za čvrstu tipologiju. Svećenički kanal može biti arhiva propovijedi, podcast,
 prijenos mise ili osobni komentar, a te se funkcije ne mogu svesti na jednu binarnu oznaku.
 
 Nedostatak varijacije primarne platforme jednako je informativan. U ovom korpusu platforma nije jedan
-od nekoliko ravnomjerno dostupnih izbora kreatora. Ona je gotovo sastavni dio promatranoga kreatorskoga
-sloja. Pokušaj procjene samostalnoga platformskog učinka stoga bi se temeljio na ekstrapolaciji, a ne na
-stvarnoj usporedbi.
+od nekoliko ravnomjerno dostupnih izbora kreatora, nego gotovo sastavni dio onoga što kreatorski sloj
+jest. Pokušaj procjene samostalnoga platformskog učinka temeljio bi se na ekstrapolaciji, a ne na
+stvarnoj usporedbi, pa je izostavljanje toga koeficijenta metodološka odluka, a ne propust.
 
 ## Ograničenja
 
 Prvo, klasifikacija se temelji na oznakama izvora i pravilima, a ne na neovisnom dvostrukom kodiranju
 svakoga računa. Primarni skup smanjuje pogrešku, ali ne jamči da je svaka oznaka katolička, aktivna ili
-ispravno svrstana. Široka klasifikacija posebno je osjetljiva na općenito kršćanske, regionalne i
+ispravno svrstana. Široka je klasifikacija posebno osjetljiva na općenito kršćanske, regionalne i
 devocijske nazive, pa služi samo kao analiza osjetljivosti.
 
 Drugo, oznake izvora nisu razriješene u jedinstvene stvarne aktere. Jedan kanal može imati više
-varijanti naziva, a ista institucija može nastupati kroz domenu i društveni račun. Fragmentacija može
-povećati broj izvora i promijeniti koncentraciju. Rezultati zato opisuju zabilježene oznake, ne potpuno
-razriješenu mrežu osoba i organizacija.
+varijanti naziva, a ista institucija može nastupati kroz domenu i društveni račun. Takva fragmentacija
+može povećati broj izvora i utjecati na izmjerenu koncentraciju, pa se rezultati odnose na zabilježene
+oznake, a ne na potpuno razriješenu mrežu osoba i organizacija.
 
-Treće, varijabla interakcija vendorska je snimka. Ne osvježava se jednako dugo nakon objave, ne obuhvaća
-iste radnje na svim platformama i može ponavljati iste vrijednosti kroz više zapisa. Nula nije siguran
-dokaz nulte reakcije. Usporedba unutar YouTubea i prag minimalnoga broja objava smanjuju, ali ne
-uklanjaju taj problem.
+Treće, varijabla interakcija snimka je stanja u trenutku prikupljanja. Ne bilježi se jednako dugo
+nakon objave, ne obuhvaća iste radnje na svim platformama i može ponavljati iste vrijednosti kroz više
+zapisa. Nula nije siguran dokaz izostanka reakcije. Usporedba unutar YouTubea, prilagodba za vrijeme
+prikupljanja i prag minimalnoga broja objava smanjuju taj problem, ali ga ne uklanjaju.
 
 Četvrto, korpus obuhvaća javno dostupne i instrumentom dohvaćene objave. Zatvorene skupine, privatne
-poruke, dio Instagrama i TikToka, tiskani kanali te offline zajednice ostaju izvan analize. Vidljivi
+poruke, dio Instagrama i TikToka, tiskani kanali te offline zajednice ostaju izvan analize, pa vidljivi
 digitalni sloj nije cijeli katolički komunikacijski prostor.
 
-Peto, promjena instrumenta prikupljanja tijekom 2024. i nepotpuna 2026. ograničavaju vremensku
-usporedivost. Modeli kontroliraju prosječno vrijeme prikupljanja gdje je to potrebno, ali ne mogu
-rekonstruirati sadržaj koji instrument nije zahvatio.
+Peto, promjena instrumenta prikupljanja tijekom 2024. i nepotpuna 2026. godina ograničavaju vremensku
+usporedivost, zbog čega se rad ne bavi promjenom kroz vrijeme.
 
 Šesto, riječ je o opservacijskim podacima. Modeli ne mogu razlikovati učinak identiteta izvora od
 učinka kvalitete produkcije, baze pratitelja, plaćene promocije, algoritamske preporuke, teme ili dobi
@@ -521,52 +726,75 @@ izvorima, ali ne uključuju pogrešku samoga rječnika.
 
 # Zaključak
 
-Službeni DigiKat korpus pokazuje institucionalni deficit zabilježenih interakcija po objavi. Nalaz je
-vidljiv u izvorima visoke pouzdanosti i ostaje velik unutar YouTubea nakon prilagodbe za aktivnost i
-vrijeme prikupljanja. Istodobno je pažnja među kreatorskim izvorima izrazito koncentrirana. Prednost
-kreatorskoga sloja zato pripada malom broju vrlo vidljivih kanala, a ne svakom izvoru koji djeluje
-izvan institucije.
+Analiza hrvatskoga digitalnog medijskog prostora pokazuje institucionalni deficit zabilježenih
+interakcija po objavi. Nalaz je vidljiv među izvorima visoke pouzdanosti i ostaje velik unutar
+YouTubea nakon prilagodbe za aktivnost i vrijeme prikupljanja, a potvrđuju ga i provjere s različitim
+klasifikacijskim skupovima i pragovima. Istodobno je pažnja među kreatorskim izvorima izrazito
+koncentrirana, pa prednost kreatorskoga sloja pripada malom broju vrlo vidljivih kanala, a ne svakom
+izvoru koji djeluje izvan institucije.
 
 Kreatorski i institucionalni izvori imaju snažno različite platformske profile, ali dijele velik dio
-tematskoga repertoara. Razlikuju se više po naglasku nego po potpunoj tematskoj odvojenosti. Unutar
-kreatorskoga sloja podaci nisu dovoljni za samostalan učinak primarne platforme, a razlika svećeničkih
-i laičkih izvora ostaje eksplorativna.
+tematskoga repertoara i razlikuju se više po naglasku nego po odvojenosti tema. Unutar kreatorskoga
+sloja podaci ne dopuštaju procjenu samostalnoga učinka primarne platforme, a razlika svećeničkih i
+laičkih izvora ostaje eksplorativna.
 
 Rad stoga sužava, a ne proširuje, tvrdnju o institucionalnom deficitu pažnje. Digitalne interakcije
-otkrivaju jednu važnu dimenziju odaziva publike. Ne mjere autoritet, povjerenje, doseg ni ostvarenje
-pastoralne i informativne svrhe. Upravo to ograničenje omogućuje da se snažan empirijski rezultat
-zadrži bez pretvaranja u opću ocjenu crkvene komunikacije.
+otkrivaju jednu važnu dimenziju odaziva publike, ali ne mjere autoritet, povjerenje, doseg ni
+ostvarenje pastoralne i informativne svrhe. Upravo to ograničenje omogućuje da se snažan empirijski
+rezultat zadrži bez pretvaranja u opću ocjenu crkvene komunikacije. Daljnji rad trebao bi povezati
+temu pojedinačne objave s platformski usporedivom mjerom pažnje, razriješiti oznake izvora u stvarne
+aktere i dopuniti mjeru reakcije pokazateljima dosega i povjerenja.
 
 # Literatura {.unnumbered}
 
-Abidin, C. (2018). *Internet Celebrity*. Emerald Publishing.
+Abidin, C. (2018). *Internet Celebrity: Understanding Fame Online*. Emerald Publishing.
 
-Davenport, T. H. i Beck, J. C. (2001). *The Attention Economy*. Harvard Business School Press.
+Bucher, T. (2018). *If...Then: Algorithmic Power and Politics*. Oxford University Press.
+
+Campbell, H. A. (2007). Who's got the power? Religious authority and the internet. *Journal of
+Computer-Mediated Communication, 12*(3), 1043–1062.
+
+Campbell, H. A. (ur.) (2013). *Digital Religion: Understanding Religious Practice in New Media
+Worlds*. Routledge.
+
+Cheong, P. H. (2014). Tweet the message? Religious authority and social media innovation. *Journal of
+Religion, Media and Digital Culture, 3*(3), 1–19.
+
+Davenport, T. H. i Beck, J. C. (2001). *The Attention Economy: Understanding the New Currency of
+Business*. Harvard Business School Press.
+
+Gillespie, T. (2018). *Custodians of the Internet: Platforms, Content Moderation, and the Hidden
+Decisions That Shape Social Media*. Yale University Press.
 
 Goldhaber, M. H. (1997). The attention economy and the net. *First Monday, 2*(4).
 
-Simon, H. A. (1971). Designing organizations for an information-rich world. U M. Greenberger
-(ur.), *Computers, Communications, and the Public Interest*. Johns Hopkins Press.
+Hjarvard, S. (2008). The mediatization of religion: A theory of the media as agents of religious
+change. *Northern Lights, 6*(1), 9–26.
 
-van Dijck, J., Poell, T. i de Waal, M. (2018). *The Platform Society*. Oxford University Press.
+Marwick, A. E. (2013). *Status Update: Celebrity, Publicity, and Branding in the Social Media Age*.
+Yale University Press.
 
-# Reproducibilnost i izjave {.unnumbered}
+Simon, H. A. (1971). Designing organizations for an information-rich world. U M. Greenberger (ur.),
+*Computers, Communications, and the Public Interest* (str. 37–72). Johns Hopkins Press.
 
-## Podaci i kod {.unnumbered}
+van Dijck, J., Poell, T. i de Waal, M. (2018). *The Platform Society: Public Values in a Connected
+World*. Oxford University Press.
 
-Ulazni manifest bilježi SHA-256 službenoga korpusa, programske datoteke, obuhvat, slučajni početni broj
-i vrijeme izvođenja. `output/analysis_results.json` jedini je brojčani izvor rukopisa, a javne tablice i
-slike ne sadrže nazive računa. Službeni redčani korpus ostaje ograničeni istraživački ulaz prema
-pravilima dostupnosti DigiKat projekta. Agregirani rezultati, kod i sintetički primjer dostupni su u
-projektnom repozitoriju.
+Webster, J. G. (2014). *The Marketplace of Attention: How Audiences Take Shape in a Digital Age*. MIT
+Press.
 
-Analiza se reproducira iz korijena repozitorija naredbom `Rscript
-studies/catholic-influencers/analysis.R`. Rukopis se zatim izrađuje naredbom `quarto render
-studies/catholic-influencers/PAPER.qmd`. Točne naredbe za lokalno okruženje navedene su u datoteci
-`studies/catholic-influencers/README.md`.
+# Izjave {.unnumbered}
 
-## Uporaba alata umjetne inteligencije {.unnumbered}
+**Dostupnost podataka.** Agregirani rezultati na kojima se temelje sve tablice i slike u radu javno su
+dostupni. Redčani korpus objava ograničeni je istraživački ulaz i dostupan je pod uvjetima pristupa
+projekta u okviru kojega je prikupljen. Popisi naziva pojedinačnih računa nisu objavljeni jer nisu
+nužni za provjeru rezultata.
 
-Codex je korišten za reviziju analitičkoga koda, provjere reproducibilnosti, izradu dijagnostike i
-jezično-strukturno uređivanje rukopisa. Autori zadržavaju odgovornost za klasifikacijske odluke,
-interpretaciju rezultata i konačni tekst.
+**Financiranje.** Rad je nastao u okviru istraživanja digitalnoga medijskog prostora na Hrvatskom
+katoličkom sveučilištu.
+
+**Sukob interesa.** Autori izjavljuju da nema sukoba interesa.
+
+**Uporaba alata umjetne inteligencije.** Alati umjetne inteligencije korišteni su kao pomoć pri
+provjeri analitičkih postupaka i jezično-strukturnom uređivanju teksta. Autori zadržavaju odgovornost
+za klasifikacijske odluke, interpretaciju rezultata i konačni tekst.

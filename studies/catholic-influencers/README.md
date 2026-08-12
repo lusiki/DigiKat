@@ -61,6 +61,10 @@ aggregate/public outputs under `output/`, and writes account-name audit tables t
 
 - 2026-08-12 — Recovered source revision `fa34ff5`, moved the study to the official corpus, corrected
   implementation errors, added provenance and robustness checks, and regenerated the manuscript.
+- 2026-08-12 — Journal-manuscript pass: added an English abstract, a deliberately minimal theory
+  section (left compact for co-authors to expand), a sample-composition table, a theme-distribution
+  table and a robustness table, expanded results and discussion, and removed all working-paper meta
+  material (file paths, reproduction commands, hash checks, visible code folds) from the manuscript.
 - 2026-08-12 — Publication-readiness pass made the high-confidence classifier primary, replaced the
   pooled platform adjustment with a within-YouTube comparison, added robust and bootstrap intervals,
   removed the unidentified primary-platform coefficient, expanded limitations and regenerated all
