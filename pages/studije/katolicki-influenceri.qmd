@@ -1,6 +1,6 @@
 ---
 title: "Katolički influenceri i institucionalni deficit pažnje"
-subtitle: "Usporedba kreatorskih i službenih crkvenih izvora u DigiKat korpusu"
+subtitle: "Usporedba kreatorskih i službenih crkvenih izvora u hrvatskom digitalnom medijskom prostoru, 2021.–2026."
 author:
   - name: "Suzana Obrovac Lipar"
     affiliation: "Hrvatsko katoličko sveučilište"
@@ -8,13 +8,14 @@ author:
     url: "https://www.lukasikic.info/"
     affiliation: "Hrvatsko katoličko sveučilište"
 date: last-modified
-lang: hr
-categories: ["Tematsko istraživanje", "Cjeloviti rad dostupan"]
+categories: ["Tematsko istraživanje", "Ekonomija pažnje", "Religijski kreatori", "Cjeloviti rad dostupan"]
 ---
 
 ```{r}
 #| label: setup
 #| include: false
+
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 
 results <- jsonlite::read_json(
   here::here("studies", "catholic-influencers", "output", "analysis_results.json"),
@@ -39,18 +40,39 @@ razlike između laičkih, svećeničkih i zajedničkih kreatorskih izvora.
 
 ## Podaci i metode
 
-Analiza polazi od službenoga DigiKat korpusa s `r fmt_n(results$corpus$rows_official)` objava od
-2021. do 11. lipnja 2026. Godina 2026. nije potpuna. Primarni skup sadrži
-`r fmt_n(results$sample$primary_posts)` objava i `r fmt_n(results$sample$primary_sources)` pouzdano
-klasificiranih oznaka izvora. TikTok ostaje izvan studije jer naslijeđeni klasifikator nije bio
-definiran za tu platformu.
+Analiza polazi od korpusa s `r fmt_n(results$corpus$rows_official)` objava od 2021. do 11. lipnja 2026.
+Godina 2026. nije potpuna. Primarni skup sadrži `r fmt_n(results$sample$primary_posts)` objava i
+`r fmt_n(results$sample$primary_sources)` pouzdano prepoznatih izvora, od čega
+`r fmt_n(results$sample$primary_influencer_sources)` kreatorskih i
+`r fmt_n(results$sample$primary_institutional_sources)` institucionalnih.
 
-Primarna analiza zadržava samo ručno utvrđene nazive i jasne institucionalne, biskupijske, župne i
+Primarna usporedba zadržava samo ručno utvrđene nazive i jasne institucionalne, biskupijske, župne i
 svećeničke obrasce. Šira klasifikacija služi provjeri osjetljivosti. Nejednakost se mjeri Gini
 koeficijentom. Razlika u interakcijama provjerava se i među usporedivim YouTube izvorima. Platformski
-se profili uspoređuju na razini objava i izvora, a tematske razlike višestrukim rječnikom sa
-izvorskim intervalima nesigurnosti. Detaljan opis mjera dostupan je u [cjelovitom radu](../../assets/papers/katolicki-influenceri.html),
-a okvir korpusa na stranici [Metodologija](../metodologija.html).
+se profili uspoređuju na razini objava i izvora, a tematske razlike višestrukim rječnikom sa izvorskim
+intervalima nesigurnosti. Pojedinosti su dostupne u [Metodologiji](../metodologija.qmd).
+
+::: {.metric-grid}
+::: {.metric-card}
+<div class="metric-value">`r fmt_n(results$sample$primary_posts)`</div>
+<div class="metric-label">analiziranih objava</div>
+:::
+
+::: {.metric-card}
+<div class="metric-value">`r fmt_num(results$h1$gini)`</div>
+<div class="metric-label">Gini koeficijent koncentracije pažnje</div>
+:::
+
+::: {.metric-card}
+<div class="metric-value">`r fmt_pct(results$h1$cr10)`</div>
+<div class="metric-label">interakcija kod deset vodećih izvora</div>
+:::
+
+::: {.metric-card}
+<div class="metric-value">`r fmt_num(results$h2$youtube_adjusted_ratio, 2)`</div>
+<div class="metric-label">procijenjeni omjer interakcija unutar YouTubea</div>
+:::
+:::
 
 ## Ključni nalaz
 
@@ -60,32 +82,34 @@ Pažnja među kreatorskim izvorima izrazito je koncentrirana. Gini koeficijent i
 medijan iznosi `r fmt_num(results$h2$medians$Influencer, 1)` interakcija po objavi, a institucionalni
 `r fmt_num(results$h2$medians$Institutional, 1)`.
 
-Razlika ostaje velika unutar YouTubea nakon prilagodbe za aktivnost i vrijeme prikupljanja. Procijenjeni
-omjer na transformiranoj ljestvici iznosi `r fmt_num(results$h2$youtube_adjusted_ratio, 2)`. Taj je
-rezultat čvršća osnova za institucionalni deficit interakcija od izravne usporedbe različitih
-platformi.
+Razlika ostaje velika unutar YouTubea nakon prilagodbe za aktivnost i vrijeme prikupljanja.
+Procijenjeni omjer na transformiranoj ljestvici iznosi
+`r fmt_num(results$h2$youtube_adjusted_ratio, 2)`. Taj je rezultat čvršća osnova za institucionalni
+deficit interakcija od izravne usporedbe različitih platformi.
 
-Platformski se profili snažno razlikuju. Cramerov V iznosi
-`r fmt_num(results$h3$post_cramers_v)`. Tematska divergencija iznosi
-`r fmt_num(results$h4$js)`. Kreatorski izvori više naglašavaju devocijski sadržaj, a institucije
-službene i hijerarhijske teme, ali skupine dijele velik dio tematskoga repertoara. Učinak primarne
-platforme unutar kreatorskoga sloja nije moguće odvojeno procijeniti jer je
+Platformski se profili snažno razlikuju. Cramerov V iznosi `r fmt_num(results$h3$post_cramers_v)`.
+Tematska divergencija iznosi `r fmt_num(results$h4$js)`. Kreatorski izvori više naglašavaju devocijski
+sadržaj, a institucije službene i hijerarhijske teme, ali skupine dijele velik dio tematskoga
+repertoara. Učinak primarne platforme unutar kreatorskoga sloja nije moguće odvojeno procijeniti jer je
 `r fmt_n(results$h5$primary_youtube_sources)` od `r fmt_n(results$h5$sources)` prihvatljivih izvora
 primarno na YouTubeu.
 
 ## Cijeli rad
 
-Pun tekst rada, uključujući intervale nesigurnosti, provjere osjetljivosti i ograničenja, dostupan je u
-tri usklađena formata.
+Rad *„Katolički influenceri i institucionalni deficit pažnje"* dostupan je u tri formata. Pun tekst
+donosi intervale nesigurnosti, provjere osjetljivosti i ograničenja.
 
 ::: {.study-paper-formats aria-label="Dostupni formati rada"}
 <a class="study-paper-format study-paper-format--primary" href="../../assets/papers/katolicki-influenceri.html"><span class="study-paper-format__type">HTML</span><span class="study-paper-format__label">Čitanje u pregledniku</span></a>
 <a class="study-paper-format" href="../../assets/papers/katolicki-influenceri.pdf"><span class="study-paper-format__type">PDF</span><span class="study-paper-format__label">Preuzimanje i ispis</span></a>
-<a class="study-paper-format" href="../../assets/papers/katolicki-influenceri.docx"><span class="study-paper-format__type">Word</span><span class="study-paper-format__label">Uređivanje i bilješke</span></a>
+<a class="study-paper-format" href="../../assets/papers/katolicki-influenceri.docx"><span class="study-paper-format__type">Word</span><span class="study-paper-format__label">Uređivi dokument</span></a>
 :::
+
+Sve brojčane vrijednosti na ovoj stranici čitaju se iz agregiranih izlaza studije. Opis korpusa, način
+prikupljanja i profil izvora dostupni su na stranici [Baza podataka](../baza.qmd).
 
 ## Status
 
-Cjeloviti istraživački rad dostupan je za čitanje i autorsku recenziju. Dio je drugoga izlaznog toka
-projekta, koji obuhvaća tematske studije i radove. Popis je na stranici
-[Projektni raspored](../schedule.html).
+Cjeloviti istraživački rad projekta [DigiKat](../../index.qmd), pripremljen na Hrvatskom katoličkom
+sveučilištu. Dio je drugoga izlaznog toka projekta, posvećenog tematskim studijama i znanstvenim
+radovima. Popis je na stranici [Projektni raspored](../schedule.qmd).

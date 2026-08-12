@@ -23,6 +23,11 @@ format:
     number-sections: true
     fig-cap-location: bottom
     tbl-cap-location: top
+  typst:
+    toc: true
+    number-sections: true
+    fig-cap-location: bottom
+    tbl-cap-location: top
 execute:
   echo: false
   warning: false

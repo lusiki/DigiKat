@@ -1,3 +1,4 @@
 /.quarto/
 **/*.quarto_ipynb
 /typeset/output/
+/typeset/PAPER.pdf
