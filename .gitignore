@@ -136,3 +136,11 @@ studies/*/output/**/intermediate/
 # Committing it here would store a gitlink, not the files: the content would never reach
 # DigiKat's remote and the pointer would break on a fresh clone.
 /Church-and-dezinfo/
+
+# ── vault/ — private meta-knowledge (NEVER committed) ──
+# Strategic, stakeholder and positioning material about the project's environment:
+# who the actors in the Croatian Catholic media field are, what they want, how DigiKat
+# is positioned toward them, and the knowledge-transfer/services thinking that sits
+# outside the academic layer. It is context for the PI and for AI assistants, not a
+# project output, and some of it would read badly if published. Keep it untracked.
+/vault/

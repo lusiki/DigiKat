@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-12 04:23:59 UTC",
+  "generator": "code/01_data_preparation.R",
+  "input": {
+    "kind": "official_digikat_corpus",
+    "path": "C:/Users/lsikic/Dropbox/HKS/Projekti/Digitalni Kat/SHKM/DigiKat/data/digikat_corpus.rds",
+    "manifest_path": "C:/Users/lsikic/Dropbox/HKS/Projekti/Digitalni Kat/SHKM/DigiKat/data/digikat_corpus_manifest.json",
+    "sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a",
+    "rows": 413985,
+    "date_min": "2021-01-01",
+    "date_max": "2026-06-11"
+  },
+  "dictionary": {
+    "path": "code/framing_dictionary.R",
+    "sha256": "2e36c0eafde3245ae0dcc7961ac90ba515404657c55fe0867e341c70a53d967f",
+    "frames": 8
+  },
+  "derived_web_corpus": {
+    "rows_before_url_deduplication": 286662,
+    "duplicate_urls_removed": 4078,
+    "rows": 282584,
+    "columns": 84,
+    "sources": 1995,
+    "catholic_rows": 91292,
+    "catholic_sources": 65,
+    "date_min": "2021-01-01",
+    "date_max": "2026-06-11"
+  }
+}

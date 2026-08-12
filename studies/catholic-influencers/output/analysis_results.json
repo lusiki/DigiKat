@@ -1,0 +1,129 @@
+{
+  "run": {
+    "generated_utc": "2026-08-12 06:22:47 UTC",
+    "analysis_file": "studies/catholic-influencers/analysis.R",
+    "random_seed": 20260812,
+    "bootstrap_repetitions": 2000
+  },
+  "corpus": {
+    "rows_official": 413985,
+    "columns_official": 54,
+    "sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a",
+    "generated_utc": "2026-08-10 13:10:27 UTC",
+    "date_min": "2021-01-01",
+    "date_max": "2026-06-11"
+  },
+  "sample": {
+    "posts": 413788,
+    "sources": 10700,
+    "excluded_tiktok": 197,
+    "date_min": "2021-01-01",
+    "date_max": "2026-06-11",
+    "broadly_classified_posts": 43759,
+    "broadly_classified_sources": 352,
+    "primary_posts": 29684,
+    "primary_sources": 186,
+    "primary_influencer_posts": 14375,
+    "primary_influencer_sources": 67,
+    "primary_institutional_posts": 15309,
+    "primary_institutional_sources": 119,
+    "primary_interaction_coverage": 0.9908368144454925
+  },
+  "h1": {
+    "sources": 66,
+    "observed_posts": 14115,
+    "total_interactions": 3333004,
+    "gini": 0.9131225801472822,
+    "gini_ci_low": 0.7888873742519388,
+    "gini_ci_high": 0.9369719531151759,
+    "cr10": 0.9251165015103492,
+    "cr_top10pct": 0.8914657768187497,
+    "rank_slope": -3.16305732186836,
+    "rank_r2": 0.8295987674740701,
+    "broad_gini": 0.9422746226677128
+  },
+  "h2": {
+    "influencer_sources": 42,
+    "institutional_sources": 60,
+    "medians": {
+      "Institutional": 14.399999999999999,
+      "Influencer": 158.04849498327758
+    },
+    "q1": {
+      "Institutional": 4.538235294117647,
+      "Influencer": 67.717857142857142
+    },
+    "q3": {
+      "Institutional": 39.298818333731198,
+      "Influencer": 234.61764705882354
+    },
+    "median_difference": 143.64849498327757,
+    "median_difference_ci_low": 79.996054965254231,
+    "median_difference_ci_high": 203.44803851417097,
+    "wilcoxon_w": 2051.5,
+    "wilcoxon_p": 7.513782174228822e-08,
+    "rank_biserial": 0.6281746031746032,
+    "youtube_influencer_sources": 41,
+    "youtube_institutional_sources": 29,
+    "youtube_adjusted_estimate": 1.448559737433507,
+    "youtube_adjusted_se": 0.3929759630589318,
+    "youtube_adjusted_p": 0.0004618794419893789,
+    "youtube_adjusted_ci_low": 0.6639579120865254,
+    "youtube_adjusted_ci_high": 2.233161562780488,
+    "youtube_adjusted_ratio": 4.256978930403092,
+    "youtube_adjusted_ratio_ci_low": 1.942465246707065,
+    "youtube_adjusted_ratio_ci_high": 9.32931471727316,
+    "youtube_sensitivity_min_estimate": 1.36730956395455,
+    "youtube_sensitivity_max_p": 0.02362105602744797
+  },
+  "h3": {
+    "post_chisq": 17691.41335624404,
+    "post_df": 4,
+    "post_p": 0,
+    "post_cramers_v": 0.7720048939401133,
+    "source_presence_cramers_v": 0.4592041684555398,
+    "social_share_influencer": 0.9997913043478261,
+    "social_share_institutional": 0.5618916976941668,
+    "web_share_influencer": 0.0002086956521739131,
+    "web_share_institutional": 0.4381083023058332,
+    "source_weighted_social_share_influencer": 0.9701492537313433,
+    "source_weighted_social_share_institutional": 0.6807047770752401,
+    "source_weighted_social_difference": 0.2894444766561032,
+    "source_weighted_social_difference_ci_low": 0.1988888514209344,
+    "source_weighted_social_difference_ci_high": 0.3800326100589489
+  },
+  "h4": {
+    "posts_with_text": 29684,
+    "coded_posts": 28904,
+    "assignments": 71988,
+    "coverage": 0.9737232178951624,
+    "js": 0.07852913912970096,
+    "js_ci_low": 0.06120739050780772,
+    "js_ci_high": 0.157177363348912,
+    "broad_js": 0.05875331261058386,
+    "devotional_difference": 0.1579256509775864,
+    "devotional_ci_low": 0.08434951746378756,
+    "devotional_ci_high": 0.3804616265291909,
+    "institutional_difference": -0.1700856035578601,
+    "institutional_ci_low": -0.210018791107829,
+    "institutional_ci_high": -0.1236416706615913
+  },
+  "h5": {
+    "sources": 42,
+    "lay_sources": 26,
+    "priest_sources": 9,
+    "charismatic_sources": 7,
+    "primary_youtube_sources": 41,
+    "adjusted_r2": 0.295286590967125,
+    "activity_estimate": 0.007539970398359111,
+    "activity_p": 0.9532837647868928,
+    "priest_estimate": -2.259425311432614,
+    "priest_p": 0.001854987641749627,
+    "priest_ci_low": -3.626351479497016,
+    "priest_ci_high": -0.8924991433682126,
+    "priest_ratio": 0.1044104710204143,
+    "charismatic_estimate": -0.3487939687332838,
+    "charismatic_p": 0.7036856434775961,
+    "primary_platform_estimable": false
+  }
+}

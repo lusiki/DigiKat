@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<title>DigiKat &middot; Jednadzba odjeka &middot; karusel</title>
+<style>
+  @page { size: 1080px 1080px; margin: 0; }
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { margin: 0; padding: 0; background: #ffffff; }
+
+  :root {
+    --paper: #f6f1e4;
+    --panel: #ffffff;
+    --ink:   #262b33;
+    --soft:  #5a554b;
+    --mute:  #837c6c;
+    --edge:  #ddd5c2;
+    --blue:  #3061b0;
+    --red:   #c04a2a;
+    --teal:  #1e8a6e;
+  }
+
+  .slide {
+    width: 1080px; height: 1080px; overflow: hidden;
+    page-break-after: always; break-after: page;
+    background: var(--paper); color: var(--ink);
+    padding: 66px 78px;
+    display: flex; flex-direction: column;
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    line-height: 1.5;
+  }
+  .slide:last-child { page-break-after: auto; break-after: auto; }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', Consolas, 'Courier New', monospace;
+    font-size: 24px; letter-spacing: 0.2em; color: var(--mute);
+    text-transform: uppercase; margin: 0 0 26px;
+    display: flex; align-items: center; gap: 18px;
+  }
+  .eyebrow::after { content: ""; flex: 1; height: 1px; background: var(--edge); }
+  .eyebrow .t1 { color: var(--blue); }
+  .eyebrow .t2 { color: var(--red); }
+  .eyebrow .t3 { color: var(--teal); }
+
+  h1 {
+    font-size: 55px; line-height: 1.11; font-weight: 700; margin: 0;
+    letter-spacing: -0.012em;
+  }
+
+  /* The hero's two auto margins centre it. Without this the footer's own auto margin
+     would be a third claimant on the free space and the block would sit high. */
+  .hero { margin-block: auto; }
+  .hero + .foot { margin-top: 0; }
+
+  .sub { font-size: 30px; color: var(--soft); margin: 24px 0 0; line-height: 1.42; }
+  .sub strong { color: var(--ink); }
+
+  .foot {
+    margin-top: auto; padding-top: 22px; border-top: 1px solid var(--edge);
+    font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 21px;
+    color: var(--mute); display: flex; justify-content: space-between; gap: 24px;
+  }
+
+  .chart {
+    background: var(--panel); border: 1px solid var(--edge); border-radius: 4px;
+    margin: 28px 0 0; padding: 20px 18px 12px;
+  }
+  .chart svg { display: block; width: 100%; height: auto; }
+
+  .note { font-size: 28px; color: var(--soft); margin: 26px 0 0; line-height: 1.4; }
+  .note strong { color: var(--ink); }
+
+  /* ---- slide 1: the equation as the exhibit ---- */
+  .eq { display: flex; align-items: flex-start; gap: 20px; margin: 46px 0 0; }
+  .eq .op { font-size: 46px; color: var(--mute); line-height: 1; padding-top: 14px; font-weight: 400; }
+  .eq .term { display: flex; flex-direction: column; }
+  .eq .term b { font-size: 64px; line-height: 1; font-weight: 700; letter-spacing: -0.015em; }
+  .eq .term span {
+    font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 17px; line-height: 1.4;
+    color: var(--soft); margin-top: 18px; max-width: 152px;
+  }
+  .swipe {
+    font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 21px;
+    letter-spacing: 0.1em; color: var(--mute); margin: 30px 0 0;
+  }
+  .eq .t1 b { color: var(--blue); }
+  .eq .t2 b { color: var(--red); }
+  .eq .t3 b { color: var(--teal); }
+
+  /* ---- slide 5: solving it ---- */
+  .rows { margin: 30px 0 0; display: flex; flex-direction: column; gap: 16px; }
+  .rows p { margin: 0; font-size: 27px; line-height: 1.36; color: var(--soft); }
+  .rows p b { color: var(--ink); }
+  .rows p .g { color: var(--blue); font-weight: 700; }
+  .rows p .k { color: var(--red); font-weight: 700; }
+  .rows p .s { color: var(--teal); font-weight: 700; }
+
+  .qlabel {
+    font-family: 'IBM Plex Mono', Consolas, monospace; font-size: 19px;
+    letter-spacing: 0.16em; text-transform: uppercase; color: var(--mute);
+    margin: 38px 0 16px;
+  }
+  .qs { display: flex; flex-direction: column; gap: 12px; }
+  .qs p {
+    margin: 0; font-size: 29px; line-height: 1.3; color: var(--ink);
+    background: var(--panel); border: 1px solid var(--edge); border-radius: 4px;
+    padding: 16px 22px;
+  }
+  .kicker { font-size: 34px; font-weight: 700; color: var(--red); margin: 32px 0 0; }
+
+  .svg-lab  { font-family: 'IBM Plex Mono', Consolas, monospace; fill: #837c6c; }
+  .svg-name { font-family: 'Palatino Linotype', Georgia, serif; fill: #262b33; }
+  .svg-val  { font-family: 'IBM Plex Mono', Consolas, monospace; fill: #262b33; }
+</style>
+</head>
+<body>
+
+<!-- ============ SLIDE 1 · THE EQUATION ============ -->
+<section class="slide">
+  <p class="eyebrow">DigiKat &middot; 413&nbsp;985 objava &middot; 2021.&ndash;2026.</p>
+  <div class="hero">
+    <h1>Nije svaka objava jednako čujna.</h1>
+    <div class="eq">
+      <div class="term"><b>ODJEK</b><span>ono što se stvarno čuje</span></div>
+      <div class="op">=</div>
+      <div class="term t1"><b>GDJE</b><span>na kojoj platformi</span></div>
+      <div class="op">&times;</div>
+      <div class="term t2"><b>TKO</b><span>institucija ili osoba</span></div>
+      <div class="op">&times;</div>
+      <div class="term t3"><b>ŠTO</b><span>koji posao objava obavlja</span></div>
+    </div>
+    <p class="sub">McKinsey je pokazao da vrijednost medijskog vremena ne određuje njegova količina,
+    nego fokus i namjera. Istu zakonitost mjerimo u hrvatskoj javnoj sferi, na strani onih koji objavljuju.</p>
+    <p class="swipe">Tri člana, tri mjerenja &#8594;</p>
+  </div>
+  <div class="foot">
+    <span>prema „The attention equation", McKinsey, 2025.</span>
+    <span>1 / 5</span>
+  </div>
+</section>
+
+<!-- ============ SLIDE 2 · GDJE ============ -->
+<section class="slide">
+  <p class="eyebrow">1. član &middot; <span class="t1">GDJE</span></p>
+  <h1>Gdje se proizvodi<br>nije gdje odjekuje.</h1>
+  <div class="chart">
+    <svg viewBox="0 0 600 330" role="img"
+         aria-label="Udjeli platformi u objavama, interakcijama i dosegu">
+      <line x1="175" y1="44" x2="175" y2="305" stroke="#eee8d8" stroke-width="1.2"/>
+      <line x1="322" y1="44" x2="322" y2="305" stroke="#eee8d8" stroke-width="1.2"/>
+      <line x1="470" y1="44" x2="470" y2="305" stroke="#eee8d8" stroke-width="1.2"/>
+      <text x="175" y="28" text-anchor="middle" class="svg-lab" font-size="14" letter-spacing="1.6">OBJAVE</text>
+      <text x="322" y="28" text-anchor="middle" class="svg-lab" font-size="14" letter-spacing="1.6">INTERAKCIJE</text>
+      <text x="470" y="28" text-anchor="middle" class="svg-lab" font-size="14" letter-spacing="1.6">DOSEG</text>
+
+      <polyline points="175,70 322,90 470,163"  fill="none" stroke="#3061b0" stroke-width="3"/>
+      <polyline points="175,250 322,237 470,143" fill="none" stroke="#c04a2a" stroke-width="3"/>
+      <polyline points="175,263 322,247 470,263" fill="none" stroke="#1e8a6e" stroke-width="3"/>
+      <g stroke="#ffffff" stroke-width="2.5">
+        <circle cx="175" cy="70"  r="6" fill="#3061b0"/><circle cx="322" cy="90"  r="6" fill="#3061b0"/><circle cx="470" cy="163" r="6" fill="#3061b0"/>
+        <circle cx="175" cy="250" r="6" fill="#c04a2a"/><circle cx="322" cy="237" r="6" fill="#c04a2a"/><circle cx="470" cy="143" r="6" fill="#c04a2a"/>
+        <circle cx="175" cy="263" r="6" fill="#1e8a6e"/><circle cx="322" cy="247" r="6" fill="#1e8a6e"/><circle cx="470" cy="263" r="6" fill="#1e8a6e"/>
+      </g>
+
+      <text x="161" y="76" text-anchor="end" class="svg-name" font-size="19" font-weight="700">Web <tspan class="svg-val" font-size="17" font-weight="400">69&nbsp;%</tspan></text>
+      <text x="161" y="245" text-anchor="end" class="svg-name" font-size="19" font-weight="700">Facebook <tspan class="svg-val" font-size="17" font-weight="400">15&nbsp;%</tspan></text>
+      <text x="161" y="280" text-anchor="end" class="svg-name" font-size="17">YouTube <tspan class="svg-val" font-size="16">11&nbsp;%</tspan></text>
+
+      <text x="484" y="149" class="svg-val" font-size="18" font-weight="700" fill="#c04a2a">47&nbsp;%</text>
+      <text x="484" y="170" class="svg-val" font-size="18" font-weight="700" fill="#3061b0">41&nbsp;%</text>
+      <text x="484" y="269" class="svg-val" font-size="16" fill="#1e8a6e">11&nbsp;%</text>
+
+      <text x="322" y="76"  text-anchor="middle" class="svg-val" font-size="15" fill="#837c6c">63&nbsp;%</text>
+      <text x="322" y="224" text-anchor="middle" class="svg-val" font-size="15" fill="#837c6c">19&nbsp;%</text>
+      <text x="322" y="270" text-anchor="middle" class="svg-val" font-size="15" fill="#837c6c">16&nbsp;%</text>
+
+      <text x="4" y="324" class="svg-lab" font-size="12.5">Izvor: DigiKat, službeni korpus, 413&nbsp;985 objava, 2021.&ndash;2026.</text>
+    </svg>
+  </div>
+  <p class="note"><strong>Facebook proizvodi sedminu sadržaja, a nosi gotovo polovicu dosega.</strong>
+  Platforma na kojoj objavljujete mijenja ishod više nego količina onoga što objavite.</p>
+  <div class="foot">
+    <span>Where content is made is not where it echoes.</span><span>2 / 5</span>
+  </div>
+</section>
+
+<!-- ============ SLIDE 3 · TKO ============ -->
+<section class="slide">
+  <p class="eyebrow">2. član &middot; <span class="t2">TKO</span></p>
+  <h1>Osoba s mobitelom pobjeđuje<br>instituciju s redakcijom.</h1>
+  <div class="chart">
+    <svg viewBox="0 0 600 320" role="img"
+         aria-label="Udio weba u svim interakcijama po godinama">
+      <text x="4" y="24" class="svg-lab" font-size="14" letter-spacing="1.6">UDIO WEBA U SVIM INTERAKCIJAMA</text>
+      <line x1="72" y1="280" x2="566" y2="280" stroke="#ddd5c2" stroke-width="1.2"/>
+      <line x1="72" y1="170" x2="566" y2="170" stroke="#f0ebdd" stroke-width="1.2"/>
+      <line x1="72" y1="60"  x2="566" y2="60"  stroke="#f0ebdd" stroke-width="1.2"/>
+      <text x="64" y="285" text-anchor="end" class="svg-lab" font-size="13">0&nbsp;%</text>
+      <text x="64" y="175" text-anchor="end" class="svg-lab" font-size="13">50&nbsp;%</text>
+      <text x="64" y="65"  text-anchor="end" class="svg-lab" font-size="13">100&nbsp;%</text>
+
+      <path d="M 95,82 L 204,91 L 313,118 L 422,168 L 531,204 L 531,280 L 95,280 Z"
+            fill="#3061b0" opacity="0.10"/>
+      <polyline points="95,82 204,91 313,118 422,168 531,204" fill="none" stroke="#3061b0" stroke-width="3"/>
+      <g stroke="#ffffff" stroke-width="2.5">
+        <circle cx="95"  cy="82"  r="7" fill="#3061b0"/>
+        <circle cx="204" cy="91"  r="5.5" fill="#3061b0"/>
+        <circle cx="313" cy="118" r="5.5" fill="#3061b0"/>
+        <circle cx="422" cy="168" r="5.5" fill="#3061b0"/>
+        <circle cx="531" cy="204" r="7" fill="#c04a2a"/>
+      </g>
+      <text x="112" y="76" class="svg-val" font-size="20" font-weight="700" fill="#3061b0">90&nbsp;%</text>
+      <text x="531" y="232" text-anchor="middle" class="svg-val" font-size="20" font-weight="700" fill="#c04a2a">35&nbsp;%</text>
+
+      <text x="95"  y="306" text-anchor="middle" class="svg-lab" font-size="13">2021.</text>
+      <text x="204" y="306" text-anchor="middle" class="svg-lab" font-size="13">2022.</text>
+      <text x="313" y="306" text-anchor="middle" class="svg-lab" font-size="13">2023.</text>
+      <text x="422" y="306" text-anchor="middle" class="svg-lab" font-size="13">2024.</text>
+      <text x="531" y="306" text-anchor="middle" class="svg-lab" font-size="13">2025.</text>
+    </svg>
+  </div>
+  <p class="note">Institucije objavljuju administrativno i web-first. Pojedinci objavljuju društveno
+  i osobno, i ubiru <strong>višestruko veći angažman</strong>. Odjek predviđaju ritam objavljivanja
+  i izbor platforme, a ne autoritet ni status.</p>
+  <div class="foot">
+    <span>Od 2024. praćenje obuhvaća i Instagram i TikTok.</span><span>3 / 5</span>
+  </div>
+</section>
+
+<!-- ============ SLIDE 4 · ŠTO ============ -->
+<section class="slide">
+  <p class="eyebrow">3. član &middot; <span class="t3">ŠTO</span></p>
+  <h1>Ono čega je najviše<br>nije ono što se najviše traži.</h1>
+  <div class="chart">
+    <svg viewBox="0 0 600 330" role="img"
+         aria-label="Rang tema po ponudi i po angažmanu">
+      <text x="238" y="26" text-anchor="end" class="svg-lab" font-size="14" letter-spacing="1.6">PONUDA</text>
+      <text x="238" y="42" text-anchor="end" class="svg-lab" font-size="11.5">rang po broju spominjanja</text>
+      <text x="432" y="26" class="svg-lab" font-size="14" letter-spacing="1.6">POTRAŽNJA</text>
+      <text x="428" y="42" class="svg-lab" font-size="11">rang po angažmanu po objavi</text>
+
+      <line x1="250" y1="52" x2="250" y2="308" stroke="#eee8d8" stroke-width="1.2"/>
+      <line x1="420" y1="52" x2="420" y2="308" stroke="#eee8d8" stroke-width="1.2"/>
+
+      <line x1="250" y1="56"  x2="420" y2="104" stroke="#3061b0" stroke-width="3"/>
+      <line x1="250" y1="104" x2="420" y2="72"  stroke="#1e8a6e" stroke-width="3"/>
+      <line x1="250" y1="200" x2="420" y2="56"  stroke="#c04a2a" stroke-width="3.5"/>
+      <line x1="250" y1="280" x2="420" y2="296" stroke="#8a8578" stroke-width="2" stroke-dasharray="6 5"/>
+      <g stroke="#ffffff" stroke-width="2.5">
+        <circle cx="250" cy="56"  r="6" fill="#3061b0"/><circle cx="420" cy="104" r="6" fill="#3061b0"/>
+        <circle cx="250" cy="104" r="6" fill="#1e8a6e"/><circle cx="420" cy="72"  r="6" fill="#1e8a6e"/>
+        <circle cx="250" cy="200" r="6" fill="#c04a2a"/><circle cx="420" cy="56"  r="6" fill="#c04a2a"/>
+        <circle cx="250" cy="280" r="5" fill="#8a8578"/><circle cx="420" cy="296" r="5" fill="#8a8578"/>
+      </g>
+
+      <text x="238" y="61"  text-anchor="end" class="svg-name" font-size="16" font-weight="700">1. Duhovnost i liturgija</text>
+      <text x="238" y="109" text-anchor="end" class="svg-name" font-size="16">4. Bioetika i kulturni ratovi</text>
+      <text x="238" y="196" text-anchor="end" class="svg-name" font-size="16" font-weight="700" fill="#c04a2a">10. Digitalna</text>
+      <text x="238" y="214" text-anchor="end" class="svg-name" font-size="16" font-weight="700" fill="#c04a2a">evangelizacija i mladi</text>
+      <text x="238" y="285" text-anchor="end" class="svg-name" font-size="15" fill="#5a554b">15. Znanost i vjera</text>
+
+      <text x="432" y="61"  class="svg-val" font-size="15" font-weight="700" fill="#c04a2a">1. &middot; 187 po objavi</text>
+      <text x="432" y="77"  class="svg-val" font-size="15" fill="#1e8a6e">2. &middot; 156</text>
+      <text x="432" y="109" class="svg-val" font-size="15" fill="#3061b0">4. &middot; 126</text>
+      <text x="432" y="301" class="svg-val" font-size="14" fill="#5a554b">16. &middot; 8 po objavi</text>
+
+      <text x="4" y="324" class="svg-lab" font-size="12">Prikazane su 4 od 16 tema. Angažman = prosjek interakcija po objavi.</text>
+    </svg>
+  </div>
+  <p class="note"><strong>Supstancijalniji sadržaj u pravilu dobiva manje angažmana.</strong>
+  Svaka objava obavlja neki posao za čitatelja, a dubina rijetko je posao koji čitatelj naručuje.</p>
+  <div class="foot">
+    <span>Supply is habit; attention is appetite.</span><span>4 / 5</span>
+  </div>
+</section>
+
+<!-- ============ SLIDE 5 · SOLVING IT ============ -->
+<section class="slide">
+  <p class="eyebrow">Rješenje</p>
+  <div class="hero">
+    <h1>Opseg proizvodnje<br>nije član jednadžbe.</h1>
+    <div class="rows">
+      <p><b>Trud</b> ulazi kao <span class="g">GDJE</span>, ali plaća se plasman, a ne količina.</p>
+      <p><b>Autoritet</b> ulazi kao <span class="k">TKO</span>, ali plaća se osoba, a ne titula.</p>
+      <p><b>Supstanca</b> ulazi kao <span class="s">ŠTO</span>, ali plaća se posao koji objava
+      obavlja za čitatelja, a ne dubina.</p>
+    </div>
+    <p class="qlabel">Tri pitanja za vašu organizaciju</p>
+    <div class="qs">
+      <p>Gdje živi odjek vaše teme?</p>
+      <p>Tko govori u vaše ime, institucija ili osoba?</p>
+      <p>Koji posao vaša objava obavlja za čitatelja?</p>
+    </div>
+    <p class="kicker">Problem nije vaš. Strukturan je.</p>
+  </div>
+  <div class="foot">
+    <span>DigiKat &middot; otvoreni podaci i metodologija</span>
+    <span>lusiki.github.io/DigiKat</span>
+  </div>
+</section>
+
+</body>
+</html>

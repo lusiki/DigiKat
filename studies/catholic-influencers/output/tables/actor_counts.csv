@@ -1,0 +1,15 @@
+﻿ACTOR_TYPE,Actor_Group,classification_confidence,sources,posts,posts_with_recorded_interactions,total_recorded_interactions
+Other,,low,7432,263692,262219,18560656
+Other,,high,2847,73882,64607,13553905
+Independent Media,,high,13,30628,30627,5742897
+Lay Influencers,Influencer,low,149,13593,13569,1324953
+Lay Influencers,Influencer,high,35,13290,13031,3190740
+Diocesan,Institutional,high,98,10452,10442,681816
+Institutional Official,Institutional,high,14,4093,4091,621017
+Religious Orders,,high,22,960,945,35790
+Charismatic Communities,Influencer,high,15,902,901,135637
+Academic,Institutional,high,7,764,764,11877
+Religious Orders,,medium,20,594,590,7237
+Charismatic Communities,Influencer,medium,17,482,461,62792
+Youth Organizations,,high,14,273,273,33872
+Individual Priests,Influencer,high,17,183,183,6627

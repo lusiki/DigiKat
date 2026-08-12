@@ -1,6 +1,8 @@
 ﻿[CmdletBinding()]
 param(
   [string[]]$Only,
+  [string]$ChurchFramingSourceHtml = $env:DIGIKAT_CHURCH_FRAMING_HTML,
+  [string]$ChurchFramingSourceDocx = $env:DIGIKAT_CHURCH_FRAMING_DOCX,
   [switch]$SkipPdf
 )
 
@@ -8,6 +10,16 @@ $ErrorActionPreference = "Stop"
 $repoRoot = [IO.Path]::GetFullPath((Join-Path $PSScriptRoot ".."))
 $paperDir = Join-Path $repoRoot "assets\papers"
 $utf8NoBom = New-Object Text.UTF8Encoding($false)
+$churchFramingHtml = if ($ChurchFramingSourceHtml) {
+  [IO.Path]::GetFullPath($ChurchFramingSourceHtml)
+} else {
+  "https://raw.githubusercontent.com/lusiki/Church-and-dezinfo/6dffe79e33f1ad2e139c19a2b93b3135946abcf2/papers/03_framing_paper_2.html"
+}
+$churchFramingDocx = if ($ChurchFramingSourceDocx) {
+  [IO.Path]::GetFullPath($ChurchFramingSourceDocx)
+} else {
+  $null
+}
 
 $profiles = @{
   "trzista-paznje" = "trzista-paznje"
@@ -47,10 +59,10 @@ $papers = @(
   },
   [pscustomobject]@{
     Stem = "katolicki-influenceri"
-    SourceHtml = "https://raw.githubusercontent.com/lusiki/Katolicki_Influenceri/fa34ff5ae1c8027c355f2523d404c8febf03a24a/code/analysis_hr.html"
-    SourceDocx = $null
+    SourceHtml = Join-Path $repoRoot "studies\catholic-influencers\typeset\PAPER.html"
+    SourceDocx = Join-Path $repoRoot "studies\catholic-influencers\typeset\PAPER.docx"
     Authors = @(
-      [pscustomobject]@{ Name = "DigiKat Projekt"; Url = "https://lusiki.github.io/DigiKat/" }
+      [pscustomobject]@{ Name = "Luka Šikić"; Url = "https://www.lukasikic.info/" }
     )
     InjectByline = $false
     Affiliation = "Hrvatsko katoličko sveučilište"
@@ -67,8 +79,8 @@ $papers = @(
   },
   [pscustomobject]@{
     Stem = "crkva-i-dezinformacije"
-    SourceHtml = "https://raw.githubusercontent.com/lusiki/Church-and-dezinfo/6dffe79e33f1ad2e139c19a2b93b3135946abcf2/papers/03_framing_paper_2.html"
-    SourceDocx = $null
+    SourceHtml = $churchFramingHtml
+    SourceDocx = $churchFramingDocx
     Authors = @()
     InjectByline = $false
     Affiliation = ""
@@ -276,6 +288,7 @@ foreach ($paper in $papers) {
   $footer = Get-PaperFooter
   if ($html -notmatch '(?is)</body>') { throw "Could not locate </body> in $($paper.Stem)" }
   $html = [regex]::Replace($html, '(?is)</body>', ($footer + "`n</body>"), 1)
+  $html = [regex]::Replace($html, '[\t ]+(?=\r?$)', '', [Text.RegularExpressions.RegexOptions]::Multiline)
 
   $htmlTarget = Join-Path $paperDir ($paper.Stem + '.html')
   [IO.File]::WriteAllText($htmlTarget, $html, $utf8NoBom)

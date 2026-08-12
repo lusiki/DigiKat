@@ -1,0 +1,26 @@
+{
+  "schema_version": 2,
+  "generated_utc": "2026-08-12 06:22:47 UTC",
+  "input": {
+    "path": "data/digikat_corpus.rds",
+    "sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a",
+    "rows": 413985,
+    "columns": 54,
+    "official_manifest": "data/digikat_corpus_manifest.json"
+  },
+  "scope": {
+    "excluded_platform": "tiktok",
+    "excluded_rows": 197,
+    "analytical_rows": 413788,
+    "primary_classification": "high confidence",
+    "partial_2026": true
+  },
+  "provenance": {
+    "upstream_repository": "https://github.com/lusiki/Katolicki_Influenceri",
+    "upstream_commit": "fa34ff5ae1c8027c355f2523d404c8febf03a24a",
+    "recovered_source": "code/analysis_hr.qmd",
+    "analysis_sha256": "92af50b77e44cfbe4ebbde33f6e21283f6cbd7456dd400cbb9b46ed9a69ad4c3",
+    "classifier_sha256": "daebbf878a85f80618af83d49025d690f64b9875440173df10c4b09780c5fbcf",
+    "manuscript_sha256": "b983b8f6cd8a523573b1cd5e3ef52df0368e850bc5d561e378aec1d731a78e07"
+  }
+}

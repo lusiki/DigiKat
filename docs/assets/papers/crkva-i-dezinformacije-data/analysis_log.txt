@@ -1,0 +1,57 @@
+[2026-08-12 06:26:25] Loading derived official-corpus web data 
+[2026-08-12 06:26:36] Computing descriptive frame profiles 
+[2026-08-12 06:26:37] Fitting Catholic-versus-other models 
+[2026-08-12 06:26:37]   model frame_MORAL_DECAY 
+[2026-08-12 06:26:39]   model frame_FOREIGN_THREAT 
+[2026-08-12 06:26:40]   model frame_INSTITUTIONAL_DISTRUST 
+[2026-08-12 06:26:41]   model frame_TRADITIONAL_VALUES 
+[2026-08-12 06:26:43]   model frame_SOVEREIGNTY 
+[2026-08-12 06:26:44]   model frame_CONSPIRACY 
+[2026-08-12 06:26:45]   model frame_FAITH_DEFENCE 
+[2026-08-12 06:26:47]   model frame_MEDIA_CRITIQUE 
+[2026-08-12 06:26:49] Fitting Catholic-aligned-versus-official models 
+[2026-08-12 06:26:49]   model frame_MORAL_DECAY 
+[2026-08-12 06:26:49]   model frame_FOREIGN_THREAT 
+[2026-08-12 06:26:50]   model frame_INSTITUTIONAL_DISTRUST 
+[2026-08-12 06:26:50]   model frame_TRADITIONAL_VALUES 
+[2026-08-12 06:26:50]   model frame_SOVEREIGNTY 
+[2026-08-12 06:26:51]   model frame_CONSPIRACY 
+[2026-08-12 06:26:51]   model frame_FAITH_DEFENCE 
+[2026-08-12 06:26:52]   model frame_MEDIA_CRITIQUE 
+[2026-08-12 06:26:52] Computing frame co-occurrences 
+[2026-08-12 06:26:52] Computing monthly frame profiles 
+[2026-08-12 06:26:52] Fitting media-type-by-year interaction models 
+[2026-08-12 06:26:52]   interaction frame_MORAL_DECAY 
+[2026-08-12 06:27:00]   interaction frame_FOREIGN_THREAT 
+[2026-08-12 06:27:07]   interaction frame_INSTITUTIONAL_DISTRUST 
+[2026-08-12 06:27:13]   interaction frame_TRADITIONAL_VALUES 
+[2026-08-12 06:27:16]   interaction frame_SOVEREIGNTY 
+[2026-08-12 06:27:24]   interaction frame_CONSPIRACY 
+[2026-08-12 06:27:31]   interaction frame_FAITH_DEFENCE 
+[2026-08-12 06:27:40]   interaction frame_MEDIA_CRITIQUE 
+[2026-08-12 06:27:48] Fitting robustness specifications 
+[2026-08-12 06:27:48]   no-short frame_MORAL_DECAY 
+[2026-08-12 06:27:50]   no-short frame_FOREIGN_THREAT 
+[2026-08-12 06:27:51]   no-short frame_INSTITUTIONAL_DISTRUST 
+[2026-08-12 06:27:52]   no-short frame_TRADITIONAL_VALUES 
+[2026-08-12 06:27:53]   no-short frame_SOVEREIGNTY 
+[2026-08-12 06:27:54]   no-short frame_CONSPIRACY 
+[2026-08-12 06:27:55]   no-short frame_FAITH_DEFENCE 
+[2026-08-12 06:27:56]   no-short frame_MEDIA_CRITIQUE 
+[2026-08-12 06:27:57]   month frame_MORAL_DECAY 
+[2026-08-12 06:28:05]   month frame_FOREIGN_THREAT 
+[2026-08-12 06:28:13]   month frame_INSTITUTIONAL_DISTRUST 
+[2026-08-12 06:28:19]   month frame_TRADITIONAL_VALUES 
+[2026-08-12 06:28:25]   month frame_SOVEREIGNTY 
+[2026-08-12 06:28:33]   month frame_CONSPIRACY 
+[2026-08-12 06:28:43]   month frame_FAITH_DEFENCE 
+[2026-08-12 06:28:52]   month frame_MEDIA_CRITIQUE 
+[2026-08-12 06:29:02]   lpm frame_MORAL_DECAY 
+[2026-08-12 06:29:02]   lpm frame_FOREIGN_THREAT 
+[2026-08-12 06:29:03]   lpm frame_INSTITUTIONAL_DISTRUST 
+[2026-08-12 06:29:03]   lpm frame_TRADITIONAL_VALUES 
+[2026-08-12 06:29:03]   lpm frame_SOVEREIGNTY 
+[2026-08-12 06:29:03]   lpm frame_CONSPIRACY 
+[2026-08-12 06:29:03]   lpm frame_FAITH_DEFENCE 
+[2026-08-12 06:29:04]   lpm frame_MEDIA_CRITIQUE 
+[2026-08-12 06:29:04] Analysis complete 

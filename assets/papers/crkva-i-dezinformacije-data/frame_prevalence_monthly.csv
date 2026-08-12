@@ -1,0 +1,993 @@
+"month","group","frame","label_hr","pct"
+2021-01-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.13935144609991
+2021-01-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",2.8045574057844
+2021-01-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.46976336546889
+2021-01-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.626643295355
+2021-01-01,"Catholic","SOVEREIGNTY","Suverenitet",0.7011393514461
+2021-01-01,"Catholic","CONSPIRACY","Zavjera",0.175284837861525
+2021-01-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.35056967572305
+2021-01-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.438212094653812
+2021-01-01,"Other media","MORAL_DECAY","Moralno propadanje",1.12098956320062
+2021-01-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.9377657518361
+2021-01-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",8.96791650560495
+2021-01-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.5044453034403
+2021-01-01,"Other media","SOVEREIGNTY","Suverenitet",1.15964437572478
+2021-01-01,"Other media","CONSPIRACY","Zavjera",1.43022806339389
+2021-01-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.347893312717433
+2021-01-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",1.46888287591805
+2021-02-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.96873190503764
+2021-02-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.56340474811812
+2021-02-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",7.75911986103069
+2021-02-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",82.9183555298205
+2021-02-01,"Catholic","SOVEREIGNTY","Suverenitet",0.579038795599305
+2021-02-01,"Catholic","CONSPIRACY","Zavjera",0.231615518239722
+2021-02-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.463231036479444
+2021-02-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.405327156919514
+2021-02-01,"Other media","MORAL_DECAY","Moralno propadanje",2.21586847748392
+2021-02-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.03716940671909
+2021-02-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",9.29235167977127
+2021-02-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",86.3116511794139
+2021-02-01,"Other media","SOVEREIGNTY","Suverenitet",1.60829163688349
+2021-02-01,"Other media","CONSPIRACY","Zavjera",0.786275911365261
+2021-02-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.607576840600429
+2021-02-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",1.00071479628306
+2021-03-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.36830102622577
+2021-03-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.48232611174458
+2021-03-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.78905359179019
+2021-03-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.751425313569
+2021-03-01,"Catholic","SOVEREIGNTY","Suverenitet",0.513112884834664
+2021-03-01,"Catholic","CONSPIRACY","Zavjera",0.399087799315849
+2021-03-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.342075256556442
+2021-03-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.456100342075257
+2021-03-01,"Other media","MORAL_DECAY","Moralno propadanje",1.29956681106298
+2021-03-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.39920026657781
+2021-03-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",7.89736754415195
+2021-03-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",86.8043985338221
+2021-03-01,"Other media","SOVEREIGNTY","Suverenitet",1.09963345551483
+2021-03-01,"Other media","CONSPIRACY","Zavjera",0.766411196267911
+2021-03-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.466511162945685
+2021-03-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",1.13295568143952
+2021-04-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.26227208976157
+2021-04-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.19214586255259
+2021-04-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.61009817671809
+2021-04-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.5203366058906
+2021-04-01,"Catholic","SOVEREIGNTY","Suverenitet",0.490883590462833
+2021-04-01,"Catholic","CONSPIRACY","Zavjera",0.140252454417952
+2021-04-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.280504908835905
+2021-04-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.701262272089762
+2021-04-01,"Other media","MORAL_DECAY","Moralno propadanje",1.81193377069666
+2021-04-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.49921899406436
+2021-04-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.99781318338019
+2021-04-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",86.2855357700718
+2021-04-01,"Other media","SOVEREIGNTY","Suverenitet",0.968447360199937
+2021-04-01,"Other media","CONSPIRACY","Zavjera",1.15588878475476
+2021-04-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.406123086535458
+2021-04-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.531084036238675
+2021-05-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.19178082191781
+2021-05-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.78082191780822
+2021-05-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.82191780821918
+2021-05-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",87.9452054794521
+2021-05-01,"Catholic","SOVEREIGNTY","Suverenitet",0.616438356164384
+2021-05-01,"Catholic","CONSPIRACY","Zavjera",0.0684931506849315
+2021-05-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.136986301369863
+2021-05-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.342465753424658
+2021-05-01,"Other media","MORAL_DECAY","Moralno propadanje",1.95984703632887
+2021-05-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",4.49330783938815
+2021-05-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",8.26959847036329
+2021-05-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",86.6156787762906
+2021-05-01,"Other media","SOVEREIGNTY","Suverenitet",1.67304015296367
+2021-05-01,"Other media","CONSPIRACY","Zavjera",0.812619502868069
+2021-05-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.525812619502868
+2021-05-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.621414913957935
+2021-06-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.90055248618785
+2021-06-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.93370165745856
+2021-06-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.62707182320442
+2021-06-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.2900552486188
+2021-06-01,"Catholic","SOVEREIGNTY","Suverenitet",1.79558011049724
+2021-06-01,"Catholic","CONSPIRACY","Zavjera",0.69060773480663
+2021-06-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.552486187845304
+2021-06-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.69060773480663
+2021-06-01,"Other media","MORAL_DECAY","Moralno propadanje",1.86915887850467
+2021-06-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.73564753004005
+2021-06-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.56297285269248
+2021-06-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",84.0231419670672
+2021-06-01,"Other media","SOVEREIGNTY","Suverenitet",1.29060970182465
+2021-06-01,"Other media","CONSPIRACY","Zavjera",0.845571873609257
+2021-06-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.489541611036938
+2021-06-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.890075656430797
+2021-07-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.13827512473272
+2021-07-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.92444761225944
+2021-07-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",3.99144689950107
+2021-07-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",84.3905915894512
+2021-07-01,"Catholic","SOVEREIGNTY","Suverenitet",0.570206699928724
+2021-07-01,"Catholic","CONSPIRACY","Zavjera",0.356379187455453
+2021-07-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.356379187455453
+2021-07-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.213827512473272
+2021-07-01,"Other media","MORAL_DECAY","Moralno propadanje",2.00601805416249
+2021-07-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.55767301905717
+2021-07-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",7.37211634904714
+2021-07-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",81.6950852557673
+2021-07-01,"Other media","SOVEREIGNTY","Suverenitet",1.05315947843531
+2021-07-01,"Other media","CONSPIRACY","Zavjera",0.501504513540622
+2021-07-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.902708124373119
+2021-07-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.752256770310933
+2021-08-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.39162929745889
+2021-08-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.04633781763827
+2021-08-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.93273542600897
+2021-08-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",84.7533632286996
+2021-08-01,"Catholic","SOVEREIGNTY","Suverenitet",0.373692077727952
+2021-08-01,"Catholic","CONSPIRACY","Zavjera",0.298953662182362
+2021-08-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.672645739910314
+2021-08-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.0747384155455904
+2021-08-01,"Other media","MORAL_DECAY","Moralno propadanje",2.10237659963437
+2021-08-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.42230347349177
+2021-08-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.76416819012797
+2021-08-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",81.5356489945155
+2021-08-01,"Other media","SOVEREIGNTY","Suverenitet",1.18829981718464
+2021-08-01,"Other media","CONSPIRACY","Zavjera",0.457038391224863
+2021-08-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.731261425959781
+2021-08-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.36563071297989
+2021-09-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.48387096774194
+2021-09-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",2.58064516129032
+2021-09-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.35483870967742
+2021-09-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",84.4516129032258
+2021-09-01,"Catholic","SOVEREIGNTY","Suverenitet",0.709677419354839
+2021-09-01,"Catholic","CONSPIRACY","Zavjera",0.129032258064516
+2021-09-01,"Catholic","FAITH_DEFENCE","Obrana vjere",1.03225806451613
+2021-09-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.774193548387097
+2021-09-01,"Other media","MORAL_DECAY","Moralno propadanje",1.09945027486257
+2021-09-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",4.39780109945027
+2021-09-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.84657671164418
+2021-09-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",84.3578210894553
+2021-09-01,"Other media","SOVEREIGNTY","Suverenitet",1.44927536231884
+2021-09-01,"Other media","CONSPIRACY","Zavjera",0.549725137431284
+2021-09-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.549725137431284
+2021-09-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.999500249875062
+2021-10-01,"Catholic","MORAL_DECAY","Moralno propadanje",0.878220140515222
+2021-10-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.69789227166276
+2021-10-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.21077283372365
+2021-10-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.4894613583138
+2021-10-01,"Catholic","SOVEREIGNTY","Suverenitet",1.22950819672131
+2021-10-01,"Catholic","CONSPIRACY","Zavjera",0.0585480093676815
+2021-10-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.351288056206089
+2021-10-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.878220140515222
+2021-10-01,"Other media","MORAL_DECAY","Moralno propadanje",2.07972270363951
+2021-10-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.9896013864818
+2021-10-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.7157712305026
+2021-10-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",82.0623916811092
+2021-10-01,"Other media","SOVEREIGNTY","Suverenitet",1.38648180242634
+2021-10-01,"Other media","CONSPIRACY","Zavjera",0.736568457538995
+2021-10-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.519930675909879
+2021-10-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.909878682842288
+2021-11-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.41509433962264
+2021-11-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",2.18160377358491
+2021-11-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.30424528301887
+2021-11-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",84.0212264150943
+2021-11-01,"Catholic","SOVEREIGNTY","Suverenitet",0.589622641509434
+2021-11-01,"Catholic","CONSPIRACY","Zavjera",0.530660377358491
+2021-11-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.589622641509434
+2021-11-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.35377358490566
+2021-11-01,"Other media","MORAL_DECAY","Moralno propadanje",1.1747953008188
+2021-11-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",3.38198647205411
+2021-11-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.51477394090424
+2021-11-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",82.2712709149163
+2021-11-01,"Other media","SOVEREIGNTY","Suverenitet",0.676397294410822
+2021-11-01,"Other media","CONSPIRACY","Zavjera",1.28159487362051
+2021-11-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.284798860804557
+2021-11-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.676397294410822
+2021-12-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.08216094541362
+2021-12-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",2.19471018570625
+2021-12-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.07765897580191
+2021-12-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.312324141812
+2021-12-01,"Catholic","SOVEREIGNTY","Suverenitet",0.393922341024198
+2021-12-01,"Catholic","CONSPIRACY","Zavjera",1.23804164321891
+2021-12-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.168823860438942
+2021-12-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.84411930219471
+2021-12-01,"Other media","MORAL_DECAY","Moralno propadanje",2.00607902735562
+2021-12-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.49240121580547
+2021-12-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",7.93313069908815
+2021-12-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.9209726443769
+2021-12-01,"Other media","SOVEREIGNTY","Suverenitet",0.577507598784195
+2021-12-01,"Other media","CONSPIRACY","Zavjera",2.67477203647416
+2021-12-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.395136778115502
+2021-12-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",1.97568389057751
+2022-01-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.7379679144385
+2022-01-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.60427807486631
+2022-01-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.14973262032086
+2022-01-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.4946524064171
+2022-01-01,"Catholic","SOVEREIGNTY","Suverenitet",1.67112299465241
+2022-01-01,"Catholic","CONSPIRACY","Zavjera",0.267379679144385
+2022-01-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.467914438502674
+2022-01-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.334224598930481
+2022-01-01,"Other media","MORAL_DECAY","Moralno propadanje",1.68516235100699
+2022-01-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.54829428688861
+2022-01-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",7.89149198520345
+2022-01-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.4500616522811
+2022-01-01,"Other media","SOVEREIGNTY","Suverenitet",1.43855322646938
+2022-01-01,"Other media","CONSPIRACY","Zavjera",0.904233456637896
+2022-01-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.863131935881628
+2022-01-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.575421290587752
+2022-02-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.95369030390738
+2022-02-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.80897250361794
+2022-02-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.36758321273517
+2022-02-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.0940665701881
+2022-02-01,"Catholic","SOVEREIGNTY","Suverenitet",0.940665701881331
+2022-02-01,"Catholic","CONSPIRACY","Zavjera",0.144717800289436
+2022-02-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.578871201157742
+2022-02-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.506512301013025
+2022-02-01,"Other media","MORAL_DECAY","Moralno propadanje",1.41394441735739
+2022-02-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.2915650901999
+2022-02-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",8.19112627986348
+2022-02-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.7640175524135
+2022-02-01,"Other media","SOVEREIGNTY","Suverenitet",1.21891760117016
+2022-02-01,"Other media","CONSPIRACY","Zavjera",0.536323744514871
+2022-02-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.68259385665529
+2022-02-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.828863968795709
+2022-03-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.04452996151732
+2022-03-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.48433205057724
+2022-03-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.00274876305662
+2022-03-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",79.3293018141836
+2022-03-01,"Catholic","SOVEREIGNTY","Suverenitet",1.1544804837823
+2022-03-01,"Catholic","CONSPIRACY","Zavjera",0.164925783397471
+2022-03-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.274876305662452
+2022-03-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.219901044529962
+2022-03-01,"Other media","MORAL_DECAY","Moralno propadanje",2.53654342218401
+2022-03-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.57953568357696
+2022-03-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",7.78159931212382
+2022-03-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",78.2029234737747
+2022-03-01,"Other media","SOVEREIGNTY","Suverenitet",1.84866723989682
+2022-03-01,"Other media","CONSPIRACY","Zavjera",0.214961306964746
+2022-03-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.343938091143594
+2022-03-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.343938091143594
+2022-04-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.15131578947368
+2022-04-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.42543859649123
+2022-04-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.48245614035088
+2022-04-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",81.5789473684211
+2022-04-01,"Catholic","SOVEREIGNTY","Suverenitet",1.37061403508772
+2022-04-01,"Catholic","CONSPIRACY","Zavjera",0.274122807017544
+2022-04-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.43859649122807
+2022-04-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.109649122807018
+2022-04-01,"Other media","MORAL_DECAY","Moralno propadanje",1.3873473917869
+2022-04-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.08213096559378
+2022-04-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.07769145394007
+2022-04-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.9345172031077
+2022-04-01,"Other media","SOVEREIGNTY","Suverenitet",2.27524972253052
+2022-04-01,"Other media","CONSPIRACY","Zavjera",0.249722530521643
+2022-04-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.416204217536071
+2022-04-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.194228634850167
+2022-05-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.12285336856011
+2022-05-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.38705416116248
+2022-05-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",3.5667107001321
+2022-05-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.6856010568032
+2022-05-01,"Catholic","SOVEREIGNTY","Suverenitet",1.51915455746367
+2022-05-01,"Catholic","CONSPIRACY","Zavjera",0.132100396301189
+2022-05-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.330250990752972
+2022-05-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.264200792602378
+2022-05-01,"Other media","MORAL_DECAY","Moralno propadanje",1.96
+2022-05-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.8
+2022-05-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.28
+2022-05-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",82.12
+2022-05-01,"Other media","SOVEREIGNTY","Suverenitet",2.12
+2022-05-01,"Other media","CONSPIRACY","Zavjera",0.72
+2022-05-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.48
+2022-05-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.6
+2022-06-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.89633375474083
+2022-06-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",0.821744627054361
+2022-06-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.10872313527181
+2022-06-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",84.007585335019
+2022-06-01,"Catholic","SOVEREIGNTY","Suverenitet",0.632111251580278
+2022-06-01,"Catholic","CONSPIRACY","Zavjera",0.252844500632111
+2022-06-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.442477876106195
+2022-06-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.252844500632111
+2022-06-01,"Other media","MORAL_DECAY","Moralno propadanje",2.17118997912317
+2022-06-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.37787056367432
+2022-06-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.25887265135699
+2022-06-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.3402922755741
+2022-06-01,"Other media","SOVEREIGNTY","Suverenitet",1.16910229645094
+2022-06-01,"Other media","CONSPIRACY","Zavjera",0.375782881002088
+2022-06-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.542797494780793
+2022-06-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.876826722338204
+2022-07-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.98105081826012
+2022-07-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.98105081826012
+2022-07-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",3.78983634797588
+2022-07-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",86.7355727820844
+2022-07-01,"Catholic","SOVEREIGNTY","Suverenitet",1.46425495262705
+2022-07-01,"Catholic","CONSPIRACY","Zavjera",0.344530577088717
+2022-07-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.172265288544358
+2022-07-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.344530577088717
+2022-07-01,"Other media","MORAL_DECAY","Moralno propadanje",1.62454873646209
+2022-07-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.22623345367028
+2022-07-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.53549939831528
+2022-07-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",82.129963898917
+2022-07-01,"Other media","SOVEREIGNTY","Suverenitet",1.92539109506619
+2022-07-01,"Other media","CONSPIRACY","Zavjera",0.842358604091456
+2022-07-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.72202166064982
+2022-07-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.421179302045728
+2022-08-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.74242424242424
+2022-08-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.36363636363636
+2022-08-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5
+2022-08-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.7121212121212
+2022-08-01,"Catholic","SOVEREIGNTY","Suverenitet",0.909090909090909
+2022-08-01,"Catholic","CONSPIRACY","Zavjera",0.227272727272727
+2022-08-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.227272727272727
+2022-08-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.151515151515152
+2022-08-01,"Other media","MORAL_DECAY","Moralno propadanje",1.98446937014668
+2022-08-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.15703192407248
+2022-08-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.60828300258844
+2022-08-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",81.2769628990509
+2022-08-01,"Other media","SOVEREIGNTY","Suverenitet",0.862812769628991
+2022-08-01,"Other media","CONSPIRACY","Zavjera",0.388265746333046
+2022-08-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.90595340811044
+2022-08-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.560828300258844
+2022-09-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.03125
+2022-09-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.5625
+2022-09-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.234375
+2022-09-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.515625
+2022-09-01,"Catholic","SOVEREIGNTY","Suverenitet",1.40625
+2022-09-01,"Catholic","CONSPIRACY","Zavjera",0.15625
+2022-09-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.9375
+2022-09-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.234375
+2022-09-01,"Other media","MORAL_DECAY","Moralno propadanje",3.14242270653827
+2022-09-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.5205271160669
+2022-09-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.03142422706538
+2022-09-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.1728332488596
+2022-09-01,"Other media","SOVEREIGNTY","Suverenitet",2.53421186011151
+2022-09-01,"Other media","CONSPIRACY","Zavjera",0.557526609224531
+2022-09-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.557526609224531
+2022-09-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.20273694880892
+2022-10-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.47965474722565
+2022-10-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.41800246609125
+2022-10-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.13070283600493
+2022-10-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.3267570900123
+2022-10-01,"Catholic","SOVEREIGNTY","Suverenitet",1.10974106041924
+2022-10-01,"Catholic","CONSPIRACY","Zavjera",0.123304562268804
+2022-10-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.246609124537608
+2022-10-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.184956843403206
+2022-10-01,"Other media","MORAL_DECAY","Moralno propadanje",1.51213688818146
+2022-10-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.83048149621966
+2022-10-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.2924791086351
+2022-10-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",79.9840827695981
+2022-10-01,"Other media","SOVEREIGNTY","Suverenitet",1.59172304019101
+2022-10-01,"Other media","CONSPIRACY","Zavjera",0.557103064066852
+2022-10-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.477516912057302
+2022-10-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.318344608038201
+2022-11-01,"Catholic","MORAL_DECAY","Moralno propadanje",0.894187779433681
+2022-11-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.56482861400894
+2022-11-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.69448584202683
+2022-11-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.4694485842027
+2022-11-01,"Catholic","SOVEREIGNTY","Suverenitet",0.894187779433681
+2022-11-01,"Catholic","CONSPIRACY","Zavjera",0.29806259314456
+2022-11-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.521609538002981
+2022-11-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.22354694485842
+2022-11-01,"Other media","MORAL_DECAY","Moralno propadanje",1.51057401812689
+2022-11-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.80535174794994
+2022-11-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.53172205438066
+2022-11-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.1963746223565
+2022-11-01,"Other media","SOVEREIGNTY","Suverenitet",0.992662926197669
+2022-11-01,"Other media","CONSPIRACY","Zavjera",0.215796288303841
+2022-11-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.517911091929219
+2022-11-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.172637030643073
+2022-12-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.27552275522755
+2022-12-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.66051660516605
+2022-12-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.1820418204182
+2022-12-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",84.1328413284133
+2022-12-01,"Catholic","SOVEREIGNTY","Suverenitet",0.922509225092251
+2022-12-01,"Catholic","CONSPIRACY","Zavjera",0.30750307503075
+2022-12-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.2460024600246
+2022-12-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.1230012300123
+2022-12-01,"Other media","MORAL_DECAY","Moralno propadanje",2.57204834211342
+2022-12-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.79733498605516
+2022-12-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.26805082119616
+2022-12-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.3901456461109
+2022-12-01,"Other media","SOVEREIGNTY","Suverenitet",1.14657576696622
+2022-12-01,"Other media","CONSPIRACY","Zavjera",0.464828013634955
+2022-12-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.433839479392625
+2022-12-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.247908273938643
+2023-01-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.29062276306371
+2023-01-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",3.29277022190408
+2023-01-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.86972083035075
+2023-01-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",84.6814602720114
+2023-01-01,"Catholic","SOVEREIGNTY","Suverenitet",1.50322118826056
+2023-01-01,"Catholic","CONSPIRACY","Zavjera",0.286327845382963
+2023-01-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.501073729420186
+2023-01-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.644237652111668
+2023-01-01,"Other media","MORAL_DECAY","Moralno propadanje",2.09708737864078
+2023-01-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.1747572815534
+2023-01-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.32038834951456
+2023-01-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.9223300970874
+2023-01-01,"Other media","SOVEREIGNTY","Suverenitet",1.4368932038835
+2023-01-01,"Other media","CONSPIRACY","Zavjera",1.24271844660194
+2023-01-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.893203883495146
+2023-01-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.660194174757281
+2023-02-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.01249132546842
+2023-02-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",2.15128383067314
+2023-02-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.03747397640527
+2023-02-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.2879944482998
+2023-02-01,"Catholic","SOVEREIGNTY","Suverenitet",1.11034004163775
+2023-02-01,"Catholic","CONSPIRACY","Zavjera",0.485773768216516
+2023-02-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.346981263011797
+2023-02-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.346981263011797
+2023-02-01,"Other media","MORAL_DECAY","Moralno propadanje",1.98500220555801
+2023-02-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.3378914865461
+2023-02-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",8.20467578297309
+2023-02-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.2227613586237
+2023-02-01,"Other media","SOVEREIGNTY","Suverenitet",1.72033524481694
+2023-02-01,"Other media","CONSPIRACY","Zavjera",1.41155712395236
+2023-02-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.70577856197618
+2023-02-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.661667401852669
+2023-03-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.41643059490085
+2023-03-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",2.03966005665722
+2023-03-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.64589235127479
+2023-03-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.3257790368272
+2023-03-01,"Catholic","SOVEREIGNTY","Suverenitet",0.793201133144476
+2023-03-01,"Catholic","CONSPIRACY","Zavjera",0.339943342776204
+2023-03-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.28328611898017
+2023-03-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.28328611898017
+2023-03-01,"Other media","MORAL_DECAY","Moralno propadanje",2.14562082307422
+2023-03-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.88427717200141
+2023-03-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",7.14034470629617
+2023-03-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.5434400281393
+2023-03-01,"Other media","SOVEREIGNTY","Suverenitet",1.09039746746395
+2023-03-01,"Other media","CONSPIRACY","Zavjera",0.668308125219838
+2023-03-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.457263454097784
+2023-03-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",1.05522335561027
+2023-04-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.98795180722892
+2023-04-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",2.2289156626506
+2023-04-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.42168674698795
+2023-04-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",84.2168674698795
+2023-04-01,"Catholic","SOVEREIGNTY","Suverenitet",0.481927710843374
+2023-04-01,"Catholic","CONSPIRACY","Zavjera",0.240963855421687
+2023-04-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.301204819277108
+2023-04-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.180722891566265
+2023-04-01,"Other media","MORAL_DECAY","Moralno propadanje",2.23616034905918
+2023-04-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.59067357512953
+2023-04-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.76302154349605
+2023-04-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",84.4014180529043
+2023-04-01,"Other media","SOVEREIGNTY","Suverenitet",0.845377692937006
+2023-04-01,"Other media","CONSPIRACY","Zavjera",0.599945459503681
+2023-04-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.490864466866649
+2023-04-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.681756203981456
+2023-05-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.57801899592944
+2023-05-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.56037991858887
+2023-05-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.74898236092266
+2023-05-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",86.5671641791045
+2023-05-01,"Catholic","SOVEREIGNTY","Suverenitet",0.881953867028494
+2023-05-01,"Catholic","CONSPIRACY","Zavjera",0.067842605156038
+2023-05-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.407055630936228
+2023-05-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.407055630936228
+2023-05-01,"Other media","MORAL_DECAY","Moralno propadanje",5.92804578904334
+2023-05-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.67620605069501
+2023-05-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",7.1545380212592
+2023-05-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",82.6246933769419
+2023-05-01,"Other media","SOVEREIGNTY","Suverenitet",1.39002452984464
+2023-05-01,"Other media","CONSPIRACY","Zavjera",0.654129190515127
+2023-05-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.408830744071954
+2023-05-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.858544562551104
+2023-06-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.98265179677819
+2023-06-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.05328376703841
+2023-06-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.52292441140025
+2023-06-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",80.731102850062
+2023-06-01,"Catholic","SOVEREIGNTY","Suverenitet",0.619578686493185
+2023-06-01,"Catholic","CONSPIRACY","Zavjera",0.247831474597274
+2023-06-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.371747211895911
+2023-06-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.247831474597274
+2023-06-01,"Other media","MORAL_DECAY","Moralno propadanje",1.15183246073298
+2023-06-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.02443280977312
+2023-06-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.6195462478185
+2023-06-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",82.5479930191972
+2023-06-01,"Other media","SOVEREIGNTY","Suverenitet",1.01221640488656
+2023-06-01,"Other media","CONSPIRACY","Zavjera",1.29144851657941
+2023-06-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.418848167539267
+2023-06-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.593368237347295
+2023-07-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.75732217573222
+2023-07-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.75732217573222
+2023-07-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.18410041841004
+2023-07-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.2719665271967
+2023-07-01,"Catholic","SOVEREIGNTY","Suverenitet",0.334728033472803
+2023-07-01,"Catholic","CONSPIRACY","Zavjera",0.0836820083682008
+2023-07-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.669456066945607
+2023-07-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.753138075313807
+2023-07-01,"Other media","MORAL_DECAY","Moralno propadanje",2.04532891100055
+2023-07-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.93477059148701
+2023-07-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",7.84964068546158
+2023-07-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",81.4814814814815
+2023-07-01,"Other media","SOVEREIGNTY","Suverenitet",1.05030403537866
+2023-07-01,"Other media","CONSPIRACY","Zavjera",0.497512437810945
+2023-07-01,"Other media","FAITH_DEFENCE","Obrana vjere",1.27142067440575
+2023-07-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.773908236594804
+2023-08-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.5297619047619
+2023-08-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.78571428571429
+2023-08-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.01785714285714
+2023-08-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.5654761904762
+2023-08-01,"Catholic","SOVEREIGNTY","Suverenitet",1.63690476190476
+2023-08-01,"Catholic","CONSPIRACY","Zavjera",0.372023809523809
+2023-08-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.372023809523809
+2023-08-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.372023809523809
+2023-08-01,"Other media","MORAL_DECAY","Moralno propadanje",2.01058201058201
+2023-08-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.62257495590829
+2023-08-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.03174603174603
+2023-08-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",82.0811287477954
+2023-08-01,"Other media","SOVEREIGNTY","Suverenitet",1.23456790123457
+2023-08-01,"Other media","CONSPIRACY","Zavjera",0.634920634920635
+2023-08-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.352733686067019
+2023-08-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.705467372134039
+2023-09-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.43322475570033
+2023-09-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.69381107491857
+2023-09-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.01628664495114
+2023-09-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",84.6254071661238
+2023-09-01,"Catholic","SOVEREIGNTY","Suverenitet",0.456026058631922
+2023-09-01,"Catholic","CONSPIRACY","Zavjera",0.195439739413681
+2023-09-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.0651465798045603
+2023-09-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.325732899022801
+2023-09-01,"Other media","MORAL_DECAY","Moralno propadanje",1.2042818911686
+2023-09-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.94380017841213
+2023-09-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.77966101694915
+2023-09-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",84.7903657448707
+2023-09-01,"Other media","SOVEREIGNTY","Suverenitet",1.07047279214987
+2023-09-01,"Other media","CONSPIRACY","Zavjera",0.490633363068689
+2023-09-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.4014272970562
+2023-09-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.713648528099911
+2023-10-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.50720838794233
+2023-10-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.57273918741809
+2023-10-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.30799475753604
+2023-10-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.3866317169069
+2023-10-01,"Catholic","SOVEREIGNTY","Suverenitet",0.589777195281782
+2023-10-01,"Catholic","CONSPIRACY","Zavjera",0.327653997378768
+2023-10-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.524246395806029
+2023-10-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.524246395806029
+2023-10-01,"Other media","MORAL_DECAY","Moralno propadanje",1.57448526443278
+2023-10-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.42228502220428
+2023-10-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",7.02462656439241
+2023-10-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",81.7117480823577
+2023-10-01,"Other media","SOVEREIGNTY","Suverenitet",1.00928542591845
+2023-10-01,"Other media","CONSPIRACY","Zavjera",0.767056923698022
+2023-10-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.444085587404118
+2023-10-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.726685506661284
+2023-11-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.53733528550512
+2023-11-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.17130307467057
+2023-11-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.17276720351391
+2023-11-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",86.1639824304539
+2023-11-01,"Catholic","SOVEREIGNTY","Suverenitet",1.09809663250366
+2023-11-01,"Catholic","CONSPIRACY","Zavjera",0
+2023-11-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.439238653001464
+2023-11-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.658857979502196
+2023-11-01,"Other media","MORAL_DECAY","Moralno propadanje",1.23948649845064
+2023-11-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.32802124833997
+2023-11-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.71049136786189
+2023-11-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.842408145197
+2023-11-01,"Other media","SOVEREIGNTY","Suverenitet",1.10668437361664
+2023-11-01,"Other media","CONSPIRACY","Zavjera",0.664010624169987
+2023-11-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.398406374501992
+2023-11-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.84108012394865
+2023-12-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.30674002751032
+2023-12-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.23796423658872
+2023-12-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.19532324621733
+2023-12-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",81.636863823934
+2023-12-01,"Catholic","SOVEREIGNTY","Suverenitet",0.687757909215956
+2023-12-01,"Catholic","CONSPIRACY","Zavjera",0.0687757909215956
+2023-12-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.481430536451169
+2023-12-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.343878954607978
+2023-12-01,"Other media","MORAL_DECAY","Moralno propadanje",1.33770133770134
+2023-12-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.99290199290199
+2023-12-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.75020475020475
+2023-12-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",84.5754845754846
+2023-12-01,"Other media","SOVEREIGNTY","Suverenitet",0.764400764400764
+2023-12-01,"Other media","CONSPIRACY","Zavjera",0.436800436800437
+2023-12-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.40950040950041
+2023-12-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.546000546000546
+2024-01-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.38888888888889
+2024-01-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.04166666666667
+2024-01-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.16666666666667
+2024-01-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.7638888888889
+2024-01-01,"Catholic","SOVEREIGNTY","Suverenitet",0.694444444444444
+2024-01-01,"Catholic","CONSPIRACY","Zavjera",0
+2024-01-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0
+2024-01-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.694444444444444
+2024-01-01,"Other media","MORAL_DECAY","Moralno propadanje",2.09497206703911
+2024-01-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.81564245810056
+2024-01-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",8.37988826815642
+2024-01-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",87.8491620111732
+2024-01-01,"Other media","SOVEREIGNTY","Suverenitet",1.95530726256983
+2024-01-01,"Other media","CONSPIRACY","Zavjera",0.418994413407821
+2024-01-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.558659217877095
+2024-01-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.698324022346369
+2024-06-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.16677609980302
+2024-06-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.96979645436638
+2024-06-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",3.54563361785949
+2024-06-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.5850295469468
+2024-06-01,"Catholic","SOVEREIGNTY","Suverenitet",0.656598818122127
+2024-06-01,"Catholic","CONSPIRACY","Zavjera",0.131319763624425
+2024-06-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.984898227183191
+2024-06-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.196979645436638
+2024-06-01,"Other media","MORAL_DECAY","Moralno propadanje",1.24910778015703
+2024-06-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.6773733047823
+2024-06-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.85296216987866
+2024-06-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",80.9778729478944
+2024-06-01,"Other media","SOVEREIGNTY","Suverenitet",1.10635260528194
+2024-06-01,"Other media","CONSPIRACY","Zavjera",0.428265524625268
+2024-06-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.749464668094218
+2024-06-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.499643112062812
+2024-07-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.3166144200627
+2024-07-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.3166144200627
+2024-07-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",3.38557993730408
+2024-07-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",80.8150470219436
+2024-07-01,"Catholic","SOVEREIGNTY","Suverenitet",0.877742946708464
+2024-07-01,"Catholic","CONSPIRACY","Zavjera",0.250783699059561
+2024-07-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.313479623824451
+2024-07-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.501567398119122
+2024-07-01,"Other media","MORAL_DECAY","Moralno propadanje",2.02863961813842
+2024-07-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.81980906921241
+2024-07-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.47374701670644
+2024-07-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",82.4880668257756
+2024-07-01,"Other media","SOVEREIGNTY","Suverenitet",1.13365155131265
+2024-07-01,"Other media","CONSPIRACY","Zavjera",0.865155131264916
+2024-07-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.447494033412888
+2024-07-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.626491646778043
+2024-08-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.56936597614564
+2024-08-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.50659133709981
+2024-08-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.21029504080352
+2024-08-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",80.9165097300691
+2024-08-01,"Catholic","SOVEREIGNTY","Suverenitet",1.00439422473321
+2024-08-01,"Catholic","CONSPIRACY","Zavjera",0.125549278091651
+2024-08-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.376647834274953
+2024-08-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.125549278091651
+2024-08-01,"Other media","MORAL_DECAY","Moralno propadanje",2.0010395010395
+2024-08-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.33887733887734
+2024-08-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.91268191268191
+2024-08-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",80.8212058212058
+2024-08-01,"Other media","SOVEREIGNTY","Suverenitet",1.1954261954262
+2024-08-01,"Other media","CONSPIRACY","Zavjera",0.441787941787942
+2024-08-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.545738045738046
+2024-08-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.831600831600832
+2024-09-01,"Catholic","MORAL_DECAY","Moralno propadanje",3.48258706467662
+2024-09-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.49253731343284
+2024-09-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",3.98009950248756
+2024-09-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",79.502487562189
+2024-09-01,"Catholic","SOVEREIGNTY","Suverenitet",1.99004975124378
+2024-09-01,"Catholic","CONSPIRACY","Zavjera",0.199004975124378
+2024-09-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.398009950248756
+2024-09-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.298507462686567
+2024-09-01,"Other media","MORAL_DECAY","Moralno propadanje",1.94552529182879
+2024-09-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.00055586436909
+2024-09-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.6147859922179
+2024-09-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",81.8788215675375
+2024-09-01,"Other media","SOVEREIGNTY","Suverenitet",2.11228460255698
+2024-09-01,"Other media","CONSPIRACY","Zavjera",0.444691495275153
+2024-09-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.444691495275153
+2024-09-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.555864369093941
+2024-10-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.0253164556962
+2024-10-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.06329113924051
+2024-10-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.20253164556962
+2024-10-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",81.0632911392405
+2024-10-01,"Catholic","SOVEREIGNTY","Suverenitet",0.506329113924051
+2024-10-01,"Catholic","CONSPIRACY","Zavjera",0.253164556962025
+2024-10-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.253164556962025
+2024-10-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.253164556962025
+2024-10-01,"Other media","MORAL_DECAY","Moralno propadanje",1.39186295503212
+2024-10-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.4186295503212
+2024-10-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.24625267665953
+2024-10-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.5920770877944
+2024-10-01,"Other media","SOVEREIGNTY","Suverenitet",0.776231263383298
+2024-10-01,"Other media","CONSPIRACY","Zavjera",0.34796573875803
+2024-10-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.321199143468951
+2024-10-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.267665952890792
+2024-11-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.03227734608488
+2024-11-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.31500298864316
+2024-11-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",3.88523610280932
+2024-11-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",82.8451882845188
+2024-11-01,"Catholic","SOVEREIGNTY","Suverenitet",0.956365809922295
+2024-11-01,"Catholic","CONSPIRACY","Zavjera",0.119545726240287
+2024-11-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.418410041841004
+2024-11-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0
+2024-11-01,"Other media","MORAL_DECAY","Moralno propadanje",1.2972972972973
+2024-11-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.27027027027027
+2024-11-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.21621621621622
+2024-11-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.2702702702703
+2024-11-01,"Other media","SOVEREIGNTY","Suverenitet",0.756756756756757
+2024-11-01,"Other media","CONSPIRACY","Zavjera",0.27027027027027
+2024-11-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.432432432432432
+2024-11-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.351351351351351
+2024-12-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.62513542795233
+2024-12-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.08342361863489
+2024-12-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",3.52112676056338
+2024-12-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",82.2860238353196
+2024-12-01,"Catholic","SOVEREIGNTY","Suverenitet",0.37919826652221
+2024-12-01,"Catholic","CONSPIRACY","Zavjera",0.162513542795233
+2024-12-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.325027085590466
+2024-12-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.162513542795233
+2024-12-01,"Other media","MORAL_DECAY","Moralno propadanje",1.04006820119352
+2024-12-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.56862745098039
+2024-12-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.65473145780051
+2024-12-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",84.228473998295
+2024-12-01,"Other media","SOVEREIGNTY","Suverenitet",0.801364023870418
+2024-12-01,"Other media","CONSPIRACY","Zavjera",0.392156862745098
+2024-12-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.289855072463768
+2024-12-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.477408354646206
+2025-01-01,"Catholic","MORAL_DECAY","Moralno propadanje",0.956022944550669
+2025-01-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.91204588910134
+2025-01-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.01529636711281
+2025-01-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",82.5047801147227
+2025-01-01,"Catholic","SOVEREIGNTY","Suverenitet",0.669216061185469
+2025-01-01,"Catholic","CONSPIRACY","Zavjera",0
+2025-01-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.286806883365201
+2025-01-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.191204588910134
+2025-01-01,"Other media","MORAL_DECAY","Moralno propadanje",1.14623133032303
+2025-01-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.91038555053838
+2025-01-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.03647099687391
+2025-01-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.3421326849601
+2025-01-01,"Other media","SOVEREIGNTY","Suverenitet",1.38937130948246
+2025-01-01,"Other media","CONSPIRACY","Zavjera",0.625217089267107
+2025-01-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.764154220215353
+2025-01-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.486279958318861
+2025-02-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.79717586649551
+2025-02-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.02695763799743
+2025-02-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.5198973042362
+2025-02-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",77.6636713735558
+2025-02-01,"Catholic","SOVEREIGNTY","Suverenitet",0.513478818998716
+2025-02-01,"Catholic","CONSPIRACY","Zavjera",0.256739409499358
+2025-02-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.449293966623877
+2025-02-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.770218228498075
+2025-02-01,"Other media","MORAL_DECAY","Moralno propadanje",2.4203211119099
+2025-02-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.62952312485023
+2025-02-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.94943685597891
+2025-02-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",75.796788880901
+2025-02-01,"Other media","SOVEREIGNTY","Suverenitet",0.910615863886892
+2025-02-01,"Other media","CONSPIRACY","Zavjera",0.910615863886892
+2025-02-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.431344356578001
+2025-02-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",1.03043374071411
+2025-03-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.48975791433892
+2025-03-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.11731843575419
+2025-03-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.28305400372439
+2025-03-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",77.715704531347
+2025-03-01,"Catholic","SOVEREIGNTY","Suverenitet",0.682805710738672
+2025-03-01,"Catholic","CONSPIRACY","Zavjera",0.248292985723153
+2025-03-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.310366232153942
+2025-03-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.248292985723153
+2025-03-01,"Other media","MORAL_DECAY","Moralno propadanje",1.70282248658736
+2025-03-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.14602285980872
+2025-03-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.64497317471425
+2025-03-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",76.1371588523443
+2025-03-01,"Other media","SOVEREIGNTY","Suverenitet",1.16631677163518
+2025-03-01,"Other media","CONSPIRACY","Zavjera",0.86307441101003
+2025-03-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.39654770235596
+2025-03-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.419874037788663
+2025-04-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.87319884726225
+2025-04-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.94524495677233
+2025-04-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.2507204610951
+2025-04-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",81.628242074928
+2025-04-01,"Catholic","SOVEREIGNTY","Suverenitet",0.792507204610951
+2025-04-01,"Catholic","CONSPIRACY","Zavjera",0.144092219020173
+2025-04-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.0720461095100865
+2025-04-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.360230547550432
+2025-04-01,"Other media","MORAL_DECAY","Moralno propadanje",1.75461065573771
+2025-04-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.4077868852459
+2025-04-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",3.32991803278689
+2025-04-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",82.313012295082
+2025-04-01,"Other media","SOVEREIGNTY","Suverenitet",0.986168032786885
+2025-04-01,"Other media","CONSPIRACY","Zavjera",0.512295081967213
+2025-04-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.128073770491803
+2025-04-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.243340163934426
+2025-05-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.14477211796247
+2025-05-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.51921358355675
+2025-05-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.46827524575514
+2025-05-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.467381590706
+2025-05-01,"Catholic","SOVEREIGNTY","Suverenitet",0.536193029490617
+2025-05-01,"Catholic","CONSPIRACY","Zavjera",0.0893655049151028
+2025-05-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.178731009830206
+2025-05-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.625558534405719
+2025-05-01,"Other media","MORAL_DECAY","Moralno propadanje",1.75554819476648
+2025-05-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.08678370321298
+2025-05-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",7.35342828751242
+2025-05-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.0738655183836
+2025-05-01,"Other media","SOVEREIGNTY","Suverenitet",1.39118913547532
+2025-05-01,"Other media","CONSPIRACY","Zavjera",0.59622391520371
+2025-05-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.298111957601855
+2025-05-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",1.02683007618417
+2025-06-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.38190954773869
+2025-06-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.0678391959799
+2025-06-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.71105527638191
+2025-06-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.2914572864322
+2025-06-01,"Catholic","SOVEREIGNTY","Suverenitet",0.942211055276382
+2025-06-01,"Catholic","CONSPIRACY","Zavjera",0.0628140703517588
+2025-06-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.314070351758794
+2025-06-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.314070351758794
+2025-06-01,"Other media","MORAL_DECAY","Moralno propadanje",1.03561505430664
+2025-06-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.28820409194241
+2025-06-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.36979035109876
+2025-06-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.678201566052
+2025-06-01,"Other media","SOVEREIGNTY","Suverenitet",0.7577671129073
+2025-06-01,"Other media","CONSPIRACY","Zavjera",0.277847941399343
+2025-06-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.277847941399343
+2025-06-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.22733013387219
+2025-07-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.11864406779661
+2025-07-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.34180790960452
+2025-07-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.14406779661017
+2025-07-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",82.1327683615819
+2025-07-01,"Catholic","SOVEREIGNTY","Suverenitet",1.20056497175141
+2025-07-01,"Catholic","CONSPIRACY","Zavjera",0
+2025-07-01,"Catholic","FAITH_DEFENCE","Obrana vjere",1.0593220338983
+2025-07-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.494350282485876
+2025-07-01,"Other media","MORAL_DECAY","Moralno propadanje",1.58690176322418
+2025-07-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.51133501259446
+2025-07-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.52392947103275
+2025-07-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.1234256926952
+2025-07-01,"Other media","SOVEREIGNTY","Suverenitet",1.33501259445844
+2025-07-01,"Other media","CONSPIRACY","Zavjera",0.453400503778338
+2025-07-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.705289672544081
+2025-07-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.478589420654912
+2025-08-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.98968312453943
+2025-08-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.54753131908622
+2025-08-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.67428150331614
+2025-08-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.6403831982314
+2025-08-01,"Catholic","SOVEREIGNTY","Suverenitet",1.10537951363301
+2025-08-01,"Catholic","CONSPIRACY","Zavjera",0.221075902726603
+2025-08-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.663227708179808
+2025-08-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.736919675755343
+2025-08-01,"Other media","MORAL_DECAY","Moralno propadanje",1.19450078882128
+2025-08-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.48749154834348
+2025-08-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.37818345729096
+2025-08-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",82.3078656750056
+2025-08-01,"Other media","SOVEREIGNTY","Suverenitet",0.788821275636691
+2025-08-01,"Other media","CONSPIRACY","Zavjera",0.473292765382015
+2025-08-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.36060401171963
+2025-08-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.315528510254677
+2025-09-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.95250320924262
+2025-09-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",2.05391527599487
+2025-09-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.77663671373556
+2025-09-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",84.0821566110398
+2025-09-01,"Catholic","SOVEREIGNTY","Suverenitet",1.15532734274711
+2025-09-01,"Catholic","CONSPIRACY","Zavjera",0.256739409499358
+2025-09-01,"Catholic","FAITH_DEFENCE","Obrana vjere",1.66880616174583
+2025-09-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.898587933247754
+2025-09-01,"Other media","MORAL_DECAY","Moralno propadanje",1.53846153846154
+2025-09-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.97802197802198
+2025-09-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",7.91208791208791
+2025-09-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",86.043956043956
+2025-09-01,"Other media","SOVEREIGNTY","Suverenitet",0.659340659340659
+2025-09-01,"Other media","CONSPIRACY","Zavjera",0.879120879120879
+2025-09-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.494505494505494
+2025-09-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",1.26373626373626
+2025-10-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.45602795573675
+2025-10-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",2.79557367501456
+2025-10-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.70762958648806
+2025-10-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.8672102504368
+2025-10-01,"Catholic","SOVEREIGNTY","Suverenitet",0.64065230052417
+2025-10-01,"Catholic","CONSPIRACY","Zavjera",0.17472335468841
+2025-10-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.87361677344205
+2025-10-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.40768782760629
+2025-10-01,"Other media","MORAL_DECAY","Moralno propadanje",2.07156308851224
+2025-10-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",2.09510357815443
+2025-10-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",7.15630885122411
+2025-10-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",84.4632768361582
+2025-10-01,"Other media","SOVEREIGNTY","Suverenitet",0.918079096045198
+2025-10-01,"Other media","CONSPIRACY","Zavjera",0.423728813559322
+2025-10-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.847457627118644
+2025-10-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.447269303201507
+2025-11-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.63826998689384
+2025-11-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.11402359108781
+2025-11-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.74967234600262
+2025-11-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",82.437745740498
+2025-11-01,"Catholic","SOVEREIGNTY","Suverenitet",1.57273918741809
+2025-11-01,"Catholic","CONSPIRACY","Zavjera",0.262123197903014
+2025-11-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.655307994757536
+2025-11-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.524246395806029
+2025-11-01,"Other media","MORAL_DECAY","Moralno propadanje",1.67304015296367
+2025-11-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.55353728489484
+2025-11-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",7.19407265774379
+2025-11-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",82.5047801147227
+2025-11-01,"Other media","SOVEREIGNTY","Suverenitet",1.0755258126195
+2025-11-01,"Other media","CONSPIRACY","Zavjera",0.406309751434034
+2025-11-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.717017208413002
+2025-11-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.597514340344168
+2025-12-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.18613366645846
+2025-12-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.31168019987508
+2025-12-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.99687695190506
+2025-12-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",81.0118675827608
+2025-12-01,"Catholic","SOVEREIGNTY","Suverenitet",0.874453466583385
+2025-12-01,"Catholic","CONSPIRACY","Zavjera",0.18738288569644
+2025-12-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.437226733291693
+2025-12-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.499687695190506
+2025-12-01,"Other media","MORAL_DECAY","Moralno propadanje",1.27682213158361
+2025-12-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.80883135307679
+2025-12-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",8.9377549210853
+2025-12-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.560915055861
+2025-12-01,"Other media","SOVEREIGNTY","Suverenitet",1.20588756871786
+2025-12-01,"Other media","CONSPIRACY","Zavjera",1.06401844298635
+2025-12-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.354672814328782
+2025-12-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.833481113672637
+2026-01-01,"Catholic","MORAL_DECAY","Moralno propadanje",0.99160945842868
+2026-01-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.67810831426392
+2026-01-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.65293668954996
+2026-01-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.9816933638444
+2026-01-01,"Catholic","SOVEREIGNTY","Suverenitet",2.21205186880244
+2026-01-01,"Catholic","CONSPIRACY","Zavjera",0.07627765064836
+2026-01-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.61022120518688
+2026-01-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.3813882532418
+2026-01-01,"Other media","MORAL_DECAY","Moralno propadanje",1.02068965517241
+2026-01-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.62758620689655
+2026-01-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.26896551724138
+2026-01-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",86.4
+2026-01-01,"Other media","SOVEREIGNTY","Suverenitet",2.26206896551724
+2026-01-01,"Other media","CONSPIRACY","Zavjera",0.524137931034483
+2026-01-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.468965517241379
+2026-01-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.606896551724138
+2026-02-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.55447032306536
+2026-02-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",2.10368144252442
+2026-02-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.70999248685199
+2026-02-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",82.4192336589031
+2026-02-01,"Catholic","SOVEREIGNTY","Suverenitet",0.601051840721262
+2026-02-01,"Catholic","CONSPIRACY","Zavjera",0.450788880540947
+2026-02-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.601051840721262
+2026-02-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.67618332081142
+2026-02-01,"Other media","MORAL_DECAY","Moralno propadanje",1.45498635950288
+2026-02-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.75810851773265
+2026-02-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",6.48681418611701
+2026-02-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.6920278872386
+2026-02-01,"Other media","SOVEREIGNTY","Suverenitet",0.54561988481358
+2026-02-01,"Other media","CONSPIRACY","Zavjera",0.606244316459533
+2026-02-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.515307668990603
+2026-02-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",1.303425280388
+2026-03-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.01058201058201
+2026-03-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.11111111111111
+2026-03-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.55026455026455
+2026-03-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",80.8994708994709
+2026-03-01,"Catholic","SOVEREIGNTY","Suverenitet",0.793650793650794
+2026-03-01,"Catholic","CONSPIRACY","Zavjera",0.211640211640212
+2026-03-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.634920634920635
+2026-03-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.529100529100529
+2026-03-01,"Other media","MORAL_DECAY","Moralno propadanje",0.904452690166976
+2026-03-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.04359925788497
+2026-03-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.82096474953618
+2026-03-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",86.3404452690167
+2026-03-01,"Other media","SOVEREIGNTY","Suverenitet",1.25231910946197
+2026-03-01,"Other media","CONSPIRACY","Zavjera",0.556586270871985
+2026-03-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.162337662337662
+2026-03-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.579777365491651
+2026-04-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.270207852194
+2026-04-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.96304849884527
+2026-04-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.54272517321016
+2026-04-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",83.8337182448037
+2026-04-01,"Catholic","SOVEREIGNTY","Suverenitet",0.981524249422633
+2026-04-01,"Catholic","CONSPIRACY","Zavjera",0.23094688221709
+2026-04-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.404157043879908
+2026-04-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.577367205542725
+2026-04-01,"Other media","MORAL_DECAY","Moralno propadanje",0.694444444444444
+2026-04-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.29985754985755
+2026-04-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.41310541310541
+2026-04-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",86.9123931623932
+2026-04-01,"Other media","SOVEREIGNTY","Suverenitet",1.70940170940171
+2026-04-01,"Other media","CONSPIRACY","Zavjera",0.373931623931624
+2026-04-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.249287749287749
+2026-04-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.462962962962963
+2026-05-01,"Catholic","MORAL_DECAY","Moralno propadanje",1.3771186440678
+2026-05-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",1.48305084745763
+2026-05-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.97881355932203
+2026-05-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",81.7266949152542
+2026-05-01,"Catholic","SOVEREIGNTY","Suverenitet",1.27118644067797
+2026-05-01,"Catholic","CONSPIRACY","Zavjera",0
+2026-05-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.423728813559322
+2026-05-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.317796610169492
+2026-05-01,"Other media","MORAL_DECAY","Moralno propadanje",1.17570215545395
+2026-05-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.807097757457
+2026-05-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.92205530154583
+2026-05-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",85.6738515131722
+2026-05-01,"Other media","SOVEREIGNTY","Suverenitet",1.78532549531896
+2026-05-01,"Other media","CONSPIRACY","Zavjera",0.522534291312867
+2026-05-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.413672980622687
+2026-05-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.587851077726976
+2026-06-01,"Catholic","MORAL_DECAY","Moralno propadanje",2.48366013071895
+2026-06-01,"Catholic","FOREIGN_THREAT","Vanjska prijetnja",0.915032679738562
+2026-06-01,"Catholic","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",4.83660130718954
+2026-06-01,"Catholic","TRADITIONAL_VALUES","Tradicionalne vrijednosti",81.6993464052288
+2026-06-01,"Catholic","SOVEREIGNTY","Suverenitet",1.30718954248366
+2026-06-01,"Catholic","CONSPIRACY","Zavjera",0.392156862745098
+2026-06-01,"Catholic","FAITH_DEFENCE","Obrana vjere",0.130718954248366
+2026-06-01,"Catholic","MEDIA_CRITIQUE","Medijska kritika",0.130718954248366
+2026-06-01,"Other media","MORAL_DECAY","Moralno propadanje",1.26165660998354
+2026-06-01,"Other media","FOREIGN_THREAT","Vanjska prijetnja",1.20680197476687
+2026-06-01,"Other media","INSTITUTIONAL_DISTRUST","Institucionalno nepovjerenje",5.54031815688426
+2026-06-01,"Other media","TRADITIONAL_VALUES","Tradicionalne vrijednosti",87.2188699945145
+2026-06-01,"Other media","SOVEREIGNTY","Suverenitet",1.97476686780033
+2026-06-01,"Other media","CONSPIRACY","Zavjera",0.383982446516731
+2026-06-01,"Other media","FAITH_DEFENCE","Obrana vjere",0.438837081733407
+2026-06-01,"Other media","MEDIA_CRITIQUE","Medijska kritika",0.329127811300055

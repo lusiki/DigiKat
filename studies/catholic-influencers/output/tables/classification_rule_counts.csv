@@ -1,0 +1,16 @@
+﻿ACTOR_TYPE,Actor_Group,classification_rule,classification_confidence,sources
+Other,,unclassified,low,7432
+Other,,secular_exclusion,high,2847
+Lay Influencers,Influencer,social_devotional_pattern,low,149
+Diocesan,Institutional,diocesan_pattern,high,86
+Lay Influencers,Influencer,manual_Lay Influencers,high,35
+Religious Orders,,manual_Religious Orders,high,22
+Religious Orders,,order_pattern,medium,20
+Individual Priests,Influencer,priest_prefix,high,17
+Charismatic Communities,Influencer,community_pattern,medium,17
+Charismatic Communities,Influencer,manual_Charismatic Communities,high,15
+Institutional Official,Institutional,manual_Institutional Official,high,14
+Youth Organizations,,manual_Youth Organizations,high,14
+Independent Media,,manual_Independent Media,high,13
+Diocesan,Institutional,manual_Diocesan,high,12
+Academic,Institutional,manual_Academic,high,7

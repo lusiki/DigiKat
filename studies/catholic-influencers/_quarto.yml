@@ -1,0 +1,7 @@
+project:
+  type: default
+  output-dir: typeset
+
+execute:
+  freeze: false
+

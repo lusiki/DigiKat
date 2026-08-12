@@ -4400,7 +4400,7 @@
     "href": "pages/studije/crkva-i-dezinformacije.html",
     "title": "Tko govori iz katoličkoga medijskog prostora",
     "section": "",
-    "text": "Rad istražuje narativne okvire u hrvatskim katoličkim web medijima (2021.–2026.) i pokazuje da katolički medijski prostor nije narativno jedinstven. Službena crkvena glasila i katolički orijentirani portali koriste kvalitativno različite komunikacijske strategije."
+    "text": "Rad istražuje narativne okvire u hrvatskim katoličkim web medijima (2021.–2026.) i pokazuje da agregirana oznaka katoličkog medija prikriva važnu unutarnju razliku. Katolički orijentirani portali češće od službenih crkvenih glasila aktiviraju svaki od osam mjerenih okvira."
   },
   {
     "objectID": "pages/studije/crkva-i-dezinformacije.html#istraživačko-pitanje",
@@ -4414,28 +4414,28 @@
     "href": "pages/studije/crkva-i-dezinformacije.html#podaci-i-metode",
     "title": "Tko govori iz katoličkoga medijskog prostora",
     "section": "Podaci i metode",
-    "text": "Podaci i metode\nKorpus obuhvaća 443.138 web članaka iz 3.170 izvora (2021.–2026.), od čega 92.915 članaka iz katoličkih medija podijeljenih u četiri potkategorije. Osam narativnih okvira (moralno propadanje, vanjska prijetnja, institucionalno nepovjerenje, tradicionalne vrijednosti, suverenitet, zavjera, obrana vjere, medijska kritika) identificira se prilagodljivim rječničkim postupkom osjetljivim na hrvatsku morfologiju, validiranim na ručno kodiranom uzorku od 200 članaka."
+    "text": "Podaci i metode\nAnaliza polazi od službenoga korpusa s 413.985 objava, obnovljenoga 10. kolovoza 2026. Nakon izdvajanja weba i uklanjanja 4.078 ponovljenih URL-ova, analitički presjek obuhvaća 282.584 članaka iz 1.995 izvora. Od toga 91.292 članaka dolazi iz 65 katoličkih izvora. Podaci završavaju 11. lipnja 2026.\nOsam narativnih okvira prepoznaje se rječničkim postupkom osjetljivim na hrvatsku morfologiju. Logistički modeli kontroliraju godinu i duljinu članka, a standardne su pogreške grupirane po izvoru. Izvorna ručna provjera na 200 članaka nije ponovljena za mjesece dodane obnovom korpusa. Promjena načina prikupljanja 2024. i nepotpuna 2026. dodatno ograničavaju vremensku interpretaciju."
   },
   {
     "objectID": "pages/studije/crkva-i-dezinformacije.html#ključni-nalaz",
     "href": "pages/studije/crkva-i-dezinformacije.html#ključni-nalaz",
     "title": "Tko govori iz katoličkoga medijskog prostora",
     "section": "Ključni nalaz",
-    "text": "Ključni nalaz\nKatolički mediji sustavno više koriste okvire obrane vjere, moralnog propadanja i tradicionalnih vrijednosti od ostalih medija, dok konspirativni i antagonistički okviri u agregiranom katoličkom prostoru nisu povišeni. Unutar samog katoličkog prostora katolički orijentirani portali znatno češće aktiviraju okvire zavjere, medijske kritike, suvereniteta i vanjske prijetnje od službenih crkvenih medija. Suprotno očekivanju, tradicionalne vrijednosti češće aktiviraju upravo službeni crkveni mediji. Nalaz upućuje na to da orijentirani portali konzervativnu poziciju prevode u politički i antagonistički rječnik, dok službeni mediji zadržavaju izvorni jezik tradicije."
+    "text": "Ključni nalaz\nKatolički mediji kao cjelina nemaju veću vjerojatnost uporabe obrane vjere ni tradicionalnih vrijednosti od ostalih medija. Jedina statistički značajna agregirana razlika jest manja vjerojatnost okvira zavjere u katoličkim medijima, uz OR 0,40.\nUnutarnja je razlika snažna. Katolički orijentirani portali statistički značajno češće od službenih crkvenih glasila aktiviraju svih osam okvira. Omjeri izgleda kreću se od 1,21 za tradicionalne vrijednosti do 4,88 za zavjeru. Orijentirani portali, dakle, ne zamjenjuju afirmativne okvire antagonističkima. Oni pojačavaju cijeli mjereni narativni repertoar. Supojavljivanja okvira ostaju slaba, pa podaci ne podupiru tvrdnju o čvrstim interpretativnim paketima.\n\n\n\n282.584\n\n\nweb članaka u novom presjeku\n\n\n\n\n91.292\n\n\nčlanaka iz katoličkih izvora\n\n\n\n\n8 / 8\n\n\nokvira češćih na orijentiranim portalima\n\n\n\n\nOR 4,88\n\n\nnajveća unutarnja razlika za zavjeru"
   },
   {
     "objectID": "pages/studije/crkva-i-dezinformacije.html#cijeli-rad",
     "href": "pages/studije/crkva-i-dezinformacije.html#cijeli-rad",
     "title": "Tko govori iz katoličkoga medijskog prostora",
     "section": "Cijeli rad",
-    "text": "Cijeli rad\nAnonimizirani rukopis dostupan je u dva usklađena formata.\n\nHTMLČitanje u pregledniku PDFPreuzimanje i ispis"
+    "text": "Cijeli rad\nRukopis je dostupan u tri usklađena formata.\n\nHTMLČitanje u pregledniku PDFPreuzimanje i ispis WordUređivanje rukopisa"
   },
   {
     "objectID": "pages/studije/crkva-i-dezinformacije.html#status",
     "href": "pages/studije/crkva-i-dezinformacije.html#status",
     "title": "Tko govori iz katoličkoga medijskog prostora",
     "section": "Status",
-    "text": "Status\nU recenziji (anonimizirano za potrebe recenzijskog postupka). Dio je drugoga izlaznog toka projekta, koji obuhvaća tematske studije i radove. Popis je na stranici Projektni raspored."
+    "text": "Status\nU recenziji. Dio je drugoga izlaznog toka projekta, koji obuhvaća tematske studije i radove. Popis je na stranici Projektni raspored."
   },
   {
     "objectID": "pages/studije/hodocasnicki-turizam.html",
@@ -4484,7 +4484,7 @@
     "href": "pages/studije/index.html",
     "title": "Tematska istraživanja",
     "section": "",
-    "text": "Uz četiri analitičke razine mape medijskog prostora, DigiKat korpus služi i kao podloga za samostalne tematske studije. Svaka studija izdvaja vlastiti presjek korpusa, postavlja jedno istraživačko pitanje i vodi prema znanstvenom radu. Stranica svake studije sažima pitanje, podatke i metode te ključni nalaz, a gdje je rukopis dostupan, vodi i na njegov puni tekst.\nStudije su poredane kako se pojavljuju u izborniku. Odaberite studiju za detaljan prikaz.\n\n\nTržišta pažnje u religijskim digitalnim medijima\nKako se raspodjeljuje pažnja. Koncentracija pažnje, modaliteti angažmana i liturgijski ritam objavljivanja. Autori su Luka Šikić, Petra Palić i Siniša Kovačić · nacrt u izradi.\n\n\nMemorijalni okvir hrvatskih katoličkih odredišta\nSvetišta između hodočašća i sjećanja. Uz religijski i turistički registar, u prikazu marijanskih svetišta postoji i treći, memorijalni registar, koji svetište povezuje s ratnim sjećanjem. Autorice i autor su Matea Topić Crnoja, Petra Palić i Luka Šikić · nacrt u izradi.\n\n\nMedijska zastupljenost redovničkih zajednica\nTko dobiva pažnju među redovima. Koncentracija pažnje, spolna asimetrija i tipologija portala u izvještavanju o redovnicima i redovnicama (2021.–2025.). Autori su Hana Kilijan i Luka Šikić · nacrt dostupan.\n\n\nKatolički influenceri i institucionalni deficit pažnje\nOsobni brend nasuprot instituciji. Usporedba angažmana katoličkih influencera i institucionalnih crkvenih komunikatora kroz pet hipoteza ekonomije pažnje. Autori su Suzana Obrovac Lipar i Luka Šikić · nacrt dostupan.\n\n\nTko govori iz katoličkoga medijskog prostora\nKatolički mediji nisu jedno. Narativni okviri razlikuju službena crkvena glasila od katolički orijentiranih portala u korpusu web članaka 2021.–2026. Autori su Luka Šikić i Andreja Sršen · u recenziji.\n\n\nInflacija, informacije i odgođene promjene cijena\nKada sektor zna, a cijene čekaju. Datirano medijsko izvještavanje kao trag javno dostupnih informacija prije odgođene prilagodbe cijena u hrvatskom vjerskom sektoru. Autori su Luka Šikić i Petra Palić · rukopis za časopis.\n\n\nSocijalni nauk Crkve u javnoj raspravi o gospodarstvu\nŠto od nauka dopre do rasprave. Mjeri koji dijelovi socijalnog nauka ulaze u javnu raspravu o gospodarstvu i pokazuje da odabir nastaje na granici prema sekularnim medijima. Autori su Luka Šikić i Petra Palić · rukopis za časopis.\n\n\nVjera u sadašnjosti, sjećanje u mučeniku\nPodjela mnemoničkog rada. Katoličko obrazovanje organizira raspravu o sadašnjosti, dok se kulturno sjećanje koncentrira u liku Alojzija Stepinca (2021.–2025.). Autori su Veronika Novoselac i Luka Šikić · radni rukopis."
+    "text": "Uz četiri analitičke razine mape medijskog prostora, DigiKat korpus služi i kao podloga za samostalne tematske studije. Svaka studija izdvaja vlastiti presjek korpusa, postavlja jedno istraživačko pitanje i vodi prema znanstvenom radu. Stranica svake studije sažima pitanje, podatke i metode te ključni nalaz, a gdje je rukopis dostupan, vodi i na njegov puni tekst.\nStudije su poredane kako se pojavljuju u izborniku. Odaberite studiju za detaljan prikaz.\n\n\nTržišta pažnje u religijskim digitalnim medijima\nKako se raspodjeljuje pažnja. Koncentracija pažnje, modaliteti angažmana i liturgijski ritam objavljivanja. Autori su Luka Šikić, Petra Palić i Siniša Kovačić · nacrt u izradi.\n\n\nMemorijalni okvir hrvatskih katoličkih odredišta\nSvetišta između hodočašća i sjećanja. Uz religijski i turistički registar, u prikazu marijanskih svetišta postoji i treći, memorijalni registar, koji svetište povezuje s ratnim sjećanjem. Autorice i autor su Matea Topić Crnoja, Petra Palić i Luka Šikić · nacrt u izradi.\n\n\nMedijska zastupljenost redovničkih zajednica\nTko dobiva pažnju među redovima. Koncentracija pažnje, spolna asimetrija i tipologija portala u izvještavanju o redovnicima i redovnicama (2021.–2025.). Autori su Hana Kilijan i Luka Šikić · nacrt dostupan.\n\n\nKatolički influenceri i institucionalni deficit pažnje\nOsobni brend nasuprot instituciji. Obnovljena analiza potvrđuje deficit interakcija po objavi i različite platformske strategije, ali ne nalazi odvojene tematske niše. Autori su Suzana Obrovac Lipar i Luka Šikić · nacrt dostupan.\n\n\nTko govori iz katoličkoga medijskog prostora\nJedna oznaka skriva različite glasove. U obnovljenom korpusu katolički mediji kao cjelina ne odstupaju na očekivanim afirmativnim okvirima, ali orijentirani portali češće od službenih glasila aktiviraju svih osam mjerenih okvira. Autori su Luka Šikić i Andreja Sršen · u recenziji.\n\n\nInflacija, informacije i odgođene promjene cijena\nKada sektor zna, a cijene čekaju. Datirano medijsko izvještavanje kao trag javno dostupnih informacija prije odgođene prilagodbe cijena u hrvatskom vjerskom sektoru. Autori su Luka Šikić i Petra Palić · rukopis za časopis.\n\n\nSocijalni nauk Crkve u javnoj raspravi o gospodarstvu\nŠto od nauka dopre do rasprave. Mjeri koji dijelovi socijalnog nauka ulaze u javnu raspravu o gospodarstvu i pokazuje da odabir nastaje na granici prema sekularnim medijima. Autori su Luka Šikić i Petra Palić · rukopis za časopis.\n\n\nVjera u sadašnjosti, sjećanje u mučeniku\nPodjela mnemoničkog rada. Katoličko obrazovanje organizira raspravu o sadašnjosti, dok se kulturno sjećanje koncentrira u liku Alojzija Stepinca (2021.–2025.). Autori su Veronika Novoselac i Luka Šikić · radni rukopis."
   },
   {
     "objectID": "pages/studije/inflacija-i-religija.html",
@@ -4547,35 +4547,35 @@
     "href": "pages/studije/katolicki-influenceri.html",
     "title": "Katolički influenceri i institucionalni deficit pažnje",
     "section": "",
-    "text": "Studija uspoređuje ekonomiju pažnje katoličkih influencera s digitalnom učinkovitošću institucionalnih crkvenih aktera, testirajući pet hipoteza proizašlih iz teorije ekonomije pažnje."
+    "text": "Dobivaju li službeni crkveni kanali jednaku pozornost kao osobne i zajedničke religijske stranice? Studija uspoređuje njihove vidljive interakcije, platformsku strukturu i tematske naglaske kroz pet hipoteza ekonomije pažnje."
   },
   {
     "objectID": "pages/studije/katolicki-influenceri.html#istraživačko-pitanje",
     "href": "pages/studije/katolicki-influenceri.html#istraživačko-pitanje",
     "title": "Katolički influenceri i institucionalni deficit pažnje",
     "section": "Istraživačko pitanje",
-    "text": "Istraživačko pitanje\nPostižu li katolički influenceri (digitalni akteri koji grade osobni ili zajednički brend oko religijskog sadržaja) veće stope angažmana od institucionalnih crkvenih komunikatora, slijedi li pažnja među njima distribuciju zakona potencije, razlikuju li se platformske strategije i tematska usmjerenost dvaju tipova aktera te predviđaju li uspjeh influencera učestalost objavljivanja i izbor platforme, a ne klerički status."
+    "text": "Istraživačko pitanje\nPostižu li katolički influenceri više interakcija po objavi od institucionalnih crkvenih komunikatora? Analiza također pita koliko je pažnja među influencerima koncentrirana, razlikuju li se platformske strategije i tematski naglasci dviju skupina te predviđaju li ukupan broj interakcija učestalost objavljivanja, primarna platforma i svećenički status."
   },
   {
     "objectID": "pages/studije/katolicki-influenceri.html#podaci-i-metode",
     "href": "pages/studije/katolicki-influenceri.html#podaci-i-metode",
     "title": "Katolički influenceri i institucionalni deficit pažnje",
     "section": "Podaci i metode",
-    "text": "Podaci i metode\nAnaliza koristi DigiKat bazu (preko 600.000 objava, 2021.–2025.) uz klasifikaciju aktera na influencere i institucionalne komunikatore. Nejednakost pažnje mjeri se Gini koeficijentom i regresijom potencijskog zakona, platformske strategije Cramerovim V, a tematska diferencijacija Jensen-Shannonovom divergencijom između distribucija tema dvaju tipova aktera."
+    "text": "Podaci i metode\nAnaliza polazi od službenoga DigiKat korpusa s 413.985 objava od 2021. do 11. lipnja 2026. Godina 2026. nije potpuna. Analitički skup sadrži 413.788 objava nakon isključenja 197 TikTok objava za koje naslijeđeni klasifikator nije bio definiran.\nNejednakost se mjeri Gini koeficijentom i opisnim odnosom ranga i interakcija. Usporedba interakcija po objavi uključuje Wilcoxonov test i prilagodbu za platformsku strukturu. Platformske razlike mjere se Cramerovim V. Tematski naglasci uspoređuju se višestrukim rječnikom i Jensen-Shannonovom divergencijom. Zaključci se dodatno provjeravaju na klasifikaciji izvora visoke pouzdanosti."
   },
   {
     "objectID": "pages/studije/katolicki-influenceri.html#ključni-nalaz",
     "href": "pages/studije/katolicki-influenceri.html#ključni-nalaz",
     "title": "Katolički influenceri i institucionalni deficit pažnje",
     "section": "Ključni nalaz",
-    "text": "Ključni nalaz\nPažnja među katoličkim influencerima slijedi distribuciju potencijskog zakona s ekstremnom koncentracijom. Influenceri postižu značajno više stope angažmana od institucionalnih aktera, a platformske strategije dvaju tipova komunikatora znatno se razlikuju. Influenceri su usmjereniji na društvene mreže, dok institucije zadržavaju jaču web prisutnost. Obrasci tematske specijalizacije otkrivaju različite niše. Influenceri se fokusiraju na devocijski i inspirativni sadržaj, a institucije na vijesti i administrativne informacije."
+    "text": "Ključni nalaz\nPažnja među influencerima izrazito je koncentrirana. Gini koeficijent iznosi 0,942, ali točan oblik distribucije nije robustan na strožu klasifikaciju. Influenceri imaju medijan od 19,5 interakcija po objavi, a institucionalni izvori 13,2. Razlika ostaje pozitivna nakon prilagodbe za platformsku strukturu.\nPlatformske strategije jasno se razlikuju. Cramerov V iznosi 0,632. Devocijski i institucionalni naglasci idu u očekivanom smjeru, ali ukupna tematska divergencija od 0,059 ne doseže postavljeni prag od 0,15. Učestalost objavljivanja predviđa ukupan broj interakcija, dok primarna platforma i svećenički status nemaju samostalan statistički značajan učinak. Novi podaci zato podupiru institucionalni deficit interakcija po objavi, ali ne i raniju tvrdnju o odvojenim tematskim nišama."
   },
   {
     "objectID": "pages/studije/katolicki-influenceri.html#cijeli-rad",
     "href": "pages/studije/katolicki-influenceri.html#cijeli-rad",
     "title": "Katolički influenceri i institucionalni deficit pažnje",
     "section": "Cijeli rad",
-    "text": "Cijeli rad\nPun tekst nacrta dostupan je u dva usklađena formata.\n\nHTMLČitanje u pregledniku PDFPreuzimanje i ispis"
+    "text": "Cijeli rad\nPun tekst obnovljenoga nacrta dostupan je u tri usklađena formata.\n\nHTMLČitanje u pregledniku PDFPreuzimanje i ispis WordUređivanje i bilješke"
   },
   {
     "objectID": "pages/studije/katolicki-influenceri.html#status",

@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-12 04:29:04 UTC",
+  "generator": "code/02_framing_analysis.R",
+  "input_manifest_sha256": "e31c7ff34f554f9fbdf1e54a8bbb09edc3a4a5ea30ee5c49f4a6f6be8685e6d7",
+  "official_corpus_sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a",
+  "derived_web_corpus": {
+    "rows_before_url_deduplication": 286662,
+    "duplicate_urls_removed": 4078,
+    "rows": 282584,
+    "columns": 84,
+    "sources": 1995,
+    "catholic_rows": 91292,
+    "catholic_sources": 65,
+    "date_min": "2021-01-01",
+    "date_max": "2026-06-11"
+  },
+  "models": {
+    "comparison": "Catholic media versus Other media category; Catholic aligned versus Official Church",
+    "controls": ["publication year", "log article word count"],
+    "uncertainty": "standard errors clustered by source",
+    "rows_full": 282584,
+    "rows_catholic": 91292
+  },
+  "catholic_vs_other": [
+    {
+      "frame": "MORAL_DECAY",
+      "label_hr": "Moralno propadanje",
+      "estimate": 0.10837595087,
+      "std_error": 0.12608513829,
+      "OR": 1.1144666513,
+      "conf_low": 0.87044876441,
+      "conf_high": 1.4268914699,
+      "p_value": 0.39003946384,
+      "n": 282584,
+      "converged": true
+    },
+    {
+      "frame": "FOREIGN_THREAT",
+      "label_hr": "Vanjska prijetnja",
+      "estimate": -0.12931899498,
+      "std_error": 0.15944733309,
+      "OR": 0.87869362198,
+      "conf_low": 0.64285889594,
+      "conf_high": 1.201045029,
+      "p_value": 0.41733971115,
+      "n": 282584,
+      "converged": true
+    },
+    {
+      "frame": "INSTITUTIONAL_DISTRUST",
+      "label_hr": "Institucionalno nepovjerenje",
+      "estimate": -0.27601093074,
+      "std_error": 0.1728948234,
+      "OR": 0.75880463642,
+      "conf_low": 0.54070655596,
+      "conf_high": 1.0648742278,
+      "p_value": 0.11039740663,
+      "n": 282584,
+      "converged": true
+    },
+    {
+      "frame": "TRADITIONAL_VALUES",
+      "label_hr": "Tradicionalne vrijednosti",
+      "estimate": -0.089208289188,
+      "std_error": 0.070496971928,
+      "OR": 0.91465504098,
+      "conf_low": 0.79661815715,
+      "conf_high": 1.050181742,
+      "p_value": 0.20572075374,
+      "n": 282584,
+      "converged": true
+    },
+    {
+      "frame": "SOVEREIGNTY",
+      "label_hr": "Suverenitet",
+      "estimate": -0.25466317337,
+      "std_error": 0.19777340498,
+      "OR": 0.77517755444,
+      "conf_low": 0.52608529362,
+      "conf_high": 1.1422106799,
+      "p_value": 0.19786738842,
+      "n": 282584,
+      "converged": true
+    },
+    {
+      "frame": "CONSPIRACY",
+      "label_hr": "Zavjera",
+      "estimate": -0.91340094277,
+      "std_error": 0.33545520579,
+      "OR": 0.40115758743,
+      "conf_low": 0.20786196185,
+      "conf_high": 0.77420326701,
+      "p_value": 0.006471750317,
+      "n": 282584,
+      "converged": true
+    },
+    {
+      "frame": "FAITH_DEFENCE",
+      "label_hr": "Obrana vjere",
+      "estimate": -0.075807439534,
+      "std_error": 0.25888191751,
+      "OR": 0.9269946919,
+      "conf_low": 0.55810583055,
+      "conf_high": 1.539706471,
+      "p_value": 0.76965490825,
+      "n": 282584,
+      "converged": true
+    },
+    {
+      "frame": "MEDIA_CRITIQUE",
+      "label_hr": "Medijska kritika",
+      "estimate": -0.42380039396,
+      "std_error": 0.30358562484,
+      "OR": 0.65455452191,
+      "conf_low": 0.36102167357,
+      "conf_high": 1.1867476485,
+      "p_value": 0.16271959203,
+      "n": 282584,
+      "converged": true
+    }
+  ],
+  "aligned_vs_official": [
+    {
+      "frame": "MORAL_DECAY",
+      "label_hr": "Moralno propadanje",
+      "estimate": 0.63214098071,
+      "std_error": 0.079695144966,
+      "OR": 1.8816348137,
+      "conf_low": 1.6095286414,
+      "conf_high": 2.1997431303,
+      "p_value": 2.1566425218e-15,
+      "n": 91292,
+      "converged": true
+    },
+    {
+      "frame": "FOREIGN_THREAT",
+      "label_hr": "Vanjska prijetnja",
+      "estimate": 0.79452995366,
+      "std_error": 0.17226337708,
+      "OR": 2.2134003515,
+      "conf_low": 1.5791708625,
+      "conf_high": 3.1023502474,
+      "p_value": 3.9824233709e-06,
+      "n": 91292,
+      "converged": true
+    },
+    {
+      "frame": "INSTITUTIONAL_DISTRUST",
+      "label_hr": "Institucionalno nepovjerenje",
+      "estimate": 0.95680143181,
+      "std_error": 0.060963487858,
+      "OR": 2.6033561299,
+      "conf_low": 2.3101563154,
+      "conf_high": 2.9337682016,
+      "p_value": 1.6451251298e-55,
+      "n": 91292,
+      "converged": true
+    },
+    {
+      "frame": "TRADITIONAL_VALUES",
+      "label_hr": "Tradicionalne vrijednosti",
+      "estimate": 0.1935481387,
+      "std_error": 0.051383265547,
+      "OR": 1.2135478038,
+      "conf_low": 1.0972848264,
+      "conf_high": 1.3421294422,
+      "p_value": 0.00016538358813,
+      "n": 91292,
+      "converged": true
+    },
+    {
+      "frame": "SOVEREIGNTY",
+      "label_hr": "Suverenitet",
+      "estimate": 0.93956671147,
+      "std_error": 0.11129856692,
+      "OR": 2.558872448,
+      "conf_low": 2.0573639527,
+      "conf_high": 3.1826299846,
+      "p_value": 3.1233231898e-17,
+      "n": 91292,
+      "converged": true
+    },
+    {
+      "frame": "CONSPIRACY",
+      "label_hr": "Zavjera",
+      "estimate": 1.5859788494,
+      "std_error": 0.18135039396,
+      "OR": 4.8840698083,
+      "conf_low": 3.4230727365,
+      "conf_high": 6.9686330758,
+      "p_value": 2.2225829206e-18,
+      "n": 91292,
+      "converged": true
+    },
+    {
+      "frame": "FAITH_DEFENCE",
+      "label_hr": "Obrana vjere",
+      "estimate": 1.064517622,
+      "std_error": 0.15255214681,
+      "OR": 2.8994400206,
+      "conf_low": 2.1501140957,
+      "conf_high": 3.9099099205,
+      "p_value": 2.992895962e-12,
+      "n": 91292,
+      "converged": true
+    },
+    {
+      "frame": "MEDIA_CRITIQUE",
+      "label_hr": "Medijska kritika",
+      "estimate": 1.3419625349,
+      "std_error": 0.27620975206,
+      "OR": 3.8265458708,
+      "conf_low": 2.2268797015,
+      "conf_high": 6.5753229917,
+      "p_value": 1.1828391346e-06,
+      "n": 91292,
+      "converged": true
+    }
+  ],
+  "max_abs_phi": 0.087242063405,
+  "outputs": ["frame_cooccurrence.csv", "frame_prevalence_by_catholic_subcategory.csv", "frame_prevalence_by_group.csv", "frame_prevalence_monthly.csv", "media_year_interactions.csv", "or_aligned_vs_official.csv", "or_catholic_vs_other.csv", "robustness.csv"]
+}

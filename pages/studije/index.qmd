@@ -38,15 +38,16 @@ Autori su Hana Kilijan i Luka Šikić · nacrt dostupan.
 
 ::: {.info-card}
 ### [Katolički influenceri i institucionalni deficit pažnje](katolicki-influenceri.html)
-**Osobni brend nasuprot instituciji.** Usporedba angažmana katoličkih influencera i institucionalnih
-crkvenih komunikatora kroz pet hipoteza ekonomije pažnje.
+**Osobni brend nasuprot instituciji.** Obnovljena analiza potvrđuje deficit interakcija po objavi i
+različite platformske strategije, ali ne nalazi odvojene tematske niše.
 Autori su Suzana Obrovac Lipar i Luka Šikić · nacrt dostupan.
 :::
 
 ::: {.info-card}
 ### [Tko govori iz katoličkoga medijskog prostora](crkva-i-dezinformacije.html)
-**Katolički mediji nisu jedno.** Narativni okviri razlikuju službena crkvena glasila od katolički
-orijentiranih portala u korpusu web članaka 2021.–2026.
+**Jedna oznaka skriva različite glasove.** U obnovljenom korpusu katolički mediji kao cjelina ne
+odstupaju na očekivanim afirmativnim okvirima, ali orijentirani portali češće od službenih glasila
+aktiviraju svih osam mjerenih okvira.
 Autori su Luka Šikić i Andreja Sršen · u recenziji.
 :::
 
