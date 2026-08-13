@@ -19,9 +19,18 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
 source("../R/lib/digikat_paths.R", encoding = "UTF-8")
 source("../R/lib/digikat_hr.R", encoding = "UTF-8")
 
-mm_path <- "../data/page-ready/moj_medij.json"
+preview_news_gap <- identical(Sys.getenv("DIGIKAT_NEWS_GAP_PREVIEW", unset = "0"), "1")
+mm_path <- if (preview_news_gap) {
+  "../studies/news-gap/output/private/moj_medij_preview.json"
+} else {
+  "../data/page-ready/moj_medij.json"
+}
 if (!file.exists(mm_path)) {
-  stop("Nedostaje data/page-ready/moj_medij.json. Izgradi ga s: Rscript R/06_moj_medij.R --apply",
+  preview_command <- paste(
+    "Rscript R/06_moj_medij.R --preview-news-gap --write-preview"
+  )
+  stop(if (preview_news_gap) paste("Nedostaje privatni pregled. Izgradi ga s:", preview_command) else
+         "Nedostaje data/page-ready/moj_medij.json. Izgradi ga s: Rscript R/06_moj_medij.R --apply",
        call. = FALSE)
 }
 mm_raw <- paste(readLines(mm_path, encoding = "UTF-8", warn = FALSE), collapse = "\n")
@@ -71,7 +80,7 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
 </div>
 
 <style>
-.mm-app { margin: 1.5rem 0 2rem; }
+.mm-app { margin:1.5rem 0 2rem; --mm-produced:#14181d; --mm-rewarded:#0f4c5c; }
 .mm-label { display:block; font-weight:600; font-size:.95rem; margin-bottom:.4rem; color:#14181d; }
 .mm-input { width:100%; max-width:560px; font-size:1.05rem; padding:.7rem .9rem;
   border:1px solid #cfccc2; border-radius:8px; background:#fff; color:#14181d; }
@@ -99,6 +108,16 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
 .mm-h { font-size:1rem; font-weight:600; margin:1.3rem 0 .5rem; color:#14181d; }
 .mm-chart { width:100%; max-width:560px; height:auto; overflow-x:auto; }
 .mm-note { font-size:.85rem; color:#6b6f76; margin:.5rem 0 0; }
+.mm-ng { margin:1.5rem 0 1.2rem; padding:1rem 0 0; border-top:1px solid #e4e2da; }
+.mm-ng-product { margin:1rem 0 1.4rem; }
+.mm-ng-name { font-size:.9rem; font-weight:600; color:#14181d; margin:0 0 .35rem; }
+.mm-ng-chart { width:100%; max-width:700px; height:auto; display:block; }
+.mm-ng-legend { display:flex; flex-wrap:wrap; gap:1rem; font-size:.78rem; color:#6b6f76;
+  margin:.15rem 0 .45rem; }
+.mm-ng-key { display:inline-flex; align-items:center; gap:.35rem; }
+.mm-ng-dot { width:.62rem; height:.62rem; border-radius:50%; display:inline-block; }
+.mm-ng-dot-p { background:var(--mm-produced); }
+.mm-ng-dot-r { background:var(--mm-rewarded); }
 /* Napomene uz pregled. Namjerno su tiše od ostatka stranice: ostaju vidljive i potpune,
    ali ne smiju izgledati kao dio samog alata. Zato su izvan hijerarhije naslova i izvan sadržaja. */
 .mm-aside { margin:3.2rem 0 0; padding:1.1rem 0 0; border-top:1px solid #e4e2da; max-width:640px; }
@@ -113,9 +132,12 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
 .mm-tag { display:inline-block; background:#eaf0f2; color:#2c5663; border-radius:4px;
   padding:.15rem .5rem; font-size:.8rem; font-family:'IBM Plex Mono',monospace; }
 @media (prefers-color-scheme: dark) {
+  .mm-app { --mm-produced:#e8e6e1; --mm-rewarded:#5a949f; }
   .mm-input, .mm-results, .mm-detail { background:#1b1d21; color:#e8e6e1; border-color:#3a3d42; }
   .mm-label, .mm-name, .mm-kpi-v, .mm-h, .mm-results button { color:#e8e6e1; }
   .mm-results button:hover, .mm-results button:focus { background:#2a2d33; }
+  .mm-ng { border-top-color:#3a3d42; }
+  .mm-ng-name { color:#e8e6e1; }
   .mm-aside { border-top-color:#3a3d42; }
   .mm-aside p { color:#9aa0a6; }
   .mm-aside strong { color:#c4c8cd; }
@@ -149,7 +171,10 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
     return s.toLowerCase()
       .replace(/č|ć/g,'c').replace(/ž/g,'z').replace(/š/g,'s').replace(/đ/g,'dj');
   }
-  DATA.sources.forEach(function (s) { s._k = fold(s.n + ' ' + (s.t || '')); });
+  DATA.sources.forEach(function (s) {
+    var products = (s.ng || []).map(function (p) { return p.n + ' ' + (p.h || ''); }).join(' ');
+    s._k = fold(s.n + ' ' + (s.t || '') + ' ' + products);
+  });
 
   function esc(s) {
     return String(s).replace(/[&<>"']/g, function (c) {
@@ -178,9 +203,12 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
       return;
     }
     results.innerHTML = list.map(function (s, i) {
+      var productNames = s.ng && s.ng.length > 1
+        ? ' <span class="mm-r-meta">' + s.ng.map(function (p) { return esc(p.n); }).join(' · ') + '</span>'
+        : '';
       return '<li><button type="button" data-i="' + DATA.sources.indexOf(s) + '">' +
         '<span>' + esc(s.n) + (s.t ? ' <span class="mm-r-meta">' + esc(s.t) + '</span>' : '') +
-        '</span><span class="mm-r-meta">' + int(s.p) + ' objava</span></button></li>';
+        productNames + '</span><span class="mm-r-meta">' + int(s.p) + ' objava</span></button></li>';
     }).join('');
   }
 
@@ -208,6 +236,40 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
     return int(rank) + '. od ' + int(total);
   }
 
+  // Usporedba tematskih udjela za jedan urednički proizvod. Podaci ulaze u javni JSON tek kada
+  // analiza nosi izričit status za javni prikaz.
+  function topicChart(profile) {
+    var W = 700, LEFT = 260, RIGHT = 82, TOP = 22, ROW = 29;
+    var vals = profile.v.p.concat(profile.v.r);
+    var max = Math.max.apply(null, vals.concat([1]));
+    var plotW = W - LEFT - RIGHT;
+    var H = TOP + profile.v.k.length * ROW + 12;
+    var rows = profile.v.k.map(function (label, i) {
+      var y = TOP + i * ROW + 12;
+      var xp = LEFT + plotW * profile.v.p[i] / max;
+      var xr = LEFT + plotW * profile.v.r[i] / max;
+      var gap = profile.v.g[i];
+      var gapLabel = (gap > 0 ? '+' : '') + dec(gap, 1) + ' pp';
+      var aria = label + '. Objavljeno ' + dec(profile.v.p[i], 1) +
+        ' %. Nagrađeno interakcijama ' + dec(profile.v.r[i], 1) + ' %.';
+      return '<g><title>' + esc(aria) + '</title>' +
+        '<text x="' + (LEFT - 10) + '" y="' + (y + 4) + '" text-anchor="end" ' +
+        'font-size="11.5" fill="currentColor">' + esc(label) + '</text>' +
+        '<line x1="' + Math.min(xp, xr).toFixed(1) + '" x2="' + Math.max(xp, xr).toFixed(1) +
+        '" y1="' + y + '" y2="' + y + '" stroke="#aaa69d" stroke-width="2" />' +
+        '<circle cx="' + xp.toFixed(1) + '" cy="' + y + '" r="4" fill="var(--mm-produced)" />' +
+        '<circle cx="' + xr.toFixed(1) + '" cy="' + y + '" r="4" fill="var(--mm-rewarded)" />' +
+        '<text x="' + (W - RIGHT + 10) + '" y="' + (y + 4) + '" font-size="11" ' +
+        'fill="#6b6f76">' + gapLabel + '</text></g>';
+    }).join('');
+    return '<div class="mm-ng-product"><p class="mm-ng-name">' + esc(profile.n) + '</p>' +
+      '<div class="mm-ng-legend" aria-hidden="true">' +
+      '<span class="mm-ng-key"><span class="mm-ng-dot mm-ng-dot-p"></span>Objavljeno</span>' +
+      '<span class="mm-ng-key"><span class="mm-ng-dot mm-ng-dot-r"></span>Nagrađeno interakcijama</span>' +
+      '</div><svg class="mm-ng-chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" ' +
+      'aria-label="Objavljeno i nagrađeno po temama za ' + esc(profile.n) + '">' + rows + '</svg></div>';
+  }
+
   function renderDetail(s) {
     var h = '<h2 class="mm-name">' + esc(s.n) + '</h2>';
     var bits = [];
@@ -228,6 +290,18 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
     h += '<p class="mm-note">Godina ' + DATA.years[DATA.years.length - 1] +
       '. nepotpuna je. Kako se čitaju godišnji volumeni, opisano je u ' +
       '<a href="metodologija.html">Metodologiji</a>.</p>';
+
+    if (s.ng && s.ng.length) {
+      h += '<section class="mm-ng"><div class="mm-h">Objavljeno i nagrađeno</div>';
+      if (s.ng.length > 1) {
+        h += '<p class="mm-note">Oznaka ' + esc(s.n) +
+          ' u korpusu obuhvaća više uredničkih proizvoda. Svaki je zato prikazan zasebno.</p>';
+      }
+      h += s.ng.map(topicChart).join('');
+      h += '<p class="mm-note">Usporedba obuhvaća sedam potpunih mjeseci 2025. Interakcije pokazuju ' +
+        'zabilježenu pažnju, a ne nužno duboku sklonost publike.</p>';
+      h += '</section>';
+    }
 
     h += '<div class="mm-h">Gdje ovaj izvor stoji</div><ul class="mm-pos">';
     h += '<li>Po broju objava ' + ord(s.rp, DATA.totals.sources_listed) +
@@ -265,6 +339,19 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
     results.className = 'mm-results';
     detail.scrollIntoView({ behavior:'smooth', block:'nearest' });
   });
+
+  // Izravna poveznica na profil olakšava pregled i dijeljenje prikaza.
+  // Primjer: moj-medij.html?medij=IKA
+  var requestedSource = new URLSearchParams(window.location.search).get('medij');
+  if (requestedSource) {
+    q.value = requestedSource;
+    var requestedMatches = search(requestedSource);
+    if (requestedMatches && requestedMatches.length) {
+      renderDetail(requestedMatches[0]);
+    } else {
+      renderResults(requestedMatches);
+    }
+  }
 })();
 </script>
 ```

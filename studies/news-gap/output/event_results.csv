@@ -1,0 +1,15 @@
+﻿result_type,period_or_contrast,estimate,standard_error,conf_low,conf_high,cross_product_sd,n_products,n_product_periods,unit,notes
+weekly_distance,2025-03-10,23.2302369321302,,,,14.2045633640192,6,6,percentage-point distance,Equal-product weekly mean; eligible product-weeks only
+weekly_distance,2025-03-17,26.86233845629,,,,11.7525347149087,6,6,percentage-point distance,Equal-product weekly mean; eligible product-weeks only
+weekly_distance,2025-03-24,,,,,,5,5,percentage-point distance,Not reported: week overlaps a collection blackout or has fewer than three eligible products
+weekly_distance,2025-03-31,,,,,,0,0,percentage-point distance,Not reported: week overlaps a collection blackout or has fewer than three eligible products
+weekly_distance,2025-04-07,,,,,,4,4,percentage-point distance,Not reported: week overlaps a collection blackout or has fewer than three eligible products
+weekly_distance,2025-04-14,30.3029183385209,,,,20.2933148477123,6,6,percentage-point distance,Equal-product weekly mean; eligible product-weeks only
+weekly_distance,2025-04-21,38.3077963308723,,,,8.84048724092667,6,6,percentage-point distance,Equal-product weekly mean; eligible product-weeks only
+weekly_distance,2025-04-28,,,,,,0,0,percentage-point distance,Not reported: week overlaps a collection blackout or has fewer than three eligible products
+weekly_distance,2025-05-05,,,,,,2,2,percentage-point distance,Not reported: week overlaps a collection blackout or has fewer than three eligible products
+weekly_distance,2025-05-12,26.6780934727413,,,,7.1317463436222,6,6,percentage-point distance,Equal-product weekly mean; eligible product-weeks only
+weekly_distance,2025-05-19,33.040341381762,,,,22.2565749520788,6,6,percentage-point distance,Equal-product weekly mean; eligible product-weeks only
+weekly_distance,2025-05-26,24.5100863528293,,,,11.5390096447754,6,6,percentage-point distance,Equal-product weekly mean; eligible product-weeks only
+weekly_distance,2025-06-02,33.1806514101565,,,,9.38420282233972,6,6,percentage-point distance,Equal-product weekly mean; eligible product-weeks only
+event_feasibility,papal_transition_minus_pre,,,,,,6,59,percentage-point distance,"Not estimable: primary-source collection is nearly absent 29 March-10 April and 28 April-10 May 2025, including the conclave and election of Leo XIV"

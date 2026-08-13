@@ -1,0 +1,1838 @@
+{
+  "study": "The News Gap, Catholic edition",
+  "generated_at": "2026-08-13T13:17:29+0200",
+  "status": "published_provisional_pending_manual_dictionary_validation",
+  "definitions": {
+    "production": "Share of fractionally assigned classified post mass by topic.",
+    "rewarded": "Share of recorded interactions allocated with the same fractional topic assignments.",
+    "gap_pp": "Rewarded share minus production share, in percentage points.",
+    "distance_pp": "Half the sum of absolute topic gaps; the share of the vector that would need to move to align them.",
+    "lag_coefficient": "Change in next-month topic share for a one-percentage-point current gap, conditional on current share and fixed effects.",
+    "headline_aggregation": "Pool retained months within each product, convert each product to shares, then average the six product vectors equally."
+  },
+  "headline_months": ["2025-02", "2025-06", "2025-07", "2025-08", "2025-10", "2025-11", "2025-12"],
+  "caveats": ["The canonical dictionary includes broad stems; the audit sample shows face-validity failures in several categories. Findings are provisional and blocked from publication or client use pending human validation and revised study-specific rules.", "Interactions are platform-recorded signals, not a complete measure of audience preference or demand.", "September 2024 and January, March, April, May, and September 2025 are excluded because primary-source collection is incomplete.", "January 2026 is used only as a supply outcome; the engagement headline ends in December 2025.", "The papal-transition contrast is not estimable because collection is nearly absent during two key multi-day windows, including the conclave and election."],
+  "field_gap_2025": [
+    {
+      "topic": "DUHOVNOST_I_LITURGIJA",
+      "topic_label": "Duhovnost i liturgija",
+      "production_pct": 48.99690412,
+      "reward_pct": 54.1482725,
+      "gap_pp": 5.15136838,
+      "reward_multiplier": 1.10513661,
+      "gap_pp_winsorized": 5.8231831,
+      "gap_pp_top_removed": 3.06712534,
+      "production_pct_full_text": 51.30306664,
+      "reward_pct_full_text": 56.54622491,
+      "gap_pp_full_text": 5.24315827,
+      "reward_multiplier_full_text": 1.1021997,
+      "n_products": 6,
+      "n_products_positive": 6,
+      "n_products_supported": 6,
+      "total_post_mass": 3785.75
+    },
+    {
+      "topic": "ODNOS_S_DRUGIM_RELIGIJAMA_I_POGLEDIMA",
+      "topic_label": "Odnos s drugim religijama i pogledima",
+      "production_pct": 0.45274665,
+      "reward_pct": 2.09460836,
+      "gap_pp": 1.64186171,
+      "reward_multiplier": 4.62644699,
+      "gap_pp_winsorized": 0.17259926,
+      "gap_pp_top_removed": 0.1256721,
+      "production_pct_full_text": 0.36270424,
+      "reward_pct_full_text": 1.89314318,
+      "gap_pp_full_text": 1.53043894,
+      "reward_multiplier_full_text": 5.21952319,
+      "n_products": 6,
+      "n_products_positive": 6,
+      "n_products_supported": 3,
+      "total_post_mass": 43.78333333
+    },
+    {
+      "topic": "BIOETIKA_I_KULTURNI_RATOVI",
+      "topic_label": "Bioetika i kulturni ratovi",
+      "production_pct": 10.22348769,
+      "reward_pct": 11.06546309,
+      "gap_pp": 0.8419754,
+      "reward_multiplier": 1.08235696,
+      "gap_pp_winsorized": 0.38335784,
+      "gap_pp_top_removed": 1.04546448,
+      "production_pct_full_text": 10.53861453,
+      "reward_pct_full_text": 10.90409264,
+      "gap_pp_full_text": 0.36547811,
+      "reward_multiplier_full_text": 1.0346799,
+      "n_products": 6,
+      "n_products_positive": 6,
+      "n_products_supported": 6,
+      "total_post_mass": 653.01666667
+    },
+    {
+      "topic": "POVIJEST_I_NACIONALNI_IDENTITET",
+      "topic_label": "Povijest i nacionalni identitet",
+      "production_pct": 2.27086605,
+      "reward_pct": 2.9499378,
+      "gap_pp": 0.67907175,
+      "reward_multiplier": 1.29903646,
+      "gap_pp_winsorized": 0.09834021,
+      "gap_pp_top_removed": -0.54903826,
+      "production_pct_full_text": 1.92334255,
+      "reward_pct_full_text": 2.81820608,
+      "gap_pp_full_text": 0.89486354,
+      "reward_multiplier_full_text": 1.46526478,
+      "n_products": 6,
+      "n_products_positive": 6,
+      "n_products_supported": 5,
+      "total_post_mass": 170.45
+    },
+    {
+      "topic": "POLITIKA_I_ODNOS_S_DRZAVOM",
+      "topic_label": "Politika i odnos s državom",
+      "production_pct": 2.01501405,
+      "reward_pct": 2.08458215,
+      "gap_pp": 0.0695681,
+      "reward_multiplier": 1.03452487,
+      "gap_pp_winsorized": -0.69603616,
+      "gap_pp_top_removed": -0.55529854,
+      "production_pct_full_text": 1.90175991,
+      "reward_pct_full_text": 2.01636164,
+      "gap_pp_full_text": 0.11460172,
+      "reward_multiplier_full_text": 1.06026088,
+      "n_products": 6,
+      "n_products_positive": 6,
+      "n_products_supported": 5,
+      "total_post_mass": 168.15
+    },
+    {
+      "topic": "DIGITALNA_EVANGELIZACIJA_I_MLADI",
+      "topic_label": "Digitalna evangelizacija i mladi",
+      "production_pct": 1.76938148,
+      "reward_pct": 1.83645181,
+      "gap_pp": 0.06707033,
+      "reward_multiplier": 1.03790609,
+      "gap_pp_winsorized": 0.26732963,
+      "gap_pp_top_removed": 0.17931783,
+      "production_pct_full_text": 1.56093367,
+      "reward_pct_full_text": 1.61527615,
+      "gap_pp_full_text": 0.05434249,
+      "reward_multiplier_full_text": 1.03481409,
+      "n_products": 6,
+      "n_products_positive": 6,
+      "n_products_supported": 6,
+      "total_post_mass": 117.25
+    },
+    {
+      "topic": "OSTALE_RIJETKE_TEME",
+      "topic_label": "Ostale rijetke teme",
+      "production_pct": 0.77113983,
+      "reward_pct": 0.46056071,
+      "gap_pp": -0.31057912,
+      "reward_multiplier": 0.59724669,
+      "gap_pp_winsorized": -0.25794186,
+      "gap_pp_top_removed": -0.27950047,
+      "production_pct_full_text": 0.64661258,
+      "reward_pct_full_text": 0.37907408,
+      "gap_pp_full_text": -0.2675385,
+      "reward_multiplier_full_text": 0.58624607,
+      "n_products": 6,
+      "n_products_positive": null,
+      "n_products_supported": null,
+      "total_post_mass": 69.56666667
+    },
+    {
+      "topic": "PAPE_I_VATIKAN",
+      "topic_label": "Pape i Vatikan",
+      "production_pct": 3.07817859,
+      "reward_pct": 2.61257612,
+      "gap_pp": -0.46560247,
+      "reward_multiplier": 0.84874092,
+      "gap_pp_winsorized": -0.08244794,
+      "gap_pp_top_removed": -0.09346996,
+      "production_pct_full_text": 2.586524,
+      "reward_pct_full_text": 2.40604554,
+      "gap_pp_full_text": -0.18047846,
+      "reward_multiplier_full_text": 0.93022355,
+      "n_products": 6,
+      "n_products_positive": 6,
+      "n_products_supported": 5,
+      "total_post_mass": 267.85
+    },
+    {
+      "topic": "KARITAS_I_SOCIJALNA_PRAVDA",
+      "topic_label": "Karitas i socijalna pravda",
+      "production_pct": 2.22002525,
+      "reward_pct": 1.55613959,
+      "gap_pp": -0.66388565,
+      "reward_multiplier": 0.70095581,
+      "gap_pp_winsorized": -0.43772677,
+      "gap_pp_top_removed": -0.23504126,
+      "production_pct_full_text": 1.98049024,
+      "reward_pct_full_text": 1.36788032,
+      "gap_pp_full_text": -0.61260992,
+      "reward_multiplier_full_text": 0.69067764,
+      "n_products": 6,
+      "n_products_positive": 6,
+      "n_products_supported": 5,
+      "total_post_mass": 217.11666667
+    },
+    {
+      "topic": "TEOLOGIJA_I_DOKTRINA",
+      "topic_label": "Teologija i doktrina",
+      "production_pct": 3.08724562,
+      "reward_pct": 2.38398842,
+      "gap_pp": -0.7032572,
+      "reward_multiplier": 0.77220562,
+      "gap_pp_winsorized": -0.61516146,
+      "gap_pp_top_removed": 0.04011469,
+      "production_pct_full_text": 2.78189353,
+      "reward_pct_full_text": 2.19288111,
+      "gap_pp_full_text": -0.58901242,
+      "reward_multiplier_full_text": 0.78826924,
+      "n_products": 6,
+      "n_products_positive": 6,
+      "n_products_supported": 5,
+      "total_post_mass": 149.01666667
+    },
+    {
+      "topic": "MEDIJI_UMJETNOST_I_KULTURA",
+      "topic_label": "Mediji, umjetnost i kultura",
+      "production_pct": 2.27360563,
+      "reward_pct": 0.8462253,
+      "gap_pp": -1.42738033,
+      "reward_multiplier": 0.37219529,
+      "gap_pp_winsorized": -1.26237855,
+      "gap_pp_top_removed": -1.17977139,
+      "production_pct_full_text": 2.08195443,
+      "reward_pct_full_text": 0.70780933,
+      "gap_pp_full_text": -1.37414509,
+      "reward_multiplier_full_text": 0.3399735,
+      "n_products": 6,
+      "n_products_positive": 6,
+      "n_products_supported": 4,
+      "total_post_mass": 199.61666667
+    },
+    {
+      "topic": "CRKVENO_UPRAVLJANJE_I_STRUKTURA",
+      "topic_label": "Crkveno upravljanje i struktura",
+      "production_pct": 22.84140503,
+      "reward_pct": 17.96119414,
+      "gap_pp": -4.88021089,
+      "reward_multiplier": 0.78634366,
+      "gap_pp_winsorized": -3.3931173,
+      "gap_pp_top_removed": -1.56557455,
+      "production_pct_full_text": 22.3321037,
+      "reward_pct_full_text": 17.15300502,
+      "gap_pp_full_text": -5.17909868,
+      "reward_multiplier_full_text": 0.76808729,
+      "n_products": 6,
+      "n_products_positive": 6,
+      "n_products_supported": 6,
+      "total_post_mass": 2479.43333333
+    }
+  ],
+  "outlet_profiles_2025": [
+    {
+      "organization_id": "laudato",
+      "product_id": "laudato_web",
+      "display_name": "Laudato",
+      "n_months": 7,
+      "total_posts": 1446,
+      "classified_posts": 1445,
+      "total_interactions": 64194,
+      "classification_rate": 0.99930844,
+      "gap_distance_pp": 23.22914548,
+      "gap_distance_winsorized_pp": 22.65961521,
+      "gap_distance_top_removed_pp": 21.61438538,
+      "most_overrewarded_topic": "Duhovnost i liturgija",
+      "most_overrewarded_gap_pp": 16.23947884,
+      "most_overrewarded_gap_pp_winsorized": 16.30269715,
+      "most_overrewarded_gap_pp_top_removed": 15.67262191,
+      "most_overrewarded_gap_pp_full_text": 17.00451224,
+      "most_overrewarded_direction_consistent": true,
+      "most_overrewarded_post_mass": 725,
+      "most_underrewarded_topic": "Crkveno upravljanje i struktura",
+      "most_underrewarded_gap_pp": -15.35043339,
+      "most_underrewarded_gap_pp_winsorized": -14.85878224,
+      "most_underrewarded_gap_pp_top_removed": -14.19851411,
+      "most_underrewarded_gap_pp_full_text": -14.50103634,
+      "most_underrewarded_direction_consistent": true,
+      "most_underrewarded_post_mass": 326.08333333,
+      "interpretation": "Descriptive profile; named topics are validation leads, not performance rankings or client-ready claims"
+    },
+    {
+      "organization_id": "bitno",
+      "product_id": "bitno_web",
+      "display_name": "Bitno.net",
+      "n_months": 7,
+      "total_posts": 1225,
+      "classified_posts": 1225,
+      "total_interactions": 237160,
+      "classification_rate": 1,
+      "gap_distance_pp": 21.30064373,
+      "gap_distance_winsorized_pp": 14.44322482,
+      "gap_distance_top_removed_pp": 13.48931243,
+      "most_overrewarded_topic": "Bioetika i kulturni ratovi",
+      "most_overrewarded_gap_pp": 6.70573171,
+      "most_overrewarded_gap_pp_winsorized": 1.44451813,
+      "most_overrewarded_gap_pp_top_removed": 1.95812241,
+      "most_overrewarded_gap_pp_full_text": 6.88998988,
+      "most_overrewarded_direction_consistent": true,
+      "most_overrewarded_post_mass": 174.36666667,
+      "most_underrewarded_topic": "Crkveno upravljanje i struktura",
+      "most_underrewarded_gap_pp": -12.42822145,
+      "most_underrewarded_gap_pp_winsorized": -8.47441972,
+      "most_underrewarded_gap_pp_top_removed": -8.02622636,
+      "most_underrewarded_gap_pp_full_text": -12.25967701,
+      "most_underrewarded_direction_consistent": true,
+      "most_underrewarded_post_mass": 279.78333333,
+      "interpretation": "Descriptive profile; named topics are validation leads, not performance rankings or client-ready claims"
+    },
+    {
+      "organization_id": "hkm",
+      "product_id": "hkr_web",
+      "display_name": "HKR",
+      "n_months": 7,
+      "total_posts": 414,
+      "classified_posts": 414,
+      "total_interactions": 11797,
+      "classification_rate": 1,
+      "gap_distance_pp": 16.02153076,
+      "gap_distance_winsorized_pp": 12.43187519,
+      "gap_distance_top_removed_pp": 9.1779434,
+      "most_overrewarded_topic": "Crkveno upravljanje i struktura",
+      "most_overrewarded_gap_pp": 3.47535407,
+      "most_overrewarded_gap_pp_winsorized": 4.14231314,
+      "most_overrewarded_gap_pp_top_removed": 5.06064868,
+      "most_overrewarded_gap_pp_full_text": 4.47757058,
+      "most_overrewarded_direction_consistent": true,
+      "most_overrewarded_post_mass": 49.16666667,
+      "most_underrewarded_topic": "Teologija i doktrina",
+      "most_underrewarded_gap_pp": -6.36235679,
+      "most_underrewarded_gap_pp_winsorized": -6.10160513,
+      "most_underrewarded_gap_pp_top_removed": -5.47967724,
+      "most_underrewarded_gap_pp_full_text": -5.73522882,
+      "most_underrewarded_direction_consistent": true,
+      "most_underrewarded_post_mass": 37.83333333,
+      "interpretation": "Descriptive profile; named topics are validation leads, not performance rankings or client-ready claims"
+    },
+    {
+      "organization_id": "glas_koncila",
+      "product_id": "glas_koncila_web",
+      "display_name": "Glas Koncila",
+      "n_months": 7,
+      "total_posts": 370,
+      "classified_posts": 370,
+      "total_interactions": 10716,
+      "classification_rate": 1,
+      "gap_distance_pp": 14.9411741,
+      "gap_distance_winsorized_pp": 10.05483839,
+      "gap_distance_top_removed_pp": 9.37455412,
+      "most_overrewarded_topic": "Duhovnost i liturgija",
+      "most_overrewarded_gap_pp": 14.9411741,
+      "most_overrewarded_gap_pp_winsorized": 9.18927005,
+      "most_overrewarded_gap_pp_top_removed": -1.37052964,
+      "most_overrewarded_gap_pp_full_text": 14.58440523,
+      "most_overrewarded_direction_consistent": false,
+      "most_overrewarded_post_mass": 157.15,
+      "most_underrewarded_topic": "Crkveno upravljanje i struktura",
+      "most_underrewarded_gap_pp": -2.41272291,
+      "most_underrewarded_gap_pp_winsorized": 0.36386528,
+      "most_underrewarded_gap_pp_top_removed": 5.50985103,
+      "most_underrewarded_gap_pp_full_text": -4.63311576,
+      "most_underrewarded_direction_consistent": false,
+      "most_underrewarded_post_mass": 90.36666667,
+      "interpretation": "Descriptive profile; named topics are validation leads, not performance rankings or client-ready claims"
+    },
+    {
+      "organization_id": "hkm",
+      "product_id": "ika_web",
+      "display_name": "IKA",
+      "n_months": 7,
+      "total_posts": 4499,
+      "classified_posts": 4498,
+      "total_interactions": 19221,
+      "classification_rate": 0.99977773,
+      "gap_distance_pp": 9.57891887,
+      "gap_distance_winsorized_pp": 6.78972435,
+      "gap_distance_top_removed_pp": 6.95028398,
+      "most_overrewarded_topic": "Politika i odnos s državom",
+      "most_overrewarded_gap_pp": 4.89513298,
+      "most_overrewarded_gap_pp_winsorized": -0.42336248,
+      "most_overrewarded_gap_pp_top_removed": -0.96786021,
+      "most_overrewarded_gap_pp_full_text": 4.74140071,
+      "most_overrewarded_direction_consistent": false,
+      "most_overrewarded_post_mass": 96.83333333,
+      "most_underrewarded_topic": "Crkveno upravljanje i struktura",
+      "most_underrewarded_gap_pp": -4.24526045,
+      "most_underrewarded_gap_pp_winsorized": -3.08481571,
+      "most_underrewarded_gap_pp_top_removed": 0.18839849,
+      "most_underrewarded_gap_pp_full_text": -6.3153027,
+      "most_underrewarded_direction_consistent": false,
+      "most_underrewarded_post_mass": 1666.53333333,
+      "interpretation": "Descriptive profile; named topics are validation leads, not performance rankings or client-ready claims"
+    },
+    {
+      "organization_id": "hkm",
+      "product_id": "hkm_web",
+      "display_name": "HKM",
+      "n_months": 7,
+      "total_posts": 369,
+      "classified_posts": 369,
+      "total_interactions": 60077,
+      "classification_rate": 1,
+      "gap_distance_pp": 4.09772304,
+      "gap_distance_winsorized_pp": 3.86689628,
+      "gap_distance_top_removed_pp": 5.01676476,
+      "most_overrewarded_topic": "Crkveno upravljanje i struktura",
+      "most_overrewarded_gap_pp": 1.68001877,
+      "most_overrewarded_gap_pp_winsorized": 1.55313544,
+      "most_overrewarded_gap_pp_top_removed": 2.07239497,
+      "most_overrewarded_gap_pp_full_text": 2.15696917,
+      "most_overrewarded_direction_consistent": true,
+      "most_overrewarded_post_mass": 67.5,
+      "most_underrewarded_topic": "Duhovnost i liturgija",
+      "most_underrewarded_gap_pp": -1.84301946,
+      "most_underrewarded_gap_pp_winsorized": -1.74846227,
+      "most_underrewarded_gap_pp_top_removed": -3.09933876,
+      "most_underrewarded_gap_pp_full_text": -1.72322514,
+      "most_underrewarded_direction_consistent": true,
+      "most_underrewarded_post_mass": 226.33333333,
+      "interpretation": "Descriptive profile; named topics are validation leads, not performance rankings or client-ready claims"
+    }
+  ],
+  "event_results": [
+    {
+      "result_type": "weekly_distance",
+      "period_or_contrast": "2025-03-10",
+      "estimate": 23.23023693,
+      "standard_error": null,
+      "conf_low": null,
+      "conf_high": null,
+      "cross_product_sd": 14.20456336,
+      "n_products": 6,
+      "n_product_periods": 6,
+      "unit": "percentage-point distance",
+      "notes": "Equal-product weekly mean; eligible product-weeks only"
+    },
+    {
+      "result_type": "weekly_distance",
+      "period_or_contrast": "2025-03-17",
+      "estimate": 26.86233846,
+      "standard_error": null,
+      "conf_low": null,
+      "conf_high": null,
+      "cross_product_sd": 11.75253471,
+      "n_products": 6,
+      "n_product_periods": 6,
+      "unit": "percentage-point distance",
+      "notes": "Equal-product weekly mean; eligible product-weeks only"
+    },
+    {
+      "result_type": "weekly_distance",
+      "period_or_contrast": "2025-03-24",
+      "estimate": null,
+      "standard_error": null,
+      "conf_low": null,
+      "conf_high": null,
+      "cross_product_sd": null,
+      "n_products": 5,
+      "n_product_periods": 5,
+      "unit": "percentage-point distance",
+      "notes": "Not reported: week overlaps a collection blackout or has fewer than three eligible products"
+    },
+    {
+      "result_type": "weekly_distance",
+      "period_or_contrast": "2025-03-31",
+      "estimate": null,
+      "standard_error": null,
+      "conf_low": null,
+      "conf_high": null,
+      "cross_product_sd": null,
+      "n_products": 0,
+      "n_product_periods": 0,
+      "unit": "percentage-point distance",
+      "notes": "Not reported: week overlaps a collection blackout or has fewer than three eligible products"
+    },
+    {
+      "result_type": "weekly_distance",
+      "period_or_contrast": "2025-04-07",
+      "estimate": null,
+      "standard_error": null,
+      "conf_low": null,
+      "conf_high": null,
+      "cross_product_sd": null,
+      "n_products": 4,
+      "n_product_periods": 4,
+      "unit": "percentage-point distance",
+      "notes": "Not reported: week overlaps a collection blackout or has fewer than three eligible products"
+    },
+    {
+      "result_type": "weekly_distance",
+      "period_or_contrast": "2025-04-14",
+      "estimate": 30.30291834,
+      "standard_error": null,
+      "conf_low": null,
+      "conf_high": null,
+      "cross_product_sd": 20.29331485,
+      "n_products": 6,
+      "n_product_periods": 6,
+      "unit": "percentage-point distance",
+      "notes": "Equal-product weekly mean; eligible product-weeks only"
+    },
+    {
+      "result_type": "weekly_distance",
+      "period_or_contrast": "2025-04-21",
+      "estimate": 38.30779633,
+      "standard_error": null,
+      "conf_low": null,
+      "conf_high": null,
+      "cross_product_sd": 8.84048724,
+      "n_products": 6,
+      "n_product_periods": 6,
+      "unit": "percentage-point distance",
+      "notes": "Equal-product weekly mean; eligible product-weeks only"
+    },
+    {
+      "result_type": "weekly_distance",
+      "period_or_contrast": "2025-04-28",
+      "estimate": null,
+      "standard_error": null,
+      "conf_low": null,
+      "conf_high": null,
+      "cross_product_sd": null,
+      "n_products": 0,
+      "n_product_periods": 0,
+      "unit": "percentage-point distance",
+      "notes": "Not reported: week overlaps a collection blackout or has fewer than three eligible products"
+    },
+    {
+      "result_type": "weekly_distance",
+      "period_or_contrast": "2025-05-05",
+      "estimate": null,
+      "standard_error": null,
+      "conf_low": null,
+      "conf_high": null,
+      "cross_product_sd": null,
+      "n_products": 2,
+      "n_product_periods": 2,
+      "unit": "percentage-point distance",
+      "notes": "Not reported: week overlaps a collection blackout or has fewer than three eligible products"
+    },
+    {
+      "result_type": "weekly_distance",
+      "period_or_contrast": "2025-05-12",
+      "estimate": 26.67809347,
+      "standard_error": null,
+      "conf_low": null,
+      "conf_high": null,
+      "cross_product_sd": 7.13174634,
+      "n_products": 6,
+      "n_product_periods": 6,
+      "unit": "percentage-point distance",
+      "notes": "Equal-product weekly mean; eligible product-weeks only"
+    },
+    {
+      "result_type": "weekly_distance",
+      "period_or_contrast": "2025-05-19",
+      "estimate": 33.04034138,
+      "standard_error": null,
+      "conf_low": null,
+      "conf_high": null,
+      "cross_product_sd": 22.25657495,
+      "n_products": 6,
+      "n_product_periods": 6,
+      "unit": "percentage-point distance",
+      "notes": "Equal-product weekly mean; eligible product-weeks only"
+    },
+    {
+      "result_type": "weekly_distance",
+      "period_or_contrast": "2025-05-26",
+      "estimate": 24.51008635,
+      "standard_error": null,
+      "conf_low": null,
+      "conf_high": null,
+      "cross_product_sd": 11.53900964,
+      "n_products": 6,
+      "n_product_periods": 6,
+      "unit": "percentage-point distance",
+      "notes": "Equal-product weekly mean; eligible product-weeks only"
+    },
+    {
+      "result_type": "weekly_distance",
+      "period_or_contrast": "2025-06-02",
+      "estimate": 33.18065141,
+      "standard_error": null,
+      "conf_low": null,
+      "conf_high": null,
+      "cross_product_sd": 9.38420282,
+      "n_products": 6,
+      "n_product_periods": 6,
+      "unit": "percentage-point distance",
+      "notes": "Equal-product weekly mean; eligible product-weeks only"
+    },
+    {
+      "result_type": "event_feasibility",
+      "period_or_contrast": "papal_transition_minus_pre",
+      "estimate": null,
+      "standard_error": null,
+      "conf_low": null,
+      "conf_high": null,
+      "cross_product_sd": null,
+      "n_products": 6,
+      "n_product_periods": 59,
+      "unit": "percentage-point distance",
+      "notes": "Not estimable: primary-source collection is nearly absent 29 March-10 April and 28 April-10 May 2025, including the conclave and election of Leo XIV"
+    }
+  ],
+  "lag_models": [
+    {
+      "analysis_era": "main_2024_2026",
+      "specification": "headline_raw",
+      "predictor": "gap_pp",
+      "estimate": -0.02469465,
+      "standard_error": 0.03709316,
+      "conf_low": -0.11240603,
+      "conf_high": 0.06301672,
+      "p_value": 0.5268945,
+      "degrees_freedom": 7,
+      "n_obs": 304,
+      "n_products": 5,
+      "n_organizations": 3,
+      "n_product_topics": 38,
+      "n_periods": 8,
+      "uncertainty": "time-HAC (Bartlett, lag 2)",
+      "notes": "Product-by-topic and topic-by-current-month fixed effects; controls current production share"
+    },
+    {
+      "analysis_era": "main_2024_2026",
+      "specification": "classification_full_text",
+      "predictor": "gap_pp",
+      "estimate": 0.011491,
+      "standard_error": 0.02531145,
+      "conf_low": -0.04836108,
+      "conf_high": 0.07134307,
+      "p_value": 0.66358134,
+      "degrees_freedom": 7,
+      "n_obs": 304,
+      "n_products": 5,
+      "n_organizations": 3,
+      "n_product_topics": 38,
+      "n_periods": 8,
+      "uncertainty": "time-HAC (Bartlett, lag 2)",
+      "notes": "Classification uses title plus full page text instead of the primary 3,000-character body window"
+    },
+    {
+      "analysis_era": "main_2024_2026",
+      "specification": "headline_raw",
+      "predictor": "gap_pp",
+      "estimate": -0.02469465,
+      "standard_error": 0.04991795,
+      "conf_low": -0.09270306,
+      "conf_high": 0.10170032,
+      "p_value": null,
+      "degrees_freedom": null,
+      "n_obs": 304,
+      "n_products": 5,
+      "n_organizations": 3,
+      "n_product_topics": 38,
+      "n_periods": 8,
+      "uncertainty": "IID whole-month cluster bootstrap",
+      "notes": "999 successful IID whole-current-month cluster replications; percentile interval; HAC is primary"
+    },
+    {
+      "analysis_era": "main_2024_2026",
+      "specification": "winsorized_99",
+      "predictor": "gap_pp_winsorized",
+      "estimate": 0.0097858,
+      "standard_error": 0.05655239,
+      "conf_low": -0.12393936,
+      "conf_high": 0.14351095,
+      "p_value": 0.86751761,
+      "degrees_freedom": 7,
+      "n_obs": 304,
+      "n_products": 5,
+      "n_organizations": 3,
+      "n_product_topics": 38,
+      "n_periods": 8,
+      "uncertainty": "time-HAC (Bartlett, lag 2)",
+      "notes": "Interactions capped at each product-month's 99th percentile"
+    },
+    {
+      "analysis_era": "main_2024_2026",
+      "specification": "top_post_removed",
+      "predictor": "gap_pp_top_removed",
+      "estimate": 0.05616514,
+      "standard_error": 0.06158596,
+      "conf_low": -0.08946251,
+      "conf_high": 0.20179279,
+      "p_value": 0.39210369,
+      "degrees_freedom": 7,
+      "n_obs": 304,
+      "n_products": 5,
+      "n_organizations": 3,
+      "n_product_topics": 38,
+      "n_periods": 8,
+      "uncertainty": "time-HAC (Bartlett, lag 2)",
+      "notes": "Highest-interaction post removed from each product-month"
+    },
+    {
+      "analysis_era": "main_2024_2026",
+      "specification": "change_score",
+      "predictor": "gap_pp",
+      "estimate": -0.02469465,
+      "standard_error": 0.03709316,
+      "conf_low": -0.11240603,
+      "conf_high": 0.06301672,
+      "p_value": 0.5268945,
+      "degrees_freedom": 7,
+      "n_obs": 304,
+      "n_products": 5,
+      "n_organizations": 3,
+      "n_product_topics": 38,
+      "n_periods": 8,
+      "uncertainty": "time-HAC (Bartlett, lag 2)",
+      "notes": "Outcome is next minus current production share; controls current production share"
+    },
+    {
+      "analysis_era": "main_2024_2026",
+      "specification": "mean_log1p_premium_min3",
+      "predictor": "log_interaction_premium",
+      "estimate": 0.47786099,
+      "standard_error": 0.29203165,
+      "conf_low": -0.21268412,
+      "conf_high": 1.1684061,
+      "p_value": 0.14578324,
+      "degrees_freedom": 7,
+      "n_obs": 269,
+      "n_products": 5,
+      "n_organizations": 3,
+      "n_product_topics": 38,
+      "n_periods": 8,
+      "uncertainty": "time-HAC (Bartlett, lag 2)",
+      "notes": "Centered mean log(1 + interactions); topic-month requires at least three assigned posts"
+    },
+    {
+      "analysis_era": "historical_2021_2023",
+      "specification": "historical_replication",
+      "predictor": "gap_pp",
+      "estimate": 0.02312192,
+      "standard_error": 0.02467333,
+      "conf_low": -0.02702032,
+      "conf_high": 0.07326416,
+      "p_value": 0.35530517,
+      "degrees_freedom": 34,
+      "n_obs": 1214,
+      "n_products": 4,
+      "n_organizations": 2,
+      "n_product_topics": 38,
+      "n_periods": 35,
+      "uncertainty": "time-HAC (Bartlett, lag 2)",
+      "notes": "Separate-era consistency check with four products from two organizations; never pooled with the main estimate"
+    },
+    {
+      "analysis_era": "main_2024_2026",
+      "specification": "leave_product_out:bitno_web",
+      "predictor": "gap_pp",
+      "estimate": -0.00426424,
+      "standard_error": 0.0706646,
+      "conf_low": -0.17135948,
+      "conf_high": 0.162831,
+      "p_value": 0.95356773,
+      "degrees_freedom": 7,
+      "n_obs": 224,
+      "n_products": 4,
+      "n_organizations": 2,
+      "n_product_topics": 28,
+      "n_periods": 8,
+      "uncertainty": "time-HAC (Bartlett, lag 2)",
+      "notes": "Influence diagnostic"
+    },
+    {
+      "analysis_era": "main_2024_2026",
+      "specification": "leave_product_out:hkm_web",
+      "predictor": "gap_pp",
+      "estimate": -0.03710757,
+      "standard_error": 0.0548392,
+      "conf_low": -0.16678168,
+      "conf_high": 0.09256653,
+      "p_value": 0.52034613,
+      "degrees_freedom": 7,
+      "n_obs": 280,
+      "n_products": 4,
+      "n_organizations": 3,
+      "n_product_topics": 35,
+      "n_periods": 8,
+      "uncertainty": "time-HAC (Bartlett, lag 2)",
+      "notes": "Influence diagnostic"
+    },
+    {
+      "analysis_era": "main_2024_2026",
+      "specification": "leave_product_out:hkr_web",
+      "predictor": "gap_pp",
+      "estimate": 0.00015759,
+      "standard_error": 0.02423132,
+      "conf_low": -0.05714038,
+      "conf_high": 0.05745555,
+      "p_value": 0.99499254,
+      "degrees_freedom": 7,
+      "n_obs": 272,
+      "n_products": 4,
+      "n_organizations": 3,
+      "n_product_topics": 34,
+      "n_periods": 8,
+      "uncertainty": "time-HAC (Bartlett, lag 2)",
+      "notes": "Influence diagnostic"
+    },
+    {
+      "analysis_era": "main_2024_2026",
+      "specification": "leave_product_out:ika_web",
+      "predictor": "gap_pp",
+      "estimate": -0.04130014,
+      "standard_error": 0.02745182,
+      "conf_low": -0.10621337,
+      "conf_high": 0.02361309,
+      "p_value": 0.17617561,
+      "degrees_freedom": 7,
+      "n_obs": 216,
+      "n_products": 4,
+      "n_organizations": 3,
+      "n_product_topics": 27,
+      "n_periods": 8,
+      "uncertainty": "time-HAC (Bartlett, lag 2)",
+      "notes": "Influence diagnostic"
+    },
+    {
+      "analysis_era": "main_2024_2026",
+      "specification": "leave_product_out:laudato_web",
+      "predictor": "gap_pp",
+      "estimate": -0.05771902,
+      "standard_error": 0.06204389,
+      "conf_low": -0.20442951,
+      "conf_high": 0.08899146,
+      "p_value": 0.38318078,
+      "degrees_freedom": 7,
+      "n_obs": 224,
+      "n_products": 4,
+      "n_organizations": 2,
+      "n_product_topics": 28,
+      "n_periods": 8,
+      "uncertainty": "time-HAC (Bartlett, lag 2)",
+      "notes": "Influence diagnostic"
+    },
+    {
+      "analysis_era": "main_2024_2026",
+      "specification": "leave_organization_out:bitno",
+      "predictor": "gap_pp",
+      "estimate": -0.00426424,
+      "standard_error": 0.0706646,
+      "conf_low": -0.17135948,
+      "conf_high": 0.162831,
+      "p_value": 0.95356773,
+      "degrees_freedom": 7,
+      "n_obs": 224,
+      "n_products": 4,
+      "n_organizations": 2,
+      "n_product_topics": 28,
+      "n_periods": 8,
+      "uncertainty": "time-HAC (Bartlett, lag 2)",
+      "notes": "Influence diagnostic"
+    },
+    {
+      "analysis_era": "main_2024_2026",
+      "specification": "leave_organization_out:hkm",
+      "predictor": "gap_pp",
+      "estimate": -0.06474079,
+      "standard_error": 0.04095886,
+      "conf_low": -0.1615931,
+      "conf_high": 0.03211152,
+      "p_value": 0.15797491,
+      "degrees_freedom": 7,
+      "n_obs": 160,
+      "n_products": 2,
+      "n_organizations": 2,
+      "n_product_topics": 20,
+      "n_periods": 8,
+      "uncertainty": "time-HAC (Bartlett, lag 2)",
+      "notes": "Influence diagnostic"
+    },
+    {
+      "analysis_era": "main_2024_2026",
+      "specification": "leave_organization_out:laudato",
+      "predictor": "gap_pp",
+      "estimate": -0.05771902,
+      "standard_error": 0.06204389,
+      "conf_low": -0.20442951,
+      "conf_high": 0.08899146,
+      "p_value": 0.38318078,
+      "degrees_freedom": 7,
+      "n_obs": 224,
+      "n_products": 4,
+      "n_organizations": 2,
+      "n_product_topics": 28,
+      "n_periods": 8,
+      "uncertainty": "time-HAC (Bartlett, lag 2)",
+      "notes": "Influence diagnostic"
+    }
+  ],
+  "diagnostics": [
+    {
+      "section": "classification",
+      "metric": "bounded_vs_full_winner_agreement",
+      "group": "all_eligible_posts",
+      "value": 0.91407684,
+      "notes": "Exact co-winner-set agreement; primary window is title plus first 3000 body characters"
+    },
+    {
+      "section": "classification",
+      "metric": "classification_rate",
+      "group": "historical_2021_2023",
+      "value": 0.99949743,
+      "notes": "Share with at least one dictionary match"
+    },
+    {
+      "section": "classification",
+      "metric": "classification_rate",
+      "group": "main_2024_2026",
+      "value": 0.99927256,
+      "notes": "Share with at least one dictionary match"
+    },
+    {
+      "section": "classification",
+      "metric": "posts",
+      "group": "historical_2021_2023",
+      "value": 41785,
+      "notes": "Deduplicated posts sent to topic scorer"
+    },
+    {
+      "section": "classification",
+      "metric": "posts",
+      "group": "main_2024_2026",
+      "value": 21995,
+      "notes": "Deduplicated posts sent to topic scorer"
+    },
+    {
+      "section": "classification",
+      "metric": "tie_rate_classified",
+      "group": "historical_2021_2023",
+      "value": 0.06505603,
+      "notes": "Share of classified posts with co-max topic winners"
+    },
+    {
+      "section": "classification",
+      "metric": "tie_rate_classified",
+      "group": "main_2024_2026",
+      "value": 0.07843851,
+      "notes": "Share of classified posts with co-max topic winners"
+    },
+    {
+      "section": "classification",
+      "metric": "unclassified_interaction_share",
+      "group": "historical_2021_2023",
+      "value": 0.00003954,
+      "notes": "Recorded interactions excluded because the post had no topic assignment"
+    },
+    {
+      "section": "classification",
+      "metric": "unclassified_interaction_share",
+      "group": "main_2024_2026",
+      "value": 0.00039836,
+      "notes": "Recorded interactions excluded because the post had no topic assignment"
+    },
+    {
+      "section": "collection_coverage",
+      "metric": "days_below_10_primary_posts",
+      "group": "2024-07",
+      "value": 0,
+      "notes": "0 zero-post days out of 31; median daily posts 45"
+    },
+    {
+      "section": "collection_coverage",
+      "metric": "days_below_10_primary_posts",
+      "group": "2024-08",
+      "value": 0,
+      "notes": "0 zero-post days out of 31; median daily posts 42"
+    },
+    {
+      "section": "collection_coverage",
+      "metric": "days_below_10_primary_posts",
+      "group": "2024-09",
+      "value": 15,
+      "notes": "15 zero-post days out of 30; median daily posts 14.5"
+    },
+    {
+      "section": "collection_coverage",
+      "metric": "days_below_10_primary_posts",
+      "group": "2024-10",
+      "value": 0,
+      "notes": "0 zero-post days out of 31; median daily posts 53"
+    },
+    {
+      "section": "collection_coverage",
+      "metric": "days_below_10_primary_posts",
+      "group": "2024-11",
+      "value": 0,
+      "notes": "0 zero-post days out of 30; median daily posts 46.5"
+    },
+    {
+      "section": "collection_coverage",
+      "metric": "days_below_10_primary_posts",
+      "group": "2024-12",
+      "value": 0,
+      "notes": "0 zero-post days out of 31; median daily posts 46"
+    },
+    {
+      "section": "collection_coverage",
+      "metric": "days_below_10_primary_posts",
+      "group": "2025-01",
+      "value": 6,
+      "notes": "3 zero-post days out of 31; median daily posts 28"
+    },
+    {
+      "section": "collection_coverage",
+      "metric": "days_below_10_primary_posts",
+      "group": "2025-02",
+      "value": 0,
+      "notes": "0 zero-post days out of 28; median daily posts 43"
+    },
+    {
+      "section": "collection_coverage",
+      "metric": "days_below_10_primary_posts",
+      "group": "2025-03",
+      "value": 3,
+      "notes": "3 zero-post days out of 31; median daily posts 46"
+    },
+    {
+      "section": "collection_coverage",
+      "metric": "days_below_10_primary_posts",
+      "group": "2025-04",
+      "value": 12,
+      "notes": "7 zero-post days out of 30; median daily posts 42"
+    },
+    {
+      "section": "collection_coverage",
+      "metric": "days_below_10_primary_posts",
+      "group": "2025-05",
+      "value": 10,
+      "notes": "5 zero-post days out of 31; median daily posts 30"
+    },
+    {
+      "section": "collection_coverage",
+      "metric": "days_below_10_primary_posts",
+      "group": "2025-06",
+      "value": 0,
+      "notes": "0 zero-post days out of 30; median daily posts 40.5"
+    },
+    {
+      "section": "collection_coverage",
+      "metric": "days_below_10_primary_posts",
+      "group": "2025-07",
+      "value": 0,
+      "notes": "0 zero-post days out of 31; median daily posts 34"
+    },
+    {
+      "section": "collection_coverage",
+      "metric": "days_below_10_primary_posts",
+      "group": "2025-08",
+      "value": 0,
+      "notes": "0 zero-post days out of 31; median daily posts 33"
+    },
+    {
+      "section": "collection_coverage",
+      "metric": "days_below_10_primary_posts",
+      "group": "2025-09",
+      "value": 14,
+      "notes": "14 zero-post days out of 30; median daily posts 23"
+    },
+    {
+      "section": "collection_coverage",
+      "metric": "days_below_10_primary_posts",
+      "group": "2025-10",
+      "value": 0,
+      "notes": "0 zero-post days out of 31; median daily posts 43"
+    },
+    {
+      "section": "collection_coverage",
+      "metric": "days_below_10_primary_posts",
+      "group": "2025-11",
+      "value": 0,
+      "notes": "0 zero-post days out of 30; median daily posts 41"
+    },
+    {
+      "section": "collection_coverage",
+      "metric": "days_below_10_primary_posts",
+      "group": "2025-12",
+      "value": 0,
+      "notes": "0 zero-post days out of 31; median daily posts 36"
+    },
+    {
+      "section": "corpus",
+      "metric": "mapped_rows_all_dates",
+      "group": "registered_products",
+      "value": 71959,
+      "notes": "Rows matching source label plus URL host registry"
+    },
+    {
+      "section": "corpus",
+      "metric": "official_corpus_rows",
+      "group": "all",
+      "value": 413985,
+      "notes": "Rows in the official corpus manifest"
+    },
+    {
+      "section": "deduplication",
+      "metric": "duplicate_urls_removed",
+      "group": "historical_2021_2023:hkm_web",
+      "value": 66,
+      "notes": "From 8073 mapped rows"
+    },
+    {
+      "section": "deduplication",
+      "metric": "duplicate_urls_removed",
+      "group": "historical_2021_2023:hkr_web",
+      "value": 1,
+      "notes": "From 818 mapped rows"
+    },
+    {
+      "section": "deduplication",
+      "metric": "duplicate_urls_removed",
+      "group": "historical_2021_2023:ika_web",
+      "value": 470,
+      "notes": "From 26702 mapped rows"
+    },
+    {
+      "section": "deduplication",
+      "metric": "duplicate_urls_removed",
+      "group": "historical_2021_2023:laudato_web",
+      "value": 235,
+      "notes": "From 6964 mapped rows"
+    },
+    {
+      "section": "deduplication",
+      "metric": "duplicate_urls_removed",
+      "group": "main_2024_2026:bitno_web",
+      "value": 0,
+      "notes": "From 3152 mapped rows"
+    },
+    {
+      "section": "deduplication",
+      "metric": "duplicate_urls_removed",
+      "group": "main_2024_2026:glas_koncila_web",
+      "value": 0,
+      "notes": "From 634 mapped rows"
+    },
+    {
+      "section": "deduplication",
+      "metric": "duplicate_urls_removed",
+      "group": "main_2024_2026:hkm_web",
+      "value": 0,
+      "notes": "From 1540 mapped rows"
+    },
+    {
+      "section": "deduplication",
+      "metric": "duplicate_urls_removed",
+      "group": "main_2024_2026:hkr_web",
+      "value": 0,
+      "notes": "From 1056 mapped rows"
+    },
+    {
+      "section": "deduplication",
+      "metric": "duplicate_urls_removed",
+      "group": "main_2024_2026:ika_web",
+      "value": 0,
+      "notes": "From 12214 mapped rows"
+    },
+    {
+      "section": "deduplication",
+      "metric": "duplicate_urls_removed",
+      "group": "main_2024_2026:laudato_web",
+      "value": 0,
+      "notes": "From 3399 mapped rows"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "non_editorial_rows_removed",
+      "group": "historical_2021_2023:hkm_web",
+      "value": 0,
+      "notes": "0.0% of mapped study rows; 0 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "non_editorial_rows_removed",
+      "group": "historical_2021_2023:hkr_web",
+      "value": 0,
+      "notes": "0.0% of mapped study rows; 0 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "non_editorial_rows_removed",
+      "group": "historical_2021_2023:ika_web",
+      "value": 4,
+      "notes": "0.0% of mapped study rows; 717 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "non_editorial_rows_removed",
+      "group": "historical_2021_2023:laudato_web",
+      "value": 1,
+      "notes": "0.0% of mapped study rows; 0 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "non_editorial_rows_removed",
+      "group": "main_2024_2026:bitno_web",
+      "value": 71,
+      "notes": "2.2% of mapped study rows; 1101 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "non_editorial_rows_removed",
+      "group": "main_2024_2026:glas_koncila_web",
+      "value": 173,
+      "notes": "21.4% of mapped study rows; 95408 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "non_editorial_rows_removed",
+      "group": "main_2024_2026:hkm_web",
+      "value": 0,
+      "notes": "0.0% of mapped study rows; 0 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "non_editorial_rows_removed",
+      "group": "main_2024_2026:hkr_web",
+      "value": 0,
+      "notes": "0.0% of mapped study rows; 0 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "non_editorial_rows_removed",
+      "group": "main_2024_2026:ika_web",
+      "value": 12,
+      "notes": "0.1% of mapped study rows; 0 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "non_editorial_rows_removed",
+      "group": "main_2024_2026:laudato_web",
+      "value": 0,
+      "notes": "0.0% of mapped study rows; 0 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "rule:archive_title",
+      "group": "main_2024_2026:bitno_web",
+      "value": 3,
+      "notes": "0 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "rule:calendar_listing_url",
+      "group": "main_2024_2026:ika_web",
+      "value": 4,
+      "notes": "0 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "rule:homepage_title",
+      "group": "main_2024_2026:glas_koncila_web",
+      "value": 1,
+      "notes": "834 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "rule:issue_landing_url",
+      "group": "main_2024_2026:glas_koncila_web",
+      "value": 53,
+      "notes": "268 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "rule:listing_url",
+      "group": "historical_2021_2023:laudato_web",
+      "value": 1,
+      "notes": "0 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "rule:listing_url",
+      "group": "main_2024_2026:glas_koncila_web",
+      "value": 1,
+      "notes": "0 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "rule:named_listing_url",
+      "group": "main_2024_2026:bitno_web",
+      "value": 1,
+      "notes": "0 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "rule:named_listing_url",
+      "group": "main_2024_2026:ika_web",
+      "value": 1,
+      "notes": "0 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "rule:pagination_url",
+      "group": "historical_2021_2023:ika_web",
+      "value": 3,
+      "notes": "0 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "rule:pagination_url",
+      "group": "main_2024_2026:bitno_web",
+      "value": 66,
+      "notes": "1101 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "rule:pagination_url",
+      "group": "main_2024_2026:glas_koncila_web",
+      "value": 118,
+      "notes": "94306 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "rule:root_query_listing",
+      "group": "historical_2021_2023:ika_web",
+      "value": 1,
+      "notes": "717 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "rule:section_landing_url",
+      "group": "main_2024_2026:bitno_web",
+      "value": 1,
+      "notes": "0 recorded interactions removed"
+    },
+    {
+      "section": "editorial_gate",
+      "metric": "rule:section_landing_url",
+      "group": "main_2024_2026:ika_web",
+      "value": 7,
+      "notes": "0 recorded interactions removed"
+    },
+    {
+      "section": "event",
+      "metric": "weeks_below_three_products",
+      "group": "papal_transition_window",
+      "value": 5,
+      "notes": "Event contrast is not estimated because key weeks are missing"
+    },
+    {
+      "section": "headline",
+      "metric": "eligible_product_months",
+      "group": "2025_complete_months",
+      "value": 42,
+      "notes": "January, March, April, May, and September excluded; minimum 30 classified posts and engagement gates"
+    },
+    {
+      "section": "headline",
+      "metric": "eligible_products",
+      "group": "2025_complete_months",
+      "value": 6,
+      "notes": "Equal-weighted in field result"
+    },
+    {
+      "section": "interaction_profile",
+      "metric": "top_10_interaction_share",
+      "group": "bitno_web",
+      "value": 0.36144797,
+      "notes": "237160 total recorded interactions"
+    },
+    {
+      "section": "interaction_profile",
+      "metric": "top_10_interaction_share",
+      "group": "glas_koncila_web",
+      "value": 0.45296753,
+      "notes": "10716 total recorded interactions"
+    },
+    {
+      "section": "interaction_profile",
+      "metric": "top_10_interaction_share",
+      "group": "hkm_web",
+      "value": 0.14116883,
+      "notes": "60077 total recorded interactions"
+    },
+    {
+      "section": "interaction_profile",
+      "metric": "top_10_interaction_share",
+      "group": "hkr_web",
+      "value": 0.32321777,
+      "notes": "11797 total recorded interactions"
+    },
+    {
+      "section": "interaction_profile",
+      "metric": "top_10_interaction_share",
+      "group": "ika_web",
+      "value": 0.22449404,
+      "notes": "19221 total recorded interactions"
+    },
+    {
+      "section": "interaction_profile",
+      "metric": "top_10_interaction_share",
+      "group": "laudato_web",
+      "value": 0.20791663,
+      "notes": "64194 total recorded interactions"
+    },
+    {
+      "section": "interaction_profile",
+      "metric": "zero_interaction_rate",
+      "group": "bitno_web",
+      "value": 0.14530612,
+      "notes": "1225 posts across retained 2025 months"
+    },
+    {
+      "section": "interaction_profile",
+      "metric": "zero_interaction_rate",
+      "group": "glas_koncila_web",
+      "value": 0.55135135,
+      "notes": "370 posts across retained 2025 months"
+    },
+    {
+      "section": "interaction_profile",
+      "metric": "zero_interaction_rate",
+      "group": "hkm_web",
+      "value": 0.03794038,
+      "notes": "369 posts across retained 2025 months"
+    },
+    {
+      "section": "interaction_profile",
+      "metric": "zero_interaction_rate",
+      "group": "hkr_web",
+      "value": 0.5821256,
+      "notes": "414 posts across retained 2025 months"
+    },
+    {
+      "section": "interaction_profile",
+      "metric": "zero_interaction_rate",
+      "group": "ika_web",
+      "value": 0.85018893,
+      "notes": "4499 posts across retained 2025 months"
+    },
+    {
+      "section": "interaction_profile",
+      "metric": "zero_interaction_rate",
+      "group": "laudato_web",
+      "value": 0.7461964,
+      "notes": "1446 posts across retained 2025 months"
+    },
+    {
+      "section": "lag_model",
+      "metric": "bootstrap_successful",
+      "group": "main",
+      "value": 999,
+      "notes": "999 requested"
+    },
+    {
+      "section": "lag_model",
+      "metric": "observations",
+      "group": "main",
+      "value": 304,
+      "notes": "Product-month-topic transitions after support gate"
+    },
+    {
+      "section": "lag_model",
+      "metric": "periods",
+      "group": "main",
+      "value": 8,
+      "notes": "Current months; exact next-calendar-month transitions only"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "bitno_web:2026-01",
+      "value": 0.20245399,
+      "notes": "163 posts; positive rate 0.798"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "bitno_web:2026-02",
+      "value": 0.32038835,
+      "notes": "103 posts; positive rate 0.680"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "bitno_web:2026-03",
+      "value": 0.92924528,
+      "notes": "212 posts; positive rate 0.071"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "bitno_web:2026-04",
+      "value": 0.90147783,
+      "notes": "203 posts; positive rate 0.099"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "bitno_web:2026-05",
+      "value": 0.8959276,
+      "notes": "221 posts; positive rate 0.104"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "bitno_web:2026-06",
+      "value": 0.93548387,
+      "notes": "93 posts; positive rate 0.065"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "glas_koncila_web:2026-01",
+      "value": 0.21428571,
+      "notes": "84 posts; positive rate 0.786"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "glas_koncila_web:2026-02",
+      "value": 0.42028986,
+      "notes": "69 posts; positive rate 0.580"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "glas_koncila_web:2026-03",
+      "value": 1,
+      "notes": "71 posts; positive rate 0.000"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "glas_koncila_web:2026-04",
+      "value": 1,
+      "notes": "66 posts; positive rate 0.000"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "glas_koncila_web:2026-05",
+      "value": 1,
+      "notes": "61 posts; positive rate 0.000"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "glas_koncila_web:2026-06",
+      "value": 1,
+      "notes": "25 posts; positive rate 0.000"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "hkm_web:2026-01",
+      "value": 0.04545455,
+      "notes": "44 posts; positive rate 0.955"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "hkm_web:2026-02",
+      "value": 0.27272727,
+      "notes": "33 posts; positive rate 0.727"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "hkm_web:2026-03",
+      "value": 1,
+      "notes": "57 posts; positive rate 0.000"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "hkm_web:2026-04",
+      "value": 1,
+      "notes": "64 posts; positive rate 0.000"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "hkm_web:2026-05",
+      "value": 1,
+      "notes": "56 posts; positive rate 0.000"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "hkm_web:2026-06",
+      "value": 1,
+      "notes": "24 posts; positive rate 0.000"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "hkr_web:2026-01",
+      "value": 0.51724138,
+      "notes": "58 posts; positive rate 0.483"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "hkr_web:2026-02",
+      "value": 0.66666667,
+      "notes": "48 posts; positive rate 0.333"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "hkr_web:2026-03",
+      "value": 1,
+      "notes": "72 posts; positive rate 0.000"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "hkr_web:2026-04",
+      "value": 1,
+      "notes": "64 posts; positive rate 0.000"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "hkr_web:2026-05",
+      "value": 1,
+      "notes": "60 posts; positive rate 0.000"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "hkr_web:2026-06",
+      "value": 1,
+      "notes": "25 posts; positive rate 0.000"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "ika_web:2026-01",
+      "value": 0.84245077,
+      "notes": "457 posts; positive rate 0.158"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "ika_web:2026-02",
+      "value": 0.8747698,
+      "notes": "543 posts; positive rate 0.125"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "ika_web:2026-03",
+      "value": 1,
+      "notes": "794 posts; positive rate 0.000"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "ika_web:2026-04",
+      "value": 1,
+      "notes": "596 posts; positive rate 0.000"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "ika_web:2026-05",
+      "value": 1,
+      "notes": "678 posts; positive rate 0.000"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "ika_web:2026-06",
+      "value": 1,
+      "notes": "257 posts; positive rate 0.000"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "laudato_web:2026-01",
+      "value": 0.77209302,
+      "notes": "215 posts; positive rate 0.228"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "laudato_web:2026-02",
+      "value": 0.8277512,
+      "notes": "209 posts; positive rate 0.172"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "laudato_web:2026-03",
+      "value": 0.984,
+      "notes": "250 posts; positive rate 0.016"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "laudato_web:2026-04",
+      "value": 0.95535714,
+      "notes": "224 posts; positive rate 0.045"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "laudato_web:2026-05",
+      "value": 0.99,
+      "notes": "200 posts; positive rate 0.010"
+    },
+    {
+      "section": "measurement_2026",
+      "metric": "zero_interaction_rate",
+      "group": "laudato_web:2026-06",
+      "value": 1,
+      "notes": "93 posts; positive rate 0.000"
+    },
+    {
+      "section": "validation",
+      "metric": "headline_product_months_covered",
+      "group": "high_interaction_audit",
+      "value": 42,
+      "notes": "Top classified interaction post sampled within every retained headline product-month"
+    },
+    {
+      "section": "validation",
+      "metric": "headline_product_topics_covered",
+      "group": "high_interaction_audit",
+      "value": 82,
+      "notes": "Top five interaction contributors sampled within every non-empty retained headline product-topic"
+    },
+    {
+      "section": "validation",
+      "metric": "high_interaction_unique_posts",
+      "group": "high_interaction_audit",
+      "value": 583,
+      "notes": "Deduplicated articles in the mandatory high-interaction audit"
+    },
+    {
+      "section": "validation",
+      "metric": "lag_product_topic_months_covered",
+      "group": "high_interaction_audit",
+      "value": 302,
+      "notes": "Top interaction contributor sampled within every non-empty product-topic-month in the main lag panel"
+    },
+    {
+      "section": "validation",
+      "metric": "sampled_unique_posts",
+      "group": "BIOETIKA_I_KULTURNI_RATOVI",
+      "value": 40,
+      "notes": "Private audit sample; separate prediction-free coder sheet and answer key were written"
+    },
+    {
+      "section": "validation",
+      "metric": "sampled_unique_posts",
+      "group": "CRKVENE_FINANCIJE_I_IMOVINA",
+      "value": 40,
+      "notes": "Private audit sample; separate prediction-free coder sheet and answer key were written"
+    },
+    {
+      "section": "validation",
+      "metric": "sampled_unique_posts",
+      "group": "CRKVENO_UPRAVLJANJE_I_STRUKTURA",
+      "value": 40,
+      "notes": "Private audit sample; separate prediction-free coder sheet and answer key were written"
+    },
+    {
+      "section": "validation",
+      "metric": "sampled_unique_posts",
+      "group": "DIGITALNA_EVANGELIZACIJA_I_MLADI",
+      "value": 40,
+      "notes": "Private audit sample; separate prediction-free coder sheet and answer key were written"
+    },
+    {
+      "section": "validation",
+      "metric": "sampled_unique_posts",
+      "group": "DUHOVNOST_I_LITURGIJA",
+      "value": 40,
+      "notes": "Private audit sample; separate prediction-free coder sheet and answer key were written"
+    },
+    {
+      "section": "validation",
+      "metric": "sampled_unique_posts",
+      "group": "GLOBALNA_CRKVA_I_MISIJE",
+      "value": 40,
+      "notes": "Private audit sample; separate prediction-free coder sheet and answer key were written"
+    },
+    {
+      "section": "validation",
+      "metric": "sampled_unique_posts",
+      "group": "KARITAS_I_SOCIJALNA_PRAVDA",
+      "value": 40,
+      "notes": "Private audit sample; separate prediction-free coder sheet and answer key were written"
+    },
+    {
+      "section": "validation",
+      "metric": "sampled_unique_posts",
+      "group": "MEDIJI_UMJETNOST_I_KULTURA",
+      "value": 40,
+      "notes": "Private audit sample; separate prediction-free coder sheet and answer key were written"
+    },
+    {
+      "section": "validation",
+      "metric": "sampled_unique_posts",
+      "group": "ODNOS_S_DRUGIM_RELIGIJAMA_I_POGLEDIMA",
+      "value": 40,
+      "notes": "Private audit sample; separate prediction-free coder sheet and answer key were written"
+    },
+    {
+      "section": "validation",
+      "metric": "sampled_unique_posts",
+      "group": "PAPE_I_VATIKAN",
+      "value": 40,
+      "notes": "Private audit sample; separate prediction-free coder sheet and answer key were written"
+    },
+    {
+      "section": "validation",
+      "metric": "sampled_unique_posts",
+      "group": "POLITIKA_I_ODNOS_S_DRZAVOM",
+      "value": 40,
+      "notes": "Private audit sample; separate prediction-free coder sheet and answer key were written"
+    },
+    {
+      "section": "validation",
+      "metric": "sampled_unique_posts",
+      "group": "POVIJEST_I_NACIONALNI_IDENTITET",
+      "value": 40,
+      "notes": "Private audit sample; separate prediction-free coder sheet and answer key were written"
+    },
+    {
+      "section": "validation",
+      "metric": "sampled_unique_posts",
+      "group": "TEOLOGIJA_I_DOKTRINA",
+      "value": 40,
+      "notes": "Private audit sample; separate prediction-free coder sheet and answer key were written"
+    },
+    {
+      "section": "validation",
+      "metric": "sampled_unique_posts",
+      "group": "UNUTARCRKVENI_PRIJEPORI_I_IDEOLOGIJE",
+      "value": 5,
+      "notes": "Private audit sample; separate prediction-free coder sheet and answer key were written"
+    },
+    {
+      "section": "validation",
+      "metric": "sampled_unique_posts",
+      "group": "ZLOSTAVLJANJE_I_KRIZA_POVJERENJA",
+      "value": 40,
+      "notes": "Private audit sample; separate prediction-free coder sheet and answer key were written"
+    },
+    {
+      "section": "validation",
+      "metric": "sampled_unique_posts",
+      "group": "ZNANOST_I_VJERA",
+      "value": 40,
+      "notes": "Private audit sample; separate prediction-free coder sheet and answer key were written"
+    }
+  ]
+}

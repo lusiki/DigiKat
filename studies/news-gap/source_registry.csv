@@ -1,0 +1,7 @@
+organization_id,product_id,display_name,source_type,raw_from,url_host,main_analysis,historical_replication,notes
+hkm,hkm_web,HKM,web,hkm.hr,hkm.hr,TRUE,TRUE,HKM editorial website
+hkm,ika_web,IKA,web,hkm.hr,ika.hkm.hr,TRUE,TRUE,Informative Catholic Agency product carried under the hkm.hr source label
+hkm,hkr_web,HKR,web,hkm.hr,hkr.hkm.hr,TRUE,TRUE,Croatian Catholic Radio product carried under the hkm.hr source label
+laudato,laudato_web,Laudato,web,laudato.hr,laudato.hr,TRUE,TRUE,Laudato web product
+bitno,bitno_web,Bitno.net,web,bitno.net,bitno.net,TRUE,TRUE,Bitno.net web product
+glas_koncila,glas_koncila_web,Glas Koncila,web,glas-koncila.hr,glas-koncila.hr,TRUE,TRUE,Glas Koncila web product; regular observed coverage begins in 2025

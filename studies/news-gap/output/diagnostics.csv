@@ -1,0 +1,138 @@
+﻿section,metric,group,value,notes
+classification,bounded_vs_full_winner_agreement,all_eligible_posts,0.914076839809861,Exact co-winner-set agreement; primary window is title plus first 3000 body characters
+classification,classification_rate,historical_2021_2023,0.99949742730645,Share with at least one dictionary match
+classification,classification_rate,main_2024_2026,0.999272561945897,Share with at least one dictionary match
+classification,posts,historical_2021_2023,41785,Deduplicated posts sent to topic scorer
+classification,posts,main_2024_2026,21995,Deduplicated posts sent to topic scorer
+classification,tie_rate_classified,historical_2021_2023,0.0650560291159851,Share of classified posts with co-max topic winners
+classification,tie_rate_classified,main_2024_2026,0.0784385094863279,Share of classified posts with co-max topic winners
+classification,unclassified_interaction_share,historical_2021_2023,3.95431969883901e-05,Recorded interactions excluded because the post had no topic assignment
+classification,unclassified_interaction_share,main_2024_2026,0.000398361757271302,Recorded interactions excluded because the post had no topic assignment
+collection_coverage,days_below_10_primary_posts,2024-07,0,0 zero-post days out of 31; median daily posts 45
+collection_coverage,days_below_10_primary_posts,2024-08,0,0 zero-post days out of 31; median daily posts 42
+collection_coverage,days_below_10_primary_posts,2024-09,15,15 zero-post days out of 30; median daily posts 14.5
+collection_coverage,days_below_10_primary_posts,2024-10,0,0 zero-post days out of 31; median daily posts 53
+collection_coverage,days_below_10_primary_posts,2024-11,0,0 zero-post days out of 30; median daily posts 46.5
+collection_coverage,days_below_10_primary_posts,2024-12,0,0 zero-post days out of 31; median daily posts 46
+collection_coverage,days_below_10_primary_posts,2025-01,6,3 zero-post days out of 31; median daily posts 28
+collection_coverage,days_below_10_primary_posts,2025-02,0,0 zero-post days out of 28; median daily posts 43
+collection_coverage,days_below_10_primary_posts,2025-03,3,3 zero-post days out of 31; median daily posts 46
+collection_coverage,days_below_10_primary_posts,2025-04,12,7 zero-post days out of 30; median daily posts 42
+collection_coverage,days_below_10_primary_posts,2025-05,10,5 zero-post days out of 31; median daily posts 30
+collection_coverage,days_below_10_primary_posts,2025-06,0,0 zero-post days out of 30; median daily posts 40.5
+collection_coverage,days_below_10_primary_posts,2025-07,0,0 zero-post days out of 31; median daily posts 34
+collection_coverage,days_below_10_primary_posts,2025-08,0,0 zero-post days out of 31; median daily posts 33
+collection_coverage,days_below_10_primary_posts,2025-09,14,14 zero-post days out of 30; median daily posts 23
+collection_coverage,days_below_10_primary_posts,2025-10,0,0 zero-post days out of 31; median daily posts 43
+collection_coverage,days_below_10_primary_posts,2025-11,0,0 zero-post days out of 30; median daily posts 41
+collection_coverage,days_below_10_primary_posts,2025-12,0,0 zero-post days out of 31; median daily posts 36
+corpus,mapped_rows_all_dates,registered_products,71959,Rows matching source label plus URL host registry
+corpus,official_corpus_rows,all,413985,Rows in the official corpus manifest
+deduplication,duplicate_urls_removed,historical_2021_2023:hkm_web,66,From 8073 mapped rows
+deduplication,duplicate_urls_removed,historical_2021_2023:hkr_web,1,From 818 mapped rows
+deduplication,duplicate_urls_removed,historical_2021_2023:ika_web,470,From 26702 mapped rows
+deduplication,duplicate_urls_removed,historical_2021_2023:laudato_web,235,From 6964 mapped rows
+deduplication,duplicate_urls_removed,main_2024_2026:bitno_web,0,From 3152 mapped rows
+deduplication,duplicate_urls_removed,main_2024_2026:glas_koncila_web,0,From 634 mapped rows
+deduplication,duplicate_urls_removed,main_2024_2026:hkm_web,0,From 1540 mapped rows
+deduplication,duplicate_urls_removed,main_2024_2026:hkr_web,0,From 1056 mapped rows
+deduplication,duplicate_urls_removed,main_2024_2026:ika_web,0,From 12214 mapped rows
+deduplication,duplicate_urls_removed,main_2024_2026:laudato_web,0,From 3399 mapped rows
+editorial_gate,non_editorial_rows_removed,historical_2021_2023:hkm_web,0,0.0% of mapped study rows; 0 recorded interactions removed
+editorial_gate,non_editorial_rows_removed,historical_2021_2023:hkr_web,0,0.0% of mapped study rows; 0 recorded interactions removed
+editorial_gate,non_editorial_rows_removed,historical_2021_2023:ika_web,4,0.0% of mapped study rows; 717 recorded interactions removed
+editorial_gate,non_editorial_rows_removed,historical_2021_2023:laudato_web,1,0.0% of mapped study rows; 0 recorded interactions removed
+editorial_gate,non_editorial_rows_removed,main_2024_2026:bitno_web,71,2.2% of mapped study rows; 1101 recorded interactions removed
+editorial_gate,non_editorial_rows_removed,main_2024_2026:glas_koncila_web,173,21.4% of mapped study rows; 95408 recorded interactions removed
+editorial_gate,non_editorial_rows_removed,main_2024_2026:hkm_web,0,0.0% of mapped study rows; 0 recorded interactions removed
+editorial_gate,non_editorial_rows_removed,main_2024_2026:hkr_web,0,0.0% of mapped study rows; 0 recorded interactions removed
+editorial_gate,non_editorial_rows_removed,main_2024_2026:ika_web,12,0.1% of mapped study rows; 0 recorded interactions removed
+editorial_gate,non_editorial_rows_removed,main_2024_2026:laudato_web,0,0.0% of mapped study rows; 0 recorded interactions removed
+editorial_gate,rule:archive_title,main_2024_2026:bitno_web,3,0 recorded interactions removed
+editorial_gate,rule:calendar_listing_url,main_2024_2026:ika_web,4,0 recorded interactions removed
+editorial_gate,rule:homepage_title,main_2024_2026:glas_koncila_web,1,834 recorded interactions removed
+editorial_gate,rule:issue_landing_url,main_2024_2026:glas_koncila_web,53,268 recorded interactions removed
+editorial_gate,rule:listing_url,historical_2021_2023:laudato_web,1,0 recorded interactions removed
+editorial_gate,rule:listing_url,main_2024_2026:glas_koncila_web,1,0 recorded interactions removed
+editorial_gate,rule:named_listing_url,main_2024_2026:bitno_web,1,0 recorded interactions removed
+editorial_gate,rule:named_listing_url,main_2024_2026:ika_web,1,0 recorded interactions removed
+editorial_gate,rule:pagination_url,historical_2021_2023:ika_web,3,0 recorded interactions removed
+editorial_gate,rule:pagination_url,main_2024_2026:bitno_web,66,1101 recorded interactions removed
+editorial_gate,rule:pagination_url,main_2024_2026:glas_koncila_web,118,94306 recorded interactions removed
+editorial_gate,rule:root_query_listing,historical_2021_2023:ika_web,1,717 recorded interactions removed
+editorial_gate,rule:section_landing_url,main_2024_2026:bitno_web,1,0 recorded interactions removed
+editorial_gate,rule:section_landing_url,main_2024_2026:ika_web,7,0 recorded interactions removed
+event,weeks_below_three_products,papal_transition_window,5,Event contrast is not estimated because key weeks are missing
+headline,eligible_product_months,2025_complete_months,42,"January, March, April, May, and September excluded; minimum 30 classified posts and engagement gates"
+headline,eligible_products,2025_complete_months,6,Equal-weighted in field result
+interaction_profile,top_10_interaction_share,bitno_web,0.361447967616799,237160 total recorded interactions
+interaction_profile,top_10_interaction_share,glas_koncila_web,0.452967525195969,10716 total recorded interactions
+interaction_profile,top_10_interaction_share,hkm_web,0.141168833330559,60077 total recorded interactions
+interaction_profile,top_10_interaction_share,hkr_web,0.323217767228957,11797 total recorded interactions
+interaction_profile,top_10_interaction_share,ika_web,0.224494042973831,19221 total recorded interactions
+interaction_profile,top_10_interaction_share,laudato_web,0.207916627722217,64194 total recorded interactions
+interaction_profile,zero_interaction_rate,bitno_web,0.14530612244898,1225 posts across retained 2025 months
+interaction_profile,zero_interaction_rate,glas_koncila_web,0.551351351351351,370 posts across retained 2025 months
+interaction_profile,zero_interaction_rate,hkm_web,0.037940379403794,369 posts across retained 2025 months
+interaction_profile,zero_interaction_rate,hkr_web,0.582125603864734,414 posts across retained 2025 months
+interaction_profile,zero_interaction_rate,ika_web,0.850188930873527,4499 posts across retained 2025 months
+interaction_profile,zero_interaction_rate,laudato_web,0.746196403872752,1446 posts across retained 2025 months
+lag_model,bootstrap_successful,main,999,999 requested
+lag_model,observations,main,304,Product-month-topic transitions after support gate
+lag_model,periods,main,8,Current months; exact next-calendar-month transitions only
+measurement_2026,zero_interaction_rate,bitno_web:2026-01,0.202453987730061,163 posts; positive rate 0.798
+measurement_2026,zero_interaction_rate,bitno_web:2026-02,0.320388349514563,103 posts; positive rate 0.680
+measurement_2026,zero_interaction_rate,bitno_web:2026-03,0.929245283018868,212 posts; positive rate 0.071
+measurement_2026,zero_interaction_rate,bitno_web:2026-04,0.901477832512315,203 posts; positive rate 0.099
+measurement_2026,zero_interaction_rate,bitno_web:2026-05,0.895927601809955,221 posts; positive rate 0.104
+measurement_2026,zero_interaction_rate,bitno_web:2026-06,0.935483870967742,93 posts; positive rate 0.065
+measurement_2026,zero_interaction_rate,glas_koncila_web:2026-01,0.214285714285714,84 posts; positive rate 0.786
+measurement_2026,zero_interaction_rate,glas_koncila_web:2026-02,0.420289855072464,69 posts; positive rate 0.580
+measurement_2026,zero_interaction_rate,glas_koncila_web:2026-03,1,71 posts; positive rate 0.000
+measurement_2026,zero_interaction_rate,glas_koncila_web:2026-04,1,66 posts; positive rate 0.000
+measurement_2026,zero_interaction_rate,glas_koncila_web:2026-05,1,61 posts; positive rate 0.000
+measurement_2026,zero_interaction_rate,glas_koncila_web:2026-06,1,25 posts; positive rate 0.000
+measurement_2026,zero_interaction_rate,hkm_web:2026-01,0.0454545454545455,44 posts; positive rate 0.955
+measurement_2026,zero_interaction_rate,hkm_web:2026-02,0.272727272727273,33 posts; positive rate 0.727
+measurement_2026,zero_interaction_rate,hkm_web:2026-03,1,57 posts; positive rate 0.000
+measurement_2026,zero_interaction_rate,hkm_web:2026-04,1,64 posts; positive rate 0.000
+measurement_2026,zero_interaction_rate,hkm_web:2026-05,1,56 posts; positive rate 0.000
+measurement_2026,zero_interaction_rate,hkm_web:2026-06,1,24 posts; positive rate 0.000
+measurement_2026,zero_interaction_rate,hkr_web:2026-01,0.517241379310345,58 posts; positive rate 0.483
+measurement_2026,zero_interaction_rate,hkr_web:2026-02,0.666666666666667,48 posts; positive rate 0.333
+measurement_2026,zero_interaction_rate,hkr_web:2026-03,1,72 posts; positive rate 0.000
+measurement_2026,zero_interaction_rate,hkr_web:2026-04,1,64 posts; positive rate 0.000
+measurement_2026,zero_interaction_rate,hkr_web:2026-05,1,60 posts; positive rate 0.000
+measurement_2026,zero_interaction_rate,hkr_web:2026-06,1,25 posts; positive rate 0.000
+measurement_2026,zero_interaction_rate,ika_web:2026-01,0.842450765864333,457 posts; positive rate 0.158
+measurement_2026,zero_interaction_rate,ika_web:2026-02,0.874769797421731,543 posts; positive rate 0.125
+measurement_2026,zero_interaction_rate,ika_web:2026-03,1,794 posts; positive rate 0.000
+measurement_2026,zero_interaction_rate,ika_web:2026-04,1,596 posts; positive rate 0.000
+measurement_2026,zero_interaction_rate,ika_web:2026-05,1,678 posts; positive rate 0.000
+measurement_2026,zero_interaction_rate,ika_web:2026-06,1,257 posts; positive rate 0.000
+measurement_2026,zero_interaction_rate,laudato_web:2026-01,0.772093023255814,215 posts; positive rate 0.228
+measurement_2026,zero_interaction_rate,laudato_web:2026-02,0.827751196172249,209 posts; positive rate 0.172
+measurement_2026,zero_interaction_rate,laudato_web:2026-03,0.984,250 posts; positive rate 0.016
+measurement_2026,zero_interaction_rate,laudato_web:2026-04,0.955357142857143,224 posts; positive rate 0.045
+measurement_2026,zero_interaction_rate,laudato_web:2026-05,0.99,200 posts; positive rate 0.010
+measurement_2026,zero_interaction_rate,laudato_web:2026-06,1,93 posts; positive rate 0.000
+validation,headline_product_months_covered,high_interaction_audit,42,Top classified interaction post sampled within every retained headline product-month
+validation,headline_product_topics_covered,high_interaction_audit,82,Top five interaction contributors sampled within every non-empty retained headline product-topic
+validation,high_interaction_unique_posts,high_interaction_audit,583,Deduplicated articles in the mandatory high-interaction audit
+validation,lag_product_topic_months_covered,high_interaction_audit,302,Top interaction contributor sampled within every non-empty product-topic-month in the main lag panel
+validation,sampled_unique_posts,BIOETIKA_I_KULTURNI_RATOVI,40,Private audit sample; separate prediction-free coder sheet and answer key were written
+validation,sampled_unique_posts,CRKVENE_FINANCIJE_I_IMOVINA,40,Private audit sample; separate prediction-free coder sheet and answer key were written
+validation,sampled_unique_posts,CRKVENO_UPRAVLJANJE_I_STRUKTURA,40,Private audit sample; separate prediction-free coder sheet and answer key were written
+validation,sampled_unique_posts,DIGITALNA_EVANGELIZACIJA_I_MLADI,40,Private audit sample; separate prediction-free coder sheet and answer key were written
+validation,sampled_unique_posts,DUHOVNOST_I_LITURGIJA,40,Private audit sample; separate prediction-free coder sheet and answer key were written
+validation,sampled_unique_posts,GLOBALNA_CRKVA_I_MISIJE,40,Private audit sample; separate prediction-free coder sheet and answer key were written
+validation,sampled_unique_posts,KARITAS_I_SOCIJALNA_PRAVDA,40,Private audit sample; separate prediction-free coder sheet and answer key were written
+validation,sampled_unique_posts,MEDIJI_UMJETNOST_I_KULTURA,40,Private audit sample; separate prediction-free coder sheet and answer key were written
+validation,sampled_unique_posts,ODNOS_S_DRUGIM_RELIGIJAMA_I_POGLEDIMA,40,Private audit sample; separate prediction-free coder sheet and answer key were written
+validation,sampled_unique_posts,PAPE_I_VATIKAN,40,Private audit sample; separate prediction-free coder sheet and answer key were written
+validation,sampled_unique_posts,POLITIKA_I_ODNOS_S_DRZAVOM,40,Private audit sample; separate prediction-free coder sheet and answer key were written
+validation,sampled_unique_posts,POVIJEST_I_NACIONALNI_IDENTITET,40,Private audit sample; separate prediction-free coder sheet and answer key were written
+validation,sampled_unique_posts,TEOLOGIJA_I_DOKTRINA,40,Private audit sample; separate prediction-free coder sheet and answer key were written
+validation,sampled_unique_posts,UNUTARCRKVENI_PRIJEPORI_I_IDEOLOGIJE,5,Private audit sample; separate prediction-free coder sheet and answer key were written
+validation,sampled_unique_posts,ZLOSTAVLJANJE_I_KRIZA_POVJERENJA,40,Private audit sample; separate prediction-free coder sheet and answer key were written
+validation,sampled_unique_posts,ZNANOST_I_VJERA,40,Private audit sample; separate prediction-free coder sheet and answer key were written

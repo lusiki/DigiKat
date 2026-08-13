@@ -12,14 +12,17 @@
 #             data/processed/{web,youtube,facebook,instagram,tiktok,twitter}_actors.rds
 #             resources/dictionaries/source_labels.csv         (PI-owned)
 #             data/digikat_corpus_manifest.json                (provenance)
+#             studies/news-gap/output/outlet_topic_profiles.csv (optional; publication-gated)
 #   OUTPUT  : data/page-ready/moj_medij.json                   (TRACKED)
 #
 # Reads only tracked aggregates. Never reads the corpus or the accumulator, so
 # it runs on a machine without them and cannot leak a post.
 #
 # Run from the REPO ROOT:   Rscript R/06_moj_medij.R [--apply]
-#   default : builds, validates, reports, writes nothing
-#   --apply : additionally installs data/page-ready/moj_medij.json
+#   default                         : builds, validates, reports, writes nothing
+#   --apply                         : additionally installs data/page-ready/moj_medij.json
+#   --preview-news-gap              : embeds the private provisional news-gap profiles in memory
+#   --preview-news-gap --write-preview : writes only the gitignored private preview JSON
 # =============================================================================
 
 suppressMessages({
@@ -29,6 +32,15 @@ suppressMessages({
 
 args   <- commandArgs(trailingOnly = TRUE)
 apply_ <- "--apply" %in% args
+preview_news_gap <- "--preview-news-gap" %in% args
+write_preview <- "--write-preview" %in% args
+if (apply_ && preview_news_gap) {
+  stop("The private preview input can never be installed as the public Moj medij artifact.",
+       call. = FALSE)
+}
+if (write_preview && !preview_news_gap) {
+  stop("--write-preview requires --preview-news-gap.", call. = FALSE)
+}
 
 source(file.path("R", "lib", "digikat_paths.R"), encoding = "UTF-8")
 source(file.path("R", "lib", "digikat_typology.R"), encoding = "UTF-8")
@@ -57,6 +69,8 @@ looks_like_domain <- function(x) grepl("^[A-Za-z0-9][A-Za-z0-9.-]*\\.[A-Za-z]{2,
 proc_dir <- file.path("data", "processed")
 out_dir  <- file.path("data", "page-ready")
 out_path <- file.path(out_dir, "moj_medij.json")
+preview_out_path <- file.path("studies", "news-gap", "output", "private",
+                              "moj_medij_preview.json")
 sidecar  <- file.path("resources", "dictionaries", "source_labels.csv")
 
 ## ---- inputs ----------------------------------------------------------------
@@ -157,6 +171,82 @@ series <- ss |>
   select(FROM, year, p = productivity, i = total_interactions, r = total_reach) |>
   arrange(FROM, year)
 
+## ---- optional publication-gated news-gap profiles -------------------------
+# The private preview must never enter the page-ready JSON. Public integration is fail-closed:
+# the result must carry an explicit public status and a separately public aggregate must exist.
+news_gap_results_path <- file.path("studies", "news-gap", "output", "analysis_results.json")
+news_gap_profiles_path <- file.path("studies", "news-gap", "output", "outlet_topic_profiles.csv")
+news_gap_private_profiles_path <- file.path("studies", "news-gap", "output", "private",
+                                           "outlet_topic_profiles.csv")
+news_gap_registry_path <- file.path("studies", "news-gap", "source_registry.csv")
+news_gap_status <- "not_available"
+news_gap_by_source <- list()
+
+if (file.exists(news_gap_results_path)) {
+  news_gap_results <- fromJSON(news_gap_results_path, simplifyVector = TRUE)
+  news_gap_status <- as.character(news_gap_results$status)
+
+  publishable_news_gap_status <- news_gap_status %in% c(
+    "published_provisional_pending_manual_dictionary_validation",
+    "validated_for_publication"
+  )
+  embed_news_gap <- publishable_news_gap_status || preview_news_gap
+  selected_news_gap_profiles_path <- if (preview_news_gap) {
+    news_gap_private_profiles_path
+  } else {
+    news_gap_profiles_path
+  }
+
+  if (embed_news_gap) {
+    if (!file.exists(selected_news_gap_profiles_path) || !file.exists(news_gap_registry_path)) {
+      stop(
+        "The selected news-gap profile table or registry is missing.",
+        call. = FALSE
+      )
+    }
+
+    ng <- read.csv(selected_news_gap_profiles_path, fileEncoding = "UTF-8-BOM",
+                   stringsAsFactors = FALSE,
+                   check.names = FALSE)
+    ng_registry <- read.csv(news_gap_registry_path, fileEncoding = "UTF-8", stringsAsFactors = FALSE,
+                            check.names = FALSE)
+    required_ng <- c("product_id", "display_name", "topic_label", "production_pct", "reward_pct",
+                     "gap_pp", "validation_status")
+    if (length(setdiff(required_ng, names(ng))) || any(ng$validation_status != news_gap_status)) {
+      stop("News-gap profile table fails its publication data contract.", call. = FALSE)
+    }
+    if (anyDuplicated(ng_registry$product_id)) {
+      stop("News-gap registry contains duplicate product IDs.", call. = FALSE)
+    }
+
+    ng <- merge(
+      ng,
+      ng_registry[, c("product_id", "raw_from", "url_host")],
+      by = "product_id",
+      all.x = TRUE
+    )
+    if (any(is.na(ng$raw_from)) || any(!is.finite(ng$production_pct)) ||
+        any(!is.finite(ng$reward_pct)) || any(!is.finite(ng$gap_pp))) {
+      stop("News-gap profiles contain an unmapped or non-finite value.", call. = FALSE)
+    }
+
+    ng_products <- split(ng, ng$product_id)
+    ng_records <- lapply(ng_products, function(z) list(
+      id = unname(z$product_id[[1L]]),
+      n = unname(z$display_name[[1L]]),
+      h = unname(z$url_host[[1L]]),
+      v = list(
+        k = unname(as.character(z$topic_label)),
+        p = unname(round(as.numeric(z$production_pct), 2)),
+        r = unname(round(as.numeric(z$reward_pct), 2)),
+        g = unname(round(as.numeric(z$gap_pp), 2))
+      )
+    ))
+    ng_sources <- vapply(ng_products, function(z) as.character(z$raw_from[[1L]]), character(1L))
+    news_gap_by_source <- split(unname(ng_records), unname(ng_sources))
+  }
+}
+
 # Catalogue profile filenames follow R/wiki_sources.R's slug rule; link only where the page exists.
 slugify <- function(x) {
   mfrom <- c("č","ć","ž","š","đ","Č","Ć","Ž","Š","Đ")
@@ -203,6 +293,9 @@ records <- lapply(seq_len(n_listed), function(k) {
   }
   if (!is.na(row$profile)) out$pr <- unname(row$profile)
   if (isTRUE(row$multi))   out$mp <- TRUE
+  if (length(news_gap_by_source[[as.character(row$FROM)]])) {
+    out$ng <- news_gap_by_source[[as.character(row$FROM)]]
+  }
   out
 })
 
@@ -233,6 +326,12 @@ payload <- list(
   years = as.integer(years),
   sources = records
 )
+if (preview_news_gap) {
+  payload$preview <- list(
+    news_gap = TRUE,
+    status = news_gap_status
+  )
+}
 
 json <- toJSON(payload, auto_unbox = TRUE, digits = 6, null = "null", na = "null")
 
@@ -245,7 +344,7 @@ hit <- forbidden[vapply(forbidden, function(p) grepl(p, txt, fixed = TRUE), logi
 if (length(hit)) {
   stop("Disclosure gate: generated JSON contains ", paste(hit, collapse = ", "), call. = FALSE)
 }
-allowed_keys <- c("n","t","p","i","x","e","rp","ri","rx","sp","y","pl","tp","lb","rl","nl","pr","mp")
+allowed_keys <- c("n","t","p","i","x","e","rp","ri","rx","sp","y","pl","tp","lb","rl","nl","pr","mp","ng")
 extra <- setdiff(unique(unlist(lapply(records, names))), allowed_keys)
 if (length(extra)) {
   stop("Disclosure gate: unexpected key(s) in a source record: ", paste(extra, collapse = ", "),
@@ -269,8 +368,16 @@ if (nrow(withheld)) {
 cat("\nvelicina JSON-a            :", nchar(txt, type = "bytes"), "bytes\n")
 cat("s tipologijom              :", sum(!is.na(listed$typology)), "\n")
 cat("s poveznicom na katalog    :", sum(!is.na(listed$profile)), "\n")
+cat("news-gap status            :", news_gap_status, "\n")
+cat("s news-gap profilom         :", sum(vapply(records, function(x) "ng" %in% names(x), logical(1L))), "\n")
 
-if (!apply_) {
+if (write_preview) {
+  dir.create(dirname(preview_out_path), showWarnings = FALSE, recursive = TRUE)
+  con <- file(preview_out_path, open = "wb")
+  writeLines(enc2utf8(txt), con, useBytes = TRUE)
+  close(con)
+  cat("\nZAPISAN PREGLED:", preview_out_path, "\n\n")
+} else if (!apply_) {
   cat("\nPREGLED. Nista nije zapisano. Za instalaciju pokreni:\n  Rscript R/06_moj_medij.R --apply\n\n")
 } else {
   dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)

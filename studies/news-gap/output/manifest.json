@@ -1,0 +1,93 @@
+{
+  "study": "news-gap",
+  "generated_at": "2026-08-13T13:17:29+0200",
+  "analysis_status": "exploratory_pending_manual_dictionary_validation",
+  "input": {
+    "corpus_path": "data/digikat_corpus.rds",
+    "corpus_sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a",
+    "corpus_rows": 413985,
+    "dictionary_path": "R/lib/thematic_dictionaries.R",
+    "dictionary_file_sha256": "a49c8b4db4b1d146aa19ff95025de47b7c6b1c8aee720db296e000e2e5e9e33e",
+    "registry_path": "studies/news-gap/source_registry.csv",
+    "registry_sha256": "3338fa7568896b00ece11e87c992e3c3a204657a81b10f2572369b6fd640fee1"
+  },
+  "code": {
+    "analysis_sha256": "c341c95f01969f5866e92137904fd068ca928d14314f581e157eed0cbad1d0a0",
+    "checks_sha256": "34fd4502104d7d5c1f09e51eb0d9896ac8bd3bf1583d4a6c7123c9f854ec0b2a",
+    "r_version": "R version 4.6.0 (2026-04-24 ucrt)"
+  },
+  "parameters": {
+    "main_start": "2024-07-01",
+    "main_engagement_end": "2025-12-31",
+    "main_supply_end": "2026-01-31",
+    "headline_start": "2025-02-01",
+    "headline_end": "2025-12-31",
+    "excluded_months": ["2024-09-01", "2025-01-01", "2025-03-01", "2025-04-01", "2025-05-01", "2025-09-01"],
+    "historical_start": "2021-01-01",
+    "historical_end": "2023-12-31",
+    "min_posts_month": 30,
+    "min_posts_week": 7,
+    "min_interaction_coverage": 0.95,
+    "min_positive_rate": 0.05,
+    "min_product_topic_posts": 20,
+    "min_product_topic_months": 6,
+    "public_min_topic_posts": 20,
+    "validation_per_topic": 40,
+    "classification_text_characters": 3000,
+    "hac_lag": 2,
+    "bootstrap_reps": 999,
+    "random_seed": 20260813
+  },
+  "public_outputs": [
+    {
+      "path": "studies/news-gap/output/analysis_results.json",
+      "sha256": "b236511c96f777bba4d3e8e0b5db93d29ed7def4ae8b2206ef375d4f08dbc66f",
+      "bytes": 63132
+    },
+    {
+      "path": "studies/news-gap/output/diagnostics.csv",
+      "sha256": "3184d00b46666f4e5574655f99a548731d4231ba3b4a65706627b30a7259b453",
+      "bytes": 15448
+    },
+    {
+      "path": "studies/news-gap/output/event_results.csv",
+      "sha256": "8a3e21384ec8dbebcf359bc223d321ce1c4b1aa4eabd1cd8b3eb162b1d5abe63",
+      "bytes": 2339
+    },
+    {
+      "path": "studies/news-gap/output/figures/lag_coefficient.png",
+      "sha256": "472b0d5a7a22c361bad8f3c1bf0d7682d668374ea42bcefe9d98d4c77717c9f1",
+      "bytes": 34219
+    },
+    {
+      "path": "studies/news-gap/output/figures/papal_transition_gap.png",
+      "sha256": "8ebf666cac46fd1a1c0722cf51414c33c06a3dd9e1f891323f54f5717bc4dbc5",
+      "bytes": 106397
+    },
+    {
+      "path": "studies/news-gap/output/figures/produced_vs_rewarded.png",
+      "sha256": "fb731b582d3b1096c0679293dadade8facb674eadecf7586cd16b3d8f145b70b",
+      "bytes": 90469
+    },
+    {
+      "path": "studies/news-gap/output/gap_overall.csv",
+      "sha256": "e2f9a89d74c416b0a37715fd1147bef30f3486e5e0ff6dadca15ba047ae5f868",
+      "bytes": 3271
+    },
+    {
+      "path": "studies/news-gap/output/lag_model.csv",
+      "sha256": "a916ca19b5ca8ffd36dd7c4ae386bed4ad9e0a2e0c356c91755142eee4300f23",
+      "bytes": 4021
+    },
+    {
+      "path": "studies/news-gap/output/outlet_profiles.csv",
+      "sha256": "a13a234dffce255ebc5b0f748e94dee2327bd5575fa138443d2e3b3cdbe20da6",
+      "bytes": 3307
+    },
+    {
+      "path": "studies/news-gap/output/outlet_topic_profiles.csv",
+      "sha256": "17785c1842d62e6dfa1bef07af1165e87e03d2f159e0c4c1058b0e9ac1adebbd",
+      "bytes": 14766
+    }
+  ]
+}
