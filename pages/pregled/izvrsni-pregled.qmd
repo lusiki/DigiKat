@@ -562,7 +562,7 @@ The full analyses, interactive source network and public corpus description are 
 </div>
 
 <div class="letter-signature">
-doc. dr. sc. Luka Šikić
+<a href="https://www.lukasikic.info/">doc. dr. sc. Luka Šikić</a>
 <span class="role"><span class="lang-hr">voditelj projekta · Hrvatsko katoličko sveučilište · DigiKat</span><span class="lang-en">principal investigator · Catholic University of Croatia · DigiKat</span></span>
 </div>
 

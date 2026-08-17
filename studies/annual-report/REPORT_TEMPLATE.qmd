@@ -287,7 +287,7 @@ nalaze se u dokumentu `INDICATORS.md`. Pregledani agregati objavljuju se uz preg
 
 # Neovisnost, licencija i zahvale {#kolofon}
 
-Pregled uređuje doc. dr. sc. Luka Šikić s Hrvatskoga katoličkog sveučilišta.
+Pregled uređuje [doc. dr. sc. Luka Šikić](https://www.lukasikic.info/) s Hrvatskoga katoličkog sveučilišta.
 
 Obuhvaćeni akteri nemaju nikakvu ulogu u odabiru pokazatelja, analizi, tumačenju ni odobravanju
 pregleda. Prije objave održava se kratko informativno predstavljanje pod embargom, koje ne može

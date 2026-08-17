@@ -381,7 +381,7 @@ nalaze se u dokumentu `INDICATORS.md`. Pregledani agregati objavljuju se uz izvj
 
 # Neovisnost, licencija i zahvale {#kolofon}
 
-**Urednik:** doc. dr. sc. Luka Šikić, Hrvatsko katoličko sveučilište.
+**Urednik:** [doc. dr. sc. Luka Šikić](https://www.lukasikic.info/), Hrvatsko katoličko sveučilište.
 
 Obuhvaćeni akteri nemaju nikakvu ulogu u odabiru pokazatelja, analizi, tumačenju ni odobravanju
 izvještaja. Prije objave održava se kratko informativno predstavljanje pod embargom; ono ne može

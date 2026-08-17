@@ -285,7 +285,7 @@ comparability rule and change history. Reviewed aggregates are published with th
 
 # Independence, licence and acknowledgements {#colophon}
 
-The review is edited by Associate Professor Luka Šikić of the Catholic University of Croatia.
+The review is edited by [Associate Professor Luka Šikić](https://www.lukasikic.info/) of the Catholic University of Croatia.
 
 Covered actors have no role in selecting indicators, analysis, interpretation or approval of the
 review. A short embargoed briefing may take place before publication, but it cannot alter a result

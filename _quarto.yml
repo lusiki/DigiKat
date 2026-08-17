@@ -13,7 +13,15 @@ project:
     - pages/**/*.qmd
     # Dovršena tematska istraživanja ostaju na verzioniranim ulazima na kojima
     # su objavljena; puni render žive stranice ne smije ih ponovno izračunati.
-    - "!pages/studije/**/*.qmd"
+    # Pregled istraživanja ostaje aktivna stranica i renderira se redovito.
+    - "!pages/studije/crkva-i-dezinformacije.qmd"
+    - "!pages/studije/hodocasnicki-turizam.qmd"
+    - "!pages/studije/inflacija-i-religija.qmd"
+    - "!pages/studije/katolicki-influenceri.qmd"
+    - "!pages/studije/katolicko-obrazovanje-i-stepinac.qmd"
+    - "!pages/studije/redovnicke-zajednice.qmd"
+    - "!pages/studije/socijalni-nauk-i-gospodarstvo.qmd"
+    - "!pages/studije/trzista-paznje.qmd"
 
 lang: hr
 website:

@@ -81,7 +81,9 @@ $papers = @(
     Stem = "crkva-i-dezinformacije"
     SourceHtml = $churchFramingHtml
     SourceDocx = $churchFramingDocx
-    Authors = @()
+    Authors = @(
+      [pscustomobject]@{ Name = "Luka Šikić"; Url = "https://www.lukasikic.info/" }
+    )
     InjectByline = $false
     Affiliation = ""
   },
@@ -170,9 +172,14 @@ function Link-TitleAuthors([string]$Html, $Authors, [bool]$InjectByline, [string
   foreach ($author in $Authors) {
     Write-Verbose ("Linking title author: " + $author.Name)
     $escapedName = [regex]::Escape($author.Name)
-    if ($header -match ('class="digikat-author-link"[^>]*>\s*' + $escapedName)) { continue }
     $anchor = '<a class="digikat-author-link" rel="author" href="' + (Html-Encode $author.Url) + '">' + (Html-Encode $author.Name) + '</a>'
-    $header = $header.Replace($author.Name, $anchor)
+    $existingAnchor = '(?is)<a\b[^>]*>\s*' + $escapedName + '\s*</a>'
+    if ($header -match $existingAnchor) {
+      $header = [regex]::Replace($header, $existingAnchor, $anchor)
+    }
+    else {
+      $header = $header.Replace($author.Name, $anchor)
+    }
   }
 
   if ($InjectByline) {
