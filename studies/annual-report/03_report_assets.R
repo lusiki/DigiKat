@@ -531,7 +531,7 @@ add("baseline_year", AR_BASELINE_YEAR, as.character(AR_BASELINE_YEAR), as.charac
 add_int("corpus_rows", cm$corpus$rows, "data/digikat_corpus_manifest.json", "all period")
 add("corpus_span", paste(cm$corpus$date_min, cm$corpus$date_max),
     paste0("od 1. siječnja 2021. do ", ar_date_hr(cm$corpus$date_max)),
-    paste0("1 January 2021 to ", format(as.Date(cm$corpus$date_max), "%d %B %Y")),
+    paste0("1 January 2021 to ", ar_date_en(cm$corpus$date_max)),
     "data/digikat_corpus_manifest.json", "all period", "span")
 add("corpus_terms", cm$rule$terms_count, ar_fmt_int_hr(cm$rule$terms_count),
     ar_fmt_int_en(cm$rule$terms_count), "data/digikat_corpus_manifest.json", "inclusion rule", "terms")
@@ -554,8 +554,8 @@ add("gap_days", coverage$gap_days, ar_fmt_int_hr(coverage$gap_days), ar_fmt_int_
 # understate the hole by fifteen days.
 add("gap_span", coverage$gap_spans,
     paste(sprintf("od %s do %s", ar_date_hr(gaps$start), ar_date_hr(gaps$end)), collapse = " i "),
-    paste(sprintf("%s to %s", format(as.Date(gaps$start), "%d %B"),
-                  format(as.Date(gaps$end), "%d %B %Y")), collapse = " and "),
+    paste(sprintf("%s to %s", ar_date_day_month_en(gaps$start),
+                  ar_date_en(gaps$end)), collapse = " and "),
     "output/coverage_gaps.csv", as.character(YEAR), "span")
 add_int("gap_estimated_posts", coverage$estimated_missing_posts, "output/coverage.csv", as.character(YEAR))
 add("median_day", coverage$median_collected_day, ar_fmt_int_hr(coverage$median_collected_day),
@@ -605,13 +605,13 @@ add("cli_ratio", cli_ratio, paste0(ar_fmt_num_hr(cli_ratio, 2), "×"),
 
 add_int("peak_posts", peak$peak_posts, "output/event_arcs.csv", "peak day", TRUE)
 add("peak_day", peak$peak_day, ar_date_hr(peak$peak_day),
-    format(as.Date(peak$peak_day), "%d %B %Y"), "output/event_arcs.csv", "peak day", "date")
+    ar_date_en(peak$peak_day), "output/event_arcs.csv", "peak day", "date")
 add("peak_z", peak$peak_z, ar_fmt_num_hr(peak$peak_z, 1), ar_fmt_num_en(peak$peak_z, 1),
     "output/event_arcs.csv", "peak day", "sd")
 add_int("peak_arc_posts", peak$arc_posts, "output/event_arcs.csv", "peak arc")
 add("peak_arc_span", paste(peak$start, peak$end),
     paste0("od ", ar_date_short_hr(peak$start), " do ", ar_date_short_hr(peak$end)),
-    paste(format(as.Date(peak$start), "%d %B"), "to", format(as.Date(peak$end), "%d %B %Y")),
+    paste(ar_date_day_month_en(peak$start), "to", ar_date_en(peak$end)),
     "output/event_arcs.csv", "peak arc", "span")
 add("arcs_n", nrow(arcs), ar_fmt_int_hr(nrow(arcs)), ar_fmt_int_en(nrow(arcs)),
     "output/event_arcs.csv", as.character(YEAR), "arcs")
@@ -989,11 +989,17 @@ for (i in seq_len(nrow(profiles))) {
 ar_write_utf8(lines, file.path(private_dir, "profiles.md"))
 ar_write_csv(profiles, file.path(AR_PRIVATE, "profiles.csv"))
 
+# The English edition shares the checked aggregates and scalar registry but owns every word-bearing
+# figure and fragment. Sourcing it here keeps both languages inside one reproducible generation.
+source(file.path(AR_DIR, "03_report_assets_en.R"), encoding = "UTF-8")
+
 ## === Manifest ======================================================================================
 generated <- c(list.files(AR_OUT, pattern = "[.]csv$", full.names = TRUE),
                list.files(AR_OUT, pattern = "[.]md$", full.names = TRUE),
                list.files(AR_TABLES, pattern = "[.]md$", full.names = TRUE),
-               list.files(AR_FIGURES, pattern = "[.]png$", full.names = TRUE))
+               list.files(AR_FIGURES, pattern = "[.]png$", full.names = TRUE),
+               list.files(AR_TABLES_EN, pattern = "[.]md$", full.names = TRUE),
+               list.files(AR_FIGURES_EN, pattern = "[.]png$", full.names = TRUE))
 generated <- generated[!grepl("/private/|\\\\private\\\\", generated)]
 inventory <- as.data.frame(lapply(ar_file_inventory(generated), unname), stringsAsFactors = FALSE)
 root_norm <- paste0(normalizePath(AR_DIR, winslash = "/", mustWork = TRUE), "/")
@@ -1002,8 +1008,9 @@ if (!all(startsWith(file_norm, root_norm))) stop("Inventory contains a file outs
 inventory$file <- substring(file_norm, nchar(root_norm) + 1L)
 
 generator_files <- c("00_data_readiness.R", "01_report_aggregates.R", "02_nlp_layers.R",
-                     "03_report_assets.R", "04_sync_fragments.R", "05_report_checks.R",
-                     "06_render_report.R", "report_lib.R", basename(ar_template_path()))
+                     "03_report_assets.R", "03_report_assets_en.R", "04_sync_fragments.R",
+                     "05_report_checks.R", "06_render_report.R", "report_lib.R",
+                     basename(ar_template_path()), basename(ar_template_en_path()))
 generator_files <- generator_files[file.exists(file.path(AR_DIR, generator_files))]
 manifest <- list(
   schema_version = 2L,
@@ -1029,4 +1036,5 @@ manifest <- list(
 write_json(manifest, file.path(AR_OUT, "manifest.json"), pretty = TRUE, auto_unbox = TRUE, na = "null")
 
 cat("Assets generated:", nrow(inventory), "tracked-safe files;", nrow(derived), "scalars;",
-    length(list.files(AR_FIGURES, pattern = "[.]png$")), "figures.\n")
+    length(list.files(AR_FIGURES, pattern = "[.]png$")) +
+      length(list.files(AR_FIGURES_EN, pattern = "[.]png$")), "figures across two editions.\n")

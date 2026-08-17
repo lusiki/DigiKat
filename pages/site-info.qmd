@@ -30,6 +30,15 @@ Ova stranica je napravljena u [Quarto](https://quarto.org/) kroz [Positron](http
   </div>
 </div>
 
+## Privatnost i mjerenje posjeta
+
+DigiKat trenutačno ne učitava vlastiti alat za analitiku, ne postavlja kolačiće za praćenje i ne vodi
+popis posjetitelja. Stranicu poslužuje GitHub Pages. GitHub navodi da pri posjetu bilježi IP adresu u
+sigurnosne svrhe, neovisno o tome je li posjetitelj prijavljen.
+
+Ako projekt naknadno uključi zbirno mjerenje posjeta, ova će stranica prije toga navesti alat, svrhu
+i vrstu podataka koji se obrađuju.
+
 ### Tehnička bilješka o okruženju
 
 Sljedeći zapis dokumentira okruženje u kojem je stranica izgrađena, dakle verziju R-a, operacijski sustav i učitane pakete. Služi reproducibilnosti i lakšoj replikaciji.

@@ -80,10 +80,6 @@ godišnje objave po nekoliko puta.
 Vodeći institucijski mediji, njih {{scalar:league_outlets}}, zajedno nose {{scalar:league_share}}
 godine.
 
-::: {.teaser}
-*Raščlamba po biskupijama, redovničkim zajednicama ili pojedinim naslovima dostupna je kao naručena analiza.*
-:::
-
 Među izvorima kojima znamo uređivački identitet konfesionalni mediji nose
 {{scalar:confessional_share_classified}} objava. Ostatak dolazi iz sekularnih i lokalnih medija.
 
@@ -135,10 +131,6 @@ a unutarcrkveni prijepori {{scalar:disputes_share}}. Četiri dana koja u godini 
 uobičajenog ritma redom su liturgijski ili papinski.
 :::
 
-::: {.teaser}
-*Tematski profil pojedinog medija, biskupije ili razdoblja dostupan je kao naručena analiza.*
-:::
-
 ::: {.callout-tip appearance="simple"}
 ## Pitanja koja podaci otvaraju
 
@@ -169,10 +161,6 @@ Razlika između konfesionalnih i sekularnih izvora vidljiva je i mjerljiva. Konf
 pokriva i redovni život zajednice.
 
 {{fragment:block_fig07_ton_oznake}}
-
-::: {.teaser}
-*Usporedba tona između odabranih medija ili oko pojedinog događaja dostupna je kao naručena analiza.*
-:::
 
 ::: {.callout-tip appearance="simple"}
 ## Pitanja koja podaci otvaraju
@@ -215,16 +203,6 @@ drugi papinski dan. Godina nema nijedan vrhunac koji bi nastao iz spora.
 - Ostavlja li veliki događaj trag u volumenu i mjesecima poslije?
 :::
 
-::: {.callout-tip appearance="simple"}
-## Primjer dubinske analize
-
-Ovako izgleda naručena analiza jednog događaja. Za travanjski luk oko smrti pape Franje ona bi
-sadržavala dnevnu krivulju po platformama i izvorima, usporedbu prvih dvadeset četiri sata s
-ostatkom luka, tematski i tonski profil po danu, popis izvora koji su prvi objavili i onih koji su
-prenosili, mjeru koliko je dugo tema držala pažnju nakon vrhunca te usporedbu s ekvivalentnim lukom
-u drugom mediju ili drugoj godini. Opseg, razdoblje i rezove dogovaramo unaprijed.
-:::
-
 # Posebno poglavlje o socijalnom nauku i gospodarstvu {#posebno}
 
 Svaka edicija donosi jedno dovršeno istraživanje, odvojeno od redovnih pokazatelja. Ove godine to je
@@ -257,17 +235,6 @@ koliko se često i koliko brzo u toj objavi pojavi crkveni okvir.
 pripremamo anketu s vlastitim uzorkom i instrumentom.
 
 {{fragment:table_indicators}}
-
-# Executive summary {#executive-summary}
-
-This is the first DigiKat annual review. It describes what the Croatian digital space published on
-Catholic themes during {{scalar:report_year}}, how much of it there is, who publishes it, what it is
-about and in what tone.
-
-{{fragment:summary_en}}
-
-Every figure in this report is computed from the database and can be reproduced. None is typed by
-hand.
 
 # Metodologija {#metodologija}
 

@@ -8,11 +8,14 @@ suppressPackageStartupMessages({ library(here); library(jsonlite) })
 source(here::here("studies", "annual-report", "report_lib.R"), encoding = "UTF-8")
 
 report_path <- file.path(AR_PRIVATE, "IZVJESTAJ.qmd")
+report_en_path <- file.path(AR_PRIVATE, "REPORT_EN.qmd")
 typeset_dir <- file.path(AR_DIR, "typeset")
 assets <- c(css = file.path(typeset_dir, "report.css"),
             typst = file.path(typeset_dir, "typst-template.typ"),
             show = file.path(typeset_dir, "typst-show.typ"))
-if (!file.exists(report_path)) stop("Run 04_sync_fragments.R first.", call. = FALSE)
+if (!file.exists(report_path) || !file.exists(report_en_path)) {
+  stop("Run 04_sync_fragments.R first.", call. = FALSE)
+}
 if (any(!file.exists(assets))) {
   stop("Missing typeset asset: ", paste(assets[!file.exists(assets)], collapse = ", "), call. = FALSE)
 }
@@ -63,10 +66,14 @@ if (startsWith(paste0(gsub("\\\\", "/", build), "/"), paste0(repo, "/"))) {
 }
 if (dir.exists(build)) unlink(build, recursive = TRUE, force = TRUE)
 dir.create(file.path(build, "figures"), recursive = TRUE, showWarnings = FALSE)
+dir.create(file.path(build, "figures-en"), recursive = TRUE, showWarnings = FALSE)
 
 qmd <- readLines(report_path, encoding = "UTF-8", warn = FALSE)
 qmd <- gsub("../figures/", "figures/", qmd, fixed = TRUE)
-ar_write_utf8(qmd, file.path(build, "report.qmd"))
+qmd_en <- readLines(report_en_path, encoding = "UTF-8", warn = FALSE)
+qmd_en <- gsub("../figures-en/", "figures-en/", qmd_en, fixed = TRUE)
+ar_write_utf8(qmd, file.path(build, "report-hr.qmd"))
+ar_write_utf8(qmd_en, file.path(build, "report-en.qmd"))
 if (!all(file.copy(unname(assets), file.path(build, basename(assets)), overwrite = TRUE))) {
   stop("Could not stage the typeset assets.", call. = FALSE)
 }
@@ -74,28 +81,36 @@ figures <- list.files(AR_FIGURES, pattern = "[.]png$", full.names = TRUE)
 if (!all(file.copy(figures, file.path(build, "figures"), overwrite = TRUE))) {
   stop("Could not stage the report figures.", call. = FALSE)
 }
+figures_en <- list.files(AR_FIGURES_EN, pattern = "[.]png$", full.names = TRUE)
+if (!all(file.copy(figures_en, file.path(build, "figures-en"), overwrite = TRUE))) {
+  stop("Could not stage the English report figures.", call. = FALSE)
+}
 
 old <- setwd(build)
 on.exit(setwd(old), add = TRUE)
-render_one <- function(format, extension) {
-  cat("[render]", format, "\n")
-  log <- system2(quarto, c("render", "report.qmd", "--to", format), stdout = TRUE, stderr = TRUE)
-  produced <- file.path(build, paste0("report.", extension))
+render_one <- function(input, format, extension) {
+  cat("[render]", input, format, "\n")
+  log <- system2(quarto, c("render", input, "--to", format), stdout = TRUE, stderr = TRUE)
+  produced <- file.path(build, paste0(tools::file_path_sans_ext(input), ".", extension))
   if ((!is.null(attr(log, "status")) && attr(log, "status") != 0L) || !file.exists(produced)) {
     cat(paste(log, collapse = "\n"), "\n")
     stop("Quarto did not produce ", extension, ".", call. = FALSE)
   }
   produced
 }
-html <- render_one("html", "html")
-pdf <- render_one("typst", "pdf")
+html <- render_one("report-hr.qmd", "html", "html")
+pdf <- render_one("report-hr.qmd", "typst", "pdf")
+html_en <- render_one("report-en.qmd", "html", "html")
+pdf_en <- render_one("report-en.qmd", "typst", "pdf")
 setwd(old)
 
 rendered_dir <- file.path(AR_PRIVATE, "rendered")
 dir.create(rendered_dir, recursive = TRUE, showWarnings = FALSE)
 stem <- sprintf("DigiKat_godisnji_pregled_%d", AR_REPORT_YEAR)
-targets <- file.path(rendered_dir, paste0(stem, c(".html", ".pdf")))
-if (!all(file.copy(c(html, pdf), targets, overwrite = TRUE))) {
+stem_en <- sprintf("DigiKat_annual_review_%d", AR_REPORT_YEAR)
+targets <- file.path(rendered_dir, c(paste0(stem, c(".html", ".pdf")),
+                                    paste0(stem_en, c(".html", ".pdf"))))
+if (!all(file.copy(c(html, pdf, html_en, pdf_en), targets, overwrite = TRUE))) {
   stop("Could not copy the rendered report.", call. = FALSE)
 }
 
@@ -107,6 +122,11 @@ html_text <- paste(readLines(targets[1], encoding = "UTF-8", warn = FALSE), coll
 if (!all(vapply(c("č", "ć", "ž", "š", "đ"), grepl, logical(1), x = html_text, fixed = TRUE))) {
   stop("Rendered HTML lost Croatian diacritics.", call. = FALSE)
 }
+html_text_en <- paste(readLines(targets[3], encoding = "UTF-8", warn = FALSE), collapse = "\n")
+if (!grepl("Catholic themes in the digital space", html_text_en, fixed = TRUE) ||
+    !grepl("Methodology", html_text_en, fixed = TRUE)) {
+  stop("Rendered English HTML is incomplete or in the wrong language.", call. = FALSE)
+}
 
 render_manifest <- list(
   generated_utc = format(Sys.time(), tz = "UTC", usetz = TRUE),
@@ -115,9 +135,9 @@ render_manifest <- list(
   build_outside_repository = TRUE,
   docs_sha256_before = docs_before,
   docs_sha256_after = docs_after,
-  files = lapply(targets, function(path) list(file = basename(path),
-                                              bytes = unname(file.info(path)$size),
-                                              sha256 = ar_sha256(path)))
+  files = lapply(seq_along(targets), function(i) list(
+    file = basename(targets[i]), language = if (i <= 2L) "hr" else "en",
+    bytes = unname(file.info(targets[i])$size), sha256 = ar_sha256(targets[i])))
 )
 write_json(render_manifest, file.path(rendered_dir, "render_manifest.json"),
            pretty = TRUE, auto_unbox = TRUE)

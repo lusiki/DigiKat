@@ -2,7 +2,7 @@
 "report_year","2025","2025","2025","report contract","annual","year",FALSE
 "baseline_year","2024","2024","2024","report contract","series rule","year",FALSE
 "corpus_rows","413985","413 985","413,985","data/digikat_corpus_manifest.json","all period","posts",FALSE
-"corpus_span","2021-01-01 2026-06-11","od 1. siječnja 2021. do 11. lipnja 2026.","1 January 2021 to 11 lipanj 2026","data/digikat_corpus_manifest.json","all period","span",FALSE
+"corpus_span","2021-01-01 2026-06-11","od 1. siječnja 2021. do 11. lipnja 2026.","1 January 2021 to 11 June 2026","data/digikat_corpus_manifest.json","all period","span",FALSE
 "corpus_terms","119","119","119","data/digikat_corpus_manifest.json","inclusion rule","terms",FALSE
 "corpus_threshold","0.7","0,70","0.70","data/digikat_corpus_manifest.json","inclusion rule","score",FALSE
 "corpus_precision","84.5","84,5 %","84.5%","data/digikat_corpus_manifest.json","measured on hand-read samples","percent",FALSE
@@ -10,7 +10,7 @@
 "total_posts","124346","124 346","124,346","output/volume_platform.csv","2025","posts",TRUE
 "collected_days","351","351","351","output/coverage.csv","2025","days",FALSE
 "gap_days","14","14","14","output/coverage.csv","2025","days",FALSE
-"gap_span","2025-09-01..2025-09-14","od 1. rujna 2025. do 14. rujna 2025.","01 rujan to 14 rujan 2025","output/coverage_gaps.csv","2025","span",FALSE
+"gap_span","2025-09-01..2025-09-14","od 1. rujna 2025. do 14. rujna 2025.","1 September to 14 September 2025","output/coverage_gaps.csv","2025","span",FALSE
 "gap_estimated_posts","3948","3 948","3,948","output/coverage.csv","2025","posts",FALSE
 "median_day","282","282","282","output/coverage.csv","days around the gap","posts",FALSE
 "web_share","54.0411432615444","54,0 %","54.0%","output/volume_platform.csv","2025","percent",TRUE
@@ -41,10 +41,10 @@
 "cli_secular","95.1488291123938","95","95","output/tone_by_label.csv","tone sample","per 1000 words",FALSE
 "cli_ratio","1.35557272522605","1,36×","1.36×","output/tone_by_label.csv","tone sample","ratio",TRUE
 "peak_posts","2825","2 825","2,825","output/event_arcs.csv","peak day","posts",TRUE
-"peak_day","2025-04-21","21. travnja 2025.","21 travanj 2025","output/event_arcs.csv","peak day","date",FALSE
+"peak_day","2025-04-21","21. travnja 2025.","21 April 2025","output/event_arcs.csv","peak day","date",FALSE
 "peak_z","12.0268753634594","12,0","12.0","output/event_arcs.csv","peak day","sd",FALSE
 "peak_arc_posts","6484","6 484","6,484","output/event_arcs.csv","peak arc","posts",FALSE
-"peak_arc_span","2025-04-20 2025-04-23","od 20. 4. 2025. do 23. 4. 2025.","20 travanj to 23 travanj 2025","output/event_arcs.csv","peak arc","span",FALSE
+"peak_arc_span","2025-04-20 2025-04-23","od 20. 4. 2025. do 23. 4. 2025.","20 April to 23 April 2025","output/event_arcs.csv","peak arc","span",FALSE
 "arcs_n","4","4","4","output/event_arcs.csv","2025","arcs",FALSE
 "web_stream_change","11.5343987460388","+11,5 %","+11.5%","output/stream_halfyear.csv","post-2024 stream","percent",TRUE
 "web_stream_sources_change","-7.1608040201005","−7,2 %","−7.2%","output/stream_halfyear.csv","post-2024 stream","percent",FALSE

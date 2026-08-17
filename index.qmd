@@ -76,7 +76,36 @@ chips <- paste0(
       <a href="assets/izvjestaji/godisnji-pregled-2025.html" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #14181d; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 6px; border: 1px solid #cfccc2;">Godišnji pregled 2025.</a>
     </div>
     <div style="margin-top: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6b6f76;">
-      Godišnji pregled dostupan je i za <a href="assets/izvjestaji/godisnji-pregled-2025.pdf" style="color: #0f4c5c;">preuzimanje i ispis (PDF)</a>.
+      Godišnji pregled dostupan je za <a href="assets/izvjestaji/godisnji-pregled-2025.pdf" style="color: #0f4c5c;">preuzimanje i ispis (PDF)</a> te u engleskom izdanju kao <a href="assets/izvjestaji/annual-review-2025.html" style="color: #0f4c5c;">HTML</a> i <a href="assets/izvjestaji/annual-review-2025.pdf" style="color: #0f4c5c;">PDF</a>.
+    </div>
+  </div>
+</section>
+
+<!-- ============ READER PATHS ============ -->
+<section style="border-bottom: 1px solid #e4e2da; background: #fff;">
+  <div style="max-width: 1180px; margin: 0 auto; padding: 56px 40px 60px;">
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #0f4c5c; margin-bottom: 12px;">Odaberite svoje polazište</div>
+    <h2 style="font-family: 'Source Serif 4', serif; font-size: 34px; font-weight: 600; color: #14181d; margin: 0 0 12px;">Što želite saznati?</h2>
+    <p style="font-size: 17px; color: #4f535a; max-width: 66ch; margin: 0 0 28px;">Isti se podaci mogu čitati iz uredničke, istraživačke i javne perspektive. Svaki put vodi izravno na otvorene rezultate projekta.</p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px;">
+      <article style="border: 1px solid #e4e2da; border-radius: 10px; padding: 24px; background: #f9f8f5;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0f4c5c; margin-bottom: 10px;">Vodim medij</div>
+        <h3 style="font-size: 22px; margin-bottom: 10px;">Kako moj medij stoji?</h3>
+        <p style="color: #4f535a;">Pronađite svoj izvor, pregledajte volumen, zabilježene interakcije i doseg te preuzmite sažetak za dijeljenje.</p>
+        <a href="pages/moj-medij.html" style="color: #0f4c5c; font-weight: 600;">Otvorite Moj medij</a>
+      </article>
+      <article style="border: 1px solid #e4e2da; border-radius: 10px; padding: 24px; background: #f9f8f5;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0f4c5c; margin-bottom: 10px;">Istražujem medije</div>
+        <h3 style="font-size: 22px; margin-bottom: 10px;">Kako mogu provjeriti nalaze?</h3>
+        <p style="color: #4f535a;">Otvorite bazu, metodologiju, kod i tematska istraživanja. Svaki javni agregat može se ponovno izračunati.</p>
+        <a href="pages/baza.html" style="color: #0f4c5c; font-weight: 600;">Otvorite bazu podataka</a>
+      </article>
+      <article style="border: 1px solid #e4e2da; border-radius: 10px; padding: 24px; background: #f9f8f5;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0f4c5c; margin-bottom: 10px;">Pratim medijski prostor</div>
+        <h3 style="font-size: 22px; margin-bottom: 10px;">Što je obilježilo godinu?</h3>
+        <p style="color: #4f535a;">Počnite godišnjim pregledom, a zatim otvorite mape ekosustava, tema, diskursa i događaja.</p>
+        <a href="assets/izvjestaji/godisnji-pregled-2025.html" style="color: #0f4c5c; font-weight: 600;">Otvorite godišnji pregled</a>
+      </article>
     </div>
   </div>
 </section>

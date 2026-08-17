@@ -1,0 +1,307 @@
+---
+title: "Catholic themes in the digital space"
+subtitle: "Annual review {{scalar:report_year}}"
+cover-stat: "{{scalar:total_posts}} posts"
+cover-line: "from {{scalar:distinct_sources}} distinct sources in the Croatian digital space"
+back-line: "Corpus {{scalar:corpus_sha_short}} · {{scalar:corpus_rows}} posts · {{scalar:corpus_span}} · CC BY 4.0"
+lang: en
+toc: true
+toc-title: "Contents"
+toc-depth: 2
+number-sections: false
+format-links: false
+format:
+  html:
+    css: report.css
+    embed-resources: true
+    fig-align: center
+    anchor-sections: false
+  typst:
+    papersize: a4
+    fontsize: 10pt
+    template-partials:
+      - typst-template.typ
+      - typst-show.typ
+---
+
+# Summary {#summary}
+
+This is the first DigiKat annual review. It describes what the Croatian digital space published on
+Catholic themes during {{scalar:report_year}}, how much of it there is, who publishes it, what it is
+about and in what tone.
+
+The database covers the Croatian digital media space as a whole, from websites and social networks
+to video and comments. It contains {{scalar:corpus_rows}} posts collected {{scalar:corpus_span}}.
+The {{scalar:report_year}} calendar year accounts for {{scalar:total_posts}} posts.
+
+{{fragment:summary}}
+
+Every number in this review is computed from the database and can be reproduced. None was entered
+by hand.
+
+::: {.callout-note appearance="simple"}
+## Two recurring terms
+
+A *post* is one database record: an article, social-media post, video or comment. A *source* is the
+media outlet or account from which a post came, not an individual person.
+:::
+
+{{fragment:block_fig01_ten_numbers}}
+
+# Ecosystem map {#ecosystem}
+
+## How large is the space? {#scale}
+
+In {{scalar:report_year}} we recorded {{scalar:total_posts}} posts on Catholic themes. More than
+half, {{scalar:web_share}}, appeared on the web, on websites and portals rather than social media.
+Facebook accounts for {{scalar:facebook_share}} and YouTube for {{scalar:youtube_share}}.
+
+{{fragment:block_fig02_platforms}}
+
+{{fragment:table_platform}}
+
+Post count and reach are not the same. Facebook accounts for roughly a quarter of posts but
+{{scalar:facebook_reach_share}} of recorded reach. The web publishes more; networks reach wider.
+
+{{fragment:block_fig03_months}}
+
+## Who leads? {#actors}
+
+Posts come from {{scalar:distinct_sources}} distinct sources. The space is highly dispersed, but
+that dispersion can mislead: the top ten sources account for {{scalar:top10_share}} of the year,
+while {{scalar:sources_to_half}} sources produce half of annual volume. The rest is a long tail in
+which thousands of sources publish only a few times a year.
+
+{{fragment:block_fig09_concentration}}
+
+{{fragment:table_league}}
+
+The {{scalar:league_outlets}} leading institutional media outlets together carry
+{{scalar:league_share}} of the year.
+
+Among sources whose editorial identity has been reviewed, confessional media account for
+{{scalar:confessional_share_classified}} of posts. The rest comes from secular and local media.
+
+{{fragment:table_typology}}
+
+The groups in this table describe the relationship between interactions and reach. Some actors have
+a broad audience that seldom reacts; others have a smaller community that responds to almost every
+post.
+
+## Where is the conversation moving? {#movement}
+
+In the second half of the year, the web published {{scalar:web_stream_change}} more than in the
+second half of {{scalar:baseline_year}}. The number of tracked web sources changed by
+{{scalar:web_stream_sources_change}} over the same period, so the increase does not come from wider
+tracking. Facebook grew by {{scalar:facebook_stream_change}}, but its number of tracked pages also
+rose by {{scalar:facebook_stream_sources_change}}.
+
+{{fragment:block_fig08_stream}}
+
+{{fragment:table_stream}}
+
+::: {.callout-tip appearance="simple"}
+## Questions raised by the data
+
+- Is the web growing because the same sources publish more, or because new titles are appearing?
+- Does Facebook growth accompany audience growth, or only growth in the number of tracked pages?
+- How often does the same source publish the same material across several platforms?
+:::
+
+# Thematic currents {#themes}
+
+## What did the space discuss? {#theme-profile}
+
+The year is led by what the Church does every week. Spirituality and liturgy—Mass, feast days,
+sacraments and prayer—is the leading theme in {{scalar:lead_theme_docs}} of posts and accounts for
+{{scalar:lead_theme_mentions}} of all theme mentions. Church governance and structure follows,
+then bioethical and cultural themes.
+
+{{fragment:block_fig05_themes}}
+
+{{fragment:table_themes}}
+
+::: {.callout-important appearance="simple"}
+## Myth and data
+
+**Myth.** Media coverage of the Church appears mainly when a scandal or conflict breaks out.
+
+**Data.** Abuse and the crisis of trust account for {{scalar:abuse_share}} of all theme mentions;
+internal Church disputes account for {{scalar:disputes_share}}. The four days that depart most from
+the year's ordinary rhythm are liturgical or papal.
+:::
+
+::: {.callout-tip appearance="simple"}
+## Questions raised by the data
+
+- Which themes grow when a feast day does not carry them?
+- Do the same sources cover bioethics and liturgy?
+- How long does one theme hold the space before another replaces it?
+:::
+
+# Atmosphere of the discourse {#tone}
+
+## What language is used? {#tonality}
+
+The year sounds more positive than one might expect. Predominantly positive vocabulary appears in
+{{scalar:tone_positive_share}} of posts, while the annual mean is {{scalar:tone_mean}} on a scale
+from −1 to +1. The subject itself explains much of this: notices about Mass, blessings and
+celebrations contain positive words.
+
+{{fragment:block_fig06_tone_themes}}
+
+{{fragment:table_tone}}
+
+Alongside tone, we track conflict vocabulary: terms connected with anger, fear, attack, division
+and scandal. The annual mean is {{scalar:cli_mean}} such words per thousand words.
+
+The difference between confessional and secular sources is visible and measurable. Confessional
+sources carry {{scalar:cli_confessional}} conflict words per thousand, while secular sources carry
+{{scalar:cli_secular}}, or {{scalar:cli_ratio}} as many. Secular media are more likely to cover the
+Church when the subject is a dispute; confessional sources also cover the community's ordinary life.
+
+{{fragment:block_fig07_tone_labels}}
+
+::: {.callout-tip appearance="simple"}
+## Questions raised by the data
+
+- Does the vocabulary gap remain when posts about the same event on the same day are compared?
+- How does tone change within an event arc, from the first report to later commentary?
+- Do national and local media differ in tone as much as confessional and secular media do?
+:::
+
+# Event focus {#events}
+
+## What marked the year? {#moment}
+
+The year has one clear peak. On {{scalar:peak_day}} we recorded {{scalar:peak_posts}} posts. That is
+{{scalar:peak_z}} standard deviations above the average collected day and the largest count of the
+year. The complete {{scalar:peak_arc_span}} arc carries {{scalar:peak_arc_posts}} posts.
+
+::: {.callout-note appearance="simple"}
+## Moment of the year: the death and funeral of Pope Francis
+
+Pope Francis died on 21 April {{scalar:report_year}}, Easter Monday, and his funeral took place on
+26 April. Both dates are among the days that diverge most sharply from the annual rhythm. “Popes and
+the Vatican” reaches its annual maximum, accompanied by spirituality and liturgy and by Church
+governance.
+:::
+
+{{fragment:block_fig04_year}}
+
+{{fragment:table_events}}
+
+The other three peaks are the Assumption of Mary, Christmas Day and the second papal date. No annual
+peak emerged from a controversy.
+
+::: {.callout-tip appearance="simple"}
+## Questions raised by the data
+
+- Who reported the Pope's death first, and who relayed the news?
+- For how many days does an event hold attention after its peak?
+- Does a major event leave a trace in volume months later?
+:::
+
+# Special chapter: Catholic social teaching and the economy {#special}
+
+Each edition contains one completed study separate from the recurring indicators. This year's study
+asks which parts of Catholic social teaching enter digital public discussion of the economy.
+
+The study searched {{scalar:special_linked}} posts in which religious and economic language meet,
+then manually checked a sample. Doctrinal terms such as the dignity of work, the preferential option
+for the poor, subsidiarity and the common good appear in {{scalar:special_headline}} of those
+encounters.
+
+{{fragment:table_special}}
+
+The study concludes that the Church speaks rarely in economic debate, but when it does, its language
+is relatively consistent with its own vocabulary.
+
+# What comes next {#gaps}
+
+This is the first edition; each future edition will add one layer.
+
+**Composite annual index.** A single number summarising the year and its direction. It will be
+introduced once the reference year is frozen, so the baseline does not change with what it measures.
+
+**Change arrows.** From the next edition, each ranking will show change from the previous year, and a
+separate section will return to previously published numbers.
+
+**Transmission of the Church voice.** When a secular outlet covers a subject already discussed by a
+Church source, how often and how quickly does the Church framing appear?
+
+**Audience.** How people encounter these materials, how much they trust them and what they do with
+them. This requires a dedicated survey, sample and instrument.
+
+{{fragment:table_indicators}}
+
+# Methodology {#methodology}
+
+**Database.** {{scalar:corpus_rows}} posts, {{scalar:corpus_span}}. One inclusion rule applies across
+the entire period. At least one of {{scalar:corpus_terms}} religious terms must occur within the
+first three thousand characters, and a second-pass model must score the post above
+{{scalar:corpus_threshold}}. Manually read samples estimate precision at about
+{{scalar:corpus_precision}}.
+
+**Scope.** The database is theme-based rather than source-based. It includes confessional and
+secular sources whenever a post discusses Catholic themes, as well as regional material including
+content from Bosnia and Herzegovina.
+
+**Year.** The year contains {{scalar:total_posts}} posts across {{scalar:collected_days}} collected
+days. The {{scalar:gap_span}} interruption is marked in every relevant display and excluded from all
+averages. The median day around the interruption carried {{scalar:median_day}} posts, so the gap is
+estimated to omit about {{scalar:gap_estimated_posts}} posts.
+
+**Comparisons.** Collection changed in the middle of {{scalar:baseline_year}}. Every comparison in
+this review is therefore made within the same collection stream and over an equal number of days.
+
+**Peaks.** A day is flagged when it lies at least three standard deviations above the annual mean.
+The threshold was fixed before data inspection, and the mean and dispersion use collected days only.
+Days separated by at most two days belong to one arc. A peak in the data identifies a date, not a
+cause, so the thematic composition of every named day was checked.
+
+**Themes.** A frozen dictionary of sixteen categories is applied to a random sample of
+{{scalar:theme_docs}} posts, or {{scalar:theme_rate}} of the corpus year. Share of mentions divides
+all dictionary matches, so one post may contribute to several themes; leading theme assigns one
+category to each post. The dictionary recognises words, not meaning.
+
+**Tone.** The tone score uses Croatian sentiment dictionaries applied to lemmas, on a −1 to +1 scale,
+for a sample of {{scalar:tone_docs}} posts, or {{scalar:tone_rate}} of the corpus year. Conflict words
+count terms of anger, fear, disgust and conflict per thousand words. Both measures describe a post's
+vocabulary, not the author's position or the truth of a claim.
+
+**Source labels.** Editorial labels for confessional and secular sources have proposal status and
+cover {{scalar:classified_coverage}} of annual volume, so comparisons by label are indicative.
+
+**Naming.** Only institutional media with at least five posts during the year may be named.
+Individual accounts are never named, and cells below the threshold are suppressed.
+
+**Reproducibility.** `INDICATORS.md` contains the complete definition of each indicator, its
+comparability rule and change history. Reviewed aggregates are published with the report.
+
+# Annex: illustrative institutional-source profiles {#annex}
+
+{{fragment:profiles_en}}
+
+# Independence, licence and acknowledgements {#colophon}
+
+The review is edited by Associate Professor Luka Šikić of the Catholic University of Croatia.
+
+Covered actors have no role in selecting indicators, analysis, interpretation or approval of the
+review. A short embargoed briefing may take place before publication, but it cannot alter a result
+unless a verifiable factual error is identified.
+
+Reviewed aggregates and text are published under CC BY 4.0 where source rights permit. Rows
+containing post text, links and individual identities are not part of the published package.
+
+Claude Code was used in preparing the analytical pipeline, drafting and mechanical checks.
+Responsibility for methodological decisions, editorial labels and publication remains with the
+editor and research team.
+
+Questions about data and methods: **luka.sikic@unicath.hr** · Catholic University of Croatia,
+Ilica 242, Zagreb · [lusiki.github.io/DigiKat](https://lusiki.github.io/DigiKat/)
+
+::: {.status-note}
+*This edition is complete and mechanically checked; publication requires the editor's sign-off under
+the editorial charter.*
+:::

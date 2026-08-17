@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_utc": "2026-08-11 05:26:16 UTC",
+  "generated_utc": "2026-08-17 07:34:39 UTC",
   "generator": "studies/annual-report/03_report_assets.R",
   "reporting_year": 2025,
   "indicator_version": "edition-1.0",
@@ -20,20 +20,22 @@
     "00_data_readiness.R": "94b173f02b64bb117e03a444c073ee73f67b3c071985c9e71df666f9a5673463",
     "01_report_aggregates.R": "2085fa8d955bc4a0769c6131b18cfd7b98d9bdbca6b423a4d5b8ba3f5dc1f55f",
     "02_nlp_layers.R": "fcb4c6125e2b98fc1de68330f281d4675f70332ded2dad94d1cc069baea886a8",
-    "03_report_assets.R": "1715be31f9f2127a2ebbb386a08de1d79eeacbed140fefeb1704e922a7432516",
-    "04_sync_fragments.R": "15a5a8e4bd424c9cb18ae4a584c8a02e9ec5605e4de029826babd5918aa21d69",
-    "05_report_checks.R": "c4682f87e70ab60f15a670052cebb6dc3bddd7b5c5484125f0d721354d841a2b",
-    "06_render_report.R": "532b0fce0502436ae023ce550dbe02022652b07e14aec5b799411ca8df4c7cac",
-    "report_lib.R": "9d0b536823680358959c17439fa3aad6341706ce8aa7ec642daa729fc973c9b6",
-    "REPORT_TEMPLATE.qmd": "fb205190bc01f1bb03ddad003bc5a822e29dcc0715246044837f2cc5b3f00c36"
+    "03_report_assets.R": "2d2102572b5bfc817294d129eae253a4c44b9040fcc80470e837cbe821b91a4b",
+    "03_report_assets_en.R": "371c1218287ce42ade3f79fe90f02a395a85f6a6bfdaeaf2f330a11765c3df88",
+    "04_sync_fragments.R": "7ea28fb895289d79f13ef5586df6d1027a6f13b072ea0fa16a3f3c4fb068886c",
+    "05_report_checks.R": "25c3132d6dff56480d1bbe0d7446d6a16a174d9e9654f6d4c36c1f77884d0901",
+    "06_render_report.R": "de6601659f4cc931fc7e652f3dc0d776d7c510bf2e7d767d4120f6611744bded",
+    "report_lib.R": "4a2030ed71d5174a0f4eba0ea46d1b3db5ec372f3114a8c5d1430051f0f44b50",
+    "REPORT_TEMPLATE.qmd": "2bd36faca76b647812a57d640f20386c2b1a9bd45f65222f9176b237333cacd8",
+    "REPORT_TEMPLATE_EN.qmd": "bfc63fae7b64c7e5c5227538585008ebe69376d332cb2ab9e50587f2d074be91"
   },
   "upstream_sha256": {
     "corpus_manifest": "c163739c05dee508c0f235bd87a4b30b8427194e80c8a0f18dc7a17c08c10954",
     "processed_manifest": "d8e54c8736f9fa2587ff89ed442ac6360c8b740d2757b49666a81f09f659d644",
     "nlp_manifest": "5162930fae7a794de8d5eed5ed5edda99a6be250b7f9f0b9d4f2a9f38f349e7d",
-    "source_labels": "26a5a7d3b8382c05f41504dd106b17753c43234de2d89d9a1de0f46441279aaf",
+    "source_labels": "d183fb435bec1ba18b53b5691a26b8ccc013df43d0e79d35e77715332ab0a619",
     "thematic_dictionaries": "a49c8b4db4b1d146aa19ff95025de47b7c6b1c8aee720db296e000e2e5e9e33e",
-    "moral_economy_derived": "0723f01284d217222a0374593760cc11abb55a40cba3268708e6e7b5e7f5007d"
+    "moral_economy_derived": "7421d7dcef36276b1c90e3aa06fef121e11216b463fedb5420fd79234762ac8c"
   },
   "outputs": [
     {
@@ -43,8 +45,8 @@
     },
     {
       "file": "output/2025/annual_report_derived.csv",
-      "bytes": 5995,
-      "sha256": "c5fbfe8dcc84c4e4e2249851badea9fb71e7e0d69fcc9c8b86283cab02dc9824"
+      "bytes": 5994,
+      "sha256": "c87c321921c191511eccd4094bdda32e6f51c06af43748b86fd435af1f242424"
     },
     {
       "file": "output/2025/concentration.csv",
@@ -80,6 +82,56 @@
       "file": "output/2025/event_signature.csv",
       "bytes": 1329,
       "sha256": "879b6f9ff2e7099132542391801801ea5795eed8e4577ccd854044739b24129d"
+    },
+    {
+      "file": "output/2025/figures-en/cover_spark.png",
+      "bytes": 40996,
+      "sha256": "50637d445280852ebaa4097f1830c6162ada91758bc8928788be8904fb095209"
+    },
+    {
+      "file": "output/2025/figures-en/fig01_ten_numbers.png",
+      "bytes": 197772,
+      "sha256": "47b1834cd46b594615ee44fff10d29d5936d5668f3e7cdc0976a2edf2db7e588"
+    },
+    {
+      "file": "output/2025/figures-en/fig02_platforms.png",
+      "bytes": 86277,
+      "sha256": "2c90dc58792199e65487874bdc6cb4ebdd5cb9cc65aec595c09167d3e100d1e4"
+    },
+    {
+      "file": "output/2025/figures-en/fig03_months.png",
+      "bytes": 153827,
+      "sha256": "c78bcdad6897d0a3c42663d2591b7e285ea4933f75e2c70f64a99ed7b8c2a8e5"
+    },
+    {
+      "file": "output/2025/figures-en/fig04_year.png",
+      "bytes": 153862,
+      "sha256": "1093e19288df8c31d7bc15f697f8af6215c8f0de5f0fcd7a228fa37ea5a281b7"
+    },
+    {
+      "file": "output/2025/figures-en/fig05_themes.png",
+      "bytes": 162729,
+      "sha256": "d9941b3ef54ab2c5ed24a4565d0e1896d58ce76f99b389c3286323f5a1341f37"
+    },
+    {
+      "file": "output/2025/figures-en/fig06_tone_themes.png",
+      "bytes": 36275,
+      "sha256": "3a42f7081c2aa17a2a6b6015745789a6ceb4e2acc423da7de03567a8bcf8e6b7"
+    },
+    {
+      "file": "output/2025/figures-en/fig07_tone_labels.png",
+      "bytes": 43018,
+      "sha256": "de154021e53b5e447f27f3ab6fab5d37da18416802ab9423482bb9a15382638d"
+    },
+    {
+      "file": "output/2025/figures-en/fig08_stream.png",
+      "bytes": 94352,
+      "sha256": "e6c719c862a06ba149bc6b24e69ab5ae64137a18afedc6aa60f7b69e72bf303c"
+    },
+    {
+      "file": "output/2025/figures-en/fig09_concentration.png",
+      "bytes": 77691,
+      "sha256": "abd0d14de1cbbacd8eb0f977aed440b0b7cc79c816bb5d489ca20dfcab5daa6e"
     },
     {
       "file": "output/2025/figures/cover_spark.png",
@@ -180,6 +232,101 @@
       "file": "output/2025/stream_halfyear.csv",
       "bytes": 1468,
       "sha256": "42095ff11eb6e62ad8395182b2fe9d4587b446d0eb6d181ce0008017b74fa6b4"
+    },
+    {
+      "file": "output/2025/tables-en/block_fig01_ten_numbers.md",
+      "bytes": 292,
+      "sha256": "e2ba242bcb025d382411fff97c40722bf9c838f35f583af29765e970eb595e59"
+    },
+    {
+      "file": "output/2025/tables-en/block_fig02_platforms.md",
+      "bytes": 300,
+      "sha256": "87b37c5785af1c61cf623c2f8c7ce496acb26211cacd4bbfc88ec274e1b59fcc"
+    },
+    {
+      "file": "output/2025/tables-en/block_fig03_months.md",
+      "bytes": 490,
+      "sha256": "7664a882b62564b596bf3464750941861ec152700637b7c834145bd6ae7a2cbb"
+    },
+    {
+      "file": "output/2025/tables-en/block_fig04_year.md",
+      "bytes": 450,
+      "sha256": "5f2fbfd0f356509a9161ce479d46ea95b5e2687012101145ebeb3d9738e7136e"
+    },
+    {
+      "file": "output/2025/tables-en/block_fig05_themes.md",
+      "bytes": 419,
+      "sha256": "27ea3e578cd60ae101a8bcddb21afaa900748ccd804f675dbc6a3b10ea8ffc09"
+    },
+    {
+      "file": "output/2025/tables-en/block_fig06_tone_themes.md",
+      "bytes": 396,
+      "sha256": "748d834550f632d1030ac1395f9f87ff4886687dbab3df1e814eac3021602623"
+    },
+    {
+      "file": "output/2025/tables-en/block_fig07_tone_labels.md",
+      "bytes": 480,
+      "sha256": "592453018dcde72b70bc2640a48751aea122eb931ab994544e93cccad853b11c"
+    },
+    {
+      "file": "output/2025/tables-en/block_fig08_stream.md",
+      "bytes": 498,
+      "sha256": "c4bd620a457b3adf0ac0ade1a925097f93c024bae76d938a01bc92cdf257bbc2"
+    },
+    {
+      "file": "output/2025/tables-en/block_fig09_concentration.md",
+      "bytes": 317,
+      "sha256": "29f41b48c67c3b5ea9ed1e6e88d07a9b8569e78fd03d4dd873f30556e848e022"
+    },
+    {
+      "file": "output/2025/tables-en/summary.md",
+      "bytes": 798,
+      "sha256": "88d811ae27af6c48b1c35e7726ec103d44420bc9042ae646fa18581d10fe5648"
+    },
+    {
+      "file": "output/2025/tables-en/table_events.md",
+      "bytes": 689,
+      "sha256": "20548ba406e53f8056ac59ead1492e2ce236397338be6b6e85f2718af514bbb0"
+    },
+    {
+      "file": "output/2025/tables-en/table_indicators.md",
+      "bytes": 721,
+      "sha256": "1f3d30b6c28894083dbee529012adc7aed19bd2dfa2709f2f0bdade5ab93d072"
+    },
+    {
+      "file": "output/2025/tables-en/table_league.md",
+      "bytes": 893,
+      "sha256": "ff17863b37c1654d6610707815941811c95c57b59a38acbac660aa3499dad51c"
+    },
+    {
+      "file": "output/2025/tables-en/table_platform.md",
+      "bytes": 839,
+      "sha256": "2e3b4dbeab301b38465afb80127ed076498091969a0a98d949526505e07a52fd"
+    },
+    {
+      "file": "output/2025/tables-en/table_special.md",
+      "bytes": 652,
+      "sha256": "2b2cd730170e0616631d8646dec2c0918936b38ef3aeaf40db472d041cee6a7d"
+    },
+    {
+      "file": "output/2025/tables-en/table_stream.md",
+      "bytes": 673,
+      "sha256": "375a9340fc440899ca1c80b1fd9e459e67bee64c4f89b73edee8a90dafc12e1b"
+    },
+    {
+      "file": "output/2025/tables-en/table_themes.md",
+      "bytes": 1341,
+      "sha256": "822d79e1bf8b0f231135515f0d7af6e40219c6426e04e5eca9ebc802289a1afd"
+    },
+    {
+      "file": "output/2025/tables-en/table_tone.md",
+      "bytes": 612,
+      "sha256": "52ff1993e87870a2ea7ee9f4d9b154646804f9c15953dceb5f8e628263989cd4"
+    },
+    {
+      "file": "output/2025/tables-en/table_typology.md",
+      "bytes": 547,
+      "sha256": "1bfe2dfdad391c1186f040a1a9fbfdd125349ab34cc30ab0d46e9ebc7e4b6195"
     },
     {
       "file": "output/2025/tables/block_fig01_deset_brojeva.md",

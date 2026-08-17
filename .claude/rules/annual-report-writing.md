@@ -121,28 +121,19 @@ tables with change arrows · the year timeline with a named "moment godine" · o
 onward, "što smo rekli prošle godine" (previous edition's key numbers revisited — the
 accountability page that makes editions serial).
 
-## Conversion design — and The Wall
+## Public-interest boundary
 
-1. **Teaser depth:** each aggregate finding may carry one italic line noting that the
-   disaggregation exists as a commissioned analysis ("Raščlamba po biskupijama dostupna
-   je kao naručena analiza."). One line, factual, never inside the finding sentence.
-2. **"Pitanja koja podaci otvaraju"** box closes each chapter: 2–3 questions the data
-   could answer but the report deliberately does not.
-3. **One product demo:** a single boxed one-pager ("Primjer dubinske analize") showing
-   what a commissioned piece looks like — usually an event post-mortem.
-4. **No service menu, no prices, no back page — PI decision, 2026-08-10.** The report
-   carries no list of what can be bought and names no price, not even "na upit". The
-   colophon keeps one neutral line saying where to write with questions about the data
-   and the method. Briefing requests remain the KPI; the report earns them by being
-   worth reading, not by advertising at the end. `05_report_checks.R` enforces this:
-   pricing vocabulary anywhere, or a named service anywhere, fails the build.
-5. **THE WALL is absolute, not positional.** With no back page there is no licensed
-   selling zone; promotional language belongs nowhere outside items 1–3's marked boxes.
-   If a passage could be read as advertising, rewrite or delete it.
+1. **No commercial direction — PI decision, 2026-08-17.** The report contains no commissioned-
+   analysis teaser, product demonstration, service menu, price or sales-oriented call to action in
+   either language. The colophon keeps one neutral line for questions about data and method.
+2. **"Pitanja koja podaci otvaraju"** boxes may close chapters with two or three genuine research
+   questions. They point toward inquiry, not something to buy.
+3. **The boundary is absolute.** If a passage could reasonably be read as advertising, rewrite or
+   remove it. `05_report_checks.R` enforces the decision in both language editions.
 
 ## Per-edition derivatives (produced WITH the report)
 
-A 10-slide briefing deck (the sales-meeting material — built from the sažetak and the
+A 10-slide briefing deck (built from the sažetak and the
 strongest figures), a 1-page shareable infographic, and a 3-number press release.
 Figures are designed so IKA and others can lift them unaltered.
 
@@ -152,8 +143,8 @@ Figures are designed so IKA and others can lift them unaltered.
 - [ ] Every figure/table regenerated this edition; no hand-edited artifacts.
 - [ ] Disclosure screen passed (named profiles = institutional outlets only;
       small cells suppressed; nothing row-level outside `output/private/`).
-- [ ] Croatian diacritics intact end-to-end; English executive summary matches the
-      sažetak scalar-for-scalar.
+- [ ] Croatian diacritics intact end-to-end; the full English edition uses the same generated
+      scalar registry and independently labelled figures.
 - [ ] numeric-claim-verifier and religion-media-domain-reviewer runs clean.
 - [ ] The Wall audit: findings prose read once specifically for promotional leakage.
 - [ ] Deck, infographic, and press release produced from the same generated assets.

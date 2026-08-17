@@ -1,0 +1,41 @@
+---
+title: "Kontakt"
+subtitle: "Pitanja o podacima, metodi i radu projekta"
+date: last-modified
+categories: ["Kontakt", "Otvorena znanost"]
+---
+
+Imate pitanje o podacima, metodologiji ili objavljenom nalazu? Pišite voditelju projekta na
+[luka.sikic@unicath.hr](mailto:luka.sikic@unicath.hr). U poruci navedite stranicu, graf ili skup
+podataka na koji se pitanje odnosi. Tako ćemo ga lakše provjeriti i dati precizan odgovor.
+
+<div class="card-grid">
+  <div class="info-card">
+    <div class="info-card-icon"><i class="bi bi-database-check"></i></div>
+    <h4>Podaci i metodologija</h4>
+    <p>Za pitanja o korpusu, pokazateljima, obuhvatu i ponovljivosti rezultata.</p>
+    <p><a href="metodologija.html">Otvorite metodologiju</a></p>
+  </div>
+  <div class="info-card">
+    <div class="info-card-icon"><i class="bi bi-journal-text"></i></div>
+    <h4>Istraživanja i citiranje</h4>
+    <p>Za znanstvenu suradnju, citiranje projekta i uporabu otvorenih agregata.</p>
+    <p><a href="resources.html">Otvorite resurse</a></p>
+  </div>
+  <div class="info-card">
+    <div class="info-card-icon"><i class="bi bi-bug"></i></div>
+    <h4>Tehnička poteškoća</h4>
+    <p>Za neispravnu poveznicu, problem u prikazu ili provjerljivu pogrešku u kodu.</p>
+    <p><a href="https://github.com/lusiki/DigiKat/issues">Prijavite problem na GitHubu</a></p>
+  </div>
+</div>
+
+## Voditelj projekta
+
+**doc. dr. sc. Luka Šikić**<br>
+Hrvatsko katoličko sveučilište<br>
+Ilica 242, 10000 Zagreb<br>
+[luka.sikic@unicath.hr](mailto:luka.sikic@unicath.hr)
+
+Na stranici nema kontaktnog obrasca ni prijave na newsletter. Slanjem poruke koristite svoj program
+za e-poštu i sami odlučujete koje podatke želite podijeliti.

@@ -4,6 +4,8 @@ project:
   resources:
     - assets/
     - .nojekyll
+    - listings.json
+    - favicon.ico
   # Only the active site sources render. Prevents auto-globbing root project
   # documentation and archived prototypes into the published docs/.
   render:
@@ -16,7 +18,15 @@ project:
 lang: hr
 website:
   title: "DigiKat"
+  description: "Otvoreni istraživački projekt koji mapira katoličke teme u hrvatskom digitalnom medijskom prostoru."
   site-url: https://lusiki.github.io/DigiKat/
+  favicon: assets/favicon.svg
+  image: assets/images/digikat-social-card.png
+  image-alt: "DigiKat. Katolički medijski opservatorij Hrvatskoga katoličkog sveučilišta."
+  open-graph:
+    locale: hr_HR
+    site-name: DigiKat
+  twitter-card: true
   navbar:
     left:
       - text: "Naslovnica"
@@ -65,13 +75,17 @@ website:
             href: pages/studije/katolicko-obrazovanje-i-stepinac.html
       - text: "Projektni raspored"
         href: pages/schedule.qmd
-      - text: "Obavijesti"
-        href: pages/news.qmd
       - text: "Resursi"
-        href: pages/resources.qmd
+        menu:
+          - text: "Resursi"
+            href: pages/resources.qmd
+          - text: "Obavijesti"
+            href: pages/news.qmd
+          - text: "Kontakt"
+            href: pages/contact.qmd
+          - text: "O stranici"
+            href: pages/site-info.qmd
     right:
-      - text: "O stranici"
-        href: pages/site-info.qmd
       - icon: github
         href: https://github.com/lusiki/DigiKat
   page-footer:
@@ -89,6 +103,8 @@ website:
         href: pages/metodologija.qmd
       - text: "Resursi"
         href: pages/resources.qmd
+      - text: "Kontakt"
+        href: pages/contact.qmd
       - text: "GitHub"
         href: https://github.com/lusiki/DigiKat
     right: |
@@ -116,5 +132,5 @@ format:
     monofont: "IBM Plex Mono"
     fig-align: center
     include-in-header:
-      - text: |
-          <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+      - file: assets/includes/site-head.html
+    canonical-url: true

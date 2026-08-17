@@ -4,7 +4,14 @@
     "href": "pages/site-info.html",
     "title": "O stranici",
     "section": "",
-    "text": "Ova stranica je napravljena u Quarto kroz Positron.\n\n\n&lt;div class=\"info-card-icon\"&gt;&lt;i class=\"bi bi-file-text\"&gt;&lt;/i&gt;&lt;/div&gt;\n&lt;h4&gt;Quarto&lt;/h4&gt;\n&lt;p&gt;Sustav za izradu znanstvenih i tehničkih publikacija koji povezuje tekst, kod i rezultate u jedinstveni web izvor.&lt;/p&gt;\n\n\n&lt;div class=\"info-card-icon\"&gt;&lt;i class=\"bi bi-laptop\"&gt;&lt;/i&gt;&lt;/div&gt;\n&lt;h4&gt;Positron&lt;/h4&gt;\n&lt;p&gt;Razvojno okruženje za rad s podacima u kojem je stranica napisana i izgrađena.&lt;/p&gt;\n\n\n&lt;div class=\"info-card-icon\"&gt;&lt;i class=\"bi bi-bar-chart-line\"&gt;&lt;/i&gt;&lt;/div&gt;\n&lt;h4&gt;R&lt;/h4&gt;\n&lt;p&gt;Programski jezik za statističku obradu i analizu podataka koji pokreće izračune na stranici.&lt;/p&gt;\n\n\n&lt;div class=\"info-card-icon\"&gt;&lt;i class=\"bi bi-globe\"&gt;&lt;/i&gt;&lt;/div&gt;\n&lt;h4&gt;GitHub Pages&lt;/h4&gt;\n&lt;p&gt;Platforma za objavu statičke web-stranice, gdje je projekt javno dostupan.&lt;/p&gt;\n\n\n\nTehnička bilješka o okruženju\nSljedeći zapis dokumentira okruženje u kojem je stranica izgrađena, dakle verziju R-a, operacijski sustav i učitane pakete. Služi reproducibilnosti i lakšoj replikaciji.\n\n\nR version 4.6.0 (2026-04-24 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 26200)\n\nMatrix products: default\n  LAPACK version 3.12.1\n\nlocale:\n[1] LC_COLLATE=Croatian_Croatia.utf8  LC_CTYPE=Croatian_Croatia.utf8   \n[3] LC_MONETARY=Croatian_Croatia.utf8 LC_NUMERIC=C                     \n[5] LC_TIME=Croatian_Croatia.utf8    \n\ntime zone: Europe/Zagreb\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices datasets  utils     methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.6.0    fastmap_1.2.0     cli_3.6.6        \n [5] htmltools_0.5.9   tools_4.6.0       otel_0.2.0        yaml_2.3.12      \n [9] rmarkdown_2.31    knitr_1.51        jsonlite_2.0.0    xfun_0.59        \n[13] digest_0.6.39     rlang_1.3.0       renv_1.2.3        evaluate_1.0.5"
+    "text": "Ova stranica je napravljena u Quarto kroz Positron."
+  },
+  {
+    "objectID": "pages/site-info.html#privatnost-i-mjerenje-posjeta",
+    "href": "pages/site-info.html#privatnost-i-mjerenje-posjeta",
+    "title": "O stranici",
+    "section": "Privatnost i mjerenje posjeta",
+    "text": "Privatnost i mjerenje posjeta\nDigiKat trenutačno ne učitava vlastiti alat za analitiku, ne postavlja kolačiće za praćenje i ne vodi popis posjetitelja. Stranicu poslužuje GitHub Pages. GitHub navodi da pri posjetu bilježi IP adresu u sigurnosne svrhe, neovisno o tome je li posjetitelj prijavljen.\nAko projekt naknadno uključi zbirno mjerenje posjeta, ova će stranica prije toga navesti alat, svrhu i vrstu podataka koji se obrađuju.\n\nTehnička bilješka o okruženju\nSljedeći zapis dokumentira okruženje u kojem je stranica izgrađena, dakle verziju R-a, operacijski sustav i učitane pakete. Služi reproducibilnosti i lakšoj replikaciji.\n\n\nR version 4.6.0 (2026-04-24 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 26200)\n\nMatrix products: default\n  LAPACK version 3.12.1\n\nlocale:\n[1] LC_COLLATE=Croatian_Croatia.utf8  LC_CTYPE=Croatian_Croatia.utf8   \n[3] LC_MONETARY=Croatian_Croatia.utf8 LC_NUMERIC=C                     \n[5] LC_TIME=Croatian_Croatia.utf8    \n\ntime zone: Europe/Zagreb\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices datasets  utils     methods   base     \n\nloaded via a namespace (and not attached):\n [1] htmlwidgets_1.6.4 compiler_4.6.0    fastmap_1.2.0     cli_3.6.6        \n [5] htmltools_0.5.9   tools_4.6.0       otel_0.2.0        yaml_2.3.12      \n [9] rmarkdown_2.31    knitr_1.51        jsonlite_2.0.0    xfun_0.59        \n[13] digest_0.6.39     rlang_1.3.0       renv_1.2.3        evaluate_1.0.5"
   },
   {
     "objectID": "pages/resources.html",
@@ -2156,6 +2163,69 @@
     "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
+    "objectID": "pages/contact.html",
+    "href": "pages/contact.html",
+    "title": "Kontakt",
+    "section": "",
+    "text": "Imate pitanje o podacima, metodologiji ili objavljenom nalazu? Pišite voditelju projekta na luka.sikic@unicath.hr. U poruci navedite stranicu, graf ili skup podataka na koji se pitanje odnosi. Tako ćemo ga lakše provjeriti i dati precizan odgovor."
+  },
+  {
+    "objectID": "pages/contact.html#voditelj-projekta",
+    "href": "pages/contact.html#voditelj-projekta",
+    "title": "Kontakt",
+    "section": "Voditelj projekta",
+    "text": "Voditelj projekta\ndoc. dr. sc. Luka Šikić\nHrvatsko katoličko sveučilište\nIlica 242, 10000 Zagreb\nluka.sikic@unicath.hr\nNa stranici nema kontaktnog obrasca ni prijave na newsletter. Slanjem poruke koristite svoj program za e-poštu i sami odlučujete koje podatke želite podijeliti."
+  },
+  {
+    "objectID": "pages/about.html",
+    "href": "pages/about.html",
+    "title": "O projektu",
+    "section": "",
+    "text": "O katoličkim se temama u hrvatskim medijima objavljuje svakodnevno, ali gotovo nitko ne zna koliko toga ima, tko to objavljuje i što od toga dopre do ljudi. DigiKat te odgovore mjeri i objavljuje. Rad projekta stoji na četiri cilja.\n\n\n\n\n\n\n\nSvakodnevno i automatsko prikupljanje objava s portala, društvenih mreža i foruma, bez ručnog probiranja.\n\n\n\n\n\n\n\n\nUređena baza s javnim popisom sadržaja, agregatima, kodom i metodologijom, uz kontroliran pristup punom tekstu objava.\n\n\n\n\n\n\n\n\nRačunalna obrada svih tih objava odjednom, kako bi se vidjelo o čemu se piše, kakvim se rječnikom i kada pažnja raste.\n\n\n\n\n\n\n\n\nObjava nalaza kroz radove, konferencije i radionice, uz otvoreno objavljen kod i metodologiju.\n\n\n\nPostupak je u cijelosti opisan na stranici Metodologija."
+  },
+  {
+    "objectID": "pages/about.html#ciljevi-projekta",
+    "href": "pages/about.html#ciljevi-projekta",
+    "title": "O projektu",
+    "section": "",
+    "text": "O katoličkim se temama u hrvatskim medijima objavljuje svakodnevno, ali gotovo nitko ne zna koliko toga ima, tko to objavljuje i što od toga dopre do ljudi. DigiKat te odgovore mjeri i objavljuje. Rad projekta stoji na četiri cilja.\n\n\n\n\n\n\n\nSvakodnevno i automatsko prikupljanje objava s portala, društvenih mreža i foruma, bez ručnog probiranja.\n\n\n\n\n\n\n\n\nUređena baza s javnim popisom sadržaja, agregatima, kodom i metodologijom, uz kontroliran pristup punom tekstu objava.\n\n\n\n\n\n\n\n\nRačunalna obrada svih tih objava odjednom, kako bi se vidjelo o čemu se piše, kakvim se rječnikom i kada pažnja raste.\n\n\n\n\n\n\n\n\nObjava nalaza kroz radove, konferencije i radionice, uz otvoreno objavljen kod i metodologiju.\n\n\n\nPostupak je u cijelosti opisan na stranici Metodologija."
+  },
+  {
+    "objectID": "pages/about.html#istraživačka-pitanja",
+    "href": "pages/about.html#istraživačka-pitanja",
+    "title": "O projektu",
+    "section": "Istraživačka pitanja",
+    "text": "Istraživačka pitanja\nProjekt je organiziran oko jednog temeljnog i četiri izvedena istraživačka pitanja koja usmjeravaju prikupljanje i analizu korpusa. Uz svako je pitanje navedeno i što ono znači u svakodnevnom jeziku.\n\n\nQ1\n\n\n\nKako se katolička tematika prikazuje i kako se o njoj raspravlja u digitalnom medijskom prostoru?\n\n\nŠto se zapravo objavljuje o Crkvi i kojim se rječnikom o tome govori?\n\n\n\n\n\n\nQ2\n\n\n\nKakve su veze između katoličkih tema i drugih društvenih i političkih pitanja?\n\n\nUz koje se druge teme katoličke teme najčešće nađu?\n\n\n\n\n\nQ3\n\n\n\nKoji su akteri i institucije najistaknutiji u tim raspravama?\n\n\nTko se u njima najviše čuje?\n\n\n\n\n\nQ4\n\n\n\nKako se narativi i tonalitet mijenjaju ovisno o aktualnim događajima?\n\n\nŠto se s temama i tonom dogodi kada se nešto važno dogodi?\n\n\n\n\n\nQ5\n\n\n\nKakva je mrežna dinamika između različitih platformi i medija koji obrađuju ove teme?\n\n\nKako sadržaj putuje između portala i društvenih mreža?"
+  },
+  {
+    "objectID": "pages/about.html#od-medijske-objave-do-analize",
+    "href": "pages/about.html#od-medijske-objave-do-analize",
+    "title": "O projektu",
+    "section": "Od medijske objave do analize",
+    "text": "Od medijske objave do analize\nPodaci se prikupljaju u akumulator, iz njega se jedinstvenim pravilom izrezuje službeni korpus, a zatim se obrađuju i čitaju kroz četiri analitičke razine te peti, vremenski presjek. Dovršena tematska istraživanja ostaju na verzioniranim ulazima na kojima su objavljena.\n\n\n\n\n\n\n01\n\n\n\nPrikupljanje\n\n\nMedijske objave s portala, društvenih platformi i foruma pristižu kao tablice u kojima je svaki redak jedna objava, s tekstom, izvorom, datumom i pokazateljima dosega i angažmana.\n\n\n\nxlsxingest\n\n\n\n\n02\n\n\n\nFiltriranje\n\n\nOd svega prikupljenog zadržavaju se samo objave koje doista govore o katoličkim temama. Odluku donosi popis religijskih pojmova i, nakon njega, model uvježban na ručno pročitanim primjerima. Pravilo je isto za cijelo razdoblje, a u cijelosti je opisano u Metodologiji.\n\n\n\npravilo uključivanjaisto za sve godine\n\n\n\n\n03\n\n\n\nSlužbeni korpus\n\n\nAkumulator zadržava sve što je servis isporučio. Iz njega je izveden službeni korpus od 413.985 objava i 54 stupca, na kojem se grade žive stranice, mape i javni agregati. Dovršena tematska istraživanja nisu prebačena na novi ulaz.\n\n\n\n413.985 × 54manifest + provenance\n\n\n\n\n04\n\n\n\nObrada\n\n\nIz službenog korpusa računaju se pregledi po godini i platformi, a tekst se računalno obrađuje kako bi se riječi mogle pouzdano brojiti i uspoređivati.\n\n\n\npreglediobrada teksta\n\n\n\n\n05\n\n\n\nAnaliza\n\n\nSlužbeni korpus čita se kroz četiri analitičke razine, a to su mapa ekosustava, tematske struje, atmosfera diskursa i fokus na događaje. Peti prikaz daje vremenski presjek evolucije ekosustava.\n\n\n\nekosustavtemediskursdogađaji"
+  },
+  {
+    "objectID": "pages/about.html#otvorena-znanost-na-djelu",
+    "href": "pages/about.html#otvorena-znanost-na-djelu",
+    "title": "O projektu",
+    "section": "Otvorena znanost na djelu",
+    "text": "Otvorena znanost na djelu\nPosebna vrijednost projekta leži u njegovoj predanosti principima otvorenosti i transparentnosti. Naš rad temelji se na principima otvorene znanosti i reproducibilnosti istraživanja.\nSvi alati, skripte i metodološki okviri bit će dostupni kao otvoreni kod na GitHubu, omogućujući drugima da provjere, repliciraju i nadograde naš rad.\nKroz ovakav pristup potičemo suradnju, jačamo istraživačke profile mladih znanstvenika i doprinosimo otvorenijoj i reproducibilnoj znanstvenoj praksi."
+  },
+  {
+    "objectID": "pages/about.html#voditelj-projekta",
+    "href": "pages/about.html#voditelj-projekta",
+    "title": "O projektu",
+    "section": "Voditelj projekta",
+    "text": "Voditelj projekta\nProjekt vodi doc. dr. sc. Luka Šikić (Hrvatsko katoličko sveučilište, Komunikologija), a okuplja interdisciplinarni tim istraživačica i istraživača iz komunikologije, sociologije, statistike, povijesti i odnosa s javnošću.\n\n\nLŠ\n\n\n\ndoc. dr. sc. Luka Šikić\n\n\nVoditelj projekta\n\n\nHKS · Komunikologija\n\n\n\n\n\nPrikaži suradnice i suradnike (9)\n\n\n\n\nAS\n\n\n\nizv. prof. dr. sc. Andreja Sršen\n\n\nSuradnica\n\n\nFHS · Sociologija\n\n\n\n\n\nIP\n\n\n\nizv. prof. dr. sc. Irena Palić\n\n\nSuradnica\n\n\nEFZG · Statistika\n\n\n\n\n\nLC\n\n\n\nizv. prof. dr. sc. Lana Ciboci Perša\n\n\nSuradnica\n\n\nHKS · Komunikologija\n\n\n\n\n\nPP\n\n\n\nizv. prof. dr. sc. Petra Palić\n\n\nSuradnica\n\n\nHKS · Sociologija\n\n\n\n\n\nIU\n\n\n\ndoc. dr. sc. Ivan Uldrijan\n\n\nSuradnik\n\n\nHKS · Komunikologija\n\n\n\n\n\nSL\n\n\n\ndr. sc. Suzana Obrovac Lipar\n\n\nSuradnica\n\n\nHKS · Odnosi s javnošću\n\n\n\n\n\nHK\n\n\n\nHana Kilijan\n\n\nSuradnica\n\n\nHKS · Komunikologija\n\n\n\n\n\nVN\n\n\n\nVeronika Novoselac\n\n\nSuradnica\n\n\nHKS · Povijest\n\n\n\n\n\nMT\n\n\n\nMatea Topić Crnoja\n\n\nSuradnica\n\n\nHKS · Sociologija"
+  },
+  {
+    "objectID": "pages/about.html#pridružite-se-našem-istraživanju",
+    "href": "pages/about.html#pridružite-se-našem-istraživanju",
+    "title": "O projektu",
+    "section": "Pridružite se našem istraživanju!",
+    "text": "Pridružite se našem istraživanju!\nTražimo motivirane istraživače i studente koji žele biti dio inovativnog projekta koji spaja društvene znanosti, podatkovnu analitiku i principe otvorene znanosti.\nKroz praktičan rad razvijate vještine u analizi velikih količina podataka, obradi teksta i statističkom modeliranju.\n\nBig Data Text Mining Statističko modeliranje R Python NLP Strojno učenje Mrežna analiza\n\nSudjelovanjem dobivate sljedeće.\n\n\n\n\n\n\nPraktično iskustvo\n\n\nRad s velikim podacima koristeći alate poput R i Python.\n\n\n\n\n\n\n\nTehničke vještine\n\n\nObrada prirodnog jezika (NLP), strojno učenje i mrežna analiza.\n\n\n\n\n\n\n\nZnanstveni doprinos\n\n\nRezultati koji su javno dostupni i citirani.\n\n\n\n\n\n\n\nDio inicijative\n\n\nKoja aktivno promiče transparentnost, suradnju i inovacije u znanosti."
+  },
+  {
     "objectID": "pages/baza.html",
     "href": "pages/baza.html",
     "title": "Baza podataka — opis korpusa katoličkoga digitalnog medijskog prostora",
@@ -2259,55 +2329,6 @@
     "title": "Baza podataka — opis korpusa katoličkoga digitalnog medijskog prostora",
     "section": "Referenca s potpunim popisom varijabli",
     "text": "Referenca s potpunim popisom varijabli\n\n\n\n\nSve 54 varijable službenoga korpusa\n\n\nVarijabla\nSkupina\nTip\nN jedinstvenih\nNedostaje\n\n\n\n\nDATE\nVremenske\ncharacter\n1.783\n0,0 %\n\n\nTIME\nVremenske\ncharacter\n72.034\n0,0 %\n\n\nTITLE\nSadržaj i tekst\ncharacter\n358.759\n0,0 %\n\n\nFROM\nIzvor i akter\ncharacter\n10.777\n0,0 %\n\n\nAUTHOR\nIzvor i akter\ncharacter\n13.202\n35,2 %\n\n\nURL\nSadržaj i tekst\ncharacter\n408.969\n0,0 %\n\n\nURL_PHOTO\nSadržaj i tekst\ncharacter\n284.610\n2,1 %\n\n\nSOURCE_TYPE\nIzvor i akter\ncharacter\n9\n0,0 %\n\n\nGROUP_NAME\nMonitoring i podudaranje\ncharacter\n2\n0,0 %\n\n\nKEYWORD_NAME\nMonitoring i podudaranje\ncharacter\n2\n0,0 %\n\n\nFOUND_KEYWORDS\nMonitoring i podudaranje\ncharacter\n161.416\n0,0 %\n\n\nLANGUAGES\nMonitoring i podudaranje\ncharacter\n328\n0,0 %\n\n\nLOCATIONS\nMonitoring i podudaranje\ncharacter\n154\n0,0 %\n\n\nTAGS\nMonitoring i podudaranje\nlogical\n1\n100,0 %\n\n\nMANUAL_SENTIMENT\nTonalitet\nlogical\n1\n100,0 %\n\n\nAUTO_SENTIMENT\nTonalitet\ncharacter\n4\n0,0 %\n\n\nMENTION_SNIPPET\nSadržaj i tekst\ncharacter\n310.921\n15,0 %\n\n\nREACH\nAngažman i doseg\nnumeric\n25.475\n4,1 %\n\n\nVIRALITY\nAngažman i doseg\nnumeric\n51.570\n30,8 %\n\n\nENGAGEMENT_RATE\nAngažman i doseg\nnumeric\n108.631\n30,1 %\n\n\nINTERACTIONS\nAngažman i doseg\nnumeric\n4.185\n2,7 %\n\n\nFOLLOWERS_COUNT\nAngažman i doseg\nnumeric\n22.512\n82,2 %\n\n\nLIKE_COUNT\nAngažman i doseg\nnumeric\n3.625\n3,7 %\n\n\nCOMMENT_COUNT\nAngažman i doseg\nnumeric\n1.579\n4,9 %\n\n\nSHARE_COUNT\nAngažman i doseg\nnumeric\n613\n15,4 %\n\n\nTWEET_COUNT\nAngažman i doseg\nlogical\n1\n100,0 %\n\n\nLOVE_COUNT\nAngažman i doseg\nnumeric\n38\n84,7 %\n\n\nWOW_COUNT\nAngažman i doseg\nnumeric\n13\n84,7 %\n\n\nHAHA_COUNT\nAngažman i doseg\nnumeric\n40\n84,7 %\n\n\nSAD_COUNT\nAngažman i doseg\nnumeric\n21\n84,7 %\n\n\nANGRY_COUNT\nAngažman i doseg\nnumeric\n31\n84,7 %\n\n\nTOTAL_REACTIONS_COUNT\nAngažman i doseg\nnumeric\n4.165\n3,4 %\n\n\nFAVORITE_COUNT\nAngažman i doseg\nnumeric\n169\n99,1 %\n\n\nRETWEET_COUNT\nAngažman i doseg\nnumeric\n42\n99,1 %\n\n\nVIEW_COUNT\nAngažman i doseg\nnumeric\n8.995\n87,9 %\n\n\nDISLIKE_COUNT\nAngažman i doseg\nnumeric\n35\n99,1 %\n\n\nCOUNT\nAngažman i doseg\nlogical\n1\n100,0 %\n\n\nREPOST_COUNT\nAngažman i doseg\nnumeric\n8\n99,9 %\n\n\nREDDIT_TYPE\nAngažman i doseg\ncharacter\n3\n98,6 %\n\n\nREDDIT_SCORE\nAngažman i doseg\nnumeric\n25\n98,6 %\n\n\nINFLUENCE_SCORE\nAngažman i doseg\nnumeric\n11\n9,7 %\n\n\nTWEET_TYPE\nAngažman i doseg\ncharacter\n4\n99,1 %\n\n\nTWEET_SOURCE_NAME\nAngažman i doseg\ncharacter\n21\n99,6 %\n\n\nTWEET_SOURCE_URL\nAngažman i doseg\ncharacter\n21\n99,6 %\n\n\nFULL_TEXT\nSadržaj i tekst\ncharacter\n400.249\n0,0 %\n\n\nyear\nVremenske\nnumeric\n6\n0,0 %\n\n\ndata_source\nMonitoring i podudaranje\ncharacter\n2\n0,0 %\n\n\ndk_era\nPodrijetlo filtriranja\ncharacter\n2\n0,0 %\n\n\ndk_master_row\nPodrijetlo filtriranja\ninteger\n413.985\n0,0 %\n\n\ndk_n_decisive\nPodrijetlo filtriranja\ninteger\n44\n0,0 %\n\n\ndk_n_total\nPodrijetlo filtriranja\ninteger\n55\n0,0 %\n\n\ndk_score\nPodrijetlo filtriranja\nnumeric\n395.522\n0,0 %\n\n\ndk_old_rule\nPodrijetlo filtriranja\nlogical\n2\n0,0 %\n\n\ndk_rule\nPodrijetlo filtriranja\ncharacter\n1\n0,0 %\n\n\n\n\n\n\n\nKontakt: luka.sikic@unicath.hr · ORCID: 0009-0006-3519-0272"
-  },
-  {
-    "objectID": "pages/about.html",
-    "href": "pages/about.html",
-    "title": "O projektu",
-    "section": "",
-    "text": "O katoličkim se temama u hrvatskim medijima objavljuje svakodnevno, ali gotovo nitko ne zna koliko toga ima, tko to objavljuje i što od toga dopre do ljudi. DigiKat te odgovore mjeri i objavljuje. Rad projekta stoji na četiri cilja.\n\n\n\n\n\n\n\nSvakodnevno i automatsko prikupljanje objava s portala, društvenih mreža i foruma, bez ručnog probiranja.\n\n\n\n\n\n\n\n\nUređena baza s javnim popisom sadržaja, agregatima, kodom i metodologijom, uz kontroliran pristup punom tekstu objava.\n\n\n\n\n\n\n\n\nRačunalna obrada svih tih objava odjednom, kako bi se vidjelo o čemu se piše, kakvim se rječnikom i kada pažnja raste.\n\n\n\n\n\n\n\n\nObjava nalaza kroz radove, konferencije i radionice, uz otvoreno objavljen kod i metodologiju.\n\n\n\nPostupak je u cijelosti opisan na stranici Metodologija."
-  },
-  {
-    "objectID": "pages/about.html#ciljevi-projekta",
-    "href": "pages/about.html#ciljevi-projekta",
-    "title": "O projektu",
-    "section": "",
-    "text": "O katoličkim se temama u hrvatskim medijima objavljuje svakodnevno, ali gotovo nitko ne zna koliko toga ima, tko to objavljuje i što od toga dopre do ljudi. DigiKat te odgovore mjeri i objavljuje. Rad projekta stoji na četiri cilja.\n\n\n\n\n\n\n\nSvakodnevno i automatsko prikupljanje objava s portala, društvenih mreža i foruma, bez ručnog probiranja.\n\n\n\n\n\n\n\n\nUređena baza s javnim popisom sadržaja, agregatima, kodom i metodologijom, uz kontroliran pristup punom tekstu objava.\n\n\n\n\n\n\n\n\nRačunalna obrada svih tih objava odjednom, kako bi se vidjelo o čemu se piše, kakvim se rječnikom i kada pažnja raste.\n\n\n\n\n\n\n\n\nObjava nalaza kroz radove, konferencije i radionice, uz otvoreno objavljen kod i metodologiju.\n\n\n\nPostupak je u cijelosti opisan na stranici Metodologija."
-  },
-  {
-    "objectID": "pages/about.html#istraživačka-pitanja",
-    "href": "pages/about.html#istraživačka-pitanja",
-    "title": "O projektu",
-    "section": "Istraživačka pitanja",
-    "text": "Istraživačka pitanja\nProjekt je organiziran oko jednog temeljnog i četiri izvedena istraživačka pitanja koja usmjeravaju prikupljanje i analizu korpusa. Uz svako je pitanje navedeno i što ono znači u svakodnevnom jeziku.\n\n\nQ1\n\n\n\nKako se katolička tematika prikazuje i kako se o njoj raspravlja u digitalnom medijskom prostoru?\n\n\nŠto se zapravo objavljuje o Crkvi i kojim se rječnikom o tome govori?\n\n\n\n\n\n\nQ2\n\n\n\nKakve su veze između katoličkih tema i drugih društvenih i političkih pitanja?\n\n\nUz koje se druge teme katoličke teme najčešće nađu?\n\n\n\n\n\nQ3\n\n\n\nKoji su akteri i institucije najistaknutiji u tim raspravama?\n\n\nTko se u njima najviše čuje?\n\n\n\n\n\nQ4\n\n\n\nKako se narativi i tonalitet mijenjaju ovisno o aktualnim događajima?\n\n\nŠto se s temama i tonom dogodi kada se nešto važno dogodi?\n\n\n\n\n\nQ5\n\n\n\nKakva je mrežna dinamika između različitih platformi i medija koji obrađuju ove teme?\n\n\nKako sadržaj putuje između portala i društvenih mreža?"
-  },
-  {
-    "objectID": "pages/about.html#od-medijske-objave-do-analize",
-    "href": "pages/about.html#od-medijske-objave-do-analize",
-    "title": "O projektu",
-    "section": "Od medijske objave do analize",
-    "text": "Od medijske objave do analize\nPodaci se prikupljaju u akumulator, iz njega se jedinstvenim pravilom izrezuje službeni korpus, a zatim se obrađuju i čitaju kroz četiri analitičke razine te peti, vremenski presjek. Dovršena tematska istraživanja ostaju na verzioniranim ulazima na kojima su objavljena.\n\n\n\n\n\n\n01\n\n\n\nPrikupljanje\n\n\nMedijske objave s portala, društvenih platformi i foruma pristižu kao tablice u kojima je svaki redak jedna objava, s tekstom, izvorom, datumom i pokazateljima dosega i angažmana.\n\n\n\nxlsxingest\n\n\n\n\n02\n\n\n\nFiltriranje\n\n\nOd svega prikupljenog zadržavaju se samo objave koje doista govore o katoličkim temama. Odluku donosi popis religijskih pojmova i, nakon njega, model uvježban na ručno pročitanim primjerima. Pravilo je isto za cijelo razdoblje, a u cijelosti je opisano u Metodologiji.\n\n\n\npravilo uključivanjaisto za sve godine\n\n\n\n\n03\n\n\n\nSlužbeni korpus\n\n\nAkumulator zadržava sve što je servis isporučio. Iz njega je izveden službeni korpus od 413.985 objava i 54 stupca, na kojem se grade žive stranice, mape i javni agregati. Dovršena tematska istraživanja nisu prebačena na novi ulaz.\n\n\n\n413.985 × 54manifest + provenance\n\n\n\n\n04\n\n\n\nObrada\n\n\nIz službenog korpusa računaju se pregledi po godini i platformi, a tekst se računalno obrađuje kako bi se riječi mogle pouzdano brojiti i uspoređivati.\n\n\n\npreglediobrada teksta\n\n\n\n\n05\n\n\n\nAnaliza\n\n\nSlužbeni korpus čita se kroz četiri analitičke razine, a to su mapa ekosustava, tematske struje, atmosfera diskursa i fokus na događaje. Peti prikaz daje vremenski presjek evolucije ekosustava.\n\n\n\nekosustavtemediskursdogađaji"
-  },
-  {
-    "objectID": "pages/about.html#otvorena-znanost-na-djelu",
-    "href": "pages/about.html#otvorena-znanost-na-djelu",
-    "title": "O projektu",
-    "section": "Otvorena znanost na djelu",
-    "text": "Otvorena znanost na djelu\nPosebna vrijednost projekta leži u njegovoj predanosti principima otvorenosti i transparentnosti. Naš rad temelji se na principima otvorene znanosti i reproducibilnosti istraživanja.\nSvi alati, skripte i metodološki okviri bit će dostupni kao otvoreni kod na GitHubu, omogućujući drugima da provjere, repliciraju i nadograde naš rad.\nKroz ovakav pristup potičemo suradnju, jačamo istraživačke profile mladih znanstvenika i doprinosimo otvorenijoj i reproducibilnoj znanstvenoj praksi."
-  },
-  {
-    "objectID": "pages/about.html#voditelj-projekta",
-    "href": "pages/about.html#voditelj-projekta",
-    "title": "O projektu",
-    "section": "Voditelj projekta",
-    "text": "Voditelj projekta\nProjekt vodi doc. dr. sc. Luka Šikić (Hrvatsko katoličko sveučilište, Komunikologija), a okuplja interdisciplinarni tim istraživačica i istraživača iz komunikologije, sociologije, statistike, povijesti i odnosa s javnošću.\n\n\nLŠ\n\n\n\ndoc. dr. sc. Luka Šikić\n\n\nVoditelj projekta\n\n\nHKS · Komunikologija\n\n\n\n\n\nPrikaži suradnice i suradnike (9)\n\n\n\n\nAS\n\n\n\nizv. prof. dr. sc. Andreja Sršen\n\n\nSuradnica\n\n\nFHS · Sociologija\n\n\n\n\n\nIP\n\n\n\nizv. prof. dr. sc. Irena Palić\n\n\nSuradnica\n\n\nEFZG · Statistika\n\n\n\n\n\nLC\n\n\n\nizv. prof. dr. sc. Lana Ciboci Perša\n\n\nSuradnica\n\n\nHKS · Komunikologija\n\n\n\n\n\nPP\n\n\n\nizv. prof. dr. sc. Petra Palić\n\n\nSuradnica\n\n\nHKS · Sociologija\n\n\n\n\n\nIU\n\n\n\ndoc. dr. sc. Ivan Uldrijan\n\n\nSuradnik\n\n\nHKS · Komunikologija\n\n\n\n\n\nSL\n\n\n\ndr. sc. Suzana Obrovac Lipar\n\n\nSuradnica\n\n\nHKS · Odnosi s javnošću\n\n\n\n\n\nHK\n\n\n\nHana Kilijan\n\n\nSuradnica\n\n\nHKS · Komunikologija\n\n\n\n\n\nVN\n\n\n\nVeronika Novoselac\n\n\nSuradnica\n\n\nHKS · Povijest\n\n\n\n\n\nMT\n\n\n\nMatea Topić Crnoja\n\n\nSuradnica\n\n\nHKS · Sociologija"
-  },
-  {
-    "objectID": "pages/about.html#pridružite-se-našem-istraživanju",
-    "href": "pages/about.html#pridružite-se-našem-istraživanju",
-    "title": "O projektu",
-    "section": "Pridružite se našem istraživanju!",
-    "text": "Pridružite se našem istraživanju!\nTražimo motivirane istraživače i studente koji žele biti dio inovativnog projekta koji spaja društvene znanosti, podatkovnu analitiku i principe otvorene znanosti.\nKroz praktičan rad razvijate vještine u analizi velikih količina podataka, obradi teksta i statističkom modeliranju.\n\nBig Data Text Mining Statističko modeliranje R Python NLP Strojno učenje Mrežna analiza\n\nSudjelovanjem dobivate sljedeće.\n\n\n\n\n\n\nPraktično iskustvo\n\n\nRad s velikim podacima koristeći alate poput R i Python.\n\n\n\n\n\n\n\nTehničke vještine\n\n\nObrada prirodnog jezika (NLP), strojno učenje i mrežna analiza.\n\n\n\n\n\n\n\nZnanstveni doprinos\n\n\nRezultati koji su javno dostupni i citirani.\n\n\n\n\n\n\n\nDio inicijative\n\n\nKoja aktivno promiče transparentnost, suradnju i inovacije u znanosti."
   },
   {
     "objectID": "pages/izvori/facebook-24sata.html",
@@ -4394,397 +4415,5 @@
     "title": "Projektni raspored",
     "section": "",
     "text": "Vremenski plan projekta\nProjekt je strukturiran u šest faza kroz razdoblje od tri godine (2025.–2027.). Empirijski korpus pritom pokriva razdoblje 2021.–2026. Svaka faza ima specifične ciljeve i aktivnosti koje osiguravaju postupan i sustavan napredak.\n\n\n\n6\n\n\nFaza\n\n\n\n\n3\n\n\nGodine (2025.–2027.)\n\n\n\n\n3\n\n\nMape ekosustava\n\n\n\n\n\n\nGodina 1. Postavljanje temelja i prva analiza (2025.)\n\n\nFaza 1. Izgradnja infrastrukture i povijesna analiza (siječanj – lipanj 2025.)\n\n\n\n\n\n\nNapomenaGlavni cilj\n\n\n\nUspostaviti tehničke temelje projekta i prikupiti povijesne podatke.\n\n\n\nAnaliza povijesnih podataka: Prikupljanje i analiza objava iz razdoblja 2021.–2024. kako bi se definirali parametri za pretragu.\nIzgradnja infrastrukture: Postavljanje strukturirane baze podataka, projektnog repozitorija i web stranice.\nPočetak prikupljanja: Aktiviranje sustava za prikupljanje podataka u realnom vremenu.\n\n\n\nFaza 2. Prva podjela podataka i definiranje istraživanja (srpanj – prosinac 2025.)\n\n\n\n\n\n\nNapomenaGlavni cilj\n\n\n\nDefinirati prve smjerove tematskih istraživanja na temelju prikupljenih podataka.\n\n\n\nDefiniranje istraživanja: Organizacija radionice s projektnim timom za definiranje i podjelu prvih tematskih cjelina.\nKontinuirani rad: Nastavak prikupljanja podataka, održavanje baze i kontrola kvalitete.\n\n\n\n\n\n\nGodina 2. Dubinska analiza i razvoj (2026.)\n\n\nFaza 3. Prvi godišnji izvještaj i daljnji razvoj (siječanj – lipanj 2026.)\n\n\n\n\n\n\nNapomenaGlavni cilj\n\n\n\nIzraditi i prezentirati prvu Mapu ekosustava.\n\n\n\nPrva Mapa ekosustava: Obrada, analiza i vizualizacija podataka za 2025. godinu, uz prezentaciju rezultata.\nRazvoj istraživanja: Druga podjela podataka za nove ili produbljene tematske analize.\nKontinuirani rad: Prikupljanje, održavanje baze i kontrola kvalitete.\n\n\n\nFaza 4. Intenzivni istraživački rad (srpanj – prosinac 2026.)\n\n\n\n\n\n\nNapomenaGlavni cilj\n\n\n\nFokus na provođenju definiranih tematskih istraživanja.\n\n\n\nIstraživanje: Timski rad na analizi dodijeljenih tematskih cjelina i priprema prvih nacrta radova.\nKontinuirani rad: Prikupljanje, održavanje baze i kontrola kvalitete.\n\n\n\n\n\n\nGodina 3. Sinteza i finalni rezultati (2027.)\n\n\nFaza 5. Drugi godišnji izvještaj i priprema za sintezu (siječanj – lipanj 2027.)\n\n\n\n\n\n\nNapomenaGlavni cilj\n\n\n\nAnalizirati podatke iz prethodne godine i integrirati prve rezultate tematskih istraživanja.\n\n\n\nDruga Mapa ekosustava: Obrada i analiza podataka za 2026. godinu te prezentacija novih uvida.\nPriprema publikacija: Rad na znanstvenim člancima i konferencijskim izlaganjima.\nKontinuirani rad: Prikupljanje, održavanje baze i kontrola kvalitete.\n\n\n\nFaza 6. Finalna sinteza i zaključci (srpanj – prosinac 2027.)\n\n\n\n\n\n\nNapomenaGlavni cilj\n\n\n\nPredstaviti cjelovite rezultate projekta.\n\n\n\nZavršni izvještaj i prezentacija. Izrada treće, finalne Mape ekosustava (za 2027. godinu) i prezentacija koja objedinjuje sve navedeno.\n\nZbirni pregled ekosustava (2021.–2027.).\nKljučne rezultate svih provedenih tematskih istraživanja.\nPreporuke za buduća istraživanja.\n\nArhiviranje: Finalizacija i arhiviranje baze podataka i koda za dugoročnu dostupnost."
-  },
-  {
-    "objectID": "pages/studije/crkva-i-dezinformacije.html",
-    "href": "pages/studije/crkva-i-dezinformacije.html",
-    "title": "Tko govori iz katoličkoga medijskog prostora",
-    "section": "",
-    "text": "Rad istražuje narativne okvire u hrvatskim katoličkim web medijima (2021.–2026.) i pokazuje da agregirana oznaka katoličkog medija prikriva važnu unutarnju razliku. Katolički orijentirani portali češće od službenih crkvenih glasila aktiviraju svaki od osam mjerenih okvira."
-  },
-  {
-    "objectID": "pages/studije/crkva-i-dezinformacije.html#istraživačko-pitanje",
-    "href": "pages/studije/crkva-i-dezinformacije.html#istraživačko-pitanje",
-    "title": "Tko govori iz katoličkoga medijskog prostora",
-    "section": "Istraživačko pitanje",
-    "text": "Istraživačko pitanje\nRazlikuju li se katolički mediji od ostalih medijskih tipova u uporabi narativnih okvira nakon kontrole duljine članka i razdoblja objave, koje se kombinacije okvira udružuju u prepoznatljive interpretativne pakete te u kojoj se mjeri razlikuju narativne strategije službenih crkvenih medija (npr. IKA, Glas Koncila) od katolički orijentiranih portala bez izravne uredničke odgovornosti prema crkvenoj hijerarhiji (npr. narod.hr, dnevno.hr)."
-  },
-  {
-    "objectID": "pages/studije/crkva-i-dezinformacije.html#podaci-i-metode",
-    "href": "pages/studije/crkva-i-dezinformacije.html#podaci-i-metode",
-    "title": "Tko govori iz katoličkoga medijskog prostora",
-    "section": "Podaci i metode",
-    "text": "Podaci i metode\nAnaliza polazi od službenoga korpusa s 413.985 objava, obnovljenoga 10. kolovoza 2026. Nakon izdvajanja weba i uklanjanja 4.078 ponovljenih URL-ova, analitički presjek obuhvaća 282.584 članaka iz 1.995 izvora. Od toga 91.292 članaka dolazi iz 65 katoličkih izvora. Podaci završavaju 11. lipnja 2026.\nOsam narativnih okvira prepoznaje se rječničkim postupkom osjetljivim na hrvatsku morfologiju. Logistički modeli kontroliraju godinu i duljinu članka, a standardne su pogreške grupirane po izvoru. Izvorna ručna provjera na 200 članaka nije ponovljena za mjesece dodane obnovom korpusa. Promjena načina prikupljanja 2024. i nepotpuna 2026. dodatno ograničavaju vremensku interpretaciju."
-  },
-  {
-    "objectID": "pages/studije/crkva-i-dezinformacije.html#ključni-nalaz",
-    "href": "pages/studije/crkva-i-dezinformacije.html#ključni-nalaz",
-    "title": "Tko govori iz katoličkoga medijskog prostora",
-    "section": "Ključni nalaz",
-    "text": "Ključni nalaz\nKatolički mediji kao cjelina nemaju veću vjerojatnost uporabe obrane vjere ni tradicionalnih vrijednosti od ostalih medija. Jedina statistički značajna agregirana razlika jest manja vjerojatnost okvira zavjere u katoličkim medijima, uz OR 0,40.\nUnutarnja je razlika snažna. Katolički orijentirani portali statistički značajno češće od službenih crkvenih glasila aktiviraju svih osam okvira. Omjeri izgleda kreću se od 1,21 za tradicionalne vrijednosti do 4,88 za zavjeru. Orijentirani portali, dakle, ne zamjenjuju afirmativne okvire antagonističkima. Oni pojačavaju cijeli mjereni narativni repertoar. Supojavljivanja okvira ostaju slaba, pa podaci ne podupiru tvrdnju o čvrstim interpretativnim paketima.\n\n\n\n282.584\n\n\nweb članaka u novom presjeku\n\n\n\n\n91.292\n\n\nčlanaka iz katoličkih izvora\n\n\n\n\n8 / 8\n\n\nokvira češćih na orijentiranim portalima\n\n\n\n\nOR 4,88\n\n\nnajveća unutarnja razlika za zavjeru"
-  },
-  {
-    "objectID": "pages/studije/crkva-i-dezinformacije.html#cijeli-rad",
-    "href": "pages/studije/crkva-i-dezinformacije.html#cijeli-rad",
-    "title": "Tko govori iz katoličkoga medijskog prostora",
-    "section": "Cijeli rad",
-    "text": "Cijeli rad\nRukopis je dostupan u tri usklađena formata.\n\nHTMLČitanje u pregledniku PDFPreuzimanje i ispis WordUređivanje rukopisa"
-  },
-  {
-    "objectID": "pages/studije/crkva-i-dezinformacije.html#status",
-    "href": "pages/studije/crkva-i-dezinformacije.html#status",
-    "title": "Tko govori iz katoličkoga medijskog prostora",
-    "section": "Status",
-    "text": "Status\nU recenziji. Dio je drugoga izlaznog toka projekta, koji obuhvaća tematske studije i radove. Popis je na stranici Projektni raspored."
-  },
-  {
-    "objectID": "pages/studije/hodocasnicki-turizam.html",
-    "href": "pages/studije/hodocasnicki-turizam.html",
-    "title": "Memorijalni okvir hrvatskih katoličkih odredišta",
-    "section": "",
-    "text": "Studija pokazuje da uobičajena binarna podjela medijskog diskursa o hrvatskim katoličkim odredištima na religijski i turistički registar previđa treći, kvantitativno značajan registar. To je memorijalni registar, u kojem se svetište ili hodočašće tematski povezuje sa žrtvama i ratnim sjećanjem."
-  },
-  {
-    "objectID": "pages/studije/hodocasnicki-turizam.html#istraživačko-pitanje",
-    "href": "pages/studije/hodocasnicki-turizam.html#istraživačko-pitanje",
-    "title": "Memorijalni okvir hrvatskih katoličkih odredišta",
-    "section": "Istraživačko pitanje",
-    "text": "Istraživačko pitanje\nKako se deset hrvatskih katoličkih odredišta (nacionalna i lokalna marijanska svetišta te nemarijanska svetišta poput Solina i Nina) prikazuju u digitalnim medijima te previđa li uvriježeni religijsko-turistički dvojac diskurs koji povezuje svetište s Domovinskim ratom i kolektivnom traumom."
-  },
-  {
-    "objectID": "pages/studije/hodocasnicki-turizam.html#podaci-i-metode",
-    "href": "pages/studije/hodocasnicki-turizam.html#podaci-i-metode",
-    "title": "Memorijalni okvir hrvatskih katoličkih odredišta",
-    "section": "Podaci i metode",
-    "text": "Podaci i metode\nAnalitički korpus obuhvaća 13.921 članak o deset odredišta (Sinj, Marija Bistrica, Trsat, Aljmaš, Voćin, Ludbreg, Krasno, Vepric, Solin, Nin) objavljen između siječnja 2021. i svibnja 2024. Rječničko označavanje šest registara (religijski, turistički, memorijalni, skandal i njihove kombinacije) kombinira se s hi-kvadrat dekompozicijom, multinomijalnom logističkom regresijom i strukturalnim modelom tema za induktivnu validaciju rječničke klasifikacije."
-  },
-  {
-    "objectID": "pages/studije/hodocasnicki-turizam.html#ključni-nalaz",
-    "href": "pages/studije/hodocasnicki-turizam.html#ključni-nalaz",
-    "title": "Memorijalni okvir hrvatskih katoličkih odredišta",
-    "section": "Ključni nalaz",
-    "text": "Ključni nalaz\n15,1 % članaka pripada religijsko-memorijalnom okviru. Gotovo svaki sedmi tekst o promatranim odredištima govori jezikom spomena i žrtve, a ne samo duhovnosti ili turizma. Memorijalni je registar raspoređen po svim tipovima odredišta, no izrazito koncentriran u Voćinu, mjestu zapadnoslavonskog masakra iz 1991., gdje mu pripada 42 % članaka. To je gotovo trostruko više od korpusnog prosjeka. Nalaz opstaje nakon kontrole za destinaciju, godinu, mjesec, platformu i blagdanski prozor."
-  },
-  {
-    "objectID": "pages/studije/hodocasnicki-turizam.html#cijeli-rad",
-    "href": "pages/studije/hodocasnicki-turizam.html#cijeli-rad",
-    "title": "Memorijalni okvir hrvatskih katoličkih odredišta",
-    "section": "Cijeli rad",
-    "text": "Cijeli rad\nPun tekst nacrta dostupan je u tri usklađena formata.\n\nHTMLČitanje u pregledniku PDFPreuzimanje i ispis WordUređivi dokument"
-  },
-  {
-    "objectID": "pages/studije/hodocasnicki-turizam.html#status",
-    "href": "pages/studije/hodocasnicki-turizam.html#status",
-    "title": "Memorijalni okvir hrvatskih katoličkih odredišta",
-    "section": "Status",
-    "text": "Status\nNacrt je u izradi. Potpisuju ga Matea Topić Crnoja, Petra Palić i Luka Šikić (Odjel za sociologiju, Hrvatsko katoličko sveučilište). Dio je drugoga izlaznog toka projekta, koji obuhvaća tematske studije i radove. Popis je na stranici Projektni raspored."
-  },
-  {
-    "objectID": "pages/studije/index.html",
-    "href": "pages/studije/index.html",
-    "title": "Tematska istraživanja",
-    "section": "",
-    "text": "Uz četiri analitičke razine mape medijskog prostora, DigiKat korpus služi i kao podloga za samostalne tematske studije. Svaka studija izdvaja vlastiti presjek korpusa, postavlja jedno istraživačko pitanje i vodi prema znanstvenom radu. Stranica svake studije sažima pitanje, podatke i metode te ključni nalaz, a gdje je rukopis dostupan, vodi i na njegov puni tekst.\nStudije su poredane kako se pojavljuju u izborniku. Odaberite studiju za detaljan prikaz.\n\n\nTržišta pažnje u religijskim digitalnim medijima\nKako se raspodjeljuje pažnja. Koncentracija pažnje, modaliteti angažmana i liturgijski ritam objavljivanja. Autori su Luka Šikić, Petra Palić i Siniša Kovačić · nacrt u izradi.\n\n\nMemorijalni okvir hrvatskih katoličkih odredišta\nSvetišta između hodočašća i sjećanja. Uz religijski i turistički registar, u prikazu marijanskih svetišta postoji i treći, memorijalni registar, koji svetište povezuje s ratnim sjećanjem. Autorice i autor su Matea Topić Crnoja, Petra Palić i Luka Šikić · nacrt u izradi.\n\n\nMedijska zastupljenost redovničkih zajednica\nTko dobiva pažnju među redovima. Koncentracija pažnje, spolna asimetrija i tipologija portala u izvještavanju o redovnicima i redovnicama (2021.–2025.). Autori su Hana Kilijan i Luka Šikić · nacrt dostupan.\n\n\nKatolički influenceri i institucionalni deficit pažnje\nOsobni brend nasuprot instituciji. Obnovljena analiza potvrđuje deficit interakcija po objavi i različite platformske strategije, ali ne nalazi odvojene tematske niše. Autori su Suzana Obrovac Lipar i Luka Šikić · nacrt dostupan.\n\n\nTko govori iz katoličkoga medijskog prostora\nJedna oznaka skriva različite glasove. U obnovljenom korpusu katolički mediji kao cjelina ne odstupaju na očekivanim afirmativnim okvirima, ali orijentirani portali češće od službenih glasila aktiviraju svih osam mjerenih okvira. Autori su Luka Šikić i Andreja Sršen · u recenziji.\n\n\nInflacija, informacije i odgođene promjene cijena\nKada sektor zna, a cijene čekaju. Datirano medijsko izvještavanje kao trag javno dostupnih informacija prije odgođene prilagodbe cijena u hrvatskom vjerskom sektoru. Autori su Luka Šikić i Petra Palić · rukopis za časopis.\n\n\nSocijalni nauk Crkve u javnoj raspravi o gospodarstvu\nVidljivo je ono što ima ime. Izričite oznake nauka rijetke su u raspravi o gospodarstvu, a vodstvo klimatskih tema nosi prepoznatljiv naslov Laudato si’, a ne veća prisutnost nauka u okolišnoj raspravi. Autori su Luka Šikić i Petra Palić · rukopis za časopis.\n\n\nVjera u sadašnjosti, sjećanje u mučeniku\nPodjela mnemoničkog rada. Katoličko obrazovanje organizira raspravu o sadašnjosti, dok se kulturno sjećanje koncentrira u liku Alojzija Stepinca (2021.–2025.). Autori su Veronika Novoselac i Luka Šikić · radni rukopis."
-  },
-  {
-    "objectID": "pages/studije/inflacija-i-religija.html",
-    "href": "pages/studije/inflacija-i-religija.html",
-    "title": "Inflacija, informacije i odgođene promjene cijena",
-    "section": "",
-    "text": "Istraživanja rigidnosti cijena uglavnom promatraju same cijene. Mnogo je teže utvrditi je li određivač cijene uočio inflacijski šok, ali je prilagodbu ipak odgodio. Ovaj rad koristi datirano medijsko izvještavanje kako bi proučio upravo taj slijed u hrvatskom vjerskom sektoru, za koji ne postoji službena cjenovna serija."
-  },
-  {
-    "objectID": "pages/studije/inflacija-i-religija.html#istraživačko-pitanje",
-    "href": "pages/studije/inflacija-i-religija.html#istraživačko-pitanje",
-    "title": "Inflacija, informacije i odgođene promjene cijena",
-    "section": "Istraživačko pitanje",
-    "text": "Istraživačko pitanje\nRad razlikuje dva moguća objašnjenja nepromijenjene cijene. U prvom slučaju određivač cijene nije obradio relevantne informacije. U drugom je slučaju upoznat s rastom vlastitih troškova, ali cijenu ne mijenja zbog troška prilagodbe, sporog organizacijskog odlučivanja ili mogućeg otpora korisnika. Medijski zapisi ne otkrivaju privatno razmišljanje, ali pokazuju kada su informacije o troškovima i prihodima postale javno prisutne unutar sektora."
-  },
-  {
-    "objectID": "pages/studije/inflacija-i-religija.html#podaci-i-metode",
-    "href": "pages/studije/inflacija-i-religija.html#podaci-i-metode",
-    "title": "Inflacija, informacije i odgođene promjene cijena",
-    "section": "Podaci i metode",
-    "text": "Podaci i metode\nAnaliza polazi od službenoga korpusa s 413.985 religijski relevantnih objava od siječnja 2021. do lipnja 2026. Jedinstveno pravilo relevantnosti primijenjeno je na oba razdoblja prikupljanja. Kodiranjem je izdvojeno 475 objava koje stvarno povezuju religiju s domaćom inflacijom. Objave su zatim razvrstane prema predmetu ekonomskog sadržaja, vrsti govornika, institucijskoj jedinici i vrsti odgovora. Odgovor može biti javni govor, promjena cijena, dobrotvorna pomoć ili normativno tumačenje tereta inflacije.\nVećina kandidata zadržava ranije odluke triju neovisnih kodiranja. Novi korpus izdvaja još 32 kandidata, koji su kodirani u zasebnom dodatku. Razlika u snazi anotacije zadržana je u analitičkim izlazima i navedena među ograničenjima rada.\nMedijski korpus koristi se kao registar događaja, a ne kao cjenovni indeks. Analiza zato mjeri datume, vrhunce, sastav izvještavanja i vremenske odmake. Ne procjenjuje razinu pojedine naknade, koeficijent prijenosa inflacije ni strukturnu stopu promjene cijena."
-  },
-  {
-    "objectID": "pages/studije/inflacija-i-religija.html#glavni-nalazi",
-    "href": "pages/studije/inflacija-i-religija.html#glavni-nalazi",
-    "title": "Inflacija, informacije i odgođene promjene cijena",
-    "section": "Glavni nalazi",
-    "text": "Glavni nalazi\nIzravan govor sektora o vlastitim troškovima ili prihodima pojavljuje se u 83 objave i doseže vrhunac u listopadu 2022. Izvještavanje o promjenama cijena doseže vrhunac u lipnju 2024., dvadeset mjeseci poslije. Harmonizirana razina potrošačkih cijena tada je bila 25,7 % viša nego u lipnju 2021.\nČetiri imenovana crkvena tijela pojavljuju se i u govoru o vlastitom ekonomskom položaju i u kasnijem izvještavanju o promjeni cijena. U tri slučaja odmak je dulji od godine dana. Relevantne informacije bile su, dakle, javno prisutne prije nego što se izvještavanje o prilagodbi cijena koncentriralo.\nNovi korpus daje oprezniju procjenu veze medijske pažnje i inflacije. U razdoblju glavnog šoka korelacija udjela objava o troškovima života i ukupnoga HICP-a iznosi 0,48, dok mjesečne promjene ne pokazuju stabilnu vezu. Glavni argument rada zato počiva na vremenskom slijedu i podudaranju imenovanih tijela, a ne na snažnoj korelaciji pažnje i inflacije.\nNalaz nije dovoljan za razdvajanje ograničenja pravednosti od sporoga organizacijskog odlučivanja. Pokazuje da nepažnja prema vlastitim troškovima nije potpuno objašnjenje opaženog slijeda, ali ne isključuje djelomičnu nepažnju ni troškove prilagodbe."
-  },
-  {
-    "objectID": "pages/studije/inflacija-i-religija.html#vremenski-slijed",
-    "href": "pages/studije/inflacija-i-religija.html#vremenski-slijed",
-    "title": "Inflacija, informacije i odgođene promjene cijena",
-    "section": "Vremenski slijed",
-    "text": "Vremenski slijed\n\n\n\n\n\n\nSlika 1: Mjesečni javni govor, izravan govor o vlastitom ekonomskom položaju, izvještavanje o promjenama cijena i hrvatski HICP.\n\n\n\nSlika Slika 1 pokazuje da govor o vlastitim troškovima doseže vrhunac uz vrhunac inflacije, dok je najveća koncentracija izvještavanja o promjenama cijena zabilježena poslije pada inflacije."
-  },
-  {
-    "objectID": "pages/studije/inflacija-i-religija.html#institucijska-raspodjela",
-    "href": "pages/studije/inflacija-i-religija.html#institucijska-raspodjela",
-    "title": "Inflacija, informacije i odgođene promjene cijena",
-    "section": "Institucijska raspodjela",
-    "text": "Institucijska raspodjela\n\n\n\n\n\n\nSlika 2: Javni govor i izvještavanje o promjenama cijena prema institucijskoj jedinici.\n\n\n\nSlika Slika 2 pokazuje organizacijsku podjelu događaja. Biskupije dominiraju javnim govorom, dok je izvještavanje o promjenama cijena raspodijeljeno između biskupija, biskupske konferencije i župa."
-  },
-  {
-    "objectID": "pages/studije/inflacija-i-religija.html#cijeli-rad",
-    "href": "pages/studije/inflacija-i-religija.html#cijeli-rad",
-    "title": "Inflacija, informacije i odgođene promjene cijena",
-    "section": "Cijeli rad",
-    "text": "Cijeli rad\nPotpuni rukopis dostupan je u tri formata.\n\nHTMLČitanje u pregledniku PDFPreuzimanje i ispis WordUređivi dokument\n\nSve tablice, slike i brojčani navodi generirani su iz osvježenih izlaza studije. Opis korpusa i profil izvora dostupni su na stranici Baza podataka."
-  },
-  {
-    "objectID": "pages/studije/inflacija-i-religija.html#status",
-    "href": "pages/studije/inflacija-i-religija.html#status",
-    "title": "Inflacija, informacije i odgođene promjene cijena",
-    "section": "Status",
-    "text": "Status\nRadni rukopis Luke Šikića i Petre Palić, pripremljen u okviru projekta DigiKat na Hrvatskom katoličkom sveučilištu. Dio je drugoga izlaznog toka projekta, čiji je popis na stranici Projektni raspored."
-  },
-  {
-    "objectID": "pages/studije/katolicki-influenceri.html",
-    "href": "pages/studije/katolicki-influenceri.html",
-    "title": "Katolički influenceri i institucionalni deficit pažnje",
-    "section": "",
-    "text": "Dobivaju li službeni crkveni kanali jednaku pozornost kao osobne i zajedničke religijske stranice? Studija uspoređuje zabilježene interakcije, platformsku strukturu i tematske naglaske kreatorskih i institucionalnih izvora. Glavni se nalaz dodatno provjerava unutar YouTubea kako se razlika među akterima ne bi zamijenila razlikom među platformama."
-  },
-  {
-    "objectID": "pages/studije/katolicki-influenceri.html#istraživačko-pitanje",
-    "href": "pages/studije/katolicki-influenceri.html#istraživačko-pitanje",
-    "title": "Katolički influenceri i institucionalni deficit pažnje",
-    "section": "Istraživačko pitanje",
-    "text": "Istraživačko pitanje\nPostižu li katolički kreatorski izvori više interakcija po objavi od institucionalnih crkvenih komunikatora kada se uspoređuju na zajedničkoj platformi? Analiza također pita koliko je pažnja među kreatorima koncentrirana, razlikuju li se platformski i tematski profili dviju skupina te postoje li razlike između laičkih, svećeničkih i zajedničkih kreatorskih izvora."
-  },
-  {
-    "objectID": "pages/studije/katolicki-influenceri.html#podaci-i-metode",
-    "href": "pages/studije/katolicki-influenceri.html#podaci-i-metode",
-    "title": "Katolički influenceri i institucionalni deficit pažnje",
-    "section": "Podaci i metode",
-    "text": "Podaci i metode\nAnaliza polazi od korpusa s 413.985 objava od 2021. do 11. lipnja 2026. Godina 2026. nije potpuna. Primarni skup sadrži 29.684 objava i 186 pouzdano prepoznatih izvora, od čega 67 kreatorskih i 119 institucionalnih.\nPrimarna usporedba zadržava samo ručno utvrđene nazive i jasne institucionalne, biskupijske, župne i svećeničke obrasce. Šira klasifikacija služi provjeri osjetljivosti. Nejednakost se mjeri Gini koeficijentom. Razlika u interakcijama provjerava se i među usporedivim YouTube izvorima. Platformski se profili uspoređuju na razini objava i izvora, a tematske razlike višestrukim rječnikom sa izvorskim intervalima nesigurnosti. Pojedinosti su dostupne u Metodologiji.\n\n\n\n29.684\n\n\nanaliziranih objava\n\n\n\n\n0,913\n\n\nGini koeficijent koncentracije pažnje\n\n\n\n\n92,5 %\n\n\ninterakcija kod deset vodećih izvora\n\n\n\n\n4,26\n\n\nprocijenjeni omjer interakcija unutar YouTubea"
-  },
-  {
-    "objectID": "pages/studije/katolicki-influenceri.html#ključni-nalaz",
-    "href": "pages/studije/katolicki-influenceri.html#ključni-nalaz",
-    "title": "Katolički influenceri i institucionalni deficit pažnje",
-    "section": "Ključni nalaz",
-    "text": "Ključni nalaz\nPažnja među kreatorskim izvorima izrazito je koncentrirana. Gini koeficijent iznosi 0,913, a deset vodećih oznaka izvora prikuplja 92,5 % zabilježenih interakcija. Među izvorima s najmanje pet objava kreatorski medijan iznosi 158,0 interakcija po objavi, a institucionalni 14,4.\nRazlika ostaje velika unutar YouTubea nakon prilagodbe za aktivnost i vrijeme prikupljanja. Procijenjeni omjer na transformiranoj ljestvici iznosi 4,26. Taj je rezultat čvršća osnova za institucionalni deficit interakcija od izravne usporedbe različitih platformi.\nPlatformski se profili snažno razlikuju. Cramerov V iznosi 0,772. Tematska divergencija iznosi 0,079. Kreatorski izvori više naglašavaju devocijski sadržaj, a institucije službene i hijerarhijske teme, ali skupine dijele velik dio tematskoga repertoara. Učinak primarne platforme unutar kreatorskoga sloja nije moguće odvojeno procijeniti jer je 41 od 42 prihvatljivih izvora primarno na YouTubeu."
-  },
-  {
-    "objectID": "pages/studije/katolicki-influenceri.html#cijeli-rad",
-    "href": "pages/studije/katolicki-influenceri.html#cijeli-rad",
-    "title": "Katolički influenceri i institucionalni deficit pažnje",
-    "section": "Cijeli rad",
-    "text": "Cijeli rad\nRad „Katolički influenceri i institucionalni deficit pažnje” dostupan je u tri formata. Pun tekst donosi intervale nesigurnosti, provjere osjetljivosti i ograničenja.\n\nHTMLČitanje u pregledniku PDFPreuzimanje i ispis WordUređivi dokument\n\nSve brojčane vrijednosti na ovoj stranici čitaju se iz agregiranih izlaza studije. Opis korpusa, način prikupljanja i profil izvora dostupni su na stranici Baza podataka."
-  },
-  {
-    "objectID": "pages/studije/katolicki-influenceri.html#status",
-    "href": "pages/studije/katolicki-influenceri.html#status",
-    "title": "Katolički influenceri i institucionalni deficit pažnje",
-    "section": "Status",
-    "text": "Status\nCjeloviti istraživački rad projekta DigiKat, pripremljen na Hrvatskom katoličkom sveučilištu. Dio je drugoga izlaznog toka projekta, posvećenog tematskim studijama i znanstvenim radovima. Popis je na stranici Projektni raspored."
-  },
-  {
-    "objectID": "pages/studije/katolicko-obrazovanje-i-stepinac.html",
-    "href": "pages/studije/katolicko-obrazovanje-i-stepinac.html",
-    "title": "Vjera u sadašnjosti, sjećanje u mučeniku",
-    "section": "",
-    "text": "Kada hrvatski digitalni mediji govore o katoličkom obrazovanju, prenose li prošlost ili raspravljaju o sadašnjosti? Nova analiza službenoga korpusa uspoređuje vjeronauk, katoličke škole, redovničke zajednice i odgoj s osobama povezanima s katoličkom poviješću. Ustanove se ponajprije pojavljuju kao pitanja sadašnjosti. Povijesni jezik i komemorativni ritam najviše se okupljaju oko Alojzija Stepinca."
-  },
-  {
-    "objectID": "pages/studije/katolicko-obrazovanje-i-stepinac.html#istraživačko-pitanje",
-    "href": "pages/studije/katolicko-obrazovanje-i-stepinac.html#istraživačko-pitanje",
-    "title": "Vjera u sadašnjosti, sjećanje u mučeniku",
-    "section": "Istraživačko pitanje",
-    "text": "Istraživačko pitanje\nPitanje nije samo koliko se često pojedina tema pojavljuje. Važno je povezuje li ona sadašnji govor s prošlošću. Rad zato ispituje koja katolička obrazovna sidra pokazuju trajnost, kalendarsko ponavljanje, jezik emocija i lokalnu tekstualnu vezu s povijesnim izrazima. Uspoređuje se i tko ta sidra objavljuje te prelaze li ona granicu između konfesionalnih i nekonfesionalnih izvora."
-  },
-  {
-    "objectID": "pages/studije/katolicko-obrazovanje-i-stepinac.html#podaci-i-metode",
-    "href": "pages/studije/katolicko-obrazovanje-i-stepinac.html#podaci-i-metode",
-    "title": "Vjera u sadašnjosti, sjećanje u mučeniku",
-    "section": "Podaci i metode",
-    "text": "Podaci i metode\nAnaliza obuhvaća 117.180 objava od 2021. do 2025. godine. Prati se osam glavnih sidara. Četiri obuhvaćaju ustanove i prakse, a četiri imenovane osobe. Učestalost se uspoređuje s mjesečnim ritmom, jezikom emocija, podrijetlom izvora i lokalnom vezom s prošlošću. Posljednja mjera traži da se povijesni izraz pojavi unutar 160 znakova od promatranog sidra. Ona je pokazatelj tekstualne blizine, a ne potvrda značenja. Pojedinosti su dostupne u Metodologiji.\n\n\n\n117.180\n\n\nanaliziranih objava\n\n\n\n\n23,2 %\n\n\nStepinčevih objava s lokalnom vezom s prošlošću\n\n\n\n\n4 / 4\n\n\nopaženih veljača s godišnjim vrhuncem\n\n\n\n\n68,3 %\n\n\nuklonjenih prividnih veza"
-  },
-  {
-    "objectID": "pages/studije/katolicko-obrazovanje-i-stepinac.html#glavni-nalazi",
-    "href": "pages/studije/katolicko-obrazovanje-i-stepinac.html#glavni-nalazi",
-    "title": "Vjera u sadašnjosti, sjećanje u mučeniku",
-    "section": "Glavni nalazi",
-    "text": "Glavni nalazi\nObrazovne teme pojavljuju se češće od Stepinca, ali su mnogo rjeđe lokalno povezane s prošlošću. Stepinac se javlja u 7.384 objava. Lokalna je veza zabilježena u 23,2 % tih objava. Njegova manja učestalost stoga ne znači i manju ulogu u javnom sjećanju.\n\nUčestalost nije isto što i sjećanje\nObrazovne ustanove zauzimaju područje velike učestalosti i slabe veze s prošlošću. Stepinac se odvaja u suprotnom smjeru. Pojavljuje se rjeđe, ali znatno češće otvara povijesni kontekst.\n\n\n\n\n\n\nSlika 1: Odnos učestalosti i lokalne veze s prošlošću za osam glavnih sidara.\n\n\n\n\n\nVeljača daje Stepincu kalendar\nStepinac doseže godišnji vrhunac u veljači u sve 4 godine za koje je veljača opažena. Podaci nedostaju od veljače do svibnja 2024. godine pa se ta godina ne prikazuje kao nulta veljača. Ritam se podudara sa Stepinčevom, dok obrazovne teme prate šire školske i medijske cikluse. Kolovoški vrhunac katoličkih obreda služi kao usporedni primjer drugog kalendara.\n\n\n\n\n\n\nSlika 2: Mjesečna raspodjela objava pokazuje različite kalendare Stepinca, obrazovnih tema i katoličkih obreda.\n\n\n\n\n\nAutorstvo prelazi institucijsku granicu\nRječnik podrijetla obuhvaća 37,4 % Stepinčevih objava. Unutar toga dijela 69,8 % objava dolazi iz konfesionalnih, a 30,2 % iz nekonfesionalnih izvora. Profil je raznolikiji nego kod katoličkih škola ili vjeronauka, ali razlika ostaje uvjetna zbog neklasificiranih izvora. Nalaz govori o zajedničkoj proizvodnji javnog simbola, a ne o zajedničkom tumačenju Stepinca.\n\n\n\n\n\n\nSlika 3: Konfesionalni i nekonfesionalni udjeli među objavama s klasificiranim izvorom."
-  },
-  {
-    "objectID": "pages/studije/katolicko-obrazovanje-i-stepinac.html#zašto-je-tekstualna-blizina-važna",
-    "href": "pages/studije/katolicko-obrazovanje-i-stepinac.html#zašto-je-tekstualna-blizina-važna",
-    "title": "Vjera u sadašnjosti, sjećanje u mučeniku",
-    "section": "Zašto je tekstualna blizina važna",
-    "text": "Zašto je tekstualna blizina važna\nPovijesni izraz pojavljuje se negdje u istoj objavi uz obrazovno sidro u 31,0 % slučajeva. Kada se zahtijeva lokalna veza, udio pada na 9,8 %. Time nestaje 68,3 % prividnih veza. Samo pojavljivanje dviju tema u istoj objavi zato nije dovoljno za zaključak da objava obavlja rad sjećanja."
-  },
-  {
-    "objectID": "pages/studije/katolicko-obrazovanje-i-stepinac.html#cijeli-rad",
-    "href": "pages/studije/katolicko-obrazovanje-i-stepinac.html#cijeli-rad",
-    "title": "Vjera u sadašnjosti, sjećanje u mučeniku",
-    "section": "Cijeli rad",
-    "text": "Cijeli rad\nRukopis „Faith in the present, memory in the martyr: Catholic education and the figure of Stepinac as sites of memory in Croatian digital media (2021–2025)“ dostupan je u tri formata.\n\nHTMLČitanje u pregledniku PDFPreuzimanje i ispis WordUređivi dokument\n\nSve brojčane vrijednosti i slike na ovoj stranici čitaju se iz agregiranih izlaza studije. Opis korpusa, način prikupljanja i profil izvora dostupni su na stranici Baza podataka."
-  },
-  {
-    "objectID": "pages/studije/katolicko-obrazovanje-i-stepinac.html#status",
-    "href": "pages/studije/katolicko-obrazovanje-i-stepinac.html#status",
-    "title": "Vjera u sadašnjosti, sjećanje u mučeniku",
-    "section": "Status",
-    "text": "Status\nRadni rukopis projekta DigiKat, pripremljen na Hrvatskom katoličkom sveučilištu. Dio je drugog izlaznog toka projekta, posvećenog tematskim studijama i znanstvenim radovima. Popis je na stranici Projektni raspored."
-  },
-  {
-    "objectID": "pages/studije/redovnicke-zajednice.html",
-    "href": "pages/studije/redovnicke-zajednice.html",
-    "title": "Medijska zastupljenost redovničkih zajednica",
-    "section": "",
-    "text": "Istraživanje analizira kako hrvatski digitalni mediji prikazuju redovničke zajednice kroz teorijski okvir ekonomije pažnje, testirajući devet hipoteza grupiranih u tri tematske cjeline."
-  },
-  {
-    "objectID": "pages/studije/redovnicke-zajednice.html#istraživačko-pitanje",
-    "href": "pages/studije/redovnicke-zajednice.html#istraživačko-pitanje",
-    "title": "Medijska zastupljenost redovničkih zajednica",
-    "section": "Istraživačko pitanje",
-    "text": "Istraživačko pitanje\nDobiva li mali broj redova većinu medijske pažnje, postoje li rodne asimetrije u izvještavanju o muškim i ženskim zajednicama te razlikuju li se obrasci izvještavanja između mainstream, religijskih, regionalnih i lokalnih portala. Devet hipoteza pokriva tri bloka, a to su koncentracija pažnje, spolne razlike i tipologija portala."
-  },
-  {
-    "objectID": "pages/studije/redovnicke-zajednice.html#podaci-i-metode",
-    "href": "pages/studije/redovnicke-zajednice.html#podaci-i-metode",
-    "title": "Medijska zastupljenost redovničkih zajednica",
-    "section": "Podaci i metode",
-    "text": "Podaci i metode\nIz DigiKat korpusa (2021.–2025.) identificirane su objave o 30-ak redovničkih zajednica pomoću rječnika specifičnih i generičkih pojmova (npr. franjevac, isusovac, benediktinka, časna sestra), grupiranih u obitelji redova i prema spolu. Portali su klasificirani u četiri tipa (mainstream nacionalni, religijski katolički, regionalni, lokalni). Koncentracija se mjeri Gini koeficijentom, Lorenzovom krivuljom i HHI indeksom. Razlike u proporcijama i distribucijama testiraju se hi-kvadrat i Mann-Whitney U testovima."
-  },
-  {
-    "objectID": "pages/studije/redovnicke-zajednice.html#ključni-nalaz",
-    "href": "pages/studije/redovnicke-zajednice.html#ključni-nalaz",
-    "title": "Medijska zastupljenost redovničkih zajednica",
-    "section": "Ključni nalaz",
-    "text": "Ključni nalaz\nMedijska pažnja nije ravnomjerno raspoređena. Mali broj redova i portala kontrolira većinu vidljivosti, u skladu s predviđanjima ekonomije pažnje. Postoje rodne asimetrije koje odražavaju šire društvene obrasce u korist muških zajednica. Četiri tipa portala pokazuju različite uredničke logike i tonalitet u izvještavanju o redovničkim zajednicama."
-  },
-  {
-    "objectID": "pages/studije/redovnicke-zajednice.html#cijeli-rad",
-    "href": "pages/studije/redovnicke-zajednice.html#cijeli-rad",
-    "title": "Medijska zastupljenost redovničkih zajednica",
-    "section": "Cijeli rad",
-    "text": "Cijeli rad\nPun tekst nacrta dostupan je u dva usklađena formata.\n\nHTMLČitanje u pregledniku PDFPreuzimanje i ispis"
-  },
-  {
-    "objectID": "pages/studije/redovnicke-zajednice.html#status",
-    "href": "pages/studije/redovnicke-zajednice.html#status",
-    "title": "Medijska zastupljenost redovničkih zajednica",
-    "section": "Status",
-    "text": "Status\nNacrt dostupan. Dio je drugoga izlaznog toka projekta, koji obuhvaća tematske studije i radove. Popis je na stranici Projektni raspored."
-  },
-  {
-    "objectID": "pages/studije/socijalni-nauk-i-gospodarstvo.html",
-    "href": "pages/studije/socijalni-nauk-i-gospodarstvo.html",
-    "title": "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu",
-    "section": "",
-    "text": "Socijalni nauk Crkve više od stoljeća govori o radu, plaćama, vlasništvu, siromaštvu, javnoj vlasti i odgovornosti gospodarskih ustanova. Ova studija postavlja uže pitanje. Koliko se u hrvatskim digitalnim medijima izrijekom pojavljuju naslovi crkvenih dokumenata i specifični pojmovi socijalnoga nauka kada se govori o gospodarstvu?\nAnaliza je ponovno izvedena na novoj službenoj bazi DigiKat. Ispravljena je i važna pogreška ranijega postupka. Oznaka socijalnoga nauka sada mora biti blizu gospodarskoga izraza iz iste teme. Rezultat je znatno uži i oprezniji od ranije verzije rada. Glavni broj nije procjena svih katoličkih ideja u hrvatskoj javnosti, nego stopa izričito otkrivenih oznaka u tematski odabranom katoličkom korpusu."
-  },
-  {
-    "objectID": "pages/studije/socijalni-nauk-i-gospodarstvo.html#korpus-i-jedinica-analize",
-    "href": "pages/studije/socijalni-nauk-i-gospodarstvo.html#korpus-i-jedinica-analize",
-    "title": "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu",
-    "section": "Korpus i jedinica analize",
-    "text": "Korpus i jedinica analize\nSlužbena baza sadržava 413.985 objava od 1. siječnja 2021. do 11. lipnja 2026. DigiKat je korpus odabran prema katoličkim temama, a ne reprezentativan uzorak svih hrvatskih medija ili cijele javne sfere.\nAnaliza ima dva koraka.\n\nU glavnom okviru opći religijski izraz mora biti udaljen najviše 220 znakova od izraza iz jedne od jedanaest gospodarskih tema. Tako dobivamo 66.374 objave i 79.439 jedinstvenih parova objava–tema.\nPar ulazi u uži sloj samo ako se naslov dokumenta ili specifična oznaka socijalnoga nauka nalazi najviše 220 znakova od gospodarskoga izraza iz te iste teme. Ispravljeni sloj sadržava 1.093 objave i 1.290 parova.\n\nGlavni omjer zato iznosi 1,62%: 1.290 otkrivenih parova s oznakom među 79.439 parova religije i gospodarstva. To je popisni omjer unutar opaženoga korpusa, pa uz njega ne prikazujemo Wilsonov interval kao da je korpus slučajni uzorak.\nOpći religijski rječnik namjerno je neovisan o užem rječniku socijalnoga nauka. U provjeri granice okvira dopušteno je da sama oznaka socijalnoga nauka uvede par u analizu. Tada okvir raste na 66.394 objave i 79.500 parova, a uži sloj na 1.131 objavu i 1.351 par. Dodaje se 61 par, ali se redoslijed tema ne mijenja."
-  },
-  {
-    "objectID": "pages/studije/socijalni-nauk-i-gospodarstvo.html#svježe-slijepe-provjere-mjerenja",
-    "href": "pages/studije/socijalni-nauk-i-gospodarstvo.html#svježe-slijepe-provjere-mjerenja",
-    "title": "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu",
-    "section": "Svježe slijepe provjere mjerenja",
-    "text": "Svježe slijepe provjere mjerenja\nGlavne provjere nisu preuzele stare kodove. Svježi Codexovi agenti dobili su samo slijepe kartice i ograničenu kodnu knjigu. Riječ je o modelskom, a ne ljudskom kodiranju. Točna inačica pozadinskoga modela i postavke dekodiranja nisu bile dostupne sesiji, što ograničava potpunu replikaciju.\nProvjera brojnika obuhvatila je 150 pronađenih objava, stratificiranih prema razredu razdoblja susjednih oznaka, uključujući skupine bez datiranoga dokumenta i mješovite skupine, te prema koncentraciji izvora. Procijenjeni udio stvarne uporabe socijalnoga nauka iznosi 79,6% [72,4; 85,3]. Unaprijed postavljeni prag bio je 80%, pa je nalaz uvjetan, a ne prolazan.\nNa istih 150 objava gospodarski izraz ima stvaran gospodarski referent u 77,1% slučajeva, a obje provjere zajedno prolaze u 62,8%. Tematski prag R2 ne prolazi ili se ne može potpuno ocijeniti. Porezi imaju ponderiranih 22,6%, dok euro, demografija i inflacija nisu zastupljeni u uzorku oblikovanom prema razdoblju i izvoru. Glavni prolaz za klimu od 95,5% također nije potvrđen u ponavljanju. Među šest ponovljenih klimatskih kartica glavno je kodiranje prihvatilo pet, a ponovljeno nijednu.\nU cijelom ponovljenom uzorku slaganje na osi gospodarskoga referenta iznosi samo 76,7% uz κ = 0,420, ispod praga od 80%. Ostale tri osi ponavljanja prolaze, ali ukupna provjera stabilnosti zato ne prolazi.\nDruga svježa provjera uzela je 60 parova iz svake gospodarske teme, ukupno 660. Procijenjeni udio stvarnih poveznica u nazivniku iznosi 52,7% prema glavnoj i 44,0% prema strožoj kodnoj odluci. Ako se smanji samo nazivnik, uz pretpostavku da je svaki od 1.290 parova u brojniku valjan, ukupni omjeri rastu na 3,08% i 3,69%. To su scenariji osjetljivosti nazivnika, a nisu ispravljena prevalencija. Provjera brojnika provedena je na objavama, dok je nazivnik provjeren na parovima. Njihovo izravno množenje miješalo bi jedinice i strukture pogreške.\n\n\n\nOtkrivene stope po gospodarskim temama i scenarij osjetljivosti nazivnika."
-  },
-  {
-    "objectID": "pages/studije/socijalni-nauk-i-gospodarstvo.html#klima-vodi-samo-uz-zadani-rječnik",
-    "href": "pages/studije/socijalni-nauk-i-gospodarstvo.html#klima-vodi-samo-uz-zadani-rječnik",
-    "title": "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu",
-    "section": "Klima vodi samo uz zadani rječnik",
-    "text": "Klima vodi samo uz zadani rječnik\nNajvišu otkrivenu stopu ima klima i energetika, i to 12,96% (202 od 1.559 parova). Slijedi makroekonomija s 4,85% (94 od 1.938). Siromaštvo i socijalna politika imaju najviše otkrivenih parova, 586, ali zbog mnogo većega nazivnika stopa iznosi 1,87%.\nKlima ostaje prva u svih 25 od 25 provjera koje zadržavaju isti rječnik. To vrijedi nakon uklanjanja bliskih i naslovnih duplikata, stranih objava, metaforičkih i Caritasovih slučajeva, po odvojenim tokovima prikupljanja, nakon uklanjanja najvećih izvora i pod različitim prijedlozima skupina medija. To pokazuje robusnost na ispitane promjene sastava korpusa.\nMeđutim, provjera samoga konstrukta mijenja zaključak.\n\nbez oznake Laudato si’ makroekonomija vodi s 3,66%, a klima pada na 3,01%.\nbez triju ekološki specifičnih oznaka, a to su Laudato si’, Laudate Deum i integralna ekologija, makroekonomija vodi s 3,56%, a klima pada na 1,73%.\n\nIsta se promjena pojavljuje u scenariju osjetljivosti nazivnika. Prema tome, najjači nalaz nije da je socijalni nauk kao cjelina usmjereniji na klimu nego na starije gospodarske teme. Nalaz je uži. Ekološki dokumenti, a osobito prepoznatljiv naslov Laudato si’, iznimno su vidljiva javna oznaka.\n\n\n\nPromjena poretka nakon izostavljanja Laudato si’ i skupine ekoloških oznaka."
-  },
-  {
-    "objectID": "pages/studije/socijalni-nauk-i-gospodarstvo.html#razdoblja-dokumenata-dodjeljuju-se-svakom-paru",
-    "href": "pages/studije/socijalni-nauk-i-gospodarstvo.html#razdoblja-dokumenata-dodjeljuju-se-svakom-paru",
-    "title": "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu",
-    "section": "Razdoblja dokumenata dodjeljuju se svakom paru",
-    "text": "Razdoblja dokumenata dodjeljuju se svakom paru\nRazdoblje se ne preuzima s razine cijele objave. Dodjeljuje se zasebno svakom paru objava–tema prema naslovima dokumenata uz tu gospodarsku temu. Tako naslov Laudato si’ uz klimu ne može odrediti razdoblje neke druge teme u istoj objavi.\nOd 1.290 parova, njih 705 ima Franju kao jedino razdoblje datiranoga dokumenta, uz mogućnost da sadržavaju i nedatirane pojmovne oznake. U klimi je takvih 187 od 202 para, odnosno 92,6%. Skupina “klasična ne-koncilska linija” odnosi se na unaprijed određeni skup naslova, a ne na neprekinuto kalendarsko razdoblje. Pojmovne oznake, uključujući naziv Kompendija prema ovoj konvenciji, nemaju dodijeljeno papinsko razdoblje.\n\n\n\nRaspodjela jedinih razdoblja datiranih dokumenata po gospodarskim temama.\n\n\nOvaj prikaz podupire tvrdnju o vidljivosti nedavnih ekoloških naslova, ali sam ne razdvaja učinak novosti dokumenta, javne prepoznatljivosti, izvora teksta ili uredničkoga odabira."
-  },
-  {
-    "objectID": "pages/studije/socijalni-nauk-i-gospodarstvo.html#skupine-izvora-samo-su-prijedlozi",
-    "href": "pages/studije/socijalni-nauk-i-gospodarstvo.html#skupine-izvora-samo-su-prijedlozi",
-    "title": "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu",
-    "section": "Skupine izvora samo su prijedlozi",
-    "text": "Skupine izvora samo su prijedlozi\nOznake “konfesionalni” i “sekularni” potječu iz automatiziranoga, još nepotvrđenog prijedloga klasifikacije izvora. U predloženoj konfesionalnoj skupini stopa klime iznosi 19,47%, a makroekonomije 11,76% (omjer 1,66). U užoj predloženoj sekularnoj skupini omjer je 4,09, a u najširoj 5,68.\n\n\n\nOpisna usporedba klimatske i makroekonomske stope u predloženim skupinama izvora.\n\n\nTe se razlike smiju čitati samo kao osjetljivost na prijedlog grupiranja. Budući da oznake nisu ratificirane i nacrt je opažački, rezultat ne dokazuje granicu crkvenih i sekularnih medija, urednički odabir ni uzročni proces “prevođenja”."
-  },
-  {
-    "objectID": "pages/studije/socijalni-nauk-i-gospodarstvo.html#što-stari-skup-može-reći-o-siromaštvu",
-    "href": "pages/studije/socijalni-nauk-i-gospodarstvo.html#što-stari-skup-može-reći-o-siromaštvu",
-    "title": "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu",
-    "section": "Što stari skup može reći o siromaštvu",
-    "text": "Što stari skup može reći o siromaštvu\nRaniji stratificirani skup imao je 555 redaka. U službenoj bazi po stabilnom identitetu ostaje 296, u ispravljenom povezanom sloju 268, a 148 je označeno kao stvarna poveznica. U tablici rukopisa prikazuju se samo teme s najmanje deset takvih poveznica, ukupno 126 jedinica.\nMeđu 77 poveznica siromaštva i socijalne politike 26,0% je označeno kao pomoć/djelovanje, 19,5% kao strukturna kritika ili načela socijalnoga nauka, 6,5% kao Crkva u ulozi gospodarskoga aktera, a 48,1% kao pobožno ili preostalo. Oznake su nastale u tri slijepa prolaza jedne obitelji jezičnih modela.\nTaj skup nije izvučen za procjenu zastupljenosti registara. Njegova kodna knjiga ne mjeri prava, pravne zahtjeve ni jezik ovlaštenja. Zato nova verzija rada odbacuje staru tvrdnju da u raspravi o siromaštvu prevladava “jezik pomoći” nad “jezikom prava”. Za takav bi zaključak trebao novi vjerojatnosni uzorak, izravna kodna knjiga i neovisni ljudski koderi."
-  },
-  {
-    "objectID": "pages/studije/socijalni-nauk-i-gospodarstvo.html#kako-čitati-zaključak",
-    "href": "pages/studije/socijalni-nauk-i-gospodarstvo.html#kako-čitati-zaključak",
-    "title": "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu",
-    "section": "Kako čitati zaključak",
-    "text": "Kako čitati zaključak\nStudija pouzdano opisuje koliko je unaprijed određeni rječnik otkriven u opaženom službenom korpusu. Ne procjenjuje sve argumente spojive sa socijalnim naukom, njihov utjecaj na politiku ili razloge zbog kojih je urednik objavio neki izraz.\nNajoprezniji sažetak glasi ovako.\n\nizričite oznake socijalnoga nauka nalaze se u 1,62% parova religije i gospodarstva u ovom korpusu,\nzbog uvjetne preciznosti brojnika, nepotpunog/neuspjelog R2 praga i neuspjele osi ponavljanja nema potpuno ispravljene procjene prevalencije parova,\nklima je prva pod zadanim rječnikom i u 25 provjera sastava, ali vodstvo nestaje bez Laudato si’ ili skupine ekoloških oznaka,\nusporedbe izvora i registri siromaštva ostaju istraživački, a ne uzročni ili populacijski nalazi.\n\nNačin prikupljanja promijenjen je 2024., a od veljače do svibnja te godine nema uporabljivog teksta u izvornom toku. Rad zato ne procjenjuje vremenski trend. Godina 2026. završava 11. lipnja."
-  },
-  {
-    "objectID": "pages/studije/socijalni-nauk-i-gospodarstvo.html#cijeli-rad",
-    "href": "pages/studije/socijalni-nauk-i-gospodarstvo.html#cijeli-rad",
-    "title": "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu",
-    "section": "Cijeli rad",
-    "text": "Cijeli rad\nPrerađeni rukopis “Construct-dependent visibility of Catholic social teaching: Detected markers in Croatia’s Catholic-topic digital-media corpus, 1 January 2021–11 June 2026” dostupan je u cijelosti.\n\nHTMLČitanje u pregledniku PDFPreuzimanje i ispis\n\nSve tablice i slike generiraju se iz agregatnih izlaza studije. Sadržaj korpusa, prikupljanje, pravilo uključivanja i profil izvora opisani su na stranici Baza podataka."
-  },
-  {
-    "objectID": "pages/studije/socijalni-nauk-i-gospodarstvo.html#status",
-    "href": "pages/studije/socijalni-nauk-i-gospodarstvo.html#status",
-    "title": "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu",
-    "section": "Status",
-    "text": "Status\nPrerađeni radni rukopis (2026-08-11), autori Luka Šikić i Petra Palić, priprema se za časopis. Dio je drugoga izlaznog toka projekta, koji obuhvaća tematske studije i radove. Popis je na stranici Projektni raspored."
-  },
-  {
-    "objectID": "pages/studije/trzista-paznje.html",
-    "href": "pages/studije/trzista-paznje.html",
-    "title": "Tržišta pažnje u religijskim digitalnim medijima",
-    "section": "",
-    "text": "Rad primjenjuje okvir ekonomije pažnje na raniji analitički presjek DigiKat korpusa, nudeći sustavno mapiranje hrvatskog katoličkog digitalnog ekosustava kroz pet hipoteza o distribuciji i dinamici pažnje."
-  },
-  {
-    "objectID": "pages/studije/trzista-paznje.html#istraživačko-pitanje",
-    "href": "pages/studije/trzista-paznje.html#istraživačko-pitanje",
-    "title": "Tržišta pažnje u religijskim digitalnim medijima",
-    "section": "Istraživačko pitanje",
-    "text": "Istraživačko pitanje\nKako se pažnja publike raspodjeljuje između institucionalnih i neovisnih katoličkih komunikatora, kakvu ulogu imaju emocionalni i vremenski (liturgijski) faktori u dinamici angažmana te razlikuje li se stupanj koncentracije pažnje ovisno o platformi. Rad testira pet hipoteza. One obuhvaćaju distribuciju pažnje po zakonu potencije, kvalitativno drugačije modalitete angažmana institucionalnih aktera, spregu sentimenta i pažnje, utjecaj katoličkog liturgijskog kalendara te platformski specifičnu koncentraciju."
-  },
-  {
-    "objectID": "pages/studije/trzista-paznje.html#podaci-i-metode",
-    "href": "pages/studije/trzista-paznje.html#podaci-i-metode",
-    "title": "Tržišta pažnje u religijskim digitalnim medijima",
-    "section": "Podaci i metode",
-    "text": "Podaci i metode\nAnalitički presjek obuhvaća 608.879 objava (2021.–2025.) na osam platformi, uz klasifikaciju izvora u deset kategorija aktera (institucije, biskupije i župe, nezavisni mediji, redovničke zajednice, karizmatske zajednice, pojedinačni svećenici, mladežne organizacije, akademske institucije, laički influenceri i ostalo). Koriste se Gini koeficijent i Lorenzova krivulja za mjerenje koncentracije, dekompozicija Facebook angažmana na afektivni, deliberativni i distribucijski modalitet, Kruskal-Wallisov test za spregu sentimenta i angažmana te hijerarhijska regresija za liturgijsko vremensko strukturiranje."
-  },
-  {
-    "objectID": "pages/studije/trzista-paznje.html#ključni-nalaz",
-    "href": "pages/studije/trzista-paznje.html#ključni-nalaz",
-    "title": "Tržišta pažnje u religijskim digitalnim medijima",
-    "section": "Ključni nalaz",
-    "text": "Ključni nalaz\nPažnja je ekstremno koncentrirana (Gini = 0,982): vodećih 10 % izvora akumulira 98,7 % ukupnog angažmana. Institucionalni akteri ne privlače samo manje pažnje, nego kvalitativno drugačiju vrstu pažnje, s većim udjelom komentara nasuprot lajkovima. Negativni sentiment je povezan s višim angažmanom, ali ta povezanost je izraženija kod neinstitucionalnih aktera. Katolički liturgijski kalendar dodatno strukturira ritam objavljivanja povrh sekularnih obrazaca, dok se koncentracija pažnje razlikuje po platformama bez jasnog obrasca prema stupnju algoritamskog kuriranja."
-  },
-  {
-    "objectID": "pages/studije/trzista-paznje.html#cijeli-rad",
-    "href": "pages/studije/trzista-paznje.html#cijeli-rad",
-    "title": "Tržišta pažnje u religijskim digitalnim medijima",
-    "section": "Cijeli rad",
-    "text": "Cijeli rad\nPun tekst nacrta dostupan je u dva usklađena formata.\n\nHTMLČitanje u pregledniku PDFPreuzimanje i ispis"
-  },
-  {
-    "objectID": "pages/studije/trzista-paznje.html#status",
-    "href": "pages/studije/trzista-paznje.html#status",
-    "title": "Tržišta pažnje u religijskim digitalnim medijima",
-    "section": "Status",
-    "text": "Status\nNacrt (v7) je u izradi. Potpisuju ga Luka Šikić, Petra Palić i Siniša Kovačić. Dio je drugoga izlaznog toka projekta, koji obuhvaća tematske studije i radove. Popis je na stranici Projektni raspored."
   }
 ]

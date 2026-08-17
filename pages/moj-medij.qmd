@@ -101,6 +101,10 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
   padding:1.4rem 1.5rem; background:#fff; }
 .mm-name { font-family:'Source Serif 4',serif; font-size:1.5rem; font-weight:600; margin:0; color:#14181d; }
 .mm-sub { color:#6b6f76; font-size:.9rem; margin:.25rem 0 1.1rem; }
+.mm-actions { margin:.1rem 0 1.15rem; }
+.mm-download { display:inline-block; border:1px solid #0f4c5c; border-radius:6px; padding:.48rem .72rem;
+  color:#0f4c5c; font-size:.86rem; font-weight:600; text-decoration:none; }
+.mm-download:hover, .mm-download:focus { background:#eaf0f2; color:#0b3945; }
 .mm-kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1rem;
   border-top:1px solid #e4e2da; border-bottom:1px solid #e4e2da; padding:1rem 0; margin-bottom:1.2rem; }
 .mm-kpi-v { font-family:'IBM Plex Mono',monospace; font-size:1.5rem; font-weight:600; color:#14181d; }
@@ -131,18 +135,6 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
 .mm-pos li { margin:.25rem 0; }
 .mm-tag { display:inline-block; background:#eaf0f2; color:#2c5663; border-radius:4px;
   padding:.15rem .5rem; font-size:.8rem; font-family:'IBM Plex Mono',monospace; }
-@media (prefers-color-scheme: dark) {
-  .mm-app { --mm-produced:#e8e6e1; --mm-rewarded:#5a949f; }
-  .mm-input, .mm-results, .mm-detail { background:#1b1d21; color:#e8e6e1; border-color:#3a3d42; }
-  .mm-label, .mm-name, .mm-kpi-v, .mm-h, .mm-results button { color:#e8e6e1; }
-  .mm-results button:hover, .mm-results button:focus { background:#2a2d33; }
-  .mm-ng { border-top-color:#3a3d42; }
-  .mm-ng-name { color:#e8e6e1; }
-  .mm-aside { border-top-color:#3a3d42; }
-  .mm-aside p { color:#9aa0a6; }
-  .mm-aside strong { color:#c4c8cd; }
-  .mm-aside a { color:#7fb3c2; }
-}
 </style>
 
 <script>
@@ -277,6 +269,10 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
     if (s.pl) bits.push(PLATFORM[s.pl] || s.pl);
     if (s.lb) bits.push(LABEL[s.lb] || s.lb);
     h += '<p class="mm-sub">' + (bits.length ? bits.join(' · ') : 'Izvor iz korpusa') + '</p>';
+    if (s.c) {
+      h += '<p class="mm-actions"><a class="mm-download" data-card="' +
+        esc('../assets/outlet-cards/' + s.c) + '" download>Preuzmite profil izvora (PDF)</a></p>';
+    }
 
     h += '<div class="mm-kpis">' +
       '<div><div class="mm-kpi-v">' + int(s.p) + '</div><div class="mm-kpi-l">objava ukupno</div></div>' +
@@ -329,6 +325,8 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
       'razlikuju se među platformama, pa ih valja uspoređivati unutar iste platforme. ' +
       '<a href="metodologija.html">Metodologija</a> objašnjava kako su izmjereni.</p>';
     detail.innerHTML = h;
+    var cardLink = detail.querySelector('[data-card]');
+    if (cardLink) cardLink.href = cardLink.dataset.card;
   }
 
   q.addEventListener('input', function () { renderResults(search(q.value)); });

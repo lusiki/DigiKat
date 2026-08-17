@@ -1,0 +1,10 @@
+- We recorded **124,346 posts** on Catholic themes during 2025.
+- The web remains the main venue and carries **54.0%** of annual volume.
+- The posts come from **5,814 distinct sources**, a highly dispersed space.
+- Even so, just **56 sources** account for half of the year's volume.
+- Spirituality and liturgy lead the year, dominant in **50.4% of posts** in the theme sample.
+- Abuse and the crisis of trust account for **0.9%** of all dictionary mentions.
+- On the day Pope Francis died we recorded **2,825 posts**, the most in the whole year.
+- Predominantly positive vocabulary appears in **90.4% of posts** in the tone sample.
+- Secular sources carry **1.36×** as many conflict words as confessional ones.
+- In the second half of the year the web carried **+11.5%** more than a year earlier.

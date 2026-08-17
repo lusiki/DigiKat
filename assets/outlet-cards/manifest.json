@@ -1,0 +1,2148 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-17 07:38:07 UTC",
+  "generator": "R/07_moj_medij_cards.R",
+  "input": {
+    "file": "data/page-ready/moj_medij.json",
+    "sha256": "9c4bd2419a7389d78d4450643e826f0c9ffdc492abc6979291549acf5f175103",
+    "corpus_sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a"
+  },
+  "cards": [
+    {
+      "source": "hkm.hr",
+      "file": "hkm-hr.pdf",
+      "bytes": 45707,
+      "sha256": "52972e37e191b635c7c425448eeeec7347493d90b880e42453f482713d8a9d2a"
+    },
+    {
+      "source": "laudato.hr",
+      "file": "laudato-hr.pdf",
+      "bytes": 47104,
+      "sha256": "46f0cc85d2bcc6b9ad00f94c2563e51f79facab176d5a0d5e0048624f04fcfb8"
+    },
+    {
+      "source": "novizivot.net",
+      "file": "novizivot-net.pdf",
+      "bytes": 46515,
+      "sha256": "710934a2ed9d6461987252df52e995c9fd7c63f460053128647d0f10ad77a292"
+    },
+    {
+      "source": "pulherissimus",
+      "file": "pulherissimus.pdf",
+      "bytes": 46474,
+      "sha256": "94b30062e547d9b98af1f9f3d5a012ec9ba83481d7fd12749344561f14b4da9e"
+    },
+    {
+      "source": "slobodnadalmacija.hr",
+      "file": "slobodnadalmacija-hr.pdf",
+      "bytes": 48970,
+      "sha256": "06300ccff1e56d58686ad39707602cb795eb7d9646f6c9a800e678d159bd4ef8"
+    },
+    {
+      "source": "djos.hr",
+      "file": "djos-hr.pdf",
+      "bytes": 45587,
+      "sha256": "ebebada21ac2b042bcfe553ffdfd631e83741a28ac213913283a5bbbebc3af78"
+    },
+    {
+      "source": "VJERA U NAMA †",
+      "file": "vjera-u-nama.pdf",
+      "bytes": 47192,
+      "sha256": "758608bc304f7697ba366112c8aaae1126eb908f5e217b2ae5b1cd7f6ffd3118"
+    },
+    {
+      "source": "vecernji.hr",
+      "file": "vecernji-hr.pdf",
+      "bytes": 46578,
+      "sha256": "e74021e11626cd78704f46075e5ff0b4d1daec7ef2911d0fd60ae482c5c757a9"
+    },
+    {
+      "source": "index.hr",
+      "file": "index-hr-web.pdf",
+      "bytes": 46328,
+      "sha256": "1d2b8385757ae359c103f0ea20052417b46afa76ca73017b195fc7ed1d5bd739"
+    },
+    {
+      "source": "bitno.net",
+      "file": "bitno-net-web.pdf",
+      "bytes": 45470,
+      "sha256": "8aeff8ca27cf364e36a1b14c9e92805f83a2d6d01442438b95010a6a2dc2ff45"
+    },
+    {
+      "source": "narod.hr",
+      "file": "narod-hr-web.pdf",
+      "bytes": 46799,
+      "sha256": "9ce224d84871a9d5c1164e5dbcee177239216dda46443b796b6ce0ab386ee53d"
+    },
+    {
+      "source": "net.hr",
+      "file": "net-hr-web.pdf",
+      "bytes": 45626,
+      "sha256": "18197cef2ac72bd6115e2aa4165b1edbf3cc4e424d006142edfa8fded1fd44e8"
+    },
+    {
+      "source": "novilist.hr",
+      "file": "novilist-hr.pdf",
+      "bytes": 46016,
+      "sha256": "5b048ae02450b0e41d7ed221e638a1a1b2bf05e5861979ec86df7d2483f384f3"
+    },
+    {
+      "source": "dnevno.hr",
+      "file": "dnevno-hr-web.pdf",
+      "bytes": 46782,
+      "sha256": "d74b876b7fb6ffaa248c8cc216882c1b61f17ba94b1a4390419e6252b0a72d03"
+    },
+    {
+      "source": "direktno.hr",
+      "file": "direktno-hr-record-1.pdf",
+      "bytes": 46658,
+      "sha256": "26e4729053db324f87a20a9f42fa352b3b36c726e2918b4f95ffcd0e419c01c7"
+    },
+    {
+      "source": "Bitno.net",
+      "file": "bitno-net-facebook.pdf",
+      "bytes": 45768,
+      "sha256": "103ca3771bed0a5538288d4ee4d531e60502050051629fdcb981bc8debd6b1de"
+    },
+    {
+      "source": "crovijesti.com",
+      "file": "crovijesti-com.pdf",
+      "bytes": 46253,
+      "sha256": "cdaa1f6d81b6a713815f1194fb76075bb37c88cd3bde8e14106d5e66f87ae40b"
+    },
+    {
+      "source": "LaudatoTV",
+      "file": "laudatotv.pdf",
+      "bytes": 47102,
+      "sha256": "314f05768bbbb9d7fdd632372d0b2c8a884db893549f9992936cabded2143d26"
+    },
+    {
+      "source": "hrt.hr",
+      "file": "hrt-hr.pdf",
+      "bytes": 43937,
+      "sha256": "f1489b238c2a3991fc77f31c07e78c0f68635fcaad3646d610a494f6ef3797a3"
+    },
+    {
+      "source": "24sata.hr",
+      "file": "24sata-hr.pdf",
+      "bytes": 46036,
+      "sha256": "325ab7ab84a2cbc15475826cbaf5a36ef2e0d4ceff345d23eb9ba4fb2fb7f0e4"
+    },
+    {
+      "source": "glasistre.hr",
+      "file": "glasistre-hr.pdf",
+      "bytes": 46742,
+      "sha256": "924a174e93b1fce56b2dce2ba4d9db0f5292d3cae52e4c8ee7fc67dc4e5235de"
+    },
+    {
+      "source": "prigorski.hr",
+      "file": "prigorski-hr.pdf",
+      "bytes": 46577,
+      "sha256": "a94c8ca2d44ffee0a421aad4518c4e2226ee9222adfeb47479d9e6ecb4fe6798"
+    },
+    {
+      "source": "Radio Marija Hrvatska",
+      "file": "radio-marija-hrvatska.pdf",
+      "bytes": 48511,
+      "sha256": "7c5f2dd8108741885872b4c72ca81e7f3e29c0d4fbdc6be51c59324769086d2a"
+    },
+    {
+      "source": "forum.hr",
+      "file": "forum-hr.pdf",
+      "bytes": 44211,
+      "sha256": "066845ae36aaa19875281f3e88b46735f632a4e4071157023a1608bd2462bb74"
+    },
+    {
+      "source": "jutarnji.hr",
+      "file": "jutarnji-hr.pdf",
+      "bytes": 46943,
+      "sha256": "57e87f01a1be9f091b6ea33078cbfd907551b046f86433a49d96228f1bccb6c5"
+    },
+    {
+      "source": "smn.hr",
+      "file": "smn-hr.pdf",
+      "bytes": 46041,
+      "sha256": "c28a78b00755a57f6b9b75fe2a13d1cd4c8bbf8a5b9bd6f9a895c5689efb693a"
+    },
+    {
+      "source": "glas-slavonije.hr",
+      "file": "glas-slavonije-hr.pdf",
+      "bytes": 48100,
+      "sha256": "11a23228edf48a41f6bb7f382b20e33e7d911721a85a9ecfbed0309c7625cc2f"
+    },
+    {
+      "source": "tportal.hr",
+      "file": "tportal-hr-record-1.pdf",
+      "bytes": 45720,
+      "sha256": "4137dba6d9146bf7841ce84b6c77fb6fa929acdefba41fa9187102dfa2dc03c2"
+    },
+    {
+      "source": "biskupija-varazdinska.hr",
+      "file": "biskupija-varazdinska-hr.pdf",
+      "bytes": 49076,
+      "sha256": "7d76638c8d0b219b7cca4fd8bdf164f6c28eb9ca651916c85ef96e37e41a6c7b"
+    },
+    {
+      "source": "Zagrebačka nadbiskupija",
+      "file": "zagrebacka-nadbiskupija.pdf",
+      "bytes": 55343,
+      "sha256": "51dd1a30188e4afff773352f8facea050d24f030e4ba82de6202f468a7492489"
+    },
+    {
+      "source": "dalmacijadanas.hr",
+      "file": "dalmacijadanas-hr.pdf",
+      "bytes": 47250,
+      "sha256": "17221fe0d2d61830a41c0be7a11f87e086c1393ae1acd0605683430f4f5a1c08"
+    },
+    {
+      "source": "dnevnik.hr",
+      "file": "dnevnik-hr-web.pdf",
+      "bytes": 46861,
+      "sha256": "004f59e28485a6340560c2c9cb1c086d9a4fce2a4ee0ef403ec14cf1b5aba59d"
+    },
+    {
+      "source": "redovnistvo.hr",
+      "file": "redovnistvo-hr.pdf",
+      "bytes": 46672,
+      "sha256": "64092583af47ad3c09981bb16faf4b2817f756a9c72204f59beec09f5c4578ee"
+    },
+    {
+      "source": "infokiosk.net",
+      "file": "infokiosk-net.pdf",
+      "bytes": 45948,
+      "sha256": "aff4b77172b6bc624e251d1ef7dee9ef1c53708a03c801faac1a0298bfe9fffe"
+    },
+    {
+      "source": "dalmatinskiportal.hr",
+      "file": "dalmatinskiportal-hr.pdf",
+      "bytes": 49361,
+      "sha256": "dfa80b07b6c5d19ba8abd424bef0bcbe7a7e28156a771f8fa6184b179b0d9682"
+    },
+    {
+      "source": "Kapljice ljubavi Božje",
+      "file": "kapljice-ljubavi-bozje.pdf",
+      "bytes": 48921,
+      "sha256": "3f3817f8ac82491fb8774942c2b6729823269bb9dadb28f6403ceb3e1b8a4b4b"
+    },
+    {
+      "source": "nacional.hr",
+      "file": "nacional-hr.pdf",
+      "bytes": 45723,
+      "sha256": "bfbdfbe9e9b6480b4ca6bd267c7a3335796fd7a04217f0eff04c5e26b272f1f4"
+    },
+    {
+      "source": "radio-medjugorje.com",
+      "file": "radio-medjugorje-com.pdf",
+      "bytes": 46962,
+      "sha256": "f4631c422a72491061e903ef307941d8ef35061f35d0b21497f34b0fe830675a"
+    },
+    {
+      "source": "Laudato",
+      "file": "laudato.pdf",
+      "bytes": 45720,
+      "sha256": "2485ba79500c6e10113a19e7c890196352207af7404cc04e5511dd99e53d1641"
+    },
+    {
+      "source": "7dnevno.hr",
+      "file": "7dnevno-hr.pdf",
+      "bytes": 45009,
+      "sha256": "0814de5b34d004ef2d6e55c61a8eb474f316129dfec78db15e1c682a39365a6b"
+    },
+    {
+      "source": "magicus.info",
+      "file": "magicus-info.pdf",
+      "bytes": 48127,
+      "sha256": "bf3d227afbf0c682a50e9cc9ea9eb54c53ac6e3dfc1ea84b1580c107eaf21687"
+    },
+    {
+      "source": "Pod Smokvom",
+      "file": "pod-smokvom.pdf",
+      "bytes": 46988,
+      "sha256": "0dcc4b574d3954c0d95d5e30f7f8c11ac2054a6d77b4ffc2f9255ce9f09a2e0f"
+    },
+    {
+      "source": "zagreb.info",
+      "file": "zagreb-info-record-1.pdf",
+      "bytes": 47103,
+      "sha256": "b928a1ba323d0eb41ce81a0e81e404c37ef74b759a2f0f8d4f6a24cb60909e9f"
+    },
+    {
+      "source": "Hrana za dušu",
+      "file": "hrana-za-dusu.pdf",
+      "bytes": 46648,
+      "sha256": "04eda42ca9aa248a4df5c2f32cd9d79adbc3f0cab3430fef7a0506bfab0631ab"
+    },
+    {
+      "source": "kamenjar.com",
+      "file": "kamenjar-com.pdf",
+      "bytes": 46974,
+      "sha256": "44a4bb5cc8d0d6168ac83fbde5a0769a09168462d45776ef96e33a91ff5bcc54"
+    },
+    {
+      "source": "telegram.hr",
+      "file": "telegram-hr-web.pdf",
+      "bytes": 47177,
+      "sha256": "fd9769016fb040a2ad57f0f81044c6ceaf6002af6d2d9e12ab962b29ad248c6a"
+    },
+    {
+      "source": "hrvatskonebo.org",
+      "file": "hrvatskonebo-org.pdf",
+      "bytes": 48730,
+      "sha256": "64d9ac124a6965dbf0160a3bc7cf9329ad033d5ba8c2f67072cb48feb13ad3e2"
+    },
+    {
+      "source": "croativ.net",
+      "file": "croativ-net.pdf",
+      "bytes": 45581,
+      "sha256": "e49482fb4aab5654b59eb900bf0342d5d2830b0afc0ff869f546146bb03562a5"
+    },
+    {
+      "source": "medjimurski.hr",
+      "file": "medjimurski-hr.pdf",
+      "bytes": 46411,
+      "sha256": "d3bcfcb42405074d6828b4950e63f1b0851a950abd844b99a56e96b9fd90123b"
+    },
+    {
+      "source": "sibenik.in",
+      "file": "sibenik-in.pdf",
+      "bytes": 45201,
+      "sha256": "114fbe96794891497c294f6c8c7760ad110e99df3c4c3e34df1659a835478794"
+    },
+    {
+      "source": "novine.hr",
+      "file": "novine-hr.pdf",
+      "bytes": 45904,
+      "sha256": "dd47af3012a1e1b20357e20b385f06327004ef63e80c28b8ad4f778cb8ff713a"
+    },
+    {
+      "source": "034portal.hr",
+      "file": "034portal-hr.pdf",
+      "bytes": 46036,
+      "sha256": "91c4fbc6b1078418756ac68fa012ec53297e5d6872437008229d4fd98cce9e9b"
+    },
+    {
+      "source": "Kraljica Mira",
+      "file": "kraljica-mira.pdf",
+      "bytes": 46725,
+      "sha256": "d9f86717d8c17a4d094c972e9e74bc4021fd007135762c7e354838a82d0e17d5"
+    },
+    {
+      "source": "vjeraidjela.com",
+      "file": "vjeraidjela-com.pdf",
+      "bytes": 46280,
+      "sha256": "5844e9e46bd0b3fbb11344ddcbcb6adb1ff453a81094a488f6c7cf6e2abbfffc"
+    },
+    {
+      "source": "VJERA",
+      "file": "vjera.pdf",
+      "bytes": 45662,
+      "sha256": "0137903ef24e8fd2b9e97c7b0a0fec334c3c24b464b8da739dbfeb60caa23270"
+    },
+    {
+      "source": "dulist.hr",
+      "file": "dulist-hr.pdf",
+      "bytes": 46060,
+      "sha256": "76ad4ce4d8045087830cfd892ca5e31449988e4e7f551b5245cad4bce50ac181"
+    },
+    {
+      "source": "ks.hr",
+      "file": "ks-hr.pdf",
+      "bytes": 44444,
+      "sha256": "89858d8f9f939454fd973ecf7ec6c3f8f6422d4c23e356235309104948fe8bdb"
+    },
+    {
+      "source": "glasgacke.hr",
+      "file": "glasgacke-hr.pdf",
+      "bytes": 47348,
+      "sha256": "d4679b968288c63f8df90f4c7a64b095ff88852a95597069df6a010e74d46f17"
+    },
+    {
+      "source": "glas-koncila.hr",
+      "file": "glas-koncila-hr.pdf",
+      "bytes": 47500,
+      "sha256": "b6c1412abf5b16e3021cd6d8c50bd2da3e88bba52143fe7107ddfd5b00bdc785"
+    },
+    {
+      "source": "hina.hr",
+      "file": "hina-hr.pdf",
+      "bytes": 44273,
+      "sha256": "3595aa2598101d85e955960690146460fc382617a9ad82887df11c671dd1f464"
+    },
+    {
+      "source": "zagorje.com",
+      "file": "zagorje-com-record-1.pdf",
+      "bytes": 46626,
+      "sha256": "f799eec602fb4728bd7eff1e50a5db2913aef08a71257bed4a6e0b826a138bd1"
+    },
+    {
+      "source": "antenazadar.hr",
+      "file": "antenazadar-hr.pdf",
+      "bytes": 46484,
+      "sha256": "ebac228456b67069c7941d628d9c62b91aa1dc4485c9ad485f59747fd9157dd4"
+    },
+    {
+      "source": "ssmi.hr",
+      "file": "ssmi-hr.pdf",
+      "bytes": 44939,
+      "sha256": "9311d21508f8bfbe2a7c9d618523a74059e69448d5e69c691d055bb53d6907b7"
+    },
+    {
+      "source": "pozeski.hr",
+      "file": "pozeski-hr.pdf",
+      "bytes": 47197,
+      "sha256": "215d6da69005e44270cc664ec355a6e3c99306f6ad9da675d30e02b62e9cd11e"
+    },
+    {
+      "source": "n1info.hr",
+      "file": "n1info-hr.pdf",
+      "bytes": 44982,
+      "sha256": "5fef5e949730b41f5293766d02132c6ba6267fcb466d603a2790de595becb137"
+    },
+    {
+      "source": "dragovoljac.com",
+      "file": "dragovoljac-com.pdf",
+      "bytes": 46850,
+      "sha256": "f8a2840abc5122453e77e4deaf8394dcac55a62f01def7a33ac6c65ca30df7e3"
+    },
+    {
+      "source": "mnovine.hr",
+      "file": "mnovine-hr.pdf",
+      "bytes": 45784,
+      "sha256": "9610cc917448fb95f26bab61891ef704903f0cf3e7fb8039531de8d53f3b9bcf"
+    },
+    {
+      "source": "057info.hr",
+      "file": "057info-hr.pdf",
+      "bytes": 45059,
+      "sha256": "19f75c0a498e65411ef90b4114ac4abdb4ea58eab4e336f8cba2ed469ed5fc2c"
+    },
+    {
+      "source": "ferata.hr",
+      "file": "ferata-hr.pdf",
+      "bytes": 45041,
+      "sha256": "18fea8b8b18273c30913f896f3361a961fc59386fe147e3a0b2ae1451631fb86"
+    },
+    {
+      "source": "Dijete Vjere",
+      "file": "dijete-vjere.pdf",
+      "bytes": 46149,
+      "sha256": "db31872e2d81688848f4b678b4b8cdd0eca1f62407ded55a59a5a4b5c34bc0dd"
+    },
+    {
+      "source": "zg-nadbiskupija.hr",
+      "file": "zg-nadbiskupija-hr.pdf",
+      "bytes": 48657,
+      "sha256": "2432c8c29f6326a836824a3149d490f44c4624346ae34c586ad46b29d0033ea8"
+    },
+    {
+      "source": "pozega.eu",
+      "file": "pozega-eu.pdf",
+      "bytes": 46449,
+      "sha256": "0c185ffa0986298b1ac6f3de7ab3109672ea7bc6990db4f068e94e48a8d73cd0"
+    },
+    {
+      "source": "Gospa",
+      "file": "gospa.pdf",
+      "bytes": 46100,
+      "sha256": "589efa33b24bdccd3adeed1c52939a83be183fd16ea27e573e60314bc305a410"
+    },
+    {
+      "source": "klik.hr",
+      "file": "klik-hr.pdf",
+      "bytes": 44563,
+      "sha256": "228980ed8aab6207c4a493fb68be5fe2c43c293481bb211b122955919c696c8f"
+    },
+    {
+      "source": "dubrovnikinsider.hr",
+      "file": "dubrovnikinsider-hr.pdf",
+      "bytes": 47595,
+      "sha256": "20f0ec9416218ebc9d862786c005eff3c7b5561be4d5c59fc3d8dde35c07486c"
+    },
+    {
+      "source": "podravski.hr",
+      "file": "podravski-hr.pdf",
+      "bytes": 47088,
+      "sha256": "756e0a860c53394ff94d0bfa69453f364390c8bd343fef40b806c5f461a7b6bd"
+    },
+    {
+      "source": "maxportal.hr",
+      "file": "maxportal-hr.pdf",
+      "bytes": 47045,
+      "sha256": "28eb60e9dd35f4489053c6a72817cafbe08d911432167135d834b5740965fe58"
+    },
+    {
+      "source": "Direktno.hr",
+      "file": "direktno-hr-record-2.pdf",
+      "bytes": 46186,
+      "sha256": "d966805d2e36d9f078750b49f0a8aa8e600e7794fa46316dcd50b6da2575ec4d"
+    },
+    {
+      "source": "dalmacijanews.hr",
+      "file": "dalmacijanews-hr.pdf",
+      "bytes": 48436,
+      "sha256": "6ac170ed9821dc31e6ba60e951465dfba79f17dc731a3302578298ce7cd2f05e"
+    },
+    {
+      "source": "oluja.info",
+      "file": "oluja-info.pdf",
+      "bytes": 45683,
+      "sha256": "be3c6e0239bfaeb3ce3f3d6a85e540b9cf02c0236b26d2e6134450b0bfa44c16"
+    },
+    {
+      "source": "Slobodna Dalmacija",
+      "file": "slobodna-dalmacija.pdf",
+      "bytes": 48319,
+      "sha256": "307add34e5982ffff7c6079a82279666d71aeb2b188df4a797a27aaa99771270"
+    },
+    {
+      "source": "glas.hr",
+      "file": "glas-hr.pdf",
+      "bytes": 46206,
+      "sha256": "0cac63cedc99d33402a1c7bd53c52aeb3fed2acf97e813814d01aff2acfa3b3e"
+    },
+    {
+      "source": "varazdinske-vijesti.hr",
+      "file": "varazdinske-vijesti-hr.pdf",
+      "bytes": 48642,
+      "sha256": "e3996aba6e1c8ff50960071775ec3aa9cf8a17e40c62d919325c32f5109da65f"
+    },
+    {
+      "source": "hrvatski-fokus.hr",
+      "file": "hrvatski-fokus-hr.pdf",
+      "bytes": 47773,
+      "sha256": "b4170dafde08c0d392dee141b50f706bbadf9fc7330ed47468732b65a427b352"
+    },
+    {
+      "source": "istra24.hr",
+      "file": "istra24-hr.pdf",
+      "bytes": 45961,
+      "sha256": "015820bd82065bddf7feb72e78b4453b6051a35521de64a15c17ed80e977b662"
+    },
+    {
+      "source": "icv.hr",
+      "file": "icv-hr.pdf",
+      "bytes": 45255,
+      "sha256": "954ce878f7eaac77b3d7efe927dce8d4c9ea29afe9d3f426bed70fb2228651f8"
+    },
+    {
+      "source": "tomislavnews.com",
+      "file": "tomislavnews-com.pdf",
+      "bytes": 48363,
+      "sha256": "56ddb3c89e2738b0f289bf3a68b92ab9ef2227134d1fba509c976ce2ba63e399"
+    },
+    {
+      "source": "Nova Eva",
+      "file": "nova-eva.pdf",
+      "bytes": 45528,
+      "sha256": "af75ebbac36a143e7d967de63971d358895002e4794ec33fd116930ddda34ee5"
+    },
+    {
+      "source": "Večernji list",
+      "file": "vecernji-list.pdf",
+      "bytes": 53676,
+      "sha256": "1ecebcfd5abc3462000cd8f38a55abaf93d8089a45ef36aab69d1b93784c00a3"
+    },
+    {
+      "source": "klikaj.hr",
+      "file": "klikaj-hr.pdf",
+      "bytes": 45783,
+      "sha256": "30ce5ebea9ae332357de96860df5724760fff11b81f2134ac81aaf0d3d0bb94d"
+    },
+    {
+      "source": "znet.hr",
+      "file": "znet-hr.pdf",
+      "bytes": 44520,
+      "sha256": "0cd4b4fe87092613c30ed22aea5ff930545b4804604ff616685f803c0a5bbf18"
+    },
+    {
+      "source": "regionalni.com",
+      "file": "regionalni-com.pdf",
+      "bytes": 47203,
+      "sha256": "c7e46d2b5f368679043be6d36e33763bfe0a28eb4ef1b3ed488e810a16bc3f10"
+    },
+    {
+      "source": "035portal.hr",
+      "file": "035portal-hr.pdf",
+      "bytes": 45900,
+      "sha256": "e916c3777562e1f4b4b7f128ef8a6ee14d0d15c7841b04e92eb80873fe099662"
+    },
+    {
+      "source": "sestre-sv-kriza.hr",
+      "file": "sestre-sv-kriza-hr.pdf",
+      "bytes": 47488,
+      "sha256": "fe585106c3e887d91d2e1dfb83f4358f06b237c45c46ec7b9efea78a81b9ecef"
+    },
+    {
+      "source": "ljportal.com",
+      "file": "ljportal-com.pdf",
+      "bytes": 46731,
+      "sha256": "9136f8fc0be0a71cabb37ca67d3926dbe3487394f49c82150816a5b3b3c038ea"
+    },
+    {
+      "source": "vjeronauk.hr",
+      "file": "vjeronauk-hr.pdf",
+      "bytes": 46522,
+      "sha256": "2d748c9fd5ee3cce0d3d2e1a52505116eafb5eabeb05c7e8d72fc92b1bd51ddd"
+    },
+    {
+      "source": "dubrovniknet.hr",
+      "file": "dubrovniknet-hr.pdf",
+      "bytes": 47373,
+      "sha256": "791bf7f9c26341840145d0b450ec13264eacb39b5ee92f10a50a6c11644eb14a"
+    },
+    {
+      "source": "adventisti.hr",
+      "file": "adventisti-hr.pdf",
+      "bytes": 46396,
+      "sha256": "82677769f97c579d63141744bb1d5160baae1cda9b627ce17e527c328b2950d0"
+    },
+    {
+      "source": "hteam.org",
+      "file": "hteam-org.pdf",
+      "bytes": 46860,
+      "sha256": "6e6723f19af01941ee789dca1beb9a9a554eb20fe0c42710c8c844c022a01ba6"
+    },
+    {
+      "source": "youtube.com",
+      "file": "youtube-com.pdf",
+      "bytes": 44790,
+      "sha256": "22eee134091ff2382c107ecebc2b87e9fffe91e3d73c466f0e870553c170b0ae"
+    },
+    {
+      "source": "czn.hr",
+      "file": "czn-hr.pdf",
+      "bytes": 44503,
+      "sha256": "599da39c91834c6454b9447bd64f3f894a618d8cc84477d4b0bc0a013f194fa3"
+    },
+    {
+      "source": "hrvatska-danas.com",
+      "file": "hrvatska-danas-com.pdf",
+      "bytes": 48198,
+      "sha256": "478af069b4d49e67e7dec3054231b2e16ed5213c2bb617b3b9546317cb30b414"
+    },
+    {
+      "source": "dubrovnikportal.com",
+      "file": "dubrovnikportal-com.pdf",
+      "bytes": 47764,
+      "sha256": "45c5bd764e2ce74e4f39851d96610e894588ddbd68a5e71e5ae99268ee3a849f"
+    },
+    {
+      "source": "sjever.hr",
+      "file": "sjever-hr-record-1.pdf",
+      "bytes": 45497,
+      "sha256": "5e1d782c90c4acaab65f8c9969b36d5659a57acf55bd0b1cd23ec64a4c542820"
+    },
+    {
+      "source": "01portal.hr",
+      "file": "01portal-hr.pdf",
+      "bytes": 45784,
+      "sha256": "e41b9a653d28d9bb730d6ae79666e7957584e465c15e528351ccc43502609815"
+    },
+    {
+      "source": "autograf.hr",
+      "file": "autograf-hr.pdf",
+      "bytes": 46297,
+      "sha256": "7f327d50d56bf4436e7a69a7053d327b3dddbcb33a873b58a43d4844eeb94741"
+    },
+    {
+      "source": "evarazdin.hr",
+      "file": "evarazdin-hr.pdf",
+      "bytes": 46404,
+      "sha256": "5ab532be3c6c17b170ec74a2a279a362b4b305fb6b69cf71fc2aa947372aa143"
+    },
+    {
+      "source": "zupcica.hr",
+      "file": "zupcica-hr.pdf",
+      "bytes": 46078,
+      "sha256": "f42639371bbc4b80057d1549707e56db01e47a769283c74879118e8876439ce9"
+    },
+    {
+      "source": "zagorje-international.hr",
+      "file": "zagorje-international-hr.pdf",
+      "bytes": 47395,
+      "sha256": "6bd7d428fa6730df16685868c7dd4323765b9a452e9fe9bba38b24ebe815df9e"
+    },
+    {
+      "source": "Dnevno.hr",
+      "file": "dnevno-hr-record-2.pdf",
+      "bytes": 45842,
+      "sha256": "484989332ade46caf2ad9e3ce13a75040624f4b7c3d7bd13d2fb704c68ed8dcc"
+    },
+    {
+      "source": "hia.com.hr",
+      "file": "hia-com-hr.pdf",
+      "bytes": 45540,
+      "sha256": "9549cb9316b106a04a12505bbac6df37ee7daf8ca2feda5cf91aa0d2bf93cdb1"
+    },
+    {
+      "source": "023.hr",
+      "file": "023-hr.pdf",
+      "bytes": 43911,
+      "sha256": "5abb0d8c716cd36bc2a1f2524f7baa23f9370c9a1d9fa989564d99db5e60b6bb"
+    },
+    {
+      "source": "brodportal.hr",
+      "file": "brodportal-hr.pdf",
+      "bytes": 46645,
+      "sha256": "57f54f2918e4d91cfd4c7ac2cd8073c3d680a9b8c09e52a045ee67647edf3de2"
+    },
+    {
+      "source": "novosti.hr",
+      "file": "novosti-hr.pdf",
+      "bytes": 46257,
+      "sha256": "ea2441a2b8234dccb58ef0a0d96dcfcbd6574b7cbc7ae62cc7241b8e8367650e"
+    },
+    {
+      "source": "poskok.info",
+      "file": "poskok-info.pdf",
+      "bytes": 46005,
+      "sha256": "532d211c95858f135d047ecbcbea50e49befe385f308613e4d88d81bd5470edf"
+    },
+    {
+      "source": "n1info.com",
+      "file": "n1info-com.pdf",
+      "bytes": 44484,
+      "sha256": "43af9ca954aae23771f040859cc9275749af9f4561d820b4680077952a148076"
+    },
+    {
+      "source": "RTL Danas",
+      "file": "rtl-danas.pdf",
+      "bytes": 47189,
+      "sha256": "02a15b58620c492e7972accb61151d9b93eb2eda049c5054cf68f99061a3a216"
+    },
+    {
+      "source": "zadarskilist.hr",
+      "file": "zadarskilist-hr.pdf",
+      "bytes": 46654,
+      "sha256": "6997bd916bca25d05251d7a4e5dbf25cf514d4551cec646014481edaf0cd28fa"
+    },
+    {
+      "source": "vinkulja.hr",
+      "file": "vinkulja-hr.pdf",
+      "bytes": 47096,
+      "sha256": "4236a2816dd24153c77130b2b0b9664d2d7852c0e8c31c18b25c8a327c49d029"
+    },
+    {
+      "source": "hkv.hr",
+      "file": "hkv-hr.pdf",
+      "bytes": 44404,
+      "sha256": "2e3d1ee159ea27647d11c906a0b518b0bd3d53f14dd47996c502f049632bb6f6"
+    },
+    {
+      "source": "ofm.hr",
+      "file": "ofm-hr.pdf",
+      "bytes": 44702,
+      "sha256": "978362310f37ccd879deb62add58e08402e7b80272187aea809eb7b732a45e91"
+    },
+    {
+      "source": "unicath.hr",
+      "file": "unicath-hr.pdf",
+      "bytes": 45954,
+      "sha256": "907391a126360e09cfe918631e1070080efcf0413c65b912bb0688584f447b40"
+    },
+    {
+      "source": "likemetkovic.hr",
+      "file": "likemetkovic-hr-record-1.pdf",
+      "bytes": 47033,
+      "sha256": "05a3bfc52b4ea38015010f7b99d5507d8eb8832f92a1f8124f8861f5df613d89"
+    },
+    {
+      "source": "tvprofil.com",
+      "file": "tvprofil-com.pdf",
+      "bytes": 46302,
+      "sha256": "bfe88e94c5088d571b1bd756d413764aaa26c4c3cd8595fe350ebee1ef12e45b"
+    },
+    {
+      "source": "velikagorica.com",
+      "file": "velikagorica-com.pdf",
+      "bytes": 45599,
+      "sha256": "8f8915cc852847d334a47713fd9d71e99e011091e7a29702aacbd928a7e83811"
+    },
+    {
+      "source": "vjeraufanjeljubav.com.hr",
+      "file": "vjeraufanjeljubav-com-hr.pdf",
+      "bytes": 47968,
+      "sha256": "b4775354b0e176314a6e60c80f5b22de71cd0268db0d183b5f81409ec9dc0269"
+    },
+    {
+      "source": "DNEVNIK.hr",
+      "file": "dnevnik-hr-facebook.pdf",
+      "bytes": 45832,
+      "sha256": "beca088dd073094c36a9dd14d5a7dfac93fe4d199a17a4cbd282da78b2a3c173"
+    },
+    {
+      "source": "sibenskiportal.hr",
+      "file": "sibenskiportal-hr.pdf",
+      "bytes": 48421,
+      "sha256": "a59129839ff9e2d3ffb9a359d79e754cae395fe7307aa55dd06a7b8e47c457d1"
+    },
+    {
+      "source": "totalinfo.hr",
+      "file": "totalinfo-hr.pdf",
+      "bytes": 46014,
+      "sha256": "74645062ced8fd4bb4b4d03e4f6ac3477489827c4750213dda25bd2eedda02c0"
+    },
+    {
+      "source": "sjeverni.info",
+      "file": "sjeverni-info.pdf",
+      "bytes": 45587,
+      "sha256": "5a1cbd2b6bb34b83433324cabd208e9b61e48bc7d09a1b72133dcf660669733f"
+    },
+    {
+      "source": "liberoportal.hr",
+      "file": "liberoportal-hr.pdf",
+      "bytes": 46960,
+      "sha256": "37e558532e1d2ed3a30ca6e326f864d8a147fb127523d154c00e8580cf2d171a"
+    },
+    {
+      "source": "rtl.hr",
+      "file": "rtl-hr.pdf",
+      "bytes": 45003,
+      "sha256": "856b61fc80394a1de2254878b6f89cfe099ca6871c7d3d8520828bd61ca4ab4e"
+    },
+    {
+      "source": "portal.hr",
+      "file": "portal-hr.pdf",
+      "bytes": 45412,
+      "sha256": "30c644d0a478583bb32127a7c68821a094a10d1690f16910205d22ca31ad2caa"
+    },
+    {
+      "source": "hercegbosna.org",
+      "file": "hercegbosna-org.pdf",
+      "bytes": 46656,
+      "sha256": "7897fee94d7e0345cb135d16fa6ef8c48934d29c0b36a022588cff389dac077f"
+    },
+    {
+      "source": "biskupijakrk.hr",
+      "file": "biskupijakrk-hr.pdf",
+      "bytes": 47374,
+      "sha256": "babe52329afe7e57c1875021f31f82551cd67527b01a7e1318a239655355b21e"
+    },
+    {
+      "source": "24sata",
+      "file": "24sata.pdf",
+      "bytes": 45495,
+      "sha256": "2107734f1d32084316ade4aef68b077421af7bfaa5fd19839161bed8c1e6bfdc"
+    },
+    {
+      "source": "glasgrada.hr",
+      "file": "glasgrada-hr.pdf",
+      "bytes": 46892,
+      "sha256": "40a607694d5ed91f397c8aa78a18d5414e1a2440dbedc35f7b49f021bc2b6472"
+    },
+    {
+      "source": "ogportal.com",
+      "file": "ogportal-com.pdf",
+      "bytes": 47242,
+      "sha256": "9fb09295d6a28560a2d15f7c1ef9be0570c07ae188ff7e37ea19441425fab5e7"
+    },
+    {
+      "source": "leportale.com",
+      "file": "leportale-com.pdf",
+      "bytes": 44899,
+      "sha256": "c2f2df9149faebaea816b1e75895307f9d7acccd91255dde5e2e4ec81ed9aed3"
+    },
+    {
+      "source": "zupa-zabok.org",
+      "file": "zupa-zabok-org.pdf",
+      "bytes": 47683,
+      "sha256": "0f7f1ff609d217e3420c93c6ff3c4990061652461714043f3d77bfa67ff0b562"
+    },
+    {
+      "source": "medjimurjepress.net",
+      "file": "medjimurjepress-net.pdf",
+      "bytes": 46984,
+      "sha256": "29d7769755e754962de779041c4dbf9d06cef5e4452b099775a27631ac6615d4"
+    },
+    {
+      "source": "otvoreno.hr",
+      "file": "otvoreno-hr-record-1.pdf",
+      "bytes": 45162,
+      "sha256": "e3b347a087cac476e05ea2c85747e27adfad3c26ecf5ccca97c2ef3b97111771"
+    },
+    {
+      "source": "karmel.hr",
+      "file": "karmel-hr.pdf",
+      "bytes": 45882,
+      "sha256": "14b7c17733c6bef7b6532e552a0763162a1612c101bcd5792be254943dfef8c6"
+    },
+    {
+      "source": "likaclub.eu",
+      "file": "likaclub-eu-record-1.pdf",
+      "bytes": 46024,
+      "sha256": "b14268d8fbd13e59ade70cd32f25beee4a4a830bfdfe0db27205a4c82643db61"
+    },
+    {
+      "source": "braniteljski-portal.com",
+      "file": "braniteljski-portal-com.pdf",
+      "bytes": 48915,
+      "sha256": "33d5d5fb225ef2634e8ce2f476b6c6a8b7546988c2edcdf90d4a3ee11afd2fa1"
+    },
+    {
+      "source": "sisak.info",
+      "file": "sisak-info.pdf",
+      "bytes": 46334,
+      "sha256": "66723fafe2005105201b1b655265724766d904b32b8d970b5eef41f9ea952cd4"
+    },
+    {
+      "source": "sinjskarera.hr",
+      "file": "sinjskarera-hr.pdf",
+      "bytes": 46620,
+      "sha256": "29d7f163e64806bfdc06ef525cbc5ebe2a0e044010869d11498ca94d4e3f55b9"
+    },
+    {
+      "source": "radio-djakovo.hr",
+      "file": "radio-djakovo-hr.pdf",
+      "bytes": 46256,
+      "sha256": "97a1064191fce4c78a4d87adb41912121419839e270152d06d61817108f44cb0"
+    },
+    {
+      "source": "radioimotski.hr",
+      "file": "radioimotski-hr.pdf",
+      "bytes": 47287,
+      "sha256": "cadcc7ef6c2375f813fa2e8393f078bf80b8b52ed08b7ce00d7f236cb36f09aa"
+    },
+    {
+      "source": "story.hr",
+      "file": "story-hr.pdf",
+      "bytes": 46575,
+      "sha256": "357a2714c9fdc496efcdfc06d22dc2e83fc35e5b90624f0a0e54f3135829dec7"
+    },
+    {
+      "source": "radiong.hr",
+      "file": "radiong-hr.pdf",
+      "bytes": 46265,
+      "sha256": "20d5c5ba1d28a5df5fd314858fd01150423475ec222a1dce0f09c99371273fe0"
+    },
+    {
+      "source": "istrain.hr",
+      "file": "istrain-hr.pdf",
+      "bytes": 46211,
+      "sha256": "021d840275f32ca3931056b457ef88b173d932c16aec65075b5a22b6ad275ef9"
+    },
+    {
+      "source": "glaslike.hr",
+      "file": "glaslike-hr.pdf",
+      "bytes": 45783,
+      "sha256": "e698b232c99f468effebb361f86dedeeb33844440c8e6b99e881c3640967a14d"
+    },
+    {
+      "source": "Stopama Padre Pija",
+      "file": "stopama-padre-pija.pdf",
+      "bytes": 48518,
+      "sha256": "c8868d1b52e178707bdeadb20286d65d375f670331a8a396193246fd527a86aa"
+    },
+    {
+      "source": "radiomarija.hr",
+      "file": "radiomarija-hr.pdf",
+      "bytes": 44887,
+      "sha256": "a31e81216199f338f76fc56f16fb2fa207d8320106995aebff13f1b7ed2735bf"
+    },
+    {
+      "source": "Vecernji.ba",
+      "file": "vecernji-ba.pdf",
+      "bytes": 46459,
+      "sha256": "3318231f2372c03a38513f3c32f2524600132c214795ec58dec6c5b401d91dc9"
+    },
+    {
+      "source": "metkovic-news.com",
+      "file": "metkovic-news-com.pdf",
+      "bytes": 47323,
+      "sha256": "1692cf112d1519281ae9a9c88f5c30488df0304d1e14d75a3e35896d5c886335"
+    },
+    {
+      "source": "radioslatina.hr",
+      "file": "radioslatina-hr.pdf",
+      "bytes": 46298,
+      "sha256": "e83d58a88da3ef374a5481d0f00d4d7f2123f994c0dd0631a3cf5c88e9883cfa"
+    },
+    {
+      "source": "hu-benedikt.hr",
+      "file": "hu-benedikt-hr.pdf",
+      "bytes": 46143,
+      "sha256": "2aafd8e07657a20748e7d1b710064516a98bc1212c5fcd517a138132fe10546d"
+    },
+    {
+      "source": "epodravina.hr",
+      "file": "epodravina-hr.pdf",
+      "bytes": 46813,
+      "sha256": "a2c9ab93bdd0f1f41b00d8543ad965a392282313a80fc788a9c3a21b371e3690"
+    },
+    {
+      "source": "lika-online.hr",
+      "file": "lika-online-hr.pdf",
+      "bytes": 45880,
+      "sha256": "8d4dab8e76ceedec50f03cc606ce94e23bfe14d59474a726e2a8748218a5db3c"
+    },
+    {
+      "source": "Narod.hr",
+      "file": "narod-hr-record-2.pdf",
+      "bytes": 46184,
+      "sha256": "d96a39763deebfef64d90c7e7cd22ba0870f32a22d3cdf7f7da48d7a88797f0e"
+    },
+    {
+      "source": "vinjani.hr",
+      "file": "vinjani-hr.pdf",
+      "bytes": 45000,
+      "sha256": "937d28c2ae731cd170da6d905d0162469cb077480c2185c6fa26bdb01e9f2c63"
+    },
+    {
+      "source": "karlovacki.hr",
+      "file": "karlovacki-hr.pdf",
+      "bytes": 46296,
+      "sha256": "70e88ffeec1e85a10c2110ea8ff6d58f3f702eb93d3bdd9534140584ca65d928"
+    },
+    {
+      "source": "Net.hr",
+      "file": "net-hr-facebook.pdf",
+      "bytes": 45170,
+      "sha256": "8416e43d8a5d17eec4375c6e5f82c55d4b508260b985b77d12d8c08ae07ce22f"
+    },
+    {
+      "source": "vgdanas.hr",
+      "file": "vgdanas-hr.pdf",
+      "bytes": 46405,
+      "sha256": "4c09b1c78df19c0b72144357be886ae2112c4dabbda80801dd7bb195d9dc0fee"
+    },
+    {
+      "source": "kastela.org",
+      "file": "kastela-org.pdf",
+      "bytes": 47094,
+      "sha256": "871ba7041e8259290adeb069b80456e2cf36040eded5153b35ce3978081a49db"
+    },
+    {
+      "source": "Croative.net",
+      "file": "croative-net.pdf",
+      "bytes": 46906,
+      "sha256": "88f7d30481702b84081e46d1aee423debbfb8a9acec08d704c584f6e04917b03"
+    },
+    {
+      "source": "magazindan.info",
+      "file": "magazindan-info.pdf",
+      "bytes": 46977,
+      "sha256": "f044e4f411384362ac03f42f6570177183124dfb930bd2d102c259aceaa16176"
+    },
+    {
+      "source": "radiomoslavina.hr",
+      "file": "radiomoslavina-hr.pdf",
+      "bytes": 46832,
+      "sha256": "17eca3d240c640dab5e63ba4248e0a85a58f172935809cd593a54e6368105732"
+    },
+    {
+      "source": "skac.hr",
+      "file": "skac-hr.pdf",
+      "bytes": 46241,
+      "sha256": "4e24e07ad6c7eb4c6460e4765158efefca4d9392687cd7f143da60c66bf62617"
+    },
+    {
+      "source": "vzaktualno.hr",
+      "file": "vzaktualno-hr.pdf",
+      "bytes": 46538,
+      "sha256": "034742edec4fea63b05d6936f95a94139fee4414cec690805878a0df2a6d2f12"
+    },
+    {
+      "source": "kursiljo.com",
+      "file": "kursiljo-com.pdf",
+      "bytes": 46435,
+      "sha256": "f2e5d2563c45afbd6f0a1ec27662ae95e9eba0411b0bc988c13aa3a8a37e9442"
+    },
+    {
+      "source": "ofmconv.hr",
+      "file": "ofmconv-hr.pdf",
+      "bytes": 45759,
+      "sha256": "88fb9553bdcea05f1203101e7d88c4f6036764d4476507aa857f3f220907ecde"
+    },
+    {
+      "source": "prijedor24h.net",
+      "file": "prijedor24h-net.pdf",
+      "bytes": 46427,
+      "sha256": "8c9a596356f6e39053460acefa5f62045aba5756fc098c6bfd869181f26d0231"
+    },
+    {
+      "source": "Majko Marijo",
+      "file": "majko-marijo.pdf",
+      "bytes": 46168,
+      "sha256": "9a8544df3e82560491413c12d3a310beb46b2532cbbfeb298c1d88a50c8da8d5"
+    },
+    {
+      "source": "044portal.hr",
+      "file": "044portal-hr.pdf",
+      "bytes": 45824,
+      "sha256": "4be368a8f79c7a983b06f58e69becacf2dfcbfe4bb4fb537c4c909fcce1df8ff"
+    },
+    {
+      "source": "eivanec.com",
+      "file": "eivanec-com.pdf",
+      "bytes": 46479,
+      "sha256": "b6c6220149495ce269ebfef3b2c74f089aacfc15c407985be59630b8c6d0c140"
+    },
+    {
+      "source": "sbperiskop.net",
+      "file": "sbperiskop-net.pdf",
+      "bytes": 47176,
+      "sha256": "91f51a9d5ddfc0bfa06f6b184af849601c08b5923479cfb53bf1f906f4d3b930"
+    },
+    {
+      "source": "muralist.hr",
+      "file": "muralist-hr.pdf",
+      "bytes": 45926,
+      "sha256": "e6cd6799d09a1cbaa2880afa21fd5c5fdf4fdb1f6fc6c95166ca68057fc5ef7c"
+    },
+    {
+      "source": "Zagreb.info",
+      "file": "zagreb-info-record-2.pdf",
+      "bytes": 47177,
+      "sha256": "c55da37c4b633e5edcfc7cdc343f94ba975d6a46af97e41994899fefa9678c48"
+    },
+    {
+      "source": "novagra.hr",
+      "file": "novagra-hr.pdf",
+      "bytes": 46128,
+      "sha256": "8b0cae7cbaa0cefd27847071aa7cdaeb2adf57a124e27e0ccf1981f5d1e1f9cf"
+    },
+    {
+      "source": "radio-banovina.hr",
+      "file": "radio-banovina-hr.pdf",
+      "bytes": 46424,
+      "sha256": "32f0138482a77f51a1a4758e453826752c82bda87b7fd5fee8ab848c4048e810"
+    },
+    {
+      "source": "sbonline.net",
+      "file": "sbonline-net.pdf",
+      "bytes": 45942,
+      "sha256": "cfa872eb9fa96e72ab37d8138ab5b06ff05f85bd7e649060ebab7da9b650bca5"
+    },
+    {
+      "source": "RTL",
+      "file": "rtl.pdf",
+      "bytes": 44591,
+      "sha256": "e097d5e93d9ccd949fc107a68280ea2f92607adf7f01dca226fdae0f2e7e2390"
+    },
+    {
+      "source": "tabor.hr",
+      "file": "tabor-hr.pdf",
+      "bytes": 45510,
+      "sha256": "9de5658b5beac2355f810086e017127ca1fa26f9cc66561c4e14883cd36ac1bb"
+    },
+    {
+      "source": "moje-djakovo.com",
+      "file": "moje-djakovo-com.pdf",
+      "bytes": 47106,
+      "sha256": "960c3d58a8c8a34f29918dab39e86acce18db5eca7574d7f521d453401038a70"
+    },
+    {
+      "source": "torpedo.media",
+      "file": "torpedo-media.pdf",
+      "bytes": 47071,
+      "sha256": "de2cd26a3885e1871c2f87d36fb7d5e061dd49a371cf7fa7528c371150d89ca2"
+    },
+    {
+      "source": "morski.hr",
+      "file": "morski-hr.pdf",
+      "bytes": 45964,
+      "sha256": "17cb66d0f9efe57b99bbe98d9d201415a78feba0fc36875df67cad8c348da9e5"
+    },
+    {
+      "source": "Tportal.hr",
+      "file": "tportal-hr-record-2.pdf",
+      "bytes": 45913,
+      "sha256": "6343625a7d918da826dc5b376794c176dbec1bf8fa4e3ca630cf2568d48c72d5"
+    },
+    {
+      "source": "braniteljski-forum.com",
+      "file": "braniteljski-forum-com.pdf",
+      "bytes": 49113,
+      "sha256": "e32d53c4604a8c914f366dfafe2066baed4f0a8c2fe9a8b1e572ceb7d6d1f684"
+    },
+    {
+      "source": "portal53.hr",
+      "file": "portal53-hr.pdf",
+      "bytes": 45709,
+      "sha256": "7aefe135d7c7eee2b5a2c5bbd2c709b9aa3fcd4fafcabc915cdabed6dbb1f3a4"
+    },
+    {
+      "source": "veritas.hr",
+      "file": "veritas-hr.pdf",
+      "bytes": 45832,
+      "sha256": "1c985f4a58d9850e4f3ead2e7954a3954fc7e69ea0e378f177ab0714f9ea0991"
+    },
+    {
+      "source": "portalnovosti.com",
+      "file": "portalnovosti-com.pdf",
+      "bytes": 47875,
+      "sha256": "28bfa06693c51df074dbc60e5fe9ba66ae8f679994bb5711025ade34a4d5e73e"
+    },
+    {
+      "source": "culturenet.hr",
+      "file": "culturenet-hr.pdf",
+      "bytes": 44214,
+      "sha256": "105330d8d0100f7998e429721707cc58bca043e1ba83b96191a726910aca9d63"
+    },
+    {
+      "source": "rogotin.hr",
+      "file": "rogotin-hr.pdf",
+      "bytes": 45144,
+      "sha256": "de71292bd4e5eb3077fbd7481bed18dd6ef87a9dd9d658d7fc983c382867271b"
+    },
+    {
+      "source": "zupa-svkriz.hr",
+      "file": "zupa-svkriz-hr.pdf",
+      "bytes": 47217,
+      "sha256": "e743a3dec11bd397a2ef1ad97ab2ec0877f7f82f10d39d63685eae04da98efdc"
+    },
+    {
+      "source": "book.hr",
+      "file": "book-hr.pdf",
+      "bytes": 45732,
+      "sha256": "6cccc9b9c2ca011f0bb1cf78cee08a77c3ea475dd656cbcc884a2c059da78cf8"
+    },
+    {
+      "source": "mok.hr",
+      "file": "mok-hr.pdf",
+      "bytes": 44686,
+      "sha256": "5af7eb8b8ae346ae6f568fc5a9b8f97610f19c812eb6f9438d503e6ec9cb19f9"
+    },
+    {
+      "source": "drava.info",
+      "file": "drava-info.pdf",
+      "bytes": 45239,
+      "sha256": "5242462574109cd8a43a0a20d3c9a4ac2c826dd43c082d390b233039bca666fd"
+    },
+    {
+      "source": "istarski.hr",
+      "file": "istarski-hr.pdf",
+      "bytes": 46456,
+      "sha256": "02082ed016fcafb0b5308caa25bdb9e1f771b950e87c0ac19de69a32af9d94ec"
+    },
+    {
+      "source": "radio1.hr",
+      "file": "radio1-hr.pdf",
+      "bytes": 44440,
+      "sha256": "0c58ce15cd58c9d1b7d240c8beb023005b6a8d424867bb1541d1fcdaeaf83a1b"
+    },
+    {
+      "source": "teleskop.hr",
+      "file": "teleskop-hr.pdf",
+      "bytes": 47122,
+      "sha256": "11f989ff61c9fabd4ca8307f63e8745729f3c4e46b396a041ab90eb3a61e8c5a"
+    },
+    {
+      "source": "priznajem.hr",
+      "file": "priznajem-hr.pdf",
+      "bytes": 46631,
+      "sha256": "27575bce78bcce13f5db22e59b8f8026b5a3ae8b2f6d204396e29e30dcbaf7b2"
+    },
+    {
+      "source": "indirektno.com",
+      "file": "indirektno-com.pdf",
+      "bytes": 46132,
+      "sha256": "b8cdfb7de4d137ddd2dd93228f3dd88b18e18254b6d123342fa2cd83d45501c3"
+    },
+    {
+      "source": "cpps.hr",
+      "file": "cpps-hr.pdf",
+      "bytes": 45622,
+      "sha256": "0d2aed2834e75b91c1d9e18fa5ae1460f33c2d2cbf4f6f53aff5fb5627d6d9b3"
+    },
+    {
+      "source": "matis.hr",
+      "file": "matis-hr.pdf",
+      "bytes": 45611,
+      "sha256": "340803f0e9d2deb1e83781f14b3e64bc71363fcc98511868cf7859d01f1f922c"
+    },
+    {
+      "source": "posusje.info",
+      "file": "posusje-info.pdf",
+      "bytes": 46088,
+      "sha256": "d27408f164d577e2a41c7d983609d38c3e66909595165b2d6fe1aac399a15e3d"
+    },
+    {
+      "source": "scena.ba",
+      "file": "scena-ba.pdf",
+      "bytes": 45857,
+      "sha256": "cc4d1e1303139b967cb1a125a2619ab2bacef70de5613afe9b7508c2c5befc9d"
+    },
+    {
+      "source": "fiuman.hr",
+      "file": "fiuman-hr.pdf",
+      "bytes": 45952,
+      "sha256": "806fd32ed54616da808932b124445916e7fd015889495e207828117a1e0fe8e7"
+    },
+    {
+      "source": "gloria.hr",
+      "file": "gloria-hr.pdf",
+      "bytes": 45518,
+      "sha256": "bd505791d0c892ba7dcbabace788b216bd945435eecdb3ff02b12c7f5e5ce1e8"
+    },
+    {
+      "source": "mraclin.hr",
+      "file": "mraclin-hr.pdf",
+      "bytes": 45454,
+      "sha256": "cd937538ddd01d16aa6fd5bca8abad5a2fa4b8359af971840ef2168c762e5154"
+    },
+    {
+      "source": "pozega.hr",
+      "file": "pozega-hr.pdf",
+      "bytes": 46226,
+      "sha256": "d9de8b88ff7c612abbb38cd4a74d7314040f33e5f9191fd22563e5e718a363b8"
+    },
+    {
+      "source": "mka.hr",
+      "file": "mka-hr.pdf",
+      "bytes": 45402,
+      "sha256": "3325654a12b149ede400fdbc00c1cc7495607e58b48e38d6e7f55279696556e3"
+    },
+    {
+      "source": "politikaplus.com",
+      "file": "politikaplus-com.pdf",
+      "bytes": 47585,
+      "sha256": "97ee3ff81cf852b1e22b5565ae35944e929ff3004a5f32823b0e374cf26423b6"
+    },
+    {
+      "source": "zupa-sv-nikole-varazdin.hr",
+      "file": "zupa-sv-nikole-varazdin-hr.pdf",
+      "bytes": 46801,
+      "sha256": "403f2ffc8711d151992d4cb717e5e04671c22e55e7cb4b4e64cc1b7553771cd6"
+    },
+    {
+      "source": "LIKACLUB.eu",
+      "file": "likaclub-eu-record-2.pdf",
+      "bytes": 46305,
+      "sha256": "d40df1aadc45fc229bfa2567f2e9737faea0cc231a131907988fb72ca9ed3c5c"
+    },
+    {
+      "source": "hop.com.hr",
+      "file": "hop-com-hr.pdf",
+      "bytes": 44652,
+      "sha256": "499de1cfaf60b518a8d7abf06663d0dca95b8f315add0e73773aece5cfb89fa1"
+    },
+    {
+      "source": "svetiste-mbb.hr",
+      "file": "svetiste-mbb-hr.pdf",
+      "bytes": 46689,
+      "sha256": "54d09d4cee53c257b0e587c9073967315a9fee6ecea5ba44d0914ce9d5b125b5"
+    },
+    {
+      "source": "tomislavcity.com",
+      "file": "tomislavcity-com.pdf",
+      "bytes": 47459,
+      "sha256": "ca0eb1418cacc65ba0863fb3541ea82fedaedfcbbd87255502688ba59e6240fd"
+    },
+    {
+      "source": "hrv.hr",
+      "file": "hrv-hr.pdf",
+      "bytes": 43299,
+      "sha256": "b423c4871a5a886eac4112c58ac7854497e439652f36675146d0bae39b00fdc9"
+    },
+    {
+      "source": "trend.com.hr",
+      "file": "trend-com-hr.pdf",
+      "bytes": 45723,
+      "sha256": "ccfc3912fb291f234dd57ca99ce39d59312a60b3bf714b8f5fc94590c785f890"
+    },
+    {
+      "source": "Index.hr",
+      "file": "index-hr-facebook.pdf",
+      "bytes": 45923,
+      "sha256": "cb5597bf2b9779beb95075cf6484ddaa14ce5fb1f0880f9527b328bc83ad3676"
+    },
+    {
+      "source": "radio-zlatar.hr",
+      "file": "radio-zlatar-hr.pdf",
+      "bytes": 45711,
+      "sha256": "d5b7c0ae8f92c5f90bdfefcfc57a42437ec4f2d004351a3892c717e7c04cb25c"
+    },
+    {
+      "source": "radiokrizevci.hr",
+      "file": "radiokrizevci-hr.pdf",
+      "bytes": 46604,
+      "sha256": "d9e01bc8b54f2a185be3b10bd373ab5fc70ed565d3d34d7d5d856495e9a12213"
+    },
+    {
+      "source": "Telegram.hr",
+      "file": "telegram-hr-record-2.pdf",
+      "bytes": 45355,
+      "sha256": "22536d0ced510e7a9c53ea0d715b1e20618bd2e540e7eeae4f5ca0531fe138f1"
+    },
+    {
+      "source": "metkovic.hr",
+      "file": "metkovic-hr.pdf",
+      "bytes": 46856,
+      "sha256": "291677d365438a288f6ed845436cab005a31207a08dec91ce9d7f8efb1b62615"
+    },
+    {
+      "source": "antikvarijatzz.hr",
+      "file": "antikvarijatzz-hr.pdf",
+      "bytes": 45685,
+      "sha256": "8f0af80d03657a794367ad7fbda4ef3eda9d8ba3c107d441c2d32b02bbd57308"
+    },
+    {
+      "source": "plusportal.hr",
+      "file": "plusportal-hr.pdf",
+      "bytes": 45841,
+      "sha256": "18b21f19a53cb1bf1497f6aea3fd7ce252cd27a927e675b1c8580c9be7a88625"
+    },
+    {
+      "source": "blidinje.net",
+      "file": "blidinje-net.pdf",
+      "bytes": 46114,
+      "sha256": "3514d9cb53bd860534f5cc1a83db5841e46d071822c2e2f53db72627ac2c016d"
+    },
+    {
+      "source": "kronikevg.com",
+      "file": "kronikevg-com.pdf",
+      "bytes": 46844,
+      "sha256": "a30e9777c2c6da98834d3be1b116287b05fe405119f7318bb253ae3e4d39c13d"
+    },
+    {
+      "source": "Jutarnji",
+      "file": "jutarnji.pdf",
+      "bytes": 45801,
+      "sha256": "dbbc2f02e55e92e158e8a87de00d3c7b8a65f249d989cb4f6ff83bcd488f7688"
+    },
+    {
+      "source": "akademija-art.hr",
+      "file": "akademija-art-hr.pdf",
+      "bytes": 47382,
+      "sha256": "7b166ad90b5cbc71e5265d96ca8391995a991989fac0a336a6af8290ee4c3f07"
+    },
+    {
+      "source": "novi-radio.hr",
+      "file": "novi-radio-hr.pdf",
+      "bytes": 45916,
+      "sha256": "81f44adcba44e1627c500b494aad7f3ca6772a6e6bdab0e2f95b524743849cea"
+    },
+    {
+      "source": "Zagorje.com",
+      "file": "zagorje-com-record-2.pdf",
+      "bytes": 46574,
+      "sha256": "f3b6d82f15e80669d545c2d00cbe419d60faa1b751b05e313be460e0a6473e9c"
+    },
+    {
+      "source": "ipress.hr",
+      "file": "ipress-hr.pdf",
+      "bytes": 44761,
+      "sha256": "15a4f259a5ad608d9bfed19ccec670bf79074a6cf4f0aa7e298724ce1920d1a4"
+    },
+    {
+      "source": "rva.hr",
+      "file": "rva-hr.pdf",
+      "bytes": 44973,
+      "sha256": "3f3ec860fc9754a28cce665724318db8d65790d67836a33ceb10ae725124adf0"
+    },
+    {
+      "source": "pozeska-kronika.hr",
+      "file": "pozeska-kronika-hr.pdf",
+      "bytes": 47697,
+      "sha256": "877ad17c4b71cb0c7c6891ca8422ede36a4c1951232aac5ef3908fb15321f587"
+    },
+    {
+      "source": "isusovci.hr",
+      "file": "isusovci-hr.pdf",
+      "bytes": 45935,
+      "sha256": "5ee25ec0f496c8b11be652292a1593743c469e39a701c099c49ac117811f2049"
+    },
+    {
+      "source": "rijekadanas.com",
+      "file": "rijekadanas-com.pdf",
+      "bytes": 48637,
+      "sha256": "53071f3992c1a10a59e3df410575dc82decea9d00404eb8212d2cb2730ae8748"
+    },
+    {
+      "source": "slavonski.hr",
+      "file": "slavonski-hr.pdf",
+      "bytes": 47164,
+      "sha256": "945bdff1e13a743a13c641dc46eefd7293916cb9427850e889d937cc430792fc"
+    },
+    {
+      "source": "gspress.net",
+      "file": "gspress-net.pdf",
+      "bytes": 46490,
+      "sha256": "7f0783b6ff0ee40cdc95694afa80e7b73273cb8637245aa9d88edc7d057dd48d"
+    },
+    {
+      "source": "klikni.hr",
+      "file": "klikni-hr.pdf",
+      "bytes": 44566,
+      "sha256": "5fba873c68474f73150b2b4f72bf5f2c01fd36da34236514f584e60d67648b57"
+    },
+    {
+      "source": "dubrovnikpress.hr",
+      "file": "dubrovnikpress-hr.pdf",
+      "bytes": 47608,
+      "sha256": "8429ac7173dc3f6cbeb0dc0797ea32ddc3abcaa607b93b885a4231a252a4f19b"
+    },
+    {
+      "source": "pev.com.hr",
+      "file": "pev-com-hr.pdf",
+      "bytes": 43885,
+      "sha256": "8d4495e93aa30f0aca1278129e31ad2259a0082f3a6174b6a0ba09b444a3901e"
+    },
+    {
+      "source": "teklic.hr",
+      "file": "teklic-hr.pdf",
+      "bytes": 45661,
+      "sha256": "31817774ed8e85e2f3ed9330b6aa4e6921c8b9057a75ccd440e29911f102b81c"
+    },
+    {
+      "source": "cityportal.hr",
+      "file": "cityportal-hr.pdf",
+      "bytes": 46140,
+      "sha256": "e4a1292ccc8c3bb1a3d22c0aeec1eb43ae70c92507827194535ca5c73acd3c91"
+    },
+    {
+      "source": "logicno.com",
+      "file": "logicno-com.pdf",
+      "bytes": 45277,
+      "sha256": "afb60f4319330010b7e9d40aa79c08782fd9877d140a8f2d4462617857ea4596"
+    },
+    {
+      "source": "e-hercegovina.com",
+      "file": "e-hercegovina-com.pdf",
+      "bytes": 47226,
+      "sha256": "30fb656dfb257866f867b1d06002b36da178b35d2d672aedd9263af6fdecd35e"
+    },
+    {
+      "source": "gspress.eu",
+      "file": "gspress-eu.pdf",
+      "bytes": 45570,
+      "sha256": "556d1ab793fe9988e1793dcfa81f3b9d89d0b6ed94cf619e96aa9bf48097192e"
+    },
+    {
+      "source": "totalno.hr",
+      "file": "totalno-hr.pdf",
+      "bytes": 45553,
+      "sha256": "40f480fcb3ccedd0e1c0b84a567c53607a830c0fa6765e9eaed6db6bc27b7438"
+    },
+    {
+      "source": "hrvatskiglas-berlin.eu",
+      "file": "hrvatskiglas-berlin-eu.pdf",
+      "bytes": 48409,
+      "sha256": "5427213eefe3eeb2f5ce63450fe90e311b15dd85cb2bed33962b822c5599e0d8"
+    },
+    {
+      "source": "ljubuski.net",
+      "file": "ljubuski-net.pdf",
+      "bytes": 46866,
+      "sha256": "28d35cada11ca6737ed2847e05e27da6f2e98b158ff790da04ae2e6de719a772"
+    },
+    {
+      "source": "rtv-hb.com",
+      "file": "rtv-hb-com.pdf",
+      "bytes": 46164,
+      "sha256": "be615d53138b4646487930d63143c41eb6e8c2fbd33bbeedd02b53a8f7ba470a"
+    },
+    {
+      "source": "quirinusportal.com",
+      "file": "quirinusportal-com.pdf",
+      "bytes": 47586,
+      "sha256": "64c5b7651bd3b099185f650f0f6374f06a2c60745732098ea9d7dcef719b25ad"
+    },
+    {
+      "source": "cronika.hr",
+      "file": "cronika-hr.pdf",
+      "bytes": 45623,
+      "sha256": "c7af0c9f1dd018d8788885399216112867075ef6beab9e05764522b3279db35e"
+    },
+    {
+      "source": "antikvarijat-biblos.hr",
+      "file": "antikvarijat-biblos-hr.pdf",
+      "bytes": 46959,
+      "sha256": "c1705783d84994a677d4aed526ed450d384387ed5ae5b0e0badea4aba45d1775"
+    },
+    {
+      "source": "radio-mreznica.hr",
+      "file": "radio-mreznica-hr.pdf",
+      "bytes": 46918,
+      "sha256": "feaf67cfdd9915bf8257acb4ade7de7206d3d69c487aa6d8c09d1c42dffc3fa2"
+    },
+    {
+      "source": "valpovstina.info",
+      "file": "valpovstina-info.pdf",
+      "bytes": 46520,
+      "sha256": "aa83d8baf36a1a4f635d701981dc14d18b9d3d3772b59f4131a07ba24701e652"
+    },
+    {
+      "source": "radiosamobor.hr",
+      "file": "radiosamobor-hr.pdf",
+      "bytes": 46524,
+      "sha256": "4f6d546511beb31f2df16d7b2126a596633a6d3503d1744e4baeeb1b8ebc8de7"
+    },
+    {
+      "source": "caritas.hr",
+      "file": "caritas-hr.pdf",
+      "bytes": 47050,
+      "sha256": "6d5c175e93383c20dd0047422001f35c914c66d976576990ce9ceabd57b44abd"
+    },
+    {
+      "source": "mojportal.hr",
+      "file": "mojportal-hr.pdf",
+      "bytes": 46581,
+      "sha256": "117b3e456d889341d3c0eeba47e09d682d2299c7b2800248d8b28ea5ff35d821"
+    },
+    {
+      "source": "aljazeera.net",
+      "file": "aljazeera-net.pdf",
+      "bytes": 45679,
+      "sha256": "9e4454762e0fe9a1c50f2f17113028a2854b0287bd78c962f6841351d6917a07"
+    },
+    {
+      "source": "herons.info",
+      "file": "herons-info.pdf",
+      "bytes": 45875,
+      "sha256": "30404a6b5d3658c6d18551103d5fb78cf7c23ffae17f77f66049eebf3145fc02"
+    },
+    {
+      "source": "makarska-danas.com",
+      "file": "makarska-danas-com.pdf",
+      "bytes": 46788,
+      "sha256": "d5b0be01c62b67dcae04bada65be90fd0c7fc3f022c9ff336fe316b284997133"
+    },
+    {
+      "source": "sisakportal.hr",
+      "file": "sisakportal-hr.pdf",
+      "bytes": 47725,
+      "sha256": "fa9434ef6d1c2c9c4bf646ce0afd4a543316801acf1fd79e9fd274ac3bcce810"
+    },
+    {
+      "source": "atma.hr",
+      "file": "atma-hr.pdf",
+      "bytes": 45310,
+      "sha256": "a5cc7bfe1aff1f62563915c53aa8ba1f301412e5a3351f5ed3324a5f9dd15704"
+    },
+    {
+      "source": "hrsvijet.net",
+      "file": "hrsvijet-net.pdf",
+      "bytes": 45230,
+      "sha256": "7e5f834de8460207452e23ce7469ba717b2e6910bf882bdabfa72a8da196ce81"
+    },
+    {
+      "source": "Duhovniportal.com",
+      "file": "duhovniportal-com.pdf",
+      "bytes": 47005,
+      "sha256": "0628072b7325c63dea0ab8f7b9816afd8caa3610e069c70d464d23a110777ed0"
+    },
+    {
+      "source": "Zadarski.hr",
+      "file": "zadarski-hr.pdf",
+      "bytes": 46788,
+      "sha256": "cde6525f1968da315a8e27d6b71b0f585625186f03ed5375a04c0c959fb9e2e6"
+    },
+    {
+      "source": "Sjever.hr",
+      "file": "sjever-hr-record-2.pdf",
+      "bytes": 45184,
+      "sha256": "14c6755fcebd8945b3fb61d1b39524bce35ea440987711573b0e17e62433e233"
+    },
+    {
+      "source": "bjelovar.live",
+      "file": "bjelovar-live.pdf",
+      "bytes": 45792,
+      "sha256": "01c20749420c1ee53ed7161ebee6e5bacd2a164a48a8bea965f1f9a113d819a6"
+    },
+    {
+      "source": "radionasice.hr",
+      "file": "radionasice-hr.pdf",
+      "bytes": 46008,
+      "sha256": "f7fb96d828e931bba2281de70b5b8dcc6b4c47dcdf359ce939b0743d1010590d"
+    },
+    {
+      "source": "crodex.net",
+      "file": "crodex-net.pdf",
+      "bytes": 46130,
+      "sha256": "7af684eff2bb2308f3891a8708ecd9c9eb6e052f670cd4e893cf48314eafadf2"
+    },
+    {
+      "source": "nacionalno.hr",
+      "file": "nacionalno-hr.pdf",
+      "bytes": 45953,
+      "sha256": "83023b7c645b5f235242e7403dba409d5ce682446666e20cfaec6de0083a5f75"
+    },
+    {
+      "source": "metro-portal.hr",
+      "file": "metro-portal-hr.pdf",
+      "bytes": 46599,
+      "sha256": "e2ce8f606e2e6c1f742c4c45c5bcc722e274f391221de0e9fccd4035923d28e1"
+    },
+    {
+      "source": "zupa-duhasvetoga-jarun.hr",
+      "file": "zupa-duhasvetoga-jarun-hr.pdf",
+      "bytes": 48639,
+      "sha256": "26fc15708884a281afa842363aff6b8d3e4d11d7ec00b87432ab307fa589c6d1"
+    },
+    {
+      "source": "poduckun.net",
+      "file": "poduckun-net.pdf",
+      "bytes": 46261,
+      "sha256": "7aa4b6eca5a0c8fcd20f6d4f4fc7c46cb2eb0f38c9cee1a6165b1636d21a939c"
+    },
+    {
+      "source": "casopiskvaka.com.hr",
+      "file": "casopiskvaka-com-hr.pdf",
+      "bytes": 47926,
+      "sha256": "248abadf0408bffd6ecf820b0a1561fe7869980b6ca5db6eb0b151c5f44f83f8"
+    },
+    {
+      "source": "livno-online.com",
+      "file": "livno-online-com.pdf",
+      "bytes": 45932,
+      "sha256": "f8e9c5dd9d3aa9b76729dddcd7d4243c8262e86528ba4279ee89e832ea9e4ddd"
+    },
+    {
+      "source": "zupa-sv-marka-krizevcanina.hr",
+      "file": "zupa-sv-marka-krizevcanina-hr.pdf",
+      "bytes": 48215,
+      "sha256": "32a74b9f308c086136caa65fef2b7777626bde8b40c1dc45496282fb19b249e0"
+    },
+    {
+      "source": "gov.hr",
+      "file": "gov-hr.pdf",
+      "bytes": 45111,
+      "sha256": "b830803873b6514b4ade90430157b1573f6479faa2ded3901d3b28b21b20a6cc"
+    },
+    {
+      "source": "hrvatski-glasnik.com",
+      "file": "hrvatski-glasnik-com.pdf",
+      "bytes": 48725,
+      "sha256": "7318fe4638a3ed672ab6c87d541b727e1b1c2fd09d644a492cea750ca89204fc"
+    },
+    {
+      "source": "mirovina.hr",
+      "file": "mirovina-hr.pdf",
+      "bytes": 46612,
+      "sha256": "299365946410802ba058b2d700a09651ef3a667475e7dea29d729c729041c6ae"
+    },
+    {
+      "source": "banjalukain.com",
+      "file": "banjalukain-com.pdf",
+      "bytes": 45773,
+      "sha256": "0327598c30e3d9552cb766752f5f50ca06a90330445f9ab53e7456a959b07345"
+    },
+    {
+      "source": "ipaprkc.org",
+      "file": "ipaprkc-org.pdf",
+      "bytes": 46470,
+      "sha256": "17a3b64463692fb9d8f8930e0dc4fc32f3439ecd144ad31ba5256eb612dd3e7f"
+    },
+    {
+      "source": "LIKEmetkovic.hr",
+      "file": "likemetkovic-hr-record-2.pdf",
+      "bytes": 47568,
+      "sha256": "454ecbf93003c573338ab599669ac886fc992a3bf137c2a3d9806ee0b55f09f7"
+    },
+    {
+      "source": "kanal-ri.hr",
+      "file": "kanal-ri-hr.pdf",
+      "bytes": 45711,
+      "sha256": "de2c3e2a8db314bb60eea3ee1ae71b9a6685283b858850659f36d2ec4e44c717"
+    },
+    {
+      "source": "srednja.hr",
+      "file": "srednja-hr.pdf",
+      "bytes": 46758,
+      "sha256": "d363f2e3d9cd2053bcd00b438d14181cd6de4686300451842dad6dc1afc0460d"
+    },
+    {
+      "source": "foi.hr",
+      "file": "foi-hr.pdf",
+      "bytes": 43455,
+      "sha256": "a278b39f3e06d803c5f4e02b62863ae104b7007d714871cd83c101e2152567cb"
+    },
+    {
+      "source": "osijek031.com",
+      "file": "osijek031-com.pdf",
+      "bytes": 46545,
+      "sha256": "656fa00021a6969cb8bbc370376f11cc1c72ebf3242092553be7f961383d0f85"
+    },
+    {
+      "source": "BOŽANSKA LJUBAV",
+      "file": "bozanska-ljubav.pdf",
+      "bytes": 47558,
+      "sha256": "d1bebe46366f05d3bf89d9bcd7ca31127d81374fab3ef379969f9f2a8fcb7590"
+    },
+    {
+      "source": "budiFRAjer",
+      "file": "budifrajer.pdf",
+      "bytes": 46937,
+      "sha256": "790e1b84fa219d1ebffa47af03b9fc635a70d841cff6a51c44a1b7f24200f54a"
+    },
+    {
+      "source": "donbosco.hr",
+      "file": "donbosco-hr.pdf",
+      "bytes": 45649,
+      "sha256": "cf9e46b406d0506b8ba2c008e15d2ab757baf94f329362f1e594b827c842951e"
+    },
+    {
+      "source": "Otvoreno.hr",
+      "file": "otvoreno-hr-record-2.pdf",
+      "bytes": 44656,
+      "sha256": "b4311f7f13c6af5fa236a61716d41a0e74ac501d21a5294eb8627058db0c2a02"
+    },
+    {
+      "source": "prelog.hr",
+      "file": "prelog-hr.pdf",
+      "bytes": 44418,
+      "sha256": "c0cd09990d8e952742402a1e4c1251fadaaca4de47c46e8d73f97ce230aa2406"
+    },
+    {
+      "source": "mojevrijeme.hr",
+      "file": "mojevrijeme-hr.pdf",
+      "bytes": 46705,
+      "sha256": "9dc1f829684228921e5287298659aa85c22573a9fe9edd6d0666fdf6025657af"
+    },
+    {
+      "source": "siscia.hr",
+      "file": "siscia-hr.pdf",
+      "bytes": 45819,
+      "sha256": "dc260d5fac5886d7a648a0ee82319113256d085dc08be633b73a3ba9d3e5757c"
+    },
+    {
+      "source": "makarskadanas.hr",
+      "file": "makarskadanas-hr.pdf",
+      "bytes": 46714,
+      "sha256": "8de826c39e50aefa76adbb5c4ae2ebf4d2d49ca1e0680a5c26421320af6c75e1"
+    },
+    {
+      "source": "mojtv.hr",
+      "file": "mojtv-hr.pdf",
+      "bytes": 46061,
+      "sha256": "e87f1432434742b16ffc615e3b45cf36ed82b43d79c9acd8f2009720658e6ec4"
+    },
+    {
+      "source": "seebiz.eu",
+      "file": "seebiz-eu.pdf",
+      "bytes": 45608,
+      "sha256": "027771753e8728cc33f5a949ab1c4f018d0f306cf22ece71ad2ec03a0190823d"
+    },
+    {
+      "source": "zadarskitjednik.hr",
+      "file": "zadarskitjednik-hr.pdf",
+      "bytes": 47490,
+      "sha256": "3fbd51ba586066de37f128db65faa9dbcb991ed434f29bf5dd1cda87242dd354"
+    },
+    {
+      "source": "croexpress.eu",
+      "file": "croexpress-eu.pdf",
+      "bytes": 46493,
+      "sha256": "013735597c8c4b9484f14d4832a40a73766ee744fe79b6d7eef195e374c426c3"
+    },
+    {
+      "source": "savjetizadeset.info",
+      "file": "savjetizadeset-info.pdf",
+      "bytes": 46580,
+      "sha256": "dbf062d529cfd02ac69e16fabc0ec904db890dd5b92e2069a8e03a2cbda7329d"
+    },
+    {
+      "source": "kucice.hr",
+      "file": "kucice-hr.pdf",
+      "bytes": 45158,
+      "sha256": "9d55ec7aca58deecbc272699a037df43437ea1bcde3e2146d3bcc300500d9790"
+    },
+    {
+      "source": "bjelovar.info",
+      "file": "bjelovar-info.pdf",
+      "bytes": 46868,
+      "sha256": "92df7621b079f559a72748a4362769c1605f7fff9c40e66cb7d9309a515ee9b8"
+    },
+    {
+      "source": "www.rama-prozor.info",
+      "file": "www-rama-prozor-info.pdf",
+      "bytes": 47150,
+      "sha256": "badbe6e935d42a137fa35f0d78a9199455acc2c910677771d7c301fe971ebb80"
+    },
+    {
+      "source": "jaskadanas.hr",
+      "file": "jaskadanas-hr.pdf",
+      "bytes": 46454,
+      "sha256": "26778b169537ed8d5c1579c7b588caaf17b9f213571d8a607abbf90a2b3f3429"
+    },
+    {
+      "source": "noviradio.hr",
+      "file": "noviradio-hr.pdf",
+      "bytes": 45642,
+      "sha256": "2b8cef17401cf7216b8204a7d36ec2b7db16a0291278879347501d1ec206feea"
+    },
+    {
+      "source": "stv.hr",
+      "file": "stv-hr.pdf",
+      "bytes": 45050,
+      "sha256": "4e0020428969097e55c826fe57c1f0c8c974e10d120df0a8710b4c3e8c45364f"
+    },
+    {
+      "source": "hdkn.hr",
+      "file": "hdkn-hr.pdf",
+      "bytes": 44015,
+      "sha256": "cbb2efb1479348b2f762e1858b00778fd5e112f650911d5604e12308a45c3a98"
+    },
+    {
+      "source": "mojzagreb.info",
+      "file": "mojzagreb-info.pdf",
+      "bytes": 47603,
+      "sha256": "93c3ad8457225a1dd662a8ba296b3b986ddaa3840a8e57796f70e3d26413e507"
+    },
+    {
+      "source": "osijekexpress.com",
+      "file": "osijekexpress-com.pdf",
+      "bytes": 47458,
+      "sha256": "a97fe2abfa642dae4a1de64aae90c695fae6107fe3f68b8c95e9a8986961c55f"
+    },
+    {
+      "source": "superknjizara.hr",
+      "file": "superknjizara-hr.pdf",
+      "bytes": 45750,
+      "sha256": "20790a15a31a37f2a1eb89bdb39e936a086f925f6702350f6438551c7bbd3288"
+    },
+    {
+      "source": "5portal.hr",
+      "file": "5portal-hr.pdf",
+      "bytes": 45253,
+      "sha256": "462a4255600ad1e841834176f3a919d63128f745a8c212cf9eeda97a211d63da"
+    },
+    {
+      "source": "hercegovina.info",
+      "file": "hercegovina-info.pdf",
+      "bytes": 46985,
+      "sha256": "6126bc7417cb570e493e474a7cb5bafa003aaf2140e772b863100e2c8556d3e1"
+    },
+    {
+      "source": "tris.com.hr",
+      "file": "tris-com-hr.pdf",
+      "bytes": 46241,
+      "sha256": "84439a4dcea27e7abda987588fb766c311772ee9a6b3a0baca0d68fee300eaea"
+    },
+    {
+      "source": "infovodice.com",
+      "file": "infovodice-com.pdf",
+      "bytes": 46990,
+      "sha256": "54c99cd4f8c5fedff4391ad990f0caef132f9c62b4c19242f82b972416cf01ee"
+    },
+    {
+      "source": "Vitez.info",
+      "file": "vitez-info.pdf",
+      "bytes": 45728,
+      "sha256": "6c4f11093317d6301674fd37ed65e05af1931b8dfffeae3dfee4345ee6822378"
+    },
+    {
+      "source": "portaloko.hr",
+      "file": "portaloko-hr.pdf",
+      "bytes": 45516,
+      "sha256": "8f5b3cb99de3b3b43348741ad3e8e82810f9d7e51201e75fedb0a75c30beab03"
+    },
+    {
+      "source": "Dugopolje.org",
+      "file": "dugopolje-org.pdf",
+      "bytes": 45462,
+      "sha256": "fb4b0a5506cff1c015c1fcfaad53808ea81db7fa27e652191a22deafef0838f9"
+    },
+    {
+      "source": "sabh.hr",
+      "file": "sabh-hr.pdf",
+      "bytes": 45196,
+      "sha256": "dc7a898e3daf87a9de2c36f30f5c3f448e6fc7858842d21cd3cf2cc7e221302c"
+    },
+    {
+      "source": "jadranski.hr",
+      "file": "jadranski-hr.pdf",
+      "bytes": 46091,
+      "sha256": "24bd7a06914e4221a07e6d1005971a51d0d3dcfd0ca6f4289329308e981ace39"
+    },
+    {
+      "source": "klanjateljice.hr",
+      "file": "klanjateljice-hr.pdf",
+      "bytes": 46504,
+      "sha256": "53aa4db0ee7a24e7debff5ae0a385bd8b56e6ce77e3796d16bb29678be8e8aae"
+    },
+    {
+      "source": "historiografija.hr",
+      "file": "historiografija-hr.pdf",
+      "bytes": 47383,
+      "sha256": "45b26dfb215f4509f6f7e2b3ade151d6fc7ef8d6590efca4961349990445ee11"
+    },
+    {
+      "source": "dobardan.info",
+      "file": "dobardan-info.pdf",
+      "bytes": 45790,
+      "sha256": "2ee3f2ee3aae6c2e1123193b5847032ca6ff414da8bc89d6c5bd847e50371501"
+    },
+    {
+      "source": "fratellanza.net",
+      "file": "fratellanza-net.pdf",
+      "bytes": 45130,
+      "sha256": "53757b5be7660c4bac0171a87374134cbb9a6c433779d458926868e6a81f4822"
+    },
+    {
+      "source": "senjskabura.hr",
+      "file": "senjskabura-hr.pdf",
+      "bytes": 45776,
+      "sha256": "202594f0a2374594ced9aa2a53d9c8c1e95d80a765fbcc215e98c86f5eea7bf5"
+    },
+    {
+      "source": "tunera.info",
+      "file": "tunera-info.pdf",
+      "bytes": 46246,
+      "sha256": "b0ace86cfe20cda67d3b30d1f557a7efc6d9890cc9a250bb4aff62c9f7d3e03f"
+    },
+    {
+      "source": "krizevci.hr",
+      "file": "krizevci-hr.pdf",
+      "bytes": 45552,
+      "sha256": "3d8ebf9ded9f1d7b3e3380d2dc5f2a7821d936e62d84b90875efc42defcc8b34"
+    },
+    {
+      "source": "morh.hr",
+      "file": "morh-hr.pdf",
+      "bytes": 44700,
+      "sha256": "59cf13d115d651cdf3b405e0a30407a1505234190635fe7ed001b648d1eb5dbc"
+    },
+    {
+      "source": "panopticum.hr",
+      "file": "panopticum-hr.pdf",
+      "bytes": 46358,
+      "sha256": "43b7c4be83ef45c347217ec966f93e084d484570504a2b2dcf700a50a340c240"
+    },
+    {
+      "source": "obican.info",
+      "file": "obican-info.pdf",
+      "bytes": 44629,
+      "sha256": "5d3d7c410c5f93fe3796371ba348cfdf516162e58d7779a59454fdf9b0375431"
+    },
+    {
+      "source": "sportnet.hr",
+      "file": "sportnet-hr.pdf",
+      "bytes": 44815,
+      "sha256": "ef57bb930297dbe7bf4a27be0411e5cd2dd26057d3184b917e9c8ed9939e0ebc"
+    },
+    {
+      "source": "glaspodravine.hr",
+      "file": "glaspodravine-hr.pdf",
+      "bytes": 47806,
+      "sha256": "69a715102442a26836fc312b10e338dc48b88c4f32d7c1d33dade646a9eb3035"
+    },
+    {
+      "source": "povijest.hr",
+      "file": "povijest-hr.pdf",
+      "bytes": 46394,
+      "sha256": "9c6d320f4636b4b267e61f367399459a4d26f961580b4727dd8ca3cb3c876f32"
+    },
+    {
+      "source": "lika-online.com",
+      "file": "lika-online-com.pdf",
+      "bytes": 46288,
+      "sha256": "a55b54a8104b0aed9d1bc2c80042a3e55156055b808a07a7ef45ac56b8e19154"
+    },
+    {
+      "source": "novo.hr",
+      "file": "novo-hr.pdf",
+      "bytes": 44882,
+      "sha256": "668a0d35691eb93d105757d1518e28acea841f96f33fb93b90e98d09070d1c90"
+    },
+    {
+      "source": "bolji-ljubuski.com",
+      "file": "bolji-ljubuski-com.pdf",
+      "bytes": 46733,
+      "sha256": "12ab9a6cbe5453b6a6b257eb4f365fb45fbae8705216437ad45b495fa048348c"
+    },
+    {
+      "source": "radioorasje.com",
+      "file": "radioorasje-com.pdf",
+      "bytes": 47140,
+      "sha256": "db5b918efbc83fa1458b6c1a1a18e34d498792bab4191d8a3e63041e32001c3f"
+    },
+    {
+      "source": "varazdin-info.com",
+      "file": "varazdin-info-com.pdf",
+      "bytes": 46304,
+      "sha256": "8951a113c79eee38a94eedc30db5eded6da7a07f75c57a9b86a473d0c3a5df98"
+    },
+    {
+      "source": "360hr.news",
+      "file": "360hr-news.pdf",
+      "bytes": 44786,
+      "sha256": "ade7402ae950d9e41ca1452fa36a7fcd33a290be2b1de6653fe43688f4fd4881"
+    },
+    {
+      "source": "politika24.net",
+      "file": "politika24-net.pdf",
+      "bytes": 46453,
+      "sha256": "a811f1a069bf31566d6534c9c533e34d832617a13e4a421bdec80a00570de2bd"
+    },
+    {
+      "source": "svpetaripavao.hr",
+      "file": "svpetaripavao-hr.pdf",
+      "bytes": 45006,
+      "sha256": "fef1aeb3b2309ee9bf7704c7c02b1bcd04ac389b167aceded7b397c0fb20f7b6"
+    },
+    {
+      "source": "superportal.hr",
+      "file": "superportal-hr.pdf",
+      "bytes": 46654,
+      "sha256": "03d3bb202487328f91ac446688e8469f3536472edb57c08fed88f1a48439d971"
+    },
+    {
+      "source": "radiogornjigrad.blog",
+      "file": "radiogornjigrad-blog.pdf",
+      "bytes": 46487,
+      "sha256": "e42188ddf760bf383d2050cedd83812adcdaf1e597593be703591a5ecb67d77e"
+    },
+    {
+      "source": "svetiandrija.hr",
+      "file": "svetiandrija-hr.pdf",
+      "bytes": 45108,
+      "sha256": "865de66701a8036ad02fa2845d5b0ee5ad7ee55d864385320f3e51d875702353"
+    },
+    {
+      "source": "balkanlifetoday.info",
+      "file": "balkanlifetoday-info.pdf",
+      "bytes": 47613,
+      "sha256": "17401b45a24a8f0b584e269f33f3a4d64693c4aa8507e75e699368effbfc366b"
+    },
+    {
+      "source": "radiodalmacija.hr",
+      "file": "radiodalmacija-hr.pdf",
+      "bytes": 45323,
+      "sha256": "fe8b9c8f27b7b9eb284270de81ace0099786763fb39fa26e5c6d483d822e8135"
+    },
+    {
+      "source": "dsng.hr",
+      "file": "dsng-hr.pdf",
+      "bytes": 43679,
+      "sha256": "752c38a9195f902d30631700990b788d114bb20b349a394ad665b994505a3180"
+    },
+    {
+      "source": "gorenjski-soncek.si",
+      "file": "gorenjski-soncek-si.pdf",
+      "bytes": 44479,
+      "sha256": "f6cc329c65c3dcd86b34530f57454d3e282e0eff933b7daa4e88620e365fa63f"
+    },
+    {
+      "source": "radio-daruvar.hr",
+      "file": "radio-daruvar-hr.pdf",
+      "bytes": 46864,
+      "sha256": "3afdde3972e367d55a1f6be8d034c63e44839ae3a7b20f4a1010809cbcb25865"
+    },
+    {
+      "source": "agroklub.com",
+      "file": "agroklub-com.pdf",
+      "bytes": 46794,
+      "sha256": "661b30686fecde976427e30974898e5acb43335211f986a512d05b7e230c0375"
+    },
+    {
+      "source": "radiomegaton.hr",
+      "file": "radiomegaton-hr.pdf",
+      "bytes": 46804,
+      "sha256": "30aea683e46cdc3750a5002043c955bd92aeec46691dcf44c1c2f3f1d4199d29"
+    },
+    {
+      "source": "lokalnatv.com",
+      "file": "lokalnatv-com.pdf",
+      "bytes": 45365,
+      "sha256": "556d92a141a2e9b00833b271a0f675a7cd6819b254ec9b7816f0e1b75df2c575"
+    },
+    {
+      "source": "porestina.info",
+      "file": "porestina-info.pdf",
+      "bytes": 45803,
+      "sha256": "d5d0540e4e97f52f595c68b20d5b02a49f6d65d80941cdd9c988d618737c9546"
+    }
+  ]
+}

@@ -8,15 +8,19 @@ source(here::here("studies", "annual-report", "report_lib.R"), encoding = "UTF-8
 
 template_path <- ar_template_path()
 report_path <- file.path(AR_PRIVATE, "IZVJESTAJ.qmd")
+template_en_path <- ar_template_en_path()
+report_en_path <- file.path(AR_PRIVATE, "REPORT_EN.qmd")
 derived_path <- file.path(AR_OUT, "annual_report_derived.csv")
 manifest_path <- file.path(AR_OUT, "manifest.json")
-needed <- c(template_path, report_path, derived_path, manifest_path)
+needed <- c(template_path, report_path, template_en_path, report_en_path, derived_path, manifest_path)
 if (any(!file.exists(needed))) {
   stop("Missing artifact: ", paste(needed[!file.exists(needed)], collapse = ", "), call. = FALSE)
 }
 
 template <- paste(readLines(template_path, encoding = "UTF-8", warn = FALSE), collapse = "\n")
 report <- paste(readLines(report_path, encoding = "UTF-8", warn = FALSE), collapse = "\n")
+template_en <- paste(readLines(template_en_path, encoding = "UTF-8", warn = FALSE), collapse = "\n")
+report_en <- paste(readLines(report_en_path, encoding = "UTF-8", warn = FALSE), collapse = "\n")
 derived <- ar_read_csv(derived_path)
 manifest <- fromJSON(manifest_path, simplifyDataFrame = TRUE)
 
@@ -33,6 +37,7 @@ cat("=== DigiKat annual report — mechanical checks ===\n\n")
 
 ## --- Generation integrity -----------------------------------------------------------------------
 ok(!grepl("\\{\\{[^{}]+\\}\\}", report, perl = TRUE), "no unresolved tokens")
+ok(!grepl("\\{\\{[^{}]+\\}\\}", report_en, perl = TRUE), "no unresolved tokens in English edition")
 
 token_keys <- unique(gsub("^\\{\\{scalar:|\\}\\}$", "",
                           unlist(regmatches(template, gregexpr("\\{\\{scalar:([^{}]+)\\}\\}", template,
@@ -42,6 +47,13 @@ ok(!length(unknown), "every prose scalar is generated",
    if (length(unknown)) paste(unknown, collapse = ", ") else paste(length(token_keys), "keys used"))
 ok(!anyDuplicated(derived$key), "scalar registry keys are unique", paste(nrow(derived), "scalars"))
 
+token_keys_en <- unique(gsub("^\\{\\{scalar:|\\}\\}$", "",
+  unlist(regmatches(template_en, gregexpr("\\{\\{scalar:([^{}]+)\\}\\}", template_en,
+                                           perl = TRUE))), perl = TRUE))
+unknown_en <- setdiff(token_keys_en, derived$key)
+ok(!length(unknown_en), "every English prose scalar is generated",
+   if (length(unknown_en)) paste(unknown_en, collapse = ", ") else paste(length(token_keys_en), "keys used"))
+
 fragment_paths <- c(list.files(AR_TABLES, pattern = "[.]md$", full.names = TRUE),
                     list.files(file.path(AR_PRIVATE, "profiles"), pattern = "[.]md$", full.names = TRUE))
 for (path in fragment_paths) {
@@ -50,13 +62,25 @@ for (path in fragment_paths) {
   if (used) ok(grepl(fragment, report, fixed = TRUE), paste0("fragment installed intact: ", basename(path)))
 }
 
+fragment_paths_en <- c(list.files(AR_TABLES_EN, pattern = "[.]md$", full.names = TRUE),
+                       file.path(AR_PRIVATE, "profiles", "profiles_en.md"))
+for (path in fragment_paths_en[file.exists(fragment_paths_en)]) {
+  fragment <- paste(readLines(path, encoding = "UTF-8", warn = FALSE), collapse = "\n")
+  used <- grepl(paste0("{{fragment:", tools::file_path_sans_ext(basename(path)), "}}"),
+                template_en, fixed = TRUE)
+  if (used) ok(grepl(fragment, report_en, fixed = TRUE),
+               paste0("English fragment installed intact: ", basename(path)))
+}
+
 ## --- The summary --------------------------------------------------------------------------------
 summary_hr <- readLines(file.path(AR_TABLES, "summary_hr.md"), encoding = "UTF-8", warn = FALSE)
 summary_en <- readLines(file.path(AR_TABLES, "summary_en.md"), encoding = "UTF-8", warn = FALSE)
+summary_en_full <- readLines(file.path(AR_TABLES_EN, "summary.md"), encoding = "UTF-8", warn = FALSE)
 ok(length(summary_hr) >= 8L && length(summary_hr) <= 10L, "summary holds at most ten findings",
    paste(length(summary_hr), "findings"))
 ok(length(summary_en) == length(summary_hr), "English summary mirrors the Croatian one",
    paste(length(summary_en), "findings"))
+ok(identical(summary_en_full, summary_en), "full English edition uses the checked summary")
 
 number_count <- function(line) {
   hits <- regmatches(line, gregexpr("[0-9]+(?:[., ][0-9]+)*(?:[[:space:] ]*%)?", line, perl = TRUE))[[1]]
@@ -106,6 +130,28 @@ alt_count <- length(unlist(regmatches(report, gregexpr("fig-alt=", report, fixed
 ok(alt_count == length(figure_paths), "every figure carries alternative text",
    paste(alt_count, "of", length(figure_paths)))
 
+figure_paths_en <- list.files(AR_FIGURES_EN, pattern = "^fig[0-9]+_.*[.]png$", full.names = TRUE)
+ok(length(figure_paths_en) == 9L, "nine English report figures exist",
+   paste(length(figure_paths_en), "figures"))
+spark_en <- file.path(AR_FIGURES_EN, "cover_spark.png")
+ok(file.exists(spark_en) && file.info(spark_en)$size > 5000, "English cover spark is generated")
+for (path in figure_paths_en) {
+  ok(file.info(path)$size > 20000 && grepl(basename(path), report_en, fixed = TRUE),
+     paste0("English figure present, referenced: ", basename(path)),
+     paste(round(file.info(path)$size / 1024), "KB"))
+}
+alt_count_en <- length(unlist(regmatches(report_en, gregexpr("fig-alt=", report_en, fixed = TRUE))))
+ok(alt_count_en == length(figure_paths_en), "every English figure carries alternative text",
+   paste(alt_count_en, "of", length(figure_paths_en)))
+ok(grepl("within the same collection stream", report_en, fixed = TRUE),
+   "English edition names the within-stream comparison")
+ok(grepl("A peak in the data identifies a date, not a cause",
+         gsub("[[:space:]]+", " ", report_en), fixed = TRUE),
+   "English event naming states that a peak shows a date, not a cause")
+ok(grepl("collection interruption", report_en, fixed = TRUE) &&
+     grepl("collected days", report_en, fixed = TRUE),
+   "English edition discloses the collection interruption")
+
 ## --- Honesty guards -------------------------------------------------------------------------------
 # Phrase guards run against a whitespace-flattened copy. The manuscript is hard-wrapped, so a
 # required sentence can be split across two lines by an ordinary edit and the guard then reports the
@@ -137,32 +183,28 @@ ok(grepl("Vrh u podacima pokazuje", report_flat, fixed = TRUE),
 ok(grepl("Kompozitni indeks", report_flat, fixed = TRUE) && grepl("Publika", report_flat, fixed = TRUE),
    "missing measures appear as gap panels")
 
-## --- The Wall -------------------------------------------------------------------------------------
-# Selling is allowed only inside marked boxes and on the back page. Everything before the first
-# marked box must be free of promotional vocabulary.
-sell_words <- c("naručena analiza", "naručenu analizu", "cijene na upit", "Cijene na upit",
-                "kontaktirajte", "ponuda", "usluga", "usluge", "besplatno")
-# PI decision, 2026-08-10: the report carries no service menu and no back page at all. The Wall is
-# therefore absolute rather than positional — promotional language is allowed nowhere, and the only
-# surviving conversion element is the single marked teaser line.
-demo_box <- regexpr("Primjer dubinske analize", report, fixed = TRUE)
-teaser <- regexpr(".teaser", report, fixed = TRUE)
-findings_prose <- gsub("[[:space:]]+", " ",
-                       substr(report, 1, if (teaser > 0) teaser - 1L else nchar(report)))
-leak <- sell_words[vapply(sell_words, grepl, logical(1), x = findings_prose, fixed = TRUE)]
-ok(!length(leak), "no promotional language before the first marked box",
-   if (length(leak)) paste(leak, collapse = "; ") else "clean")
-ok(!grepl("Što možemo napraviti za vas", report, fixed = TRUE),
-   "the report carries no service menu")
-ok(!grepl("Usluga", report, fixed = TRUE) && !grepl("Radionica za tiskovne urede", report, fixed = TRUE),
-   "no service is named anywhere in the report")
+## --- Public-interest boundary -------------------------------------------------------------------
+# PI decision, 2026-08-17: neither edition contains sales copy, teasers, product demonstrations,
+# service menus or prices. The only call to action is a neutral address for data and method questions.
+sell_words_hr <- c("naručena analiza", "naručenu analizu", "cijene na upit", "kontaktirajte",
+                   "ponuda", "usluga", "usluge", "besplatno", ".teaser",
+                   "Primjer dubinske analize")
+sell_words_en <- c("commissioned analysis", "contact us", "service menu", "our services",
+                   "pricing", "price on request", "free consultation", ".teaser",
+                   "product demonstration")
+leak_hr <- sell_words_hr[vapply(sell_words_hr, grepl, logical(1), x = tolower(report), fixed = TRUE)]
+leak_en <- sell_words_en[vapply(sell_words_en, grepl, logical(1), x = tolower(report_en), fixed = TRUE)]
+ok(!length(leak_hr), "no commercial direction in the Croatian edition",
+   if (length(leak_hr)) paste(leak_hr, collapse = "; ") else "clean")
+ok(!length(leak_en), "no commercial direction in the English edition",
+   if (length(leak_en)) paste(leak_en, collapse = "; ") else "clean")
 
 # Editorial decision, PI, 2026-08-10: the report names no prices anywhere, not even "na upit".
 # The word boundary matters — "ocijeniti" contains "cijen" and is ordinary methods prose.
 price_words <- c("\bcijen", "\bna upit", "€", "\beura\b", "\bkuna\b", "\bkošta",
                  "\bnaplać", "\btarif", "\bhonorar", "\bpopust")
-price_hits <- price_words[vapply(price_words, grepl, logical(1), x = report, perl = TRUE)]
-ok(!length(price_hits), "no pricing anywhere in the report",
+price_hits <- price_words[vapply(price_words, grepl, logical(1), x = paste(report, report_en), perl = TRUE)]
+ok(!length(price_hits), "no pricing anywhere in either report",
    if (length(price_hits)) paste(price_hits, collapse = "; ") else "clean")
 
 ## --- Disclosure -------------------------------------------------------------------------------------
@@ -179,6 +221,8 @@ ok(!any(grepl("^[A-Za-z]:[/\\\\]", unlist(manifest$outputs), perl = TRUE)),
    "the public manifest holds no absolute local path")
 ok(!grepl("http://www\\.|https://www\\.[a-z]+\\.hr/[a-z]", report, perl = TRUE),
    "no row-level source URL reached the manuscript")
+ok(!grepl("http://www\\.|https://www\\.[a-z]+\\.hr/[a-z]", report_en, perl = TRUE),
+   "no row-level source URL reached the English manuscript")
 
 ## --- Reconciliation ----------------------------------------------------------------------------------
 stale <- ar_stale_outputs()
@@ -222,9 +266,16 @@ english_leak <- c(" dashboard", " insight", " engagement rate", " benchmark", " 
 leak_en <- english_leak[vapply(english_leak, grepl, logical(1), x = report, fixed = TRUE)]
 ok(!length(leak_en), "no untranslated English in the Croatian body",
    if (length(leak_en)) paste(leak_en, collapse = ", ") else "clean")
+croatian_months <- c("siječanj", "veljača", "ožujak", "travanj", "svibanj", "lipanj",
+                     "srpanj", "kolovoz", "rujan", "listopad", "studeni", "prosinac")
+month_leak <- croatian_months[vapply(croatian_months, grepl, logical(1),
+                                     x = tolower(report_en), fixed = TRUE)]
+ok(!length(month_leak), "no Croatian month name in the English edition",
+   if (length(month_leak)) paste(month_leak, collapse = ", ") else "clean")
 
-asset_script <- paste(readLines(file.path(AR_DIR, "03_report_assets.R"), encoding = "UTF-8", warn = FALSE),
-                      collapse = "\n")
+asset_script <- paste(unlist(lapply(c("03_report_assets.R", "03_report_assets_en.R"), function(x) {
+  readLines(file.path(AR_DIR, x), encoding = "UTF-8", warn = FALSE)
+})), collapse = "\n")
 ok(!grepl("#[0-9A-Fa-f]{6}", asset_script, perl = TRUE), "figures use theme tokens, not literal colours")
 
 pipeline_scripts <- list.files(AR_DIR, pattern = "^[0-9]{2}_.*[.]R$", full.names = TRUE)

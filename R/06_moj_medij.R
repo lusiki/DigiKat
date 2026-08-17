@@ -264,6 +264,17 @@ exists_profile <- file.exists(file.path("pages", "izvori",
                                         sub("\\.html$", ".qmd", ifelse(is.na(listed$profile), "", listed$profile))))
 listed$profile[!exists_profile] <- NA_character_
 
+# Case and punctuation occasionally distinguish two public source records (most often the web and
+# Facebook forms of the same outlet). Keep every record downloadable without allowing one PDF to
+# overwrite another. Platform names make the common collision readable; a stable ordinal covers
+# the few legacy records that do not carry a platform value.
+card_stem <- slugify(listed$FROM)
+card_collision <- duplicated(card_stem) | duplicated(card_stem, fromLast = TRUE)
+card_ordinal <- ave(seq_along(card_stem), card_stem, FUN = seq_along)
+card_suffix <- ifelse(!is.na(listed$platform), listed$platform, paste0("record-", card_ordinal))
+card_stem[card_collision] <- paste(card_stem[card_collision], card_suffix[card_collision], sep = "-")
+listed$card <- paste0(make.unique(card_stem, sep = "-record-"), ".pdf")
+
 ## ---- assemble ---------------------------------------------------------------
 r1 <- function(x) round(as.numeric(x), 1)
 
@@ -272,6 +283,7 @@ records <- lapply(seq_len(n_listed), function(k) {
   ys <- series[series$FROM == row$FROM, ]
   out <- list(
     n = unname(row$FROM),
+    c = unname(row$card),
     p = unname(as.integer(row$posts)),
     i = unname(as.numeric(row$interactions)),
     x = unname(as.numeric(row$reach)),
@@ -300,7 +312,7 @@ records <- lapply(seq_len(n_listed), function(k) {
 })
 
 payload <- list(
-  schema_version = 1L,
+  schema_version = 2L,
   generated_utc = format(Sys.time(), tz = "UTC", "%Y-%m-%d %H:%M:%S UTC"),
   generator = "R/06_moj_medij.R",
   input = list(
@@ -344,13 +356,14 @@ hit <- forbidden[vapply(forbidden, function(p) grepl(p, txt, fixed = TRUE), logi
 if (length(hit)) {
   stop("Disclosure gate: generated JSON contains ", paste(hit, collapse = ", "), call. = FALSE)
 }
-allowed_keys <- c("n","t","p","i","x","e","rp","ri","rx","sp","y","pl","tp","lb","rl","nl","pr","mp","ng")
+allowed_keys <- c("n","c","t","p","i","x","e","rp","ri","rx","sp","y","pl","tp","lb","rl","nl","pr","mp","ng")
 extra <- setdiff(unique(unlist(lapply(records, names))), allowed_keys)
 if (length(extra)) {
   stop("Disclosure gate: unexpected key(s) in a source record: ", paste(extra, collapse = ", "),
        call. = FALSE)
 }
 stopifnot(!any(is.na(listed$posts)), all(listed$posts >= MIN_POSTS))
+stopifnot(!anyDuplicated(listed$card), all(grepl("^[a-z0-9-]+[.]pdf$", listed$card)))
 
 ## ---- report ------------------------------------------------------------------
 cat("\n=== Moj medij ===\n")

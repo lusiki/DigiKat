@@ -80,9 +80,11 @@ is a separate, deliberate act after sign-off, so a rebuild cannot silently chang
    profiles spanning four quadrants and five platforms, because 51 outlets clear the publish gate.
 4. **Label ratification.** The source sidecar is still `proposed` and covers 34,5 % of annual volume;
    every confessional/secular figure is labelled indicative until that changes.
-5. **Remaining conversion elements.** The service menu and the back page were removed on PI
-   instruction (2026-08-10). Two smaller items from the writing guide survive: the one-line teaser
-   under the league table and the boxed "Primjer dubinske analize". Say the word and they go too.
+5. **No commercial direction.** On PI instruction (2026-08-17), the remaining commissioned-analysis
+   teasers and the boxed demonstration were removed. Both language editions now contain only neutral
+   contact information for questions about data and method.
+6. **English edition.** The complete report, including tables and word-bearing figures, is generated
+   in English from the same checked aggregate and scalar registries as the Croatian edition.
 
 ## Environment note
 

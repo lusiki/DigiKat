@@ -31,6 +31,8 @@ AR_OUT <- file.path(AR_DIR, "output", as.character(AR_REPORT_YEAR))
 AR_PRIVATE <- file.path(AR_OUT, "private")
 AR_TABLES <- file.path(AR_OUT, "tables")
 AR_FIGURES <- file.path(AR_OUT, "figures")
+AR_TABLES_EN <- file.path(AR_OUT, "tables-en")
+AR_FIGURES_EN <- file.path(AR_OUT, "figures-en")
 
 # 2024 is a leap year and 2025 is not. Standardising a daily series over the wrong calendar length
 # silently shifts every z-score, so the length is computed, never assumed.
@@ -56,7 +58,7 @@ AR_STREAM_MODE <- if (as.Date(sprintf("%d-07-01", AR_BASELINE_YEAR)) >= AR_STREA
 # Named cells below this floor are suppressed.
 AR_SMALL_CELL <- 5L
 
-for (path in c(AR_OUT, AR_PRIVATE, AR_TABLES, AR_FIGURES)) {
+for (path in c(AR_OUT, AR_PRIVATE, AR_TABLES, AR_FIGURES, AR_TABLES_EN, AR_FIGURES_EN)) {
   dir.create(path, recursive = TRUE, showWarnings = FALSE)
 }
 
@@ -171,12 +173,35 @@ ar_date_short_hr <- function(x) {
   paste0(as.integer(format(x, "%d")), ". ", as.integer(format(x, "%m")), ". ", format(x, "%Y"), ".")
 }
 
+ar_month_en <- month.name
+
+ar_date_day_month_en <- function(x) {
+  x <- as.Date(x)
+  paste(as.integer(format(x, "%d")), ar_month_en[as.integer(format(x, "%m"))])
+}
+
+ar_date_en <- function(x) {
+  x <- as.Date(x)
+  paste(ar_date_day_month_en(x), format(x, "%Y"))
+}
+
+ar_date_short_en <- function(x) {
+  x <- as.Date(x)
+  paste(as.integer(format(x, "%d")), month.abb[as.integer(format(x, "%m"))], format(x, "%Y"))
+}
+
 ## --- Controlled vocabulary ---------------------------------------------------------------------
 
 ar_platform_hr <- c(
   web = "Web", youtube = "YouTube", facebook = "Facebook", twitter = "Twitter/X",
   reddit = "Reddit", forum = "Forumi", instagram = "Instagram",
   comment = "Komentari", tiktok = "TikTok"
+)
+
+ar_platform_en <- c(
+  web = "Web", youtube = "YouTube", facebook = "Facebook", twitter = "Twitter/X",
+  reddit = "Reddit", forum = "Forums", instagram = "Instagram",
+  comment = "Comments", tiktok = "TikTok"
 )
 
 ar_topic_hr <- c(
@@ -198,6 +223,25 @@ ar_topic_hr <- c(
   ODNOS_S_DRUGIM_RELIGIJAMA_I_POGLEDIMA = "Odnos s drugim religijama i pogledima"
 )
 
+ar_topic_en <- c(
+  DUHOVNOST_I_LITURGIJA = "Spirituality and liturgy",
+  TEOLOGIJA_I_DOKTRINA = "Theology and doctrine",
+  CRKVENO_UPRAVLJANJE_I_STRUKTURA = "Church governance and structure",
+  PAPE_I_VATIKAN = "Popes and the Vatican",
+  CRKVENE_FINANCIJE_I_IMOVINA = "Church finances and property",
+  GLOBALNA_CRKVA_I_MISIJE = "Global Church and missions",
+  POLITIKA_I_ODNOS_S_DRZAVOM = "Politics and relations with the state",
+  BIOETIKA_I_KULTURNI_RATOVI = "Bioethics and culture wars",
+  KARITAS_I_SOCIJALNA_PRAVDA = "Charity and social justice",
+  POVIJEST_I_NACIONALNI_IDENTITET = "History and national identity",
+  ZNANOST_I_VJERA = "Science and faith",
+  MEDIJI_UMJETNOST_I_KULTURA = "Media, art and culture",
+  DIGITALNA_EVANGELIZACIJA_I_MLADI = "Digital evangelisation and young people",
+  ZLOSTAVLJANJE_I_KRIZA_POVJERENJA = "Abuse and the crisis of trust",
+  UNUTARCRKVENI_PRIJEPORI_I_IDEOLOGIJE = "Internal Church disputes and ideologies",
+  ODNOS_S_DRUGIM_RELIGIJAMA_I_POGLEDIMA = "Relations with other religions and worldviews"
+)
+
 # The four quadrants are named by what they measure. The legacy interpretive names stay out of the
 # public text until qualitative validation supports them (INDICATORS.md, AR04).
 ar_typology_hr <- c(
@@ -205,6 +249,13 @@ ar_typology_hr <- c(
   "visok_nizak" = "Visoke interakcije, niži doseg",
   "nizak_visok" = "Niže interakcije, visok doseg",
   "nizak_nizak" = "Niže interakcije i niži doseg"
+)
+
+ar_typology_en <- c(
+  "visok_visok" = "High interactions and high reach",
+  "visok_nizak" = "High interactions, lower reach",
+  "nizak_visok" = "Lower interactions, high reach",
+  "nizak_nizak" = "Lower interactions and lower reach"
 )
 
 ## --- Per-edition registries ----------------------------------------------------------------------
@@ -221,10 +272,27 @@ AR_EVENT_NAMES <- list(
   `2025-12-25` = "Božić"
 )
 
+AR_EVENT_NAMES_EN <- list(
+  `2024-08-15` = "Assumption of Mary",
+  `2024-12-25` = "Christmas Day",
+  `2024-12-24` = "Christmas Eve",
+  `2025-04-21` = "Death of Pope Francis",
+  `2025-04-26` = "Funeral of Pope Francis",
+  `2025-08-15` = "Assumption of Mary",
+  `2025-12-25` = "Christmas Day"
+)
+
 ar_event_name <- function(date) {
   key <- format(as.Date(date), "%Y-%m-%d")
   vapply(key, function(k) {
     if (!is.null(AR_EVENT_NAMES[[k]])) AR_EVENT_NAMES[[k]] else "neimenovano"
+  }, character(1), USE.NAMES = FALSE)
+}
+
+ar_event_name_en <- function(date) {
+  key <- format(as.Date(date), "%Y-%m-%d")
+  vapply(key, function(k) {
+    if (!is.null(AR_EVENT_NAMES_EN[[k]])) AR_EVENT_NAMES_EN[[k]] else "unnamed"
   }, character(1), USE.NAMES = FALSE)
 }
 
@@ -265,6 +333,8 @@ ar_template_path <- function(year = AR_REPORT_YEAR) {
   specific <- file.path(AR_DIR, sprintf("REPORT_TEMPLATE_%d.qmd", year))
   if (file.exists(specific)) specific else file.path(AR_DIR, "REPORT_TEMPLATE.qmd")
 }
+
+ar_template_en_path <- function() file.path(AR_DIR, "REPORT_TEMPLATE_EN.qmd")
 
 ## --- Markdown fragment helpers -----------------------------------------------------------------
 
@@ -312,10 +382,10 @@ ar_fragment <- function(path, title, table_lines, note) {
 # A generated figure block: the same title object as a table's, the image, then the measure and the
 # source in one small note. Nothing is baked into the PNG, so every word in the report is set once,
 # by the typesetter, in the document's own font.
-ar_figure <- function(path, name, title, measure, note, alt) {
+ar_figure <- function(path, name, title, measure, note, alt, figure_dir = "../figures") {
   ar_write_utf8(c(
     ar_block_title(title),
-    sprintf("![](../figures/%s.png){fig-alt=\"%s\"}", name, alt),
+    sprintf("![](%s/%s.png){fig-alt=\"%s\"}", figure_dir, name, alt),
     ar_block_note(paste0(measure, " · ", note))
   ), path)
 }

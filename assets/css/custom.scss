@@ -93,6 +93,19 @@ a:hover { text-decoration: underline; }
   color: $dk-accent !important;
 }
 
+// Quarto keeps the desktop navbar until 992 px. Between that breakpoint and a wide desktop, the
+// long Croatian labels need a compact setting or the brand is squeezed to an ellipsis.
+@media (min-width: 992px) and (max-width: 1300px) {
+  .navbar .navbar-brand { flex-shrink: 0; margin-right: 0.45rem; font-size: 1rem; }
+  .navbar .nav-link { font-size: 0.82rem; padding-left: 0.42rem !important;
+    padding-right: 0.42rem !important; }
+}
+
+// Quarto emits an empty collapsible sidebar shell even on full-content pages. Its glass layer can
+// otherwise sit over the left edge of the article at desktop widths and clip the first characters.
+body.fullcontent #quarto-sidebar,
+body.fullcontent #quarto-sidebar-glass { display: none !important; }
+
 // ---------------------------------------------------------------------
 // Title block (inner pages) — serif title, mono category chips, hairline
 // ---------------------------------------------------------------------
