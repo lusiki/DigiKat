@@ -8,15 +8,16 @@
 # That is why the disclosure gate below is part of the generator and not a
 # separate optional step.
 #
-#   INPUTS  : data/processed/source_summary.rds                (year x FROM)
+#   INPUTS  : data/digikat_corpus.rds                          (read-only official corpus)
+#             data/processed/source_summary.rds                (year x FROM)
 #             data/processed/{web,youtube,facebook,instagram,tiktok,twitter}_actors.rds
 #             resources/dictionaries/source_labels.csv         (PI-owned)
 #             data/digikat_corpus_manifest.json                (provenance)
 #             studies/news-gap/output/outlet_topic_profiles.csv (optional; publication-gated)
 #   OUTPUT  : data/page-ready/moj_medij.json                   (TRACKED)
 #
-# Reads only tracked aggregates. Never reads the corpus or the accumulator, so
-# it runs on a machine without them and cannot leak a post.
+# Reads the official corpus to build compact behavioural aggregates. The public
+# artifact contains no post text, URL, identifier or top-post list.
 #
 # Run from the REPO ROOT:   Rscript R/06_moj_medij.R [--apply]
 #   default                         : builds, validates, reports, writes nothing
@@ -44,6 +45,10 @@ if (write_preview && !preview_news_gap) {
 
 source(file.path("R", "lib", "digikat_paths.R"), encoding = "UTF-8")
 source(file.path("R", "lib", "digikat_typology.R"), encoding = "UTF-8")
+source(file.path("R", "lib", "digikat_events.R"), encoding = "UTF-8")
+source(file.path("R", "lib", "moj_medij_metrics.R"), encoding = "UTF-8")
+source(file.path("R", "lib", "thematic_dictionaries.R"), encoding = "UTF-8")
+source(file.path("R", "lib", "moj_medij_topics.R"), encoding = "UTF-8")
 
 # A page must never print a corpus figure computed from a different dataset than the one the
 # manifest names, so refuse to build against stale aggregates for the same reason a page refuses
@@ -55,6 +60,9 @@ digikat_assert_aggregates_current(file.path("data", "processed", "manifest.json"
 # a handful of posts. The publish gate is the catalogue's own editorial decision, reused here so
 # an actor withheld from the catalogue cannot reappear through the lookup.
 MIN_POSTS <- 100L
+MIN_RHYTHM_CELL_POSTS <- 20L
+MIN_TOPIC_CLASSIFIED_POSTS <- 100L
+EVENT_YEARS <- c(2024L, 2025L)
 
 # Sidecar `kind` values that are not media actors and never appear.
 KIND_NOT_ACTOR <- c("offtopic", "noise", "duplicate")
@@ -138,6 +146,124 @@ listed   <- elig |> filter(listed)
 
 stopifnot(nrow(listed) > 0L)
 
+## ---- full-corpus behavioural and topic aggregates -------------------------
+# This is the only row-level read in the generator. Keep the URL only long enough to verify that
+# TIME follows Europe/Zagreb local time against Twitter Snowflake timestamps. Topic classification
+# is chunked and immediately reduced to (FROM, platform, topic) before all row-level fields vanish.
+corpus_path <- digikat_corpus_path()
+if (!file.exists(corpus_path)) {
+  stop("The official corpus is required for Moj medij behavioural profiles: ", corpus_path,
+       call. = FALSE)
+}
+corpus <- readRDS(corpus_path)
+behaviour_columns <- c("DATE", "TIME", "FROM", "SOURCE_TYPE", "INTERACTIONS", "URL")
+topic_columns <- c("FROM", "SOURCE_TYPE", "TITLE", "FULL_TEXT")
+missing_profile_columns <- setdiff(union(behaviour_columns, topic_columns), names(corpus))
+if (length(missing_profile_columns)) {
+  stop("The official corpus is missing profile field(s): ",
+       paste(missing_profile_columns, collapse = ", "), call. = FALSE)
+}
+if (nrow(corpus) != as.integer(mf$corpus$rows)) {
+  stop("The official corpus row count does not match its manifest.", call. = FALSE)
+}
+behaviour_all <- corpus[, behaviour_columns]
+topic_rows <- corpus[, topic_columns]
+rm(corpus); invisible(gc())
+topic_profiles_all <- digikat_topic_profiles(
+  topic_rows,
+  dictionary = digikat_thematic_dictionaries,
+  text_characters = 3000L,
+  chunk_size = 25000L,
+  progress = TRUE
+)
+rm(topic_rows); invisible(gc())
+topic_comparisons <- digikat_topic_comparisons(
+  topic_profiles_all,
+  listed_sources = listed$FROM,
+  min_classified_posts = MIN_TOPIC_CLASSIFIED_POSTS,
+  max_neighbours = 4L,
+  min_neighbours = 3L
+)
+rm(topic_profiles_all); invisible(gc())
+behaviour_all$DATE <- as.Date(behaviour_all$DATE)
+behaviour_all$FROM <- as.character(behaviour_all$FROM)
+behaviour_all$SOURCE_TYPE <- as.character(behaviour_all$SOURCE_TYPE)
+
+time_audit <- digikat_audit_vendor_time(behaviour_all)
+if (!isTRUE(time_audit$reliable)) {
+  stop("TIME reliability audit failed; hour-band profiles cannot be published.", call. = FALSE)
+}
+
+# Detect the same global interruptions as the annual-report chain. The shared event registry and
+# gap rule prevent one product from treating an uncollected date as zero while another omits it.
+events <- digikat_calendar_events(EVENT_YEARS, moj_medij_only = TRUE)
+support_years <- seq.int(min(EVENT_YEARS) - 1L, max(EVENT_YEARS) + 1L)
+support_gaps <- digikat_collection_gaps(behaviour_all$DATE, support_years)
+collected_dates <- digikat_collected_dates(support_years, support_gaps)
+collected_dates <- collected_dates[
+  collected_dates >= min(behaviour_all$DATE, na.rm = TRUE) &
+    collected_dates <= max(behaviour_all$DATE, na.rm = TRUE)
+]
+collection_gaps <- support_gaps[
+  as.integer(format(support_gaps$start, "%Y")) %in% EVENT_YEARS,
+  , drop = FALSE
+]
+event_windows <- digikat_event_windows(events, collected_dates)
+
+# Fail closed if a generated annual-report gap table disagrees with the shared detector.
+for (event_year in EVENT_YEARS) {
+  annual_gap_path <- file.path("studies", "annual-report", "output", as.character(event_year),
+                               "coverage_gaps.csv")
+  if (file.exists(annual_gap_path)) {
+    annual_gaps <- read.csv(annual_gap_path, stringsAsFactors = FALSE)
+    annual_gaps$start <- as.Date(annual_gaps$start)
+    annual_gaps$end <- as.Date(annual_gaps$end)
+    detected <- collection_gaps[as.integer(format(collection_gaps$start, "%Y")) == event_year,
+                                c("start", "end", "days"), drop = FALSE]
+    rownames(annual_gaps) <- NULL
+    rownames(detected) <- NULL
+    if (!isTRUE(all.equal(annual_gaps[, c("start", "end", "days"), drop = FALSE],
+                          detected, check.attributes = TRUE))) {
+      stop("Collection gaps disagree with the annual-report chain for ", event_year, ".",
+           call. = FALSE)
+    }
+  }
+}
+
+behaviour <- behaviour_all |>
+  filter(FROM %in% listed$FROM, !is.na(SOURCE_TYPE), nzchar(SOURCE_TYPE))
+
+platform_counts <- behaviour |>
+  count(FROM, SOURCE_TYPE, name = "posts") |>
+  arrange(FROM, desc(posts), SOURCE_TYPE)
+primary_platform <- platform_counts |>
+  group_by(FROM) |>
+  summarise(primary_platform = first(SOURCE_TYPE), platform_n = n(), .groups = "drop")
+
+attention <- digikat_attention_metrics(behaviour) |>
+  digikat_attention_peer_medians(MIN_POSTS)
+rhythm <- digikat_rhythm_cells(behaviour, MIN_RHYTHM_CELL_POSTS)
+
+# Counts are aggregated to date before they meet an event window. The same event and baseline dates
+# then feed outlet and platform-field rates, including zeros on collected days.
+event_map <- event_windows$map
+source_daily <- behaviour |>
+  count(FROM, SOURCE_TYPE, DATE, name = "posts")
+source_event_counts <- source_daily |>
+  inner_join(event_map, by = c("DATE" = "date"), relationship = "many-to-many") |>
+  group_by(FROM, SOURCE_TYPE, id, period) |>
+  summarise(posts = sum(posts), .groups = "drop")
+field_daily <- behaviour_all |>
+  filter(!is.na(SOURCE_TYPE), nzchar(SOURCE_TYPE)) |>
+  count(SOURCE_TYPE, DATE, name = "posts")
+field_event_counts <- field_daily |>
+  inner_join(event_map, by = c("DATE" = "date"), relationship = "many-to-many") |>
+  group_by(SOURCE_TYPE, id, period) |>
+  summarise(posts = sum(posts), .groups = "drop")
+
+# No public object below this point needs a URL or any other row-level identifier.
+behaviour_all$URL <- NULL
+
 ## ---- ranks, shares, series --------------------------------------------------
 corpus_posts <- as.numeric(mf$corpus$rows)
 
@@ -150,7 +276,8 @@ listed <- listed |>
     share_posts = 100 * posts / corpus_posts
   ) |>
   left_join(actors, by = "FROM") |>
-  mutate(multi = FROM %in% multi_platform) |>
+  left_join(primary_platform, by = "FROM") |>
+  mutate(multi = platform_n > 1L | FROM %in% multi_platform) |>
   arrange(desc(posts))
 
 n_listed <- nrow(listed)
@@ -277,6 +404,91 @@ listed$card <- paste0(make.unique(card_stem, sep = "-record-"), ".pdf")
 
 ## ---- assemble ---------------------------------------------------------------
 r1 <- function(x) round(as.numeric(x), 1)
+r2 <- function(x) ifelse(is.finite(as.numeric(x)), round(as.numeric(x), 2), NA_real_)
+
+period_posts <- function(table, from = NULL, platform, event_id, period) {
+  keep <- table$SOURCE_TYPE == platform & table$id == event_id & table$period == period
+  if (!is.null(from)) keep <- keep & table$FROM == from
+  value <- table$posts[keep]
+  if (length(value)) sum(value) else 0
+}
+
+calendar_values <- function(from, platform) {
+  lapply(seq_len(nrow(event_windows$registry)), function(i) {
+    event <- event_windows$registry[i, ]
+    out <- list(v = as.integer(i))
+    if (isTRUE(event$measurable)) {
+      outlet_event <- period_posts(source_event_counts, from, platform, event$id, "event")
+      outlet_base <- period_posts(source_event_counts, from, platform, event$id, "baseline")
+      field_event <- period_posts(field_event_counts, NULL, platform, event$id, "event")
+      field_base <- period_posts(field_event_counts, NULL, platform, event$id, "baseline")
+      out$o <- unname(r2(digikat_rate_ratio(outlet_event, event$event_days,
+                                           outlet_base, event$baseline_days)))
+      out$f <- unname(r2(digikat_rate_ratio(field_event, event$event_days,
+                                           field_base, event$baseline_days)))
+    }
+    out
+  })
+}
+
+behaviour_values <- function(from) {
+  source_platforms <- platform_counts[platform_counts$FROM == from, , drop = FALSE]
+  lapply(seq_len(nrow(source_platforms)), function(i) {
+    platform <- source_platforms$SOURCE_TYPE[[i]]
+    topic_key <- digikat_topic_profile_key(from, platform)
+    att <- attention[attention$FROM == from & attention$SOURCE_TYPE == platform, , drop = FALSE]
+    cells <- rhythm[rhythm$FROM == from & rhythm$SOURCE_TYPE == platform, , drop = FALSE]
+    coverage <- topic_comparisons$coverage[
+      topic_comparisons$coverage$key == topic_key,
+      , drop = FALSE
+    ]
+    if (nrow(coverage) != 1L) {
+      stop("Topic coverage is missing or duplicated for ", from, " / ", platform, ".",
+           call. = FALSE)
+    }
+    out <- list(
+      pl = unname(platform),
+      p = unname(as.integer(source_platforms$posts[[i]])),
+      tc = unname(as.integer(coverage$classified_posts[[1L]])),
+      a = list(
+        t = unname(r2(att$top10_share[[1L]])),
+        z = unname(r2(att$zero_rate[[1L]])),
+        mt = unname(r2(att$peer_top10[[1L]])),
+        mz = unname(r2(att$peer_zero[[1L]])),
+        nt = unname(as.integer(att$peer_top10_n[[1L]])),
+        nz = unname(as.integer(att$peer_zero_n[[1L]]))
+      ),
+      r = lapply(seq_len(nrow(cells)), function(j) list(
+        d = unname(as.integer(cells$weekday[[j]])),
+        b = unname(as.integer(cells$band[[j]])),
+        p = unname(as.integer(cells$posts[[j]])),
+        e = unname(r2(cells$engagement[[j]]))
+      )),
+      k = calendar_values(from, platform)
+    )
+    if (isTRUE(coverage$eligible[[1L]])) {
+      topic_rows <- topic_comparisons$profiles[
+        topic_comparisons$profiles$FROM == from &
+          topic_comparisons$profiles$SOURCE_TYPE == platform,
+        , drop = FALSE
+      ]
+      topic_rows <- topic_rows[match(topic_comparisons$topics, topic_rows$topic), , drop = FALSE]
+      if (nrow(topic_rows) != length(topic_comparisons$topics) || anyNA(topic_rows$topic)) {
+        stop("Eligible topic profile is incomplete for ", from, " / ", platform, ".",
+             call. = FALSE)
+      }
+      out$tm <- list(
+        n = unname(as.integer(coverage$classified_posts[[1L]])),
+        pn = unname(as.integer(topic_rows$peer_n[[1L]])),
+        s = unname(r2(topic_rows$topic_share)),
+        f = unname(r2(topic_rows$peer_share))
+      )
+      similar <- topic_comparisons$neighbours[[topic_key]]
+      if (length(similar)) out$sn <- unname(as.character(similar))
+    }
+    out
+  })
+}
 
 records <- lapply(seq_len(n_listed), function(k) {
   row <- listed[k, ]
@@ -305,6 +517,7 @@ records <- lapply(seq_len(n_listed), function(k) {
   }
   if (!is.na(row$profile)) out$pr <- unname(row$profile)
   if (isTRUE(row$multi))   out$mp <- TRUE
+  out$bh <- behaviour_values(as.character(row$FROM))
   if (length(news_gap_by_source[[as.character(row$FROM)]])) {
     out$ng <- news_gap_by_source[[as.character(row$FROM)]]
   }
@@ -312,7 +525,7 @@ records <- lapply(seq_len(n_listed), function(k) {
 })
 
 payload <- list(
-  schema_version = 2L,
+  schema_version = 4L,
   generated_utc = format(Sys.time(), tz = "UTC", "%Y-%m-%d %H:%M:%S UTC"),
   generator = "R/06_moj_medij.R",
   input = list(
@@ -322,10 +535,67 @@ payload <- list(
   ),
   policy = list(
     min_posts = MIN_POSTS,
+    rhythm_min_cell_posts = MIN_RHYTHM_CELL_POSTS,
+    topic_min_classified_posts = MIN_TOPIC_CLASSIFIED_POSTS,
     unreviewed_handles_withheld = TRUE,
     note = paste("Prikazani su izvori s najmanje", MIN_POSTS,
                  "objava. Računi koji nisu internetske domene prikazuju se samo ako ih je",
                  "urednička provjera odobrila.")
+  ),
+  behaviour = list(
+    attention = list(
+      top_posts = 10L,
+      peer_definition = paste("Prikazani izvori na istoj platformi s najmanje", MIN_POSTS, "objava."),
+      zero_denominator = "Objave za koje je servis zabilježio broj interakcija."
+    ),
+    rhythm = list(
+      timezone = time_audit$timezone,
+      weekdays = c("Pon", "Uto", "Sri", "Čet", "Pet", "Sub", "Ned"),
+      bands = unname(DIGIKAT_TIME_BANDS$label),
+      min_cell_posts = MIN_RHYTHM_CELL_POSTS
+    ),
+    topics = list(
+      status = "provisional_validation_leads_not_rankings",
+      decision_date = "2026-08-13",
+      label = "Privremeno · smjernice za validaciju, ne rangiranje",
+      method = "Rječnik na naslovu i prvih 3.000 znakova teksta; vezani rezultati dijele težinu.",
+      min_classified_posts = MIN_TOPIC_CLASSIFIED_POSTS,
+      labels = unname(DIGIKAT_TOPIC_PROFILE_LABELS[topic_comparisons$topics]),
+      peer_definition = paste(
+        "Jednako ponderiran prosjek prikazanih izvora na istoj platformi s najmanje",
+        MIN_TOPIC_CLASSIFIED_POSTS, "rječnički razvrstanih objava."
+      ),
+      similarity = "Kosinusna sličnost tematskih udjela među prikazanim izvorima na istoj platformi."
+    ),
+    calendar = list(
+      event_radius_days = 1L,
+      baseline_weeks_each_side = 2L,
+      events = lapply(seq_len(nrow(event_windows$registry)), function(i) {
+        event <- event_windows$registry[i, ]
+        list(
+          id = unname(event$id),
+          d = format(event$date, "%Y-%m-%d"),
+          n = unname(event$label_hr),
+          y = as.integer(format(event$date, "%Y")),
+          ok = isTRUE(event$measurable),
+          rs = if (nzchar(event$reason)) unname(event$reason) else NULL
+        )
+      }),
+      exclusions = lapply(seq_len(nrow(collection_gaps)), function(i) list(
+        s = format(collection_gaps$start[[i]], "%Y-%m-%d"),
+        e = format(collection_gaps$end[[i]], "%Y-%m-%d")
+      ))
+    ),
+    time_audit = list(
+      rows = as.integer(time_audit$rows),
+      valid_pct = r2(time_audit$valid_pct),
+      missing_pct = r2(time_audit$missing_pct),
+      distinct_times = as.integer(time_audit$distinct_times),
+      second_precision_pct = r2(time_audit$second_precision_pct),
+      timezone = unname(time_audit$timezone),
+      twitter_snowflakes = as.integer(time_audit$twitter_snowflakes),
+      zagreb_match_pct = r2(time_audit$zagreb_match_pct)
+    )
   ),
   totals = list(
     corpus_posts = as.integer(mf$corpus$rows),
@@ -351,12 +621,12 @@ json <- toJSON(payload, auto_unbox = TRUE, digits = 6, null = "null", na = "null
 # The artifact is public the moment it is committed, so assert what it must NOT contain rather
 # than trusting the assembly above.
 txt <- as.character(json)
-forbidden <- c("http://", "https://", "FULL_TEXT", "@gmail", "AUTHOR", "URL\"")
+forbidden <- c("http://", "https://", "FULL_TEXT", "@gmail", "AUTHOR", "URL\"", "TITLE\"")
 hit <- forbidden[vapply(forbidden, function(p) grepl(p, txt, fixed = TRUE), logical(1))]
 if (length(hit)) {
   stop("Disclosure gate: generated JSON contains ", paste(hit, collapse = ", "), call. = FALSE)
 }
-allowed_keys <- c("n","c","t","p","i","x","e","rp","ri","rx","sp","y","pl","tp","lb","rl","nl","pr","mp","ng")
+allowed_keys <- c("n","c","t","p","i","x","e","rp","ri","rx","sp","y","pl","tp","lb","rl","nl","pr","mp","ng","bh")
 extra <- setdiff(unique(unlist(lapply(records, names))), allowed_keys)
 if (length(extra)) {
   stop("Disclosure gate: unexpected key(s) in a source record: ", paste(extra, collapse = ", "),
@@ -364,6 +634,27 @@ if (length(extra)) {
 }
 stopifnot(!any(is.na(listed$posts)), all(listed$posts >= MIN_POSTS))
 stopifnot(!anyDuplicated(listed$card), all(grepl("^[a-z0-9-]+[.]pdf$", listed$card)))
+stopifnot(sum(platform_counts$posts) == sum(listed$posts))
+stopifnot(all(rhythm$posts >= MIN_RHYTHM_CELL_POSTS))
+stopifnot(identical(names(DIGIKAT_TOPIC_PROFILE_LABELS), topic_comparisons$topics))
+topic_payloads <- unlist(lapply(records, function(record) {
+  lapply(record$bh, function(platform) platform$tm)
+}), recursive = FALSE)
+topic_payloads <- topic_payloads[!vapply(topic_payloads, is.null, logical(1L))]
+stopifnot(length(topic_payloads) == sum(topic_comparisons$coverage$eligible))
+stopifnot(all(vapply(topic_payloads, function(profile) {
+  length(profile$s) == length(topic_comparisons$topics) &&
+    length(profile$f) == length(topic_comparisons$topics) &&
+    abs(sum(profile$s) - 100) <= 0.1 && abs(sum(profile$f) - 100) <= 0.1
+}, logical(1L))))
+similar_payloads <- unlist(lapply(records, function(record) {
+  lapply(record$bh, function(platform) platform$sn)
+}), recursive = FALSE)
+similar_payloads <- similar_payloads[!vapply(similar_payloads, is.null, logical(1L))]
+stopifnot(all(vapply(similar_payloads, function(similar) length(similar) %in% 3:4, logical(1L))))
+easter_2024 <- event_windows$registry[event_windows$registry$id == "easter-2024", ]
+stopifnot(nrow(easter_2024) == 1L, !isTRUE(easter_2024$measurable),
+          identical(easter_2024$reason, "collection_gap"))
 
 ## ---- report ------------------------------------------------------------------
 cat("\n=== Moj medij ===\n")
@@ -383,6 +674,13 @@ cat("s tipologijom              :", sum(!is.na(listed$typology)), "\n")
 cat("s poveznicom na katalog    :", sum(!is.na(listed$profile)), "\n")
 cat("news-gap status            :", news_gap_status, "\n")
 cat("s news-gap profilom         :", sum(vapply(records, function(x) "ng" %in% names(x), logical(1L))), "\n")
+cat("s tematskim profilom        :", length(topic_payloads), "\n")
+cat("s 3-4 slična izvora         :", length(similar_payloads), "\n")
+cat("rječnički razvrstano        :", sum(topic_comparisons$coverage$classified_posts), "objava\n")
+cat("TIME zona                  :", time_audit$timezone, "(", time_audit$zagreb_match_pct,
+    "% Twitter provjera)\n")
+cat("ćelija ritma (>= prag)      :", nrow(rhythm), "\n")
+cat("kalendarskih događaja       :", nrow(event_windows$registry), "\n")
 
 if (write_preview) {
   dir.create(dirname(preview_out_path), showWarnings = FALSE, recursive = TRUE)

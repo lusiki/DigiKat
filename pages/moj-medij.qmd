@@ -42,6 +42,10 @@ if (!identical(mm$input$corpus_sha256, mf$corpus$sha256)) {
   stop("data/page-ready/moj_medij.json izgrađen je iz drugog korpusa nego što ga manifest opisuje.\n",
        "Ponovno pokreni: Rscript R/06_moj_medij.R --apply", call. = FALSE)
 }
+if (is.null(mm$schema_version) || mm$schema_version < 4L) {
+  stop("Moj medij nema nove tematske pokazatelje. Ponovno pokreni: Rscript R/06_moj_medij.R --apply",
+       call. = FALSE)
+}
 
 n_prikazano <- mm$totals$sources_listed
 n_zadrzano  <- mm$totals$sources_withheld
@@ -52,8 +56,9 @@ raspon      <- paste0(mf$corpus$year_min, ".–", mf$corpus$year_max, ".")
 
 Objavljujete o katoličkim temama i pitate se koliko toga doista dopre do ljudi? Ova stranica na to
 odgovara brojkama iz iste baze na kojoj se temelje sve ostale analize projekta. Upišite ime medija i
-dobit ćete koliko objavljuje, koliko reakcija skuplja, kako se to mijenjalo kroz godine i gdje stoji
-u odnosu na druge.
+dobit ćete koliko objavljuje, koliko reakcija skuplja, kada objavljuje, koliko se pažnja koncentrira
+na mali broj objava, po čemu se njegov tematski profil razlikuje od usporedivog polja, koji su mu
+izvori tematski najsličniji i kako reagira na velike kalendarske događaje.
 
 Pretraživanje pokriva `r digikat_hr_count(n_prikazano, "izvor")` s najmanje
 `r digikat_hr_count(prag, "objava")` u razdoblju `r raspon` Za najveće izvore postoji i razrađen
@@ -122,6 +127,56 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
 .mm-ng-dot { width:.62rem; height:.62rem; border-radius:50%; display:inline-block; }
 .mm-ng-dot-p { background:var(--mm-produced); }
 .mm-ng-dot-r { background:var(--mm-rewarded); }
+.mm-feature { margin:1.55rem 0 1.2rem; padding-top:1rem; border-top:1px solid #e4e2da; }
+.mm-feature:first-child { margin-top:.7rem; }
+.mm-platform-title { font-family:'IBM Plex Mono',monospace; font-size:.78rem; letter-spacing:.06em;
+  text-transform:uppercase; color:#6b6f76; margin:1.65rem 0 .25rem; }
+.mm-attention { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:.75rem; }
+.mm-att-card { border:1px solid #e4e2da; border-radius:8px; padding:.85rem .95rem; }
+.mm-att-value { font-family:'IBM Plex Mono',monospace; font-size:1.35rem; font-weight:600; color:#14181d; }
+.mm-att-label { font-size:.78rem; color:#6b6f76; margin:.1rem 0 .35rem; }
+.mm-att-peer { font-size:.82rem; color:#4f535a; margin:0; }
+.mm-reading { font-size:.9rem; line-height:1.55; margin:.65rem 0 0; color:#363a40; }
+.mm-topic-status { display:inline-block; margin:.05rem 0 .5rem; padding:.18rem .5rem;
+  border-radius:4px; background:#f3efe2; color:#655a32; font-family:'IBM Plex Mono',monospace;
+  font-size:.7rem; letter-spacing:.02em; }
+.mm-topic-chart { width:100%; max-width:720px; height:auto; display:block; }
+.mm-topic-legend { display:flex; flex-wrap:wrap; gap:1rem; font-size:.78rem; color:#6b6f76;
+  margin:.25rem 0 .45rem; }
+.mm-topic-key { display:inline-flex; align-items:center; gap:.35rem; }
+.mm-topic-dot { width:.62rem; height:.62rem; border-radius:50%; display:inline-block; }
+.mm-topic-dot-source { background:#0f4c5c; }
+.mm-topic-dot-field { background:#8aa1a8; }
+.mm-similar-title { font-size:.82rem; font-weight:600; color:#4f535a; margin:.8rem 0 .35rem; }
+.mm-similar { display:flex; flex-wrap:wrap; gap:.4rem; }
+.mm-similar a { display:inline-block; border:1px solid #cfd9dc; border-radius:999px;
+  padding:.28rem .6rem; color:#0f4c5c; background:#f8fbfb; font-size:.8rem; text-decoration:none; }
+.mm-similar a:hover, .mm-similar a:focus { background:#eaf0f2; color:#0b3945; }
+.mm-heat-wrap { width:100%; overflow-x:auto; margin:.6rem 0 .3rem; }
+.mm-heat { width:100%; min-width:700px; border-collapse:separate; border-spacing:3px; table-layout:fixed; }
+.mm-heat th { font-size:.72rem; font-weight:600; color:#6b6f76; padding:.3rem; text-align:center; }
+.mm-heat th:first-child { width:54px; text-align:left; }
+.mm-heat td { height:58px; border-radius:5px; padding:.35rem .4rem; text-align:center;
+  vertical-align:middle; font-size:.72rem; line-height:1.3; color:#14181d; }
+.mm-heat td.mm-suppressed { background:#f3f2ed; color:#8a8e95; }
+.mm-heat-n { display:block; font-weight:600; }
+.mm-heat-e { display:block; font-size:.68rem; margin-top:.12rem; }
+.mm-event-year { font-family:'IBM Plex Mono',monospace; font-size:.78rem; color:#6b6f76;
+  margin:1rem 0 .35rem; }
+.mm-event-row { display:grid; grid-template-columns:minmax(130px,1.15fr) minmax(260px,3fr);
+  gap:.7rem; align-items:center; padding:.55rem 0; border-bottom:1px solid #f0eee8; }
+.mm-event-name { font-size:.84rem; line-height:1.35; }
+.mm-event-date { display:block; color:#6b6f76; font-size:.74rem; }
+.mm-event-bars { display:grid; gap:.3rem; }
+.mm-event-barline { display:grid; grid-template-columns:72px minmax(110px,1fr) 52px; gap:.4rem;
+  align-items:center; font-size:.72rem; color:#6b6f76; }
+.mm-event-track { height:9px; background:#f0eee8; border-radius:5px; overflow:hidden; }
+.mm-event-fill { display:block; height:100%; min-width:0; border-radius:5px; background:#0f4c5c; }
+.mm-event-fill-field { background:#8aa1a8; }
+.mm-event-na { color:#8a8e95; font-size:.8rem; }
+@media (max-width:640px) {
+  .mm-event-row { grid-template-columns:1fr; gap:.35rem; }
+}
 /* Napomene uz pregled. Namjerno su tiše od ostatka stranice: ostaju vidljive i potpune,
    ali ne smiju izgledati kao dio samog alata. Zato su izvan hijerarhije naslova i izvan sadržaja. */
 .mm-aside { margin:3.2rem 0 0; padding:1.1rem 0 0; border-top:1px solid #e4e2da; max-width:640px; }
@@ -145,8 +200,10 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
   var detail = document.getElementById('mm-detail');
 
   var PLATFORM = { web:'web', youtube:'YouTube', facebook:'Facebook',
-                   instagram:'Instagram', tiktok:'TikTok', twitter:'Twitter / X' };
+                   instagram:'Instagram', tiktok:'TikTok', twitter:'Twitter / X',
+                   reddit:'Reddit', forum:'forum', comment:'komentari' };
   var LABEL = { confessional:'konfesionalni izvor', secular:'sekularni izvor', other:'ostalo' };
+  var WEEKDAY_LONG = ['ponedjeljkom', 'utorkom', 'srijedom', 'četvrtkom', 'petkom', 'subotom', 'nedjeljom'];
   var TYP = {
     'Divovi':'visok doseg i visok angažman',
     'Graditelji zajednica':'niži doseg uz vrlo visok angažman',
@@ -228,6 +285,208 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
     return int(rank) + '. od ' + int(total);
   }
 
+  function present(n) { return typeof n === 'number' && Number.isFinite(n); }
+  function pct(n) { return present(n) ? dec(n, 1) + ' %' : 'nije dostupno'; }
+  function multiple(n) { return present(n) ? dec(n, 1) + '×' : '—'; }
+  function dateHr(value) {
+    return new Date(value + 'T12:00:00').toLocaleDateString('hr-HR', {
+      day:'numeric', month:'long'
+    });
+  }
+
+  function attentionSection(bh) {
+    var a = bh.a || {};
+    var topRead = present(a.t)
+      ? 'Deset objava nosi ' + pct(a.t) + ' svih zabilježenih interakcija.'
+      : 'Za ovu platformu nema dovoljno zabilježenih interakcija za izračun udjela.';
+    var zeroRead;
+    if (!present(a.z)) {
+      zeroRead = 'Servis za ovu platformu ne bilježi broj interakcija po objavi.';
+    } else if (a.z === 0) {
+      zeroRead = 'Svaka objava ima barem jednu zabilježenu interakciju.';
+    } else if (a.z > 50) {
+      zeroRead = 'Više od polovice objava nema zabilježenu interakciju.';
+    } else {
+      zeroRead = 'To je približno 1 od ' + Math.max(2, Math.round(100 / a.z)) + ' objava.';
+    }
+    return '<section class="mm-feature"><div class="mm-h">Koncentracija pažnje</div>' +
+      '<div class="mm-attention">' +
+      '<div class="mm-att-card"><div class="mm-att-value">' + pct(a.t) + '</div>' +
+      '<div class="mm-att-label">interakcija u deset vodećih objava</div>' +
+      '<p class="mm-att-peer">Medijan usporedive skupine ' + pct(a.mt) +
+      (a.nt ? ' · ' + int(a.nt) + ' izvora' : '') + '</p></div>' +
+      '<div class="mm-att-card"><div class="mm-att-value">' + pct(a.z) + '</div>' +
+      '<div class="mm-att-label">objava bez zabilježene interakcije</div>' +
+      '<p class="mm-att-peer">Medijan usporedive skupine ' + pct(a.mz) +
+      (a.nz ? ' · ' + int(a.nz) + ' izvora' : '') + '</p></div></div>' +
+      '<p class="mm-reading">' + topRead + ' ' + zeroRead + '</p>' +
+      '<p class="mm-note">Usporedivu skupinu čine prikazani izvori na istoj platformi s najmanje ' +
+      int(DATA.policy.min_posts) + ' objava. Popis vodećih objava nije dio javnog prikaza.</p></section>';
+  }
+
+  function rhythmSection(bh) {
+    var meta = DATA.behaviour.rhythm;
+    var cells = bh.r || [];
+    var lookup = {};
+    cells.forEach(function (c) { lookup[c.d + '-' + c.b] = c; });
+    var maxPosts = Math.max.apply(null, cells.map(function (c) { return c.p; }).concat([1]));
+    var head = '<tr><th></th>' + meta.bands.map(function (b) { return '<th scope="col">' + b + '</th>'; }).join('') + '</tr>';
+    var rows = meta.weekdays.map(function (day, di) {
+      var body = meta.bands.map(function (band, bi) {
+        var c = lookup[(di + 1) + '-' + (bi + 1)];
+        if (!c) {
+          return '<td class="mm-suppressed" title="Manje od ' + int(meta.min_cell_posts) +
+            ' objava">&lt;' + int(meta.min_cell_posts) + '<span class="mm-heat-e">premalo objava</span></td>';
+        }
+        var alpha = .10 + .46 * c.p / maxPosts;
+        var engagement = present(c.e) ? dec(c.e, 1) + ' interakcija po objavi' : 'angažman nije zabilježen';
+        return '<td style="background:rgba(15,76,92,' + alpha.toFixed(2) + ')" title="' +
+          day + ' ' + band + '. ' + int(c.p) + ' objava. ' + engagement + '.">' +
+          '<span class="mm-heat-n">' + int(c.p) + ' objava</span><span class="mm-heat-e">' +
+          (present(c.e) ? dec(c.e, 1) + ' interakcija / objavi' : 'angažman nije dostupan') + '</span></td>';
+      }).join('');
+      return '<tr><th scope="row">' + day + '</th>' + body + '</tr>';
+    }).join('');
+    var readable = cells.filter(function (c) { return present(c.e); });
+    var reading = 'Nijedna ćelija nema najmanje ' + int(meta.min_cell_posts) +
+      ' objava sa zabilježenim angažmanom.';
+    if (readable.length) {
+      var best = readable.reduce(function (a, b) { return b.e > a.e ? b : a; });
+      var counts = cells.map(function (c) { return c.p; }).sort(function (a, b) { return a - b; });
+      var medianPosts = counts[Math.floor(counts.length / 2)];
+      reading = 'Najviši zabilježeni prosjek pojavljuje se ' +
+        WEEKDAY_LONG[best.d - 1] + ' u pojasu ' + meta.bands[best.b - 1] +
+        ', uz ' + dec(best.e, 1) + ' interakcija po objavi.';
+      if (best.p < medianPosts) {
+        reading += ' U toj se ćeliji objavljuje rjeđe nego u tipičnoj prikazanoj ćeliji.';
+      }
+      reading += ' To opisuje različite objave u različitim terminima i ne procjenjuje učinak premještanja istog sadržaja.';
+    }
+    return '<section class="mm-feature"><div class="mm-h">Ritam objavljivanja</div>' +
+      '<div class="mm-heat-wrap"><ta' + 'ble class="mm-heat" aria-label="Objave i interakcije po danu i vremenskom pojasu">' +
+      '<thead>' + head + '</thead><tbody>' + rows + '</tbody></ta' + 'ble></div>' +
+      '<p class="mm-reading">' + reading + '</p><p class="mm-note">Vrijeme je lokalno vrijeme Europe/Zagreb. ' +
+      'Ćelije s manje od ' + int(meta.min_cell_posts) + ' objava nisu prikazane.</p></section>';
+  }
+
+  function eventBar(label, value, field) {
+    return '<div class="mm-event-barline"><span>' + label + '</span><span class="mm-event-track">' +
+      '<span class="mm-event-fill' + (field ? ' mm-event-fill-field' : '') + '" data-value="' +
+      (present(value) ? value : '') + '"></span></span><span>' + multiple(value) + '</span></div>';
+  }
+
+  function topicMixChart(profile) {
+    var meta = DATA.behaviour.topics;
+    var order = meta.labels.map(function (label, i) {
+      return { label:label, source:profile.s[i], field:profile.f[i] };
+    }).sort(function (a, b) {
+      return b.source - a.source || b.field - a.field || a.label.localeCompare(b.label, 'hr');
+    });
+    var W = 720, LEFT = 265, RIGHT = 105, TOP = 24, ROW = 28;
+    var max = Math.max.apply(null, order.reduce(function (all, row) {
+      return all.concat([row.source, row.field]);
+    }, [1]));
+    var plotW = W - LEFT - RIGHT;
+    var H = TOP + order.length * ROW + 14;
+    var rows = order.map(function (row, i) {
+      var y = TOP + i * ROW + 11;
+      var xs = LEFT + plotW * row.source / max;
+      var xf = LEFT + plotW * row.field / max;
+      var aria = row.label + '. Izvor ' + dec(row.source, 1) +
+        ' %. Prosjek usporedive skupine ' + dec(row.field, 1) + ' %.';
+      return '<g><title>' + esc(aria) + '</title>' +
+        '<text x="' + (LEFT - 10) + '" y="' + (y + 4) + '" text-anchor="end" ' +
+        'font-size="11.5" fill="currentColor">' + esc(row.label) + '</text>' +
+        '<line x1="' + Math.min(xs, xf).toFixed(1) + '" x2="' + Math.max(xs, xf).toFixed(1) +
+        '" y1="' + y + '" y2="' + y + '" stroke="#c8c5bc" stroke-width="2" />' +
+        '<circle cx="' + xf.toFixed(1) + '" cy="' + y + '" r="4" fill="#8aa1a8" />' +
+        '<circle cx="' + xs.toFixed(1) + '" cy="' + y + '" r="4.5" fill="#0f4c5c" />' +
+        '<text x="' + (W - RIGHT + 10) + '" y="' + (y + 4) + '" font-size="10.5" ' +
+        'fill="#6b6f76">' + dec(row.source, 1) + ' / ' + dec(row.field, 1) + ' %</text></g>';
+    }).join('');
+    return '<div class="mm-topic-legend" aria-hidden="true">' +
+      '<span class="mm-topic-key"><span class="mm-topic-dot mm-topic-dot-source"></span>Izvor</span>' +
+      '<span class="mm-topic-key"><span class="mm-topic-dot mm-topic-dot-field"></span>' +
+      'Prosjek usporedive skupine</span></div>' +
+      '<svg class="mm-topic-chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" ' +
+      'aria-label="Tematski udjeli izvora i prosjeka usporedive skupine">' + rows + '</svg>';
+  }
+
+  function topicSection(bh) {
+    var meta = DATA.behaviour.topics;
+    var heading = '<section class="mm-feature"><div class="mm-h">Vi i prosjek polja</div>' +
+      '<span class="mm-topic-status">' + esc(meta.label) + '</span>';
+    if (!bh.tm) {
+      return heading + '<p class="mm-note">Rječnik je razvrstao ' + int(bh.tc || 0) +
+        ' od ' + int(bh.p) + ' objava. Tematski se profil prikazuje tek od ' +
+        int(meta.min_classified_posts) + ' razvrstanih objava.</p></section>';
+    }
+    var similar = '';
+    if (bh.sn && bh.sn.length) {
+      similar = '<p class="mm-similar-title">Slični izvori</p><div class="mm-similar">' +
+        bh.sn.map(function (name) {
+          return '<a href="?medij=' + encodeURIComponent(name) + '">' + esc(name) + '</a>';
+        }).join('') + '</div><p class="mm-note">Ovo znači sličan tematski profil na istoj platformi, ' +
+        'ne „konkurent”.</p>';
+    }
+    return heading + topicMixChart(bh.tm) +
+      '<p class="mm-note">Udio se računa među ' + int(bh.tm.n) +
+      ' rječnički razvrstanih objava. Prosjek jednako ponderira ' + int(bh.tm.pn) +
+      ' prikazanih izvora na istoj platformi; nije prosjek između platformi. ' +
+      esc(meta.method) + '</p>' + similar + '</section>';
+  }
+
+  function calendarSection(bh) {
+    var meta = DATA.behaviour.calendar;
+    var values = {};
+    (bh.k || []).forEach(function (v) { values[v.v] = v; });
+    var years = [];
+    meta.events.forEach(function (e) { if (years.indexOf(e.y) < 0) years.push(e.y); });
+    var html = years.map(function (year) {
+      var yearEvents = meta.events.map(function (e, i) { return { e:e, i:i + 1 }; })
+        .filter(function (x) { return x.e.y === year; });
+      var available = [];
+      yearEvents.forEach(function (x) {
+        var v = values[x.i] || {};
+        if (present(v.o)) available.push(v.o);
+        if (present(v.f)) available.push(v.f);
+      });
+      var max = Math.max.apply(null, available.concat([1]));
+      var rows = yearEvents.map(function (x) {
+        var e = x.e, v = values[x.i] || {};
+        if (!e.ok) {
+          return '<div class="mm-event-row"><div class="mm-event-name">' + esc(e.n) +
+            '<span class="mm-event-date">' + dateHr(e.d) + ' ' + e.y + '.</span></div>' +
+            '<div class="mm-event-na">Nije mjerljivo zbog prekida u prikupljanju.</div></div>';
+        }
+        var bars = '<div class="mm-event-bars">' + eventBar('Izvor', v.o, false) +
+          eventBar('Platforma', v.f, true) + '</div>';
+        return '<div class="mm-event-row"><div class="mm-event-name">' + esc(e.n) +
+          '<span class="mm-event-date">' + dateHr(e.d) + ' ' + e.y + '.</span></div>' + bars + '</div>';
+      }).join('');
+      var wrapped = '<div class="mm-event-year">' + year + '.</div>' + rows;
+      var holder = document.createElement('div');
+      holder.innerHTML = wrapped;
+      holder.querySelectorAll('.mm-event-fill').forEach(function (bar) {
+        var value = parseFloat(bar.dataset.value);
+        bar.style.width = Number.isFinite(value) ? Math.max(1, 100 * value / max).toFixed(1) + '%' : '0';
+      });
+      return holder.innerHTML;
+    }).join('');
+    return '<section class="mm-feature"><div class="mm-h">Kalendarski test</div>' + html +
+      '<p class="mm-note">Omjer uspoređuje prosječan broj objava po danu u trodnevnom prozoru s ' +
+      'prosjekom u dva tjedna prije i dva tjedna poslije. Platforma je cijelo polje na istoj platformi. ' +
+      'Isključeni datumi uklonjeni su iz oba računa. Omjer opisuje vremensko podudaranje i ne pripisuje događaju uzrok.</p></section>';
+  }
+
+  function behaviourSections(s) {
+    return (s.bh || []).map(function (bh) {
+      var heading = '<div class="mm-platform-title">' + esc(PLATFORM[bh.pl] || bh.pl) +
+        ' · ' + int(bh.p) + ' objava</div>';
+      return heading + attentionSection(bh) + rhythmSection(bh) + topicSection(bh) + calendarSection(bh);
+    }).join('');
+  }
+
   // Usporedba tematskih udjela za jedan urednički proizvod. Podaci ulaze u javni JSON tek kada
   // analiza nosi izričit status za javni prikaz.
   function topicChart(profile) {
@@ -286,6 +545,8 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
     h += '<p class="mm-note">Godina ' + DATA.years[DATA.years.length - 1] +
       '. nepotpuna je. Kako se čitaju godišnji volumeni, opisano je u ' +
       '<a href="metodologija.html">Metodologiji</a>.</p>';
+
+    h += behaviourSections(s);
 
     if (s.ng && s.ng.length) {
       h += '<section class="mm-ng"><div class="mm-h">Objavljeno i nagrađeno</div>';
@@ -365,6 +626,15 @@ ovdje ima znatno manje objava nego što ih doista ima.</p>
 <p>Interakcije i doseg vrijednosti su koje isporučuje servis za praćenje medija. Doseg je procjena, a
 ne izmjerena publika, i mjeri se drukčije na svakoj platformi. Usporedba između weba i YouTubea zato
 ne znači ono što bi se na prvi pogled činilo, dok je usporedba unutar iste platforme smislena.</p>
+
+<p>Vrijeme objave prošlo je zasebnu provjeru. Vrijednosti imaju preciznost u sekundama, nemaju
+nedostajućih zapisa i odgovaraju lokalnom vremenu Europe/Zagreb. Kalendarski test koristi iste
+isključene dane za izvor i usporedivo polje. Zato se Uskrs 2024. označava nemjerljivim, a ne nulom.</p>
+
+<p>Tematski je rječnik <strong>privremen</strong>: služi kao smjernica za validaciju, a ne kao
+rang-lista izvora. Usporedba i tematski slični izvori računaju se samo unutar iste platforme i samo
+za prikazane izvore s najmanje 100 rječnički razvrstanih objava. Sličnost opisuje raspodjelu tema,
+ne uredničku ulogu, publiku ni konkurentski odnos.</p>
 
 <p>Prikazani su izvori s najmanje `r digikat_hr_count(prag, "objava")`, jer bi ispod toga poredak
 počivao na premalom broju objava. Uz njih `r digikat_hr_count(n_zadrzano, "izvor")` iznad istoga

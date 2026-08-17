@@ -10,6 +10,7 @@ suppressPackageStartupMessages({
 })
 
 source(here::here("R", "lib", "digikat_paths.R"), encoding = "UTF-8")
+source(here::here("R", "lib", "digikat_events.R"), encoding = "UTF-8")
 
 AR_DIR <- here::here("studies", "annual-report")
 
@@ -262,25 +263,15 @@ ar_typology_en <- c(
 # A peak in the data shows a DATE, not a cause. Naming one is an editorial act, so the names live
 # here as a reviewable registry keyed by date rather than as a positional vector inside the figure
 # code, where a changed peak order would silently relabel the year.
-AR_EVENT_NAMES <- list(
-  `2024-08-15` = "Velika Gospa",
-  `2024-12-25` = "Božić",
-  `2024-12-24` = "Badnjak",
-  `2025-04-21` = "Smrt pape Franje",
-  `2025-04-26` = "Sprovod pape Franje",
-  `2025-08-15` = "Velika Gospa",
-  `2025-12-25` = "Božić"
-)
+AR_EVENT_NAMES <- as.list(stats::setNames(
+  DIGIKAT_EVENT_REGISTRY$label_hr,
+  format(DIGIKAT_EVENT_REGISTRY$date, "%Y-%m-%d")
+))
 
-AR_EVENT_NAMES_EN <- list(
-  `2024-08-15` = "Assumption of Mary",
-  `2024-12-25` = "Christmas Day",
-  `2024-12-24` = "Christmas Eve",
-  `2025-04-21` = "Death of Pope Francis",
-  `2025-04-26` = "Funeral of Pope Francis",
-  `2025-08-15` = "Assumption of Mary",
-  `2025-12-25` = "Christmas Day"
-)
+AR_EVENT_NAMES_EN <- as.list(stats::setNames(
+  DIGIKAT_EVENT_REGISTRY$label_en,
+  format(DIGIKAT_EVENT_REGISTRY$date, "%Y-%m-%d")
+))
 
 ar_event_name <- function(date) {
   key <- format(as.Date(date), "%Y-%m-%d")

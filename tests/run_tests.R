@@ -5,6 +5,9 @@ source("R/lib/digikat_utils.R", encoding = "UTF-8")
 source("R/lib/religious_filter.R", encoding = "UTF-8")
 source("R/lib/thematic_dictionaries.R", encoding = "UTF-8")
 source("R/lib/page_summaries.R", encoding = "UTF-8")
+source("R/lib/digikat_events.R", encoding = "UTF-8")
+source("R/lib/moj_medij_metrics.R", encoding = "UTF-8")
+source("R/lib/moj_medij_topics.R", encoding = "UTF-8")
 
 failures <- character()
 checks <- 0L
@@ -92,6 +95,196 @@ expect_equal(length(digikat_thematic_dictionaries), 16L, "Canonical thematic dic
 expect_true(
   all(vapply(digikat_thematic_dictionaries, length, integer(1L)) > 0L),
   "Every thematic category must contain at least one term"
+)
+expect_equal(
+  names(DIGIKAT_TOPIC_PROFILE_LABELS),
+  names(digikat_thematic_dictionaries),
+  "Public topic labels must cover the canonical dictionary in canonical order"
+)
+
+topic_fixture <- data.frame(
+  FROM = rep(LETTERS[1:5], each = 3L),
+  SOURCE_TYPE = "web",
+  TITLE = c(
+    "crkva", "crkva", "film",
+    "crkva", "crkva", "film",
+    "film", "film", "crkva",
+    "crkva", "film", "crkva film",
+    "crkva", "crkva", "crkva"
+  ),
+  FULL_TEXT = "",
+  stringsAsFactors = FALSE
+)
+topic_fixture_profiles <- digikat_topic_profiles(
+  topic_fixture,
+  dictionary = list(CRKVA = "crkv", KULTURA = "film"),
+  chunk_size = 4L
+)
+topic_a <- topic_fixture_profiles[topic_fixture_profiles$FROM == "A", , drop = FALSE]
+expect_true(
+  all(abs(topic_a$topic_share - c(66.6666667, 33.3333333)) < 1e-6),
+  "Topic profiles must convert classified posts to production shares"
+)
+topic_d <- topic_fixture_profiles[topic_fixture_profiles$FROM == "D", , drop = FALSE]
+expect_true(
+  all(abs(topic_d$topic_mass - c(1.5, 1.5)) < 1e-9),
+  "Tied dictionary winners must divide one post fractionally"
+)
+topic_fixture_comparison <- digikat_topic_comparisons(
+  topic_fixture_profiles,
+  listed_sources = LETTERS[1:5],
+  min_classified_posts = 3L,
+  max_neighbours = 4L,
+  min_neighbours = 3L
+)
+topic_fixture_peer <- unique(topic_fixture_comparison$profiles[
+  , c("SOURCE_TYPE", "topic", "peer_share"), drop = FALSE
+])
+expect_true(
+  all(abs(tapply(topic_fixture_peer$peer_share,
+                 topic_fixture_peer$SOURCE_TYPE, sum) - 100) < 1e-9),
+  "Same-platform peer topic averages must sum to 100 percent"
+)
+expect_equal(
+  topic_fixture_comparison$neighbours[[digikat_topic_profile_key("A", "web")]][[1L]],
+  "B",
+  "Cosine neighbours must rank an identical same-platform topic vector first"
+)
+expect_true(
+  all(vapply(topic_fixture_comparison$neighbours, length, integer(1L)) == 4L),
+  "Eligible topic profiles must store four neighbours when four are available"
+)
+
+topic_window_fixture <- data.frame(
+  FROM = c("outside", "inside"),
+  SOURCE_TYPE = "web",
+  TITLE = "",
+  FULL_TEXT = c(paste0(strrep("x", 3001L), " crkva"), "crkva"),
+  stringsAsFactors = FALSE
+)
+topic_window_profiles <- digikat_topic_profiles(
+  topic_window_fixture,
+  dictionary = list(CRKVA = "crkv"),
+  text_characters = 3000L,
+  chunk_size = 1L
+)
+expect_equal(
+  topic_window_profiles$classified_posts,
+  c(0L, 1L),
+  "Topic classification must stop at the first 3,000 body characters"
+)
+
+expect_equal(
+  digikat_top_n_interaction_share(c(50, 25, 25, 0), n = 1L),
+  50,
+  "Attention concentration must publish an interaction share, not top posts"
+)
+expect_equal(
+  digikat_zero_interaction_rate(c(0, 2, NA_real_)),
+  50,
+  "Zero-interaction rate must use vendor-measured posts as its denominator"
+)
+expect_equal(
+  digikat_time_band(c(0L, 5L, 6L, 13L, 22L, 23L)),
+  c(1L, 1L, 2L, 3L, 6L, 6L),
+  "Publishing hours must map to the six public time bands"
+)
+expect_equal(
+  digikat_rate_ratio(9, 3, 28, 28),
+  3,
+  "Calendar surge must compare daily event and baseline rates"
+)
+
+profile_events <- digikat_calendar_events(c(2024L, 2025L), moj_medij_only = TRUE)
+expect_equal(
+  as.integer(table(format(profile_events$date, "%Y"))),
+  c(4L, 6L),
+  "Moj medij must carry four to six reviewed calendar events per complete year"
+)
+calendar_2024 <- seq(as.Date("2024-01-01"), as.Date("2024-12-31"), by = "day")
+easter_gap <- seq(as.Date("2024-03-30"), as.Date("2024-04-01"), by = "day")
+test_windows <- digikat_event_windows(
+  profile_events[profile_events$id == "easter-2024", , drop = FALSE],
+  calendar_2024[!calendar_2024 %in% easter_gap]
+)
+expect_true(
+  !test_windows$registry$measurable[[1L]] &&
+    identical(test_windows$registry$reason[[1L]], "collection_gap"),
+  "An event overlapping a collection gap must be unmeasurable, never zero"
+)
+
+rhythm_fixture <- data.frame(
+  FROM = rep("example.invalid", 39),
+  SOURCE_TYPE = rep("web", 39),
+  DATE = c(rep("2025-01-06", 20), rep("2025-01-07", 19)),
+  TIME = c(rep("10:30:00", 20), rep("10:30:00", 19)),
+  INTERACTIONS = c(rep(2, 20), rep(5, 19)),
+  stringsAsFactors = FALSE
+)
+rhythm_test <- digikat_rhythm_cells(rhythm_fixture, min_cell_posts = 20L)
+expect_equal(nrow(rhythm_test), 1L, "Publishing-rhythm cells below 20 posts must be suppressed")
+expect_equal(rhythm_test$engagement, 2, "Rhythm cells must report interactions per post")
+
+moj_medij_raw <- paste(readLines("data/page-ready/moj_medij.json", encoding = "UTF-8", warn = FALSE),
+                       collapse = "\n")
+moj_medij <- jsonlite::fromJSON(moj_medij_raw, simplifyVector = FALSE)
+expect_equal(moj_medij$schema_version, 4L, "Moj medij public artifact must use topic schema v4")
+expect_true(
+  all(vapply(moj_medij$sources, function(source) length(source$bh) > 0L, logical(1L))),
+  "Every public Moj medij profile must contain platform-specific behavioural metrics"
+)
+published_rhythm_counts <- unlist(lapply(moj_medij$sources, function(source) {
+  unlist(lapply(source$bh, function(platform) {
+    if (length(platform$r)) vapply(platform$r, function(cell) cell$p, integer(1L)) else integer()
+  }))
+}))
+expect_true(
+  all(published_rhythm_counts >= moj_medij$policy$rhythm_min_cell_posts),
+  "No sub-threshold rhythm-cell count may enter the public artifact"
+)
+expect_equal(
+  moj_medij$behaviour$topics$status,
+  "provisional_validation_leads_not_rankings",
+  "The public topic panel must preserve its provisional validation-only status"
+)
+expect_equal(
+  length(moj_medij$behaviour$topics$labels),
+  16L,
+  "The public topic panel must carry all 16 canonical topic labels"
+)
+published_platform_profiles <- unlist(lapply(moj_medij$sources, function(source) source$bh),
+                                      recursive = FALSE)
+published_topic_profiles <- Filter(function(platform) !is.null(platform$tm),
+                                   published_platform_profiles)
+expect_true(length(published_topic_profiles) > 0L, "Eligible public profiles must carry topic mixes")
+expect_true(
+  all(vapply(published_topic_profiles, function(platform) {
+    platform$tm$n >= moj_medij$policy$topic_min_classified_posts &&
+      length(platform$tm$s) == 16L && length(platform$tm$f) == 16L &&
+      abs(sum(unlist(platform$tm$s)) - 100) <= 0.1 &&
+      abs(sum(unlist(platform$tm$f)) - 100) <= 0.1
+  }, logical(1L))),
+  "Published topic mixes must clear the support floor and reconcile to 100 percent"
+)
+published_neighbours <- Filter(function(platform) !is.null(platform$sn),
+                               published_platform_profiles)
+expect_true(
+  all(vapply(published_neighbours, function(platform) {
+    is.character(unlist(platform$sn)) && length(platform$sn) %in% 3:4
+  }, logical(1L))),
+  "Similar-source payloads must contain only three or four source names"
+)
+public_easter_2024 <- Filter(
+  function(event) identical(event$id, "easter-2024"),
+  moj_medij$behaviour$calendar$events
+)[[1L]]
+expect_true(
+  identical(public_easter_2024$ok, FALSE) && identical(public_easter_2024$rs, "collection_gap"),
+  "The public artifact must label Easter 2024 unmeasurable because of the collection gap"
+)
+expect_true(
+  !grepl("FULL_TEXT|\\\"URL\\\"|http://|https://", moj_medij_raw, perl = TRUE),
+  "Moj medij public artifact must not expose text, URLs or post identifiers"
 )
 
 sample_path <- "data/sample/merged_sample.rds"
