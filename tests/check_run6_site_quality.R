@@ -73,6 +73,9 @@ expect_true(identical(unname(package$devDependencies[["axe-core"]]), "4.13.0"),
             "axe-core must remain pinned for reproducible accessibility results")
 expect_true(file.exists("scripts/check_site_quality.mjs") && file.exists("scripts/check_site_browser.mjs"),
             "Static and browser release checks must exist")
+ci <- read_utf8(".github/workflows/ci.yml")
+expect_true(grepl("git checkout -- docs/pages/studije docs/studies docs/site_libs", ci, fixed = TRUE),
+            "CI must restore frozen study pages, reviewed figure assets and their shared libraries")
 static_check <- read_utf8("scripts/check_site_quality.mjs")
 expect_true(grepl('file === "pages/izvori/mreza.html"', static_check, fixed = TRUE) &&
               grepl('["mreža izvora", 2_000_000]', static_check, fixed = TRUE),

@@ -80,7 +80,8 @@ jobs:
       # The finished thematic studies are excluded from the render in _quarto.yml, so that a live-site
       # build can never recompute the numbers they published. Their HTML is versioned under docs/
       # instead, and a full render drops output whose input is not in the render list — restore the
-      # nine published files from git so the link check crawls the site as it is actually served.
+      # nine published files and their reviewed figure assets from git so the link check crawls the
+      # site as it is actually served.
       #
       # site_libs too: those nine pages were frozen against content-hashed CSS bundle names, and a
       # different Quarto/dart-sass compiles the theme to a different hash, so this render's bundles do
@@ -89,7 +90,7 @@ jobs:
       - name: Restore the versioned output the render does not reproduce
         shell: pwsh
         run: |
-          git checkout -- docs/pages/studije docs/site_libs
+          git checkout -- docs/pages/studije docs/studies docs/site_libs
           $n = (Get-ChildItem docs/pages/studije -Filter *.html).Count
           if ($n -lt 9) { throw "Expected 9 published study pages under docs/pages/studije, found $n" }
 
