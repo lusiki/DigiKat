@@ -1,7 +1,12 @@
 ---
 title: "Mapa medijskog prostora"
 subtitle: "Četiri analitičke razine i vremenski presjek katoličkoga digitalnog prostora"
-date: last-modified
+description: "Mapa medijskog prostora povezuje pet analitičkih prikaza izvora, tema, atmosfere diskursa, događaja i promjena kroz vrijeme."
+date-modified: 2026-08-24
+data-cutoff: 2026-06-11
+status: "Ažurira se"
+show-freshness: true
+schema-type: "CollectionPage"
 categories: ["Pregled", "Analitičke razine"]
 toc: false
 ---
@@ -24,6 +29,8 @@ Tko objavljuje o katoličkim temama, o čemu se pritom govori, kakvim se rječni
 Sve mape računaju se na istom korpusu od `r digikat_hr_count(mf$corpus$rows, "objava")` (`r raspon`). Kako je taj korpus nastao i što se na njemu smije usporediti, opisano je u [Metodologiji](../metodologija.html).
 
 Svaka je mapa samostalna cjelina. Zajedno daju slojevit prikaz digitalne medijske arene. Odaberite mapu za detaljan prikaz.
+
+## Analitičke razine
 
 ::: {.card-grid}
 

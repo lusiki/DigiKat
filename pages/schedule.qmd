@@ -1,12 +1,16 @@
 ---
 title: "Projektni raspored"
 subtitle: "Od izgradnje infrastrukture do finalne sinteze — ciljevi i aktivnosti po fazama"
-date: last-modified
+description: "Projektni raspored odvaja razdoblje projekta 2025.–2027. od razdoblja opažanja u korpusu te prikazuje ciljeve i aktivnosti u šest faza."
+date-modified: 2026-08-24
+status: "Ažurira se"
+show-freshness: true
+schema-type: "WebPage"
 categories: ["2025.–2027.", "6 faza", "3 godine"]
 ---
 
 
-### Vremenski plan projekta
+## Vremenski plan projekta
 
 Projekt je strukturiran u šest faza kroz razdoblje od tri godine (2025.–2027.). Empirijski korpus pritom pokriva razdoblje 2021.–2026. Svaka faza ima specifične ciljeve i aktivnosti koje osiguravaju postupan i sustavan napredak.
 
@@ -35,7 +39,7 @@ Projekt je strukturiran u šest faza kroz razdoblje od tri godine (2025.–2027.
 **Faza 1. Izgradnja infrastrukture i povijesna analiza (siječanj – lipanj 2025.)**
 
 ::: {.callout-note}
-## Glavni cilj
+#### Glavni cilj
 Uspostaviti tehničke temelje projekta i prikupiti povijesne podatke.
 :::
 
@@ -49,7 +53,7 @@ Uspostaviti tehničke temelje projekta i prikupiti povijesne podatke.
 **Faza 2. Prva podjela podataka i definiranje istraživanja (srpanj – prosinac 2025.)**
 
 ::: {.callout-note}
-## Glavni cilj
+#### Glavni cilj
 Definirati prve smjerove tematskih istraživanja na temelju prikupljenih podataka.
 :::
 
@@ -69,7 +73,7 @@ Definirati prve smjerove tematskih istraživanja na temelju prikupljenih podatak
 **Faza 3. Prvi godišnji izvještaj i daljnji razvoj (siječanj – lipanj 2026.)**
 
 ::: {.callout-note}
-## Glavni cilj
+#### Glavni cilj
 Izraditi i prezentirati prvu Mapu ekosustava.
 :::
 
@@ -83,7 +87,7 @@ Izraditi i prezentirati prvu Mapu ekosustava.
 **Faza 4. Intenzivni istraživački rad (srpanj – prosinac 2026.)**
 
 ::: {.callout-note}
-## Glavni cilj
+#### Glavni cilj
 Fokus na provođenju definiranih tematskih istraživanja.
 :::
 
@@ -103,7 +107,7 @@ Fokus na provođenju definiranih tematskih istraživanja.
 **Faza 5. Drugi godišnji izvještaj i priprema za sintezu (siječanj – lipanj 2027.)**
 
 ::: {.callout-note}
-## Glavni cilj
+#### Glavni cilj
 Analizirati podatke iz prethodne godine i integrirati prve rezultate tematskih istraživanja.
 :::
 
@@ -117,7 +121,7 @@ Analizirati podatke iz prethodne godine i integrirati prve rezultate tematskih i
 **Faza 6. Finalna sinteza i zaključci (srpanj – prosinac 2027.)**
 
 ::: {.callout-note}
-## Glavni cilj
+#### Glavni cilj
 Predstaviti cjelovite rezultate projekta.
 :::
 

@@ -1,5 +1,5 @@
 ---
-pagetitle: "DigiKat — otvoreni opservatorij katoličkih tema u medijima"
+pagetitle: "Otvoreni opservatorij katoličkih tema u medijima"
 description: "DigiKat je otvoreni opservatorij koji pokazuje tko u Hrvatskoj objavljuje o katoličkim temama, o čemu govori i što privlači pozornost."
 date-modified: 2026-08-24
 data-cutoff: 2026-06-11

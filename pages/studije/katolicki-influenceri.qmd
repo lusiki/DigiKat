@@ -1,13 +1,17 @@
 ---
 title: "Katolički influenceri i institucionalni deficit pažnje"
 subtitle: "Usporedba kreatorskih i službenih crkvenih izvora u hrvatskom digitalnom medijskom prostoru, 2021.–2026."
+description: "Studija uspoređuje raspodjelu pažnje, interakcije i tematske profile katoličkih kreatorskih i institucionalnih crkvenih izvora."
 author:
   - name: "Suzana Obrovac Lipar"
     affiliation: "Hrvatsko katoličko sveučilište"
   - name: "Luka Šikić"
     url: "https://www.lukasikic.info/"
     affiliation: "Hrvatsko katoličko sveučilište"
-date: last-modified
+date-modified: 2026-08-24
+status: "Stabilno izdanje"
+show-freshness: true
+schema-type: "ScholarlyArticle"
 categories: ["Tematsko istraživanje", "Ekonomija pažnje", "Religijski kreatori", "Cjeloviti rad dostupan"]
 ---
 

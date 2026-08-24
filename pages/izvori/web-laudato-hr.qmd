@@ -1,15 +1,45 @@
 ---
 title: "laudato.hr"
 subtitle: "Web · Specijalizirani akteri"
-date: last-modified
+description: "Profil izvora laudato.hr na platformi Web prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat."
+date-modified: 2026-08-24
+data-cutoff: 2026-06-11
+status: "Ažurira se"
+show-freshness: true
+schema-type: "ProfilePage"
+image: false
 categories: ["Katalog izvora", "Web"]
 ---
 
-Ova stranica sažima profil izvora **laudato.hr** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+```{=html}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "name": "Profil izvora laudato.hr",
+  "description": "Profil izvora laudato.hr na platformi Web prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat.",
+  "url": "https://lusiki.github.io/DigiKat/pages/izvori/web-laudato-hr.html",
+  "inLanguage": "hr",
+  "dateModified": "2026-08-24",
+  "isPartOf": {
+    "@id": "https://lusiki.github.io/DigiKat/pages/izvori/"
+  },
+  "mainEntity": {
+    "@type": "Thing",
+    "name": "laudato.hr"
+  },
+  "publisher": {
+    "@id": "https://lusiki.github.io/DigiKat/#project"
+  }
+}
+</script>
+```
+
+Ova stranica sažima profil izvora **laudato.hr** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih izvora koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
 
 ## Što je
 
-Laudato, katolički news-portal
+Laudato, katolički informativni portal
 
 ## Profil
 
@@ -26,7 +56,7 @@ Ključni pokazatelji ovog izvora u korpusu.
 </div>
 <div class="metric-card">
 <div class="metric-value">8.550.486</div>
-<div class="metric-label">Doseg</div>
+<div class="metric-label">Procijenjenoga dosega</div>
 </div>
 </div>
 
@@ -41,14 +71,15 @@ Uređivačka oznaka je **konfesionalni izvor** *(prijedlog koji potvrđuje vodit
 ## Povezano
 
 - [Pregled platforme Web](platforma-web.html)
-- Srodni akteri: [hkm.hr](web-hkm-hr.html), [novizivot.net](web-novizivot-net.html), [slobodnadalmacija.hr](web-slobodnadalmacija-hr.html)
+- Srodni izvori: [hkm.hr](web-hkm-hr.html), [novizivot.net](web-novizivot-net.html), [slobodnadalmacija.hr](web-slobodnadalmacija-hr.html)
 - [Katalog izvora, sve platforme](index.html)
+- [Metodologija prikupljanja i mjerenja](../metodologija.html)
 
 ## Izvori podataka
 
-Podaci: `data/processed/web_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-08-11).
+Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.
 
 ::: {.callout-warning}
-Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.
+Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira izvore na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.
 :::
 

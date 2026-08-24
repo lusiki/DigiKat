@@ -109,14 +109,14 @@
     "href": "pages/news.html",
     "title": "Obavijesti",
     "section": "",
-    "text": "Novosti i događanja\n\n\nUskoro\nSiječanj 2026 Prezentacija rezultata prvog godišnjeg izvještaja.\n\n\nDogađanja u 2025. godini\n\n\n\nProsinac 2025 Interna radionica za planiranje aktivnosti u 2026. godini.\n\n\nTim je evaluirao rad u prvoj godini projekta i definirao prioritete za sljedeću fazu istraživanja.\n\n\n\n\nStudeni 2025 Objavljen prvi tehnički izvještaj o sustavu za prikupljanje podataka.\n\n\nDetaljno dokumentiran proces razvoja infrastrukture, algoritmi i tehnička rješenja objavljena su u internom dokumentu.\n\n\n\n\nListopad 2025 Provedena analiza tonaliteta na povijesnim podacima.\n\n\nRačunalnom obradom teksta automatski je određen tonalitet prikupljenih objava.\n\n\n\n\nRujan 2025 Održana radionica za podjelu tematskih istraživanja.\n\n\nDefiniranje smjerova istraživanja i podjela zaduženja unutar tima za prvu seriju tematskih analiza.\n\n\n\n\nKolovoz 2025 Integracija analitičkih alata i aplikacije nadzorne ploče.\n\n\nImplementirana interaktivna nadzorna ploča za praćenje ključnih metrika i trendova u prikupljenim podacima.\n\n\n\n\nSrpanj 2025 Objavljena baza podataka na Kaggle platformi.\n\n\nPrvi javno dostupan skup podataka projekta objavljen je na Kaggle platformi, omogućavajući široj akademskoj zajednici pristup podacima.\n\n\n\n\nLipanj 2025 Uspješno uspostavljen sustav za prikupljanje podataka u realnom vremenu.\n\n\nAutomatizirani sustav za praćenje digitalnih medija 24/7 postaje operativan.\n\n\n\n\nSvibanj 2025 Prezentacija preliminarnih rezultata na internom seminaru.\n\n\nTim je predstavio prve uvide iz povijesnih podataka i planove za tematske analize.\n\n\n\n\nTravanj 2025 Pokrenuta nova verzija web stranice projekta.\n\n\nPoboljšana verzija stranice postavljena je za testiranje i interne potrebe tima.\n\n\n\n\nTravanj 2025 Završena prva faza prikupljanja povijesnih podataka.\n\n\nUspješno je prikupljen i obrađen korpus podataka iz razdoblja 2021.–2024., čime je stvoren temelj za daljnje analize.\n\n\n\n\nOžujak 2025 Metodološka radionica tima.\n\n\nOdržana je interna radionica o računalnoj obradi teksta za potrebe projekta.\n\n\n\n\nVeljača 2025 Finaliziran kod za prikupljanje podataka (v1.0).\n\n\nNakon višemjesečnog razvoja, prva stabilna verzija alata za automatsko prikupljanje objava spremna je za rad.\n\n\n\n\nSiječanj 2025 Službeni početak projekta i konstituiranje tima!\n\n\nOdržan je početni (kick off) sastanak projektnog tima, usvojen je finalni plan rada te su potvrđene uloge i odgovornosti svih članova, čime je formaliziran rad nakon odobrenja financiranja krajem 2022. godine.\n\n\n\n\n\nDogađanja u 2024. godini\n\n\n\nProsinac 2024 Javno predstavljanje projekta na HKS-u.\n\n\nProjekt, njegovi ciljevi i metodologija službeno su predstavljeni akademskoj zajednici i javnosti. Pokrenuta je i službena web stranica projekta.\n\n\n\n\nStudeni 2024 Predstavljanje projekta na HKS-u\n\n\nProjektni ciljevi i metodologija predstavljeni su na internom seminaru Odjela za komunikologiju."
+    "text": "Ažurirano24. kolovoza 2026.StatusAžurira se"
   },
   {
     "objectID": "pages/metodologija.html",
     "href": "pages/metodologija.html",
     "title": "Metodologija",
     "section": "",
-    "text": "Ova stranica okuplja tehnički dio projekta na jednom mjestu. Ostale stranice vode računa o tome što podaci pokazuju. Ovdje piše kako su nastali, na čemu su mjereni i što se iz njih ne smije zaključiti. Namijenjena je čitatelju koji želi provjeriti postupak, ponoviti ga ili citirati.\nSvaka brojka na ovoj stranici izračunata je iz praćenih manifesta koji nastaju zajedno s podacima. Nijedna nije prepisana rukom."
+    "text": "Ažurirano24. kolovoza 2026.Podaci zaključno s11. lipnja 2026.StatusAžurira se\nOva stranica okuplja tehnički dio projekta na jednom mjestu. Ostale stranice vode računa o tome što podaci pokazuju. Ovdje piše kako su nastali, na čemu su mjereni i što se iz njih ne smije zaključiti. Namijenjena je čitatelju koji želi provjeriti postupak, ponoviti ga ili citirati.\nSvaka brojka na ovoj stranici izračunata je iz praćenih manifesta koji nastaju zajedno s podacima. Nijedna nije prepisana rukom."
   },
   {
     "objectID": "pages/metodologija.html#što-ulazi-u-korpus",
@@ -844,21 +844,21 @@
     "href": "pages/izvori/web-24sata-hr.html",
     "title": "24sata.hr",
     "section": "",
-    "text": "Ova stranica sažima profil izvora 24sata.hr u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+    "text": "Ažurirano24. kolovoza 2026.Podaci zaključno s11. lipnja 2026.StatusAžurira se\nOva stranica sažima profil izvora 24sata.hr u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih izvora koji dopunjuje Mapu ekosustava."
   },
   {
     "objectID": "pages/izvori/web-24sata-hr.html#što-je",
     "href": "pages/izvori/web-24sata-hr.html#što-je",
     "title": "24sata.hr",
     "section": "Što je",
-    "text": "Što je\n24sata, nacionalni news-portal"
+    "text": "Što je\n24sata, nacionalni informativni portal"
   },
   {
     "objectID": "pages/izvori/web-24sata-hr.html#profil",
     "href": "pages/izvori/web-24sata-hr.html#profil",
     "title": "24sata.hr",
     "section": "Profil",
-    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu.\n\n\n\n3.270\n\n\nObjava\n\n\n\n\n971.429\n\n\nInterakcija\n\n\n\n\n28.731.111\n\n\nDoseg\n\n\n\nPo volumenu objava, 24sata.hr je na 11. mjestu od 16 praćenih izvora na platformi Web. Prosječno ostvaruje 297 interakcija po objavi."
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu.\n\n\n\n3.270\n\n\nObjava\n\n\n\n\n971.429\n\n\nInterakcija\n\n\n\n\n28.731.111\n\n\nProcijenjenoga dosega\n\n\n\nPo volumenu objava, 24sata.hr je na 11. mjestu od 16 praćenih izvora na platformi Web. Prosječno ostvaruje 297 interakcija po objavi."
   },
   {
     "objectID": "pages/izvori/web-24sata-hr.html#tipologija",
@@ -872,14 +872,14 @@
     "href": "pages/izvori/web-24sata-hr.html#povezano",
     "title": "24sata.hr",
     "section": "Povezano",
-    "text": "Povezano\n\nPregled platforme Web\nSrodni akteri: dnevno.hr, jutarnji.hr, net.hr\nKatalog izvora, sve platforme"
+    "text": "Povezano\n\nPregled platforme Web\nSrodni izvori: dnevno.hr, jutarnji.hr, net.hr\nKatalog izvora, sve platforme\nMetodologija prikupljanja i mjerenja"
   },
   {
     "objectID": "pages/izvori/web-24sata-hr.html#izvori-podataka",
     "href": "pages/izvori/web-24sata-hr.html#izvori-podataka",
     "title": "24sata.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/web_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira izvore na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/twitter-vlada-republike-hrvatske.html",
@@ -1348,21 +1348,21 @@
     "href": "pages/izvori/tiktok-index-hr.html",
     "title": "index.hr",
     "section": "",
-    "text": "Ova stranica sažima profil izvora index.hr u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+    "text": "Ažurirano24. kolovoza 2026.Podaci zaključno s11. lipnja 2026.StatusPreliminarno\nOva stranica sažima profil izvora index.hr u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih izvora koji dopunjuje Mapu ekosustava."
   },
   {
     "objectID": "pages/izvori/tiktok-index-hr.html#što-je",
     "href": "pages/izvori/tiktok-index-hr.html#što-je",
     "title": "index.hr",
     "section": "Što je",
-    "text": "Što je\nIndex.hr, nacionalni news-portal"
+    "text": "Što je\nIndex.hr, nacionalni informativni portal"
   },
   {
     "objectID": "pages/izvori/tiktok-index-hr.html#profil",
     "href": "pages/izvori/tiktok-index-hr.html#profil",
     "title": "index.hr",
     "section": "Profil",
-    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu.\n\n\n\n4\n\n\nObjava\n\n\n\n\n32.775\n\n\nInterakcija\n\n\n\n\n405.049\n\n\nDoseg\n\n\n\n\n\n\n\n\n\nOprez\n\n\n\nOvo je vrlo tanak profil temeljen na 4 objava. Prikazan je radi potpunosti kataloga, ali rang i tipologiju ne treba tumačiti kao stabilnu procjenu aktera.\n\n\nPo volumenu objava, index.hr je na 8. mjestu od 16 praćenih izvora na platformi TikTok. Prosječno ostvaruje 8.194 interakcija po objavi."
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu.\n\n\n\n4\n\n\nObjava\n\n\n\n\n32.775\n\n\nInterakcija\n\n\n\n\n405.049\n\n\nProcijenjenoga dosega\n\n\n\n\n\n\n\n\n\nOprez\n\n\n\nOvaj se profil temelji na samo 4 objava. Prikazan je radi potpunosti kataloga. Rang i tipologiju zato ne treba tumačiti kao stabilnu procjenu izvora.\n\n\nPo volumenu objava, index.hr je na 8. mjestu od 16 praćenih izvora na platformi TikTok. Prosječno ostvaruje 8.194 interakcija po objavi."
   },
   {
     "objectID": "pages/izvori/tiktok-index-hr.html#tipologija",
@@ -1376,14 +1376,14 @@
     "href": "pages/izvori/tiktok-index-hr.html#povezano",
     "title": "index.hr",
     "section": "Povezano",
-    "text": "Povezano\n\nPregled platforme TikTok\nSrodni akteri: shkm2026, mladifesthrvatska, kristijanilicic\nKatalog izvora, sve platforme"
+    "text": "Povezano\n\nPregled platforme TikTok\nSrodni izvori: shkm2026, mladifesthrvatska, kristijanilicic\nKatalog izvora, sve platforme\nMetodologija prikupljanja i mjerenja"
   },
   {
     "objectID": "pages/izvori/tiktok-index-hr.html#izvori-podataka",
     "href": "pages/izvori/tiktok-index-hr.html#izvori-podataka",
     "title": "index.hr",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/tiktok_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira izvore na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/tiktok-hrvatska-radiotelevizija.html",
@@ -1999,7 +1999,7 @@
     "href": "pages/izvori/facebook-laudato.html",
     "title": "Laudato",
     "section": "",
-    "text": "Ova stranica sažima profil izvora Laudato u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+    "text": "Ažurirano24. kolovoza 2026.Podaci zaključno s11. lipnja 2026.StatusAžurira se\nOva stranica sažima profil izvora Laudato u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih izvora koji dopunjuje Mapu ekosustava."
   },
   {
     "objectID": "pages/izvori/facebook-laudato.html#što-je",
@@ -2013,7 +2013,7 @@
     "href": "pages/izvori/facebook-laudato.html#profil",
     "title": "Laudato",
     "section": "Profil",
-    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu.\n\n\n\n1.636\n\n\nObjava\n\n\n\n\n720.991\n\n\nInterakcija\n\n\n\n\n42.049.631\n\n\nDoseg\n\n\n\nPo volumenu objava, Laudato je na 6. mjestu od 19 praćenih izvora na platformi Facebook. Prosječno ostvaruje 441 interakcija po objavi."
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu.\n\n\n\n1.636\n\n\nObjava\n\n\n\n\n720.991\n\n\nInterakcija\n\n\n\n\n42.049.631\n\n\nProcijenjenoga dosega\n\n\n\nPo volumenu objava, Laudato je na 6. mjestu od 19 praćenih izvora na platformi Facebook. Prosječno ostvaruje 441 interakcija po objavi."
   },
   {
     "objectID": "pages/izvori/facebook-laudato.html#tipologija",
@@ -2027,14 +2027,14 @@
     "href": "pages/izvori/facebook-laudato.html#povezano",
     "title": "Laudato",
     "section": "Povezano",
-    "text": "Povezano\n\nPregled platforme Facebook\nSrodni akteri: Kapljice ljubavi Božje, Kraljica Mira, Zagrebačka nadbiskupija\nKatalog izvora, sve platforme"
+    "text": "Povezano\n\nPregled platforme Facebook\nSrodni izvori: Kapljice ljubavi Božje, Kraljica Mira, Zagrebačka nadbiskupija\nKatalog izvora, sve platforme\nMetodologija prikupljanja i mjerenja"
   },
   {
     "objectID": "pages/izvori/facebook-laudato.html#izvori-podataka",
     "href": "pages/izvori/facebook-laudato.html#izvori-podataka",
     "title": "Laudato",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/facebook_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira izvore na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/facebook-kapljice-ljubavi-bozje.html",
@@ -2671,7 +2671,7 @@
     "href": "pages/izvori/index.html",
     "title": "Katalog izvora",
     "section": "",
-    "text": "Tko su pojedinačni mediji iza brojki? Katalog izvora za svaki praćeni izvor donosi koliko objavljuje, koliko reakcija skuplja i do koliko ljudi dopire, te kojem tipu pripada (Divovi, Graditelji zajednica, Megafoni, Specijalizirani akteri). Tipologija je ista kao u Mapi ekosustava, pa se dva prikaza ne mogu razići.\nOvdje su razrađeni profili najvećih izvora. Tražite određeni medij? Pretraživanje svih izvora s dovoljno objava nalazi se na stranici Moj medij.\nCijeli se katalog može vidjeti i kao mreža izvora. Čvorovi su izvori, a poveznice pripadnost platformi i zajednički brend.\nBrojke obuhvaćaju 413.985 objava u razdoblju 2021.–2026. i računaju se iz javnih agregata bez osobnih podataka. Kako su nastali i kako se mjere volumen, angažman i doseg, opisano je u Metodologiji, a struktura same baze na stranici Baza podataka."
+    "text": "Ažurirano24. kolovoza 2026.Podaci zaključno s11. lipnja 2026.StatusAžurira se\nTko su pojedinačni mediji iza brojki? Katalog izvora za svaki praćeni izvor donosi koliko objavljuje, koliko reakcija skuplja i do koliko ljudi dopire, te kojem tipu pripada (Divovi, Graditelji zajednica, Megafoni, Specijalizirani akteri). Tipologija je ista kao u Mapi ekosustava, pa se dva prikaza ne mogu razići.\nOvdje su razrađeni profili najvećih izvora. Tražite određeni medij? Pretraživanje svih izvora s dovoljno objava nalazi se na stranici Moj medij.\nCijeli se katalog može vidjeti i kao mreža izvora. Čvorovi su izvori, a poveznice pripadnost platformi i zajednički brend.\nBrojke obuhvaćaju 413.985 objava u razdoblju 2021.–2026. i računaju se iz javnih agregata bez osobnih podataka. Kako su nastali i kako se mjere volumen, angažman i doseg, opisano je u Metodologiji, a struktura same baze na stranici Baza podataka."
   },
   {
     "objectID": "pages/izvori/index.html#web",
@@ -2888,7 +2888,7 @@
     "href": "pages/izvori/instagram-laudatotv.html",
     "title": "laudatotv",
     "section": "",
-    "text": "Ova stranica sažima profil izvora laudatotv u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+    "text": "Ažurirano24. kolovoza 2026.Podaci zaključno s11. lipnja 2026.StatusPreliminarno\nOva stranica sažima profil izvora laudatotv u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih izvora koji dopunjuje Mapu ekosustava."
   },
   {
     "objectID": "pages/izvori/instagram-laudatotv.html#što-je",
@@ -2902,7 +2902,7 @@
     "href": "pages/izvori/instagram-laudatotv.html#profil",
     "title": "laudatotv",
     "section": "Profil",
-    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu.\n\n\n\n30\n\n\nObjava\n\n\n\n\n16.341\n\n\nInterakcija\n\n\n\n\n141.603\n\n\nDoseg\n\n\n\n\n\n\n\n\n\nNapomena\n\n\n\nProfil se temelji na 30 objava i zato ima status provisionalnog profila. Pokazatelji opisuju zabilježeni uzorak, a ne cjelokupno djelovanje aktera.\n\n\nPo volumenu objava, laudatotv je na 3. mjestu od 20 praćenih izvora na platformi Instagram. Prosječno ostvaruje 545 interakcija po objavi."
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu.\n\n\n\n30\n\n\nObjava\n\n\n\n\n16.341\n\n\nInterakcija\n\n\n\n\n141.603\n\n\nProcijenjenoga dosega\n\n\n\n\n\n\n\n\n\nNapomena\n\n\n\nProfil se temelji na 30 objava i zato ima status Preliminarno. Pokazatelji opisuju zabilježeni dio korpusa, a ne cjelokupno djelovanje izvora.\n\n\nPo volumenu objava, laudatotv je na 3. mjestu od 20 praćenih izvora na platformi Instagram. Prosječno ostvaruje 545 interakcija po objavi."
   },
   {
     "objectID": "pages/izvori/instagram-laudatotv.html#tipologija",
@@ -2916,14 +2916,14 @@
     "href": "pages/izvori/instagram-laudatotv.html#povezano",
     "title": "laudatotv",
     "section": "Povezano",
-    "text": "Povezano\n\nPregled platforme Instagram\nSrodni akteri: dnevniavaz, ivan.anusic.hr, jutarnji.hr\nKatalog izvora, sve platforme"
+    "text": "Povezano\n\nPregled platforme Instagram\nSrodni izvori: dnevniavaz, ivan.anusic.hr, jutarnji.hr\nKatalog izvora, sve platforme\nMetodologija prikupljanja i mjerenja"
   },
   {
     "objectID": "pages/izvori/instagram-laudatotv.html#izvori-podataka",
     "href": "pages/izvori/instagram-laudatotv.html#izvori-podataka",
     "title": "laudatotv",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/instagram_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira izvore na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/instagram-rina-rs.html",
@@ -3294,21 +3294,21 @@
     "href": "pages/izvori/twitter-24sata.html",
     "title": "24sata",
     "section": "",
-    "text": "Ova stranica sažima profil izvora 24sata u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+    "text": "Ažurirano24. kolovoza 2026.Podaci zaključno s11. lipnja 2026.StatusPreliminarno\nOva stranica sažima profil izvora 24sata u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih izvora koji dopunjuje Mapu ekosustava."
   },
   {
     "objectID": "pages/izvori/twitter-24sata.html#što-je",
     "href": "pages/izvori/twitter-24sata.html#što-je",
     "title": "24sata",
     "section": "Što je",
-    "text": "Što je\n24sata, news-portal (Facebook)"
+    "text": "Što je\n24sata, informativni portal na Facebooku"
   },
   {
     "objectID": "pages/izvori/twitter-24sata.html#profil",
     "href": "pages/izvori/twitter-24sata.html#profil",
     "title": "24sata",
     "section": "Profil",
-    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu.\n\n\n\n2\n\n\nObjava\n\n\n\n\n0\n\n\nInterakcija\n\n\n\n\n19.606\n\n\nDoseg\n\n\n\n\n\n\n\n\n\nOprez\n\n\n\nOvo je vrlo tanak profil temeljen na 2 objava. Prikazan je radi potpunosti kataloga, ali rang i tipologiju ne treba tumačiti kao stabilnu procjenu aktera.\n\n\nPo volumenu objava, 24sata je na 21. mjestu od 23 praćenih izvora na platformi Twitter. Prosječno ostvaruje 0 interakcija po objavi."
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu.\n\n\n\n2\n\n\nObjava\n\n\n\n\n0\n\n\nInterakcija\n\n\n\n\n19.606\n\n\nProcijenjenoga dosega\n\n\n\n\n\n\n\n\n\nOprez\n\n\n\nOvaj se profil temelji na samo 2 objava. Prikazan je radi potpunosti kataloga. Rang i tipologiju zato ne treba tumačiti kao stabilnu procjenu izvora.\n\n\nPo volumenu objava, 24sata je na 21. mjestu od 23 praćenih izvora na platformi Twitter. Prosječno ostvaruje 0 interakcija po objavi."
   },
   {
     "objectID": "pages/izvori/twitter-24sata.html#tipologija",
@@ -3322,14 +3322,14 @@
     "href": "pages/izvori/twitter-24sata.html#povezano",
     "title": "24sata",
     "section": "Povezano",
-    "text": "Povezano\n\nPregled platforme Twitter\nSrodni akteri: Vesna Rajnović 🌿, Dalija Orešković, Dominik Alpeza\nKatalog izvora, sve platforme"
+    "text": "Povezano\n\nPregled platforme Twitter\nSrodni izvori: Vesna Rajnović 🌿, Dalija Orešković, Dominik Alpeza\nKatalog izvora, sve platforme\nMetodologija prikupljanja i mjerenja"
   },
   {
     "objectID": "pages/izvori/twitter-24sata.html#izvori-podataka",
     "href": "pages/izvori/twitter-24sata.html#izvori-podataka",
     "title": "24sata",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/twitter_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira izvore na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/twitter-dalija-oreskovic.html",
@@ -4050,7 +4050,7 @@
     "href": "pages/izvori/youtube-laudatotv.html",
     "title": "LaudatoTV",
     "section": "",
-    "text": "Ova stranica sažima profil izvora LaudatoTV u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih aktera koji dopunjuje Mapu ekosustava."
+    "text": "Ažurirano24. kolovoza 2026.Podaci zaključno s11. lipnja 2026.StatusAžurira se\nOva stranica sažima profil izvora LaudatoTV u korpusu katoličke tematike. Dio je Kataloga izvora, pregleda pojedinačnih izvora koji dopunjuje Mapu ekosustava."
   },
   {
     "objectID": "pages/izvori/youtube-laudatotv.html#što-je",
@@ -4064,7 +4064,7 @@
     "href": "pages/izvori/youtube-laudatotv.html#profil",
     "title": "LaudatoTV",
     "section": "Profil",
-    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu.\n\n\n\n3.537\n\n\nObjava\n\n\n\n\n143.208\n\n\nInterakcija\n\n\n\n\n5.642.997\n\n\nDoseg\n\n\n\nPo volumenu objava, LaudatoTV je na 2. mjestu od 20 praćenih izvora na platformi YouTube. Prosječno ostvaruje 40 interakcija po objavi."
+    "text": "Profil\nKljučni pokazatelji ovog izvora u korpusu.\n\n\n\n3.537\n\n\nObjava\n\n\n\n\n143.208\n\n\nInterakcija\n\n\n\n\n5.642.997\n\n\nProcijenjenoga dosega\n\n\n\nPo volumenu objava, LaudatoTV je na 2. mjestu od 20 praćenih izvora na platformi YouTube. Prosječno ostvaruje 40 interakcija po objavi."
   },
   {
     "objectID": "pages/izvori/youtube-laudatotv.html#tipologija",
@@ -4078,14 +4078,14 @@
     "href": "pages/izvori/youtube-laudatotv.html#povezano",
     "title": "LaudatoTV",
     "section": "Povezano",
-    "text": "Povezano\n\nPregled platforme YouTube\nSrodni akteri: pulherissimus, Pod Smokvom, Hrana za dušu\nKatalog izvora, sve platforme"
+    "text": "Povezano\n\nPregled platforme YouTube\nSrodni izvori: pulherissimus, Pod Smokvom, Hrana za dušu\nKatalog izvora, sve platforme\nMetodologija prikupljanja i mjerenja"
   },
   {
     "objectID": "pages/izvori/youtube-laudatotv.html#izvori-podataka",
     "href": "pages/izvori/youtube-laudatotv.html#izvori-podataka",
     "title": "LaudatoTV",
     "section": "Izvori podataka",
-    "text": "Izvori podataka\nPodaci: data/processed/youtube_actors.rds (agregat bez osobnih podataka), generirano skriptom R/wiki_sources.R (2026-08-11).\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira aktere na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno."
+    "text": "Izvori podataka\nPokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.\n\n\n\n\n\n\nUpozorenje\n\n\n\nBrojke su indikativne. Agregati opisuju službeni korpus u razdoblju 2021.–2026. s 9 vrsta izvora i platformi. Katalog profilira izvore na 6 platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno."
   },
   {
     "objectID": "pages/izvori/youtube-nova-eva.html",
@@ -4260,7 +4260,7 @@
     "href": "pages/mapa/index.html",
     "title": "Mapa medijskog prostora",
     "section": "",
-    "text": "Tko objavljuje o katoličkim temama, o čemu se pritom govori, kakvim se rječnikom i kada pažnja naraste? Na ta četiri pitanja odgovaraju četiri analitičke razine, a peti, vremenski presjek prati kako se sve to mijenja kroz godine.\nSve mape računaju se na istom korpusu od 413.985 objava (2021.–2026.). Kako je taj korpus nastao i što se na njemu smije usporediti, opisano je u Metodologiji.\nSvaka je mapa samostalna cjelina. Zajedno daju slojevit prikaz digitalne medijske arene. Odaberite mapu za detaljan prikaz.\n\n\nMapa ekosustava\nTko objavljuje i koliko odjekuje. Volumen, doseg i angažman po platformama te tipologija aktera, koja razlikuje Divove, Graditelje zajednica, Megafone i Specijalizirane aktere.\n\n\nEvolucija ekosustava\nKako se mijenja kroz vrijeme. Opaženi volumen, platformski udjeli interakcija i koncentracija među izvorima kroz cijelo razdoblje.\n\n\nTematske struje\nO čemu se govori. Unaprijed definirane tematske kategorije, njihova učestalost, gustoća i supojavljivanje na dijelu korpusa.\n\n\nAtmosfera diskursa\nKako se govori. Leksički tonalitet i emocionalne kategorije (lilaHR, CroSentilex i CroSentilex Gold) te Relativni indeks konflikta (RIK).\n\n\nFokus na događaje\nKada se govori. Neuobičajeni dani u volumenu i konfliktnom rječniku te ograničene studije slučaja Uskrsa i Stepinca."
+    "text": "Ažurirano24. kolovoza 2026.Podaci zaključno s11. lipnja 2026.StatusAžurira se\nTko objavljuje o katoličkim temama, o čemu se pritom govori, kakvim se rječnikom i kada pažnja naraste? Na ta četiri pitanja odgovaraju četiri analitičke razine, a peti, vremenski presjek prati kako se sve to mijenja kroz godine.\nSve mape računaju se na istom korpusu od 413.985 objava (2021.–2026.). Kako je taj korpus nastao i što se na njemu smije usporediti, opisano je u Metodologiji.\nSvaka je mapa samostalna cjelina. Zajedno daju slojevit prikaz digitalne medijske arene. Odaberite mapu za detaljan prikaz.\n\n\nMapa ekosustava\nTko objavljuje i koliko odjekuje. Volumen, doseg i angažman po platformama te tipologija aktera, koja razlikuje Divove, Graditelje zajednica, Megafone i Specijalizirane aktere.\n\n\nEvolucija ekosustava\nKako se mijenja kroz vrijeme. Opaženi volumen, platformski udjeli interakcija i koncentracija među izvorima kroz cijelo razdoblje.\n\n\nTematske struje\nO čemu se govori. Unaprijed definirane tematske kategorije, njihova učestalost, gustoća i supojavljivanje na dijelu korpusa.\n\n\nAtmosfera diskursa\nKako se govori. Leksički tonalitet i emocionalne kategorije (lilaHR, CroSentilex i CroSentilex Gold) te Relativni indeks konflikta (RIK).\n\n\nFokus na događaje\nKada se govori. Neuobičajeni dani u volumenu i konfliktnom rječniku te ograničene studije slučaja Uskrsa i Stepinca."
   },
   {
     "objectID": "pages/mapa/mapa_stats.html",
@@ -4316,7 +4316,7 @@
     "href": "pages/moj-medij.html",
     "title": "Moj medij",
     "section": "",
-    "text": "Upišite ime izvora i provjerite što službeni korpus pokazuje o njegovu opsegu, pažnji, temama i ritmu objavljivanja.\n\n\n  Ime medija, portala, kanala ili stranice\n  \n  Upišite barem dva znaka. Popis se sužava dok tipkate.\n  Pretraživanje pokriva 356 izvora s najmanje 100 objava u razdoblju 2021.–2026. Za najveće izvore postoji i razrađen profil u Katalogu izvora.\n  \n  \n  \n\n\n\n\n\n\n\nKako čitati rezultate\n\n\nŠto profil obuhvaća\nBrojke opisuju službeni korpus, a ne cjelokupnu produkciju nekog izvora. U korpus\nulaze samo objave o katoličkim temama. Portal općeg sadržaja zato ovdje ima manje objava nego u svojoj\nukupnoj produkciji.\nPrikazani su izvori s najmanje 100 objava. Isti je prag unaprijed zadan\nza svaki profil. Uz njih 144 izvora čeka uredničku provjeru i zasad se\nne prikazuje. Korpus ukupno bilježi 10.775 izvora. Većina ima tek nekoliko\nobjava. Pravilo uključivanja objašnjeno je u\nmetodologiji korpusa.\n\n\n\nKako se uspoređuju pažnja i vrijeme\nInterakcije i doseg vrijednosti su servisa za praćenje medija. Doseg je procjena, a ne izmjerena\npublika. Mjeri se drukčije na svakoj platformi. Zato profil uspoređuje izvore samo unutar imenovane\nplatforme. Definicije mjera opisuju njihove\ngranice.\nVrijeme objave prošlo je zasebnu provjeru i odgovara lokalnom vremenu Europe/Zagreb. Kalendarski\ntest koristi iste isključene dane za izvor i usporedivo polje. Uskrs 2024. zato je označen kao\nnemjerljiv, a ne kao nula. Prekid u prikupljanju\nobjašnjava zašto.\n\n\n\nKako se čitaju teme i javni podaci\nTematski je rječnik privremen. Služi kao smjernica za validaciju, a ne kao\nrang-lista izvora. Usporedba se računa samo unutar iste platforme i od najmanje 100 rječnički\nrazvrstanih objava. Sličnost opisuje raspodjelu tema. Ne opisuje publiku, uredničku ulogu ni\nkonkurentski odnos. Više je u odjeljku Uzorci i\nrječnici.\nJavni agregati, manifest korpusa i sintetički uzorak dostupni su pod licencijom CC BY 4.0.\nPristup, licencija i citiranje vode do javnih\nartefakata i postupka za pristup punom tekstu."
+    "text": "Ažurirano24. kolovoza 2026. Podaci zaključno s11. lipnja 2026. StatusAžurira se\n\nUpišite ime izvora i provjerite što službeni korpus pokazuje o njegovu opsegu, pažnji, temama i ritmu objavljivanja.\n\n\n  Ime medija, portala, kanala ili stranice\n  \n  Upišite barem dva znaka. Popis se sužava dok tipkate.\n  Pretraživanje pokriva 356 izvora s najmanje 100 objava u razdoblju 2021.–2026. Za najveće izvore postoji i razrađen profil u Katalogu izvora.\n  \n  \n  \n\n\n\n\n\n\n\nKako čitati rezultate\n\n\nŠto profil obuhvaća\nBrojke opisuju službeni korpus, a ne cjelokupnu produkciju nekog izvora. U korpus\nulaze samo objave o katoličkim temama. Portal općeg sadržaja zato ovdje ima manje objava nego u svojoj\nukupnoj produkciji.\nPrikazani su izvori s najmanje 100 objava. Isti je prag unaprijed zadan\nza svaki profil. Uz njih 144 izvora čeka uredničku provjeru i zasad se\nne prikazuje. Korpus ukupno bilježi 10.775 izvora. Većina ima tek nekoliko\nobjava. Pravilo uključivanja objašnjeno je u\nmetodologiji korpusa.\n\n\n\nKako se uspoređuju pažnja i vrijeme\nInterakcije i doseg vrijednosti su servisa za praćenje medija. Doseg je procjena, a ne izmjerena\npublika. Mjeri se drukčije na svakoj platformi. Zato profil uspoređuje izvore samo unutar imenovane\nplatforme. Definicije mjera opisuju njihove\ngranice.\nVrijeme objave prošlo je zasebnu provjeru i odgovara lokalnom vremenu Europe/Zagreb. Kalendarski\ntest koristi iste isključene dane za izvor i usporedivo polje. Uskrs 2024. zato je označen kao\nnemjerljiv, a ne kao nula. Prekid u prikupljanju\nobjašnjava zašto.\n\n\n\nKako se čitaju teme i javni podaci\nTematski je rječnik privremen. Služi kao smjernica za validaciju, a ne kao\nrang-lista izvora. Usporedba se računa samo unutar iste platforme i od najmanje 100 rječnički\nrazvrstanih objava. Sličnost opisuje raspodjelu tema. Ne opisuje publiku, uredničku ulogu ni\nkonkurentski odnos. Više je u odjeljku Uzorci i\nrječnici.\nJavni agregati, manifest korpusa i sintetički uzorak dostupni su pod licencijom CC BY 4.0.\nPristup, licencija i citiranje vode do javnih\nartefakata i postupka za pristup punom tekstu."
   },
   {
     "objectID": "pages/pregled/agentic-layer.html",
@@ -4442,7 +4442,7 @@
     "href": "pages/metodologija.html#method-collection-break",
     "title": "Metodologija",
     "section": "Promjena prikupljanja 2024. i što ona zabranjuje",
-    "text": "Promjena prikupljanja 2024. i što ona zabranjuje\nTijekom 2024. promijenio se način na koji su objave prikupljane. Pravilo uključivanja ostalo je isto s obje strane te granice, pa su razdoblja usporediva po pravilu, ali nisu usporediva po zahvatu. Udio zadržanih objava skače za otprilike dvadeset postotnih bodova preko te granice, i to je svojstvo instrumenta, ne medijske stvarnosti.\n\n\n\nDva razdoblja prikupljanja pod istim pravilom uključivanja. Izvor: manifest službenoga korpusa, odjeljak o razdobljima.\n\n\n\n\n\n\n\n\n\nRazdoblje\nRaspon\nObjava u akumulatoru\nZadržano u korpusu\nUdio zadržanih\n\n\n\n\nPrije promjene\n2021-01-01 -&gt; 2024-07-04\n269.583\n192.861\n71,5 %\n\n\nPoslije promjene\n2024-07-01 -&gt; 2026-06-11\n440.724\n221.124\n50,2 %\n\n\n\n\n\nIz toga slijedi jedno ograničenje koje vrijedi za sve prikaze na ovom sjedištu. Porast broja objava preko 2024. nije porast medijske pažnje. Godišnji volumeni smiju se uspoređivati unutar istoga toka prikupljanja, a ne preko granice. Najveća godina u korpusu, 2025. s 124.346 objava, dijelom je posljedica obuhvatnijega prikupljanja, a ne samo veće medijske pažnje. Instagram i TikTok ulaze u prikupljanje tek 2024., pa ranije godine za te platforme nemaju objava i platformski udjeli nisu usporedivi kroz cijelo razdoblje.\nUz to, u vendorskom izvoru za razdoblje od veljače do svibnja 2024. nema teksta, pa nijedno razdoblje nema retke u tim mjesecima. Prikupljanje ima i kraćih prekida.\n\n\n\n\n\n\nVažnoOvo je jedino mjesto na kojem se ta ograda navodi\n\n\n\nOstale stranice prikazuju volumene bez ponavljanja ove napomene, kako čitanje ne bi bilo opterećeno istim upozorenjem na svakom prikazu. Tko uspoređuje godine ili platforme kroz vrijeme, mjerodavan je ovaj odjeljak.\n\n\n\n\n\nZadržane objave po godini. Godina 2026. obuhvaća razdoblje do lipnja. Izvor: manifest službenoga korpusa, odjeljak o godinama.\n\n\nGodina\nU akumulatoru\nU korpusu\nUdio zadržanih\n\n\n\n\n2021.\n90.388\n62.151\n68,8 %\n\n\n2022.\n84.535\n59.657\n70,6 %\n\n\n2023.\n83.836\n64.069\n76,4 %\n\n\n2024.\n114.231\n56.923\n49,8 %\n\n\n2025.\n236.166\n124.346\n52,7 %\n\n\n2026.\n101.151\n46.839\n46,3 %"
+    "text": "Promjena prikupljanja 2024. i što ona zabranjuje\nTijekom 2024. promijenio se način na koji su objave prikupljane. Pravilo uključivanja ostalo je isto s obje strane te granice, pa su razdoblja usporediva po pravilu, ali nisu usporediva po zahvatu. Udio zadržanih objava skače za otprilike dvadeset postotnih bodova preko te granice, i to je svojstvo instrumenta, ne medijske stvarnosti.\n\n\n\nDva razdoblja prikupljanja pod istim pravilom uključivanja. Izvor: manifest službenoga korpusa, odjeljak o razdobljima.\n\n\n\n\n\n\n\n\n\nRazdoblje\nRaspon\nObjava u akumulatoru\nZadržano u korpusu\nUdio zadržanih\n\n\n\n\nPrije promjene\n2021-01-01 -&gt; 2024-07-04\n269.583\n192.861\n71,5 %\n\n\nPoslije promjene\n2024-07-01 -&gt; 2026-06-11\n440.724\n221.124\n50,2 %\n\n\n\n\n\nIz toga slijedi jedno ograničenje koje vrijedi za sve prikaze na ovom sjedištu. Porast broja objava preko 2024. nije porast medijske pažnje. Godišnji volumeni smiju se uspoređivati unutar istoga toka prikupljanja, a ne preko granice. Najveća godina u korpusu, 2025. s 124.346 objava, dijelom je posljedica obuhvatnijega prikupljanja, a ne samo veće medijske pažnje. Instagram i TikTok ulaze u prikupljanje tek 2024., pa ranije godine za te platforme nemaju objava i platformski udjeli nisu usporedivi kroz cijelo razdoblje.\nUz to, u izvoru pružatelja podataka za razdoblje od veljače do svibnja 2024. nema teksta, pa nijedno razdoblje nema retke u tim mjesecima. Prikupljanje ima i kraćih prekida.\n\n\n\n\n\n\nVažnoOvo je jedino mjesto na kojem se ta ograda navodi\n\n\n\nOstale stranice prikazuju volumene bez ponavljanja ove napomene, kako čitanje ne bi bilo opterećeno istim upozorenjem na svakom prikazu. Tko uspoređuje godine ili platforme kroz vrijeme, mjerodavan je ovaj odjeljak.\n\n\n\n\n\nZadržane objave po godini. Godina 2026. obuhvaća razdoblje do lipnja. Izvor: manifest službenoga korpusa, odjeljak o godinama.\n\n\nGodina\nU akumulatoru\nU korpusu\nUdio zadržanih\n\n\n\n\n2021.\n90.388\n62.151\n68,8 %\n\n\n2022.\n84.535\n59.657\n70,6 %\n\n\n2023.\n83.836\n64.069\n76,4 %\n\n\n2024.\n114.231\n56.923\n49,8 %\n\n\n2025.\n236.166\n124.346\n52,7 %\n\n\n2026.\n101.151\n46.839\n46,3 %"
   },
   {
     "objectID": "pages/metodologija.html#method-platform-metrics",
@@ -4534,5 +4534,12 @@
     "title": "Mapa ekosustava — katolički digitalni prostor u RH (2021.–2026.)",
     "section": "Mapa dosega i interakcija najvećih izvora",
     "text": "Mapa dosega i interakcija najvećih izvora\nPrikaz pozicionira izvore prema dvjema dimenzijama, interakcijama (horizontalna os) i vendorskoj procjeni dosega (vertikalna os). Medijani prikazanih izvora unutar svake platforme stvaraju četiri opisna kvadranta. Njihovi su nazivi pomoćne oznake, a ne empirijski potvrđeni tipovi komunikacijskog ponašanja.\nDivovi, pozicionirani u gornjem desnom kvadrantu, imaju i doseg i angažman iznad medijana prikazanih izvora na istoj platformi.\nGraditelji zajednica, smješteni u donjem desnom kvadrantu, imaju doseg ispod, a angažman iznad platformskoga medijana. Naziv je interpretivna oznaka položaja, a ne izravno mjerenje dubine odnosa ili lojalnosti publike.\nMegafoni, pozicionirani u gornjem lijevom kvadrantu, imaju doseg iznad, a angažman ispod platformskoga medijana.\nSpecijalizirani akteri, smješteni u donjem lijevom kvadrantu, imaju obje mjere ispod medijana prikazanih izvora. Položaj ne dokazuje da izvor doista služi određenoj tematskoj ili geografskoj niši.\nOsi grafikona prikazane su na logaritamskoj skali kako bi se bolje prikazao širok raspon vrijednosti i omogućilo smisleno uspoređivanje aktera različitih veličina.\n\nPitanje. Kako se među najvećim izvorima odnose zabilježene interakcije i procijenjeni doseg?\n\n\nNalaz. Položaji se razlikuju unutar svake platforme, pa volumen, interakcije i doseg ne daju isti poredak.\n\n\n\n\n\n\nOdnos zabilježenih interakcija i procijenjenog dosega među najvećim izvorima unutar tri platforme. Isprekidane crte označavaju medijane prikazanih izvora.\n\n\n\n\nSažetak grafikona. Isprekidani medijani stvaraju relativne kvadrante unutar platforme. Položaj opisuje kombinaciju dosega i interakcija, a ne motiv ili kvalitetu odnosa s publikom.Preuzmite podatke (CSV)Preuzmite grafikon (SVG)Prikažite podatke u tablici\n\nDoseg, interakcije i volumen najvećih izvora\n\n\nPlatforma\nIzvor\nObjave\nInterakcije\nDoseg\n\n\n\n\nweb-portali\nnovizivot.net\n6782\n3404252\n42241140\n\n\nweb-portali\nhkm.hr\n55087\n2986089\n41080542\n\n\nweb-portali\ndnevno.hr\n3634\n2980574\n55489845\n\n\nweb-portali\nindex.hr\n4303\n2071834\n71284584\n\n\nweb-portali\n24sata.hr\n3270\n971429\n28731111\n\n\nweb-portali\nvecernji.hr\n4098\n945747\n31588701\n\n\nweb-portali\nslobodnadalmacija.hr\n5949\n872923\n28694499\n\n\nweb-portali\nbitno.net\n4261\n787274\n12781494\n\n\nweb-portali\njutarnji.hr\n2828\n743462\n29739897\n\n\nweb-portali\nlaudato.hr\n11512\n685687\n8550486\n\n\nweb-portali\ntelegram.hr\n1435\n637206\n12459948\n\n\nweb-portali\ndnevnik.hr\n2079\n564700\n15146586\n\n\nweb-portali\ncaritas.hr\n171\n447069\n7056738\n\n\nweb-portali\nnet.hr\n3879\n408042\n20720772\n\n\nweb-portali\nnarod.hr\n3991\n359402\n6687228\n\n\nweb-portali\ndalmatinskiportal.hr\n1919\n356175\n9374376\n\n\nYouTube\npulherissimus\n6031\n1620448\n18017818\n\n\nYouTube\nДобровољци\n340\n775777\n19930670\n\n\nYouTube\nPod Smokvom\n1522\n589626\n3889465\n\n\nYouTube\nMajko Marijo\n333\n266210\n9386044\n\n\nYouTube\nHrana za dušu\n1476\n177424\n3976961\n\n\nYouTube\nBOŽANSKA LJUBAV\n152\n144742\n1244769\n\n\nYouTube\nLaudatoTV\n3537\n143208\n5642997\n\n\nYouTube\nbudiFRAjer\n152\n118891\n3397741\n\n\nYouTube\nStopama Padre Pija\n404\n103281\n1007332\n\n\nYouTube\nNova Eva\n666\n93953\n4123158\n\n\nYouTube\nBog Je Tu\n87\n83104\n3128452\n\n\nYouTube\nBIBLIJA na dlanu - Dario Kovačević\n62\n78158\n923960\n\n\nYouTube\nDijete Vjere\n903\n77612\n1858783\n\n\nYouTube\nHrana za dušu TV\n327\n73222\n2661492\n\n\nYouTube\nŽupa Šurkovac\n442\n70885\n1315864\n\n\nYouTube\nRTL\n298\n39403\n2984782\n\n\nYouTube\n40 dana za život - Hrvatska za Život\n220\n43711\n2428098\n\n\nYouTube\nradiomedjugorje\n452\n683\n2234247\n\n\nYouTube\nBosanski teferic\n28\n16839\n1948375\n\n\nYouTube\nAd Deum Podcast\n46\n34678\n1928187\n\n\nFacebook\nLaudato\n1636\n720991\n42049631\n\n\nFacebook\nBitno.net\n3552\n595434\n51445569\n\n\nFacebook\nMiletić Marin\n123\n448774\n18274407\n\n\nFacebook\nKapljice ljubavi Božje\n1840\n383278\n21352333\n\n\nFacebook\nVJERA\n1172\n320460\n16481614\n\n\nFacebook\nZagrebačka nadbiskupija\n2202\n281662\n12766185\n\n\nFacebook\nVJERA U NAMA †\n5180\n249123\n18151290\n\n\nFacebook\nGospa\n857\n209117\n11019978\n\n\nFacebook\nRadio Marija Hrvatska\n2959\n151195\n8979233\n\n\nFacebook\nKraljica Mira\n1244\n126499\n18876855\n\n\nFacebook\nIndex.hr\n222\n125004\n17552956\n\n\nFacebook\n24sata\n452\n124136\n45587972\n\n\nFacebook\nSlobodna Dalmacija\n750\n118144\n18405019\n\n\nFacebook\nVelimir Bujanec\n55\n115598\n5521570\n\n\nFacebook\nRTL Danas\n533\n107870\n14630113\n\n\nFacebook\nDNEVNIK.hr\n494\n102280\n25847181\n\n\nFacebook\nVečernji list\n489\n70821\n23805176\n\n\nFacebook\nNet.hr\n364\n70732\n17229204\n\n\nFacebook\nSvjetski dan mladih\n129\n4304\n13190542\n\n\n\n\nTipologija je relativna unutar svake platforme, pa isprekidane crte označavaju medijane samo prikazanih najvećih izvora. Zato isti apsolutni rezultat može zauzeti drukčiji kvadrant na drugoj platformi. Nazivi arhetipova služe čitanju kombinacija dosega i angažmana. Oni ne mjere motive izvora, kvalitetu odnosa ni lojalnost publike."
+  },
+  {
+    "objectID": "pages/news.html#novosti-i-događanja",
+    "href": "pages/news.html#novosti-i-događanja",
+    "title": "Obavijesti",
+    "section": "Novosti i događanja",
+    "text": "Novosti i događanja\n\nDogađanja u 2025. godini\n\n\n\nProsinac 2025 Interna radionica za planiranje aktivnosti u 2026. godini.\n\n\nTim je evaluirao rad u prvoj godini projekta i definirao prioritete za sljedeću fazu istraživanja.\n\n\n\n\nStudeni 2025 Objavljen prvi tehnički izvještaj o sustavu za prikupljanje podataka.\n\n\nDetaljno dokumentiran proces razvoja infrastrukture, algoritmi i tehnička rješenja objavljena su u internom dokumentu.\n\n\n\n\nListopad 2025 Provedena analiza tonaliteta na povijesnim podacima.\n\n\nRačunalnom obradom teksta automatski je određen tonalitet prikupljenih objava.\n\n\n\n\nRujan 2025 Održana radionica za podjelu tematskih istraživanja.\n\n\nDefiniranje smjerova istraživanja i podjela zaduženja unutar tima za prvu seriju tematskih analiza.\n\n\n\n\nKolovoz 2025 Integracija analitičkih alata i aplikacije nadzorne ploče.\n\n\nImplementirana interaktivna nadzorna ploča za praćenje ključnih metrika i trendova u prikupljenim podacima.\n\n\n\n\nSrpanj 2025 Objavljena baza podataka na Kaggle platformi.\n\n\nPrvi javno dostupan skup podataka projekta objavljen je na Kaggle platformi, omogućavajući široj akademskoj zajednici pristup podacima.\n\n\n\n\nLipanj 2025 Uspješno uspostavljen sustav za prikupljanje podataka u realnom vremenu.\n\n\nAutomatizirani sustav za praćenje digitalnih medija 24/7 postaje operativan.\n\n\n\n\nSvibanj 2025 Prezentacija preliminarnih rezultata na internom seminaru.\n\n\nTim je predstavio prve uvide iz povijesnih podataka i planove za tematske analize.\n\n\n\n\nTravanj 2025 Pokrenuta nova verzija web stranice projekta.\n\n\nPoboljšana verzija stranice postavljena je za testiranje i interne potrebe tima.\n\n\n\n\nTravanj 2025 Završena prva faza prikupljanja povijesnih podataka.\n\n\nUspješno je prikupljen i obrađen korpus podataka iz razdoblja 2021.–2024., čime je stvoren temelj za daljnje analize.\n\n\n\n\nOžujak 2025 Metodološka radionica tima.\n\n\nOdržana je interna radionica o računalnoj obradi teksta za potrebe projekta.\n\n\n\n\nVeljača 2025 Finaliziran kod za prikupljanje podataka (v1.0).\n\n\nNakon višemjesečnog razvoja, prva stabilna verzija alata za automatsko prikupljanje objava spremna je za rad.\n\n\n\n\nSiječanj 2025 Službeni početak projekta i konstituiranje tima!\n\n\nOdržan je početni sastanak projektnog tima. Usvojen je konačni plan rada te su potvrđene uloge i odgovornosti svih članova.\n\n\n\n\n\nDogađanja u 2024. godini\n\n\n\nProsinac 2024 Javno predstavljanje projekta na HKS-u.\n\n\nProjekt, njegovi ciljevi i metodologija službeno su predstavljeni akademskoj zajednici i javnosti. Pokrenuta je i službena web stranica projekta.\n\n\n\n\nStudeni 2024 Predstavljanje projekta na HKS-u\n\n\nProjektni ciljevi i metodologija predstavljeni su na internom seminaru Odjela za komunikologiju."
   }
 ]

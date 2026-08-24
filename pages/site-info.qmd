@@ -1,7 +1,11 @@
 ---
 title: "O stranici"
 subtitle: "Tehnička pozadina stranice"
-date: last-modified
+description: "O stranici objašnjava tehnologiju, otvoreni kod, privatnost i pristupačnost mrežnoga mjesta DigiKat."
+date-modified: 2026-08-24
+status: "Ažurira se"
+show-freshness: true
+schema-type: "WebPage"
 categories: ["Quarto", "Positron", "R"]
 ---
 
@@ -11,7 +15,7 @@ Ova stranica je napravljena u [Quarto](https://quarto.org/) kroz [Positron](http
 ::: {.info-card}
 <div class="info-card-icon"><i class="bi bi-file-text"></i></div>
 
-#### Quarto
+## Quarto
 
 Sustav za izradu znanstvenih i tehničkih publikacija koji povezuje tekst, kod i rezultate u jedinstveni web izvor.
 :::
@@ -19,7 +23,7 @@ Sustav za izradu znanstvenih i tehničkih publikacija koji povezuje tekst, kod i
 ::: {.info-card}
 <div class="info-card-icon"><i class="bi bi-laptop"></i></div>
 
-#### Positron
+## Positron
 
 Razvojno okruženje za rad s podacima u kojem je stranica napisana i izgrađena.
 :::
@@ -27,7 +31,7 @@ Razvojno okruženje za rad s podacima u kojem je stranica napisana i izgrađena.
 ::: {.info-card}
 <div class="info-card-icon"><i class="bi bi-bar-chart-line"></i></div>
 
-#### R
+## R
 
 Programski jezik za statističku obradu i analizu podataka koji pokreće izračune na stranici.
 :::
@@ -35,7 +39,7 @@ Programski jezik za statističku obradu i analizu podataka koji pokreće izraču
 ::: {.info-card}
 <div class="info-card-icon"><i class="bi bi-globe"></i></div>
 
-#### GitHub Pages
+## GitHub Pages
 
 Platforma za objavu statičke web-stranice, gdje je projekt javno dostupan.
 :::

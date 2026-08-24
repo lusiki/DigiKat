@@ -1,7 +1,11 @@
 ---
 title: "Kontakt"
 subtitle: "Pitanja o podacima, metodi i radu projekta"
-date: last-modified
+description: "Kontaktna stranica upućuje pitanja o korpusu, metodologiji, objavljenim nalazima i tehničkim poteškoćama odgovornim kanalima projekta DigiKat."
+date-modified: 2026-08-24
+status: "Ažurira se"
+show-freshness: true
+schema-type: "WebPage"
 categories: ["Kontakt", "Otvorena znanost"]
 ---
 
@@ -13,7 +17,7 @@ podataka na koji se pitanje odnosi. Tako ćemo ga lakše provjeriti i dati preci
 ::: {.info-card}
 <div class="info-card-icon"><i class="bi bi-database-check"></i></div>
 
-#### Podaci i metodologija
+## Podaci i metodologija
 
 Za pitanja o korpusu, pokazateljima, obuhvatu i ponovljivosti rezultata.
 
@@ -23,7 +27,7 @@ Za pitanja o korpusu, pokazateljima, obuhvatu i ponovljivosti rezultata.
 ::: {.info-card}
 <div class="info-card-icon"><i class="bi bi-journal-text"></i></div>
 
-#### Istraživanja i citiranje
+## Istraživanja i citiranje
 
 Za znanstvenu suradnju, citiranje projekta i uporabu otvorenih agregata.
 
@@ -33,7 +37,7 @@ Za znanstvenu suradnju, citiranje projekta i uporabu otvorenih agregata.
 ::: {.info-card}
 <div class="info-card-icon"><i class="bi bi-bug"></i></div>
 
-#### Tehnička poteškoća
+## Tehnička poteškoća
 
 Za neispravnu poveznicu, problem u prikazu ili provjerljivu pogrešku u kodu.
 

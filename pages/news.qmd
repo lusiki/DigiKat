@@ -1,18 +1,17 @@
 ---
 title: "Obavijesti"
 subtitle: "Novosti, koraci i najave projekta"
-date: last-modified
-categories: ["Obavijesti", "2021.–2026."]
+description: "Obavijesti bilježe završene projektne korake i javna događanja DigiKat kronološkim redom, bez isteklih najava."
+date-modified: 2026-08-24
+status: "Ažurira se"
+show-freshness: true
+schema-type: "CollectionPage"
+categories: ["Obavijesti", "Projekt DigiKat"]
 ---
 
-### Novosti i događanja
+## Novosti i događanja
 
-::: {.featured-box}
-### Uskoro
-**Siječanj 2026** Prezentacija rezultata prvog godišnjeg izvještaja.
-:::
-
-#### Događanja u 2025. godini
+### Događanja u 2025. godini
 
 <div class="timeline">
 <div class="timeline-item">
@@ -65,11 +64,11 @@ categories: ["Obavijesti", "2021.–2026."]
 </div>
 <div class="timeline-item">
 <p><strong>Siječanj 2025</strong> Službeni početak projekta i konstituiranje tima!</p>
-<p><em>Održan je početni (kick off) sastanak projektnog tima, usvojen je finalni plan rada te su potvrđene uloge i odgovornosti svih članova, čime je formaliziran rad nakon odobrenja financiranja krajem 2022. godine.</em></p>
+<p><em>Održan je početni sastanak projektnog tima. Usvojen je konačni plan rada te su potvrđene uloge i odgovornosti svih članova.</em></p>
 </div>
 </div>
 
-#### Događanja u 2024. godini
+### Događanja u 2024. godini
 
 <div class="timeline">
 <div class="timeline-item">

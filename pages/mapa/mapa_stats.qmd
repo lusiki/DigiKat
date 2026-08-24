@@ -1,8 +1,11 @@
 ---
 title: "Tematske struje — anatomija diskursa katoličkog digitalnog prostora u Hrvatskoj (2021.–2026.)"
 subtitle: "Tematske struje na dijelu korpusa"
-date: last-modified
 description: "Tematske struje prikazuju učestalost, intenzitet, zabilježene reakcije i supojavljivanje 16 rječnički definiranih tema u dijelu korpusa DigiKat."
+date-modified: 2026-08-24
+data-cutoff: 2026-06-11
+status: "Preliminarno"
+schema-type: "Article"
 categories: ["Tematske struje", "Računalna obrada teksta", "16 kategorija"]
 filters:
   - ../../assets/filters/lazy-images.lua

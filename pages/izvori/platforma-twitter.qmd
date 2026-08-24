@@ -1,9 +1,34 @@
 ---
 title: "Izvori — Twitter"
-subtitle: "Praćeni akteri na platformi Twitter"
-date: last-modified
+subtitle: "Praćeni izvori na platformi Twitter"
+description: "Pregled izvora na platformi Twitter uspoređuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Mapi ekosustava."
+date-modified: 2026-08-24
+data-cutoff: 2026-06-11
+status: "Ažurira se"
+show-freshness: true
+schema-type: "CollectionPage"
 categories: ["Katalog izvora", "Twitter"]
 ---
+
+```{=html}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Izvori — Twitter",
+  "description": "Pregled praćenih izvora na platformi Twitter u Katalogu izvora DigiKat.",
+  "url": "https://lusiki.github.io/DigiKat/pages/izvori/platforma-twitter.html",
+  "inLanguage": "hr",
+  "dateModified": "2026-08-24",
+  "isPartOf": {
+    "@id": "https://lusiki.github.io/DigiKat/#website"
+  },
+  "publisher": {
+    "@id": "https://lusiki.github.io/DigiKat/#project"
+  }
+}
+</script>
+```
 
 Ova stranica okuplja praćene izvore na platformi **Twitter** iz **Kataloga izvora**. Tipologija je izračunata jednako kao u [Mapi ekosustava](../mapa/mapa.html), podjelom po medijanu angažmana i dosega. Poredano po volumenu objava.
 

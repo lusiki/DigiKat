@@ -1,6 +1,11 @@
 ---
 title: "O projektu"
-date: last-modified
+subtitle: "Ciljevi, istraživačka pitanja i otvorenoznanstveni okvir projekta DigiKat"
+description: "DigiKat istražuje katoličke teme u hrvatskom digitalnom medijskom prostoru te javno povezuje korpus, metode i analitičke rezultate."
+date-modified: 2026-08-24
+status: "Ažurira se"
+show-freshness: true
+schema-type: "WebPage"
 categories: ["Ciljevi", "Otvorena znanost", "Suradnja"]
 ---
 
@@ -120,8 +125,8 @@ Tražimo motivirane istraživače i studente koji žele biti dio inovativnog pro
 Kroz praktičan rad razvijate vještine u analizi velikih količina podataka, obradi teksta i statističkom modeliranju.
 
 <p>
-  <span class="tag tag-primary">Big Data</span>
-  <span class="tag tag-primary">Text Mining</span>
+  <span class="tag tag-primary">Velike količine podataka</span>
+  <span class="tag tag-primary">Analiza teksta</span>
   <span class="tag tag-primary">Statističko modeliranje</span>
   <span class="tag tag-primary">R</span>
   <span class="tag tag-primary">Python</span>

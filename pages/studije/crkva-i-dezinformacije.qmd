@@ -1,6 +1,7 @@
 ---
 title: "Tko govori iz katoličkoga medijskog prostora"
 subtitle: "Narativni okviri razlikuju službena crkvena glasila od katolički orijentiranih portala"
+description: "Studija uspoređuje narativne okvire službenih crkvenih glasila i katolički orijentiranih portala u korpusu DigiKat."
 author:
   - name: "Luka Šikić"
     url: "https://www.lukasikic.info/"
@@ -8,7 +9,10 @@ author:
   - name: "Andreja Sršen"
     url: "https://www.fhs.hr/staff/andreja.srsen"
     affiliation: "Fakultet hrvatskih studija Sveučilišta u Zagrebu"
-date: last-modified
+date-modified: 2026-08-24
+status: "Preliminarno"
+show-freshness: true
+schema-type: "ScholarlyArticle"
 categories: ["Tematsko istraživanje", "U recenziji"]
 ---
 

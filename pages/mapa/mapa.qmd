@@ -1,8 +1,11 @@
 ---
 title: "Mapa ekosustava — katolički digitalni prostor u RH (2021.–2026.)"
 subtitle: "Mapiranje digitalne medijske arene"
-date: last-modified
 description: "Mapa ekosustava uspoređuje volumen objava, zabilježene interakcije i procijenjeni doseg po platformama i izvorima u službenom korpusu DigiKat."
+date-modified: 2026-08-24
+data-cutoff: 2026-06-11
+status: "Ažurira se"
+schema-type: "Article"
 categories: ["Mapa ekosustava", "Akteri", "Doseg"]
 filters:
   - ../../assets/filters/lazy-images.lua
@@ -84,7 +87,7 @@ Tri su glavna pitanja u pozadini ove mape.
 
 * Koji izvori imaju najviše objava i zabilježenih interakcija?
 
-* Kako se među najvećim izvorima odnose vendorska procjena dosega i zabilježene interakcije?
+* Kako se među najvećim izvorima odnose procjena dosega pružatelja podataka i zabilježene interakcije?
 
 <div class="metric-grid">
 <div class="metric-card">
@@ -108,7 +111,7 @@ Tri su glavna pitanja u pozadini ove mape.
 ::: {.callout-note}
 ## Prije nastavka, potrebno je definirati metrike koje se koriste u mapi.
 
-Pod **volumenom** podrazumijevamo ukupan broj objava, što opisuje produktivnost aktera. **Angažman** označava ukupne interakcije koje bilježi servis za monitoring. **Doseg** je vendorska procjena potencijalne vidljivosti, a ne broj potvrđeno dosegnutih jedinstvenih osoba. Način mjerenja angažmana i dosega razlikuje se među platformama, pa su njihove međusobne usporedbe indikativne.
+Pod **volumenom** podrazumijevamo ukupan broj objava, što opisuje produktivnost izvora. **Angažman** označava ukupne interakcije koje bilježi servis za praćenje. **Doseg** je procjena pružatelja podataka o potencijalnoj vidljivosti, a ne broj potvrđeno dosegnutih jedinstvenih osoba. Način mjerenja angažmana i dosega razlikuje se među platformama, pa su njihove međusobne usporedbe indikativne.
 
 :::
 
@@ -304,7 +307,7 @@ Apsolutni brojevi pokazuju razmjer, a relativni udjeli sastav korpusa prema poje
 
 ### Relativni udjeli platformi
 
-Ova vizualizacija razdvaja tri različite mjere. U cijelom korpusu web čini `r fmt_pct1(web_post_share)` objava, `r fmt_pct1(web_interaction_share)` interakcija i `r fmt_pct1(web_reach_share)` zabilježenog dosega. Facebook čini `r fmt_pct1(facebook_post_share)` objava, ali `r fmt_pct1(facebook_reach_share)` dosega, čime prema toj vendorskoj mjeri prelazi web. YouTubeovi su udjeli `r fmt_pct1(youtube_post_share)` objava, `r fmt_pct1(youtube_interaction_share)` interakcija i `r fmt_pct1(youtube_reach_share)` dosega. Paneli zato ne mjere jednu opću vrstu „utjecaja", nego tri nejednako dostupna i platformski specifična signala.
+Ova vizualizacija razdvaja tri različite mjere. U cijelom korpusu web čini `r fmt_pct1(web_post_share)` objava, `r fmt_pct1(web_interaction_share)` interakcija i `r fmt_pct1(web_reach_share)` zabilježenog dosega. Facebook čini `r fmt_pct1(facebook_post_share)` objava, ali `r fmt_pct1(facebook_reach_share)` dosega, čime prema procjeni pružatelja podataka prelazi web. YouTubeovi su udjeli `r fmt_pct1(youtube_post_share)` objava, `r fmt_pct1(youtube_interaction_share)` interakcija i `r fmt_pct1(youtube_reach_share)` dosega. Paneli zato ne mjere jednu opću vrstu „utjecaja", nego tri nejednako dostupna i platformski specifična signala.
 
 <p class="figure-question"><strong>Pitanje.</strong> Mijenja li se položaj platforme kada se umjesto volumena promatraju interakcije ili doseg?</p>
 <p class="figure-card__takeaway"><strong>Nalaz.</strong> Da. Platformsko težište ovisi o mjeri, pa jedna ljestvica „utjecaja" nije opravdana.</p>
@@ -457,7 +460,7 @@ Završni prikaz uspoređuje dvije dodatne mjere za najveće izvore.
 
 ## Mapa dosega i interakcija najvećih izvora
 
-Prikaz pozicionira izvore prema dvjema dimenzijama, interakcijama (horizontalna os) i vendorskoj procjeni dosega (vertikalna os). Medijani prikazanih izvora unutar svake platforme stvaraju četiri opisna kvadranta. Njihovi su nazivi pomoćne oznake, a ne empirijski potvrđeni tipovi komunikacijskog ponašanja.
+Prikaz pozicionira izvore prema dvjema dimenzijama, interakcijama (horizontalna os) i procjeni dosega pružatelja podataka (vertikalna os). Medijani prikazanih izvora unutar svake platforme stvaraju četiri opisna kvadranta. Njihovi su nazivi pomoćne oznake, a ne empirijski potvrđeni tipovi komunikacijskog ponašanja.
 
 **Divovi**, pozicionirani u gornjem desnom kvadrantu, imaju i doseg i angažman iznad medijana prikazanih izvora na istoj platformi.
 
@@ -536,7 +539,7 @@ Analiza daje tri opisna nalaza o prikupljenom prostoru.
 
 **Mješovita struktura izvora.** Na vrhu weba pojavljuju se i specijalizirani i opći portali, dok na YouTubeu i Facebooku visoke pozicije zauzimaju specijalizirani kanali, stranice i pojedinci. Rangiranje opisuje zabilježene interakcije i ne mjeri dubinu odnosa s publikom ni komunikacijsku funkciju izvora.
 
-**Višedimenzionalnost vidljivosti.** Volumen, angažman i doseg ne rangiraju izvore jednako. Zbog toga se nijedna od tih mjera ne može sama poistovjetiti s digitalnim utjecajem, osobito kada su doseg i interakcije vendorski i platformski specifični.
+**Višedimenzionalnost vidljivosti.** Volumen, angažman i doseg ne rangiraju izvore jednako. Zbog toga se nijedna od tih mjera ne može sama poistovjetiti s digitalnim utjecajem, osobito kada su doseg i interakcije određeni načinom mjerenja pojedine platforme i pružatelja podataka.
 
 Za uredništvo to znači da odgovor na pitanje „koliko dobro stojimo" ovisi o tome koja se mjera gleda. Izvor koji je nisko po broju objava može biti visoko po interakcijama po objavi, i obrnuto, pa usporedba s drugima ima smisla tek unutar iste platforme i iste mjere. Kako pojedini izvor stoji po svakoj od tih mjera, može se provjeriti u pregledu [Moj medij](../moj-medij.html).
 

@@ -5,7 +5,7 @@ resources/dictionaries/katolički_izrazi_small.xlsx,10455,ec44f1442f25be810e6f64
 resources/dictionaries/lilaHR_clean.xlsx,400292,b8fef0e9d0d69819b5b54b6f24db640e0f72f48edb36a7fc50de17371b24f143,yes,LiLaH transformed workbook,CC BY-NC-SA 4.0
 resources/dictionaries/lilaHR_clean_long.xlsx,435947,3b22f01807261b081c3f6fb31d4dd26569ac4941b9458bb26daa68d10b3a806a,no,LiLaH transformed workbook,CC BY-NC-SA 4.0
 resources/dictionaries/lilaHR_full.xlsx,644518,ed0568ebf4f30e2e4671a3a8f0a0f88c77d12c0fc4a28ad4bba4d9a702a0d6da,no,LiLaH transformed workbook,CC BY-NC-SA 4.0
-resources/dictionaries/source_labels.csv,9331,d183fb435bec1ba18b53b5691a26b8ccc013df43d0e79d35e77715332ab0a619,yes,DigiKat source catalog configuration,project-declared CC BY 4.0
+resources/dictionaries/source_labels.csv,9465,a5223fd5d12eea01ca9a90157357abe39abb9ef95c6354873ed8136f37b87570,yes,DigiKat source catalog configuration,project-declared CC BY 4.0
 resources/lexicons/crosentilex-negatives.txt,642190,93a52c91d71e4e37b6b921ac2cfff8e0fd99c50d53dcaf9a3ca61c6a4a41fe13,yes,CroSentiLex,MIT per HR-CLARIN record
 resources/lexicons/crosentilex-positives.txt,641404,7810531e2e4a55395a2c93ddef639ea62059faf5de3f7b9345bc0ebec4e7630a,yes,CroSentiLex,MIT per HR-CLARIN record
 resources/lexicons/gs-sentiment-annotations.txt,26629,158e503a74fe38c130058201792b709eac8094e2d2427a951ff8dab85c354473,yes,CroSentiLex gold annotations,MIT per HR-CLARIN record
@@ -14,4 +14,3 @@ resources/lexicons/lilaHRcsv.csv,284299,a5a63879b0e08db1ee463cff00af093fe56bb4ee
 resources/lexicons/rules.txt,5505,064180768d675b53cabd9c3385a54466d2b2bb1328216a8a833be3c90bc27e8d,no,legacy Croatian stemmer rules,origin and license verification required before independent reuse
 resources/lexicons/transformations.txt,1487,b4084a8b22cdd1f4b2bfc410fae25da4d109730343390d7f94d8c9d92099984d,no,legacy Croatian stemmer transformations,origin and license verification required before independent reuse
 resources/models/croatian-set-ud-2.5-191206.udpipe,19236607,b8e0ad212bdc84c57366bd7267d21810e1fd3239c4d22ca5867f94e76c6cedc7,yes,UDPipe 1 UD 2.5 Croatian SET model,CC BY-NC-SA plus underlying CC BY-SA 4.0
-

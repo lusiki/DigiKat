@@ -1,7 +1,13 @@
 ---
 title: "DigiKat — izvršni pregled / executive overview"
+pagetitle: "Izvršni pregled / executive overview"
 subtitle: "Kartografija katoličke tematike u hrvatskom digitalnom medijskom prostoru"
-date: last-modified
+description: "Izvršni pregled dvojezično sažima opseg korpusa DigiKat, odnose među platformama, tematske struje i metodološke granice."
+date-modified: 2026-08-24
+data-cutoff: 2026-06-11
+status: "Ažurira se"
+show-freshness: true
+schema-type: "Report"
 lang: hr
 toc: false
 categories: ["Izvršni pregled", "2021.–2026."]
@@ -268,7 +274,7 @@ This overview summarises the whole project. The digital space is read through fi
 
 Web-portali proizvode `r fmt_pct(web_post_sh)` svih objava te bilježe `r fmt_pct(web_int_sh)` interakcija i `r fmt_pct(web_reach_sh)` dosega. Facebook s `r fmt_pct(fb_post_sh)` objava nosi `r fmt_pct(fb_reach_sh)` zabilježenog dosega, a YouTube s `r fmt_pct(yt_post_sh)` objava `r fmt_pct(yt_int_sh)` interakcija. Najproduktivniji je pojedinačni izvor hkm.hr, s `r fmt_int(hkm_posts)` objava.
 
-To je asimetrija opaženog volumena, zabilježenih interakcija i vendorski procijenjenog dosega. Te mjere nisu jednako definirane ni dostupne na svim platformama, pa razlike ne dokazuju veću komunikacijsku učinkovitost, seobu publike ni uzročnu podjelu funkcija među platformama.
+To je asimetrija opaženog volumena, zabilježenih interakcija i dosega koji procjenjuje pružatelj podataka. Te mjere nisu jednako definirane ni dostupne na svim platformama, pa razlike ne dokazuju veću komunikacijsku učinkovitost, seobu publike ni uzročnu podjelu funkcija među platformama.
 :::
 ::: {.lang-en}
 ### Finding 1. platforms have different measurement profiles
@@ -285,6 +291,7 @@ This is an asymmetry between observed volume, recorded interactions and vendor-e
 ```{r}
 #| label: plot-udjeli
 #| fig-alt: !expr 'paste0("Vodoravni složeni stupci: udjeli platformi u objavama, interakcijama i dosegu. Web-portali padaju s ", fmt_pct(web_post_sh), " objava na ", fmt_pct(web_reach_sh), " dosega, a Facebook raste s ", fmt_pct(fb_post_sh), " objava na ", fmt_pct(fb_reach_sh), " dosega.")'
+#| out.extra: 'loading="lazy" decoding="async"'
 
 big <- c("web", "facebook", "youtube")
 plot_df <- platform_summary |>
@@ -341,7 +348,7 @@ The chart shows how each of the three metrics is split among platforms. Each bar
 ::: {.lang-hr}
 ### Nalaz 2. četiri opisna položaja aktera
 
-Karta dosega i angažmana dijeli aktere prema medijanima njihove platforme. **Divovi** su iznad oba medijana, **Graditelji zajednica** iznad medijana interakcija, **Megafoni** iznad medijana dosega, a **Specijalizirani akteri** ispod oba. Nazivi sažimaju položaj na dvije vendorske mjere i ne dokazuju utjecaj, komunikacijsku strategiju ni kvalitetu odnosa s publikom.
+Karta dosega i angažmana dijeli aktere prema medijanima njihove platforme. **Divovi** su iznad oba medijana, **Graditelji zajednica** iznad medijana interakcija, **Megafoni** iznad medijana dosega, a **Specijalizirani akteri** ispod oba. Nazivi sažimaju položaj na dvije platformski specifične mjere i ne dokazuju utjecaj, komunikacijsku strategiju ni kvalitetu odnosa s publikom.
 
 Na vrhu pojedinih platformskih ljestvica pojavljuju se i specijalizirani i opći mediji. Budući da je korpus odabran prema sadržaju, visoka pozicija ne znači da je izvor konfesionalan niti da sav njegov sadržaj pripada katoličkoj tematici.
 :::
@@ -354,7 +361,7 @@ Both specialised and general-news outlets appear near the top of individual plat
 :::
 :::
 
-![](../mapa/mapa_files/figure-html/plot-actor-map-1.svg){fig-alt="Trodijelna točkasta karta aktera po dosegu i angažmanu za web, YouTube i Facebook, s medijanskim linijama koje dijele četiri kvadranta arhetipova."}
+![](../mapa/mapa_files/figure-html/plot-actor-map-1.svg){fig-alt="Trodijelna točkasta karta aktera po dosegu i angažmanu za web, YouTube i Facebook, s medijanskim linijama koje dijele četiri kvadranta arhetipova." loading="lazy" decoding="async"}
 
 <div class="izvor-caption"><span class="lang-hr">Opisna karta aktera: doseg (okomito) i interakcije (vodoravno), po platformama; veličina točke je broj objava. Izvor:</span><span class="lang-en">Descriptive actor map: reach (vertical) and interactions (horizontal), by platform; point size is the number of posts. Source:</span> <a href="https://lusiki.github.io/DigiKat/pages/mapa/mapa.html">Mapa ekosustava</a></div>
 
@@ -408,7 +415,7 @@ Love and Angry are platform reaction labels whose meaning depends on content and
 :::
 :::
 
-![](../mapa/mapa_stats_files/figure-html/plot-topic-network-1.svg){fig-alt="Mrežni graf šesnaest tematskih kategorija; veze označavaju korelacije supojavljivanja oznaka, a položaj čvorova služi čitljivosti."}
+![](../mapa/mapa_stats_files/figure-html/plot-topic-network-1.svg){fig-alt="Mrežni graf šesnaest tematskih kategorija; veze označavaju korelacije supojavljivanja oznaka, a položaj čvorova služi čitljivosti." loading="lazy" decoding="async"}
 
 <div class="izvor-caption"><span class="lang-hr">Mreža povezanosti tematskih kategorija: veze prikazuju korelacije supojavljivanja u uzorku, bez unaprijed potvrđenih klastera. Izvor:</span><span class="lang-en">Network of thematic-category links: edges show co-occurrence correlations in the sample, without predefined confirmed clusters. Source:</span> <a href="https://lusiki.github.io/DigiKat/pages/mapa/mapa_stats.html">Tematske struje</a></div>
 

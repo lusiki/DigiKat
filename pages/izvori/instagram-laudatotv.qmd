@@ -1,11 +1,41 @@
 ---
 title: "laudatotv"
 subtitle: "Instagram · Divovi"
-date: last-modified
+description: "Profil izvora laudatotv na platformi Instagram prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat."
+date-modified: 2026-08-24
+data-cutoff: 2026-06-11
+status: "Preliminarno"
+show-freshness: true
+schema-type: "ProfilePage"
+image: false
 categories: ["Katalog izvora", "Instagram"]
 ---
 
-Ova stranica sažima profil izvora **laudatotv** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
+```{=html}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "name": "Profil izvora laudatotv",
+  "description": "Profil izvora laudatotv na platformi Instagram prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat.",
+  "url": "https://lusiki.github.io/DigiKat/pages/izvori/instagram-laudatotv.html",
+  "inLanguage": "hr",
+  "dateModified": "2026-08-24",
+  "isPartOf": {
+    "@id": "https://lusiki.github.io/DigiKat/pages/izvori/"
+  },
+  "mainEntity": {
+    "@type": "Thing",
+    "name": "laudatotv"
+  },
+  "publisher": {
+    "@id": "https://lusiki.github.io/DigiKat/#project"
+  }
+}
+</script>
+```
+
+Ova stranica sažima profil izvora **laudatotv** u korpusu katoličke tematike. Dio je **Kataloga izvora**, pregleda pojedinačnih izvora koji dopunjuje [Mapu ekosustava](../mapa/mapa.html).
 
 ## Što je
 
@@ -26,12 +56,12 @@ Ključni pokazatelji ovog izvora u korpusu.
 </div>
 <div class="metric-card">
 <div class="metric-value">141.603</div>
-<div class="metric-label">Doseg</div>
+<div class="metric-label">Procijenjenoga dosega</div>
 </div>
 </div>
 
 ::: {.callout-note}
-Profil se temelji na 30 objava i zato ima status **provisionalnog profila**. Pokazatelji opisuju zabilježeni uzorak, a ne cjelokupno djelovanje aktera.
+Profil se temelji na 30 objava i zato ima status **Preliminarno**. Pokazatelji opisuju zabilježeni dio korpusa, a ne cjelokupno djelovanje izvora.
 :::
 
 Po volumenu objava, laudatotv je na **3. mjestu** od 20 praćenih izvora na platformi Instagram. Prosječno ostvaruje **545 interakcija po objavi**.
@@ -45,14 +75,15 @@ Uređivačka oznaka je **konfesionalni izvor** *(prijedlog koji potvrđuje vodit
 ## Povezano
 
 - [Pregled platforme Instagram](platforma-instagram.html)
-- Srodni akteri: [dnevniavaz](instagram-dnevniavaz.html), [ivan.anusic.hr](instagram-ivan-anusic-hr.html), [jutarnji.hr](instagram-jutarnji-hr.html)
+- Srodni izvori: [dnevniavaz](instagram-dnevniavaz.html), [ivan.anusic.hr](instagram-ivan-anusic-hr.html), [jutarnji.hr](instagram-jutarnji-hr.html)
 - [Katalog izvora, sve platforme](index.html)
+- [Metodologija prikupljanja i mjerenja](../metodologija.html)
 
 ## Izvori podataka
 
-Podaci: `data/processed/instagram_actors.rds` (agregat bez osobnih podataka), generirano skriptom `R/wiki_sources.R` (2026-08-11).
+Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.
 
 ::: {.callout-warning}
-Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira aktere na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.
+Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira izvore na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.
 :::
 

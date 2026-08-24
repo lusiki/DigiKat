@@ -1,8 +1,11 @@
 ---
 title: "Evolucija ekosustava — digitalni prostor kroz vrijeme (2021.–2026.)"
 subtitle: "Opaženi volumen, platformski udjeli i koncentracija interakcija"
-date: last-modified
 description: "Evolucija ekosustava prati opaženi mjesečni volumen, raspodjelu zabilježenih interakcija i koncentraciju izvora kroz vrijeme."
+date-modified: 2026-08-24
+data-cutoff: 2026-06-11
+status: "Ažurira se"
+schema-type: "Article"
 categories: ["Evolucija ekosustava", "Trendovi", "Koncentracija"]
 filters:
   - ../../assets/filters/lazy-images.lua

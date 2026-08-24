@@ -34,13 +34,17 @@ website:
   description: "DigiKat je otvoreni opservatorij koji pokazuje tko u Hrvatskoj objavljuje o katoličkim temama, o čemu govori i što privlači pozornost."
   site-url: https://lusiki.github.io/DigiKat/
   favicon: assets/favicon.svg
-  image: assets/images/digikat-social-card.png
+  image: https://lusiki.github.io/DigiKat/assets/images/digikat-social-card.png
   image-alt: "DigiKat. Katolički medijski opservatorij Hrvatskoga katoličkog sveučilišta."
   open-graph:
     locale: hr_HR
     site-name: DigiKat
   twitter-card: true
   navbar:
+    right:
+      - icon: github
+        href: https://github.com/lusiki/DigiKat
+        aria-label: "GitHub repozitorij projekta DigiKat"
     left:
       - text: "Istražite"
         menu:
@@ -125,4 +129,8 @@ format:
     fig-align: center
     include-in-header:
       - file: assets/includes/site-head.html
+    include-after-body:
+      - file: assets/includes/site-end.html
+    filters:
+      - assets/filters/page-freshness.lua
     canonical-url: true

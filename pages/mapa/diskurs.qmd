@@ -1,8 +1,11 @@
 ---
 title: "Atmosfera diskursa — emocionalna i konfliktna mapa katoličkog digitalnog prostora (2021.–2026.)"
 subtitle: "Emocije i tonalitet diskursa"
-date: last-modified
 description: "Atmosfera diskursa opisuje leksički tonalitet, emocionalne oznake i Relativni indeks konflikta u dijelu korpusa DigiKat."
+date-modified: 2026-08-24
+data-cutoff: 2026-06-11
+status: "Preliminarno"
+schema-type: "Article"
 categories: ["Atmosfera diskursa", "Tonalitet", "Emocije"]
 filters:
   - ../../assets/filters/lazy-images.lua

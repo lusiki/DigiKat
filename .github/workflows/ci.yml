@@ -33,12 +33,25 @@ jobs:
 
       - uses: quarto-dev/quarto-actions/setup@v2
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+
+      - name: Install browser-quality dependency
+        shell: pwsh
+        run: npm ci
+
       # One script per step ON PURPOSE. In a pwsh step only the LAST command's exit code decides the
       # step's outcome, so a batch of Rscript calls reports success while an earlier one is failing —
       # which is exactly how a failing tests/run_tests.R went unnoticed until the link check went red.
       - name: Unit and source checks
         shell: pwsh
         run: Rscript tests/run_tests.R
+
+      - name: Whole-site source-quality contract
+        shell: pwsh
+        run: Rscript tests/check_run6_site_quality.R
 
       - name: Source registry check
         shell: pwsh
@@ -85,3 +98,11 @@ jobs:
       - name: Check rendered local links
         shell: pwsh
         run: Rscript R/check_site_links.R
+
+      - name: Check rendered metadata, structure and page budgets
+        shell: pwsh
+        run: npm run check:site
+
+      - name: Check required viewports and accessibility
+        shell: pwsh
+        run: npm run check:browser

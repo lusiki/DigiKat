@@ -16,6 +16,10 @@
 assets/izvjestaji/**/libs/** -whitespace
 docs/assets/izvjestaji/**/libs/** -whitespace
 
+# Quarto owns these generated trees; source files retain normal whitespace checks.
+_freeze/** -whitespace
+docs/** -whitespace
+
 *.db binary
 *.gif binary
 *.jpeg binary

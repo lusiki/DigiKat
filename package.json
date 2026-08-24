@@ -1,0 +1,11 @@
+{
+  "name": "digikat-site-quality",
+  "private": true,
+  "scripts": {
+    "check:site": "node scripts/check_site_quality.mjs docs",
+    "check:browser": "node scripts/check_site_browser.mjs docs"
+  },
+  "devDependencies": {
+    "axe-core": "4.13.0"
+  }
+}

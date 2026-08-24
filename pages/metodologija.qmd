@@ -1,7 +1,12 @@
 ---
 title: "Metodologija"
 subtitle: "Kako nastaje korpus, što se na njemu mjeri i gdje su granice tih mjera"
-date: last-modified
+description: "Metodologija DigiKat dokumentira prikupljanje, pravilo uključivanja, računalnu obradu teksta, pokazatelje, provjere i granice službenoga korpusa."
+date-modified: 2026-08-24
+data-cutoff: 2026-06-11
+status: "Ažurira se"
+show-freshness: true
+schema-type: "WebPage"
 categories: ["Metodologija", "Otvorena znanost", "Reproducibilnost"]
 ---
 
@@ -194,7 +199,7 @@ prikupljanja, a ne samo veće medijske pažnje. Instagram i TikTok ulaze u priku
 ranije godine za te platforme nemaju objava i platformski udjeli nisu usporedivi kroz cijelo
 razdoblje.
 
-Uz to, u vendorskom izvoru za razdoblje od veljače do svibnja 2024. nema teksta, pa nijedno razdoblje
+Uz to, u izvoru pružatelja podataka za razdoblje od veljače do svibnja 2024. nema teksta, pa nijedno razdoblje
 nema retke u tim mjesecima. Prikupljanje ima i kraćih prekida.
 
 ::: {.callout-important}

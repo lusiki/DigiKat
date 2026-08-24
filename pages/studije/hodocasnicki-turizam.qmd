@@ -1,6 +1,7 @@
 ---
 title: "Memorijalni okvir hrvatskih katoličkih odredišta"
 subtitle: "Treći registar u medijskoj reprezentaciji marijanskih svetišta — sjecište hodočašća i ratnog sjećanja"
+description: "Studija ispituje kako se hodočašće, vjerski identitet i ratno sjećanje povezuju u medijskoj reprezentaciji hrvatskih katoličkih odredišta."
 author:
   - name: "Matea Topić Crnoja"
     url: "https://www.unicath.hr/odjeli-i-fakultet/nastavnici/matea-topic-crnoja"
@@ -11,7 +12,10 @@ author:
   - name: "Luka Šikić"
     url: "https://www.lukasikic.info/"
     affiliation: "Hrvatsko katoličko sveučilište"
-date: last-modified
+date-modified: 2026-08-24
+status: "Radni prikaz"
+show-freshness: true
+schema-type: "ScholarlyArticle"
 categories: ["Tematsko istraživanje", "Nacrt u izradi"]
 ---
 

@@ -1,13 +1,17 @@
 ---
 title: "Medijska zastupljenost redovničkih zajednica"
 subtitle: "Ekonomija pažnje, spolna asimetrija i tipologija portala u izvještavanju o redovnicima i redovnicama"
+description: "Studija analizira medijsku zastupljenost redovničkih zajednica kroz ekonomiju pažnje, spolnu asimetriju i razlike među portalima."
 author:
   - name: "Hana Kilijan"
     affiliation: "Hrvatsko katoličko sveučilište"
   - name: "Luka Šikić"
     url: "https://www.lukasikic.info/"
     affiliation: "Hrvatsko katoličko sveučilište"
-date: last-modified
+date-modified: 2026-08-24
+status: "Preliminarno"
+show-freshness: true
+schema-type: "ScholarlyArticle"
 categories: ["Tematsko istraživanje", "Nacrt dostupan"]
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "Službeni korpus DigiKat"
+pagetitle: "Službeni korpus"
 subtitle: "Jedna istraživačka zbirka za analizu katoličkih tema u hrvatskom digitalnom medijskom prostoru"
 description: "Službeni korpus DigiKat obuhvaća približno 400.000 objava, uz javni manifest, agregate, rječnik varijabli i sintetički uzorak."
 date-modified: 2026-08-24
@@ -17,7 +18,6 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 library(data.table)
 library(jsonlite)
-library(kableExtra)
 
 source("../R/lib/digikat_paths.R", encoding = "UTF-8")
 
@@ -327,6 +327,8 @@ Tablice i upute ostaju dostupne bez prekidanja glavne priče o korpusu.
 
 Tablica prikazuje broj i udio objava u službenom korpusu prema zabilježenoj platformi.
 
+<div class="reference-table" role="region" aria-label="Sastav službenoga korpusa po platformama" tabindex="0">
+
 ```{r}
 #| label: platform-table
 
@@ -334,13 +336,16 @@ platform_display <- platform_table
 platform_display$`Broj objava` <- fmt_int(platform_display$`Broj objava`)
 platform_display$Udio <- fmt_pct(platform_display$Udio)
 
-kable(
+knitr::kable(
   platform_display,
+  format = "html",
   caption = "Sastav službenoga korpusa po platformama",
-  align = c("l", "r", "r")
-) |>
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+  align = c("l", "r", "r"),
+  table.attr = 'class="table table-striped table-hover table-sm"'
+)
 ```
+
+</div>
 
 </div>
 </details>
@@ -350,6 +355,8 @@ kable(
 <div class="reference-section__content">
 
 Rječnik navodi funkcionalnu skupinu, tehnički tip i udio nedostajućih vrijednosti za svaku varijablu službenoga korpusa.
+
+<div class="reference-table reference-table--tall" role="region" aria-label="Rječnik varijabli službenoga korpusa" tabindex="0">
 
 ```{r}
 #| label: full-variable-list
@@ -378,14 +385,16 @@ all_vars <- data.frame(
   stringsAsFactors = FALSE
 )
 
-kable(
+knitr::kable(
   all_vars,
+  format = "html",
   caption = paste0("Svih ", n_vars, " varijabli službenoga korpusa"),
-  align = c("l", "l", "l", "r")
-) |>
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) |>
-  scroll_box(width = "100%", height = "520px")
+  align = c("l", "l", "l", "r"),
+  table.attr = 'class="table table-striped table-hover table-sm"'
+)
 ```
+
+</div>
 
 </div>
 </details>

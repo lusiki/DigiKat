@@ -1,7 +1,11 @@
 ---
 title: "Tematska istra탑ivanja"
 subtitle: "Pregled svih studija provedenih na DigiKat korpusu, s autorstvom i fazom izrade"
-date: last-modified
+description: "Tematska istra탑ivanja okupljaju studije nastale na korpusu DigiKat te za svaku navode pitanje, autore, status i dostupne oblike rada."
+date-modified: 2026-08-24
+status: "A탑urira se"
+show-freshness: true
+schema-type: "CollectionPage"
 categories: ["Pregled", "Tematska istra탑ivanja"]
 toc: false
 ---
@@ -12,6 +16,8 @@ istra탑iva훾ko pitanje i vodi prema znanstvenom radu. Stranica svake studije sa�
 i metode te klju훾ni nalaz, a gdje je rukopis dostupan, vodi i na njegov puni tekst.
 
 Studije su poredane kako se pojavljuju u izborniku. Odaberite studiju za detaljan prikaz.
+
+## Dostupne studije
 
 ::: {.card-grid}
 

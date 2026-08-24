@@ -1,8 +1,11 @@
 ---
 title: "Fokus na događaje (2021.–2026.)"
 subtitle: "Dnevna odstupanja volumena, konfliktnog rječnika i tonaliteta u uzorku"
-date: last-modified
 description: "Fokus na događaje označava neuobičajene dane te opisuje prozor oko Uskrsa 2022. i dostupna leksička okruženja Alojzija Stepinca."
+date-modified: 2026-08-24
+data-cutoff: 2026-06-11
+status: "Preliminarno"
+schema-type: "Article"
 categories: ["Događaji", "Dinamika", "Tonalitet"]
 filters:
   - ../../assets/filters/lazy-images.lua

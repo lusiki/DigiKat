@@ -1,9 +1,34 @@
 ---
 title: "Izvori — TikTok"
-subtitle: "Praćeni akteri na platformi TikTok"
-date: last-modified
+subtitle: "Praćeni izvori na platformi TikTok"
+description: "Pregled izvora na platformi TikTok uspoređuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Mapi ekosustava."
+date-modified: 2026-08-24
+data-cutoff: 2026-06-11
+status: "Ažurira se"
+show-freshness: true
+schema-type: "CollectionPage"
 categories: ["Katalog izvora", "TikTok"]
 ---
+
+```{=html}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Izvori — TikTok",
+  "description": "Pregled praćenih izvora na platformi TikTok u Katalogu izvora DigiKat.",
+  "url": "https://lusiki.github.io/DigiKat/pages/izvori/platforma-tiktok.html",
+  "inLanguage": "hr",
+  "dateModified": "2026-08-24",
+  "isPartOf": {
+    "@id": "https://lusiki.github.io/DigiKat/#website"
+  },
+  "publisher": {
+    "@id": "https://lusiki.github.io/DigiKat/#project"
+  }
+}
+</script>
+```
 
 Ova stranica okuplja praćene izvore na platformi **TikTok** iz **Kataloga izvora**. Tipologija je izračunata jednako kao u [Mapi ekosustava](../mapa/mapa.html), podjelom po medijanu angažmana i dosega. Poredano po volumenu objava.
 

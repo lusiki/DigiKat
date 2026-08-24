@@ -49,6 +49,10 @@ if (!file.exists(file.path(proc_dir, "platform_summary.rds"))) {
 
 GEN_DATE <- format(Sys.Date(), "%Y-%m-%d")
 RUN_TS   <- format(Sys.time(), "%Y-%m-%d %H:%M")
+SITE_ORIGIN <- "https://lusiki.github.io/DigiKat/"
+
+corpus_manifest <- digikat_read_corpus_manifest()
+data_cutoff_iso <- as.character(corpus_manifest$corpus$date_max)
 
 coverage <- as.data.frame(readRDS(file.path(proc_dir, "platform_summary.rds")))
 stopifnot(all(c("year", "SOURCE_TYPE", "total_posts") %in% names(coverage)))
@@ -72,6 +76,57 @@ append_utf8 <- function(lines, path) {
 
 # Croatian thousands grouping: 56500 -> "56.500" (decimal.mark set only to avoid a formatC warning)
 fmt_int <- function(x) formatC(as.numeric(x), format = "d", big.mark = ".", decimal.mark = ",")
+
+hr_date <- function(value) {
+  value <- as.Date(value)
+  months <- c(
+    "siječnja", "veljače", "ožujka", "travnja", "svibnja", "lipnja",
+    "srpnja", "kolovoza", "rujna", "listopada", "studenoga", "prosinca"
+  )
+  paste0(
+    as.integer(format(value, "%d")), ". ",
+    months[as.integer(format(value, "%m"))], " ",
+    format(value, "%Y"), "."
+  )
+}
+
+GEN_DATE_HR <- hr_date(GEN_DATE)
+
+yaml_string <- function(x) {
+  as.character(jsonlite::toJSON(enc2utf8(as.character(x)), auto_unbox = TRUE))
+}
+
+json_ld_block <- function(data) {
+  c(
+    "```{=html}",
+    '<script type="application/ld+json">',
+    as.character(jsonlite::toJSON(data, auto_unbox = TRUE, pretty = TRUE, null = "null")),
+    "</script>",
+    "```",
+    ""
+  )
+}
+
+profile_description <- function(name, platform) {
+  paste0(
+    "Profil izvora ", name, " na platformi ", platform,
+    " prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat."
+  )
+}
+
+collection_schema <- function(name, description, relative_url) {
+  list(
+    "@context" = "https://schema.org",
+    "@type" = "CollectionPage",
+    name = name,
+    description = description,
+    url = paste0(SITE_ORIGIN, relative_url),
+    inLanguage = "hr",
+    dateModified = GEN_DATE,
+    isPartOf = list("@id" = paste0(SITE_ORIGIN, "#website")),
+    publisher = list("@id" = paste0(SITE_ORIGIN, "#project"))
+  )
+}
 
 # ASCII kebab-case slug for FILENAMES ONLY (never for displayed corpus text).
 # Explicit Croatian map (no iconv//TRANSLIT, per croatian-encoding rule);
@@ -122,7 +177,7 @@ metric_grid <- function(posts, inter, reach) {
     '</div>',
     '<div class="metric-card">',
     paste0('<div class="metric-value">', fmt_int(reach), '</div>'),
-    '<div class="metric-label">Doseg</div>',
+    '<div class="metric-label">Procijenjenoga dosega</div>',
     '</div>',
     '</div>')
 }
@@ -140,13 +195,15 @@ make_actor_page <- function(row, pkey, pub) {
   plat <- platforms[[pkey]]
   name <- row$FROM; ty <- row$typology
   ipp  <- if (row$total_posts > 0) round(row$total_interactions / row$total_posts) else 0
+  description <- profile_description(name, plat$display)
+  profile_status <- if (row$total_posts < 200) "Preliminarno" else "Ažurira se"
   evidence_note <- if (row$total_posts < 20) {
     c(
       "::: {.callout-caution}",
       paste0(
-        "Ovo je **vrlo tanak profil** temeljen na ", fmt_int(row$total_posts),
-        " objava. Prikazan je radi potpunosti kataloga, ali rang i tipologiju ne treba ",
-        "tumačiti kao stabilnu procjenu aktera."
+        "Ovaj se profil temelji na samo ", fmt_int(row$total_posts),
+        " objava. Prikazan je radi potpunosti kataloga. Rang i tipologiju zato ne treba ",
+        "tumačiti kao stabilnu procjenu izvora."
       ),
       ":::",
       ""
@@ -156,8 +213,8 @@ make_actor_page <- function(row, pkey, pub) {
       "::: {.callout-note}",
       paste0(
         "Profil se temelji na ", fmt_int(row$total_posts),
-        " objava i zato ima status **provisionalnog profila**. Pokazatelji opisuju ",
-        "zabilježeni uzorak, a ne cjelokupno djelovanje aktera."
+        " objava i zato ima status **Preliminarno**. Pokazatelji opisuju ",
+        "zabilježeni dio korpusa, a ne cjelokupno djelovanje izvora."
       ),
       ":::",
       ""
@@ -178,14 +235,32 @@ make_actor_page <- function(row, pkey, pub) {
 
   c(
     "---",
-    paste0('title: "', name, '"'),
-    paste0('subtitle: "', plat$display, " · ", ty, '"'),
-    "date: last-modified",
+    paste0("title: ", yaml_string(name)),
+    paste0("subtitle: ", yaml_string(paste0(plat$display, " · ", ty))),
+    paste0("description: ", yaml_string(description)),
+    paste0("date-modified: ", GEN_DATE),
+    paste0("data-cutoff: ", data_cutoff_iso),
+    paste0("status: ", yaml_string(profile_status)),
+    "show-freshness: true",
+    'schema-type: "ProfilePage"',
+    "image: false",
     paste0('categories: ["Katalog izvora", "', plat$display, '"]'),
     "---",
     "",
+    json_ld_block(list(
+      "@context" = "https://schema.org",
+      "@type" = "ProfilePage",
+      name = paste0("Profil izvora ", name),
+      description = description,
+      url = paste0(SITE_ORIGIN, "pages/izvori/", row$slug, ".html"),
+      inLanguage = "hr",
+      dateModified = GEN_DATE,
+      isPartOf = list("@id" = paste0(SITE_ORIGIN, "pages/izvori/")),
+      mainEntity = list("@type" = "Thing", name = name),
+      publisher = list("@id" = paste0(SITE_ORIGIN, "#project"))
+    )),
     paste0("Ova stranica sažima profil izvora **", name, "** u korpusu katoličke tematike. ",
-           "Dio je **Kataloga izvora**, pregleda pojedinačnih aktera koji dopunjuje ",
+           "Dio je **Kataloga izvora**, pregleda pojedinačnih izvora koji dopunjuje ",
            "[Mapu ekosustava](../mapa/mapa.html)."),
     "",
     "## Što je",
@@ -213,18 +288,19 @@ make_actor_page <- function(row, pkey, pub) {
     "## Povezano",
     "",
     paste0("- [Pregled platforme ", plat$display, "](", plat$hub, ".html)"),
-    paste0("- Srodni akteri: ", neighbor_md(name, pub)),
+    paste0("- Srodni izvori: ", neighbor_md(name, pub)),
     "- [Katalog izvora, sve platforme](index.html)",
+    "- [Metodologija prikupljanja i mjerenja](../metodologija.html)",
     "",
     "## Izvori podataka",
     "",
-    paste0("Podaci: `data/processed/", plat$file, "` (agregat bez osobnih podataka), ",
-           "generirano skriptom `R/wiki_sources.R` (", GEN_DATE, ")."),
+    paste0("Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran ",
+           GEN_DATE_HR, " zajedničkim generatorom Kataloga izvora."),
     "",
     "::: {.callout-warning}",
     paste0(
       "Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **", coverage_years_hr,
-      "** s **", coverage_platform_count, "** vrsta izvora i platformi. Katalog profilira aktere na ",
+      "** s **", coverage_platform_count, "** vrsta izvora i platformi. Katalog profilira izvore na ",
       "**", catalog_platform_count, "** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). ",
       "Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. ",
       "Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno."
@@ -281,11 +357,6 @@ for (pkey in names(platforms)) {
   # tiered and caveated on their page.
   is_pub <- df$publish == "yes"
   pub <- df[is_pub, , drop = FALSE]
-  pub$evidence_tier <- ifelse(
-    pub$total_posts < 20,
-    "vrlo tanak",
-    ifelse(pub$total_posts < 200, "provisionalan", "stabilniji")
-  )
   pubs[[pkey]] <- pub
   counts_pub[pkey] <- nrow(pub)
 
@@ -308,12 +379,25 @@ for (pkey in names(platforms)) {
   # ---- platform hub page ----
   hub_lines <- c(
     "---",
-    paste0('title: "Izvori — ', plat$display, '"'),
-    paste0('subtitle: "Praćeni akteri na platformi ', plat$display, '"'),
-    "date: last-modified",
+    paste0("title: ", yaml_string(paste0("Izvori — ", plat$display))),
+    paste0("subtitle: ", yaml_string(paste0("Praćeni izvori na platformi ", plat$display))),
+    paste0("description: ", yaml_string(paste0(
+      "Pregled izvora na platformi ", plat$display,
+      " uspoređuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Mapi ekosustava."
+    ))),
+    paste0("date-modified: ", GEN_DATE),
+    paste0("data-cutoff: ", data_cutoff_iso),
+    'status: "Ažurira se"',
+    "show-freshness: true",
+    'schema-type: "CollectionPage"',
     paste0('categories: ["Katalog izvora", "', plat$display, '"]'),
     "---",
     "",
+    json_ld_block(collection_schema(
+      paste0("Izvori — ", plat$display),
+      paste0("Pregled praćenih izvora na platformi ", plat$display, " u Katalogu izvora DigiKat."),
+      paste0("pages/izvori/", plat$hub, ".html")
+    )),
     paste0("Ova stranica okuplja praćene izvore na platformi **", plat$display,
            "** iz **Kataloga izvora**. Tipologija je izračunata jednako kao u ",
            "[Mapi ekosustava](../mapa/mapa.html), podjelom po medijanu angažmana i dosega. ",
@@ -336,11 +420,21 @@ n_held <- nrow(held_all)
 idx_lines <- c(
   "---",
   'title: "Katalog izvora"',
-  'subtitle: "Profili pojedinačnih medijskih aktera"',
-  "date: last-modified",
+  'subtitle: "Profili pojedinačnih medijskih izvora"',
+  'description: "Katalog izvora povezuje profile medija i kanala s volumenom objava, zabilježenim interakcijama, procijenjenim dosegom i Mapom ekosustava."',
+  paste0("date-modified: ", GEN_DATE),
+  paste0("data-cutoff: ", data_cutoff_iso),
+  'status: "Ažurira se"',
+  "show-freshness: true",
+  'schema-type: "CollectionPage"',
   'categories: ["Katalog izvora", "Baza podataka"]',
   "---",
   "",
+  json_ld_block(collection_schema(
+    "Katalog izvora",
+    "Katalog izvora povezuje profile medija i kanala s pokazateljima službenoga korpusa DigiKat.",
+    "pages/izvori/"
+  )),
   paste0("Tko su pojedinačni mediji iza brojki? **Katalog izvora** za svaki praćeni izvor donosi ",
          "koliko objavljuje, koliko reakcija skuplja i do koliko ljudi dopire, te kojem tipu ",
          "pripada (Divovi, Graditelji zajednica, Megafoni, Specijalizirani akteri). Tipologija je ",
@@ -354,14 +448,14 @@ idx_lines <- c(
   "",
   "::: {.callout-note}",
   paste0("## Što ovaj katalog jest i što nije", "\n\n",
-         "Katalog je **radna verzija**. Oznake konfesionalnog ili sekularnog izvora prijedlozi su ",
+         "Katalog ima status **Ažurira se**. Oznake konfesionalnog ili sekularnog izvora prijedlozi su ",
          "koje potvrđuje voditelj projekta, pa ih valja čitati kao indikativne. Brojke su statične ",
-         "i mnogi akteri na novijim platformama imaju tek nekoliko objava, zbog čega njihovi ",
+         "i mnogi izvori na novijim platformama imaju tek nekoliko objava, zbog čega njihovi ",
          "poretci nisu stabilni.", "\n\n",
          "Trenutno je objavljeno **", n_pub, "** izvora, dok je **", n_held,
-         "** aktera zadržano za uredničku provjeru. Katalog profilira aktere na **",
+         "** izvora zadržano za uredničku provjeru. Katalog profilira izvore na **",
          catalog_platform_count, "** platformi, a korpus ih ima **", coverage_platform_count,
-         "**. Reddit, forumi i komentari nisu profilirani kao pojedinačni akteri."),
+         "**. Reddit, forumi i komentari nisu profilirani kao pojedinačni izvori."),
   ":::",
   "",
   paste0("Brojke obuhvaćaju ", fmt_int(coverage_rows), " objava u razdoblju ", coverage_years_hr,

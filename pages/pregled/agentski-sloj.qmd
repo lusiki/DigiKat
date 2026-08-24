@@ -1,13 +1,16 @@
 ---
 title: "Agentski sloj — kako projekt nastaje pod nadzorom"
 subtitle: "Kontekst, pravila, vještine, nezavisne provjere i tvrde brane oko jednosmjernog podatkovnog lanca"
-date: last-modified
+description: "Agentski sloj prikazuje kako kontekst, pravila, provjere i zaštitne brane upravljaju reproducibilnim radom na projektu DigiKat."
+date-modified: 2026-08-24
+status: "Stabilno izdanje"
+show-freshness: true
+schema-type: "WebPage"
 lang: hr
 toc: false
 categories: ["Metodologija", "Agentski sloj"]
 format:
   html:
-    embed-resources: true
     anchor-sections: false
 ---
 
@@ -126,7 +129,7 @@ Uz podatkovni i analitički sloj, DigiKat ima i treći, manje vidljiv sloj, **ag
   .organ-head{ display:flex; align-items:center; gap:.6rem; margin-bottom:.2rem; }
   .organ-head .disc{ width:2.1rem; height:2.1rem; border-radius:8px; display:grid; place-items:center;
                      background:color-mix(in srgb,var(--accent) 12%,white); color:var(--accent); flex:0 0 auto; }
-  .organ-head h3{ margin:0; font-size:1.08rem; font-weight:600; border:0; padding:0; }
+  .organ-head .organ-title{ margin:0; font-size:1.08rem; font-weight:600; border:0; padding:0; }
   .organ-head .en{ display:block; font-family:var(--mono); font-size:.64rem; letter-spacing:.04em;
                    text-transform:uppercase; color:var(--faint); margin-top:.1rem; }
   .organ .count{ align-self:flex-start; margin:.65rem 0 .9rem; }
@@ -150,7 +153,7 @@ Uz podatkovni i analitički sloj, DigiKat ima i treći, manje vidljiv sloj, **ag
             margin-bottom:1.6rem; }
   .ag-gate .disc{ color:var(--amber); flex:0 0 auto; margin-top:.05rem; }
   .ag-gate .disc .ic{ width:1.5rem; height:1.5rem; }
-  .ag-gate h4{ margin:0 0 .3rem; font-size:.95rem; font-weight:600; color:#5F4413;
+  .ag-gate .ag-gate-title{ margin:0 0 .3rem; font-size:.95rem; font-weight:600; color:#5F4413;
                font-family:var(--mono); letter-spacing:.02em; text-transform:uppercase; border:0; padding:0; }
   .ag-gate p{ margin:0; font-size:.88rem; color:#584A2D; line-height:1.5; }
   .ag-gate b{ color:#3E3316; }
@@ -241,7 +244,7 @@ Uz podatkovni i analitički sloj, DigiKat ima i treći, manje vidljiv sloj, **ag
     <ol class="flow">
       <li class="node">
         <div class="disc"><svg class="ic"><use href="#i-inbox"/></svg></div>
-        <div class="colwrap"><b>Prikupljanje</b><small>vendorski xlsx → akumulator</small></div>
+        <div class="colwrap"><b>Prikupljanje</b><small>izvorni XLSX pružatelja → akumulator</small></div>
       </li>
       <li class="link" title="prijelaz pod nadzorom"><span class="gate"><svg class="ic"><use href="#i-shield-sm"/></svg></span><span class="arrow"><svg class="ic"><use href="#i-arrow"/></svg></span></li>
       <li class="node">
@@ -275,7 +278,7 @@ Uz podatkovni i analitički sloj, DigiKat ima i treći, manje vidljiv sloj, **ag
       <article class="organ rules rise">
         <div class="organ-head">
           <div class="disc"><svg class="ic"><use href="#i-rules"/></svg></div>
-          <div><h3>Pravila</h3><span class="en">standing orders</span></div>
+          <div><div class="organ-title">Pravila</div><span class="en">standing orders</span></div>
         </div>
         <span class="count">6 pravila · učitavaju se sama</span>
         <ul class="members">
@@ -292,7 +295,7 @@ Uz podatkovni i analitički sloj, DigiKat ima i treći, manje vidljiv sloj, **ag
       <article class="organ skills rise">
         <div class="organ-head">
           <div class="disc"><svg class="ic"><use href="#i-cmd"/></svg></div>
-          <div><h3>Vještine</h3><span class="en">skills</span></div>
+          <div><div class="organ-title">Vještine</div><span class="en">skills</span></div>
         </div>
         <span class="count">14 vještina · pokreće korisnik</span>
         <ul class="members">
@@ -308,7 +311,7 @@ Uz podatkovni i analitički sloj, DigiKat ima i treći, manje vidljiv sloj, **ag
       <article class="organ checks rise">
         <div class="organ-head">
           <div class="disc"><svg class="ic"><use href="#i-search"/></svg></div>
-          <div><h3>Provjere</h3><span class="en">review agents</span></div>
+          <div><div class="organ-title">Provjere</div><span class="en">review agents</span></div>
         </div>
         <span class="count">5 agenata · samo čitaju</span>
         <ul class="members">
@@ -324,7 +327,7 @@ Uz podatkovni i analitički sloj, DigiKat ima i treći, manje vidljiv sloj, **ag
       <article class="organ guards rise">
         <div class="organ-head">
           <div class="disc"><svg class="ic"><use href="#i-shield"/></svg></div>
-          <div><h3>Zaštite</h3><span class="en">hard guards</span></div>
+          <div><div class="organ-title">Zaštite</div><span class="en">hard guards</span></div>
         </div>
         <span class="count">hook · deny-lista · plan-gate</span>
         <ul class="members">
@@ -343,7 +346,7 @@ Uz podatkovni i analitički sloj, DigiKat ima i treći, manje vidljiv sloj, **ag
   <div class="ag-gate">
     <span class="disc"><svg class="ic"><use href="#i-person"/></svg></span>
     <div>
-      <h4>Tvrda brana — čovjek u petlji</h4>
+      <div class="ag-gate-title">Tvrda brana — čovjek u petlji</div>
       <p>Najrizičnije, nepovratne operacije agent ne izvodi sam: <b>voditelj projekta ih osobno odobrava</b> — prebrisavanje korpusa · pokretanje <code>R/03_aggregate.R</code> · puni render preko <code>docs/</code> · prepisivanje git povijesti. Agentski sloj ubrzava rad; odgovornost i tumačenje ostaju ljudski.</p>
     </div>
   </div>

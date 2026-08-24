@@ -1,0 +1,33 @@
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("thead th:not([scope])").forEach(function (cell) {
+    cell.setAttribute("scope", "col");
+  });
+  document.querySelectorAll("tbody th:not([scope])").forEach(function (cell) {
+    cell.setAttribute("scope", "row");
+  });
+
+  document.querySelectorAll("main table").forEach(function (table, index) {
+    if (table.closest(".reference-table, .mm-table-wrap, .mm-heat-wrap, .table-responsive")) return;
+    var wrapper = document.createElement("div");
+    wrapper.className = "table-responsive";
+    wrapper.setAttribute("role", "region");
+    wrapper.setAttribute("tabindex", "0");
+    var caption = table.querySelector("caption");
+    wrapper.setAttribute(
+      "aria-label",
+      caption && caption.textContent.trim() ? caption.textContent.trim() : "Tablični prikaz " + (index + 1)
+    );
+    table.parentNode.insertBefore(wrapper, table);
+    wrapper.appendChild(table);
+  });
+
+  document.querySelectorAll("a:has(.bi-github)").forEach(function (link) {
+    if (!link.getAttribute("aria-label") && !link.textContent.trim()) {
+      link.setAttribute("aria-label", "GitHub repozitorij projekta DigiKat");
+    }
+    var icon = link.querySelector(".bi-github");
+    if (icon) icon.setAttribute("aria-hidden", "true");
+  });
+});
+</script>

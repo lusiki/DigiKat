@@ -8,7 +8,7 @@
 
 <meta name="description" content="DigiKat je otvoreni opservatorij koji pokazuje tko u Hrvatskoj objavljuje o katoličkim temama, o čemu govori i što privlači pozornost.">
 
-<title>DigiKat — otvoreni opservatorij katoličkih tema u medijima – DigiKat</title>
+<title>Otvoreni opservatorij katoličkih tema u medijima – DigiKat</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-18eeef7e313107c10b6b051a6734352e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-330fe350594946a1db9b7fa2b0461185.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-3729d0f6f0d5b2ed7d6131f33038217e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -118,20 +118,16 @@ ul.task-list li input[type="checkbox"] {
 </script>
 
 
-<meta property="og:title" content="DigiKat — otvoreni opservatorij katoličkih tema u medijima">
+<meta property="og:title" content="Otvoreni opservatorij katoličkih tema u medijima">
 <meta property="og:description" content="DigiKat je otvoreni opservatorij koji pokazuje tko u Hrvatskoj objavljuje o katoličkim temama, o čemu govori i što privlači pozornost.">
 <meta property="og:image" content="https://lusiki.github.io/DigiKat/assets/images/digikat-social-card.png">
 <meta property="og:site_name" content="DigiKat">
 <meta property="og:locale" content="hr_HR">
 <meta property="og:image:alt" content="DigiKat. Katolički medijski opservatorij Hrvatskoga katoličkog sveučilišta.">
-<meta property="og:image:height" content="630">
-<meta property="og:image:width" content="1200">
-<meta name="twitter:title" content="DigiKat — otvoreni opservatorij katoličkih tema u medijima">
+<meta name="twitter:title" content="Otvoreni opservatorij katoličkih tema u medijima">
 <meta name="twitter:description" content="DigiKat je otvoreni opservatorij koji pokazuje tko u Hrvatskoj objavljuje o katoličkim temama, o čemu govori i što privlači pozornost.">
 <meta name="twitter:image" content="https://lusiki.github.io/DigiKat/assets/images/digikat-social-card.png">
 <meta name="twitter:image:alt" content="DigiKat. Katolički medijski opservatorij Hrvatskoga katoličkog sveučilišta.">
-<meta name="twitter:image-height" content="630">
-<meta name="twitter:image-width" content="1200">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://lusiki.github.io/DigiKat/">
 </head>
@@ -245,6 +241,13 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/lusiki/DigiKat"> <i class="bi bi-github" role="img" aria-label="GitHub repozitorij projekta DigiKat">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -904,6 +907,39 @@ ul.task-list li input[type="checkbox"] {
 </div>
   </div>
 </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("thead th:not([scope])").forEach(function (cell) {
+    cell.setAttribute("scope", "col");
+  });
+  document.querySelectorAll("tbody th:not([scope])").forEach(function (cell) {
+    cell.setAttribute("scope", "row");
+  });
+
+  document.querySelectorAll("main table").forEach(function (table, index) {
+    if (table.closest(".reference-table, .mm-table-wrap, .mm-heat-wrap, .table-responsive")) return;
+    var wrapper = document.createElement("div");
+    wrapper.className = "table-responsive";
+    wrapper.setAttribute("role", "region");
+    wrapper.setAttribute("tabindex", "0");
+    var caption = table.querySelector("caption");
+    wrapper.setAttribute(
+      "aria-label",
+      caption && caption.textContent.trim() ? caption.textContent.trim() : "Tablični prikaz " + (index + 1)
+    );
+    table.parentNode.insertBefore(wrapper, table);
+    wrapper.appendChild(table);
+  });
+
+  document.querySelectorAll("a:has(.bi-github)").forEach(function (link) {
+    if (!link.getAttribute("aria-label") && !link.textContent.trim()) {
+      link.setAttribute("aria-label", "GitHub repozitorij projekta DigiKat");
+    }
+    var icon = link.querySelector(".bi-github");
+    if (icon) icon.setAttribute("aria-hidden", "true");
+  });
+});
+</script>
 
 
 

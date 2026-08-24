@@ -1,8 +1,12 @@
 ---
 title: "Resursi i korisne poveznice"
 subtitle: "Kurirana lista alata, literature i zajednica"
-date: last-modified
-categories: ["Resursi", "R & Python", "Literatura"]
+description: "Resursi okupljaju provjerene alate, knjige, časopise, skupove podataka i zajednice za računalne društvene znanosti."
+date-modified: 2026-08-24
+status: "Ažurira se"
+show-freshness: true
+schema-type: "CollectionPage"
+categories: ["Resursi", "R i Python", "Literatura"]
 ---
 
 ## Pregled
@@ -32,7 +36,7 @@ Ovi resursi idealni su za sve koji žele naučiti ili usavršiti svoje vještine
 ::: {.info-card}
 <div class="info-card-icon"><i class="bi bi-bar-chart-line"></i></div>
 
-#### Za korisnike R
+### Za korisnike R
 
 Vodiči i knjige za analizu podataka i teksta u jeziku R, od osnova RStudio okruženja do tidy principa.
 :::
@@ -40,7 +44,7 @@ Vodiči i knjige za analizu podataka i teksta u jeziku R, od osnova RStudio okru
 ::: {.info-card}
 <div class="info-card-icon"><i class="bi bi-filetype-py"></i></div>
 
-#### Za korisnike Pythona
+### Za korisnike Pythona
 
 Službena dokumentacija i moderni tutorijali za obradu prirodnog jezika i opće programiranje u Pythonu.
 :::
@@ -70,7 +74,7 @@ Knjige i znanstveni radovi koji oblikuju područje kojim se bavimo.
 ::: {.info-card}
 <div class="info-card-icon"><i class="bi bi-cpu"></i></div>
 
-#### Računalne društvene znanosti
+### Računalne društvene znanosti
 
 Ključne knjige i seminalni radovi koji definiraju polje i njegove izazove u digitalnom dobu.
 :::
@@ -78,7 +82,7 @@ Ključne knjige i seminalni radovi koji definiraju polje i njegove izazove u dig
 ::: {.info-card}
 <div class="info-card-icon"><i class="bi bi-file-text"></i></div>
 
-#### Analiza teksta kao podatka
+### Analiza teksta kao podatka
 
 Temeljni okvir za primjenu metoda analize teksta u društvenim znanostima.
 :::
@@ -86,7 +90,7 @@ Temeljni okvir za primjenu metoda analize teksta u društvenim znanostima.
 ::: {.info-card}
 <div class="info-card-icon"><i class="bi bi-graph-up"></i></div>
 
-#### Statistika i podaci
+### Statistika i podaci
 
 Pristupačne knjige o razumijevanju podataka i prepoznavanju manipulacije statistikom.
 :::
@@ -116,7 +120,7 @@ Poveznice na relevantne izvore podataka, časopise i organizacije koje se bave s
 ::: {.info-card}
 <div class="info-card-icon"><i class="bi bi-database"></i></div>
 
-#### Izvori podataka
+### Izvori podataka
 
 Pew Research Center kao jedan od najvažnijih izvora podataka i analiza o ulozi religije u društvu.
 :::
@@ -124,7 +128,7 @@ Pew Research Center kao jedan od najvažnijih izvora podataka i analiza o ulozi 
 ::: {.info-card}
 <div class="info-card-icon"><i class="bi bi-journals"></i></div>
 
-#### Časopisi i organizacije
+### Časopisi i organizacije
 
 Vodeći znanstveni časopisi i globalne organizacije na sjecištu medija, religije i digitalnih humanističkih znanosti.
 :::
@@ -144,7 +148,7 @@ Mjesta za učenje, postavljanje pitanja i praćenje najnovijih trendova.
 ::: {.info-card}
 <div class="info-card-icon"><i class="bi bi-pencil"></i></div>
 
-#### Učenje i članci
+### Učenje i članci
 
 Towards Data Science kao jedna od najvećih online publikacija o podatkovnoj znanosti, s tisućama tutorijala.
 :::
@@ -152,7 +156,7 @@ Towards Data Science kao jedna od najvećih online publikacija o podatkovnoj zna
 ::: {.info-card}
 <div class="info-card-icon"><i class="bi bi-chat-dots"></i></div>
 
-#### Zajednice programera
+### Zajednice programera
 
 Stack Overflow za tehnička pitanja i odgovore, ključna zajednica za rješavanje problema u kodu.
 :::
@@ -160,7 +164,7 @@ Stack Overflow za tehnička pitanja i odgovore, ključna zajednica za rješavanj
 ::: {.info-card}
 <div class="info-card-icon"><i class="bi bi-globe"></i></div>
 
-#### Otvorena znanost
+### Otvorena znanost
 
 GitHub i Zenodo kao ključne platforme za suradnju, dijeljenje koda i pohranu podataka po FAIR principima.
 :::

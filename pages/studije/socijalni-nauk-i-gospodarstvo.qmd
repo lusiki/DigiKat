@@ -1,6 +1,7 @@
 ---
 title: "Socijalni nauk Crkve u javnoj raspravi o gospodarstvu"
 subtitle: "Nova službena baza pokazuje da vidljivost ovisi o odabranim oznakama: klimatsko vodstvo uglavnom nosi Laudato si'"
+description: "Studija ispituje koliko se dokumenti i pojmovi socijalnoga nauka Crkve pojavljuju u hrvatskoj digitalnoj raspravi o gospodarstvu."
 author:
   - name: "Luka Šikić"
     url: "https://www.lukasikic.info/"
@@ -8,7 +9,10 @@ author:
   - name: "Petra Palić"
     url: "https://www.unicath.hr/odjeli-i-fakultet/nastavnici/petra-palic"
     affiliation: "Hrvatsko katoličko sveučilište"
-date: last-modified
+date-modified: 2026-08-24
+status: "Preliminarno"
+show-freshness: true
+schema-type: "ScholarlyArticle"
 categories: ["Tematsko istraživanje", "Socijalni nauk", "Rukopis za časopis"]
 ---
 
@@ -75,7 +79,7 @@ na **3,08%** i **3,69%**. To su scenariji osjetljivosti nazivnika, a **nisu ispr
 Provjera brojnika provedena je na objavama, dok je nazivnik provjeren na parovima. Njihovo izravno
 množenje miješalo bi jedinice i strukture pogreške.
 
-![Otkrivene stope po gospodarskim temama i scenarij osjetljivosti nazivnika.](../../studies/moral-economy/output/figures/rsp_fig1_gradient.png)
+![Otkrivene stope po gospodarskim temama i scenarij osjetljivosti nazivnika.](../../studies/moral-economy/output/figures/rsp_fig1_gradient.png){width="2010" height="1080"}
 
 ## Klima vodi samo uz zadani rječnik
 
@@ -99,7 +103,7 @@ Ista se promjena pojavljuje u scenariju osjetljivosti nazivnika. Prema tome, naj
 socijalni nauk kao cjelina usmjereniji na klimu nego na starije gospodarske teme. Nalaz je uži.
 Ekološki dokumenti, a osobito prepoznatljiv naslov *Laudato si'*, iznimno su vidljiva javna oznaka.
 
-![Promjena poretka nakon izostavljanja Laudato si' i skupine ekoloških oznaka.](../../studies/moral-economy/output/figures/rsp_fig4_lexicon_sensitivity.png)
+![Promjena poretka nakon izostavljanja Laudato si' i skupine ekoloških oznaka.](../../studies/moral-economy/output/figures/rsp_fig4_lexicon_sensitivity.png){width="2070" height="1080"}
 
 ## Razdoblja dokumenata dodjeljuju se svakom paru
 
@@ -113,7 +117,7 @@ ne-koncilska linija” odnosi se na unaprijed određeni skup naslova, a ne na ne
 razdoblje. Pojmovne oznake, uključujući naziv Kompendija prema ovoj konvenciji, nemaju dodijeljeno
 papinsko razdoblje.
 
-![Raspodjela jedinih razdoblja datiranih dokumenata po gospodarskim temama.](../../studies/moral-economy/output/figures/rsp_fig2_era.png)
+![Raspodjela jedinih razdoblja datiranih dokumenata po gospodarskim temama.](../../studies/moral-economy/output/figures/rsp_fig2_era.png){width="2010" height="1050"}
 
 Ovaj prikaz podupire tvrdnju o vidljivosti nedavnih ekoloških naslova, ali sam ne razdvaja učinak
 novosti dokumenta, javne prepoznatljivosti, izvora teksta ili uredničkoga odabira.
@@ -124,7 +128,7 @@ Oznake “konfesionalni” i “sekularni” potječu iz automatiziranoga, još 
 klasifikacije izvora. U predloženoj konfesionalnoj skupini stopa klime iznosi 19,47%, a makroekonomije
 11,76% (omjer 1,66). U užoj predloženoj sekularnoj skupini omjer je 4,09, a u najširoj 5,68.
 
-![Opisna usporedba klimatske i makroekonomske stope u predloženim skupinama izvora.](../../studies/moral-economy/output/figures/rsp_fig3_boundary.png)
+![Opisna usporedba klimatske i makroekonomske stope u predloženim skupinama izvora.](../../studies/moral-economy/output/figures/rsp_fig3_boundary.png){width="2070" height="1140"}
 
 Te se razlike smiju čitati samo kao osjetljivost na prijedlog grupiranja. Budući da oznake nisu
 ratificirane i nacrt je opažački, rezultat ne dokazuje granicu crkvenih i sekularnih medija, urednički

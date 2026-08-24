@@ -1,6 +1,7 @@
 ---
 title: "Inflacija, informacije i odgođene promjene cijena"
 subtitle: "Javni govor, inflacijski šok i vremenski odmak promjena cijena"
+description: "Studija povezuje javni govor o inflaciji s inflacijskim šokom i vremenskim odmakom promjena cijena u hrvatskom gospodarstvu."
 author:
   - name: "Luka Šikić"
     url: "https://www.lukasikic.info/"
@@ -8,7 +9,10 @@ author:
   - name: "Petra Palić"
     url: "https://www.unicath.hr/odjeli-i-fakultet/nastavnici/petra-palic"
     affiliation: "Hrvatsko katoličko sveučilište"
-date: last-modified
+date-modified: 2026-08-24
+status: "Preliminarno"
+show-freshness: true
+schema-type: "ScholarlyArticle"
 categories: ["Tematsko istraživanje", "Ekonomija", "Rukopis za časopis"]
 ---
 
@@ -78,14 +82,14 @@ nepažnju ni troškove prilagodbe.
 
 ## Vremenski slijed
 
-![Mjesečni javni govor, izravan govor o vlastitom ekonomskom položaju, izvještavanje o promjenama cijena i hrvatski HICP.](../../assets/papers/inflation-information-delayed-repricing-fig1.png){#fig-inflation-timeline fig-alt="Dvopanelni vremenski grafikon od 2021. do lipnja 2026. Gornji panel prikazuje mjesečne medijske događaje javnog govora, govora o vlastitim troškovima i promjena cijena, a donji hrvatsku godišnju stopu HICP-a."}
+![Mjesečni javni govor, izravan govor o vlastitom ekonomskom položaju, izvještavanje o promjenama cijena i hrvatski HICP.](../../assets/papers/inflation-information-delayed-repricing-fig1.png){#fig-inflation-timeline fig-alt="Dvopanelni vremenski grafikon od 2021. do lipnja 2026. Gornji panel prikazuje mjesečne medijske događaje javnog govora, govora o vlastitim troškovima i promjena cijena, a donji hrvatsku godišnju stopu HICP-a." width="2200" height="1450"}
 
 Slika @fig-inflation-timeline pokazuje da govor o vlastitim troškovima doseže vrhunac uz vrhunac inflacije,
 dok je najveća koncentracija izvještavanja o promjenama cijena zabilježena poslije pada inflacije.
 
 ## Institucijska raspodjela
 
-![Javni govor i izvještavanje o promjenama cijena prema institucijskoj jedinici.](../../assets/papers/inflation-information-delayed-repricing-fig2.png){#fig-inflation-units fig-alt="Vodoravni stupčasti grafikon javnog govora, izravnog govora o vlastitim troškovima i izvještavanja o promjenama cijena prema župama, biskupijama, redovničkim zajednicama, Caritasu, biskupskoj konferenciji, Vatikanu i drugim jedinicama."}
+![Javni govor i izvještavanje o promjenama cijena prema institucijskoj jedinici.](../../assets/papers/inflation-information-delayed-repricing-fig2.png){#fig-inflation-units fig-alt="Vodoravni stupčasti grafikon javnog govora, izravnog govora o vlastitim troškovima i izvještavanja o promjenama cijena prema župama, biskupijama, redovničkim zajednicama, Caritasu, biskupskoj konferenciji, Vatikanu i drugim jedinicama." width="2200" height="1400"}
 
 Slika @fig-inflation-units pokazuje organizacijsku podjelu događaja. Biskupije dominiraju javnim govorom,
 dok je izvještavanje o promjenama cijena raspodijeljeno između biskupija, biskupske konferencije i župa.

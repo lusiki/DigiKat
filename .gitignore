@@ -148,3 +148,5 @@ studies/*/output/**/intermediate/
 # outside the academic layer. It is context for the PI and for AI assistants, not a
 # project output, and some of it would read badly if published. Keep it untracked.
 /vault/
+# Local Node dependencies used by release checks
+node_modules/

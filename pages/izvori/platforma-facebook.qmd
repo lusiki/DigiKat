@@ -1,9 +1,34 @@
 ---
 title: "Izvori — Facebook"
-subtitle: "Praćeni akteri na platformi Facebook"
-date: last-modified
+subtitle: "Praćeni izvori na platformi Facebook"
+description: "Pregled izvora na platformi Facebook uspoređuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Mapi ekosustava."
+date-modified: 2026-08-24
+data-cutoff: 2026-06-11
+status: "Ažurira se"
+show-freshness: true
+schema-type: "CollectionPage"
 categories: ["Katalog izvora", "Facebook"]
 ---
+
+```{=html}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Izvori — Facebook",
+  "description": "Pregled praćenih izvora na platformi Facebook u Katalogu izvora DigiKat.",
+  "url": "https://lusiki.github.io/DigiKat/pages/izvori/platforma-facebook.html",
+  "inLanguage": "hr",
+  "dateModified": "2026-08-24",
+  "isPartOf": {
+    "@id": "https://lusiki.github.io/DigiKat/#website"
+  },
+  "publisher": {
+    "@id": "https://lusiki.github.io/DigiKat/#project"
+  }
+}
+</script>
+```
 
 Ova stranica okuplja praćene izvore na platformi **Facebook** iz **Kataloga izvora**. Tipologija je izračunata jednako kao u [Mapi ekosustava](../mapa/mapa.html), podjelom po medijanu angažmana i dosega. Poredano po volumenu objava.
 

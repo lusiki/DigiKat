@@ -1,6 +1,7 @@
 ---
 title: "Tržišta pažnje u religijskim digitalnim medijima"
 subtitle: "Ekonomija pažnje u ranijem analitičkom presjeku korpusa — koncentracija, modaliteti angažmana i liturgijski ritam"
+description: "Studija primjenjuje okvir ekonomije pažnje na raniji presjek korpusa te ispituje koncentraciju, oblike angažmana i liturgijski ritam."
 author:
   - name: "Luka Šikić"
     url: "https://www.lukasikic.info/"
@@ -11,7 +12,10 @@ author:
   - name: "Siniša Kovačić"
     url: "https://vijesti.hrt.hr/hrvatska/sinisa-kovacic-izabran-za-novog-ravnatelja-hine-12346782"
     affiliation: "Hrvatska izvještajna novinska agencija"
-date: last-modified
+date-modified: 2026-08-24
+status: "Radni prikaz"
+show-freshness: true
+schema-type: "ScholarlyArticle"
 categories: ["Tematsko istraživanje", "Nacrt u izradi"]
 ---
 

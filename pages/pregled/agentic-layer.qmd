@@ -1,13 +1,16 @@
 ---
 title: "The agentic layer — how the project is built under governance"
 subtitle: "Context, rules, skills, independent checks and hard guards around a one-way data chain"
-date: last-modified
+description: "The agentic layer shows how context, rules, independent checks and hard guards govern reproducible work in the DigiKat project."
+date-modified: 2026-08-24
+status: "Stable edition"
+show-freshness: true
+schema-type: "WebPage"
 lang: en
 toc: false
 categories: ["Methodology", "Agentic layer"]
 format:
   html:
-    embed-resources: true
     anchor-sections: false
 ---
 
@@ -126,7 +129,7 @@ Beside its data and analytical layers, DigiKat has a third and less visible laye
   .organ-head{ display:flex; align-items:center; gap:.6rem; margin-bottom:.2rem; }
   .organ-head .disc{ width:2.1rem; height:2.1rem; border-radius:8px; display:grid; place-items:center;
                      background:color-mix(in srgb,var(--accent) 12%,white); color:var(--accent); flex:0 0 auto; }
-  .organ-head h3{ margin:0; font-size:1.08rem; font-weight:600; border:0; padding:0; }
+  .organ-head .organ-title{ margin:0; font-size:1.08rem; font-weight:600; border:0; padding:0; }
   .organ-head .en{ display:block; font-family:var(--mono); font-size:.64rem; letter-spacing:.04em;
                    text-transform:uppercase; color:var(--faint); margin-top:.1rem; }
   .organ .count{ align-self:flex-start; margin:.65rem 0 .9rem; }
@@ -150,7 +153,7 @@ Beside its data and analytical layers, DigiKat has a third and less visible laye
             margin-bottom:1.6rem; }
   .ag-gate .disc{ color:var(--amber); flex:0 0 auto; margin-top:.05rem; }
   .ag-gate .disc .ic{ width:1.5rem; height:1.5rem; }
-  .ag-gate h4{ margin:0 0 .3rem; font-size:.95rem; font-weight:600; color:#5F4413;
+  .ag-gate .ag-gate-title{ margin:0 0 .3rem; font-size:.95rem; font-weight:600; color:#5F4413;
                font-family:var(--mono); letter-spacing:.02em; text-transform:uppercase; border:0; padding:0; }
   .ag-gate p{ margin:0; font-size:.88rem; color:#584A2D; line-height:1.5; }
   .ag-gate b{ color:#3E3316; }
@@ -275,7 +278,7 @@ Beside its data and analytical layers, DigiKat has a third and less visible laye
       <article class="organ rules rise">
         <div class="organ-head">
           <div class="disc"><svg class="ic"><use href="#i-rules"/></svg></div>
-          <div><h3>Rules</h3><span class="en">standing orders</span></div>
+          <div><div class="organ-title">Rules</div><span class="en">standing orders</span></div>
         </div>
         <span class="count">6 rules · self-loading</span>
         <ul class="members">
@@ -292,7 +295,7 @@ Beside its data and analytical layers, DigiKat has a third and less visible laye
       <article class="organ skills rise">
         <div class="organ-head">
           <div class="disc"><svg class="ic"><use href="#i-cmd"/></svg></div>
-          <div><h3>Skills</h3><span class="en">skills</span></div>
+          <div><div class="organ-title">Skills</div><span class="en">skills</span></div>
         </div>
         <span class="count">14 skills · user-invoked</span>
         <ul class="members">
@@ -308,7 +311,7 @@ Beside its data and analytical layers, DigiKat has a third and less visible laye
       <article class="organ checks rise">
         <div class="organ-head">
           <div class="disc"><svg class="ic"><use href="#i-search"/></svg></div>
-          <div><h3>Checks</h3><span class="en">review agents</span></div>
+          <div><div class="organ-title">Checks</div><span class="en">review agents</span></div>
         </div>
         <span class="count">5 agents · read-only</span>
         <ul class="members">
@@ -324,7 +327,7 @@ Beside its data and analytical layers, DigiKat has a third and less visible laye
       <article class="organ guards rise">
         <div class="organ-head">
           <div class="disc"><svg class="ic"><use href="#i-shield"/></svg></div>
-          <div><h3>Guards</h3><span class="en">hard guards</span></div>
+          <div><div class="organ-title">Guards</div><span class="en">hard guards</span></div>
         </div>
         <span class="count">hook · deny-list · plan-gate</span>
         <ul class="members">
@@ -343,7 +346,7 @@ Beside its data and analytical layers, DigiKat has a third and less visible laye
   <div class="ag-gate">
     <span class="disc"><svg class="ic"><use href="#i-person"/></svg></span>
     <div>
-      <h4>Hard gate — human in the loop</h4>
+      <div class="ag-gate-title">Hard gate — human in the loop</div>
       <p>The riskiest, irreversible operations the agent does not perform alone: <b>the project lead approves them personally</b> — overwriting the corpus · running <code>R/03_aggregate.R</code> · a full render over <code>docs/</code> · rewriting git history. The agentic layer speeds up the work; responsibility and interpretation stay human.</p>
     </div>
   </div>
