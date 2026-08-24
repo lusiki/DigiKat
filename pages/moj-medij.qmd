@@ -1,8 +1,12 @@
 ---
 title: "Moj medij"
 subtitle: "Koliko vaš medij objavljuje o katoličkim temama i koliko toga odjekne"
-date: last-modified
+description: "Moj medij sažima opseg, pažnju, teme i ritam objavljivanja pojedinog izvora u službenom korpusu DigiKat."
+date-modified: "2026-08-24"
+data-cutoff: "2026-06-11"
+status: "Ažurira se"
 categories: ["Moj medij", "Katalog izvora", "Otvoreni podaci"]
+schema-type: "WebPage"
 # Stranica je alat, a ne tekst s odjeljcima: jedini naslov bio bi napomena na dnu, koja namjerno
 # stoji izvan hijerarhije naslova, pa bi sadržaj ostao prazan.
 toc: false
@@ -52,17 +56,23 @@ n_zadrzano  <- mm$totals$sources_withheld
 n_ukupno    <- mm$totals$sources_in_corpus
 prag        <- mm$policy$min_posts
 raspon      <- paste0(mf$corpus$year_min, ".–", mf$corpus$year_max, ".")
+hr_mjeseci  <- c("siječnja", "veljače", "ožujka", "travnja", "svibnja", "lipnja",
+                 "srpnja", "kolovoza", "rujna", "listopada", "studenoga", "prosinca")
+data_cutoff <- as.Date(mf$corpus$date_max)
+data_cutoff_hr <- paste0(
+  as.integer(format(data_cutoff, "%d")), ". ",
+  hr_mjeseci[as.integer(format(data_cutoff, "%m"))], " ",
+  format(data_cutoff, "%Y"), "."
+)
 ```
 
-Objavljujete o katoličkim temama i pitate se koliko toga doista dopre do ljudi? Ova stranica na to
-odgovara brojkama iz iste baze na kojoj se temelje sve ostale analize projekta. Upišite ime medija i
-dobit ćete koliko objavljuje, koliko reakcija skuplja, kada objavljuje, koliko se pažnja koncentrira
-na mali broj objava, po čemu se njegov tematski profil razlikuje od usporedivog polja, koji su mu
-izvori tematski najsličniji i kako reagira na velike kalendarske događaje.
+<div class="freshness-strip" aria-label="Svježina alata Moj medij">
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">24. kolovoza 2026.</span></span>
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">`r data_cutoff_hr`</span></span>
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--updating">Ažurira se</span></span>
+</div>
 
-Pretraživanje pokriva `r digikat_hr_count(n_prikazano, "izvor")` s najmanje
-`r digikat_hr_count(prag, "objava")` u razdoblju `r raspon` Za najveće izvore postoji i razrađen
-profil u [Katalogu izvora](izvori/index.html).
+Upišite ime izvora i provjerite što službeni korpus pokazuje o njegovu opsegu, pažnji, temama i ritmu objavljivanja.
 
 ```{r}
 #| label: mm-data
@@ -78,45 +88,72 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
   <label class="mm-label" for="mm-q">Ime medija, portala, kanala ili stranice</label>
   <input id="mm-q" class="mm-input" type="search" autocomplete="off" spellcheck="false"
          placeholder="npr. laudato.hr, Radio Marija, vecernji.hr"
-         aria-describedby="mm-hint" aria-controls="mm-results" />
+         role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-expanded="false"
+         aria-describedby="mm-hint mm-coverage" aria-controls="mm-results" />
   <p id="mm-hint" class="mm-hint">Upišite barem dva znaka. Popis se sužava dok tipkate.</p>
+  <p id="mm-coverage" class="mm-coverage">Pretraživanje pokriva `r digikat_hr_count(n_prikazano, "izvor")` s najmanje `r digikat_hr_count(prag, "objava")` u razdoblju `r raspon` Za najveće izvore postoji i <a href="izvori/index.html">razrađen profil u Katalogu izvora</a>.</p>
   <ul id="mm-results" class="mm-results" role="listbox" aria-label="Rezultati pretraživanja"></ul>
-  <div id="mm-detail" class="mm-detail" aria-live="polite"></div>
+  <p id="mm-status" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></p>
+  <div id="mm-detail" class="mm-detail"></div>
 </div>
 
 <style>
-.mm-app { margin:1.5rem 0 2rem; --mm-produced:#14181d; --mm-rewarded:#0f4c5c; }
+.mm-app { margin:1.5rem 0 2rem; max-width:100%; overflow:clip;
+  --mm-produced:#14181d; --mm-rewarded:#0f4c5c; }
 .mm-label { display:block; font-weight:600; font-size:.95rem; margin-bottom:.4rem; color:#14181d; }
 .mm-input { width:100%; max-width:560px; font-size:1.05rem; padding:.7rem .9rem;
   border:1px solid #cfccc2; border-radius:8px; background:#fff; color:#14181d; }
 .mm-input:focus { outline:3px solid rgba(15,76,92,.35); outline-offset:1px; border-color:#0f4c5c; }
 .mm-hint { font-size:.85rem; color:#6b6f76; margin:.4rem 0 0; }
+.mm-coverage { max-width:680px; font-size:.86rem; color:#6b6f76; margin:.45rem 0 0; }
 .mm-results { list-style:none; padding:0; margin:.7rem 0 0; max-width:560px;
   border:1px solid #e4e2da; border-radius:8px; overflow:hidden; display:none; background:#fff; }
 .mm-results.on { display:block; }
-.mm-results li { border-bottom:1px solid #f0eee8; }
+.mm-results li { border-bottom:1px solid #f0eee8; padding:.6rem .9rem; color:#14181d;
+  display:flex; justify-content:space-between; gap:1rem; cursor:pointer; }
 .mm-results li:last-child { border-bottom:0; }
-.mm-results button { width:100%; text-align:left; background:none; border:0; cursor:pointer;
-  padding:.6rem .9rem; font:inherit; color:#14181d; display:flex; justify-content:space-between; gap:1rem; }
-.mm-results button:hover, .mm-results button:focus { background:#eaf0f2; outline:none; }
+.mm-results li:hover, .mm-results li.mm-active { background:#eaf0f2; outline:none; }
 .mm-results .mm-r-meta { color:#6b6f76; font-size:.85rem; white-space:nowrap; }
-.mm-none { padding:.7rem .9rem; color:#6b6f76; font-size:.9rem; }
+.mm-results li.mm-none { display:block; cursor:default; color:#6b6f76; font-size:.9rem; }
 .mm-detail:empty { display:none; }
 .mm-detail { margin-top:1.6rem; border:1px solid #e4e2da; border-radius:10px;
-  padding:1.4rem 1.5rem; background:#fff; }
+  padding:1.4rem 1.5rem; background:#fff; max-width:100%; min-width:0; }
 .mm-name { font-family:'Source Serif 4',serif; font-size:1.5rem; font-weight:600; margin:0; color:#14181d; }
+.mm-name:focus { outline:3px solid rgba(15,76,92,.35); outline-offset:4px; }
 .mm-sub { color:#6b6f76; font-size:.9rem; margin:.25rem 0 1.1rem; }
-.mm-actions { margin:.1rem 0 1.15rem; }
-.mm-download { display:inline-block; border:1px solid #0f4c5c; border-radius:6px; padding:.48rem .72rem;
-  color:#0f4c5c; font-size:.86rem; font-weight:600; text-decoration:none; }
-.mm-download:hover, .mm-download:focus { background:#eaf0f2; color:#0b3945; }
+.mm-actions { display:flex; flex-wrap:wrap; align-items:center; gap:.55rem; margin:.1rem 0 1.15rem; }
+.mm-action { display:inline-block; border:1px solid #0f4c5c; border-radius:6px; padding:.48rem .72rem;
+  color:#0f4c5c; background:#fff; font:inherit; font-size:.86rem; font-weight:600;
+  line-height:1.2; text-decoration:none; cursor:pointer; }
+.mm-action:hover, .mm-action:focus { background:#eaf0f2; color:#0b3945; }
+.mm-summary { margin:1rem 0 1.35rem; padding:1.1rem 1.15rem; border-left:3px solid #0f4c5c;
+  background:#f5f8f8; }
+.mm-summary-title { font-family:'Source Serif 4',serif; font-size:1.25rem; margin:0; color:#14181d; }
+.mm-summary-context { margin:.35rem 0 .9rem; color:#4f535a; font-size:.88rem; }
+.mm-findings { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.8rem;
+  list-style:none; padding:0; margin:0; counter-reset:mm-finding; }
+.mm-findings li { min-width:0; border-top:1px solid #cfd9dc; padding-top:.7rem;
+  counter-increment:mm-finding; }
+.mm-findings h4 { font-size:.9rem; line-height:1.35; margin:0 0 .35rem; color:#14181d; }
+.mm-findings h4::before { content:counter(mm-finding) '. '; color:#0f4c5c;
+  font-family:'IBM Plex Mono',monospace; }
+.mm-findings p { margin:0; color:#363a40; font-size:.86rem; line-height:1.55; }
+.mm-summary-short { margin:.75rem 0 0; color:#655a32; font-size:.84rem; }
 .mm-kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:1rem;
   border-top:1px solid #e4e2da; border-bottom:1px solid #e4e2da; padding:1rem 0; margin-bottom:1.2rem; }
 .mm-kpi-v { font-family:'IBM Plex Mono',monospace; font-size:1.5rem; font-weight:600; color:#14181d; }
 .mm-kpi-l { font-size:.8rem; color:#6b6f76; margin-top:.2rem; }
 .mm-h { font-size:1rem; font-weight:600; margin:1.3rem 0 .5rem; color:#14181d; }
-.mm-chart { width:100%; max-width:560px; height:auto; overflow-x:auto; }
+.mm-chart { width:100%; max-width:560px; height:auto; display:block; }
 .mm-note { font-size:.85rem; color:#6b6f76; margin:.5rem 0 0; }
+.mm-data-alt { max-width:720px; margin:.45rem 0 .8rem; font-size:.82rem; }
+.mm-data-alt summary { color:#0f4c5c; cursor:pointer; font-weight:600; }
+.mm-table-wrap { max-width:100%; overflow-x:auto; margin:.45rem 0 0;
+  overscroll-behavior-inline:contain; }
+.mm-data-table { width:100%; border-collapse:collapse; font-size:.8rem; }
+.mm-data-table th, .mm-data-table td { padding:.38rem .5rem; border-bottom:1px solid #e4e2da;
+  text-align:left; vertical-align:top; }
+.mm-data-table th:not(:first-child), .mm-data-table td:not(:first-child) { text-align:right; }
 .mm-ng { margin:1.5rem 0 1.2rem; padding:1rem 0 0; border-top:1px solid #e4e2da; }
 .mm-ng-product { margin:1rem 0 1.4rem; }
 .mm-ng-name { font-size:.9rem; font-weight:600; color:#14181d; margin:0 0 .35rem; }
@@ -152,7 +189,10 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
 .mm-similar a { display:inline-block; border:1px solid #cfd9dc; border-radius:999px;
   padding:.28rem .6rem; color:#0f4c5c; background:#f8fbfb; font-size:.8rem; text-decoration:none; }
 .mm-similar a:hover, .mm-similar a:focus { background:#eaf0f2; color:#0b3945; }
-.mm-heat-wrap { width:100%; overflow-x:auto; margin:.6rem 0 .3rem; }
+.mm-wide-cue { display:none; color:#6b6f76; font-size:.78rem; margin:.45rem 0 .2rem; }
+.mm-heat-wrap { width:100%; max-width:100%; overflow-x:auto; margin:.6rem 0 .3rem;
+  overscroll-behavior-inline:contain; scrollbar-gutter:stable; }
+.mm-heat-wrap:focus { outline:3px solid rgba(15,76,92,.35); outline-offset:2px; }
 .mm-heat { width:100%; min-width:700px; border-collapse:separate; border-spacing:3px; table-layout:fixed; }
 .mm-heat th { font-size:.72rem; font-weight:600; color:#6b6f76; padding:.3rem; text-align:center; }
 .mm-heat th:first-child { width:54px; text-align:left; }
@@ -175,29 +215,58 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
 .mm-event-fill-field { background:#8aa1a8; }
 .mm-event-na { color:#8a8e95; font-size:.8rem; }
 @media (max-width:640px) {
+  .mm-detail { padding:1rem; }
+  .mm-results li { flex-direction:column; gap:.2rem; }
+  .mm-results .mm-r-meta { white-space:normal; }
+  .mm-findings { grid-template-columns:1fr; }
+  .mm-wide-cue { display:block; }
+  .mm-heat { min-width:620px; }
   .mm-event-row { grid-template-columns:1fr; gap:.35rem; }
+  .mm-event-barline { grid-template-columns:64px minmax(90px,1fr) 48px; }
 }
-/* Napomene uz pregled. Namjerno su tiše od ostatka stranice: ostaju vidljive i potpune,
-   ali ne smiju izgledati kao dio samog alata. Zato su izvan hijerarhije naslova i izvan sadržaja. */
-.mm-aside { margin:3.2rem 0 0; padding:1.1rem 0 0; border-top:1px solid #e4e2da; max-width:640px; }
-.mm-aside-title { font-family:'IBM Plex Mono',monospace; font-size:.72rem; letter-spacing:.1em;
-  text-transform:uppercase; color:#8a8e95; margin:0 0 .75rem; }
-.mm-aside p { font-size:.875rem; line-height:1.6; color:#6b6f76; margin:0 0 .65rem; }
-.mm-aside p:last-child { margin-bottom:0; }
-.mm-aside strong { color:#4f535a; font-weight:600; }
-.mm-aside a { color:#0f4c5c; }
+.mm-reference { margin:3rem 0 0; padding-top:1rem; border-top:1px solid #e4e2da; max-width:720px; }
+.mm-reference-title { font-family:'IBM Plex Mono',monospace; font-size:.76rem; letter-spacing:.07em;
+  text-transform:uppercase; color:#6b6f76; margin:0 0 .75rem; }
+.mm-reference details { border-bottom:1px solid #e4e2da; padding:.6rem 0; }
+.mm-reference summary { color:#0f4c5c; cursor:pointer; font-weight:600; }
+.mm-reference p { font-size:.875rem; line-height:1.6; color:#6b6f76; margin:.65rem 0; }
+.mm-reference p:last-child { margin-bottom:.2rem; }
+.mm-reference strong { color:#4f535a; font-weight:600; }
+.mm-reference a { color:#0f4c5c; }
 .mm-pos { margin:.4rem 0 0; padding-left:1.1rem; }
 .mm-pos li { margin:.25rem 0; }
 .mm-tag { display:inline-block; background:#eaf0f2; color:#2c5663; border-radius:4px;
   padding:.15rem .5rem; font-size:.8rem; font-family:'IBM Plex Mono',monospace; }
 </style>
 
+<script src="../assets/js/moj-medij-findings.js"></script>
 <script>
 (function () {
-  var DATA = JSON.parse(document.getElementById('mm-data').textContent);
   var q = document.getElementById('mm-q');
   var results = document.getElementById('mm-results');
   var detail = document.getElementById('mm-detail');
+  var status = document.getElementById('mm-status');
+  var HELPER = window.DigiKatMojMedij;
+  var DATA;
+  var currentResults = [];
+  var activeIndex = -1;
+  var currentSource = null;
+
+  function announce(message) { status.textContent = message; }
+
+  try {
+    DATA = JSON.parse(document.getElementById('mm-data').textContent);
+    if (!HELPER || typeof HELPER.createFindings !== 'function') {
+      throw new Error('Nedostaje modul za sažetak profila.');
+    }
+  } catch (error) {
+    q.disabled = true;
+    q.setAttribute('aria-invalid', 'true');
+    announce('Profil se trenutačno ne može otvoriti zbog pogreške u podacima.');
+    detail.innerHTML = '<p class="mm-none">Profil se trenutačno ne može otvoriti. Pokušajte ponovno kasnije.</p>';
+    console.error(error);
+    return;
+  }
 
   var PLATFORM = { web:'web', youtube:'YouTube', facebook:'Facebook',
                    instagram:'Instagram', tiktok:'TikTok', twitter:'Twitter / X',
@@ -216,10 +285,7 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
     return n.toLocaleString('hr-HR', { minimumFractionDigits:d, maximumFractionDigits:d });
   }
   // Uspoređivanje bez dijakritike, da "vecernji" pronađe "Večernji".
-  function fold(s) {
-    return s.toLowerCase()
-      .replace(/č|ć/g,'c').replace(/ž/g,'z').replace(/š/g,'s').replace(/đ/g,'dj');
-  }
+  function fold(s) { return HELPER.fold(s); }
   DATA.sources.forEach(function (s) {
     var products = (s.ng || []).map(function (p) { return p.n + ' ' + (p.h || ''); }).join(' ');
     s._k = fold(s.n + ' ' + (s.t || '') + ' ' + products);
@@ -242,23 +308,61 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
     return starts.concat(has).slice(0, 25);
   }
 
+  function closeResults() {
+    results.className = 'mm-results';
+    results.innerHTML = '';
+    currentResults = [];
+    activeIndex = -1;
+    q.setAttribute('aria-expanded', 'false');
+    q.removeAttribute('aria-activedescendant');
+  }
+
+  function sourcePlatforms(source) {
+    return HELPER.profilePlatforms(source).map(function (platform) {
+      return PLATFORM[platform] || platform;
+    }).join(', ');
+  }
+
   function renderResults(list) {
-    if (list === null) { results.className = 'mm-results'; results.innerHTML = ''; return; }
+    if (list === null) { closeResults(); return; }
+    currentResults = list.slice();
+    activeIndex = -1;
     results.className = 'mm-results on';
+    q.setAttribute('aria-expanded', 'true');
+    q.removeAttribute('aria-activedescendant');
     if (!list.length) {
-      results.innerHTML = '<li class="mm-none">Nema izvora s tim imenom među prikazanima. ' +
+      results.innerHTML = '<li class="mm-none" role="option" aria-disabled="true">Nema izvora s tim imenom među prikazanima. ' +
         'Moguće je da objavljuje manje od ' + int(DATA.policy.min_posts) +
         ' objava ili da čeka uredničku provjeru.</li>';
+      announce('Nema rezultata među prikazanim izvorima.');
       return;
     }
     results.innerHTML = list.map(function (s, i) {
       var productNames = s.ng && s.ng.length > 1
         ? ' <span class="mm-r-meta">' + s.ng.map(function (p) { return esc(p.n); }).join(' · ') + '</span>'
         : '';
-      return '<li><button type="button" data-i="' + DATA.sources.indexOf(s) + '">' +
+      return '<li id="mm-option-' + i + '" role="option" aria-selected="false" data-i="' +
+        DATA.sources.indexOf(s) + '">' +
         '<span>' + esc(s.n) + (s.t ? ' <span class="mm-r-meta">' + esc(s.t) + '</span>' : '') +
-        productNames + '</span><span class="mm-r-meta">' + int(s.p) + ' objava</span></button></li>';
+        productNames + '</span><span class="mm-r-meta">' + esc(sourcePlatforms(s)) + ' · ' +
+        int(s.p) + ' objava</span></li>';
     }).join('');
+    announce('Pronađeno je ' + int(list.length) + (list.length === 1 ? ' rezultat.' : ' rezultata.'));
+  }
+
+  function setActive(index) {
+    if (!currentResults.length) return;
+    activeIndex = (index + currentResults.length) % currentResults.length;
+    results.querySelectorAll('[role="option"][data-i]').forEach(function (option, optionIndex) {
+      var selected = optionIndex === activeIndex;
+      option.classList.toggle('mm-active', selected);
+      option.setAttribute('aria-selected', selected ? 'true' : 'false');
+    });
+    var active = document.getElementById('mm-option-' + activeIndex);
+    if (active) {
+      q.setAttribute('aria-activedescendant', active.id);
+      active.scrollIntoView({ block:'nearest' });
+    }
   }
 
   // Stupčasti prikaz po godinama. Crta se kao SVG, bez ijedne vanjske knjižnice.
@@ -277,8 +381,14 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
         '<text x="' + (x + w / 2).toFixed(1) + '" y="' + (y - 4).toFixed(1) +
         '" text-anchor="middle" font-size="10.5" fill="#4f535a">' + int(vals[i]) + '</text>';
     }).join('');
-    return '<div class="mm-h">' + title + '</div><svg class="mm-chart" viewBox="0 0 ' + W + ' ' + H +
-      '" role="img" aria-label="' + title + ' po godinama">' + bars + '</svg>';
+    var tableRows = years.map(function (year, index) {
+      return '<tr><th scope="row">' + year + '.</th><td>' + int(vals[index]) + '</td></tr>';
+    }).join('');
+    return '<h3 class="mm-h">' + esc(title) + '</h3><svg class="mm-chart" viewBox="0 0 ' + W + ' ' + H +
+      '" role="img" aria-label="' + esc(title) + ' po godinama">' + bars + '</svg>' +
+      '<details class="mm-data-alt"><summary>Podaci iz grafikona</summary>' +
+      '<div class="mm-table-wrap"><ta' + 'ble class="mm-data-table"><thead><tr><th>Godina</th><th>Vrijednost</th>' +
+      '</tr></thead><tbody>' + tableRows + '</tbody></ta' + 'ble></div></details>';
   }
 
   function ord(rank, total) {
@@ -294,7 +404,7 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
     });
   }
 
-  function attentionSection(bh) {
+  function attentionSection(bh, platformName) {
     var a = bh.a || {};
     var topRead = present(a.t)
       ? 'Deset objava nosi ' + pct(a.t) + ' svih zabilježenih interakcija.'
@@ -309,7 +419,7 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
     } else {
       zeroRead = 'To je približno 1 od ' + Math.max(2, Math.round(100 / a.z)) + ' objava.';
     }
-    return '<section class="mm-feature"><div class="mm-h">Koncentracija pažnje</div>' +
+    return '<section class="mm-feature"><h3 class="mm-h">Koncentracija pažnje</h3>' +
       '<div class="mm-attention">' +
       '<div class="mm-att-card"><div class="mm-att-value">' + pct(a.t) + '</div>' +
       '<div class="mm-att-label">interakcija u deset vodećih objava</div>' +
@@ -320,8 +430,9 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
       '<p class="mm-att-peer">Medijan usporedive skupine ' + pct(a.mz) +
       (a.nz ? ' · ' + int(a.nz) + ' izvora' : '') + '</p></div></div>' +
       '<p class="mm-reading">' + topRead + ' ' + zeroRead + '</p>' +
-      '<p class="mm-note">Usporedivu skupinu čine prikazani izvori na istoj platformi s najmanje ' +
-      int(DATA.policy.min_posts) + ' objava. Popis vodećih objava nije dio javnog prikaza.</p></section>';
+      '<p class="mm-note">Usporedivu skupinu na platformi ' + esc(platformName) +
+      ' čine prikazani izvori s najmanje ' + int(DATA.policy.min_posts) +
+      ' objava. Popis vodećih objava nije dio javnog prikaza.</p></section>';
   }
 
   function rhythmSection(bh) {
@@ -362,8 +473,10 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
       }
       reading += ' To opisuje različite objave u različitim terminima i ne procjenjuje učinak premještanja istog sadržaja.';
     }
-    return '<section class="mm-feature"><div class="mm-h">Ritam objavljivanja</div>' +
-      '<div class="mm-heat-wrap"><ta' + 'ble class="mm-heat" aria-label="Objave i interakcije po danu i vremenskom pojasu">' +
+    return '<section class="mm-feature"><h3 class="mm-h">Ritam objavljivanja</h3>' +
+      '<p class="mm-wide-cue">Tablica se na uskom zaslonu može pomicati vodoravno.</p>' +
+      '<div class="mm-heat-wrap" role="region" tabindex="0" aria-label="Tablica objava i interakcija po danu i vremenskom pojasu">' +
+      '<ta' + 'ble class="mm-heat" aria-label="Objave i interakcije po danu i vremenskom pojasu">' +
       '<thead>' + head + '</thead><tbody>' + rows + '</tbody></ta' + 'ble></div>' +
       '<p class="mm-reading">' + reading + '</p><p class="mm-note">Vrijeme je lokalno vrijeme Europe/Zagreb. ' +
       'Ćelije s manje od ' + int(meta.min_cell_posts) + ' objava nisu prikazane.</p></section>';
@@ -404,17 +517,25 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
         '<text x="' + (W - RIGHT + 10) + '" y="' + (y + 4) + '" font-size="10.5" ' +
         'fill="#6b6f76">' + dec(row.source, 1) + ' / ' + dec(row.field, 1) + ' %</text></g>';
     }).join('');
+    var tableRows = order.map(function (row) {
+      return '<tr><th scope="row">' + esc(row.label) + '</th><td>' + dec(row.source, 1) +
+        ' %</td><td>' + dec(row.field, 1) + ' %</td></tr>';
+    }).join('');
     return '<div class="mm-topic-legend" aria-hidden="true">' +
       '<span class="mm-topic-key"><span class="mm-topic-dot mm-topic-dot-source"></span>Izvor</span>' +
       '<span class="mm-topic-key"><span class="mm-topic-dot mm-topic-dot-field"></span>' +
       'Prosjek usporedive skupine</span></div>' +
       '<svg class="mm-topic-chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" ' +
-      'aria-label="Tematski udjeli izvora i prosjeka usporedive skupine">' + rows + '</svg>';
+      'aria-label="Tematski udjeli izvora i prosjeka usporedive skupine">' + rows + '</svg>' +
+      '<details class="mm-data-alt"><summary>Tablični prikaz tema</summary>' +
+      '<div class="mm-table-wrap"><ta' + 'ble class="mm-data-table"><thead><tr><th>Tema</th>' +
+      '<th>Izvor</th><th>Usporediva skupina</th></tr></thead><tbody>' + tableRows +
+      '</tbody></ta' + 'ble></div></details>';
   }
 
-  function topicSection(bh) {
+  function topicSection(bh, platformName) {
     var meta = DATA.behaviour.topics;
-    var heading = '<section class="mm-feature"><div class="mm-h">Vi i prosjek polja</div>' +
+    var heading = '<section class="mm-feature"><h3 class="mm-h">Izvor i prosjek polja</h3>' +
       '<span class="mm-topic-status">' + esc(meta.label) + '</span>';
     if (!bh.tm) {
       return heading + '<p class="mm-note">Rječnik je razvrstao ' + int(bh.tc || 0) +
@@ -425,20 +546,22 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
     if (bh.sn && bh.sn.length) {
       similar = '<p class="mm-similar-title">Slični izvori</p><div class="mm-similar">' +
         bh.sn.map(function (name) {
-          return '<a href="?medij=' + encodeURIComponent(name) + '">' + esc(name) + '</a>';
+          return '<a href="?medij=' + encodeURIComponent(name) + '&platforma=' +
+            encodeURIComponent(bh.pl) + '">' + esc(name) + '</a>';
         }).join('') + '</div><p class="mm-note">Ovo znači sličan tematski profil na istoj platformi, ' +
         'ne „konkurent”.</p>';
     }
     return heading + topicMixChart(bh.tm) +
       '<p class="mm-note">Udio se računa među ' + int(bh.tm.n) +
       ' rječnički razvrstanih objava. Prosjek jednako ponderira ' + int(bh.tm.pn) +
-      ' prikazanih izvora na istoj platformi; nije prosjek između platformi. ' +
+      ' prikazanih izvora na platformi ' + esc(platformName) + '. Nije prosjek između platformi. ' +
       esc(meta.method) + '</p>' + similar + '</section>';
   }
 
-  function calendarSection(bh) {
+  function calendarSection(bh, platformName) {
     var meta = DATA.behaviour.calendar;
     var values = {};
+    var tableRows = [];
     (bh.k || []).forEach(function (v) { values[v.v] = v; });
     var years = [];
     meta.events.forEach(function (e) { if (years.indexOf(e.y) < 0) years.push(e.y); });
@@ -455,12 +578,16 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
       var rows = yearEvents.map(function (x) {
         var e = x.e, v = values[x.i] || {};
         if (!e.ok) {
+          tableRows.push('<tr><th scope="row">' + esc(e.n) + ' ' + e.y + '.</th>' +
+            '<td colspan="2">Nije mjerljivo zbog prekida u prikupljanju</td></tr>');
           return '<div class="mm-event-row"><div class="mm-event-name">' + esc(e.n) +
             '<span class="mm-event-date">' + dateHr(e.d) + ' ' + e.y + '.</span></div>' +
             '<div class="mm-event-na">Nije mjerljivo zbog prekida u prikupljanju.</div></div>';
         }
+        tableRows.push('<tr><th scope="row">' + esc(e.n) + ' ' + e.y + '.</th><td>' +
+          multiple(v.o) + '</td><td>' + multiple(v.f) + '</td></tr>');
         var bars = '<div class="mm-event-bars">' + eventBar('Izvor', v.o, false) +
-          eventBar('Platforma', v.f, true) + '</div>';
+          eventBar(platformName, v.f, true) + '</div>';
         return '<div class="mm-event-row"><div class="mm-event-name">' + esc(e.n) +
           '<span class="mm-event-date">' + dateHr(e.d) + ' ' + e.y + '.</span></div>' + bars + '</div>';
       }).join('');
@@ -473,17 +600,24 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
       });
       return holder.innerHTML;
     }).join('');
-    return '<section class="mm-feature"><div class="mm-h">Kalendarski test</div>' + html +
+    return '<section class="mm-feature"><h3 class="mm-h">Kalendarski test</h3>' + html +
+      '<details class="mm-data-alt"><summary>Tablični prikaz kalendarskog testa</summary>' +
+      '<div class="mm-table-wrap"><ta' + 'ble class="mm-data-table"><thead><tr><th>Događaj</th>' +
+      '<th>Izvor</th><th>' + esc(platformName) + '</th></tr></thead><tbody>' +
+      tableRows.join('') + '</tbody></ta' + 'ble></div></details>' +
       '<p class="mm-note">Omjer uspoređuje prosječan broj objava po danu u trodnevnom prozoru s ' +
-      'prosjekom u dva tjedna prije i dva tjedna poslije. Platforma je cijelo polje na istoj platformi. ' +
+      'prosjekom u dva tjedna prije i dva tjedna poslije. Usporedba za platformu ' + esc(platformName) +
+      ' obuhvaća sve prikazane izvore na toj platformi. ' +
       'Isključeni datumi uklonjeni su iz oba računa. Omjer opisuje vremensko podudaranje i ne pripisuje događaju uzrok.</p></section>';
   }
 
   function behaviourSections(s) {
     return (s.bh || []).map(function (bh) {
-      var heading = '<div class="mm-platform-title">' + esc(PLATFORM[bh.pl] || bh.pl) +
+      var platformName = PLATFORM[bh.pl] || bh.pl;
+      var heading = '<div class="mm-platform-title">' + esc(platformName) +
         ' · ' + int(bh.p) + ' objava</div>';
-      return heading + attentionSection(bh) + rhythmSection(bh) + topicSection(bh) + calendarSection(bh);
+      return heading + attentionSection(bh, platformName) + rhythmSection(bh) +
+        topicSection(bh, platformName) + calendarSection(bh, platformName);
     }).join('');
   }
 
@@ -513,25 +647,70 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
         '<text x="' + (W - RIGHT + 10) + '" y="' + (y + 4) + '" font-size="11" ' +
         'fill="#6b6f76">' + gapLabel + '</text></g>';
     }).join('');
+    var tableRows = profile.v.k.map(function (label, i) {
+      var gap = profile.v.g[i];
+      return '<tr><th scope="row">' + esc(label) + '</th><td>' + dec(profile.v.p[i], 1) +
+        ' %</td><td>' + dec(profile.v.r[i], 1) + ' %</td><td>' +
+        (gap > 0 ? '+' : '') + dec(gap, 1) + ' postotnih bodova</td></tr>';
+    }).join('');
     return '<div class="mm-ng-product"><p class="mm-ng-name">' + esc(profile.n) + '</p>' +
       '<div class="mm-ng-legend" aria-hidden="true">' +
       '<span class="mm-ng-key"><span class="mm-ng-dot mm-ng-dot-p"></span>Objavljeno</span>' +
       '<span class="mm-ng-key"><span class="mm-ng-dot mm-ng-dot-r"></span>Nagrađeno interakcijama</span>' +
       '</div><svg class="mm-ng-chart" viewBox="0 0 ' + W + ' ' + H + '" role="img" ' +
-      'aria-label="Objavljeno i nagrađeno po temama za ' + esc(profile.n) + '">' + rows + '</svg></div>';
+      'aria-label="Objavljeno i nagrađeno po temama za ' + esc(profile.n) + '">' + rows + '</svg>' +
+      '<details class="mm-data-alt"><summary>Tablični prikaz tema</summary>' +
+      '<div class="mm-table-wrap"><ta' + 'ble class="mm-data-table"><thead><tr><th>Tema</th>' +
+      '<th>Objavljeno</th><th>Nagrađeno</th><th>Razlika</th></tr></thead><tbody>' + tableRows +
+      '</tbody></ta' + 'ble></div></details></div>';
+  }
+
+  function profileUrl(source) {
+    var url = new URL(window.location.href);
+    var params = HELPER.shareParameters(source);
+    url.searchParams.set('medij', params.medij);
+    if (params.platforma) url.searchParams.set('platforma', params.platforma);
+    else url.searchParams.delete('platforma');
+    url.hash = '';
+    return url.toString();
+  }
+
+  function findingSummary(source) {
+    var findings = HELPER.createFindings(source, DATA);
+    var platforms = HELPER.profilePlatforms(source).map(function (platform) {
+      return PLATFORM[platform] || platform;
+    });
+    var context = platforms.length === 1
+      ? 'Usporedbe se odnose na druge prikazane izvore na platformi ' + platforms[0] + '.'
+      : 'Profil obuhvaća platforme ' + platforms.join(', ') + '. Svaki usporedni nalaz navodi svoju platformu.';
+    var items = findings.map(function (finding) {
+      return '<li><h4>' + esc(finding.title) + '</h4><p>' + esc(finding.text) + '</p></li>';
+    }).join('');
+    var shortNotice = findings.length < 3
+      ? '<p class="mm-summary-short">Dostupni podaci ne podupiru tri odvojena sažeta nalaza. ' +
+        'Prikazani su samo nalazi koji prolaze unaprijed zadane pragove potpore.</p>'
+      : '';
+    return '<section class="mm-summary" aria-labelledby="mm-summary-title">' +
+      '<h3 id="mm-summary-title" class="mm-summary-title">Tri stvari koje trebate znati</h3>' +
+      '<p class="mm-summary-context">' + esc(context) + '</p>' +
+      (items ? '<ol class="mm-findings">' + items + '</ol>' : '') + shortNotice + '</section>';
   }
 
   function renderDetail(s) {
-    var h = '<h2 class="mm-name">' + esc(s.n) + '</h2>';
+    currentSource = s;
+    var h = '<h2 class="mm-name" tabindex="-1">' + esc(s.n) + '</h2>';
     var bits = [];
     if (s.t) bits.push(esc(s.t));
     if (s.pl) bits.push(PLATFORM[s.pl] || s.pl);
     if (s.lb) bits.push(LABEL[s.lb] || s.lb);
     h += '<p class="mm-sub">' + (bits.length ? bits.join(' · ') : 'Izvor iz korpusa') + '</p>';
-    if (s.c) {
-      h += '<p class="mm-actions"><a class="mm-download" data-card="' +
-        esc('../assets/outlet-cards/' + s.c) + '" download>Preuzmite profil izvora (PDF)</a></p>';
-    }
+    h += '<div class="mm-actions"><button class="mm-action" type="button" data-share>' +
+      'Kopirajte poveznicu</button>';
+    if (s.c) h += '<a class="mm-action" data-card="' + esc('../assets/outlet-cards/' + s.c) +
+      '" download>Preuzmite profil izvora (PDF)</a>';
+    h += '</div>';
+
+    h += findingSummary(s);
 
     h += '<div class="mm-kpis">' +
       '<div><div class="mm-kpi-v">' + int(s.p) + '</div><div class="mm-kpi-l">objava ukupno</div></div>' +
@@ -549,7 +728,7 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
     h += behaviourSections(s);
 
     if (s.ng && s.ng.length) {
-      h += '<section class="mm-ng"><div class="mm-h">Objavljeno i nagrađeno</div>';
+      h += '<section class="mm-ng"><h3 class="mm-h">Objavljeno i nagrađeno</h3>';
       if (s.ng.length > 1) {
         h += '<p class="mm-note">Oznaka ' + esc(s.n) +
           ' u korpusu obuhvaća više uredničkih proizvoda. Svaki je zato prikazan zasebno.</p>';
@@ -560,7 +739,7 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
       h += '</section>';
     }
 
-    h += '<div class="mm-h">Gdje ovaj izvor stoji</div><ul class="mm-pos">';
+    h += '<h3 class="mm-h">Gdje ovaj izvor stoji</h3><ul class="mm-pos">';
     h += '<li>Po broju objava ' + ord(s.rp, DATA.totals.sources_listed) +
       ' među prikazanim izvorima, što je ' + dec(s.sp, 2) + ' % svih objava u bazi.</li>';
     h += '<li>Po zabilježenim interakcijama ' + ord(s.ri, DATA.totals.sources_listed) +
@@ -590,24 +769,97 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
     if (cardLink) cardLink.href = cardLink.dataset.card;
   }
 
-  q.addEventListener('input', function () { renderResults(search(q.value)); });
-  results.addEventListener('click', function (e) {
-    var b = e.target.closest('button[data-i]');
-    if (!b) return;
-    renderDetail(DATA.sources[+b.dataset.i]);
-    results.className = 'mm-results';
-    detail.scrollIntoView({ behavior:'smooth', block:'nearest' });
+  function selectSource(source, updateUrl, moveFocus) {
+    if (!source) return;
+    q.value = source.n;
+    renderDetail(source);
+    closeResults();
+    if (updateUrl !== false) window.history.replaceState({}, '', profileUrl(source));
+    announce(source.n + ' je odabran. Profil je otvoren.');
+    var heading = detail.querySelector('.mm-name');
+    if (moveFocus !== false && heading) {
+      heading.focus();
+      heading.scrollIntoView({ block:'nearest' });
+    }
+  }
+
+  q.addEventListener('input', function () {
+    renderResults(search(q.value));
+  });
+
+  q.addEventListener('keydown', function (event) {
+    if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+      var list = search(q.value);
+      if (list && list.length && !currentResults.length) renderResults(list);
+      if (currentResults.length) {
+        event.preventDefault();
+        setActive(activeIndex + (event.key === 'ArrowDown' ? 1 : -1));
+      }
+      return;
+    }
+    if (event.key === 'Enter' && activeIndex >= 0 && currentResults[activeIndex]) {
+      event.preventDefault();
+      selectSource(currentResults[activeIndex], true, true);
+      return;
+    }
+    if (event.key === 'Escape' && q.getAttribute('aria-expanded') === 'true') {
+      event.preventDefault();
+      closeResults();
+      announce('Popis rezultata je zatvoren.');
+    }
+  });
+
+  results.addEventListener('click', function (event) {
+    var option = event.target.closest('[role="option"][data-i]');
+    if (!option) return;
+    selectSource(DATA.sources[+option.dataset.i], true, true);
+  });
+
+  document.addEventListener('click', function (event) {
+    if (!event.target.closest('.mm-app') && q.getAttribute('aria-expanded') === 'true') closeResults();
+  });
+
+  function fallbackCopy(text) {
+    var field = document.createElement('textarea');
+    field.value = text;
+    field.setAttribute('readonly', '');
+    field.style.position = 'fixed';
+    field.style.opacity = '0';
+    document.body.appendChild(field);
+    field.select();
+    var copied = document.execCommand('copy');
+    document.body.removeChild(field);
+    if (!copied) throw new Error('Preglednik nije potvrdio kopiranje.');
+  }
+
+  detail.addEventListener('click', function (event) {
+    var share = event.target.closest('[data-share]');
+    if (!share || !currentSource) return;
+    var url = profileUrl(currentSource);
+    var copy = navigator.clipboard && navigator.clipboard.writeText
+      ? navigator.clipboard.writeText(url).catch(function () { fallbackCopy(url); })
+      : Promise.resolve().then(function () { fallbackCopy(url); });
+    copy.then(function () {
+      share.textContent = 'Poveznica je kopirana';
+      announce('Poveznica na profil je kopirana u međuspremnik.');
+      window.setTimeout(function () { share.textContent = 'Kopirajte poveznicu'; }, 2400);
+    }).catch(function (error) {
+      announce('Poveznicu nije bilo moguće kopirati.');
+      console.error(error);
+    });
   });
 
   // Izravna poveznica na profil olakšava pregled i dijeljenje prikaza.
   // Primjer: moj-medij.html?medij=IKA
   var requestedSource = new URLSearchParams(window.location.search).get('medij');
+  var requestedPlatform = new URLSearchParams(window.location.search).get('platforma');
   if (requestedSource) {
-    q.value = requestedSource;
-    var requestedMatches = search(requestedSource);
+    var directMatch = HELPER.findRequestedSource(DATA.sources, requestedSource, requestedPlatform);
+    var requestedMatches = directMatch ? [directMatch] : search(requestedSource);
     if (requestedMatches && requestedMatches.length) {
-      renderDetail(requestedMatches[0]);
+      selectSource(requestedMatches[0], false, false);
     } else {
+      q.value = requestedSource;
       renderResults(requestedMatches);
     }
   }
@@ -616,35 +868,43 @@ cat('<script id="mm-data" type="application/json">\n', mm_raw, '\n</script>\n', 
 ```
 
 ```{=html}
-<aside class="mm-aside" aria-label="Napomene uz pregled">
-<p class="mm-aside-title">Napomene · što ovaj pregled pokazuje, a što ne</p>
+<section class="mm-reference" aria-labelledby="mm-reference-title">
+<h2 id="mm-reference-title" class="mm-reference-title">Kako čitati rezultate</h2>
 
-<p>Brojke opisuju <strong>prikupljeni korpus</strong>, a ne cjelokupnu medijsku produkciju nekog
-izvora. U bazu ulaze samo objave koje govore o katoličkim temama, pa portal koji objavljuje o svemu
-ovdje ima znatno manje objava nego što ih doista ima.</p>
+<details>
+<summary>Što profil obuhvaća</summary>
+<p>Brojke opisuju <strong>službeni korpus</strong>, a ne cjelokupnu produkciju nekog izvora. U korpus
+ulaze samo objave o katoličkim temama. Portal općeg sadržaja zato ovdje ima manje objava nego u svojoj
+ukupnoj produkciji.</p>
+<p>Prikazani su izvori s najmanje `r digikat_hr_count(prag, "objava")`. Isti je prag unaprijed zadan
+za svaki profil. Uz njih `r digikat_hr_count(n_zadrzano, "izvor")` čeka uredničku provjeru i zasad se
+ne prikazuje. Korpus ukupno bilježi `r digikat_hr_count(n_ukupno, "izvor")`. Većina ima tek nekoliko
+objava. Pravilo uključivanja objašnjeno je u
+<a href="metodologija.html#method-corpus-inclusion">metodologiji korpusa</a>.</p>
+</details>
 
-<p>Interakcije i doseg vrijednosti su koje isporučuje servis za praćenje medija. Doseg je procjena, a
-ne izmjerena publika, i mjeri se drukčije na svakoj platformi. Usporedba između weba i YouTubea zato
-ne znači ono što bi se na prvi pogled činilo, dok je usporedba unutar iste platforme smislena.</p>
+<details>
+<summary>Kako se uspoređuju pažnja i vrijeme</summary>
+<p>Interakcije i doseg vrijednosti su servisa za praćenje medija. Doseg je procjena, a ne izmjerena
+publika. Mjeri se drukčije na svakoj platformi. Zato profil uspoređuje izvore samo unutar imenovane
+platforme. <a href="metodologija.html#method-platform-metrics">Definicije mjera</a> opisuju njihove
+granice.</p>
+<p>Vrijeme objave prošlo je zasebnu provjeru i odgovara lokalnom vremenu Europe/Zagreb. Kalendarski
+test koristi iste isključene dane za izvor i usporedivo polje. Uskrs 2024. zato je označen kao
+nemjerljiv, a ne kao nula. <a href="metodologija.html#method-collection-break">Prekid u prikupljanju</a>
+objašnjava zašto.</p>
+</details>
 
-<p>Vrijeme objave prošlo je zasebnu provjeru. Vrijednosti imaju preciznost u sekundama, nemaju
-nedostajućih zapisa i odgovaraju lokalnom vremenu Europe/Zagreb. Kalendarski test koristi iste
-isključene dane za izvor i usporedivo polje. Zato se Uskrs 2024. označava nemjerljivim, a ne nulom.</p>
-
-<p>Tematski je rječnik <strong>privremen</strong>: služi kao smjernica za validaciju, a ne kao
-rang-lista izvora. Usporedba i tematski slični izvori računaju se samo unutar iste platforme i samo
-za prikazane izvore s najmanje 100 rječnički razvrstanih objava. Sličnost opisuje raspodjelu tema,
-ne uredničku ulogu, publiku ni konkurentski odnos.</p>
-
-<p>Prikazani su izvori s najmanje `r digikat_hr_count(prag, "objava")`, jer bi ispod toga poredak
-počivao na premalom broju objava. Uz njih `r digikat_hr_count(n_zadrzano, "izvor")` iznad istoga
-praga čeka uredničku provjeru i zasad se ne prikazuje; riječ je o računima za koje još nije potvrđeno
-predstavljaju li medij ili pojedinca. Korpus ukupno bilježi `r digikat_hr_count(n_ukupno, "izvor")`,
-od kojih velika većina ima tek nekoliko objava.</p>
-
-<p>Cijela baza otvorena je pod licencijom CC BY 4.0 i dostupna na
-<a href="https://github.com/lusiki/DigiKat">GitHubu</a>, pa se svaka brojka s ove stranice može
-provjeriti. Kako korpus nastaje i kako se mjere volumen, angažman i doseg, opisano je u
-<a href="metodologija.html">Metodologiji</a>.</p>
-</aside>
+<details>
+<summary>Kako se čitaju teme i javni podaci</summary>
+<p>Tematski je rječnik <strong>privremen</strong>. Služi kao smjernica za validaciju, a ne kao
+rang-lista izvora. Usporedba se računa samo unutar iste platforme i od najmanje 100 rječnički
+razvrstanih objava. Sličnost opisuje raspodjelu tema. Ne opisuje publiku, uredničku ulogu ni
+konkurentski odnos. Više je u odjeljku <a href="metodologija.html#method-text-analysis">Uzorci i
+rječnici</a>.</p>
+<p>Javni agregati, manifest korpusa i sintetički uzorak dostupni su pod licencijom CC BY 4.0.
+<a href="baza.html#pristup-licencija-i-citiranje">Pristup, licencija i citiranje</a> vode do javnih
+artefakata i postupka za pristup punom tekstu.</p>
+</details>
+</section>
 ```
