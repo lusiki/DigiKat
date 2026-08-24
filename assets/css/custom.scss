@@ -689,6 +689,8 @@ details.reference-section[open] > summary { border-bottom: 1px solid $dk-hairlin
 // ---------------------------------------------------------------------
 // Homepage — calm hierarchy for purpose, corpus, maps, research and tools
 // ---------------------------------------------------------------------
+.page-layout-custom #title-block-header { display: none; }
+
 .home-page {
   width: 100%;
   min-width: 0;
@@ -727,6 +729,22 @@ details.reference-section[open] > summary { border-bottom: 1px solid $dk-hairlin
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+
+.home-credits {
+  max-width: 100%;
+  line-height: 1.55;
+}
+
+.home-credits a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(15, 76, 92, 0.3);
+  text-decoration-thickness: 0.075em;
+  text-underline-offset: 0.2em;
+}
+
+.home-credits a:hover,
+.home-credits a:focus { text-decoration-color: currentColor; }
 
 .home-hero h1 {
   max-width: 25ch;

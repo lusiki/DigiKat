@@ -8,6 +8,7 @@ categories: ["Istraživački projekt", "Otvoreni podaci"]
 schema-type: "ResearchProject"
 page-layout: custom
 toc: false
+title-block-style: none
 ---
 
 ```{r}
@@ -47,7 +48,7 @@ presjek <- hr_date(mf$corpus$date_max)
 
 <section class="home-hero">
   <div class="home-section__inner">
-    <p class="home-eyebrow">DigiKat · Hrvatsko katoličko sveučilište</p>
+    <p class="home-eyebrow home-credits">DigiKat · <a href="https://www.unicath.hr/">Hrvatsko katoličko sveučilište</a> · <a href="https://www.lukasikic.info/" rel="author">Luka Šikić</a></p>
     <h1>DigiKat je otvoreni opservatorij koji pokazuje tko u Hrvatskoj objavljuje o katoličkim temama, o čemu govori i što privlači pozornost.</h1>
     <p class="home-questions">Tko oblikuje hrvatski digitalni razgovor o katoličkim temama? O čemu se govori? Kada neka tema privuče veću pozornost?</p>
     <p class="home-intro">Odgovore tražimo u službenom korpusu medijskih objava. Rezultate objavljujemo kao otvorene karte medijskog prostora, istraživačke preglede i javne agregate.</p>

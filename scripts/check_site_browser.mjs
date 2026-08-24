@@ -8,7 +8,7 @@ import { tmpdir } from "node:os";
 import { extname, resolve, sep } from "node:path";
 
 const siteRoot = resolve(process.argv[2] || "docs");
-const viewports = [320, 375, 390, 768, 1024];
+const viewports = [320, 375, 390, 768, 1024, 1440, 2048];
 const pages = [
   "index.html",
   "pages/baza.html",
@@ -215,6 +215,38 @@ const motionExpression = `(() => {
   return { reduced, scrollBehavior: html.scrollBehavior, animated };
 })()`;
 
+const homepageExpression = `(() => {
+  window.scrollTo(0, 0);
+  const navbar = document.querySelector('.navbar');
+  const hero = document.querySelector('.home-hero');
+  const inner = hero?.querySelector('.home-section__inner');
+  const credit = hero?.querySelector('.home-credits');
+  const titleBlock = document.querySelector('#title-block-header');
+  const author = credit?.querySelector('a[rel="author"]');
+  const institution = credit?.querySelector('a[href="https://www.unicath.hr/"]');
+  if (!navbar || !hero || !inner || !credit) return { ok: false, reason: 'missing homepage structure' };
+  const navbarBox = navbar.getBoundingClientRect();
+  const creditBox = credit.getBoundingClientRect();
+  const innerBox = inner.getBoundingClientRect();
+  const titleBlockHeight = titleBlock?.getBoundingClientRect().height || 0;
+  const sideDifference = Math.abs(innerBox.left - (document.documentElement.clientWidth - innerBox.right));
+  return {
+    ok: titleBlockHeight <= 1 && !titleBlock?.textContent.trim() &&
+      creditBox.top - navbarBox.bottom >= 40 && creditBox.top - navbarBox.bottom <= 140 &&
+      sideDifference <= 2 &&
+      author?.textContent.trim() === 'Luka Šikić' &&
+      author?.href === 'https://www.lukasikic.info/' &&
+      institution?.textContent.trim() === 'Hrvatsko katoličko sveučilište',
+    titleBlockHeight: Math.round(titleBlockHeight),
+    titleBlockText: titleBlock?.textContent.trim() || '',
+    heroGap: Math.round(creditBox.top - navbarBox.bottom),
+    sideDifference: Math.round(sideDifference),
+    authorText: author?.textContent.trim() || '',
+    authorHref: author?.href || '',
+    institutionText: institution?.textContent.trim() || ''
+  };
+})()`;
+
 const mojMedijExpression = `(async () => {
   const input = document.querySelector('#mm-q');
   const results = document.querySelector('#mm-results');
@@ -266,6 +298,10 @@ try {
         findings.push(`${page} @ ${width}px: page width ${layout.scrollWidth}px; offenders: ${layout.offenders.join(", ") || "unknown"}`);
       }
       if (!layout.focusVisible) findings.push(`${page} @ ${width}px: first interactive element has no visible keyboard focus`);
+      if (page === "index.html") {
+        const homepage = await evaluate(homepageExpression, sessionId);
+        if (!homepage.ok) findings.push(`${page} @ ${width}px: homepage layout/credit contract failed (${JSON.stringify(homepage)})`);
+      }
       const violations = await evaluate(auditExpression, sessionId, true);
       for (const violation of violations) {
         findings.push(`${page} @ ${width}px: ${violation.impact} ${violation.id} — ${violation.help} (${violation.targets.join(", ")})`);

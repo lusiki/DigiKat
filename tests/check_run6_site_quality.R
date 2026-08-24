@@ -44,6 +44,14 @@ expect_true(grepl("data/sample/merged_sample.rds", corpus_page, fixed = TRUE) &&
               !grepl("readRDS(corpus_path)", corpus_page, fixed = TRUE),
             "The public corpus page must render from the tracked schema without private row-level data")
 
+homepage <- read_utf8("index.qmd")
+expect_true(grepl("title-block-style: none", homepage, fixed = TRUE),
+            "The custom homepage must suppress Quarto's duplicate visible title block")
+expect_true(all(vapply(c(
+  "https://www.unicath.hr/", "https://www.lukasikic.info/", "rel=\"author\">Luka Šikić"
+), grepl, logical(1L), x = homepage, fixed = TRUE)),
+            "The homepage credit line must visibly link the institution and project lead")
+
 croatian_sweep <- paste(vapply(c(
   "pages/about.qmd", "pages/metodologija.qmd", "pages/news.qmd",
   "pages/mapa/mapa.qmd", "pages/pregled/agentski-sloj.qmd"
@@ -80,6 +88,10 @@ static_check <- read_utf8("scripts/check_site_quality.mjs")
 expect_true(grepl('file === "pages/izvori/mreza.html"', static_check, fixed = TRUE) &&
               grepl('["mreža izvora", 2_000_000]', static_check, fixed = TRUE),
             "The interactive source network must have an explicit two-megabyte budget")
+browser_check <- read_utf8("scripts/check_site_browser.mjs")
+expect_true(grepl("const viewports = [320, 375, 390, 768, 1024, 1440, 2048]", browser_check, fixed = TRUE) &&
+              grepl("homepage layout/credit contract failed", browser_check, fixed = TRUE),
+            "The browser gate must protect the homepage audit contract through ultra-wide viewports")
 expect_true(file.exists("site-governance/RELEASE_CHECKLIST.md"),
             "The repeatable release checklist must exist")
 expect_true(!file.exists("assets/images/photo_.png") && file.exists("archive/design-prototype/photo_.png"),

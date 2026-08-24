@@ -858,3 +858,9 @@ Begin with Run 1. Do not combine all six runs into one implementation change.
 - Manual viewports checked: the in-app browser had no connected backend; the repository's real-Chrome gate completed 100 page/viewport combinations, and the final rendered content and shared styles were reviewed for the established academic identity.
 - Remaining known issues: the local `renv` library still reports its pre-existing temporary-directory and out-of-sync warnings; unrelated exploration work remains outside this run. No site release-gate failures remain.
 - Approval to continue: the user explicitly approved the full render and final gate on 24 August 2026; the six-run programme is complete.
+
+### Landing-page audit follow-up
+
+- Audit addressed: removed the duplicate visible Quarto metadata block above the custom hero and its residual empty spacing.
+- Attribution added: the hero credit now links Hrvatsko katoličko sveučilište and project lead [Luka Šikić](https://www.lukasikic.info/).
+- Regression coverage: the source contract contains 387 checks, and the Chrome matrix now verifies homepage spacing, centering and attribution across 20 pages at 320, 375, 390, 768, 1024, 1440 and 2048 pixels (140 page/viewport combinations).
