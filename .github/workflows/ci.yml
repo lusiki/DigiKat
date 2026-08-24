@@ -75,9 +75,7 @@ jobs:
 
       - name: Render the full site
         shell: pwsh
-        run: |
-          Copy-Item data/sample/merged_sample.rds data/merged_comprehensive.rds
-          quarto render
+        run: quarto render
 
       # The finished thematic studies are excluded from the render in _quarto.yml, so that a live-site
       # build can never recompute the numbers they published. Their HTML is versioned under docs/

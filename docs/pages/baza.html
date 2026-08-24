@@ -685,7 +685,7 @@ Sastav korpusa po platformama
 Rječnik svih 54 varijabli
 </summary>
 <div class="reference-section__content">
-<p>Rječnik navodi funkcionalnu skupinu, tehnički tip i udio nedostajućih vrijednosti za svaku varijablu službenoga korpusa.</p>
+<p>Rječnik navodi funkcionalnu skupinu i tehnički tip svake varijable službenoga korpusa. Struktura se provjerava prema javnom sintetičkom uzorku, a sedam stupaca podrijetla filtriranja dodaje se prema ugovoru gradnje službenoga korpusa.</p>
 <div class="reference-table reference-table--tall" role="region" aria-label="Rječnik varijabli službenoga korpusa" tabindex="0">
 <div class="cell">
 <div class="cell-output-display">
@@ -697,7 +697,6 @@ Rječnik svih 54 varijabli
 <th style="text-align: left;" data-quarto-table-cell-role="th">Varijabla</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Skupina</th>
 <th style="text-align: left;" data-quarto-table-cell-role="th">Tip</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">Nedostaje</th>
 </tr>
 </thead>
 <tbody>
@@ -706,378 +705,324 @@ Rječnik svih 54 varijabli
 <td style="text-align: left;">DATE</td>
 <td style="text-align: left;">Vremenske</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">TIME</td>
 <td style="text-align: left;">TIME</td>
 <td style="text-align: left;">Vremenske</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">TITLE</td>
 <td style="text-align: left;">TITLE</td>
 <td style="text-align: left;">Sadržaj i tekst</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">FROM</td>
 <td style="text-align: left;">FROM</td>
 <td style="text-align: left;">Izvor i akter</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">AUTHOR</td>
 <td style="text-align: left;">AUTHOR</td>
 <td style="text-align: left;">Izvor i akter</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">35,2 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">URL</td>
 <td style="text-align: left;">URL</td>
 <td style="text-align: left;">Sadržaj i tekst</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">URL_PHOTO</td>
 <td style="text-align: left;">URL_PHOTO</td>
 <td style="text-align: left;">Sadržaj i tekst</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">2,1 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">SOURCE_TYPE</td>
 <td style="text-align: left;">SOURCE_TYPE</td>
 <td style="text-align: left;">Izvor i akter</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">GROUP_NAME</td>
 <td style="text-align: left;">GROUP_NAME</td>
 <td style="text-align: left;">Monitoring i podudaranje</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">KEYWORD_NAME</td>
 <td style="text-align: left;">KEYWORD_NAME</td>
 <td style="text-align: left;">Monitoring i podudaranje</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">FOUND_KEYWORDS</td>
 <td style="text-align: left;">FOUND_KEYWORDS</td>
 <td style="text-align: left;">Monitoring i podudaranje</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">LANGUAGES</td>
 <td style="text-align: left;">LANGUAGES</td>
 <td style="text-align: left;">Monitoring i podudaranje</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">LOCATIONS</td>
 <td style="text-align: left;">LOCATIONS</td>
 <td style="text-align: left;">Monitoring i podudaranje</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">TAGS</td>
 <td style="text-align: left;">TAGS</td>
 <td style="text-align: left;">Monitoring i podudaranje</td>
 <td style="text-align: left;">logical</td>
-<td style="text-align: right;">100,0 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">MANUAL_SENTIMENT</td>
 <td style="text-align: left;">MANUAL_SENTIMENT</td>
 <td style="text-align: left;">Tonalitet</td>
 <td style="text-align: left;">logical</td>
-<td style="text-align: right;">100,0 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">AUTO_SENTIMENT</td>
 <td style="text-align: left;">AUTO_SENTIMENT</td>
 <td style="text-align: left;">Tonalitet</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">MENTION_SNIPPET</td>
 <td style="text-align: left;">MENTION_SNIPPET</td>
 <td style="text-align: left;">Sadržaj i tekst</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">15,0 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">REACH</td>
 <td style="text-align: left;">REACH</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">4,1 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">VIRALITY</td>
 <td style="text-align: left;">VIRALITY</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">30,8 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">ENGAGEMENT_RATE</td>
 <td style="text-align: left;">ENGAGEMENT_RATE</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">30,1 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">INTERACTIONS</td>
 <td style="text-align: left;">INTERACTIONS</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">2,7 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">FOLLOWERS_COUNT</td>
 <td style="text-align: left;">FOLLOWERS_COUNT</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">82,2 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">LIKE_COUNT</td>
 <td style="text-align: left;">LIKE_COUNT</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">3,7 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">COMMENT_COUNT</td>
 <td style="text-align: left;">COMMENT_COUNT</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">4,9 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">SHARE_COUNT</td>
 <td style="text-align: left;">SHARE_COUNT</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">15,4 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">TWEET_COUNT</td>
 <td style="text-align: left;">TWEET_COUNT</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">logical</td>
-<td style="text-align: right;">100,0 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">LOVE_COUNT</td>
 <td style="text-align: left;">LOVE_COUNT</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">84,7 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">WOW_COUNT</td>
 <td style="text-align: left;">WOW_COUNT</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">84,7 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">HAHA_COUNT</td>
 <td style="text-align: left;">HAHA_COUNT</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">84,7 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">SAD_COUNT</td>
 <td style="text-align: left;">SAD_COUNT</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">84,7 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">ANGRY_COUNT</td>
 <td style="text-align: left;">ANGRY_COUNT</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">84,7 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">TOTAL_REACTIONS_COUNT</td>
 <td style="text-align: left;">TOTAL_REACTIONS_COUNT</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">3,4 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">FAVORITE_COUNT</td>
 <td style="text-align: left;">FAVORITE_COUNT</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">99,1 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">RETWEET_COUNT</td>
 <td style="text-align: left;">RETWEET_COUNT</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">99,1 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">VIEW_COUNT</td>
 <td style="text-align: left;">VIEW_COUNT</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">87,9 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">DISLIKE_COUNT</td>
 <td style="text-align: left;">DISLIKE_COUNT</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">99,1 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">COUNT</td>
 <td style="text-align: left;">COUNT</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">logical</td>
-<td style="text-align: right;">100,0 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">REPOST_COUNT</td>
 <td style="text-align: left;">REPOST_COUNT</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">99,9 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">REDDIT_TYPE</td>
 <td style="text-align: left;">REDDIT_TYPE</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">98,6 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">REDDIT_SCORE</td>
 <td style="text-align: left;">REDDIT_SCORE</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">98,6 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">INFLUENCE_SCORE</td>
 <td style="text-align: left;">INFLUENCE_SCORE</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">9,7 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">TWEET_TYPE</td>
 <td style="text-align: left;">TWEET_TYPE</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">99,1 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">TWEET_SOURCE_NAME</td>
 <td style="text-align: left;">TWEET_SOURCE_NAME</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">99,6 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">TWEET_SOURCE_URL</td>
 <td style="text-align: left;">TWEET_SOURCE_URL</td>
 <td style="text-align: left;">Interakcije i doseg</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">99,6 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">FULL_TEXT</td>
 <td style="text-align: left;">FULL_TEXT</td>
 <td style="text-align: left;">Sadržaj i tekst</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">year</td>
 <td style="text-align: left;">year</td>
 <td style="text-align: left;">Vremenske</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">data_source</td>
 <td style="text-align: left;">data_source</td>
 <td style="text-align: left;">Monitoring i podudaranje</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">dk_era</td>
 <td style="text-align: left;">dk_era</td>
 <td style="text-align: left;">Podrijetlo filtriranja</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">dk_master_row</td>
 <td style="text-align: left;">dk_master_row</td>
 <td style="text-align: left;">Podrijetlo filtriranja</td>
 <td style="text-align: left;">integer</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">dk_n_decisive</td>
 <td style="text-align: left;">dk_n_decisive</td>
 <td style="text-align: left;">Podrijetlo filtriranja</td>
 <td style="text-align: left;">integer</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">dk_n_total</td>
 <td style="text-align: left;">dk_n_total</td>
 <td style="text-align: left;">Podrijetlo filtriranja</td>
 <td style="text-align: left;">integer</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">dk_score</td>
 <td style="text-align: left;">dk_score</td>
 <td style="text-align: left;">Podrijetlo filtriranja</td>
 <td style="text-align: left;">numeric</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">dk_old_rule</td>
 <td style="text-align: left;">dk_old_rule</td>
 <td style="text-align: left;">Podrijetlo filtriranja</td>
 <td style="text-align: left;">logical</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">dk_rule</td>
 <td style="text-align: left;">dk_rule</td>
 <td style="text-align: left;">Podrijetlo filtriranja</td>
 <td style="text-align: left;">character</td>
-<td style="text-align: right;">0,0 %</td>
 </tr>
 </tbody>
 </table>

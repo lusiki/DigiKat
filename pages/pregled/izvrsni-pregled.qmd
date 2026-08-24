@@ -290,7 +290,7 @@ This is an asymmetry between observed volume, recorded interactions and vendor-e
 
 ```{r}
 #| label: plot-udjeli
-#| fig-alt: !expr 'paste0("Vodoravni složeni stupci: udjeli platformi u objavama, interakcijama i dosegu. Web-portali padaju s ", fmt_pct(web_post_sh), " objava na ", fmt_pct(web_reach_sh), " dosega, a Facebook raste s ", fmt_pct(fb_post_sh), " objava na ", fmt_pct(fb_reach_sh), " dosega.")'
+#| fig-alt: "Vodoravni složeni stupci uspoređuju udjele platformi u objavama, interakcijama i procijenjenom dosegu; web-portali imaju najveći udio objava, a Facebook najveći udio dosega."
 #| out.extra: 'loading="lazy" decoding="async"'
 
 big <- c("web", "facebook", "youtube")

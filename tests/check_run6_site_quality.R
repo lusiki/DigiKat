@@ -39,6 +39,11 @@ news <- read_utf8("pages/news.qmd")
 expect_true(!grepl("Uskoro|kick off", news, ignore.case = TRUE),
             "News must not contain expired upcoming items or unexplained English terms")
 
+corpus_page <- read_utf8("pages/baza.qmd")
+expect_true(grepl("data/sample/merged_sample.rds", corpus_page, fixed = TRUE) &&
+              !grepl("readRDS(corpus_path)", corpus_page, fixed = TRUE),
+            "The public corpus page must render from the tracked schema without private row-level data")
+
 croatian_sweep <- paste(vapply(c(
   "pages/about.qmd", "pages/metodologija.qmd", "pages/news.qmd",
   "pages/mapa/mapa.qmd", "pages/pregled/agentski-sloj.qmd"

@@ -75,14 +75,25 @@ aggregate_files <- vapply(
   character(1)
 )
 
-corpus_path <- file.path("..", digikat_corpus_path())
-dta <- readRDS(corpus_path)
-if (!inherits(dta, "data.table")) dta <- as.data.table(dta)
+# The tracked synthetic sample is the public schema contract. Building this page must not require
+# the restricted 524 MB row-level corpus; official counts and dates come from its tracked manifest.
+schema_path <- "../data/sample/merged_sample.rds"
+schema <- readRDS(schema_path)
+if (!inherits(schema, "data.table")) schema <- as.data.table(schema)
 
-stopifnot(
-  identical(nrow(dta), n_records),
-  identical(ncol(dta), n_vars)
+provenance_schema <- list(
+  dk_era = NA_character_,
+  dk_master_row = NA_integer_,
+  dk_n_decisive = NA_integer_,
+  dk_n_total = NA_integer_,
+  dk_score = NA_real_,
+  dk_old_rule = NA,
+  dk_rule = NA_character_
 )
+for (name in names(provenance_schema)) {
+  if (!name %in% names(schema)) schema[, (name) := provenance_schema[[name]]]
+}
+stopifnot(identical(ncol(schema), n_vars), !anyDuplicated(names(schema)))
 
 citation_text <- paste0(
   "Šikić, L. i sur. (2025.–2027.). DigiKat: Prikaz i analiza katoličke tematike u ",
@@ -116,7 +127,7 @@ dataset_jsonld <- list(
     "Pristup redcima s punim tekstom odobrava se zasebno za istraživačke svrhe."
   ),
   keywords = c("katoličke teme", "hrvatski mediji", "digitalna religija", "računalne društvene znanosti"),
-  variableMeasured = names(dta),
+  variableMeasured = names(schema),
   distribution = list(
     list(
       `@type` = "DataDownload",
@@ -354,7 +365,7 @@ knitr::kable(
 <summary>Rječnik svih `r n_vars` varijabli</summary>
 <div class="reference-section__content">
 
-Rječnik navodi funkcionalnu skupinu, tehnički tip i udio nedostajućih vrijednosti za svaku varijablu službenoga korpusa.
+Rječnik navodi funkcionalnu skupinu i tehnički tip svake varijable službenoga korpusa. Struktura se provjerava prema javnom sintetičkom uzorku, a sedam stupaca podrijetla filtriranja dodaje se prema ugovoru gradnje službenoga korpusa.
 
 <div class="reference-table reference-table--tall" role="region" aria-label="Rječnik varijabli službenoga korpusa" tabindex="0">
 
@@ -371,16 +382,11 @@ variable_group <- function(name) {
   "Interakcije i doseg"
 }
 
-variable_names <- names(dta)
+variable_names <- names(schema)
 all_vars <- data.frame(
   Varijabla = variable_names,
   Skupina = vapply(variable_names, variable_group, character(1)),
-  Tip = vapply(variable_names, function(v) class(dta[[v]])[1], character(1)),
-  `Nedostaje` = vapply(
-    variable_names,
-    function(v) fmt_pct(100 * mean(is.na(dta[[v]]) | (is.character(dta[[v]]) & dta[[v]] == ""))),
-    character(1)
-  ),
+  Tip = vapply(variable_names, function(v) class(schema[[v]])[1], character(1)),
   check.names = FALSE,
   stringsAsFactors = FALSE
 )
@@ -389,7 +395,7 @@ knitr::kable(
   all_vars,
   format = "html",
   caption = paste0("Svih ", n_vars, " varijabli službenoga korpusa"),
-  align = c("l", "l", "l", "r"),
+  align = c("l", "l", "l"),
   table.attr = 'class="table table-striped table-hover table-sm"'
 )
 ```
