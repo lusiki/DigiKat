@@ -42,6 +42,47 @@
     history_culture: "Crkvena povijest, nacionalni identitet, mediji, umjetnost i kulturna baština.",
     abuse: "Zlostavljanje, odgovornost, istrage i narušeno povjerenje u Crkvu."
   };
+  const canonicalActorLabels = {
+    official: "Crkveni izvori",
+    independent: "Drugi katolički mediji",
+    creator: "Vjerski stvaratelji",
+    public: "Ostali javni izvori"
+  };
+  const actorNameReplacements = [
+    ["Crkveni mediji i ustanove", "Crkveni izvori"],
+    ["crkvenih medija i ustanova", "crkvenih izvora"],
+    ["Katolički mediji drugih osnivača", "Drugi katolički mediji"],
+    ["katoličkih medija drugih osnivača", "drugih katoličkih medija"],
+    ["Pastoralni i vjerski kanali i stvaratelji", "Vjerski stvaratelji"],
+    ["pastoralnih i vjerskih kanala i stvaratelja", "vjerskih stvaratelja"],
+    ["Ostali mediji i javni izvori", "Ostali javni izvori"],
+    ["ostalih medija i javnih izvora", "ostalih javnih izvora"]
+  ];
+  const accessibleAccentColors = {
+    "#0f4c5c": "#0f4c5c",
+    "#2f8f6b": "#246d52",
+    "#c47b21": "#855011",
+    "#2f73b8": "#235d94",
+    "#55768c": "#465f73",
+    "#5b8a72": "#476d58",
+    "#846d9b": "#68557e",
+    "#b5462f": "#8a3526"
+  };
+  const actorName = key => canonicalActorLabels[key] || actorMap[key]?.short || actorMap[key]?.label || key;
+  const normalizeActorNames = value => actorNameReplacements.reduce(
+    (result, [original, replacement]) => result.split(original).join(replacement),
+    value || ""
+  );
+  const accessibleAccent = color => accessibleAccentColors[String(color).toLowerCase()] || "#0a3543";
+  const postNoun = value => {
+    const absolute = Math.abs(Math.trunc(Number(value)));
+    const lastTwo = absolute % 100;
+    const last = absolute % 10;
+    if (lastTwo >= 12 && lastTwo <= 14) return "objava";
+    if (last >= 2 && last <= 4) return "objave";
+    return "objava";
+  };
+  const postCount = value => `${HR0.format(value)} ${postNoun(value)}`;
 
   function node(name, attributes = {}, text = null) {
     const element = document.createElementNS(NS, name);
@@ -68,6 +109,27 @@
     const element = node("text", { x, y, ...attributes }, value);
     parent.append(element);
     return element;
+  }
+
+  function wrappedText(parent, x, y, value, maxLength, attributes = {}) {
+    const words = value.split(/\s+/);
+    const lines = [];
+    words.forEach(word => {
+      const candidate = lines.length ? `${lines[lines.length - 1]} ${word}` : word;
+      if (lines.length && candidate.length > maxLength) {
+        lines.push(word);
+      } else if (lines.length) {
+        lines[lines.length - 1] = candidate;
+      } else {
+        lines.push(word);
+      }
+    });
+    const element = node("text", { x, y, ...attributes });
+    lines.forEach((lineValue, index) => {
+      element.append(node("tspan", { x, dy: index === 0 ? 0 : 15 }, lineValue));
+    });
+    parent.append(element);
+    return { element, lines };
   }
 
   function line(parent, x1, y1, x2, y2, attributes = {}) {
@@ -103,9 +165,12 @@
   function populateSourceGuide() {
     DATA.actorTotals.forEach(actor => {
       const card = document.querySelector(`[data-actor-card="${actor.key}"]`);
-      if (card) card.style.setProperty("--actor-color", actor.color);
+      if (card) {
+        card.style.setProperty("--actor-color", actor.color);
+        card.style.setProperty("--actor-text-color", accessibleAccent(actor.color));
+      }
       const total = document.querySelector(`[data-actor-total="${actor.key}"]`);
-      if (total) total.textContent = `${pct(actor.postShare)} svih objava · ${HR0.format(actor.posts)} objava`;
+      if (total) total.textContent = `${pct(actor.postShare)} svih objava · ${postCount(actor.posts)}`;
     });
   }
 
@@ -120,6 +185,7 @@
         .reduce((sum, row) => sum + Number(row.posts || 0), 0);
       const card = document.createElement("div");
       card.style.setProperty("--theme-color", theme.color);
+      card.style.setProperty("--theme-text-color", accessibleAccent(theme.color));
       const swatch = document.createElement("span");
       swatch.className = "theme-guide__swatch";
       swatch.setAttribute("aria-hidden", "true");
@@ -128,7 +194,7 @@
       const description = document.createElement("p");
       description.textContent = themeDescriptions[theme.key] || "Široka tema razgovora o Crkvi.";
       const total = document.createElement("strong");
-      total.textContent = `${pct(100 * posts / totalPosts)} · ${HR0.format(posts)} objava`;
+      total.textContent = `${pct(100 * posts / totalPosts)} · ${postCount(posts)}`;
       card.append(swatch, title, description, total);
       guide.append(card);
     });
@@ -181,7 +247,7 @@
         }));
         points.forEach(point => {
           circle(svg, point[0], point[1], 4.5, { fill: actor.color, stroke: "#fff", "stroke-width": 2 });
-          const title = node("title", {}, `${actor.label}. ${pct(point[2])}`);
+          const title = node("title", {}, `${actorName(actor.key)}. ${pct(point[2])}`);
           svg.lastChild.append(title);
         });
       });
@@ -190,7 +256,7 @@
       "actor-share-data",
       "Udio objava i reakcija.",
       DATA.actorShares.flatMap(row => DATA.actors.map((actor, index) =>
-        `${row.period} ${actor.label}. Objave ${pct(row.posts[index])}. Reakcije ${pct(row.interactions[index])}.`
+        `${row.period} ${actorName(actor.key)}. Objave ${pct(row.posts[index])}. Reakcije ${pct(row.interactions[index])}.`
       ))
     );
   }
@@ -212,11 +278,15 @@
       const rowIndex = Math.floor(actorIndex / 2);
       const x0 = left + col * (panelWidth + 25);
       const y0 = top + rowIndex * (panelHeight + 35);
-      text(svg, x0, y0, actor.label, { class: "svg-panel-title" });
+      text(svg, x0, y0, actorName(actor.key), { class: "svg-panel-title" });
       const rows = DATA.themeByActor.filter(row => row.actor_group === actor.key);
       rows.forEach((row, index) => {
         const y = y0 + 38 + index * 43;
-        text(svg, x0 + barLeft - 12, y + 13, short(row.label, 29), { class: "svg-category", "text-anchor": "end" });
+        const labelLines = row.label.length > 26 ? 2 : 1;
+        wrappedText(svg, x0 + barLeft - 12, y + (labelLines === 2 ? 7 : 13), row.label, 26, {
+          class: "svg-category",
+          "text-anchor": "end"
+        });
         rect(svg, x0 + barLeft, y, barWidth, 18, { fill: "#edf0ee", rx: 3 });
         rect(svg, x0 + barLeft, y, row.share / globalMax * barWidth, 18, { fill: row.color, rx: 3 });
         text(svg, x0 + barLeft + row.share / globalMax * barWidth + 7, y + 14, pct(row.share), { class: "svg-value" });
@@ -228,7 +298,7 @@
     setAccessible(
       "theme-by-actor-data",
       "Teme po skupinama izvora.",
-      DATA.themeByActor.map(row => `${actorMap[row.actor_group].label}. ${row.label}. ${pct(row.share)}.`)
+      DATA.themeByActor.map(row => `${actorName(row.actor_group)}. ${row.label}. ${pct(row.share)}.`)
     );
   }
 
@@ -294,7 +364,7 @@
     });
     DATA.sharpByActor.forEach((row, index) => {
       const y = top + index * 70;
-      text(svg, left - 18, y + 22, actorMap[row.actor_group].label, { class: "svg-category", "text-anchor": "end" });
+      text(svg, left - 18, y + 22, actorName(row.actor_group), { class: "svg-category", "text-anchor": "end" });
       rect(svg, left, y, row.post_share / maxValue * plotWidth, 18, { fill: "#0f4c5c", rx: 3 });
       rect(svg, left, y + 25, row.interaction_share / maxValue * plotWidth, 18, { fill: "#c47b21", rx: 3 });
       text(svg, left + row.post_share / maxValue * plotWidth + 7, y + 14, pct(row.post_share), { class: "svg-value" });
@@ -303,7 +373,7 @@
     setAccessible(
       "sharp-share-data",
       "Oštriji govor po skupinama.",
-      DATA.sharpByActor.map(row => `${actorMap[row.actor_group].label}. Objave ${pct(row.post_share)}. Reakcije ${pct(row.interaction_share)}.`)
+      DATA.sharpByActor.map(row => `${actorName(row.actor_group)}. Objave ${pct(row.post_share)}. Reakcije ${pct(row.interaction_share)}.`)
     );
   }
 
@@ -368,8 +438,8 @@
       "tone-rik-data",
       "Ton riječi i jezik sukoba po temama i skupinama.",
       DATA.toneRikByThemeActor.map(row => row.reportable
-        ? `${row.theme_label}. ${row.actor_label}. Ton riječi ${signed(row.tone, 2)}. Jezik sukoba ${signed(row.rik, 1)}. Na temelju ${HR0.format(row.n)} objava.`
-        : `${row.theme_label}. ${row.actor_label}. Premalo objava za usporedbu.`)
+        ? `${row.theme_label}. ${actorName(row.actor_group)}. Ton riječi ${signed(row.tone, 2)}. Jezik sukoba ${signed(row.rik, 1)}. Na temelju ${postCount(row.n)}.`
+        : `${row.theme_label}. ${actorName(row.actor_group)}. Premalo objava za usporedbu.`)
     );
   }
 
@@ -533,7 +603,7 @@
     setAccessible(
       "event-composition-data",
       "Udio skupina izvora u cijelom razdoblju i tijekom velikih događaja.",
-      DATA.eventComposition.flatMap(event => DATA.actors.map(actor => `${event.label}. ${actor.label}. ${pct(Number(event.shares[actor.key] || 0))}.`))
+      DATA.eventComposition.flatMap(event => DATA.actors.map(actor => `${event.label}. ${actorName(actor.key)}. ${pct(Number(event.shares[actor.key] || 0))}.`))
     );
   }
 
@@ -563,7 +633,7 @@
     DATA.rhythmEffects.forEach((row, index) => {
       const actor = actorMap[row.actor_group];
       const y = top + index * 66;
-      text(svg, left - 20, y + 5, actor.label, { class: "svg-category", "text-anchor": "end" });
+      text(svg, left - 20, y + 5, actorName(actor.key), { class: "svg-category", "text-anchor": "end" });
       line(svg, scale(row.lower), y, scale(row.upper), y, { stroke: actor.color, "stroke-width": 5, "stroke-linecap": "round" });
       circle(svg, scale(row.estimate), y, 7, { fill: actor.color, stroke: "#fff", "stroke-width": 2 });
       text(svg, Math.min(width - 6, scale(row.upper) + 12), y + 5, `${signed(row.estimate, 1)} %`, { class: "svg-value" });
@@ -571,7 +641,7 @@
     setAccessible(
       "rhythm-data",
       "Promjena broja objava oko velikih blagdana.",
-      DATA.rhythmEffects.map(row => `${actorMap[row.actor_group].label}. ${signed(row.estimate, 1)} %. Mogući raspon od ${signed(row.lower, 1)} % do ${signed(row.upper, 1)} %.`)
+      DATA.rhythmEffects.map(row => `${actorName(row.actor_group)}. ${signed(row.estimate, 1)} %. Mogući raspon od ${signed(row.lower, 1)} % do ${signed(row.upper, 1)} %.`)
     );
   }
 
@@ -579,7 +649,7 @@
     const target = document.querySelector("#trend-chart");
     const width = 980;
     const height = 420;
-    const svg = makeSvg(target, width, height, "Udio web-objava crkvenih medija i ustanova po polugodištu");
+    const svg = makeSvg(target, width, height, "Udio web-objava crkvenih izvora po polugodištu");
     const left = 78;
     const right = 35;
     const top = 55;
@@ -611,7 +681,7 @@
         "text-anchor": index === 0 ? "start" : index === points.length - 1 ? "end" : "middle"
       });
     });
-    setAccessible("trend-data", "Udio web-objava crkvenih medija i ustanova.", periods.map((period, index) => `${period}. ${pct(values[index])}.`));
+    setAccessible("trend-data", "Udio web-objava crkvenih izvora.", periods.map((period, index) => `${period}. ${pct(values[index])}.`));
   }
 
   function renderNarrative() {
@@ -623,10 +693,10 @@
     document.querySelector("#metric-largest-day").textContent = HR0.format(headline.largest_peak.value);
 
     const verdict = DATA.findings.verdict;
-    document.querySelector("#hero-finding-title").textContent = verdict.title;
-    document.querySelector("#hero-finding-summary").textContent = verdict.summary;
-    document.querySelector("#verdict-title").textContent = verdict.title;
-    document.querySelector("#verdict-summary").textContent = [verdict.summary, verdict.estimateNote].filter(Boolean).join(" ");
+    document.querySelector("#hero-finding-title").textContent = normalizeActorNames(verdict.title);
+    document.querySelector("#hero-finding-summary").textContent = normalizeActorNames(verdict.summary);
+    document.querySelector("#verdict-title").textContent = normalizeActorNames(verdict.title);
+    document.querySelector("#verdict-summary").textContent = normalizeActorNames([verdict.summary, verdict.estimateNote].filter(Boolean).join(" "));
 
     const stories = DATA.findings.narrative;
     Object.entries({
@@ -639,7 +709,7 @@
       composition: "#story-composition",
       rhythm: "#story-rhythm",
       trend: "#story-trend"
-    }).forEach(([key, selector]) => { document.querySelector(selector).textContent = stories[key]; });
+    }).forEach(([key, selector]) => { document.querySelector(selector).textContent = normalizeActorNames(stories[key]); });
     if (DATA.meta.themeFallbackWeb) {
       document.querySelector("#story-themes").textContent += " Ovdje su prikazane web-objave jer na drugim platformama nije bilo dovoljno teksta za jednaku usporedbu.";
     }
@@ -648,10 +718,10 @@
     synthesis.replaceChildren();
     DATA.findings.synthesis.forEach(sentence => {
       const item = document.createElement("li");
-      item.textContent = sentence;
+      item.textContent = normalizeActorNames(sentence);
       synthesis.append(item);
     });
-    document.querySelector("#capability-sentence").textContent = DATA.findings.capability;
+    document.querySelector("#capability-sentence").textContent = normalizeActorNames(DATA.findings.capability);
 
     const method = document.querySelector("#method-description");
     method.textContent = `Analiza razvrstava ${HR0.format(DATA.meta.corpusRows)} objava u četiri skupine izvora i šest širokih tema. Računalna obrada prepoznaje riječi i veće obrasce. Ne može utvrditi namjeru autora ni istinitost pojedine tvrdnje.`;
@@ -661,6 +731,134 @@
       const item = document.createElement("li");
       item.textContent = value;
       caveats.append(item);
+    });
+  }
+
+  function setupNavigation() {
+    const sectionIds = ["tko-govori", "o-cemu", "kako", "kada", "promjena", "sinteza"];
+    const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+    const links = [...document.querySelectorAll(".site-nav a[href^='#'], .mobile-nav a[href^='#']")];
+    const mobileMenu = document.querySelector(".mobile-nav");
+    let framePending = false;
+
+    const setActive = id => {
+      links.forEach(link => {
+        const isActive = id && link.getAttribute("href") === `#${id}`;
+        if (isActive) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+    };
+
+    const updateActive = () => {
+      framePending = false;
+      const header = document.querySelector(".site-header");
+      const readingLine = window.scrollY + (header?.offsetHeight || 0) + 120;
+      let active = null;
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+        if (sectionTop <= readingLine) active = section.id;
+      });
+      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4) {
+        active = sections[sections.length - 1]?.id || active;
+      }
+      setActive(active);
+    };
+
+    const requestUpdate = () => {
+      if (framePending) return;
+      framePending = true;
+      window.requestAnimationFrame(updateActive);
+    };
+
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        setActive(link.getAttribute("href").slice(1));
+        if (mobileMenu?.open) mobileMenu.open = false;
+      });
+    });
+    mobileMenu?.addEventListener("keydown", event => {
+      if (event.key !== "Escape" || !mobileMenu.open) return;
+      mobileMenu.open = false;
+      mobileMenu.querySelector("summary")?.focus();
+    });
+    document.addEventListener("click", event => {
+      if (mobileMenu?.open && !mobileMenu.contains(event.target)) mobileMenu.open = false;
+    });
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate, { passive: true });
+    window.addEventListener("hashchange", requestUpdate);
+    updateActive();
+  }
+
+  function setupChartInteractions() {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    document.querySelectorAll(".chart-frame--scroll").forEach((region, index) => {
+      if (!region.id) region.id = `chart-scroll-${index + 1}`;
+      const title = region.closest("figure")?.querySelector("h3")?.textContent || `Graf ${index + 1}`;
+      const hintId = `${region.id}-hint`;
+      const tools = document.createElement("div");
+      tools.className = "chart-scroll-tools";
+      tools.hidden = true;
+
+      const hint = document.createElement("p");
+      hint.id = hintId;
+      hint.className = "chart-scroll-tools__hint";
+      hint.textContent = "Povucite graf ili ga pomičite strelicama.";
+
+      const buttons = document.createElement("div");
+      buttons.className = "chart-scroll-tools__buttons";
+      const previous = document.createElement("button");
+      previous.type = "button";
+      previous.textContent = "←";
+      previous.setAttribute("aria-label", `Prikaži prethodni dio grafa: ${title}`);
+      previous.setAttribute("aria-controls", region.id);
+      const next = document.createElement("button");
+      next.type = "button";
+      next.textContent = "→";
+      next.setAttribute("aria-label", `Prikaži sljedeći dio grafa: ${title}`);
+      next.setAttribute("aria-controls", region.id);
+      buttons.append(previous, next);
+      tools.append(hint, buttons);
+      region.before(tools);
+
+      region.setAttribute("role", "region");
+      region.setAttribute("aria-label", `${title}. Graf se može pomicati vodoravno.`);
+      region.setAttribute("aria-describedby", hintId);
+
+      const amount = () => Math.max(220, Math.round(region.clientWidth * 0.78));
+      const move = destination => {
+        const options = { behavior: reducedMotion.matches ? "auto" : "smooth" };
+        if (destination === "start") region.scrollTo({ left: 0, ...options });
+        else if (destination === "end") region.scrollTo({ left: region.scrollWidth, ...options });
+        else region.scrollBy({ left: destination * amount(), ...options });
+      };
+      const update = () => {
+        const scrollable = region.scrollWidth > region.clientWidth + 2;
+        tools.hidden = !scrollable;
+        region.tabIndex = scrollable ? 0 : -1;
+        previous.disabled = !scrollable || region.scrollLeft <= 2;
+        next.disabled = !scrollable || region.scrollLeft >= region.scrollWidth - region.clientWidth - 2;
+      };
+
+      previous.addEventListener("click", () => move(-1));
+      next.addEventListener("click", () => move(1));
+      region.addEventListener("keydown", event => {
+        const destinations = {
+          ArrowLeft: -1,
+          ArrowRight: 1,
+          PageUp: -1,
+          PageDown: 1,
+          Home: "start",
+          End: "end"
+        };
+        if (!(event.key in destinations)) return;
+        event.preventDefault();
+        move(destinations[event.key]);
+      });
+      region.addEventListener("scroll", () => window.requestAnimationFrame(update), { passive: true });
+      if ("ResizeObserver" in window) new ResizeObserver(update).observe(region);
+      else window.addEventListener("resize", update, { passive: true });
+      update();
     });
   }
 
@@ -678,10 +876,12 @@
     eventCompositionChart();
     rhythmChart();
     trendChart();
-    document.querySelectorAll(".chart-frame--scroll, .table-scroll").forEach(region => {
+    document.querySelectorAll(".table-scroll").forEach(region => {
       region.tabIndex = 0;
-      region.setAttribute("aria-label", "Pomaknite prikaz vodoravno za cijeli sadržaj.");
+      region.setAttribute("aria-label", "Pomaknite tablicu vodoravno za cijeli sadržaj.");
     });
+    setupNavigation();
+    setupChartInteractions();
     document.documentElement.dataset.analysisReady = "true";
   }
 

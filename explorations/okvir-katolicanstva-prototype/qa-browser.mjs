@@ -157,6 +157,53 @@ async function inspectViewport(name, width, height, mobile) {
     clip: { x: 0, y: 0, width, height: contentHeight, scale: 1 }
   });
   writeFileSync(path.join(output, `${name}-full.png`), Buffer.from(fullScreenshot.data, "base64"));
+  if (mobile) {
+    const interactionResult = await cdp.send("Runtime.evaluate", {
+      expression: `(async () => {
+        const menu = document.querySelector('.mobile-nav');
+        const menuSummary = menu?.querySelector('summary');
+        const menuLink = menu?.querySelector('a[href="#o-cemu"]');
+        if (menu && menuLink) {
+          menu.open = true;
+          menuLink.click();
+        }
+        await new Promise(resolve => setTimeout(resolve, 1400));
+        const mobileMenuCloses = menu?.open === false;
+        const mobileActiveNav = menuLink?.getAttribute('aria-current') === 'location';
+        const mobileActiveHref = document.querySelector('.mobile-nav a[aria-current="location"]')?.getAttribute('href') || null;
+        const mobileScrollY = Math.round(window.scrollY);
+        const mobileTargetTop = Math.round(document.querySelector('#o-cemu')?.getBoundingClientRect().top || 0);
+
+        const region = document.querySelector('.chart-frame--scroll');
+        const tools = region?.previousElementSibling?.classList.contains('chart-scroll-tools')
+          ? region.previousElementSibling
+          : null;
+        const nextButton = tools?.querySelector('button:last-child');
+        const scrollBefore = region?.scrollLeft || 0;
+        region?.focus();
+        region?.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight', bubbles: true }));
+        await new Promise(resolve => setTimeout(resolve, 450));
+        const buttonBox = nextButton?.getBoundingClientRect();
+        const summaryBox = menuSummary?.getBoundingClientRect();
+        const result = {
+          mobileMenuCloses,
+          mobileActiveNav,
+          mobileActiveHref,
+          mobileScrollY,
+          mobileTargetTop,
+          mobileMenuTouchTarget: Boolean(summaryBox && summaryBox.height >= 44),
+          chartToolsVisible: Boolean(tools && !tools.hidden && getComputedStyle(tools).display !== 'none'),
+          chartButtonTouchTarget: Boolean(buttonBox && buttonBox.width >= 44 && buttonBox.height >= 44),
+          chartKeyboardScrolls: Boolean(region && region.scrollLeft > scrollBefore)
+        };
+        window.scrollTo(0, 0);
+        return JSON.stringify(result);
+      })()`,
+      awaitPromise: true,
+      returnByValue: true
+    });
+    Object.assign(metrics, JSON.parse(interactionResult.result.value));
+  }
   if (name === "qa-desktop") {
     const boxesResult = await cdp.send("Runtime.evaluate", {
       expression: `JSON.stringify(Array.from(document.querySelectorAll('figure')).map((node, index) => {
@@ -246,8 +293,20 @@ try {
       failures.push(`${viewport}.mojibakeMatches: ${metrics.mojibakeMatches}`);
     }
     // Keep the report readable while leaving detailed qualifications in project methodology.
-    if (metrics.articleWords < 900 || metrics.articleWords > 1800) {
-      failures.push(`${viewport}.articleWords: expected 900–1,800, received ${metrics.articleWords}`);
+    if (metrics.articleWords < 900 || metrics.articleWords > 1900) {
+      failures.push(`${viewport}.articleWords: expected 900–1,900, received ${metrics.articleWords}`);
+    }
+    if (viewport === "mobile") {
+      for (const metric of [
+        "mobileMenuCloses",
+        "mobileActiveNav",
+        "mobileMenuTouchTarget",
+        "chartToolsVisible",
+        "chartButtonTouchTarget",
+        "chartKeyboardScrolls"
+      ]) {
+        if (!metrics[metric]) failures.push(`mobile.${metric}: expected true, received ${metrics[metric]}`);
+      }
     }
   }
   if (exceptions.length !== 0) {

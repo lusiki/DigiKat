@@ -197,14 +197,28 @@ button:focus-visible,
 }
 
 .site-nav a {
+  position: relative;
+  padding: 0.35rem 0;
   color: #44474d;
   font-size: 0.88rem;
   text-decoration: none;
   white-space: nowrap;
 }
 
-.site-nav a:hover {
+.site-nav a:hover,
+.site-nav a[aria-current="location"] {
   color: var(--accent);
+}
+
+.site-nav a[aria-current="location"]::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  content: "";
 }
 
 .site-header__mode {
@@ -224,7 +238,10 @@ button:focus-visible,
 }
 
 .mobile-nav summary {
-  padding: 0.28rem 0.55rem;
+  min-height: 44px;
+  padding: 0.55rem 0.7rem;
+  display: inline-flex;
+  align-items: center;
   background: var(--accent-soft);
   border-radius: 4px;
   color: var(--accent-deep);
@@ -265,16 +282,25 @@ button:focus-visible,
 }
 
 .mobile-nav nav a {
+  min-height: 44px;
   padding: 0.65rem 0.72rem;
+  display: flex;
+  align-items: center;
   color: var(--body-2);
   border-radius: 4px;
   font-size: 0.88rem;
   text-decoration: none;
 }
 
-.mobile-nav nav a:hover {
+.mobile-nav nav a:hover,
+.mobile-nav nav a[aria-current="location"] {
   background: var(--accent-soft);
   color: var(--accent-deep);
+}
+
+.mobile-nav nav a[aria-current="location"] {
+  box-shadow: inset 3px 0 0 var(--accent);
+  font-weight: 700;
 }
 
 .hero {
@@ -387,6 +413,22 @@ button:focus-visible,
   font-family: var(--serif);
   font-size: clamp(1.25rem, 2.2vw, 1.65rem);
   line-height: 1.4;
+}
+
+.hero__byline {
+  max-width: 940px;
+  margin: 1.2rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
+  color: var(--body-2);
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.hero__byline strong {
+  color: var(--heading);
+  font-weight: 600;
 }
 
 .hero-finding {
@@ -716,7 +758,7 @@ button:focus-visible,
   right: 1.2rem;
   bottom: 1.15rem;
   left: 1.2rem;
-  color: var(--actor-color);
+  color: var(--actor-text-color, var(--actor-color));
   font-size: 0.82rem;
   line-height: 1.35;
 }
@@ -765,7 +807,7 @@ button:focus-visible,
   right: 1.05rem;
   bottom: 1rem;
   left: 1.05rem;
-  color: var(--theme-color);
+  color: var(--theme-text-color, var(--theme-color));
   font-size: 0.8rem;
   line-height: 1.35;
 }
@@ -858,6 +900,60 @@ button:focus-visible,
 .chart-frame--scroll {
   overflow-x: auto;
   overscroll-behavior-inline: contain;
+  scrollbar-color: var(--accent-mid) var(--hairline-2);
+  scrollbar-width: thin;
+  touch-action: pan-x pan-y;
+}
+
+.chart-frame--scroll:focus-visible {
+  outline: 3px solid rgba(15, 76, 92, 0.34);
+  outline-offset: -3px;
+}
+
+.chart-scroll-tools {
+  display: none;
+}
+
+.chart-scroll-tools[hidden] {
+  display: none !important;
+}
+
+.chart-scroll-tools__hint {
+  margin: 0;
+  color: var(--body-2);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.chart-scroll-tools__buttons {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.chart-scroll-tools button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid rgba(15, 76, 92, 0.32);
+  border-radius: 5px;
+  color: var(--accent-deep);
+  cursor: pointer;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.chart-scroll-tools button:hover:not(:disabled) {
+  background: var(--accent-soft);
+}
+
+.chart-scroll-tools button:disabled {
+  color: var(--faint);
+  cursor: default;
+  opacity: 0.5;
 }
 
 .chart-watermark {
@@ -1357,6 +1453,91 @@ tbody tr:hover {
   font-size: 0.68rem !important;
 }
 
+.publication-info {
+  margin-top: 6rem;
+  padding: clamp(1.6rem, 4vw, 2.4rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+}
+
+.publication-info__eyebrow {
+  margin: 0;
+  color: var(--accent-deep);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.publication-info h2 {
+  margin: 0.45rem 0 0;
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+}
+
+.publication-info__details {
+  margin: 1.35rem 0 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.publication-info__details > div {
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  gap: 0.8rem;
+}
+
+.publication-info dt {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.publication-info dd {
+  margin: 0;
+  color: var(--body-2);
+  font-size: 0.88rem;
+}
+
+.publication-info code {
+  color: var(--accent-deep);
+  font-size: 0.8em;
+}
+
+.publication-info a {
+  color: var(--accent-deep);
+  overflow-wrap: anywhere;
+}
+
+.suggested-citation {
+  align-self: start;
+  padding: 1.15rem 1.2rem;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+}
+
+.suggested-citation h3 {
+  margin: 0;
+  color: var(--heading);
+  font-family: var(--serif);
+  font-size: 1.12rem;
+}
+
+.suggested-citation p {
+  margin: 0.65rem 0 0;
+  color: #34545d;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
 /* Shared SVG typography and marks */
 .svg-axis,
 .svg-note,
@@ -1370,42 +1551,42 @@ tbody tr:hover {
 
 .svg-axis {
   fill: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .svg-note {
   fill: var(--muted);
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .svg-label {
   fill: var(--body);
   font-family: var(--sans);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .svg-label-strong {
   fill: var(--heading);
   font-family: var(--sans);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
 }
 
 .svg-value {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
 }
 
 .svg-end-value {
   fill: var(--accent-deep);
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
 }
 
 .svg-panel-label {
   fill: var(--accent);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
 }
@@ -1413,14 +1594,14 @@ tbody tr:hover {
 .svg-panel-title {
   fill: var(--heading);
   font-family: var(--serif);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
 }
 
 .svg-category {
   fill: var(--body);
   font-family: var(--sans);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .svg-column-title,
@@ -1428,7 +1609,7 @@ tbody tr:hover {
 .svg-side-label {
   fill: var(--body-2);
   font-family: var(--sans);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
 }
 
@@ -1438,20 +1619,20 @@ tbody tr:hover {
 
 .svg-legend {
   fill: var(--body-2);
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .svg-year {
   fill: var(--accent-deep);
   font-family: var(--serif);
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
 }
 
 .svg-event-label {
   fill: var(--heading);
   font-family: var(--sans);
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
   paint-order: stroke;
   stroke: rgba(255, 255, 255, 0.94);
@@ -1483,13 +1664,13 @@ tbody tr:hover {
 
 .svg-heat-n {
   fill: var(--body-2);
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .svg-stack-value {
   fill: #fff;
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 700;
   paint-order: stroke;
   stroke: rgba(15, 20, 25, 0.22);
@@ -1629,6 +1810,11 @@ tbody tr:hover {
     font-size: 1.18rem;
   }
 
+  .hero__byline {
+    display: grid;
+    gap: 0.35rem;
+  }
+
   .hero-finding {
     display: block;
   }
@@ -1744,6 +1930,17 @@ tbody tr:hover {
     padding-left: 0.65rem;
   }
 
+  .chart-scroll-tools {
+    min-height: 58px;
+    padding: 0.45rem 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    background: #fafaf8;
+    border-bottom: 1px solid var(--hairline);
+  }
+
   .chart--actor,
   .chart--heatmap,
   .chart--peaks,
@@ -1768,6 +1965,10 @@ tbody tr:hover {
   }
 
   .method-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .publication-info {
     grid-template-columns: 1fr;
   }
 
