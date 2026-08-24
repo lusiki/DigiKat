@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-07-28 10:26:57 UTC",
+  "generator": "R/make_sample.R",
+  "synthetic": true,
+  "contains_source_rows": false,
+  "contains_source_text": false,
+  "rows": 2700,
+  "columns": 47,
+  "rows_per_year_platform_stratum": 50,
+  "year_min": 2021,
+  "year_max": 2026,
+  "source_types": [
+    "web",
+    "youtube",
+    "facebook",
+    "twitter",
+    "reddit",
+    "forum",
+    "instagram",
+    "comment",
+    "tiktok"
+  ],
+  "sha256": "4c27aa2e422a4a371b80ceea64a745699830c2227a1f4af00214c77e0f98914c"
+}

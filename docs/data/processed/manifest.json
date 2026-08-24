@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "generated_utc": "2026-08-10 15:53:59 UTC",
+  "generator": "R/03_aggregate.R",
+  "input": {
+    "path": "data/digikat_corpus.rds",
+    "bytes": 524573828,
+    "modified_utc": "2026-08-10 13:10:19 UTC",
+    "sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a"
+  },
+  "corpus": {
+    "master_rows": 413985,
+    "included_rows": 413985,
+    "date_min": "2021-01-01",
+    "date_max": "2026-06-11",
+    "year_min": 2021,
+    "year_max": 2026,
+    "upstream_year_mismatches": 0,
+    "source_counts": {
+      "comment": 1186,
+      "facebook": 63513,
+      "forum": 3223,
+      "instagram": 2378,
+      "reddit": 5621,
+      "tiktok": 197,
+      "twitter": 3860,
+      "web": 286662,
+      "youtube": 47345
+    }
+  },
+  "outputs": {
+    "platform_summary": {
+      "file": "platform_summary.rds",
+      "rows": 49,
+      "columns": ["year", "SOURCE_TYPE", "total_posts", "total_interactions", "total_reach"],
+      "sha256": "822ed850a97d9ec2faf0265f7adbf63b48f032dbdb7315762039b1cbd66d084b"
+    },
+    "proportions_summary": {
+      "file": "proportions_summary.rds",
+      "rows": 49,
+      "columns": ["year", "SOURCE_TYPE", "total_posts", "total_interactions", "total_reach", "post_share", "interaction_share", "reach_share"],
+      "sha256": "49391b3544cec05fcc8d30c1c770444cd9eb7c16a98b1dc4de2978745f7b0b2a"
+    },
+    "platform_monthly": {
+      "file": "platform_monthly.rds",
+      "rows": 435,
+      "columns": ["month", "SOURCE_TYPE", "total_posts", "total_interactions", "total_reach"],
+      "sha256": "a49dae3227dbaf2c79f68e8fa375133f8242dc9b8032ab1a803325e2b7e593fb"
+    },
+    "source_summary": {
+      "file": "source_summary.rds",
+      "rows": 17976,
+      "columns": ["year", "FROM", "productivity", "total_interactions", "avg_engagement_rate", "total_reach"],
+      "sha256": "6809765b6c0d72351b6245ac394dd149199111f0d014c5c53c85d5ca789c16d3"
+    },
+    "top_sources_by_year": {
+      "file": "top_sources_by_year.rds",
+      "rows": 90,
+      "columns": ["year", "FROM", "productivity", "total_interactions", "avg_engagement_rate", "total_reach"],
+      "sha256": "d43444b4b9f1cafe7577584e204b745f9bc64b40eb80d09d058080825fa75290"
+    },
+    "top_web_sources": {
+      "file": "top_web_sources.rds",
+      "rows": 20,
+      "columns": ["FROM", "total_posts", "total_interactions", "total_reach"],
+      "sha256": "4443b101e330c2d2939ff81334b84b5c6628d5435a937f86807910690b86839c"
+    },
+    "top_youtube_sources": {
+      "file": "top_youtube_sources.rds",
+      "rows": 20,
+      "columns": ["FROM", "total_posts", "total_interactions", "total_reach"],
+      "sha256": "36dae0f6c4e2c2ddb26cfe02200fb51db275aeb7c2731dc28154dac9c4ef36bf"
+    },
+    "top_facebook_sources": {
+      "file": "top_facebook_sources.rds",
+      "rows": 20,
+      "columns": ["FROM", "total_posts", "total_interactions", "total_reach"],
+      "sha256": "8a7073f7640bd748bb6e72d219feb75626d4f08a20275b77984d15e6f8846972"
+    },
+    "web_actors": {
+      "file": "web_actors.rds",
+      "rows": 16,
+      "columns": ["FROM", "total_posts", "total_interactions", "total_reach"],
+      "sha256": "4692b6bcfa5eed43b322c79ae56c5627796c73448122505019340318a824b8ae"
+    },
+    "youtube_actors": {
+      "file": "youtube_actors.rds",
+      "rows": 20,
+      "columns": ["FROM", "total_posts", "total_interactions", "total_reach"],
+      "sha256": "bab440df05d7a126a9a1a5e0bd5a056e81b9e80d36730833d88358dece9bcf9e"
+    },
+    "facebook_actors": {
+      "file": "facebook_actors.rds",
+      "rows": 19,
+      "columns": ["FROM", "total_posts", "total_interactions", "total_reach"],
+      "sha256": "1449fd4a7978e442f95f97d2e194a213e90d26a03951653ec32e72813817c7f4"
+    },
+    "instagram_actors": {
+      "file": "instagram_actors.rds",
+      "rows": 20,
+      "columns": ["FROM", "total_posts", "total_interactions", "total_reach"],
+      "sha256": "7c1c19d2b8938ae325eda3b9007d5606ab071e87f3334101299087323e47a028"
+    },
+    "tiktok_actors": {
+      "file": "tiktok_actors.rds",
+      "rows": 16,
+      "columns": ["FROM", "total_posts", "total_interactions", "total_reach"],
+      "sha256": "6fbe682b26531101e67912ce4969ee5d83df865a589da3f8d2530454815c752a"
+    },
+    "twitter_actors": {
+      "file": "twitter_actors.rds",
+      "rows": 23,
+      "columns": ["FROM", "total_posts", "total_interactions", "total_reach"],
+      "sha256": "c6c62fc677206ee6771c03ac42cd07b5eee2283b7d92a2e23ac2601ede05830e"
+    }
+  }
+}

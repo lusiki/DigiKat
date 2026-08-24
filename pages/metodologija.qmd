@@ -89,7 +89,7 @@ Namijenjena je čitatelju koji želi provjeriti postupak, ponoviti ga ili citira
 Svaka brojka na ovoj stranici izračunata je iz praćenih manifesta koji nastaju zajedno s podacima.
 Nijedna nije prepisana rukom.
 
-## Što ulazi u korpus
+## Što ulazi u korpus {#method-corpus-inclusion}
 
 Službeni korpus sadrži `r digikat_hr_count(mf$corpus$rows, "objava")` i
 `r digikat_hr_count(n_stupaca, "stupac")`, prikupljenih u razdoblju `r raspon` na
@@ -115,7 +115,7 @@ daje čišći, ali manji korpus.
 **Isto pravilo vrijedi za cijelo razdoblje.** To je bitno jer se metoda prikupljanja mijenjala, a
 pravilo uključivanja nije smjelo pratiti tu promjenu.
 
-### Koliko je korpus čist
+### Koliko je korpus čist {#method-corpus-quality}
 
 Preciznost je mjerena ručnim čitanjem `r n_citanih` objava po razdoblju. Na tako mjerenoj osnovici
 zajednička krivulja procjenjuje da je oko `r p_ukupno` % objava u korpusu doista katolički sadržaj, uz
@@ -141,7 +141,7 @@ data.frame(
         align = c("l", "l"))
 ```
 
-## Dva skupa podataka koja nisu zamjenjiva
+## Dva skupa podataka koja nisu zamjenjiva {#method-data-lineage}
 
 Projekt vodi dva odvojena skupa podataka i njihovo miješanje najčešći je način da se dobiju krive
 brojke.
@@ -162,7 +162,7 @@ kojem je skupu izračunato.
 Praktična posljedica za čitatelja je jednostavna. Ako se brojka s neke stranice ne slaže s brojkom iz
 nekog istraživanja, prva provjera nije aritmetika nego to govore li o istom skupu podataka.
 
-## Promjena prikupljanja 2024. i što ona zabranjuje
+## Promjena prikupljanja 2024. i što ona zabranjuje {#method-collection-break}
 
 Tijekom 2024. promijenio se način na koji su objave prikupljane. Pravilo uključivanja ostalo je isto s
 obje strane te granice, pa su razdoblja usporediva po pravilu, ali nisu usporediva po zahvatu. Udio
@@ -221,9 +221,21 @@ data.frame(
         align = c("l", "r", "r", "r"))
 ```
 
-## Uzorci i rječnici
+## Mjere objava, interakcija i dosega {#method-platform-metrics}
 
-Analize volumena, dosega i angažmana računaju se na cijelom korpusu. Analize teksta ne, jer jezična
+**Objava** je jedinica sadržaja zabilježena u službenom korpusu. **Interakcije** su zabilježene
+platformske radnje poput reakcija, komentara i dijeljenja. Njihov sastav nije jednak na svim
+platformama, pa se usporedbe tumače unutar platforme kad god je to moguće. **Angažman** je naziv za
+izvedenu mjeru koja se iz interakcija računa prema jasno navedenom pravilu. Ne upotrebljava se kao
+slobodan sinonim za interakcije.
+
+**Doseg** je procjena pružatelja usluge. Ne označava potvrđen broj jedinstvenih osoba koje su vidjele
+objavu. Volumen, interakcije i doseg zato opisuju tri različita signala. Nijedan od njih samostalno ne
+mjeri utjecaj, kvalitetu sadržaja ili lojalnost publike.
+
+## Uzorci i rječnici {#method-text-analysis}
+
+Analize volumena, dosega i interakcija računaju se na cijelom korpusu. Analize teksta ne, jer jezična
 obrada cijeloga korpusa nije izvediva u razumnom vremenu, pa se one računaju na stratificiranim
 uzorcima. Svaki uzorak vučen je s fiksnim sjemenom slučajnosti (`r sjeme`), stratificiran po
 `r slojevi_txt`, ograničen na objave dulje od `r digikat_hr_count(min_znakova - 1, "znak")` i bez
@@ -266,14 +278,14 @@ one koja bi se očekivala s obzirom na prosjek toga izvora i te teme. Mjeri odst
 apsolutnu razinu sukoba.
 
 ::: {.callout-important}
-## Što ove mjere ne mjere
+## Što ove mjere ne mjere {#method-interpretation-limits}
 
 Sve navedeno mjeri **riječi u tekstu**. Tonalitet nije osjećaj autora, emocionalna oznaka nije reakcija
-publike, a gustoća konfliktnog rječnika nije dokaz sukoba ni namjere. Doseg je vendorska procjena, ne
+publike, a gustoća konfliktnog rječnika nije dokaz sukoba ni namjere. Doseg je procjena pružatelja usluge, ne
 izmjerena publika. Nalazi su opisni i takvima ih valja čitati.
 :::
 
-## Reproducibilnost
+## Reproducibilnost {#method-reproducibility}
 
 Kod, pravila i agregati javni su na [GitHubu](https://github.com/lusiki/DigiKat) pod licencijom
 CC BY 4.0. Sam korpus i akumulator sadrže puni tekst objava i nisu javni, pa se pristup retcima

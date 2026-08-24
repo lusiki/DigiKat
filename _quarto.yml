@@ -3,6 +3,11 @@ project:
   output-dir: docs
   resources:
     - assets/
+    - CITATION.cff
+    - data/digikat_corpus_manifest.json
+    - data/processed/
+    - data/sample/merged_sample.rds
+    - data/sample/merged_sample_manifest.json
     - .nojekyll
     - listings.json
     - favicon.ico
@@ -26,7 +31,7 @@ project:
 lang: hr
 website:
   title: "DigiKat"
-  description: "Otvoreni istraživački projekt koji mapira katoličke teme u hrvatskom digitalnom medijskom prostoru."
+  description: "DigiKat je otvoreni opservatorij koji pokazuje tko u Hrvatskoj objavljuje o katoličkim temama, o čemu govori i što privlači pozornost."
   site-url: https://lusiki.github.io/DigiKat/
   favicon: assets/favicon.svg
   image: assets/images/digikat-social-card.png
@@ -37,65 +42,46 @@ website:
   twitter-card: true
   navbar:
     left:
-      - text: "Naslovnica"
-        href: index.qmd
-      - text: "O projektu"
-        href: pages/about.qmd
-      - text: "Moj medij"
-        href: pages/moj-medij.qmd
-      - text: "Baza podataka"
-        href: pages/baza.qmd
-      - text: "Metodologija"
-        href: pages/metodologija.qmd
-      - text: "Mapa medijskog prostora"
+      - text: "Istražite"
         menu:
-          - text: "Pregled mapa"
+          - text: "Mapa medijskog prostora"
             href: pages/mapa/index.qmd
-          - text: "Mapa ekosustava"
-            href: pages/mapa/mapa.qmd
-          - text: "Evolucija ekosustava"
-            href: pages/mapa/evolucija.qmd
-          - text: "Tematske struje"
-            href: pages/mapa/mapa_stats.qmd
-          - text: "Atmosfera diskursa"
-            href: pages/mapa/diskurs.qmd
-          - text: "Fokus na događaje i kampanje"
-            href: pages/mapa/događaji.qmd
-      - text: "Tematska istraživanja"
+          - text: "Moj medij"
+            href: pages/moj-medij.qmd
+          - text: "Katalog izvora"
+            href: pages/izvori/index.qmd
+          - text: "Izvršni pregled"
+            href: pages/pregled/izvrsni-pregled.qmd
+      - text: "Podaci i metodologija"
         menu:
-          - text: "Pregled istraživanja"
-            href: pages/studije/index.html
-          - text: "Tržišta pažnje u religijskim digitalnim medijima"
-            href: pages/studije/trzista-paznje.html
-          - text: "Memorijalni okvir hrvatskih katoličkih odredišta"
-            href: pages/studije/hodocasnicki-turizam.html
-          - text: "Medijska zastupljenost redovničkih zajednica"
-            href: pages/studije/redovnicke-zajednice.html
-          - text: "Katolički influenceri i institucionalni deficit pažnje"
-            href: pages/studije/katolicki-influenceri.html
-          - text: "Tko govori iz katoličkoga medijskog prostora"
-            href: pages/studije/crkva-i-dezinformacije.html
-          - text: "Inflacija, informacije i odgođene promjene cijena"
-            href: pages/studije/inflacija-i-religija.html
-          - text: "Socijalni nauk Crkve u raspravi o gospodarstvu"
-            href: pages/studije/socijalni-nauk-i-gospodarstvo.html
-          - text: "Katoličko obrazovanje i Stepinac kao mjesta sjećanja"
-            href: pages/studije/katolicko-obrazovanje-i-stepinac.html
-      - text: "Projektni raspored"
-        href: pages/schedule.qmd
-      - text: "Resursi"
-        menu:
-          - text: "Resursi"
+          - text: "Službeni korpus"
+            href: pages/baza.qmd
+          - text: "Metodologija"
+            href: pages/metodologija.qmd
+          - text: "Reproducibilnost"
+            href: pages/metodologija.qmd#method-reproducibility
+          - text: "Citiranje i pristup"
+            href: pages/baza.qmd#pristup-licencija-i-citiranje
+          - text: "Javni resursi"
             href: pages/resources.qmd
+      - text: "Istraživanja"
+        menu:
+          - text: "Tematska istraživanja"
+            href: pages/studije/index.html
+          - text: "Godišnji pregled 2025."
+            href: assets/izvjestaji/godisnji-pregled-2025.html
+          - text: "Kako se govori o Crkvi?"
+            href: assets/izvjestaji/kako-se-govori-o-crkvi/index.html
+      - text: "O projektu"
+        menu:
+          - text: "O projektu"
+            href: pages/about.qmd
           - text: "Obavijesti"
             href: pages/news.qmd
+          - text: "Projektni raspored"
+            href: pages/schedule.qmd
           - text: "Kontakt"
             href: pages/contact.qmd
-          - text: "O stranici"
-            href: pages/site-info.qmd
-    right:
-      - icon: github
-        href: https://github.com/lusiki/DigiKat
   page-footer:
     background: "#0f1419"
     foreground: "#aeb4b8"
@@ -103,14 +89,12 @@ website:
     left: |
       **DigiKat** · Hrvatsko katoličko sveučilište
     center:
-      - text: "Moj medij"
-        href: pages/moj-medij.qmd
-      - text: "Baza podataka"
-        href: pages/baza.qmd
-      - text: "Metodologija"
-        href: pages/metodologija.qmd
+      - text: "Naslovnica"
+        href: index.qmd
       - text: "Resursi"
         href: pages/resources.qmd
+      - text: "O stranici"
+        href: pages/site-info.qmd
       - text: "Kontakt"
         href: pages/contact.qmd
       - text: "GitHub"

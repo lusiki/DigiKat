@@ -1,5 +1,11 @@
 ---
-pagetitle: "DigiKat — Crkva u medijima"
+pagetitle: "DigiKat — otvoreni opservatorij katoličkih tema u medijima"
+description: "DigiKat je otvoreni opservatorij koji pokazuje tko u Hrvatskoj objavljuje o katoličkim temama, o čemu govori i što privlači pozornost."
+date-modified: 2026-08-24
+data-cutoff: 2026-06-11
+status: "Ažurira se"
+categories: ["Istraživački projekt", "Otvoreni podaci"]
+schema-type: "ResearchProject"
 page-layout: custom
 toc: false
 ---
@@ -9,170 +15,197 @@ toc: false
 #| include: false
 
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
-library(dplyr)
-library(visNetwork)
-source("R/theme_digikat.R")
-source("R/source_network.R")
-source("R/lib/digikat_paths.R")
-```
+source("R/lib/digikat_paths.R", encoding = "UTF-8")
 
-```{r}
-#| label: brojke
-# Brojke u traci NISU utipkane. Čitaju se iz praćenog manifesta službenog korpusa
-# (data/digikat_corpus_manifest.json), koji nastaje uz sam korpus u R/build_corpus.R. Manifest ne
-# sadrži retke ni osobne podatke, pa se stranica renderira i na stroju bez podataka.
+# Sve promjenjive brojke na naslovnici dolaze iz manifesta službenoga korpusa.
 mf <- digikat_read_corpus_manifest()
 
-# Traka brojki opisuje korpus, a mreža izvora ispod nje crta se iz agregata u data/processed/.
-# Ako agregati nisu izgrađeni iz aktualnog korpusa, stranica bi tvrdila jedno, a prikazivala drugo.
-# Provjera namjerno PREKIDA render umjesto da upozori — pogrešna stranica ne smije nastati slučajno.
-digikat_assert_aggregates_current()
+fmt_int <- function(x) {
+  formatC(as.integer(x), big.mark = ".", decimal.mark = ",", format = "d")
+}
 
-# Tematske kategorije: broj se izvodi iz jedinog kanonskog rječnika, ne prepisuje.
-e_dict <- new.env(parent = baseenv())
-sys.source("R/lib/thematic_dictionaries.R", envir = e_dict)
-n_kategorija <- length(e_dict$digikat_thematic_dictionaries)
+mj_gen <- c(
+  "siječnja", "veljače", "ožujka", "travnja", "svibnja", "lipnja",
+  "srpnja", "kolovoza", "rujna", "listopada", "studenoga", "prosinca"
+)
 
-hr_broj <- function(x) formatC(x, big.mark = ".", decimal.mark = ",", format = "d")
-# Manifest nosi točan broj redaka službenog korpusa, pa ga naslovna stranica
-# prikazuje bez zaokruživanja.
-n_objava   <- hr_broj(mf$corpus$rows)
-n_varijabli <- mf$corpus$columns
-n_godina   <- mf$corpus$year_max - mf$corpus$year_min + 1
-raspon     <- paste0(mf$corpus$year_min, ".–", mf$corpus$year_max, ".")
+hr_date <- function(x) {
+  x <- as.Date(x)
+  paste0(as.integer(format(x, "%d")), ". ", mj_gen[as.integer(format(x, "%m"))],
+         " ", format(x, "%Y"), ".")
+}
+
+n_objava <- fmt_int(mf$corpus$rows)
 n_platformi <- mf$corpus$platforms
-
-# Oznake platformi prate manifest, pa se popis i brojač ne mogu razići.
-oznake <- c(web = "Web portali", youtube = "YouTube", facebook = "Facebook", twitter = "Twitter / X",
-            reddit = "Reddit", forum = "Forumi", instagram = "Instagram", comment = "Komentari",
-            tiktok = "TikTok")
-pl <- names(sort(unlist(mf$corpus$platform_counts), decreasing = TRUE))
-chips <- paste0(
-  '<span style="background: #f2f0ea; border-radius: 4px; padding: 4px 10px;">',
-  ifelse(is.na(oznake[pl]), pl, oznake[pl]), "</span>", collapse = "\n      ")
+n_godina <- mf$corpus$year_max - mf$corpus$year_min + 1
+raspon <- paste0(mf$corpus$year_min, ".–", mf$corpus$year_max, ".")
+presjek <- hr_date(mf$corpus$date_max)
 ```
 
 ```{=html}
-<div style="font-family: 'Source Sans 3', system-ui, sans-serif; color: #1b1d21; line-height: 1.55;">
+<div class="home-page">
 
-<!-- ============ HERO ============ -->
-<section style="border-bottom: 1px solid #e4e2da;">
-  <div style="max-width: 1180px; margin: 0 auto; padding: 72px 40px 64px;">
-    <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #0f4c5c; margin-bottom: 26px;">
-      <span style="width: 7px; height: 7px; background: #0f4c5c; border-radius: 50%;"></span>
-      <a href="https://www.lukasikic.info/" target="_blank" rel="noopener" style="color: #0f4c5c; text-decoration: none;">Luka Šikić</a>
-      · Hrvatsko katoličko sveučilište · 2021.–2027.
-    </div>
-    <h1 style="font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 52px; line-height: 1.08; letter-spacing: -0.015em; margin: 0; max-width: 19ch; color: #14181d; text-wrap: balance;">
-      Crkva u medijima
-    </h1>
-    <p style="font-size: 20px; line-height: 1.5; color: #4f535a; margin: 22px 0 0; max-width: 60ch;">
-      Tko u Hrvatskoj objavljuje o katoličkim temama? Što od toga doista odjekne? Kada pažnja raste? Odgovore računamo iz `r n_objava` medijskih objava s portala, društvenih mreža i foruma, prikupljenih od `r mf$corpus$year_min`. godine. Mape pokazuju kako taj prostor izgleda u cjelini, istraživačima je cijela baza otvorena za vlastite analize, a svako uredništvo može provjeriti kako njegov medij stoji.
-    </p>
-    <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 38px;">
-      <a href="pages/mapa/index.html" style="display: inline-flex; align-items: center; gap: 8px; background: #0f4c5c; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 6px;">Mapa medijskog prostora</a>
-      <a href="pages/baza.html" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #14181d; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 6px; border: 1px solid #cfccc2;">Istraži podatke</a>
-      <a href="pages/moj-medij.html" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #14181d; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 6px; border: 1px solid #cfccc2;">Pronađite svoj medij</a>
-      <a href="assets/izvjestaji/godisnji-pregled-2025.html" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #14181d; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 6px; border: 1px solid #cfccc2;">Godišnji pregled 2025.</a>
-      <a href="assets/izvjestaji/kako-se-govori-o-crkvi/index.html" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #14181d; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 6px; border: 1px solid #cfccc2;">Kako se govori o Crkvi?</a>
-    </div>
-    <div style="margin-top: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #6b6f76;">
-      Godišnji pregled dostupan je za <a href="assets/izvjestaji/godisnji-pregled-2025.pdf" style="color: #0f4c5c;">preuzimanje i ispis (PDF)</a> te u engleskom izdanju kao <a href="assets/izvjestaji/annual-review-2025.html" style="color: #0f4c5c;">HTML</a> i <a href="assets/izvjestaji/annual-review-2025.pdf" style="color: #0f4c5c;">PDF</a>.
+<section class="home-hero">
+  <div class="home-section__inner">
+    <p class="home-eyebrow">DigiKat · Hrvatsko katoličko sveučilište</p>
+    <h1>DigiKat je otvoreni opservatorij koji pokazuje tko u Hrvatskoj objavljuje o katoličkim temama, o čemu govori i što privlači pozornost.</h1>
+    <p class="home-questions">Tko oblikuje hrvatski digitalni razgovor o katoličkim temama? O čemu se govori? Kada neka tema privuče veću pozornost?</p>
+    <p class="home-intro">Odgovore tražimo u službenom korpusu medijskih objava. Rezultate objavljujemo kao otvorene karte medijskog prostora, istraživačke preglede i javne agregate.</p>
+    <div class="home-hero__actions">
+      <a class="dk-btn" href="pages/mapa/index.html">Istražite mapu</a>
+      <nav class="home-quiet-links" aria-label="Dodatni putovi s naslovnice">
+        <a href="pages/baza.html">Službeni korpus</a>
+        <a href="pages/studije/index.html">Pregled istraživanja</a>
+      </nav>
     </div>
   </div>
 </section>
 
-<!-- ============ READER PATHS ============ -->
-<section style="border-bottom: 1px solid #e4e2da; background: #fff;">
-  <div style="max-width: 1180px; margin: 0 auto; padding: 56px 40px 60px;">
-    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #0f4c5c; margin-bottom: 12px;">Odaberite svoje polazište</div>
-    <h2 style="font-family: 'Source Serif 4', serif; font-size: 34px; font-weight: 600; color: #14181d; margin: 0 0 12px;">Što želite saznati?</h2>
-    <p style="font-size: 17px; color: #4f535a; max-width: 66ch; margin: 0 0 28px;">Isti se podaci mogu čitati iz uredničke, istraživačke i javne perspektive. Svaki put vodi izravno na otvorene rezultate projekta.</p>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px;">
-      <article style="border: 1px solid #e4e2da; border-radius: 10px; padding: 24px; background: #f9f8f5;">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0f4c5c; margin-bottom: 10px;">Vodim medij</div>
-        <h3 style="font-size: 22px; margin-bottom: 10px;">Kako moj medij stoji?</h3>
-        <p style="color: #4f535a;">Pronađite svoj izvor, pregledajte volumen, zabilježene interakcije i doseg te preuzmite sažetak za dijeljenje.</p>
-        <a href="pages/moj-medij.html" style="color: #0f4c5c; font-weight: 600;">Otvorite Moj medij</a>
+<section class="home-section home-section--paper" id="sluzbeni-korpus">
+  <div class="home-section__inner">
+    <p class="home-eyebrow">01 — Službeni korpus</p>
+    <div class="home-section__heading">
+      <div>
+        <h2>Jedna službena osnova za rezultate</h2>
+        <p class="home-section__lead">Službeni korpus DigiKat obuhvaća približno 400.000 zapisa. Svaka objava prolazi dokumentirano pravilo uključivanja, a javni manifest čuva opseg, presjek i podrijetlo ove verzije.</p>
+      </div>
+      <a class="home-text-link" href="pages/baza.html">Otvorite korpus i javne datoteke</a>
+    </div>
+
+    <div class="home-stats" aria-label="Opseg službenoga korpusa">
+      <div class="home-stat">
+        <strong class="home-stat__value">`r n_objava`</strong>
+        <span class="home-stat__label">medijskih objava</span>
+      </div>
+      <div class="home-stat">
+        <strong class="home-stat__value">`r raspon`</strong>
+        <span class="home-stat__label">`r n_godina` kalendarskih godina</span>
+      </div>
+      <div class="home-stat">
+        <strong class="home-stat__value">`r n_platformi`</strong>
+        <span class="home-stat__label">vrsta izvora i platformi</span>
+      </div>
+      <div class="home-stat">
+        <strong class="home-stat__value">4</strong>
+        <span class="home-stat__label">analitičke razine</span>
+      </div>
+    </div>
+
+    <div class="freshness-strip" aria-label="Svježina podataka na naslovnici">
+      <span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">`r presjek`</span></span>
+      <span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--updating">Ažurira se</span></span>
+    </div>
+  </div>
+</section>
+
+<section class="home-section" id="mape">
+  <div class="home-section__inner">
+    <p class="home-eyebrow">02 — Mape medijskog prostora</p>
+    <div class="home-section__heading">
+      <div>
+        <h2>Četiri pogleda na isti medijski prostor</h2>
+        <p class="home-section__lead">Mape povezuju izvore, teme, atmosferu teksta i događaje. Svaka razina odgovara na drugo istraživačko pitanje, ali sve polaze od iste službene osnove.</p>
+      </div>
+      <a class="home-text-link" href="pages/mapa/index.html">Pregledajte cijelu mapu</a>
+    </div>
+
+    <div class="home-map-grid">
+      <article class="home-map-card">
+        <span class="home-map-card__number">01</span>
+        <h3><a href="pages/mapa/mapa.html">Mapa ekosustava</a></h3>
+        <p>Pokazuje volumen, zabilježene interakcije, procijenjeni doseg i položaje medijskih aktera.</p>
       </article>
-      <article style="border: 1px solid #e4e2da; border-radius: 10px; padding: 24px; background: #f9f8f5;">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0f4c5c; margin-bottom: 10px;">Istražujem medije</div>
-        <h3 style="font-size: 22px; margin-bottom: 10px;">Kako mogu provjeriti nalaze?</h3>
-        <p style="color: #4f535a;">Otvorite bazu, metodologiju, kod i tematska istraživanja. Svaki javni agregat može se ponovno izračunati.</p>
-        <a href="pages/baza.html" style="color: #0f4c5c; font-weight: 600;">Otvorite bazu podataka</a>
+      <article class="home-map-card">
+        <span class="home-map-card__number">02</span>
+        <h3><a href="pages/mapa/mapa_stats.html">Tematske struje</a></h3>
+        <p>Prati šesnaest tematskih kategorija i način na koji se njihova prisutnost mijenja kroz vrijeme.</p>
       </article>
-      <article style="border: 1px solid #e4e2da; border-radius: 10px; padding: 24px; background: #f9f8f5;">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #0f4c5c; margin-bottom: 10px;">Pratim medijski prostor</div>
-        <h3 style="font-size: 22px; margin-bottom: 10px;">Što je obilježilo godinu?</h3>
-        <p style="color: #4f535a;">Počnite godišnjim pregledom, a zatim otvorite mape ekosustava, tema, diskursa i događaja.</p>
-        <a href="assets/izvjestaji/godisnji-pregled-2025.html" style="color: #0f4c5c; font-weight: 600;">Otvorite godišnji pregled</a>
+      <article class="home-map-card">
+        <span class="home-map-card__number">03</span>
+        <h3><a href="pages/mapa/diskurs.html">Atmosfera diskursa</a></h3>
+        <p>Čita tonalitet, emocionalni rječnik i relativni indeks konflikta u tekstu objava.</p>
+      </article>
+      <article class="home-map-card">
+        <span class="home-map-card__number">04</span>
+        <h3><a href="pages/mapa/događaji.html">Fokus na događaje</a></h3>
+        <p>Povezuje dnevna odstupanja s događajima koji su promijenili teme i jezik razgovora.</p>
       </article>
     </div>
   </div>
 </section>
 
-<!-- ============ STATS BAND ============ -->
-<section style="border-bottom: 1px solid #e4e2da;">
-  <div style="max-width: 1180px; margin: 0 auto; padding: 52px 40px;">
-    <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; align-items: start;">
-      <div style="padding: 4px 28px 4px 0; border-right: 1px solid #e4e2da;">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">`r n_objava`</div>
-        <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">medijskih objava</div>
+<section class="home-section home-section--paper" id="najnoviji-nalazi">
+  <div class="home-section__inner">
+    <p class="home-eyebrow">03 — Istraživanja</p>
+    <div class="home-section__heading">
+      <div>
+        <h2>Najnoviji nalazi</h2>
+        <p class="home-section__lead">Sažeti pregledi i cjeloviti radovi pretvaraju korpus u provjerljive nalaze za javnost i istraživače.</p>
       </div>
-      <div style="padding: 4px 28px; border-right: 1px solid #e4e2da;">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">`r n_varijabli`</div>
-        <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">stupca u korpusu</div>
-      </div>
-      <div style="padding: 4px 28px; border-right: 1px solid #e4e2da;">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">`r n_godina`</div>
-        <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">kalendarskih godina · `r raspon`</div>
-      </div>
-      <div style="padding: 4px 28px; border-right: 1px solid #e4e2da;">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">`r n_platformi`</div>
-        <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">vrsta izvora i platformi</div>
-      </div>
-      <div style="padding: 4px 28px; border-right: 1px solid #e4e2da;">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">`r n_kategorija`</div>
-        <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">tematskih kategorija</div>
-      </div>
-      <div style="padding: 4px 0 4px 28px;">
-        <div style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 36px; line-height: 1; letter-spacing: -0.02em; color: #14181d;">4</div>
-        <div style="font-size: 13px; color: #6b6f76; margin-top: 8px; line-height: 1.4;">analitičke razine</div>
+      <a class="home-text-link" href="pages/studije/index.html">Sva tematska istraživanja</a>
+    </div>
+
+    <div class="publication-list">
+      <article class="publication-entry">
+        <div>
+          <p class="publication-entry__meta">20. kolovoza 2026. · oko 6 min čitanja · <span class="status status--stable">Stabilno izdanje</span></p>
+          <h3 class="publication-entry__title"><a href="assets/izvjestaji/kako-se-govori-o-crkvi/index.html">Kako se govori o Crkvi?</a></h3>
+          <p class="publication-entry__finding">O Crkvi ne govore samo crkveni mediji. Različite skupine izvora biraju različite teme, a događaji mijenjaju ritam cijeloga razgovora.</p>
+        </div>
+        <div class="publication-entry__links"><a href="assets/izvjestaji/kako-se-govori-o-crkvi/index.html">HTML</a></div>
+      </article>
+
+      <article class="publication-entry">
+        <div>
+          <p class="publication-entry__meta">10. kolovoza 2026. · oko 16 min čitanja · <span class="status status--stable">Stabilno izdanje</span></p>
+          <h3 class="publication-entry__title"><a href="assets/izvjestaji/godisnji-pregled-2025.html">Katoličke teme u digitalnom prostoru</a></h3>
+          <p class="publication-entry__finding">Godišnji pregled 2025. povezuje opseg objavljivanja, vodeće izvore, teme i promjene u jeziku tijekom ključnih događaja.</p>
+        </div>
+        <div class="publication-entry__links">
+          <a href="assets/izvjestaji/godisnji-pregled-2025.html">HTML</a>
+          <a href="assets/izvjestaji/godisnji-pregled-2025.pdf">PDF</a>
+        </div>
+      </article>
+
+      <article class="publication-entry">
+        <div>
+          <p class="publication-entry__meta">6. kolovoza 2026. · oko 60 min čitanja · <span class="status status--preliminary">Preliminarno</span></p>
+          <h3 class="publication-entry__title"><a href="assets/papers/crkva-i-dezinformacije.html">Tko govori iz katoličkoga medijskog prostora</a></h3>
+          <p class="publication-entry__finding">Katolički mediji nisu jedna glasovna skupina. Službena glasila i orijentirani portali razlikuju se u učestalosti mjerenih narativnih okvira.</p>
+        </div>
+        <div class="publication-entry__links">
+          <a href="assets/papers/crkva-i-dezinformacije.html">HTML</a>
+          <a href="assets/papers/crkva-i-dezinformacije.pdf">PDF</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="home-section" id="dodatni-alati">
+  <div class="home-section__inner">
+    <p class="home-eyebrow">04 — Dodatni alati</p>
+    <div class="home-section__heading">
+      <div>
+        <h2>Istražite pojedinačne izvore</h2>
+        <p class="home-section__lead">Alati za izvore nadopunjuju korpus, mape i istraživanja. Pomažu pronaći jedan medij ili pregledati njegov položaj u širem prostoru.</p>
       </div>
     </div>
-    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e4e2da; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; color: #4f535a;">
-      `r chips`
+
+    <div class="home-support-grid">
+      <article class="home-support-card">
+        <h3><a href="pages/moj-medij.html">Moj medij</a></h3>
+        <p>Pronađite izvor i pregledajte njegov volumen, zabilježene interakcije i procijenjeni doseg u usporedbi s drugim izvorima na istoj platformi.</p>
+        <a class="home-text-link" href="pages/moj-medij.html">Pronađite svoj medij</a>
+      </article>
+      <article class="home-support-card">
+        <h3><a href="pages/izvori/index.html">Katalog izvora</a></h3>
+        <p>Otvorite profile objavljenih izvora i pogledajte kako se isti brendovi ili osobe pojavljuju na različitim platformama.</p>
+        <a class="home-text-link" href="pages/izvori/index.html">Otvorite katalog</a>
+      </article>
     </div>
   </div>
 </section>
 
 </div>
-```
-
-```{=html}
-<section class="home-network">
-<div class="hn-inner">
-<div class="hn-text">
-  <h2>Mreža izvora</h2>
-  <p>Iza brojki stoje konkretni akteri. <strong>Mreža izvora</strong> prikazuje objavljene profile iz <strong>Kataloga izvora</strong> kao interaktivni graf. Svaki je čvor jedan izvor, obojen prema platformi i skaliran prema volumenu objava iz službenog korpusa.</p>
-  <p>Korpus obuhvaća devet vrsta izvora i platformi, dok katalog donosi profile aktera za šest platformi s usporedivim agregatima: web, YouTube, Facebook, Instagram, TikTok i Twitter.</p>
-  <p>Poveznice su strukturne: pripadnost platformi te zajednički brend ili osoba prisutna na više platformi. Graf je interaktivan — čvorove možete povlačiti i zumirati, a prelaskom preko čvora otkrivaju se tipologija, volumen, angažman i doseg.</p>
-  <div class="hn-links">
-    <a class="hn-primary" href="pages/izvori/mreza.html">Istraži mrežu</a>
-    <a class="hn-ghost" href="pages/izvori/index.html">Katalog izvora</a>
-  </div>
-</div>
-<div class="hn-viz">
-```
-
-```{r}
-#| label: home-network
-sn <- build_source_network("data/processed", "resources/dictionaries/source_labels.csv")
-source_network_widget(sn, height = "460px")
-```
-
-```{=html}
-</div>
-</div>
-</section>
 ```

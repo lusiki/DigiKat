@@ -1,8 +1,12 @@
 ---
-title: "Baza podataka — opis korpusa katoličkoga digitalnog medijskog prostora"
-subtitle: "Sadržaj, prikupljanje, jedinstveno pravilo uključivanja i izvori službenoga korpusa (2021.–2026.)"
-date: last-modified
-categories: ["Korpus", "Metodologija", "Otvoreni podaci"]
+title: "Službeni korpus DigiKat"
+subtitle: "Jedna istraživačka zbirka za analizu katoličkih tema u hrvatskom digitalnom medijskom prostoru"
+description: "Službeni korpus DigiKat obuhvaća približno 400.000 objava, uz javni manifest, agregate, rječnik varijabli i sintetički uzorak."
+date-modified: 2026-08-24
+data-cutoff: 2026-06-11
+status: "Ažurira se"
+categories: ["Korpus", "Otvoreni podaci", "Metodologija"]
+schema-type: "Dataset"
 ---
 
 ```{r}
@@ -12,464 +16,404 @@ categories: ["Korpus", "Metodologija", "Otvoreni podaci"]
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 library(data.table)
-library(dplyr)
+library(jsonlite)
 library(kableExtra)
-library(lubridate)
 
-# Pomoćne funkcije za hrvatski format brojeva
-fmt_int <- function(x) {
-  format(
-    round(as.numeric(x)),
-    big.mark = ".",
-    decimal.mark = ",",
-    scientific = FALSE,
-    trim = TRUE
-  )
-}
-fmt_pct <- function(x, d = 1) paste0(formatC(as.numeric(x), format = "f", digits = d, decimal.mark = ","), " %")
-
-# Hrvatski nazivi mjeseci (genitiv) za datum presjeka
-mj_gen <- c("siječnja", "veljače", "ožujka", "travnja", "svibnja", "lipnja",
-            "srpnja", "kolovoza", "rujna", "listopada", "studenoga", "prosinca")
-
-# Pravilo uključivanja čita se iz manifesta službenog korpusa — dakle iz onoga čime je korpus
-# doista izrezan, a ne iz zasebno održavanog opisa koji se s njim može razići.
 source("../R/lib/digikat_paths.R", encoding = "UTF-8")
+
 mf <- digikat_read_corpus_manifest(base_dir = "../data")
-n_terms    <- mf$rule$terms_count
-n_odlucnih <- mf$rule$terms_decisive
-prag       <- format(mf$rule$threshold, nsmall = 2, decimal.mark = ",")
-prozor     <- formatC(mf$rule$window_chars, big.mark = ".", decimal.mark = ",", format = "d")
-n_accumulator <- mf$source$accumulator_rows
-```
+agg_mf <- jsonlite::read_json("../data/processed/manifest.json", simplifyVector = FALSE)
 
-```{r}
-#| label: load-data
+fmt_int <- function(x) {
+  formatC(as.integer(x), big.mark = ".", decimal.mark = ",", format = "d")
+}
 
-# Službeni korpus, a ne akumulator iz kojeg je izrezan. Akumulator
-# (data/merged_comprehensive.rds) i dalje postoji i iz njega su računati dovršeni radovi.
-dta <- readRDS(file.path("..", digikat_corpus_path()))
+fmt_pct <- function(x, d = 1) {
+  paste0(formatC(as.numeric(x), format = "f", digits = d, decimal.mark = ","), " %")
+}
+
+mj_gen <- c(
+  "siječnja", "veljače", "ožujka", "travnja", "svibnja", "lipnja",
+  "srpnja", "kolovoza", "rujna", "listopada", "studenoga", "prosinca"
+)
+
+hr_date <- function(x) {
+  x <- as.Date(x)
+  paste0(as.integer(format(x, "%d")), ". ", mj_gen[as.integer(format(x, "%m"))],
+         " ", format(x, "%Y"), ".")
+}
+
+n_records <- as.integer(mf$corpus$rows)
+n_vars <- as.integer(mf$corpus$columns)
+n_platforms <- as.integer(mf$corpus$platforms)
+yr_min <- as.integer(mf$corpus$year_min)
+yr_max <- as.integer(mf$corpus$year_max)
+data_cutoff <- as.Date(mf$corpus$date_max)
+manifest_date <- as.Date(substr(mf$generated_utc, 1, 10))
+data_cutoff_hr <- hr_date(data_cutoff)
+manifest_date_hr <- hr_date(manifest_date)
+corpus_range <- paste0(yr_min, ".–", yr_max, ".")
+
+platform_labels <- c(
+  comment = "Komentari", facebook = "Facebook", forum = "Forumi",
+  instagram = "Instagram", reddit = "Reddit", tiktok = "TikTok",
+  twitter = "Twitter / X", web = "Web portali", youtube = "YouTube"
+)
+
+platform_counts <- unlist(mf$corpus$platform_counts)
+platform_table <- data.frame(
+  Platforma = unname(platform_labels[names(platform_counts)]),
+  `Broj objava` = as.integer(platform_counts),
+  Udio = 100 * as.integer(platform_counts) / sum(as.integer(platform_counts)),
+  check.names = FALSE
+)
+platform_table <- platform_table[order(platform_table$`Broj objava`, decreasing = TRUE), ]
+
+aggregate_files <- vapply(
+  agg_mf$outputs,
+  function(x) as.character(x$file),
+  character(1)
+)
+
+corpus_path <- file.path("..", digikat_corpus_path())
+dta <- readRDS(corpus_path)
 if (!inherits(dta, "data.table")) dta <- as.data.table(dta)
 
-n_records <- nrow(dta)
-n_vars    <- ncol(dta)
 stopifnot(
-  identical(n_records, as.integer(mf$corpus$rows)),
-  identical(n_vars, as.integer(mf$corpus$columns))
+  identical(nrow(dta), n_records),
+  identical(ncol(dta), n_vars)
 )
-retention_pct <- 100 * n_records / n_accumulator
 
-dta[, .date := as.Date(DATE)]
-snap      <- max(dta$.date, na.rm = TRUE)
-snap_str  <- paste0(mday(snap), ". ", mj_gen[month(snap)], " ", year(snap), ".")
-yr_min    <- year(min(dta$.date, na.rm = TRUE))
-yr_max    <- year(snap)
+citation_text <- paste0(
+  "Šikić, L. i sur. (2025.–2027.). DigiKat: Prikaz i analiza katoličke tematike u ",
+  "digitalnom medijskom prostoru. Hrvatsko katoličko sveučilište. Presjek korpusa: ",
+  data_cutoff_hr, " (", fmt_int(n_records), " objava). https://lusiki.github.io/DigiKat/pages/baza.html"
+)
 
-# Platforme
-plat <- dta[!is.na(SOURCE_TYPE), .N, by = SOURCE_TYPE][order(-N)]
-plat[, pct := 100 * N / sum(N)]
-n_platforms <- nrow(plat)
-web_share   <- plat[SOURCE_TYPE == "web", pct]
+dataset_jsonld <- list(
+  `@context` = "https://schema.org",
+  `@type` = "Dataset",
+  name = "Službeni korpus DigiKat",
+  description = paste0(
+    "Službeni korpus DigiKat obuhvaća ", fmt_int(n_records),
+    " medijskih objava o katoličkim temama u hrvatskom digitalnom prostoru."
+  ),
+  url = "https://lusiki.github.io/DigiKat/pages/baza.html",
+  sameAs = "https://github.com/lusiki/DigiKat",
+  inLanguage = c("hr", "bs"),
+  creator = list(
+    `@type` = "Person",
+    name = "Luka Šikić",
+    affiliation = list(`@type` = "Organization", name = "Hrvatsko katoličko sveučilište")
+  ),
+  publisher = list(`@type` = "Organization", name = "Hrvatsko katoličko sveučilište"),
+  dateModified = format(manifest_date, "%Y-%m-%d"),
+  temporalCoverage = paste0(mf$corpus$date_min, "/", mf$corpus$date_max),
+  spatialCoverage = list(`@type` = "Place", name = "Hrvatska i regionalni južnoslavenski digitalni prostor"),
+  license = "https://creativecommons.org/licenses/by/4.0/",
+  conditionsOfAccess = paste(
+    "Manifest, javni agregati i sintetički uzorak dostupni su otvoreno.",
+    "Pristup redcima s punim tekstom odobrava se zasebno za istraživačke svrhe."
+  ),
+  keywords = c("katoličke teme", "hrvatski mediji", "digitalna religija", "računalne društvene znanosti"),
+  variableMeasured = names(dta),
+  distribution = list(
+    list(
+      `@type` = "DataDownload",
+      name = "Manifest službenoga korpusa",
+      encodingFormat = "application/json",
+      contentUrl = "https://lusiki.github.io/DigiKat/data/digikat_corpus_manifest.json"
+    ),
+    list(
+      `@type` = "DataDownload",
+      name = "Manifest javnih agregata",
+      encodingFormat = "application/json",
+      contentUrl = "https://lusiki.github.io/DigiKat/data/processed/manifest.json"
+    ),
+    list(
+      `@type` = "DataDownload",
+      name = "Sintetički uzorak",
+      encodingFormat = "application/x-r-rds",
+      contentUrl = "https://lusiki.github.io/DigiKat/data/sample/merged_sample.rds"
+    )
+  )
+)
 ```
 
-## Što je ovaj korpus
+```{r}
+#| label: dataset-structured-data
+#| output: asis
 
-Trebate podatke o tome kako hrvatski mediji pišu o katoličkim temama? Ova stranica opisuje bazu na
-kojoj počivaju sve analize projekta, redak po redak i stupac po stupac. Namijenjena je istraživačima,
-novinarima i studentima koji žele znati što točno u bazi jest, a što nije, prije nego što je
-upotrijebe. Podaci su otvoreni pod licencijom CC BY 4.0, a pristup punom tekstu objava odobrava se
-zasebno. Kraći opis postupka nalazi se u [Metodologiji](metodologija.html), a ovdje slijedi
-cjelovit popis sadržaja.
+cat(
+  '<script type="application/ld+json">',
+  jsonlite::toJSON(dataset_jsonld, auto_unbox = TRUE, pretty = TRUE),
+  '</script>',
+  sep = "\n"
+)
+```
 
-**DigiKat** je strukturirani **korpus** od **`r fmt_int(n_records)`** medijskih objava (`r yr_min`.–`r yr_max`.)
-koje govore o **katoličkim i religijskim temama** u hrvatskom digitalnom medijskom prostoru. Jedinica promatranja
-je **jedna objava**, bilo da je riječ o članku na portalu, objavi na društvenoj mreži, videozapisu ili
-komentaru. Svaki redak baze jedna je objava.
-
-Ključno je razumjeti da je korpus prikupljen **prema sadržaju, a ne prema unaprijed odabranom popisu medija.**
-Objava ulazi u korpus jer *govori o katoličkim temama*, bez obzira na to objavljuje li je konfesionalni
-(katolički) ili sekularni (mainstream) medij. Zato korpus obuhvaća i jedne i druge, od crkvenih portala i
-župnih Facebook-stranica do najčitanijih općih news-portala.
-
-Korpus je empirijska osnova za četiri analitičke razine projekta, a to su [Mapa ekosustava](mapa/mapa.html),
-[Tematske struje](mapa/mapa_stats.html), [Atmosfera diskursa](mapa/diskurs.html) i
-[Fokus na događaje](mapa/događaji.html).
-
-Na Kaggleu je javno arhiviran **stariji presjek** baze
-([Croatian Catholic Digital Media Space](https://www.kaggle.com/datasets/lukasikic/croatian-catholic-digital-media-space),
-612.065 zapisa, ažurirano u siječnju 2026.). Taj presjek nije ni akumulator od
-`r fmt_int(n_accumulator)` redaka ni službeni korpus od `r fmt_int(n_records)` objava koji opisuje ova stranica.
-U repozitoriju su otvoreni manifest korpusa, agregati i potpuno sintetički uzorak. Manifest sadrži opseg,
-vremenski raspon, platformsku raspodjelu i pravilo uključivanja, ali ne sadrži retke, URL-ove ni tekst. Pristup
-aktualnim redcima korpusa odobrava se zasebno.
-
-## Ključni pokazatelji
-
-<div class="metric-grid">
-<div class="metric-card">
-<div class="metric-value">`r fmt_int(n_records)`</div>
-<div class="metric-label">Medijskih objava</div>
-</div>
-<div class="metric-card">
-<div class="metric-value">`r yr_min`.–`r yr_max`.</div>
-<div class="metric-label">Razdoblje (2026. nepotpuna)</div>
-</div>
-<div class="metric-card">
-<div class="metric-value">`r n_platforms`</div>
-<div class="metric-label">Platformi</div>
-</div>
-<div class="metric-card">
-<div class="metric-value">≥2 / `r n_terms` + `r prag`</div>
-<div class="metric-label">Prag uključivanja (pojmovi, pa model)</div>
-</div>
+<div class="freshness-strip" aria-label="Svježina službenoga korpusa">
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">24. kolovoza 2026.</span></span>
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">`r data_cutoff_hr`</span></span>
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--updating">Ažurira se</span></span>
 </div>
 
-Web-sadržaj čini **`r fmt_pct(web_share)`** korpusa. Ostatak dolazi s društvenih platformi i foruma. Presjek
-korpusa opisan na ovoj stranici zaključno je s datumom **`r snap_str`**.
+::: {.summary-60}
+<span class="summary-60__label">Sažetak u 60 sekundi</span>
 
-## Što korpus NIJE
+Službeni korpus DigiKat obuhvaća približno 400.000 zapisa. Sadrži `r fmt_int(n_records)` objava s web-portala, društvenih platformi, foruma i komentara u razdoblju `r corpus_range`
 
-::: {.featured-box}
-Prije daljnjeg čitanja korpus treba jasno razgraničiti od onoga što nije. Korpus **nije** kurirani popis
-katoličkih medija, jer hvata teme, a ne institucije. On **nije** ni reprezentativan, vjerojatnosni uzorak svih
-hrvatskih medija, nego velik **opservacijski** korpus omeđen dosegom servisa za monitoring i pravilom
-uključivanja. Korpus **nije**, naposljetku, mjera religioznosti stanovništva ni stavova javnosti, nego **jest**
-tematski zahvat objava koje govore o katoličkim temama u razdoblju `r yr_min`.–`r yr_max`.
+Korpus je prikupljen prema sadržaju. U njemu su zato i crkveni i sekularni izvori koji objavljuju o katoličkim temama. Opisuje prikupljeni medijski sadržaj, a ne stavove stanovništva ili cijeli hrvatski medijski prostor.
+
+Manifest, agregati i sintetički uzorak dostupni su javno. Redci s punim tekstom i URL-ovima imaju poseban postupak pristupa za istraživačke svrhe.
 :::
 
-## Kako je korpus definiran
+Pojedini izvor može se pronaći u alatu [Moj medij](moj-medij.html), koji njegove pokazatelje uspoređuje samo s izvorima na istoj platformi.
 
-Članstvo u korpusu određuje jedno pravilo, isto za cijelo razdoblje, u dva koraka.
+## Pristup na jednom mjestu {#pristup-licencija-i-citiranje}
 
-Prvi je korak popis riječi. Tekst svake objave prevede se u mala slova i pretraži popisom od **`r n_terms`
-hrvatskih religijskih pojmova** (biskup, misa, euharistija, hodočašće, enciklika, Sveta stolica…), zapisanih kao
-regularni izrazi koji pokrivaju padeže i množine. Pojmovi su podijeljeni na **`r n_odlucnih` odlučnih**, koji sami
-po sebi upućuju na katolički sadržaj, i na preostale dvojbene, koji to čine tek u društvu drugih. Objava prolazi
-prvi korak ako pogodi **najmanje jedan odlučan i najmanje dva različita pojma ukupno**, i to unutar **prvih
-`r prozor` znakova** teksta, dakle unutar onoga što drugi korak i ljudski koder doista pročitaju. Riječ koja se
-pojavi tek dublje u tekstu ne otvara vrata korpusu.
+Panel odvaja podatkovni presjek od datuma ove stranice i vodi izravno na svaki javni artefakt.
 
-Drugi je korak model. Objave koje su prošle popis riječi ocjenjuje ansambl klasifikatora izgrađen na ručno
-kodiranim objavama, a ulaze one s ocjenom **`r prag` ili višom**. Popis riječi prepoznaje da se o religiji govori,
-a model prosuđuje govori li se o katoličkoj temi ili je riječ o prometnoj nesreći na Trgu svetog Florijana.
-
-Pravilo je isto za cijelo razdoblje. Zadržalo je **`r fmt_int(n_records)` od `r fmt_int(n_accumulator)` redaka**
-akumulatora (`r fmt_pct(retention_pct)`).
-
-## Sastav i tipologija izvora
-
-```{r}
-#| label: outlet-typology
-
-dta[, FROM_l := tolower(trimws(FROM))]
-
-conf_exact <- tolower(c(
-  "hkm.hr","laudato.hr","laudatotv","laudato","crovijesti.com","novizivot.net","bitno.net","narod.hr",
-  "djos.hr","croativ.net","hrvatskonebo.org","biskupija-varazdinska.hr","redovnistvo.hr","radio-medjugorje.com",
-  "glas-koncila.hr","ks.hr","zg-nadbiskupija.hr","ofm.hr","vjeraidjela.com","ssmi.hr","zupcica.hr","vjeronauk.hr",
-  "sestre-sv-kriza.hr","unicath.hr","hu-benedikt.hr","biskupijakrk.hr","radio-djakovo.hr","karmel.hr",
-  "zupa-zabok.org","czn.hr","vjeraufanjeljubav.com.hr","smn.hr","adventisti.hr","radio marija hrvatska",
-  "vjera u nama †","svjedočanstva & vjera","zagrebačka nadbiskupija","kapljice ljubavi božje",
-  "prihvati isusa krista","dijete vjere","vjera","kraljica mira","pod smokvom","omnia deo","nova eva",
-  "kršćanska proročka crkva isus je kralj!","gospa","vjera-ufanje-ljubav","isus i gospa vas vole","pulherissimus",
-  "hrana za dušu","sveti ante","sisačka biskupija","ravnateljstvo dušobrižništva za hrvate u inozemstvu",
-  "dijete vjere (child of faith)","@slavimoboga","glaslike.hr","hrvatski katolički radio","@hkr_radio",
-  "hkr_radio","radio samobor","hia.com.hr"))
-conf_pat <- paste0("(biskupij|nadbiskup|\\bzupa\\b|zupa-|-zupa|zupn|redovni|karmel|\\bofm\\b|franjev|salezij",
-  "|isusov|jezuit|benedikt|dominikan|\\bvjeron|kršćan|krscan|katolič|katolic|župa|župn|sestre|dušobri",
-  "|medjugorje|\\bkrist|\\bgospa|molitv|blagoslov|nadbiskupij)")
-sec_exact <- tolower(c(
-  "slobodnadalmacija.hr","slobodna dalmacija","vecernji.hr","večernji list","vecernji.ba","index.hr","novilist.hr",
-  "net.hr","jutarnji.hr","24sata.hr","24sata","tportal.hr","direktno.hr","glasistre.hr","hrt.hr","hrt vijesti",
-  "glas-slavonije.hr","dnevnik.hr","nacional.hr","nacional news magazin","dalmatinskiportal.hr","dalmacijadanas.hr",
-  "telegram.hr","zagreb.info","n1info.hr","n1info.com","rtl.hr","rtl danas","story.hr","hina.hr","gov.hr",
-  "aljazeera.net","poslovni.hr","seebiz.eu","geopolitika.news","dnevno.hr","7dnevno.hr","tvprofil.com","srednja.hr"))
-
-dta[, tip_izvora := fifelse(
-  FROM_l %in% conf_exact | grepl(conf_pat, FROM_l), "Konfesionalni / crkveni",
-  fifelse(FROM_l %in% sec_exact, "Sekularni / mainstream (identificirani)", "Ostalo / nerazvrstano"))]
-dta[SOURCE_TYPE %in% c("forum","reddit") |
-      FROM_l %in% c("forum.hr","youtube.com","anonymous_user","sportnet.hr","osijek031.com","croatia","bih","hrvatska"),
-    tip_izvora := "Zajednice i forumi"]
-
-conf_pct <- 100 * mean(dta$tip_izvora == "Konfesionalni / crkveni")
-class_pct <- 100 * mean(dta$tip_izvora != "Ostalo / nerazvrstano")
-
-comp <- dta[, .(`Broj objava` = .N), by = .(`Tip izvora` = tip_izvora)][order(-`Broj objava`)]
-comp[, `Udio` := fmt_pct(100 * `Broj objava` / n_records)]
-comp[, `Broj objava` := fmt_int(`Broj objava`)]
-
-# Udio konfesionalnih izvora unutar glavnih platformi
-plat_conf <- dta[SOURCE_TYPE %in% c("web","facebook","youtube","twitter"),
-                 .(`Udio konfesionalnih` = fmt_pct(100 * mean(tip_izvora == "Konfesionalni / crkveni"))),
-                 by = .(Platforma = SOURCE_TYPE)]
-plat_conf <- plat_conf[order(match(Platforma, c("web","facebook","youtube","twitter")))]
+```{=html}
+<section class="corpus-access" aria-label="Pristup službenom korpusu i javnim artefaktima">
+  <div class="corpus-access__facts">
+    <div><span>Podaci zaključno s</span><strong>`r data_cutoff_hr`</strong></div>
+    <div><span>Verzija manifesta</span><strong>`r manifest_date_hr`</strong></div>
+    <div><span>Licencija javnih artefakata</span><strong>CC BY 4.0</strong></div>
+    <div><span>Preporučeno citiranje</span><strong><a href="#citiranje">Citirajte ovu verziju</a></strong></div>
+  </div>
+  <div class="corpus-access__resources">
+    <h3>Datoteke i dokumentacija</h3>
+    <ul>
+      <li><a href="../data/digikat_corpus_manifest.json">Manifest korpusa</a></li>
+      <li><a href="../data/processed/manifest.json">Javni agregati</a></li>
+      <li><a href="#rjecnik-varijabli">Rječnik varijabli</a></li>
+      <li><a href="../data/sample/merged_sample.rds">Sintetički uzorak</a></li>
+      <li><a href="../CITATION.cff">Strojno čitljiv citat</a></li>
+      <li><a href="#pristup-punom-tekstu">Pristup punom tekstu</a></li>
+    </ul>
+  </div>
+</section>
 ```
 
-Budući da je okvir tematski, korpus doslovno **miješa konfesionalne i sekularne izvore**. Najveći pojedinačni
-izvor jest konfesionalni **hkm.hr** (Hrvatska katolička mreža), no odmah uz njega stoje najčitaniji opći portali.
-Prema **indikativnoj** klasifikaciji izvora (opisanoj niže), iz jasno **konfesionalnih / crkvenih** medija dolazi
-najmanje **`r fmt_pct(conf_pct)`** objava. Ostatak nose sekularni, mainstream i lokalni news-mediji, uz manji
-udio zajednica i foruma.
+## Što korpus sadrži
+
+Jedinica analize jedna je medijska objava. Korpus obuhvaća članke, objave na društvenim platformama, videozapise, forumske zapise i komentare koji zadovoljavaju dokumentirano pravilo uključivanja.
+
+```{=html}
+<div class="metric-grid corpus-metrics">
+  <div class="metric-card">
+    <div class="metric-value">`r fmt_int(n_records)`</div>
+    <div class="metric-label">objava</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">`r n_vars`</div>
+    <div class="metric-label">varijable</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">`r corpus_range`</div>
+    <div class="metric-label">razdoblje, uz nepotpunu 2026.</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-value">`r n_platforms`</div>
+    <div class="metric-label">vrsta izvora i platformi</div>
+  </div>
+</div>
+```
+
+Korpus je odabran prema temi, a ne prema unaprijed sastavljenom popisu medija. Zato isti istraživački okvir obuhvaća konfesionalne izvore, opće i lokalne medije, javne ustanove, zajednice i osobne račune. To je temelj za [Mapu ekosustava](mapa/mapa.html), [Tematske struje](mapa/mapa_stats.html), [Atmosferu diskursa](mapa/diskurs.html) i [Fokus na događaje](mapa/događaji.html).
+
+## Što korpus može i ne može poduprijeti
+
+Ove dvije granice vrijede prije svake analize.
+
+<div class="corpus-use-grid">
+  <article class="corpus-use-card corpus-use-card--yes">
+    <h3>Može poduprijeti</h3>
+    <p>Korpus može opisati volumen objavljivanja, zastupljenost izvora i tema te promjene u riječima zabilježenima u prikupljenom sadržaju.</p>
+    <p>Usporedbe su najčvršće unutar iste platforme, mjere i stabilnoga toka prikupljanja.</p>
+  </article>
+  <article class="corpus-use-card corpus-use-card--no">
+    <h3>Ne može poduprijeti</h3>
+    <p>Korpus ne mjeri religioznost stanovništva, javno mnijenje, namjeru autora, kvalitetu sadržaja ili potvrđenu veličinu publike.</p>
+    <p>Ne opravdava uzročne zaključke ni izravno uspoređivanje procijenjenoga dosega među platformama.</p>
+  </article>
+</div>
+
+Način prikupljanja promijenio se tijekom 2024. Podaci s obje strane te granice slijede isto pravilo uključivanja, ali promjena zabranjuje jednostavno čitanje skoka u volumenu kao promjene medijske pozornosti. [Obrazloženje i dijagnostika nalaze se u Metodologiji](metodologija.html#method-collection-break).
+
+## Javni artefakti i pristup {#javni-artefakti}
+
+Javna distribucija ne sadrži izvorne retke, puni tekst ili URL-ove. Sadrži provjerljive opise i agregate bez izvornoga teksta.
+
+### Manifest i sintetički uzorak
+
+Manifest bilježi opseg, presjek, platformsku raspodjelu, pravilo uključivanja i kontrolne sažetke ove verzije. Sintetički uzorak oponaša strukturu podataka bez izvornih redaka, tekstova ili osobnih podataka.
+
+<div class="download-group">
+  <a href="../data/digikat_corpus_manifest.json">Preuzmite manifest korpusa</a>
+  <a href="../data/sample/merged_sample.rds">Preuzmite sintetički uzorak</a>
+  <a href="../data/sample/merged_sample_manifest.json">Otvorite manifest uzorka</a>
+</div>
+
+### Javni agregati
+
+Agregati su izvedeni iz iste verzije službenoga korpusa. Njihov manifest navodi dimenzije i kontrolni sažetak svake datoteke.
+
+<div class="download-group">
+  <a href="../data/processed/manifest.json">Otvorite manifest agregata</a>
+  <a href="../data/processed/platform_summary.rds">Sažetak platformi</a>
+  <a href="../data/processed/platform_monthly.rds">Mjesečni niz platformi</a>
+  <a href="../data/processed/source_summary.rds">Sažetak izvora</a>
+</div>
+
+<details class="reference-section">
+<summary>Sve datoteke javnih agregata</summary>
+<div class="reference-section__content">
 
 ```{r}
-#| label: outlet-typology-table
-kable(comp, caption = "Sastav korpusa prema tipu izvora (indikativno, na razini objave)",
-      align = c("l", "r", "r")) |>
+#| label: aggregate-downloads
+#| output: asis
+
+cat('<ul class="artifact-file-list">\n')
+for (file in aggregate_files) {
+  cat(sprintf(
+    '<li><a href="../data/processed/%s"><code>%s</code></a></li>\n',
+    file, file
+  ))
+}
+cat('</ul>\n')
+```
+
+</div>
+</details>
+
+### Pristup punom tekstu {#pristup-punom-tekstu}
+
+Pristup redcima s punim tekstom odobrava se zasebno za istraživačke svrhe. Zahtjev treba navesti istraživačko pitanje, traženi opseg podataka, plan sigurne pohrane i način objave rezultata. Pošaljite ga na [luka.sikic@unicath.hr](mailto:luka.sikic@unicath.hr). Potpuna matrica dostupnosti nalazi se u dokumentu [`DATA_AVAILABILITY.md`](https://github.com/lusiki/DigiKat/blob/main/DATA_AVAILABILITY.md).
+
+## Citiranje {#citiranje}
+
+Citirajte projekt, presjek korpusa i konkretni javni artefakt koji ste upotrijebili.
+
+<div class="citation-block">
+  <span class="citation-block__label">Preporučeni citat</span>
+  <p class="citation-block__text">`r citation_text`</p>
+  <p><strong>Trajna mrežna adresa</strong><br><a href="https://lusiki.github.io/DigiKat/pages/baza.html">https://lusiki.github.io/DigiKat/pages/baza.html</a></p>
+  <p><strong>Verzija</strong><br>Manifest generiran `r manifest_date_hr`</p>
+  <p><strong>Licencija javnih artefakata</strong><br><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+  <p><strong>Strojno čitljiv citat</strong><br><a href="../CITATION.cff">CITATION.cff</a></p>
+</div>
+
+## Metodologija po temama
+
+Ova stranica zadržava samo podatke potrebne za pristup i odgovorno tumačenje. Tehnički postupci imaju jedno kanonsko mjesto.
+
+<div class="method-link-list">
+  <a href="metodologija.html#method-corpus-inclusion"><strong>Što ulazi u korpus</strong><span>Pravilo uključivanja i granica korpusa</span></a>
+  <a href="metodologija.html#method-corpus-quality"><strong>Kvaliteta korpusa</strong><span>Ručna provjera i procjena pogreške</span></a>
+  <a href="metodologija.html#method-collection-break"><strong>Promjena prikupljanja</strong><span>Prekid 2024. i vremenske usporedbe</span></a>
+  <a href="metodologija.html#method-platform-metrics"><strong>Značenje mjera</strong><span>Objave, interakcije, angažman i procijenjeni doseg</span></a>
+  <a href="metodologija.html#method-reproducibility"><strong>Reproducibilnost</strong><span>Obrada, manifesti i ponavljanje postupka</span></a>
+</div>
+
+## Referentni odjeljci
+
+Tablice i upute ostaju dostupne bez prekidanja glavne priče o korpusu.
+
+<details class="reference-section" id="sastav-po-platformama">
+<summary>Sastav korpusa po platformama</summary>
+<div class="reference-section__content">
+
+Tablica prikazuje broj i udio objava u službenom korpusu prema zabilježenoj platformi.
+
+```{r}
+#| label: platform-table
+
+platform_display <- platform_table
+platform_display$`Broj objava` <- fmt_int(platform_display$`Broj objava`)
+platform_display$Udio <- fmt_pct(platform_display$Udio)
+
+kable(
+  platform_display,
+  caption = "Sastav službenoga korpusa po platformama",
+  align = c("l", "r", "r")
+) |>
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
-Indikativno razvrstani udjeli razlikuju se po platformi. Tablica opisuje objave kojima je izvor bilo moguće
-označiti. Ne predstavlja cjelovit popis aktera platforme niti dokazuje kakva je njezina ukupna publika.
+</div>
+</details>
+
+<details class="reference-section" id="rjecnik-varijabli">
+<summary>Rječnik svih `r n_vars` varijabli</summary>
+<div class="reference-section__content">
+
+Rječnik navodi funkcionalnu skupinu, tehnički tip i udio nedostajućih vrijednosti za svaku varijablu službenoga korpusa.
 
 ```{r}
-#| label: outlet-platform-table
-kable(plat_conf, caption = "Udio konfesionalnih izvora unutar glavnih platformi",
-      align = c("l", "r")) |>
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+#| label: full-variable-list
+
+variable_group <- function(name) {
+  if (name %in% c("DATE", "TIME", "year")) return("Vremenske")
+  if (name %in% c("TITLE", "FULL_TEXT", "MENTION_SNIPPET", "URL", "URL_PHOTO")) return("Sadržaj i tekst")
+  if (name %in% c("FROM", "AUTHOR", "SOURCE_TYPE")) return("Izvor i akter")
+  if (name %in% c("GROUP_NAME", "KEYWORD_NAME", "FOUND_KEYWORDS", "LANGUAGES", "LOCATIONS", "TAGS", "data_source")) return("Monitoring i podudaranje")
+  if (name %in% c("AUTO_SENTIMENT", "MANUAL_SENTIMENT")) return("Tonalitet")
+  if (startsWith(name, "dk_")) return("Podrijetlo filtriranja")
+  "Interakcije i doseg"
+}
+
+variable_names <- names(dta)
+all_vars <- data.frame(
+  Varijabla = variable_names,
+  Skupina = vapply(variable_names, variable_group, character(1)),
+  Tip = vapply(variable_names, function(v) class(dta[[v]])[1], character(1)),
+  `Nedostaje` = vapply(
+    variable_names,
+    function(v) fmt_pct(100 * mean(is.na(dta[[v]]) | (is.character(dta[[v]]) & dta[[v]] == ""))),
+    character(1)
+  ),
+  check.names = FALSE,
+  stringsAsFactors = FALSE
+)
+
+kable(
+  all_vars,
+  caption = paste0("Svih ", n_vars, " varijabli službenoga korpusa"),
+  align = c("l", "l", "l", "r")
+) |>
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) |>
+  scroll_box(width = "100%", height = "520px")
 ```
 
-::: {.callout-note}
-**Napomena o klasifikaciji.** Razvrstavanje izvora je **indikativno**, jer je ručno označen skup najčešćih izvora
-(uz obrasce za crkvene domene poput *biskupija*, *župa*, *franjev*), čime je razvrstano oko
-**`r fmt_pct(class_pct, 0)`** objava. Preostalo („Ostalo / nerazvrstano") uglavnom su sekularne **lokalne
-vijesti**. Tipologija je analitički presjek, a ne prirodna kategorija, pa navedene udjele treba čitati kao red
-veličine, a ne kao točne mjere.
-:::
+</div>
+</details>
 
-## Pojedinačni izvori, katalog i mreža
+<details class="reference-section" id="upute-za-ponavljanje">
+<summary>Upute za uporabu i ponavljanje</summary>
+<div class="reference-section__content">
 
-Iza zbirnih brojki stoje konkretni akteri. [Katalog izvora](izvori/index.html) okuplja uređivački objavljene
-profile za šest platformi s usporedivim agregatima, a to su web, YouTube, Facebook, Instagram, TikTok i Twitter.
-Reddit, forumi i komentari prisutni su u korpusu, ali katalog ih ne profilira kao pojedinačne aktere. Za svaki
-objavljeni profil donosi volumen, interakcije i doseg te pripadnost opisnoj tipologiji (Divovi, Graditelji
-zajednica, Megafoni, Specijalizirani akteri), izračunatoj jednako kao u
-[Mapi ekosustava](mapa/mapa.html).
-
-Isti se katalog može sagledati i kao [mreža izvora](izvori/mreza.html): interaktivni graf u kojem je svaki izvor
-jedan čvor, obojen prema platformi i skaliran prema volumenu objava. Poveznice među čvorovima su **strukturne**, dakle
-pripadnost izvora svojoj platformi te zajednički brend ili osoba prisutna na više platformi (primjerice Laudato
-ili Index). Struktura kataloga, inače vidljiva tek listanjem pojedinačnih stranica, tako se vidi odjednom i
-istražuje mišem.
-
-::: {.callout-warning}
-Mreža prikazuje **strukturu kataloga**, a ne izmjerene odnose među akterima. Poveznice **ne** znače zajedničku
-publiku, tematsko preklapanje ni utjecaj. Riječ je isključivo o pripadnosti platformi i zajedničkom brendu.
-Katalog je **radna verzija**. Uređivačke oznake (konfesionalni ili sekularni izvor) prijedlozi su koje potvrđuje
-voditelj projekta, a brojke su indikativne.
-:::
-
-## Kako je prikupljen
-
-Podaci su **izvezeni iz komercijalnog servisa za medijski monitoring** (koji objave prikuplja *web scrapingom* i
-platformskim API-jima) u obliku `.xlsx` tablica, koje su potom spojene i filtrirane u jedinstveni korpus.
-
-Pri novim se dopunama deduplikacija provodi po **kanoniziranom URL-u**. Uklanjaju se samo poznati parametri
-praćenja (primjerice `utm_*` i `fbclid`), dok parametri koji određuju identitet objave ostaju sačuvani
-(primjerice YouTubeov `v`). URL ipak nije zajamčeno jedinstven ključ, jer je povijesni dio korpusa nastao prije
-uvođenja tog pravila, a jedan URL može predstavljati više zabilježenih jedinica monitoringa. Ukupan broj objava
-stoga treba čitati kao **gornju granicu**. Pokrivenost je omeđena dosegom servisa za monitoring, pa je riječ o
-velikom **opservacijskom**, a ne vjerojatnosnom uzorku.
-
-## Opseg korpusa
-
-### Vremenska pokrivenost
-
-```{r}
-#| label: yearly-distribution
-yearly <- dta[!is.na(.date), .(N = .N), by = .(Godina = year(.date))][order(Godina)]
-n_2025 <- yearly[Godina == 2025, N]
-yearly_disp <- yearly[, .(Godina, `Broj objava` = fmt_int(N))]
-kable(yearly_disp, caption = "Broj objava po godinama", align = c("l", "r")) |>
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
-```
-
-Najviše objava korpus bilježi u 2025. (`r fmt_int(n_2025)`). Godina **2026. je nepotpuna** (do lipnja), pa je
-njezin manji broj artefakt presjeka, a ne pad. Instagram i TikTok ulaze u korpus tek od 2024., pa ranije godine
-za te platforme nemaju objava. Kako čitati godišnje volumene opisano je u
-[Metodologiji](metodologija.html).
-
-### Platforme
-
-```{r}
-#| label: platform-distribution
-plat_disp <- plat[, .(Platforma = SOURCE_TYPE, `Broj objava` = fmt_int(N), Udio = fmt_pct(pct))]
-kable(plat_disp, caption = "Distribucija objava po platformama", align = c("l", "r", "r")) |>
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
-```
-
-Web-sadržaj čini `r fmt_pct(web_share)` službenoga korpusa. Taj udio opisuje sastav prikupljene građe i dostupnost
-izvora u monitoringu. Sam po sebi ne mjeri preferencije publike, stvarni udio platforme u hrvatskom
-digitalnom prostoru ni komunikacijsku učinkovitost.
-
-### Jezik i geografija
-
-```{r}
-#| label: lang-geo
-pure_hr   <- sum(dta$LANGUAGES == "hr", na.rm = TRUE)
-any_bcs   <- sum(grepl("bs|sr|sl", dta$LANGUAGES), na.rm = TRUE)
-hr_only_loc <- sum(dta$LOCATIONS == "HR", na.rm = TRUE)
-```
-
-Jezik i geografija strojno su detektirani i **višeoznačni** (jedna objava može nositi više oznaka). Hrvatski
-dominira, pa **`r fmt_int(pure_hr)`** objava nosi isključivo oznaku `hr`. Korpus ipak sadrži i znatan
-**regionalni južnoslavenski** sadržaj (bosanski, srpski, slovenski), pa oko **`r fmt_int(any_bcs)`** objava ima
-barem jednu takvu oznaku. Geografski je težište Hrvatska (**`r fmt_int(hr_only_loc)`** objava označeno je samo
-kao `HR`), uz prelijev prema Bosni i Hercegovini te ostatku regije. Filtriranje na `LANGUAGES == "hr"` stoga tiho
-izbacuje regionalni sadržaj. S time treba računati pri ponovnom korištenju.
-
-## Struktura podataka
-
-Korpus ima **`r n_vars` varijable**, koje se grupiraju u sedam funkcionalnih skupina. To su vremenske (`DATE`, `TIME`,
-`year`), sadržaj i tekst (`TITLE`, `FULL_TEXT`, `MENTION_SNIPPET`, `URL`, `URL_PHOTO`), izvor i akter (`FROM`,
-`AUTHOR`, `SOURCE_TYPE`), monitoring i podudaranje (`GROUP_NAME`, `KEYWORD_NAME`, `FOUND_KEYWORDS`, `LANGUAGES`,
-`LOCATIONS`, `data_source`), tonalitet (`AUTO_SENTIMENT`, `MANUAL_SENTIMENT`), angažman i doseg (`REACH`,
-`ENGAGEMENT_RATE`, `INTERACTIONS`, `VIEW_COUNT`, reakcije, `INFLUENCE_SCORE` i dr.) te podrijetlo filtriranja.
-Sedam varijabli s prefiksom `dk_` za svaki redak bilježi tok prikupljanja, položaj u akumulatoru, broj odlučnih i
-ukupnih podudaranja, ocjenu modela, rezultat prijašnjega pravila i oznaku primijenjenoga pravila. Potpuni popis s
-pripadajućom skupinom nalazi se u referentnoj tablici na dnu stranice.
-
-**Redci službenoga korpusa, URL-ovi i puni tekst (`FULL_TEXT`) nisu dio repozitorijske distribucije.** Javno se
-dijele samo agregati bez teksta i URL-ova, manifest korpusa te potpuno sintetički uzorak. Pristup korpusu dostupan
-je **na zahtjev** za istraživačke svrhe. Kontrolirane kategorije imaju zatvoren skup vrijednosti. Tako `SOURCE_TYPE`
-ima `r n_platforms` razina, `AUTO_SENTIMENT` četiri (uključujući `undefined`), a
-`INFLUENCE_SCORE` `r length(unique(na.omit(dta$INFLUENCE_SCORE)))` razina. Polje `FOUND_KEYWORDS` dolazi iz servisa za monitoring i **šumovito** je
-(najčešća vrijednost je veznik „i"), pa ga ne treba tumačiti kao dokaz religijskog filtra.
-
-## Podrijetlo signala i mjera
-
-```{r}
-#| label: sentiment-distribution
-sent <- dta[, .N, by = AUTO_SENTIMENT][order(-N)]
-sent_disp <- sent[, .(Sentiment = AUTO_SENTIMENT, `Broj objava` = fmt_int(N), Udio = fmt_pct(100 * N / sum(sent$N)))]
-kable(sent_disp, caption = "Distribucija automatskog (vendorskog) tonaliteta", align = c("l", "r", "r")) |>
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
-
-manual_sent_missing_pct <- 100 * mean(is.na(dta$MANUAL_SENTIMENT))
-```
-
-Varijabla `AUTO_SENTIMENT` je **vendorska**. Izračunava je servis za monitoring nepoznatom metodom i gruba je
-(tri razine + `undefined`). Ona je **distinktna** od projektnoga leksičkog tonaliteta koji se računa u sloju
-[Atmosfera diskursa](mapa/diskurs.html) i ne treba je s njime miješati. Ručno kodirani tonalitet
-(`MANUAL_SENTIMENT`) u ovom je izdanju **prazan po dizajnu** (`r fmt_pct(manual_sent_missing_pct, 0)` nedostaje).
-
-Mjere angažmana (`REACH`, `VIRALITY`, `ENGAGEMENT_RATE`, `INFLUENCE_SCORE`) također računa vendor pri zahvatu.
-Formule su neprozirne, **nisu usporedive među platformama** i ne osvježavaju se kako objava stari. Doseg je izrazito
-asimetričan (medijan je `r fmt_int(median(dta$REACH, na.rm = TRUE))`, a maksimum više milijuna), pa prosjek dosega
-lako zavara. `INFLUENCE_SCORE` je **ordinalna** ljestvica od `r length(unique(na.omit(dta$INFLUENCE_SCORE)))` razina i ne treba je prosjekovati.
-
-## Kvaliteta i ograničenja
-
-```{r}
-#| label: availability-matrix
-eng <- c("REACH", "ENGAGEMENT_RATE", "VIEW_COUNT", "TOTAL_REACTIONS_COUNT", "FOLLOWERS_COUNT")
-avail <- dta[, lapply(.SD, function(x) round(100 * mean(!(is.na(x) | (is.character(x) & x == "")))) ),
-             by = .(Platforma = SOURCE_TYPE), .SDcols = eng]
-setnames(avail, eng, c("REACH", "ENGAGEMENT_RATE", "VIEW_COUNT", "REAKCIJE", "FOLLOWERS"))
-avail <- avail[order(match(Platforma, plat$SOURCE_TYPE))]
-kable(avail, caption = "Dostupnost ključnih metrika po platformi (% popunjeno)", align = c("l", rep("r", 5))) |>
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
-
-author_missing_pct <- 100 * mean(is.na(dta$AUTHOR) | (is.character(dta$AUTHOR) & dta$AUTHOR == ""))
-```
-
-Metrike angažmana **nisu popunjene za sve platforme**, pa `REACH` i reakcije postoje uglavnom za web i Facebook,
-`VIEW_COUNT` samo za video (YouTube, Instagram), a forumi, Reddit i komentari nose malo metrika. Zato prosjek preko
-platformi spaja strukturne praznine i vodi u pogrešan zaključak.
-
-Nedostajuće vrijednosti dolaze u **tri vrste**. Prva je **prazno po dizajnu**, pa `MANUAL_SENTIMENT`, `TAGS`,
-`TWEET_COUNT` i `COUNT` u potpunosti nedostaju u ovom izdanju. Druga je **platformski uvjetovana**, pa `VIEW_COUNT`,
-Facebook-reakcije i `REDDIT_SCORE` postoje samo na svojoj matičnoj platformi. Treća je **stvarno nedostajanje**,
-poput autora objave (`AUTHOR`), koji nedostaje u `r fmt_pct(author_missing_pct, 0)` slučajeva.
-
-::: {.callout-note}
-**Sigurni i nesigurni zaključci.** Iz korpusa je **pouzdano** čitati relativni tematski volumen kroz vrijeme
-*unutar iste platforme i toka*, distribuciju tonaliteta (uz vendorsku ogradu) i broj objava po izvoru. **Nije
-pouzdano** usporediti angažman ili doseg *među* platformama, čitati porast u 2025. ili pad u 2026. kao stvaran
-trend, niti prosjekovati `REACH` ili `INFLUENCE_SCORE`.
-:::
-
-## Kako se korpus koristi
-
-Referentna primjena službenoga korpusa jesu žive mape projekta. [Mapa ekosustava](mapa/mapa.html) opisuje volumen,
-doseg i interakcije te platformske položaje aktera. [Tematske struje](mapa/mapa_stats.html) primjenjuju rječnik od
-16 kategorija, [Atmosfera diskursa](mapa/diskurs.html) leksički tonalitet, emocionalne oznake i konfliktni
-rječnik, a [Fokus na događaje](mapa/događaji.html) označava dnevna odstupanja i opisuje dvije ograničene studije
-slučaja. [Evolucija ekosustava](mapa/evolucija.html) daje vremenski presjek ekosustava.
-
-Dovršena tematska istraživanja nisu prebačena na službeni korpus. Ona ostaju na verzioniranim ulazima na kojima
-su izračunana i zadržavaju već objavljene brojeve.
-
-## Pristup, licencija i citiranje
-
-Službeni korpus i akumulator iz kojega je izveden nisu javni repozitorijski artefakti. Javno su dostupni
-**agregati bez teksta i URL-ova** te potpuno sintetički testni uzorak, koje projekt označava licencijom
-**CC BY 4.0**. Kaggle zasebno čuva stariji javni presjek. Prije uporabe treba provjeriti njegovu verziju,
-sadržaj i licenciju navedenu na samoj platformi. Kod i metodološki filtar `` `r mf$rule$terms_file` `` dostupni
-su na [GitHubu](https://github.com/lusiki/DigiKat), a potpuna matrica dostupnosti nalazi se u
-[`DATA_AVAILABILITY.md`](https://github.com/lusiki/DigiKat/blob/main/DATA_AVAILABILITY.md).
-
-**Kako je korpus nastao (reproducibilnost).** Sirove `.xlsx` izvoze → spajanje u akumulator
-`merged_comprehensive.rds` (sve što je servis isporučio) → popis od `r n_terms` pojmova unutar prvih
-`r prozor` znakova (≥1 odlučan, ≥2 ukupno) → ansambl drugog koraka uz prag `r prag` → **`digikat_corpus.rds`**,
-službeni korpus koji ova stranica opisuje. Ni akumulator ni korpus nisu u repozitoriju jer sadrže puni tekst, pa
-u njemu je `data/digikat_corpus_manifest.json`, koji bilježi opseg, raspon i točno pravilo rezanja. Repozitorijska
-distribucija ne sadrži izvorne retke, tekstualne isječke ni URL-ove.
-
-**Osobni podaci.** Korpus sadrži javno dostupne metapodatke o izvorima i računima (npr. `FROM`, `AUTHOR`,
-nazive javnih stranica i `FOLLOWERS_COUNT`). To što je objava javna ne uklanja obvezu ograničenja svrhe,
-sigurne pohrane i provjere otkrivanja. Redci, URL-ovi i puni tekst izuzeti su iz repozitorijske distribucije.
-
-Preporučeni oblik citiranja glasi ovako.
-
-> Šikić, L. i sur. (2025.–2027.). *DigiKat: Prikaz i analiza katoličke tematike u digitalnom medijskom
-> prostoru.* Hrvatsko katoličko sveučilište. Presjek korpusa: `r snap_str`
-> (`r fmt_int(n_records)` objava). https://github.com/lusiki/DigiKat
+Javni agregati i sintetički uzorak učitavaju se izravno u R. Kontrolni sažeci iz pripadajućih manifesta služe za provjeru preuzete datoteke.
 
 ```{r}
 #| label: how-to-load
 #| echo: true
 #| eval: false
 
-# Minimalno učitavanje (put prilagodite preuzetoj datoteci)
-dta <- readRDS("digikat_corpus.rds")
+# Agregat bez izvornoga teksta
+platforme <- readRDS("data/processed/platform_summary.rds")
+
+# Potpuno sintetički uzorak za provjeru koda
+uzorak <- readRDS("data/sample/merged_sample.rds")
 ```
 
-## Referenca s potpunim popisom varijabli
+Cijeli slijed obrade, pravila uključivanja i provjera opisan je u odjeljku [Reproducibilnost](metodologija.html#method-reproducibility). Izvorni kod i upute za lokalno pokretanje nalaze se u [repozitoriju projekta](https://github.com/lusiki/DigiKat).
 
-```{r}
-#| label: full-variable-list
-
-grp <- function(n) {
-  if (n %in% c("DATE", "TIME", "year")) return("Vremenske")
-  if (n %in% c("TITLE", "FULL_TEXT", "MENTION_SNIPPET", "URL", "URL_PHOTO")) return("Sadržaj i tekst")
-  if (n %in% c("FROM", "AUTHOR", "SOURCE_TYPE")) return("Izvor i akter")
-  if (n %in% c("GROUP_NAME", "KEYWORD_NAME", "FOUND_KEYWORDS", "LANGUAGES", "LOCATIONS", "TAGS", "data_source"))
-    return("Monitoring i podudaranje")
-  if (n %in% c("AUTO_SENTIMENT", "MANUAL_SENTIMENT")) return("Tonalitet")
-  if (startsWith(n, "dk_")) return("Podrijetlo filtriranja")
-  "Angažman i doseg"
-}
-
-vn <- setdiff(names(dta), c(".date", "FROM_l", "tip_izvora"))
-all_vars <- data.frame(
-  Varijabla = vn,
-  Skupina   = vapply(vn, grp, character(1)),
-  Tip       = vapply(vn, function(v) class(dta[[v]])[1], character(1)),
-  `N jedinstvenih` = vapply(vn, function(v) fmt_int(length(unique(dta[[v]]))), character(1)),
-  `Nedostaje` = vapply(vn, function(v)
-    fmt_pct(100 * mean(is.na(dta[[v]]) | (is.character(dta[[v]]) & dta[[v]] == ""))), character(1)),
-  check.names = FALSE, stringsAsFactors = FALSE
-)
-rownames(all_vars) <- NULL
-
-kable(all_vars, caption = paste0("Sve ", length(vn), " varijable službenoga korpusa"),
-      align = c("l", "l", "l", "r", "r")) |>
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) |>
-  scroll_box(width = "100%", height = "500px")
-```
+</div>
+</details>
 
 ---
 
-**Kontakt:** [luka.sikic@unicath.hr](mailto:luka.sikic@unicath.hr) ·
-**ORCID:** [0009-0006-3519-0272](https://orcid.org/0009-0006-3519-0272)
+**Kontakt** [luka.sikic@unicath.hr](mailto:luka.sikic@unicath.hr)
+**ORCID** [0009-0006-3519-0272](https://orcid.org/0009-0006-3519-0272)
