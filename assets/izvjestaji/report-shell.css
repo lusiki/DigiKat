@@ -1,0 +1,41 @@
+/* Shared scholarly reading furniture for DigiKat long-form publications. */
+
+.reading-progress {
+  position: fixed;
+  z-index: 1200;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  overflow: hidden;
+  background: transparent;
+  pointer-events: none;
+}
+
+.reading-progress__bar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #0f4c5c;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 80ms linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reading-progress__bar {
+    transition: none;
+  }
+}
+
+@media (forced-colors: active) {
+  .reading-progress__bar {
+    background: CanvasText;
+  }
+}
+
+@media print {
+  .reading-progress {
+    display: none !important;
+  }
+}

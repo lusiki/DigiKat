@@ -58,7 +58,7 @@ corpus year for themes and 2,0 % for tone. udpipe is never re-run here.
 | `03_report_assets.R` | the report's own CSVs | 9 figures, 10 table fragments, `annual_report_derived.csv`, `manifest.json` | a scalar cannot be derived, a table exceeds five columns, or a figure fails to draw |
 | `04_sync_fragments.R` | the tracked template, scalars, fragments | `output/private/IZVJESTAJ.qmd` | a token is unknown, duplicated or unresolved |
 | `05_report_checks.R` | template, manuscript, outputs, manifest | `output/private/review/mechanical_checks.csv` | any of the 57 checks fails |
-| `06_render_report.R` | the checked manuscript, figures, typeset assets | private HTML and Typst PDF | checks fail, Quarto is older than 1.8, a render fails, `docs/` changes, or the HTML loses diacritics |
+| `06_render_report.R` | the checked manuscript, figures, typeset assets | private HTML with external responsive assets and Typst PDF | checks fail, Quarto is older than 1.8, a render fails, `docs/` changes, metadata is incomplete, images embed as base64, or the HTML loses diacritics |
 
 ## Provenance model
 
@@ -107,7 +107,7 @@ repository, and `docs/` is fingerprinted before and after.
 7. Run the disclosure screen and the independent numeric and domain reviews.
 8. Render HTML and PDF outside the repository (stage 06).
 9. Freeze the copy and hold the embargo pre-brief without covered-actor editorial input.
-10. Obtain PI sign-off; publish only through `/deploy`.
+10. Obtain PI sign-off; run `06_render_report.R --promote`, then publish the site only through `/deploy`.
 
 ## Recovery
 

@@ -39,6 +39,24 @@ cat("=== DigiKat annual report — mechanical checks ===\n\n")
 ok(!grepl("\\{\\{[^{}]+\\}\\}", report, perl = TRUE), "no unresolved tokens")
 ok(!grepl("\\{\\{[^{}]+\\}\\}", report_en, perl = TRUE), "no unresolved tokens in English edition")
 
+ok(grepl("embed-resources: false", template, fixed = TRUE) &&
+     grepl("report-html.lua", template, fixed = TRUE),
+   "HTML uses external assets and the semantic heading filter")
+ok(grepl("Sažetak u 60 sekundi", template, fixed = TRUE) &&
+     grepl("Stabilno izdanje", template, fixed = TRUE),
+   "Croatian edition exposes orientation and publication status")
+ok(grepl("The review in 60 seconds", template_en, fixed = TRUE) &&
+     grepl("Stable edition", template_en, fixed = TRUE),
+   "English edition exposes orientation and publication status")
+for (needle in c("rel=\"canonical\"", "property=\"og:title\"", "name=\"twitter:card\"",
+                 "ScholarlyArticle", "citation_pdf_url", "report-shell.js")) {
+  ok(grepl(needle, template, fixed = TRUE) && grepl(needle, template_en, fixed = TRUE),
+     paste0("both editions carry report metadata: ", needle))
+}
+ok(grepl("godisnji-pregled-{{scalar:report_year}}.pdf", template, fixed = TRUE) &&
+     grepl("annual-review-{{scalar:report_year}}.pdf", template_en, fixed = TRUE),
+   "HTML citation blocks target their matching PDF editions")
+
 token_keys <- unique(gsub("^\\{\\{scalar:|\\}\\}$", "",
                           unlist(regmatches(template, gregexpr("\\{\\{scalar:([^{}]+)\\}\\}", template,
                                                                perl = TRUE))), perl = TRUE))

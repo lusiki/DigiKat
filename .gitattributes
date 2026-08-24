@@ -12,11 +12,16 @@
 *.yml text eol=lf
 *.yaml text eol=lf
 
+# Quarto-generated third-party bundles are preserved byte-for-byte.
+assets/izvjestaji/**/libs/** -whitespace
+docs/assets/izvjestaji/**/libs/** -whitespace
+
 *.db binary
 *.gif binary
 *.jpeg binary
 *.jpg binary
 *.parquet binary
+*.pdf binary
 *.png binary
 *.rds binary
 *.RData binary

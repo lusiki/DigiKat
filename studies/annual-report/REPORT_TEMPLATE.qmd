@@ -1,6 +1,19 @@
 ---
 title: "Katoličke teme u digitalnom prostoru"
 subtitle: "Godišnji pregled {{scalar:report_year}}."
+author:
+  - name: "doc. dr. sc. Luka Šikić"
+    affiliation: "Hrvatsko katoličko sveučilište"
+    url: "https://www.lukasikic.info/"
+date: 2026-08-10
+date-modified: 2026-08-24
+description: "Godišnji pregled objava o katoličkim temama u hrvatskom digitalnom prostoru tijekom {{scalar:report_year}}. godine."
+keywords:
+  - katolički mediji
+  - digitalni mediji
+  - Hrvatska
+  - DigiKat
+license: "CC BY 4.0"
 cover-stat: "{{scalar:total_posts}} objava"
 cover-line: "iz {{scalar:distinct_sources}} različitih izvora u hrvatskom digitalnom prostoru"
 back-line: "Korpus {{scalar:corpus_sha_short}} · {{scalar:corpus_rows}} objava · {{scalar:corpus_span}} · CC BY 4.0"
@@ -13,16 +26,96 @@ format-links: false
 format:
   html:
     css: report.css
-    embed-resources: true
+    embed-resources: false
     fig-align: center
     anchor-sections: false
+    toc-location: left
+    include-in-header:
+      text: |
+        <link rel="icon" href="https://lusiki.github.io/DigiKat/assets/favicon.svg" type="image/svg+xml">
+        <link rel="canonical" href="https://lusiki.github.io/DigiKat/assets/izvjestaji/godisnji-pregled-{{scalar:report_year}}.html">
+        <link rel="stylesheet" href="report-shell.css">
+        <meta name="citation_title" content="Katoličke teme u digitalnom prostoru. Godišnji pregled {{scalar:report_year}}.">
+        <meta name="citation_author" content="Šikić, Luka">
+        <meta name="citation_publication_date" content="2026/08/10">
+        <meta name="citation_publisher" content="Hrvatsko katoličko sveučilište">
+        <meta name="citation_language" content="hr">
+        <meta name="citation_pdf_url" content="https://lusiki.github.io/DigiKat/assets/izvjestaji/godisnji-pregled-{{scalar:report_year}}.pdf">
+        <meta property="og:type" content="article">
+        <meta property="og:locale" content="hr_HR">
+        <meta property="og:site_name" content="DigiKat">
+        <meta property="og:title" content="Katoličke teme u digitalnom prostoru. Godišnji pregled {{scalar:report_year}}.">
+        <meta property="og:description" content="Godišnji pregled objava o katoličkim temama u hrvatskom digitalnom prostoru tijekom {{scalar:report_year}}. godine.">
+        <meta property="og:url" content="https://lusiki.github.io/DigiKat/assets/izvjestaji/godisnji-pregled-{{scalar:report_year}}.html">
+        <meta property="og:image" content="https://lusiki.github.io/DigiKat/assets/images/digikat-social-card.png">
+        <meta property="og:image:alt" content="DigiKat — Katolički medijski opservatorij Hrvatskoga katoličkog sveučilišta">
+        <meta property="article:published_time" content="2026-08-10">
+        <meta property="article:modified_time" content="2026-08-24">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Katoličke teme u digitalnom prostoru. Godišnji pregled {{scalar:report_year}}.">
+        <meta name="twitter:description" content="Godišnji pregled objava o katoličkim temama u hrvatskom digitalnom prostoru tijekom {{scalar:report_year}}. godine.">
+        <meta name="twitter:image" content="https://lusiki.github.io/DigiKat/assets/images/digikat-social-card.png">
+        <meta name="twitter:image:alt" content="DigiKat — Katolički medijski opservatorij Hrvatskoga katoličkog sveučilišta">
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "ScholarlyArticle",
+          "headline": "Katoličke teme u digitalnom prostoru. Godišnji pregled {{scalar:report_year}}.",
+          "description": "Godišnji pregled objava o katoličkim temama u hrvatskom digitalnom prostoru tijekom {{scalar:report_year}}. godine.",
+          "inLanguage": "hr",
+          "datePublished": "2026-08-10",
+          "dateModified": "2026-08-24",
+          "url": "https://lusiki.github.io/DigiKat/assets/izvjestaji/godisnji-pregled-{{scalar:report_year}}.html",
+          "image": "https://lusiki.github.io/DigiKat/assets/images/digikat-social-card.png",
+          "author": {"@type": "Person", "name": "Luka Šikić"},
+          "publisher": {"@type": "Organization", "name": "Hrvatsko katoličko sveučilište"},
+          "isPartOf": {"@type": "ResearchProject", "name": "DigiKat"}
+        }
+        </script>
   typst:
     papersize: a4
     fontsize: 10pt
     template-partials:
       - typst-template.typ
       - typst-show.typ
+filters:
+  - report-html.lua
 ---
+
+```{=html}
+<div class="reading-progress" aria-hidden="true"><span class="reading-progress__bar"></span></div>
+<header class="report-masthead">
+  <a class="report-masthead__brand" href="../../index.html" aria-label="DigiKat početna stranica">DigiKat</a>
+  <nav aria-label="Glavni dijelovi godišnjeg pregleda">
+    <a href="#sazetak">Sažetak</a>
+    <a href="#mapa">Mapa ekosustava</a>
+    <a href="#teme">Tematske struje</a>
+    <a href="#ton">Atmosfera diskursa</a>
+    <a href="#dogadjaji">Fokus na događaje</a>
+    <a href="#metodologija">Metodologija</a>
+  </nav>
+</header>
+<div class="report-status-strip" role="list" aria-label="Podatci o izdanju">
+  <span role="listitem"><strong>Objavljeno</strong> 10. kolovoza 2026.</span>
+  <span role="listitem"><strong>Ažurirano</strong> 24. kolovoza 2026.</span>
+  <span role="listitem"><strong>Izvještajna godina</strong> {{scalar:report_year}}.</span>
+  <span role="listitem"><strong>Podatci zaključno s</strong> 31. prosinca {{scalar:report_year}}.</span>
+  <span role="listitem"><strong>Status</strong> <span class="report-status">Stabilno izdanje</span></span>
+</div>
+<section class="report-summary-60" aria-labelledby="summary-60-title">
+  <p class="report-summary-60__label">Orijentacija</p>
+  <h2 id="summary-60-title">Sažetak u 60 sekundi</h2>
+  <p>Pregled sažima što je tijekom {{scalar:report_year}}. godine zabilježeno o katoličkim temama u hrvatskom digitalnom prostoru.</p>
+  <ul>
+    <li>Zabilježeno je <strong>{{scalar:total_posts}} objava</strong>.</li>
+    <li>Web nosi <strong>{{scalar:web_share}}</strong> godišnjeg volumena.</li>
+    <li>Glavna je tema u <strong>{{scalar:lead_theme_docs}}</strong> obrađenih objava.</li>
+  </ul>
+  <p><strong>Može se zaključiti.</strong> Pregled pokazuje zabilježenu prisutnost, tematske naglaske i jezik objava u korpusu.</p>
+  <p><strong>Ne može se zaključiti.</strong> Rezultati ne mjere povjerenje publike, uvjerenja autora ni istinitost pojedine tvrdnje.</p>
+  <a href="#sazetak">Nastavite na sažetak nalaza</a>
+</section>
+```
 
 # Sažetak {#sazetak}
 
@@ -302,7 +395,28 @@ za metodološke odluke, uredničke oznake i objavu ostaje na uredniku i istraži
 Pitanja o podacima i metodi šaljite na **luka.sikic@unicath.hr** · Hrvatsko katoličko sveučilište,
 Ilica 242, Zagreb · [lusiki.github.io/DigiKat](https://lusiki.github.io/DigiKat/)
 
-::: {.status-note}
-*Ova je edicija dovršena i mehanički provjerena; objava zahtijeva potpis urednika prema postupku iz
-uređivačke povelje.*
+::: {.citation-block}
+**Preporučeno citiranje.** Šikić, L. (2026). *Katoličke teme u digitalnom prostoru. Godišnji pregled {{scalar:report_year}}.* DigiKat, Hrvatsko katoličko sveučilište.
+
+**Stalna poveznica.** [Mrežno izdanje](https://lusiki.github.io/DigiKat/assets/izvjestaji/godisnji-pregled-{{scalar:report_year}}.html)
+
+**PDF izdanje.** [Preuzmite PDF](https://lusiki.github.io/DigiKat/assets/izvjestaji/godisnji-pregled-{{scalar:report_year}}.pdf)
+
+**Licencija.** CC BY 4.0
 :::
+
+::: {.status-note}
+*Stabilno izdanje. Objavljeno 10. kolovoza 2026. i ažurirano 24. kolovoza 2026.*
+:::
+
+```{=html}
+<footer class="report-footer">
+  <div><strong>DigiKat</strong><span>Hrvatsko katoličko sveučilište</span></div>
+  <nav aria-label="Poveznice izvještaja">
+    <a href="../../pages/baza.html">Službeni korpus</a>
+    <a href="../../pages/metodologija.html">Metodologija</a>
+    <a href="../../index.html">Početna stranica</a>
+  </nav>
+</footer>
+<script src="report-shell.js"></script>
+```

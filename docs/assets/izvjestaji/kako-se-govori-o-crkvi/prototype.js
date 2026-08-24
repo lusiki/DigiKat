@@ -691,6 +691,12 @@
     document.querySelector("#metric-public-share").textContent = pct(headline.actor_posts.value);
     document.querySelector("#metric-faith-share").textContent = pct(headline.leading_theme.value);
     document.querySelector("#metric-largest-day").textContent = HR0.format(headline.largest_peak.value);
+    document.querySelector("#summary-public").innerHTML =
+      `<strong>${pct(headline.actor_posts.value)}</strong> objava dolazi iz ostalih javnih izvora.`;
+    document.querySelector("#summary-faith").innerHTML =
+      `Vjera i duhovni život vode razgovor s <strong>${pct(headline.leading_theme.value)}</strong> objava.`;
+    document.querySelector("#summary-peak").innerHTML =
+      `Na najživlji je dan zabilježeno <strong>${HR0.format(headline.largest_peak.value)} objava</strong>.`;
 
     const verdict = DATA.findings.verdict;
     document.querySelector("#hero-finding-title").textContent = normalizeActorNames(verdict.title);

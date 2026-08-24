@@ -1,0 +1,418 @@
+/* DigiKat annual report — HTML design.
+   Same tokens as R/theme_digikat.R and typeset/typst-template.typ, so the page, the PDF and every
+   figure share one palette. The cream page matters: the figures carry that background themselves. */
+
+:root {
+  --dk-paper: #F5F4F0;
+  --dk-panel: #FFFFFF;
+  --dk-accent: #0F4C5C;
+  --dk-accent-300: #2C6F7E;
+  --dk-accent-050: #EAF0F2;
+  --dk-ink: #14181D;
+  --dk-body: #1B1D21;
+  --dk-muted: #6B6F76;
+  --dk-faint: #9A9EA6;
+  --dk-hairline: #E4E2DA;
+  --dk-alert: #B5462F;
+  --dk-serif: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  --dk-sans: "Segoe UI", Corbel, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --dk-mono: Consolas, "IBM Plex Mono", ui-monospace, monospace;
+}
+
+body {
+  background: var(--dk-paper);
+  color: var(--dk-body);
+  font-family: var(--dk-serif);
+  font-size: 17.5px;
+  line-height: 1.82;
+  overflow-x: clip;
+}
+
+p { margin-bottom: 1.35em; }
+li { margin-bottom: 0.6em; }
+ul, ol { margin-bottom: 1.6em; }
+
+#quarto-content > * { padding-top: 0; }
+main.content { max-width: 48rem; }
+
+/* --- Title block ------------------------------------------------------------------------- */
+#title-block-header {
+  border-top: 3px solid var(--dk-accent);
+  padding-top: 1.6rem;
+  margin-bottom: 2.4rem;
+}
+#title-block-header .title {
+  font-family: var(--dk-serif);
+  font-weight: 700;
+  color: var(--dk-accent);
+  font-size: 2.6rem;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+#title-block-header .subtitle {
+  font-family: var(--dk-sans);
+  color: var(--dk-muted);
+  font-size: 1.2rem;
+  margin-top: 0.35rem;
+}
+
+/* --- Headings ---------------------------------------------------------------------------- */
+h1, h2, h3, h4 { font-family: var(--dk-serif); color: var(--dk-accent); font-weight: 700; }
+h2 {
+  font-size: 2rem;
+  border-top: 2px solid var(--dk-accent);
+  padding-top: 1.5rem;
+  margin-top: 4.4rem;
+  margin-bottom: 1.6rem;
+}
+h3 { font-size: 1.36rem; color: var(--dk-accent-300); margin-top: 3rem; margin-bottom: 1rem; }
+/* h4 is never a section: it is the title of the figure or table directly beneath it. */
+h4 {
+  font-family: var(--dk-serif);
+  font-size: 1.12rem;
+  color: var(--dk-ink);
+  margin: 2.6rem 0 0.6rem;
+}
+
+strong { color: var(--dk-ink); }
+a { color: var(--dk-accent-300); }
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #2f73b8;
+  outline-offset: 3px;
+}
+
+/* --- Shared report identity --------------------------------------------------------------- */
+.report-masthead {
+  position: sticky;
+  z-index: 40;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin: 0 calc(50% - 50vw) 1.2rem;
+  padding: 0.75rem max(1rem, calc((100vw - 72rem) / 2));
+  background: color-mix(in srgb, var(--dk-paper) 95%, transparent);
+  border-top: 1px solid var(--dk-hairline);
+  border-bottom: 1px solid var(--dk-hairline);
+  font-family: var(--dk-sans);
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+  width: 100vw;
+}
+
+.report-masthead__brand {
+  color: var(--dk-accent);
+  font-family: var(--dk-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.report-masthead nav,
+.report-footer nav {
+  display: flex;
+  min-width: 0;
+  max-width: 100%;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  margin-left: auto;
+}
+
+.report-masthead nav a,
+.report-footer nav a {
+  color: var(--dk-muted);
+  font-size: 0.78rem;
+  text-decoration: none;
+  white-space: normal;
+}
+
+.report-masthead nav a:hover,
+.report-footer nav a:hover {
+  color: var(--dk-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.report-status-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1.25rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--dk-hairline);
+  border-bottom: 1px solid var(--dk-hairline);
+  color: var(--dk-muted);
+  font-family: var(--dk-sans);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.report-status-strip strong {
+  margin-right: 0.25rem;
+  color: var(--dk-muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.report-status {
+  display: inline-block;
+  padding: 0.08rem 0.42rem;
+  background: var(--dk-accent-050);
+  color: var(--dk-accent);
+  font-weight: 650;
+}
+
+.report-summary-60 {
+  margin: 2rem 0 3rem;
+  padding: clamp(1.1rem, 3vw, 1.65rem);
+  background: var(--dk-panel);
+  border: 1px solid var(--dk-hairline);
+  border-left: 3px solid var(--dk-accent);
+  font-family: var(--dk-sans);
+  font-size: 0.94rem;
+  line-height: 1.62;
+}
+
+.report-summary-60__label {
+  margin: 0 0 0.35rem;
+  color: var(--dk-accent-300);
+  font-family: var(--dk-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.report-summary-60 h2 {
+  margin: 0 0 0.9rem;
+  padding: 0;
+  border: 0;
+  color: var(--dk-accent);
+  font-size: 1.35rem;
+}
+
+.report-summary-60 p,
+.report-summary-60 ul {
+  margin-bottom: 0.8rem;
+}
+
+.report-summary-60 li {
+  margin-bottom: 0.25rem;
+}
+
+.citation-block {
+  margin: 2.5rem 0;
+  padding: 1.25rem 1.4rem;
+  background: var(--dk-panel);
+  border: 1px solid var(--dk-hairline);
+  font-family: var(--dk-sans);
+  font-size: 0.86rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.citation-block p {
+  margin: 0.45rem 0;
+}
+
+.report-footer {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 4rem calc(50% - 50vw) 0;
+  padding: 1.4rem max(1rem, calc((100vw - 72rem) / 2));
+  background: var(--dk-accent);
+  color: #fff;
+  font-family: var(--dk-sans);
+  font-size: 0.8rem;
+  box-sizing: border-box;
+  width: 100vw;
+}
+
+.report-footer div {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.report-footer strong,
+.report-footer a,
+.report-footer nav a,
+.report-footer nav a:hover {
+  color: #fff;
+}
+
+/* --- Table of contents ------------------------------------------------------------------- */
+#TOC, nav[role="doc-toc"] {
+  position: sticky;
+  top: 1.5rem;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  font-family: var(--dk-sans);
+  font-size: 0.86rem;
+}
+nav[role="doc-toc"] ul li a { color: #3f555c !important; opacity: 1 !important; }
+nav[role="doc-toc"] ul li a.active {
+  color: #0f1419 !important;
+  background: #fff !important;
+  border-left-color: #0f1419 !important;
+  font-weight: 600;
+  opacity: 1 !important;
+}
+#TOC,
+#TOC ul,
+#TOC li { opacity: 1 !important; }
+
+/* --- Figures ----------------------------------------------------------------------------- */
+p > img, figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 2.6rem 0 2.2rem;
+}
+
+/* --- Tables ------------------------------------------------------------------------------ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--dk-sans);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  margin: 1.6rem 0 0.6rem;
+  background: var(--dk-panel);
+}
+thead th {
+  background: var(--dk-accent-050);
+  color: var(--dk-accent);
+  font-weight: 700;
+  text-align: left;
+  border-bottom: 1px solid var(--dk-hairline);
+  padding: 0.85rem 0.85rem;
+}
+tbody td { border-bottom: 1px solid var(--dk-hairline); padding: 0.8rem 0.85rem; }
+tbody tr:last-child td { border-bottom: none; }
+td:not(:first-child), th:not(:first-child) { text-align: right; }
+td:last-child, th:last-child { text-align: left; }
+
+/* --- Editorial blocks -------------------------------------------------------------------- */
+/* A block quote is never a quotation here: it is the source note under a figure or a table. */
+blockquote {
+  font-family: var(--dk-sans);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--dk-muted);
+  border-left: none;
+  margin: 0.7rem 0 2.8rem;
+  padding: 0;
+  max-width: 42rem;
+}
+blockquote p { margin: 0; }
+
+.source-note {
+  font-family: var(--dk-sans);
+  font-size: 0.79rem;
+  color: var(--dk-muted);
+  line-height: 1.5;
+  margin: 0.6rem 0 2.8rem;
+  max-width: 44rem;
+}
+.source-note p { margin: 0; }
+
+.teaser {
+  font-family: var(--dk-sans);
+  font-size: 0.88rem;
+  color: var(--dk-accent-300);
+  border-left: 2px solid var(--dk-accent-300);
+  padding: 0.3rem 0 0.3rem 1rem;
+  margin: 2.2rem 0;
+}
+.teaser p { margin: 0; }
+
+.status-note {
+  font-family: var(--dk-sans);
+  font-size: 0.85rem;
+  color: var(--dk-muted);
+  border-top: 1px solid var(--dk-hairline);
+  padding-top: 0.8rem;
+  margin-top: 1.6rem;
+}
+
+/* --- Callouts ---------------------------------------------------------------------------- */
+div.callout {
+  background: var(--dk-accent-050);
+  border: none;
+  border-left: 3px solid var(--dk-accent);
+  border-radius: 0;
+  margin: 2.6rem 0;
+  padding: 0.5rem 0.4rem 0.3rem;
+}
+div.callout .callout-body,
+div.callout .callout-body-container { background: transparent; }
+div.callout .callout-title {
+  background: transparent;
+  padding-bottom: 0.2rem;
+}
+div.callout .callout-title p,
+div.callout .callout-title-container {
+  font-family: var(--dk-serif);
+  font-weight: 700;
+  color: #0a3543 !important;
+  font-size: 1.02rem;
+}
+div.callout.callout-style-simple > div.callout-header { border-bottom: none; }
+div.callout-important { border-left-color: var(--dk-alert); }
+div.callout-important .callout-title-container { color: #7f2e22 !important; }
+div.callout.callout-important.callout-titled > .callout-header .callout-title-container {
+  color: #5b1d16 !important;
+  opacity: 1 !important;
+}
+
+/* --- Print ------------------------------------------------------------------------------- */
+@media print {
+  body { background: var(--dk-paper); font-size: 11pt; }
+  h2 { page-break-before: always; }
+  h2:first-of-type { page-break-before: avoid; }
+  div.callout, table, .source-note { page-break-inside: avoid; }
+  .report-masthead,
+  .report-status-strip,
+  .report-summary-60,
+  .report-footer { display: none !important; }
+}
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  #title-block-header .title { font-size: 1.9rem; }
+  table { font-size: 0.78rem; }
+  .report-masthead {
+    position: static;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .report-masthead nav { margin-left: 0; }
+  .report-footer { align-items: flex-start; flex-direction: column; }
+  .report-footer nav { margin-left: 0; }
+}
+
+/* Quarto keeps the left-TOC grid at exactly 768 px, where its minimum columns exceed the viewport. */
+@media (min-width: 641px) and (max-width: 900px) {
+  body .page-columns,
+  body:not(.floating):not(.docked) .page-columns.toc-left {
+    display: block !important;
+    max-width: 100%;
+  }
+  #quarto-sidebar-toc-left,
+  nav[role="doc-toc"] { display: none !important; }
+  main.content { width: auto; max-width: 48rem; margin-inline: 1rem; }
+  .report-masthead,
+  .report-footer { width: auto; margin-right: 0; margin-left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

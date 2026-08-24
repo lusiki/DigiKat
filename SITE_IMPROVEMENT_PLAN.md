@@ -836,3 +836,14 @@ Begin with Run 1. Do not combine all six runs into one implementation change.
 - Manual viewports checked: browser control was unavailable; rendered DOM, one-H1, lazy-loading, overflow-containment, keyboard-focus, and download-target checks were used as deterministic substitutes.
 - Remaining known issues: four pre-existing source-encoding findings, one pre-existing restricted-study disclosure finding, a pre-existing executive-overview alt-text warning, no browser-console/visual viewport pass, and no full-site render without explicit authorization.
 - Approval to continue: pending user review.
+
+### Run 5 completion
+
+- Commit: recorded by the commit containing this completion record.
+- Pages changed: Croatian and English annual-review HTML/PDF editions, the bespoke **Kako se govori o Crkvi?** report, their publication packages under `assets/` and `docs/`, and annual-report production documentation.
+- Shared components changed: reusable report progress CSS/JavaScript, annual-report metadata and scholarly identity, semantic HTML heading filter, responsive-image builder, print-safe Typst separation, status strips, citation blocks, and report masthead/footer treatments.
+- Tests added or updated: focused Run 5 source/rendered-publication checks, annual-report metadata and citation checks, one-H1 and external-image assertions, PDF-dimension separation, responsive assets, and shared accessibility behaviour.
+- Verification commands passed: annual-report synchronization and 120 mechanical checks, four isolated report renders with explicit promotion, 21 focused Run 5 checks, 66 repository regression checks, `R/00_setup.R`, and `R/check_site_links.R` across 135 HTML files.
+- Manual viewports checked: the in-app browser had no available backend; rendered DOM, local-target, responsive-asset, overflow-containment, focus, reduced-motion and print assertions were used as deterministic substitutes. Both 24-page A4 PDFs were rendered to complete contact sheets and representative high-resolution pages with no clipping or overlap.
+- Remaining known issues: four pre-existing source-encoding findings, one pre-existing restricted-study disclosure finding, the machine's pre-existing `renv` temporary-directory/out-of-sync warning, no browser-console or live viewport pass, and no full-site render without explicit authorization.
+- Approval to continue: approved by the user on 24 August 2026.

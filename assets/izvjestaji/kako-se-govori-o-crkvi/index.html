@@ -59,14 +59,17 @@
     }
   }
   </script>
+  <link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../report-shell.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#sadrzaj">Preskoči na sadržaj</a>
+  <div class="reading-progress" aria-hidden="true"><span class="reading-progress__bar"></span></div>
 
   <div class="prototype-banner" role="note">
     <span class="prototype-banner__mark" aria-hidden="true"></span>
-    Istraživački izvještaj. Nalazi su izvedeni iz korpusa projekta DigiKat.
+    Istraživački izvještaj. Stabilno izdanje. Nalazi su izvedeni iz korpusa projekta DigiKat.
   </div>
 
   <header class="site-header">
@@ -103,6 +106,7 @@
       <div class="hero__inner">
         <div class="hero__status-row">
           <span class="scope-chip" data-fragment="scope">Učitavanje obuhvata…</span>
+          <span class="status-chip status-chip--stable">Stabilno izdanje</span>
         </div>
         <p class="section-heading__kicker">Pregled digitalnoga razgovora o Crkvi</p>
         <h1 id="page-title">Kako se govori o Crkvi?</h1>
@@ -149,6 +153,19 @@
       <section class="opening" aria-labelledby="opening-question">
         <p id="opening-question" class="opening__question">O Crkvi ne govore samo crkveni mediji. Govore i katolički portali, vjerski stvaratelji, nacionalni i lokalni mediji, javne ustanove, forumi i brojni osobni računi.</p>
         <p>Zajedno stvaraju jedan velik razgovor, ali ne govore jednako često i ne biraju iste teme. Ovaj izvještaj pokazuje tko najviše objavljuje, što stavlja u središte, kada razgovor naglo oživi i kakvim se riječima služi.</p>
+      </section>
+
+      <section class="summary-60" aria-labelledby="summary-60-title">
+        <p class="summary-60__label">Orijentacija</p>
+        <h2 id="summary-60-title">Sažetak u 60 sekundi</h2>
+        <ul>
+          <li id="summary-public">Podatci se učitavaju.</li>
+          <li id="summary-faith">Podatci se učitavaju.</li>
+          <li id="summary-peak">Podatci se učitavaju.</li>
+        </ul>
+        <p><strong>Može se zaključiti.</strong> Izvještaj pokazuje tko je prisutan u zabilježenom razgovoru, koje teme bira i kada se razgovor pojačava.</p>
+        <p><strong>Ne može se zaključiti.</strong> Rezultati ne mjere doseg publike, povjerenje u pojedini medij ni uvjerenja autora.</p>
+        <a href="#tko-govori">Nastavite na prvo poglavlje</a>
       </section>
 
       <section id="tko-govori" class="report-section" aria-labelledby="tko-title">
@@ -547,5 +564,6 @@
   <noscript>Za prikaz generiranih nalaza potreban je JavaScript.</noscript>
   <script src="analysis-data.js"></script>
   <script src="prototype.js"></script>
+  <script src="../report-shell.js"></script>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 - **Slug:** `annual-report`
 - **Owner/editor:** Luka Šikić
-- **Status:** two editions built and mechanically checked (2025, 2024); awaiting PI sign-off before publication
+- **Status:** 2025 and 2024 editions built and mechanically checked; the 2025 edition is a published stable edition
 - **Created:** 2026-08-07
 
 ## Editions
@@ -66,9 +66,10 @@ Publication runs through `/deploy` after PI sign-off, per the charter. Until the
 
 ## Publication
 
-Both formats are copied to `assets/izvjestaji/godisnji-pregled-2025.{html,pdf}` and linked from the
-landing-page hero beside the database and the maps. The render chain never writes there: publication
-is a separate, deliberate act after sign-off, so a rebuild cannot silently change what is published.
+The default render writes checked HTML and PDF files plus external responsive web assets below the
+edition's private `rendered/` directory. After sign-off, rerun stage 06 with `--promote` to refresh
+`assets/izvjestaji/godisnji-pregled-2025.{html,pdf}` and its companion `_files/` directory. Promotion
+is explicit, so an ordinary rebuild cannot silently change what is published.
 
 ## Open editorial questions for the PI
 
