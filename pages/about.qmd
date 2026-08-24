@@ -31,22 +31,22 @@ projekta stoji na četiri cilja.
 <div class="card-grid">
 <div class="info-card">
 <div class="info-card-icon"><i class="bi bi-broadcast"></i></div>
-<h4>Prikupljanje objava</h4>
+<h3>Prikupljanje objava</h3>
 <p>Svakodnevno i automatsko prikupljanje objava s portala, društvenih mreža i foruma, bez ručnog probiranja.</p>
 </div>
 <div class="info-card">
 <div class="info-card-icon"><i class="bi bi-database"></i></div>
-<h4>Baza podataka</h4>
+<h3>Baza podataka</h3>
 <p>Uređena baza s javnim popisom sadržaja, agregatima, kodom i metodologijom, uz kontroliran pristup punom tekstu objava.</p>
 </div>
 <div class="info-card">
 <div class="info-card-icon"><i class="bi bi-cpu"></i></div>
-<h4>Računalna obrada teksta</h4>
+<h3>Računalna obrada teksta</h3>
 <p>Računalna obrada svih tih objava odjednom, kako bi se vidjelo o čemu se piše, kakvim se rječnikom i kada pažnja raste.</p>
 </div>
 <div class="info-card">
 <div class="info-card-icon"><i class="bi bi-share"></i></div>
-<h4>Dijeljenje rezultata</h4>
+<h3>Dijeljenje rezultata</h3>
 <p>Objava nalaza kroz radove, konferencije i radionice, uz otvoreno objavljen kod i metodologiju.</p>
 </div>
 </div>
@@ -140,22 +140,22 @@ Sudjelovanjem dobivate sljedeće.
 <div class="card-grid">
 <div class="info-card">
 <div class="info-card-icon"><i class="bi bi-graph-up-arrow"></i></div>
-<h4>Praktično iskustvo</h4>
+<h3>Praktično iskustvo</h3>
 <p>Rad s velikim podacima koristeći alate poput <strong>R</strong> i <strong>Python</strong>.</p>
 </div>
 <div class="info-card">
 <div class="info-card-icon"><i class="bi bi-diagram-3"></i></div>
-<h4>Tehničke vještine</h4>
+<h3>Tehničke vještine</h3>
 <p>Obrada prirodnog jezika (NLP), strojno učenje i mrežna analiza.</p>
 </div>
 <div class="info-card">
 <div class="info-card-icon"><i class="bi bi-award"></i></div>
-<h4>Znanstveni doprinos</h4>
+<h3>Znanstveni doprinos</h3>
 <p>Rezultati koji su javno dostupni i citirani.</p>
 </div>
 <div class="info-card">
 <div class="info-card-icon"><i class="bi bi-people"></i></div>
-<h4>Dio inicijative</h4>
+<h3>Dio inicijative</h3>
 <p>Koja aktivno promiče transparentnost, suradnju i inovacije u znanosti.</p>
 </div>
 </div>

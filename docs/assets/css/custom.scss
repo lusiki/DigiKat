@@ -123,6 +123,13 @@ h1 { font-weight: 600; line-height: 1.1; }
 h2 { font-weight: 600; line-height: 1.12; }
 a { text-decoration: none; }
 a:hover { text-decoration: underline; }
+
+// Inline links must remain identifiable without relying on colour alone.
+#quarto-document-content :where(p, li, dd, blockquote, figcaption, td, th, .summary-60, .mm-foot) a:not(.btn) {
+  text-decoration: underline;
+  text-decoration-thickness: 0.075em;
+  text-underline-offset: 0.16em;
+}
 ::selection { background: $dk-accent; color: #fff; }
 
 :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
@@ -195,16 +202,16 @@ body.fullcontent #quarto-sidebar-glass { display: none !important; }
   margin-bottom: 2rem;
 }
 .quarto-categories { gap: 0.5rem; margin-top: 0.85rem; }
-.quarto-category {
+.quarto-title-block .quarto-categories .quarto-category {
   font-family: $font-family-monospace;
   font-size: 0.72rem;
   letter-spacing: 0.04em;
   background: $dk-accent-050;
-  color: $dk-accent-ink;
+  color: $dk-accent-700 !important;
   border: none;
   border-radius: 4px;
   padding: 0.25rem 0.6rem;
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 // ---------------------------------------------------------------------
@@ -544,6 +551,7 @@ details.reference-section[open] > summary { border-bottom: 1px solid $dk-hairlin
 .reference-section__content { padding: var(--dk-space-4) var(--dk-space-5); }
 .reference-section__content > :last-child { margin-bottom: 0; }
 .reference-table { max-width: 100%; overflow-x: auto; }
+.reference-table--tall { max-height: 32.5rem; overflow: auto; }
 
 .table-responsive {
   max-width: 100%;

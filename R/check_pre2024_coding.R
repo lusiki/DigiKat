@@ -40,7 +40,13 @@ if ("url" %in% names(cd)) {
   cat("URL disagreements  :", sum(j$url_c != j$url_r, na.rm = TRUE), "(must be 0)\n")
   url_ok <- sum(j$url_c != j$url_r, na.rm = TRUE) == 0
 } else { cat("URL column         : not supplied by the coder (join is on id alone)\n"); url_ok <- TRUE }
-mojibake <- sum(grepl("Ä‡|Å¾|Å¡|Ä‘|â€", ref$text))
+mojibake_pattern <- paste(c(
+  intToUtf8(0x00C3),
+  paste0(intToUtf8(0x00E2), intToUtf8(0x20AC)),
+  paste0(intToUtf8(0x00C4), "[", paste0(intToUtf8(c(0x2021, 0x0164, 0x2018)), collapse = ""), "]"),
+  paste0(intToUtf8(0x00C5), "[", paste0(intToUtf8(c(0x00BE, 0x00A1)), collapse = ""), "]")
+), collapse = "|")
+mojibake <- sum(grepl(mojibake_pattern, ref$text, perl = TRUE))
 cat("mojibake rows      :", mojibake, "(must be 0)\n")
 ok <- nrow(cd) == nrow(ref) && sum(blank) == 0 && !length(bad) && url_ok &&
   sum(duplicated(cd$id)) == 0 && mojibake == 0

@@ -66,7 +66,13 @@ dia <- sum(grepl("[čćžšđČĆŽŠĐ]", cd$text))
 cat("\n=== encoding ===\n")
 cat("rows whose text contains Croatian diacritics:", dia, "of", nrow(cd),
     if (dia == 0) " !! suspicious — possible mojibake\n" else " (looks intact)\n")
-mojibake <- sum(grepl("Ä‡|Å¾|Ä\u008d|Å¡|Ä‘|â€", cd$text))
+mojibake_pattern <- paste(c(
+  intToUtf8(0x00C3),
+  paste0(intToUtf8(0x00E2), intToUtf8(0x20AC)),
+  paste0(intToUtf8(0x00C4), "[", paste0(intToUtf8(c(0x2021, 0x0164, 0x2018)), collapse = ""), "]"),
+  paste0(intToUtf8(0x00C5), "[", paste0(intToUtf8(c(0x00BE, 0x00A1)), collapse = ""), "]")
+), collapse = "|")
+mojibake <- sum(grepl(mojibake_pattern, cd$text, perl = TRUE))
 cat("rows showing classic CP1250/UTF-8 mojibake  :", mojibake, "(must be 0)\n")
 
 ## ---- verdict ---------------------------------------------------------------------------------

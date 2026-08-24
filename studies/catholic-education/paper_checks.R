@@ -86,10 +86,14 @@ if (length(old_strand_lines) != 2L || any(!grepl("previous|rather than", old_str
 if (grepl("genuine anchoring", paper, ignore.case = TRUE)) {
   stop("Use 'local past linkage'; proximity is not semantically validated genuine anchoring.", call. = FALSE)
 }
-mojibake <- c("Ã", "ÄŤ", "Å¡", "Å¾", "â€“", "â€”")
-bad_encoding <- mojibake[vapply(mojibake, grepl, logical(1), x = paper, fixed = TRUE)]
-if (length(bad_encoding)) {
-  stop("PAPER_v2.md contains mojibake marker(s): ", paste(bad_encoding, collapse = ", "), call. = FALSE)
+mojibake_pattern <- paste(c(
+  intToUtf8(0x00C3),
+  paste0(intToUtf8(0x00E2), intToUtf8(0x20AC)),
+  paste0(intToUtf8(0x00C4), "[", paste0(intToUtf8(c(0x2021, 0x0164, 0x2018)), collapse = ""), "]"),
+  paste0(intToUtf8(0x00C5), "[", paste0(intToUtf8(c(0x00BE, 0x00A1)), collapse = ""), "]")
+), collapse = "|")
+if (grepl(mojibake_pattern, paper, perl = TRUE)) {
+  stop("PAPER_v2.md contains a mojibake marker.", call. = FALSE)
 }
 
 figure_paths <- c(

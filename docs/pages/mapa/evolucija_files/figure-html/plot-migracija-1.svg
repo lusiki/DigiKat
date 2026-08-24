@@ -1041,20 +1041,20 @@
 <line x1='598.88' y1='418.01' x2='603.11' y2='413.78' style='stroke-width: 1.03; stroke: #AA3377; stroke-opacity: 0.70;' />
 <line x1='598.88' y1='413.78' x2='603.11' y2='418.01' style='stroke-width: 1.03; stroke: #AA3377; stroke-opacity: 0.70;' />
 <rect x='598.88' y='418.31' width='4.23' height='4.23' style='stroke-width: 1.03; stroke: #332288; stroke-opacity: 0.70;' />
-<line x1='618.98' y1='387.40' x2='601.49' y2='420.11' style='stroke-width: 1.07; stroke: none;' />
-<line x1='611.92' y1='430.41' x2='601.83' y2='422.54' style='stroke-width: 1.07; stroke: none;' />
-<line x1='613.00' y1='412.33' x2='601.83' y2='421.22' style='stroke-width: 1.07; stroke: none;' />
-<line x1='619.40' y1='373.09' x2='601.41' y2='414.91' style='stroke-width: 1.07; stroke: none;' />
-<line x1='612.28' y1='397.62' x2='601.46' y2='419.47' style='stroke-width: 1.07; stroke: none;' />
-<text x='594.37' y='244.87' style='font-size: 9.67px;fill: #4477AA; font-family: "Arial";' textLength='47.30px' lengthAdjust='spacingAndGlyphs'>web-portali</text>
-<text x='603.68' y='427.98' style='font-size: 9.67px;fill: #EE6677; font-family: "Arial";' textLength='37.98px' lengthAdjust='spacingAndGlyphs'>YouTube</text>
+<line x1='619.38' y1='379.06' x2='601.42' y2='420.07' style='stroke-width: 1.07; stroke: none;' />
+<line x1='611.92' y1='417.17' x2='601.97' y2='421.46' style='stroke-width: 1.07; stroke: none;' />
+<line x1='613.00' y1='403.06' x2='601.56' y2='420.98' style='stroke-width: 1.07; stroke: none;' />
+<line x1='619.62' y1='364.96' x2='601.36' y2='414.89' style='stroke-width: 1.07; stroke: none;' />
+<line x1='625.87' y1='393.14' x2='601.71' y2='419.64' style='stroke-width: 1.07; stroke: none;' />
+<text x='594.37' y='228.92' style='font-size: 9.67px;fill: #4477AA; font-family: "Arial";' textLength='47.30px' lengthAdjust='spacingAndGlyphs'>web-portali</text>
+<text x='603.68' y='433.44' style='font-size: 9.67px;fill: #EE6677; font-family: "Arial";' textLength='37.98px' lengthAdjust='spacingAndGlyphs'>YouTube</text>
 <text x='599.21' y='260.37' style='font-size: 9.67px;fill: #228833; font-family: "Arial";' textLength='42.47px' lengthAdjust='spacingAndGlyphs'>Facebook</text>
-<text x='598.68' y='385.60' style='font-size: 9.67px;fill: #66CCEE; font-family: "Arial";' textLength='43.00px' lengthAdjust='spacingAndGlyphs'>Twitter / X</text>
-<text x='613.72' y='435.47' style='font-size: 9.67px;fill: #EE7733; font-family: "Arial";' textLength='27.95px' lengthAdjust='spacingAndGlyphs'>Reddit</text>
-<text x='614.80' y='414.31' style='font-size: 9.67px;fill: #777777; font-family: "Arial";' textLength='26.88px' lengthAdjust='spacingAndGlyphs'>forumi</text>
+<text x='598.68' y='377.26' style='font-size: 9.67px;fill: #66CCEE; font-family: "Arial";' textLength='43.00px' lengthAdjust='spacingAndGlyphs'>Twitter / X</text>
+<text x='613.72' y='419.45' style='font-size: 9.67px;fill: #EE7733; font-family: "Arial";' textLength='27.95px' lengthAdjust='spacingAndGlyphs'>Reddit</text>
+<text x='614.80' y='405.35' style='font-size: 9.67px;fill: #777777; font-family: "Arial";' textLength='26.88px' lengthAdjust='spacingAndGlyphs'>forumi</text>
 <text x='599.21' y='435.47' style='font-size: 9.67px;fill: #CCBB44; font-family: "Arial";' textLength='42.47px' lengthAdjust='spacingAndGlyphs'>komentari</text>
-<text x='598.68' y='371.29' style='font-size: 9.67px;fill: #AA3377; font-family: "Arial";' textLength='43.00px' lengthAdjust='spacingAndGlyphs'>Instagram</text>
-<text x='614.08' y='400.04' style='font-size: 9.67px;fill: #332288; font-family: "Arial";' textLength='27.59px' lengthAdjust='spacingAndGlyphs'>TikTok</text>
+<text x='598.68' y='363.16' style='font-size: 9.67px;fill: #AA3377; font-family: "Arial";' textLength='43.00px' lengthAdjust='spacingAndGlyphs'>Instagram</text>
+<text x='614.08' y='391.34' style='font-size: 9.67px;fill: #332288; font-family: "Arial";' textLength='27.59px' lengthAdjust='spacingAndGlyphs'>TikTok</text>
 <text x='59.48' y='426.35' text-anchor='end' style='font-size: 12.48px;fill: #6B6F76; font-family: "Arial";' textLength='18.03px' lengthAdjust='spacingAndGlyphs'>0%</text>
 <text x='59.48' y='337.92' text-anchor='end' style='font-size: 12.48px;fill: #6B6F76; font-family: "Arial";' textLength='24.97px' lengthAdjust='spacingAndGlyphs'>25%</text>
 <text x='59.48' y='249.49' text-anchor='end' style='font-size: 12.48px;fill: #6B6F76; font-family: "Arial";' textLength='24.97px' lengthAdjust='spacingAndGlyphs'>50%</text>

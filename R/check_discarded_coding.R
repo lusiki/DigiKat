@@ -34,7 +34,13 @@ cat("stratum disagreements:", sum(j$stratum_c != j$stratum_r, na.rm = TRUE), "(m
 VALID <- c("catholic_clear","catholic_mention","religious_other","not_religious","cannot_tell")
 bad <- setdiff(unique(cd$label[!blank]), VALID)
 if (length(bad)) cat("!! unrecognised labels:", paste(bad, collapse = ", "), "\n")
-mojibake <- sum(grepl("Ä‡|Å¾|Å¡|Ä‘|â€", cd$text))
+mojibake_pattern <- paste(c(
+  intToUtf8(0x00C3),
+  paste0(intToUtf8(0x00E2), intToUtf8(0x20AC)),
+  paste0(intToUtf8(0x00C4), "[", paste0(intToUtf8(c(0x2021, 0x0164, 0x2018)), collapse = ""), "]"),
+  paste0(intToUtf8(0x00C5), "[", paste0(intToUtf8(c(0x00BE, 0x00A1)), collapse = ""), "]")
+), collapse = "|")
+mojibake <- sum(grepl(mojibake_pattern, cd$text, perl = TRUE))
 cat("mojibake rows      :", mojibake, "(must be 0)\n")
 ok <- nrow(cd) == nrow(ref) && sum(blank) == 0 && !length(bad) &&
   sum(j$url_c != j$url_r, na.rm = TRUE) == 0 && sum(duplicated(cd$id)) == 0 && mojibake == 0

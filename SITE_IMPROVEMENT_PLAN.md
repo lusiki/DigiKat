@@ -847,3 +847,14 @@ Begin with Run 1. Do not combine all six runs into one implementation change.
 - Manual viewports checked: the in-app browser had no available backend; rendered DOM, local-target, responsive-asset, overflow-containment, focus, reduced-motion and print assertions were used as deterministic substitutes. Both 24-page A4 PDFs were rendered to complete contact sheets and representative high-resolution pages with no clipping or overlap.
 - Remaining known issues: four pre-existing source-encoding findings, one pre-existing restricted-study disclosure finding, the machine's pre-existing `renv` temporary-directory/out-of-sync warning, no browser-console or live viewport pass, and no full-site render without explicit authorization.
 - Approval to continue: approved by the user on 24 August 2026.
+
+### Run 6 completion
+
+- Commit: recorded by the commit containing this completion record.
+- Pages changed: all 115 active Quarto inputs were fully rendered; 126 active HTML pages passed the release contract; the eight excluded frozen-study pages were restored from their controlled renders without recomputing research findings.
+- Shared components changed: canonical source-profile generator, page freshness and status strip, structured metadata, global responsive and accessibility styles, table hardening, report contrast, page-weight budgets, source-network handling, CI coverage, and the repeatable release checklist.
+- Tests added or updated: 382 Run 6 source-quality checks, static checks for 126 active HTML pages, and a pinned Chrome audit covering accessibility, overflow, focus, reduced motion, console/network failures, and the **Moj medij** keyboard path.
+- Verification commands passed: 66 regression checks, source checks across 234 active R files and 124 QMD files, disclosure checks across 251 trackable study artifacts, setup validation, the full 115-page Quarto render, links across 136 HTML files, all page-weight budgets, and the final Chrome matrix of 20 pages at 320, 375, 390, 768, and 1024 pixels. The protected corpus retained SHA-256 `15473A615BF301C02B5D4149D662A4DB282927D3B3E98308C5FF54CBE1DE520A`.
+- Manual viewports checked: the in-app browser had no connected backend; the repository's real-Chrome gate completed 100 page/viewport combinations, and the final rendered content and shared styles were reviewed for the established academic identity.
+- Remaining known issues: the local `renv` library still reports its pre-existing temporary-directory and out-of-sync warnings; unrelated exploration work remains outside this run. No site release-gate failures remain.
+- Approval to continue: the user explicitly approved the full render and final gate on 24 August 2026; the six-run programme is complete.
