@@ -3,8 +3,15 @@ import { existsSync, mkdirSync, mkdtempSync, readdirSync, rmSync, writeFileSync 
 import { fileURLToPath, pathToFileURL } from "node:url";
 import path from "node:path";
 
-const root = path.dirname(fileURLToPath(import.meta.url));
-const output = path.join(root, "output");
+const scriptDir = path.dirname(fileURLToPath(import.meta.url));
+// The reviewed static package lives under assets/ once a report is promoted, while this folder keeps the
+// analytical source. --root lets the same harness check either copy; output always stays beside the script.
+const rootArgument = process.argv.slice(2).find(value => value.startsWith("--root="));
+const root = rootArgument ? path.resolve(rootArgument.slice("--root=".length)) : scriptDir;
+if (!existsSync(path.join(root, "index.html"))) {
+  throw new Error(`No index.html under --root: ${root}`);
+}
+const output = path.join(scriptDir, "output");
 mkdirSync(output, { recursive: true });
 
 const resolvedOutputRoot = path.resolve(output);
@@ -228,7 +235,9 @@ async function inspectViewport(name, width, height, mobile) {
         { name: 'sources', node: document.querySelector('.source-guide') },
         { name: 'themes', node: document.querySelector('.theme-guide') },
         { name: 'concepts', node: document.querySelector('.concept-guide') },
+        { name: 'modes', node: document.querySelector('.mode-guide') },
         { name: 'verdict', node: document.querySelector('.verdict-box') },
+        { name: 'scope', node: document.querySelector('.scope-note') },
         { name: 'method', node: document.querySelector('.method-box') }
       ].filter(item => item.node).map(item => {
         const box = item.node.getBoundingClientRect();
@@ -292,9 +301,12 @@ try {
     if (metrics.mojibakeMatches !== 0) {
       failures.push(`${viewport}.mojibakeMatches: ${metrics.mojibakeMatches}`);
     }
-    // Keep the report readable while leaving detailed qualifications in project methodology.
-    if (metrics.articleWords < 900 || metrics.articleWords > 1900) {
-      failures.push(`${viewport}.articleWords: expected 900–1,900, received ${metrics.articleWords}`);
+    // Keep the report readable while leaving detailed qualifications in project methodology. The ceiling was
+    // raised from 1,900 to 2,050 on 2026-08-24 for the chapter 6 conversion pass (three closing environments
+    // plus the scope note). That pass added 186 words of framing, not method detail, so the intent behind the
+    // cap is intact. Raise it again only for another deliberate editorial decision, never to fit new caveats.
+    if (metrics.articleWords < 900 || metrics.articleWords > 2050) {
+      failures.push(`${viewport}.articleWords: expected 900–2,050, received ${metrics.articleWords}`);
     }
     if (viewport === "mobile") {
       for (const metric of [

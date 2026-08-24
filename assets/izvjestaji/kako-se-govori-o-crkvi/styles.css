@@ -839,6 +839,115 @@ button:focus-visible,
   text-transform: uppercase;
 }
 
+/* Chapter 6 closing frame: three conversation environments, one metric each. */
+.mode-guide {
+  margin: 2.5rem 0 2.6rem 121px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+}
+
+.mode-guide > div {
+  position: relative;
+  min-height: 210px;
+  padding: 1.15rem 1.2rem 3.6rem;
+  background: rgba(255, 255, 255, 0.74);
+  border-top: 4px solid var(--accent);
+}
+
+.mode-guide > div:nth-child(2) {
+  border-top-color: var(--blue);
+}
+
+.mode-guide > div:nth-child(3) {
+  border-top-color: var(--brick);
+}
+
+.mode-guide__index {
+  margin: 0 0 0.55rem;
+  color: var(--faint);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.mode-guide h3 {
+  margin: 0;
+  color: var(--heading);
+  font-family: var(--serif);
+  font-size: 1.04rem;
+  line-height: 1.25;
+}
+
+.mode-guide p:not(.mode-guide__index) {
+  margin: 0.48rem 0 0;
+  color: var(--body-2);
+  font-size: 0.84rem;
+  line-height: 1.48;
+}
+
+.mode-guide strong {
+  position: absolute;
+  right: 1.2rem;
+  bottom: 1.15rem;
+  left: 1.2rem;
+  color: var(--accent-deep);
+  font-family: var(--mono);
+  font-size: 0.94rem;
+  line-height: 1.35;
+}
+
+/* What the report measures, and what it does not. Sits between the verdict and the imprint. */
+.scope-note {
+  margin: 2.6rem 0 0 121px;
+  padding: 1.5rem 1.7rem;
+  background: var(--panel);
+  border: 1px solid var(--hairline);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+}
+
+.scope-note__eyebrow {
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.scope-note p:not(.scope-note__eyebrow) {
+  margin: 0 0 0.85rem;
+  color: var(--body);
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+
+.scope-note__pointer {
+  color: var(--body-2) !important;
+}
+
+.scope-note__link {
+  padding-top: 0.9rem;
+  display: inline-flex;
+  gap: 0.45rem;
+  border-top: 1px solid rgba(15, 76, 92, 0.2);
+  color: var(--accent-deep);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.scope-note__link:hover,
+.scope-note__link:focus-visible {
+  text-decoration: underline;
+}
+
 .figure-card,
 .table-card {
   position: relative;
@@ -1871,20 +1980,28 @@ tbody tr:hover {
 
   .section-lead,
   .trend-note,
-  .source-guide {
+  .source-guide,
+  .mode-guide,
+  .scope-note {
     margin-left: 0;
   }
 
   .source-guide,
   .theme-guide,
-  .concept-guide {
+  .concept-guide,
+  .mode-guide {
     grid-template-columns: 1fr;
   }
 
   .source-guide > div,
   .theme-guide > div,
-  .concept-guide > div {
+  .concept-guide > div,
+  .mode-guide > div {
     min-height: 0;
+  }
+
+  .mode-guide > div {
+    padding-bottom: 3.6rem;
   }
 
   .source-guide > div,

@@ -37,12 +37,25 @@ Iz korijena repozitorija, uz pauziranu Dropbox sinkronizaciju tijekom prvoga tem
 ```powershell
 & 'C:\Program Files\R\R-4.6.0\bin\Rscript.exe' --vanilla 'explorations/okvir-katolicanstva-prototype/build-15pct-nlp.R'
 & 'C:\Program Files\R\R-4.6.0\bin\Rscript.exe' --vanilla 'explorations/okvir-katolicanstva-prototype/analysis.R'
-node explorations/okvir-katolicanstva-prototype/qa-browser.mjs
+node explorations/okvir-katolicanstva-prototype/qa-browser.mjs --root=assets/izvjestaji/kako-se-govori-o-crkvi
 ```
 
 Prva naredba gradi privatnu generaciju samo ako ona ne postoji. Druga izračunava svih devet figura, tablicu, dijagnostičke CSV-ove, `analysis-data.js` i `analysis-summary.txt`. Treća provjerava široki i mobilni prikaz, pogreške JavaScripta, prazne grafikone, prelijevanje i broj prikazanih elemenata te sprema snimke u `output/`.
 
 Nakon izračuna otvorite [`index.html`](index.html). Stranica namjerno prekida učitavanje ako generirani rezultati nedostaju.
+
+## Objavljeni paket i ova mapa
+
+Objavljeni paket pod `assets/izvjestaji/kako-se-govori-o-crkvi/` prikazna je verzija izvještaja i
+razlikuje se od prototipa u ovoj mapi. `analysis-data.js` istovjetan je u obje kopije, pa je analitički
+sloj isti. `index.html`, `prototype.js` i `styles.css` razlikuju se i objavljeni paket je noviji.
+
+Uređuje se objavljeni paket. `qa-browser.mjs` zato prima `--root` i pokreće se nad njim. Bez toga
+argumenta provjerava zastarjeli prototip u ovoj mapi.
+
+Poglavlje 6 objavljenoga paketa 24. kolovoza 2026. dobilo je tri okruženja razgovora, napomenu o tome
+što izvještaj mjeri i poveznicu na „Moj medij”. Plan je u
+`quality_reports/plans/2026-08-24_flagship-report-conversion-pass.md`.
 
 ## Reconciliation
 

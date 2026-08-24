@@ -723,6 +723,32 @@
     });
     document.querySelector("#capability-sentence").textContent = normalizeActorNames(DATA.findings.capability);
 
+    // The three closing environments and the scope note are read out of the same generated aggregates the
+    // figures use, so nothing here is a second, hand-maintained copy of a number printed above.
+    const spiritual = DATA.categoryGap.find(row => row.category === "DUHOVNOST_I_LITURGIJA");
+    const eventShares = DATA.eventComposition
+      .filter(row => row.key !== "baseline")
+      .map(row => Number(row.shares.public))
+      .filter(Number.isFinite);
+    const sharpTotals = DATA.sharpByActor.reduce((sums, row) => ({
+      posts: sums.posts + Number(row.posts),
+      sharpPosts: sums.sharpPosts + Number(row.sharp_posts),
+      interactions: sums.interactions + Number(row.interactions),
+      sharpInteractions: sums.sharpInteractions + Number(row.sharp_interactions)
+    }), { posts: 0, sharpPosts: 0, interactions: 0, sharpInteractions: 0 });
+
+    document.querySelector("#mode-faith-metric").textContent =
+      `${pct(spiritual.catholic_share)} katoličkih objava`;
+    document.querySelector("#mode-event-metric").textContent =
+      `${HR1.format(Math.min(...eventShares))}⁠–⁠${pct(Math.max(...eventShares))} javnih izvora`;
+    document.querySelector("#mode-sharp-metric").textContent =
+      `${pct(100 * sharpTotals.sharpPosts / sharpTotals.posts)} objava · ${pct(100 * sharpTotals.sharpInteractions / sharpTotals.interactions)} reakcija`;
+
+    const spanStart = DATA.meta.dateMin.slice(0, 4);
+    const spanEnd = DATA.meta.dateMax.slice(0, 4);
+    document.querySelector("#scope-note-basis").textContent =
+      `Iza svakoga grafa stoji jedan neprekinut niz mjerenja. Korpus obuhvaća ${HR0.format(DATA.meta.corpusRows)} objava o Crkvi u hrvatskome digitalnom prostoru u razdoblju ${spanStart}.⁠–⁠${spanEnd}. Isto pravilo uključivanja primijenjeno je na cijelo razdoblje, pa se godine, teme i skupine izvora mogu izravno uspoređivati.`;
+
     const method = document.querySelector("#method-description");
     method.textContent = `Analiza razvrstava ${HR0.format(DATA.meta.corpusRows)} objava u četiri skupine izvora i šest širokih tema. Računalna obrada prepoznaje riječi i veće obrasce. Ne može utvrditi namjeru autora ni istinitost pojedine tvrdnje.`;
     const caveats = document.querySelector("#caveat-list");
