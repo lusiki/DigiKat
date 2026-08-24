@@ -825,3 +825,14 @@ Append a short record after each completed run:
 ```
 
 Begin with Run 1. Do not combine all six runs into one implementation change.
+
+### Run 4 completion
+
+- Commit: recorded by the commit containing this completion record.
+- Pages changed: all five analytical map pages, their generated site output, and the executive-overview links that consume the rebuilt map figures.
+- Shared components changed: colour-blind-safe chart theme and non-colour encodings, aggregate-download builder and chart-evidence helper, Croatian date labels, lazy-image filter, responsive chart/table styles, 23 CSV downloads, and compact text-based SVG figures.
+- Tests added or updated: focused source and rendered chart-contract checks, responsive-CSS assertions, aggregate disclosure validation, and Croatian date/download regressions.
+- Verification commands passed: five individual map-page renders, executive-overview render, `R/00_setup.R`, `tests/run_tests.R`, rendered Run 4 contract checks, and `R/check_site_links.R`; repository-wide source and disclosure checks introduced no new findings.
+- Manual viewports checked: browser control was unavailable; rendered DOM, one-H1, lazy-loading, overflow-containment, keyboard-focus, and download-target checks were used as deterministic substitutes.
+- Remaining known issues: four pre-existing source-encoding findings, one pre-existing restricted-study disclosure finding, a pre-existing executive-overview alt-text warning, no browser-console/visual viewport pass, and no full-site render without explicit authorization.
+- Approval to continue: pending user review.

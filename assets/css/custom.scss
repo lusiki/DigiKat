@@ -88,17 +88,17 @@ $navbar-light-active-color: $dk-accent;
   --dk-shadow-resting: 0 1px 2px rgba(15, 20, 25, 0.04);
   --dk-shadow-raised: 0 8px 22px rgba(15, 76, 92, 0.08);
   --dk-focus-ring: 0 0 0 3px rgba(15, 76, 92, 0.28);
-  --dk-chart-web: #0F4C5C;
-  --dk-chart-youtube: #B5462F;
-  --dk-chart-facebook: #2F73B8;
-  --dk-chart-twitter: #1F97A4;
-  --dk-chart-reddit: #CF8324;
-  --dk-chart-forum: #5E7488;
-  --dk-chart-comment: #6E8C3A;
-  --dk-chart-instagram: #C0468A;
-  --dk-chart-tiktok: #3F4FA0;
-  --dk-chart-positive: #2F73B8;
-  --dk-chart-negative: #B5462F;
+  --dk-chart-web: #4477AA;
+  --dk-chart-youtube: #EE6677;
+  --dk-chart-facebook: #228833;
+  --dk-chart-twitter: #66CCEE;
+  --dk-chart-reddit: #EE7733;
+  --dk-chart-forum: #777777;
+  --dk-chart-comment: #CCBB44;
+  --dk-chart-instagram: #AA3377;
+  --dk-chart-tiktok: #332288;
+  --dk-chart-positive: #0072B2;
+  --dk-chart-negative: #D55E00;
   --dk-chart-neutral: #F0ECE3;
 }
 
@@ -455,6 +455,51 @@ body.fullcontent #quarto-sidebar-glass { display: none !important; }
 .figure-card img,
 .figure-card svg { display: block; max-width: 100%; height: auto; }
 .figure-card figcaption { margin-top: var(--dk-space-3); color: $dk-muted; font-size: 0.9rem; }
+
+.figure-question {
+  margin: var(--dk-space-5) 0 var(--dk-space-2);
+  color: $dk-sub;
+  font-family: $font-family-monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.015em;
+}
+
+.figure-card__takeaway {
+  padding-left: var(--dk-space-3);
+  border-left: 3px solid $dk-accent-200;
+}
+
+.chart-evidence {
+  margin: var(--dk-space-3) 0 var(--dk-space-7);
+}
+
+.chart-accessible-summary {
+  max-width: 76ch;
+  margin: var(--dk-space-3) 0;
+  color: $dk-body-2;
+}
+
+.chart-table-note {
+  max-width: 76ch;
+  color: $dk-muted;
+  font-size: 0.9rem;
+}
+
+.chart-table-view .reference-table {
+  overscroll-behavior-inline: contain;
+}
+
+.chart-table-view .reference-table:focus-visible {
+  outline: 3px solid rgba($dk-accent, 0.25);
+  outline-offset: 2px;
+}
+
+.chart-data-table caption {
+  caption-side: top;
+  color: $dk-heading;
+  font-weight: 600;
+  text-align: left;
+}
 
 .download-group {
   display: flex;

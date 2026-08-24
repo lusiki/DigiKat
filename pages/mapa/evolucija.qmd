@@ -2,7 +2,10 @@
 title: "Evolucija ekosustava — digitalni prostor kroz vrijeme (2021.–2026.)"
 subtitle: "Opaženi volumen, platformski udjeli i koncentracija interakcija"
 date: last-modified
+description: "Evolucija ekosustava prati opaženi mjesečni volumen, raspodjelu zabilježenih interakcija i koncentraciju izvora kroz vrijeme."
 categories: ["Evolucija ekosustava", "Trendovi", "Koncentracija"]
+filters:
+  - ../../assets/filters/lazy-images.lua
 ---
 
 ```{r}
@@ -13,9 +16,10 @@ knitr::opts_chunk$set(
   echo = FALSE,
   message = FALSE,
   warning = FALSE,
-  fig.width = 14,
-  fig.height = 9,
-  dpi = 200
+  fig.width = 10,
+  fig.height = 7,
+  dev = "svglite",
+  dpi = 120
 )
 ```
 
@@ -25,9 +29,11 @@ knitr::opts_chunk$set(
 
 library(ggplot2)
 source("../../R/theme_digikat.R")
+source("../../R/lib/digikat_charts.R", encoding = "UTF-8")
 library(dplyr)
 library(tidyr)
 library(scales)
+library(ggrepel)
 ```
 
 ```{r}
@@ -46,14 +52,12 @@ platform_monthly    <- readRDS("../../data/processed/platform_monthly.rds")
 # je na stranici Metodologija, pa ova stranica iz manifesta više ne čita nijednu vrijednost i poziv
 # se ovdje zadržava isključivo zbog te provjere.
 source("../../R/lib/digikat_paths.R", encoding = "UTF-8")
-invisible(digikat_page_corpus("../.."))
+source("../../R/lib/digikat_hr.R", encoding = "UTF-8")
+mf <- digikat_page_corpus("../..")
+data_cutoff_hr <- digikat_hr_date(mf$corpus$date_max)
 
-# Paleta platformi (konzistentno s Mapom ekosustava)
-platform_colors <- c(
-  "web" = "#1f77b4", "youtube" = "#d62728", "facebook" = "#3b5998",
-  "twitter" = "#1DA1F2", "reddit" = "#FF4500", "forum" = "#7f7f7f",
-  "comment" = "#bcbd22", "instagram" = "#E4405F", "tiktok" = "#69C9D0"
-)
+# Paleta platformi i dodatni oblici preuzimaju se iz zajedničke teme.
+platform_colors <- dk_platform_colors
 mjeseci_hr <- c("siječanj", "veljača", "ožujak", "travanj", "svibanj", "lipanj",
                 "srpanj", "kolovoz", "rujan", "listopad", "studeni", "prosinac")
 mjeseci_gen <- c("siječnja", "veljače", "ožujka", "travnja", "svibnja", "lipnja",
@@ -168,6 +172,24 @@ stopifnot(length(posts_first) == 1, length(posts_lfy) == 1,
 
 ## Uvod u vremensku dinamiku ekosustava
 
+<div class="freshness-strip" aria-label="Svježina Evolucije ekosustava">
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">24. kolovoza 2026.</span></span>
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">`r data_cutoff_hr`</span></span>
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--updating">Ažurira se</span></span>
+</div>
+
+::: {.summary-60}
+<span class="summary-60__label">Sažetak u 60 sekundi</span>
+
+Mapa prati promjenu opaženog ekosustava kroz vrijeme.
+
+- Opaženi volumen veći je u posljednjoj potpunoj godini nego na početku razdoblja.
+- Udio weba u zabilježenim interakcijama pada, dok udjeli Facebooka i YouTubea rastu.
+- Udio deset najvećih izvora u interakcijama niži je nego na početku razdoblja.
+
+Može se zaključiti kako se mijenja sastav prikupljenoga korpusa. Ne može se zaključiti da je medijska pažnja rasla preko promjene prikupljanja 2024. Metodološka granica označena je izravno na vremenskim prikazima.
+:::
+
 Mijenja li se tko dominira ovim prostorom i seli li se pažnja s portala na društvene mreže? Prethodne su mape opisale [aktere i platforme](mapa.html), [Tematske struje](mapa_stats.html), [Atmosferu diskursa](diskurs.html) te [Fokus na događaje](događaji.html). Ova peta analitička mapa, **Evolucija ekosustava**, prati promjene u opaženom korpusu od `r first_year`. do `r last_year`. godine. Prati volumen objava, raspodjelu interakcija među platformama i koncentraciju interakcija među izvorima. Odgovara na istraživačko pitanje Q5 o odnosima među platformama.
 
 Mjereno je na cijelom korpusu od `r fmt_int(corpus_total)` objava, bez uzorkovanja. Kako je korpus nastao i kako se čitaju godišnji volumeni, opisano je u [Metodologiji](../metodologija.html).
@@ -198,7 +220,7 @@ cat('<div class="metric-grid">',
 ::: {.callout-note}
 ## Kako čitati ovu mapu
 
-Sve su brojke unaprijed izračunate iz agregiranih podataka, a ne iz sirovog korpusa pri izradi prikaza. Pod **volumenom** podrazumijevamo broj objava koje ulaze u korpus, dakle isječak, a ne cjelokupni hrvatski medijski prostor. **Interakcije** su vendorske, platformski specifične vrijednosti. Bilježe ih web, YouTube, Facebook, Instagram, TikTok i Twitter, dok reddit, forum i komentari u ovim podacima nemaju tu mjeru. Isti se brend na različitim platformama broji zasebno, a izvor može biti i pojedinačni račun. Godina `r last_year`. nepotpuna je, s podacima do `r cutoff_lbl`. Mjesečni prikazi uključuju samo stvarno prikupljene mjesece, bez procjene do kraja godine. Godišnja koncentracija za `r last_year`. prikazana je zasebno i ne uspoređuje se izravno s potpunim godinama.
+**Volumen** znači broj objava u korpusu, a ne cijeli hrvatski medijski prostor. **Interakcije** su platformski specifične vrijednosti i ne mjere izravno publiku. Godina `r last_year`. nepotpuna je, s podacima do `r cutoff_lbl`. Mjesečni prikazi ne procjenjuju ostatak godine. Pojedinosti o [platformskim mjerama](../metodologija.html#method-platform-metrics) i [promjeni prikupljanja 2024.](../metodologija.html#method-collection-break) nalaze se u Metodologiji.
 :::
 
 ---
@@ -207,16 +229,25 @@ Sve su brojke unaprijed izračunate iz agregiranih podataka, a ne iz sirovog kor
 
 Prvi prikaz daje mjesečni broj objava po platformama. Budući da se način prikupljanja mijenja 2024., on pokazuje opaženi volumen korpusa, a ne samostalnu mjeru širenja katoličke tematike.
 
+<p class="figure-question"><strong>Pitanje.</strong> Kako se opaženi mjesečni volumen mijenja unutar glavnih platformi?</p>
+<p class="figure-card__takeaway"><strong>Nalaz.</strong> Volumen je viši u novijem dijelu korpusa, ali zasjenjeno razdoblje promjene prikupljanja prekida izravnu vremensku usporedbu.</p>
+
 ```{r}
 #| label: plot-rast
-#| fig-width: 14
-#| fig-height: 9
+#| fig-width: 10
+#| fig-height: 7
+#| fig-alt: "Mjesečne linije broja objava u šest platformskih panela. Zasjenjeno je razdoblje promjene prikupljanja od veljače do svibnja 2024."
+#| fig-cap: "Opaženi mjesečni broj objava po glavnim platformama. Zasjenjeno razdoblje označava prazninu u tekstnom zapisu i promjenu prikupljanja 2024. Izvor je analiza projekta DigiKat."
 
 rast_monthly <- platform_monthly %>%
   filter(SOURCE_TYPE %in% main_platforms) %>%
   mutate(SOURCE_TYPE = factor(SOURCE_TYPE, levels = main_platforms))
 
-ggplot(rast_monthly, aes(x = month, y = total_posts, colour = SOURCE_TYPE)) +
+plot_growth <- ggplot(rast_monthly, aes(x = month, y = total_posts, colour = SOURCE_TYPE)) +
+  annotate(
+    "rect", xmin = as.Date("2024-02-01"), xmax = as.Date("2024-05-31"),
+    ymin = -Inf, ymax = Inf, fill = dk_col$faint, alpha = 0.16
+  ) +
   geom_line(linewidth = 0.7) +
   facet_wrap(~SOURCE_TYPE, scales = "free_y") +
   scale_x_date(date_breaks = "1 year", date_labels = "%Y") +
@@ -227,10 +258,23 @@ ggplot(rast_monthly, aes(x = month, y = total_posts, colour = SOURCE_TYPE)) +
         strip.text = element_text(face = "bold")) +
   labs(
     title = paste0("Broj objava po platformama, mjesečno (", first_year, ".–", last_year, ".)"),
-    subtitle = paste0("Podaci do ", cutoff_lbl, "; posljednji prikazani mjesec može biti nepotpun"),
+    subtitle = paste0("Podaci do ", cutoff_lbl, ". Zasjenjeno je razdoblje promjene prikupljanja 2024."),
     x = "Godina", y = "Broj objava",
     caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru. Napomena: okomite su osi neovisne po platformi."
   )
+
+print(plot_growth)
+```
+
+```{r}
+#| label: evidence-growth
+#| output: asis
+digikat_chart_evidence(
+  "evolucija-monthly-volume",
+  "Mjesečni volumen raste u novijem dijelu korpusa, ali zasjenjena promjena prikupljanja 2024. znači da razine prije i poslije nje nisu izravno usporedive.",
+  "evolucija_files/figure-html/plot-rast-1.svg",
+  "Mjesečni opaženi volumen po platformama"
+)
 ```
 
 Prikaz je mjesečan kako bi uključio stvarne podatke za nepotpunu `r last_year`. godinu, bez procjene do kraja godine. Opaženi broj objava iznosi `r fmt_int(posts_first)` u `r first_year`. i `r fmt_int(posts_lfy)` u posljednjoj potpunoj, `r last_full_year`. godini, odnosno `r fmt_x(growth_ratio)` puta više. Web ostaje najveća platforma po volumenu. Facebook i YouTube rastu brže od weba do 2025., ali s niže osnovice, dok se Instagram i TikTok u korpusu pojavljuju tek od 2024.
@@ -241,10 +285,15 @@ Prikaz je mjesečan kako bi uključio stvarne podatke za nepotpunu `r last_year`
 
 Broj objava i broj interakcija ne moraju biti raspoređeni jednako. Sljedeći prikaz prati mjesečni udio svake platforme u ukupnim zabilježenim interakcijama. Zbog različitih definicija interakcije to nije izravna mjera udjela publike ili pažnje.
 
+<p class="figure-question"><strong>Pitanje.</strong> Kako se mijenja platformska raspodjela zabilježenih interakcija?</p>
+<p class="figure-card__takeaway"><strong>Nalaz.</strong> Udio weba pada, dok Facebook i YouTube preuzimaju veći dio zabilježenog signala.</p>
+
 ```{r}
 #| label: plot-migracija
-#| fig-width: 14
-#| fig-height: 9
+#| fig-width: 10
+#| fig-height: 7
+#| fig-alt: "Mjesečne linije udjela platformi u zabilježenim interakcijama. Serije imaju različite boje, vrste crta, oblike i izravne oznake."
+#| fig-cap: "Mjesečni udjeli platformi u zabilježenim interakcijama. Zasjenjeno razdoblje označava promjenu prikupljanja 2024. Interakcije nisu izravno usporedive među platformama."
 
 # Udio po mjesecu, izveden izravno iz platform_monthly (isti postupak kao
 # proportions_summary, samo na mjesečnoj razini) — eksplicitna nula za platforme
@@ -258,18 +307,54 @@ mig_monthly <- platform_monthly %>%
   mutate(interaction_share = total_interactions / sum(total_interactions)) %>%
   ungroup()
 
-ggplot(mig_monthly, aes(x = month, y = interaction_share, fill = SOURCE_TYPE)) +
-  geom_area(colour = dk_col$paper, linewidth = 0.2) +
+mig_labels <- mig_monthly %>%
+  group_by(SOURCE_TYPE) %>%
+  filter(month == max(month)) %>%
+  ungroup()
+
+plot_migration <- ggplot(
+  mig_monthly,
+  aes(x = month, y = interaction_share, colour = SOURCE_TYPE, linetype = SOURCE_TYPE)
+) +
+  annotate(
+    "rect", xmin = as.Date("2024-02-01"), xmax = as.Date("2024-05-31"),
+    ymin = -Inf, ymax = Inf, fill = dk_col$faint, alpha = 0.16
+  ) +
+  geom_line(linewidth = 0.9) +
+  geom_point(aes(shape = SOURCE_TYPE), size = 1.5, alpha = 0.7) +
+  geom_text_repel(
+    data = mig_labels,
+    aes(label = digikat_platform_hr(SOURCE_TYPE)),
+    direction = "y", hjust = 0, nudge_x = 70, size = 3.4,
+    segment.color = NA, show.legend = FALSE, max.overlaps = Inf
+  ) +
   scale_x_date(date_breaks = "1 year", date_labels = "%Y") +
   scale_y_continuous(labels = percent_format(decimal.mark = ",")) +
-  scale_fill_manual(values = platform_colors, name = "Platforma") +
-  theme_digikat(base_size = 24) +
+  scale_colour_manual(values = platform_colors, name = "Platforma") +
+  scale_linetype_manual(values = dk_platform_linetypes, name = "Platforma") +
+  scale_shape_manual(values = dk_platform_shapes, name = "Platforma") +
+  coord_cartesian(clip = "off") +
+  theme_digikat(base_size = 16) +
+  theme(legend.position = "none", plot.margin = margin(10, 75, 10, 10)) +
   labs(
-    title = paste0("Raspodjela angažmana među platformama, mjesečno (", first_year, ".–", last_year, ".)"),
-    subtitle = paste0("Udio svake platforme u ukupnim interakcijama, po mjesecu; podaci do ", cutoff_lbl),
+    title = paste0("Raspodjela interakcija među platformama, mjesečno (", first_year, ".–", last_year, ".)"),
+    subtitle = paste0("Izravne oznake, vrste crta i oblici nadopunjuju boju. Podaci do ", cutoff_lbl),
     x = "Godina", y = "Udio interakcija",
     caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru. Napomena: reddit, forum i komentari u agregatima nemaju zabilježenu mjeru interakcija (udio 0 %)."
   )
+
+print(plot_migration)
+```
+
+```{r}
+#| label: evidence-migration
+#| output: asis
+digikat_chart_evidence(
+  "evolucija-interaction-shares",
+  "Udio weba u zabilježenim interakcijama pada kroz potpune godine, dok se udjeli Facebooka i YouTubea povećavaju. To nije izravna mjera seobe publike.",
+  "evolucija_files/figure-html/plot-migracija-1.svg",
+  "Mjesečni udjeli platformi u zabilježenim interakcijama"
+)
 ```
 
 Prikaz uključuje podatke do `r cutoff_lbl`. Udio weba u zabilježenim interakcijama `r web_dir` s `r fmt_pct(web_ishare_first)` u `r first_year`. na `r fmt_pct(web_ishare_last)` u posljednjoj potpunoj, `r last_full_year`. godini. Facebook i YouTube istodobno nose veći dio opaženih interakcija. Na taj pomak utječu i kasniji ulazak Instagrama i TikToka te niska početna osnovica Facebooka. Interakcije nisu jednako definirane na svim platformama, pa grafikon prikazuje raspodjelu zabilježenog signala, a ne izravno usporedivu seobu publike. Doseg nije glavna mjera jer je za dio platformi nedostupan i metodološki neproziran.
@@ -280,10 +365,15 @@ Prikaz uključuje podatke do `r cutoff_lbl`. Udio weba u zabilježenim interakci
 
 Treći prikaz mjeri koliki udio svih zabilježenih interakcija u pojedinoj godini pripada deset najvećih izvora. Pokazatelj ostaje na godišnjoj razini jer agregati o pojedinačnim izvorima nisu pripremljeni mjesečno. Godina `r last_year`. prikazana je zasebno kao stvarna, ali nepotpuna vrijednost.
 
+<p class="figure-question"><strong>Pitanje.</strong> Pripada li deset najvećih izvora sve veći ili sve manji dio interakcija?</p>
+<p class="figure-card__takeaway"><strong>Nalaz.</strong> Njihov udio pada do posljednje potpune godine, dok je nepotpuna 2026. odvojena praznim simbolom.</p>
+
 ```{r}
 #| label: plot-koncentracija
-#| fig-width: 14
-#| fig-height: 8
+#| fig-width: 10
+#| fig-height: 6
+#| fig-alt: "Linija godišnjeg udjela deset najvećih izvora u interakcijama. Vrijednosti su izravno označene, a nepotpuna 2026. prikazana je praznim rombom."
+#| fig-cap: "Godišnji udio deset najvećih izvora u zabilježenim interakcijama. Nepotpuna završna godina prikazana je odvojeno. Izvor je analiza projekta DigiKat."
 
 conc_complete <- filter(conc_by_year, year <= last_full_year)
 conc_partial  <- filter(conc_by_year, year == last_year)
@@ -305,7 +395,7 @@ if (last_partial) {
               vjust = -1.1, hjust = 1, size = 5.5, colour = dk_col$ink)
 }
 
-p +
+plot_concentration <- p +
   scale_x_continuous(breaks = first_year:last_year,
                       expand = expansion(mult = c(0.02, 0.06))) +
   scale_y_continuous(labels = percent_format(decimal.mark = ","),
@@ -318,6 +408,19 @@ p +
     x = "Godina", y = "Udio deset najvećih aktera",
     caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru. Napomena: mjereno među platformama koje bilježe interakcije."
   )
+
+print(plot_concentration)
+```
+
+```{r}
+#| label: evidence-concentration
+#| output: asis
+digikat_chart_evidence(
+  "evolucija-concentration",
+  "Udio deset najvećih izvora u interakcijama niži je u posljednjoj potpunoj godini nego na početku razdoblja. Završna godina nije potpuna.",
+  "evolucija_files/figure-html/plot-koncentracija-1.svg",
+  "Koncentracija interakcija među deset najvećih izvora"
+)
 ```
 
 U opaženom korpusu udio deset najvećih izvora pada s `r fmt_pct(conc_first)` svih interakcija u `r first_year`. na `r fmt_pct(top10_last)` u `r last_full_year`., dok broj izvora s barem jednom zabilježenom interakcijom raste s `r fmt_int(actor_first)` na `r fmt_int(actor_last)` (`r fmt_x(actor_growth)` puta). Od deset najvećih izvora u `r last_full_year`. njih `r new_entrants` nije bilo u vrhu `r first_year`. Ti podaci pokazuju `r conc_mag` smanjenje koncentracije unutar prikupljenoga korpusa, ali ne dokazuju stvarno širenje kruga glasova. Interakcije su platformski specifične, a isti se brend na različitim platformama može brojiti zasebno. Do `r cutoff_lbl` udio deset najvećih izvora u nepotpunoj `r last_year`. iznosi `r fmt_pct(top10_2026)` i ne uspoređuje se izravno s potpunim godinama.
@@ -328,13 +431,23 @@ U opaženom korpusu udio deset najvećih izvora pada s `r fmt_pct(conc_first)` s
 
 Sljedeći prikaz usrednjuje broj objava po kalendarskom mjesecu preko potpunih godina. Time opisuje godišnji ritam opaženog volumena, bez pretpostavke da ga uzrokuje liturgijski kalendar.
 
+<p class="figure-question"><strong>Pitanje.</strong> U kojim je kalendarskim mjesecima opaženi volumen u prosjeku viši ili niži?</p>
+<p class="figure-card__takeaway"><strong>Nalaz.</strong> Godišnji ritam pokazuje sezonske razlike, ali ne odvaja blagdane od drugih događaja.</p>
+
 ```{r}
 #| label: plot-ritam
-#| fig-width: 14
-#| fig-height: 8
+#| fig-width: 10
+#| fig-height: 5.5
+#| fig-alt: "Stupci prosječnog broja objava po kalendarskim mjesecima u godinama s potpunom mjesečnom pokrivenošću."
+#| fig-cap: "Prosječni opaženi volumen po kalendarskom mjesecu u godinama s potpunom mjesečnom pokrivenošću. Izvor je analiza projekta DigiKat."
 
-ggplot(ritam, aes(x = mj_lab, y = avg_posts)) +
+plot_rhythm <- ggplot(ritam, aes(x = mj_lab, y = avg_posts)) +
   geom_col(fill = dk_col$accent, alpha = 0.9) +
+  geom_text(
+    aes(label = label_number(big.mark = ".", decimal.mark = ",", accuracy = 1)(avg_posts)),
+    vjust = -0.35, size = 3.4, color = dk_col$ink
+  ) +
+  expand_limits(y = max(ritam$avg_posts) * 1.08) +
   scale_y_continuous(labels = label_number(big.mark = ".", decimal.mark = ",")) +
   theme_digikat(base_size = 24) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
@@ -344,6 +457,19 @@ ggplot(ritam, aes(x = mj_lab, y = avg_posts)) +
     x = "Mjesec", y = "Prosječan broj objava",
     caption = paste0("Izvor: Analiza projekta DigiKat. Napomena: uključene su samo godine sa svih 12 mjeseci u agregatima (", rhythm_years_lbl, "); prikazan je isključivo volumen.")
   )
+
+print(plot_rhythm)
+```
+
+```{r}
+#| label: evidence-rhythm
+#| output: asis
+digikat_chart_evidence(
+  "evolucija-annual-rhythm",
+  paste0("Prosječni opaženi volumen najviši je u mjesecu ", peak_month_lbl, ", a najniži u mjesecu ", low_month_lbl, "."),
+  "evolucija_files/figure-html/plot-ritam-1.svg",
+  "Prosječni broj objava po kalendarskom mjesecu"
+)
 ```
 
 Među godinama s potpunom mjesečnom pokrivenošću (`r rhythm_years_lbl`) opaženi je volumen u prosjeku najviši u mjesecu `r peak_month_lbl`, a najniži u mjesecu `r low_month_lbl`. Obrazac ne odvaja učinak blagdana, drugih događaja ni razlika u prikupljanju između uključenih godina. Sadržajnu dinamiku oko konkretnog blagdana donosi [Fokus na događaje](događaji.html).

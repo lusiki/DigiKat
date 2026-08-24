@@ -8,6 +8,8 @@ source("R/lib/page_summaries.R", encoding = "UTF-8")
 source("R/lib/digikat_events.R", encoding = "UTF-8")
 source("R/lib/moj_medij_metrics.R", encoding = "UTF-8")
 source("R/lib/moj_medij_topics.R", encoding = "UTF-8")
+source("R/lib/digikat_hr.R", encoding = "UTF-8")
+source("R/lib/digikat_charts.R", encoding = "UTF-8")
 
 failures <- character()
 checks <- 0L
@@ -411,6 +413,22 @@ for (page in names(page_summary_schema)) {
     expect_true(valid, paste("Page-ready summary must validate:", page))
   }
 }
+
+expect_equal(
+  digikat_hr_date(as.Date("2026-06-11")),
+  "11. lipnja 2026.",
+  "Shared Croatian dates must use a lowercase genitive month"
+)
+safe_chart_fixture <- data.frame(year = 2026L, total_posts = 10L)
+expect_true(
+  !inherits(try(digikat_assert_chart_download(safe_chart_fixture), silent = TRUE), "try-error"),
+  "Aggregate chart downloads must pass disclosure validation"
+)
+unsafe_chart_fixture <- data.frame(year = 2026L, URL = "https://example.invalid")
+expect_true(
+  inherits(try(digikat_assert_chart_download(unsafe_chart_fixture), silent = TRUE), "try-error"),
+  "Chart downloads must reject URL-bearing columns"
+)
 
 if (length(failures)) {
   cat("FAILED", length(failures), "of", checks, "checks:\n")

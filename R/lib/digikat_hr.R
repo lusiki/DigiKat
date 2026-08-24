@@ -77,3 +77,18 @@ digikat_hr_list <- function(x) {
   if (length(x) == 1L) return(x)
   paste0(paste(utils::head(x, -1), collapse = ", "), " i ", utils::tail(x, 1))
 }
+
+DIGIKAT_MONTH_HR_GENITIVE <- c(
+  "siječnja", "veljače", "ožujka", "travnja", "svibnja", "lipnja",
+  "srpnja", "kolovoza", "rujna", "listopada", "studenoga", "prosinca"
+)
+
+digikat_hr_date <- function(x) {
+  x <- as.Date(x)
+  if (length(x) != 1L || is.na(x)) return(NA_character_)
+  paste0(
+    as.integer(format(x, "%d")), ". ",
+    DIGIKAT_MONTH_HR_GENITIVE[as.integer(format(x, "%m"))], " ",
+    format(x, "%Y"), "."
+  )
+}

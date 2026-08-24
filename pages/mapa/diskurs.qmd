@@ -2,7 +2,10 @@
 title: "Atmosfera diskursa — emocionalna i konfliktna mapa katoličkog digitalnog prostora (2021.–2026.)"
 subtitle: "Emocije i tonalitet diskursa"
 date: last-modified
+description: "Atmosfera diskursa opisuje leksički tonalitet, emocionalne oznake i Relativni indeks konflikta u dijelu korpusa DigiKat."
 categories: ["Atmosfera diskursa", "Tonalitet", "Emocije"]
+filters:
+  - ../../assets/filters/lazy-images.lua
 ---
 
 ```{r}
@@ -14,9 +17,10 @@ knitr::opts_chunk$set(
   echo = FALSE,
   message = FALSE,
   warning = FALSE,
-  fig.width = 14,
-  fig.height = 9,
-  dpi = 200
+  fig.width = 10,
+  fig.height = 7,
+  dev = "svglite",
+  dpi = 120
 )
 ```
 
@@ -30,6 +34,7 @@ library(dplyr)
 library(stringr)
 library(ggplot2)
 source("../../R/theme_digikat.R")
+source("../../R/lib/digikat_charts.R", encoding = "UTF-8")
 library(ggraph)
 library(igraph)
 library(ggrepel)
@@ -55,6 +60,7 @@ source("../../R/lib/digikat_hr.R", encoding = "UTF-8")
 mf <- digikat_page_corpus("../..")
 n_objava <- digikat_hr_int(mf$corpus$rows)
 raspon <- paste0(mf$corpus$year_min, ".–", mf$corpus$year_max, ".")
+data_cutoff_hr <- digikat_hr_date(mf$corpus$date_max)
 nlp_mf <- jsonlite::fromJSON("../../data/nlp/manifest.json", simplifyVector = TRUE)
 sample_n <- nlp_mf$pages$diskurs$sample_rows
 
@@ -110,6 +116,24 @@ most_observed_pairs <- graph_data |>
 
 ## Uvod u analizu emocionalne i konfliktne strukture diskursa
 
+<div class="freshness-strip" aria-label="Svježina Atmosfere diskursa">
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">24. kolovoza 2026.</span></span>
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">`r data_cutoff_hr`</span></span>
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--preliminary">Preliminarno</span></span>
+</div>
+
+::: {.summary-60}
+<span class="summary-60__label">Sažetak u 60 sekundi</span>
+
+Mapa opisuje kako se leksički tonalitet i konfliktni rječnik razlikuju među temama i izvorima.
+
+- Prosječni tonalitet ovisi o kombinaciji tematske i emocionalne oznake.
+- Izvori se razlikuju po gustoći konfliktnog rječnika i varijabilnosti RIK-a.
+- Često supojavljivanje tema ne znači nužno i visok RIK.
+
+Može se zaključiti gdje se u uzorku pojavljuju leksičke razlike. Ne može se zaključiti što je autor namjeravao ili kako je publika doživjela tekst. Definicije rječnika i RIK-a nalaze se u [Metodologiji](../metodologija.html#method-text-analysis).
+:::
+
 <div class="metric-grid">
 <div class="metric-card">
 <div class="metric-value">`r length(c("CroSentilex", "CroSentilex Gold", "lilaHR"))`</div>
@@ -145,10 +169,15 @@ Analiza razlikuje dvije leksičke dimenzije. Prva je pozitivna ili negativna obo
 
 Sljedeća vizualizacija prikazuje opažene kombinacije tematskih i dominantnih emocionalnih kategorija koje imaju više od tri teksta u uzorku. Boja svake ćelije označava njihov prosječni leksički tonalitet. Plave nijanse označavaju pozitivnije, a crvene negativnije vrijednosti.
 
+<p class="figure-question"><strong>Pitanje.</strong> Kako se prosječni leksički tonalitet razlikuje među kombinacijama tema i emocija?</p>
+<p class="figure-card__takeaway"><strong>Nalaz.</strong> Razlike se pojavljuju u oba smjera, a ispisane vrijednosti omogućuju čitanje bez oslanjanja na boju.</p>
+
 ```{r}
 #| label: plot-emotion-heatmap
-#| fig-width: 14
-#| fig-height: 9
+#| fig-width: 10
+#| fig-height: 6.5
+#| fig-alt: "Matrica tematskih i emocionalnih oznaka. Svaka ćelija ispisuje prosječni leksički tonalitet, uz divergirajuću paletu kao dodatni znak."
+#| fig-cap: "Prosječni leksički tonalitet prema kombinaciji dominantne tematske i emocionalne oznake. Prikazane su kombinacije s više od tri dokumenta."
 
 ggplot(heatmap_data, aes(x = dominant_emotion, y = dominant_topic, fill = avg_sentiment)) +
   geom_tile(color = dk_col$paper, linewidth = 0.5) +
@@ -165,6 +194,17 @@ ggplot(heatmap_data, aes(x = dominant_emotion, y = dominant_topic, fill = avg_se
   )
 ```
 
+```{r}
+#| label: evidence-emotion-tonality
+#| output: asis
+digikat_chart_evidence(
+  "diskurs-emotion-tonality",
+  paste0("Najpozitivniji ponderirani prosjek imaju oznake ", fmt_list(positive_emotions), ", a najnegativniji ", fmt_list(negative_emotions), "."),
+  "diskurs_files/figure-html/plot-emotion-heatmap-1.svg",
+  "Prosječni tonalitet prema tematskim i emocionalnim oznakama"
+)
+```
+
 Matrica pokazuje da se prosječni leksički tonalitet razlikuje i među emocionalnim oznakama i među temama. Ponderirano brojem tekstova, najpozitivniji prosjek imaju oznake `r fmt_list(positive_emotions)`, a najnegativniji `r fmt_list(negative_emotions)`. Najširi raspon vrijednosti između emocionalnih oznaka bilježe teme `r fmt_topics(widest_topics)`. To su opisne razlike unutar uzorka. Budući da su i tonalitet i emocija izvedeni iz rječnika riječi, matrica ne može pokazati je li autor namjerno odabrao okvir niti kakav je učinak tekst imao na publiku.
 
 ---
@@ -177,10 +217,15 @@ Gustoća konfliktnog rječnika broj je rječničkih podudaranja na tisuću token
 
 Sljedeći grafikon opisuje `r nrow(media_strategy_data)` izvora s najviše tekstova među izvorima koji imaju više od 20 uzorkovanih objava. Horizontalna os prikazuje njihovu prosječnu gustoću konfliktnog rječnika, a vertikalna standardnu devijaciju RIK-a među tekstovima. Veličina točke označava broj tekstova u uzorku. Grafikon nema unaprijed zadane kvadrante ni kategorije strategije.
 
+<p class="figure-question"><strong>Pitanje.</strong> Koji se izvori razlikuju po prosječnoj gustoći konfliktnog rječnika i varijabilnosti RIK-a?</p>
+<p class="figure-card__takeaway"><strong>Nalaz.</strong> Visoka prosječna gustoća i visoka varijabilnost nisu isto svojstvo, pa izvori zauzimaju različite položaje.</p>
+
 ```{r}
 #| label: plot-rci-strategy
-#| fig-width: 14
-#| fig-height: 10
+#| fig-width: 10
+#| fig-height: 7
+#| fig-alt: "Raspršeni prikaz izvora prema prosječnoj gustoći konfliktnog rječnika i standardnoj devijaciji RIK-a. Točke imaju izravne nazive, a veličina prikazuje broj dokumenata."
+#| fig-cap: "Profili izvora prema gustoći konfliktnog rječnika i varijabilnosti Relativnog indeksa konflikta. Položaj je opisni i ne određuje motiv izvora."
 #| warning: false
 #| message: false
 
@@ -199,6 +244,17 @@ ggplot(media_strategy_data, aes(x = avg_cli, y = rci_sd, size = n_articles)) +
   )
 ```
 
+```{r}
+#| label: evidence-source-conflict
+#| output: asis
+digikat_chart_evidence(
+  "diskurs-source-conflict",
+  paste0("Najvišu prosječnu gustoću konfliktnog rječnika imaju ", fmt_list(high_cli_sources), ". Najveću varijabilnost RIK-a imaju ", fmt_list(variable_sources), "."),
+  "diskurs_files/figure-html/plot-rci-strategy-1.svg",
+  "Izvori prema gustoći konfliktnog rječnika i varijabilnosti RIK-a"
+)
+```
+
 Najvišu prosječnu gustoću konfliktnog rječnika među prikazanim izvorima imaju `r fmt_list(high_cli_sources)`, a najnižu `r fmt_list(low_cli_sources)`. Najveću varijabilnost RIK-a imaju `r fmt_list(variable_sources)`. Ti se poretci odnose samo na uzorkovane tekstove koji su ušli u ovu analizu. Ne pokazuju zašto izvor upotrebljava određene riječi, pripada li izvor određenom uredničkom tipu ni pokušava li povećati angažman.
 
 ---
@@ -209,21 +265,30 @@ Mreža sažima parove tematskih kategorija koje se pojavljuju u istim tekstovima
 
 Boja veze označava prosječni ne-normalizirani CroSentilex-Gold zbroj u tekstovima, gdje plave nijanse označavaju pozitivniju leksičku bilancu, a crvene negativniju. Za razliku od matrice iznad, taj je zbroj osjetljiv na duljinu teksta i vrijednosti nisu izravno usporedive. Debljina veze označava prosječni RIK, pa deblje veze imaju višu relativnu zastupljenost konfliktnog rječnika. Prozirnost veze označava broj tekstova na kojima se prosjek temelji. Položaj čvorova služi čitljivosti mreže i nema samostalno sadržajno značenje.
 
+<p class="figure-question"><strong>Pitanje.</strong> Kako se uz veze među temama raspoređuju učestalost, tonalitet i RIK?</p>
+<p class="figure-card__takeaway"><strong>Nalaz.</strong> Najčešće veze nisu nužno veze s najvišim RIK-om, a vrsta crte prenosi smjer tonaliteta i bez boje.</p>
+
 ```{r}
 #| label: plot-network
-#| fig-width: 16
-#| fig-height: 12
+#| fig-width: 10
+#| fig-height: 7.5
+#| fig-alt: "Mreža tematskih supojavljivanja. Debljina veze prikazuje prosječni RIK, prozirnost broj tekstova, a puna ili isprekidana crta smjer tonaliteta."
+#| fig-cap: "Mreža tematskih supojavljivanja, prosječnog RIK-a i leksičkog tonaliteta. Vrsta crte i boja zajedno označavaju smjer tonaliteta."
 #| warning: false
 #| message: false
 
 set.seed(123)
-graph_from_data_frame(graph_data, directed = FALSE) %>%
+graph_plot_data <- graph_data %>%
+  mutate(tonalitet_smjer = ifelse(avg_sentiment >= 0, "Pozitivniji", "Negativniji"))
+
+graph_from_data_frame(graph_plot_data, directed = FALSE) %>%
   ggraph(layout = "fr") +
     geom_edge_fan(
       aes(
         color = avg_sentiment,
         width = avg_rci,
-        alpha = n
+        alpha = n,
+        linetype = tonalitet_smjer
       ),
       arrow = NULL
     ) +
@@ -245,11 +310,26 @@ graph_from_data_frame(graph_data, directed = FALSE) %>%
       range = c(0.3, 1),
       name = "Broj tekstova"
     ) +
+    scale_edge_linetype_manual(
+      values = c("Negativniji" = "22", "Pozitivniji" = "solid"),
+      name = "Smjer tonaliteta"
+    ) +
     theme_digikat_void(base_size = 24) +
     labs(
       title = "Mreža tematskih supojavljivanja, tonaliteta i RIK-a",
-      subtitle = "Boja veze = CroSentilex-Gold zbroj | Debljina = prosječni RIK | Prozirnost = broj tekstova"
+      subtitle = "Vrsta crte i boja prikazuju tonalitet. Debljina prikazuje RIK, a prozirnost broj tekstova."
     )
+```
+
+```{r}
+#| label: evidence-discourse-network
+#| output: asis
+digikat_chart_evidence(
+  "diskurs-topic-network",
+  paste0("Najviši prosječni RIK imaju parovi ", fmt_list(highest_rik_pairs), ". Najviše dokumenata podupire veze ", fmt_list(most_observed_pairs), "."),
+  "diskurs_files/figure-html/plot-network-1.svg",
+  "Tematske veze prema učestalosti, tonalitetu i RIK-u"
+)
 ```
 
 U novim sažecima najviši prosječni RIK imaju parovi `r fmt_list(highest_rik_pairs)`. Najviše uzorkovanih tekstova podupire veze `r fmt_list(most_observed_pairs)`. Ta dva poretka ne moraju se podudarati, jer često opažena veza nije nužno veza s najvišom relativnom zastupljenošću konfliktnog rječnika. Mreža je deskriptivna mapa supojavljivanja, pa bez zasebnog modela ne dokazuje postojanje dvaju diskursnih “svjetova”, smjer utjecaja među temama ni prelijevanje atmosfere.

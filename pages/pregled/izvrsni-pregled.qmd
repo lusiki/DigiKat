@@ -354,7 +354,7 @@ Both specialised and general-news outlets appear near the top of individual plat
 :::
 :::
 
-![](../mapa/mapa_files/figure-html/plot-actor-map-1.png){fig-alt="Trodijelna točkasta karta aktera po dosegu i angažmanu za web, YouTube i Facebook, s medijanskim linijama koje dijele četiri kvadranta arhetipova."}
+![](../mapa/mapa_files/figure-html/plot-actor-map-1.svg){fig-alt="Trodijelna točkasta karta aktera po dosegu i angažmanu za web, YouTube i Facebook, s medijanskim linijama koje dijele četiri kvadranta arhetipova."}
 
 <div class="izvor-caption"><span class="lang-hr">Opisna karta aktera: doseg (okomito) i interakcije (vodoravno), po platformama; veličina točke je broj objava. Izvor:</span><span class="lang-en">Descriptive actor map: reach (vertical) and interactions (horizontal), by platform; point size is the number of posts. Source:</span> <a href="https://lusiki.github.io/DigiKat/pages/mapa/mapa.html">Mapa ekosustava</a></div>
 
@@ -408,7 +408,7 @@ Love and Angry are platform reaction labels whose meaning depends on content and
 :::
 :::
 
-![](../mapa/mapa_stats_files/figure-html/plot-topic-network-1.png){fig-alt="Mrežni graf šesnaest tematskih kategorija; veze označavaju korelacije supojavljivanja oznaka, a položaj čvorova služi čitljivosti."}
+![](../mapa/mapa_stats_files/figure-html/plot-topic-network-1.svg){fig-alt="Mrežni graf šesnaest tematskih kategorija; veze označavaju korelacije supojavljivanja oznaka, a položaj čvorova služi čitljivosti."}
 
 <div class="izvor-caption"><span class="lang-hr">Mreža povezanosti tematskih kategorija: veze prikazuju korelacije supojavljivanja u uzorku, bez unaprijed potvrđenih klastera. Izvor:</span><span class="lang-en">Network of thematic-category links: edges show co-occurrence correlations in the sample, without predefined confirmed clusters. Source:</span> <a href="https://lusiki.github.io/DigiKat/pages/mapa/mapa_stats.html">Tematske struje</a></div>
 

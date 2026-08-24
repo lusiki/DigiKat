@@ -11,8 +11,13 @@
 suppressWarnings(suppressMessages(library(ggplot2)))
 
 # --- Fonts: pull the design's Google fonts via showtext (graceful fallback) ---
+# showtext converts glyphs to paths on SVG devices. That makes small analytical
+# charts several megabytes wide on disk and removes their selectable text. SVG
+# output therefore keeps native text and lets the page's web-font CSS render it.
+.dk_chunk_device <- tryCatch(knitr::opts_chunk$get("dev"), error = function(e) NULL)
+.dk_svg_output <- any(grepl("svg", as.character(.dk_chunk_device), ignore.case = TRUE))
 .dk_fonts_ok <- FALSE
-if (requireNamespace("showtext", quietly = TRUE) &&
+if (!.dk_svg_output && requireNamespace("showtext", quietly = TRUE) &&
     requireNamespace("sysfonts", quietly = TRUE)) {
   try({
     sysfonts::font_add_google("Source Serif 4", "dk_serif")
@@ -26,9 +31,9 @@ if (requireNamespace("showtext", quietly = TRUE) &&
     .dk_fonts_ok <- TRUE
   }, silent = TRUE)
 }
-dk_serif <- if (.dk_fonts_ok) "dk_serif" else "serif"
-dk_sans  <- if (.dk_fonts_ok) "dk_sans"  else "sans"
-dk_mono  <- if (.dk_fonts_ok) "dk_mono"  else "mono"
+dk_serif <- if (.dk_fonts_ok) "dk_serif" else if (.dk_svg_output) "Source Serif 4" else "serif"
+dk_sans  <- if (.dk_fonts_ok) "dk_sans"  else if (.dk_svg_output) "Source Sans 3" else "sans"
+dk_mono  <- if (.dk_fonts_ok) "dk_mono"  else if (.dk_svg_output) "IBM Plex Mono" else "mono"
 
 # --- Design tokens (mirror assets/css/custom.scss) ---
 dk_col <- list(
@@ -41,29 +46,46 @@ dk_col <- list(
   # Semantic encodings — kept on-brand. The diverging pair preserves the
   # "plave nijanse = pozitivno · crvene nijanse = negativno" convention used in
   # the pages' prose, so swapping firebrick/steelblue for these needs no text edits.
-  pos = "#2F73B8", neg = "#B5462F", neutral = "#F0ECE3",
+  # Okabe–Ito blue and vermilion remain distinguishable under common colour-
+  # vision deficiencies. Signed charts also print their values or use shape.
+  pos = "#0072B2", neg = "#D55E00", neutral = "#F0ECE3",
   # Anomaly / spike highlight (event detection)
-  alert = "#B5462F"
+  alert = "#D55E00"
 )
 
-# 16-hue categorical palette (kept visually distinct from the brand accent)
-dk_palette <- c("#b5462f","#cf8324","#a98a1f","#6e8c3a","#2f8f6b","#1f97a4",
-                "#2f73b8","#3f4fa0","#6e54a6","#9b4d9e","#c0468a","#b23a52",
-                "#8a6240","#5e7488","#4c9c5e","#c2702a")
+# Colour-blind-safe categorical sequence based on Paul Tol's qualitative sets.
+# Dense charts must still use direct labels, facets, shape or line type so that
+# no distinction depends on colour alone.
+dk_palette <- c(
+  "#332288", "#117733", "#44AA99", "#88CCEE", "#DDCC77", "#CC6677",
+  "#AA4499", "#882255", "#4477AA", "#66CCEE", "#228833", "#CCBB44",
+  "#EE6677", "#AA3377", "#BBBBBB", "#EE7733"
+)
 
 # Platform identity colors, harmonized to the brand palette: each platform keeps
 # its hue family (web=petrol, YouTube=brick red, Facebook=blue …) but is tuned to
 # the editorial petrol/warm system instead of the bright Tableau defaults.
 dk_platform_colors <- c(
-  "web"       = "#0F4C5C",  # petrol (brand) — the dominant platform
-  "youtube"   = "#B5462F",  # brick red
-  "facebook"  = "#2F73B8",  # blue
-  "twitter"   = "#1F97A4",  # teal
-  "reddit"    = "#CF8324",  # amber
-  "forum"     = "#5E7488",  # slate
-  "comment"   = "#6E8C3A",  # olive
-  "instagram" = "#C0468A",  # magenta
-  "tiktok"    = "#3F4FA0"   # indigo
+  "web"       = "#4477AA",
+  "youtube"   = "#EE6677",
+  "facebook"  = "#228833",
+  "twitter"   = "#66CCEE",
+  "reddit"    = "#EE7733",
+  "forum"     = "#777777",
+  "comment"   = "#CCBB44",
+  "instagram" = "#AA3377",
+  "tiktok"    = "#332288"
+)
+
+dk_platform_shapes <- c(
+  web = 16, youtube = 17, facebook = 15, twitter = 18, reddit = 8,
+  forum = 3, comment = 7, instagram = 4, tiktok = 0
+)
+
+dk_platform_linetypes <- c(
+  web = "solid", youtube = "22", facebook = "42", twitter = "13",
+  reddit = "44", forum = "longdash", comment = "twodash",
+  instagram = "dotted", tiktok = "dotdash"
 )
 
 # --- The theme ---

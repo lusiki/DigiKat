@@ -2,7 +2,10 @@
 title: "Fokus na događaje (2021.–2026.)"
 subtitle: "Dnevna odstupanja volumena, konfliktnog rječnika i tonaliteta u uzorku"
 date: last-modified
+description: "Fokus na događaje označava neuobičajene dane te opisuje prozor oko Uskrsa 2022. i dostupna leksička okruženja Alojzija Stepinca."
 categories: ["Događaji", "Dinamika", "Tonalitet"]
+filters:
+  - ../../assets/filters/lazy-images.lua
 ---
 
 ```{r}
@@ -14,9 +17,10 @@ knitr::opts_chunk$set(
   echo = FALSE,
   message = FALSE,
   warning = FALSE,
-  fig.width = 14,
-  fig.height = 10,
-  dpi = 350
+  fig.width = 10,
+  fig.height = 7,
+  dev = "svglite",
+  dpi = 120
 )
 ```
 
@@ -32,6 +36,7 @@ library(tidytext)
 library(stringr)
 library(ggplot2)
 source("../../R/theme_digikat.R")
+source("../../R/lib/digikat_charts.R", encoding = "UTF-8")
 library(forcats)
 ```
 
@@ -55,6 +60,7 @@ source("../../R/lib/digikat_hr.R", encoding = "UTF-8")
 mf <- digikat_page_corpus("../..")
 n_objava <- digikat_hr_int(mf$corpus$rows)
 raspon <- paste0(mf$corpus$year_min, ".–", mf$corpus$year_max, ".")
+data_cutoff_hr <- digikat_hr_date(mf$corpus$date_max)
 nlp_mf <- jsonlite::fromJSON("../../data/nlp/manifest.json", simplifyVector = TRUE)
 sample_n <- nlp_mf$pages$dogadjaji$sample_rows
 
@@ -115,6 +121,24 @@ stepinac_terms <- top_associated_words_final |>
 
 ## Uvod u dinamičku analizu
 
+<div class="freshness-strip" aria-label="Svježina Fokusa na događaje">
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">24. kolovoza 2026.</span></span>
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">`r data_cutoff_hr`</span></span>
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--preliminary">Preliminarno</span></span>
+</div>
+
+::: {.summary-60}
+<span class="summary-60__label">Sažetak u 60 sekundi</span>
+
+Mapa prelazi s dugoročnih obrazaca na neuobičajene dane i dva ograničena slučaja.
+
+- Z-vrijednosti označavaju dane neuobičajenog volumena ili konfliktnog rječnika.
+- Prozor oko Uskrsa 2022. pokazuje dnevno kretanje teme Duhovnost i liturgija.
+- Presjeci o Stepincu prikazuju dostupne leksičke jedinice, a ne cjelovitu vremensku seriju.
+
+Može se zaključiti koji dani i leksički presjeci odstupaju unutar uzorka. Ne može se automatski odrediti uzrok odstupanja, namjera autora ili događaj koji ga je proizveo. Ograničenja dnevnih vrijednosti opisana su u [Metodologiji](../metodologija.html#method-text-analysis).
+:::
+
 Kada pažnja naraste i što je pokrene? Nakon što su prethodne faze mapirale [aktere i platforme](mapa.html), [tematske](mapa_stats.html) kategorije te [emocionalnu i konfliktnu atmosferu](diskurs.html), dnevne promjene promatra zadnja analitička mapa **Fokus na događaje**. Ona odgovara na istraživačko pitanje Q4 o tome što se s temama i tonom dogodi kada se nešto važno dogodi. Označava neuobičajene dane i zatim opisuje dva ograničena slučaja, razdoblje oko Uskrsa 2022. i dostupne godišnje presjeke leksičkog okruženja Alojzija Stepinca.
 
 Prvi postupak ispituje koji dani snažno odstupaju od godišnjeg prosjeka volumena ili konfliktnog rječnika. Drugi prati udio jedne teme, tonalitet i konfliktni rječnik u prozoru oko unaprijed odabranog blagdana. Treći uspoređuje imenice i pridjeve u dokumentima s imenom Stepinca u godinama za koje uzorak daje primjere. Ni jedan od tih postupaka sam ne utvrđuje uzrok odstupanja.
@@ -154,7 +178,10 @@ Označavaju se dva tipa anomalija. Vrh volumena dan je s brojem objava većim od
 # Vizualizacija standardiziranih vrijednosti
 p_volume_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_volume)) +
   geom_line(color = dk_col$faint) +
-  geom_point(data = filter(spikes_detected_z, is_volume_spike), color = dk_col$alert, size = 5) +
+  geom_point(
+    data = filter(spikes_detected_z, is_volume_spike),
+    shape = 24, color = dk_col$alert, fill = dk_col$paper, stroke = 1.1, size = 3.6
+  ) +
   geom_hline(yintercept = spike_threshold_z, linetype = "dashed", color = dk_col$alert) +
   theme_digikat(base_size = 24) +
   labs(
@@ -165,7 +192,10 @@ p_volume_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_volume)) +
 
 p_cli_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_cli)) +
   geom_line(color = dk_col$faint) +
-  geom_point(data = filter(spikes_detected_z, is_cli_spike), color = dk_col$alert, size = 5) +
+  geom_point(
+    data = filter(spikes_detected_z, is_cli_spike),
+    shape = 24, color = dk_col$alert, fill = dk_col$paper, stroke = 1.1, size = 3.6
+  ) +
   geom_hline(yintercept = spike_threshold_z, linetype = "dashed", color = dk_col$alert) +
   theme_digikat(base_size = 24) +
   labs(
@@ -175,28 +205,58 @@ p_cli_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_cli)) +
   )
 ```
 
-### Dani ekstremnog volumena medijske produkcije
+### Dani neuobičajenog volumena
+
+<p class="figure-question"><strong>Pitanje.</strong> Koji dani odstupaju od godišnjeg prosjeka broja objava za više od tri standardne devijacije?</p>
+<p class="figure-card__takeaway"><strong>Nalaz.</strong> Trokuti označavaju rijetke vrhove volumena, ali ne određuju događaj koji ih je proizveo.</p>
 
 ```{r}
-knitr::kable(volume_spike_dates, caption = "Rangiranje datuma prema Z scoreu volumena objava.")
-```
-
-### Dani ekstremne gustoće konfliktnog rječnika
-
-```{r}
-knitr::kable(cli_spike_dates, caption = "Rangiranje datuma prema z-vrijednosti gustoće konfliktnog rječnika.")
-```
-
-```{r}
-#| fig-width: 14
-#| fig-height: 8
+#| label: plot-volume-anomalies
+#| fig-width: 10
+#| fig-height: 5.5
+#| fig-alt: "Dnevna z-vrijednost volumena objava. Trokuti označavaju dane iznad praga od tri standardne devijacije, koji je prikazan isprekidanom crtom."
+#| fig-cap: "Dnevna standardizirana odstupanja volumena objava. Trokuti označavaju dane iznad praga od tri standardne devijacije."
 p_volume_z
 ```
 
 ```{r}
-#| fig-width: 14
-#| fig-height: 8
+#| label: evidence-volume-anomalies
+#| output: asis
+digikat_chart_evidence(
+  "dogadjaji-volume-anomalies",
+  paste0("Označeno je ", nrow(volume_spike_dates), " dana neuobičajenog volumena. Najveća odstupanja padaju na ", fmt_list(top_volume_dates), "."),
+  "događaji_files/figure-html/plot-volume-anomalies-1.svg",
+  "Dani iznad praga neuobičajenog volumena",
+  table_data = volume_spike_dates,
+  table_note = "Tablica prikazuje označene dane. CSV sadrži cijeli dnevni niz korišten u grafikonu."
+)
+```
+
+### Dani neuobičajene gustoće konfliktnog rječnika
+
+<p class="figure-question"><strong>Pitanje.</strong> Koji dani odstupaju od godišnjeg prosjeka gustoće konfliktnog rječnika za više od tri standardne devijacije?</p>
+<p class="figure-card__takeaway"><strong>Nalaz.</strong> Vrhovi konfliktnog rječnika ne podudaraju se nužno s vrhovima volumena.</p>
+
+```{r}
+#| label: plot-conflict-anomalies
+#| fig-width: 10
+#| fig-height: 5.5
+#| fig-alt: "Dnevna z-vrijednost gustoće konfliktnog rječnika. Trokuti označavaju dane iznad praga od tri standardne devijacije."
+#| fig-cap: "Dnevna standardizirana odstupanja gustoće konfliktnog rječnika. Trokuti označavaju dane iznad praga od tri standardne devijacije."
 p_cli_z
+```
+
+```{r}
+#| label: evidence-conflict-anomalies
+#| output: asis
+digikat_chart_evidence(
+  "dogadjaji-conflict-anomalies",
+  paste0("Označeno je ", nrow(cli_spike_dates), " dana neuobičajene gustoće konfliktnog rječnika. Najveća odstupanja padaju na ", fmt_list(top_cli_dates), "."),
+  "događaji_files/figure-html/plot-conflict-anomalies-1.svg",
+  "Dani iznad praga neuobičajenog konfliktnog rječnika",
+  table_data = cli_spike_dates,
+  table_note = "Tablica prikazuje označene dane. CSV sadrži cijeli dnevni niz korišten u grafikonu."
+)
 ```
 
 Crvene točke označavaju `r nrow(volume_spike_dates)` dana s vrhom volumena i `r nrow(cli_spike_dates)` dana s vrhom konfliktnog rječnika. Tri najveća odstupanja volumena padaju na `r fmt_list(top_volume_dates)`, a tri najveća odstupanja konfliktnog rječnika na `r fmt_list(top_cli_dates)`. Tablice daju potpune popise i veličinu odstupanja.
@@ -209,27 +269,60 @@ To su statističke zastavice, a ne automatski prepoznati događaji. Za tvrdnju o
 
 Kao unaprijed odabrana studija slučaja uzima se Uskrs 2022., slavljen 17. travnja. Kalendarski prozor obuhvaća 29 dana, ali uzorak sadrži podatke za `r easter_observed_days` dana. Analiza ne uspoređuje Uskrs sa zasebnim uzorkom političkih ili drugih događaja.
 
-Prikaz prati tematsku kategoriju Duhovnost i liturgija u prozoru od 14 dana prije i poslije blagdana. Linija predstavlja udio ove teme u ukupnom dnevnom uzorku. Veličina točke predstavlja prosječnu gustoću konfliktnog rječnika, a boja prosječni leksički tonalitet.
+Prikaz prati tematsku kategoriju Duhovnost i liturgija u prozoru od 14 dana prije i poslije blagdana. Tri odvojena panela prikazuju njezin udio u dnevnom uzorku, prosječnu gustoću konfliktnog rječnika i prosječni leksički tonalitet.
+
+<p class="figure-question"><strong>Pitanje.</strong> Kako se oko Uskrsa 2022. kreću udio teme, konfliktni rječnik i tonalitet?</p>
+<p class="figure-card__takeaway"><strong>Nalaz.</strong> Tri odvojena panela pokazuju da se pokazatelji ne kreću jednako i da se nijedan ne može čitati kao potpuni „potpis" događaja.</p>
 
 ```{r}
 #| label: event-seismograph-uskrs
-#| fig-height: 12
-#| fig-width: 14
+#| fig-height: 8
+#| fig-width: 10
 #| message: false
+#| fig-alt: "Tri usklađena dnevna panela oko Uskrsa 2022. prikazuju udio teme Duhovnost i liturgija, gustoću konfliktnog rječnika i prosječni tonalitet. Okomita crta označava Uskrs."
+#| fig-cap: "Dnevni udio teme Duhovnost i liturgija, prosječna gustoća konfliktnog rječnika i leksički tonalitet u prozoru oko Uskrsa 2022."
 
-ggplot(daily_duhovnost_dynamics, aes(x = date, y = duhovnost_share)) +
-  geom_line(color = dk_col$faint, linewidth=1.2) +
-  geom_point(aes(size = avg_cli, color = avg_sentiment)) +
-  geom_vline(xintercept = event_date_uskrs, linetype = "dashed", color = dk_col$ink, linewidth=1) +
+easter_share_plot <- ggplot(daily_duhovnost_dynamics, aes(x = date, y = duhovnost_share)) +
+  geom_line(color = dk_col$accent, linewidth = 1) +
+  geom_point(color = dk_col$accent, size = 2) +
+  geom_vline(xintercept = event_date_uskrs, linetype = "dashed", color = dk_col$ink) +
   scale_y_continuous(labels = percent_format(decimal.mark = ",")) +
-  scale_color_digikat_diverging(name="Prosječni tonalitet") +
-  scale_size_continuous(range = c(3, 14), name="Gustoća konfliktnog rječnika") +
-  theme_digikat(base_size = 24) +
-  labs(
+  theme_digikat(base_size = 14) +
+  labs(x = NULL, y = "Udio teme")
+
+easter_conflict_plot <- ggplot(daily_duhovnost_dynamics, aes(x = date, y = avg_cli)) +
+  geom_line(color = dk_col$neg, linewidth = 1) +
+  geom_point(color = dk_col$neg, shape = 17, size = 2) +
+  geom_vline(xintercept = event_date_uskrs, linetype = "dashed", color = dk_col$ink) +
+  theme_digikat(base_size = 14) +
+  labs(x = NULL, y = "Konfliktni rječnik")
+
+easter_sentiment_plot <- ggplot(daily_duhovnost_dynamics, aes(x = date, y = avg_sentiment)) +
+  geom_hline(yintercept = 0, color = dk_col$faint) +
+  geom_line(color = dk_col$pos, linewidth = 1) +
+  geom_point(color = dk_col$pos, shape = 15, size = 2) +
+  geom_vline(xintercept = event_date_uskrs, linetype = "dashed", color = dk_col$ink) +
+  theme_digikat(base_size = 14) +
+  labs(x = "Datum", y = "Tonalitet")
+
+easter_plot <- (easter_share_plot / easter_conflict_plot / easter_sentiment_plot) +
+  plot_annotation(
     title = "Tematski prozor oko Uskrsa 2022.",
-    subtitle = "Linija = udio teme | Veličina točke = konfliktni rječnik | Boja točke = leksički tonalitet",
-    x = "Datum", y = "Udio teme Duhovnost i Liturgija u dnevnom diskursu"
+    subtitle = "Isprekidana okomita crta označava Uskrs. Svaki pokazatelj ima zasebnu os."
   )
+
+print(easter_plot)
+```
+
+```{r}
+#| label: evidence-easter-window
+#| output: asis
+digikat_chart_evidence(
+  "dogadjaji-easter-window",
+  paste0("Udio teme najviši je ", fmt_hr_date(easter_peak$date), ". Dnevni tonalitet i konfliktni rječnik ne kreću se istim obrascem."),
+  "događaji_files/figure-html/event-seismograph-uskrs-1.svg",
+  "Dnevni pokazatelji u prozoru oko Uskrsa 2022."
+)
 ```
 
 ### Opis prozora oko Uskrsa 2022.
@@ -246,13 +339,23 @@ Zadnji dio mape uspoređuje dostupne godišnje presjeke imenica i pridjeva u dok
 
 Postupak broji imenice i pridjeve u dokumentima koji spominju *Stepinca* i mjeri prosječni tonalitet tih dokumenata. Uzorak daje presjeke za godine `r stepinac_year_text`. Grafikon je zato usporedba dostupnih presjeka, a ne potpuna longitudinalna serija.
 
+<p class="figure-question"><strong>Pitanje.</strong> Koje se leksičke jedinice najčešće pojavljuju u dostupnim godišnjim presjecima tekstova o Stepincu?</p>
+<p class="figure-card__takeaway"><strong>Nalaz.</strong> Najčešće riječi razlikuju se među dostupnim godinama, ali praznine onemogućuju tvrdnju o kontinuiranoj promjeni narativa.</p>
+
 ```{r}
 #| label: narrative-biography-robust
-#| fig-height: 12
-#| fig-width: 14
+#| fig-height: 8
+#| fig-width: 10
+#| fig-alt: "Fasetirani stupci prikazuju najčešće leksičke jedinice u dostupnim godišnjim presjecima tekstova koji spominju Stepinca. Na svakom stupcu ispisan je prosječni tonalitet."
+#| fig-cap: "Najčešće leksičke jedinice u dostupnim godišnjim presjecima dokumenata koji spominju Alojzija Stepinca. Ispisana vrijednost i boja prikazuju prosječni tonalitet tekstova."
 
 ggplot(top_associated_words_final, aes(x = total_cooccurrences, y = reorder_within(lemma, total_cooccurrences, year), fill = avg_sentiment)) +
   geom_col() +
+  geom_text(
+    aes(label = format(round(avg_sentiment, 2), decimal.mark = ",", nsmall = 2)),
+    hjust = -0.1, size = 3, color = dk_col$ink
+  ) +
+  expand_limits(x = max(top_associated_words_final$total_cooccurrences) * 1.12) +
   scale_y_reordered() +
   scale_fill_digikat_diverging(name="Prosječni leksički\ntonalitet tekstova") +
   facet_wrap(~ year, scales = "free_y") +
@@ -263,6 +366,17 @@ ggplot(top_associated_words_final, aes(x = total_cooccurrences, y = reorder_with
     subtitle = paste0("Dostupne godine: ", stepinac_year_text, "; boja stupca prikazuje prosječni tonalitet tekstova"),
     x = "Broj pojavljivanja u dokumentima koji spominju Stepinca", y = "Leksička jedinica"
   )
+```
+
+```{r}
+#| label: evidence-stepinac-terms
+#| output: asis
+digikat_chart_evidence(
+  "dogadjaji-stepinac-terms",
+  paste0("Dostupni su presjeci za godine ", stepinac_year_text, ". Razlike među riječima ne čine kontinuiranu vremensku seriju."),
+  "događaji_files/figure-html/narrative-biography-robust-1.svg",
+  "Leksičke jedinice u dostupnim godišnjim presjecima o Stepincu"
+)
 ```
 
 **Interpretacija dostupnih godišnjih presjeka**

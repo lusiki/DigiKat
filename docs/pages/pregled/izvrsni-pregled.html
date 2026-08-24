@@ -20,7 +20,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */
   vertical-align: middle;
 }
 </style>
@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-18eeef7e313107c10b6b051a6734352e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-e29ec2c24c2059059fb94265e3e8550f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-d2e72f3cef35377e503de1f8f9e16e5a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       "@id": "https://lusiki.github.io/DigiKat/#project",
       "name": "DigiKat",
       "alternateName": "Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
-      "description": "Otvoreni istraživački projekt koji mapira katoličke teme u hrvatskom digitalnom medijskom prostoru.",
+      "description": "DigiKat je otvoreni opservatorij koji pokazuje tko u Hrvatskoj objavljuje o katoličkim temama, o čemu govori i što privlači pozornost.",
       "url": "https://lusiki.github.io/DigiKat/",
       "image": "https://lusiki.github.io/DigiKat/assets/images/digikat-social-card.png",
       "sameAs": "https://github.com/lusiki/DigiKat",
@@ -151,134 +151,98 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
-<span class="menu-text">Naslovnica</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../pages/about.html"> 
-<span class="menu-text">O projektu</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../pages/moj-medij.html"> 
-<span class="menu-text">Moj medij</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../pages/baza.html"> 
-<span class="menu-text">Baza podataka</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../pages/metodologija.html"> 
-<span class="menu-text">Metodologija</span></a>
-  </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mapa-medijskog-prostora" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Mapa medijskog prostora</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-istražite" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Istražite</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-mapa-medijskog-prostora">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-istražite">
         <li>
     <a class="dropdown-item" href="../../pages/mapa/index.html">
- <span class="dropdown-text">Pregled mapa</span></a>
-  </li>  
+ <span class="dropdown-text">Mapa medijskog prostora</span></a>
+  </li>
         <li>
-    <a class="dropdown-item" href="../../pages/mapa/mapa.html">
- <span class="dropdown-text">Mapa ekosustava</span></a>
-  </li>  
+    <a class="dropdown-item" href="../../pages/moj-medij.html">
+ <span class="dropdown-text">Moj medij</span></a>
+  </li>
         <li>
-    <a class="dropdown-item" href="../../pages/mapa/evolucija.html">
- <span class="dropdown-text">Evolucija ekosustava</span></a>
-  </li>  
+    <a class="dropdown-item" href="../../pages/izvori/index.html">
+ <span class="dropdown-text">Katalog izvora</span></a>
+  </li>
         <li>
-    <a class="dropdown-item" href="../../pages/mapa/mapa_stats.html">
- <span class="dropdown-text">Tematske struje</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../pages/mapa/diskurs.html">
- <span class="dropdown-text">Atmosfera diskursa</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../pages/mapa/događaji.html">
- <span class="dropdown-text">Fokus na događaje i kampanje</span></a>
-  </li>  
+    <a class="dropdown-item" href="../../pages/pregled/izvrsni-pregled.html">
+ <span class="dropdown-text">Izvršni pregled</span></a>
+  </li>
     </ul>
   </li>
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tematska-istraživanja" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Tematska istraživanja</span>
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-podaci-i-metodologija" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Podaci i metodologija</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-tematska-istraživanja">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-podaci-i-metodologija">
         <li>
-    <a class="dropdown-item" href="../../pages/studije/index.html">
- <span class="dropdown-text">Pregled istraživanja</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../pages/studije/trzista-paznje.html">
- <span class="dropdown-text">Tržišta pažnje u religijskim digitalnim medijima</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../pages/studije/hodocasnicki-turizam.html">
- <span class="dropdown-text">Memorijalni okvir hrvatskih katoličkih odredišta</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../pages/studije/redovnicke-zajednice.html">
- <span class="dropdown-text">Medijska zastupljenost redovničkih zajednica</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../pages/studije/katolicki-influenceri.html">
- <span class="dropdown-text">Katolički influenceri i institucionalni deficit pažnje</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../pages/studije/crkva-i-dezinformacije.html">
- <span class="dropdown-text">Tko govori iz katoličkoga medijskog prostora</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../pages/studije/inflacija-i-religija.html">
- <span class="dropdown-text">Inflacija, informacije i odgođene promjene cijena</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../pages/studije/socijalni-nauk-i-gospodarstvo.html">
- <span class="dropdown-text">Socijalni nauk Crkve u raspravi o gospodarstvu</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../pages/studije/katolicko-obrazovanje-i-stepinac.html">
- <span class="dropdown-text">Katoličko obrazovanje i Stepinac kao mjesta sjećanja</span></a>
-  </li>  
-    </ul>
+    <a class="dropdown-item" href="../../pages/baza.html">
+ <span class="dropdown-text">Službeni korpus</span></a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="../../pages/schedule.html"> 
-<span class="menu-text">Projektni raspored</span></a>
-  </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-resursi" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Resursi</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-resursi">    
+        <li>
+    <a class="dropdown-item" href="../../pages/metodologija.html">
+ <span class="dropdown-text">Metodologija</span></a>
+  </li>
+        <li>
+    <a class="dropdown-item" href="../../pages/metodologija.html#method-reproducibility">
+ <span class="dropdown-text">Reproducibilnost</span></a>
+  </li>
+        <li>
+    <a class="dropdown-item" href="../../pages/baza.html#pristup-licencija-i-citiranje">
+ <span class="dropdown-text">Citiranje i pristup</span></a>
+  </li>
         <li>
     <a class="dropdown-item" href="../../pages/resources.html">
- <span class="dropdown-text">Resursi</span></a>
-  </li>  
+ <span class="dropdown-text">Javni resursi</span></a>
+  </li>
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-istraživanja" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Istraživanja</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-istraživanja">
+        <li>
+    <a class="dropdown-item" href="../../pages/studije/index.html">
+ <span class="dropdown-text">Tematska istraživanja</span></a>
+  </li>
+        <li>
+    <a class="dropdown-item" href="../../assets/izvjestaji/godisnji-pregled-2025.html">
+ <span class="dropdown-text">Godišnji pregled 2025.</span></a>
+  </li>
+        <li>
+    <a class="dropdown-item" href="../../assets/izvjestaji/kako-se-govori-o-crkvi/index.html">
+ <span class="dropdown-text">Kako se govori o Crkvi?</span></a>
+  </li>
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-o-projektu" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">O projektu</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-o-projektu">
+        <li>
+    <a class="dropdown-item" href="../../pages/about.html">
+ <span class="dropdown-text">O projektu</span></a>
+  </li>
         <li>
     <a class="dropdown-item" href="../../pages/news.html">
  <span class="dropdown-text">Obavijesti</span></a>
-  </li>  
+  </li>
+        <li>
+    <a class="dropdown-item" href="../../pages/schedule.html">
+ <span class="dropdown-text">Projektni raspored</span></a>
+  </li>
         <li>
     <a class="dropdown-item" href="../../pages/contact.html">
  <span class="dropdown-text">Kontakt</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../pages/site-info.html">
- <span class="dropdown-text">O stranici</span></a>
-  </li>  
+  </li>
     </ul>
   </li>
-</ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/lusiki/DigiKat"> <i class="bi bi-github" role="img">
-</i> 
-<span class="menu-text"></span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -290,11 +254,11 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    
+
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -312,17 +276,17 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-title-meta">
 
-    
+
     <div>
     <div class="quarto-title-meta-heading">Objavljeno</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">17. kolovoza 2026.</p>
+      <p class="date">24. kolovoza 2026.</p>
     </div>
   </div>
-  
-    
+
+
   </div>
-  
+
 
 
 </header>
@@ -525,7 +489,7 @@ The first layer measures volume, reach and engagement by platform and source. On
 <p>Both specialised and general-news outlets appear near the top of individual platform rankings. Because the corpus is selected by content, a high rank does not mean that a source is confessional or that all of its output concerns Catholic topics.</p>
 </section>
 </div>
-<p><img src="../mapa/mapa_files/figure-html/plot-actor-map-1.png" class="img-fluid" alt="Trodijelna točkasta karta aktera po dosegu i angažmanu za web, YouTube i Facebook, s medijanskim linijama koje dijele četiri kvadranta arhetipova."></p>
+<p><img src="../mapa/mapa_files/figure-html/plot-actor-map-1.svg" class="img-fluid" alt="Trodijelna točkasta karta aktera po dosegu i angažmanu za web, YouTube i Facebook, s medijanskim linijama koje dijele četiri kvadranta arhetipova."></p>
 <div class="izvor-caption">
 <span class="lang-hr">Opisna karta aktera: doseg (okomito) i interakcije (vodoravno), po platformama; veličina točke je broj objava. Izvor:</span><span class="lang-en">Descriptive actor map: reach (vertical) and interactions (horizontal), by platform; point size is the number of posts. Source:</span> <a href="https://lusiki.github.io/DigiKat/pages/mapa/mapa.html">Mapa ekosustava</a>
 </div>
@@ -597,7 +561,7 @@ The third layer describes how things are said. It measures tonality (the CroSent
 <p>Love and Angry are platform reaction labels whose meaning depends on content and audience, while RIK measures the relative density of conflict vocabulary. The findings therefore support a description of overlapping thematic streams and continuous lexical differences, not a claim that the entire discourse separates into two confirmed worlds.</p>
 </section>
 </div>
-<p><img src="../mapa/mapa_stats_files/figure-html/plot-topic-network-1.png" class="img-fluid" alt="Mrežni graf šesnaest tematskih kategorija; veze označavaju korelacije supojavljivanja oznaka, a položaj čvorova služi čitljivosti."></p>
+<p><img src="../mapa/mapa_stats_files/figure-html/plot-topic-network-1.svg" class="img-fluid" alt="Mrežni graf šesnaest tematskih kategorija; veze označavaju korelacije supojavljivanja oznaka, a položaj čvorova služi čitljivosti."></p>
 <div class="izvor-caption">
 <span class="lang-hr">Mreža povezanosti tematskih kategorija: veze prikazuju korelacije supojavljivanja u uzorku, bez unaprijed potvrđenih klastera. Izvor:</span><span class="lang-en">Network of thematic-category links: edges show co-occurrence correlations in the sample, without predefined confirmed clusters. Source:</span> <a href="https://lusiki.github.io/DigiKat/pages/mapa/mapa_stats.html">Tematske struje</a>
 </div>
@@ -783,7 +747,7 @@ The fifth layer offers a temporal cross-section. The share of the ten largest so
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
+        if (clz.startsWith('code-annotation-')) {
           return true;
         }
       }
@@ -803,11 +767,11 @@ The fifth layer offers a temporal cross-section. The share of the ten largest so
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
         button.setAttribute("data-bs-title", "Kopirano!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
+        tooltip = new bootstrap.Tooltip(button,
+          { trigger: "manual",
             customClass: "code-copy-button-tooltip",
             offset: [0, -8]});
-        tooltip.show();    
+        tooltip.show();
       }
       setTimeout(function() {
         if (tooltip) {
@@ -884,7 +848,7 @@ The fifth layer offers a temporal cross-section. The share of the ten largest so
       if (onUntriggerFn) {
         config.onUntrigger = onUntriggerFn;
       }
-      window.tippy(el, config); 
+      window.tippy(el, config);
     }
     const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
     for (var i=0; i<noterefs.length; i++) {
@@ -959,7 +923,7 @@ The fifth layer offers a temporal cross-section. The share of the ten largest so
       tippyHover(xref, undefined, function(instance) {
         instance.disable();
         let url = xref.getAttribute('href');
-        let hash = undefined; 
+        let hash = undefined;
         if (url.startsWith('#')) {
           hash = url;
         } else {
@@ -987,7 +951,7 @@ The fifth layer offers a temporal cross-section. The share of the ten largest so
               if (note !== null) {
                 const html = processXRef(id, note);
                 instance.setContent(html);
-              } 
+              }
             }).finally(() => {
               instance.enable();
               instance.show();
@@ -1011,7 +975,7 @@ The fifth layer offers a temporal cross-section. The share of the ten largest so
               }
               const html = processXRef(null, note);
               instance.setContent(html);
-            } 
+            }
           }).finally(() => {
             instance.enable();
             instance.show();
@@ -1051,7 +1015,7 @@ The fifth layer offers a temporal cross-section. The share of the ten largest so
               height = bottom - top;
             }
             if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
+              // cook up a div (if necessary) and position it
               let div = window.document.getElementById("code-annotation-line-highlight");
               if (div === null) {
                 div = window.document.createElement("div");
@@ -1177,39 +1141,34 @@ The fifth layer offers a temporal cross-section. The share of the ten largest so
   <div class="nav-footer">
     <div class="nav-footer-left">
 <p><strong>DigiKat</strong> · Hrvatsko katoličko sveučilište</p>
-</div>   
+</div>
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../../pages/moj-medij.html">
-<p>Moj medij</p>
+    <a class="nav-link" href="../../index.html">
+<p>Naslovnica</p>
 </a>
-  </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="../../pages/baza.html">
-<p>Baza podataka</p>
-</a>
-  </li>  
-    <li class="nav-item">
-    <a class="nav-link" href="../../pages/metodologija.html">
-<p>Metodologija</p>
-</a>
-  </li>  
+  </li>
     <li class="nav-item">
     <a class="nav-link" href="../../pages/resources.html">
 <p>Resursi</p>
 </a>
-  </li>  
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" href="../../pages/site-info.html">
+<p>O stranici</p>
+</a>
+  </li>
     <li class="nav-item">
     <a class="nav-link" href="../../pages/contact.html">
 <p>Kontakt</p>
 </a>
-  </li>  
+  </li>
     <li class="nav-item">
     <a class="nav-link" href="https://github.com/lusiki/DigiKat">
 <p>GitHub</p>
 </a>
-  </li>  
+  </li>
 </ul>
     </div>
     <div class="nav-footer-right">
