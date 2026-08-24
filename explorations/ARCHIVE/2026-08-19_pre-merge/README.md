@@ -1,0 +1,3 @@
+# Pre-merge outputs, 19 August 2026
+
+This directory freezes `analysis-summary.txt` and every public CSV from the three reports immediately before they were merged into `okvir-katolicanstva-prototype`. The reconciliation anchor is `okvir/actor_totals.csv`, which contains 413,985 posts across four groups and has SHA-256 `F96F20454281451949D188C0CDFF302C8F564BECDA38514330A1CE2546B16DFF`. The merged analysis must reproduce `actor_totals.csv`, `event_arcs.csv`, and `rhythm_effects.csv` byte-for-byte. The group-4 version of `theme_selection.csv` is intentionally expected to differ from the archived curated-panel version.

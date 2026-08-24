@@ -1,0 +1,13 @@
+﻿indicator,label,era,scenario,estimate,lower,upper,n,status
+V1,Udio službenoga glasa među četirima glasovima,pre,broad,2.52943404801048,1.80095392083431,3.25791417518666,23,rising
+V1,Udio službenoga glasa među četirima glasovima,post,broad,-3.28181274927367,-4.00111277461723,-2.56251272393012,15,falling
+V2,Udio objava sa supstantivnim rječnikom,pre,broad,-0.179126917239569,-0.472558793520214,0.114304959041076,23,stable
+V2,Udio objava sa supstantivnim rječnikom,post,broad,0.277724660139651,-0.0591206084633689,0.614569928742672,16,stable
+V3,Razlika antagonističkih okvira portala i službenoga glasa,pre,broad,-2.54561907333417,-6.95559551307161,1.86435736640328,16,stable
+V3,Razlika antagonističkih okvira portala i službenoga glasa,post,broad,-3.66621595170259,-20.9101954930336,13.5777635896284,13,stable
+V4,Omjer reakcija po objavi portala i službenoga glasa,pre,broad,4.55682898067706,-13.9267341915251,23.0403921528792,17,stable
+V4,Omjer reakcija po objavi portala i službenoga glasa,post,broad,0.0692800172325387,-4.17170515019435,4.31026518465943,13,stable
+V3,Razlika antagonističkih okvira portala i službenoga glasa,pre,strict,-2.62431150888861,-7.19495300078986,1.94632998301264,16,stable
+V3,Razlika antagonističkih okvira portala i službenoga glasa,post,strict,-3.71832903849581,-20.9438662758907,13.5072081988991,13,stable
+V4,Omjer reakcija po objavi portala i službenoga glasa,pre,strict,4.39443385665736,-14.1053477489657,22.8942154622804,17,stable
+V4,Omjer reakcija po objavi portala i službenoga glasa,post,strict,0.0740071990609219,-4.16575299808143,4.31376739620328,13,stable

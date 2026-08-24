@@ -1,0 +1,9 @@
+ŠTO IZ CRKVENOGA ŽIVOTA DOSPIJEVA U VIJESTI — ANALYSIS RUN
+Generated UTC: 2026-08-19 06:16:53 UTC
+Corpus SHA-256: 15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a
+General-news panel posts: 86.949
+Catholic-source posts: 105.127
+General-news brands: 70
+Recognised theme posts: 191.877
+Named event waves above baseline: 16 of 16
+Headline: Veliki crkveni događaji ulaze u opće vijesti, ali svakodnevna vjera ondje zauzima manje mjesta.

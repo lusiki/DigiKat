@@ -1,0 +1,33 @@
+﻿actor_group,posts,event_key,event_label,period,event_type,peak_z
+public,5771,event-1,Smrt pape Franje,21. travnja 2025.,papal,12.0268753634594
+official,291,event-1,Smrt pape Franje,21. travnja 2025.,papal,12.0268753634594
+creator,246,event-1,Smrt pape Franje,21. travnja 2025.,papal,12.0268753634594
+independent,176,event-1,Smrt pape Franje,21. travnja 2025.,papal,12.0268753634594
+public,1491,event-2,Božić,25. prosinca 2024.,liturgical,7.18117275575406
+official,110,event-2,Božić,25. prosinca 2024.,liturgical,7.18117275575406
+creator,99,event-2,Božić,25. prosinca 2024.,liturgical,7.18117275575406
+independent,66,event-2,Božić,25. prosinca 2024.,liturgical,7.18117275575406
+public,1347,event-3,Uskrs,17. travnja 2022.,liturgical,6.87518835639923
+official,287,event-3,Uskrs,17. travnja 2022.,liturgical,6.87518835639923
+creator,89,event-3,Uskrs,17. travnja 2022.,liturgical,6.87518835639923
+independent,61,event-3,Uskrs,17. travnja 2022.,liturgical,6.87518835639923
+creator,45,event-4,Božić,25. prosinca 2021.,liturgical,6.42087396479763
+public,858,event-4,Božić,25. prosinca 2021.,liturgical,6.42087396479763
+official,124,event-4,Božić,25. prosinca 2021.,liturgical,6.42087396479763
+independent,26,event-4,Božić,25. prosinca 2021.,liturgical,6.42087396479763
+public,718,event-5,Božić,25. prosinca 2022.,liturgical,6.22965212198745
+independent,13,event-5,Božić,25. prosinca 2022.,liturgical,6.22965212198745
+creator,41,event-5,Božić,25. prosinca 2022.,liturgical,6.22965212198745
+official,102,event-5,Božić,25. prosinca 2022.,liturgical,6.22965212198745
+public,1986,event-6,Uskrs,5. travnja 2026.,liturgical,6.17010227558608
+official,171,event-6,Uskrs,5. travnja 2026.,liturgical,6.17010227558608
+creator,128,event-6,Uskrs,5. travnja 2026.,liturgical,6.17010227558608
+independent,77,event-6,Uskrs,5. travnja 2026.,liturgical,6.17010227558608
+public,400,event-7,Velika Gospa,15. kolovoza 2022.,liturgical,5.68879743910191
+creator,22,event-7,Velika Gospa,15. kolovoza 2022.,liturgical,5.68879743910191
+official,63,event-7,Velika Gospa,15. kolovoza 2022.,liturgical,5.68879743910191
+independent,12,event-7,Velika Gospa,15. kolovoza 2022.,liturgical,5.68879743910191
+official,91,event-8,Božić,25. prosinca 2023.,liturgical,5.4223803093591
+public,718,event-8,Božić,25. prosinca 2023.,liturgical,5.4223803093591
+creator,102,event-8,Božić,25. prosinca 2023.,liturgical,5.4223803093591
+independent,11,event-8,Božić,25. prosinca 2023.,liturgical,5.4223803093591

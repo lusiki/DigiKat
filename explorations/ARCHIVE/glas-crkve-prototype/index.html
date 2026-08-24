@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="DigiKat nastavak analize o tome kada različite skupine izvora pojačavaju govor o katoličanstvu.">
+  <title>Kada se govori o katoličanstvu — i tko tada govori? · DigiKat</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="output/analysis-data.js"></script>
+  <script defer src="prototype.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#sadrzaj">Prijeđi na sadržaj</a>
+
+  <div class="prototype-banner" role="status">
+    <strong>Nastavak glavnog pregleda</strong>
+    <span>Iste skupine izvora, isti korpus i ista pravila razvrstavanja.</span>
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="../../docs/index.html"><span aria-hidden="true">D</span>DigiKat</a>
+    <nav aria-label="Glavna navigacija">
+      <a href="../okvir-katolicanstva-prototype/index.html">Glavni pregled</a>
+      <a href="../../docs/pages/about.html">O projektu</a>
+      <a href="../../docs/pages/baza.html">Baza podataka</a>
+      <a href="../../docs/pages/metodologija.html">Metodologija</a>
+    </nav>
+    <span class="mode">Nastavak</span>
+  </header>
+
+  <main id="sadrzaj">
+    <header class="hero">
+      <div class="hero__inner">
+        <p class="eyebrow">DigiKat · nastavak analize „Kako se govori o katoličanstvu”</p>
+        <p class="scope" data-fragment="scope"></p>
+        <h1>Kada se govori o katoličanstvu — i tko tada govori?</h1>
+        <p class="hero__dek">Glavni pregled pokazao je tko sudjeluje u razgovoru o katoličanstvu i na koji način govori. Ovaj nastavak prati iste četiri skupine izvora i pita tko nosi najveće poraste objavljivanja oko blagdana i velikih crkvenih događaja.</p>
+
+        <div class="hero-finding" aria-live="polite">
+          <p class="label">Glavni nalaz</p>
+          <p id="hero-finding">Najveći događaji mijenjaju i broj objava i odnos skupina koje ih objavljuju.</p>
+          <p id="hero-readout">Izračunati sažetak učitava se s rezultatima analize.</p>
+        </div>
+
+        <div class="metric-grid" aria-label="Opseg analize">
+          <div><strong data-fragment="corpusRows">—</strong><span>objava u istom korpusu</span></div>
+          <div><strong>4</strong><span>iste skupine izvora</span></div>
+          <div><strong data-fragment="peakCount">—</strong><span>prepoznatih vrhunaca</span></div>
+          <div><strong>±2</strong><span>dana oko blagdana</span></div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="question-rail" aria-label="Pitanja izvještaja">
+      <a href="#veza"><span>01</span>Kako se ovaj nastavak veže uz glavni pregled?</a>
+      <a href="#dogadaji"><span>02</span>Tko je najviše objavljivao tijekom najvećih događaja?</a>
+      <a href="#ritam"><span>03</span>Čiji se ritam najviše mijenja oko blagdana?</a>
+    </nav>
+
+    <div class="page-shell">
+      <aside class="toc" aria-label="Na ovoj stranici">
+        <p>Na ovoj stranici</p>
+        <ol>
+          <li><a href="#veza">Veza s glavnim pregledom</a></li>
+          <li><a href="#dogadaji">Najveći događaji</a></li>
+          <li><a href="#ritam">Liturgijski ritam</a></li>
+          <li><a href="#zakljucak">Što možemo zaključiti</a></li>
+          <li><a href="#metoda">Kako je izračunato</a></li>
+        </ol>
+      </aside>
+
+      <article class="article">
+        <section id="veza" class="opening" aria-labelledby="veza-title">
+          <p id="veza-title" class="opening__question">Ovo nije nova podjela katoličkoga prostora, nego bliži pogled na događaje pronađene u glavnom izvještaju.</p>
+          <p>Izvještaj <a href="../okvir-katolicanstva-prototype/index.html"><em>Kako se govori o katoličanstvu</em></a> pokazao je da broj objava snažno raste oko blagdana i papinskih događaja. Ovdje uzimamo te iste događaje i odgovaramo na sljedeće pitanje: jesu li vrhunce podjednako nosile sve skupine izvora ili se njihov odnos tijekom važnih dana mijenjao?</p>
+          <p>Svaki je izvor razvrstan istim pravilom kao u glavnom pregledu. Nazivi, redoslijed i boje skupina također su isti. Politički i zagovarački portali nisu zasebna peta skupina, nego ostaju unutar ostalih medija i javnih izvora.</p>
+
+          <div class="source-guide" aria-label="Četiri skupine izvora iz glavnog pregleda">
+            <div data-actor-card="official">
+              <span class="source-guide__swatch" aria-hidden="true"></span>
+              <h2>Crkveni mediji i ustanove</h2>
+              <p>Izvori iza kojih stoje HBK, biskupija, redovnička zajednica ili druga crkvena ustanova.</p>
+              <strong data-actor-total="official">—</strong>
+            </div>
+            <div data-actor-card="independent">
+              <span class="source-guide__swatch" aria-hidden="true"></span>
+              <h2>Katolički mediji drugih osnivača</h2>
+              <p>Mediji s jasnim katoličkim poslanjem koje vode udruge, tvrtke ili druge zasebne pravne osobe.</p>
+              <strong data-actor-total="independent">—</strong>
+            </div>
+            <div data-actor-card="creator">
+              <span class="source-guide__swatch" aria-hidden="true"></span>
+              <h2>Pastoralni i vjerski kanali i stvaratelji</h2>
+              <p>Župni i zajednički kanali te osobni kanali klerika, laika i drugih javnih vjerskih stvaratelja.</p>
+              <strong data-actor-total="creator">—</strong>
+            </div>
+            <div data-actor-card="public">
+              <span class="source-guide__swatch" aria-hidden="true"></span>
+              <h2>Ostali mediji i javni izvori</h2>
+              <p>Opći i mjesni mediji, politički portali, javne ustanove, osobni računi, forumi i komentari.</p>
+              <strong data-actor-total="public">—</strong>
+            </div>
+          </div>
+
+          <div class="guardrail">
+            <strong>Što skupina znači</strong>
+            <p>Podjela opisuje tko stoji iza izvora ili kakav je to kanal. Ne ocjenjuje pouzdanost, crkveno odobrenje ni slaganje publike sa sadržajem.</p>
+          </div>
+        </section>
+
+        <section id="dogadaji" class="report-section" aria-labelledby="dogadaji-title">
+          <header class="section-heading">
+            <span aria-hidden="true">01</span>
+            <div>
+              <p>Najveći događaji</p>
+              <h2 id="dogadaji-title">Tko je objavljivao kada se razgovor najviše pojačao?</h2>
+            </div>
+          </header>
+          <p class="section-lead">Prvi redak pokazuje uobičajeni odnos četiriju skupina u cijelom korpusu. Sljedeći redci pokazuju njihov udio tijekom osam najvećih prepoznatih vrhunaca. Tako se odmah vidi kada je pojedina skupina bila zastupljenija ili manje zastupljena nego inače.</p>
+
+          <figure class="figure-card" aria-labelledby="event-composition-title">
+            <header>
+              <div>
+                <p class="figure-no">Slika 1</p>
+                <h3 id="event-composition-title">Odnos skupina mijenja se od događaja do događaja</h3>
+                <p>Udio objava svake skupine tijekom najvećih prepoznatih vrhunaca</p>
+              </div>
+              <span>Isti akteri kao u glavnom pregledu</span>
+            </header>
+            <div class="chart-frame">
+              <div id="event-composition-chart" class="chart"></div>
+              <div id="event-composition-data" class="sr-only"></div>
+            </div>
+            <figcaption>
+              <span><strong>Izvor:</strong> istraživački korpus projekta DigiKat.</span>
+              <span><strong>Čitanje:</strong> svaki redak zbraja se do 100 %. Prvi redak služi kao referentna raspodjela.</span>
+            </figcaption>
+          </figure>
+
+          <div class="interpretation">
+            <p class="label">Kako čitati nalaz</p>
+            <p id="event-readout">Događaj može promijeniti odnos skupina čak i kada skupina koja inače najviše objavljuje ostane najveća.</p>
+            <p>Grafikon opisuje tko je objavljivao tijekom vrhunca. Ne tvrdi da je svaka objava u tom razdoblju bila izravno uzrokovana imenovanim događajem.</p>
+          </div>
+        </section>
+
+        <section id="ritam" class="report-section" aria-labelledby="ritam-title">
+          <header class="section-heading">
+            <span aria-hidden="true">02</span>
+            <div>
+              <p>Liturgijski ritam</p>
+              <h2 id="ritam-title">Blagdani ne mijenjaju ritam svih izvora jednako</h2>
+            </div>
+          </header>
+          <p class="section-lead">Za svaku skupinu uspoređujemo broj objava u petodnevnom prozoru oko Uskrsa, Velike Gospe, Svih svetih i Božića s drugim prikupljenim danima. Procjena uzima u obzir dan u tjednu, polugodište i platformu.</p>
+
+          <figure class="figure-card" aria-labelledby="rhythm-title">
+            <header>
+              <div>
+                <p class="figure-no">Slika 2</p>
+                <h3 id="rhythm-title">Koliko se objavljivanje mijenja oko ponavljajućih blagdana?</h3>
+                <p>Procijenjena promjena broja objava u odnosu na usporedive dane, uz 95-postotni interval</p>
+              </div>
+              <span>Jedan pokazatelj</span>
+            </header>
+            <div class="chart-frame">
+              <div id="rhythm-chart" class="chart chart--rhythm"></div>
+              <div id="rhythm-data" class="sr-only"></div>
+            </div>
+            <figcaption>
+              <span><strong>Izvor:</strong> puni korpus i popis ponavljajućih blagdana iz glavnog pregleda.</span>
+              <span><strong>Čitanje:</strong> crta koja prelazi nulu znači da smjer nije dovoljno jasan.</span>
+            </figcaption>
+          </figure>
+
+          <div class="interpretation">
+            <p class="label">Kako čitati nalaz</p>
+            <p id="rhythm-readout">Točka pokazuje najbolju procjenu, a vodoravna crta raspon nesigurnosti.</p>
+            <p>Uskrs 2025. nije uključen u ovaj izračun jer se njegov petodnevni prozor preklapa sa smrću pape Franje. Time se izvanredni papinski događaj ne pripisuje liturgijskomu ritmu.</p>
+          </div>
+        </section>
+
+        <section id="zakljucak" class="report-section conclusion" aria-labelledby="zakljucak-title">
+          <header class="section-heading">
+            <span aria-hidden="true">03</span>
+            <div>
+              <p>Što možemo zaključiti</p>
+              <h2 id="zakljucak-title">Velik događaj nije samo više objava; mijenja se i tko sudjeluje</h2>
+            </div>
+          </header>
+          <div class="conclusion-grid">
+            <div>
+              <span>Najveći vrhunac</span>
+              <strong id="conclusion-peak">—</strong>
+            </div>
+            <div>
+              <span>Najveći pomak u sastavu</span>
+              <strong id="conclusion-shift">—</strong>
+            </div>
+            <div>
+              <span>Najjači liturgijski ritam</span>
+              <strong id="conclusion-rhythm">—</strong>
+            </div>
+          </div>
+          <p class="conclusion__text">Glavni pregled pokazuje širu sliku: tko govori, kojim okvirima i uz koje objave publika reagira. Ovaj nastavak dodaje samo jednu novu dimenziju. Iste skupine nisu jednako prisutne u svakom trenutku, a liturgijski kalendar neke od njih strukturira jasnije od drugih.</p>
+        </section>
+
+        <section id="metoda" class="method-box" aria-labelledby="metoda-title">
+          <p class="eyebrow">Kako je izračunato</p>
+          <h2 id="metoda-title">Jedna klasifikacija, jedan događajni sloj i jasno naveden nazivnik</h2>
+          <div class="method-grid">
+            <div>
+              <h3>Skupine izvora</h3>
+              <p>Preuzete su izravno iz glavnog izvještaja. Izračun se prekida ako se broj objava u bilo kojoj skupini razlikuje.</p>
+            </div>
+            <div>
+              <h3>Događajni vrhunci</h3>
+              <p>Vrh je dan s neuobičajeno velikim brojem objava unutar iste godine. Susjedni vrhovi spajaju se u jedan događajni luk.</p>
+            </div>
+            <div>
+              <h3>Liturgijski prozor</h3>
+              <p>Obuhvaća dva dana prije, sam blagdan i dva dana poslije Uskrsa, Velike Gospe, Svih svetih i Božića.</p>
+            </div>
+            <div>
+              <h3>Granica tumačenja</h3>
+              <p>Vremensko podudaranje opisuje ritam objavljivanja. Ono samo po sebi ne dokazuje uzrok sadržaja.</p>
+            </div>
+          </div>
+          <ul id="caveat-list" class="caveat-list"></ul>
+          <a class="method-link" href="../../docs/pages/metodologija.html">Pročitaj projektnu metodologiju <span aria-hidden="true">→</span></a>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <strong>DigiKat</strong>
+    <span>Hrvatsko katoličko sveučilište</span>
+    <span>CC BY 4.0 · istraživački prototip</span>
+  </footer>
+</body>
+</html>

@@ -68,7 +68,11 @@ quality_reports/session_logs/
 quality_reports/recovery/
 
 # Exploration sandbox outputs are throwaway (the explorations themselves ARE tracked)
-explorations/*/output/
+explorations/**/output/
+# Raw vendor exports dropped into an exploration (full text + URLs) are never committed
+explorations/**/input/
+# Full per-source audit names ~11k raw handles incl. personal accounts - local diagnostic only
+explorations/ARCHIVE/2026-08-19_pre-merge/okvir/actor_source_audit.csv
 
 # Study working slices carry RAW post text (PII) and are large (~450 MB each) — NEVER commit.
 # Small aggregate tables/figures under studies/*/output/ stay trackable (no PII, CC BY 4.0);

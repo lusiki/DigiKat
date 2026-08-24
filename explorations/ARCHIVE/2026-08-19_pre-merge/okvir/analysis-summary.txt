@@ -1,0 +1,15 @@
+OKVIR KATOLICANSTVA — ANALYSIS RUN
+Generated UTC: 2026-08-19 07:08:37 UTC
+DigiKat research corpus rows: 413.985
+Discourse sample rows: 62.019
+Discourse sample proportion: 15,0 %
+Reportable heatmap cells: 20 / 20
+Actor coverage (posts): 100,0 %
+Actor coverage (interactions): 100,0 %
+Frame coverage: 95,7 %
+Sharp-frame post share: 4,0 %
+Sharp-frame interaction share: 5,5 %
+Church-media web-share status: worse
+Tone status: worse
+Sharp-frame post-share status: stable
+Verdict: Crkveni glasovi čine manji dio razgovora, a njegov se ton ne zaoštrava

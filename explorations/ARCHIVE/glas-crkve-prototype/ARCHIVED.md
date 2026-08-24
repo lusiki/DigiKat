@@ -1,0 +1,1 @@
+Ovaj je nastavak 19. kolovoza 2026. apsorbiran u jedinstveni izvještaj [`okvir-katolicanstva-prototype`](../../okvir-katolicanstva-prototype/README.md). Brojke prije spajanja, uključujući `rhythm_effects.csv`, sačuvane su u [`2026-08-19_pre-merge/glas`](../2026-08-19_pre-merge/glas/analysis-summary.txt), a aktivna analiza više se ne izvodi iz ove mape.

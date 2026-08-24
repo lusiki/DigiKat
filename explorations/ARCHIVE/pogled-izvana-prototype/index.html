@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="DigiKat usporedba tema u katoličkim izvorima i općim informativnim medijima.">
+  <title>Što iz crkvenoga života dospijeva u vijesti? · DigiKat</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="output/analysis-data.js"></script>
+  <script defer src="prototype.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#sadrzaj">Prijeđi na sadržaj</a>
+
+  <div class="prototype-banner" role="status">
+    <strong>Radna inačica izvještaja</strong>
+    <span>Analiza je obnovljena na službenom korpusu i još nije dio javne navigacije projekta.</span>
+  </div>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="../../docs/index.html" aria-label="DigiKat naslovnica">
+        <span class="brand__sigil" aria-hidden="true">D</span>
+        <span>DigiKat</span>
+      </a>
+      <nav class="site-nav" aria-label="Glavna navigacija">
+        <a href="../okvir-katolicanstva-prototype/index.html">Glavni pregled</a>
+        <a href="../../docs/pages/metodologija.html">Metodologija</a>
+        <a href="../../docs/pages/mapa/index.html">Mapa ekosustava</a>
+      </nav>
+      <span class="site-header__mode">Analiza</span>
+    </div>
+  </header>
+
+  <main id="sadrzaj">
+    <header class="hero">
+      <div class="hero__inner">
+        <p class="eyebrow">DigiKat · što šira javnost vidi od crkvenoga života</p>
+        <div class="hero__status-row">
+          <span class="status-chip">Istraživački nalaz</span>
+          <span class="scope-chip" data-scope></span>
+        </div>
+        <h1>Što iz crkvenoga života dospijeva u vijesti?</h1>
+        <p class="hero__dek">Koje teme prate i opći mediji, a koje uglavnom ostaju u katoličkom medijskom krugu?</p>
+
+        <div class="hero-finding">
+          <p class="hero-finding__label">Glavni nalaz</p>
+          <p id="hero-finding-title" class="hero-finding__text">Nalaz se učitava iz izračunatih rezultata.</p>
+          <p id="hero-finding-summary" class="hero-finding__readout"></p>
+        </div>
+
+        <div class="hero__meta" aria-label="Sažetak obuhvata">
+          <div><strong id="metric-general-posts">—</strong><span>objava općih medija</span></div>
+          <div><strong id="metric-catholic-posts">—</strong><span>objava katoličkih izvora</span></div>
+          <div><strong id="metric-general-brands">—</strong><span>provjerenih medijskih marki</span></div>
+          <div><strong id="metric-events">—</strong><span>prepoznatih događajnih valova</span></div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="question-rail" aria-label="Dijelovi izvještaja">
+      <a href="#izbor-tema"><span>01</span>Koje teme biraju?</a>
+      <a href="#razlike"><span>02</span>Gdje je razlika najveća?</a>
+      <a href="#dogadaji"><span>03</span>Kada tema izlazi u širu javnost?</a>
+    </nav>
+
+    <article class="article">
+      <section class="opening" aria-labelledby="uvod-title">
+        <p class="section-index">Pitanje</p>
+        <h2 id="uvod-title">Glavni pregled pokazuje cijeli razgovor. Ovaj nastavak prati što od toga ulazi u opće vijesti.</h2>
+        <p><a href="../okvir-katolicanstva-prototype/index.html"><em>Kako se govori o katoličanstvu</em></a> pokazuje tko objavljuje, na koji način govori i uz koje objave ljudi češće reagiraju. Ovaj izvještaj postavlja uže pitanje. Uspoređuje teme koje biraju katolički izvori s temama koje biraju opći informativni mediji.</p>
+        <p>Opći informativni mediji ovdje su provjereni nacionalni, regionalni i lokalni web-mediji. Taj panel nije popis svih hrvatskih medija. Forumi, Reddit, osobni računi i politički portali nisu dio glavnih nalaza.</p>
+
+        <div class="circle-guide" aria-label="Dvije uspoređene skupine izvora">
+          <div class="circle-card circle-card--catholic">
+            <span aria-hidden="true"></span>
+            <div><h3>Katolički izvori</h3><p>Crkveni mediji i ustanove, drugi katolički mediji te pastoralni i vjerski kanali.</p></div>
+          </div>
+          <div class="circle-card circle-card--general">
+            <span aria-hidden="true"></span>
+            <div><h3>Opći informativni mediji</h3><p>Provjereni nacionalni, regionalni i lokalni web-mediji iz uredničkog registra.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="izbor-tema" class="report-section" aria-labelledby="izbor-tema-title">
+        <header class="section-heading">
+          <span aria-hidden="true">01</span>
+          <div>
+            <p>Izbor tema</p>
+            <h2 id="izbor-tema-title">Katolički i opći mediji ne izdvajaju iste dijelove crkvenoga života</h2>
+          </div>
+        </header>
+        <p class="section-lead">Svaki redak uspoređuje udio teme među objavama jedne i druge skupine. Veći udio ne znači da je tema važnija. Pokazuje samo koliko prostora zauzima unutar promatranoga medijskog kruga.</p>
+
+        <figure class="figure-card" aria-labelledby="fig1-title">
+          <figcaption class="figure-card__header">
+            <div>
+              <p>Slika 1</p>
+              <h3 id="fig1-title">Isti korpus daje dva različita presjeka crkvenoga života</h3>
+              <p>Udio računalno prepoznatih tema među objavama svake skupine</p>
+            </div>
+            <span>Šest tema</span>
+          </figcaption>
+          <div class="chart-scroll" tabindex="0" aria-label="Grafikon se na uskom zaslonu može pomicati vodoravno">
+            <div id="chart-themes" class="chart"></div>
+          </div>
+        </figure>
+        <div class="interpretation">
+          <p class="interpretation__label">Kako čitati nalaz</p>
+          <p id="theme-reading">Tumačenje se učitava iz izračunatih rezultata.</p>
+          <p id="theme-coverage-note"></p>
+        </div>
+      </section>
+
+      <section id="razlike" class="report-section" aria-labelledby="razlike-title">
+        <header class="section-heading">
+          <span aria-hidden="true">02</span>
+          <div>
+            <p>Najveće razlike</p>
+            <h2 id="razlike-title">Šire teme skrivaju vrlo konkretne uredničke izbore</h2>
+          </div>
+        </header>
+        <p class="section-lead">Šesnaest projektnih kategorija pokazuje koji sadržaji najviše pomiču ukupnu sliku. Prikazane su četiri najveće razlike u svakom smjeru. Lijevo su teme s većim udjelom u katoličkim izvorima, a desno teme s većim udjelom u općim medijima.</p>
+
+        <figure class="figure-card" aria-labelledby="fig2-title">
+          <figcaption class="figure-card__header">
+            <div>
+              <p>Slika 2</p>
+              <h3 id="fig2-title">Koje teme dobivaju više prostora u kojem medijskom krugu</h3>
+              <p>Razlika udjela u postotnim bodovima</p>
+            </div>
+            <span>Najveći pomaci</span>
+          </figcaption>
+          <div class="chart-scroll" tabindex="0" aria-label="Grafikon se na uskom zaslonu može pomicati vodoravno">
+            <div id="chart-categories" class="chart"></div>
+          </div>
+        </figure>
+        <div class="interpretation">
+          <p class="interpretation__label">Kako čitati nalaz</p>
+          <p id="category-reading">Tumačenje se učitava iz izračunatih rezultata.</p>
+          <p>Razlika opisuje raspored pozornosti u prikupljenim objavama. Ne pokazuje je li pojedini medij temu obradio dobro, loše ili dovoljno opširno.</p>
+        </div>
+      </section>
+
+      <section id="dogadaji" class="report-section" aria-labelledby="dogadaji-title">
+        <header class="section-heading">
+          <span aria-hidden="true">03</span>
+          <div>
+            <p>Trenutci šire pozornosti</p>
+            <h2 id="dogadaji-title">Veliki blagdani također ulaze u opće vijesti</h2>
+          </div>
+        </header>
+        <p class="section-lead">Usporedba prati prepoznate liturgijske i papinske događajne valove. Siva točka pokazuje uobičajeni udio općih medija u pripadajućem razdoblju. Plava točka pokazuje njihov udio tijekom događaja.</p>
+
+        <figure class="figure-card" aria-labelledby="fig3-title">
+          <figcaption class="figure-card__header">
+            <div>
+              <p>Slika 3</p>
+              <h3 id="fig3-title">Kada se udio općih medija povećava</h3>
+              <p>Uobičajeni udio i udio tijekom prepoznatih događajnih valova</p>
+            </div>
+            <span>Prepoznati događaji</span>
+          </figcaption>
+          <div class="chart-scroll" tabindex="0" aria-label="Grafikon se na uskom zaslonu može pomicati vodoravno">
+            <div id="chart-events" class="chart"></div>
+          </div>
+        </figure>
+        <div class="interpretation">
+          <p class="interpretation__label">Kako čitati nalaz</p>
+          <p id="event-reading">Tumačenje se učitava iz izračunatih rezultata.</p>
+          <p>Događajni val opisuje nekoliko dana s neuobičajeno mnogo objava. Ne tvrdi da je imenovani događaj uzrokovao svaku objavu u tome razdoblju.</p>
+        </div>
+      </section>
+
+      <section class="synthesis" aria-labelledby="zakljucak-title">
+        <p class="section-index">Zaključak</p>
+        <h2 id="zakljucak-title">Šira javna slika Crkve nastaje izborom tema</h2>
+        <p id="conclusion-reading">Zaključak se učitava iz izračunatih rezultata.</p>
+        <p>Rezultat ne znači da opći mediji trebaju preuzeti urednički raspored katoličkih izvora. Pokazuje gdje se dvije slike već susreću i koji dijelovi svakodnevnoga crkvenog života izvan katoličkoga kruga dobivaju manje prostora.</p>
+      </section>
+
+      <section id="metodologija" class="method-box" aria-labelledby="method-title">
+        <p class="method-box__eyebrow">Kako je mjereno</p>
+        <h2 id="method-title">Jasan panel izvora i jedna usporedba tema</h2>
+        <p>Teme su računalno prepoznate prema postojećem projektnom rječniku. Šesnaest kategorija spojeno je u šest širih tema radi čitljivosti. Oznaka opisuje najizraženiju temu u objavi. Ne opisuje namjeru autora.</p>
+        <div class="method-grid">
+          <div><h3>Obuhvat izvora</h3><p>U glavnu usporedbu ulaze samo web-objave provjerenih općih medija i tri skupine katoličkih izvora iz glavnog izvještaja.</p></div>
+          <div><h3>Usporedba udjela</h3><p>Svaka se skupina zbraja zasebno. Rezultat pokazuje koliko određena tema zauzima prostora unutar te skupine.</p></div>
+          <div><h3>Događaji</h3><p>Prikazuju se samo ranije prepoznati liturgijski i papinski valovi. Neprepoznati vrhovi nisu dio glavne priče.</p></div>
+          <div><h3>Promjena prikupljanja</h3><p>Način prikupljanja promijenjen je 2024. Svaki se događaj uspoređuje s osnovicom svojega razdoblja.</p></div>
+        </div>
+        <details>
+          <summary>Granice zaključka</summary>
+          <ul id="caveat-list"></ul>
+        </details>
+        <details>
+          <summary>Kako je šesnaest kategorija spojeno u šest tema</summary>
+          <div id="theme-collapse" class="theme-collapse"></div>
+        </details>
+      </section>
+
+      <noscript><p class="noscript-note">Za prikaz izračunatih grafikona potrebno je uključiti JavaScript.</p></noscript>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <span>DigiKat · Hrvatsko katoličko sveučilište</span>
+    <span>CC BY 4.0 · istraživački pregled</span>
+  </footer>
+</body>
+</html>

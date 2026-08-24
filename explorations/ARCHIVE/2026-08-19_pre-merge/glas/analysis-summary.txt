@@ -1,0 +1,10 @@
+KADA SE GOVORI O KATOLIČANSTVU — ANALYSIS RUN
+Generated UTC: 2026-08-19 05:48:04 UTC
+Corpus rows: 413.985
+Canonical actor totals match flagship: TRUE
+Named event peaks: 16
+Displayed event peaks: 8
+Largest named peak: Smrt pape Franje — 21. travnja 2025.
+Repeated liturgical events in rhythm model: 20
+Most responsive group: Ostali mediji i javni izvori
+Estimated liturgical-window change: 61,3% [40; 77,8]
