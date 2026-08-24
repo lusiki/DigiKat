@@ -254,6 +254,23 @@
   `summarise(kept = sum(kept), kept_pct = 100 * mean(kept))` silently computes the mean of the new
   `kept` total, not of the logical flag. Name the intermediate differently and rename after.
 
+## Report merge and archive (2026-08-24)
+- [LEARN] `explorations/*/output/` only matches ONE directory level, so moving an exploration under
+  `explorations/ARCHIVE/<name>/` silently UN-ignored its `output/` -- including `output/private/`
+  row-level text samples -- and `git add` would have committed them. The pattern is now
+  `explorations/**/output/` (same for `input/`). When relocating any folder, re-check which ignore
+  rules still cover it before staging.
+- [LEARN] `okvir-katolicanstva-prototype`'s `actor_source_audit.csv` (~11k raw FROM handles incl.
+  personal accounts) is a LOCAL-ONLY diagnostic, ignored by name in `.gitignore`; the committed
+  pre-merge freeze under `explorations/ARCHIVE/2026-08-19_pre-merge/` carries aggregates only.
+- [LEARN] Codex turn-diff checkpoint refs under `.git/refs/codex/` can exceed the Windows path limit;
+  git then reports the ref as "bad object" and every `git fetch` fails. Fix without touching files:
+  `git -c core.longpaths=true update-ref -d <ref>`. The renv library is also Dropbox-exposed: five
+  packages lost their DESCRIPTION mid-sync and blocked all Quarto renders; repair = delete the broken
+  package dirs, reinstall (base `install.packages` survives the rename-lock by copying; renv's
+  installer fails hard). `stringi` is now 1.8.9/CRAN vs lockfile 1.8.7/RSPM -- pending
+  `/capture-environment`.
+
 ## Housekeeping resolution (2026-07-28)
 - [LEARN] Legacy NLP/stemmer scripts with phantom or hard-coded paths are archived under
   `archive/legacy-pipeline/`; active code uses `resources/` and `R/lib/`.
