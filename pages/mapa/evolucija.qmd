@@ -2,7 +2,7 @@
 title: "Evolucija ekosustava — digitalni prostor kroz vrijeme (2021.–2026.)"
 subtitle: "Opaženi volumen, platformski udjeli i koncentracija interakcija"
 description: "Evolucija ekosustava prati opaženi mjesečni volumen, raspodjelu zabilježenih interakcija i koncentraciju izvora kroz vrijeme."
-date-modified: 2026-08-24
+date-modified: 2026-08-25
 data-cutoff: 2026-06-11
 status: "Ažurira se"
 schema-type: "Article"
@@ -16,18 +16,8 @@ filters:
 #| label: setup
 #| include: false
 
-knitr::opts_chunk$set(
-  echo = FALSE,
-  message = FALSE,
-  warning = FALSE,
-  fig.width = 10,
-  fig.height = 7,
-  dev = "ragg_png",
-  dpi = 144,
-  fig.retina = 1,
-  out.width = "1440px",
-  dev.args = list(bg = "#FFFFFF")
-)
+source("../../R/lib/digikat_charts.R", encoding = "UTF-8")
+digikat_map_setup()
 ```
 
 ```{r}
@@ -37,7 +27,6 @@ knitr::opts_chunk$set(
 library(ggplot2)
 source("../../R/theme_digikat.R")
 theme_set(theme_digikat_map())
-source("../../R/lib/digikat_charts.R", encoding = "UTF-8")
 library(dplyr)
 library(tidyr)
 library(scales)
@@ -272,7 +261,15 @@ plot_growth <- ggplot(rast_monthly, aes(x = month, y = total_posts, colour = SOU
     caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru.\nNapomena: okomite su osi neovisne po platformi."
   )
 
-print(plot_growth)
+plot_growth_mobile <- plot_growth +
+  facet_wrap(~SOURCE_TYPE, scales = "free_y", ncol = 1) +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.5))
+
+digikat_render_map_plot(
+  plot_growth,
+  plot_growth_mobile,
+  mobile_height = 15
+)
 ```
 
 ```{r}
@@ -353,7 +350,48 @@ plot_migration <- ggplot(
     caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru.\nNapomena: reddit, forum i komentari u agregatima nemaju zabilježenu mjeru interakcija (udio 0 %)."
   )
 
-print(plot_migration)
+migration_mobile_platforms <- mig_monthly %>%
+  group_by(SOURCE_TYPE) %>%
+  summarise(max_share = max(interaction_share, na.rm = TRUE), .groups = "drop") %>%
+  filter(max_share >= 0.01) %>%
+  pull(SOURCE_TYPE)
+
+plot_migration_mobile <- mig_monthly %>%
+  filter(SOURCE_TYPE %in% migration_mobile_platforms) %>%
+  ggplot(
+    aes(x = month, y = interaction_share, colour = SOURCE_TYPE,
+        linetype = SOURCE_TYPE)
+  ) +
+  annotate(
+    "rect", xmin = as.Date("2024-02-01"), xmax = as.Date("2024-05-31"),
+    ymin = -Inf, ymax = Inf, fill = dk_col$faint, alpha = 0.16
+  ) +
+  geom_line(linewidth = 0.9) +
+  geom_point(aes(shape = SOURCE_TYPE), size = 1.8, alpha = 0.75) +
+  facet_wrap(
+    ~ SOURCE_TYPE,
+    ncol = 1,
+    labeller = labeller(SOURCE_TYPE = as_labeller(digikat_platform_hr))
+  ) +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y") +
+  scale_y_continuous(labels = percent_format(decimal.mark = ",")) +
+  scale_colour_manual(values = platform_colors) +
+  scale_linetype_manual(values = dk_platform_linetypes) +
+  scale_shape_manual(values = dk_platform_shapes) +
+  theme_digikat_map(base_size = 14) +
+  theme(legend.position = "none", strip.text = element_text(hjust = 0)) +
+  labs(
+    title = paste0("Raspodjela interakcija među platformama, mjesečno (", first_year, ".–", last_year, ".)"),
+    subtitle = paste0("Platforme s barem 1 % udjela u jednom mjesecu. Podaci do ", cutoff_lbl),
+    x = "Godina", y = "Udio interakcija",
+    caption = "Izvor: Analiza projekta DigiKat. Zasjenjeno je razdoblje promjene prikupljanja 2024."
+  )
+
+digikat_render_map_plot(
+  plot_migration,
+  plot_migration_mobile,
+  mobile_height = 15
+)
 ```
 
 ```{r}
@@ -420,7 +458,10 @@ plot_concentration <- p +
     caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru.\nNapomena: mjereno među platformama koje bilježe interakcije."
   )
 
-print(plot_concentration)
+digikat_render_map_plot(
+  plot_concentration,
+  mobile_height = 6.5
+)
 ```
 
 ```{r}
@@ -470,7 +511,10 @@ plot_rhythm <- ggplot(ritam, aes(x = mj_lab, y = avg_posts)) +
     caption = paste0("Izvor: Analiza projekta DigiKat.\nNapomena: uključene su samo godine sa svih 12 mjeseci u agregatima (", rhythm_years_lbl, "); prikazan je isključivo volumen.")
   )
 
-print(plot_rhythm)
+digikat_render_map_plot(
+  plot_rhythm,
+  mobile_height = 7
+)
 ```
 
 ```{r}

@@ -8,7 +8,7 @@ import { tmpdir } from "node:os";
 import { extname, resolve, sep } from "node:path";
 
 const siteRoot = resolve(process.argv[2] || "docs");
-const viewports = [320, 375, 390, 768, 1024, 1440, 2048];
+const viewports = [320, 375, 390, 768, 1024, 1366, 1440, 2048];
 const pages = [
   "index.html",
   "pages/baza.html",
@@ -215,6 +215,35 @@ const motionExpression = `(() => {
   return { reduced, scrollBehavior: html.scrollBehavior, animated };
 })()`;
 
+const mapFigureExpression = `(() => {
+  const cells = [...document.querySelectorAll('main .cell.page-full')];
+  const figures = cells.map((cell) => cell.querySelector('figure.figure')).filter(Boolean);
+  const images = figures.map((figure) => figure.querySelector('img.figure-img')).filter(Boolean);
+  const scrollers = figures.map((figure) => figure.querySelector(':scope > p')).filter(Boolean);
+  const prose = [...document.querySelectorAll('main p')].find((paragraph) =>
+    !paragraph.closest('figure') && !paragraph.classList.contains('page-full') &&
+    paragraph.getBoundingClientRect().width > 250
+  );
+  const proseCenter = prose ? prose.getBoundingClientRect().left + prose.getBoundingClientRect().width / 2 : null;
+  const centers = cells.map((cell) => {
+    const box = cell.getBoundingClientRect();
+    return box.left + box.width / 2;
+  });
+  const paper = figures.every((figure) => getComputedStyle(figure).backgroundColor === 'rgb(245, 244, 240)');
+  const mobile = window.innerWidth < 768;
+  return {
+    count: figures.length,
+    internalOverflow: scrollers.some((scroller) => scroller.scrollWidth > scroller.clientWidth + 1),
+    maxWidth: Math.max(0, ...cells.map((cell) => cell.getBoundingClientRect().width)),
+    centerDelta: proseCenter === null ? null : Math.max(0, ...centers.map((center) => Math.abs(center - proseCenter))),
+    paper,
+    intrinsicDimensions: images.every((image) => Number(image.getAttribute('width')) > 0 && Number(image.getAttribute('height')) > 0),
+    correctSource: images.every((image) => mobile
+      ? image.getAttribute('src').includes('/assets/images/maps/mobile/') || image.getAttribute('src').startsWith('../../assets/images/maps/mobile/')
+      : !image.getAttribute('src').includes('/assets/images/maps/mobile/') && !image.getAttribute('src').startsWith('../../assets/images/maps/mobile/'))
+  };
+})()`;
+
 const homepageExpression = `(() => {
   window.scrollTo(0, 0);
   const navbar = document.querySelector('.navbar');
@@ -298,6 +327,15 @@ try {
         findings.push(`${page} @ ${width}px: page width ${layout.scrollWidth}px; offenders: ${layout.offenders.join(", ") || "unknown"}`);
       }
       if (!layout.focusVisible) findings.push(`${page} @ ${width}px: first interactive element has no visible keyboard focus`);
+      if (page.startsWith("pages/mapa/") && page !== "pages/mapa/index.html") {
+        const mapFigures = await evaluate(mapFigureExpression, sessionId);
+        if (!mapFigures.count || mapFigures.internalOverflow || !mapFigures.paper ||
+            !mapFigures.intrinsicDimensions || !mapFigures.correctSource ||
+            (width >= 1024 && mapFigures.maxWidth > 961) ||
+            (width >= 1024 && mapFigures.centerDelta !== null && mapFigures.centerDelta > 2)) {
+          findings.push(`${page} @ ${width}px: map figure contract failed (${JSON.stringify(mapFigures)})`);
+        }
+      }
       if (page === "index.html") {
         const homepage = await evaluate(homepageExpression, sessionId);
         if (!homepage.ok) findings.push(`${page} @ ${width}px: homepage layout/credit contract failed (${JSON.stringify(homepage)})`);

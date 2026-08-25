@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-18eeef7e313107c10b6b051a6734352e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-6afbdf8848278981719c9dbb592aeb18.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-05a0de8cf355dfe4f020f6ea4b5bd17a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -115,6 +115,52 @@ ul.task-list li input[type="checkbox"] {
     }
   ]
 }
+</script>
+<script>
+(function () {
+  var mobileCharts = window.matchMedia("(max-width: 767.98px)");
+
+  function updateChart(image) {
+    var mobileSource = image.getAttribute("data-mobile-src");
+    if (!mobileSource) return;
+
+    if (!image.hasAttribute("data-desktop-src")) {
+      image.setAttribute("data-desktop-src", image.getAttribute("src"));
+      image.setAttribute("data-desktop-width", image.getAttribute("width") || "");
+      image.setAttribute("data-desktop-height", image.getAttribute("height") || "");
+    }
+
+    if (mobileCharts.matches) {
+      image.setAttribute("src", mobileSource);
+      image.setAttribute("width", image.getAttribute("data-mobile-width"));
+      image.setAttribute("height", image.getAttribute("data-mobile-height"));
+    } else {
+      image.setAttribute("src", image.getAttribute("data-desktop-src"));
+      image.setAttribute("width", image.getAttribute("data-desktop-width"));
+      image.setAttribute("height", image.getAttribute("data-desktop-height"));
+    }
+  }
+
+  function updateCharts(root) {
+    if (root.nodeType === 1 && root.matches("img[data-mobile-src]")) updateChart(root);
+    if (root.querySelectorAll) {
+      root.querySelectorAll("img[data-mobile-src]").forEach(updateChart);
+    }
+  }
+
+  var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(updateCharts);
+    });
+  });
+
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+  mobileCharts.addEventListener("change", function () { updateCharts(document); });
+  document.addEventListener("DOMContentLoaded", function () {
+    updateCharts(document);
+    observer.disconnect();
+  });
+})();
 </script>
 
 
@@ -314,7 +360,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Izmijenjeno</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">24. kolovoza 2026.</p>
+      <p class="date-modified">25. kolovoza 2026.</p>
     </div>
   </div>
     
@@ -395,7 +441,7 @@ Razdoblje analize
 <div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="događaji_files/figure-html/plot-volume-anomalies-1.png" class="img-fluid figure-img column-page" loading="lazy" decoding="async" alt="Dnevna z-vrijednost volumena objava. Trokuti označavaju dane iznad praga od tri standardne devijacije, koji je prikazan isprekidanom crtom." width="1440"></p>
+<p class="page-columns page-full"><img src="događaji_files/figure-html/plot-volume-anomalies-1.png" loading="lazy" decoding="async" data-mobile-src="../../assets/images/maps/mobile/plot-volume-anomalies.png" data-mobile-width="720" data-mobile-height="936" alt="Dnevna z-vrijednost volumena objava. Trokuti označavaju dane iznad praga od tri standardne devijacije, koji je prikazan isprekidanom crtom." width="1440" height="792" class="figure-img column-page"></p>
 <figcaption>Dnevna standardizirana odstupanja volumena objava. Trokuti označavaju dane iznad praga od tri standardne devijacije.</figcaption>
 </figure>
 </div>
@@ -415,7 +461,7 @@ Razdoblje analize
 <div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="događaji_files/figure-html/plot-conflict-anomalies-1.png" class="img-fluid figure-img column-page" loading="lazy" decoding="async" alt="Dnevna z-vrijednost gustoće konfliktnog rječnika. Trokuti označavaju dane iznad praga od tri standardne devijacije." width="1440"></p>
+<p class="page-columns page-full"><img src="događaji_files/figure-html/plot-conflict-anomalies-1.png" loading="lazy" decoding="async" data-mobile-src="../../assets/images/maps/mobile/plot-conflict-anomalies.png" data-mobile-width="720" data-mobile-height="936" alt="Dnevna z-vrijednost gustoće konfliktnog rječnika. Trokuti označavaju dane iznad praga od tri standardne devijacije." width="1440" height="792" class="figure-img column-page"></p>
 <figcaption>Dnevna standardizirana odstupanja gustoće konfliktnog rječnika. Trokuti označavaju dane iznad praga od tri standardne devijacije.</figcaption>
 </figure>
 </div>
@@ -441,7 +487,7 @@ Razdoblje analize
 <div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="događaji_files/figure-html/event-seismograph-uskrs-1.png" class="img-fluid figure-img column-page" loading="lazy" decoding="async" alt="Tri usklađena dnevna panela oko Uskrsa 2022. prikazuju udio teme Duhovnost i liturgija, gustoću konfliktnog rječnika i prosječni tonalitet. Okomita crta označava Uskrs." width="1440"></p>
+<p class="page-columns page-full"><img src="događaji_files/figure-html/event-seismograph-uskrs-1.png" loading="lazy" decoding="async" data-mobile-src="../../assets/images/maps/mobile/event-seismograph-uskrs.png" data-mobile-width="720" data-mobile-height="1440" alt="Tri usklađena dnevna panela oko Uskrsa 2022. prikazuju udio teme Duhovnost i liturgija, gustoću konfliktnog rječnika i prosječni tonalitet. Okomita crta označava Uskrs." width="1440" height="1152" class="figure-img column-page"></p>
 <figcaption>Dnevni udio teme Duhovnost i liturgija, prosječna gustoća konfliktnog rječnika i leksički tonalitet u prozoru oko Uskrsa 2022.</figcaption>
 </figure>
 </div>
@@ -469,7 +515,7 @@ Razdoblje analize
 <div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="događaji_files/figure-html/narrative-biography-robust-1.png" class="img-fluid figure-img column-page" loading="lazy" decoding="async" alt="Fasetirani stupci prikazuju najčešće leksičke jedinice u dostupnim godišnjim presjecima tekstova koji spominju Stepinca. Na svakom stupcu ispisan je prosječni tonalitet." width="1440"></p>
+<p class="page-columns page-full"><img src="događaji_files/figure-html/narrative-biography-robust-1.png" loading="lazy" decoding="async" data-mobile-src="../../assets/images/maps/mobile/narrative-biography-robust.png" data-mobile-width="720" data-mobile-height="2016" alt="Fasetirani stupci prikazuju najčešće leksičke jedinice u dostupnim godišnjim presjecima tekstova koji spominju Stepinca. Na svakom stupcu ispisan je prosječni tonalitet." width="1440" height="1152" class="figure-img column-page"></p>
 <figcaption>Najčešće leksičke jedinice u dostupnim godišnjim presjecima dokumenata koji spominju Alojzija Stepinca. Ispisana vrijednost i boja prikazuju prosječni tonalitet tekstova.</figcaption>
 </figure>
 </div>

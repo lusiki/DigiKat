@@ -2,7 +2,7 @@
 title: "Mapa ekosustava — katolički digitalni prostor u RH (2021.–2026.)"
 subtitle: "Mapiranje digitalne medijske arene"
 description: "Mapa ekosustava uspoređuje volumen objava, zabilježene interakcije i procijenjeni doseg po platformama i izvorima u službenom korpusu DigiKat."
-date-modified: 2026-08-24
+date-modified: 2026-08-25
 data-cutoff: 2026-06-11
 status: "Ažurira se"
 schema-type: "Article"
@@ -16,18 +16,8 @@ filters:
 #| label: setup
 #| include: false
 
-knitr::opts_chunk$set(
-  echo = FALSE,
-  message = FALSE,
-  warning = FALSE,
-  fig.width = 10,
-  fig.height = 7,
-  dev = "ragg_png",
-  dpi = 144,
-  fig.retina = 1,
-  out.width = "1440px",
-  dev.args = list(bg = "#FFFFFF")
-)
+source("../../R/lib/digikat_charts.R", encoding = "UTF-8")
+digikat_map_setup()
 ```
 
 ```{r}
@@ -36,7 +26,6 @@ knitr::opts_chunk$set(
 library(ggplot2)
 source("../../R/theme_digikat.R")
 theme_set(theme_digikat_map())
-source("../../R/lib/digikat_charts.R", encoding = "UTF-8")
 library(dplyr)
 library(scales)
 library(patchwork)
@@ -242,7 +231,15 @@ plot_volume <- platform_summary %>%
     caption = "Napomena: Platforme su u svakoj godini prikazane istim redoslijedom.\nNovije platforme (Instagram, TikTok) navedene su na kraju popisa."
   )
 
-print(plot_volume)
+plot_volume_mobile <- plot_volume +
+  facet_wrap(~year, scales = "free_y", ncol = 1) +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.5))
+
+digikat_render_map_plot(
+  plot_volume,
+  plot_volume_mobile,
+  mobile_height = 15
+)
 ```
 
 ```{r}
@@ -298,7 +295,15 @@ plot_interactions <- platform_summary %>%
     caption = "Napomena: Platforme su prikazane istim redoslijedom kao u prethodnom grafikonu,\na novije platforme (Instagram, TikTok) nalaze se na kraju popisa.\nPrikazane su samo platforme s više od 0 interakcija."
   )
 
-print(plot_interactions)
+plot_interactions_mobile <- plot_interactions +
+  facet_wrap(~year, scales = "free_y", ncol = 1) +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.5))
+
+digikat_render_map_plot(
+  plot_interactions,
+  plot_interactions_mobile,
+  mobile_height = 15
+)
 ```
 
 ```{r}
@@ -377,7 +382,10 @@ plot_combined_share <- ggplot(
     x = "Godina", y = "Udio"
   )
 
-print(plot_combined_share)
+digikat_render_map_plot(
+  plot_combined_share,
+  mobile_height = 10
+)
 ```
 
 ```{r}
@@ -454,9 +462,24 @@ final_dashboard <- plot_web + plot_youtube + plot_facebook +
     subtitle = "Rangirano prema ukupnim interakcijama. Veličina točke predstavlja ukupan broj objava.",
     caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
     theme = theme(plot.title = element_text(size = 21, face = "bold"))
-  ) & theme(plot.background = element_rect(fill = dk_col$panel, color = NA))
+  ) & theme(plot.background = element_rect(fill = dk_col$paper, color = NA))
 
-print(final_dashboard)
+final_dashboard_mobile <- (plot_web / plot_youtube / plot_facebook) +
+  plot_annotation(
+    title = paste0("Dvadeset profila s najviše interakcija po platformi (", raspon, ")"),
+    subtitle = "Rangirano prema ukupnim interakcijama. Veličina točke predstavlja ukupan broj objava.",
+    caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
+    theme = theme(plot.title = element_text(size = 18, face = "bold"))
+  ) & theme(
+    plot.background = element_rect(fill = dk_col$paper, color = NA),
+    axis.text.x = element_text(size = 12)
+  )
+
+digikat_render_map_plot(
+  final_dashboard,
+  final_dashboard_mobile,
+  mobile_height = 18
+)
 ```
 
 ```{r}
@@ -499,17 +522,27 @@ Osi grafikona prikazane su na logaritamskoj skali kako bi se bolje prikazao šir
 #| fig-alt: "Tri raspršena prikaza najvećih izvora prema interakcijama i procijenjenom dosegu na logaritamskim osima. Točke su izravno označene nazivima izvora."
 #| fig-cap: "Odnos zabilježenih interakcija i procijenjenog dosega među najvećim izvorima unutar tri platforme. Isprekidane crte označavaju medijane prikazanih izvora."
 
-create_actor_map_plot <- function(data, platform_name, platform_color) {
+create_actor_map_plot <- function(data, platform_name, platform_color,
+                                  label_size = 3.5, label_limit = 15) {
   if(nrow(data) < 2) { return(ggplot() + labs(title = paste("Nema dovoljno podataka za", platform_name)) + theme_digikat_map_void(base_size = 14)) }
 
   median_interactions <- median(data$total_interactions, na.rm = TRUE)
   median_reach <- median(data$total_reach, na.rm = TRUE)
+  label_data <- data %>%
+    slice_max(total_interactions, n = label_limit, with_ties = FALSE)
 
   ggplot(data, aes(x = total_interactions, y = total_reach)) +
     geom_vline(xintercept = median_interactions, linetype = "dashed", color = dk_col$faint) +
     geom_hline(yintercept = median_reach, linetype = "dashed", color = dk_col$faint) +
     geom_point(aes(size = total_posts), color = platform_color, alpha = 0.7) +
-    geom_text_repel(aes(label = FROM), size = 3.5, max.overlaps = 15) +
+    geom_text_repel(
+      data = label_data,
+      aes(label = FROM),
+      size = label_size,
+      max.overlaps = Inf,
+      box.padding = 0.35,
+      point.padding = 0.2
+    ) +
     scale_x_log10(labels = label_number(big.mark = ".", suffix = " K", scale = 1e-3)) +
     scale_y_log10(labels = label_number(big.mark = ".", suffix = " M", scale = 1e-6)) +
     # Kao i na prethodnom grafikonu, tri panela nose tri ljestvice veličine.
@@ -525,6 +558,9 @@ create_actor_map_plot <- function(data, platform_name, platform_color) {
 plot_map_web <- create_actor_map_plot(web_actors, "Web portali", dk_platform_colors[["web"]])
 plot_map_youtube <- create_actor_map_plot(youtube_actors, "YouTube kanali", dk_platform_colors[["youtube"]])
 plot_map_facebook <- create_actor_map_plot(facebook_actors, "Facebook stranice", dk_platform_colors[["facebook"]])
+plot_map_web_mobile <- create_actor_map_plot(web_actors, "Web portali", dk_platform_colors[["web"]], 4.2, 6)
+plot_map_youtube_mobile <- create_actor_map_plot(youtube_actors, "YouTube kanali", dk_platform_colors[["youtube"]], 4.2, 6)
+plot_map_facebook_mobile <- create_actor_map_plot(facebook_actors, "Facebook stranice", dk_platform_colors[["facebook"]], 4.2, 6)
 
 final_map_dashboard <- plot_map_web + plot_map_youtube + plot_map_facebook +
   plot_annotation(
@@ -532,9 +568,21 @@ final_map_dashboard <- plot_map_web + plot_map_youtube + plot_map_facebook +
     subtitle = "Usporedba dosega i angažmana. Veličina točke predstavlja produktivnost (broj objava).",
     caption = "Izvor: Analiza projekta DigiKat. Napomena: osi su prikazane na logaritamskoj skali.",
     theme = theme(plot.title = element_text(size = 21, face = "bold"))
-  ) & theme(plot.background = element_rect(fill = dk_col$panel, color = NA))
+  ) & theme(plot.background = element_rect(fill = dk_col$paper, color = NA))
 
-print(final_map_dashboard)
+final_map_dashboard_mobile <- (plot_map_web_mobile / plot_map_youtube_mobile / plot_map_facebook_mobile) +
+  plot_annotation(
+    title = paste0("Doseg i interakcije najvećih profila (", raspon, ")"),
+    subtitle = "Usporedba dosega i angažmana. Veličina točke predstavlja produktivnost (broj objava).",
+    caption = "Izvor: Analiza projekta DigiKat. Napomena: osi su prikazane na logaritamskoj skali.",
+    theme = theme(plot.title = element_text(size = 18, face = "bold"))
+  ) & theme(plot.background = element_rect(fill = dk_col$paper, color = NA))
+
+digikat_render_map_plot(
+  final_map_dashboard,
+  final_map_dashboard_mobile,
+  mobile_height = 19
+)
 ```
 
 ```{r}

@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-18eeef7e313107c10b6b051a6734352e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-6afbdf8848278981719c9dbb592aeb18.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-05a0de8cf355dfe4f020f6ea4b5bd17a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -115,6 +115,52 @@ ul.task-list li input[type="checkbox"] {
     }
   ]
 }
+</script>
+<script>
+(function () {
+  var mobileCharts = window.matchMedia("(max-width: 767.98px)");
+
+  function updateChart(image) {
+    var mobileSource = image.getAttribute("data-mobile-src");
+    if (!mobileSource) return;
+
+    if (!image.hasAttribute("data-desktop-src")) {
+      image.setAttribute("data-desktop-src", image.getAttribute("src"));
+      image.setAttribute("data-desktop-width", image.getAttribute("width") || "");
+      image.setAttribute("data-desktop-height", image.getAttribute("height") || "");
+    }
+
+    if (mobileCharts.matches) {
+      image.setAttribute("src", mobileSource);
+      image.setAttribute("width", image.getAttribute("data-mobile-width"));
+      image.setAttribute("height", image.getAttribute("data-mobile-height"));
+    } else {
+      image.setAttribute("src", image.getAttribute("data-desktop-src"));
+      image.setAttribute("width", image.getAttribute("data-desktop-width"));
+      image.setAttribute("height", image.getAttribute("data-desktop-height"));
+    }
+  }
+
+  function updateCharts(root) {
+    if (root.nodeType === 1 && root.matches("img[data-mobile-src]")) updateChart(root);
+    if (root.querySelectorAll) {
+      root.querySelectorAll("img[data-mobile-src]").forEach(updateChart);
+    }
+  }
+
+  var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(updateCharts);
+    });
+  });
+
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+  mobileCharts.addEventListener("change", function () { updateCharts(document); });
+  document.addEventListener("DOMContentLoaded", function () {
+    updateCharts(document);
+    observer.disconnect();
+  });
+})();
 </script>
 
 
@@ -308,7 +354,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Izmijenjeno</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">24. kolovoza 2026.</p>
+      <p class="date-modified">25. kolovoza 2026.</p>
     </div>
   </div>
     
@@ -400,7 +446,7 @@ Razdoblje analize
 <div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="evolucija_files/figure-html/plot-rast-1.png" class="img-fluid figure-img column-page" loading="lazy" decoding="async" alt="Mjesečne linije broja objava u šest platformskih panela. Zasjenjeno je razdoblje promjene prikupljanja od veljače do svibnja 2024." width="1440"></p>
+<p class="page-columns page-full"><img src="evolucija_files/figure-html/plot-rast-1.png" loading="lazy" decoding="async" data-mobile-src="../../assets/images/maps/mobile/plot-rast.png" data-mobile-width="720" data-mobile-height="2160" alt="Mjesečne linije broja objava u šest platformskih panela. Zasjenjeno je razdoblje promjene prikupljanja od veljače do svibnja 2024." width="1440" height="1008" class="figure-img column-page"></p>
 <figcaption>Opaženi mjesečni broj objava po glavnim platformama. Zasjenjeno razdoblje označava prazninu u tekstnom zapisu i promjenu prikupljanja 2024. Izvor je analiza projekta DigiKat.</figcaption>
 </figure>
 </div>
@@ -423,7 +469,7 @@ Razdoblje analize
 <div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="evolucija_files/figure-html/plot-migracija-1.png" class="img-fluid figure-img column-page" loading="lazy" decoding="async" alt="Mjesečne linije udjela platformi u zabilježenim interakcijama. Serije imaju različite boje, vrste crta, oblike i izravne oznake." width="1440"></p>
+<p class="page-columns page-full"><img src="evolucija_files/figure-html/plot-migracija-1.png" loading="lazy" decoding="async" data-mobile-src="../../assets/images/maps/mobile/plot-migracija.png" data-mobile-width="720" data-mobile-height="2160" alt="Mjesečne linije udjela platformi u zabilježenim interakcijama. Serije imaju različite boje, vrste crta, oblike i izravne oznake." width="1440" height="1008" class="figure-img column-page"></p>
 <figcaption>Mjesečni udjeli platformi u zabilježenim interakcijama. Zasjenjeno razdoblje označava promjenu prikupljanja 2024. Interakcije nisu izravno usporedive među platformama.</figcaption>
 </figure>
 </div>
@@ -446,7 +492,7 @@ Razdoblje analize
 <div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="evolucija_files/figure-html/plot-koncentracija-1.png" class="img-fluid figure-img column-page" loading="lazy" decoding="async" alt="Linija godišnjeg udjela deset najvećih izvora u interakcijama. Vrijednosti su izravno označene, a nepotpuna 2026. prikazana je praznim rombom." width="1440"></p>
+<p class="page-columns page-full"><img src="evolucija_files/figure-html/plot-koncentracija-1.png" loading="lazy" decoding="async" data-mobile-src="../../assets/images/maps/mobile/plot-koncentracija.png" data-mobile-width="720" data-mobile-height="936" alt="Linija godišnjeg udjela deset najvećih izvora u interakcijama. Vrijednosti su izravno označene, a nepotpuna 2026. prikazana je praznim rombom." width="1440" height="864" class="figure-img column-page"></p>
 <figcaption>Godišnji udio deset najvećih izvora u zabilježenim interakcijama. Nepotpuna završna godina prikazana je odvojeno. Izvor je analiza projekta DigiKat.</figcaption>
 </figure>
 </div>
@@ -469,7 +515,7 @@ Razdoblje analize
 <div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="evolucija_files/figure-html/plot-ritam-1.png" class="img-fluid figure-img column-page" loading="lazy" decoding="async" alt="Stupci prosječnog broja objava po kalendarskim mjesecima u godinama s potpunom mjesečnom pokrivenošću." width="1440"></p>
+<p class="page-columns page-full"><img src="evolucija_files/figure-html/plot-ritam-1.png" loading="lazy" decoding="async" data-mobile-src="../../assets/images/maps/mobile/plot-ritam.png" data-mobile-width="720" data-mobile-height="1008" alt="Stupci prosječnog broja objava po kalendarskim mjesecima u godinama s potpunom mjesečnom pokrivenošću." width="1440" height="792" class="figure-img column-page"></p>
 <figcaption>Prosječni opaženi volumen po kalendarskom mjesecu u godinama s potpunom mjesečnom pokrivenošću. Izvor je analiza projekta DigiKat.</figcaption>
 </figure>
 </div>

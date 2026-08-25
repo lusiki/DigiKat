@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-18eeef7e313107c10b6b051a6734352e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-6afbdf8848278981719c9dbb592aeb18.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-05a0de8cf355dfe4f020f6ea4b5bd17a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -115,6 +115,52 @@ ul.task-list li input[type="checkbox"] {
     }
   ]
 }
+</script>
+<script>
+(function () {
+  var mobileCharts = window.matchMedia("(max-width: 767.98px)");
+
+  function updateChart(image) {
+    var mobileSource = image.getAttribute("data-mobile-src");
+    if (!mobileSource) return;
+
+    if (!image.hasAttribute("data-desktop-src")) {
+      image.setAttribute("data-desktop-src", image.getAttribute("src"));
+      image.setAttribute("data-desktop-width", image.getAttribute("width") || "");
+      image.setAttribute("data-desktop-height", image.getAttribute("height") || "");
+    }
+
+    if (mobileCharts.matches) {
+      image.setAttribute("src", mobileSource);
+      image.setAttribute("width", image.getAttribute("data-mobile-width"));
+      image.setAttribute("height", image.getAttribute("data-mobile-height"));
+    } else {
+      image.setAttribute("src", image.getAttribute("data-desktop-src"));
+      image.setAttribute("width", image.getAttribute("data-desktop-width"));
+      image.setAttribute("height", image.getAttribute("data-desktop-height"));
+    }
+  }
+
+  function updateCharts(root) {
+    if (root.nodeType === 1 && root.matches("img[data-mobile-src]")) updateChart(root);
+    if (root.querySelectorAll) {
+      root.querySelectorAll("img[data-mobile-src]").forEach(updateChart);
+    }
+  }
+
+  var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(updateCharts);
+    });
+  });
+
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+  mobileCharts.addEventListener("change", function () { updateCharts(document); });
+  document.addEventListener("DOMContentLoaded", function () {
+    updateCharts(document);
+    observer.disconnect();
+  });
+})();
 </script>
 
 
@@ -315,7 +361,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Izmijenjeno</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">24. kolovoza 2026.</p>
+      <p class="date-modified">25. kolovoza 2026.</p>
     </div>
   </div>
     
@@ -414,7 +460,7 @@ Razdoblje analize
 <div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="mapa_files/figure-html/plot-volume-1.png" class="img-fluid figure-img column-page" loading="lazy" decoding="async" alt="Stupčasti prikaz broja objava po platformama i godinama. Web-portali imaju najveći broj objava u svakoj godini." width="1440"></p>
+<p class="page-columns page-full"><img src="mapa_files/figure-html/plot-volume-1.png" loading="lazy" decoding="async" data-mobile-src="../../assets/images/maps/mobile/plot-volume.png" data-mobile-width="720" data-mobile-height="2160" alt="Stupčasti prikaz broja objava po platformama i godinama. Web-portali imaju najveći broj objava u svakoj godini." width="1440" height="1080" class="figure-img column-page"></p>
 <figcaption>Broj objava po platformama i godinama. Izvor je analiza projekta DigiKat. Promjena prikupljanja 2024. ograničava usporedbu razina kroz vrijeme.</figcaption>
 </figure>
 </div>
@@ -436,7 +482,7 @@ Razdoblje analize
 <div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="mapa_files/figure-html/plot-interaction-1.png" class="img-fluid figure-img column-page" loading="lazy" decoding="async" alt="Stupčasti prikaz ukupnih zabilježenih interakcija po platformama i godinama. Poredak se razlikuje od poretka prema broju objava." width="1440"></p>
+<p class="page-columns page-full"><img src="mapa_files/figure-html/plot-interaction-1.png" loading="lazy" decoding="async" data-mobile-src="../../assets/images/maps/mobile/plot-interaction.png" data-mobile-width="720" data-mobile-height="2160" alt="Stupčasti prikaz ukupnih zabilježenih interakcija po platformama i godinama. Poredak se razlikuje od poretka prema broju objava." width="1440" height="1080" class="figure-img column-page"></p>
 <figcaption>Zabilježene interakcije po platformama i godinama. Izvor je analiza projekta DigiKat. Mjere su platformski specifične, a promjena prikupljanja 2024. ograničava usporedbu razina kroz vrijeme.</figcaption>
 </figure>
 </div>
@@ -458,7 +504,7 @@ Razdoblje analize
 <div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="mapa_files/figure-html/plot-shares-1.png" class="img-fluid figure-img column-page" loading="lazy" decoding="async" alt="Tri vremenska panela uspoređuju udjele platformi u objavama, interakcijama i dosegu. Platforme su izravno označene na kraju linija." width="1440"></p>
+<p class="page-columns page-full"><img src="mapa_files/figure-html/plot-shares-1.png" loading="lazy" decoding="async" data-mobile-src="../../assets/images/maps/mobile/plot-shares.png" data-mobile-width="720" data-mobile-height="1440" alt="Tri vremenska panela uspoređuju udjele platformi u objavama, interakcijama i dosegu. Platforme su izravno označene na kraju linija." width="1440" height="1008" class="figure-img column-page"></p>
 <figcaption>Godišnji udjeli platformi u objavama, zabilježenim interakcijama i procijenjenom dosegu. Izvor je analiza projekta DigiKat. Okomita oznaka upozorava na promjenu prikupljanja 2024.</figcaption>
 </figure>
 </div>
@@ -489,7 +535,7 @@ Razdoblje analize
 <div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="mapa_files/figure-html/plot-lollipops-interactions-1.png" class="img-fluid figure-img column-page" loading="lazy" decoding="async" alt="Tri platformska poretka dvadeset izvora s najviše interakcija. Veličina točke prikazuje broj objava, a svaki izvor označen je nazivom." width="1440"></p>
+<p class="page-columns page-full"><img src="mapa_files/figure-html/plot-lollipops-interactions-1.png" loading="lazy" decoding="async" data-mobile-src="../../assets/images/maps/mobile/plot-lollipops-interactions.png" data-mobile-width="720" data-mobile-height="2592" alt="Tri platformska poretka dvadeset izvora s najviše interakcija. Veličina točke prikazuje broj objava, a svaki izvor označen je nazivom." width="1440" height="1296" class="figure-img column-page"></p>
 <figcaption>Dvadeset izvora s najviše zabilježenih interakcija unutar weba, YouTubea i Facebooka. Izvor je analiza projekta DigiKat.</figcaption>
 </figure>
 </div>
@@ -518,7 +564,7 @@ Razdoblje analize
 <div class="cell-output-display page-columns page-full">
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="mapa_files/figure-html/plot-actor-map-1.png" class="img-fluid figure-img column-page" loading="lazy" decoding="async" alt="Tri raspršena prikaza najvećih izvora prema interakcijama i procijenjenom dosegu na logaritamskim osima. Točke su izravno označene nazivima izvora." width="1440"></p>
+<p class="page-columns page-full"><img src="mapa_files/figure-html/plot-actor-map-1.png" loading="lazy" decoding="async" data-mobile-src="../../assets/images/maps/mobile/plot-actor-map.png" data-mobile-width="720" data-mobile-height="2736" alt="Tri raspršena prikaza najvećih izvora prema interakcijama i procijenjenom dosegu na logaritamskim osima. Točke su izravno označene nazivima izvora." width="1440" height="1224" class="figure-img column-page"></p>
 <figcaption>Odnos zabilježenih interakcija i procijenjenog dosega među najvećim izvorima unutar tri platforme. Isprekidane crte označavaju medijane prikazanih izvora.</figcaption>
 </figure>
 </div>

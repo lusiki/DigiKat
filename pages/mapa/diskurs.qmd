@@ -2,7 +2,7 @@
 title: "Atmosfera diskursa — emocionalna i konfliktna mapa katoličkog digitalnog prostora (2021.–2026.)"
 subtitle: "Emocije i tonalitet diskursa"
 description: "Atmosfera diskursa opisuje leksički tonalitet, emocionalne oznake i Relativni indeks konflikta u dijelu korpusa DigiKat."
-date-modified: 2026-08-24
+date-modified: 2026-08-25
 data-cutoff: 2026-06-11
 status: "Preliminarno"
 schema-type: "Article"
@@ -16,19 +16,9 @@ filters:
 #| label: setup
 #| include: false
 
-# Globalne postavke
-knitr::opts_chunk$set(
-  echo = FALSE,
-  message = FALSE,
-  warning = FALSE,
-  fig.width = 10,
-  fig.height = 7,
-  dev = "ragg_png",
-  dpi = 144,
-  fig.retina = 1,
-  out.width = "1440px",
-  dev.args = list(bg = "#FFFFFF")
-)
+# Shared export settings for all five analytical maps.
+source("../../R/lib/digikat_charts.R", encoding = "UTF-8")
+digikat_map_setup()
 ```
 
 ```{r}
@@ -42,7 +32,6 @@ library(stringr)
 library(ggplot2)
 source("../../R/theme_digikat.R")
 theme_set(theme_digikat_map())
-source("../../R/lib/digikat_charts.R", encoding = "UTF-8")
 library(ggraph)
 library(igraph)
 library(ggrepel)
@@ -188,19 +177,77 @@ Sljedeća vizualizacija prikazuje opažene kombinacije tematskih i dominantnih e
 #| fig-alt: "Matrica tematskih i emocionalnih oznaka. Svaka ćelija ispisuje prosječni leksički tonalitet, uz divergirajuću paletu kao dodatni znak."
 #| fig-cap: "Prosječni leksički tonalitet prema kombinaciji dominantne tematske i emocionalne oznake. Prikazane su kombinacije s više od tri dokumenta."
 
-ggplot(heatmap_data, aes(x = dominant_emotion, y = dominant_topic, fill = avg_sentiment)) +
-  geom_tile(color = dk_col$panel, linewidth = 0.5) +
-  geom_text(aes(label = round(avg_sentiment, 2)), size = 3.5, color = dk_col$ink) +
-  scale_fill_digikat_diverging(name = "Prosj. tonalitet") +
-  scale_y_discrete(labels = digikat_topic_label) +
-  theme_digikat_map(base_size = 14) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
-  labs(
-    title = "Matrica tonaliteta\nprema tematskim i emocionalnim kategorijama",
-    subtitle = "Boja ćelije predstavlja prosječni leksički tonalitet unutar kombinacije oznaka",
-    x = "Dominantna emocionalna kategorija",
-    y = "Dominantna tematska kategorija"
+create_emotion_heatmap <- function(data = heatmap_data, label_size = 3.5,
+                                   legend_position = "right", split_panels = FALSE) {
+  plot <- ggplot(data, aes(x = dominant_emotion, y = dominant_topic, fill = avg_sentiment)) +
+    geom_tile(color = dk_col$paper, linewidth = 0.5) +
+    geom_text(aes(label = round(avg_sentiment, 2)), size = label_size, color = dk_col$ink) +
+    scale_fill_digikat_diverging(name = "Prosj. tonalitet") +
+    scale_y_discrete(labels = digikat_topic_label) +
+    theme_digikat_map(base_size = 14) +
+    theme(
+      axis.text.x = element_text(angle = 45, hjust = 1),
+      legend.position = legend_position
+    ) +
+    labs(
+      title = "Matrica tonaliteta\nprema tematskim i emocionalnim kategorijama",
+      subtitle = "Boja ćelije predstavlja prosječni leksički tonalitet unutar kombinacije oznaka",
+      x = "Dominantna emocionalna kategorija",
+      y = "Dominantna tematska kategorija"
+    )
+
+  if (split_panels) {
+    plot <- plot +
+      facet_wrap(~ emotion_panel, ncol = 1, scales = "free_x") +
+      scale_y_discrete(
+        labels = function(value) str_wrap(digikat_topic_label(value), 23)
+      ) +
+      guides(
+        fill = guide_colorbar(
+          title.position = "top",
+          barwidth = grid::unit(8, "lines"),
+          barheight = grid::unit(0.65, "lines")
+        )
+      ) +
+      theme(
+        strip.text = element_text(hjust = 0),
+        legend.box = "vertical",
+        legend.box.just = "left"
+      ) +
+      labs(x = "", y = "")
+  }
+
+  plot
+}
+
+plot_emotion_heatmap <- create_emotion_heatmap()
+emotion_levels <- unique(as.character(heatmap_data$dominant_emotion))
+emotion_panel_lookup <- tibble::tibble(
+  dominant_emotion = emotion_levels,
+  emotion_panel_number = ceiling(seq_along(emotion_levels) * 3 / length(emotion_levels))
+)
+heatmap_mobile_data <- heatmap_data %>%
+  mutate(dominant_emotion = as.character(dominant_emotion)) %>%
+  left_join(emotion_panel_lookup, by = "dominant_emotion") %>%
+  mutate(
+    emotion_panel = factor(
+      paste0("Emocionalne oznake · ", emotion_panel_number, "/3"),
+      levels = paste0("Emocionalne oznake · ", 1:3, "/3")
+    ),
+    dominant_emotion = factor(dominant_emotion, levels = emotion_levels)
   )
+plot_emotion_heatmap_mobile <- create_emotion_heatmap(
+  data = heatmap_mobile_data,
+  label_size = 4.3,
+  legend_position = "bottom",
+  split_panels = TRUE
+)
+
+digikat_render_map_plot(
+  plot_emotion_heatmap,
+  plot_emotion_heatmap_mobile,
+  mobile_height = 28
+)
 ```
 
 ```{r}
@@ -239,19 +286,34 @@ Sljedeći grafikon opisuje `r nrow(media_strategy_data)` izvora s najviše tekst
 #| warning: false
 #| message: false
 
-ggplot(media_strategy_data, aes(x = avg_cli, y = rci_sd, size = n_articles)) +
-  geom_jitter(color = dk_col$accent, alpha = 0.7, width = 0.01, height = 0.01) +
-  geom_text_repel(aes(label = FROM), size = 3.5, max.overlaps = 15) +
-  scale_x_log10(labels = scales::number_format(accuracy = 0.1, decimal.mark = ",")) +
-  scale_y_log10(labels = scales::number_format(accuracy = 0.1, decimal.mark = ",")) +
-  scale_size_continuous(range = c(3, 12), name = "Broj članaka") +
-  theme_digikat_map(base_size = 14) +
-  labs(
-    title = "Profili izvora prema konfliktnom rječniku",
-    subtitle = paste0(nrow(media_strategy_data), " izvora s najviše uzorkovanih tekstova; položaj je opisna, a ne motivacijska mjera"),
-    x = "Prosječna gustoća konfliktnog rječnika (logaritamska skala)",
-    y = "Standardna devijacija Relativnog indeksa konflikta (logaritamska skala)"
-  )
+create_rci_strategy_plot <- function(label_size = 3.5, legend_position = "right") {
+  ggplot(media_strategy_data, aes(x = avg_cli, y = rci_sd, size = n_articles)) +
+    geom_jitter(color = dk_col$accent, alpha = 0.7, width = 0.01, height = 0.01) +
+    geom_text_repel(aes(label = FROM), size = label_size, max.overlaps = 15) +
+    scale_x_log10(labels = scales::number_format(accuracy = 0.1, decimal.mark = ",")) +
+    scale_y_log10(labels = scales::number_format(accuracy = 0.1, decimal.mark = ",")) +
+    scale_size_continuous(range = c(3, 12), name = "Broj članaka") +
+    theme_digikat_map(base_size = 14) +
+    theme(legend.position = legend_position) +
+    labs(
+      title = "Profili izvora prema konfliktnom rječniku",
+      subtitle = paste0(nrow(media_strategy_data), " izvora s najviše uzorkovanih tekstova; položaj je opisna, a ne motivacijska mjera"),
+      x = "Prosječna gustoća konfliktnog rječnika (logaritamska skala)",
+      y = "Standardna devijacija Relativnog indeksa konflikta (logaritamska skala)"
+    )
+}
+
+plot_rci_strategy <- create_rci_strategy_plot()
+plot_rci_strategy_mobile <- create_rci_strategy_plot(
+  label_size = 4.2,
+  legend_position = "bottom"
+)
+
+digikat_render_map_plot(
+  plot_rci_strategy,
+  plot_rci_strategy_mobile,
+  mobile_height = 8
+)
 ```
 
 ```{r}
@@ -292,8 +354,9 @@ set.seed(123)
 graph_plot_data <- graph_data %>%
   mutate(tonalitet_smjer = ifelse(avg_sentiment >= 0, "Pozitivniji", "Negativniji"))
 
-graph_from_data_frame(graph_plot_data, directed = FALSE) %>%
-  ggraph(layout = "kk") +
+create_discourse_network <- function(label_size = 3.4, legend_position = "right") {
+  plot <- graph_from_data_frame(graph_plot_data, directed = FALSE) %>%
+    ggraph(layout = "kk") +
     geom_edge_fan(
       aes(
         color = avg_sentiment,
@@ -308,7 +371,7 @@ graph_from_data_frame(graph_plot_data, directed = FALSE) %>%
       aes(label = str_wrap(digikat_topic_label(name), 15)),
       repel = TRUE,
       color = dk_col$ink,
-      size = 3.4,
+      size = label_size,
       lineheight = 0.95,
       box.padding = 0.4,
       point.padding = 0.25,
@@ -336,11 +399,31 @@ graph_from_data_frame(graph_plot_data, directed = FALSE) %>%
     scale_x_continuous(expand = expansion(mult = 0.2)) +
     scale_y_continuous(expand = expansion(mult = 0.2)) +
     theme_digikat_map_void(base_size = 14) +
-    theme(legend.position = "right") +
+    theme(legend.position = legend_position) +
     labs(
       title = "Mreža tematskih supojavljivanja, tonaliteta i RIK-a",
       subtitle = "Vrsta crte i boja prikazuju tonalitet. Debljina prikazuje RIK, a prozirnost broj tekstova."
     )
+
+  if (identical(legend_position, "bottom")) {
+    plot <- plot +
+      theme(legend.box = "vertical", legend.box.just = "left")
+  }
+
+  plot
+}
+
+plot_discourse_network <- create_discourse_network()
+plot_discourse_network_mobile <- create_discourse_network(
+  label_size = 4.2,
+  legend_position = "bottom"
+)
+
+digikat_render_map_plot(
+  plot_discourse_network,
+  plot_discourse_network_mobile,
+  mobile_height = 9
+)
 ```
 
 ```{r}

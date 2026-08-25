@@ -131,14 +131,14 @@ theme_digikat_void <- function(base_size = 13) {
 # --- Editorial map variant -------------------------------------------------
 # The analytical maps are read in a wide, card-like figure column. Their type
 # should feel like the surrounding article instead of a technical console:
-# proportional sans-serif labels, a restrained serif title, a white canvas and
+# proportional sans-serif labels, a restrained serif title, a paper canvas and
 # softer grid lines. Raster output embeds these faces in the image, avoiding
 # the Arial fallback that occurs when an SVG is loaded as an isolated image.
 theme_digikat_map <- function(base_size = 14) {
   theme_digikat(base_size = base_size) +
     ggplot2::theme(
-      plot.background  = ggplot2::element_rect(fill = dk_col$panel, color = NA),
-      panel.background = ggplot2::element_rect(fill = dk_col$panel, color = NA),
+      plot.background  = ggplot2::element_rect(fill = dk_col$paper, color = NA),
+      panel.background = ggplot2::element_rect(fill = dk_col$paper, color = NA),
       panel.grid.major = ggplot2::element_line(color = "#ECE9E2", linewidth = 0.35),
       axis.text = ggplot2::element_text(
         family = dk_sans, size = base_size * 0.84, color = dk_col$muted,

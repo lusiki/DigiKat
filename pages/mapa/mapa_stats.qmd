@@ -2,7 +2,7 @@
 title: "Tematske struje — anatomija diskursa katoličkog digitalnog prostora u Hrvatskoj (2021.–2026.)"
 subtitle: "Tematske struje na dijelu korpusa"
 description: "Tematske struje prikazuju učestalost, intenzitet, zabilježene reakcije i supojavljivanje 16 rječnički definiranih tema u dijelu korpusa DigiKat."
-date-modified: 2026-08-24
+date-modified: 2026-08-25
 data-cutoff: 2026-06-11
 status: "Preliminarno"
 schema-type: "Article"
@@ -16,19 +16,9 @@ filters:
 #| label: setup
 #| include: false
 
-# Globalne postavke za dokument
-knitr::opts_chunk$set(
-  echo = FALSE,
-  message = FALSE,
-  warning = FALSE,
-  fig.width = 10,
-  fig.height = 7,
-  dev = "ragg_png",
-  dpi = 144,
-  fig.retina = 1,
-  out.width = "1440px",
-  dev.args = list(bg = "#FFFFFF")
-)
+# Shared export settings for all five analytical maps.
+source("../../R/lib/digikat_charts.R", encoding = "UTF-8")
+digikat_map_setup()
 ```
 
 ```{r}
@@ -43,7 +33,6 @@ library(stringr)
 library(ggplot2)
 source("../../R/theme_digikat.R")
 theme_set(theme_digikat_map())
-source("../../R/lib/digikat_charts.R", encoding = "UTF-8")
 library(forcats)
 library(ggridges)
 library(ggraph)
@@ -223,7 +212,10 @@ plot_terms <- ggplot(top_terms_plot, aes(x = n, y = lemma)) +
   theme(panel.grid.major.y = element_blank()) +
   labs(title = "Najčešće leksičke jedinice", x = "Broj pojavljivanja", y = NULL)
 
-print(plot_terms)
+digikat_render_map_plot(
+  plot_terms,
+  mobile_height = 10
+)
 ```
 
 ```{r}
@@ -290,7 +282,10 @@ plot_topic_trends <- ggplot(
   theme_digikat_map(base_size = 14) +
   theme(legend.position = "none", plot.margin = margin(10, 100, 10, 10))
 
-print(plot_topic_trends)
+digikat_render_map_plot(
+  plot_topic_trends,
+  mobile_height = 7.5
+)
 ```
 
 ```{r}
@@ -341,7 +336,10 @@ plot_topic_intensity <- ggplot(
   ) +
   theme(panel.grid.major.y = element_blank())
 
-print(plot_topic_intensity)
+digikat_render_map_plot(
+  plot_topic_intensity,
+  mobile_height = 8
+)
 ```
 
 ```{r}
@@ -378,7 +376,7 @@ Zato se iz grafikona ne može izdvojiti konflikt kao uzročni pokretač angažma
 #| fig-alt: "Vodoravni stupci prosječnog broja zabilježenih interakcija po dominantnim temama, s izravno ispisanim vrijednostima."
 #| fig-cap: "Prosječne zabilježene interakcije po dokumentu prema dominantnoj tematskoj oznaci. Usporedba ne kontrolira platformu, izvor ni godinu."
 
-ggplot(engagement_by_topic, aes(x = avg_interactions, y = reorder(dominant_topic, avg_interactions))) +
+plot_engagement <- ggplot(engagement_by_topic, aes(x = avg_interactions, y = reorder(dominant_topic, avg_interactions))) +
   geom_col(fill = dk_col$accent, width=0.8) +
   geom_text(aes(label = round(avg_interactions)), hjust = -0.2, size = 4, color = dk_col$ink) +
   expand_limits(x = max(engagement_by_topic$avg_interactions) * 1.1) +
@@ -388,6 +386,11 @@ ggplot(engagement_by_topic, aes(x = avg_interactions, y = reorder(dominant_topic
        subtitle = "Prosječan broj interakcija po članku za svaku dominantnu temu",
        x = "Prosječne interakcije", y = "Dominantna tematska kategorija") +
   theme(panel.grid.major.y = element_blank())
+
+digikat_render_map_plot(
+  plot_engagement,
+  mobile_height = 8
+)
 ```
 
 ```{r}
@@ -437,7 +440,10 @@ plot_reactions <- ggplot(polarization_by_topic, aes(y = reorder(dominant_topic, 
        subtitle = "Love je prikazan lijevo, a Angry desno. Vrijednosti su ispisane na stupcima.",
        y = "Dominantna tematska kategorija")
 
-print(plot_reactions)
+digikat_render_map_plot(
+  plot_reactions,
+  mobile_height = 8
+)
 ```
 
 ```{r}
@@ -476,7 +482,7 @@ Poredak treba čitati kao kartu leksičke prisutnosti. On omogućuje provjeru ra
 #| fig-alt: "Fasetirani vodoravni stupci prikazuju najčešće vlastite imenice unutar pet najzastupljenijih tematskih oznaka."
 #| fig-cap: "Najčešće automatski izdvojene vlastite imenice u najzastupljenijim tematskim kategorijama. Izvor je analiza projekta DigiKat."
 
-ggplot(top_actors_in_top_topics, aes(x = n, y = reorder_within(lemma, n, dominant_topic), fill = dominant_topic)) +
+plot_topic_actors <- ggplot(top_actors_in_top_topics, aes(x = n, y = reorder_within(lemma, n, dominant_topic), fill = dominant_topic)) +
   geom_col(show.legend = FALSE, width = 0.8) +
   scale_y_reordered() +
   scale_fill_digikat() +
@@ -502,6 +508,11 @@ ggplot(top_actors_in_top_topics, aes(x = n, y = reorder_within(lemma, n, dominan
     panel.grid.minor = element_blank(),
     plot.margin = margin(20, 20, 20, 20)
   )
+
+digikat_render_map_plot(
+  plot_topic_actors,
+  mobile_height = 13
+)
 ```
 
 ```{r}
@@ -533,7 +544,7 @@ Tri najjače korelacije u novom uzorku povezuju `r pair_labels`. Prostorni raspo
 #| fig-cap: "Mreža korelacija supojavljivanja tematskih oznaka iznad 0,1. Debljina i prozirnost veze prenose njezinu jačinu."
 
 set.seed(123)
-topic_pairs %>%
+plot_topic_network <- topic_pairs %>%
   filter(correlation > 0.1) %>%
   graph_from_data_frame() %>%
   ggraph(layout = "kk") +
@@ -562,6 +573,15 @@ topic_pairs %>%
     subtitle = "Koje se teme najčešće pojavljuju zajedno u istim člancima?",
     edge_width = "Snaga veze (korelacija)"
   )
+
+plot_topic_network_mobile <- plot_topic_network +
+  theme(legend.position = "bottom")
+
+digikat_render_map_plot(
+  plot_topic_network,
+  plot_topic_network_mobile,
+  mobile_height = 8.5
+)
 ```
 
 ```{r}

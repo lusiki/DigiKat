@@ -488,11 +488,14 @@ body.fullcontent #quarto-sidebar-glass { display: none !important; }
   color: $dk-body-2;
 }
 
-// Analytical maps use a wide editorial figure column while keeping prose at a
-// comfortable reading measure. The chart sits on a crisp white sheet; on
-// narrow screens dense figures remain legible inside a contained scroller.
+// Analytical maps use a centered editorial figure column while keeping prose
+// at a comfortable reading measure. Figures share the page's paper surface and
+// resize without introducing a second horizontal scrolling region.
 body.map-page .cell.page-full {
-  max-width: min(1120px, calc(100vw - 3rem));
+  width: min(960px, calc(100vw - 3rem));
+  max-width: none;
+  justify-self: center;
+  margin-inline: auto;
 }
 
 body.map-page .cell.page-full .quarto-figure {
@@ -501,27 +504,26 @@ body.map-page .cell.page-full .quarto-figure {
 
 body.map-page .cell.page-full figure.figure {
   margin: 0;
-  padding: clamp(0.75rem, 1.8vw, 1.4rem);
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid rgba(20, 24, 29, 0.09);
-  border-radius: var(--dk-radius-lg);
-  box-shadow: 0 12px 34px rgba(20, 24, 29, 0.075);
+  padding: 0;
+  overflow: visible;
+  background: var(--dk-color-paper);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 body.map-page .cell.page-full figure.figure > p {
   margin: 0;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-  scrollbar-color: $dk-accent-200 transparent;
+  overflow-x: visible;
 }
 
 body.map-page .cell.page-full .figure-img {
   display: block;
   width: 100%;
-  max-width: none;
+  max-width: 100%;
+  min-width: 0;
   height: auto;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 body.map-page .cell.page-full figcaption {
@@ -535,23 +537,17 @@ body.map-page .cell.page-full figcaption {
 
 @media (max-width: 767.98px) {
   body.map-page .cell.page-full {
-    width: calc(100vw - 1.5rem);
+    width: calc(100vw - 2rem);
     max-width: none;
   }
 
   body.map-page .cell.page-full figure.figure {
-    padding: 0.65rem;
-    border-radius: var(--dk-radius-md);
-    box-shadow: 0 8px 24px rgba(20, 24, 29, 0.06);
-  }
-
-  body.map-page .cell.page-full figure.figure > p {
-    padding-bottom: 0.35rem;
+    padding: 0;
   }
 
   body.map-page .cell.page-full .figure-img {
-    width: 44rem;
-    min-width: 44rem;
+    width: 100%;
+    min-width: 0;
   }
 }
 

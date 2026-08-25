@@ -2,7 +2,7 @@
 title: "Fokus na događaje (2021.–2026.)"
 subtitle: "Dnevna odstupanja volumena, konfliktnog rječnika i tonaliteta u uzorku"
 description: "Fokus na događaje označava neuobičajene dane te opisuje prozor oko Uskrsa 2022. i dostupna leksička okruženja Alojzija Stepinca."
-date-modified: 2026-08-24
+date-modified: 2026-08-25
 data-cutoff: 2026-06-11
 status: "Preliminarno"
 schema-type: "Article"
@@ -16,19 +16,9 @@ filters:
 #| label: setup
 #| include: false
 
-# Globalne postavke
-knitr::opts_chunk$set(
-  echo = FALSE,
-  message = FALSE,
-  warning = FALSE,
-  fig.width = 10,
-  fig.height = 7,
-  dev = "ragg_png",
-  dpi = 144,
-  fig.retina = 1,
-  out.width = "1440px",
-  dev.args = list(bg = "#FFFFFF")
-)
+# Shared export settings for all five analytical maps.
+source("../../R/lib/digikat_charts.R", encoding = "UTF-8")
+digikat_map_setup()
 ```
 
 ```{r}
@@ -44,7 +34,6 @@ library(stringr)
 library(ggplot2)
 source("../../R/theme_digikat.R")
 theme_set(theme_digikat_map())
-source("../../R/lib/digikat_charts.R", encoding = "UTF-8")
 library(forcats)
 ```
 
@@ -225,7 +214,10 @@ p_cli_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_cli)) +
 #| column: page
 #| fig-alt: "Dnevna z-vrijednost volumena objava. Trokuti označavaju dane iznad praga od tri standardne devijacije, koji je prikazan isprekidanom crtom."
 #| fig-cap: "Dnevna standardizirana odstupanja volumena objava. Trokuti označavaju dane iznad praga od tri standardne devijacije."
-p_volume_z
+digikat_render_map_plot(
+  p_volume_z,
+  mobile_height = 6.5
+)
 ```
 
 ```{r}
@@ -253,7 +245,10 @@ digikat_chart_evidence(
 #| column: page
 #| fig-alt: "Dnevna z-vrijednost gustoće konfliktnog rječnika. Trokuti označavaju dane iznad praga od tri standardne devijacije."
 #| fig-cap: "Dnevna standardizirana odstupanja gustoće konfliktnog rječnika. Trokuti označavaju dane iznad praga od tri standardne devijacije."
-p_cli_z
+digikat_render_map_plot(
+  p_cli_z,
+  mobile_height = 6.5
+)
 ```
 
 ```{r}
@@ -299,14 +294,14 @@ easter_share_plot <- ggplot(daily_duhovnost_dynamics, aes(x = date, y = duhovnos
   geom_vline(xintercept = event_date_uskrs, linetype = "dashed", color = dk_col$ink) +
   scale_y_continuous(labels = percent_format(decimal.mark = ",")) +
   theme_digikat_map(base_size = 14) +
-  labs(x = NULL, y = "Udio teme")
+  labs(x = "", y = "Udio teme")
 
 easter_conflict_plot <- ggplot(daily_duhovnost_dynamics, aes(x = date, y = avg_cli)) +
   geom_line(color = dk_col$neg, linewidth = 1) +
   geom_point(color = dk_col$neg, shape = 17, size = 2) +
   geom_vline(xintercept = event_date_uskrs, linetype = "dashed", color = dk_col$ink) +
   theme_digikat_map(base_size = 14) +
-  labs(x = NULL, y = "Konfliktni rječnik")
+  labs(x = "", y = "Konfliktni rječnik")
 
 easter_sentiment_plot <- ggplot(daily_duhovnost_dynamics, aes(x = date, y = avg_sentiment)) +
   geom_hline(yintercept = 0, color = dk_col$faint) +
@@ -322,7 +317,10 @@ easter_plot <- (easter_share_plot / easter_conflict_plot / easter_sentiment_plot
     subtitle = "Isprekidana okomita crta označava Uskrs. Svaki pokazatelj ima zasebnu os."
   )
 
-print(easter_plot)
+digikat_render_map_plot(
+  easter_plot,
+  mobile_height = 10
+)
 ```
 
 ```{r}
@@ -361,7 +359,7 @@ Postupak broji imenice i pridjeve u dokumentima koji spominju *Stepinca* i mjeri
 #| fig-alt: "Fasetirani stupci prikazuju najčešće leksičke jedinice u dostupnim godišnjim presjecima tekstova koji spominju Stepinca. Na svakom stupcu ispisan je prosječni tonalitet."
 #| fig-cap: "Najčešće leksičke jedinice u dostupnim godišnjim presjecima dokumenata koji spominju Alojzija Stepinca. Ispisana vrijednost i boja prikazuju prosječni tonalitet tekstova."
 
-ggplot(top_associated_words_final, aes(x = total_cooccurrences, y = reorder_within(lemma, total_cooccurrences, year), fill = avg_sentiment)) +
+plot_stepinac_terms <- ggplot(top_associated_words_final, aes(x = total_cooccurrences, y = reorder_within(lemma, total_cooccurrences, year), fill = avg_sentiment)) +
   geom_col() +
   geom_text(
     aes(label = format(round(avg_sentiment, 2), decimal.mark = ",", nsmall = 2)),
@@ -378,6 +376,16 @@ ggplot(top_associated_words_final, aes(x = total_cooccurrences, y = reorder_with
     subtitle = paste0("Dostupne godine: ", stepinac_year_text, "; boja stupca prikazuje prosječni tonalitet tekstova"),
     x = "Broj pojavljivanja u dokumentima koji spominju Stepinca", y = "Leksička jedinica"
   )
+
+plot_stepinac_terms_mobile <- plot_stepinac_terms +
+  facet_wrap(~ year, scales = "free_y", ncol = 1) +
+  theme(legend.position = "bottom")
+
+digikat_render_map_plot(
+  plot_stepinac_terms,
+  plot_stepinac_terms_mobile,
+  mobile_height = 14
+)
 ```
 
 ```{r}
