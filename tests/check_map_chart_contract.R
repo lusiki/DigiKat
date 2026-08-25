@@ -29,17 +29,6 @@ figures <- list(
                 "event-seismograph-uskrs", "narrative-biography-robust")
 )
 
-slugs <- c(
-  "mapa-platform-volume", "mapa-platform-interactions", "mapa-platform-shares",
-  "mapa-top-sources", "mapa-actor-map", "evolucija-monthly-volume",
-  "evolucija-interaction-shares", "evolucija-concentration", "evolucija-annual-rhythm",
-  "teme-top-terms", "teme-topic-trends", "teme-topic-intensity",
-  "teme-topic-interactions", "teme-facebook-reactions", "teme-actors", "teme-network",
-  "diskurs-emotion-tonality", "diskurs-source-conflict", "diskurs-topic-network",
-  "dogadjaji-volume-anomalies", "dogadjaji-conflict-anomalies",
-  "dogadjaji-easter-window", "dogadjaji-stepinac-terms"
-)
-
 markdown_h1_count <- function(lines) {
   in_code <- FALSE
   count <- 0L
@@ -58,8 +47,9 @@ for (name in names(pages)) {
   lines <- readLines(pages[[name]], encoding = "UTF-8", warn = FALSE)
   all_source <- c(all_source, lines)
   expect_true(any(grepl("^description:", lines)), paste(name, "must have a description"))
+  expect_true(any(grepl("^body-classes: map-page$", lines)), paste(name, "must use map-page styling"))
   expect_true(any(grepl("lazy-images\\.lua", lines)), paste(name, "must lazy-load figures"))
-  expect_true(any(grepl('dev = "svglite"', lines, fixed = TRUE)), paste(name, "must render vector figures"))
+  expect_true(any(grepl('dev = "ragg_png"', lines, fixed = TRUE)), paste(name, "must embed chart fonts in raster figures"))
   expect_true(markdown_h1_count(lines) == 0L, paste(name, "must rely on the single YAML H1"))
   expect_true(any(grepl("summary-60", lines, fixed = TRUE)), paste(name, "must have a 60-second summary"))
   expect_true(any(grepl("freshness-strip", lines, fixed = TRUE)), paste(name, "must have freshness metadata"))
@@ -72,6 +62,7 @@ for (name in names(pages)) {
     expect_true(length(position) == 1L, paste(name, label, "must occur once"))
     if (length(position) == 1L) {
       options <- lines[position:min(length(lines), position + 10L)]
+      expect_true(any(grepl("#\\| column: page", options)), paste(label, "must use the wide figure column"))
       expect_true(any(grepl("#\\| fig-alt:", options)), paste(label, "must have meaningful alt text"))
       expect_true(any(grepl("#\\| fig-cap:", options)), paste(label, "must have a semantic caption"))
     }
@@ -79,21 +70,13 @@ for (name in names(pages)) {
 }
 
 expect_true(
-  sum(grepl("digikat_chart_evidence\\(", all_source)) == length(slugs),
-  "Every retained chart must have one evidence block"
+  sum(grepl("digikat_chart_evidence\\(", all_source)) == sum(lengths(figures)),
+  "Every retained chart must have one visible summary block"
 )
-for (slug in slugs) {
-  expect_true(any(grepl(paste0('"', slug, '"'), all_source, fixed = TRUE)),
-              paste(slug, "must be linked from a map page"))
-  path <- file.path("assets", "downloads", "maps", paste0(slug, ".csv"))
-  expect_true(file.exists(path), paste(slug, "CSV download must exist"))
-  if (file.exists(path)) {
-    data <- utils::read.csv(path, check.names = FALSE, stringsAsFactors = FALSE,
-                            fileEncoding = "UTF-8")
-    valid <- !inherits(try(digikat_assert_chart_download(data, slug), silent = TRUE), "try-error")
-    expect_true(valid, paste(slug, "must pass aggregate disclosure validation"))
-  }
-}
+expect_true(
+  !length(list.files(file.path("assets", "downloads", "maps"), pattern = "\\.csv$")),
+  "Map CSV downloads must not be published"
+)
 
 chart_css <- paste(
   readLines("assets/css/custom.scss", encoding = "UTF-8", warn = FALSE),
@@ -105,17 +88,14 @@ expect_true(
   "Chart images and SVGs must stay within their responsive container"
 )
 expect_true(
-  grepl(".reference-table { max-width: 100%; overflow-x: auto; }", chart_css, fixed = TRUE),
-  "Wide chart tables must scroll inside their own container"
+  grepl("body.map-page .cell.page-full figure.figure", chart_css, fixed = TRUE) &&
+    grepl("body.map-page .cell.page-full .figure-img", chart_css, fixed = TRUE),
+  "Map figures must use the wide editorial card treatment"
 )
 expect_true(
-  grepl(".download-group", chart_css, fixed = TRUE) &&
-    grepl("flex-wrap: wrap", chart_css, fixed = TRUE),
-  "Chart download controls must wrap at narrow widths"
-)
-expect_true(
-  grepl(".chart-table-view .reference-table:focus-visible", chart_css, fixed = TRUE),
-  "Scrollable chart tables must expose a visible keyboard focus state"
+  grepl("overflow-x: auto", chart_css, fixed = TRUE) &&
+    grepl("min-width: 44rem", chart_css, fixed = TRUE),
+  "Dense map figures must remain legible in a narrow-screen scroller"
 )
 
 rendered_required <- "--rendered" %in% commandArgs(trailingOnly = TRUE)
@@ -134,8 +114,12 @@ if (rendered_required) {
                 paste(html_path, "must contain lazy-loaded figures"))
     expect_true(grepl("chart-accessible-summary", html, fixed = TRUE),
                 paste(html_path, "must contain accessible chart summaries"))
-    expect_true(grepl("Preuzmite podatke (CSV)", html, fixed = TRUE),
-                paste(html_path, "must expose CSV downloads"))
+    expect_true(grepl('class="[^\"]*map-page', html, perl = TRUE),
+                paste(html_path, "must expose the map page class"))
+    expect_true(grepl('_files/figure-html/[^\"]+\\.png', html, perl = TRUE),
+                paste(html_path, "must contain raster figures with embedded fonts"))
+    expect_true(!grepl("Preuzmite podatke (CSV)|Preuzmite grafikon (SVG)|Prikažite podatke u tablici", html),
+                paste(html_path, "must not expose chart downloads or data tables"))
   }
 }
 

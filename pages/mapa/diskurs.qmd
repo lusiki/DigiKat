@@ -7,6 +7,7 @@ data-cutoff: 2026-06-11
 status: "Preliminarno"
 schema-type: "Article"
 categories: ["Atmosfera diskursa", "Tonalitet", "Emocije"]
+body-classes: map-page
 filters:
   - ../../assets/filters/lazy-images.lua
 ---
@@ -22,8 +23,11 @@ knitr::opts_chunk$set(
   warning = FALSE,
   fig.width = 10,
   fig.height = 7,
-  dev = "svglite",
-  dpi = 120
+  dev = "ragg_png",
+  dpi = 144,
+  fig.retina = 1,
+  out.width = "1440px",
+  dev.args = list(bg = "#FFFFFF")
 )
 ```
 
@@ -37,6 +41,7 @@ library(dplyr)
 library(stringr)
 library(ggplot2)
 source("../../R/theme_digikat.R")
+theme_set(theme_digikat_map())
 source("../../R/lib/digikat_charts.R", encoding = "UTF-8")
 library(ggraph)
 library(igraph)
@@ -177,17 +182,18 @@ Sljedeća vizualizacija prikazuje opažene kombinacije tematskih i dominantnih e
 
 ```{r}
 #| label: plot-emotion-heatmap
-#| fig-width: 15.2
-#| fig-height: 9.9
+#| fig-width: 10
+#| fig-height: 6.5
+#| column: page
 #| fig-alt: "Matrica tematskih i emocionalnih oznaka. Svaka ćelija ispisuje prosječni leksički tonalitet, uz divergirajuću paletu kao dodatni znak."
 #| fig-cap: "Prosječni leksički tonalitet prema kombinaciji dominantne tematske i emocionalne oznake. Prikazane su kombinacije s više od tri dokumenta."
 
 ggplot(heatmap_data, aes(x = dominant_emotion, y = dominant_topic, fill = avg_sentiment)) +
-  geom_tile(color = dk_col$paper, linewidth = 0.5) +
-  geom_text(aes(label = round(avg_sentiment, 2)), size = 5.5, color = dk_col$ink) +
+  geom_tile(color = dk_col$panel, linewidth = 0.5) +
+  geom_text(aes(label = round(avg_sentiment, 2)), size = 3.5, color = dk_col$ink) +
   scale_fill_digikat_diverging(name = "Prosj. tonalitet") +
   scale_y_discrete(labels = digikat_topic_label) +
-  theme_digikat(base_size = 24) +
+  theme_digikat_map(base_size = 14) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   labs(
     title = "Matrica tonaliteta\nprema tematskim i emocionalnim kategorijama",
@@ -225,8 +231,9 @@ Sljedeći grafikon opisuje `r nrow(media_strategy_data)` izvora s najviše tekst
 
 ```{r}
 #| label: plot-rci-strategy
-#| fig-width: 15.2
-#| fig-height: 10.6
+#| fig-width: 10
+#| fig-height: 7
+#| column: page
 #| fig-alt: "Raspršeni prikaz izvora prema prosječnoj gustoći konfliktnog rječnika i standardnoj devijaciji RIK-a. Točke imaju izravne nazive, a veličina prikazuje broj dokumenata."
 #| fig-cap: "Profili izvora prema gustoći konfliktnog rječnika i varijabilnosti Relativnog indeksa konflikta. Položaj je opisni i ne određuje motiv izvora."
 #| warning: false
@@ -234,11 +241,11 @@ Sljedeći grafikon opisuje `r nrow(media_strategy_data)` izvora s najviše tekst
 
 ggplot(media_strategy_data, aes(x = avg_cli, y = rci_sd, size = n_articles)) +
   geom_jitter(color = dk_col$accent, alpha = 0.7, width = 0.01, height = 0.01) +
-  geom_text_repel(aes(label = FROM), size = 5.5, max.overlaps = 15) +
+  geom_text_repel(aes(label = FROM), size = 3.5, max.overlaps = 15) +
   scale_x_log10(labels = scales::number_format(accuracy = 0.1, decimal.mark = ",")) +
   scale_y_log10(labels = scales::number_format(accuracy = 0.1, decimal.mark = ",")) +
   scale_size_continuous(range = c(3, 12), name = "Broj članaka") +
-  theme_digikat(base_size = 24) +
+  theme_digikat_map(base_size = 14) +
   labs(
     title = "Profili izvora prema konfliktnom rječniku",
     subtitle = paste0(nrow(media_strategy_data), " izvora s najviše uzorkovanih tekstova; položaj je opisna, a ne motivacijska mjera"),
@@ -273,8 +280,9 @@ Boja veze označava prosječni ne-normalizirani CroSentilex-Gold zbroj u tekstov
 
 ```{r}
 #| label: plot-network
-#| fig-width: 15.2
-#| fig-height: 11.4
+#| fig-width: 10
+#| fig-height: 7.5
+#| column: page
 #| fig-alt: "Mreža tematskih supojavljivanja. Debljina veze prikazuje prosječni RIK, prozirnost broj tekstova, a puna ili isprekidana crta smjer tonaliteta."
 #| fig-cap: "Mreža tematskih supojavljivanja, prosječnog RIK-a i leksičkog tonaliteta. Vrsta crte i boja zajedno označavaju smjer tonaliteta."
 #| warning: false
@@ -285,7 +293,7 @@ graph_plot_data <- graph_data %>%
   mutate(tonalitet_smjer = ifelse(avg_sentiment >= 0, "Pozitivniji", "Negativniji"))
 
 graph_from_data_frame(graph_plot_data, directed = FALSE) %>%
-  ggraph(layout = "fr") +
+  ggraph(layout = "kk") +
     geom_edge_fan(
       aes(
         color = avg_sentiment,
@@ -295,31 +303,40 @@ graph_from_data_frame(graph_plot_data, directed = FALSE) %>%
       ),
       arrow = NULL
     ) +
-    geom_node_point(color = dk_col$accent, size = 12) +
+    geom_node_point(color = dk_col$accent, size = 8) +
     geom_node_text(
       aes(label = str_wrap(digikat_topic_label(name), 15)),
+      repel = TRUE,
       color = dk_col$ink,
-      size = 6
+      size = 3.4,
+      lineheight = 0.95,
+      box.padding = 0.4,
+      point.padding = 0.25,
+      force = 1.6,
+      max.overlaps = Inf,
+      seed = 123
     ) +
     scale_edge_color_gradient2(
       low = dk_col$neg, mid = dk_col$neutral, high = dk_col$pos, midpoint = 0,
       name="Prosječni CroSentilex-Gold\nzbroj"
     ) +
     scale_edge_width(
-      range = c(1, 5),
+      range = c(0.8, 3.2),
       name="Prosječni RIK"
     ) +
     scale_edge_alpha(
-      range = c(0.3, 1),
-      name = "Broj tekstova"
+      range = c(0.18, 0.78),
+      guide = "none"
     ) +
     scale_edge_linetype_manual(
       values = c("Negativniji" = "22", "Pozitivniji" = "solid"),
       name = "Smjer tonaliteta"
     ) +
     # Nazivi čvorova na rubu mreže inače se režu na granici panela.
-    scale_x_continuous(expand = expansion(mult = 0.12)) +
-    theme_digikat_void(base_size = 24) +
+    scale_x_continuous(expand = expansion(mult = 0.2)) +
+    scale_y_continuous(expand = expansion(mult = 0.2)) +
+    theme_digikat_map_void(base_size = 14) +
+    theme(legend.position = "right") +
     labs(
       title = "Mreža tematskih supojavljivanja, tonaliteta i RIK-a",
       subtitle = "Vrsta crte i boja prikazuju tonalitet. Debljina prikazuje RIK, a prozirnost broj tekstova."

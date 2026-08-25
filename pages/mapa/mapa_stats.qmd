@@ -7,6 +7,7 @@ data-cutoff: 2026-06-11
 status: "Preliminarno"
 schema-type: "Article"
 categories: ["Tematske struje", "Računalna obrada teksta", "16 kategorija"]
+body-classes: map-page
 filters:
   - ../../assets/filters/lazy-images.lua
 ---
@@ -22,11 +23,11 @@ knitr::opts_chunk$set(
   warning = FALSE,
   fig.width = 10,
   fig.height = 7,
-  dev = "svglite",
-  dpi = 120,
-  # Cream device canvas so the base-graphics wordcloud (not a ggplot) also matches
-  # the page background; ggplots already fill plot.background via theme_digikat().
-  dev.args = list(bg = "#F5F4F0")
+  dev = "ragg_png",
+  dpi = 144,
+  fig.retina = 1,
+  out.width = "1440px",
+  dev.args = list(bg = "#FFFFFF")
 )
 ```
 
@@ -41,6 +42,7 @@ library(tidytext)
 library(stringr)
 library(ggplot2)
 source("../../R/theme_digikat.R")
+theme_set(theme_digikat_map())
 source("../../R/lib/digikat_charts.R", encoding = "UTF-8")
 library(forcats)
 library(ggridges)
@@ -205,6 +207,7 @@ Prije tematskog označavanja, prikaz rangira 25 najčešćih imenica, pridjeva i
 #| label: plot-wordcloud
 #| fig-height: 7
 #| fig-width: 10
+#| column: page
 #| fig-alt: "Vodoravni stupci prikazuju 25 najčešćih leksičkih jedinica u analiziranom uzorku, poredanih prema broju pojavljivanja."
 #| fig-cap: "Dvadeset pet najčešćih imenica, pridjeva i glagola u analiziranom uzorku. Izvor je analiza projekta DigiKat."
 
@@ -216,7 +219,7 @@ plot_terms <- ggplot(top_terms_plot, aes(x = n, y = lemma)) +
   ) +
   expand_limits(x = max(top_terms_plot$n) * 1.1) +
   scale_x_continuous(labels = label_number(big.mark = ".", decimal.mark = ",")) +
-  theme_digikat(base_size = 16) +
+  theme_digikat_map(base_size = 14) +
   theme(panel.grid.major.y = element_blank()) +
   labs(title = "Najčešće leksičke jedinice", x = "Broj pojavljivanja", y = NULL)
 
@@ -253,6 +256,7 @@ Prema ukupnom broju rječničkih podudaranja u uzorku najzastupljenije su teme `
 #| label: plot-topic-trends
 #| fig-width: 10
 #| fig-height: 6.5
+#| column: page
 #| fig-alt: "Linije godišnjih udjela glavnih tematskih oznaka. Svaka linija ima zasebnu boju, vrstu crte i izravnu oznaku na kraju."
 #| fig-cap: "Godišnji udjeli tematskih oznaka koje prelaze 5 % u barem jednom presjeku. Godina 2026. nije uključena u pripremljeni uzorak za ovaj prikaz."
 
@@ -283,7 +287,7 @@ plot_topic_trends <- ggplot(
   scale_linetype_manual(values = topic_line_types) +
   labs(title = "Promjena zastupljenosti glavnih tema",
        x = "Godina", y = "Udio rječničkih podudaranja u uzorku") +
-  theme_digikat(base_size = 16) +
+  theme_digikat_map(base_size = 14) +
   theme(legend.position = "none", plot.margin = margin(10, 100, 10, 10))
 
 print(plot_topic_trends)
@@ -313,6 +317,7 @@ Najviši medijan intenziteta imaju `r high_intensity_names`, a najniži `r low_i
 #| label: plot-topic-intensity
 #| fig-width: 10
 #| fig-height: 7
+#| column: page
 #| fig-alt: "Intervalni prikaz intenziteta tema. Tanka crta prikazuje 10. do 90. percentila, debela crta interkvartilni raspon, a točka medijan."
 #| fig-cap: "Sažetak distribucije intenziteta tematskih oznaka. Intervali prikazuju 10.–90. percentil i interkvartilni raspon, a točka medijan."
 
@@ -324,10 +329,10 @@ plot_topic_intensity <- ggplot(
                linewidth = 0.8, colour = dk_col$accent_200) +
   geom_segment(aes(x = p25, xend = p75, yend = fct_reorder(topic, median)),
                linewidth = 3, colour = dk_col$accent) +
-  geom_point(size = 3.2, shape = 21, fill = dk_col$paper, colour = dk_col$ink) +
+  geom_point(size = 3.2, shape = 21, fill = dk_col$panel, colour = dk_col$ink) +
   scale_x_log10(breaks = c(1, 10, 100, 1000), labels = c("1", "10", "100", "1000")) +
   scale_y_discrete(labels = digikat_topic_label) +
-  theme_digikat(base_size = 16) +
+  theme_digikat_map(base_size = 14) +
   labs(
     title = "Raspon intenziteta tematskih oznaka",
     subtitle = "Tanka crta prikazuje 10.–90. percentil. Debela crta prikazuje srednjih 50 %, a točka medijan.",
@@ -367,17 +372,18 @@ Zato se iz grafikona ne može izdvojiti konflikt kao uzročni pokretač angažma
 
 ```{r}
 #| label: plot-engagement-by-topic
-#| fig-width: 15.2
-#| fig-height: 9.9
+#| fig-width: 10
+#| fig-height: 6.5
+#| column: page
 #| fig-alt: "Vodoravni stupci prosječnog broja zabilježenih interakcija po dominantnim temama, s izravno ispisanim vrijednostima."
 #| fig-cap: "Prosječne zabilježene interakcije po dokumentu prema dominantnoj tematskoj oznaci. Usporedba ne kontrolira platformu, izvor ni godinu."
 
 ggplot(engagement_by_topic, aes(x = avg_interactions, y = reorder(dominant_topic, avg_interactions))) +
   geom_col(fill = dk_col$accent, width=0.8) +
-  geom_text(aes(label = round(avg_interactions)), hjust = -0.2, size = 6.5, color = dk_col$ink) +
+  geom_text(aes(label = round(avg_interactions)), hjust = -0.2, size = 4, color = dk_col$ink) +
   expand_limits(x = max(engagement_by_topic$avg_interactions) * 1.1) +
   scale_y_discrete(labels = digikat_topic_label) +
-  theme_digikat(base_size = 24) +
+  theme_digikat_map(base_size = 14) +
   labs(title = "Zabilježene interakcije prema tematskim kategorijama",
        subtitle = "Prosječan broj interakcija po članku za svaku dominantnu temu",
        x = "Prosječne interakcije", y = "Dominantna tematska kategorija") +
@@ -408,6 +414,7 @@ Najveći udio reakcije Love imaju `r top_love_names`, a najveći udio reakcije A
 #| label: plot-polarization-by-topic
 #| fig-width: 10
 #| fig-height: 7
+#| column: page
 #| fig-alt: "Divergirajući stupci prikazuju udio Love reakcija lijevo i Angry reakcija desno za svaku temu. Vrijednosti su ispisane na stupcima."
 #| fig-cap: "Udjeli Facebookovih reakcija Love i Angry prema dominantnoj tematskoj oznaci. Smjer stupca i izravne vrijednosti prenose isto značenje kao boja."
 
@@ -425,7 +432,7 @@ plot_reactions <- ggplot(polarization_by_topic, aes(y = reorder(dominant_topic, 
   geom_vline(xintercept = 0, color = dk_col$faint) +
   scale_x_continuous(labels = function(x) percent(abs(x), decimal.mark = ","), name = "Udio u ukupnim reakcijama") +
   scale_y_discrete(labels = digikat_topic_label) +
-  theme_digikat(base_size = 16) +
+  theme_digikat_map(base_size = 14) +
   labs(title = "Udio Facebookovih reakcija Love i Angry\nprema tematskim kategorijama",
        subtitle = "Love je prikazan lijevo, a Angry desno. Vrijednosti su ispisane na stupcima.",
        y = "Dominantna tematska kategorija")
@@ -463,8 +470,9 @@ Poredak treba čitati kao kartu leksičke prisutnosti. On omogućuje provjeru ra
 
 ```{r}
 #| label: plot-actors-in-topics
-#| fig-height: 13.7
-#| fig-width: 15.2
+#| fig-height: 9
+#| fig-width: 10
+#| column: page
 #| fig-alt: "Fasetirani vodoravni stupci prikazuju najčešće vlastite imenice unutar pet najzastupljenijih tematskih oznaka."
 #| fig-cap: "Najčešće automatski izdvojene vlastite imenice u najzastupljenijim tematskim kategorijama. Izvor je analiza projekta DigiKat."
 
@@ -484,11 +492,11 @@ ggplot(top_actors_in_top_topics, aes(x = n, y = reorder_within(lemma, n, dominan
     x = "Ukupan broj spominjanja",
     y = "Akter (osnovni oblik)"
   ) +
-  theme_digikat(base_size = 24) +
+  theme_digikat_map(base_size = 14) +
   theme(
-    plot.title = element_text(face = "bold", size = 30, margin = margin(b = 5)),
-    plot.subtitle = element_text(size = 20, color = dk_col$muted, margin = margin(b = 20)),
-    strip.text = element_text(face = "bold", size = 18, hjust = 0),
+    plot.title = element_text(face = "bold", size = 21, margin = margin(b = 5)),
+    plot.subtitle = element_text(size = 14, color = dk_col$muted, margin = margin(b = 14)),
+    strip.text = element_text(face = "bold", size = 13, hjust = 0),
     panel.grid.major.y = element_blank(),
     panel.grid.major.x = element_line(color = dk_col$grid),
     panel.grid.minor = element_blank(),
@@ -518,8 +526,9 @@ Tri najjače korelacije u novom uzorku povezuju `r pair_labels`. Prostorni raspo
 
 ```{r}
 #| label: plot-topic-network
-#| fig-height: 10.6
-#| fig-width: 15.2
+#| fig-height: 7
+#| fig-width: 10
+#| column: page
 #| fig-alt: "Mreža tematskih oznaka. Deblje i manje prozirne veze označavaju višu korelaciju supojavljivanja, a svi čvorovi imaju izravne tekstne oznake."
 #| fig-cap: "Mreža korelacija supojavljivanja tematskih oznaka iznad 0,1. Debljina i prozirnost veze prenose njezinu jačinu."
 
@@ -527,21 +536,31 @@ set.seed(123)
 topic_pairs %>%
   filter(correlation > 0.1) %>%
   graph_from_data_frame() %>%
-  ggraph(layout = "fr") +
+  ggraph(layout = "kk") +
   geom_edge_link(aes(edge_alpha = correlation, edge_width = correlation), color = dk_col$accent_200) +
-  geom_node_point(color = dk_col$accent, size = 7) +
+  geom_node_point(color = dk_col$accent, size = 6) +
   geom_node_text(
-    aes(label = str_wrap(digikat_topic_label(name), 20)),
+    aes(label = str_wrap(digikat_topic_label(name), 17)),
     repel = TRUE,
-    size = 6.5,
-    color = dk_col$ink
+    size = 3.4,
+    lineheight = 0.95,
+    color = dk_col$ink,
+    box.padding = 0.45,
+    point.padding = 0.3,
+    force = 1.8,
+    max.overlaps = Inf,
+    seed = 123
   ) +
-  theme_digikat_void(base_size = 24) +
+  scale_edge_width(range = c(0.7, 3.2), name = "Snaga veze (korelacija)") +
+  scale_edge_alpha(range = c(0.16, 0.62), guide = "none") +
+  scale_x_continuous(expand = expansion(mult = 0.2)) +
+  scale_y_continuous(expand = expansion(mult = 0.2)) +
+  theme_digikat_map_void(base_size = 14) +
+  theme(legend.position = "right") +
   labs(
     title = "Mreža povezanosti tematskih kategorija",
     subtitle = "Koje se teme najčešće pojavljuju zajedno u istim člancima?",
-    edge_width = "Snaga veze (korelacija)",
-    edge_alpha = ""
+    edge_width = "Snaga veze (korelacija)"
   )
 ```
 

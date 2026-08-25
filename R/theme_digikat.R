@@ -128,6 +128,65 @@ theme_digikat_void <- function(base_size = 13) {
     )
 }
 
+# --- Editorial map variant -------------------------------------------------
+# The analytical maps are read in a wide, card-like figure column. Their type
+# should feel like the surrounding article instead of a technical console:
+# proportional sans-serif labels, a restrained serif title, a white canvas and
+# softer grid lines. Raster output embeds these faces in the image, avoiding
+# the Arial fallback that occurs when an SVG is loaded as an isolated image.
+theme_digikat_map <- function(base_size = 14) {
+  theme_digikat(base_size = base_size) +
+    ggplot2::theme(
+      plot.background  = ggplot2::element_rect(fill = dk_col$panel, color = NA),
+      panel.background = ggplot2::element_rect(fill = dk_col$panel, color = NA),
+      panel.grid.major = ggplot2::element_line(color = "#ECE9E2", linewidth = 0.35),
+      axis.text = ggplot2::element_text(
+        family = dk_sans, size = base_size * 0.84, color = dk_col$muted,
+        lineheight = 1.05
+      ),
+      axis.title = ggplot2::element_text(
+        family = dk_sans, size = base_size * 0.92, color = dk_col$body,
+        margin = ggplot2::margin(t = 8, r = 8, b = 8, l = 8)
+      ),
+      plot.title = ggplot2::element_text(
+        family = dk_serif, face = "bold", size = base_size * 1.5,
+        color = dk_col$ink, lineheight = 1.06, margin = ggplot2::margin(b = 7)
+      ),
+      plot.subtitle = ggplot2::element_text(
+        family = dk_sans, size = base_size, color = dk_col$muted,
+        lineheight = 1.15, margin = ggplot2::margin(b = 14)
+      ),
+      plot.caption = ggplot2::element_text(
+        family = dk_sans, size = base_size * 0.72, color = dk_col$faint,
+        lineheight = 1.12, hjust = 0, margin = ggplot2::margin(t = 12)
+      ),
+      legend.title = ggplot2::element_text(
+        family = dk_sans, size = base_size * 0.86, color = dk_col$body,
+        face = "bold"
+      ),
+      legend.text = ggplot2::element_text(
+        family = dk_sans, size = base_size * 0.82, color = dk_col$body
+      ),
+      strip.text = ggplot2::element_text(
+        family = dk_sans, face = "bold", size = base_size * 0.94,
+        color = dk_col$ink, margin = ggplot2::margin(t = 5, b = 8)
+      ),
+      plot.margin = ggplot2::margin(18, 22, 18, 18)
+    )
+}
+
+theme_digikat_map_void <- function(base_size = 14) {
+  theme_digikat_map(base_size = base_size) +
+    ggplot2::theme(
+      panel.background = ggplot2::element_blank(),
+      panel.border = ggplot2::element_blank(),
+      panel.grid = ggplot2::element_blank(),
+      axis.text = ggplot2::element_blank(),
+      axis.title = ggplot2::element_blank(),
+      axis.ticks = ggplot2::element_blank()
+    )
+}
+
 # --- Brand scales (use for categorical / thematic series) ---
 scale_fill_digikat   <- function(...) ggplot2::scale_fill_manual(values = dk_palette, ...)
 scale_colour_digikat <- function(...) ggplot2::scale_colour_manual(values = dk_palette, ...)

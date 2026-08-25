@@ -7,6 +7,7 @@ data-cutoff: 2026-06-11
 status: "Preliminarno"
 schema-type: "Article"
 categories: ["Događaji", "Dinamika", "Tonalitet"]
+body-classes: map-page
 filters:
   - ../../assets/filters/lazy-images.lua
 ---
@@ -22,8 +23,11 @@ knitr::opts_chunk$set(
   warning = FALSE,
   fig.width = 10,
   fig.height = 7,
-  dev = "svglite",
-  dpi = 120
+  dev = "ragg_png",
+  dpi = 144,
+  fig.retina = 1,
+  out.width = "1440px",
+  dev.args = list(bg = "#FFFFFF")
 )
 ```
 
@@ -39,6 +43,7 @@ library(tidytext)
 library(stringr)
 library(ggplot2)
 source("../../R/theme_digikat.R")
+theme_set(theme_digikat_map())
 source("../../R/lib/digikat_charts.R", encoding = "UTF-8")
 library(forcats)
 ```
@@ -183,10 +188,10 @@ p_volume_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_volume)) +
   geom_line(color = dk_col$faint) +
   geom_point(
     data = filter(spikes_detected_z, is_volume_spike),
-    shape = 24, color = dk_col$alert, fill = dk_col$paper, stroke = 1.1, size = 3.6
+    shape = 24, color = dk_col$alert, fill = dk_col$panel, stroke = 1.1, size = 3.6
   ) +
   geom_hline(yintercept = spike_threshold_z, linetype = "dashed", color = dk_col$alert) +
-  theme_digikat(base_size = 24) +
+  theme_digikat_map(base_size = 14) +
   labs(
     title = "Anomalije u volumenu objava (Standardizirano odstupanje)",
     y = "Odstupanje od godišnjeg prosjeka (u standardnim devijacijama)",
@@ -197,10 +202,10 @@ p_cli_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_cli)) +
   geom_line(color = dk_col$faint) +
   geom_point(
     data = filter(spikes_detected_z, is_cli_spike),
-    shape = 24, color = dk_col$alert, fill = dk_col$paper, stroke = 1.1, size = 3.6
+    shape = 24, color = dk_col$alert, fill = dk_col$panel, stroke = 1.1, size = 3.6
   ) +
   geom_hline(yintercept = spike_threshold_z, linetype = "dashed", color = dk_col$alert) +
-  theme_digikat(base_size = 24) +
+  theme_digikat_map(base_size = 14) +
   labs(
     title = "Anomalije u gustoći konfliktnog rječnika\n(standardizirano odstupanje)",
     y = "Odstupanje od godišnjeg prosjeka (u standardnim devijacijama)",
@@ -215,8 +220,9 @@ p_cli_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_cli)) +
 
 ```{r}
 #| label: plot-volume-anomalies
-#| fig-width: 15.2
-#| fig-height: 8.4
+#| fig-width: 10
+#| fig-height: 5.5
+#| column: page
 #| fig-alt: "Dnevna z-vrijednost volumena objava. Trokuti označavaju dane iznad praga od tri standardne devijacije, koji je prikazan isprekidanom crtom."
 #| fig-cap: "Dnevna standardizirana odstupanja volumena objava. Trokuti označavaju dane iznad praga od tri standardne devijacije."
 p_volume_z
@@ -242,8 +248,9 @@ digikat_chart_evidence(
 
 ```{r}
 #| label: plot-conflict-anomalies
-#| fig-width: 15.2
-#| fig-height: 8.4
+#| fig-width: 10
+#| fig-height: 5.5
+#| column: page
 #| fig-alt: "Dnevna z-vrijednost gustoće konfliktnog rječnika. Trokuti označavaju dane iznad praga od tri standardne devijacije."
 #| fig-cap: "Dnevna standardizirana odstupanja gustoće konfliktnog rječnika. Trokuti označavaju dane iznad praga od tri standardne devijacije."
 p_cli_z
@@ -281,6 +288,7 @@ Prikaz prati tematsku kategoriju Duhovnost i liturgija u prozoru od 14 dana prij
 #| label: event-seismograph-uskrs
 #| fig-height: 8
 #| fig-width: 10
+#| column: page
 #| message: false
 #| fig-alt: "Tri usklađena dnevna panela oko Uskrsa 2022. prikazuju udio teme Duhovnost i liturgija, gustoću konfliktnog rječnika i prosječni tonalitet. Okomita crta označava Uskrs."
 #| fig-cap: "Dnevni udio teme Duhovnost i liturgija, prosječna gustoća konfliktnog rječnika i leksički tonalitet u prozoru oko Uskrsa 2022."
@@ -290,14 +298,14 @@ easter_share_plot <- ggplot(daily_duhovnost_dynamics, aes(x = date, y = duhovnos
   geom_point(color = dk_col$accent, size = 2) +
   geom_vline(xintercept = event_date_uskrs, linetype = "dashed", color = dk_col$ink) +
   scale_y_continuous(labels = percent_format(decimal.mark = ",")) +
-  theme_digikat(base_size = 14) +
+  theme_digikat_map(base_size = 14) +
   labs(x = NULL, y = "Udio teme")
 
 easter_conflict_plot <- ggplot(daily_duhovnost_dynamics, aes(x = date, y = avg_cli)) +
   geom_line(color = dk_col$neg, linewidth = 1) +
   geom_point(color = dk_col$neg, shape = 17, size = 2) +
   geom_vline(xintercept = event_date_uskrs, linetype = "dashed", color = dk_col$ink) +
-  theme_digikat(base_size = 14) +
+  theme_digikat_map(base_size = 14) +
   labs(x = NULL, y = "Konfliktni rječnik")
 
 easter_sentiment_plot <- ggplot(daily_duhovnost_dynamics, aes(x = date, y = avg_sentiment)) +
@@ -305,7 +313,7 @@ easter_sentiment_plot <- ggplot(daily_duhovnost_dynamics, aes(x = date, y = avg_
   geom_line(color = dk_col$pos, linewidth = 1) +
   geom_point(color = dk_col$pos, shape = 15, size = 2) +
   geom_vline(xintercept = event_date_uskrs, linetype = "dashed", color = dk_col$ink) +
-  theme_digikat(base_size = 14) +
+  theme_digikat_map(base_size = 14) +
   labs(x = "Datum", y = "Tonalitet")
 
 easter_plot <- (easter_share_plot / easter_conflict_plot / easter_sentiment_plot) +
@@ -347,8 +355,9 @@ Postupak broji imenice i pridjeve u dokumentima koji spominju *Stepinca* i mjeri
 
 ```{r}
 #| label: narrative-biography-robust
-#| fig-height: 12.2
-#| fig-width: 15.2
+#| fig-height: 8
+#| fig-width: 10
+#| column: page
 #| fig-alt: "Fasetirani stupci prikazuju najčešće leksičke jedinice u dostupnim godišnjim presjecima tekstova koji spominju Stepinca. Na svakom stupcu ispisan je prosječni tonalitet."
 #| fig-cap: "Najčešće leksičke jedinice u dostupnim godišnjim presjecima dokumenata koji spominju Alojzija Stepinca. Ispisana vrijednost i boja prikazuju prosječni tonalitet tekstova."
 
@@ -362,8 +371,8 @@ ggplot(top_associated_words_final, aes(x = total_cooccurrences, y = reorder_with
   scale_y_reordered() +
   scale_fill_digikat_diverging(name="Prosječni leksički\ntonalitet tekstova") +
   facet_wrap(~ year, scales = "free_y") +
-  theme_digikat(base_size = 24) +
-  theme(strip.text = element_text(face = "bold", size = 18)) +
+  theme_digikat_map(base_size = 14) +
+  theme(strip.text = element_text(face = "bold", size = 13)) +
   labs(
     title = "Dostupna godišnja leksička okruženja Alojzija Stepinca",
     subtitle = paste0("Dostupne godine: ", stepinac_year_text, "; boja stupca prikazuje prosječni tonalitet tekstova"),

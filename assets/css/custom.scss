@@ -488,6 +488,73 @@ body.fullcontent #quarto-sidebar-glass { display: none !important; }
   color: $dk-body-2;
 }
 
+// Analytical maps use a wide editorial figure column while keeping prose at a
+// comfortable reading measure. The chart sits on a crisp white sheet; on
+// narrow screens dense figures remain legible inside a contained scroller.
+body.map-page .cell.page-full {
+  max-width: min(1120px, calc(100vw - 3rem));
+}
+
+body.map-page .cell.page-full .quarto-figure {
+  margin-block: var(--dk-space-5) var(--dk-space-3);
+}
+
+body.map-page .cell.page-full figure.figure {
+  margin: 0;
+  padding: clamp(0.75rem, 1.8vw, 1.4rem);
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(20, 24, 29, 0.09);
+  border-radius: var(--dk-radius-lg);
+  box-shadow: 0 12px 34px rgba(20, 24, 29, 0.075);
+}
+
+body.map-page .cell.page-full figure.figure > p {
+  margin: 0;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-color: $dk-accent-200 transparent;
+}
+
+body.map-page .cell.page-full .figure-img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  margin: 0 auto;
+}
+
+body.map-page .cell.page-full figcaption {
+  max-width: 92ch;
+  margin: var(--dk-space-3) auto 0;
+  color: $dk-muted;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  text-align: left;
+}
+
+@media (max-width: 767.98px) {
+  body.map-page .cell.page-full {
+    width: calc(100vw - 1.5rem);
+    max-width: none;
+  }
+
+  body.map-page .cell.page-full figure.figure {
+    padding: 0.65rem;
+    border-radius: var(--dk-radius-md);
+    box-shadow: 0 8px 24px rgba(20, 24, 29, 0.06);
+  }
+
+  body.map-page .cell.page-full figure.figure > p {
+    padding-bottom: 0.35rem;
+  }
+
+  body.map-page .cell.page-full .figure-img {
+    width: 44rem;
+    min-width: 44rem;
+  }
+}
+
 .chart-table-note {
   max-width: 76ch;
   color: $dk-muted;
