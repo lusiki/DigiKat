@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='720.00pt' height='396.00pt' viewBox='0 0 720.00 396.00'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='1094.40pt' height='604.80pt' viewBox='0 0 1094.40 604.80'>
 <g class='svglite'>
 <defs>
   <style type='text/css'><![CDATA[
@@ -21,85 +21,87 @@
 </defs>
 <rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
 <defs>
-  <clipPath id='cpMC4wMHw3MjAuMDB8MC4wMHwzOTYuMDA='>
-    <rect x='0.00' y='0.00' width='720.00' height='396.00' />
+  <clipPath id='cpMC4wMHwxMDk0LjQwfDAuMDB8NjA0Ljgw'>
+    <rect x='0.00' y='0.00' width='1094.40' height='604.80' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHwzOTYuMDA=)'>
-<rect x='0.00' y='-0.00000000000011' width='720.00' height='396.00' style='stroke-width: 2.33; stroke: none; fill: #F5F4F0;' />
+<g clip-path='url(#cpMC4wMHwxMDk0LjQwfDAuMDB8NjA0Ljgw)'>
+<rect x='0.00' y='0.00000000000011' width='1094.40' height='604.80' style='stroke-width: 2.33; stroke: none; fill: #F5F4F0;' />
 </g>
 <defs>
-  <clipPath id='cpMTA2LjM4fDcwOC4wNHw4MS40OXwyNTYuNjE='>
-    <rect x='106.38' y='81.49' width='601.66' height='175.12' />
+  <clipPath id='cpMTA2LjM4fDEwODIuNDR8MTIwLjM3fDQ0Ni43NQ=='>
+    <rect x='106.38' y='120.37' width='976.06' height='326.38' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMTA2LjM4fDcwOC4wNHw4MS40OXwyNTYuNjE=)'>
-<rect x='106.38' y='81.49' width='601.66' height='175.12' style='stroke-width: 2.33; stroke: none; fill: #F5F4F0;' />
-<polyline points='106.38,248.65 708.04,248.65 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='106.38,207.39 708.04,207.39 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='106.38,166.13 708.04,166.13 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='106.38,124.87 708.04,124.87 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='106.38,83.61 708.04,83.61 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='135.97,256.61 135.97,81.49 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='185.29,256.61 185.29,81.49 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='234.61,256.61 234.61,81.49 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='283.92,256.61 283.92,81.49 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='333.24,256.61 333.24,81.49 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='382.56,256.61 382.56,81.49 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='431.87,256.61 431.87,81.49 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='481.19,256.61 481.19,81.49 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='530.50,256.61 530.50,81.49 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='579.82,256.61 579.82,81.49 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='629.14,256.61 629.14,81.49 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='678.45,256.61 678.45,81.49 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<rect x='113.78' y='138.80' width='44.38' height='109.85' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
-<rect x='163.10' y='148.39' width='44.38' height='100.26' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
-<rect x='212.41' y='137.39' width='44.38' height='111.26' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
-<rect x='261.73' y='101.25' width='44.38' height='147.41' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
-<rect x='311.05' y='145.54' width='44.38' height='103.11' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
-<rect x='360.36' y='146.36' width='44.38' height='102.30' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
-<rect x='409.68' y='162.46' width='44.38' height='86.19' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
-<rect x='459.00' y='145.11' width='44.38' height='103.54' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
-<rect x='508.31' y='172.99' width='44.38' height='75.66' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
-<rect x='557.63' y='143.05' width='44.38' height='105.60' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
-<rect x='606.95' y='144.31' width='44.38' height='104.35' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
-<rect x='656.26' y='118.19' width='44.38' height='130.46' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
-<text x='135.97' y='136.38' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>6.656</text>
-<text x='185.29' y='145.97' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>6.075</text>
-<text x='234.61' y='134.97' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>6.741</text>
-<text x='283.92' y='98.82' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>8.932</text>
-<text x='333.24' y='143.12' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>6.248</text>
-<text x='382.56' y='143.93' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>6.198</text>
-<text x='431.87' y='160.04' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>5.222</text>
-<text x='481.19' y='142.69' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>6.274</text>
-<text x='530.50' y='170.57' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>4.584</text>
-<text x='579.82' y='140.63' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>6.398</text>
-<text x='629.14' y='141.88' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>6.322</text>
-<text x='678.45' y='115.77' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>7.905</text>
+<g clip-path='url(#cpMTA2LjM4fDEwODIuNDR8MTIwLjM3fDQ0Ni43NQ==)'>
+<rect x='106.38' y='120.37' width='976.06' height='326.38' style='stroke-width: 2.33; stroke: none; fill: #F5F4F0;' />
+<polyline points='106.38,431.91 1082.44,431.91 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='106.38,355.02 1082.44,355.02 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='106.38,278.12 1082.44,278.12 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='106.38,201.22 1082.44,201.22 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='106.38,124.32 1082.44,124.32 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='154.39,446.75 154.39,120.37 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='234.39,446.75 234.39,120.37 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='314.40,446.75 314.40,120.37 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='394.40,446.75 394.40,120.37 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='474.41,446.75 474.41,120.37 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='554.41,446.75 554.41,120.37 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='634.42,446.75 634.42,120.37 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='714.42,446.75 714.42,120.37 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='794.43,446.75 794.43,120.37 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='874.43,446.75 874.43,120.37 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='954.44,446.75 954.44,120.37 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='1034.44,446.75 1034.44,120.37 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<rect x='118.38' y='227.18' width='72.00' height='204.73' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
+<rect x='198.39' y='245.05' width='72.00' height='186.86' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
+<rect x='278.39' y='224.56' width='72.00' height='207.36' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
+<rect x='358.40' y='157.19' width='72.00' height='274.73' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
+<rect x='438.40' y='239.75' width='72.00' height='192.17' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
+<rect x='518.41' y='241.26' width='72.00' height='190.65' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
+<rect x='598.41' y='271.27' width='72.00' height='160.64' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
+<rect x='678.42' y='238.95' width='72.00' height='192.97' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
+<rect x='758.42' y='290.90' width='72.00' height='141.02' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
+<rect x='838.43' y='235.10' width='72.00' height='196.81' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
+<rect x='918.43' y='237.44' width='72.00' height='194.48' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
+<rect x='998.44' y='188.77' width='72.00' height='243.15' style='stroke-width: 2.33; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C; fill-opacity: 0.90;' />
+<text x='154.39' y='224.76' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>6.656</text>
+<text x='234.39' y='242.63' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>6.075</text>
+<text x='314.40' y='222.13' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>6.741</text>
+<text x='394.40' y='154.76' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>8.932</text>
+<text x='474.41' y='237.32' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>6.248</text>
+<text x='554.41' y='238.84' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>6.198</text>
+<text x='634.42' y='268.85' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>5.222</text>
+<text x='714.42' y='236.52' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>6.274</text>
+<text x='794.43' y='288.47' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>4.584</text>
+<text x='874.43' y='232.68' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>6.398</text>
+<text x='954.44' y='235.01' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>6.322</text>
+<text x='1034.44' y='186.35' text-anchor='middle' style='font-size: 9.67px;fill: #14181D; font-family: "Arial";' textLength='24.19px' lengthAdjust='spacingAndGlyphs'>7.905</text>
 </g>
-<g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHwzOTYuMDA=)'>
-<text x='95.62' y='255.36' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='10.41px' lengthAdjust='spacingAndGlyphs'>0</text>
-<text x='95.62' y='214.10' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='46.83px' lengthAdjust='spacingAndGlyphs'>2.500</text>
-<text x='95.62' y='172.84' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='46.83px' lengthAdjust='spacingAndGlyphs'>5.000</text>
-<text x='95.62' y='131.58' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='46.83px' lengthAdjust='spacingAndGlyphs'>7.500</text>
-<text x='95.62' y='90.32' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='57.23px' lengthAdjust='spacingAndGlyphs'>10.000</text>
-<text transform='translate(145.45,276.85) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='62.41px' lengthAdjust='spacingAndGlyphs'>siječanj</text>
-<text transform='translate(194.77,276.85) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='58.25px' lengthAdjust='spacingAndGlyphs'>veljača</text>
-<text transform='translate(244.08,276.85) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='54.09px' lengthAdjust='spacingAndGlyphs'>ožujak</text>
-<text transform='translate(293.40,276.85) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='56.17px' lengthAdjust='spacingAndGlyphs'>travanj</text>
-<text transform='translate(342.72,276.85) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='58.25px' lengthAdjust='spacingAndGlyphs'>svibanj</text>
-<text transform='translate(392.03,276.85) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='43.69px' lengthAdjust='spacingAndGlyphs'>lipanj</text>
-<text transform='translate(441.35,276.85) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='50.97px' lengthAdjust='spacingAndGlyphs'>srpanj</text>
-<text transform='translate(490.67,276.85) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='63.45px' lengthAdjust='spacingAndGlyphs'>kolovoz</text>
-<text transform='translate(539.98,276.85) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='41.61px' lengthAdjust='spacingAndGlyphs'>rujan</text>
-<text transform='translate(589.30,276.85) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='64.50px' lengthAdjust='spacingAndGlyphs'>listopad</text>
-<text transform='translate(638.62,276.85) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='60.34px' lengthAdjust='spacingAndGlyphs'>studeni</text>
-<text transform='translate(687.93,276.85) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='70.73px' lengthAdjust='spacingAndGlyphs'>prosinac</text>
-<text x='407.21' y='351.44' text-anchor='middle' style='font-size: 22.08px;fill: #1B1D21; font-family: "Arial";' textLength='69.95px' lengthAdjust='spacingAndGlyphs'>Mjesec</text>
-<text transform='translate(27.76,169.05) rotate(-90)' text-anchor='middle' style='font-size: 22.08px;fill: #1B1D21; font-family: "Arial";' textLength='212.39px' lengthAdjust='spacingAndGlyphs'>Prosječan broj objava</text>
-<text x='11.96' y='66.48' style='font-size: 24.00px;fill: #6B6F76; font-family: "Arial";' textLength='1001.89px' lengthAdjust='spacingAndGlyphs'>Prosječan broj objava po kalendarskom mjesecu; uključene godine 2021., 2022., 2023. i 2025.</text>
-<text x='11.96' y='37.73' style='font-size: 36.00px; font-weight: bold;fill: #14181D; font-family: "Arial";' textLength='1348.00px' lengthAdjust='spacingAndGlyphs'>Godišnji ritam objavljivanja u godinama s potpunom mjesečnom pokrivenošću</text>
-<text x='11.96' y='380.41' style='font-size: 17.28px;fill: #9A9EA6; font-family: "Arial";' textLength='1248.09px' lengthAdjust='spacingAndGlyphs'>Izvor: Analiza projekta DigiKat. Napomena: uključene su samo godine sa svih 12 mjeseci u agregatima (2021., 2022., 2023. i 2025.); prikazan je isključivo volumen.</text>
+<g clip-path='url(#cpMC4wMHwxMDk0LjQwfDAuMDB8NjA0Ljgw)'>
+<text x='95.62' y='438.62' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='10.41px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='95.62' y='361.72' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='46.83px' lengthAdjust='spacingAndGlyphs'>2.500</text>
+<text x='95.62' y='284.82' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='46.83px' lengthAdjust='spacingAndGlyphs'>5.000</text>
+<text x='95.62' y='207.92' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='46.83px' lengthAdjust='spacingAndGlyphs'>7.500</text>
+<text x='95.62' y='131.02' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='57.23px' lengthAdjust='spacingAndGlyphs'>10.000</text>
+<text transform='translate(163.86,466.99) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='62.41px' lengthAdjust='spacingAndGlyphs'>siječanj</text>
+<text transform='translate(243.87,466.99) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='58.25px' lengthAdjust='spacingAndGlyphs'>veljača</text>
+<text transform='translate(323.88,466.99) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='54.09px' lengthAdjust='spacingAndGlyphs'>ožujak</text>
+<text transform='translate(403.88,466.99) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='56.17px' lengthAdjust='spacingAndGlyphs'>travanj</text>
+<text transform='translate(483.89,466.99) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='58.25px' lengthAdjust='spacingAndGlyphs'>svibanj</text>
+<text transform='translate(563.89,466.99) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='43.69px' lengthAdjust='spacingAndGlyphs'>lipanj</text>
+<text transform='translate(643.90,466.99) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='50.97px' lengthAdjust='spacingAndGlyphs'>srpanj</text>
+<text transform='translate(723.90,466.99) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='63.45px' lengthAdjust='spacingAndGlyphs'>kolovoz</text>
+<text transform='translate(803.91,466.99) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='41.61px' lengthAdjust='spacingAndGlyphs'>rujan</text>
+<text transform='translate(883.91,466.99) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='64.50px' lengthAdjust='spacingAndGlyphs'>listopad</text>
+<text transform='translate(963.92,466.99) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='60.34px' lengthAdjust='spacingAndGlyphs'>studeni</text>
+<text transform='translate(1043.92,466.99) rotate(-45)' text-anchor='end' style='font-size: 18.72px;fill: #6B6F76; font-family: "Arial";' textLength='70.73px' lengthAdjust='spacingAndGlyphs'>prosinac</text>
+<text x='594.41' y='541.58' text-anchor='middle' style='font-size: 22.08px;fill: #1B1D21; font-family: "Arial";' textLength='69.95px' lengthAdjust='spacingAndGlyphs'>Mjesec</text>
+<text transform='translate(27.76,283.56) rotate(-90)' text-anchor='middle' style='font-size: 22.08px;fill: #1B1D21; font-family: "Arial";' textLength='212.39px' lengthAdjust='spacingAndGlyphs'>Prosječan broj objava</text>
+<text x='11.96' y='105.36' style='font-size: 24.00px;fill: #6B6F76; font-family: "Arial";' textLength='1001.89px' lengthAdjust='spacingAndGlyphs'>Prosječan broj objava po kalendarskom mjesecu; uključene godine 2021., 2022., 2023. i 2025.</text>
+<text x='11.96' y='37.73' style='font-size: 36.00px; font-weight: bold;fill: #14181D; font-family: "Arial";' textLength='468.03px' lengthAdjust='spacingAndGlyphs'>Godišnji ritam objavljivanja</text>
+<text x='11.96' y='76.61' style='font-size: 36.00px; font-weight: bold;fill: #14181D; font-family: "Arial";' textLength='869.97px' lengthAdjust='spacingAndGlyphs'>u godinama s potpunom mjesečnom pokrivenošću</text>
+<text x='11.96' y='570.55' style='font-size: 17.28px;fill: #9A9EA6; font-family: "Arial";' textLength='234.22px' lengthAdjust='spacingAndGlyphs'>Izvor: Analiza projekta DigiKat.</text>
+<text x='11.96' y='589.21' style='font-size: 17.28px;fill: #9A9EA6; font-family: "Arial";' textLength='1009.08px' lengthAdjust='spacingAndGlyphs'>Napomena: uključene su samo godine sa svih 12 mjeseci u agregatima (2021., 2022., 2023. i 2025.); prikazan je isključivo volumen.</text>
 </g>
 </g>
 </svg>

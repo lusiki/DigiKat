@@ -367,8 +367,8 @@ Zato se iz grafikona ne može izdvojiti konflikt kao uzročni pokretač angažma
 
 ```{r}
 #| label: plot-engagement-by-topic
-#| fig-width: 10
-#| fig-height: 6.5
+#| fig-width: 15.2
+#| fig-height: 9.9
 #| fig-alt: "Vodoravni stupci prosječnog broja zabilježenih interakcija po dominantnim temama, s izravno ispisanim vrijednostima."
 #| fig-cap: "Prosječne zabilježene interakcije po dokumentu prema dominantnoj tematskoj oznaci. Usporedba ne kontrolira platformu, izvor ni godinu."
 
@@ -426,7 +426,7 @@ plot_reactions <- ggplot(polarization_by_topic, aes(y = reorder(dominant_topic, 
   scale_x_continuous(labels = function(x) percent(abs(x), decimal.mark = ","), name = "Udio u ukupnim reakcijama") +
   scale_y_discrete(labels = digikat_topic_label) +
   theme_digikat(base_size = 16) +
-  labs(title = "Udio Facebookovih reakcija Love i Angry prema tematskim kategorijama",
+  labs(title = "Udio Facebookovih reakcija Love i Angry\nprema tematskim kategorijama",
        subtitle = "Love je prikazan lijevo, a Angry desno. Vrijednosti su ispisane na stupcima.",
        y = "Dominantna tematska kategorija")
 
@@ -463,8 +463,8 @@ Poredak treba čitati kao kartu leksičke prisutnosti. On omogućuje provjeru ra
 
 ```{r}
 #| label: plot-actors-in-topics
-#| fig-height: 9
-#| fig-width: 10
+#| fig-height: 13.7
+#| fig-width: 15.2
 #| fig-alt: "Fasetirani vodoravni stupci prikazuju najčešće vlastite imenice unutar pet najzastupljenijih tematskih oznaka."
 #| fig-cap: "Najčešće automatski izdvojene vlastite imenice u najzastupljenijim tematskim kategorijama. Izvor je analiza projekta DigiKat."
 
@@ -479,7 +479,7 @@ ggplot(top_actors_in_top_topics, aes(x = n, y = reorder_within(lemma, n, dominan
     labeller = labeller(dominant_topic = as_labeller(digikat_topic_label))
   ) +
   labs(
-    title = "Najčešće vlastite imenice u najzastupljenijim tematskim kategorijama",
+    title = "Najčešće vlastite imenice\nu najzastupljenijim tematskim kategorijama",
     subtitle = "Najčešći automatski izdvojeni osnovni oblici po dominantnoj temi",
     x = "Ukupan broj spominjanja",
     y = "Akter (osnovni oblik)"
@@ -518,8 +518,8 @@ Tri najjače korelacije u novom uzorku povezuju `r pair_labels`. Prostorni raspo
 
 ```{r}
 #| label: plot-topic-network
-#| fig-height: 7
-#| fig-width: 10
+#| fig-height: 10.6
+#| fig-width: 15.2
 #| fig-alt: "Mreža tematskih oznaka. Deblje i manje prozirne veze označavaju višu korelaciju supojavljivanja, a svi čvorovi imaju izravne tekstne oznake."
 #| fig-cap: "Mreža korelacija supojavljivanja tematskih oznaka iznad 0,1. Debljina i prozirnost veze prenose njezinu jačinu."
 

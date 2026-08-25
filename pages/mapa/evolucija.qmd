@@ -237,8 +237,8 @@ Prvi prikaz daje mjesečni broj objava po platformama. Budući da se način prik
 
 ```{r}
 #| label: plot-rast
-#| fig-width: 10
-#| fig-height: 7
+#| fig-width: 15.2
+#| fig-height: 10.6
 #| fig-alt: "Mjesečne linije broja objava u šest platformskih panela. Zasjenjeno je razdoblje promjene prikupljanja od veljače do svibnja 2024."
 #| fig-cap: "Opaženi mjesečni broj objava po glavnim platformama. Zasjenjeno razdoblje označava prazninu u tekstnom zapisu i promjenu prikupljanja 2024. Izvor je analiza projekta DigiKat."
 
@@ -263,7 +263,7 @@ plot_growth <- ggplot(rast_monthly, aes(x = month, y = total_posts, colour = SOU
     title = paste0("Broj objava po platformama, mjesečno (", first_year, ".–", last_year, ".)"),
     subtitle = paste0("Podaci do ", cutoff_lbl, ". Zasjenjeno je razdoblje promjene prikupljanja 2024."),
     x = "Godina", y = "Broj objava",
-    caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru. Napomena: okomite su osi neovisne po platformi."
+    caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru.\nNapomena: okomite su osi neovisne po platformi."
   )
 
 print(plot_growth)
@@ -340,10 +340,10 @@ plot_migration <- ggplot(
   theme_digikat(base_size = 16) +
   theme(legend.position = "none", plot.margin = margin(10, 75, 10, 10)) +
   labs(
-    title = paste0("Raspodjela interakcija među platformama, mjesečno (", first_year, ".–", last_year, ".)"),
+    title = paste0("Raspodjela interakcija među platformama,\nmjesečno (", first_year, ".–", last_year, ".)"),
     subtitle = paste0("Izravne oznake, vrste crta i oblici nadopunjuju boju. Podaci do ", cutoff_lbl),
     x = "Godina", y = "Udio interakcija",
-    caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru. Napomena: reddit, forum i komentari u agregatima nemaju zabilježenu mjeru interakcija (udio 0 %)."
+    caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru.\nNapomena: reddit, forum i komentari u agregatima nemaju zabilježenu mjeru interakcija (udio 0 %)."
   )
 
 print(plot_migration)
@@ -373,8 +373,8 @@ Treći prikaz mjeri koliki udio svih zabilježenih interakcija u pojedinoj godin
 
 ```{r}
 #| label: plot-koncentracija
-#| fig-width: 10
-#| fig-height: 6
+#| fig-width: 15.2
+#| fig-height: 9.1
 #| fig-alt: "Linija godišnjeg udjela deset najvećih izvora u interakcijama. Vrijednosti su izravno označene, a nepotpuna 2026. prikazana je praznim rombom."
 #| fig-cap: "Godišnji udio deset najvećih izvora u zabilježenim interakcijama. Nepotpuna završna godina prikazana je odvojeno. Izvor je analiza projekta DigiKat."
 
@@ -400,7 +400,7 @@ if (last_partial) {
 
 plot_concentration <- p +
   scale_x_continuous(breaks = first_year:last_year,
-                      expand = expansion(mult = c(0.02, 0.06))) +
+                      expand = expansion(mult = c(0.06, 0.10))) +
   scale_y_continuous(labels = percent_format(decimal.mark = ","),
                      limits = c(0, NA), expand = expansion(mult = c(0, 0.15))) +
   theme_digikat(base_size = 24) +
@@ -409,7 +409,7 @@ plot_concentration <- p +
     subtitle = paste0("Cjelovite godine ", first_year, ".–", last_full_year,
                       ".; ", last_year, ". prikazana zasebno kao stvarna, nepotpuna vrijednost"),
     x = "Godina", y = "Udio deset najvećih aktera",
-    caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru. Napomena: mjereno među platformama koje bilježe interakcije."
+    caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru.\nNapomena: mjereno među platformama koje bilježe interakcije."
   )
 
 print(plot_concentration)
@@ -439,8 +439,8 @@ Sljedeći prikaz usrednjuje broj objava po kalendarskom mjesecu preko potpunih g
 
 ```{r}
 #| label: plot-ritam
-#| fig-width: 10
-#| fig-height: 5.5
+#| fig-width: 15.2
+#| fig-height: 8.4
 #| fig-alt: "Stupci prosječnog broja objava po kalendarskim mjesecima u godinama s potpunom mjesečnom pokrivenošću."
 #| fig-cap: "Prosječni opaženi volumen po kalendarskom mjesecu u godinama s potpunom mjesečnom pokrivenošću. Izvor je analiza projekta DigiKat."
 
@@ -455,10 +455,10 @@ plot_rhythm <- ggplot(ritam, aes(x = mj_lab, y = avg_posts)) +
   theme_digikat(base_size = 24) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   labs(
-    title = "Godišnji ritam objavljivanja u godinama s potpunom mjesečnom pokrivenošću",
+    title = "Godišnji ritam objavljivanja\nu godinama s potpunom mjesečnom pokrivenošću",
     subtitle = paste0("Prosječan broj objava po kalendarskom mjesecu; uključene godine ", rhythm_years_lbl),
     x = "Mjesec", y = "Prosječan broj objava",
-    caption = paste0("Izvor: Analiza projekta DigiKat. Napomena: uključene su samo godine sa svih 12 mjeseci u agregatima (", rhythm_years_lbl, "); prikazan je isključivo volumen.")
+    caption = paste0("Izvor: Analiza projekta DigiKat.\nNapomena: uključene su samo godine sa svih 12 mjeseci u agregatima (", rhythm_years_lbl, "); prikazan je isključivo volumen.")
   )
 
 print(plot_rhythm)

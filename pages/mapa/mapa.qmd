@@ -206,8 +206,8 @@ Grafikon koji slijedi prikazuje web-portale kao najveće proizvođače sadržaja
 
 ```{r}
 #| label: plot-volume
-#| fig-width: 10
-#| fig-height: 7.5
+#| fig-width: 15.2
+#| fig-height: 11.4
 #| fig-alt: "Stupčasti prikaz broja objava po platformama i godinama. Web-portali imaju najveći broj objava u svakoj godini."
 #| fig-cap: "Broj objava po platformama i godinama. Izvor je analiza projekta DigiKat. Promjena prikupljanja 2024. ograničava usporedbu razina kroz vrijeme."
 
@@ -217,6 +217,7 @@ plot_volume <- platform_summary %>%
   ggplot(aes(x = total_posts, y = SOURCE_TYPE_ordered, fill = SOURCE_TYPE)) +
   geom_col() +
   geom_text(aes(label = comma(total_posts, accuracy = 1, big.mark = ".")), hjust = -0.1, size = 5.5, color = dk_col$ink) +
+  expand_limits(x = max(platform_summary$total_posts, na.rm = TRUE) * 1.22) +
   facet_wrap(~year, scales = "free_y") +
   scale_x_continuous(labels = label_number(suffix = " K", scale = 1e-3)) +
   scale_fill_manual(values = platform_colors) +
@@ -232,7 +233,7 @@ plot_volume <- platform_summary %>%
     subtitle = "",
     x = "Ukupan broj objava (u tisućama)",
     y = "Tip platforme",
-    caption = "Napomena: Platforme su u svakoj godini prikazane istim redoslijedom. Novije platforme (Instagram, TikTok) navedene su na kraju popisa."
+    caption = "Napomena: Platforme su u svakoj godini prikazane istim redoslijedom.\nNovije platforme (Instagram, TikTok) navedene su na kraju popisa."
   )
 
 print(plot_volume)
@@ -260,8 +261,8 @@ U cjelokupnom razdoblju web bilježi najviše interakcija (`r fmt_pct1(web_inter
 
 ```{r}
 #| label: plot-interaction
-#| fig-width: 10
-#| fig-height: 7.5
+#| fig-width: 15.2
+#| fig-height: 11.4
 #| fig-alt: "Stupčasti prikaz ukupnih zabilježenih interakcija po platformama i godinama. Poredak se razlikuje od poretka prema broju objava."
 #| fig-cap: "Zabilježene interakcije po platformama i godinama. Izvor je analiza projekta DigiKat. Mjere su platformski specifične, a promjena prikupljanja 2024. ograničava usporedbu razina kroz vrijeme."
 
@@ -272,6 +273,7 @@ plot_interactions <- platform_summary %>%
   ggplot(aes(x = total_interactions, y = SOURCE_TYPE_ordered, fill = SOURCE_TYPE)) +
   geom_col() +
   geom_text(aes(label = comma(total_interactions, accuracy = 1, big.mark = ".")), hjust = -0.1, size = 5.5, color = dk_col$ink) +
+  expand_limits(x = max(platform_summary$total_interactions, na.rm = TRUE) * 1.45) +
   facet_wrap(~year, scales = "free_y") +
   scale_x_continuous(labels = label_number(suffix = " M", scale = 1e-6)) +
   scale_fill_manual(values = platform_colors) +
@@ -286,7 +288,7 @@ plot_interactions <- platform_summary %>%
     title = paste0("Ukupan broj interakcija po platformama (", raspon, ")"),
     x = "Interakcije (u milijunima)",
     y = "Tip platforme",
-    caption = "Napomena: Platforme su prikazane istim redoslijedom kao u prethodnom grafikonu, a novije platforme (Instagram, TikTok) nalaze se na kraju popisa. Prikazane su samo platforme s više od 0 interakcija."
+    caption = "Napomena: Platforme su prikazane istim redoslijedom kao u prethodnom grafikonu,\na novije platforme (Instagram, TikTok) nalaze se na kraju popisa.\nPrikazane su samo platforme s više od 0 interakcija."
   )
 
 print(plot_interactions)
@@ -406,8 +408,8 @@ Veličina točke predstavlja produktivnost aktera mjerenu brojem objava. Grafiko
 
 ```{r}
 #| label: plot-lollipops-interactions
-#| fig-width: 10
-#| fig-height: 9
+#| fig-width: 15.2
+#| fig-height: 13.7
 #| fig-alt: "Tri platformska poretka dvadeset izvora s najviše interakcija. Veličina točke prikazuje broj objava, a svaki izvor označen je nazivom."
 #| fig-cap: "Dvadeset izvora s najviše zabilježenih interakcija unutar weba, YouTubea i Facebooka. Izvor je analiza projekta DigiKat."
 
@@ -417,15 +419,20 @@ create_top_source_plot <- function(data, platform_name, platform_color) {
     geom_segment(aes(x = FROM, xend = FROM, y = 0, yend = total_interactions), color = dk_col$faint, linewidth = 0.5) +
     geom_point(aes(size = total_posts), color = platform_color, alpha = 0.8) +
     coord_flip() +
-    scale_y_continuous(labels = label_number(suffix = " K", scale = 1e-3)) +
-    scale_size_continuous(range = c(3, 12), name = "Broj objava") +
+    scale_y_continuous(labels = label_number(suffix = " K", scale = 1e-3),
+                       n.breaks = 3) +
+    # Tri panela imaju tri različite ljestvice veličine, pa se tri legende ne mogu
+    # spojiti ni smjestiti jedna uz drugu. Značenje veličine točke nosi podnaslov.
+    scale_size_continuous(range = c(3, 12), guide = "none") +
   theme_digikat(base_size = 24) +
     theme(
       panel.grid.major.y = element_blank(), panel.border = element_blank(),
-      axis.ticks.y = element_blank(), legend.position = "bottom",
-      axis.text.x = element_text(angle = 45, hjust = 1)
+      axis.ticks.y = element_blank(), legend.position = "none",
+      # Tri panela u jednom redu ostavljaju usku os, pa oznake moraju biti zakošene
+      # i nešto manje od ostatka grafikona da se ne bi preklapale.
+      axis.text.x = element_text(angle = 45, hjust = 1, size = 15)
     ) +
-    labs(title = platform_name, x = "", y = "Ukupne interakcije (u tisućama)")
+    labs(title = platform_name, x = "", y = "Interakcije\nu tisućama")
 }
 
 plot_web <- create_top_source_plot(top_web_sources, "Web portali", dk_platform_colors[["web"]])
@@ -477,8 +484,8 @@ Osi grafikona prikazane su na logaritamskoj skali kako bi se bolje prikazao šir
 
 ```{r}
 #| label: plot-actor-map
-#| fig-width: 10
-#| fig-height: 8.5
+#| fig-width: 15.2
+#| fig-height: 12.9
 #| fig-alt: "Tri raspršena prikaza najvećih izvora prema interakcijama i procijenjenom dosegu na logaritamskim osima. Točke su izravno označene nazivima izvora."
 #| fig-cap: "Odnos zabilježenih interakcija i procijenjenog dosega među najvećim izvorima unutar tri platforme. Isprekidane crte označavaju medijane prikazanih izvora."
 
@@ -495,9 +502,11 @@ create_actor_map_plot <- function(data, platform_name, platform_color) {
     geom_text_repel(aes(label = FROM), size = 5.5, max.overlaps = 15) +
     scale_x_log10(labels = label_number(big.mark = ".", suffix = " K", scale = 1e-3)) +
     scale_y_log10(labels = label_number(big.mark = ".", suffix = " M", scale = 1e-6)) +
-    scale_size_continuous(range = c(3, 14), name = "Broj objava") +
+    # Kao i na prethodnom grafikonu, tri panela nose tri ljestvice veličine.
+    # Značenje veličine točke nosi podnaslov, pa se legende izostavljaju.
+    scale_size_continuous(range = c(3, 14), guide = "none") +
   theme_digikat(base_size = 24) +
-    theme(legend.position = "bottom") +
+    theme(legend.position = "none") +
     labs(
       title = platform_name, x = "Ukupne interakcije (Log)", y = "Ukupan doseg (Log)"
     )

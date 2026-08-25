@@ -177,8 +177,8 @@ Sljedeća vizualizacija prikazuje opažene kombinacije tematskih i dominantnih e
 
 ```{r}
 #| label: plot-emotion-heatmap
-#| fig-width: 10
-#| fig-height: 6.5
+#| fig-width: 15.2
+#| fig-height: 9.9
 #| fig-alt: "Matrica tematskih i emocionalnih oznaka. Svaka ćelija ispisuje prosječni leksički tonalitet, uz divergirajuću paletu kao dodatni znak."
 #| fig-cap: "Prosječni leksički tonalitet prema kombinaciji dominantne tematske i emocionalne oznake. Prikazane su kombinacije s više od tri dokumenta."
 
@@ -190,7 +190,7 @@ ggplot(heatmap_data, aes(x = dominant_emotion, y = dominant_topic, fill = avg_se
   theme_digikat(base_size = 24) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
   labs(
-    title = "Matrica tonaliteta prema tematskim i emocionalnim kategorijama",
+    title = "Matrica tonaliteta\nprema tematskim i emocionalnim kategorijama",
     subtitle = "Boja ćelije predstavlja prosječni leksički tonalitet unutar kombinacije oznaka",
     x = "Dominantna emocionalna kategorija",
     y = "Dominantna tematska kategorija"
@@ -225,8 +225,8 @@ Sljedeći grafikon opisuje `r nrow(media_strategy_data)` izvora s najviše tekst
 
 ```{r}
 #| label: plot-rci-strategy
-#| fig-width: 10
-#| fig-height: 7
+#| fig-width: 15.2
+#| fig-height: 10.6
 #| fig-alt: "Raspršeni prikaz izvora prema prosječnoj gustoći konfliktnog rječnika i standardnoj devijaciji RIK-a. Točke imaju izravne nazive, a veličina prikazuje broj dokumenata."
 #| fig-cap: "Profili izvora prema gustoći konfliktnog rječnika i varijabilnosti Relativnog indeksa konflikta. Položaj je opisni i ne određuje motiv izvora."
 #| warning: false
@@ -273,8 +273,8 @@ Boja veze označava prosječni ne-normalizirani CroSentilex-Gold zbroj u tekstov
 
 ```{r}
 #| label: plot-network
-#| fig-width: 10
-#| fig-height: 7.5
+#| fig-width: 15.2
+#| fig-height: 11.4
 #| fig-alt: "Mreža tematskih supojavljivanja. Debljina veze prikazuje prosječni RIK, prozirnost broj tekstova, a puna ili isprekidana crta smjer tonaliteta."
 #| fig-cap: "Mreža tematskih supojavljivanja, prosječnog RIK-a i leksičkog tonaliteta. Vrsta crte i boja zajedno označavaju smjer tonaliteta."
 #| warning: false
@@ -317,6 +317,8 @@ graph_from_data_frame(graph_plot_data, directed = FALSE) %>%
       values = c("Negativniji" = "22", "Pozitivniji" = "solid"),
       name = "Smjer tonaliteta"
     ) +
+    # Nazivi čvorova na rubu mreže inače se režu na granici panela.
+    scale_x_continuous(expand = expansion(mult = 0.12)) +
     theme_digikat_void(base_size = 24) +
     labs(
       title = "Mreža tematskih supojavljivanja, tonaliteta i RIK-a",

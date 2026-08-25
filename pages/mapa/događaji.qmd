@@ -202,7 +202,7 @@ p_cli_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_cli)) +
   geom_hline(yintercept = spike_threshold_z, linetype = "dashed", color = dk_col$alert) +
   theme_digikat(base_size = 24) +
   labs(
-    title = "Anomalije u gustoći konfliktnog rječnika (standardizirano odstupanje)",
+    title = "Anomalije u gustoći konfliktnog rječnika\n(standardizirano odstupanje)",
     y = "Odstupanje od godišnjeg prosjeka (u standardnim devijacijama)",
     x = "Datum"
   )
@@ -215,8 +215,8 @@ p_cli_z <- ggplot(spikes_detected_z, aes(x = date, y = z_score_cli)) +
 
 ```{r}
 #| label: plot-volume-anomalies
-#| fig-width: 10
-#| fig-height: 5.5
+#| fig-width: 15.2
+#| fig-height: 8.4
 #| fig-alt: "Dnevna z-vrijednost volumena objava. Trokuti označavaju dane iznad praga od tri standardne devijacije, koji je prikazan isprekidanom crtom."
 #| fig-cap: "Dnevna standardizirana odstupanja volumena objava. Trokuti označavaju dane iznad praga od tri standardne devijacije."
 p_volume_z
@@ -242,8 +242,8 @@ digikat_chart_evidence(
 
 ```{r}
 #| label: plot-conflict-anomalies
-#| fig-width: 10
-#| fig-height: 5.5
+#| fig-width: 15.2
+#| fig-height: 8.4
 #| fig-alt: "Dnevna z-vrijednost gustoće konfliktnog rječnika. Trokuti označavaju dane iznad praga od tri standardne devijacije."
 #| fig-cap: "Dnevna standardizirana odstupanja gustoće konfliktnog rječnika. Trokuti označavaju dane iznad praga od tri standardne devijacije."
 p_cli_z
@@ -347,8 +347,8 @@ Postupak broji imenice i pridjeve u dokumentima koji spominju *Stepinca* i mjeri
 
 ```{r}
 #| label: narrative-biography-robust
-#| fig-height: 8
-#| fig-width: 10
+#| fig-height: 12.2
+#| fig-width: 15.2
 #| fig-alt: "Fasetirani stupci prikazuju najčešće leksičke jedinice u dostupnim godišnjim presjecima tekstova koji spominju Stepinca. Na svakom stupcu ispisan je prosječni tonalitet."
 #| fig-cap: "Najčešće leksičke jedinice u dostupnim godišnjim presjecima dokumenata koji spominju Alojzija Stepinca. Ispisana vrijednost i boja prikazuju prosječni tonalitet tekstova."
 

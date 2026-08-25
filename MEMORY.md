@@ -573,3 +573,50 @@
 - [LEARN] `25_paper_checks.R` CRASHES on `PAPER_RSP_v1.md` (pre-existing): v1 has no
   `## Sažetak (hrvatski)`, so `h0` is empty and `(h0 + 1):(h1 - 1)` errors. v1 also still references
   the obsolete `rsp_fig4_vocabulary.png`. Only v2 is published and sealed; v1 needs a decision.
+
+## Figure legibility on the mapa pages (2026-08-25)
+
+- [LEARN] Figure text size on the site is **not** what `base_size` says. The figures are `svglite` SVGs
+  in an `<img>`, scaled by the browser to the ~760 px content column, so
+  `on_screen_px = font_pt × (760 / (fig_width_in × 72))`. Fourteen chunks used
+  `theme_digikat(base_size = 24)` on a 10-inch canvas and rendered axis text at **19,5 px** and titles at
+  **37,5 px**, against 16 px body text; nine other chunks used `base_size = 16` and landed at 13 px. The
+  rule that keeps them consistent is **canvas inches ≈ base_size × 0,645**, so a `base_size = 24` chart
+  needs `fig-width: 15.2`. Never change `base_size` alone to fix apparent size — `strip.text` and
+  `geom_text(size =)` are hand-tuned against it in the same chunk and would no longer match. Scale the
+  canvas instead; it preserves every internal proportion.
+- [LEARN] ggplot never shrinks a title, caption or value label to fit, so oversized text simply
+  overflows and the device truncates it. Before this pass **18 of 23** mapa figures carried text wider
+  than their own canvas: `plot-volume`'s title measured 710 units and its caption 1 049 units in a
+  720-unit canvas, and the bar labels read `52.4` for 52.405. Croatian captions over ~110 characters and
+  titles over ~60 do not fit at any sane canvas size and must be wrapped with an explicit `\n`.
+- [LEARN] A bar label placed outside its bar (`hjust = -0.1`) needs the value axis expanded or the
+  longest bar's label is cut by the PANEL. `expand_limits(x = max(...) * 1.12)` was not enough for a
+  6-character label and 1,22 was; a 9-character label ("8.097.961") needed 1,45. Most charts on the
+  pages already had this — `plot-volume` and `plot-interaction` were the two that did not.
+- [LEARN] Panel-level clipping is invisible to any check that reads SVG text CONTENT — the full string
+  is in the file and a `clipPath` hides part of it. Detect it geometrically by comparing each `<text>`
+  span against the enclosing `<g clip-path>` rect, and **honour `text-anchor`**: svglite writes
+  `middle` / `end`, so treating `x` as the left edge falsely flags every centred label (54 hits, of
+  which 44 were false). Skip anything carrying a `transform`, since `textLength` then runs along the
+  rotated baseline.
+- [LEARN] Three patchwork panels each carrying their own continuous size legend cannot fit side by side
+  — on `plot-lollipops-interactions` the three "Broj objava" legends overlapped each other and ran off
+  the canvas. The scales differ per platform so `guides = "collect"` cannot merge them. Resolved by
+  `scale_size_continuous(guide = "none")`, since the subtitle already states what point size means.
+  Same fix on `plot-actor-map`. **This is an editorial call the PI can reverse.**
+- [LEARN] Three panels in one row leave roughly **200 SVG units** of plotting area each once the source
+  names are drawn, which is narrower than the axis title. `Ukupne interakcije (u tisućama)` had to
+  become `Interakcije\nu tisućama`, and the tick labels need `n.breaks = 3` **and** a 45° angle **and**
+  a smaller `axis.text.x`. `scales::pretty_breaks(n = 3)` is a target, not a cap — it returned four
+  labels, which still collided; `n.breaks = 3` behaves.
+- [LEARN] **None of the theme's three typefaces is installed on the PI's machine.**
+  `systemfonts::match_font()` resolves Source Serif 4, Source Sans 3 and IBM Plex Mono all to
+  `arial.ttf`, so every chart is drawn in Arial and the serif-title / mono-numeral / sans-body system is
+  lost. `theme_digikat.R` skips `showtext` for SVG deliberately so the browser can use web fonts, but an
+  SVG referenced through `<img>` is an isolated document and cannot inherit page CSS — svglite therefore
+  measures AND writes `font-family: "Arial"`. Arial is wider than Source Sans 3, so it also worsens
+  overflow. **Not fixed** (it would need the fonts vendored under an SIL OFL licence plus
+  `svglite(web_fonts = ...)`, and it shifts every metric measured above). PI decision.
+- [LEARN] Axis tick labels group thousands with a space (`1 000 K`), not the period the voice guide's §7
+  requires (`1.000`). Pre-existing and site-wide in figures; not touched in this pass.
