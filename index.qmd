@@ -1,6 +1,6 @@
 ---
 pagetitle: "Otvoreni opservatorij katoličkih tema u medijima"
-description: "DigiKat je otvoreni znanstveni opservatorij. Na korpusu medijskih objava pratimo tko objavljuje o katoličkim temama, o čemu govori i što privlači pozornost."
+description: "DigiKat je znanstveni projekt koji sustavno prati katoličke teme u hrvatskom medijskom prostoru. Mjerimo tko objavljuje, o čemu se govori i što privlači pozornost publike."
 date-modified: 2026-08-24
 data-cutoff: 2026-06-11
 status: "Ažurira se"
@@ -49,8 +49,8 @@ presjek <- hr_date(mf$corpus$date_max)
 <section class="home-hero">
   <div class="home-section__inner">
     <p class="home-eyebrow home-credits">DigiKat · <a href="https://www.unicath.hr/">Hrvatsko katoličko sveučilište</a> · <a href="https://www.lukasikic.info/" rel="author">Luka Šikić</a></p>
-    <h1>Crkva u medijima</h1>
-    <p class="home-intro">DigiKat je otvoreni znanstveni opservatorij. Na korpusu od `r n_objava` objava kontinuirano pratimo tko objavljuje, o čemu govori i što privlači pozornost.</p>
+    <h1>Kako hrvatski mediji govore o Crkvi?</h1>
+    <p class="home-intro">DigiKat je znanstveni projekt koji sustavno prati katoličke teme u hrvatskom medijskom prostoru. Od 2021. prikupljamo objave s portala, društvenih mreža i foruma, a tijekom 2026. praćenje se proširuje na tisak, televiziju i radio. Korpus danas broji `r n_objava` objava. Na njemu mjerimo tko objavljuje, o čemu se govori i što privlači pozornost publike. Podaci, metode i rezultati su otvoreni.</p>
     <div class="home-hero__actions">
       <a class="dk-btn" href="pages/mapa/index.html">Istražite mapu</a>
       <nav class="home-quiet-links" aria-label="Dodatni putovi s naslovnice">
