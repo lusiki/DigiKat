@@ -1,6 +1,6 @@
 ---
-title: "Mapa ekosustava — katolički digitalni prostor u RH (2021.–2026.)"
-subtitle: "Mapiranje digitalne medijske arene"
+title: "Mapa ekosustava katoličkog digitalnog prostora u RH (2021.–2026.)"
+subtitle: "Tko objavljuje i gdje sadržaj odjekuje"
 description: "Mapa ekosustava uspoređuje volumen objava, zabilježene interakcije i procijenjeni doseg po platformama i izvorima u službenom korpusu DigiKat."
 date-modified: 2026-08-25
 data-cutoff: 2026-06-11
@@ -38,7 +38,7 @@ library(ggrepel)
 
 # Brojke o korpusu čitaju se iz manifesta službene baze (data/digikat_corpus.rds), a grafikoni
 # niže iz agregata u data/processed/. Ako agregati nisu izgrađeni iz tog korpusa, poziv PREKIDA
-# render — stranica koja tvrdi jedno, a crta drugo ne smije nastati slučajno.
+# render. Stranica koja tvrdi jedno, a crta drugo ne smije nastati slučajno.
 source("../../R/lib/digikat_paths.R", encoding = "UTF-8")
 source("../../R/lib/digikat_hr.R", encoding = "UTF-8")
 mf <- digikat_page_corpus("../..")
@@ -49,7 +49,7 @@ n_platformi <- mf$corpus$platforms
 arhetipovi <- c("Divovi", "Graditelji zajednica", "Megafoni", "Specijalizirani akteri")
 ```
 
-## Pregled medijskog ekosustava
+## Tko objavljuje i gdje se bilježi odjek
 
 <div class="freshness-strip" aria-label="Svježina Mape ekosustava">
   <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">24. kolovoza 2026.</span></span>
@@ -58,30 +58,20 @@ arhetipovi <- c("Divovi", "Graditelji zajednica", "Megafoni", "Specijalizirani a
 </div>
 
 ::: {.summary-60}
-<span class="summary-60__label">Sažetak u 60 sekundi</span>
+<span class="summary-60__label">Sažetak</span>
 
-Mapa pokazuje tko objavljuje o katoličkim temama i gdje se bilježi najveći odjek.
+Mapa pokazuje tko objavljuje o katoličkim temama i gdje te objave imaju najveći zabilježeni odjek. Portali nose najveći dio objava. Udio platforme u objavama često se razlikuje od njezina udjela u interakcijama i procijenjenom dosegu. Izvore zato treba uspoređivati unutar iste platforme i prema istoj mjeri.
 
-- Web-portali nose najveći dio opaženog volumena.
-- Udio platforme u objavama nije jednak njezinu udjelu u interakcijama ili procijenjenom dosegu.
-- Izvori se zato uspoređuju unutar iste platforme i iste mjere.
-
-Može se zaključiti kako je prikupljeni prostor strukturiran. Ne može se zaključiti koja platforma uzrokuje veći utjecaj ili promjenu publike. Pojedinačni izvor može se provjeriti u alatu [Moj medij](../moj-medij.html).
+Podaci opisuju strukturu prikupljenog prostora. Ne mogu pokazati koja platforma stvara veći utjecaj ili mijenja publiku. Pojedinačni izvor može se provjeriti u alatu [Moj medij](../moj-medij.html).
 :::
 
-Tko u hrvatskom digitalnom prostoru objavljuje o katoličkim temama i čije objave doista odjeknu? Ova prva analitička mapa odgovara na to pitanje opisom strukture prikupljenoga prostora prema platformama, izvorima, zabilježenim interakcijama i procjeni dosega. Odgovara na istraživačka pitanja Q3 (tko se najviše čuje) i Q5 (kako se sadržaj kreće između platformi).
+Tko u hrvatskom digitalnom prostoru objavljuje o katoličkim temama i gdje te objave najviše odjekuju? Mapa ekosustava odgovara opisom platformi, izvora, zabilježenih interakcija i procijenjenog dosega. Obuhvaća istraživačko pitanje Q3 o tome tko se najviše čuje i Q5 o kretanju sadržaja među platformama.
 
-Mjereno je na cijelom korpusu od `r digikat_hr_count(mf$corpus$rows, "objava")` iz razdoblja `r raspon`, bez uzorkovanja. Kako je korpus nastao i što se na njemu smije usporediti, opisano je u [Metodologiji](../metodologija.html).
+Analiza obuhvaća cijeli korpus od `r digikat_hr_count(mf$corpus$rows, "objava")` iz razdoblja `r raspon`. [Metodologija](../metodologija.html) opisuje kako je korpus nastao i koje su usporedbe opravdane.
 
-Analiza je strukturirana u tri dijela. Prvi uspoređuje platforme prema broju objava, zabilježenim interakcijama i procjeni dosega. Drugi rangira izvore prema objavama i interakcijama. Treći prikazuje odnos dosega i interakcija među najvećim izvorima unutar svake platforme.
+Analiza ima tri dijela. Prvi uspoređuje platforme prema objavama, interakcijama i dosegu. Drugi uspoređuje izvore prema objavama i interakcijama. Treći pokazuje odnos dosega i interakcija među najvećim izvorima na svakoj platformi.
 
-Tri su glavna pitanja u pozadini ove mape.
-
-* Na kojim je platformama sadržaj prikupljen i u kojem volumenu? Ovdje su analizirani web-portali, YouTube, Facebook i drugi digitalni prostori.
-
-* Koji izvori imaju najviše objava i zabilježenih interakcija?
-
-* Kako se među najvećim izvorima odnose procjena dosega pružatelja podataka i zabilježene interakcije?
+Mapu vode tri pitanja. Na kojim je platformama prikupljeno najviše sadržaja? Koji izvori imaju najviše objava i interakcija? Kako su među najvećim izvorima povezani procijenjeni doseg i zabilježene interakcije?
 
 <div class="metric-grid">
 <div class="metric-card">
@@ -94,7 +84,7 @@ Tri su glavna pitanja u pozadini ove mape.
 </div>
 <div class="metric-card">
 <div class="metric-value">`r length(arhetipovi)`</div>
-<div class="metric-label">Opisna kvadranta</div>
+<div class="metric-label">Opisne skupine</div>
 </div>
 <div class="metric-card">
 <div class="metric-value">`r raspon`</div>
@@ -103,9 +93,9 @@ Tri su glavna pitanja u pozadini ove mape.
 </div>
 
 ::: {.callout-note}
-## Prije nastavka, potrebno je definirati metrike koje se koriste u mapi.
+## Kako se mjere volumen, angažman i doseg
 
-Pod **volumenom** podrazumijevamo ukupan broj objava, što opisuje produktivnost izvora. **Angažman** označava ukupne interakcije koje bilježi servis za praćenje. **Doseg** je procjena pružatelja podataka o potencijalnoj vidljivosti, a ne broj potvrđeno dosegnutih jedinstvenih osoba. Način mjerenja angažmana i dosega razlikuje se među platformama, pa su njihove međusobne usporedbe indikativne.
+**Volumen** je ukupan broj objava i opisuje koliko izvor objavljuje. **Angažman** je ukupan broj zabilježenih interakcija. **Doseg** je procjena moguće vidljivosti. Nije broj potvrđeno dosegnutih osoba. Angažman i doseg ne mjere se jednako na svim platformama. Zato usporedbe među platformama treba čitati oprezno.
 
 :::
 
@@ -177,33 +167,33 @@ top_web_names <- fmt_list(top_names(top_web_sources))
 top_youtube_names <- fmt_list(top_names(top_youtube_sources))
 top_facebook_names <- fmt_list(top_names(top_facebook_sources))
 
-# Paleta boja platformi — usklađena s dizajnom (definirana u R/theme_digikat.R)
+# Paleta boja platformi usklađena je s dizajnom i definirana u R/theme_digikat.R.
 platform_colors <- dk_platform_colors
 
 # Fiksni redoslijed platformi, isti u svim godinama/panelima (obrnut redoslijed
 # dk_platform_colors, tako da najstarije/dominantne platforme završe na vrhu
-# grafikona); nove platforme (Instagram, TikTok) dodaju se na kraj popisa, a ne
+# grafikona). Nove platforme (Instagram, TikTok) dodaju se na kraj popisa, a ne
 # mijenjaju poredak postojećih.
 platform_levels <- rev(names(dk_platform_colors))
 ```
 
-## Topografija digitalnog prostora
+## Platforme u digitalnom prostoru
 
-Pregled počinje platformama na kojima su objave prikupljene. Ovaj dio razdvaja tri pokazatelja, a to su broj objava, zabilježene interakcije i procijenjeni doseg.
+Pregled počinje platformama na kojima su objave prikupljene. Zasebno prikazuje broj objava, zabilježene interakcije i procijenjeni doseg.
 
-### Distribucija sadržaja po platformama
+### Objave po platformama
 
-Grafikon koji slijedi prikazuje web-portale kao najveće proizvođače sadržaja. Web čini `r fmt_pct1(web_post_share)` svih objava, a njegov godišnji udio ni u jednoj promatranoj godini ne pada ispod `r fmt_pct1(web_min_post_share)`. YouTube čini `r fmt_pct1(youtube_post_share)` korpusa, dok je 2026. nepotpuna. Te razlike opisuju sastav prikupljenoga korpusa i ne dokazuju same po sebi rast platforme ni promjenu komunikacijske strategije.
+Portali su najveći proizvođači sadržaja. Web čini `r fmt_pct1(web_post_share)` svih objava. Njegov godišnji udio ni u jednoj promatranoj godini ne pada ispod `r fmt_pct1(web_min_post_share)`. YouTube čini `r fmt_pct1(youtube_post_share)` korpusa. Godina 2026. nije potpuna. Ove razlike opisuju sastav korpusa. Same ne dokazuju rast platforme ni promjenu komunikacijske strategije.
 
 <p class="figure-question"><strong>Pitanje.</strong> Na kojim je platformama prikupljeno najviše objava u svakoj godini?</p>
-<p class="figure-card__takeaway"><strong>Nalaz.</strong> Web-portali ostaju najveći izvor opaženog volumena u svim prikazanim godinama.</p>
+<p class="figure-card__takeaway"><strong>Nalaz.</strong> Web portali ostaju najveći izvor opaženog volumena u svim prikazanim godinama.</p>
 
 ```{r}
 #| label: plot-volume
 #| fig-width: 10
 #| fig-height: 7.5
 #| column: page
-#| fig-alt: "Stupčasti prikaz broja objava po platformama i godinama. Web-portali imaju najveći broj objava u svakoj godini."
+#| fig-alt: "Stupčasti prikaz broja objava po platformama i godinama. Web portali imaju najveći broj objava u svakoj godini."
 #| fig-cap: "Broj objava po platformama i godinama. Izvor je analiza projekta DigiKat. Promjena prikupljanja 2024. ograničava usporedbu razina kroz vrijeme."
 
 plot_volume <- platform_summary %>%
@@ -247,19 +237,19 @@ digikat_render_map_plot(
 #| output: asis
 digikat_chart_evidence(
   "mapa-platform-volume",
-  "Web-portali imaju najveći broj objava u svakoj prikazanoj godini. Godišnje razine preko promjene prikupljanja 2024. nisu izravno usporedive.",
+  "Web portali imaju najveći broj objava u svakoj prikazanoj godini. Godišnje razine preko promjene prikupljanja 2024. nisu izravno usporedive.",
   "mapa_files/figure-html/plot-volume-1.svg",
   "Broj objava po platformama i godinama"
 )
 ```
 
-Brojčana prevlast web-sadržaja pokazuje da se katolička tematika u ovom korpusu najčešće pojavljuje u portalskom izvještavanju. Iz samoga volumena, međutim, nije moguće zaključiti da web postavlja agendu drugim platformama, stvara širu raspravu ili nudi manju dubinu. Ova mapa mjeri proizvodnju i zabilježeni odjek, a ne prijenos tema među platformama.
+Velik udio portalskog sadržaja pokazuje da se katoličke teme u ovom korpusu najčešće pojavljuju u portalskom izvještavanju. Sam broj objava ne pokazuje tko određuje teme rasprave niti gdje je rasprava dublja. Ova mapa mjeri proizvodnju i zabilježeni odjek. Ne mjeri prijenos tema među platformama.
 
-### Distribucija zabilježenih interakcija po platformama
+### Interakcije po platformama
 
-U cjelokupnom razdoblju web bilježi najviše interakcija (`r fmt_pct1(web_interaction_share)`), ali njegov je udio manji od udjela u objavama (`r fmt_pct1(web_post_share)`). Facebook bilježi `r fmt_pct1(facebook_interaction_share)` interakcija uz `r fmt_pct1(facebook_post_share)` objava, a YouTube `r fmt_pct1(youtube_interaction_share)` interakcija uz `r fmt_pct1(youtube_post_share)` objava. To je deskriptivna asimetrija između volumena i zabilježenog angažmana. Zbog različitih platformskih metrika ne predstavlja izravnu usporedbu komunikacijske učinkovitosti.
+Web bilježi najviše interakcija u cijelom razdoblju i nosi `r fmt_pct1(web_interaction_share)` ukupnog broja. Taj je udio manji od njegova udjela u objavama koji iznosi `r fmt_pct1(web_post_share)`. Facebook bilježi `r fmt_pct1(facebook_interaction_share)` interakcija uz `r fmt_pct1(facebook_post_share)` objava. YouTube bilježi `r fmt_pct1(youtube_interaction_share)` interakcija uz `r fmt_pct1(youtube_post_share)` objava. Volumen i angažman zato daju različitu sliku. Budući da platforme drukčije mjere interakcije, grafikon ne uspoređuje izravno njihovu komunikacijsku učinkovitost.
 
-<p class="figure-question"><strong>Pitanje.</strong> Kako se apsolutni broj zabilježenih interakcija raspoređuje među platformama?</p>
+<p class="figure-question"><strong>Pitanje.</strong> Kako se ukupan broj zabilježenih interakcija raspoređuje među platformama?</p>
 <p class="figure-card__takeaway"><strong>Nalaz.</strong> Web bilježi najviše interakcija ukupno, ali Facebook i YouTube imaju veći udio interakcija nego objava.</p>
 
 ```{r}
@@ -317,14 +307,14 @@ digikat_chart_evidence(
 )
 ```
 
-Apsolutni brojevi pokazuju razmjer, a relativni udjeli sastav korpusa prema pojedinoj mjeri. Sljedeća vizualizacija uspoređuje udio svake platforme u ukupnom broju objava, interakcija i dosega.
+Ukupni brojevi pokazuju veličinu, a udjeli sastav korpusa. Sljedeći grafikon uspoređuje udio svake platforme u objavama, interakcijama i dosegu.
 
-### Relativni udjeli platformi
+### Udjeli platformi prema mjeri
 
-Ova vizualizacija razdvaja tri različite mjere. U cijelom korpusu web čini `r fmt_pct1(web_post_share)` objava, `r fmt_pct1(web_interaction_share)` interakcija i `r fmt_pct1(web_reach_share)` zabilježenog dosega. Facebook čini `r fmt_pct1(facebook_post_share)` objava, ali `r fmt_pct1(facebook_reach_share)` dosega, čime prema procjeni pružatelja podataka prelazi web. YouTubeovi su udjeli `r fmt_pct1(youtube_post_share)` objava, `r fmt_pct1(youtube_interaction_share)` interakcija i `r fmt_pct1(youtube_reach_share)` dosega. Paneli zato ne mjere jednu opću vrstu „utjecaja", nego tri nejednako dostupna i platformski specifična signala.
+Grafikon prikazuje tri različite mjere. Web čini `r fmt_pct1(web_post_share)` objava, `r fmt_pct1(web_interaction_share)` interakcija i `r fmt_pct1(web_reach_share)` zabilježenog dosega. Facebook čini `r fmt_pct1(facebook_post_share)` objava i `r fmt_pct1(facebook_reach_share)` dosega. Prema procjeni pružatelja podataka time prelazi web. YouTube čini `r fmt_pct1(youtube_post_share)` objava, `r fmt_pct1(youtube_interaction_share)` interakcija i `r fmt_pct1(youtube_reach_share)` dosega. Te tri mjere ne čine jednu opću mjeru utjecaja. Svaka opisuje drukčiji signal koji nije jednako dostupan na svim platformama.
 
 <p class="figure-question"><strong>Pitanje.</strong> Mijenja li se položaj platforme kada se umjesto volumena promatraju interakcije ili doseg?</p>
-<p class="figure-card__takeaway"><strong>Nalaz.</strong> Da. Platformsko težište ovisi o mjeri, pa jedna ljestvica „utjecaja" nije opravdana.</p>
+<p class="figure-card__takeaway"><strong>Nalaz.</strong> Da. Poredak platformi ovisi o mjeri pa jedna ljestvica „utjecaja" nije opravdana.</p>
 
 ```{r}
 #| label: plot-shares
@@ -377,7 +367,7 @@ plot_combined_share <- ggplot(
   theme_digikat_map(base_size = 14) +
   theme(legend.position = "none") +
   labs(
-    title = "Tri različita platformska profila",
+    title = "Platforme se razlikuju prema mjeri",
     subtitle = "Izravne oznake i oblici nadopunjuju boju. Isprekidana crta označava promjenu prikupljanja 2024.",
     x = "Godina", y = "Udio"
   )
@@ -399,25 +389,25 @@ digikat_chart_evidence(
 )
 ```
 
-Asimetrija između volumena i interakcija pokazuje da se objave i zabilježeni odjek ne raspoređuju jednako. Ona je kompatibilna s razlikama u formatima i navikama korištenja platformi, ali ova agregirana analiza ne odvaja te mehanizme od razlika u načinu mjerenja. Zaključak je zato uži. Platforme imaju različite profile volumena, interakcija i dosega.
+Objave i zabilježeni odjek ne raspoređuju se jednako. Razlog mogu biti formati, navike publike ili način mjerenja. Ova analiza ne može razdvojiti te razloge. Može pokazati samo da platforme imaju različite profile volumena, interakcija i dosega.
 
 Nakon platformskih udjela analiza prelazi na pojedinačne izvore zabilježene u korpusu.
 
 ## Izvori s najviše zabilježenih interakcija
 
-Fokus je na web-portalima, YouTube kanalima i Facebook stranicama, trima platformama s najvećim volumenom ili brojem zabilježenih interakcija u korpusu. Poredak je platformski i ne predstavlja jedinstvenu ljestvicu utjecaja.
+Fokus je na portalima, YouTube kanalima i Facebook stranicama. Te tri platforme imaju najveći volumen ili broj interakcija u korpusu. Svaka ima svoj poredak. Ne postoji jedna zajednička ljestvica utjecaja.
 
-### Rangiranje izvora prema interakcijama
+### Izvori s najviše interakcija
 
-Prvo rangiranje aktera provodi se prema ukupnom broju zabilježenih interakcija. Riječ je o poretku unutar svake platforme, a ne o izravno usporedivoj ljestvici svih izvora.
+Izvori su poredani prema ukupnom broju zabilježenih interakcija. Poredak vrijedi samo unutar iste platforme.
 
-Na webu prema interakcijama prednjače `r top_web_names`. Taj poredak pokazuje da se na vrhu pojavljuju i specijalizirani vjerski i opći informativni portali. Ne pokazuje sam po sebi tko postavlja agendu javne rasprave.
+Na webu prema interakcijama prednjače `r top_web_names`. Na vrhu su i specijalizirani vjerski portali i opći informativni portali. Poredak ne pokazuje tko određuje teme javne rasprave.
 
-Na YouTubeu prednjače `r top_youtube_names`, a na Facebooku `r top_facebook_names`. Budući da je korpus odabran prema sadržaju, a ne prema unaprijed sastavljenom popisu katoličkih medija, visoka pozicija izvora ne znači da je sam izvor konfesionalan niti da sav njegov sadržaj pripada katoličkoj tematici.
+Na YouTubeu prednjače `r top_youtube_names`. Na Facebooku prednjače `r top_facebook_names`. Korpus je odabran prema sadržaju, a ne prema popisu katoličkih medija. Visoka pozicija zato ne znači da je izvor konfesionalan niti da je sav njegov sadržaj katoličke tematike.
 
-Facebookov poredak odnosi se na nazive stranica i javnih računa zabilježenih u polju izvora. Grafikon opisuje njihove zabilježene interakcije i volumen, ali ne mjeri vrstu odnosa s publikom.
+Facebookov poredak obuhvaća stranice i javne račune zabilježene kao izvore. Grafikon prikazuje njihove objave i interakcije. Ne mjeri vrstu odnosa s publikom.
 
-Veličina točke predstavlja produktivnost aktera mjerenu brojem objava. Grafikon razlikuje izvore s većim volumenom od izvora s većim ukupnim brojem interakcija, ali iz te razlike ne rekonstruira njihove namjere ni strategije.
+Veličina točke pokazuje broj objava. Tako se razlikuju izvori koji mnogo objavljuju od izvora koji bilježe mnogo interakcija. Grafikon ne pokazuje njihove namjere ni strategije.
 
 <p class="figure-question"><strong>Pitanje.</strong> Koji izvori unutar weba, YouTubea i Facebooka bilježe najviše interakcija?</p>
 <p class="figure-card__takeaway"><strong>Nalaz.</strong> Vrhovi platformskih ljestvica okupljaju različite vrste izvora, a broj objava ne određuje sam njihov položaj.</p>
@@ -458,7 +448,7 @@ plot_facebook <- create_top_source_plot(top_facebook_sources, "Facebook stranice
 
 final_dashboard <- plot_web + plot_youtube + plot_facebook +
   plot_annotation(
-    title = paste0("Dvadeset profila s najviše interakcija po platformi (", raspon, ")"),
+    title = paste0("Dvadeset izvora s najviše interakcija po platformi (", raspon, ")"),
     subtitle = "Rangirano prema ukupnim interakcijama. Veličina točke predstavlja ukupan broj objava.",
     caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
     theme = theme(plot.title = element_text(size = 21, face = "bold"))
@@ -466,7 +456,7 @@ final_dashboard <- plot_web + plot_youtube + plot_facebook +
 
 final_dashboard_mobile <- (plot_web / plot_youtube / plot_facebook) +
   plot_annotation(
-    title = paste0("Dvadeset profila s najviše interakcija po platformi (", raspon, ")"),
+    title = paste0("Dvadeset izvora s najviše interakcija po platformi (", raspon, ")"),
     subtitle = "Rangirano prema ukupnim interakcijama. Veličina točke predstavlja ukupan broj objava.",
     caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru",
     theme = theme(plot.title = element_text(size = 18, face = "bold"))
@@ -493,23 +483,23 @@ digikat_chart_evidence(
 )
 ```
 
-Poredak pokazuje da se objave u korpusu pripisuju različitim vrstama izvora. Agregati ne mjere promjenu javnoga mnijenja, intimnost komunikacije ni funkciju pojedinog izvora. Oni pokazuju koliko je objava i zabilježenih interakcija pripisano svakom izvoru.
+Na vrhu poretka nalaze se različite vrste izvora. Podaci ne mjere javno mnijenje, bliskost s publikom ni ulogu pojedinog izvora. Pokazuju samo koliko je objava i interakcija pripisano svakom izvoru.
 
 Završni prikaz uspoređuje dvije dodatne mjere za najveće izvore.
 
-## Mapa dosega i interakcija najvećih izvora
+## Doseg i interakcije najvećih izvora
 
-Prikaz pozicionira izvore prema dvjema dimenzijama, interakcijama (horizontalna os) i procjeni dosega pružatelja podataka (vertikalna os). Medijani prikazanih izvora unutar svake platforme stvaraju četiri opisna kvadranta. Njihovi su nazivi pomoćne oznake, a ne empirijski potvrđeni tipovi komunikacijskog ponašanja.
+Grafikon raspoređuje izvore prema interakcijama na vodoravnoj osi i procijenjenom dosegu na okomitoj osi. Medijani prikazanih izvora na svakoj platformi stvaraju četiri skupine. Njihovi nazivi olakšavaju čitanje. Ne opisuju potvrđene vrste komunikacijskog ponašanja.
 
-**Divovi**, pozicionirani u gornjem desnom kvadrantu, imaju i doseg i angažman iznad medijana prikazanih izvora na istoj platformi.
+**Divovi** imaju doseg i angažman iznad medijana prikazanih izvora na istoj platformi.
 
-**Graditelji zajednica**, smješteni u donjem desnom kvadrantu, imaju doseg ispod, a angažman iznad platformskoga medijana. Naziv je interpretivna oznaka položaja, a ne izravno mjerenje dubine odnosa ili lojalnosti publike.
+**Graditelji zajednica** imaju doseg ispod medijana, a angažman iznad njega. Naziv opisuje položaj na grafikonu. Ne mjeri bliskost ni odanost publike.
 
-**Megafoni**, pozicionirani u gornjem lijevom kvadrantu, imaju doseg iznad, a angažman ispod platformskoga medijana.
+**Megafoni** imaju doseg iznad medijana, a angažman ispod njega.
 
-**Specijalizirani akteri**, smješteni u donjem lijevom kvadrantu, imaju obje mjere ispod medijana prikazanih izvora. Položaj ne dokazuje da izvor doista služi određenoj tematskoj ili geografskoj niši.
+**Specijalizirani akteri** imaju obje mjere ispod medijana prikazanih izvora. Taj položaj ne dokazuje da izvor služi određenoj temi ili području.
 
-Osi grafikona prikazane su na logaritamskoj skali kako bi se bolje prikazao širok raspon vrijednosti i omogućilo smisleno uspoređivanje aktera različitih veličina.
+Osi su logaritamske kako bi se jasno prikazao širok raspon vrijednosti i izvori različitih veličina.
 
 <p class="figure-question"><strong>Pitanje.</strong> Kako se među najvećim izvorima odnose zabilježene interakcije i procijenjeni doseg?</p>
 <p class="figure-card__takeaway"><strong>Nalaz.</strong> Položaji se razlikuju unutar svake platforme, pa volumen, interakcije i doseg ne daju isti poredak.</p>
@@ -564,7 +554,7 @@ plot_map_facebook_mobile <- create_actor_map_plot(facebook_actors, "Facebook str
 
 final_map_dashboard <- plot_map_web + plot_map_youtube + plot_map_facebook +
   plot_annotation(
-    title = paste0("Doseg i interakcije najvećih profila (", raspon, ")"),
+    title = paste0("Doseg i interakcije najvećih izvora (", raspon, ")"),
     subtitle = "Usporedba dosega i angažmana. Veličina točke predstavlja produktivnost (broj objava).",
     caption = "Izvor: Analiza projekta DigiKat. Napomena: osi su prikazane na logaritamskoj skali.",
     theme = theme(plot.title = element_text(size = 21, face = "bold"))
@@ -572,7 +562,7 @@ final_map_dashboard <- plot_map_web + plot_map_youtube + plot_map_facebook +
 
 final_map_dashboard_mobile <- (plot_map_web_mobile / plot_map_youtube_mobile / plot_map_facebook_mobile) +
   plot_annotation(
-    title = paste0("Doseg i interakcije najvećih profila (", raspon, ")"),
+    title = paste0("Doseg i interakcije najvećih izvora (", raspon, ")"),
     subtitle = "Usporedba dosega i angažmana. Veličina točke predstavlja produktivnost (broj objava).",
     caption = "Izvor: Analiza projekta DigiKat. Napomena: osi su prikazane na logaritamskoj skali.",
     theme = theme(plot.title = element_text(size = 18, face = "bold"))
@@ -596,18 +586,18 @@ digikat_chart_evidence(
 )
 ```
 
-Tipologija je relativna unutar svake platforme, pa isprekidane crte označavaju medijane samo prikazanih najvećih izvora. Zato isti apsolutni rezultat može zauzeti drukčiji kvadrant na drugoj platformi. Nazivi arhetipova služe čitanju kombinacija dosega i angažmana. Oni ne mjere motive izvora, kvalitetu odnosa ni lojalnost publike.
+Skupine su određene zasebno za svaku platformu. Isprekidane crte označavaju medijane samo prikazanih najvećih izvora. Isti rezultat zato može pripasti drugoj skupini na drugoj platformi. Nazivi pomažu čitati odnos dosega i angažmana. Ne opisuju motive izvora ni kvalitetu odnosa s publikom.
 
-## Zaključak i sljedeći koraci
+## Glavni nalazi
 
-Analiza daje tri opisna nalaza o prikupljenom prostoru.
+Analiza pokazuje tri obrasca u prikupljenom prostoru.
 
-**Različiti platformski profili.** Web nosi `r fmt_pct1(web_post_share)` objava i `r fmt_pct1(web_interaction_share)` interakcija. Facebook i YouTube imaju veći udio interakcija nego objava, ali njihove metrike nisu izravno usporedive s webom. Podaci pokazuju asimetriju volumena i zabilježenog odjeka, a ne dokazuju agenda-setting ili veću učinkovitost platforme.
+**Platforme imaju različite profile.** Web nosi `r fmt_pct1(web_post_share)` objava i `r fmt_pct1(web_interaction_share)` interakcija. Facebook i YouTube imaju veći udio interakcija nego objava. Njihove mjere nisu izravno usporedive s webom. Podaci pokazuju razliku između volumena i odjeka. Ne dokazuju koja platforma određuje teme niti koja je učinkovitija.
 
-**Mješovita struktura izvora.** Na vrhu weba pojavljuju se i specijalizirani i opći portali, dok na YouTubeu i Facebooku visoke pozicije zauzimaju specijalizirani kanali, stranice i pojedinci. Rangiranje opisuje zabilježene interakcije i ne mjeri dubinu odnosa s publikom ni komunikacijsku funkciju izvora.
+**Na vrhu su različiti izvori.** Među vodećim portalima nalaze se specijalizirani i opći mediji. Na YouTubeu i Facebooku visoko su specijalizirani kanali, stranice i pojedinci. Poredak opisuje interakcije. Ne mjeri bliskost s publikom ni komunikacijsku ulogu izvora.
 
-**Višedimenzionalnost vidljivosti.** Volumen, angažman i doseg ne rangiraju izvore jednako. Zbog toga se nijedna od tih mjera ne može sama poistovjetiti s digitalnim utjecajem, osobito kada su doseg i interakcije određeni načinom mjerenja pojedine platforme i pružatelja podataka.
+**Različite mjere daju različite poretke.** Volumen, angažman i doseg ne rangiraju izvore jednako. Nijedna mjera zato sama ne pokazuje digitalni utjecaj. To posebno vrijedi za doseg i interakcije jer ovise o načinu mjerenja platforme i pružatelja podataka.
 
-Za uredništvo to znači da odgovor na pitanje „koliko dobro stojimo" ovisi o tome koja se mjera gleda. Izvor koji je nisko po broju objava može biti visoko po interakcijama po objavi, i obrnuto, pa usporedba s drugima ima smisla tek unutar iste platforme i iste mjere. Kako pojedini izvor stoji po svakoj od tih mjera, može se provjeriti u pregledu [Moj medij](../moj-medij.html).
+Za uredništvo odgovor na pitanje „koliko dobro stojimo" ovisi o odabranoj mjeri. Izvor s malo objava može imati mnogo interakcija po objavi. Moguće je i obrnuto. Usporedba zato ima smisla samo unutar iste platforme i prema istoj mjeri. Položaj pojedinog izvora može se provjeriti u pregledu [Moj medij](../moj-medij.html).
 
-Druga istraživačka mapa, [Tematske struje](mapa_stats.html), prelazi sa strukture na rječnički opis sadržaja na dijelu korpusa. Prati učestalost tematskih oznaka, njihovu gustoću, zabilježene reakcije i supojavljivanja.
+Sljedeća mapa [Tematske struje](mapa_stats.html) prelazi sa strukture na sadržaj. Prati učestalost i gustoću tematskih oznaka te njihove reakcije i veze.
