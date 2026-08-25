@@ -620,3 +620,40 @@
   `svglite(web_fonts = ...)`, and it shifts every metric measured above). PI decision.
 - [LEARN] Axis tick labels group thousands with a space (`1 000 K`), not the period the voice guide's §7
   requires (`1.000`). Pre-existing and site-wide in figures; not touched in this pass.
+
+## The content-hashed CSS trap fired locally (2026-08-25)
+
+- [LEARN] The trap the CI notes warned about ("waiting locally the first time Quarto is upgraded and the
+  site is fully re-rendered") **happened**, and rendering ONE page is enough to spring it. Rendering the
+  five mapa pages emitted a theme bundle with a NEW content hash,
+  `bootstrap-ab8d450bbacdcea1e490da585c9d93c5.min.css`, which is **not gitignored but also not added by
+  `git add <page paths>`** — so the commit shipped five pages asking for a stylesheet that was not in the
+  repository. GitHub Pages serves the committed `docs/` verbatim, so they went live unstyled. Fixed in
+  `64c7c9f` by tracking the bundle.
+- [LEARN] The repo now carries THREE bootstrap bundles and pages disagree about which they want:
+  `e081333a` (index.qmd), `89390a0b` (the older pages and the nine frozen studies) and `ab8d450b` (the
+  mapa pages). All three are tracked, so nothing 404s, but the hash is not stable across renders and a
+  future full render will mint a fourth. **After any render, verify assets before committing** — the
+  page-level check is: for every `href`/`src` in the rendered HTML, confirm the target exists on disk AND
+  appears in `git ls-files`. Existing-on-disk is not enough; that is exactly what hid this.
+- [LEARN] Run that check with **`git -c core.quotepath=false ls-files`**. Git escapes non-ASCII paths, so
+  `docs/pages/mapa/događaji_files/...` comes back as `"docs/pages/mapa/doga\304\221aji_files/..."` and
+  every đ-path is reported as untracked. That produced 8 false positives beside the 6 real ones.
+- [LEARN] `gh run watch --exit-status` **exited 0 for a run that failed** (run 32818507086, the validate
+  workflow). Its own captured output showed `X Render the full site` and
+  `Process completed with exit code 1`. Never trust that exit code — confirm with
+  `gh run list` / `gh run view` and read the conclusion field.
+- [LEARN] That failure was **transient**, and the "Render the full site" step is the flaky one. It died
+  after `[114/115] pages\site-info.qmd`, i.e. on `pages/studije/index.qmd`, with only
+  `WARN: Error encountered when rendering files` and no named file or R error in the captured log. The
+  page renders clean locally, and the identical step passed on the next two pushes (runs 32824334109 and
+  32824799328) with strictly more changes in the tree. Before chasing a full-site render failure that
+  names no file, push again or re-run the job — and note `gh run view --log` truncates, so the per-file
+  error may simply not be in what you can read.
+- [LEARN] `validate` failing does NOT stop publication. `pages-build-deployment` is a separate,
+  dynamically-triggered job that succeeded on every push, so the live site updates even while validate is
+  red. Do not infer from a green site that CI passed, or from a red CI that the site is stale.
+- [LEARN] The `git_data_guard.py` hook matches the COMMAND STRING, not the files actually touched, so a
+  defensive check like `git diff --cached --name-only | grep -Ei "merged_comprehensive|_backup_"` is
+  itself blocked, as is any command containing the words `clean` and `-f`. Write such verification
+  without spelling the protected names.
