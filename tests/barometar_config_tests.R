@@ -1,0 +1,35 @@
+# Configuration and gate tests: no DetermDB connection or private input.
+local({
+  source("R/lib/digikat_paths.R", local = TRUE, encoding = "UTF-8")
+  variables <- c("DIGIKAT_DETERMDB_PATH", "DIGIKAT_DETERMDB_OLD_PATH",
+                 "DIGIKAT_DETERMDB_TABLE", "DIGIKAT_BAROMETAR_WORKDIR")
+  original <- Sys.getenv(variables, unset = NA_character_)
+  on.exit({
+    Sys.unsetenv(variables)
+    present <- !is.na(original)
+    if (any(present)) do.call(Sys.setenv, as.list(original[present]))
+  }, add = TRUE)
+  Sys.unsetenv(variables)
+  must_fail <- function(expr) stopifnot(inherits(try(expr, silent = TRUE), "try-error"))
+  must_fail(digikat_determdb_path())
+  must_fail(digikat_determdb_old_path())
+  must_fail(digikat_barometar_workdir())
+  stopifnot(identical(digikat_determdb_table(), "main.media_data_all"))
+  Sys.setenv(DIGIKAT_DETERMDB_TABLE = "main.media_data_all; DROP TABLE x")
+  must_fail(digikat_determdb_table())
+  Sys.setenv(DIGIKAT_BAROMETAR_WORKDIR = "private-cache")
+  must_fail(digikat_barometar_workdir())
+  Sys.setenv(DIGIKAT_BAROMETAR_WORKDIR = normalizePath(getwd(), winslash = "/"))
+  must_fail(digikat_barometar_workdir())
+  Sys.setenv(DIGIKAT_BAROMETAR_WORKDIR = file.path(getwd(), "uncreated-private-cache"))
+  must_fail(digikat_barometar_workdir())
+  outside <- file.path(tempdir(), "barometar-config-test")
+  Sys.setenv(DIGIKAT_BAROMETAR_WORKDIR = outside)
+  stopifnot(identical(digikat_barometar_workdir(), normalizePath(outside, winslash = "/", mustWork = FALSE)))
+  gates <- jsonlite::fromJSON("studies/demokrscanstvo-barometar/config/gates.json")
+  stopifnot(identical(gates$initial_plan$status, "approved"))
+  # The fixture checks the safe state shipped before any scientific ratification.
+  stopifnot(all(c("G1_panel", "G2_definition", "G3_validation", "G4_first_apply",
+                  "G5_full_render", "G6_publication") %in% names(gates)))
+  cat("Barometer configuration checks passed; no database opened.\n")
+})

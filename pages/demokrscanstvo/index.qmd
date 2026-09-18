@@ -1,0 +1,211 @@
+---
+title: "Medijski barometar demokršćanstva"
+description: "Razvojni prikaz zastupljenosti demokršćanskih i kršćansko-socijalnih ideja u stalnom panelu hrvatskih mrežnih medija."
+author: "Luka Šikić"
+date: "2026-09-18"
+date-modified: "2026-09-18"
+status: "Radni prikaz"
+categories: ["Pokazatelji", "Otvoreni podaci"]
+schema-type: "Dataset"
+page-layout: custom
+template-partials:
+  - title-block.html
+toc: false
+smooth-scroll: false
+css: ../../assets/css/barometar.css
+execute:
+  freeze: false
+---
+
+```{r}
+#| label: barometar-setup
+#| include: false
+knitr::opts_chunk$set(echo=FALSE,message=FALSE,warning=FALSE,dev="svglite",fig.width=10,fig.height=3.6)
+source("../../R/lib/barometar_page.R",encoding="UTF-8")
+source("../../R/lib/barometar_figures.R",encoding="UTF-8")
+source("../../R/lib/digikat_hr.R",encoding="UTF-8")
+override <- Sys.getenv("DIGIKAT_BAROMETAR_DATA_DIR",unset="")
+release <- barometar_read_release(if(nzchar(override))override else "../../data/barometar/demokrscanstvo",synthetic_allowed=nzchar(override))
+summary <- release$summary
+preview <- nzchar(override) || isTRUE(summary$synthetic)
+if(preview)release$summary$synthetic <- TRUE
+metadata <- yaml::read_yaml("_metadata.yml")
+if(!identical(as.character(metadata$`data-cutoff`),summary$data_through))stop("Page data-cutoff does not match release.")
+payload <- barometar_page_payload(release)
+monthly <- release$tables$monthly
+default_scope <- if(is.null(summary$default_scope))"siri" else summary$default_scope
+scope_hr <- c(siri="šire",uze="uže")
+available <- monthly[monthly$scope==default_scope & monthly$visibility_status=="published" & monthly$breadth_status=="published",]
+if(!nrow(available))stop("No publishable default period in this payload.")
+latest <- tail(available,1L)
+number <- function(x,digits=1L)if(is.na(x))"—" else if(x==0)"0" else if(x>0&&x<.05)"< 0,1" else formatC(x,format="f",digits=digits,big.mark=".",decimal.mark=",")
+integer <- function(x)formatC(x,format="d",big.mark=".",decimal.mark=",")
+article_genitive <- function(x)paste(integer(x),digikat_hr_plural(x,c("članka","članka","članaka")))
+status_hr <- c(published="dostupno",partial="djelomično",unavailable="nije dostupno")
+download_root <- "../../data/barometar/demokrscanstvo/"
+escape <- function(x)htmltools::htmlEscape(as.character(x))
+facet_hr <- c(route_set="Put prepoznavanja",speaker_type="Govornik",reference_geography="Prostor",outlet_segment="Skupina medija",register="Vrsta argumenta",principles="Načelo")
+value_hr <- c(national="nacionalni",regional="regionalni",public_service="javna služba",confessional="konfesionalni",political_portal="politički portal",dostojanstvo_osobe="dostojanstvo osobe",opce_dobro="opće dobro",opca_namjena_dobara="opća namjena dobara",supsidijarnost="supsidijarnost",sudjelovanje="sudjelovanje",solidarnost="solidarnost")
+translate_value <- function(x)if(x %in% names(value_hr))value_hr[[x]] else x
+```
+
+::: {.dkb}
+```{r}
+#| output: asis
+if(preview)cat('<p class="dkb-synthetic">SINTETIČKI PODACI · Razvojni prikaz. Ovo nisu objavljeni nalazi o medijima.</p>')
+```
+<section class="dkb-hero dkb-on-dark"><div class="dkb-inner">
+<p class="dkb-eyebrow">DigiKat · Hrvatsko katoličko sveučilište · Luka Šikić</p>
+<h1>Medijski barometar demokršćanstva</h1>
+<p>Prisutnost demokršćanskih i srodnih kršćansko-socijalnih ideja u hrvatskim mrežnim medijima</p>
+<p class="dkb-muted">Barometar prati koliko se u stalnom panelu hrvatskih mrežnih medija piše o demokršćanstvu kao političkoj tradiciji i o kršćanskoj socijalnoj misli primijenjenoj na politička i javnopolitička pitanja. Uključeni su izvještavanje, kritika i istupi crkvenih ustanova. Barometar ne mjeri potporu tim idejama, uspjeh stranaka ni stav autora ili izdavača.</p>
+<p>Barometar pokazuje koliko se o temi piše, a ne potporu strankama ni doseg objava.</p>
+<div class="freshness-strip">`r if(preview)"Radni prikaz · Sintetički podaci" else paste("Preliminarno · Izdanje",summary$release_version,"· Podaci")` do `r digikat_hr_date(summary$data_through)` · `r summary$panel_outlets` `r if(preview)"izmišljenih medija" else "medija u stalnom panelu"`</div>
+<p><a href="#pregled">Pregled pokazatelja</a> · <a href="#podaci-i-metoda">Podaci i metoda</a></p>
+</div></section>
+<nav class="dkb-subnav" aria-label="Sadržaj barometra"><div class="dkb-inner"><a href="#pregled">Pregled</a><a href="#kretanja">Kretanja</a><a href="#teme">Teme</a><a href="#nalazi">Nalazi</a><a href="#podaci-i-metoda">Podaci i metoda</a></div></nav>
+
+<section id="pregled" class="dkb-inner">
+<h2>Pregled pokazatelja</h2>
+<p>Koliko su demokršćanske ideje prisutne u hrvatskim medijima i koliko se široko o njima govori?</p>
+<div class="dkb-controls" hidden>
+<fieldset><legend>Učestalost</legend><label><input type="radio" name="frequency" value="monthly" checked>Mjesečno</label><label><input type="radio" name="frequency" value="weekly">Tjedno</label></fieldset>
+<fieldset><legend>Obuhvat</legend><label><input type="radio" name="scope" value="siri" checked>Šire</label><label><input type="radio" name="scope" value="uze">Uže</label></fieldset>
+</div>
+<details><summary>Što znači obuhvat?</summary><p>Šire obuhvaća demokršćanske i kršćansko-socijalne ideje primijenjene na politička pitanja. Uže prati imenovanje demokršćanstva kao tradicije i ideje. Sami stranački nazivi ne ulaze u pokazatelje.</p></details>
+<p id="dkb-state" class="dkb-status" role="status" aria-live="polite">Prikaz: mjesečno, `r scope_hr[default_scope]`. `r if(preview)"Sintetički podaci." else ""`</p>
+<div class="dkb-cards">
+<article class="dkb-card dkb-on-dark"><h3>Medijska zastupljenost</h3><p class="dkb-value dkb-mono" id="dkb-visibility">`r number(latest$visibility_per_10000)`</p><p>na 10.000 analiziranih članaka</p><p id="dkb-count-articles" class="dkb-mono">`r integer(latest$matching_articles)` od `r article_genitive(latest$total_articles)`</p><p class="dkb-card-period">`r latest$period_id` · mjesečno · `r scope_hr[default_scope]`</p><small id="dkb-change">`r if(preview)"Razvojni prikaz, bez tumačenja promjene." else "Usporedba zasebnih razdoblja dostupna je u tablici podataka."`</small></article>
+<article class="dkb-card dkb-on-dark"><h3>Širina prisutnosti</h3><p class="dkb-value dkb-mono" id="dkb-breadth">`r number(latest$breadth_pct)` %</p><p>praćenih medija</p><p id="dkb-count-outlets" class="dkb-mono">`r integer(latest$matching_outlets)` od `r integer(latest$panel_outlets)` medija</p><p class="dkb-card-period">`r latest$period_id` · mjesečno · `r scope_hr[default_scope]`</p></article>
+</div>
+<p>Promjena pokazatelja ne govori o potpori demokršćanskim idejama ni o uspjehu bilo koje stranke.</p>
+</section>
+
+<section id="kretanja" class="dkb-inner"><h2>Kretanja</h2>
+<p>`r if(preview)"Sintetički niz provjerava prikaz praznina, djelomičnih razdoblja i promjene prikupljanja. Brojevi u ovom prikazu ne opisuju stvarne medije." else "Nizovi pokazuju zastupljenost teme i širinu njezine prisutnosti. Praznine označavaju nedostupna razdoblja, a prazne točke djelomična."`</p>
+<div class="dkb-controls" hidden><label>Raspon <select id="dkb-range"><option value="all">Sve</option></select></label><label>Od <select id="dkb-from"></select></label><label>Do <select id="dkb-to"></select></label><button id="dkb-latest" type="button">Najnovije razdoblje</button></div>
+<div class="figure-card"><h3>Medijska zastupljenost kroz vrijeme</h3><p class="chart-accessible-summary">Broj uključenih članaka na 10.000 analiziranih članaka. Praznine se ne povezuju crtom.</p><div id="dkb-vis-chart" tabindex="0" role="group" aria-label="Grafikon medijske zastupljenosti. Strelice biraju razdoblje, Home i End početak i kraj.">
+
+```{r}
+#| label: barometar-static-visibility
+#| classes: dkb-static-desktop
+#| fig-alt: "Mjesečna zastupljenost s prazninama i odvojenim nizovima prije i nakon travnja 2024."
+barometar_static_plot(monthly,"visibility_per_10000",scope=default_scope)
+```
+
+```{r}
+#| label: barometar-static-visibility-mobile
+#| classes: dkb-static-mobile
+#| fig-width: 4.2
+#| fig-height: 3.6
+#| fig-alt: "Mjesečna zastupljenost s označenim nedostupnim razdobljima i promjenom prikupljanja."
+barometar_static_plot(monthly,"visibility_per_10000",scope=default_scope,mobile=TRUE)
+```
+
+</div></div>
+<div class="figure-card"><h3>Širina prisutnosti kroz vrijeme</h3><p class="chart-accessible-summary">Udio praćenih medija u kojima je pronađen barem jedan uključeni članak.</p><div id="dkb-breadth-chart" tabindex="0" role="group" aria-label="Grafikon širine prisutnosti. Strelice biraju razdoblje, Home i End početak i kraj.">
+
+```{r}
+#| label: barometar-static-breadth
+#| classes: dkb-static-desktop
+#| fig-alt: "Mjesečna širina prisutnosti s označenim nedostupnim razdobljima."
+barometar_static_plot(monthly,"breadth_pct",scope=default_scope)
+```
+
+```{r}
+#| label: barometar-static-breadth-mobile
+#| classes: dkb-static-mobile
+#| fig-width: 4.2
+#| fig-height: 3.6
+#| fig-alt: "Mjesečna širina prisutnosti s označenim nedostupnim razdobljima."
+barometar_static_plot(monthly,"breadth_pct",scope=default_scope,mobile=TRUE)
+```
+
+</div></div>
+<p id="dkb-readout" role="status" aria-live="polite" class="dkb-mono"></p>
+<p>Promjena prikupljanja · 1. travnja 2024. Crte se prekidaju na granici te na razdobljima bez dostupnih podataka.</p>
+<details class="reference-section"><summary>Tablica podataka</summary><div class="table-responsive" role="region" tabindex="0" aria-label="Tablica odabranog obuhvata"><table id="dkb-data-table"><caption>Mjesečno, `r scope_hr[default_scope]`. `r if(preview)"Sintetički podaci." else ""`</caption><thead><tr><th scope="col">Razdoblje</th><th scope="col">Članci</th><th scope="col">Ukupno</th><th scope="col">Na 10.000</th><th scope="col">Mediji</th><th scope="col">Širina (%)</th><th scope="col">Zastupljenost</th><th scope="col">Širina</th></tr></thead><tbody>
+```{r}
+#| output: asis
+for(i in which(monthly$scope==default_scope))cat(sprintf('<tr><th scope="row">%s</th><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n',monthly$period_id[i],integer(monthly$matching_articles[i]),integer(monthly$total_articles[i]),number(monthly$visibility_per_10000[i]),integer(monthly$matching_outlets[i]),number(monthly$breadth_pct[i]),status_hr[monthly$visibility_status[i]],status_hr[monthly$breadth_status[i]]))
+```
+</tbody></table></div></details></section>
+<section id="teme" class="dkb-inner"><h2>O kojim se pitanjima govori?</h2>
+<p>Teme opisuju javna pitanja u uključenim odlomcima. Jedan članak može obuhvatiti više tema. Vrijednosti su izražene na 10.000 analiziranih članaka. Oznaka „nepotvrđeno” znači da ljudska provjera još ne podupire pouzdanost tematske oznake.</p>
+<div class="dkb-controls" hidden><button id="dkb-matrix-prev" type="button">Prethodnih 12 razdoblja</button><button id="dkb-matrix-next" type="button">Sljedećih 12 razdoblja</button></div>
+<p id="dkb-matrix-range" class="dkb-status"></p>
+<div class="table-responsive" role="region" tabindex="0" aria-label="Teme u posljednjih dvanaest razdoblja"><table id="dkb-matrix"><caption>Teme · mjesečno · `r scope_hr[default_scope]` · na 10.000 članaka</caption>
+```{r}
+#| output: asis
+theme_rows <- release$tables$themes
+if(is.null(theme_rows))stop("Theme export missing.")
+periods <- tail(monthly$period_id[monthly$scope==default_scope],12L)
+theme_rows <- theme_rows[theme_rows$frequency=="monthly" & theme_rows$scope==default_scope,,drop=FALSE]
+bins <- unlist(summary$matrix_bins[[paste("monthly",default_scope,sep="_")]])
+ramp <- c("#eaf0f2","#c9dce0","#8fb5bd","#5a949f","#2c6f7e")
+cat('<thead><tr><th scope="col">Tema</th>',paste(sprintf('<th scope="col">%s</th>',periods),collapse=""),'</tr></thead><tbody>')
+for(id in unique(theme_rows$theme_id)) {
+  a <- theme_rows[theme_rows$theme_id==id,,drop=FALSE];a <- a[match(periods,a$period_id),]
+  cat('<tr><th scope="row">',escape(a$theme_label_hr[1L]),'<small>',if(identical(a$theme_status[1L],"confirmed"))"provjereno" else "nepotvrđeno",'</small></th>',sep="")
+  for(i in seq_len(nrow(a))) {
+    value <- a$rate_per_10000[i];bin <- if(is.na(value)||value==0)0L else barometar_matrix_bin(value,bins)+1L
+    class <- if(a$period_status[i]=="unavailable")"dkb-missing-cell" else if(a$period_status[i]=="partial")"dkb-partial-cell" else ""
+    style <- if(bin>0L)paste0("background-color:",ramp[bin],";color:",if(bin==5L)"#fff" else "#14181d") else ""
+    cat('<td class="',class,'" style="',style,'">',number(value),'</td>',sep="")
+  }
+  cat('</tr>')
+}
+cat('</tbody>')
+```
+</table></div>
+<p id="dkb-matrix-detail" role="status" aria-live="polite">Tablica navodi svako područje zasebno. Tematske se vrijednosti ne zbrajaju.</p>
+<p class="dkb-matrix-legend">Bijelo: opažena nula · „—” i šrafura: nije dostupno · isprekidani rub: djelomično · pet nijansi: stalni razredi intenziteta za odabrani obuhvat i učestalost.</p>
+<p id="dkb-matrix-bins" class="dkb-mono">Granice razreda na 10.000 članaka: `r paste(vapply(bins,number,character(1L)),collapse=" · ")`.</p>
+<details><summary>Načela i sastav uključenih članaka</summary><p id="dkb-composition-period">Sastav posljednjega cjelovitog mjeseca.</p>
+<div class="table-responsive"><table id="dkb-composition"><caption>Sastav uključenih članaka</caption><thead><tr><th scope="col">Svojstvo</th><th scope="col">Oznaka</th><th scope="col">Članci</th></tr></thead><tbody>
+```{r}
+#| output: asis
+composition <- release$tables$composition
+a <- composition[composition$frequency=="monthly" & composition$scope==default_scope & composition$period_id==latest$period_id & composition$articles>0,]
+for(i in seq_len(nrow(a)))cat(sprintf('<tr><th scope="row">%s</th><td>%s</td><td>%s</td></tr>',escape(facet_hr[[a$facet[i]]]),escape(translate_value(a$value[i])),integer(a$articles[i])))
+```
+</tbody></table></div><p>Putovi su prikazani u točnim kombinacijama. Načela mogu biti višestruka. Uži obuhvat uzima samo odlomke koji imenuju demokršćansku tradiciju.</p></details>
+</section>
+<section id="nalazi" class="dkb-inner"><h2>Nalazi</h2><p>`r if(preview || !isTRUE(summary$human_validation_complete))"Empirijski nalazi nisu objavljeni. Za prvo izdanje potrebna je ljudska provjera pravila na zasebnom uzorku članaka. Sintetički prikaz služi provjeri računanja i sučelja." else "Ovo izdanje donosi provjerene tablice. Opisni nalazi dodaju se kada ih podupiru provjera pravila, sastav članaka i analize osjetljivosti."`</p></section>
+<section id="podaci-i-metoda" class="dkb-inner"><h2>Podaci i metoda</h2>
+<p>Medijska zastupljenost opisuje omjer uključenih i analiziranih članaka. Širina prisutnosti opisuje u koliko se medija iz stalnog panela tema pojavljuje. Pokazatelji se ne spajaju u zajednički indeks.</p>
+<div class="download-group">
+```{r}
+#| output: asis
+for(frequency in c("monthly","weekly"))for(scope in unique(release$tables[[frequency]]$scope))
+  for(extension in c("csv","svg","png")) {
+    file <- if(extension=="csv")paste0(frequency,"_",scope,".csv") else paste0("figures/",frequency,"_",scope,"_visibility_per_10000.",extension)
+    cat(sprintf('<a class="dkb-selection-download" data-frequency="%s" data-scope="%s" href="%s%s" download>%s</a> ',frequency,scope,download_root,file,
+      paste(c(monthly="Mjesečno",weekly="Tjedno")[[frequency]],scope_hr[[scope]],toupper(extension))))
+  }
+cat('<p>Potpuni paket: ')
+directory <- if(nzchar(override))override else "../../data/barometar/demokrscanstvo"
+files <- sort(list.files(directory,recursive=TRUE))
+for(file in files)cat(sprintf('<a href="%s%s" download>%s (%s · %s kB)</a> ',download_root,file,escape(file),
+  toupper(tools::file_ext(file)),number(file.info(file.path(directory,file))$size/1000)))
+cat('</p>')
+```
+</div>
+<details><summary>Kako se prepoznaju ideje?</summary><p>Demokršćanstvo kao tradicija i ideja prepoznaje se po izravnom imenovanju. Kršćanska socijalna misao obuhvaća socijalni nauk u političkom pitanju i kršćanski utemeljen argument iz načela. Programski govor aktera zasebna je opisna oznaka već uključenih članaka. Ljudska provjera određuje koja pravila mogu ući u objavljene pokazatelje.</p></details>
+<details><summary>Razdoblja, provjera i ograničenja</summary><p>Nedostatni dani ostaju neopaženi. Mjesečni prikaz koristi cjelovite mjesece, a tjedne kartice zadnjih 28 dana do kraja dostupnog tjedna. Poredbe se računaju iz zasebnih, nepreklopljenih razdoblja. Granica prikupljanja 1. travnja 2024. ostaje označena.</p><p>Razvoj pravila i ljudska evaluacija koriste odvojene članke. Odziv cijeloga panela nije procijenjen. Analize osjetljivosti zasebno izostavljaju skupine medija, crkvene govornike i članke u kojima je HDZ jedini prepoznati registrirani akter ili uloga.</p><p>Izvorni članci, naslovi i poveznice ne ulaze u javne tablice. Popis medija donosi samo nazivnike, bez pojedinačnih brojnika.</p></details>
+<div class="citation-block"><p>Šikić, L. (2026). <em>Medijski barometar demokršćanstva</em> (`r if(preview)"sintetički razvojni prikaz" else paste("izdanje",summary$release_version)`, podaci do `r digikat_hr_date(summary$data_through)`). DigiKat, Hrvatsko katoličko sveučilište.</p><p>Definicija `r summary$definition_version` · Panel `r summary$panel_version` · `r if(preview)"Bez empirijskog izdanja." else "CC BY 4.0."`</p></div>
+<p class="dkb-footer-note">Codex je korišten za pripremu koda, prijedlog rječnika i razvojnu provjeru pravila. Ljudske oznake i konačno znanstveno tumačenje odgovornost su istraživača.</p>
+<p><a href="../studije/index.html">Istraživanja DigiKat</a> · <a href="../metodologija.html">Metodologija projekta</a></p>
+</section>
+<section class="dkb-inner"><h2>Povezana istraživanja</h2><div class="dkb-related">
+<article><h3><a href="../studije/socijalni-nauk-i-gospodarstvo.html">Socijalni nauk Crkve u javnoj raspravi o gospodarstvu</a></h3><p>Luka Šikić, Petra Palić</p><p>Korpus katoličkih tema DigiKat, do 11. lipnja 2026.</p></article>
+<article><h3><a href="../../assets/izvjestaji/kako-se-govori-o-crkvi/index.html">Kako se govori o Crkvi?</a></h3><p>Luka Šikić</p><p>Korpus DigiKat, do 11. lipnja 2026.</p></article>
+<article><h3><a href="../../assets/izvjestaji/godisnji-pregled-2025.html">Katoličke teme u digitalnom prostoru. Godišnji pregled 2025.</a></h3><p>Luka Šikić</p><p>Korpus DigiKat, 2025.</p></article>
+</div></section>
+```{r}
+#| output: asis
+cat('<script id="dkb-payload" type="application/json">',payload,'</script>',sep="")
+```
+<script src="../../assets/js/barometar-core.js"></script>
+<script src="../../assets/js/barometar.js"></script>
+:::

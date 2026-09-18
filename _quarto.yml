@@ -16,6 +16,9 @@ project:
   render:
     - index.qmd
     - pages/**/*.qmd
+    # Development page: activate only after the human validation release gate.
+    # Explicit synthetic preview renders this source separately.
+    - "!pages/demokrscanstvo/index.qmd"
     # Dovršena tematska istraživanja ostaju na verzioniranim ulazima na kojima
     # su objavljena; puni render žive stranice ne smije ih ponovno izračunati.
     # Pregled istraživanja ostaje aktivna stranica i renderira se redovito.

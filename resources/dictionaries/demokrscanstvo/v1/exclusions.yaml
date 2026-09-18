@@ -1,0 +1,178 @@
+entries:
+  - id: 'rescue_life'
+    family: 'exclusion'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['zaštitili živote', 'života i imovine', 'života i zdravlja']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'ecclesial_council'
+    family: 'ecclesial_council'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['vatikanski sabor']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['vatikanski', 'vatikanska', 'vatikansko', 'vatikanske', 'vatikansku', 'vatikanskog', 'vatikanskoga', 'vatikanskom', 'vatikanskomu', 'vatikanskome', 'vatikanskoj', 'vatikanskim', 'vatikanskima', 'vatikanskih', 'crkveni', 'crkvena', 'crkveno', 'crkvene', 'crkvenu', 'crkvenog', 'crkvenoga', 'crkvenom', 'crkvenomu', 'crkvenome', 'crkvenoj', 'crkvenim', 'crkvenima', 'crkvenih', 'ekumenski', 'ekumenska', 'ekumensko', 'ekumenske', 'ekumensku', 'ekumenskog', 'ekumenskoga', 'ekumenskom', 'ekumenskomu', 'ekumenskome', 'ekumenskoj', 'ekumenskim', 'ekumenskima', 'ekumenskih', 'biskupski', 'biskupska', 'biskupsko', 'biskupske', 'biskupsku', 'biskupskog', 'biskupskoga', 'biskupskom', 'biskupskomu', 'biskupskome', 'biskupskoj', 'biskupskim', 'biskupskima', 'biskupskih'], ['sabor', 'sabora', 'saboru', 'saborom', 'sabore', 'sabori', 'saborima']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'ecclesial_minister'
+    family: 'ecclesial_council'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['generalni ministar']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['generalni', 'generalnog', 'generalnoga', 'generalnom', 'provincijalni', 'provincijalnog', 'provincijalnoga'], ['ministar', 'ministra', 'ministru', 'ministrom', 'ministrica', 'ministrice', 'ministrici', 'ministricu', 'ministricom', 'ministricama', 'ministrico']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'franciscan_minister'
+    family: 'ecclesial_council'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['ministar franjevački']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['ministar', 'ministra', 'ministru', 'ministrom', 'ministrica', 'ministrice', 'ministrici', 'ministricu', 'ministricom', 'ministricama', 'ministrico'], ['franjevački', 'franjevačka', 'franjevačko', 'franjevačke', 'franjevačku', 'franjevačkog', 'franjevačkoga', 'franjevačkom', 'franjevačkomu', 'franjevačkome', 'franjevačkoj', 'franjevačkim', 'franjevačkima', 'franjevačkih']]
+    gap_max: '1'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'cst_organisation_name'
+    family: 'cst_organisation_name'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['Centar za promicanje socijalnog nauka Crkve', 'Centra za promicanje socijalnog nauka Crkve', 'Centrom za promicanje socijalnog nauka Crkve', 'Centru za promicanje socijalnog nauka Crkve']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'publication_notice'
+    family: 'notice'
+    tier: 'generic'
+    kind: 'token'
+    forms: ['objava', 'objavama', 'objave', 'objavi', 'objavila', 'objavile', 'objavili', 'objavilo', 'objavio', 'objaviti', 'objavljen', 'objavljena', 'objavljene', 'objavljeni', 'objavljenih', 'objavljenima', 'objavljeno', 'objavljenoj', 'objavljenom', 'objavljenu', 'objavljivali', 'objavljivani', 'objavljivanja', 'objavljivanje', 'objavljivati', 'objavljuje', 'objavljujemo', 'objavom', 'objavu', 'obljetnica', 'obljetnice', 'obljetnici', 'obljetnicu', 'predstavljanja', 'predstavljanje', 'predstavljanju', 'predstavljen', 'predstavljena', 'predstavljene', 'predstavljeni', 'predstavljenim', 'prijevod', 'prijevoda', 'prijevode', 'prijevodu', 'promocija', 'promocije', 'promociji', 'promocijom', 'promociju']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'papal_naming'
+    family: 'papal_naming'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['izabrao ime', 'izbor imena', 'izbora imena', 'odabrao ime', 'papinsko ime', 'uzeo ime']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'legal_senses'
+    family: 'legal_sense'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['od interesa za Republiku', 'pomorsko dobro', 'pomorskog dobra', 'supsidijarna odgovornost', 'supsidijarna tužba', 'supsidijarna zaštita', 'supsidijarne odgovornosti', 'supsidijarne zaštite', 'supsidijarnu zaštitu']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'toponyms'
+    family: 'toponym'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['Općina Biskupija', 'Općina Kapela', 'Općine Biskupija', 'Sveti Križ Začretje', 'Vatikanska ulica', 'križni put', 'oltar Domovine']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'

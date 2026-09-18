@@ -1,0 +1,16 @@
+case_id,input,expected
+nfc_croatian,C\u030Cuvaj c\u0301ud i z\u030Civot,Čuvaj ćud i život
+line_endings,Prvi\r\nDrugi\rTreći\u2028Četvrti\u2029Peti,Prvi\nDrugi\nTreći\nČetvrti\nPeti
+soft_hyphen,demokr\u00ADšćanstvo,demokršćanstvo
+zero_width,dos\u200Btojan\u200Dstveno,dostojanstveno
+bidi_and_bom,\uFEFFrad\u2066nici\u2069,radnici
+space_runs,opće\u00A0\u2002\u2009\tdobro,opće dobro
+newlines_preserved,prvo  \n  drugo,prvo \n drugo
+digraph_cases,\u01C4 \u01C5 \u01C6 \u01C7 \u01C8 \u01C9 \u01CA \u01CB \u01CC,DŽ Dž dž LJ Lj lj NJ Nj nj
+latin_ligatures,\uFB00 \uFB01 \uFB02 \uFB03 \uFB04 \uFB05 \uFB06,ff fi fl ffi ffl st st
+fullwidth,\uFF21\uFF11\uFF01,A1!
+explicit_letter_maps,\u00F0ak i \u0130,đak i I
+not_general_nfkc,① ² Ⅳ,① ² Ⅳ
+diacritics_not_folded,č ć ž š đ Č Ć Ž Š Đ,č ć ž š đ Č Ć Ž Š Đ
+edge_whitespace,"  riječ  "," riječ "
+newline_not_word_boundary,ideja\u00AD\nrasprave,ideja\nrasprave

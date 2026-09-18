@@ -1,0 +1,109 @@
+entries:
+  - id: 'argument'
+    family: 'connector'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['brane', 'brani', 'na temelju', 'nadahnut', 'nadahnuta', 'nadahnuti', 'polazeći od', 'poziva da', 'poziva na', 'poziva se na', 'pozivaju da', 'pozivaju na', 'pozivaju se na', 'pozivajući se na', 'pozvala je da', 'pozvala je na', 'pozvala na', 'pozvala se na', 'pozvali na', 'pozvao je da', 'pozvao je na', 'pozvao na', 'pozvao se na', 'prema nauku Crkve', 'protive se', 'protivi se', 'se poziva na', 'se pozivaju na', 'temelj je', 'temelji se na', 'traže', 'traži', 'u duhu', 'u skladu s', 'u skladu sa', 'zahtijeva', 'zahtijevaju', 'zahtijevala', 'zahtijevao', 'zalaže se', 'zalažu se']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'argument_reviewed_forms'
+    family: 'connector'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['braneći', 'branila', 'branili', 'branimo', 'branio', 'nadahnule', 'nadahnute', 'nadahnuto', 'nadahnutu', 'polaze od', 'polazi od', 'pozivala na', 'pozivala na temelju', 'pozivala se na', 'pozivali na', 'pozivali na temelju', 'pozivali se na', 'pozivam na', 'pozivam na temelju', 'pozivam se na', 'pozivamo na', 'pozivamo na temelju', 'pozivamo se na', 'pozivao na', 'pozivao na temelju', 'pozivao se na', 'pozvale na', 'pozvale na temelju', 'pozvale se na', 'pozvavši na', 'pozvavši na temelju', 'pozvavši se na', 'temeljem', 'temeljen na', 'temeljena na', 'temeljene na', 'temeljeni na', 'temeljenih na', 'temeljeno na', 'temeljenog na', 'temeljenom na', 'temeljenu na', 'temeljilo se na', 'tražeći', 'tražila', 'tražile', 'tražili', 'tražilo', 'tražimo', 'tražio', 'tražite', 'tražiš', 'zahtijevalo', 'zalagali se za', 'zalagao se za', 'zalažemo se za']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'other_speaker'
+    family: 'other_speaker'
+    tier: 'generic'
+    kind: 'token'
+    forms: ['analitičar', 'analitičara', 'analitičare', 'analitičari', 'analitičarima', 'analitičarom', 'analitičaru', 'autor', 'autora', 'autore', 'autori', 'autorima', 'autorom', 'autoru', 'dužnosnici', 'dužnosnicima', 'dužnosnik', 'dužnosnika', 'komentator', 'komentatora', 'komentatore', 'komentatori', 'komentatorima', 'komentatorom', 'komentatoru', 'novinar', 'novinara', 'novinare', 'novinari', 'novinarima', 'novinarom', 'novinaru', 'urednici', 'urednicima', 'urednik', 'urednika', 'urednike', 'uredniki', 'urednikima', 'urednikom', 'uredniku']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'other_speaker_reviewed_forms'
+    family: 'other_speaker'
+    tier: 'generic'
+    kind: 'token'
+    forms: ['analitičarem', 'analitičarka', 'analitičarkama', 'analitičarke', 'analitičarki', 'analitičarko', 'analitičarkom', 'analitičarku', 'autorica', 'autoricama', 'autorice', 'autorici', 'autorico', 'autoricom', 'autoricu', 'komentatorica', 'komentatoricama', 'komentatorice', 'komentatorici', 'komentatorico', 'komentatoricom', 'komentatoricu', 'novinarka', 'novinarkama', 'novinarke', 'novinarki', 'novinarko', 'novinarkom', 'novinarku', 'političarka', 'političarkama', 'političarke', 'političarki', 'političarko', 'političarkom', 'političarku', 'urednica', 'urednicama', 'urednice', 'urednici', 'urednico', 'urednicom', 'urednicu']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'attribution'
+    family: 'attribution'
+    tier: 'generic'
+    kind: 'token'
+    forms: ['istaknula', 'istaknuo', 'ističe', 'ističu', 'kazala', 'kazao', 'kaže', 'navodi', 'poručila', 'poručio', 'poručuje', 'rekao', 'rekla', 'smatra', 'smatraju', 'traži', 'zahtijeva']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'attribution_reviewed_forms'
+    family: 'attribution'
+    tier: 'generic'
+    kind: 'token'
+    forms: ['istaknuli', 'ističem', 'ističemo', 'ističete', 'ističući', 'kazali', 'kazavši', 'kazuje', 'kažem', 'kažemo', 'kažete', 'kažeš', 'kažu', 'navode', 'navodeći', 'rekavši', 'rekle', 'rekli', 'reklo', 'smatrajući', 'smatrala', 'smatrali', 'smatralo', 'smatram', 'smatramo', 'smatrao', 'smatrate']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'

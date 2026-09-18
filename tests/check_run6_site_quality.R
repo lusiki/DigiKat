@@ -92,6 +92,12 @@ browser_check <- read_utf8("scripts/check_site_browser.mjs")
 expect_true(grepl("const viewports = [320, 375, 390, 768, 1024, 1366, 1440, 2048]", browser_check, fixed = TRUE) &&
               grepl("homepage layout/credit contract failed", browser_check, fixed = TRUE),
             "The browser gate must protect the homepage audit contract through ultra-wide viewports")
+expect_true(all(vapply(c("const barometarPage = \"pages/demokrscanstvo/index.html\"",
+                         "if (existsSync(resolve(siteRoot, barometarPage))) pages.push(barometarPage)",
+                         "const barometarExpression", "Input.dispatchKeyEvent", "unavailableCells > 0",
+                         "columns === 12", "coreCrossings"),
+                       grepl, logical(1L), x = browser_check, fixed = TRUE)),
+            "The browser gate must conditionally audit a rendered barometer and its keyboard, matrix and boundary contracts")
 expect_true(file.exists("site-governance/RELEASE_CHECKLIST.md"),
             "The repeatable release checklist must exist")
 expect_true(!file.exists("assets/images/photo_.png") && file.exists("archive/design-prototype/photo_.png"),

@@ -1,0 +1,163 @@
+entries:
+  - id: 'cd_noun'
+    family: 'cd_label'
+    tier: 'strong'
+    kind: 'token'
+    forms: ['demokršćanstva', 'demokršćanstvima', 'demokršćanstvo', 'demokršćanstvom', 'demokršćanstvu']
+    case_sensitive: 'false'
+    ascii_variants: ['demokrscanstva', 'demokrscanstvima', 'demokrscanstvo', 'demokrscanstvom', 'demokrscanstvu']
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'cd_label'
+    family: 'cd_label'
+    tier: 'strong'
+    kind: 'token'
+    forms: ['demo-kršćana', 'demo-kršćane', 'demo-kršćani', 'demo-kršćanima', 'demo-kršćanin', 'demo-kršćanina', 'demo-kršćaninom', 'demo-kršćaninu', 'demohrišćana', 'demohrišćane', 'demohrišćani', 'demohrišćanima', 'demohrišćanin', 'demohrišćanina', 'demohrišćaninom', 'demohrišćaninu', 'demohrišćanska', 'demohrišćanske', 'demohrišćanski', 'demohrišćanskih', 'demohrišćanskim', 'demohrišćanskima', 'demohrišćansko', 'demohrišćanskog', 'demohrišćanskoga', 'demohrišćanskoj', 'demohrišćanskom', 'demohrišćanskome', 'demohrišćanskomu', 'demohrišćansku', 'demokršćana', 'demokršćane', 'demokršćani', 'demokršćanima', 'demokršćanin', 'demokršćanina', 'demokršćaninom', 'demokršćaninu', 'demokršćanska', 'demokršćanske', 'demokršćanski', 'demokršćanskih', 'demokršćanskim', 'demokršćanskima', 'demokršćansko', 'demokršćanskog', 'demokršćanskoga', 'demokršćanskoj', 'demokršćanskom', 'demokršćanskome', 'demokršćanskomu', 'demokršćansku']
+    case_sensitive: 'false'
+    ascii_variants: ['demo-krscana', 'demo-krscane', 'demo-krscani', 'demo-krscanima', 'demo-krscanin', 'demo-krscanina', 'demo-krscaninom', 'demo-krscaninu', 'demohriscana', 'demohriscane', 'demohriscani', 'demohriscanima', 'demohriscanin', 'demohriscanina', 'demohriscaninom', 'demohriscaninu', 'demohriscanska', 'demohriscanske', 'demohriscanski', 'demohriscanskih', 'demohriscanskim', 'demohriscanskima', 'demohriscansko', 'demohriscanskog', 'demohriscanskoga', 'demohriscanskoj', 'demohriscanskom', 'demohriscanskome', 'demohriscanskomu', 'demohriscansku', 'demokrscana', 'demokrscane', 'demokrscani', 'demokrscanima', 'demokrscanin', 'demokrscanina', 'demokrscaninom', 'demokrscaninu', 'demokrscanska', 'demokrscanske', 'demokrscanski', 'demokrscanskih', 'demokrscanskim', 'demokrscanskima', 'demokrscansko', 'demokrscanskog', 'demokrscanskoga', 'demokrscanskoj', 'demokrscanskom', 'demokrscanskome', 'demokrscanskomu', 'demokrscansku']
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'cd_phrase'
+    family: 'cd_label'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['kršćanski demokrat']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['kršćanski', 'kršćanska', 'kršćansko', 'kršćanske', 'kršćansku', 'kršćanskog', 'kršćanskoga', 'kršćanskom', 'kršćanskomu', 'kršćanskome', 'kršćanskoj', 'kršćanskim', 'kršćanskima', 'kršćanskih', 'hrišćanski', 'hrišćanska', 'hrišćansko', 'hrišćanske', 'hrišćansku', 'hrišćanskog', 'hrišćanskoga', 'hrišćanskom', 'hrišćanskomu', 'hrišćanskome', 'hrišćanskoj', 'hrišćanskim', 'hrišćanskima', 'hrišćanskih'], ['demokrat', 'demokrata', 'demokratu', 'demokratom', 'demokrate', 'demokrati', 'demokratima', 'demokracija', 'demokracije', 'demokraciji', 'demokraciju', 'demokracijom', 'demokracijama', 'demokracijo', 'demokratija', 'demokratije', 'demokratiji', 'demokratiju', 'demokratijom', 'demokratijama', 'demokratijo', 'demokratski', 'demokratska', 'demokratsko', 'demokratske', 'demokratsku', 'demokratskog', 'demokratskoga', 'demokratskom', 'demokratskomu', 'demokratskome', 'demokratskoj', 'demokratskim', 'demokratskima', 'demokratskih']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'cd_closed'
+    family: 'cd_label'
+    tier: 'strong'
+    kind: 'token'
+    forms: ['hrišćanskodemokratska', 'hrišćanskodemokratske', 'hrišćanskodemokratski', 'hrišćanskodemokratskih', 'hrišćanskodemokratskim', 'hrišćanskodemokratskima', 'hrišćanskodemokratsko', 'hrišćanskodemokratskog', 'hrišćanskodemokratskoga', 'hrišćanskodemokratskoj', 'hrišćanskodemokratskom', 'hrišćanskodemokratskome', 'hrišćanskodemokratskomu', 'hrišćanskodemokratsku', 'kršćanskodemokratska', 'kršćanskodemokratske', 'kršćanskodemokratski', 'kršćanskodemokratskih', 'kršćanskodemokratskim', 'kršćanskodemokratskima', 'kršćanskodemokratsko', 'kršćanskodemokratskog', 'kršćanskodemokratskoga', 'kršćanskodemokratskoj', 'kršćanskodemokratskom', 'kršćanskodemokratskome', 'kršćanskodemokratskomu', 'kršćanskodemokratsku']
+    case_sensitive: 'false'
+    ascii_variants: ['hriscanskodemokratska', 'hriscanskodemokratske', 'hriscanskodemokratski', 'hriscanskodemokratskih', 'hriscanskodemokratskim', 'hriscanskodemokratskima', 'hriscanskodemokratsko', 'hriscanskodemokratskog', 'hriscanskodemokratskoga', 'hriscanskodemokratskoj', 'hriscanskodemokratskom', 'hriscanskodemokratskome', 'hriscanskodemokratskomu', 'hriscanskodemokratsku', 'krscanskodemokratska', 'krscanskodemokratske', 'krscanskodemokratski', 'krscanskodemokratskih', 'krscanskodemokratskim', 'krscanskodemokratskima', 'krscanskodemokratsko', 'krscanskodemokratskog', 'krscanskodemokratskoga', 'krscanskodemokratskoj', 'krscanskodemokratskom', 'krscanskodemokratskome', 'krscanskodemokratskomu', 'krscanskodemokratsku']
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'cd_ascii_phrase'
+    family: 'cd_label'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['krscanski demokrat']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['krscanski', 'krscanska', 'krscansko', 'krscanske', 'krscansku', 'krscanskog', 'krscanskoga', 'krscanskom', 'krscanskomu', 'krscanskome', 'krscanskoj', 'krscanskim', 'krscanskima', 'krscanskih', 'hriscanski', 'hriscanska', 'hriscansko', 'hriscanske', 'hriscansku', 'hriscanskog', 'hriscanskoga', 'hriscanskom', 'hriscanskomu', 'hriscanskome', 'hriscanskoj', 'hriscanskim', 'hriscanskima', 'hriscanskih'], ['demokrat', 'demokrata', 'demokratu', 'demokratom', 'demokrate', 'demokrati', 'demokratima', 'demokracija', 'demokracije', 'demokraciji', 'demokraciju', 'demokracijom', 'demokracijama', 'demokracijo', 'demokratija', 'demokratije', 'demokratiji', 'demokratiju', 'demokratijom', 'demokratijama', 'demokratijo', 'demokratski', 'demokratska', 'demokratsko', 'demokratske', 'demokratsku', 'demokratskog', 'demokratskoga', 'demokratskom', 'demokratskomu', 'demokratskome', 'demokratskoj', 'demokratskim', 'demokratskima', 'demokratskih']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'cd_foreign'
+    family: 'cd_label'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['christdemokrat', 'christdemokraten', 'christdemokratisch', 'christian democracy', 'christian democrat', 'christian democratic', 'christian democrats', 'christlich demokratisch', 'democrazia cristiana', 'democristiani', 'democristiano']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'idea_cues'
+    family: 'idea_cue'
+    tier: 'generic'
+    kind: 'token'
+    forms: ['baština', 'baštinama', 'baštine', 'baštini', 'baštino', 'baštinom', 'baštinu', 'doktrina', 'doktrinama', 'doktrinarna', 'doktrinarne', 'doktrinarni', 'doktrinarnih', 'doktrinarnim', 'doktrinarnima', 'doktrinarno', 'doktrinarnog', 'doktrinarnoga', 'doktrinarnoj', 'doktrinarnom', 'doktrinarnome', 'doktrinarnomu', 'doktrinarnu', 'doktrine', 'doktrini', 'doktrino', 'doktrinom', 'doktrinu', 'etika', 'etikama', 'etike', 'etiki', 'etiko', 'etikom', 'etiku', 'ideja', 'idejama', 'ideje', 'ideji', 'idejna', 'idejne', 'idejni', 'idejnih', 'idejnim', 'idejnima', 'idejno', 'idejnog', 'idejnoga', 'idejnoj', 'idejnom', 'idejnome', 'idejnomu', 'idejnu', 'idejo', 'idejom', 'ideju', 'identitet', 'identiteta', 'identitete', 'identiteti', 'identitetima', 'identitetom', 'identitetska', 'identitetske', 'identitetski', 'identitetskih', 'identitetskim', 'identitetskima', 'identitetsko', 'identitetskog', 'identitetskoga', 'identitetskoj', 'identitetskom', 'identitetskome', 'identitetskomu', 'identitetsku', 'identitetu', 'ideologija', 'ideologijama', 'ideologije', 'ideologiji', 'ideologijo', 'ideologijom', 'ideologiju', 'koncept', 'koncepta', 'koncepte', 'koncepti', 'konceptima', 'konceptom', 'konceptu', 'konzervatizam', 'konzervatizma', 'konzervatizmom', 'konzervatizmu', 'korijen', 'korijena', 'korijene', 'korijeni', 'korijenima', 'korijenom', 'korijenu', 'misao', 'misli', 'mišlju', 'nadahnuća', 'nadahnuće', 'nadahnućem', 'nadahnuću', 'načela', 'načelima', 'načelo', 'načelom', 'načelu', 'orijentacija', 'orijentacijama', 'orijentacije', 'orijentaciji', 'orijentacijo', 'orijentacijom', 'orijentaciju', 'svjetonazor', 'svjetonazora', 'svjetonazore', 'svjetonazori', 'svjetonazorima', 'svjetonazorom', 'svjetonazorska', 'svjetonazorske', 'svjetonazorski', 'svjetonazorskih', 'svjetonazorskim', 'svjetonazorskima', 'svjetonazorsko', 'svjetonazorskog', 'svjetonazorskoga', 'svjetonazorskoj', 'svjetonazorskom', 'svjetonazorskome', 'svjetonazorskomu', 'svjetonazorsku', 'svjetonazoru', 'tradicija', 'tradicijama', 'tradicije', 'tradiciji', 'tradicijo', 'tradicijom', 'tradicijska', 'tradicijske', 'tradicijski', 'tradicijskih', 'tradicijskim', 'tradicijskima', 'tradicijsko', 'tradicijskog', 'tradicijskoga', 'tradicijskoj', 'tradicijskom', 'tradicijskome', 'tradicijskomu', 'tradicijsku', 'tradiciju', 'vrijednosna', 'vrijednosne', 'vrijednosni', 'vrijednosnih', 'vrijednosnim', 'vrijednosnima', 'vrijednosno', 'vrijednosnog', 'vrijednosnoga', 'vrijednosnoj', 'vrijednosnom', 'vrijednosnome', 'vrijednosnomu', 'vrijednosnu', 'vrijednost', 'vrijednosti', 'vrijednostima', 'vrijednošću']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'party_cues'
+    family: 'party_cue'
+    tier: 'generic'
+    kind: 'token'
+    forms: ['austrijska', 'austrijske', 'austrijski', 'austrijskih', 'austrijskim', 'austrijskima', 'austrijsko', 'austrijskog', 'austrijskoga', 'austrijskoj', 'austrijskom', 'austrijskome', 'austrijskomu', 'austrijsku', 'bavarska', 'bavarske', 'bavarski', 'bavarskih', 'bavarskim', 'bavarskima', 'bavarsko', 'bavarskog', 'bavarskoga', 'bavarskoj', 'bavarskom', 'bavarskome', 'bavarskomu', 'bavarsku', 'birač', 'birača', 'birače', 'birači', 'biračima', 'biračka', 'biračke', 'birački', 'biračkih', 'biračkim', 'biračkima', 'biračko', 'biračkog', 'biračkoga', 'biračkoj', 'biračkom', 'biračkome', 'biračkomu', 'biračku', 'biračom', 'biraču', 'europska', 'europske', 'europski', 'europskih', 'europskim', 'europskima', 'europsko', 'europskog', 'europskoga', 'europskoj', 'europskom', 'europskome', 'europskomu', 'europsku', 'frakcija', 'frakcijama', 'frakcije', 'frakciji', 'frakcijo', 'frakcijom', 'frakciju', 'gradonačelnica', 'gradonačelnicama', 'gradonačelnice', 'gradonačelnici', 'gradonačelnico', 'gradonačelnicom', 'gradonačelnicu', 'izbor', 'izbora', 'izbore', 'izbori', 'izborima', 'izborna', 'izborne', 'izborni', 'izbornih', 'izbornim', 'izbornima', 'izborno', 'izbornog', 'izbornoga', 'izbornoj', 'izbornom', 'izbornome', 'izbornomu', 'izbornu', 'izborom', 'izboru', 'kancelar', 'kancelara', 'kancelare', 'kancelari', 'kancelarima', 'kancelarka', 'kancelarkama', 'kancelarke', 'kancelarki', 'kancelarko', 'kancelarkom', 'kancelarku', 'kancelarom', 'kancelarska', 'kancelarske', 'kancelarski', 'kancelarskih', 'kancelarskim', 'kancelarskima', 'kancelarsko', 'kancelarskog', 'kancelarskoga', 'kancelarskoj', 'kancelarskom', 'kancelarskome', 'kancelarskomu', 'kancelarsku', 'kancelaru', 'kandidat', 'kandidata', 'kandidate', 'kandidati', 'kandidatima', 'kandidatkinja', 'kandidatkinjama', 'kandidatkinje', 'kandidatkinji', 'kandidatkinjo', 'kandidatkinjom', 'kandidatkinju', 'kandidatom', 'kandidatu', 'klub', 'kluba', 'klube', 'klubi', 'klubima', 'klubom', 'klubova', 'klubove', 'klubovi', 'klubovima', 'klubu', 'koalicija', 'koalicijama', 'koalicije', 'koaliciji', 'koalicijo', 'koalicijom', 'koalicijska', 'koalicijske', 'koalicijski', 'koalicijskih', 'koalicijskim', 'koalicijskima', 'koalicijsko', 'koalicijskog', 'koalicijskoga', 'koalicijskoj', 'koalicijskom', 'koalicijskome', 'koalicijskomu', 'koalicijsku', 'koaliciju', 'ministrica', 'ministricama', 'ministrice', 'ministrici', 'ministrico', 'ministricom', 'ministricu', 'njemačka', 'njemačke', 'njemački', 'njemačkih', 'njemačkim', 'njemačkima', 'njemačko', 'njemačkog', 'njemačkoga', 'njemačkoj', 'njemačkom', 'njemačkome', 'njemačkomu', 'njemačku', 'premijer', 'premijera', 'premijere', 'premijeri', 'premijerima', 'premijerka', 'premijerkama', 'premijerke', 'premijerki', 'premijerko', 'premijerkom', 'premijerku', 'premijerom', 'premijeru', 'stranaka', 'stranci', 'stranka', 'strankama', 'stranke', 'stranki', 'stranko', 'strankom', 'stranku', 'talijanska', 'talijanske', 'talijanski', 'talijanskih', 'talijanskim', 'talijanskima', 'talijansko', 'talijanskog', 'talijanskoga', 'talijanskoj', 'talijanskom', 'talijanskome', 'talijanskomu', 'talijansku', 'unija', 'unijama', 'unije', 'uniji', 'unijo', 'unijom', 'uniju', 'vlada', 'vladama', 'vlade', 'vladi', 'vlado', 'vladom', 'vladu', 'vođa', 'vođama', 'vođe', 'vođi', 'vođo', 'vođom', 'vođu', 'zastupnica', 'zastupnicama', 'zastupnice', 'zastupnici', 'zastupnicima', 'zastupnico', 'zastupnicom', 'zastupnicu', 'zastupnik', 'zastupnika', 'zastupnike', 'zastupniki', 'zastupnikima', 'zastupnikom', 'zastupniku', 'zastupnička', 'zastupničke', 'zastupnički', 'zastupničkih', 'zastupničkim', 'zastupničkima', 'zastupničko', 'zastupničkog', 'zastupničkoga', 'zastupničkoj', 'zastupničkom', 'zastupničkome', 'zastupničkomu', 'zastupničku', 'čelna', 'čelne', 'čelni', 'čelnica', 'čelnicama', 'čelnice', 'čelnici', 'čelnicima', 'čelnico', 'čelnicom', 'čelnicu', 'čelnih', 'čelnik', 'čelnika', 'čelnike', 'čelniki', 'čelnikima', 'čelnikom', 'čelniku', 'čelnim', 'čelnima', 'čelništva', 'čelništvima', 'čelništvo', 'čelništvom', 'čelništvu', 'čelno', 'čelnog', 'čelnoga', 'čelnoj', 'čelnom', 'čelnome', 'čelnomu', 'čelnu']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'party_codes'
+    family: 'party_cue'
+    tier: 'generic'
+    kind: 'token'
+    forms: ['CDU', 'CSU', 'EPP', 'ÖVP']
+    case_sensitive: 'true'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'

@@ -657,3 +657,22 @@
   defensive check like `git diff --cached --name-only | grep -Ei "merged_comprehensive|_backup_"` is
   itself blocked, as is any command containing the words `clean` and `-f`. Write such verification
   without spelling the protected names.
+
+## 2026-09-18 — Barometer reproducibility and presentation checks
+
+- [LEARN] Bind a frozen human validation certificate to the classifier body,
+  definition, panel and actual adjudicated result. Refresh orchestration may
+  change without changing the scientific instrument, but cached public releases
+  must also match validation, bridge, source snapshots and release-building code.
+  Probe both source databases before declaring that no data changed.
+- [LEARN] A page with a custom H1 needs an empty Pandoc `title-block.html`
+  partial to suppress the default title. `title-block-style: none` removes
+  styling but can leave a second H1. Explicitly unignore source HTML partials
+  and coding templates hidden by the project's generated-HTML patterns.
+- [LEARN] Static CSV values and browser-recomputed ratios can differ around
+  quantile cutoffs after serialization. Use the same precision/tolerance in
+  both matrix renderers and test actual boundary values, including repeated
+  cutoffs. This affects colour assignment, never the underlying indicator.
+- [LEARN] Human masking audits must count every genuinely qualifying masked
+  segment even when the unmasked context viewer already shows that segment.
+  Requiring its absence from the main view would conceal a masking error.

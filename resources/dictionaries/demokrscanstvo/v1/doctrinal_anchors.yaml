@@ -1,0 +1,536 @@
+entries:
+  - id: 'social_teaching'
+    family: 'doctrine'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['socijalni nauk']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['socijalni', 'socijalnog', 'socijalnoga', 'socijalnom', 'socijalnomu', 'socijalnome', 'socijalnim'], ['nauk', 'nauka', 'nauku', 'naukom']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'social_doctrine'
+    family: 'doctrine'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['socijalni doktrina']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['socijalni', 'socijalna', 'socijalno', 'socijalne', 'socijalnu', 'socijalnog', 'socijalnoga', 'socijalnom', 'socijalnomu', 'socijalnome', 'socijalnoj', 'socijalnim', 'socijalnima', 'socijalnih'], ['doktrina', 'doktrine', 'doktrini', 'doktrinu', 'doktrinom', 'doktrinama', 'doktrino']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'catholic_teaching'
+    family: 'doctrine'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['katolički socijalni učenje']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['katolički', 'katolička', 'katoličko', 'katoličke', 'katoličku', 'katoličkog', 'katoličkoga', 'katoličkom', 'katoličkomu', 'katoličkome', 'katoličkoj', 'katoličkim', 'katoličkima', 'katoličkih'], ['socijalni', 'socijalna', 'socijalno', 'socijalne', 'socijalnu', 'socijalnog', 'socijalnoga', 'socijalnom', 'socijalnomu', 'socijalnome', 'socijalnoj', 'socijalnim', 'socijalnima', 'socijalnih'], ['učenje', 'učenja', 'učenju', 'učenjem', 'učenjima']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'church_teaching'
+    family: 'doctrine'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['socijalni učenje Crkve']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['socijalni', 'socijalna', 'socijalno', 'socijalne', 'socijalnu', 'socijalnog', 'socijalnoga', 'socijalnom', 'socijalnomu', 'socijalnome', 'socijalnoj', 'socijalnim', 'socijalnima', 'socijalnih'], ['učenje', 'učenja', 'učenju', 'učenjem', 'učenjima'], ['Crkve', 'Crkvi', 'Crkvom', 'Crkava']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'christian_social_thought'
+    family: 'doctrine'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['kršćanski socijalni misao']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['kršćanski', 'kršćanska', 'kršćansko', 'kršćanske', 'kršćansku', 'kršćanskog', 'kršćanskoga', 'kršćanskom', 'kršćanskomu', 'kršćanskome', 'kršćanskoj', 'kršćanskim', 'kršćanskima', 'kršćanskih'], ['socijalni', 'socijalna', 'socijalno', 'socijalne', 'socijalnu', 'socijalnog', 'socijalnoga', 'socijalnom', 'socijalnomu', 'socijalnome', 'socijalnoj', 'socijalnim', 'socijalnima', 'socijalnih'], ['misao', 'misli', 'mišlju']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'universal_goods'
+    family: 'universal_goods'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['opći namjena dobara']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['opći', 'opća', 'općo', 'opće', 'opću', 'općog', 'općoga', 'općom', 'općomu', 'općome', 'općoj', 'općim', 'općima', 'općih', 'univerzalni', 'univerzalna', 'univerzalno', 'univerzalne', 'univerzalnu', 'univerzalnog', 'univerzalnoga', 'univerzalnom', 'univerzalnomu', 'univerzalnome', 'univerzalnoj', 'univerzalnim', 'univerzalnima', 'univerzalnih'], ['namjena', 'namjene', 'namjeni', 'namjenu', 'namjenom', 'namjenama', 'namjeno'], ['dobara']]
+    gap_max: '0'
+    order: 'fixed'
+    principle: 'opca_namjena_dobara'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'poor_option'
+    family: 'poor_option'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['opredjeljenje za siromašni']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['opredjeljenje', 'opredjeljenja', 'opredjeljenju', 'opredjeljenjem', 'opcija', 'opcije', 'opciji', 'opciju', 'opcijom', 'opcijama', 'opcijo'], ['za'], ['siromašni', 'siromašna', 'siromašno', 'siromašne', 'siromašnu', 'siromašnog', 'siromašnoga', 'siromašnom', 'siromašnomu', 'siromašnome', 'siromašnoj', 'siromašnim', 'siromašnima', 'siromašnih']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'preferential_poor_love'
+    family: 'poor_option'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['povlašteni ljubav prema siromašnima']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['povlašteni', 'povlaštena', 'povlašteno', 'povlaštene', 'povlaštenu', 'povlaštenog', 'povlaštenoga', 'povlaštenom', 'povlaštenomu', 'povlaštenome', 'povlaštenoj', 'povlaštenim', 'povlaštenima', 'povlaštenih'], ['ljubav', 'ljubavi', 'ljubavlju'], ['prema'], ['siromašnima']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'integral_ecology'
+    family: 'integral_ecology'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['integralni ekologija']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['integralni', 'integralna', 'integralno', 'integralne', 'integralnu', 'integralnog', 'integralnoga', 'integralnom', 'integralnomu', 'integralnome', 'integralnoj', 'integralnim', 'integralnima', 'integralnih'], ['ekologija', 'ekologije', 'ekologiji', 'ekologiju', 'ekologijom', 'ekologijama', 'ekologijo']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'personalism'
+    family: 'personalism'
+    tier: 'strong'
+    kind: 'token'
+    forms: ['personalist', 'personalista', 'personaliste', 'personalisti', 'personalistima', 'personalistička', 'personalističke', 'personalistički', 'personalističkih', 'personalističkim', 'personalističkima', 'personalističko', 'personalističkog', 'personalističkoga', 'personalističkoj', 'personalističkom', 'personalističkome', 'personalističkomu', 'personalističku', 'personalistom', 'personalistu', 'personalizam', 'personalizma', 'personalizmom', 'personalizmu']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'doc_rerum_novarum'
+    family: 'document'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['rerum novarum']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/moral-economy/cst_lexicon.R'
+      source_object: 'CST_DOCS'
+      source_line: '25'
+      source_sha256: '354204f2e562f5c547cd7fe9cd5908b84a89f94e160bcd7d441f2df096aee8f0'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'doc_quadragesimo_anno'
+    family: 'document'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['quadragesimo anno']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/moral-economy/cst_lexicon.R'
+      source_object: 'CST_DOCS'
+      source_line: '26'
+      source_sha256: '354204f2e562f5c547cd7fe9cd5908b84a89f94e160bcd7d441f2df096aee8f0'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'doc_mater_et_magistra'
+    family: 'document'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['mater et magistra']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/moral-economy/cst_lexicon.R'
+      source_object: 'CST_DOCS'
+      source_line: '27'
+      source_sha256: '354204f2e562f5c547cd7fe9cd5908b84a89f94e160bcd7d441f2df096aee8f0'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'doc_pacem_in_terris'
+    family: 'document'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['pacem in terris']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/moral-economy/cst_lexicon.R'
+      source_object: 'CST_DOCS'
+      source_line: '28'
+      source_sha256: '354204f2e562f5c547cd7fe9cd5908b84a89f94e160bcd7d441f2df096aee8f0'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'doc_gaudium_et_spes'
+    family: 'document'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['gaudium et spes']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/moral-economy/cst_lexicon.R'
+      source_object: 'CST_DOCS'
+      source_line: '29'
+      source_sha256: '354204f2e562f5c547cd7fe9cd5908b84a89f94e160bcd7d441f2df096aee8f0'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'doc_populorum_progressio'
+    family: 'document'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['populorum progressio']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/moral-economy/cst_lexicon.R'
+      source_object: 'CST_DOCS'
+      source_line: '30'
+      source_sha256: '354204f2e562f5c547cd7fe9cd5908b84a89f94e160bcd7d441f2df096aee8f0'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'doc_octogesima_adveniens'
+    family: 'document'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['octogesima adveniens']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/moral-economy/cst_lexicon.R'
+      source_object: 'CST_DOCS'
+      source_line: '31'
+      source_sha256: '354204f2e562f5c547cd7fe9cd5908b84a89f94e160bcd7d441f2df096aee8f0'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'doc_laborem_exercens'
+    family: 'document'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['laborem exercens']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/moral-economy/cst_lexicon.R'
+      source_object: 'CST_DOCS'
+      source_line: '32'
+      source_sha256: '354204f2e562f5c547cd7fe9cd5908b84a89f94e160bcd7d441f2df096aee8f0'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'doc_sollicitudo_rei_socialis'
+    family: 'document'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['sollicitudo rei socialis']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/moral-economy/cst_lexicon.R'
+      source_object: 'CST_DOCS'
+      source_line: '33'
+      source_sha256: '354204f2e562f5c547cd7fe9cd5908b84a89f94e160bcd7d441f2df096aee8f0'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'doc_centesimus_annus'
+    family: 'document'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['centesimus annus']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/moral-economy/cst_lexicon.R'
+      source_object: 'CST_DOCS'
+      source_line: '34'
+      source_sha256: '354204f2e562f5c547cd7fe9cd5908b84a89f94e160bcd7d441f2df096aee8f0'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'doc_caritas_in_veritate'
+    family: 'document'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['caritas in veritate']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/moral-economy/cst_lexicon.R'
+      source_object: 'CST_DOCS'
+      source_line: '35'
+      source_sha256: '354204f2e562f5c547cd7fe9cd5908b84a89f94e160bcd7d441f2df096aee8f0'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'doc_evangelii_gaudium'
+    family: 'document'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['evangelii gaudium']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/moral-economy/cst_lexicon.R'
+      source_object: 'CST_DOCS'
+      source_line: '36'
+      source_sha256: '354204f2e562f5c547cd7fe9cd5908b84a89f94e160bcd7d441f2df096aee8f0'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'doc_laudato_si'
+    family: 'document'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['laudato si']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/moral-economy/cst_lexicon.R'
+      source_object: 'CST_DOCS'
+      source_line: '22'
+      source_sha256: '354204f2e562f5c547cd7fe9cd5908b84a89f94e160bcd7d441f2df096aee8f0'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'doc_fratelli_tutti'
+    family: 'document'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['fratelli tutti']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/moral-economy/cst_lexicon.R'
+      source_object: 'CST_DOCS'
+      source_line: '38'
+      source_sha256: '354204f2e562f5c547cd7fe9cd5908b84a89f94e160bcd7d441f2df096aee8f0'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'doc_laudate_deum'
+    family: 'document'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['laudate deum']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/moral-economy/cst_lexicon.R'
+      source_object: 'CST_DOCS'
+      source_line: '39'
+      source_sha256: '354204f2e562f5c547cd7fe9cd5908b84a89f94e160bcd7d441f2df096aee8f0'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'doc_dignitas_infinita'
+    family: 'document'
+    tier: 'strong'
+    kind: 'phrase'
+    forms: ['dignitas infinita']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/moral-economy/cst_lexicon.R'
+      source_object: 'CST_DOCS'
+      source_line: '40'
+      source_sha256: '354204f2e562f5c547cd7fe9cd5908b84a89f94e160bcd7d441f2df096aee8f0'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'encyclical_genre'
+    family: 'encyclical'
+    tier: 'generic'
+    kind: 'token'
+    forms: ['enciklici', 'enciklika', 'enciklikama', 'enciklike', 'encikliki', 'encikliko', 'enciklikom', 'encikliku']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'

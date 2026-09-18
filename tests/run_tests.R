@@ -419,9 +419,44 @@ expect_equal(
   "11. lipnja 2026.",
   "Shared Croatian dates must use a lowercase genitive month"
 )
+# Keep suite-local counters and failure lists separate from shared regressions.
+barometar_suites <- c(
+  "tests/barometar_text_tests.R",
+  "tests/barometar_config_tests.R",
+  "tests/barometar_rules_tests.R",
+  "tests/barometar_engine_tests.R",
+  "tests/barometar_facet_review_tests.R",
+  "tests/barometar_definition_review_tests.R",
+  "tests/barometar_metrics_tests.R",
+  "tests/barometar_validation_tests.R",
+  "tests/barometar_validation_audit_tests.R",
+  "tests/barometar_near_miss_audit_tests.R",
+  "tests/barometar_human_import_tests.R",
+  "tests/barometar_bridge_audit_tests.R",
+  "tests/barometar_bridge_source_tests.R",
+  "tests/barometar_denominator_tests.R",
+  "tests/barometar_worker_tests.R",
+  "tests/barometar_release_audit_tests.R",
+  "tests/barometar_page_display_tests.R",
+  "tests/barometar_history_tests.R",
+  "tests/barometar_certificate_tests.R",
+  "tests/barometar_install_tests.R",
+  "tests/barometar_update_tests.R",
+  "tests/barometar_disclosure_tests.R")
+for (test in barometar_suites) {
+  test_environment <- new.env(parent = .GlobalEnv)
+  source(test, local = test_environment, encoding = "UTF-8")
+  if (endsWith(test, "definition_review_tests.R")) test_environment$run_barometar_definition_review_tests()
+  if (endsWith(test, "denominator_tests.R")) test_environment$run_barometar_denominator_tests()
+}
+expect_equal(digikat_hr_noun(1, "članak"), "članak", "Barometer singular article")
+expect_equal(digikat_hr_noun(22, "članak"), "članka", "Barometer few articles")
+expect_equal(digikat_hr_noun(114, "članak"), "članaka", "Barometer teen articles")
+expect_equal(digikat_hr_noun(12, "tjedan"), "tjedana", "Barometer teen weeks")
+expect_equal(digikat_hr_noun(3, "mjesec"), "mjeseca", "Barometer few months")
 if (length(failures)) {
   cat("FAILED", length(failures), "of", checks, "checks:\n")
   cat(paste0("- ", failures, collapse = "\n"), "\n")
   quit(save = "no", status = 1L)
 }
-cat("All", checks, "DigiKat regression checks passed.\n")
+cat("All", checks, "shared DigiKat regression checks and all barometer suites passed.\n")

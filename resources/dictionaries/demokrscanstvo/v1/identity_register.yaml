@@ -1,0 +1,41 @@
+entries:
+  - id: 'identity_family'
+    family: 'identity_family'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['obiteljske vrijednosti', 'obiteljskih vrijednosti', 'prava na život', 'pravo na život', 'tradicionalna obitelj', 'tradicionalne obitelji', 'zaštita nerođenih', 'zaštite nerođenih']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'identity_other'
+    family: 'identity_other'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['islamizacija', 'islamizacijama', 'islamizacije', 'islamizaciji', 'islamizacijo', 'islamizacijom', 'islamizaciju', 'kršćanska Europa', 'kršćanska civilizacija', 'kršćanske Europe', 'kršćanske civilizacije', 'kršćanski identitet', 'kršćanski korijeni', 'kršćanskih korijena', 'kršćanskog identiteta', 'rodna ideologija', 'rodne ideologije', 'velika zamjena', 'velike zamjene']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'

@@ -28,6 +28,9 @@ digikat_hr_plural <- function(n, forms) {
 # Add a noun here rather than inlining forms at a call site.
 DIGIKAT_NOUN_HR <- list(
   objava    = c("objava", "objave", "objava"),
+  članak    = c("članak", "članka", "članaka"),
+  tjedan    = c("tjedan", "tjedna", "tjedana"),
+  mjesec    = c("mjesec", "mjeseca", "mjeseci"),
   izvor     = c("izvor", "izvora", "izvora"),
   stupac    = c("stupac", "stupca", "stupaca"),
   redak     = c("redak", "retka", "redaka"),

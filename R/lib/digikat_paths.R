@@ -28,6 +28,47 @@ digikat_legacy_master_path <- function() {
   Sys.getenv("DIGIKAT_MASTER_PATH", unset = "data/merged_comprehensive.rds")
 }
 
+# The barometer uses a separate restricted general-media feed, never the corpus above.
+# No machine-specific data path is a tracked default; configure the user's .Renviron.
+digikat_required_local_path <- function(variable) {
+  value <- Sys.getenv(variable, unset = "")
+  if (!nzchar(trimws(value))) {
+    stop(variable, " is not configured. See CLAUDE.local.md and ",
+         "studies/demokrscanstvo-barometar/config/paths.example.Renviron.", call. = FALSE)
+  }
+  path.expand(value)
+}
+
+digikat_determdb_path <- function() digikat_required_local_path("DIGIKAT_DETERMDB_PATH")
+
+digikat_determdb_table <- function() {
+  value <- Sys.getenv("DIGIKAT_DETERMDB_TABLE", unset = "main.media_data_all")
+  # A table identifier is not arbitrary SQL. Quote the two validated parts at the caller.
+  if (!grepl("^[A-Za-z_][A-Za-z0-9_]*[.][A-Za-z_][A-Za-z0-9_]*$", value)) {
+    stop("DIGIKAT_DETERMDB_TABLE must be a schema.table identifier.", call. = FALSE)
+  }
+  value
+}
+
+digikat_determdb_old_path <- function() digikat_required_local_path("DIGIKAT_DETERMDB_OLD_PATH")
+
+digikat_barometar_workdir <- function() {
+  value <- digikat_required_local_path("DIGIKAT_BAROMETAR_WORKDIR")
+  if (!grepl("^([A-Za-z]:[/\\\\]|[/\\\\]{2}|/)", value)) {
+    stop("DIGIKAT_BAROMETAR_WORKDIR must be an absolute path outside the repository.", call. = FALSE)
+  }
+  resolved <- normalizePath(value, winslash = "/", mustWork = FALSE)
+  root <- normalizePath(getwd(), winslash = "/", mustWork = TRUE)
+  if (identical(tolower(resolved), tolower(root)) ||
+      startsWith(tolower(resolved), paste0(tolower(root), "/"))) {
+    stop("DIGIKAT_BAROMETAR_WORKDIR must be outside the repository.", call. = FALSE)
+  }
+  if (any(tolower(strsplit(resolved, "/", fixed = TRUE)[[1L]]) == "dropbox")) {
+    stop("DIGIKAT_BAROMETAR_WORKDIR must be outside Dropbox.", call. = FALSE)
+  }
+  resolved
+}
+
 digikat_corpus_manifest_path <- function() {
   paste0(tools::file_path_sans_ext(digikat_corpus_path()), "_manifest.json")
 }

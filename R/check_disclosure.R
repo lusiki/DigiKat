@@ -19,8 +19,8 @@ git_lines <- function(arguments) {
   enc2utf8(out[nzchar(out)])
 }
 
-tracked <- git_lines(c("ls-files", "--", "studies"))
-untracked <- git_lines(c("ls-files", "--others", "--exclude-standard", "--", "studies"))
+tracked <- git_lines(c("ls-files", "--", "studies", "data/barometar"))
+untracked <- git_lines(c("ls-files", "--others", "--exclude-standard", "--", "studies", "data/barometar"))
 files <- sort(unique(c(tracked, untracked)))
 files <- files[file.exists(files) & !dir.exists(files)]
 
@@ -55,6 +55,7 @@ read_schema <- function(path) {
 }
 
 violations <- character()
+source("R/lib/barometar_disclosure.R",encoding="UTF-8")
 for (path in files) {
   normalized <- gsub("\\\\", "/", path)
   if (grepl("/output/(private|intermediate)/", normalized, ignore.case = TRUE)) {
@@ -71,6 +72,16 @@ for (path in files) {
       "%s: direct row-level field(s): %s", path, paste(sort(risky), collapse = ", ")
     ))
   }
+  if(startsWith(normalized,"data/barometar/")) {
+    ext <- tolower(tools::file_ext(path))
+    obj <- tryCatch(switch(ext,
+      json=jsonlite::fromJSON(path,simplifyVector=FALSE),
+      csv=utils::read.csv(path,fileEncoding="UTF-8-BOM",check.names=FALSE,stringsAsFactors=FALSE),
+      tsv=utils::read.delim(path,fileEncoding="UTF-8-BOM",check.names=FALSE,stringsAsFactors=FALSE),
+      stop("Unsupported public release artifact type")),error=function(e)e)
+    if(inherits(obj,"error"))violations <- c(violations,paste0(path,": cannot inspect: ",conditionMessage(obj)))
+    else violations <- c(violations,barometar_public_inspect(obj,path)$issues)
+  }
 }
 
 if (length(violations)) {
@@ -79,4 +90,4 @@ if (length(violations)) {
   quit(status = 1L, save = "no")
 }
 
-cat(sprintf("Disclosure guard passed: %d trackable study artifact(s) inspected.\n", length(files)))
+cat(sprintf("Disclosure guard passed: %d trackable study/public barometer artifact(s) inspected.\n", length(files)))

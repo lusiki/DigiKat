@@ -1,0 +1,5 @@
+# Copy to the user's .Renviron and replace placeholders. Never commit actual local paths.
+DIGIKAT_DETERMDB_PATH="/absolute/path/to/determDB_merged.duckdb"
+DIGIKAT_DETERMDB_TABLE="main.media_data_all"
+DIGIKAT_DETERMDB_OLD_PATH="/absolute/path/to/determDB.duckdb"
+DIGIKAT_BAROMETAR_WORKDIR="/absolute/path/outside/the/repository/barometar_work"

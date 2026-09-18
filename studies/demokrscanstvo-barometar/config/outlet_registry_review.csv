@@ -1,0 +1,75 @@
+from_value,display_name,segment,editorial,croatia_link,evidence_note,evidence_url
+hkm.hr,Hrvatska katolička mreža,confessional,TRUE,TRUE,HKM newsroom; IKA and HKR grouped as products of HKM subject to PI G1.,https://hkm.hr/impressum/;https://ika.hkm.hr/o-nama/
+laudato.hr,Laudato,confessional,TRUE,TRUE,Confessional editorial product identified in both source-label and news-gap seeds; D2 includes the segment.,
+bitno.net,Bitno.net,confessional,TRUE,TRUE,Seed editorial publisher; BRIEF 4.3 says new-batch-only coverage prevents panel_v1 continuity.,
+glas-koncila.hr,Glas Koncila,confessional,TRUE,TRUE,Seed editorial publisher; BRIEF 4.3 says new-batch-only coverage prevents panel_v1 continuity.,
+novizivot.net,Novi Život,confessional,TRUE,NA,needs_review: self-description is Christian portal (not sufficient evidence of the Catholic label in the seed); Croatia publisher link needs confirmation.,https://www.novizivot.net/impressum/
+5portal.hr,5portal,regional,TRUE,TRUE,Publisher describes local Labin area news and identifies editorial office and Croatian publisher.,https://5portal.hr/korisno/88/o-portalu
+drava.info,Drava.info,regional,TRUE,TRUE,Newsroom and Croatian association publisher; Koprivnica and Podravina service confirmed by publisher.,https://drava.info/impresum/;https://drava.info/2025/08/poseban-dan-za-nasu-redakciju-danas-je-10-velikih-godina-portala-drava-info/
+danica.hr,Danica,regional,TRUE,TRUE,Publisher homepage identifies editorial selection and reporting on Podravina; regional is a proposed segment.,https://danica.hr/
+fiuman.hr,Fiuman,regional,TRUE,TRUE,Publisher describes regional Rijeka newsroom and its reporting remit.,https://www.fiuman.hr/o-nama/
+krizevci.info,Križevci.info,regional,TRUE,TRUE,Publisher describes independent local news project and identifies Križevci association and editorial team.,https://www.krizevci.info/impressum/
+kronikevg.com,Kronike Velike Gorice,regional,TRUE,TRUE,Publisher describes Velika Gorica and Turopolje news; Croatian editorial office.,https://www.kronikevg.com/impressum/
+lika-express.hr,Lika Express,regional,TRUE,TRUE,Electronic publication and editorial office identified in Gospić.,https://www.lika-express.hr/impressum
+parentium.com,Parentium,regional,TRUE,TRUE,Publisher describes daily local Poreč and Istria news with identified editorial team.,https://www.parentium.com/impressum
+novosti.hr,Novosti Vinkovci,regional,TRUE,TRUE,Publisher identifies Novosti news and radio company in Vinkovci; distinct from portalnovosti.com.,https://novosti.hr/contact/
+zupcica.hr,Župčica,regional,TRUE,TRUE,Homepage is local Župa dubrovačka news with editorial selection; not a parish site despite its name.,https://www.zupcica.hr/
+portalnovosti.com,Portal Novosti,national,TRUE,TRUE,Identified Zagreb editorial publication; separate newsroom from institutional publisher SNV; proposed national segment requires PI review.,https://www.portalnovosti.com/impressum/
+advance.hr,Advance,political_portal,TRUE,TRUE,Publisher identifies Croatian editorial operation and political analytical remit; political_portal is a proposed segment.,https://www.advance.hr/o-nama;https://www.advance.hr/kontakt
+bug.hr,Bug,national,TRUE,TRUE,Technology editorial publication with identified Zagreb publisher and newsroom; national includes specialist editorial publications.,https://www.bug.hr/impresum
+agroklub.com,Agroklub,national,TRUE,TRUE,Agriculture editorial publication with identified Croatian publisher and editor; national includes specialist editorial publications.,https://www.agroklub.com/agroklub/kontakt-impressum
+journal.hr,Journal,national,TRUE,TRUE,Lifestyle editorial publication with identified Zagreb newsroom and publisher; national includes specialist editorial publications.,https://www.journal.hr/kontakt/
+grazia.hr,Grazia,national,TRUE,TRUE,Croatian lifestyle publication with identified editorial team and Zagreb publisher; national includes specialist editorial publications.,https://grazia.hr/o-nama/
+poslovni.hr,Poslovni dnevnik,national,TRUE,TRUE,Business editorial publication with identified Croatian newsroom and publisher; remains distinct outlet from Vecernji despite shared publisher.,https://www.poslovni.hr/impressum
+mojarijeka.hr,Moja Rijeka,institutional,FALSE,TRUE,Published by City of Rijeka; city-site exclusion follows BRIEF 4.2 even though a newsroom is named.,https://www.mojarijeka.hr/impressum/
+novine.hr,Novine.hr,aggregator,FALSE,TRUE,Explicit BRIEF exclusion; publisher describes aggregation of other Croatian portals and blogs.,https://novine.hr/impressum
+dubrovnik.hr,Grad Dubrovnik,institutional,FALSE,TRUE,Official city website; BRIEF city-site exclusion.,https://www.dubrovnik.hr/
+grad-krk.hr,Grad Krk,institutional,FALSE,TRUE,Official city website; BRIEF city-site exclusion.,https://grad-krk.hr/
+kckzz.hr,Koprivničko-križevačka županija,institutional,FALSE,TRUE,Official county website; BRIEF county-site exclusion.,https://kckzz.hr/hr/
+kgz.hr,Knjižnice grada Zagreba,institutional,FALSE,TRUE,Official public-library website; institutional publisher.,https://www.kgz.hr/hr
+koprivnica.hr,Grad Koprivnica,institutional,FALSE,TRUE,Official city website; BRIEF city-site exclusion.,https://koprivnica.hr/
+krizevci.hr,Grad Križevci,institutional,FALSE,TRUE,Official city website; distinct from krizevci.info; BRIEF city-site exclusion.,https://krizevci.hr/
+medjimurska-zupanija.hr,Međimurska županija,institutional,FALSE,TRUE,Official county website; BRIEF county-site exclusion.,https://medjimurska-zupanija.hr/
+prelog.hr,Grad Prelog,institutional,FALSE,TRUE,Official city website; BRIEF city-site exclusion.,https://www.prelog.hr/
+pula.hr,Grad Pula,institutional,FALSE,TRUE,Official city website; BRIEF city-site exclusion.,https://www.pula.hr/hr/?redirect=false
+rijeka.hr,Grad Rijeka,institutional,FALSE,TRUE,Official city website; BRIEF city-site exclusion.,https://www.rijeka.hr/
+sibenik.hr,Grad Šibenik,institutional,FALSE,TRUE,Official city website; BRIEF city-site exclusion.,https://www.sibenik.hr/
+split.hr,Grad Split,institutional,FALSE,TRUE,Official city website; BRIEF city-site exclusion.,https://split.hr/
+srce.hr,Sveučilišni računski centar,institutional,FALSE,TRUE,Official university-computing-centre website; institutional publisher.,https://www.srce.unizg.hr/
+vukovar.hr,Grad Vukovar,institutional,FALSE,TRUE,Official city website; BRIEF city-site exclusion.,https://vukovar.hr/
+smn.hr,Splitsko-makarska nadbiskupija,institutional,FALSE,TRUE,Official archdiocesan website; BRIEF diocesan-site exclusion.,https://smn.hr/kontakt
+hvs.hr,Hrvatski vaterpolski savez,institutional,FALSE,TRUE,Official sports federation website; institutional publisher.,https://hvs.hr/
+elipso.hr,Elipso,non_news,FALSE,TRUE,Retail storefront; BRIEF shop exclusion.,https://www.elipso.hr/
+gizzmo.hr,Gizzmo,non_news,FALSE,NA,Retail storefront; BRIEF shop exclusion; publisher country not needed for exclusion.,https://gizzmo.hr/
+svijet-medija.hr,Svijet medija,non_news,FALSE,TRUE,Retail storefront; BRIEF shop exclusion.,https://www.svijet-medija.hr/
+tower-center-rijeka.hr,Tower Center Rijeka,non_news,FALSE,TRUE,Shopping-centre website; BRIEF shop exclusion.,https://tower-center-rijeka.hr/
+ictbusiness.info,ICTbusiness,national,TRUE,TRUE,Editorial technology publication; publisher identifies ICTbusiness.info as Croatian and regional web product.,https://www.ictbusiness.info/;https://www.ictbusiness.biz/about-us/
+jatrgovac.com,Ja TRGOVAC,national,TRUE,TRUE,Publisher identifies Croatian retail trade magazine and Zagreb office; specialist editorial publication.,https://jatrgovac.com/kontakt/marketing/
+hrturizam.hr,HrTurizam,national,TRUE,TRUE,Croatian tourism newspaper with identified editorial office and Vinkovci publisher; specialist editorial publication.,https://en.hrturizam.hr/contact
+gospodarski.hr,Gospodarski list,national,TRUE,TRUE,Identified Zagreb newspaper publisher and editorial office; specialist editorial publication; storefront URLs still excluded.,https://gospodarski.hr/uvjeti-koristenja/
+tockanai.hr,Točka na i,national,TRUE,TRUE,Publisher identifies business-news remit and Zagreb office; commercial agency services do not alone disqualify editorial product.,https://tockanai.hr/o-nama-tocka-na-i-media/
+srednja.hr,Srednja.hr,national,TRUE,TRUE,Publisher identifies Croatian student news publication and newsroom; separate outlet from its explicitly excluded sister portal mirovina.hr.,https://www.srednja.hr/stranice/9/impressum;https://www.srednja.hr/stranice/12/o-nama
+studentski.hr,Studentski.hr,national,TRUE,TRUE,Identified editorial team and Zagreb youth-association publisher; specialist editorial publication.,https://studentski.hr/impressum
+seebiz.eu,SEEbiz,national,TRUE,NA,needs_review: newsroom identified but primary impressum does not establish publisher location or Croatia-specific product scope.,https://www.seebiz.eu/impressum/
+profitiraj.hr,Profitiraj,national,TRUE,TRUE,News publication identifies Medijski mali servis as publisher; same publisher address independently appears in its Zagrebonline impressum.,https://profitiraj.hr/impressum-2/;https://zagrebonline.hr/info/impressum/
+mojevrijeme.hr,Moje Vrijeme,national,TRUE,TRUE,Identified editorial team and Zagreb association publisher; specialist editorial publication.,https://www.mojevrijeme.hr/magazin/kontakt/
+medjimurjepress.net,Međimurje Press,regional,TRUE,TRUE,Identified newsroom and Čakovec publisher.,https://medjimurjepress.net/impresum/
+poduckun.net,PodUčkun,regional,TRUE,TRUE,Publisher explicitly describes regional daily news magazine and Opatija publisher.,https://poduckun.net/inf/impressum/
+pozeska-kronika.hr,Požeška kronika,regional,TRUE,TRUE,Publisher identifies Požega newsroom and local weekly/web publication.,https://pozeska-kronika.hr/impressum.html
+porestina.info,Poreština.info,regional,TRUE,TRUE,Publisher identifies daily Poreč-area editorial publication.,https://porestina.info/kontakt/impressum/
+osijek031.com,Osijek031,regional,NA,TRUE,needs_review: identified newsroom and Osijek publisher but phpBB routes mix editorial articles and user forum topics; product-scope decision required before counting this outlet. Do not blanket-exclude viewtopic.php and call the residue news.,https://www.osijek031.com/osijek.php?page=15
+maxportal.hr,Maxportal,political_portal,TRUE,TRUE,Identified newsroom and Zagreb publisher; political_portal classification proposed for PI review.,https://www.maxportal.hr/impressum/
+sbperiskop.net,SBPeriskop,regional,TRUE,TRUE,Publisher describes Brod web magazine and editorial team; geographic segment is a proposal.,https://www.sbperiskop.net/impresum
+zagrebonline.hr,Zagreb Online,regional,TRUE,TRUE,Identified Zagreb newsroom and publisher; local Zagreb remit.,https://zagrebonline.hr/info/impressum/
+rogotin.hr,Portal Rogotin,regional,TRUE,TRUE,Identified editorial publication and association publisher in Rogotin Croatia.,https://www.rogotin.hr/impressum/
+teklic.hr,Teklić,regional,TRUE,TRUE,Publisher footer identifies daily regional news portal for Rijeka/PGŽ and Rijeka office.,https://teklic.hr/?p=19223
+femina.hr,Femina,national,TRUE,TRUE,Identified editorial team and Zagreb publisher; specialist lifestyle publication.,https://www.femina.hr/clanak/index/r/16/c/52/se/site_impressum
+jolie.hr,Jolie,,NA,TRUE,needs_review: Zagreb publisher identified in privacy page but accessible impressum has no newsroom details; editorial product status unresolved.,https://jolie.hr/impressum/;https://jolie.hr/pravila-privatnosti/
+vidi.hr,VIDI,national,TRUE,TRUE,Identified Zagreb technology-publication publisher and newsroom; specialist editorial publication.,https://www.vidi.hr/O-Vidiju/Impressum
+geek.hr,Geek,national,TRUE,TRUE,Publisher identifies Croatian science/technology newsroom and Zagreb office; forum subhost must be excluded at URL eligibility.,https://geek.hr/znanost/impressum/
+goodgame.hr,GoodGame,,NA,NA,needs_review: editorial gaming coverage identified but BRIEF games-site boundary and Croatia publisher link require review; do not infer eligibility from news format.,https://www.goodgame.hr/impressum/
+klubskascena.hr,Klubska scena,national,TRUE,TRUE,Publisher identifies music editorial team and Croatian public cultural support; specialist editorial publication.,https://www.klubskascena.hr/impressum
+womeninadria.com,Women in Adria,national,TRUE,TRUE,Identified Zagreb publisher and editor; specialist business editorial publication; publisher also serves regional audience.,https://womeninadria.com/impressum/
+ravnododna.com,Ravno do dna,national,TRUE,TRUE,Publisher footer identifies pop-culture magazine newsroom and Zagreb association publisher.,https://ravnododna.com/tag/husta/
+ipress.hr,iPress,regional,TRUE,TRUE,Publisher identifies daily Istria newsroom and Pula publisher.,https://mail.ipress.hr/41868-Impressum
+hia.com.hr,Hrvatska informativna agencija,national,TRUE,TRUE,Identified Croatian editorial team and publisher; distinct from Hina.,https://www.hia.com.hr/impressum

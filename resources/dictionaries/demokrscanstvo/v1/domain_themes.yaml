@@ -1,0 +1,126 @@
+entries:
+  - id: 'theme_family'
+    family: 'theme_family'
+    tier: 'generic'
+    kind: 'token'
+    forms: ['abortus', 'abortusa', 'djeca', 'djece', 'djeci', 'dječjeg', 'eutanazija', 'eutanazijama', 'eutanazije', 'eutanaziji', 'eutanazijo', 'eutanazijom', 'eutanaziju', 'obitelj', 'obitelji', 'obiteljima', 'odgoj', 'odgoja', 'odgoje', 'odgojem', 'odgoji', 'odgojima', 'odgojom', 'odgoju', 'pobačaj', 'pobačaja', 'pobačaje', 'pobačajem', 'pobačaji', 'pobačajima', 'pobačajom', 'pobačaju', 'roditelj', 'roditelja', 'roditelje', 'roditelji', 'roditeljima', 'vjeronauk', 'vjeronauka', 'vjeronauke', 'vjeronauki', 'vjeronaukima', 'vjeronaukom', 'vjeronauku', 'škola', 'školama', 'škole', 'školi', 'školo', 'školom', 'školu']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'theme_work'
+    family: 'theme_work'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['plaća', 'plaćama', 'plaće', 'plaći', 'plaćo', 'plaćom', 'plaću', 'rad', 'rada', 'radne migracije', 'radnice', 'radnici', 'radnicima', 'radnih migracija', 'radnik', 'radnika', 'radnike', 'radniku', 'radom', 'radu', 'strani radnici', 'stranih radnika', 'zaposlenici', 'zaposlenik', 'zaposlenika', 'zaposlenike', 'zaposleniki', 'zaposlenikima', 'zaposlenikom', 'zaposleniku', 'zaposlenima']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'theme_economy'
+    family: 'theme_economy'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['ekonomija', 'ekonomijama', 'ekonomije', 'ekonomiji', 'ekonomijo', 'ekonomijom', 'ekonomiju', 'gospodarstva', 'gospodarstvima', 'gospodarstvo', 'gospodarstvom', 'gospodarstvu', 'mirovina', 'mirovinama', 'mirovine', 'mirovini', 'mirovino', 'mirovinom', 'mirovinu', 'porez', 'poreza', 'poreze', 'porezi', 'porezima', 'porezom', 'porezu', 'proračun', 'proračuna', 'proračune', 'proračuni', 'proračunima', 'proračunom', 'proračunu', 'siromaštva', 'siromaštvima', 'siromaštvo', 'siromaštvom', 'siromaštvu', 'socijalna država', 'socijalne države']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'theme_politics'
+    family: 'theme_politics'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['demokracija', 'demokracijama', 'demokracije', 'demokraciji', 'demokracijo', 'demokracijom', 'demokraciju', 'izbor', 'izbora', 'izbore', 'izbori', 'izborima', 'izborom', 'izboru', 'ustav', 'ustava', 'ustave', 'ustavi', 'ustavima', 'ustavom', 'ustavu', 'vjerska sloboda', 'vjerske slobode', 'vladavina prava', 'vladavine prava']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'theme_europe'
+    family: 'theme_europe'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['Europa', 'Europe', 'Europi', 'Europo', 'Europom', 'Europska unija', 'Europske unije', 'Europu', 'kultura mira', 'kulture mira', 'mir u svijetu', 'mirotvorac', 'mirotvoraca', 'mirotvorace', 'mirotvoraci', 'mirotvoracima', 'mirotvoracom', 'mirotvoracu', 'mirovna', 'mirovne', 'mirovni', 'mirovnih', 'mirovnim', 'mirovnima', 'mirovno', 'mirovnog', 'mirovnoga', 'mirovnoj', 'mirovnom', 'mirovnome', 'mirovnomu', 'mirovnu', 'pomirenja', 'pomirenje', 'pomirenjem', 'pomirenju']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'theme_environment'
+    family: 'theme_environment'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['briga za zajednički dom', 'brigama za zajednički dom', 'brige za zajednički dom', 'brigom za zajednički dom', 'brigu za zajednički dom', 'brizi za zajednički dom', 'ekologija', 'ekologijama', 'ekologije', 'ekologiji', 'ekologijo', 'ekologijom', 'ekologiju', 'okoliš', 'okoliša', 'okoliše', 'okoliši', 'okolišima', 'okolišom', 'okolišu']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+labels:
+  family: 'Obitelj, život i odgoj'
+  work: 'Rad i dostojanstvo rada'
+  economy: 'Gospodarski život i socijalna država'
+  politics: 'Politička zajednica, demokracija i vjerska sloboda'
+  europe: 'Europa, međunarodna zajednica i mir'
+  environment: 'Okoliš i briga za zajednički dom'
+  unclassified: 'Nerazvrstano'

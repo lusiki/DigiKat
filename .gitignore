@@ -3,6 +3,7 @@
 .Rhistory
 .RData
 .Ruserdata
+/.Renviron
 
 # Quarto
 /.quarto/
@@ -81,6 +82,8 @@ studies/*/output/*.rds
 studies/*/output/**/*.rds
 studies/*/output/private/
 studies/*/output/intermediate/
+# Barometer release previews are reviewed before --apply; never publish a preview by committing it.
+/studies/demokrscanstvo-barometar/output/
 # Editions own a directory (output/<year>/), so the guard has to match private/ and intermediate/ at
 # ANY depth under output/. Without these two lines the per-edition layout silently exposes every
 # row-level artifact: named sources, the actor panel and the populated manuscript.
@@ -101,6 +104,7 @@ studies/*/output/**/intermediate/
 /studies/**/*_files/
 # ...but the typeset/ includes are SOURCE for 28_render_paper.R, not render output.
 !/studies/*/typeset/*.html
+!/studies/demokrscanstvo-barometar/coder_template.html
 # Typeset manuscripts (28_render_paper.R) are rebuilt from the tracked .md, tables and figures.
 /studies/*/output/paper/
 # Assembled by 12_replication.R from files already tracked elsewhere; it is a deposit
@@ -120,6 +124,8 @@ studies/*/output/**/intermediate/
 #
 # pages/ — the main website sources
 /pages/**/*.html
+# This Pandoc partial is source; generated pages remain ignored above.
+!/pages/demokrscanstvo/title-block.html
 /pages/**/site_libs/
 /pages/**/*_files/
 # R/ — guard against accidental ad-hoc analysis renders

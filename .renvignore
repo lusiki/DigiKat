@@ -6,4 +6,5 @@ quality_reports/
 preview/
 studies/*/output/private/
 studies/*/output/intermediate/
+studies/demokrscanstvo-barometar/output/
 data/

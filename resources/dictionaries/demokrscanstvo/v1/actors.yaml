@@ -1,0 +1,343 @@
+entries:
+  - id: 'actor_hdz'
+    family: 'actor_cd'
+    tier: 'generic'
+    kind: 'token'
+    forms: ['HDZ', 'HDZ-a', 'HDZ-om', 'HDZ-ov', 'HDZ-ova', 'HDZ-ove', 'HDZ-u']
+    case_sensitive: 'true'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'actor_registry_specification'
+      source_line: '409-423'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'actor_hdz_full'
+    family: 'actor_cd'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['Hrvatska demokratska zajednica', 'Hrvatske demokratske zajednice', 'Hrvatskoj demokratskoj zajednici']
+    case_sensitive: 'true'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'actor_registry_specification'
+      source_line: '409-423'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'actor_hbk'
+    family: 'actor_church'
+    tier: 'generic'
+    kind: 'token'
+    forms: ['HBK', 'HBK-a', 'HBK-om', 'HBK-u']
+    case_sensitive: 'true'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'actor_registry_specification'
+      source_line: '409-423'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'actor_foreign_codes'
+    family: 'actor_foreign'
+    tier: 'generic'
+    kind: 'token'
+    forms: ['CD&V', 'CDU', 'CSU', 'NSi', 'ÖVP']
+    case_sensitive: 'true'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'actor_registry_specification'
+      source_line: '409-423'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'actor_hdz_bih'
+    family: 'actor_foreign'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['HDZ BiH', 'HDZ-a BiH', 'HDZ-u BiH']
+    case_sensitive: 'true'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'actor_registry_specification'
+      source_line: '409-423'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'geography_foreign'
+    family: 'geography_foreign'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['Austrija', 'Austrije', 'Austriji', 'Austrijom', 'Bosna i Hercegovina', 'Bosne i Hercegovine', 'Bosni i Hercegovini', 'Bosnom i Hercegovinom', 'Bosnu i Hercegovinu', 'Francuska', 'Francuske', 'Francuskoj', 'Francusku', 'Italija', 'Italije', 'Italiji', 'Njemačka', 'Njemačke', 'Njemačkoj', 'Poljska', 'Poljske', 'Poljskoj', 'Poljsku', 'Slovenija', 'Slovenije', 'Sloveniji', 'Slovenijom']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'actor_registry_specification'
+      source_line: '409-423'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'geography_eu'
+    family: 'geography_eu'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['Europska komisija', 'Europska unija', 'Europske komisije', 'Europske unije', 'Europski parlament', 'Europskog parlamenta', 'Europskoj komisiji', 'Europskoj uniji', 'Europskom parlamentu']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'actor_registry_specification'
+      source_line: '409-423'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'geography_domestic'
+    family: 'geography_domestic'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['Hrvatska', 'Hrvatske', 'Hrvatski sabor', 'Hrvatskih', 'Hrvatskim', 'Hrvatsko', 'Hrvatskog sabora', 'Hrvatskoga', 'Hrvatskoj', 'Hrvatskom', 'Hrvatsku', 'Zagreb', 'Zagreba', 'Zagrebu']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'actor_registry_specification'
+      source_line: '409-423'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+registry:
+  - id: 'hdz'
+    name_hr: 'Hrvatska demokratska zajednica'
+    role: 'cd_self_identified'
+    aliases: ['HDZ', 'HDZ-a', 'HDZ-u', 'HDZ-om', 'HDZ-ov', 'HDZ-ova', 'HDZ-ove', 'Hrvatska demokratska zajednica', 'Hrvatske demokratske zajednice', 'Hrvatskoj demokratskoj zajednici']
+    valid_from: '2024-10-20'
+    valid_to: '2026-09-18'
+    country: 'HR'
+    status: 'proposed'
+    sources: ['https://www.hdz.hr/userfiles/My_folder5/dodatno/Statut_2024/STATUT_HDZ_2024.pdf', 'Article 1(1)']
+    note: 'Earlier validity requires historical statute verification; no back-projection'
+  - id: 'hbk'
+    name_hr: 'Hrvatska biskupska konferencija'
+    role: 'church_body'
+    aliases: ['HBK', 'HBK-a', 'HBK-u', 'HBK-om', 'Hrvatska biskupska konferencija', 'Hrvatske biskupske konferencije']
+    valid_from: '2021-01-01'
+    valid_to: '2026-09-18'
+    country: 'HR'
+    status: 'proposed'
+    sources: ['https://hbk.hr/']
+    note: 'Organisation only; speaker attribution required'
+  - id: 'cdu'
+    name_hr: 'Christlich Demokratische Union Deutschlands'
+    aliases: ['CDU']
+    role: 'foreign_cd_party'
+    valid_from: '2021-01-01'
+    valid_to: '2026-09-18'
+    country: 'DE'
+    status: 'proposed'
+    sources: ['https://archiv.cdu.de/node/27667', '2007 programme and 2024-05-07 successor; official programme history']
+    note: 'Study interval begins after cited identity evidence; organisation identity/foreign cue only; no D or inferred individual ideology'
+  - id: 'csu'
+    name_hr: 'Christlich-Soziale Union'
+    aliases: ['CSU']
+    role: 'foreign_cd_party'
+    valid_from: '2021-01-01'
+    valid_to: '2026-09-18'
+    country: 'DE'
+    status: 'proposed'
+    sources: ['https://www.hss.de/fileadmin/user_upload/HSS/Dokumente/ACSP/Grundsatzprogramme/CSU_Grundsatzprogramm_2016.pdf', 'Adopted 2016-11-05; identity cue only']
+    note: 'Study interval begins after cited identity evidence; organisation identity/foreign cue only; no D or inferred individual ideology'
+  - id: 'ovp'
+    name_hr: 'Österreichische Volkspartei'
+    aliases: ['ÖVP']
+    role: 'foreign_cd_party'
+    valid_from: '2021-01-01'
+    valid_to: '2026-09-18'
+    country: 'AT'
+    status: 'proposed'
+    sources: ['https://www.dievolkspartei.at/Common/Download/Grundsatzprogramm_dieVolkspartei.pdf', '2015-05-12 edition, printed page 13']
+    note: 'Study interval begins after cited identity evidence; organisation identity/foreign cue only; no D or inferred individual ideology'
+  - id: 'nsi'
+    name_hr: 'Nova Slovenija – krščanski demokrati'
+    aliases: ['NSi']
+    role: 'foreign_cd_party'
+    valid_from: '2021-01-01'
+    valid_to: '2026-09-18'
+    country: 'SI'
+    status: 'proposed'
+    sources: ['https://nsi.si/wp-content/uploads/2020/02/Temeljni-program-NSi_sprejetnakongresu.pdf', 'Adopted 2019-11-17']
+    note: 'Study interval begins after cited identity evidence; organisation identity/foreign cue only; no D or inferred individual ideology'
+  - id: 'cdv'
+    name_hr: 'Christen-Democratisch & Vlaams'
+    aliases: ['CD&V']
+    role: 'foreign_cd_party'
+    valid_from: '2021-01-01'
+    valid_to: '2026-09-18'
+    country: 'BE'
+    status: 'proposed'
+    sources: ['https://www.cdenv.be/geschiedenis', 'Official history: name adopted 2001-09-28/29; 2020 manifesto']
+    note: 'Study interval begins after cited identity evidence; organisation identity/foreign cue only; no D or inferred individual ideology'
+  - id: 'hdz_bih'
+    name_hr: 'Hrvatska demokratska zajednica Bosne i Hercegovine'
+    aliases: ['HDZ BiH', 'HDZ-a BiH', 'HDZ-u BiH']
+    role: 'foreign_cd_party'
+    valid_from: '2023-05-06'
+    valid_to: '2026-09-18'
+    country: 'BA'
+    status: 'proposed'
+    sources: ['https://hdzbih.org/sites/default/files/dokumenti/HDZ%20BiH%20-%20XIV.%20Sabor%20-%20_Statut%20%26%20Program_.pdf', 'Official indexed XIV programme, 2023-05-06; no domestic D inference']
+    note: 'Study interval begins after cited identity evidence; organisation identity/foreign cue only; no D or inferred individual ideology'
+  - id: 'cda'
+    name_hr: 'Christen Democratisch Appèl'
+    aliases: ['Christen Democratisch Appèl']
+    role: 'foreign_cd_party'
+    valid_from: ''
+    valid_to: ''
+    country: 'NL'
+    status: 'excluded_pending_evidence'
+    sources: []
+    note: 'Candidate listed by the brief; exact dated entity/role evidence incomplete. No active actor entry; ambiguous abbreviations excluded. Generic church-role vocabulary does not identify this named entity.'
+  - id: 'dc_historical'
+    name_hr: 'Democrazia Cristiana (povijesna talijanska stranka)'
+    aliases: ['Democrazia Cristiana (povijesna talijanska stranka)']
+    role: 'historical_cd'
+    valid_from: ''
+    valid_to: ''
+    country: 'IT'
+    status: 'excluded_pending_evidence'
+    sources: []
+    note: 'Candidate listed by the brief; exact dated entity/role evidence incomplete. No active actor entry; ambiguous abbreviations excluded. Generic church-role vocabulary does not identify this named entity.'
+  - id: 'hss'
+    name_hr: 'Hrvatska seljačka stranka'
+    aliases: ['Hrvatska seljačka stranka']
+    role: 'epp_affiliated'
+    valid_from: ''
+    valid_to: ''
+    country: 'HR'
+    status: 'excluded_pending_evidence'
+    sources: []
+    note: 'Candidate listed by the brief; exact dated entity/role evidence incomplete. No active actor entry; ambiguous abbreviations excluded. Generic church-role vocabulary does not identify this named entity.'
+  - id: 'hps_1919'
+    name_hr: 'Hrvatska pučka stranka (1919)'
+    aliases: ['Hrvatska pučka stranka (1919)']
+    role: 'historical_cd'
+    valid_from: ''
+    valid_to: ''
+    country: 'HR'
+    status: 'excluded_pending_evidence'
+    sources: []
+    note: 'Candidate listed by the brief; exact dated entity/role evidence incomplete. No active actor entry; ambiguous abbreviations excluded. Generic church-role vocabulary does not identify this named entity.'
+  - id: 'hkp'
+    name_hr: 'Hrvatski katolički pokret'
+    aliases: ['Hrvatski katolički pokret']
+    role: 'historical_cd'
+    valid_from: ''
+    valid_to: ''
+    country: 'HR'
+    status: 'excluded_pending_evidence'
+    sources: []
+    note: 'Candidate listed by the brief; exact dated entity/role evidence incomplete. No active actor entry; ambiguous abbreviations excluded. Generic church-role vocabulary does not identify this named entity.'
+  - id: 'hkdu'
+    name_hr: 'Hrvatska kršćanska demokratska unija'
+    aliases: ['Hrvatska kršćanska demokratska unija']
+    role: 'historical_cd'
+    valid_from: ''
+    valid_to: ''
+    country: 'HR'
+    status: 'excluded_pending_evidence'
+    sources: []
+    note: 'Candidate listed by the brief; exact dated entity/role evidence incomplete. No active actor entry; ambiguous abbreviations excluded. Generic church-role vocabulary does not identify this named entity.'
+  - id: 'hkds'
+    name_hr: 'Hrvatska kršćanska demokratska stranka'
+    aliases: ['Hrvatska kršćanska demokratska stranka']
+    role: 'historical_cd'
+    valid_from: ''
+    valid_to: ''
+    country: 'HR'
+    status: 'excluded_pending_evidence'
+    sources: []
+    note: 'Candidate listed by the brief; exact dated entity/role evidence incomplete. No active actor entry; ambiguous abbreviations excluded. Generic church-role vocabulary does not identify this named entity.'
+  - id: 'hds'
+    name_hr: 'Hrvatska demokršćanska stranka'
+    aliases: ['Hrvatska demokršćanska stranka']
+    role: 'historical_cd'
+    valid_from: ''
+    valid_to: ''
+    country: 'HR'
+    status: 'excluded_pending_evidence'
+    sources: []
+    note: 'Candidate listed by the brief; exact dated entity/role evidence incomplete. No active actor entry; ambiguous abbreviations excluded. Generic church-role vocabulary does not identify this named entity.'
+  - id: 'uio'
+    name_hr: 'U ime obitelji'
+    aliases: ['U ime obitelji']
+    role: 'identity_civil_society'
+    valid_from: ''
+    valid_to: ''
+    country: 'HR'
+    status: 'excluded_pending_evidence'
+    sources: []
+    note: 'Candidate listed by the brief; exact dated entity/role evidence incomplete. No active actor entry; ambiguous abbreviations excluded. Generic church-role vocabulary does not identify this named entity.'
+  - id: 'iustitia_hbk'
+    name_hr: 'Komisija HBK Iustitia et pax'
+    aliases: ['Komisija HBK Iustitia et pax']
+    role: 'church_body'
+    valid_from: ''
+    valid_to: ''
+    country: 'HR'
+    status: 'excluded_pending_evidence'
+    sources: []
+    note: 'Candidate listed by the brief; exact dated entity/role evidence incomplete. No active actor entry; ambiguous abbreviations excluded. Generic church-role vocabulary does not identify this named entity.'
+  - id: 'caritas_hr'
+    name_hr: 'Hrvatski Caritas'
+    aliases: ['Hrvatski Caritas']
+    role: 'church_body'
+    valid_from: ''
+    valid_to: ''
+    country: 'HR'
+    status: 'excluded_pending_evidence'
+    sources: []
+    note: 'Candidate listed by the brief; exact dated entity/role evidence incomplete. No active actor entry; ambiguous abbreviations excluded. Generic church-role vocabulary does not identify this named entity.'

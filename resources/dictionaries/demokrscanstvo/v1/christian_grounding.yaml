@@ -1,0 +1,78 @@
+entries:
+  - id: 'christian_basis'
+    family: 'grounding'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['kršćanski načelo']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['kršćanski', 'kršćanska', 'kršćansko', 'kršćanske', 'kršćansku', 'kršćanskog', 'kršćanskoga', 'kršćanskom', 'kršćanskomu', 'kršćanskome', 'kršćanskoj', 'kršćanskim', 'kršćanskima', 'kršćanskih', 'katolički', 'katolička', 'katoličko', 'katoličke', 'katoličku', 'katoličkog', 'katoličkoga', 'katoličkom', 'katoličkomu', 'katoličkome', 'katoličkoj', 'katoličkim', 'katoličkima', 'katoličkih'], ['načelo', 'načela', 'načelu', 'načelom', 'načelima', 'vrijednost', 'vrijednosti', 'vrijednostima', 'etika', 'etike', 'etiki', 'etiku', 'etikom', 'etikama', 'etiko', 'nauk', 'nauka', 'nauku', 'naukom', 'nauke', 'nauki', 'naukima', 'nadahnuće', 'nadahnuća', 'nadahnuću', 'nadahnućem', 'pogled', 'pogleda', 'pogledu', 'pogledom', 'poglede', 'pogledi', 'pogledima', 'antropologija', 'antropologije', 'antropologiji', 'antropologiju', 'antropologijom', 'antropologijama', 'antropologijo', 'savjest', 'savjesti', 'savješću']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'gospel'
+    family: 'grounding'
+    tier: 'generic'
+    kind: 'token'
+    forms: ['evanđelja', 'evanđelje', 'evanđeljem', 'evanđelju', 'evanđeoska', 'evanđeoske', 'evanđeoski', 'evanđeoskih', 'evanđeoskim', 'evanđeoskima', 'evanđeosko', 'evanđeoskog', 'evanđeoskoga', 'evanđeoskoj', 'evanđeoskom', 'evanđeoskome', 'evanđeoskomu', 'evanđeosku']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'according_to_church'
+    family: 'grounding'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['prema nauku Crkve']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'church_speaker'
+    family: 'church_speaker'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['Caritas', 'Hrvatska biskupska konferencija', 'Hrvatske biskupske konferencije', 'Iustitia et pax', 'Justitia et pax', 'Karitas', 'Sveta Stolica', 'Svete Stolice', 'biskup', 'biskupa', 'biskupe', 'biskupi', 'biskupima', 'biskupom', 'biskupu', 'nadbiskup', 'nadbiskupa', 'nadbiskupe', 'nadbiskupi', 'nadbiskupima', 'nadbiskupom', 'nadbiskupu', 'papa', 'pape', 'papi', 'papom', 'papu']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'

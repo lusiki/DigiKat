@@ -31,6 +31,10 @@ const pages = [
   "assets/izvjestaji/godisnji-pregled-2025.html",
   "assets/izvjestaji/kako-se-govori-o-crkvi/index.html"
 ];
+// Before G4 the normal build excludes this page; audit an explicit local preview
+// or an installed release whenever its rendered artifact is present.
+const barometarPage = "pages/demokrscanstvo/index.html";
+if (existsSync(resolve(siteRoot, barometarPage))) pages.push(barometarPage);
 
 const chromeCandidates = [
   process.env.CHROME_PATH,
@@ -300,6 +304,102 @@ const mojMedijExpression = `(async () => {
   };
 })()`;
 
+const barometarExpression = `(async () => {
+  const overview = document.querySelector('section#pregled');
+  const live = document.querySelector('#dkb-state');
+  const params = new URL(location.href).searchParams;
+  const matrix = document.querySelector('#dkb-matrix');
+  const columns = matrix?.tHead?.rows[0]?.cells.length - 1;
+  const keyboardState = overview?.dataset.frequency === 'weekly' &&
+    overview?.dataset.scope === 'uze' &&
+    document.querySelector('input[name=frequency][value=weekly]')?.checked &&
+    document.querySelector('input[name=scope][value=uze]')?.checked &&
+    params.get('ucestalost') === 'tjedno' && params.get('obuhvat') === 'uze' &&
+    live?.getAttribute('aria-live') === 'polite' &&
+    live.textContent.includes('tjedno') && live.textContent.includes('uže');
+  const announcement = live?.textContent.trim();
+  const payload = JSON.parse(document.querySelector('#dkb-payload').textContent);
+  const core = window.BarometarCore;
+  const rows = core.unpack(payload.tables.monthly).filter(row => row.scope === 'uze');
+
+  // Use the real range controls to expose the historical collection boundary.
+  document.querySelector('input[name=frequency][value=monthly]').click();
+  const range = document.querySelector('#dkb-range');
+  range.value = 'all';
+  range.dispatchEvent(new Event('change', { bubbles: true }));
+  await new Promise(done => requestAnimationFrame(() => requestAnimationFrame(done)));
+  const boundary = '2024-04-01';
+  const sourceSpansBoundary = rows.some(row => row.period_end < boundary) &&
+    rows.some(row => row.period_end >= boundary);
+  const seam = ['visibility_per_10000', 'breadth_pct'].map((metric, i) => {
+    const svg = document.querySelector(i ? '#dkb-breadth-chart svg' : '#dkb-vis-chart svg');
+    const marker = svg?.querySelector('line[stroke-dasharray="4 4"]');
+    const seamX = Number(marker?.getAttribute('x1'));
+    const paths = [...(svg?.querySelectorAll('path.series') || [])];
+    const crossings = paths.filter(path => {
+      const points = path.getAttribute('d').trim().split(/(?=[ML])/).map(command => ({
+        move: command[0] === 'M', x: Number(command.slice(1).split(',')[0])
+      }));
+      return points.some((point, n) => n > 0 && !point.move &&
+        points[n - 1].x < seamX && point.x >= seamX);
+    }).length;
+    const coreCrossings = core.segments(rows, metric).filter(segment =>
+      segment.some(row => row.period_end < boundary) &&
+      segment.some(row => row.period_end >= boundary)
+    ).length;
+    return { metric, marker: Boolean(marker), paths: paths.length, crossings, coreCrossings };
+  });
+
+  // The latest twelve periods need not contain an outage. Select the most recent
+  // unavailable month so the em-dash assertion cannot pass on an empty cell list.
+  const missingIndex = rows.findLastIndex(row => row.visibility_status === 'unavailable');
+  if (missingIndex >= 0) {
+    document.querySelector('#dkb-from').value = rows[Math.max(0, missingIndex - 11)].period_id;
+    const to = document.querySelector('#dkb-to');
+    to.value = rows[missingIndex].period_id;
+    to.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+  const unavailable = [...matrix.querySelectorAll('td.dkb-missing-cell')];
+  const unavailableCells = unavailable.length;
+  const unavailableText = unavailable.every(cell => cell.textContent.trim() === '—');
+  return {
+    ok: Boolean(keyboardState) && columns === 12 && sourceSpansBoundary &&
+      seam.every(item => item.marker && item.paths > 0 && !item.crossings && !item.coreCrossings) &&
+      missingIndex >= 0 && unavailableCells > 0 && unavailableText,
+    keyboardState: Boolean(keyboardState), columns, announcement,
+    sourceSpansBoundary, seam, unavailableCells, unavailableText
+  };
+})()`;
+
+async function checkBarometar(sessionId) {
+  const controls = await evaluate(`(() => {
+    const weekly = document.querySelector('input[name=frequency][value=weekly]');
+    const broad = document.querySelector('input[name=scope][value=siri]');
+    const narrow = document.querySelector('input[name=scope][value=uze]');
+    return { ready: Boolean(weekly && !weekly.disabled && narrow && !narrow.disabled &&
+      window.BarometarCore && document.querySelector('#dkb-payload') &&
+      document.querySelector('#dkb-matrix')), broad: Boolean(broad && !broad.disabled) };
+  })()`, sessionId);
+  if (!controls.ready) return { ok: false, reason: 'missing or disabled barometer controls' };
+  // CDP keyboard input invokes the browser's native radio behavior; synthetic
+  // KeyboardEvents would not prove that these controls are keyboard operable.
+  const selectors = [
+    ...(controls.broad ? ['input[name=scope][value=siri]'] : []),
+    'input[name=frequency][value=weekly]',
+    'input[name=scope][value=uze]'
+  ];
+  for (const selector of selectors) {
+    await evaluate(`document.querySelector(${JSON.stringify(selector)}).focus()`, sessionId);
+    for (const type of ['keyDown', 'keyUp']) {
+      await command('Input.dispatchKeyEvent', {
+        type, key: ' ', code: 'Space', windowsVirtualKeyCode: 32, nativeVirtualKeyCode: 32
+      }, sessionId);
+    }
+    await pause(40);
+  }
+  return evaluate(barometarExpression, sessionId, true);
+}
+
 try {
   for (const page of pages) {
     const url = `http://127.0.0.1:${port}/${page}`;
@@ -359,6 +459,10 @@ try {
     if (page === "pages/moj-medij.html") {
       const interaction = await evaluate(mojMedijExpression, sessionId, true);
       if (!interaction.ok) findings.push(`${page}: keyboard combobox/announcement check failed (${JSON.stringify(interaction)})`);
+    }
+    if (page === barometarPage) {
+      const interaction = await checkBarometar(sessionId);
+      if (!interaction.ok) findings.push(`${page}: barometer keyboard/data/URL/live-region/matrix/seam contract failed (${JSON.stringify(interaction)})`);
     }
     await command("Target.closeTarget", { targetId });
   }

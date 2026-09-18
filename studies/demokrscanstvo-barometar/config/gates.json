@@ -1,0 +1,56 @@
+{
+  "initial_plan": {
+    "status": "approved",
+    "date": "2026-09-18",
+    "instruction": "Run this brief and all decisions that are necessary and awaiting can be executed as recommended.",
+    "authority": "Recommended choices and gate actions authorized; scientific and documentary prerequisites remain checks."
+  },
+  "G1_panel": {
+    "status": "approved",
+    "date": "2026-09-18",
+    "panel_hash": "6a94583f52c8d45d925c09860a027d65b60bb345d5fd5304964af3dc4fe7b463",
+    "input_digest": "74f473e129d7a1613574b12a565374384bb28aafd8d4641c2d59ae4066e9d604",
+    "authority": "PI instruction: all necessary and awaiting decisions may be executed as recommended",
+    "evidence": "quality_reports/2026-09-18_barometar-outlet-review.md",
+    "panel_size": 115
+  },
+  "G2_definition": {
+    "status": "approved",
+    "date": "2026-09-18",
+    "definition_version": "1.0.0+33429974d0b8",
+    "definition_hash": "33429974d0b886c09163f413ce3ef2253723cbdc82f0d63995115db43f426462",
+    "panel_hash": "6a94583f52c8d45d925c09860a027d65b60bb345d5fd5304964af3dc4fe7b463",
+    "input_digest": "74f473e129d7a1613574b12a565374384bb28aafd8d4641c2d59ae4066e9d604",
+    "boilerplate_version": "boilerplate_v1+7f0a0299367f",
+    "authority": "PI authorized execution of recommended pending decisions; empirical prerequisites checked before full classification",
+    "human_validation_complete": false,
+    "development_cases": 217,
+    "evidence_sha256": {
+      "tests/fixtures/barometar_cases.csv": "ed6048fddfb96fcc493ed81a0b83a2bab79be83df3f17e3cfdca62b0fd53b5ac",
+      "tests/barometar_engine_tests.R": "7398692d9ccea4c0d445ba7f1e6e4c5b73bdb9a4df37a204dc416fc8b4458b2d",
+      "tests/barometar_definition_review_tests.R": "d2c3787e7e39a4e26c9be0a491fc5371af8b774417c944fefdd062b0d61a8d21",
+      "R/lib/barometar_validation.R": "a9ea8faed59a6710b0895bbdb06b6840ec03e0e8f4d14686bda389be344e82a2",
+      "R/lib/barometar_metrics.R": "40ca9ba55d14c0cbafe5f581a9a7e3ebc55fbc7f59d443a3c20192641fea959e",
+      "R/lib/barometar_bridge.R": "2af8ca311f9ddd99120f2583b0f56cff68bfcf4611d5e563e10ca316acc492f7",
+      "studies/demokrscanstvo-barometar/DEVLOG.md": "605e4ae56144084b14b7c3505ad9da961d3f715b1259de50dc9e49bb919ac10c",
+      "quality_reports/2026-09-18_barometar-development-delta-review.md": "208eb9c21a39c3a173d00c055a0af24e929ecba15943c65953ec49e450250b4f"
+    },
+    "prefilter_gate_sha256": "f479422f7227124c9db94ccbc05b5f7b66d579331278c0a6a5cad8bc284ac7c5",
+    "segmenter_gate_sha256": "efc5cccbe2d5a0dd7772cee005be424c0e70362ae93eb1267799f083312c3e0a",
+    "assistant_review_sha256": "f7a86148fd75c1266d40b5ccb0f43431ed0c86e6e7e303e7db8ce5a43e0f94cf"
+  },
+  "G3_validation": {
+    "status": "pending",
+    "break_policy": "not_comparable_seam"
+  },
+  "G4_first_apply": {
+    "status": "pending",
+    "vendor_licence_confirmed": false
+  },
+  "G5_full_render": {
+    "status": "pending"
+  },
+  "G6_publication": {
+    "status": "pending"
+  }
+}

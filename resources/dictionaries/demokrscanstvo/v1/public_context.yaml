@@ -1,0 +1,215 @@
+entries:
+  - id: 'public_institutions'
+    family: 'public'
+    tier: 'generic'
+    kind: 'token'
+    forms: ['Sabor', 'Sabora', 'Saborom', 'Saboru', 'demokracija', 'demokracijama', 'demokracije', 'demokraciji', 'demokracijo', 'demokracijom', 'demokraciju', 'gradonačelnica', 'gradonačelnicama', 'gradonačelnice', 'gradonačelnici', 'gradonačelnico', 'gradonačelnicom', 'gradonačelnicu', 'gradonačelnik', 'gradonačelnika', 'gradonačelnikom', 'gradonačelniku', 'kancelarka', 'kancelarkama', 'kancelarke', 'kancelarki', 'kancelarko', 'kancelarkom', 'kancelarku', 'ministar', 'ministarstva', 'ministarstvima', 'ministarstvo', 'ministarstvom', 'ministarstvu', 'ministra', 'ministre', 'ministri', 'ministrica', 'ministricama', 'ministrice', 'ministrici', 'ministrico', 'ministricom', 'ministricu', 'ministrima', 'ministrom', 'ministru', 'mirovina', 'mirovinama', 'mirovine', 'mirovini', 'mirovino', 'mirovinom', 'mirovinu', 'općina', 'općinama', 'općine', 'općini', 'općinu', 'parlament', 'parlamenta', 'parlamente', 'parlamenti', 'parlamentima', 'parlamentom', 'parlamentu', 'plaća', 'plaćama', 'plaće', 'plaći', 'plaćo', 'plaćom', 'plaću', 'pluralizam', 'pluralizma', 'pluralizmom', 'pluralizmu', 'porez', 'poreza', 'poreze', 'porezi', 'porezima', 'porezom', 'porezu', 'premijerka', 'premijerkama', 'premijerke', 'premijerki', 'premijerko', 'premijerkom', 'premijerku', 'proračun', 'proračuna', 'proračune', 'proračuni', 'proračunima', 'proračunom', 'proračunu', 'stranka', 'strankama', 'stranke', 'stranki', 'stranko', 'strankom', 'stranku', 'ustav', 'ustava', 'ustave', 'ustavi', 'ustavima', 'ustavna', 'ustavne', 'ustavni', 'ustavnih', 'ustavnim', 'ustavnima', 'ustavno', 'ustavnog', 'ustavnoga', 'ustavnoj', 'ustavnom', 'ustavnome', 'ustavnomu', 'ustavnu', 'ustavom', 'ustavu', 'vlada', 'vladama', 'vlade', 'vladi', 'vlado', 'vladom', 'vladu', 'zakonodavna', 'zakonodavne', 'zakonodavni', 'zakonodavnih', 'zakonodavnim', 'zakonodavnima', 'zakonodavno', 'zakonodavnog', 'zakonodavnoga', 'zakonodavnoj', 'zakonodavnom', 'zakonodavnome', 'zakonodavnomu', 'zakonodavnu', 'zastupnica', 'zastupnicama', 'zastupnice', 'zastupnici', 'zastupnico', 'zastupnicom', 'zastupnicu', 'županija', 'županijama', 'županije', 'županiji', 'županijom', 'županiju']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'public_courts'
+    family: 'public'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['ustavni sud']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['ustavni', 'ustavna', 'ustavno', 'ustavne', 'ustavnu', 'ustavnog', 'ustavnoga', 'ustavnom', 'ustavnomu', 'ustavnome', 'ustavnoj', 'ustavnim', 'ustavnima', 'ustavnih', 'vrhovni', 'vrhovna', 'vrhovno', 'vrhovne', 'vrhovnu', 'vrhovnog', 'vrhovnoga', 'vrhovnom', 'vrhovnomu', 'vrhovnome', 'vrhovnoj', 'vrhovnim', 'vrhovnima', 'vrhovnih', 'općinski', 'općinska', 'općinsko', 'općinske', 'općinsku', 'općinskog', 'općinskoga', 'općinskom', 'općinskomu', 'općinskome', 'općinskoj', 'općinskim', 'općinskima', 'općinskih', 'županijski', 'županijska', 'županijsko', 'županijske', 'županijsku', 'županijskog', 'županijskoga', 'županijskom', 'županijskomu', 'županijskome', 'županijskoj', 'županijskim', 'županijskima', 'županijskih', 'trgovački', 'trgovačka', 'trgovačko', 'trgovačke', 'trgovačku', 'trgovačkog', 'trgovačkoga', 'trgovačkom', 'trgovačkomu', 'trgovačkome', 'trgovačkoj', 'trgovačkim', 'trgovačkima', 'trgovačkih', 'upravni', 'upravna', 'upravno', 'upravne', 'upravnu', 'upravnog', 'upravnoga', 'upravnom', 'upravnomu', 'upravnome', 'upravnoj', 'upravnim', 'upravnima', 'upravnih'], ['sud', 'suda', 'sudu', 'sudom', 'sude', 'sudi', 'sudima', 'sudovi', 'sudove', 'sudova', 'sudovima']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'civil_society'
+    family: 'public'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['civilni društvo']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['civilni', 'civilna', 'civilno', 'civilne', 'civilnu', 'civilnog', 'civilnoga', 'civilnom', 'civilnomu', 'civilnome', 'civilnoj', 'civilnim', 'civilnima', 'civilnih'], ['društvo', 'društva', 'društvu', 'društvom', 'društvima']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'party_programme'
+    family: 'public'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['stranački program']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['stranački', 'stranačka', 'stranačko', 'stranačke', 'stranačku', 'stranačkog', 'stranačkoga', 'stranačkom', 'stranačkomu', 'stranačkome', 'stranačkoj', 'stranačkim', 'stranačkima', 'stranačkih', 'politički', 'politička', 'političko', 'političke', 'političku', 'političkog', 'političkoga', 'političkom', 'političkomu', 'političkome', 'političkoj', 'političkim', 'političkima', 'političkih'], ['program', 'programa', 'programu', 'programom', 'programe', 'programi', 'programima']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'programme_of_party'
+    family: 'public'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['program političke stranke', 'program stranke', 'programa političke stranke', 'programa stranke', 'programom stranke', 'programu političke stranke', 'programu stranke']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'public_phrases'
+    family: 'public'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['Europska komisija', 'Europske komisije', 'Europski parlament', 'Europskog parlamenta', 'Zakona o', 'donošenje zakona', 'izmjena zakona', 'izmjene zakona', 'lokalna samouprava', 'lokalne samouprave', 'na izborima', 'prijedlog zakona', 'prijedloga zakona', 'vladavina prava', 'vladavine prava', 'zakon o']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: ['zakon o zaštiti osobnih podataka', 'zakon o medijima', 'zakon o elektroničkim medijima', 'zakon o igrama na sreću']
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'public_policy'
+    family: 'public'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['javni politika']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['javni', 'javna', 'javno', 'javne', 'javnu', 'javnog', 'javnoga', 'javnom', 'javnomu', 'javnome', 'javnoj', 'javnim', 'javnima', 'javnih', 'ekonomski', 'ekonomska', 'ekonomsko', 'ekonomske', 'ekonomsku', 'ekonomskog', 'ekonomskoga', 'ekonomskom', 'ekonomskomu', 'ekonomskome', 'ekonomskoj', 'ekonomskim', 'ekonomskima', 'ekonomskih', 'gospodarski', 'gospodarska', 'gospodarsko', 'gospodarske', 'gospodarsku', 'gospodarskog', 'gospodarskoga', 'gospodarskom', 'gospodarskomu', 'gospodarskome', 'gospodarskoj', 'gospodarskim', 'gospodarskima', 'gospodarskih', 'socijalni', 'socijalna', 'socijalno', 'socijalne', 'socijalnu', 'socijalnog', 'socijalnoga', 'socijalnom', 'socijalnomu', 'socijalnome', 'socijalnoj', 'socijalnim', 'socijalnima', 'socijalnih', 'mirovinski', 'mirovinska', 'mirovinsko', 'mirovinske', 'mirovinsku', 'mirovinskog', 'mirovinskoga', 'mirovinskom', 'mirovinskomu', 'mirovinskome', 'mirovinskoj', 'mirovinskim', 'mirovinskima', 'mirovinskih', 'porezni', 'porezna', 'porezno', 'porezne', 'poreznu', 'poreznog', 'poreznoga', 'poreznom', 'poreznomu', 'poreznome', 'poreznoj', 'poreznim', 'poreznima', 'poreznih', 'obrazovni', 'obrazovna', 'obrazovno', 'obrazovne', 'obrazovnu', 'obrazovnog', 'obrazovnoga', 'obrazovnom', 'obrazovnomu', 'obrazovnome', 'obrazovnoj', 'obrazovnim', 'obrazovnima', 'obrazovnih', 'zdravstveni', 'zdravstvena', 'zdravstveno', 'zdravstvene', 'zdravstvenu', 'zdravstvenog', 'zdravstvenoga', 'zdravstvenom', 'zdravstvenomu', 'zdravstvenome', 'zdravstvenoj', 'zdravstvenim', 'zdravstvenima', 'zdravstvenih', 'demografski', 'demografska', 'demografsko', 'demografske', 'demografsku', 'demografskog', 'demografskoga', 'demografskom', 'demografskomu', 'demografskome', 'demografskoj', 'demografskim', 'demografskima', 'demografskih', 'obiteljski', 'obiteljska', 'obiteljsko', 'obiteljske', 'obiteljsku', 'obiteljskog', 'obiteljskoga', 'obiteljskom', 'obiteljskomu', 'obiteljskome', 'obiteljskoj', 'obiteljskim', 'obiteljskima', 'obiteljskih', 'migracijski', 'migracijska', 'migracijsko', 'migracijske', 'migracijsku', 'migracijskog', 'migracijskoga', 'migracijskom', 'migracijskomu', 'migracijskome', 'migracijskoj', 'migracijskim', 'migracijskima', 'migracijskih'], ['politika', 'politike', 'politiki', 'politiku', 'politikom', 'politikama', 'politiko', 'politici']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'policy_reforms'
+    family: 'public'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['mirovinski reforma']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['mirovinski', 'mirovinska', 'mirovinsko', 'mirovinske', 'mirovinsku', 'mirovinskog', 'mirovinskoga', 'mirovinskom', 'mirovinskomu', 'mirovinskome', 'mirovinskoj', 'mirovinskim', 'mirovinskima', 'mirovinskih', 'porezni', 'porezna', 'porezno', 'porezne', 'poreznu', 'poreznog', 'poreznoga', 'poreznom', 'poreznomu', 'poreznome', 'poreznoj', 'poreznim', 'poreznima', 'poreznih', 'zdravstveni', 'zdravstvena', 'zdravstveno', 'zdravstvene', 'zdravstvenu', 'zdravstvenog', 'zdravstvenoga', 'zdravstvenom', 'zdravstvenomu', 'zdravstvenome', 'zdravstvenoj', 'zdravstvenim', 'zdravstvenima', 'zdravstvenih', 'obrazovni', 'obrazovna', 'obrazovno', 'obrazovne', 'obrazovnu', 'obrazovnog', 'obrazovnoga', 'obrazovnom', 'obrazovnomu', 'obrazovnome', 'obrazovnoj', 'obrazovnim', 'obrazovnima', 'obrazovnih'], ['reforma', 'reforme', 'reformi', 'reformu', 'reformom', 'reformama', 'reformo']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'policy_action'
+    family: 'policy_action'
+    tier: 'generic'
+    kind: 'token'
+    forms: ['donijeti', 'donošenje', 'isplatiti', 'isplaćivati', 'izmjena', 'izmjene', 'odlučuju', 'poveća', 'povećati', 'povisiti', 'prijedlog', 'prijedloga', 'smanjiti', 'ugradila', 'ugradio', 'ugraditi', 'ugrađuje', 'uredi', 'urediti', 'uređuje', 'uvrstila', 'uvrstio', 'uvrstiti']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'bound_policy_action'
+    family: 'policy_action'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['predložio zakon']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['predložio', 'predložila', 'predložili', 'predložilo', 'predlagao', 'predlagala', 'predlagali', 'uvesti', 'uveo', 'unijeti', 'unijeli'], ['zakon', 'zakona', 'porez', 'poreza', 'reformu', 'reforme', 'proračun', 'proračuna', 'program', 'programa', 'plaću', 'plaće', 'mirovinu', 'mirovine']]
+    gap_max: '3'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'election'
+    family: 'public'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['parlamentarni izbor']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['parlamentarni', 'parlamentarna', 'parlamentarno', 'parlamentarne', 'parlamentarnu', 'parlamentarnog', 'parlamentarnoga', 'parlamentarnom', 'parlamentarnomu', 'parlamentarnome', 'parlamentarnoj', 'parlamentarnim', 'parlamentarnima', 'parlamentarnih', 'lokalni', 'lokalna', 'lokalno', 'lokalne', 'lokalnu', 'lokalnog', 'lokalnoga', 'lokalnom', 'lokalnomu', 'lokalnome', 'lokalnoj', 'lokalnim', 'lokalnima', 'lokalnih', 'predsjednički', 'predsjednička', 'predsjedničko', 'predsjedničke', 'predsjedničku', 'predsjedničkog', 'predsjedničkoga', 'predsjedničkom', 'predsjedničkomu', 'predsjedničkome', 'predsjedničkoj', 'predsjedničkim', 'predsjedničkima', 'predsjedničkih', 'europski', 'europska', 'europsko', 'europske', 'europsku', 'europskog', 'europskoga', 'europskom', 'europskomu', 'europskome', 'europskoj', 'europskim', 'europskima', 'europskih'], ['izbor', 'izbora', 'izboru', 'izborom', 'izbore', 'izbori', 'izborima']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'

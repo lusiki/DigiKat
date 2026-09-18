@@ -50,6 +50,15 @@ An authorized pipeline machine may also need:
 | semantic prepared corpus + manifest | `data/semantic/` | store validation or rebuild |
 | Ragnar DuckDB + manifest | `data/semantic/` | semantic querying and validation |
 | private study outputs | `studies/<study>/output/private/` | authorized study continuation |
+| DetermDB general web feed | external path in `DIGIKAT_DETERMDB_PATH` | barometer readiness, panel and classification (read-only) |
+| old DetermDB snapshot | external path in `DIGIKAT_DETERMDB_OLD_PATH` | June 2024 barometer bridge (read-only) |
+| barometer private work | external directory in `DIGIKAT_BAROMETAR_WORKDIR` | private caches, evidence and human coding sheets |
+
+The barometer is a separate population, not an input to the official corpus. Copy the variable
+names from `studies/demokrscanstvo-barometar/config/paths.example.Renviron` into the user-level
+`.Renviron` and substitute local paths. Keep its work directory outside the clone and Dropbox.
+The default table is `main.media_data_all`; set `DIGIKAT_DETERMDB_TABLE` only to another
+`schema.table` identifier when needed. Do not run the barometer while DetermDB imports are active.
 
 Transfer these through an approved encrypted channel. Do not add them to Git, email attachments,
 issues, or public cloud shares. File sizes can change; verify hashes rather than relying on a historical

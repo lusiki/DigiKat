@@ -1,0 +1,463 @@
+entries:
+  - id: 'dignity_person'
+    family: 'dignity'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['ljudski dostojanstvo']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['ljudski', 'ljudska', 'ljudsko', 'ljudske', 'ljudsku', 'ljudskog', 'ljudskoga', 'ljudskom', 'ljudskomu', 'ljudskome', 'ljudskoj', 'ljudskim', 'ljudskima', 'ljudskih'], ['dostojanstvo', 'dostojanstva', 'dostojanstvu', 'dostojanstvom', 'dostojanstvima']]
+    gap_max: '0'
+    order: 'fixed'
+    principle: 'dostojanstvo_osobe'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'dignity_of_person'
+    family: 'dignity'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['dostojanstvo osobe']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['dostojanstvo', 'dostojanstva', 'dostojanstvu', 'dostojanstvom', 'dostojanstvima'], ['osobe', 'osoba', 'čovjeka', 'čovjeku']]
+    gap_max: '1'
+    order: 'fixed'
+    principle: 'dostojanstvo_osobe'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'dignity_work'
+    family: 'dignity_work'
+    tier: 'distinctive'
+    kind: 'phrase'
+    forms: ['dostojanstvo rada']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['dostojanstvo', 'dostojanstva', 'dostojanstvu', 'dostojanstvom', 'dostojanstvima'], ['rada', 'radu', 'radnika', 'radnicima']]
+    gap_max: '0'
+    order: 'fixed'
+    principle: 'dostojanstvo_osobe'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'religious_freedom'
+    family: 'freedom'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['vjerski sloboda']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['vjerski', 'vjerska', 'vjersko', 'vjerske', 'vjersku', 'vjerskog', 'vjerskoga', 'vjerskom', 'vjerskomu', 'vjerskome', 'vjerskoj', 'vjerskim', 'vjerskima', 'vjerskih'], ['sloboda', 'slobode', 'slobodi', 'slobodu', 'slobodom', 'slobodama', 'slobodo']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'conscience'
+    family: 'freedom'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['prigovor savjesti', 'priziv savjesti', 'sloboda savjesti', 'slobode savjesti']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'human_rights'
+    family: 'rights'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['ljudski prava']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['ljudski', 'ljudska', 'ljudsko', 'ljudske', 'ljudsku', 'ljudskog', 'ljudskoga', 'ljudskom', 'ljudskomu', 'ljudskome', 'ljudskoj', 'ljudskim', 'ljudskima', 'ljudskih'], ['prava', 'pravima']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'solidarity'
+    family: 'solidarity'
+    tier: 'generic'
+    kind: 'token'
+    forms: ['solidarnost', 'solidarnosti', 'solidarnošću']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    principle: 'solidarnost'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'social_justice'
+    family: 'justice'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['socijalni pravda']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['socijalni', 'socijalna', 'socijalno', 'socijalne', 'socijalnu', 'socijalnog', 'socijalnoga', 'socijalnom', 'socijalnomu', 'socijalnome', 'socijalnoj', 'socijalnim', 'socijalnima', 'socijalnih', 'društveni', 'društvena', 'društveno', 'društvene', 'društvenu', 'društvenog', 'društvenoga', 'društvenom', 'društvenomu', 'društvenome', 'društvenoj', 'društvenim', 'društvenima', 'društvenih'], ['pravda', 'pravde', 'pravdi', 'pravdu', 'pravdom', 'pravdama', 'pravdo']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'worker_rights'
+    family: 'work'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['radnički prava']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['radnički', 'radnička', 'radničko', 'radničke', 'radničku', 'radničkog', 'radničkoga', 'radničkom', 'radničkomu', 'radničkome', 'radničkoj', 'radničkim', 'radničkima', 'radničkih'], ['prava', 'pravima', 'pravo']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'rights_of_workers'
+    family: 'work'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['prava radnika']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['prava', 'pravo', 'pravima'], ['radnika', 'radnica', 'radnicima', 'zaposlenika', 'zaposlenih']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'fair_wage'
+    family: 'work'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['pravedni plaća']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['pravedni', 'pravedna', 'pravedno', 'pravedne', 'pravednu', 'pravednog', 'pravednoga', 'pravednom', 'pravednomu', 'pravednome', 'pravednoj', 'pravednim', 'pravednima', 'pravednih'], ['plaća', 'plaće', 'plaći', 'plaću', 'plaćom', 'plaćama', 'plaćo']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'sunday_rest'
+    family: 'work'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['neradni nedjelja']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['neradni', 'neradna', 'neradno', 'neradne', 'neradnu', 'neradnog', 'neradnoga', 'neradnom', 'neradnomu', 'neradnome', 'neradnoj', 'neradnim', 'neradnima', 'neradnih'], ['nedjelja', 'nedjelje', 'nedjelji', 'nedjelju', 'nedjeljom', 'nedjeljama', 'nedjeljo']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'subsidiarity'
+    family: 'subsidiarity'
+    tier: 'distinctive'
+    kind: 'token'
+    forms: ['supsidijarnost', 'supsidijarnosti', 'supsidijarnošću']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    principle: 'supsidijarnost'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'subsidiarity_principle'
+    family: 'subsidiarity'
+    tier: 'distinctive'
+    kind: 'phrase'
+    forms: ['načelo supsidijarni']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['načelo', 'načela', 'načelu', 'načelom', 'načelima'], ['supsidijarni', 'supsidijarna', 'supsidijarno', 'supsidijarne', 'supsidijarnu', 'supsidijarnog', 'supsidijarnoga', 'supsidijarnom', 'supsidijarnomu', 'supsidijarnome', 'supsidijarnoj', 'supsidijarnim', 'supsidijarnima', 'supsidijarnih']]
+    gap_max: '0'
+    order: 'fixed'
+    principle: 'supsidijarnost'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'participation'
+    family: 'participation'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['politički participacija']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['politički', 'politička', 'političko', 'političke', 'političku', 'političkog', 'političkoga', 'političkom', 'političkomu', 'političkome', 'političkoj', 'političkim', 'političkima', 'političkih', 'građanski', 'građanska', 'građansko', 'građanske', 'građansku', 'građanskog', 'građanskoga', 'građanskom', 'građanskomu', 'građanskome', 'građanskoj', 'građanskim', 'građanskima', 'građanskih', 'demokratski', 'demokratska', 'demokratsko', 'demokratske', 'demokratsku', 'demokratskog', 'demokratskoga', 'demokratskom', 'demokratskomu', 'demokratskome', 'demokratskoj', 'demokratskim', 'demokratskima', 'demokratskih', 'društveni', 'društvena', 'društveno', 'društvene', 'društvenu', 'društvenog', 'društvenoga', 'društvenom', 'društvenomu', 'društvenome', 'društvenoj', 'društvenim', 'društvenima', 'društvenih'], ['participacija', 'participacije', 'participaciji', 'participaciju', 'participacijom', 'participacijama', 'participacijo']]
+    gap_max: '0'
+    order: 'fixed'
+    principle: 'sudjelovanje'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'social_market'
+    family: 'social_market'
+    tier: 'distinctive'
+    kind: 'phrase'
+    forms: ['socijalni tržišni gospodarstvo']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['socijalni', 'socijalna', 'socijalno', 'socijalne', 'socijalnu', 'socijalnog', 'socijalnoga', 'socijalnom', 'socijalnomu', 'socijalnome', 'socijalnoj', 'socijalnim', 'socijalnima', 'socijalnih'], ['tržišni', 'tržišna', 'tržišno', 'tržišne', 'tržišnu', 'tržišnog', 'tržišnoga', 'tržišnom', 'tržišnomu', 'tržišnome', 'tržišnoj', 'tržišnim', 'tržišnima', 'tržišnih'], ['gospodarstvo', 'gospodarstva', 'gospodarstvu', 'gospodarstvom', 'gospodarstvima', 'ekonomija', 'ekonomije', 'ekonomiji', 'ekonomiju', 'ekonomijom', 'ekonomijama', 'ekonomijo']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'common_good'
+    family: 'common_good'
+    tier: 'distinctive'
+    kind: 'phrase'
+    forms: ['opće dobro']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: ['opća dobra']
+    slots: [['opće', 'općeg', 'općega', 'općem', 'općemu', 'općim', 'zajedničko', 'zajedničkog', 'zajedničkoga', 'zajedničkom', 'zajedničkomu'], ['dobro', 'dobra', 'dobru', 'dobrom', 'dobrima']]
+    gap_max: '0'
+    order: 'fixed'
+    principle: 'opce_dobro'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'social_partnership'
+    family: 'work'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['socijalni partnerstvo']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['socijalni', 'socijalna', 'socijalno', 'socijalne', 'socijalnu', 'socijalnog', 'socijalnoga', 'socijalnom', 'socijalnomu', 'socijalnome', 'socijalnoj', 'socijalnim', 'socijalnima', 'socijalnih'], ['partnerstvo', 'partnerstva', 'partnerstvu', 'partnerstvom', 'partnerstvima']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'family_policy'
+    family: 'family_life'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['obiteljski politika']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['obiteljski', 'obiteljska', 'obiteljsko', 'obiteljske', 'obiteljsku', 'obiteljskog', 'obiteljskoga', 'obiteljskom', 'obiteljskomu', 'obiteljskome', 'obiteljskoj', 'obiteljskim', 'obiteljskima', 'obiteljskih', 'demografski', 'demografska', 'demografsko', 'demografske', 'demografsku', 'demografskog', 'demografskoga', 'demografskom', 'demografskomu', 'demografskome', 'demografskoj', 'demografskim', 'demografskima', 'demografskih'], ['politika', 'politike', 'politiki', 'politiku', 'politikom', 'politikama', 'politiko', 'politici']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'parental_rights'
+    family: 'family_life'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['roditeljski dopust']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['roditeljski', 'roditeljska', 'roditeljsko', 'roditeljske', 'roditeljsku', 'roditeljskog', 'roditeljskoga', 'roditeljskom', 'roditeljskomu', 'roditeljskome', 'roditeljskoj', 'roditeljskim', 'roditeljskima', 'roditeljskih'], ['dopust', 'dopusta', 'dopustu', 'dopustom', 'dopuste', 'dopusti', 'dopustima', 'prava', 'pravima', 'pravo']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'child_benefit'
+    family: 'family_life'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['dječji doplatak']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: [['dječji', 'dječja', 'dječjo', 'dječje', 'dječju', 'dječjog', 'dječjoga', 'dječjom', 'dječjomu', 'dječjome', 'dječjoj', 'dječjim', 'dječjima', 'dječjih'], ['doplatak', 'doplatka', 'doplatku', 'doplatkom', 'doplatci', 'doplatcima']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'protect_life'
+    family: 'family_life'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['zaštita život']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: ['rescue_life']
+    excluded_forms: ['zaštita životinja']
+    slots: [['zaštita', 'zaštite', 'zaštiti', 'zaštitu', 'zaštitom', 'zaštitama', 'zaštito'], ['život', 'života', 'životu', 'životom', 'nerođeni', 'nerođena', 'nerođeno', 'nerođene', 'nerođenu', 'nerođenog', 'nerođenoga', 'nerođenom', 'nerođenomu', 'nerođenome', 'nerođenoj', 'nerođenim', 'nerođenima', 'nerođenih']]
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
+  - id: 'family_life_policy'
+    family: 'family_life'
+    tier: 'generic'
+    kind: 'phrase'
+    forms: ['eutanazija', 'eutanazijama', 'eutanazije', 'eutanaziji', 'eutanazijo', 'eutanazijom', 'eutanaziju', 'hod za život', 'medicinski potpomognuta oplodnja', 'palijativna skrb', 'palijativne skrbi', 'palijativnoj skrbi', 'palijativnom skrbi', 'palijativnu skrb', 'pobačaj', 'pobačaja', 'pobačaje', 'pobačajem', 'pobačaji', 'pobačajima', 'pobačajom', 'pobačaju', 'sloboda odgoja', 'slobode odgoja', 'vjeronauk u školi']
+    case_sensitive: 'false'
+    ascii_variants: []
+    exclude_if: []
+    excluded_forms: []
+    slots: []
+    gap_max: '0'
+    order: 'fixed'
+    provenance:
+      source_file: 'studies/demokrscanstvo-barometar/BRIEF.md'
+      source_object: 'seed_families_specification'
+      source_line: '365-395'
+      source_sha256: 'e07fc231ef3abfa945cf7009034a64239d7f380f4afbfc4749541e54ed8e4f84'
+      added: '2026-09-18'
+      reviewed_by: 'Codex; proposed for empirical development'
+      known_defects: 'Enumerated proposed forms; no human precision estimate yet'
