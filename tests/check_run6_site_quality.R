@@ -89,7 +89,7 @@ expect_true(grepl('file === "pages/izvori/mreza.html"', static_check, fixed = TR
               grepl('["mreža izvora", 2_000_000]', static_check, fixed = TRUE),
             "The interactive source network must have an explicit two-megabyte budget")
 browser_check <- read_utf8("scripts/check_site_browser.mjs")
-expect_true(grepl("const viewports = [320, 375, 390, 768, 1024, 1440, 2048]", browser_check, fixed = TRUE) &&
+expect_true(grepl("const viewports = [320, 375, 390, 768, 1024, 1366, 1440, 2048]", browser_check, fixed = TRUE) &&
               grepl("homepage layout/credit contract failed", browser_check, fixed = TRUE),
             "The browser gate must protect the homepage audit contract through ultra-wide viewports")
 expect_true(file.exists("site-governance/RELEASE_CHECKLIST.md"),

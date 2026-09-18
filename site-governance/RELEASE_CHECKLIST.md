@@ -24,7 +24,7 @@ npm run check:browser
 git diff --check
 ```
 
-The browser check uses Chrome and the pinned `axe-core` package. It covers 320, 375, 390, 768 and 1024 pixels. It fails on page-level horizontal overflow, serious or critical WCAG 2.2 A/AA findings, browser-console or network errors, missing focus indication, reduced-motion regressions, or a broken keyboard path through **Moj medij**.
+The browser check uses Chrome and the pinned `axe-core` package. It covers 320, 375, 390, 768, 1024, 1366, 1440 and 2048 pixels. It fails on page-level horizontal overflow, serious or critical WCAG 2.2 A/AA findings, browser-console or network errors, missing focus indication, reduced-motion regressions, or a broken keyboard path through **Moj medij**.
 
 ## Page-weight budgets
 
