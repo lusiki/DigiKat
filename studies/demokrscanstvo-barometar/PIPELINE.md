@@ -62,16 +62,21 @@ Run `06_validation_score.R --pi=<export.json> --second=<export.json>` to prepare
 private adjudication templates. The PI must review disagreements, document the
 reason for every changed/disagreed field, and mark their completed review in the
 returned adjudication JSON. Rerun with `--adjudicated=<json> --log=<csv>` to score.
-Then rerun the bridge and `accept_validation.R`. An A1 failure prevents the
+Then rerun the bridge and `run.R --stage=accept-validation`. An A1 failure prevents the
 empirical release. All export paths are private local paths, never repository files.
 
 ```powershell
 Rscript studies/demokrscanstvo-barometar/run.R --sample
 Rscript studies/demokrscanstvo-barometar/run.R
+Rscript studies/demokrscanstvo-barometar/run.R --edition
 Rscript studies/demokrscanstvo-barometar/run.R --apply
-Rscript studies/demokrscanstvo-barometar/12_update.R
 quarto render pages/demokrscanstvo/index.qmd
 ```
+
+The default command and `--stage=update` call the same checked refresh helper
+with eight workers. Override that count with `--workers=1` through `--workers=12`.
+`--edition` is accepted only for update or aggregate. G3 is checked before a
+refresh opens either source database; installation remains a separate `--apply`.
 
 `--definition=v2` intentionally refuses an unprepared migration. A new version needs a new
 inventory, development review, full recomputation and fresh human evaluation; the flag cannot

@@ -86,3 +86,13 @@ The reviewer executed **27/27 independent invented checks** against the actual f
 The 27 checks are retained in `tests/barometar_release_policy_tests.R` so the frozen-scorer counterexamples and passing controls remain reproducible. The reviewer did not edit the shared test runner; the owner will wire this suite.
 
 **Verdict:** the reviewed release entry points now enforce the declared A1 no-go policy without changing G2 classification or frozen statistical estimates. This follow-up used invented labels only; reviewer changes were limited to the test artifact and this report. The owner's separate regressions report 13 certificate checks, including rejection of B/C-only evidence, and 29 refresh checks passing. No empirical result, human label, bridge, release or real gate was read or changed by this review.
+
+## Final CLI routing review
+
+The bounded read-only review of `run.R`, README and PIPELINE confirms that the no-argument command and `--stage=update` dispatch to the reviewed refresh helper with eight workers. Explicit worker counts are restricted to the canonical integers 1 through 12 and to update, classification or development. `--edition` reaches only update or aggregation; `--stage=accept-validation` dispatches to the existing G3 acceptance function. Installation remains the separate, solitary `--apply` command. The documented commands and prerequisite descriptions match this routing.
+
+The reviewer identified one convention violation in the first patch: base-R regex was used to validate worker text. The owner replaced it with exact membership in `as.character(seq_len(12L))`, preserving strict argument acceptance without regex. No remaining material CLI defect was found in this bounded review.
+
+After that repair, **22/22 metadata-only checks passed**: help output, fifteen invalid or incompatible argument combinations, default and explicit update with pending G3, the minimum/maximum worker options, and update with `--edition`. A temporary sentinel on `DBI::dbConnect` recorded **zero database connection attempts**; each valid update invocation stopped with the G3 prerequisite message. The real gate file's hash was unchanged. The test did not invoke classification, scoring, bridge computation, aggregate construction or installation. The reviewer edited this report only; the owner's separate isolated CLI dispatch suite reports 31 passing checks and is wired into the shared runner.
+
+**Verdict:** the documented default now performs a checked refresh when prerequisites are met and demonstrably refuses before source access while G3 is pending. This verifies routing and refusal behavior, not empirical validation or authorization to publish.

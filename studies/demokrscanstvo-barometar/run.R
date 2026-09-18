@@ -14,7 +14,8 @@ barometar_main <- function(args = commandArgs(trailingOnly = TRUE)) {
     stop("Run this command from the DigiKat repository root.", call. = FALSE)
   }
   if ("--help" %in% args) {
-    cat("Barometer development commands:\n",
+    cat("Barometer commands (no arguments: checked refresh after G3):\n",
+        "  --stage=update --workers=8  checked refresh; --edition starts a monthly edition\n",
         "  --stage=readiness   schema, snapshot, all-web day fingerprints\n",
         "  --stage=inventory   outlet/month continuity inventory\n",
         "  --stage=panel       eligible-article panel proposal for PI review\n",
@@ -23,8 +24,9 @@ barometar_main <- function(args = commandArgs(trailingOnly = TRUE)) {
         "  --stage=development classify the 30% development split after G1\n",
         "  --stage=classify --workers=8  frozen full-history classification\n",
         "  --stage=validation  prepare fresh blinded human coding package\n",
+        "  --stage=accept-validation  record G3 from completed human evidence and bridge\n",
         "  --stage=bridge      independent old/new June reconstruction\n",
-        "  --stage=aggregate   accepted-route release preview after G3\n",
+        "  --stage=aggregate [--edition]  accepted-route release preview after G3\n",
         "  --stage=figures     figures for the current checked preview\n",
         "  --stage=checks      reconciliation and restricted-text overlap\n",
         "  --stage=method-pdf  method-only conference fallback\n",
@@ -51,21 +53,28 @@ barometar_main <- function(args = commandArgs(trailingOnly = TRUE)) {
   }
   stages <- args[startsWith(args, "--stage=")]
   worker_arg <- args[startsWith(args,"--workers=")]
-  if (length(stages) > 1L || length(worker_arg)>1L || length(setdiff(args, c(stages,worker_arg)))) {
+  edition_arg <- args[args=="--edition"]
+  if (length(stages) > 1L || length(worker_arg)>1L || length(edition_arg)>1L || length(setdiff(args, c(stages,worker_arg,edition_arg)))) {
     stop("Unknown or duplicate arguments. Use --help.", call. = FALSE)
   }
-  stage <- if (length(stages)) substring(stages, 9L) else "aggregate"
-  workers <- if(length(worker_arg))as.integer(substring(worker_arg,11L)) else 1L
-  if(length(worker_arg) && !stage %in% c("classify","development"))stop("--workers applies only to classification.")
-  if (!stage %in% c("readiness", "inventory", "panel", "candidates", "boilerplate", "development","classify","validation","bridge","aggregate","figures","checks","method-pdf")) {
+  stage <- if (length(stages)) substring(stages, 9L) else "update"
+  if (!stage %in% c("update","readiness", "inventory", "panel", "candidates", "boilerplate", "development","classify","validation","accept-validation","bridge","aggregate","figures","checks","method-pdf")) {
     stop("Unknown stage. Use --help.", call. = FALSE)
   }
-  if(stage %in% c("validation","bridge","aggregate","figures","checks","method-pdf")) {
-    script <- c(validation="05_validation_draw.R",bridge="07_bridge.R",aggregate="08_aggregate.R",figures="09_figures.R",checks="11_checks.R",`method-pdf`="10_summary_pdf.R")
+  if(length(worker_arg) && !stage %in% c("update","classify","development"))stop("--workers applies only to update, classify or development.",call.=FALSE)
+  worker_text <- if(length(worker_arg))substring(worker_arg,11L) else if(stage=="update")"8" else "1"
+  if(!worker_text %in% as.character(seq_len(12L)))stop("--workers must be an integer from 1 to 12.",call.=FALSE)
+  workers <- as.integer(worker_text)
+  new_edition <- length(edition_arg)==1L
+  if(new_edition && !stage %in% c("update","aggregate"))stop("--edition applies only to update or aggregate.",call.=FALSE)
+  if(stage %in% c("update","validation","accept-validation","bridge","aggregate","figures","checks","method-pdf")) {
+    script <- c(update="12_update.R",validation="05_validation_draw.R",`accept-validation`="accept_validation.R",bridge="07_bridge.R",aggregate="08_aggregate.R",figures="09_figures.R",checks="11_checks.R",`method-pdf`="10_summary_pdf.R")
     source(file.path(study,script[[stage]]),local=environment(),encoding="UTF-8")
+    if(stage=="update")return(invisible(barometar_update(workers=workers,new_edition=new_edition)))
     if(stage=="validation")return(invisible(barometar_prepare_validation()))
+    if(stage=="accept-validation")return(invisible(barometar_accept_validation()))
     if(stage=="bridge")return(invisible(barometar_run_bridge()))
-    if(stage=="aggregate")return(invisible(barometar_aggregate_release()))
+    if(stage=="aggregate")return(invisible(barometar_aggregate_release(new_edition=new_edition)))
     if(stage=="method-pdf")return(invisible(barometar_method_pdf()))
     preview <- readRDS(file.path(barometar_workdir(),"release_manifest.rds"))
     if(stage=="figures")return(invisible(barometar_figures(preview$directory)))

@@ -6,6 +6,11 @@ empirical release exists. The approved execution plan is
 [`quality_reports/plans/2026-09-18_demokrscanstvo-barometar.md`](../../quality_reports/plans/2026-09-18_demokrscanstvo-barometar.md).
 It records the PI's amendments to the original [brief](BRIEF.md).
 
+All 69 monthly classification chunks are complete. The verified private coding
+package has 320 PI items and 80 second-coder items under the full frozen design
+(rare strata are censused). It is ready in `WORKDIR/validation/1.0.0+33429974d0b8/`;
+see [PIPELINE.md](PIPELINE.md) for the independent human-coding handoff.
+
 The resource will measure how frequently Christian-democratic ideas and Christian social thought
 applied to public-policy questions appear in a fixed panel of Croatian online news media.
 It measures coverage, not support, party strength, reach or a publisher's beliefs.
@@ -41,7 +46,15 @@ Rscript studies/demokrscanstvo-barometar/run.R --stage=classify --workers=8
 Rscript studies/demokrscanstvo-barometar/run.R --stage=validation
 Rscript studies/demokrscanstvo-barometar/run.R --stage=bridge
 Rscript studies/demokrscanstvo-barometar/run.R --stage=method-pdf
+Rscript studies/demokrscanstvo-barometar/run.R --stage=accept-validation
+Rscript studies/demokrscanstvo-barometar/run.R
+Rscript studies/demokrscanstvo-barometar/run.R --edition
 ```
+
+With no arguments, the command performs a checked refresh after G3, using eight
+workers. `--workers=1` through `--workers=12` controls update/classification
+parallelism. `--edition` explicitly creates a new monthly edition during update
+or aggregation; a routine refresh preserves the existing edition.
 
 The `panel` stage produces a review proposal. It does not freeze a panel. Review files are
 aggregate-only; candidates, canonical article URLs, duplicate capture metadata and caches remain

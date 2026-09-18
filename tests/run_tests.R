@@ -443,6 +443,7 @@ barometar_suites <- c(
   "tests/barometar_certificate_tests.R",
   "tests/barometar_install_tests.R",
   "tests/barometar_update_tests.R",
+  "tests/barometar_cli_tests.R",
   "tests/barometar_disclosure_tests.R")
 for (test in barometar_suites) {
   test_environment <- new.env(parent = .GlobalEnv)
