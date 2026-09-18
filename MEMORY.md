@@ -676,3 +676,15 @@
 - [LEARN] Human masking audits must count every genuinely qualifying masked
   segment even when the unmasked context viewer already shows that segment.
   Requiring its absence from the main view would conceal a masking error.
+- [LEARN] Validation proportions and kappa need their own decimal formatter.
+  A headline-rate convention such as `< 0,1` below 0.05 misstates small
+  precision/interval values. Preserve named agreement/kappa fields in JSON.
+- [LEARN] Statistical route acceptance and publication policy are different.
+  If the instrument requires A1 to pass, a strong pooled B/C result cannot
+  bypass that requirement. Recompute the policy at each release entry point
+  and bind its implementation to the validation certificate.
+- [LEARN] Test actual browser PDF export, not only print-media emulation.
+  Chromium can hang on SVG pattern fills even when the page renders correctly;
+  a print-only solid unavailable band preserves the meaning and avoids it.
+  Current Chromium also needs the details content pseudo-element made visible
+  to print closed disclosure sections, and cards should avoid page splits.

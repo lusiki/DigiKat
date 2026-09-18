@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-18eeef7e313107c10b6b051a6734352e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-89390a0b5fa5de9f06f1c04b1c1b6b2e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-05a0de8cf355dfe4f020f6ea4b5bd17a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -115,6 +115,52 @@ ul.task-list li input[type="checkbox"] {
     }
   ]
 }
+</script>
+<script>
+(function () {
+  var mobileCharts = window.matchMedia("(max-width: 767.98px)");
+
+  function updateChart(image) {
+    var mobileSource = image.getAttribute("data-mobile-src");
+    if (!mobileSource) return;
+
+    if (!image.hasAttribute("data-desktop-src")) {
+      image.setAttribute("data-desktop-src", image.getAttribute("src"));
+      image.setAttribute("data-desktop-width", image.getAttribute("width") || "");
+      image.setAttribute("data-desktop-height", image.getAttribute("height") || "");
+    }
+
+    if (mobileCharts.matches) {
+      image.setAttribute("src", mobileSource);
+      image.setAttribute("width", image.getAttribute("data-mobile-width"));
+      image.setAttribute("height", image.getAttribute("data-mobile-height"));
+    } else {
+      image.setAttribute("src", image.getAttribute("data-desktop-src"));
+      image.setAttribute("width", image.getAttribute("data-desktop-width"));
+      image.setAttribute("height", image.getAttribute("data-desktop-height"));
+    }
+  }
+
+  function updateCharts(root) {
+    if (root.nodeType === 1 && root.matches("img[data-mobile-src]")) updateChart(root);
+    if (root.querySelectorAll) {
+      root.querySelectorAll("img[data-mobile-src]").forEach(updateChart);
+    }
+  }
+
+  var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(updateCharts);
+    });
+  });
+
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+  mobileCharts.addEventListener("change", function () { updateCharts(document); });
+  document.addEventListener("DOMContentLoaded", function () {
+    updateCharts(document);
+    observer.disconnect();
+  });
+})();
 </script>
 
 
@@ -268,6 +314,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#method-corpus-quality" id="toc-method-corpus-quality" class="nav-link" data-scroll-target="#method-corpus-quality">Koliko je korpus čist</a></li>
   </ul></li>
   <li><a href="#method-data-lineage" id="toc-method-data-lineage" class="nav-link" data-scroll-target="#method-data-lineage">Dva skupa podataka koja nisu zamjenjiva</a></li>
+  <li><a href="#method-barometar" id="toc-method-barometar" class="nav-link" data-scroll-target="#method-barometar">Medijski barometar demokršćanstva u pripremi</a>
+  <ul class="collapse">
+  <li><a href="#method-barometar-kontinuitet" id="toc-method-barometar-kontinuitet" class="nav-link" data-scroll-target="#method-barometar-kontinuitet">Kontinuitet barometra</a></li>
+  </ul></li>
   <li><a href="#method-collection-break" id="toc-method-collection-break" class="nav-link" data-scroll-target="#method-collection-break">Promjena prikupljanja 2024. i što ona zabranjuje</a></li>
   <li><a href="#method-platform-metrics" id="toc-method-platform-metrics" class="nav-link" data-scroll-target="#method-platform-metrics">Mjere objava, interakcija i dosega</a></li>
   <li><a href="#method-text-analysis" id="toc-method-text-analysis" class="nav-link" data-scroll-target="#method-text-analysis">Uzorci i rječnici</a></li>
@@ -307,7 +357,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Izmijenjeno</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">24. kolovoza 2026.</p>
+      <p class="date-modified">18. rujna 2026.</p>
     </div>
   </div>
     
@@ -318,7 +368,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="freshness-strip" aria-label="Svježina i status stranice"><span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">24. kolovoza 2026.</span></span><span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">11. lipnja 2026.</span></span><span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--updating">Ažurira se</span></span></div>
+<div class="freshness-strip" aria-label="Svježina i status stranice"><span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">18. rujna 2026.</span></span><span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">11. lipnja 2026.</span></span><span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--updating">Ažurira se</span></span></div>
 <p>Ova stranica okuplja tehnički dio projekta na jednom mjestu. Ostale stranice vode računa o tome što podaci pokazuju. Ovdje piše kako su nastali, na čemu su mjereni i što se iz njih ne smije zaključiti. Namijenjena je čitatelju koji želi provjeriti postupak, ponoviti ga ili citirati.</p>
 <p>Svaka brojka na ovoj stranici izračunata je iz praćenih manifesta koji nastaju zajedno s podacima. Nijedna nije prepisana rukom.</p>
 <section id="method-corpus-inclusion" class="level2">
@@ -384,6 +434,15 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Službeni korpus</strong> (413.985 objava) izrezan je iz akumulatora pravilom opisanim gore. Sve što opisuju stranice ovoga sjedišta, sve mape i svi javni agregati računaju se na njemu.</p>
 <p>Dovršena tematska istraživanja i dalje čitaju akumulator, imenom, jer su na njemu izračunata i objavljena. Prebacivanje gotove analize na novi ulaz tiho bi promijenilo brojke koje su već objavljene, pa se to ne radi. Svako istraživanje na stranici <a href="studije/index.html">Tematska istraživanja</a> navodi na kojem je skupu izračunato.</p>
 <p>Praktična posljedica za čitatelja je jednostavna. Ako se brojka s neke stranice ne slaže s brojkom iz nekog istraživanja, prva provjera nije aritmetika nego to govore li o istom skupu podataka.</p>
+</section>
+<section id="method-barometar" class="level2">
+<h2 class="anchored" data-anchor-id="method-barometar">Medijski barometar demokršćanstva u pripremi</h2>
+<p>Barometar je zaseban instrument za stalni panel hrvatskih mrežnih medija. Njegov nazivnik čine svi prihvatljivi članci tog panela, pa njegovi pokazatelji nisu udjeli unutar korpusa katoličkih tema. Zastupljenost se izražava na 10.000 analiziranih članaka, a širina kao udio medija stalnog panela s barem jednim uključenim člankom. Pokazatelji se ne spajaju u zajednički indeks.</p>
+<p>Uži obuhvat prati imenovanje demokršćanstva kao tradicije i ideje. Širi mu obuhvat može dodati socijalni nauk u političkom pitanju i kršćanski utemeljen argument iz načela, nakon zasebne ljudske provjere. Stranački nazivi i programski govor aktera ne daju samostalan razlog za uključivanje. Oznaka pripisanoga govora demokršćanskog aktera odnosi se na već prihvaćen argument i registraciju koja vrijedi na dan članka. Empirijsko izdanje još nije objavljeno; razvojni prikazi koriste izmišljene podatke. Rječnik je razvijen iz projektnog briefa i javnih naslova dokumenata socijalnog nauka.</p>
+<section id="method-barometar-kontinuitet" class="level3">
+<h3 class="anchored" data-anchor-id="method-barometar-kontinuitet">Kontinuitet barometra</h3>
+<p>Promjena prikupljanja 1. travnja 2024. označava se i u ovom instrumentu. Usporedivost se provjerava na preklopljenom mjesecu za prihvaćene putove, bez preuzimanja zaključka iz drugoga korpusa. Izvorni tekstovi, naslovi i poveznice na pojedinačne članke ostaju izvan javnog paketa.</p>
+</section>
 </section>
 <section id="method-collection-break" class="level2">
 <h2 class="anchored" data-anchor-id="method-collection-break">Promjena prikupljanja 2024. i što ona zabranjuje</h2>

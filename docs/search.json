@@ -4260,7 +4260,7 @@
     "href": "pages/metodologija.html",
     "title": "Metodologija",
     "section": "",
-    "text": "Ažurirano24. kolovoza 2026.Podaci zaključno s11. lipnja 2026.StatusAžurira se\nOva stranica okuplja tehnički dio projekta na jednom mjestu. Ostale stranice vode računa o tome što podaci pokazuju. Ovdje piše kako su nastali, na čemu su mjereni i što se iz njih ne smije zaključiti. Namijenjena je čitatelju koji želi provjeriti postupak, ponoviti ga ili citirati.\nSvaka brojka na ovoj stranici izračunata je iz praćenih manifesta koji nastaju zajedno s podacima. Nijedna nije prepisana rukom."
+    "text": "Ažurirano18. rujna 2026.Podaci zaključno s11. lipnja 2026.StatusAžurira se\nOva stranica okuplja tehnički dio projekta na jednom mjestu. Ostale stranice vode računa o tome što podaci pokazuju. Ovdje piše kako su nastali, na čemu su mjereni i što se iz njih ne smije zaključiti. Namijenjena je čitatelju koji želi provjeriti postupak, ponoviti ga ili citirati.\nSvaka brojka na ovoj stranici izračunata je iz praćenih manifesta koji nastaju zajedno s podacima. Nijedna nije prepisana rukom."
   },
   {
     "objectID": "pages/metodologija.html#method-corpus-inclusion",
@@ -4597,5 +4597,12 @@
     "title": "Fokus na događaje (2021.–2026.)",
     "section": "Glavni nalazi",
     "text": "Glavni nalazi\nMapa daje tri ograničena rezultata. Dnevni postupak označio je 26 vrhova volumena i 17 vrhova konfliktnog rječnika. Njihovu vezu s događajima tek treba provjeriti čitanjem sadržaja. Prozor oko Uskrsa opisuje jednu temu i dvije jezične mjere u jednom slučaju. Nema usporedne skupine drugih događaja. Presjeci o Stepincu pokazuju dostupne riječi, ali ne čine neprekinutu vremensku seriju.\nPouzdaniji model tražio bi unaprijed određen popis događaja, zaseban skup za provjeru i najmanji dopušten broj tekstova po danu. Trebalo bi provjeriti i koliko točno model prepoznaje događaje. Tek bi tada bilo moguće govoriti o pouzdanom automatskom prepoznavanju ili predviđanju.\nVeć se vide obrasci korisni za planiranje. Najveći vrhovi pažnje povezani su s datumima koji su poznati unaprijed, a ne s prijeporima. Kalendar zato pomaže predvidjeti velik dio godišnje pažnje. Onaj tko planira objave može vidjeti koji su termini već zasićeni, a gdje ima više prostora."
+  },
+  {
+    "objectID": "pages/metodologija.html#method-barometar",
+    "href": "pages/metodologija.html#method-barometar",
+    "title": "Metodologija",
+    "section": "Medijski barometar demokršćanstva u pripremi",
+    "text": "Medijski barometar demokršćanstva u pripremi\nBarometar je zaseban instrument za stalni panel hrvatskih mrežnih medija. Njegov nazivnik čine svi prihvatljivi članci tog panela, pa njegovi pokazatelji nisu udjeli unutar korpusa katoličkih tema. Zastupljenost se izražava na 10.000 analiziranih članaka, a širina kao udio medija stalnog panela s barem jednim uključenim člankom. Pokazatelji se ne spajaju u zajednički indeks.\nUži obuhvat prati imenovanje demokršćanstva kao tradicije i ideje. Širi mu obuhvat može dodati socijalni nauk u političkom pitanju i kršćanski utemeljen argument iz načela, nakon zasebne ljudske provjere. Stranački nazivi i programski govor aktera ne daju samostalan razlog za uključivanje. Oznaka pripisanoga govora demokršćanskog aktera odnosi se na već prihvaćen argument i registraciju koja vrijedi na dan članka. Empirijsko izdanje još nije objavljeno; razvojni prikazi koriste izmišljene podatke. Rječnik je razvijen iz projektnog briefa i javnih naslova dokumenata socijalnog nauka.\n\nKontinuitet barometra\nPromjena prikupljanja 1. travnja 2024. označava se i u ovom instrumentu. Usporedivost se provjerava na preklopljenom mjesecu za prihvaćene putove, bez preuzimanja zaključka iz drugoga korpusa. Izvorni tekstovi, naslovi i poveznice na pojedinačne članke ostaju izvan javnog paketa."
   }
 ]

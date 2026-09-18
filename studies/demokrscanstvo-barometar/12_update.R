@@ -11,9 +11,12 @@ barometar_update <- function(workers=8L,new_edition=FALSE) {
   workdir <- barometar_workdir();panel <- barometar_require_panel()
   gates <- jsonlite::fromJSON("studies/demokrscanstvo-barometar/config/gates.json",simplifyVector=FALSE)
   if(!identical(gates$G3_validation$status,"approved"))stop("Empirical refresh awaits accepted actual human coding, adjudication and the validated bridge (G3).")
+  if(!"A1" %in% gates$G3_validation$accepted_routes)stop("No empirical refresh without accepted A1.")
   definition <- barometar_definition()
   validation_path <- file.path(workdir,"validation",definition$definition_version,"validation-result.rds")
   validation_hash <- digikat_hash_file(validation_path)
+  validation <- barometar_apply_release_policy(readRDS(validation_path))
+  if(identical(validation$release_scope,"none"))stop("No empirical refresh without the current accepted A1 result.")
   current_engine <- digikat_hash_object(lapply(c("R/lib/barometar_engine.R","R/lib/barometar_text.R","R/lib/barometar_rules.R"),digikat_hash_file))
   if(!identical(gates$G2_definition$status,"approved")||
     !identical(gates$G2_definition$definition_version,definition$definition_version)||
@@ -22,7 +25,8 @@ barometar_update <- function(workers=8L,new_edition=FALSE) {
     !identical(gates$G3_validation$engine_hash,current_engine)||
     !identical(gates$G3_validation$classifier_body_hash,digikat_hash_object(body(barometar_classify_month)))||
     !identical(gates$G3_validation$validation_result_sha256,validation_hash)||
-    !identical(gates$G3_validation$validation_code_sha256,digikat_hash_file("R/lib/barometar_validation.R")))stop("Refresh instrument differs from the accepted human-validation certificate.")
+    !identical(gates$G3_validation$validation_code_sha256,digikat_hash_file("R/lib/barometar_validation.R")) ||
+    !identical(gates$G3_validation$release_policy_code_sha256,digikat_hash_file("studies/demokrscanstvo-barometar/06_validation_score.R")))stop("Refresh instrument differs from the accepted human-validation certificate.")
   code_hashes <- barometar_release_code_hashes()
   con <- barometar_connect_readonly()
   probe <- tryCatch(list(snapshot=barometar_source_snapshot(con),data_through=DBI::dbGetQuery(con,

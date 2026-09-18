@@ -9,7 +9,7 @@ barometar_accept_validation <- function() {
   draw <- readRDS(file.path(folder,"draw.rds"));barometar_check_coding_package(folder,draw)
   result_path <- file.path(folder,"validation-result.rds")
   if(!file.exists(result_path))stop("G3 awaits completed actual human coding and adjudication.")
-  result <- readRDS(result_path);classification <- readRDS(file.path(workdir,"classification_manifest.rds"))
+  result <- barometar_apply_release_policy(readRDS(result_path));classification <- readRDS(file.path(workdir,"classification_manifest.rds"))
   if(!isTRUE(result$human_validation_complete)||!identical(result$draw_id,draw$draw_id)||
     !setequal(names(result$input_hashes),c("pi","second","adjudicated","log"))||
     !identical(draw$input_identity$panel_hash,panel$panel_hash[1L])||
@@ -30,7 +30,9 @@ barometar_accept_validation <- function() {
     accepted_routes=result$accepted_routes,release_scope=result$release_scope,
     break_policy=bridge$break_policy,draw_id=draw$draw_id,validation_result_sha256=digikat_hash_file(result_path),
     validation_input_digest=draw$input_identity$input_digest,bridge_sha256=digikat_hash_file(file.path(workdir,"bridge_manifest.rds")),
-    validation_code_sha256=digikat_hash_file("R/lib/barometar_validation.R"))
+    validation_code_sha256=digikat_hash_file("R/lib/barometar_validation.R"),
+    release_policy_code_sha256=digikat_hash_file("studies/demokrscanstvo-barometar/06_validation_score.R"),
+    release_policy=if(is.null(result$release_policy))"accepted_A1" else result$release_policy)
   barometar_write_json(gates,path)
   message("G3 evidence recorded: ",gates$G3_validation$status,"; route scope ",result$release_scope,"; ",bridge$break_policy,".")
   invisible(gates$G3_validation)

@@ -49,13 +49,16 @@ run_barometar_update_tests <- function() {
     panel <- data.frame(outlet_id = "invented", panel_hash = "invented-panel", panel_version = "invented-panel-v1")
     validation_folder <- file.path(workdir, "validation", version); dir.create(validation_folder, recursive = TRUE)
     validation_path <- file.path(validation_folder, "validation-result.rds")
-    saveRDS(list(invented = "result"), validation_path)
+    saveRDS(list(accepted_routes="A1",narrow_publishable=TRUE,release_scope="uze",
+      validation=data.frame(route="A1",precision=.9,gate="accepted")), validation_path)
     validation_hash <- digikat_hash_file(validation_path)
     gates <- list(G2_definition = list(status = "approved", definition_version = version),
       G3_validation = list(status = "approved", definition_version = version, panel_hash = panel$panel_hash,
+        accepted_routes = "A1",
         engine_hash = digikat_hash_object(lapply(c("R/lib/barometar_engine.R", "R/lib/barometar_text.R", "R/lib/barometar_rules.R"), digikat_hash_file)),
         classifier_body_hash = digikat_hash_object(body(barometar_classify_month)),
-        validation_result_sha256 = validation_hash, validation_code_sha256 = digikat_hash_file("R/lib/barometar_validation.R")))
+        validation_result_sha256 = validation_hash, validation_code_sha256 = digikat_hash_file("R/lib/barometar_validation.R"),
+        release_policy_code_sha256=digikat_hash_file("studies/demokrscanstvo-barometar/06_validation_score.R")))
     gate_path <- "studies/demokrscanstvo-barometar/config/gates.json"
     barometar_write_json(gates, gate_path)
     barometar_write_csv(data.frame(outlet_id = "invented"), "studies/demokrscanstvo-barometar/config/outlet_registry.csv")
@@ -76,7 +79,7 @@ run_barometar_update_tests <- function() {
       period <- function(frequency, id) data.frame(frequency = frequency, scope = "uze", period_id = id, total_articles = 10L)
       tables <- list(monthly = period("monthly", "2024-02"), weekly = period("weekly", "2024-W08"),
         rolling28 = period("rolling28", "2024-02-25"))
-      for (name in c("themes", "composition", "sensitivity", "outlets")) tables[[name]] <- data.frame(invented = character())
+      for (name in c("themes", "composition", "sensitivity", "outlets", "diagnostics")) tables[[name]] <- data.frame(invented = character())
       summary <- list(synthetic = FALSE, human_validation_complete = TRUE, release_version = release_version,
         definition_version = version, panel_version = panel$panel_version, data_through = "2024-02-29",
         latest_publishable_month = "2024-02", latest_publishable_week = "2024-W08", findings = list(),
@@ -143,7 +146,9 @@ run_barometar_update_tests <- function() {
   f <- fixture()
   result <- run()
   check(is.null(result) && identical(f$state$calls, c("connect", "read_release", "connect_old")), "matching receipt, instrument and both sources take no-new shortcut without pipeline work")
-  for (field in c("definition_version", "panel_hash", "engine_hash", "classifier_body_hash", "validation_result_sha256", "validation_code_sha256")) {
+  f <- fixture(); changed <- f$gates; changed$G3_validation$accepted_routes <- c("B","C"); barometar_write_json(changed,f$gate_path)
+  check(inherits(error_of(run()),"error") && !length(f$state$calls),"B/C-only stale approval is rejected before source access")
+  for (field in c("definition_version", "panel_hash", "engine_hash", "classifier_body_hash", "validation_result_sha256", "validation_code_sha256","release_policy_code_sha256")) {
     f <- fixture(); changed <- f$gates; changed$G3_validation[[field]] <- "invented-mismatch"; barometar_write_json(changed, f$gate_path)
     check(inherits(error_of(run()), "error") && !length(f$state$calls), paste("stale certificate", field, "is rejected before source access"))
   }

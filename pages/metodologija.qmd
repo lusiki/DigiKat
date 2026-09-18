@@ -2,7 +2,7 @@
 title: "Metodologija"
 subtitle: "Kako nastaje korpus, što se na njemu mjeri i gdje su granice tih mjera"
 description: "Metodologija DigiKat dokumentira prikupljanje, pravilo uključivanja, računalnu obradu teksta, pokazatelje, provjere i granice službenoga korpusa."
-date-modified: 2026-08-24
+date-modified: 2026-09-18
 data-cutoff: 2026-06-11
 status: "Ažurira se"
 show-freshness: true
@@ -166,6 +166,30 @@ kojem je skupu izračunato.
 
 Praktična posljedica za čitatelja je jednostavna. Ako se brojka s neke stranice ne slaže s brojkom iz
 nekog istraživanja, prva provjera nije aritmetika nego to govore li o istom skupu podataka.
+
+## Medijski barometar demokršćanstva u pripremi {#method-barometar}
+
+Barometar je zaseban instrument za stalni panel hrvatskih mrežnih medija.
+Njegov nazivnik čine svi prihvatljivi članci tog panela, pa njegovi pokazatelji
+nisu udjeli unutar korpusa katoličkih tema. Zastupljenost se izražava na 10.000
+analiziranih članaka, a širina kao udio medija stalnog panela s barem jednim
+uključenim člankom. Pokazatelji se ne spajaju u zajednički indeks.
+
+Uži obuhvat prati imenovanje demokršćanstva kao tradicije i ideje. Širi mu
+obuhvat može dodati socijalni nauk u političkom pitanju i kršćanski utemeljen
+argument iz načela, nakon zasebne ljudske provjere. Stranački nazivi i programski
+govor aktera ne daju samostalan razlog za uključivanje. Oznaka pripisanoga govora
+demokršćanskog aktera odnosi se na već prihvaćen argument i registraciju koja
+vrijedi na dan članka. Empirijsko izdanje još
+nije objavljeno; razvojni prikazi koriste izmišljene podatke. Rječnik je razvijen
+iz projektnog briefa i javnih naslova dokumenata socijalnog nauka.
+
+### Kontinuitet barometra {#method-barometar-kontinuitet}
+
+Promjena prikupljanja 1. travnja 2024. označava se i u ovom instrumentu.
+Usporedivost se provjerava na preklopljenom mjesecu za prihvaćene putove,
+bez preuzimanja zaključka iz drugoga korpusa. Izvorni tekstovi, naslovi i
+poveznice na pojedinačne članke ostaju izvan javnog paketa.
 
 ## Promjena prikupljanja 2024. i što ona zabranjuje {#method-collection-break}
 

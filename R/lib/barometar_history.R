@@ -3,7 +3,7 @@ barometar_release_code_hashes <- function() {
   paths <- c("R/lib/barometar_release.R","R/lib/barometar_history.R","R/lib/barometar_metrics.R","R/lib/barometar_figures.R",
     "R/lib/barometar_disclosure.R","R/lib/barometar_page.R","R/lib/barometar_install.R","studies/demokrscanstvo-barometar/lib/io.R",
     "studies/demokrscanstvo-barometar/08_aggregate.R","studies/demokrscanstvo-barometar/09_figures.R",
-    "studies/demokrscanstvo-barometar/11_checks.R","studies/demokrscanstvo-barometar/12_update.R")
+    "studies/demokrscanstvo-barometar/11_checks.R","studies/demokrscanstvo-barometar/12_update.R","studies/demokrscanstvo-barometar/06_validation_score.R")
   setNames(vapply(paths,digikat_hash_file,character(1L)),paths)
 }
 

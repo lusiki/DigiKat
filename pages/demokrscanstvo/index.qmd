@@ -7,6 +7,8 @@ date-modified: "2026-09-18"
 status: "Radni prikaz"
 categories: ["Pokazatelji", "Otvoreni podaci"]
 schema-type: "Dataset"
+image: ../../data/barometar/demokrscanstvo/figures/social-card.png
+image-alt: "Medijski barometar demokršćanstva, DigiKat. Oznaka izdanja nalazi se na kartici."
 page-layout: custom
 template-partials:
   - title-block.html
@@ -27,6 +29,8 @@ source("../../R/lib/digikat_hr.R",encoding="UTF-8")
 override <- Sys.getenv("DIGIKAT_BAROMETAR_DATA_DIR",unset="")
 release <- barometar_read_release(if(nzchar(override))override else "../../data/barometar/demokrscanstvo",synthetic_allowed=nzchar(override))
 summary <- release$summary
+edition <- release$edition
+if(is.null(edition))stop("Dated edition is required by this page.")
 preview <- nzchar(override) || isTRUE(summary$synthetic)
 if(preview)release$summary$synthetic <- TRUE
 metadata <- yaml::read_yaml("_metadata.yml")
@@ -38,7 +42,7 @@ scope_hr <- c(siri="šire",uze="uže")
 available <- monthly[monthly$scope==default_scope & monthly$visibility_status=="published" & monthly$breadth_status=="published",]
 if(!nrow(available))stop("No publishable default period in this payload.")
 latest <- tail(available,1L)
-number <- function(x,digits=1L)if(is.na(x))"—" else if(x==0)"0" else if(x>0&&x<.05)"< 0,1" else formatC(x,format="f",digits=digits,big.mark=".",decimal.mark=",")
+number <- function(x,digits=1L)if(length(x)!=1L||is.na(x))"—" else if(x==0)"0" else if(x>0&&x<.05)"< 0,1" else formatC(x,format="f",digits=digits,big.mark=".",decimal.mark=",")
 integer <- function(x)formatC(x,format="d",big.mark=".",decimal.mark=",")
 article_genitive <- function(x)paste(integer(x),digikat_hr_plural(x,c("članka","članka","članaka")))
 status_hr <- c(published="dostupno",partial="djelomično",unavailable="nije dostupno")
@@ -47,6 +51,10 @@ escape <- function(x)htmltools::htmlEscape(as.character(x))
 facet_hr <- c(route_set="Put prepoznavanja",speaker_type="Govornik",reference_geography="Prostor",outlet_segment="Skupina medija",register="Vrsta argumenta",principles="Načelo")
 value_hr <- c(national="nacionalni",regional="regionalni",public_service="javna služba",confessional="konfesionalni",political_portal="politički portal",dostojanstvo_osobe="dostojanstvo osobe",opce_dobro="opće dobro",opca_namjena_dobara="opća namjena dobara",supsidijarnost="supsidijarnost",sudjelovanje="sudjelovanje",solidarnost="solidarnost")
 translate_value <- function(x)if(x %in% names(value_hr))value_hr[[x]] else x
+html_table <- function(data,caption) {
+  cat('<div class="table-responsive" role="region" tabindex="0" aria-label="',escape(caption),'">',sep="")
+  cat(as.character(knitr::kable(data,format="html",escape=TRUE,row.names=FALSE,caption=caption)),"</div>")
+}
 ```
 
 ::: {.dkb}
@@ -60,10 +68,11 @@ if(preview)cat('<p class="dkb-synthetic">SINTETIČKI PODACI · Razvojni prikaz. 
 <p>Prisutnost demokršćanskih i srodnih kršćansko-socijalnih ideja u hrvatskim mrežnim medijima</p>
 <p class="dkb-muted">Barometar prati koliko se u stalnom panelu hrvatskih mrežnih medija piše o demokršćanstvu kao političkoj tradiciji i o kršćanskoj socijalnoj misli primijenjenoj na politička i javnopolitička pitanja. Uključeni su izvještavanje, kritika i istupi crkvenih ustanova. Barometar ne mjeri potporu tim idejama, uspjeh stranaka ni stav autora ili izdavača.</p>
 <p>Barometar pokazuje koliko se o temi piše, a ne potporu strankama ni doseg objava.</p>
-<div class="freshness-strip">`r if(preview)"Radni prikaz · Sintetički podaci" else paste("Preliminarno · Izdanje",summary$release_version,"· Podaci")` do `r digikat_hr_date(summary$data_through)` · `r summary$panel_outlets` `r if(preview)"izmišljenih medija" else "medija u stalnom panelu"`</div>
+<p class="dkb-mono">Populacija: `r if(preview)"izmišljeni članci i mediji" else "prihvatljivi članci stalnog panela hrvatskih mrežnih medija"` · `r substr(min(monthly$period_start),1,4)`–`r substr(summary$data_through,1,4)`</p>
+<div class="freshness-strip">`r if(preview)"Radni prikaz · Sintetički podaci" else "Preliminarno"` · Izdanje `r summary$release_version` · Podaci do `r digikat_hr_date(summary$data_through)` · `r summary$panel_outlets` `r if(preview)"izmišljenih medija" else "medija u stalnom panelu"` · Definicija `r summary$definition_version` · Izračun `r summary$computed_at`</div>
 <p><a href="#pregled">Pregled pokazatelja</a> · <a href="#podaci-i-metoda">Podaci i metoda</a></p>
 </div></section>
-<nav class="dkb-subnav" aria-label="Sadržaj barometra"><div class="dkb-inner"><a href="#pregled">Pregled</a><a href="#kretanja">Kretanja</a><a href="#teme">Teme</a><a href="#nalazi">Nalazi</a><a href="#podaci-i-metoda">Podaci i metoda</a></div></nav>
+<nav class="dkb-subnav" aria-label="Sadržaj barometra"><div class="dkb-inner"><a href="#pregled">Pregled</a><a href="#kretanja">Kretanja</a><a href="#tematska-slika">Tematska slika</a><a href="#nalazi">Nalazi</a><a href="#povezana-istrazivanja">Povezana istraživanja</a><a href="#podaci-i-metoda">Podaci i metoda</a></div></nav>
 
 <section id="pregled" class="dkb-inner">
 <h2>Pregled pokazatelja</h2>
@@ -72,12 +81,13 @@ if(preview)cat('<p class="dkb-synthetic">SINTETIČKI PODACI · Razvojni prikaz. 
 <fieldset><legend>Učestalost</legend><label><input type="radio" name="frequency" value="monthly" checked>Mjesečno</label><label><input type="radio" name="frequency" value="weekly">Tjedno</label></fieldset>
 <fieldset><legend>Obuhvat</legend><label><input type="radio" name="scope" value="siri" checked>Šire</label><label><input type="radio" name="scope" value="uze">Uže</label></fieldset>
 </div>
-<details><summary>Što znači obuhvat?</summary><p>Šire obuhvaća demokršćanske i kršćansko-socijalne ideje primijenjene na politička pitanja. Uže prati imenovanje demokršćanstva kao tradicije i ideje. Sami stranački nazivi ne ulaze u pokazatelje.</p></details>
+<details><summary>Što znači obuhvat?</summary><p>Širi obuhvat uključuje imenovanje demokršćanske tradicije (A1) te prihvaćene putove primjene socijalnog nauka i kršćanski utemeljenog argumenta (B i C). Uži obuhvat prati A1. Stranačka etiketa sama ne daje razlog za uključivanje.</p></details>
 <p id="dkb-state" class="dkb-status" role="status" aria-live="polite">Prikaz: mjesečno, `r scope_hr[default_scope]`. `r if(preview)"Sintetički podaci." else ""`</p>
 <div class="dkb-cards">
 <article class="dkb-card dkb-on-dark"><h3>Medijska zastupljenost</h3><p class="dkb-value dkb-mono" id="dkb-visibility">`r number(latest$visibility_per_10000)`</p><p>na 10.000 analiziranih članaka</p><p id="dkb-count-articles" class="dkb-mono">`r integer(latest$matching_articles)` od `r article_genitive(latest$total_articles)`</p><p class="dkb-card-period">`r latest$period_id` · mjesečno · `r scope_hr[default_scope]`</p><small id="dkb-change">`r if(preview)"Razvojni prikaz, bez tumačenja promjene." else "Usporedba zasebnih razdoblja dostupna je u tablici podataka."`</small></article>
-<article class="dkb-card dkb-on-dark"><h3>Širina prisutnosti</h3><p class="dkb-value dkb-mono" id="dkb-breadth">`r number(latest$breadth_pct)` %</p><p>praćenih medija</p><p id="dkb-count-outlets" class="dkb-mono">`r integer(latest$matching_outlets)` od `r integer(latest$panel_outlets)` medija</p><p class="dkb-card-period">`r latest$period_id` · mjesečno · `r scope_hr[default_scope]`</p></article>
+<article class="dkb-card dkb-on-dark"><h3>Širina prisutnosti</h3><p class="dkb-value dkb-mono" id="dkb-breadth">`r number(latest$breadth_pct)` %</p><p>praćenih medija</p><p id="dkb-count-outlets" class="dkb-mono">`r integer(latest$matching_outlets)` od `r integer(latest$panel_outlets)` medija</p><p class="dkb-card-period">`r latest$period_id` · mjesečno · `r scope_hr[default_scope]`</p><small id="dkb-breadth-change">`r if(preview)"Razvojni prikaz, bez tumačenja promjene." else "Usporedba dostupna u tablici podataka."`</small></article>
 </div>
+<p id="dkb-composition-strip" class="dkb-status">Sastav prikazanog razdoblja dostupan je u <a href="#dkb-composition">tablici sastava članaka</a>.</p>
 <p>Promjena pokazatelja ne govori o potpori demokršćanskim idejama ni o uspjehu bilo koje stranke.</p>
 </section>
 
@@ -90,7 +100,7 @@ if(preview)cat('<p class="dkb-synthetic">SINTETIČKI PODACI · Razvojni prikaz. 
 #| label: barometar-static-visibility
 #| classes: dkb-static-desktop
 #| fig-alt: "Mjesečna zastupljenost s prazninama i odvojenim nizovima prije i nakon travnja 2024."
-barometar_static_plot(monthly,"visibility_per_10000",scope=default_scope)
+barometar_static_plot(monthly,"visibility_per_10000",scope=default_scope,diagnostics=release$tables$diagnostics,annotations=summary$annotations)
 ```
 
 ```{r}
@@ -99,7 +109,7 @@ barometar_static_plot(monthly,"visibility_per_10000",scope=default_scope)
 #| fig-width: 4.2
 #| fig-height: 3.6
 #| fig-alt: "Mjesečna zastupljenost s označenim nedostupnim razdobljima i promjenom prikupljanja."
-barometar_static_plot(monthly,"visibility_per_10000",scope=default_scope,mobile=TRUE)
+barometar_static_plot(monthly,"visibility_per_10000",scope=default_scope,mobile=TRUE,diagnostics=release$tables$diagnostics,annotations=summary$annotations)
 ```
 
 </div></div>
@@ -109,7 +119,7 @@ barometar_static_plot(monthly,"visibility_per_10000",scope=default_scope,mobile=
 #| label: barometar-static-breadth
 #| classes: dkb-static-desktop
 #| fig-alt: "Mjesečna širina prisutnosti s označenim nedostupnim razdobljima."
-barometar_static_plot(monthly,"breadth_pct",scope=default_scope)
+barometar_static_plot(monthly,"breadth_pct",scope=default_scope,annotations=summary$annotations)
 ```
 
 ```{r}
@@ -118,19 +128,20 @@ barometar_static_plot(monthly,"breadth_pct",scope=default_scope)
 #| fig-width: 4.2
 #| fig-height: 3.6
 #| fig-alt: "Mjesečna širina prisutnosti s označenim nedostupnim razdobljima."
-barometar_static_plot(monthly,"breadth_pct",scope=default_scope,mobile=TRUE)
+barometar_static_plot(monthly,"breadth_pct",scope=default_scope,mobile=TRUE,annotations=summary$annotations)
 ```
 
 </div></div>
 <p id="dkb-readout" role="status" aria-live="polite" class="dkb-mono"></p>
-<p>Promjena prikupljanja · 1. travnja 2024. Crte se prekidaju na granici te na razdobljima bez dostupnih podataka.</p>
+<p><a href="../metodologija.html#method-barometar-kontinuitet">Promjena prikupljanja · 1. travnja 2024.</a> Crte se prekidaju na granici te na razdobljima bez dostupnih podataka.</p>
+<p id="dkb-a2-note" `r if(default_scope!='uze')'hidden' else ''`>Tanka siva crta: A2, stranačka etiketa bez potvrđenog imenovanja ideje. Oznaka A2 ne opravdava uključivanje; članak može zasebno zadovoljiti B ili C.</p>
 <details class="reference-section"><summary>Tablica podataka</summary><div class="table-responsive" role="region" tabindex="0" aria-label="Tablica odabranog obuhvata"><table id="dkb-data-table"><caption>Mjesečno, `r scope_hr[default_scope]`. `r if(preview)"Sintetički podaci." else ""`</caption><thead><tr><th scope="col">Razdoblje</th><th scope="col">Članci</th><th scope="col">Ukupno</th><th scope="col">Na 10.000</th><th scope="col">Mediji</th><th scope="col">Širina (%)</th><th scope="col">Zastupljenost</th><th scope="col">Širina</th></tr></thead><tbody>
 ```{r}
 #| output: asis
 for(i in which(monthly$scope==default_scope))cat(sprintf('<tr><th scope="row">%s</th><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>\n',monthly$period_id[i],integer(monthly$matching_articles[i]),integer(monthly$total_articles[i]),number(monthly$visibility_per_10000[i]),integer(monthly$matching_outlets[i]),number(monthly$breadth_pct[i]),status_hr[monthly$visibility_status[i]],status_hr[monthly$breadth_status[i]]))
 ```
 </tbody></table></div></details></section>
-<section id="teme" class="dkb-inner"><h2>O kojim se pitanjima govori?</h2>
+<section id="tematska-slika" class="dkb-inner"><h2>Tematska slika</h2><p>O kojim se pitanjima govori?</p>
 <p>Teme opisuju javna pitanja u uključenim odlomcima. Jedan članak može obuhvatiti više tema. Vrijednosti su izražene na 10.000 analiziranih članaka. Oznaka „nepotvrđeno” znači da ljudska provjera još ne podupire pouzdanost tematske oznake.</p>
 <div class="dkb-controls" hidden><button id="dkb-matrix-prev" type="button">Prethodnih 12 razdoblja</button><button id="dkb-matrix-next" type="button">Sljedećih 12 razdoblja</button></div>
 <p id="dkb-matrix-range" class="dkb-status"></p>
@@ -146,7 +157,7 @@ ramp <- c("#eaf0f2","#c9dce0","#8fb5bd","#5a949f","#2c6f7e")
 cat('<thead><tr><th scope="col">Tema</th>',paste(sprintf('<th scope="col">%s</th>',periods),collapse=""),'</tr></thead><tbody>')
 for(id in unique(theme_rows$theme_id)) {
   a <- theme_rows[theme_rows$theme_id==id,,drop=FALSE];a <- a[match(periods,a$period_id),]
-  cat('<tr><th scope="row">',escape(a$theme_label_hr[1L]),'<small>',if(identical(a$theme_status[1L],"confirmed"))"provjereno" else "nepotvrđeno",'</small></th>',sep="")
+  cat('<tr',if(id=="unclassified")' class="dkb-unclassified"' else '', '><th scope="row">',escape(a$theme_label_hr[1L]),'<small>',if(identical(a$theme_status[1L],"confirmed"))"provjereno" else "nepotvrđeno",'</small></th>',sep="")
   for(i in seq_len(nrow(a))) {
     value <- a$rate_per_10000[i];bin <- if(is.na(value)||value==0)0L else barometar_matrix_bin(value,bins)+1L
     class <- if(a$period_status[i]=="unavailable")"dkb-missing-cell" else if(a$period_status[i]=="partial")"dkb-partial-cell" else ""
@@ -159,6 +170,7 @@ cat('</tbody>')
 ```
 </table></div>
 <p id="dkb-matrix-detail" role="status" aria-live="polite">Tablica navodi svako područje zasebno. Tematske se vrijednosti ne zbrajaju.</p>
+<p><a href="../studije/socijalni-nauk-i-gospodarstvo.html">Povezano istraživanje: socijalni nauk i gospodarstvo</a></p>
 <p class="dkb-matrix-legend">Bijelo: opažena nula · „—” i šrafura: nije dostupno · isprekidani rub: djelomično · pet nijansi: stalni razredi intenziteta za odabrani obuhvat i učestalost.</p>
 <p id="dkb-matrix-bins" class="dkb-mono">Granice razreda na 10.000 članaka: `r paste(vapply(bins,number,character(1L)),collapse=" · ")`.</p>
 <details><summary>Načela i sastav uključenih članaka</summary><p id="dkb-composition-period">Sastav posljednjega cjelovitog mjeseca.</p>
@@ -171,7 +183,17 @@ for(i in seq_len(nrow(a)))cat(sprintf('<tr><th scope="row">%s</th><td>%s</td><td
 ```
 </tbody></table></div><p>Putovi su prikazani u točnim kombinacijama. Načela mogu biti višestruka. Uži obuhvat uzima samo odlomke koji imenuju demokršćansku tradiciju.</p></details>
 </section>
-<section id="nalazi" class="dkb-inner"><h2>Nalazi</h2><p>`r if(preview || !isTRUE(summary$human_validation_complete))"Empirijski nalazi nisu objavljeni. Za prvo izdanje potrebna je ljudska provjera pravila na zasebnom uzorku članaka. Sintetički prikaz služi provjeri računanja i sučelja." else "Ovo izdanje donosi provjerene tablice. Opisni nalazi dodaju se kada ih podupiru provjera pravila, sastav članaka i analize osjetljivosti."`</p></section>
+<section id="nalazi" class="dkb-inner"><h2>Nalazi</h2><p>Izdanje nalaza: <a href="`r paste0(download_root,'izdanja/',edition$edition,'/summary.json')`">`r edition$edition` · sažetak JSON</a>.</p><p>`r if(preview || !isTRUE(edition$human_validation_complete))"Empirijski nalazi nisu objavljeni. Za prvo izdanje potrebna je ljudska provjera pravila na zasebnom uzorku članaka. Sintetički prikaz služi provjeri računanja i sučelja." else "Ovo izdanje donosi provjerene tablice. Opisni nalazi dodaju se kada ih podupiru provjera pravila, sastav članaka i analize osjetljivosti."`</p>
+```{r}
+#| include: false
+if(length(edition$findings))stop("Nonempty edition findings require the approved numeric-claim template before rendering.")
+```
+</section>
+<section id="povezana-istrazivanja" class="dkb-inner"><h2>Povezana istraživanja</h2><div class="dkb-related">
+<article class="info-card"><h3><a href="../studije/socijalni-nauk-i-gospodarstvo.html">Socijalni nauk Crkve u javnoj raspravi o gospodarstvu</a></h3><p>Luka Šikić, Petra Palić</p><p class="dkb-mono">Populacija: korpus katoličkih tema DigiKat, do 11. lipnja 2026.</p></article>
+<article class="info-card"><h3><a href="../../assets/izvjestaji/kako-se-govori-o-crkvi/index.html">Kako se govori o Crkvi?</a></h3><p>Luka Šikić</p><p class="dkb-mono">Populacija: korpus DigiKat, do 11. lipnja 2026.</p></article>
+<article class="info-card"><h3><a href="../../assets/izvjestaji/godisnji-pregled-2025.html">Katoličke teme u digitalnom prostoru. Godišnji pregled 2025.</a></h3><p>Luka Šikić</p><p class="dkb-mono">Populacija: korpus DigiKat, 2025.</p></article>
+</div></section>
 <section id="podaci-i-metoda" class="dkb-inner"><h2>Podaci i metoda</h2>
 <p>Medijska zastupljenost opisuje omjer uključenih i analiziranih članaka. Širina prisutnosti opisuje u koliko se medija iz stalnog panela tema pojavljuje. Pokazatelji se ne spajaju u zajednički indeks.</p>
 <div class="download-group">
@@ -191,20 +213,81 @@ for(file in files)cat(sprintf('<a href="%s%s" download>%s (%s · %s kB)</a> ',do
 cat('</p>')
 ```
 </div>
-<details><summary>Kako se prepoznaju ideje?</summary><p>Demokršćanstvo kao tradicija i ideja prepoznaje se po izravnom imenovanju. Kršćanska socijalna misao obuhvaća socijalni nauk u političkom pitanju i kršćanski utemeljen argument iz načela. Programski govor aktera zasebna je opisna oznaka već uključenih članaka. Ljudska provjera određuje koja pravila mogu ući u objavljene pokazatelje.</p></details>
-<details><summary>Razdoblja, provjera i ograničenja</summary><p>Nedostatni dani ostaju neopaženi. Mjesečni prikaz koristi cjelovite mjesece, a tjedne kartice zadnjih 28 dana do kraja dostupnog tjedna. Poredbe se računaju iz zasebnih, nepreklopljenih razdoblja. Granica prikupljanja 1. travnja 2024. ostaje označena.</p><p>Razvoj pravila i ljudska evaluacija koriste odvojene članke. Odziv cijeloga panela nije procijenjen. Analize osjetljivosti zasebno izostavljaju skupine medija, crkvene govornike i članke u kojima je HDZ jedini prepoznati registrirani akter ili uloga.</p><p>Izvorni članci, naslovi i poveznice ne ulaze u javne tablice. Popis medija donosi samo nazivnike, bez pojedinačnih brojnika.</p></details>
-<div class="citation-block"><p>Šikić, L. (2026). <em>Medijski barometar demokršćanstva</em> (`r if(preview)"sintetički razvojni prikaz" else paste("izdanje",summary$release_version)`, podaci do `r digikat_hr_date(summary$data_through)`). DigiKat, Hrvatsko katoličko sveučilište.</p><p>Definicija `r summary$definition_version` · Panel `r summary$panel_version` · `r if(preview)"Bez empirijskog izdanja." else "CC BY 4.0."`</p></div>
+<p><strong>A1 · Demokršćanstvo kao tradicija i ideja.</strong> Izravno imenovanje mora upućivati na tradiciju ili ideju, a ne samo na naziv stranke.</p>
+<p><strong>B · Socijalni nauk u političkom pitanju.</strong> Doktrinarno uporište primijenjeno je na javno ili političko pitanje.</p>
+<p><strong>C · Kršćanski utemeljen argument iz načela.</strong> Kršćansko uporište i političko pitanje povezani su argumentom koji sadrži jedan snažan ili razlikovni pojam, odnosno najmanje dvije različite obitelji općih načela, u istom dokaznom odlomku.</p>
+<p><strong>D · Programski govor aktera.</strong> Pripisani govor demokršćanskog aktera označava već prihvaćen argument pripisan akteru čiji zapis u registru vrijedi na dan članka. Ta oznaka ne dodaje članke u pokazatelj.</p>
+<p>Uži obuhvat čini A1. Širi obuhvat dodaje prihvaćene putove B i C, zajedno nazvane „Kršćanska socijalna misao”, bez višestrukog brojanja članka. Ljudska provjera određuje koji putovi mogu u objavljene pokazatelje. <a href="../metodologija.html#method-barometar">Mjesto barometra u metodologiji DigiKat</a>.</p>
+<details id="dkb-dictionaries"><summary>Rječničke obitelji i pravila</summary><p>Broj unosa opisuje rječnik, a ne broj pronađenih članaka. Više oblika može pripadati istom unosu. Prisutnost riječi sama po sebi ne potvrđuje put prepoznavanja.</p>
+```{r}
+#| output: asis
+family_labels <- c(actor_cd="Demokršćanski akteri",actor_church="Crkveni akteri",actor_foreign="Inozemni akteri",geography_foreign="Inozemni prostor",geography_eu="Europska unija",geography_domestic="Domaći prostor",connector="Argumentacijske veze",other_speaker="Drugi govornici",attribution="Pripisivanje iskaza",grounding="Kršćansko utemeljenje",church_speaker="Crkveni govornici",dignity="Dostojanstvo osobe",dignity_work="Dostojanstvo rada",freedom="Sloboda",rights="Prava",solidarity="Solidarnost",justice="Pravednost",work="Rad",subsidiarity="Supsidijarnost",participation="Sudjelovanje",social_market="Socijalno tržišno gospodarstvo",common_good="Opće dobro",family_life="Obitelj i život",cd_label="Imenovanje demokršćanstva",idea_cue="Pokazatelji idejnog značenja",party_cue="Pokazatelji stranačkog značenja",doctrine="Socijalni nauk",universal_goods="Opća namjena dobara",poor_option="Opcija za siromašne",integral_ecology="Cjelovita ekologija",personalism="Personalizam",document="Dokumenti",encyclical="Enciklike",theme_family="Tema obitelji",theme_work="Tema rada",theme_economy="Tema gospodarstva",theme_politics="Tema politike",theme_europe="Tema Europe",theme_environment="Tema okoliša",exclusion="Isključujući kontekst",ecclesial_council="Crkveni sabori i službe",cst_organisation_name="Nazivi ustanova socijalnog nauka",notice="Obavijesti",papal_naming="Izbor papinskoga imena",legal_sense="Pravni smisao",toponym="Toponimi",identity_family="Identitetski izrazi o obitelji i životu",identity_other="Druge identitetske oznake",public="Javna pitanja",policy_action="Javnopolitičko djelovanje")
+families <- table(vapply(release$definitions$entries,function(x)x$family,character(1L)))
+if(any(!names(families) %in% names(family_labels)))stop("Missing Croatian family summary.")
+html_table(data.frame(Obitelj=unname(family_labels[names(families)]),Unosi=as.integer(families)),paste("Definicija",summary$definition_version))
+```
+</details>
+<details id="dkb-panel"><summary>Panel praćenih medija (P = `r summary$panel_outlets`, verzija `r summary$panel_version`)</summary><p>Tablica prikazuje samo prihvatljive članke u nazivniku po mediju i godini. Ne prikazuje koliko je članaka pojedinog medija uključeno u brojnik.</p>
+```{r}
+#| output: asis
+p <- release$tables$outlets
+p <- p[p$in_panel,,drop=FALSE]
+ids <- unique(p$outlet_id)
+panel_table <- data.frame(Medij=p$display_name[match(ids,p$outlet_id)],Domena=p$outlet_domain[match(ids,p$outlet_id)],Skupina=vapply(p$segment[match(ids,p$outlet_id)],translate_value,character(1L)))
+for(year in sort(unique(p$year)))panel_table[[as.character(year)]] <- p$eligible_articles[match(paste(ids,year),paste(p$outlet_id,p$year))]
+html_table(panel_table,"Prihvatljivi članci po godini · nazivnik")
+```
+</details>
+<details id="dkb-validation"><summary>Ljudska provjera po putu prepoznavanja</summary><p>Preciznost je udio ispravno uključenih članaka među provjerenim uključenima. Procjena uzima u obzir različite vjerojatnosti odabira pa se može razlikovati od jednostavnog omjera k/n. Interval je približni Wilsonov interval uz Kishovu efektivnu veličinu uzorka (n_eff). Slaganje dvaju kodera prikazuje se zasebno. Ne procjenjuje se odziv cijeloga panela.</p>
+```{r}
+#| output: asis
+v <- release$tables$validation
+if(preview || !isTRUE(summary$human_validation_complete) || !nrow(v))cat('<p>Ljudska provjera nije završena. Preciznost i κ nisu dostupni.</p>') else {
+  gate_hr <- c(accepted="prihvaćeno",experimental="eksperimentalno",dropped="isključeno",diagnostic="dijagnostika",unvalidated="nije provjereno")
+  html_table(data.frame(Put=v$route,Sloj=v$stratum,n=v$n,k=v$k,n_eff=vapply(v$n_eff,barometar_validation_number,character(1L)),Preciznost=vapply(v$precision,barometar_validation_number,character(1L)),Donja=vapply(v$lo,barometar_validation_number,character(1L)),Gornja=vapply(v$hi,barometar_validation_number,character(1L)),Status=unname(gate_hr[v$gate])),"Ljudska provjera · procjena i 95 % interval")
+  cat('<p>κ za uključivanje: ',barometar_validation_number(release$validation$qualifies_agreement$kappa),' · κ za konstrukt: ',barometar_validation_number(release$validation$construct_agreement$kappa),'.</p>',sep="")
+}
+```
+</details>
+<details id="dkb-diagnostics"><summary>Stranačke etikete A2 i nerazriješena spominjanja A?</summary><p>Oznake A2 i A? same ne opravdavaju uključivanje. Članak s takvom oznakom može zasebno zadovoljiti B ili C. Dijagnostika pokazuje broj označenih članaka u posljednjem cjelovitom mjesecu. Puni vremenski niz nalazi se u datoteci diagnostics.csv.</p>
+```{r}
+#| output: asis
+a <- release$tables$diagnostics
+a <- a[a$frequency=="monthly" & a$scope==default_scope & a$period_id==latest$period_id,,drop=FALSE]
+html_table(data.frame(Oznaka=a$diagnostic,Članci=a$articles,Nazivnik=a$total_articles),paste("Dijagnostika",latest$period_id))
+if(default_scope=="uze") {
+  a <- barometar_a2_series(monthly,release$tables$diagnostics)
+  html_table(data.frame(Razdoblje=a$period_id,Članci=a$matching_articles,`Na 10.000`=vapply(a$visibility_per_10000,number,character(1L)),Status=unname(status_hr[a$visibility_status]),check.names=FALSE),"A2 · mjesečno · izvan pokazatelja")
+}
+```
+</details>
+<details id="dkb-history"><summary>Povijest izdanja</summary>
+```{r}
+#| output: asis
+h <- release$tables$releases
+html_table(data.frame(Izdanje=h$release_version,Podaci=h$data_through,Definicija=h$definition_version,Panel=h$panel_version,Nalazi=h$edition),"Objavljene verzije paketa")
+revisions <- release$tables$revisions
+if(!nrow(revisions))cat('<p>Nema zabilježenih revizija ranijih vrijednosti.</p>') else {
+  changes <- as.data.frame(table(revisions$release_version,revisions$table),stringsAsFactors=FALSE)
+  changes <- changes[changes$Freq>0,,drop=FALSE];names(changes) <- c("Izdanje","Tablica","Promijenjene vrijednosti")
+  html_table(changes,"Sažetak revizija; pojedinosti u revisions.csv")
+}
+```
+</details>
+<details id="dkb-periods"><summary>Razdoblja i promjena prikupljanja</summary><p>Nedostatni dani ostaju neopaženi. Mjesečni prikaz koristi cjelovite mjesece, a tjedne kartice zadnjih 28 dana do kraja dostupnog tjedna. Poredbe se računaju iz zasebnih, nepreklopljenih razdoblja. Granica prikupljanja 1. travnja 2024. ostaje označena. Za uspoređivanje preko nje potrebna je zasebna provjera usporedivosti na preklopljenom mjesecu i prihvaćenim putovima.</p><p>Razvoj pravila i ljudska evaluacija koriste odvojene članke. Analize osjetljivosti zasebno izostavljaju skupine medija, crkvene govornike i članke u kojima je HDZ jedini prepoznati registrirani akter ili uloga. Izostavljanje skupina medija mijenja panel i nazivnik; provjere govornika mijenjaju samo broj uključenih članaka.</p><p>Izvorni članci, naslovi i poveznice ne ulaze u javne tablice. Popis medija donosi samo nazivnike, bez pojedinačnih brojnika.</p></details>
+<div class="citation-block"><p>Šikić, L. (2026). <em>Medijski barometar demokršćanstva</em> (`r if(preview)"sintetički razvojni prikaz" else paste("izdanje",summary$release_version)`, podaci do `r digikat_hr_date(summary$data_through)`). DigiKat, Hrvatsko katoličko sveučilište. <a href="index.html">Identifikator stranice</a> · <a href="../../data/barometar/demokrscanstvo/summary.json">Sažetak izdanja</a>.</p><p>Definicija `r summary$definition_version` · Panel `r summary$panel_version` · `r if(preview)"Bez empirijskog izdanja." else "CC BY 4.0."`</p></div>
 <p class="dkb-footer-note">Codex je korišten za pripremu koda, prijedlog rječnika i razvojnu provjeru pravila. Ljudske oznake i konačno znanstveno tumačenje odgovornost su istraživača.</p>
 <p><a href="../studije/index.html">Istraživanja DigiKat</a> · <a href="../metodologija.html">Metodologija projekta</a></p>
 </section>
-<section class="dkb-inner"><h2>Povezana istraživanja</h2><div class="dkb-related">
-<article><h3><a href="../studije/socijalni-nauk-i-gospodarstvo.html">Socijalni nauk Crkve u javnoj raspravi o gospodarstvu</a></h3><p>Luka Šikić, Petra Palić</p><p>Korpus katoličkih tema DigiKat, do 11. lipnja 2026.</p></article>
-<article><h3><a href="../../assets/izvjestaji/kako-se-govori-o-crkvi/index.html">Kako se govori o Crkvi?</a></h3><p>Luka Šikić</p><p>Korpus DigiKat, do 11. lipnja 2026.</p></article>
-<article><h3><a href="../../assets/izvjestaji/godisnji-pregled-2025.html">Katoličke teme u digitalnom prostoru. Godišnji pregled 2025.</a></h3><p>Luka Šikić</p><p>Korpus DigiKat, 2025.</p></article>
-</div></section>
+
 ```{r}
 #| output: asis
 cat('<script id="dkb-payload" type="application/json">',payload,'</script>',sep="")
+site_url <- yaml::read_yaml("../../_quarto.yml")$website$`site-url`
+dataset <- list(`@context`="https://schema.org",`@type`="Dataset",name=paste("Medijski barometar demokršćanstva",if(preview)"· sintetički prikaz" else summary$release_version),description=if(preview)"Izmišljeni podaci za provjeru prikaza; bez empirijskih nalaza." else "Skupni pokazatelji zastupljenosti i širine prisutnosti u stalnom panelu hrvatskih mrežnih medija.",identifier=paste0(site_url,"pages/demokrscanstvo/"),url=paste0(site_url,"pages/demokrscanstvo/"),inLanguage="hr",dateModified=substr(summary$computed_at,1L,10L),version=summary$release_version,creator=list(`@type`="Person",name="Luka Šikić"),temporalCoverage=paste(min(monthly$period_start),summary$data_through,sep="/"),variableMeasured=list(list(`@type`="PropertyValue",name="Medijska zastupljenost",unitText="Uključeni članci na 10.000 analiziranih članaka"),list(`@type`="PropertyValue",name="Širina prisutnosti",unitText="Postotak medija stalnog panela")))
+dataset$distribution <- lapply(files[endsWith(files,".csv")],function(file)list(`@type`="DataDownload",name=file,encodingFormat="text/csv",contentUrl=paste0(download_root,file)))
+if(!preview)dataset$license <- "https://creativecommons.org/licenses/by/4.0/"
+cat('<script id="dkb-dataset" type="application/ld+json">',stringi::stri_replace_all_fixed(jsonlite::toJSON(dataset,auto_unbox=TRUE),"<","\\u003c"),'</script>',sep="")
 ```
 <script src="../../assets/js/barometar-core.js"></script>
 <script src="../../assets/js/barometar.js"></script>

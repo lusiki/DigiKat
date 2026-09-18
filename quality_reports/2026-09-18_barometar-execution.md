@@ -21,7 +21,7 @@ plan. The PI authorized recommended decisions and gate actions once supported.
 
 The combined R runner passed all 69 shared DigiKat checks and all barometer
 suites. Added recovery/refresh checks include 20 worker, 48 release, 21 history,
-12 certificate, 56 installer and 27 update cases, using invented temporary inputs.
+13 certificate, 56 installer, 29 update and 27 publication-policy cases, using invented temporary inputs.
 The synthetic source-to-release pipeline passed on 3,206 invented records with
 the real 49-column source schema. The empirical DuckDB version stays 1.5.4;
 CI's invented checks also passed against the checksummed 1.5.5 Windows binary.
@@ -31,7 +31,15 @@ independent numeric review checked all 4,900 available synthetic theme cells,
 all 84 static matrix cells and the SVG/PNG exports. The site reviewer checked
 16 page cases plus all eight standard widths, with no axe, overflow or browser
 failures and working download links. Corrected export caption contrast is 6.65:1.
-The page is 1,313,610 bytes with a 181,901-byte embedded payload.
+The final expanded page is 1,337,926 bytes with a 182,665-byte embedded payload.
+Sixteen browser cases plus nine expanded-content cases pass, along with all
+eight standard widths, 46 additional numeric checks and 73 local links.
+Normal direct printing with JavaScript active passes for monthly/broad and
+weekly/narrow; raster inspection confirms the full matrix, tables and charts.
+Print uses solid unavailable bands to avoid a Chromium SVG-pattern PDF hang,
+and exposes closed details tables while keeping cards intact. A separate
+artificial print-media-to-screen toggle still triggers a Chrome 153 timeout;
+the passing artifacts use normal direct printing.
 
 The repository source-quality contract passed 391 checks. Disclosure screening
 passed 257 trackable study/public-data artifacts. The site link checker passed
@@ -59,9 +67,68 @@ trackable.
 After full classification: create and verify the blinded PI/second-coder
 package, then await genuine independent human coding and PI adjudication.
 Vendor aggregate-licence evidence is also outstanding. The empirical edition
-PDF, dated findings, remaining method/page details, navigation, social metadata,
-publication governance and final full-site release checks follow G3/G4.
+PDF, dated empirical findings, production navigation, publication governance
+and final full-site release checks follow G3/G4. The page's method details and
+research metadata are prepared and checked on synthetic data.
 
 The running `run.R` entry point will be connected to the reviewed refresh helper
 after classification ends. Editing a streamed top-level R script while it runs
 can change the expressions that R reads later; avoid doing so.
+
+## Fresh-checkout follow-up
+
+Checkpoint `e892f83` and the final overview-dimension fix `3fdb058` are committed.
+A detached checkout at `3fdb058` reproduced all 40 generated synthetic public
+files byte for byte, including CSV, JSON, SVG, PNG and manifests. Only the
+explicitly exempt `computed_at` value was held at a fixed test time. Both trees
+used the same locked R library; the test unset the external-source variables.
+
+The detached checkout also completed the full 115-source Quarto render. After
+restoring the nine frozen study pages and their tracked libraries, its link
+check passed 136 HTML files and its metadata/structure/budget check passed 126
+active pages. Tracked processed data stayed unchanged. This verifies the source
+checkpoint's ordinary site build; the empirical barometer remains excluded,
+and it is not the G5 production integration or a deployment.
+
+## D19 evidence search
+
+No licence/contract file was found by a filename search in the supplied
+DetermDB directory. The public [Determ terms](https://determ.com/tos/), reviewed
+on 18 September 2026 and marked updated 19 August 2024, restrict service/content
+reuse and do not expressly grant a CC BY licence for derived aggregates.
+Accordingly, I cannot use that page alone as evidence satisfying D19. The
+project-specific agreement or written confirmation remains needed. No vendor
+was contacted.
+
+## Page and release-policy follow-up
+
+The page now reads manifest-checked dictionary, panel, validation and history
+files and the hash-bound dated edition. It displays denominator-only outlet
+tables, pending human-validation status, family summaries, release history and
+separate A2 diagnostics in the narrow view. Related-study navigation, Dataset
+metadata, citation links and the methodology continuity anchor are prepared.
+The domain review clarified B/C application, C's strength threshold, date-valid
+D attribution and the fact that an A2-labelled article can qualify separately
+through B/C. These are synthetic page preparations, not empirical findings.
+
+Independent numeric review passed all 734 primary period rows, 367 A2 keyed
+rows, 350 available A2 SVG points, 50 families/105 entries and 72 invented
+outlet-year denominator cells. The precision/κ formatter now preserves small
+proportions instead of applying the headline-rate display threshold. The full
+R suite passed after the edition/diagnostic reader changes; the update fixture
+was brought into line with the stricter production manifest requirement.
+
+An independent release review reproduced a policy gap: B/C could satisfy the
+frozen statistical scorer when A1 was dropped, experimental or unvalidated.
+The adopted plan forbids a release in all three cases. A separate publication
+policy now enforces accepted A1 in scoring import, G3 acceptance, aggregation,
+refresh and installation, and binds its code hash to the certificate. The
+frozen scorer and all G2 evidence remain unchanged. All 27 independent policy
+regressions, 13 certificate checks and 29 update checks pass on invented data.
+
+The eight-token overlap scan now caches public n-grams and vectorizes the same
+consecutive-token joins. Independent scalar-reference tests confirmed identical
+matches, including Unicode, punctuation, missing/short strings and several n.
+The obsolete scans were superseded by a final partitioned scan of all private
+candidate chunks, each using the same checker and isolated output directory.
+Its completion is recorded separately; it is not yet claimed here.

@@ -11,7 +11,8 @@ run_barometar_certificate_tests <- function() {
     "studies/demokrscanstvo-barometar/coder_template.html",
     "studies/demokrscanstvo-barometar/07_bridge.R", "studies/demokrscanstvo-barometar/02_panel.R",
     "R/lib/digikat_utils.R", "R/lib/barometar_bridge.R", "R/lib/barometar_outlet_urls.R",
-    "R/lib/barometar_url_rules.R", "R/lib/barometar_engine.R", "R/lib/barometar_text.R", "R/lib/barometar_rules.R"))
+    "R/lib/barometar_url_rules.R", "R/lib/barometar_engine.R", "R/lib/barometar_text.R", "R/lib/barometar_rules.R",
+    "studies/demokrscanstvo-barometar/06_validation_score.R"))
   for (path in paths) {
     target <- file.path(root, path); dir.create(dirname(target), recursive = TRUE, showWarnings = FALSE)
     stopifnot(file.copy(file.path(repository, path), target))
@@ -59,7 +60,8 @@ run_barometar_certificate_tests <- function() {
   saveRDS(classification, file.path(workdir, "classification_manifest.rds"))
   result <- list(human_validation_complete = TRUE, draw_id = draw$draw_id,
     input_hashes = setNames(rep("invented-export-hash", 4L), c("pi", "second", "adjudicated", "log")),
-    accepted_routes = "A1", release_scope = "uze")
+    accepted_routes = "A1", release_scope = "uze",narrow_publishable=TRUE,
+    validation=data.frame(route="A1",precision=.9,gate="accepted"))
   result_path <- file.path(folder, "validation-result.rds"); saveRDS(result, result_path)
   bridge <- list(validated = TRUE, validation_result_hash = digikat_hash_file(result_path),
     identity = list(definition = definition$definition_hash, panel = panel$panel_hash,
@@ -117,6 +119,10 @@ run_barometar_certificate_tests <- function() {
     Sys.setFileTime(database[[batch]], old_time)
   }
   check(identical(audit$barometar_accept_validation()$status, "approved"), "restored invented inputs permit acceptance again")
+  no_a1 <- result;no_a1$accepted_routes <- c("B","C");no_a1$release_scope <- "siri";no_a1$broad_publishable <- TRUE
+  saveRDS(no_a1,result_path);rebound <- bridge;rebound$validation_result_hash <- digikat_hash_file(result_path);saveRDS(rebound,bridge_path)
+  rejected <- audit$barometar_accept_validation()
+  check(identical(rejected$status,"rejected") && identical(rejected$release_scope,"none"),"B/C-only evidence cannot certify an empirical release when A1 fails")
   cat("Barometer certificate audit: ", checked, "/", checked, " invented checks passed.\n", sep = "")
   invisible(checked)
 }

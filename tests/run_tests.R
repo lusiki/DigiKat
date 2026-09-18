@@ -432,6 +432,7 @@ barometar_suites <- c(
   "tests/barometar_validation_audit_tests.R",
   "tests/barometar_near_miss_audit_tests.R",
   "tests/barometar_human_import_tests.R",
+  "tests/barometar_release_policy_tests.R",
   "tests/barometar_bridge_audit_tests.R",
   "tests/barometar_bridge_source_tests.R",
   "tests/barometar_denominator_tests.R",

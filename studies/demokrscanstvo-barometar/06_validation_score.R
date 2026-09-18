@@ -1,6 +1,20 @@
 # Import actual human exports. Never creates or infers a human answer.
 source("studies/demokrscanstvo-barometar/05_validation_draw.R",encoding="UTF-8")
 
+# Publication policy is separate from the frozen statistical estimates.
+barometar_apply_release_policy <- function(result) {
+  a1 <- if(is.data.frame(result$validation))result$validation[result$validation$route=="A1",,drop=FALSE] else NULL
+  passes <- !is.null(a1) && nrow(a1)==1L && identical(a1$gate,"accepted") &&
+    isTRUE(is.finite(a1$precision) && a1$precision>=.8) && "A1" %in% result$accepted_routes && isTRUE(result$narrow_publishable)
+  if(!passes) {
+    result$broad_publishable <- FALSE
+    result$narrow_publishable <- FALSE
+    result$release_scope <- "none"
+    result$release_policy <- "no_go_A1"
+  }
+  result
+}
+
 barometar_check_coding_package <- function(folder,draw) {
   path <- file.path(folder,"package_manifest.json")
   if(!file.exists(path))stop("Coding package integrity manifest is missing.")
@@ -84,7 +98,7 @@ barometar_score_human_exports <- function(pi_path,second_path,adjudicated_path=N
     if(any(!vapply(seq_len(nrow(required)),function(i)all(stringi::stri_split_fixed(required$fields[i],";")[[1L]] %in%
       stringi::stri_split_fixed(audited$fields[i],";")[[1L]]),logical(1L))))stop("Adjudication log omits changed fields.")
   }
-  result <- barometar_score_validation(draw,pi$answers,second$answers,final$answers,definition$definition_version)
+  result <- barometar_apply_release_policy(barometar_score_validation(draw,pi$answers,second$answers,final$answers,definition$definition_version))
   result$draw_id <- draw$draw_id
   result$input_hashes <- setNames(vapply(c(pi_path,second_path,adjudicated_path,log_path),digikat_hash_file,character(1L)),c("pi","second","adjudicated","log"))
   result$human_validation_complete <- TRUE

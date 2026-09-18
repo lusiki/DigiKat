@@ -4,6 +4,7 @@
   if (!node) return;
   const C = window.BarometarCore, payload = JSON.parse(node.textContent);
   const tables = Object.fromEntries(Object.entries(payload.tables).map(([key, value]) => [key, C.unpack(value)]));
+  const a2 = Object.fromEntries(['monthly','weekly'].map(frequency => [frequency,new Map(C.select(tables,frequency,'uze').map((row,i)=>[row.period_id,{...row,matching_articles:payload.a2?.[frequency]?.[i],visibility_per_10000:row.visibility_status==='unavailable'||!row.total_articles?null:10000*payload.a2?.[frequency]?.[i]/row.total_articles}]))]));
   const root = document.querySelector('.dkb'), url = new URL(location.href);
   const labels = { monthly: 'mjesečno', weekly: 'tjedno', siri: 'šire', uze: 'uže', published: 'dostupno', partial: 'djelomično', unavailable: 'nije dostupno' };
   const requestedScope=url.searchParams.get('obuhvat');
@@ -35,6 +36,7 @@
     const body=document.createElement('tbody'), cells=[];
     themes.ids.forEach((id,t)=>{
       const tr=document.createElement('tr'), th=document.createElement('th');th.scope='row';th.textContent=themes.labels[t];
+      if(id==='unclassified')tr.className='dkb-unclassified';
       const note=document.createElement('small');note.textContent=pack.statuses[t]==='confirmed'?'provjereno':'nepotvrđeno';th.append(note);tr.append(th);
       periods.forEach((row,p)=>{
         const count=pack.counts[lookup.get(row.period_id)][t], missing=row.visibility_status==='unavailable', value=missing?null:10000*count/row.total_articles;
@@ -69,6 +71,8 @@
       const fragment=document.createDocumentFragment();
       for(const [facet,value,count] of composition.rows){const tr=document.createElement('tr');[facetLabels[facet]||facet,valueLabels[value]||value,C.integer(count)].forEach((value,i)=>{const cell=document.createElement(i?'td':'th');if(!i)cell.scope='row';cell.textContent=value;tr.append(cell);});fragment.append(tr);}
       compositionBody.replaceChildren(fragment);document.getElementById('dkb-composition-period').textContent=`${composition.period} · ${labels[state.frequency]} · ${labels[state.scope]}. Sastav toga razdoblja, bez zbrajanja preklopljenih načela.`;
+      const routes=composition.rows.filter(([facet])=>facet==='route_set').map(([,value,count])=>`${value}: ${C.integer(count)}`).join(' · ');
+      document.getElementById('dkb-composition-strip').textContent=`Sastav ${composition.period} · ${labels[state.frequency]} · ${labels[state.scope]} · ${routes}. ${state.frequency==='weekly'?'Zasebni tjedan; kartice prikazuju zadnjih 28 dana.':'Točne kombinacije putova.'}`;
     }
     for(const link of root.querySelectorAll('.dkb-selection-download'))link.hidden=link.dataset.frequency!==state.frequency||link.dataset.scope!==state.scope;
   }
@@ -83,7 +87,8 @@
     const left = 54, right = 20, top = 35, bottom = 36;
     const status = metric === 'breadth_pct' ? 'breadth_status' : 'visibility_status';
     const rolling = state.frequency === 'weekly' ? C.select(tables, 'rolling28', state.scope).filter(row => visible.some(v => v.period_end === row.period_end)) : [];
-    const max = metric === 'breadth_pct' ? 100 : Math.max(1, ...[...visible, ...rolling].map(row => Number.isFinite(row[metric]) ? row[metric] : 0)) * 1.1;
+    const diagnostic = state.scope==='uze' && metric==='visibility_per_10000' ? visible.map(row=>a2[state.frequency].get(row.period_id)).filter(Boolean) : [];
+    const max = metric === 'breadth_pct' ? 100 : Math.max(1, ...[...visible, ...rolling,...diagnostic].map(row => Number.isFinite(row[metric]) ? row[metric] : 0)) * 1.1;
     const step = (width - left - right) / Math.max(1, visible.length - 1), x = i => left + i * step, y = value => height - bottom - value / max * (height - top - bottom);
     const svg = svgEl('svg', { viewBox: `0 0 ${width} ${height}`, role: 'img', 'aria-label': metric === 'breadth_pct' ? 'Širina prisutnosti, postotak medija' : 'Medijska zastupljenost na 10.000 članaka' });
     const defs = svgEl('defs'), pattern = svgEl('pattern', { id: `${id}-missing`, width: 6, height: 6, patternUnits: 'userSpaceOnUse' });
@@ -95,6 +100,8 @@
       svg.append(svgEl('text', { x: left - 7, y: y(value) + 4, 'text-anchor': 'end' }, C.rate(value)));
     }
     const index = new Map(visible.map((row, i) => [row.period_id, i]));
+    for(const segment of C.segments(diagnostic,metric))svg.append(svgEl('path',{d:segment.map((row,i)=>`${i?'L':'M'}${x(index.get(row.period_id))},${y(row[metric])}`).join(' '),class:'a2-series'}));
+    for(const row of diagnostic.filter(row=>row.visibility_status==='partial'&&Number.isFinite(row[metric])))svg.append(svgEl('circle',{cx:x(index.get(row.period_id)),cy:y(row[metric]),r:2,fill:'#fff',stroke:'#656b70',class:'a2-partial'}));
     if (state.frequency === 'monthly') for (const segment of C.segments(visible, metric)) svg.append(svgEl('path', { d: segment.map((row, i) => `${i ? 'L' : 'M'}${x(index.get(row.period_id))},${y(row[metric])}`).join(' '), class: 'series' }));
     visible.forEach((row, i) => {
       if (!Number.isFinite(row[metric]) || row[status] === 'unavailable') return;
@@ -111,8 +118,10 @@
     }
     const ticks = Math.min(visible.length, Math.max(2, Math.floor((width - left - right) / 110) + 1), 6);
     for (let i = 0; i < ticks; i++) { const n = Math.round(i * (visible.length - 1) / Math.max(1, ticks - 1)); svg.append(svgEl('text', { x: x(n), y: height - 8, 'text-anchor': i === 0 ? 'start' : i === ticks - 1 ? 'end' : 'middle' }, visible[n].period_id)); }
-    const seam = visible.findIndex(row => row.period_end >= '2024-04-01');
-    if (seam > 0) { svg.append(svgEl('line', { x1: x(seam), x2: x(seam), y1: top, y2: height - bottom, stroke: '#0f1419', 'stroke-dasharray': '4 4' })); svg.append(svgEl('text', { x: Math.min(width - 195, Math.max(left, x(seam))), y: top - 8 }, 'Promjena prikupljanja · 1. 4. 2024.')); }
+    for(const annotation of payload.meta.annotations||[]) {
+      const seam = visible.findIndex(row => row.period_end >= annotation.day);
+      if (seam > 0) { svg.append(svgEl('line', { x1: x(seam), x2: x(seam), y1: top, y2: height - bottom, stroke: '#0f1419', 'stroke-dasharray': '4 4' })); svg.append(svgEl('text', { x: Math.min(width - 195, Math.max(left, x(seam))), y: top - 8 }, `${annotation.label_hr} · ${new Intl.DateTimeFormat('hr-HR',{day:'numeric',month:'numeric',year:'numeric',timeZone:'UTC'}).format(new Date(annotation.day))}`)); }
+    }
     // Keep the static fallback until the enhancement is fully constructed.
     target.replaceChildren(svg); geometries.set(id, { svg, x, top, bottom: height - bottom, left, width: width - left - right });
   }
@@ -120,6 +129,7 @@
     for (const g of geometries.values()) { g.svg.querySelectorAll('.crosshair').forEach(el => el.remove()); if (state.cursor !== null) g.svg.append(svgEl('line', { x1: g.x(state.cursor), x2: g.x(state.cursor), y1: g.top, y2: g.bottom, stroke: '#0f1419', 'stroke-dasharray': '2 3', class: 'crosshair' })); }
     const row = visible[state.cursor];
     document.getElementById('dkb-readout').textContent = row ? `${row.period_id} · ${C.rate(row.visibility_per_10000)} na 10.000 (${labels[row.visibility_status]}) · ${C.rate(row.breadth_pct)} % (${labels[row.breadth_status]}) · ${C.integer(row.matching_articles)} od ${C.count(row.total_articles, 'članka', 'članka', 'članaka')}` : '';
+    if(row && state.scope==='uze'){const d=a2[state.frequency].get(row.period_id);document.getElementById('dkb-readout').textContent+=` · A2: ${C.count(d.matching_articles,'članak','članka','članaka')}, ${C.rate(d.visibility_per_10000)} na 10.000 (izvan pokazatelja)`;}
   }
   function rangeControls(selected) {
     const select = document.getElementById('dkb-range'), options = state.frequency === 'weekly' ? ['13', '26', '52', '104', 'all'] : ['12', '24', '36', '60', 'all'];
@@ -138,11 +148,16 @@
     document.getElementById('dkb-count-outlets').textContent = values ? `${C.integer(values.matching_outlets)} od ${C.count(values.panel_outlets, 'medija', 'medija', 'medija')}` : 'nije dostupno';
     for (const el of root.querySelectorAll('.dkb-card-period')) el.textContent = `${head?.period.period_id || '—'} · ${labels[state.frequency]} · ${labels[state.scope]}${state.frequency === 'weekly' ? ' · zadnjih 28 dana' : ''}`;
     document.getElementById('dkb-change').textContent = payload.meta.synthetic ? 'Razvojni prikaz, bez tumačenja promjene.' : C.change(head?.period, 'visibility_difference') + (head?.period.comparison_status === 'comparable' ? ' na 10.000' : '');
+    document.getElementById('dkb-breadth-change').hidden=state.frequency==='weekly';
+    document.getElementById('dkb-breadth-change').textContent=payload.meta.synthetic?'Razvojni prikaz, bez tumačenja promjene.':C.change(head?.period,'breadth_difference_pp')+(head?.period.comparison_status==='comparable'?' postotnih bodova':'');
+    document.getElementById('dkb-a2-note').hidden=state.scope!=='uze';
     document.getElementById('dkb-state').textContent = `Prikaz: ${labels[state.frequency]}, ${labels[state.scope]}.${payload.meta.synthetic ? ' Sintetički podaci.' : ''}`;
     for (const input of root.querySelectorAll('input[type=radio]')) input.checked = state[input.name] === input.value;
     const table = document.getElementById('dkb-data-table'); table.querySelector('caption').textContent = `${labels[state.frequency]}, ${labels[state.scope]}.${payload.meta.synthetic ? ' Sintetički podaci.' : ''}`;
     const body = document.createDocumentFragment();
-    for (const row of selected) { const tr = document.createElement('tr'); [row.period_id, C.integer(row.matching_articles), C.integer(row.total_articles), C.rate(row.visibility_per_10000), C.integer(row.matching_outlets), C.rate(row.breadth_pct), labels[row.visibility_status], labels[row.breadth_status]].forEach((value, i) => { const td = document.createElement(i ? 'td' : 'th'); if (!i) td.scope = 'row'; td.textContent = value; tr.append(td); }); body.append(tr); } table.tBodies[0].replaceChildren(body);
+    table.tHead.rows[0].querySelectorAll('.a2-column').forEach(n=>n.remove());
+    if(state.scope==='uze')for(const label of ['A2 članci','A2 na 10.000']){const th=document.createElement('th');th.scope='col';th.className='a2-column';th.textContent=label;table.tHead.rows[0].append(th);}
+    for (const row of selected) { const tr = document.createElement('tr'); const values=[row.period_id, C.integer(row.matching_articles), C.integer(row.total_articles), C.rate(row.visibility_per_10000), C.integer(row.matching_outlets), C.rate(row.breadth_pct), labels[row.visibility_status], labels[row.breadth_status]];if(state.scope==='uze'){const d=a2[state.frequency].get(row.period_id);values.push(C.integer(d.matching_articles),C.rate(d.visibility_per_10000));}values.forEach((value, i) => { const td = document.createElement(i ? 'td' : 'th'); if (!i) td.scope = 'row'; td.textContent = value; tr.append(td); }); body.append(tr); } table.tBodies[0].replaceChildren(body);
     rangeControls(selected); chart('dkb-vis-chart', 'visibility_per_10000'); chart('dkb-breadth-chart', 'breadth_pct'); readout(); matrix();
     url.searchParams.set('ucestalost', state.frequency === 'weekly' ? 'tjedno' : 'mjesecno'); url.searchParams.set('obuhvat', state.scope); history.replaceState(null, '', url);
   }

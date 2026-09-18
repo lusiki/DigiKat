@@ -1,5 +1,5 @@
 # Plot an already screened aggregate. No source database or aggregation here.
-barometar_static_plot <- function(series,metric,scope="siri",mobile=FALSE,rolling=NULL) {
+barometar_static_plot <- function(series,metric,scope="siri",mobile=FALSE,rolling=NULL,diagnostics=NULL,annotations=list(list(day="2024-04-01",label_hr="Promjena prikupljanja",kind="seam"))) {
   d <- series[series$scope==scope,,drop=FALSE]
   d <- d[order(d$period_start),]
   d$date <- as.Date(d$period_start);d$end <- as.Date(d$period_end)
@@ -17,6 +17,16 @@ barometar_static_plot <- function(series,metric,scope="siri",mobile=FALSE,rollin
   line <- if(weekly)NULL else ggplot2::geom_line(data=d[d$status=="published",],ggplot2::aes(group=segment),colour="#0f4c5c",linewidth=.6,na.rm=TRUE)
   bars <- if(weekly)ggplot2::geom_col(data=d[d$status=="published",],fill="#5a949f",width=4,na.rm=TRUE) else NULL
   roll_line <- NULL
+  diagnostic_line <- NULL
+  if(scope=="uze" && metric=="visibility_per_10000" && !is.null(diagnostics)) {
+    a <- barometar_a2_series(series,diagnostics)
+    a <- a[match(d$period_id,a$period_id),,drop=FALSE]
+    a$date <- d$date;a$value <- a$visibility_per_10000;a$segment <- d$segment
+    diagnostic_line <- list(ggplot2::geom_line(data=a[a$visibility_status=="published",],ggplot2::aes(group=segment),colour="#656b70",linewidth=.35,na.rm=TRUE),
+      ggplot2::geom_point(data=a[a$visibility_status=="partial",],shape=1,colour="#656b70",size=1,na.rm=TRUE))
+    legend <- paste0("Tanka siva crta: stranački nazivi A2, izvan pokazatelja.\n",legend)
+  }
+  annotation_lines <- lapply(annotations,function(a)ggplot2::geom_vline(xintercept=as.Date(a$day),linetype="dashed",colour="#51575d"))
   if(weekly && !is.null(rolling)) {
     r <- rolling[rolling$scope==scope & rolling$period_end %in% d$period_end,,drop=FALSE]
     r$date <- as.Date(r$period_end)-6L;r$value <- r[[metric]]
@@ -27,10 +37,10 @@ barometar_static_plot <- function(series,metric,scope="siri",mobile=FALSE,rollin
   }
   ggplot2::ggplot(d,ggplot2::aes(x=date,y=value)) +
     ggplot2::geom_rect(data=missing,ggplot2::aes(xmin=date,xmax=end+1,ymin=-Inf,ymax=Inf),inherit.aes=FALSE,fill="#e4e2da",alpha=.65) +
-    bars + line + roll_line +
+    bars + line + roll_line + diagnostic_line +
     ggplot2::geom_point(ggplot2::aes(shape=status),colour="#0f4c5c",size=1.5,na.rm=TRUE) +
     ggplot2::scale_shape_manual(values=c(published=16,partial=1,unavailable=NA),guide="none") +
-    ggplot2::geom_vline(xintercept=seam,linetype="dashed",colour="#51575d") +
+    annotation_lines +
     ggplot2::scale_x_date(date_breaks=if(mobile)"2 years" else "1 year",date_labels="%Y") +
     ggplot2::scale_y_continuous(labels=number,limits=if(metric=="breadth_pct")c(0,100) else c(0,NA),expand=ggplot2::expansion(mult=c(.02,.08))) +
     ggplot2::labs(x=NULL,y=if(metric=="breadth_pct")"% praćenih medija" else "Na 10.000 analiziranih članaka",

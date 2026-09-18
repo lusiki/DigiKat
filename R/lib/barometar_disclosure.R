@@ -31,8 +31,8 @@ barometar_public_ngrams <- function(strings,n=8L) {
 }
 
 # Return public phrases only; never return or log private article passages.
-barometar_text_overlap <- function(public_strings,private_texts,n=8L) {
-  grams <- barometar_public_ngrams(public_strings,n)
+barometar_text_overlap <- function(public_strings,private_texts,n=8L,public_ngrams=NULL) {
+  grams <- if(is.null(public_ngrams))barometar_public_ngrams(public_strings,n) else public_ngrams
   if(!length(grams))return(character())
   first <- unique(stringi::stri_extract_first_regex(grams,"^[^ ]+"))
   found <- character()
@@ -40,7 +40,10 @@ barometar_text_overlap <- function(public_strings,private_texts,n=8L) {
     tokens <- stringi::stri_extract_all_regex(stringi::stri_trans_tolower(stringi::stri_trans_nfc(value),"hr"),"[\\p{L}\\p{M}\\p{N}]+",omit_no_match=TRUE)[[1L]]
     at <- which(tokens %in% first & seq_along(tokens)<=length(tokens)-n+1L)
     if(length(at)) {
-      possible <- vapply(at,function(i)paste(tokens[i:(i+n-1L)],collapse=" "),character(1L))
+      # Vectorize the exact same consecutive-token join in ICU; avoid one R
+      # closure invocation for each candidate position in a long article.
+      shifted <- lapply(seq_len(n)-1L,function(offset)tokens[at+offset])
+      possible <- do.call(stringi::stri_join,c(shifted,list(sep=" ")))
       found <- union(found,intersect(grams,possible))
     }
   }

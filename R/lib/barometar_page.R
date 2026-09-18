@@ -1,5 +1,6 @@
 # Page reads an already-built release; rendering never opens a source database.
 barometar_matrix_bin <- function(value,bins)sum(value>bins+1e-10)
+barometar_validation_number <- function(x)if(length(x)!=1L||is.na(x))"—" else formatC(x,format="f",digits=3L,decimal.mark=",")
 
 barometar_read_release <- function(directory, synthetic_allowed=FALSE) {
   summary_path <- file.path(directory,"summary.json")
@@ -12,7 +13,7 @@ barometar_read_release <- function(directory, synthetic_allowed=FALSE) {
   if(!identical(summary$data_through,manifest$data_through))stop("Manifest data-cutoff mismatch.")
   minimum <- c("monthly.csv","weekly.csv","rolling28.csv","summary.json")
   required <- if(isTRUE(summary$synthetic))minimum else c(minimum,"themes.csv","composition.csv","sensitivity.csv",
-    "outlets.csv","validation.csv","bridge_summary.csv","definitions_v1.json","releases.csv","revisions.csv","README.md")
+    "outlets.csv","validation.csv","diagnostics.csv","validation_summary.json","bridge_summary.csv","definitions_v1.json","releases.csv","revisions.csv","README.md")
   if(!all(required %in% names(manifest$files)))stop("Incomplete release manifest.")
   for(name in names(manifest$files)) {
     if(stringi::stri_detect_regex(name,"(?:^/|^[A-Za-z]:|\\\\|(?:^|/)\\.\\.(?:/|$))"))stop("Unsafe release filename.")
@@ -22,12 +23,41 @@ barometar_read_release <- function(directory, synthetic_allowed=FALSE) {
   tables <- setNames(lapply(c("monthly","weekly","rolling28"),function(name) {
     utils::read.csv(file.path(directory,paste0(name,".csv")),fileEncoding="UTF-8-BOM",stringsAsFactors=FALSE,na.strings="")
   }),c("monthly","weekly","rolling28"))
-  for(name in c("themes","composition","diagnostics","validation","sensitivity","concentration"))
+  for(name in c("themes","composition","diagnostics","validation","sensitivity","concentration","outlets","releases","revisions","bridge_summary"))
     if(file.exists(file.path(directory,paste0(name,".csv")))) {
       if(!paste0(name,".csv") %in% names(manifest$files))stop("Unmanifested page input: ",name)
       tables[[name]] <- utils::read.csv(file.path(directory,paste0(name,".csv")),fileEncoding="UTF-8-BOM",stringsAsFactors=FALSE,na.strings="")
     }
-  list(summary=summary,tables=tables)
+  read_json <- function(name) {
+    if(!name %in% names(manifest$files))stop("Unmanifested page input: ",name)
+    jsonlite::fromJSON(file.path(directory,name),simplifyVector=FALSE)
+  }
+  edition <- NULL
+  if(!is.null(summary$edition)) {
+    if(!stringi::stri_detect_regex(summary$edition,"^[0-9]{4}-[0-9]{2}$"))stop("Invalid dated edition.")
+    name <- paste0("izdanja/",summary$edition,"/summary.json")
+    edition <- read_json(name)
+    if(!identical(manifest$files[[name]],summary$edition_summary_sha256))stop("Dated edition hash mismatch.")
+    if(!identical(edition$edition,summary$edition))stop("Dated edition identifier mismatch.")
+  } else if(!isTRUE(summary$synthetic))stop("Dated edition missing.")
+  definitions <- if("definitions_v1.json" %in% names(manifest$files))read_json("definitions_v1.json") else NULL
+  validation <- if("validation_summary.json" %in% names(manifest$files))read_json("validation_summary.json") else NULL
+  list(summary=summary,tables=tables,edition=edition,definitions=definitions,validation=validation)
+}
+
+# Align diagnostics by key, never CSV row order. They never enter a numerator.
+barometar_a2_series <- function(series,diagnostics) {
+  d <- series[series$scope=="uze",,drop=FALSE]
+  if(is.null(diagnostics)||!nrow(d))return(d[FALSE,])
+  a <- diagnostics[diagnostics$scope=="uze" & diagnostics$diagnostic=="A2",,drop=FALSE]
+  key <- function(x)paste(x$frequency,x$period_id,sep="|")
+  if(anyDuplicated(key(a)))stop("Duplicate A2 diagnostic key.")
+  i <- match(key(d),key(a))
+  if(anyNA(i))stop("Missing A2 diagnostic period.")
+  if(any(d$total_articles!=a$total_articles[i]))stop("A2 diagnostic denominator mismatch.")
+  d$matching_articles <- a$articles[i]
+  d$visibility_per_10000 <- ifelse(d$visibility_status=="unavailable"|d$total_articles==0,NA_real_,10000*d$matching_articles/d$total_articles)
+  d
 }
 
 barometar_page_payload <- function(release) {
@@ -65,7 +95,8 @@ barometar_page_payload <- function(release) {
       }
     }
   }
-  payload <- list(meta=meta,tables=columnar,themes=theme_pack,composition=composition)
+  diagnostics <- lapply(tables[c("monthly","weekly")],function(d)as.list(barometar_a2_series(d,release$tables$diagnostics)$matching_articles))
+  payload <- list(meta=meta,tables=columnar,themes=theme_pack,composition=composition,a2=diagnostics)
   json <- jsonlite::toJSON(payload,auto_unbox=TRUE,null="null",na="null",digits=16)
   json <- stringi::stri_replace_all_fixed(json,"<","\\u003c")
   if(nchar(json,type="bytes")>200000L)stop("Page payload exceeds 200 kB.")

@@ -13,7 +13,8 @@ barometar_write_release <- function(tables,summary,definition,validation,bridge,
   for(name in c("per_batch","theme_precision","miss_diagnostics","route_set_precision"))
     if(is.data.frame(validation[[name]]) && ncol(validation[[name]]))barometar_write_csv(validation[[name]],file.path(directory,paste0("validation_",name,".csv")))
   barometar_write_json(list(human_validation_complete=isTRUE(validation$human_validation_complete),
-    broad_precision=validation$broad_precision,qualifies_agreement=validation$agreement,construct_agreement=validation$construct_agreement,
+    broad_precision=validation$broad_precision,qualifies_agreement=if(is.null(validation$agreement))NULL else as.list(validation$agreement),
+    construct_agreement=if(is.null(validation$construct_agreement))NULL else as.list(validation$construct_agreement),
     double_coded_items=validation$second_coder_n,masked_evidence_losses=validation$masked_evidence_losses,
     release_scope=validation$release_scope,accepted_routes=validation$accepted_routes),file.path(directory,"validation_summary.json"))
   barometar_write_csv(bridge,file.path(directory,"bridge_summary.csv"))
@@ -82,8 +83,9 @@ barometar_aggregate_release <- function(new_edition=FALSE) {
     !identical(gates$G3_validation$status,"approved"))stop("Aggregate release requires the frozen definition and accepted human validation.")
   folder <- file.path(workdir,"validation",definition$definition_version)
   draw <- readRDS(file.path(folder,"draw.rds"));barometar_check_coding_package(folder,draw)
-  validation <- readRDS(file.path(folder,"validation-result.rds"))
-  if(!isTRUE(validation$human_validation_complete) || !identical(validation$draw_id,draw$draw_id) || validation$release_scope=="none")stop("No human-validated release scope.")
+  validation <- barometar_apply_release_policy(readRDS(file.path(folder,"validation-result.rds")))
+  if(!isTRUE(validation$human_validation_complete) || !identical(validation$draw_id,draw$draw_id) || validation$release_scope=="none" ||
+    !"A1" %in% validation$accepted_routes || !"A1" %in% gates$G3_validation$accepted_routes)stop("No human-validated release scope; accepted A1 is required.")
   classification <- readRDS(file.path(workdir,"classification_manifest.rds"))
   if(!identical(classification$panel_hash,panel$panel_hash[1L])||
     !identical(draw$input_identity$panel_hash,panel$panel_hash[1L]))stop("Evaluation/classification and frozen panel differ.")
@@ -93,7 +95,8 @@ barometar_aggregate_release <- function(new_edition=FALSE) {
     !identical(gates$G3_validation$engine_hash,classification$engine_hash)||
     !identical(gates$G3_validation$classifier_body_hash,digikat_hash_object(body(barometar_classify_month)))||
     !identical(gates$G3_validation$panel_hash,classification$panel_hash)||
-    !identical(gates$G3_validation$validation_code_sha256,digikat_hash_file("R/lib/barometar_validation.R")))stop("Current classification lacks its frozen human-validation certificate.")
+    !identical(gates$G3_validation$validation_code_sha256,digikat_hash_file("R/lib/barometar_validation.R")) ||
+    !identical(gates$G3_validation$release_policy_code_sha256,digikat_hash_file("studies/demokrscanstvo-barometar/06_validation_score.R")))stop("Current classification lacks its frozen human-validation certificate.")
   bridge <- readRDS(file.path(workdir,"bridge_manifest.rds"))
   if(!isTRUE(bridge$validated) || !identical(bridge$validation_result_hash,digikat_hash_file(file.path(folder,"validation-result.rds"))))stop("Bridge certification is stale.")
   if(!identical(bridge$identity$definition,definition$definition_hash) || !identical(bridge$identity$panel,panel$panel_hash[1L]) ||

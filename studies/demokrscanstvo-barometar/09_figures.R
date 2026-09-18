@@ -17,7 +17,7 @@ barometar_figures <- function(directory,synthetic_allowed=FALSE) {
   source("R/theme_digikat.R",local=environment(),encoding="UTF-8")
   output <- file.path(directory,"figures");dir.create(output,recursive=TRUE,showWarnings=FALSE)
   for(frequency in c("monthly","weekly"))for(scope in unique(release$tables[[frequency]]$scope))for(metric in c("visibility_per_10000","breadth_pct")) {
-    plot <- barometar_static_plot(release$tables[[frequency]],metric,scope,rolling=release$tables$rolling28) +
+    plot <- barometar_static_plot(release$tables[[frequency]],metric,scope,rolling=release$tables$rolling28,diagnostics=release$tables$diagnostics,annotations=release$summary$annotations) +
       theme_digikat() + ggplot2::theme(text=ggplot2::element_text(family="Source Sans 3"),
         plot.background=ggplot2::element_rect(fill="#f5f4f0",colour=NA),plot.caption=ggplot2::element_text(hjust=0,size=9,colour="#51575d"))
     stem <- paste(frequency,scope,metric,sep="_")

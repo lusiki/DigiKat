@@ -57,12 +57,13 @@ barometar_release_checks <- function(directory,synthetic_allowed=FALSE,private_c
   for(path in extra_public_files)strings <- union(strings,paste(readLines(path,encoding="UTF-8"),collapse="\n"))
   overlap_status <- "not_run"
   if(!is.null(private_candidates)) {
+    public_ngrams <- barometar_public_ngrams(strings)
     con <- DBI::dbConnect(duckdb::duckdb());on.exit(DBI::dbDisconnect(con,shutdown=TRUE),add=TRUE)
     for(path in private_candidates) {
       cursor <- DBI::dbSendQuery(con,paste0("SELECT TITLE,FULL_TEXT FROM read_parquet(",DBI::dbQuoteString(con,path),")"))
       repeat {
         rows <- DBI::dbFetch(cursor,n=1000L);if(!nrow(rows))break
-        if(length(barometar_text_overlap(strings,c(rows$TITLE,rows$FULL_TEXT))))stop("Eight-token overlap with restricted source text; public wording needs review.")
+        if(length(barometar_text_overlap(strings,c(rows$TITLE,rows$FULL_TEXT),public_ngrams=public_ngrams)))stop("Eight-token overlap with restricted source text; public wording needs review.")
       }
       DBI::dbClearResult(cursor)
     }
@@ -79,6 +80,7 @@ barometar_release_checks <- function(directory,synthetic_allowed=FALSE,private_c
 barometar_apply_release <- function(directory) {
   gates <- jsonlite::fromJSON("studies/demokrscanstvo-barometar/config/gates.json",simplifyVector=FALSE)
   if(!identical(gates$G3_validation$status,"approved") || !isTRUE(gates$G4_first_apply$vendor_licence_confirmed))stop("Public installation requires human validation and documented vendor aggregate-licence confirmation.")
+  if(!"A1" %in% gates$G3_validation$accepted_routes)stop("No empirical installation without accepted A1.")
   release <- barometar_read_release(directory,FALSE)
   if(!identical(release$summary$definition_version,gates$G3_validation$definition_version)||
     !identical(release$summary$validation_result_sha256,gates$G3_validation$validation_result_sha256))stop("Release does not match the accepted human evidence.")

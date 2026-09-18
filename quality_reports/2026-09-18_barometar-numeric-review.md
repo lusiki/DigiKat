@@ -97,3 +97,37 @@ d9d797377a451b08640d84d365c42f235786e96ce76e50d1ee697bf53e19d03b
 studies/demokrscanstvo-barometar/output/conference/demokrscanstvo-metoda-2026-09-18.pdf
 9516519ea369bb117703fae53fb94e7aca2f8cc316682e62fc1ec05fcae1d5e0
 ```
+
+## Independent follow-up: §8 method tables, A2, dated edition and validation format
+
+**PASS for the reviewed source changes and the regenerated synthetic numeric artifacts.** This follow-up inspected the render completed in process 12038 and the public invented release with `computed_at=2026-09-18T20:11:15Z`. It is read-only apart from this report addition. No private article text, held-out evaluation text, restricted database or external work directory was inspected. All values in this section are invented test data; no empirical release, human validation, L1 completion or media finding is established.
+
+| Independent check | Evidence and result |
+|---|---|
+| Release integrity | All **39** manifest file hashes match the actual downloads. The dated file `izdanja/2026-08/summary.json` matches the main summary's `edition_summary_sha256`, with the same edition identifier and empty findings. |
+| Primary payload | Every embedded field in **138 monthly + 596 weekly = 734 rows** matches the corresponding CSV record. The A2 addition does not change the primary numerators or headline selection. The actual payload is **182,665 UTF-8 bytes**, below 200,000 bytes. |
+| Keyed A2 payload | All **69 monthly + 298 weekly = 367** narrow-scope A2 counts match `diagnostics.csv` by frequency, scope and period. Every diagnostic denominator matches its corresponding primary-series denominator. |
+| A2 SVG values | Independently reconstructed dates and rates from diagnostic CSV counts and denominators. All **65 monthly + 285 weekly = 350 available plotted points** agree with the gray SVG marks; maximum coordinate residuals are **0.00829 pt monthly** and **0.00571 pt weekly**, within serialization precision. |
+| Diagnostic separation | Across all **8 SVG exports**, gray A2 marks occur only in the two narrow visibility plots. Their captions identify A2 as a separate diagnostic outside the indicators. Weekly captions retain the separate-week bars versus trailing-28-day line distinction. |
+| Dictionary method table | All displayed counts match `definitions_v1.json`: **50 families, 105 entries**. The prose explicitly distinguishes dictionary entries from articles. |
+| Panel method table | All displayed denominator counts match `outlets.csv`: **12 invented panel outlets × 6 years**. No outlet numerator is shown. The synthetic panel remains distinct from the frozen 115-outlet panel. |
+| Latest diagnostic table | The August 2026 default-scope table exactly matches `diagnostics.csv`: **A2 = 3 / 372**, **A? = 0 / 372**. These are diagnostic counts, not additional indicator numerators. |
+| Synthetic cards | Rendered default values remain **322.6 per 10,000** and **91.7%**, matching the original verified August-wide arithmetic. |
+| Validation display and metadata | `human_validation_complete=false`; no estimated precision or agreement table is rendered. The validation summary retains null precision/agreement values. The page makes no empirical findings claim. |
+
+The source review initially found two precision-display defects: passing an entire agreement object to a numeric formatter, and applying the indicator-rate small-value censor to precision/κ. The implementer resolved both. The validation export now serializes named agreement vectors with `as.list`, preserving the `agreement` and `kappa` keys; the page reads `$kappa`. The separate three-decimal formatter preserves small and negative values. Independently executed examples `0`, `0.024`, `0.049`, `0.05`, `0.8` and `-0.024` produced the expected decimal-comma strings, and an invented named agreement object survived JSON serialization with κ = 0.75 intact. The page now explains weighted precision versus raw k/n and identifies the approximate Wilson interval using Kish effective sample size; these descriptions match the frozen scoring implementation.
+
+Executed `tests/barometar_page_display_tests.R` again: **PASS**, including unchanged primary input, shuffled A2-key alignment, missing/duplicate diagnostic rejection, mismatched denominator rejection, a manifest-valid replacement of the dated file rejected by its unchanged summary anchor, and traversal rejection. The focused formatter and named-agreement JSON checks also exited 0. R's existing locale/renv startup warnings did not prevent the verified run after explicit UTF-8 locale initialization.
+
+The dated-file reader establishes integrity against the current release's summary anchor. Cross-release immutability also depends on the existing history/installation guards; changing both the dated file and its main-summary anchor is not something this reader alone can prevent. This is a scope clarification, not a mismatch in the reviewed package. The separate full-suite update-fixture correction being handled by the implementer is outside this numeric verdict. No further numeric correction was found.
+
+Follow-up reviewed hashes (superseding earlier preview hashes above):
+
+```text
+docs/pages/demokrscanstvo/index.html
+7f5179f474cd57bd7e4d57ee2b29056a611a6e7b1b211cba7c2661b2daab6af8
+docs/data/barometar/demokrscanstvo/summary.json
+cadc0a0634bb815cdbee805a11347706e8b4882e01c4bc4793c9a1d9f149ee0b
+docs/data/barometar/demokrscanstvo/manifest.json
+cdf186e084e6d9c835276304ee642708ce5d03e03bca5807fd430d796a21b452
+```

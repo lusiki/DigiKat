@@ -47,3 +47,22 @@ The strongest alternative explanations for a future change are the collection br
 The method-only status is consistent throughout: there are no measured route precision values, trend statements, popularity claims or empirical Nalazi in the reviewed draft. The numerical validation thresholds are correctly presented as requirements, not achieved performance. A fixed panel does not become a census of Croatian media, and article counts do not measure audience exposure or engagement.
 
 This review supports the method-only presentation subject to the wording clarifications above. It does not approve an empirical release, human coding, scientific findings, source licensing or L1 verification.
+
+## Final web-page wording recheck
+
+Date: 2026-09-18. This bounded follow-up read `pages/demokrscanstvo/index.qmd` and the new `#method-barometar` section of `pages/metodologija.qmd`. Only this review report was edited.
+
+**Verdict: the seven requested wording corrections are confirmed; no unresolved critical or required domain wording correction remains in this reviewed web-page revision.**
+
+The broad scope explicitly includes A1 and accepted B/C routes. B requires application rather than co-occurrence. C states the strong/distinctive-or-two-families threshold. D's explanation identifies an already qualifying argument attributed to an actor with a date-valid registry record and adds no articles independently; the legacy “Programski govor aktera” heading is qualified by that explanation. A2 and A? no longer imply exclusion of an entire article that separately qualifies through B/C. The four reviewed family labels now distinguish the European Union, ecclesial councils and offices, selection of a papal name, and identity expressions concerning family and life. Sensitivity prose distinguishes changing the outlet panel/denominator from filtering only the numerator.
+
+For clarity, the earlier report's shorthand that A2/A? remain outside both scopes concerns those diagnostic labels as inclusion grounds, not a prohibition on including an article through an independently valid B or C passage.
+
+The precision paragraph correctly retains unequal-selection weighting, the approximate Wilson–Kish interval and the absence of whole-panel recall. The page still identifies synthetic previews and pending human validation; it supplies no empirical Nalazi through this revision. These findings confirm explanatory consistency with the frozen definition, not empirical classification performance or human validation.
+
+Verified source SHA256:
+
+- `pages/demokrscanstvo/index.qmd`: `862f1b3faa1b36669237e2030a372eb08dd56cf31d2cb90b2f8b8052089ad968`.
+- `pages/metodologija.qmd`: `b237ab91c4184e3354065e4134718a40de4bb8a4e61c9b7d90484b1bbee393c9`.
+
+No frozen definition, DEVLOG, G2 core file, actual coding template, source article or human evaluation material was changed or accessed in this follow-up. Native coding-form browser verification was not repeated and remains outside this verdict.
