@@ -54,7 +54,7 @@ jobs:
 
       - name: Barometer browser-core checks
         shell: pwsh
-        run: node --test tests/barometar_core.test.cjs tests/barometar_multiplatform.test.cjs
+        run: node --test tests/barometar_core.test.cjs tests/barometar_multiplatform.test.cjs tests/barometar_themes.test.cjs
 
       - uses: actions/setup-python@v5
         with:
@@ -72,6 +72,9 @@ jobs:
 
       - name: Verify the committed empirical release
         run: python studies/demokrscanstvo-barometar/multiplatform_verify.py --html docs/pages/demokrscanstvo/index.html
+
+      - name: Verify the committed thematic release
+        run: python studies/demokrscanstvo-barometar/thematic_verify.py --html docs/pages/demokrscanstvo/index.html
 
       - name: Barometer source-to-release synthetic check
         shell: pwsh
@@ -128,6 +131,9 @@ jobs:
 
       - name: Verify the rendered empirical release
         run: python studies/demokrscanstvo-barometar/multiplatform_verify.py --root docs/data/barometar/demokrscanstvo-multiplatform/v1 --html docs/pages/demokrscanstvo/index.html
+
+      - name: Verify the rendered thematic release
+        run: python studies/demokrscanstvo-barometar/thematic_verify.py --root docs/data/barometar/demokrscanstvo-themes/v1 --base docs/data/barometar/demokrscanstvo-multiplatform/v1 --html docs/pages/demokrscanstvo/index.html
 
       - name: Check rendered metadata, structure and page budgets
         shell: pwsh

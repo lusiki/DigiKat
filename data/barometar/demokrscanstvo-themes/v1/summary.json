@@ -1,0 +1,241 @@
+{
+  "schema": "barometar-themes-v1",
+  "records": 2306,
+  "distinct_contexts": 1731,
+  "data_from": "2021-01-01",
+  "data_through": "2026-09-10",
+  "base_manifest_sha256": "c91f3ae8e80b74b0e9ff4374f3e9cafb3bd1a68a8f3a9949efb8c945be5d432a",
+  "topics": [
+    {
+      "id": "t01",
+      "label": "Politička pripadnost i ideje",
+      "editorial_note": "Demokršćanstvo kao političko opredjeljenje: odnos prema konzervativizmu, ljevici i drugim stranačkim tradicijama.",
+      "records": 377,
+      "share": 16.34865568083261,
+      "terms": [
+        "stranka",
+        "politički",
+        "načelo",
+        "politika",
+        "konzervativan",
+        "orijentacija",
+        "spektar",
+        "predsjednik",
+        "sdp",
+        "epp"
+      ]
+    },
+    {
+      "id": "t02",
+      "label": "Domoljublje i državotvornost",
+      "editorial_note": "Povezivanje demokršćanstva s domoljubljem, narodnjaštvom i nasljeđem Franje Tuđmana u govoru o HDZ-u.",
+      "records": 274,
+      "share": 11.882046834345186,
+      "terms": [
+        "domoljublje",
+        "narodnjaštvo",
+        "državotvornost",
+        "temeljan",
+        "narod",
+        "predsjednik",
+        "tuđman",
+        "plenković",
+        "načelo",
+        "svijet"
+      ]
+    },
+    {
+      "id": "t03",
+      "label": "HDZ i demokršćanski identitet",
+      "editorial_note": "Rasprave o odnosu HDZ-ova demokršćanskog određenja, političkog djelovanja i svjetonazorskih pitanja.",
+      "records": 290,
+      "share": 12.575888985255855,
+      "terms": [
+        "hdz",
+        "ideologija",
+        "svjetonazor",
+        "savjest",
+        "plenković",
+        "pobačaj",
+        "andrej",
+        "ministar",
+        "politika",
+        "odgovoran"
+      ]
+    },
+    {
+      "id": "t04",
+      "label": "Desni centar i suradnja stranaka",
+      "editorial_note": "Pozicioniranje na desnom centru, stranačka suradnja te pozivanje na narodnjačke i demokršćanske vrijednosti.",
+      "records": 212,
+      "share": 9.193408499566349,
+      "terms": [
+        "centar",
+        "desni",
+        "narodnjački",
+        "domoljuban",
+        "vrijednost",
+        "hss",
+        "državotvoran",
+        "izazov",
+        "suvremen",
+        "spreman"
+      ]
+    },
+    {
+      "id": "t05",
+      "label": "Obitelj i nacionalni identitet",
+      "editorial_note": "Obitelj, zajednica, tradicija i nacionalna pripadnost u raspravama o demokršćanskom svjetonazoru.",
+      "records": 207,
+      "share": 8.976582827406766,
+      "terms": [
+        "nacionalan",
+        "obitelj",
+        "identitet",
+        "zajednica",
+        "tradicija",
+        "hrvatska",
+        "svjetonazor",
+        "program",
+        "normalan",
+        "jezgra"
+      ]
+    },
+    {
+      "id": "t06",
+      "label": "Europa i kršćanski korijeni",
+      "editorial_note": "Kršćansko nasljeđe Europe, njezina budućnost i mjesto demokršćanskih ideja u europskoj politici.",
+      "records": 212,
+      "share": 9.193408499566349,
+      "terms": [
+        "europa",
+        "europski",
+        "korijena",
+        "parlament",
+        "budućnost",
+        "hrvatska",
+        "penav",
+        "izbor",
+        "solidarnost",
+        "siguran"
+      ]
+    },
+    {
+      "id": "t07",
+      "label": "Izbori i konzervativna scena",
+      "editorial_note": "Izborno nadmetanje i predstavljanje političkih aktera kroz demokršćanstvo i konzervativizam, uz izražen trag kampanje Miroslava Škore.",
+      "records": 151,
+      "share": 6.548135299219427,
+      "terms": [
+        "scena",
+        "svjetlo",
+        "izbor",
+        "škoro",
+        "konzervativizam",
+        "kontaminiran",
+        "konzervatizam",
+        "krug",
+        "mlad",
+        "zagreb"
+      ]
+    },
+    {
+      "id": "t08",
+      "label": "Idejna tradicija i javne rasprave",
+      "editorial_note": "Skupovi, knjige i rasprave o izvorima, razvoju i suvremenoj ulozi demokršćanstva i kršćanske socijalne misli.",
+      "records": 173,
+      "share": 7.502168256721596,
+      "terms": [
+        "katolički",
+        "izvor",
+        "perspektiva",
+        "postignuće",
+        "sveučilište",
+        "zbornik",
+        "rad",
+        "politički",
+        "predstavljanje",
+        "koncil"
+      ]
+    },
+    {
+      "id": "t09",
+      "label": "Vrijednosti i svjetonazorski prijepori",
+      "editorial_note": "Pozivanje na demokršćanske vrijednosti u govoru o životu, obitelji, suverenizmu i kulturnim prijeporima.",
+      "records": 335,
+      "share": 14.527320034692108,
+      "terms": [
+        "vrijednost",
+        "važan",
+        "život",
+        "obiteljski",
+        "koncert",
+        "thompson",
+        "prav",
+        "pobačaj",
+        "ludilo",
+        "stranački"
+      ]
+    },
+    {
+      "id": "t10",
+      "label": "Njemačka i međunarodni odnosi",
+      "editorial_note": "Njemačka demokršćanska politika, CDU i odnosi Europe i Sjedinjenih Američkih Država.",
+      "records": 74,
+      "share": 3.209019947961839,
+      "terms": [
+        "unija",
+        "njemački",
+        "cdu",
+        "pitanje",
+        "transatlantski",
+        "zapad",
+        "trump",
+        "donald",
+        "čelnik",
+        "sloboda"
+      ]
+    },
+    {
+      "id": "unassigned",
+      "label": "Ostali konteksti",
+      "editorial_note": "Kratki ili jezično različiti konteksti bez dovoljno zajedničkog tematskog rječnika.",
+      "terms": [],
+      "records": 1,
+      "share": 0.04336513443191674
+    }
+  ],
+  "method": {
+    "algorithm": "TF-IDF / NMF",
+    "n_components": 10,
+    "vocabulary_size": 1372,
+    "min_document_frequency": 5,
+    "max_document_frequency": 0.85,
+    "max_features": 6000,
+    "sublinear_tf": true,
+    "normalization": "L2",
+    "seed": 20260919,
+    "iterations": 142,
+    "fit_unit": "distinct normalized qualifying context; all records counted after assignment",
+    "assignment": "largest component contribution after L2 normalization of component vectors",
+    "context_policy": "union of original qualifying A1/B/C windows, at most 80 tokens each",
+    "parts_of_speech": [
+      "NOUN",
+      "PROPN",
+      "ADJ"
+    ],
+    "unassigned_records": 1,
+    "random_start_ari": [
+      0.6580934825180405,
+      0.5275785099490511,
+      0.6591746974661046
+    ],
+    "sklearn": "1.9.1",
+    "numpy": "2.5.3",
+    "udpipe": "0.8.16",
+    "udpipe_model_sha256": "b8e0ad212bdc84c57366bd7267d21810e1fd3239c4d22ca5867f94e76c6cedc7",
+    "model_signature": "42d6a440fd1de82fa3aaa1b5953b4a038f4a49b91424d3f1bd459edf91b55820",
+    "generator_sha256": "53ab2bb48e4ac51d5efb00901c1351a2e32275b16c867251359fc82acd94688a",
+    "labels_sha256": "9f22823fbfb9f0b811c4bdeb76ebdbcc808e9200d65d38e125dc7de1d43a702a"
+  }
+}

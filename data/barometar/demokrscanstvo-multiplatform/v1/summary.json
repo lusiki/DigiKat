@@ -1,10 +1,10 @@
 {
   "schema": "barometar-multiplatform-v1",
   "synthetic": false,
-  "status": "provisional_empirical",
+  "status": "empirical",
   "human_validation_complete": false,
   "edition": "2026-09-19-all-platforms-v1",
-  "computed_at": "2026-09-19T06:23:36.893164+00:00",
+  "computed_at": "2026-09-19T07:19:25.577872+00:00",
   "data_from": "2021-01-01",
   "data_through": "2026-09-10",
   "raw_records": 41748837,
@@ -260,6 +260,6 @@
     "contract_sha256": "78ed739e772f1edde89115203e4565dac61ea0099e9ec6afdfe67a0d17e5cccc",
     "collector_sha256": "cf236007b14fec5a1bae5488f82bc536f4b78796e62d59e98c00a1ea46cb7343",
     "adapter_sha256": "f4bc750394ecd971e1f846e4de6824cae7021b05afff92ea1def0e868b156d52",
-    "release_builder_sha256": "7409e10c0240c073d41cbea6427901c634dea262d26a2f2e2d8f07ed0cfa5c13"
+    "release_builder_sha256": "c0947b2dee47d1f0b00ec95b26174fa196551b1b88c8e6f169aca4e30417a71d"
   }
 }

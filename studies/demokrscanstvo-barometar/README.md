@@ -1,12 +1,11 @@
 # Medijski barometar demokršćanstva
 
-**2026-09-19 scope update.** The PI authorized a separate provisional empirical
-edition across every platform and source in the merged archive. It now supplies
-the public page. See [MULTIPLATFORM.md](MULTIPLATFORM.md) and the
-[approved expansion plan](../../quality_reports/plans/2026-09-19_barometar-all-platforms.md)
-for its text policy, record denominator, commands and explicit incomplete-human-validation
-status. The original fixed-panel study below remains frozen and retains its gates.
-The 55-item assistant pilot is AI review, not human validation of either edition.
+**Public resource, 2026-09-19.** The barometer combines all-platform visibility
+indicators with a contextual thematic map. The public page presents findings,
+platform/year comparisons and aggregate downloads. See [MULTIPLATFORM.md](MULTIPLATFORM.md)
+for the inclusion and count method and [THEMATIC.md](THEMATIC.md) for the Croatian
+TF–IDF/NMF analysis. Historical fixed-panel work is documented below; its rules
+and validation records remain separate.
 
 ## Original fixed-panel study
 

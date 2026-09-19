@@ -1,0 +1,16 @@
+{
+  "model_signature": "42d6a440fd1de82fa3aaa1b5953b4a038f4a49b91424d3f1bd459edf91b55820",
+  "n_components": 10,
+  "topics": [
+    {"id":"t01","label":"Politička pripadnost i ideje","editorial_note":"Demokršćanstvo kao političko opredjeljenje: odnos prema konzervativizmu, ljevici i drugim stranačkim tradicijama."},
+    {"id":"t02","label":"Domoljublje i državotvornost","editorial_note":"Povezivanje demokršćanstva s domoljubljem, narodnjaštvom i nasljeđem Franje Tuđmana u govoru o HDZ-u."},
+    {"id":"t03","label":"HDZ i demokršćanski identitet","editorial_note":"Rasprave o odnosu HDZ-ova demokršćanskog određenja, političkog djelovanja i svjetonazorskih pitanja."},
+    {"id":"t04","label":"Desni centar i suradnja stranaka","editorial_note":"Pozicioniranje na desnom centru, stranačka suradnja te pozivanje na narodnjačke i demokršćanske vrijednosti."},
+    {"id":"t05","label":"Obitelj i nacionalni identitet","editorial_note":"Obitelj, zajednica, tradicija i nacionalna pripadnost u raspravama o demokršćanskom svjetonazoru."},
+    {"id":"t06","label":"Europa i kršćanski korijeni","editorial_note":"Kršćansko nasljeđe Europe, njezina budućnost i mjesto demokršćanskih ideja u europskoj politici."},
+    {"id":"t07","label":"Izbori i konzervativna scena","editorial_note":"Izborno nadmetanje i predstavljanje političkih aktera kroz demokršćanstvo i konzervativizam, uz izražen trag kampanje Miroslava Škore."},
+    {"id":"t08","label":"Idejna tradicija i javne rasprave","editorial_note":"Skupovi, knjige i rasprave o izvorima, razvoju i suvremenoj ulozi demokršćanstva i kršćanske socijalne misli."},
+    {"id":"t09","label":"Vrijednosti i svjetonazorski prijepori","editorial_note":"Pozivanje na demokršćanske vrijednosti u govoru o životu, obitelji, suverenizmu i kulturnim prijeporima."},
+    {"id":"t10","label":"Njemačka i međunarodni odnosi","editorial_note":"Njemačka demokršćanska politika, CDU i odnosi Europe i Sjedinjenih Američkih Država."}
+  ]
+}

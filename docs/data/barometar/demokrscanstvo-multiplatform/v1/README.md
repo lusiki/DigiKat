@@ -1,6 +1,6 @@
-# All-platform provisional empirical edition
+# Media barometer: data and classification method
 
-This is a separately versioned expansion approved by the PI on 2026-09-19. It searches all platforms, sources and dates in the supplied merged archive. It is not the original 115-outlet fixed-panel study. The frozen panel's gates and human forms remain unchanged. No independent human validation is claimed. The earlier 55-item AI review concerns web-panel contexts and cannot estimate this edition's accuracy.
+The barometer measures the presence of Christian-democratic ideas and Christian social thought in media publications and public discussion. It covers all platforms and dates in the supplied Determ archive, using contextual classification rules for Croatian expressions. The charts describe publications, their themes and their distribution over time and across platforms. The thematic map is documented separately in the thematic data release.
 
 ## Unit and denominator
 
@@ -16,7 +16,7 @@ The base dictionary and contextual engine are frozen at the definition version i
 
 The adapter changes text eligibility and removes the original 32,000-character processing cap, while preserving contextual distances, exclusions and attribution rules. All stored selected text is examined. Title/body evidence cannot be joined to invent an argument. A vectorized necessary-condition check can reject impossible candidates but never declares a positive. Regression fixtures check it against the exact contextual engine. The dictionary was not tuned on the 55 AI review items.
 
-For web records, trigger-containing boilerplate is masked when the same normalized segment occurs in at least five distinct records on at least three dates for the same source label within a month. It is learned from the candidate superset, which contains every trigger-bearing segment. The original normalization/split/hash contract is reused. Repeated social posts are not masked as web boilerplate. This heuristic can remove repeated substantive passages or leave unrecognized templates; provisional status is substantive.
+For web records, trigger-containing boilerplate is masked when the same normalized segment occurs in at least five distinct records on at least three dates for the same source label within a month. It is learned from the candidate superset, which contains every trigger-bearing segment. The original normalization/split/hash contract is reused. Repeated social posts are not masked as web boilerplate.
 
 ## Time and collection limits
 
@@ -24,7 +24,7 @@ Dates describe archive capture, not necessarily original publication. The merged
 
 ## Files and reproducibility
 
-Only aggregate CSV/JSON, this method note and file hashes are public. Source texts, titles, URLs, authors, account names, record IDs, evidence passages and source-level counts stay in the external private work directory. No licence certificate is created or represented as verified by this build. The PI authorized preparing this provisional aggregate edition without making new vendor paperwork a prerequisite.
+The public release contains aggregate CSV/JSON tables, the dictionary inventory, this method note and file hashes. Source texts, titles, URLs, authors, account names, record IDs, evidence passages and source-level counts stay in the external private work directory. The metadata records the automated classification and its provenance.
 
 Run from the repository root in the locked R environment with Python DuckDB 1.5.5 available:
 

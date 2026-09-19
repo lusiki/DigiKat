@@ -1,11 +1,11 @@
 ---
 title: "Medijski barometar demokršćanstva"
-subtitle: "Demokršćanske i kršćansko-socijalne ideje u medijima i na društvenim platformama"
-description: "Preliminarni empirijski pregled demokršćanskog i kršćansko-socijalnog diskursa u stvarnoj arhivi svih praćenih platformi."
+subtitle: "Demokršćanske ideje i kršćanska socijalna misao u javnom prostoru"
+description: "Gdje se govori o demokršćanstvu, koje teme oblikuju raspravu i kako se njihova medijska prisutnost mijenja od 2021. godine."
 author: "Luka Šikić"
 date: "2026-09-19"
 date-modified: "2026-09-19"
-status: "Preliminarno"
+status: "Stabilno izdanje"
 categories: ["Pokazatelji", "Otvoreni podaci"]
 page-layout: custom
 template-partials:
@@ -15,6 +15,7 @@ smooth-scroll: false
 css: ../../assets/css/barometar.css
 resources:
   - ../../data/barometar/demokrscanstvo-multiplatform/v1/
+  - ../../data/barometar/demokrscanstvo-themes/v1/
 execute:
   freeze: false
 ---
@@ -26,7 +27,9 @@ knitr::opts_chunk$set(echo=FALSE,message=FALSE,warning=FALSE,dev="svglite",fig.w
 source("../../R/lib/barometar_multiplatform_page.R",encoding="UTF-8")
 source("../../R/lib/digikat_hr.R",encoding="UTF-8")
 source("../../R/theme_digikat.R",encoding="UTF-8")
-release <- barometar_multiplatform_release("../../data/barometar/demokrscanstvo-multiplatform/v1")
+base_dir <- "../../data/barometar/demokrscanstvo-multiplatform/v1"
+release <- barometar_multiplatform_release(base_dir)
+thematic <- barometar_thematic_release("../../data/barometar/demokrscanstvo-themes/v1",base_dir)
 s <- release$summary
 m <- release$tables$monthly
 p <- release$tables$platforms
@@ -36,57 +39,87 @@ number <- function(x,digits=1L)ifelse(is.na(x),"—",formatC(x,format="f",digits
 escape <- function(x)htmltools::htmlEscape(as.character(x))
 table_html <- function(x,caption)cat('<div class="table-responsive" tabindex="0" role="region" aria-label="',escape(caption),'">',
   as.character(knitr::kable(x,format="html",escape=TRUE,row.names=FALSE,caption=caption)),"</div>",sep="")
-largest <- p[which.max(p$matching_records),]
-fallback_n <- sum(p$snippet_records+p$title_records)
+web_share <- 100*p$matching_records[p$platform=="web"]/s$matching_records
+topic_count <- thematic$summary$method$n_components
+topic_rows <- thematic$summary$topics
+topic_rows <- topic_rows[order(vapply(topic_rows,`[[`,numeric(1),"records"),decreasing=TRUE)]
 ```
 
 ::: {.dkb}
 <section class="dkb-hero dkb-on-dark"><div class="dkb-inner">
-<p class="dkb-eyebrow">DigiKat · Hrvatsko katoličko sveučilište · Luka Šikić</p>
+<p class="dkb-eyebrow">DigiKat · Hrvatsko katoličko sveučilište</p>
 <h1>Medijski barometar demokršćanstva</h1>
-<p>Gdje se govori o demokršćanskim idejama i kršćanskoj socijalnoj misli?</p>
-<p class="dkb-muted">Barometar pretražuje stvarnu arhivu medijskih objava, društvenih platformi i komentara. Prepoznaje demokršćanstvo kao političku tradiciju i primjenu kršćanske socijalne misli na javna pitanja. Uključuje i kritiku tih ideja. Brojevi opisuju njihovu prisutnost u prikupljenom tekstu. Ne mjere potporu strankama, doseg ili stavove autora.</p>
-<div class="freshness-strip">Stvarni podaci · Preliminarno empirijsko izdanje · `r s$platform_count` platformi · Podaci od `r digikat_hr_date(s$data_from)` do `r digikat_hr_date(s$data_through)`</div>
-<p><a href="#pregled">Pregled nalaza</a> · <a href="#kretanja">Kretanja po platformama</a> · <a href="#metoda">Podaci i metoda</a></p>
+<p class="dkb-lead">Gdje se govori o demokršćanskim idejama i kršćanskoj socijalnoj misli?</p>
+<p class="dkb-muted">Od stranačkog identiteta i europske politike do obitelji, solidarnosti i općeg dobra: barometar pokazuje kako demokršćanske ideje ulaze u javnu raspravu, koje ih teme prate i gdje dobivaju medijsku pozornost.</p>
+<div class="freshness-strip">`r s$platform_count` platformi · `r digikat_hr_date(s$data_from)` – `r digikat_hr_date(s$data_through)`</div>
+<p class="dkb-hero-links"><a href="#teme">Tematska karta rasprave <span aria-hidden="true">↗</span></a><a href="#kretanja">Kretanja kroz vrijeme <span aria-hidden="true">↗</span></a></p>
 </div></section>
 
-<nav class="dkb-subnav" aria-label="Sadržaj barometra"><div class="dkb-inner"><a href="#pregled">Pregled</a><a href="#kretanja">Kretanja</a><a href="#platforme">Platforme</a><a href="#teme">Teme</a><a href="#metoda">Podaci i metoda</a></div></nav>
+<nav class="dkb-subnav" aria-label="Sadržaj barometra"><div class="dkb-inner"><a href="#pregled">Pregled</a><a href="#teme">Tematska karta</a><a href="#kretanja">Kretanja</a><a href="#platforme">Platforme</a><a href="#javna-pitanja">Javna pitanja</a><a href="#metoda">O barometru</a></div></nav>
 
 <section id="pregled" class="dkb-inner">
-<h2>Prisutnost u prikupljenoj arhivi</h2>
-<p>Pretražena je cijela spojena arhiva. Obuhvat uključuje sve raspoložive platforme i izvore, bez ograničenja na raniji panel mrežnih medija. Ista objava prenesena na više mjesta može se pojaviti više puta. Ukupni broj zato opisuje arhivske objave, a ne broj jedinstvenih tekstova ili ljudi.</p>
-<div class="dkb-cards">
-<article class="dkb-card dkb-on-dark"><h3>Prepoznate objave</h3><p class="dkb-value dkb-mono">`r integer(s$matching_records)`</p><p>sa sadržajem koji zadovoljava šire pravilo uključivanja</p><small>Demokršćanska tradicija ili kvalificirani kršćansko-socijalni argument.</small></article>
-<article class="dkb-card dkb-on-dark"><h3>Pretražive objave</h3><p class="dkb-value dkb-mono">`r integer(s$eligible_records)`</p><p>s barem jednim dostupnim tekstnim poljem</p><small>Udio se računa zasebno unutar svake platforme.</small></article>
-<article class="dkb-card dkb-on-dark"><h3>Izričito demokršćanstvo</h3><p class="dkb-value dkb-mono">`r integer(s$narrow_records)`</p><p>objava koje imenuju demokršćanstvo kao ideju ili tradiciju</p><small>Uži obuhvat sadržan je u širem broju.</small></article>
-<article class="dkb-card dkb-on-dark"><h3>Platforme u arhivi</h3><p class="dkb-value dkb-mono">`r s$platform_count`</p><p>mediji, društvene platforme, forumi i komentari</p><small>Razdoblje i dostupnost teksta razlikuju se među platformama.</small></article>
+<p class="dkb-kicker">Demokršćanstvo u javnom prostoru</p>
+<h2>Ideje, politički identitet i društvene vrijednosti</h2>
+<p>Demokršćanstvo se u medijima pojavljuje kao politička tradicija, stranačko opredjeljenje i polazište za raspravu o društvu. Barometar povezuje te načine govora s platformama na kojima se pojavljuju. Obuhvaća zagovaranje, kritiku i raspravu o demokršćanskim idejama.</p>
+<div class="dkb-cards dkb-overview-cards">
+<article class="dkb-card dkb-on-dark"><h3>Objave o demokršćanstvu</h3><p class="dkb-value dkb-mono">`r integer(s$matching_records)`</p><p>demokršćanske ideje i kršćanska socijalna misao u javnoj raspravi</p></article>
+<article class="dkb-card dkb-on-dark"><h3>Udio mrežnih medija</h3><p class="dkb-value dkb-mono">`r number(web_share)` <span>%</span></p><p>obrađenih objava dolazi s weba</p></article>
+<article class="dkb-card dkb-on-dark"><h3>Teme rasprave</h3><p class="dkb-value dkb-mono">`r topic_count`</p><p>tematskih skupina izdvojenih iz jezika objava</p></article>
+<article class="dkb-card dkb-on-dark"><h3>Izričito demokršćanstvo</h3><p class="dkb-value dkb-mono">`r integer(s$narrow_records)`</p><p>objava izravno imenuje demokršćansku ideju ili tradiciju</p></article>
 </div>
-<p class="dkb-footer-note"><strong>Preliminarni nalazi.</strong> Klasifikacija je računalna. Raniji pregled `r s$assistant_review$n` objava proveo je AI asistent na mrežnim člancima. Neovisna ljudska validacija još nije provedena. Taj pregled nije procjena točnosti za sve platforme.</p>
+<p class="dkb-reading">Izričito imenovanje demokršćanstva prisutno je u `r number(100*s$narrow_records/s$matching_records)` % uključenih objava. Tematska karta otkriva što se uz taj naziv veže: politička pripadnost, domoljublje, obitelj, europski korijeni i svjetonazorski prijepori.</p>
 </section>
 
-<section id="kretanja" class="dkb-inner">
-<h2>Kretanja unutar platforme</h2>
-<p>Broj prepoznatih objava ovisi i o tome koliko je sadržaja prikupljeno. Udio na 10.000 pretraživih objava stavlja taj broj u odnos prema raspoloživoj arhivi iste platforme. Nazivnik je vidljiv za svaki mjesec. Odabir objava s tijelom teksta izostavlja one dostupne samo kroz naslov ili isječak.</p>
+<section id="teme" class="dkb-inner dkb-section-rule">
+<p class="dkb-kicker">O čemu se govori</p>
+<h2>Tematska karta rasprave</h2>
+<p>Računalna obrada teksta izdvaja `r topic_count` skupina objava sa sličnim rječnikom u odlomcima o demokršćanstvu. Najveća je <strong>„`r escape(topic_rows[[1]]$label)`”</strong>, s `r integer(topic_rows[[1]]$records)` objava. Svaka je objava pridružena jednoj glavnoj temi, pa udjeli pokazuju sastav odabrane rasprave.</p>
+<div id="mt-controls" class="dkb-controls" hidden>
+<label>Platforma <select id="mt-platform" aria-controls="mt-topics mt-detail"><option value="all">Sve platforme</option></select></label>
+<label>Razdoblje <select id="mt-year" aria-controls="mt-topics mt-detail"><option value="all">Cijelo razdoblje</option></select></label>
+<button id="mt-reset" class="dkb-reset" type="button">Poništi odabir</button>
+</div>
+<p id="mt-status" class="dkb-status" role="status" aria-live="polite">Teme u svim uključenim objavama.</p>
+<div id="mt-interactive" class="dkb-topic-explorer" hidden>
+<div><h3 class="dkb-small-heading">Teme prema broju objava</h3><p class="dkb-status">Odabir teme otvara njezin opis i raspodjelu po platformama.</p><div id="mt-topics"></div></div>
+<article id="mt-detail" class="dkb-topic-detail" aria-label="Opis odabrane teme"></article>
+</div>
+<div id="mt-static">
+
+```{r}
+#| output: asis
+table_html(do.call(rbind,lapply(topic_rows,function(t)data.frame(Tema=t$label,Objave=integer(t$records),
+  `Udio (%)`=number(t$share),Opis=t$editorial_note,check.names=FALSE))),"Teme i njihov udio u objavama")
+```
+
+</div>
+<div class="dkb-editorial-note"><h3>Kako čitati tematsku kartu</h3><p>Politička tradicija ovdje ima više javnih lica. Stranački govori povezuju je s identitetom i vrijednostima, europske rasprave s kršćanskim nasljeđem, a knjige i skupovi s poviješću ideja. Odabir platforme ili godine pokazuje kako se mijenja odnos tih tema unutar obrađenih objava.</p></div>
+</section>
+
+<section id="kretanja" class="dkb-inner dkb-section-rule">
+<p class="dkb-kicker">Kada se govori</p>
+<h2>Medijska prisutnost kroz vrijeme</h2>
+<p>Mjesečni prikaz otkriva razdoblja pojačane pozornosti. Broj objava pokazuje opseg rasprave, a pokazatelj na 10.000 objava njezinu zastupljenost u ukupno prikupljenom sadržaju odabrane platforme.</p>
 <div id="mp-controls" class="dkb-controls" hidden>
 <label>Platforma <select id="mp-platform" aria-controls="mp-chart mp-monthly"></select></label>
-<label>Obuhvat <select id="mp-scope"><option value="broad">Šire</option><option value="narrow">Izričito demokršćanstvo</option></select></label>
+<label>Obuhvat <select id="mp-scope"><option value="broad">Sve uključene objave</option><option value="narrow">Izričito demokršćanstvo</option></select></label>
 <label>Pokazatelj <select id="mp-measure"><option value="rate">Na 10.000 objava</option><option value="count">Broj objava</option></select></label>
-<label>Tekst <select id="mp-text"><option value="all">Sve pretražive objave</option><option value="full">Samo objave s tijelom teksta</option></select></label>
+<label>Tekst <select id="mp-text"><option value="all">Svi dostupni tekstovi</option><option value="full">Objave s punim tekstom</option></select></label>
 </div>
 <p id="mp-status" class="dkb-status" role="status" aria-live="polite">Mjesečni podaci za sve platforme dostupni su u datoteci za preuzimanje.</p>
 <div id="mp-interactive" hidden>
-<div class="figure-card"><h3 id="mp-chart-title">Mjesečna zastupljenost</h3><div id="mp-chart" role="img" aria-label="Mjesečna zastupljenost odabrane platforme"></div><p class="dkb-status">Izvor: spojena arhiva Determ. Prazni kružići označavaju mjesece s manje arhiviranih dana od kalendarskih. Prekid crte označava promjenu prikupljanja ili nedostupan mjesec.</p></div>
-<details><summary>Mjesečni brojevi i dostupnost teksta</summary><div id="mp-monthly" class="table-responsive" tabindex="0"></div></details>
+<div class="figure-card"><h3 id="mp-chart-title">Mjesečna zastupljenost</h3><div id="mp-chart" role="img" aria-label="Mjesečna zastupljenost odabrane platforme"></div><p class="dkb-status">Izvor: DigiKat / Determ. Prazni kružići označavaju djelomično obuhvaćene mjesece. Prekid crte označava promjenu prikupljanja u travnju 2024. ili mjesec bez podataka.</p></div>
+<details><summary>Mjesečni podaci</summary><div id="mp-monthly" class="table-responsive" tabindex="0" role="region" aria-label="Mjesečni podaci odabrane platforme"></div></details>
 </div>
 <div id="mp-static" class="figure-card">
-<h3>Mjesečni udio u mrežnim objavama</h3>
-<p>Statički prikaz odnosi se na web. Izbornik platforme proširuje prikaz na ostale dijelove arhive.</p>
+<h3>Mjesečna zastupljenost u mrežnim medijima</h3>
+<p>Prikaz pokazuje broj objava o demokršćanstvu na 10.000 prikupljenih mrežnih objava.</p>
 
 ```{r}
 #| label: multiplatform-static
 #| fig-height: 3.5
-#| fig-alt: "Mjesečni udio prepoznatih mrežnih objava. Niz se prekida pri promjeni prikupljanja u travnju 2024."
-#| fig-cap: "Izvor: spojena arhiva Determ. Širi obuhvat. Prazni kružići označavaju nepotpune kalendarske mjesece."
+#| fig-alt: "Mjesečna zastupljenost demokršćanskih ideja u mrežnim objavama, s označenom promjenom prikupljanja u travnju 2024."
+#| fig-cap: "Izvor: DigiKat / Determ. Prazni kružići označavaju djelomično obuhvaćene mjesece."
 web <- m[m$platform=="web",]
 web$date <- as.Date(paste0(web$month,"-01"))
 web$segment <- interaction(cumsum(c(TRUE,head(web$eligible_records==0,-1))),web$month>="2024-04")
@@ -96,84 +129,93 @@ ggplot(web,aes(date,per_10000,group=segment))+geom_line(color=dk_col$accent,na.r
   geom_point(aes(shape=partial),color=dk_col$accent,na.rm=TRUE,size=1.6)+scale_shape_manual(values=c(`FALSE`=16,`TRUE`=1),guide="none")+
   geom_vline(xintercept=as.Date(s$collection_break),linetype="dashed",color=dk_col$muted)+
   scale_x_date(date_breaks="1 year",date_labels="%Y.")+scale_y_continuous(labels=function(x)number(x,0L))+
-  labs(x=NULL,y="Na 10.000 pretraživih objava")+theme_digikat()
+  labs(x=NULL,y="Na 10.000 objava")+theme_digikat()
 ```
 
 </div>
-<p>Prikupljanje se promijenilo u travnju 2024. Neke su platforme uključene kasnije, a komentari imaju duge prekide. Praznina u arhivi ne znači da tada nije bilo rasprave. Ni promjenu udjela preko prekida nije moguće pripisati samo promjeni javnog govora.</p>
 </section>
 
-<section id="platforme" class="dkb-inner">
-<h2>Sastav pronađenih objava</h2>
-<p>Najviše prepoznatih objava u ovoj arhivi pripada platformi `r labels[[largest$platform]]`. Ona čini `r number(100*largest$matching_records/s$matching_records)` % svih prepoznatih objava. Raspodjela pokazuje sastav prikupljene građe. Platforme imaju različite vrste objava i različit obuhvat prikupljanja.</p>
+<section id="platforme" class="dkb-inner dkb-section-rule">
+<p class="dkb-kicker">Gdje se govori</p>
+<h2>Mrežni mediji nose najveći dio objava</h2>
+<p>Web čini `r number(web_share)` % uključenih objava. Slijede Twitter / X i Facebook, a demokršćanske ideje pojavljuju se i u tisku, radijskim i televizijskim sadržajima te na forumima i u komentarima. Grafikon prikazuje raspodjelu objava u obrađenoj građi.</p>
 
 ```{r}
 #| label: multiplatform-composition
-#| fig-alt: "Broj prepoznatih objava po platformama u cijeloj raspoloživoj arhivi."
-#| fig-cap: "Izvor: spojena arhiva Determ. Širi obuhvat. Razdoblja dostupnosti razlikuju se među platformama."
+#| fig-alt: "Broj objava o demokršćanskim idejama po platformama. Najveći broj dolazi s weba."
+#| fig-cap: "Izvor: DigiKat / Determ. Broj objava u razdoblju dostupnom za svaku platformu."
 p$label <- factor(labels[p$platform],levels=rev(labels[p$platform]))
 ggplot(p,aes(matching_records,label))+geom_col(fill=dk_col$accent,width=.7)+
-  scale_x_continuous(labels=function(x)number(x,0L),expand=expansion(mult=c(0,.05)))+
-  labs(x="Prepoznate objave",y=NULL)+theme_digikat()
+  geom_text(aes(label=integer(matching_records)),hjust=-.15,size=3.5,color=dk_col$ink)+
+  scale_x_continuous(labels=function(x)number(x,0L),expand=expansion(mult=c(0,.13)))+
+  labs(x="Objave",y=NULL)+theme_digikat()
 ```
 
-<p>Tablica povezuje broj prepoznatih objava s nazivnikom i stvarnim rasponom arhiviranja za svaku platformu. Ukupni udjeli sažimaju različita razdoblja i nisu ljestvica popularnosti ideja.</p>
+<details><summary>Brojevi i razdoblja po platformama</summary>
+<p>Uz broj uključenih objava prikazani su ukupna količina prikupljenog teksta, njegova vremenska pokrivenost i zastupljenost demokršćanskih ideja.</p>
 
 ```{r}
 #| output: asis
-table_html(data.frame(Platforma=labels[p$platform],Pretražive=integer(p$eligible_records),Prepoznate=integer(p$matching_records),
-  `Na 10.000`=number(p$per_10000),`Prvi datum`=p$first_day,`Zadnji datum`=p$last_day,
-  `Dana u arhivi`=integer(p$observed_days),check.names=FALSE),"Platforme i raspoloživa građa")
+table_html(data.frame(Platforma=labels[p$platform],Prikupljene=integer(p$eligible_records),Uključene=integer(p$matching_records),
+  `Na 10.000`=number(p$per_10000),`Od`=p$first_day,`Do`=p$last_day,
+  `Obuhvaćeni dani`=integer(p$observed_days),check.names=FALSE),"Objave i vremenski obuhvat po platformama")
 ```
 
-<p>Broj arhiviranih dana ne potvrđuje potpunost praćenja pojedinog dana. Objave na radiju, televiziji i videoplatformama pretražene su samo kroz tekst koji je pohranjen u arhivi.</p>
+</details>
 </section>
 
-<section id="teme" class="dkb-inner">
-<h2>Javna pitanja u prepoznatim objavama</h2>
-<p>Teme su prepoznate u blizini relevantnog demokršćanskog ili kršćansko-socijalnog argumenta. Jedna objava može obuhvatiti više tema. Dio objava nema dodijeljenu temu. Prikaz sažima širi obuhvat svih platformi u cijeloj raspoloživoj arhivi.</p>
+<section id="javna-pitanja" class="dkb-inner dkb-section-rule">
+<p class="dkb-kicker">Ideje u društvenom kontekstu</p>
+<h2>S kojim se javnim pitanjima povezuju?</h2>
+<p>Tematska karta opisuje jezik rasprave. Ovaj prikaz izdvaja konkretna javna pitanja spomenuta uz demokršćanski ili kršćansko-socijalni argument: od politike i europskih odnosa do obitelji, rada i socijalne skrbi. Jedna objava može povezivati više pitanja.</p>
 
 ```{r}
 #| label: multiplatform-themes
 #| fig-height: 4
-#| fig-alt: "Broj prepoznatih objava po javnopolitičkim temama. Jedna objava može imati više tematskih oznaka."
-#| fig-cap: "Izvor: spojena arhiva Determ. Tematske oznake nisu neovisno ljudski validirane."
+#| fig-alt: "Javna pitanja spomenuta u kontekstu demokršćanskih i kršćansko-socijalnih argumenata."
+#| fig-cap: "Izvor: DigiKat / Determ. Objave se mogu pojaviti u više kategorija."
 themes <- aggregate(matching_records~theme,data=release$tables$themes,FUN=sum)
-theme_labels <- unlist(jsonlite::fromJSON("../../data/barometar/demokrscanstvo-multiplatform/v1/definitions.json")$theme_labels)
+unclassified <- sum(themes$matching_records[themes$theme=="unclassified"])
+themes <- themes[themes$theme!="unclassified",]
+theme_labels <- unlist(jsonlite::fromJSON(file.path(base_dir,"definitions.json"))$theme_labels)
 themes <- themes[order(themes$matching_records),]
 themes$label <- factor(theme_labels[themes$theme],levels=theme_labels[themes$theme])
 ggplot(themes,aes(matching_records,label))+geom_col(fill=dk_col$accent,width=.7)+
-  scale_x_continuous(labels=function(x)number(x,0L),expand=expansion(mult=c(0,.05)))+
-  labs(x="Objave s tematskom oznakom",y=NULL)+theme_digikat()
+  geom_text(aes(label=integer(matching_records)),hjust=-.15,size=3.5,color=dk_col$ink)+
+  scale_x_continuous(labels=function(x)number(x,0L),expand=expansion(mult=c(0,.13)))+
+  labs(x="Objave koje povezuju ideju s javnim pitanjem",y=NULL)+theme_digikat()
 ```
 
-<p>Tematski brojevi se ne zbrajaju u ukupni broj objava jer se oznake mogu preklapati. Odsutnost oznake znači da računalno pravilo nije dodijelilo temu. Ona ne dokazuje da u objavi nema javnopolitičkog sadržaja.</p>
+<p class="dkb-reading">Konkretno javno pitanje prepoznato je u `r integer(s$matching_records-unclassified)` objava. U preostalih `r integer(unclassified)` objava demokršćanstvo se pojavljuje bez jedne od ovih oznaka u analiziranom odlomku. Tako barometar razlikuje prisutnost naziva od njegova povezivanja s konkretnim društvenim pitanjima.</p>
 </section>
 
-<section id="metoda" class="dkb-inner">
-<h2>Podaci i metoda</h2>
-<p>Iz `r integer(s$raw_records)` izvornih zapisa uklonjeno je `r integer(s$duplicates_removed)` ponovljenih identiteta zapisa. Preostalo je `r integer(s$unique_records)` arhivskih zapisa, od kojih `r integer(s$eligible_records)` sadrži pretraživ tekst. Samo naslov ili isječak dostupan je za `r integer(fallback_n)` pretraživih objava. To ograničenje ostaje vidljivo u preuzimljivim podacima.</p>
-<details><summary>Koje riječi i argumenti daju razlog za uključivanje?</summary>
-<p>Pretraga traži oblike riječi poput demokršćanstvo i kršćanska demokracija te izraze socijalni nauk Crkve i katoličko socijalno učenje. Pojmovi poput općeg dobra, supsidijarnosti, dostojanstva i solidarnosti vrijede tek uz potreban kršćanski i javnopolitički kontekst. Naziv stranke ili pojedina opća vrijednost sama po sebi nije dovoljna.</p>
-<p>Uži obuhvat prepoznaje imenovanje demokršćanske ideje ili tradicije. Širi obuhvat uključuje i primjenu socijalnog nauka te kršćanski utemeljen argument o javnoj politici. Bliski pojmovi moraju pripadati povezanom argumentu. Naslov i tijelo teksta obrađuju se odvojeno.</p>
+<section id="metoda" class="dkb-inner dkb-section-rule">
+<p class="dkb-kicker">Izvori i objašnjenja</p>
+<h2>O barometru</h2>
+<p>Barometar je istraživački resurs projekta DigiKat pri Hrvatskom katoličkom sveučilištu. Analizira tekstove medijskih objava i javnih rasprava prikupljene putem sustava Determ. Autor: Luka Šikić.</p>
+<details><summary>Što barometar mjeri?</summary>
+<p>Mjeri prisutnost demokršćanskih ideja i kršćanske socijalne misli u prikupljenom tekstu. Uključuje njihovo zagovaranje, opisivanje i kritiku. Brojevi se odnose na objave; ne izražavaju potporu strankama ili stavove stanovništva. U izračunu se pretražuje `r integer(s$eligible_records)` objava na `r s$platform_count` platformi.</p>
+<p>Uži obuhvat prepoznaje izričito imenovanje demokršćanstva kao ideje ili tradicije. Širi obuhvat dodaje primjenu socijalnog nauka Crkve i kršćanski utemeljene argumente o javnim pitanjima. Naziv stranke ili riječ poput solidarnosti sama za sebe nije dovoljna za uključivanje. Prepoznavanje slijedi računalna pravila za hrvatske izraze i njihov neposredni kontekst.</p>
 </details>
-<details><summary>Što je drukčije od ranijeg panela?</summary>
-<p>Ovo izdanje obuhvaća sve izvore u spojenoj arhivi. Nije ograničeno na stalni panel 115 mrežnih medija. Kratke objave također su prihvatljive. Pregledava se sav pohranjeni odabrani tekst, a kad tijelo nedostaje, pretraga koristi raspoloživi isječak ili naslov. Stvarni prijepisi mogu biti skraćeni već pri prikupljanju.</p>
-<p>Objave s istim identifikatorom unutar platforme spajaju se. Za stariju građu bez identifikatora uklanjaju se samo ponovljeni istovjetni zapisi. Različiti komentari pod istom poveznicom ostaju odvojeni. Preneseni tekstovi i ponovne objave na drugim mjestima mogu ostati u broju.</p>
+<details><summary>Kako nastaje tematska karta?</summary>
+<p>Obrada uspoređuje riječi u odlomcima zbog kojih je objava uključena u barometar. Slični odlomci grupiraju se u teme, a njihovi nazivi i opisi sažimaju zajednički sadržaj. Model je izrađen na `r integer(thematic$summary$distinct_contexts)` različitih tekstnih konteksta. Svaka objava ulazi u zbroj samo jednom, prema svojoj najizraženijoj temi.</p>
+<p>Filtri mijenjaju izbor platforme i godine, dok definicije tema ostaju jednake. Udio teme računa se među uključenim objavama odabranog razdoblja i platforme. Prikaz javnih pitanja koristi zasebne oznake koje se mogu preklapati. <a href="../../data/barometar/demokrscanstvo-themes/v1/README.md">Postupak tematske analize</a>.</p>
 </details>
-<p>Arhiva nije popis cjelokupnog hrvatskog medijskog prostora. Rječnik je usmjeren na hrvatske izraze, a sama arhiva može sadržavati i druge jezike. Oznaka preliminarnog izdanja vrijedi za sve nalaze na ovoj stranici.</p>
-<p>Datoteke sadrže zbirne brojeve. Izvorni tekstovi, naslovi, poveznice, autori i identifikatori objava nisu dio javnih priloga.</p>
+<details><summary>Kako se računaju brojevi i vremenska kretanja?</summary>
+<p>Pokazatelj na 10.000 objava jednak je broju uključenih objava podijeljenom s ukupnim brojem pretraživih objava iste platforme i mjeseca, pomnoženom s 10.000. Ponovljena preuzimanja istog zapisa uklanjaju se; objavljivanje istog sadržaja na različitim mjestima ostaje dio medijske prisutnosti.</p>
+<p>Datumi se odnose na prikupljanje. Dostupnost platformi i teksta razlikuje se kroz vrijeme. Grafikon označava promjenu prikupljanja u travnju 2024., mjesece bez podataka i djelomično obuhvaćene mjesece; promjene preko tih granica uključuju i promjenu obuhvata. Za radio, televiziju i video analizira se raspoloživi tekst. Posljednja godina obuhvaćena je do `r digikat_hr_date(s$data_through)`. <a href="../../data/barometar/demokrscanstvo-multiplatform/v1/README.md">Podatkovna i računalna metoda</a>.</p>
+</details>
+<h3>Podaci za preuzimanje</h3>
+<p>Zbirne tablice omogućuju daljnju analizu i izradu vlastitih prikaza.</p>
 <div class="download-group">
+<a href="../../data/barometar/demokrscanstvo-themes/v1/topics.csv" download>Teme rasprave</a>
+<a href="../../data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv" download>Teme po mjesecima i platformama</a>
 <a href="../../data/barometar/demokrscanstvo-multiplatform/v1/monthly.csv" download>Mjesečni pokazatelji</a>
 <a href="../../data/barometar/demokrscanstvo-multiplatform/v1/platforms.csv" download>Sažetak platformi</a>
-<a href="../../data/barometar/demokrscanstvo-multiplatform/v1/text_availability.csv" download>Dostupnost teksta</a>
-<a href="../../data/barometar/demokrscanstvo-multiplatform/v1/themes.csv" download>Tematski agregati</a>
-<a href="../../data/barometar/demokrscanstvo-multiplatform/v1/routes.csv" download>Putovi prepoznavanja</a>
-<a href="../../data/barometar/demokrscanstvo-multiplatform/v1/definitions.json" download>Rječnik i oblici pojmova</a>
-<a href="../../data/barometar/demokrscanstvo-multiplatform/v1/README.md">Tehnička metoda i ponavljanje izračuna</a>
-<a href="../../data/barometar/demokrscanstvo-multiplatform/v1/manifest.json">Kontrolni zbrojevi datoteka</a>
+<a href="../../data/barometar/demokrscanstvo-multiplatform/v1/themes.csv" download>Javna pitanja</a>
+<a href="../../data/barometar/demokrscanstvo-multiplatform/v1/definitions.json" download>Rječnik pojmova</a>
 </div>
-<p class="dkb-status">Izdanje `r s$edition` · Definicija `r s$definition_version` · Podaci do `r digikat_hr_date(s$data_through)`</p>
+<p class="dkb-status">DigiKat · Luka Šikić · Stabilno izdanje · Podaci do `r digikat_hr_date(s$data_through)`</p>
 </section>
 :::
 
@@ -182,6 +224,10 @@ ggplot(themes,aes(matching_records,label))+geom_col(fill=dk_col$accent,width=.7)
 payload <- jsonlite::toJSON(list(summary=s[c("platform_labels","data_through","collection_break")],monthly=m),
   dataframe="rows",auto_unbox=TRUE,na="null",digits=10)
 cat('<script id="mp-data" type="application/json">',gsub("<","\\u003c",payload,fixed=TRUE),'</script>',sep="")
+topic_payload <- jsonlite::toJSON(list(topics=thematic$summary$topics,monthly=thematic$monthly,
+  platform_labels=s$platform_labels,data_through=s$data_through),dataframe="rows",auto_unbox=TRUE,na="null",digits=10)
+cat('<script id="mt-data" type="application/json">',gsub("<","\\u003c",topic_payload,fixed=TRUE),'</script>',sep="")
 ```
 
 <script src="../../assets/js/barometar-multiplatform.js" defer></script>
+<script src="../../assets/js/barometar-themes.js" defer></script>

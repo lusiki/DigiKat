@@ -1,0 +1,9 @@
+{
+  "schema": "barometar-themes-v1",
+  "files": {
+    "topic_monthly.csv": "0de16f77914ceb1c080ef05a1e54b4bedfc12da5d2d1fe6feac112b4ef2cb417",
+    "topics.csv": "40a35431eab5334be40ea4aeda61817bb3b8f73767f90ccddb9db73a6b9d51d1",
+    "summary.json": "ee438368a253cb27724e23c9b61a0c88c6da2873c3f1af1d5045340f15806b31",
+    "README.md": "0555c592bc0499b3b8f6f4c8b0fcfca7b6c4165898deef722a359c5684cb316b"
+  }
+}

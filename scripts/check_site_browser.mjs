@@ -3,7 +3,7 @@
 import { createServer } from "node:http";
 import { spawn } from "node:child_process";
 import { existsSync } from "node:fs";
-import { mkdtemp, readFile, rm, stat } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, rm, stat, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { extname, resolve, sep } from "node:path";
 
@@ -436,7 +436,35 @@ async function checkMultiplatformBarometar(sessionId) {
     }
     await pause(40);
   }
-  return evaluate(multiplatformExpression, sessionId, true);
+  const existing = await evaluate(multiplatformExpression, sessionId, true);
+  const themes = await evaluate(`(() => {
+    const data=JSON.parse(document.querySelector('#mt-data').textContent);
+    const platform=document.querySelector('#mt-platform'),year=document.querySelector('#mt-year');
+    const change=(node,value)=>{node.value=value;node.dispatchEvent(new Event('change',{bubbles:true}));};
+    const initial=document.querySelectorAll('#mt-topics button').length===data.topics.length;
+    change(platform,'web');change(year,'2025');
+    const n=data.monthly.filter(r=>r.platform==='web'&&r.month.startsWith('2025-')).reduce((a,r)=>a+r.records,0);
+    const filtered=document.querySelector('#mt-status').textContent.includes(n.toLocaleString('hr-HR')+' objava');
+    const buttons=[...document.querySelectorAll('#mt-topics button')];
+    const picked=buttons[buttons.length-1];picked.focus();picked.click();
+    const selected=picked.getAttribute('aria-pressed')==='true'&&document.activeElement===picked&&
+      document.querySelector('#mt-detail h3').textContent===data.topics.find(t=>t.id===picked.dataset.topic).label;
+    change(platform,'bluesky');
+    const empty=!document.querySelector('#mt-topics button')&&document.querySelector('#mt-detail').textContent.includes('Nema objava');
+    document.querySelector('#mt-reset').click();
+    const reset=platform.value==='all'&&year.value==='all'&&document.querySelectorAll('#mt-topics button').length===data.topics.length;
+    const fallback=document.querySelector('#mt-static').hidden&&!document.querySelector('#mt-interactive').hidden;
+    return {ok:initial&&filtered&&selected&&empty&&reset&&fallback,initial,filtered,selected,empty,reset,fallback};
+  })()`,sessionId);
+  // Native keyboard activation also updates the topic detail without losing focus.
+  await evaluate("document.querySelectorAll('#mt-topics button')[1].focus()",sessionId);
+  for (const type of ['keyDown','keyUp']) await command('Input.dispatchKeyEvent',{
+    type,key:'Enter',code:'Enter',windowsVirtualKeyCode:13,nativeVirtualKeyCode:13,
+    ...(type==='keyDown'?{text:'\r',unmodifiedText:'\r'}:{})
+  },sessionId);
+  const topicKeyboard=await evaluate("document.activeElement.getAttribute('aria-pressed')==='true'",sessionId);
+  await evaluate("document.querySelector('#mt-reset').click()",sessionId);
+  return {...existing,themes,topicKeyboard,ok:existing.ok&&themes.ok&&topicKeyboard};
 }
 
 async function checkBarometar(sessionId) {
@@ -534,6 +562,23 @@ try {
     if (page === barometarPage) {
       const interaction = await checkBarometar(sessionId);
       if (!interaction.ok) findings.push(`${page}: barometer keyboard/data/live-region/collection-boundary contract failed (${JSON.stringify(interaction)})`);
+      if (process.env.DIGIKAT_SCREENSHOT_DIR) {
+        const output=resolve(process.env.DIGIKAT_SCREENSHOT_DIR);
+        await mkdir(output,{recursive:true});
+        for (const width of [1440,390]) {
+          await command('Emulation.setDeviceMetricsOverride',{width,height:1000,deviceScaleFactor:1,mobile:false},sessionId);
+          await pause(250);
+          await evaluate("document.querySelector('#teme').scrollIntoView()",sessionId);
+          await pause(200);
+          const shot=await command('Page.captureScreenshot',{format:'png'},sessionId);
+          await writeFile(resolve(output,`barometar-themes-${width}.png`),Buffer.from(shot.data,'base64'));
+        }
+      }
+      await command('Emulation.setScriptExecutionDisabled',{value:true},sessionId);
+      await command('Page.reload',{},sessionId);
+      await pause(1000);
+      const staticVisible=await evaluate("!document.querySelector('#mt-static').hidden && document.querySelector('#mt-static table tbody').rows.length > 0 && !document.querySelector('#mp-static').hidden",sessionId);
+      if (!staticVisible) findings.push(`${page}: no-JavaScript static fallback is missing`);
     }
     await command("Target.closeTarget", { targetId });
   }

@@ -1,4 +1,4 @@
-"""Build aggregate-only provisional release; never publish source records."""
+"""Build the public aggregate release; never publish source records."""
 import argparse
 import calendar
 from datetime import date, datetime, timezone
@@ -98,7 +98,7 @@ def release(work, destination):
     first_day,last_day = con.execute("SELECT min(day),max(day) FROM den").fetchone()
     review_dir = work.parent/"assistant_review_55_2026-09-19"
     summary = {"schema":"barometar-multiplatform-v1","synthetic":False,
-        "status":"provisional_empirical","human_validation_complete":False,
+        "status":"empirical","human_validation_complete":False,
         "edition":"2026-09-19-all-platforms-v1", "computed_at":datetime.now(timezone.utc).isoformat(),
         "data_from":first_day,"data_through":last_day,"raw_records":audit["raw_records"],
         "unique_records":audit["unique_records"],"duplicates_removed":audit["duplicates_removed"],

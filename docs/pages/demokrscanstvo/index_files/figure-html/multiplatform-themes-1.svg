@@ -35,36 +35,43 @@
 </defs>
 <g clip-path='url(#cpMjMzLjkzfDcxMy41Mnw2LjQ4fDI1Mi4wMQ==)'>
 <rect x='233.93' y='6.48' width='479.60' height='245.53' style='stroke-width: 1.26; stroke: none; fill: #F5F4F0;' />
-<polyline points='233.93,231.55 713.52,231.55 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='233.93,197.45 713.52,197.45 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='233.93,163.35 713.52,163.35 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='233.93,129.24 713.52,129.24 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='233.93,95.14 713.52,95.14 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='233.93,61.04 713.52,61.04 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='233.93,26.94 713.52,26.94 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='233.93,228.25 713.52,228.25 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='233.93,188.65 713.52,188.65 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='233.93,149.04 713.52,149.04 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='233.93,109.44 713.52,109.44 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='233.93,69.84 713.52,69.84 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='233.93,30.24 713.52,30.24 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
 <polyline points='233.93,252.01 233.93,6.48 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='402.35,252.01 402.35,6.48 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<polyline points='570.77,252.01 570.77,6.48 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
-<rect x='233.93' y='219.61' width='2.36' height='23.87' style='stroke-width: 1.26; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C;' />
-<rect x='233.93' y='185.51' width='26.27' height='23.87' style='stroke-width: 1.26; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C;' />
-<rect x='233.93' y='151.41' width='55.58' height='23.87' style='stroke-width: 1.26; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C;' />
-<rect x='233.93' y='117.31' width='80.17' height='23.87' style='stroke-width: 1.26; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C;' />
-<rect x='233.93' y='83.21' width='92.29' height='23.87' style='stroke-width: 1.26; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C;' />
-<rect x='233.93' y='49.10' width='137.43' height='23.87' style='stroke-width: 1.26; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C;' />
-<rect x='233.93' y='15.00' width='456.76' height='23.87' style='stroke-width: 1.26; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C;' />
+<polyline points='337.95,252.01 337.95,6.48 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='441.98,252.01 441.98,6.48 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='546.00,252.01 546.00,6.48 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<polyline points='650.03,252.01 650.03,6.48 ' style='stroke-width: 0.85; stroke: #E2DDD0; stroke-linecap: butt;' />
+<rect x='233.93' y='214.39' width='7.28' height='27.72' style='stroke-width: 1.26; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C;' />
+<rect x='233.93' y='174.79' width='81.14' height='27.72' style='stroke-width: 1.26; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C;' />
+<rect x='233.93' y='135.18' width='171.64' height='27.72' style='stroke-width: 1.26; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C;' />
+<rect x='233.93' y='95.58' width='247.58' height='27.72' style='stroke-width: 1.26; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C;' />
+<rect x='233.93' y='55.98' width='285.03' height='27.72' style='stroke-width: 1.26; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C;' />
+<rect x='233.93' y='16.38' width='424.42' height='27.72' style='stroke-width: 1.26; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #0F4C5C;' />
+<text x='242.04' y='231.81' style='font-size: 9.96px;fill: #14181D; font-family: "Arial";' textLength='5.53px' lengthAdjust='spacingAndGlyphs'>7</text>
+<text x='316.73' y='192.21' style='font-size: 9.96px;fill: #14181D; font-family: "Arial";' textLength='11.06px' lengthAdjust='spacingAndGlyphs'>78</text>
+<text x='408.06' y='152.61' style='font-size: 9.96px;fill: #14181D; font-family: "Arial";' textLength='16.59px' lengthAdjust='spacingAndGlyphs'>165</text>
+<text x='484.00' y='113.01' style='font-size: 9.96px;fill: #14181D; font-family: "Arial";' textLength='16.59px' lengthAdjust='spacingAndGlyphs'>238</text>
+<text x='521.45' y='73.40' style='font-size: 9.96px;fill: #14181D; font-family: "Arial";' textLength='16.59px' lengthAdjust='spacingAndGlyphs'>274</text>
+<text x='660.84' y='33.80' style='font-size: 9.96px;fill: #14181D; font-family: "Arial";' textLength='16.59px' lengthAdjust='spacingAndGlyphs'>408</text>
 </g>
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHwyODguMDA=)'>
-<text x='228.10' y='235.17' text-anchor='end' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='141.75px' lengthAdjust='spacingAndGlyphs'>Okoliš i briga za zajednički dom</text>
-<text x='228.10' y='201.07' text-anchor='end' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='160.88px' lengthAdjust='spacingAndGlyphs'>Gospodarski život i socijalna država</text>
-<text x='228.10' y='166.97' text-anchor='end' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='106.31px' lengthAdjust='spacingAndGlyphs'>Rad i dostojanstvo rada</text>
-<text x='228.10' y='132.87' text-anchor='end' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='87.75px' lengthAdjust='spacingAndGlyphs'>Obitelj, život i odgoj</text>
-<text x='228.10' y='98.77' text-anchor='end' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='168.19px' lengthAdjust='spacingAndGlyphs'>Europa, međunarodna zajednica i mir</text>
-<text x='228.10' y='64.66' text-anchor='end' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='221.62px' lengthAdjust='spacingAndGlyphs'>Politička zajednica, demokracija i vjerska sloboda</text>
-<text x='228.10' y='30.56' text-anchor='end' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='60.19px' lengthAdjust='spacingAndGlyphs'>Nerazvrstano</text>
+<text x='228.10' y='231.87' text-anchor='end' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='141.75px' lengthAdjust='spacingAndGlyphs'>Okoliš i briga za zajednički dom</text>
+<text x='228.10' y='192.27' text-anchor='end' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='160.88px' lengthAdjust='spacingAndGlyphs'>Gospodarski život i socijalna država</text>
+<text x='228.10' y='152.67' text-anchor='end' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='106.31px' lengthAdjust='spacingAndGlyphs'>Rad i dostojanstvo rada</text>
+<text x='228.10' y='113.07' text-anchor='end' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='87.75px' lengthAdjust='spacingAndGlyphs'>Obitelj, život i odgoj</text>
+<text x='228.10' y='73.46' text-anchor='end' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='168.19px' lengthAdjust='spacingAndGlyphs'>Europa, međunarodna zajednica i mir</text>
+<text x='228.10' y='33.86' text-anchor='end' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='221.62px' lengthAdjust='spacingAndGlyphs'>Politička zajednica, demokracija i vjerska sloboda</text>
 <text x='233.93' y='265.09' text-anchor='middle' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='5.62px' lengthAdjust='spacingAndGlyphs'>0</text>
-<text x='402.35' y='265.09' text-anchor='middle' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='16.88px' lengthAdjust='spacingAndGlyphs'>500</text>
-<text x='570.77' y='265.09' text-anchor='middle' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='25.31px' lengthAdjust='spacingAndGlyphs'>1.000</text>
-<text x='473.73' y='279.01' text-anchor='middle' style='font-size: 11.96px;fill: #1B1D21; font-family: "Arial";' textLength='160.77px' lengthAdjust='spacingAndGlyphs'>Objave s tematskom oznakom</text>
+<text x='337.95' y='265.09' text-anchor='middle' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='16.88px' lengthAdjust='spacingAndGlyphs'>100</text>
+<text x='441.98' y='265.09' text-anchor='middle' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='16.88px' lengthAdjust='spacingAndGlyphs'>200</text>
+<text x='546.00' y='265.09' text-anchor='middle' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='16.88px' lengthAdjust='spacingAndGlyphs'>300</text>
+<text x='650.03' y='265.09' text-anchor='middle' style='font-size: 10.14px;fill: #6B6F76; font-family: "Arial";' textLength='16.88px' lengthAdjust='spacingAndGlyphs'>400</text>
+<text x='473.73' y='279.01' text-anchor='middle' style='font-size: 11.96px;fill: #1B1D21; font-family: "Arial";' textLength='238.48px' lengthAdjust='spacingAndGlyphs'>Objave koje povezuju ideju s javnim pitanjem</text>
 </g>
 </g>
 </svg>
