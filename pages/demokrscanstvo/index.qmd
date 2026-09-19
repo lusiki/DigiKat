@@ -16,6 +16,9 @@ css: ../../assets/css/barometar.css
 resources:
   - ../../data/barometar/demokrscanstvo-multiplatform/v1/
   - ../../data/barometar/demokrscanstvo-themes/v1/
+  - ../../assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.pdf
+  - ../../assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.webp
+  - ../../assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.meta.json
 execute:
   freeze: false
 ---
@@ -43,6 +46,12 @@ web_share <- 100*p$matching_records[p$platform=="web"]/s$matching_records
 topic_count <- thematic$summary$method$n_components
 topic_rows <- thematic$summary$topics
 topic_rows <- topic_rows[order(vapply(topic_rows,`[[`,numeric(1),"records"),decreasing=TRUE)]
+report_stem <- "../../assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru"
+report <- jsonlite::fromJSON(paste0(report_stem,".meta.json"))
+stopifnot(identical(digest::digest(file=paste0(report_stem,".pdf"),algo="sha256",serialize=FALSE),report$pdf_sha256),
+  report$records==s$matching_records,report$data_from==s$data_from,report$data_through==s$data_through)
+identity_records <- sum(vapply(Filter(function(t)t$id %in% c("t01","t02","t03","t04"),topic_rows),`[[`,numeric(1),"records"))
+values_topic <- Filter(function(t)t$id=="t09",topic_rows)[[1L]]
 ```
 
 ::: {.dkb}
@@ -52,10 +61,10 @@ topic_rows <- topic_rows[order(vapply(topic_rows,`[[`,numeric(1),"records"),decr
 <p class="dkb-lead">Gdje se govori o demokršćanskim idejama i kršćanskoj socijalnoj misli?</p>
 <p class="dkb-muted">Od stranačkog identiteta i europske politike do obitelji, solidarnosti i općeg dobra: barometar pokazuje kako demokršćanske ideje ulaze u javnu raspravu, koje ih teme prate i gdje dobivaju medijsku pozornost.</p>
 <div class="freshness-strip">`r s$platform_count` platformi · `r digikat_hr_date(s$data_from)` – `r digikat_hr_date(s$data_through)`</div>
-<p class="dkb-hero-links"><a href="#teme">Tematska karta rasprave <span aria-hidden="true">↗</span></a><a href="#kretanja">Kretanja kroz vrijeme <span aria-hidden="true">↗</span></a></p>
+<p class="dkb-hero-links"><a href="#teme">Tematska karta rasprave <span aria-hidden="true">↗</span></a><a href="#kretanja">Kretanja kroz vrijeme <span aria-hidden="true">↗</span></a><a href="../../assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.pdf" download>Preuzmi izvještaj (PDF) <span aria-hidden="true">↓</span></a></p>
 </div></section>
 
-<nav class="dkb-subnav" aria-label="Sadržaj barometra"><div class="dkb-inner"><a href="#pregled">Pregled</a><a href="#teme">Tematska karta</a><a href="#kretanja">Kretanja</a><a href="#platforme">Platforme</a><a href="#javna-pitanja">Javna pitanja</a><a href="#metoda">O barometru</a></div></nav>
+<nav class="dkb-subnav" aria-label="Sadržaj barometra"><div class="dkb-inner"><a href="#pregled">Pregled</a><a href="#izvjestaj">Izvještaj</a><a href="#teme">Tematska karta</a><a href="#kretanja">Kretanja</a><a href="#platforme">Platforme</a><a href="#javna-pitanja">Javna pitanja</a><a href="#metoda">O barometru</a></div></nav>
 
 <section id="pregled" class="dkb-inner">
 <p class="dkb-kicker">Demokršćanstvo u javnom prostoru</p>
@@ -68,6 +77,26 @@ topic_rows <- topic_rows[order(vapply(topic_rows,`[[`,numeric(1),"records"),decr
 <article class="dkb-card dkb-on-dark"><h3>Izričito demokršćanstvo</h3><p class="dkb-value dkb-mono">`r integer(s$narrow_records)`</p><p>objava izravno imenuje demokršćansku ideju ili tradiciju</p></article>
 </div>
 <p class="dkb-reading">Izričito imenovanje demokršćanstva prisutno je u `r number(100*s$narrow_records/s$matching_records)` % uključenih objava. Tematska karta otkriva što se uz taj naziv veže: politička pripadnost, domoljublje, obitelj, europski korijeni i svjetonazorski prijepori.</p>
+</section>
+
+<section id="izvjestaj" class="dkb-inner dkb-section-rule" aria-labelledby="izvjestaj-title">
+<div class="dkb-report">
+<img class="dkb-report-cover" src="../../assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.webp" alt="Naslovnica izvještaja Demokršćanstvo u medijskom prostoru" width="951" height="1345" loading="lazy">
+<div class="dkb-report-copy">
+<p class="dkb-kicker">Izvještaj za čitanje i preuzimanje</p>
+<h2 id="izvjestaj-title">Demokršćanstvo u medijskom prostoru</h2>
+<p>Kako se demokršćanstvo pojavljuje u političkim porukama, javnim raspravama i društvenim pitanjima? Izvještaj povezuje tematski pregled s konkretnim izjavama, sporovima i primjerima solidarnosti, savjesti i općeg dobra. Tri mjesečna portreta približavaju rasprave iza vrhunaca medijske pozornosti.</p>
+<p class="dkb-report-meta">`r integer(report$pages)` stranica · PDF · `r number(report$bytes/1e6)` MB · `r digikat_hr_date(report$published)`</p>
+<a class="dkb-report-download" href="../../assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.pdf" download>Preuzmi izvještaj <span aria-hidden="true">↓</span><span class="visually-hidden"> (PDF, `r integer(report$pages)` stranica)</span></a>
+</div>
+</div>
+<h3 class="dkb-findings-title">Tri nalaza iz izvještaja</h3>
+<p class="dkb-report-period">Analiza obuhvaća `r integer(report$records)` tekstova i objava od `r digikat_hr_date(report$data_from)` do `r digikat_hr_date(report$data_through)`</p>
+<div class="dkb-report-findings">
+<article><h4>Politička pripadnost u središtu</h4><p>Teme političke pripadnosti, domoljublja, HDZ-ova identiteta i desnog centra zajedno obuhvaćaju <strong>`r number(100*identity_records/report$records)` %</strong> analiziranih tekstova. Demokršćansko ime služi predstavljanju vlastitog položaja, ali i osporavanju političke vjerodostojnosti.</p></article>
+<article><h4>Zajedničke vrijednosti, različiti zaključci</h4><p>Vrijednosti i svjetonazorski prijepori okupljaju <strong>`r integer(values_topic$records)` tekstova i objava</strong>. Obitelj, nacionalni identitet i savjest pojavljuju se u afirmaciji načela i u kritikama stranačke dosljednosti.</p></article>
+<article><h4>Od načela do javnog zahtjeva</h4><p>Solidarnost se povezuje s položajem radnika i europskom suradnjom, opće dobro sa zapošljavanjem prema sposobnosti, a supsidijarnost s razinama vlasti. Ti primjeri otvaraju društveni sadržaj demokršćanske tradicije.</p></article>
+</div>
 </section>
 
 <section id="teme" class="dkb-inner dkb-section-rule">
@@ -203,10 +232,10 @@ ggplot(themes,aes(matching_records,label))+geom_col(fill=dk_col$accent,width=.7)
 </details>
 <details><summary>Kako se računaju brojevi i vremenska kretanja?</summary>
 <p>Pokazatelj na 10.000 objava jednak je broju uključenih objava podijeljenom s ukupnim brojem pretraživih objava iste platforme i mjeseca, pomnoženom s 10.000. Ponovljena preuzimanja istog zapisa uklanjaju se; objavljivanje istog sadržaja na različitim mjestima ostaje dio medijske prisutnosti.</p>
-<p>Datumi se odnose na prikupljanje. Dostupnost platformi i teksta razlikuje se kroz vrijeme. Grafikon označava promjenu prikupljanja u travnju 2024., mjesece bez podataka i djelomično obuhvaćene mjesece; promjene preko tih granica uključuju i promjenu obuhvata. Za radio, televiziju i video analizira se raspoloživi tekst. Posljednja godina obuhvaćena je do `r digikat_hr_date(s$data_through)`. <a href="../../data/barometar/demokrscanstvo-multiplatform/v1/README.md">Podatkovna i računalna metoda</a>.</p>
+<p>Datumi se odnose na prikupljanje. Dostupnost platformi i teksta razlikuje se kroz vrijeme. Grafikon označava promjenu prikupljanja u travnju 2024., mjesece bez podataka i djelomično obuhvaćene mjesece; promjene preko tih granica uključuju i promjenu obuhvata. Za radio, televiziju i video analizira se raspoloživi tekst. Posljednja godina obuhvaćena je do `r digikat_hr_date(s$data_through)` <a href="../../data/barometar/demokrscanstvo-multiplatform/v1/README.md">Podatkovna i računalna metoda</a>.</p>
 </details>
 <h3>Podaci za preuzimanje</h3>
-<p>Zbirne tablice omogućuju daljnju analizu i izradu vlastitih prikaza.</p>
+<p>Cjelovit pregled nalaza dostupan je u <a href="../../assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.pdf" download>izvještaju Demokršćanstvo u medijskom prostoru (PDF)</a>. Zbirne tablice omogućuju daljnju analizu i izradu vlastitih prikaza.</p>
 <div class="download-group">
 <a href="../../data/barometar/demokrscanstvo-themes/v1/topics.csv" download>Teme rasprave</a>
 <a href="../../data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv" download>Teme po mjesecima i platformama</a>

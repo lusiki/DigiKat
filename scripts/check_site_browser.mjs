@@ -572,6 +572,18 @@ try {
           await pause(200);
           const shot=await command('Page.captureScreenshot',{format:'png'},sessionId);
           await writeFile(resolve(output,`barometar-themes-${width}.png`),Buffer.from(shot.data,'base64'));
+          if (await evaluate("Boolean(document.querySelector('#izvjestaj'))",sessionId)) {
+            await evaluate("document.querySelector('#izvjestaj').scrollIntoView()",sessionId);
+            await pause(200);
+            const reportShot=await command('Page.captureScreenshot',{format:'png'},sessionId);
+            await writeFile(resolve(output,`barometar-report-${width}.png`),Buffer.from(reportShot.data,'base64'));
+            if (width===390) {
+              await evaluate("document.querySelector('.dkb-report-findings').scrollIntoView()",sessionId);
+              await pause(200);
+              const findingsShot=await command('Page.captureScreenshot',{format:'png'},sessionId);
+              await writeFile(resolve(output,`barometar-findings-${width}.png`),Buffer.from(findingsShot.data,'base64'));
+            }
+          }
         }
       }
       await command('Emulation.setScriptExecutionDisabled',{value:true},sessionId);

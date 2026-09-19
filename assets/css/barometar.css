@@ -55,6 +55,19 @@
 .dkb-editorial-note{padding:1.2rem 1.5rem;background:#e9eeea;border-radius:5px;margin-top:1.5rem}
 .dkb-editorial-note h3{font-size:1.25rem;margin:0 0 .65rem}
 .dkb-editorial-note p{margin:0}
+.dkb-report{display:grid;grid-template-columns:190px minmax(0,1fr);gap:clamp(1.5rem,4vw,3rem);align-items:center;margin:.5rem 0 2rem}
+.dkb-report-cover{display:block;width:100%;height:auto;border:1px solid #cdd9d4;box-shadow:0 8px 24px rgba(15,48,54,.12)}
+.dkb-report-copy{min-width:0}.dkb-report-copy h2{margin:.3rem 0 1rem;text-wrap:balance}.dkb-report-copy>p{max-width:75ch}
+.dkb .dkb-report-meta,.dkb .dkb-report-period{font-size:.875rem;color:#526b6f}
+.dkb .dkb-report-download{display:inline-flex;align-items:center;justify-content:center;gap:1rem;min-height:48px;padding:.75rem 1.2rem;background:#173e43;color:#fff;border:2px solid #173e43;border-radius:4px;text-decoration:none;font-weight:600}
+.dkb .dkb-report-download:hover{background:#24565c;border-color:#24565c;color:#fff}.dkb .dkb-report-download:focus-visible{outline:3px solid #a9643b;outline-offset:4px}
+.dkb .dkb-findings-title{font-size:1.4rem;margin:0 0 .5rem}
+.dkb-report-findings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:1.25rem}
+.dkb-report-findings article{padding:1.25rem;background:#eef2ef;border-top:3px solid #a9643b;border-radius:0 0 4px 4px}
+.dkb-report-findings h4{font-family:'Source Serif 4',serif;font-size:1.2rem;line-height:1.3;color:#173e43;margin:0 0 .75rem}
+.dkb-report-findings p{font-size:.95rem;line-height:1.6;margin:0}
+@media(max-width:740px){.dkb-report{grid-template-columns:1fr;gap:1.5rem}.dkb-report-cover{width:145px}.dkb-report-findings{grid-template-columns:1fr;gap:1rem}}
+@media print{.dkb-report{grid-template-columns:120px minmax(0,1fr);gap:1.5rem}.dkb-report-cover{box-shadow:none}.dkb-report-findings{grid-template-columns:1fr}.dkb-report-findings article{break-inside:avoid}.dkb .dkb-report-download{background:#fff;color:#173e43}}
 .dkb button:focus-visible,.dkb select:focus-visible{outline:3px solid #ba6e1c;outline-offset:3px}
 @media(max-width:1000px){.dkb-overview-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.dkb-topic-explorer{gap:1rem}}
 @media(max-width:740px){.dkb-topic-explorer{grid-template-columns:1fr}.dkb-topic-detail{padding:1.25rem}.dkb #mt-controls label{flex-basis:100%}.dkb-topic-button-heading{font-size:.85rem}.dkb-topic-back{display:inline-block;padding:.7rem 0}}
