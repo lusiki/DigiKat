@@ -20,6 +20,10 @@ docs/assets/izvjestaji/**/libs/** -whitespace
 _freeze/** -whitespace
 docs/** -whitespace
 
+# Manifest-sealed aggregate releases must retain their exact published bytes.
+data/barometar/demokrscanstvo-multiplatform/v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+docs/data/barometar/demokrscanstvo-multiplatform/v1/** -text
+
 *.db binary
 *.gif binary
 *.jpeg binary

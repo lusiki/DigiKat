@@ -31,10 +31,12 @@ const pages = [
   "assets/izvjestaji/godisnji-pregled-2025.html",
   "assets/izvjestaji/kako-se-govori-o-crkvi/index.html"
 ];
-// Before G4 the normal build excludes this page; audit an explicit local preview
-// or an installed release whenever its rendered artifact is present.
+// Audit either barometer edition whenever its rendered artifact is present.
 const barometarPage = "pages/demokrscanstvo/index.html";
 if (existsSync(resolve(siteRoot, barometarPage))) pages.push(barometarPage);
+const requestedPages = process.argv.slice(3);
+if (requestedPages.some(page => !pages.includes(page))) throw new Error("Unknown browser-check page.");
+const selectedPages = requestedPages.length ? requestedPages : pages;
 
 const chromeCandidates = [
   process.env.CHROME_PATH,
@@ -371,7 +373,76 @@ const barometarExpression = `(async () => {
   };
 })()`;
 
+const multiplatformExpression = `(async () => {
+  const data = JSON.parse(document.querySelector('#mp-data').textContent);
+  const platform = document.querySelector('#mp-platform');
+  const scope = document.querySelector('#mp-scope');
+  const measure = document.querySelector('#mp-measure');
+  const basis = document.querySelector('#mp-text');
+  const status = document.querySelector('#mp-status');
+  const keyboardState = platform.selectedIndex === platform.options.length - 1 &&
+    scope.value === 'narrow' && measure.value === 'count' && basis.value === 'full';
+  const announcement = status.textContent.trim();
+  const live = status.getAttribute('aria-live') === 'polite' &&
+    announcement.includes(platform.selectedOptions[0].textContent) &&
+    announcement.includes(scope.selectedOptions[0].textContent) &&
+    announcement.includes(measure.selectedOptions[0].textContent) &&
+    announcement.includes(basis.selectedOptions[0].textContent);
+  const change = (control, value) => {
+    control.value = value;
+    control.dispatchEvent(new Event('change', { bubbles: true }));
+  };
+  change(platform, 'web'); change(scope, 'broad'); change(measure, 'rate'); change(basis, 'all');
+  const svg = document.querySelector('#mp-chart svg');
+  const marker = svg?.querySelector('line[stroke-dasharray]');
+  const seamX = Number(marker?.getAttribute('x1'));
+  const paths = [...svg.querySelectorAll('polyline.series')];
+  const crossings = paths.filter(path => {
+    const xs = path.getAttribute('points').trim().split(/\\s+/).map(point => Number(point.split(',')[0]));
+    return xs.some(x => x < seamX) && xs.some(x => x >= seamX);
+  }).length;
+  const sourceSpansBoundary = data.monthly.some(row => row.platform === 'web' && row.month < '2024-04' && row.eligible_records > 0) &&
+    data.monthly.some(row => row.platform === 'web' && row.month >= '2024-04' && row.eligible_records > 0);
+  const webRows = data.monthly.filter(row => row.platform === 'web');
+  const table = document.querySelector('#mp-monthly table');
+  const latest = webRows[webRows.length - 1];
+  const first = table.tBodies[0].rows[0];
+  const fmt = (n, digits = 0) => Number(n).toLocaleString('hr-HR', { minimumFractionDigits: digits, maximumFractionDigits: digits });
+  const tableMatches = table.tBodies[0].rows.length === webRows.length &&
+    first.cells[0].textContent === latest.month && first.cells[1].textContent === fmt(latest.matching_records) &&
+    first.cells[2].textContent === fmt(latest.eligible_records) &&
+    first.cells[3].textContent === fmt(10000 * latest.matching_records / latest.eligible_records, 2);
+  const missing = data.monthly.find(row => !row.eligible_records);
+  if (missing) change(platform, missing.platform);
+  const missingRow = [...document.querySelectorAll('#mp-monthly tbody tr')].find(row => row.cells[0].textContent === missing?.month);
+  const unavailableText = missingRow?.cells[1].textContent === '—' && missingRow?.cells[3].textContent === '—';
+  const fallback = document.querySelector('#mp-static').hidden && !document.querySelector('#mp-interactive').hidden;
+  change(platform, 'web');
+  return {
+    ok: keyboardState && live && platform.options.length === Object.keys(data.summary.platform_labels).length &&
+      Boolean(marker) && paths.length >= 2 && !crossings && sourceSpansBoundary && tableMatches && unavailableText && fallback,
+    keyboardState, live, announcement, platforms: platform.options.length,
+    marker: Boolean(marker), paths: paths.length, crossings, sourceSpansBoundary, tableMatches, unavailableText, fallback
+  };
+})()`;
+
+async function checkMultiplatformBarometar(sessionId) {
+  for (const selector of ['#mp-platform', '#mp-scope', '#mp-measure', '#mp-text']) {
+    await evaluate(`document.querySelector(${JSON.stringify(selector)}).focus()`, sessionId);
+    for (const type of ['keyDown', 'keyUp']) {
+      await command('Input.dispatchKeyEvent', {
+        type, key: 'End', code: 'End', windowsVirtualKeyCode: 35, nativeVirtualKeyCode: 35
+      }, sessionId);
+    }
+    await pause(40);
+  }
+  return evaluate(multiplatformExpression, sessionId, true);
+}
+
 async function checkBarometar(sessionId) {
+  if (await evaluate("Boolean(document.querySelector('#mp-data'))", sessionId)) {
+    return checkMultiplatformBarometar(sessionId);
+  }
   const controls = await evaluate(`(() => {
     const weekly = document.querySelector('input[name=frequency][value=weekly]');
     const broad = document.querySelector('input[name=scope][value=siri]');
@@ -401,7 +472,7 @@ async function checkBarometar(sessionId) {
 }
 
 try {
-  for (const page of pages) {
+  for (const page of selectedPages) {
     const url = `http://127.0.0.1:${port}/${page}`;
     const { targetId } = await command("Target.createTarget", { url: "about:blank" });
     const { sessionId } = await command("Target.attachToTarget", { targetId, flatten: true });
@@ -462,7 +533,7 @@ try {
     }
     if (page === barometarPage) {
       const interaction = await checkBarometar(sessionId);
-      if (!interaction.ok) findings.push(`${page}: barometer keyboard/data/URL/live-region/matrix/seam contract failed (${JSON.stringify(interaction)})`);
+      if (!interaction.ok) findings.push(`${page}: barometer keyboard/data/live-region/collection-boundary contract failed (${JSON.stringify(interaction)})`);
     }
     await command("Target.closeTarget", { targetId });
   }
@@ -485,5 +556,5 @@ if (findings.length) {
   console.error(findings.map((finding) => `- ${finding}`).join("\n"));
   process.exitCode = 1;
 } else {
-  console.log(`Browser quality checks passed for ${pages.length} pages at ${viewports.join(", ")} px.`);
+  console.log(`Browser quality checks passed for ${selectedPages.length} pages at ${viewports.join(", ")} px.`);
 }

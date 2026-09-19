@@ -1,5 +1,7 @@
-# Render the explicit synthetic preview while its tempdir payload still exists.
-# Run from repository root. The page remains excluded from ordinary site builds.
+# The page now serves the separately authorized all-platform empirical edition.
+# The original synthetic preview source remains available at commit 37f208b.
+stop("Synthetic page preview retired. The active page reads the all-platform empirical release; see MULTIPLATFORM.md.",call.=FALSE)
+# Original workflow retained below for historical reproducibility only.
 if(.Platform$OS.type=="windows")Sys.setlocale("LC_CTYPE","English_United States.utf8")
 source("studies/demokrscanstvo-barometar/sample.R",encoding="UTF-8")
 sample <- barometar_sample()

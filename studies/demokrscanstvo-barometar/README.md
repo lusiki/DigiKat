@@ -1,5 +1,15 @@
 # Medijski barometar demokršćanstva
 
+**2026-09-19 scope update.** The PI authorized a separate provisional empirical
+edition across every platform and source in the merged archive. It now supplies
+the public page. See [MULTIPLATFORM.md](MULTIPLATFORM.md) and the
+[approved expansion plan](../../quality_reports/plans/2026-09-19_barometar-all-platforms.md)
+for its text policy, record denominator, commands and explicit incomplete-human-validation
+status. The original fixed-panel study below remains frozen and retains its gates.
+The 55-item assistant pilot is AI review, not human validation of either edition.
+
+## Original fixed-panel study
+
 Status: **G1 and G2 completed; human validation pending**. The fixed panel has 115 outlets.
 Definition `1.0.0+33429974d0b8` is frozen after independent development review. No validated
 empirical release exists. The approved execution plan is
@@ -11,7 +21,7 @@ package has 320 PI items and 80 second-coder items under the full frozen design
 (rare strata are censused). It is ready in `WORKDIR/validation/1.0.0+33429974d0b8/`;
 see [PIPELINE.md](PIPELINE.md) for the independent human-coding handoff.
 
-The resource will measure how frequently Christian-democratic ideas and Christian social thought
+The original fixed-panel study measures how frequently Christian-democratic ideas and Christian social thought
 applied to public-policy questions appear in a fixed panel of Croatian online news media.
 It measures coverage, not support, party strength, reach or a publisher's beliefs.
 The source population is the restricted DetermDB general web feed, separate from the official
@@ -63,8 +73,9 @@ in the private work directory. Proposed outlet labels require PI review.
 The full source-schema synthetic run in [PIPELINE.md](PIPELINE.md) passes on 3,206 invented
 records and writes only to `tempdir()`. `preview.R` additionally renders synthetic HTML and
 copies checked synthetic downloads into `docs/` for browser checks. Never stage or publish
-those preview files. The page is excluded from normal site builds until a genuine release
-is installed. `--apply` refuses synthetic data, unfinished human validation and missing
+those preview files. The old `preview.R` command is retired because that page now reads
+the all-platform empirical edition. Its original source is preserved in Git at `37f208b`.
+The original fixed-panel `--apply` refuses synthetic data, unfinished human validation and missing
 vendor aggregate-licence evidence.
 
 ## Gates and ownership

@@ -100,6 +100,10 @@ expect_true(all(vapply(c("const barometarPage = \"pages/demokrscanstvo/index.htm
             "The browser gate must conditionally audit a rendered barometer and its keyboard, matrix and boundary contracts")
 expect_true(file.exists("site-governance/RELEASE_CHECKLIST.md"),
             "The repeatable release checklist must exist")
+expect_true(all(vapply(c("const multiplatformExpression", "checkMultiplatformBarometar",
+                         "#mp-platform", "tableMatches", "unavailableText"),
+                       grepl, logical(1L), x = browser_check, fixed = TRUE)),
+            "The browser gate must also audit the empirical all-platform controls and data")
 expect_true(!file.exists("assets/images/photo_.png") && file.exists("archive/design-prototype/photo_.png"),
             "The unused ten-megabyte prototype raster must stay outside published assets")
 

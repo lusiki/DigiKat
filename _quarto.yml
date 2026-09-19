@@ -6,6 +6,7 @@ project:
     - CITATION.cff
     - data/digikat_corpus_manifest.json
     - data/processed/
+    - data/barometar/demokrscanstvo-multiplatform/v1/
     - data/sample/merged_sample.rds
     - data/sample/merged_sample_manifest.json
     - .nojekyll
@@ -16,9 +17,8 @@ project:
   render:
     - index.qmd
     - pages/**/*.qmd
-    # Development page: activate only after the human validation release gate.
-    # Explicit synthetic preview renders this source separately.
-    - "!pages/demokrscanstvo/index.qmd"
+    # All-platform provisional empirical edition authorized 2026-09-19.
+    # Its page discloses incomplete human validation; fixed-panel gates remain.
     # Dovršena tematska istraživanja ostaju na verzioniranim ulazima na kojima
     # su objavljena; puni render žive stranice ne smije ih ponovno izračunati.
     # Pregled istraživanja ostaje aktivna stranica i renderira se redovito.
@@ -75,6 +75,8 @@ website:
         menu:
           - text: "Tematska istraživanja"
             href: pages/studije/index.html
+          - text: "Medijski barometar demokršćanstva"
+            href: pages/demokrscanstvo/index.qmd
           - text: "Godišnji pregled 2025."
             href: assets/izvjestaji/godisnji-pregled-2025.html
           - text: "Kako se govori o Crkvi?"
