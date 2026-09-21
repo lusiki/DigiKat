@@ -23,6 +23,7 @@ library(knitr)
 source("../R/lib/digikat_paths.R", encoding = "UTF-8")
 source("../R/lib/digikat_hr.R", encoding = "UTF-8")
 mf <- digikat_page_corpus("..")
+bm <- jsonlite::fromJSON("../data/barometar/demokrscanstvo-multiplatform/v1/summary.json")
 
 hr_pct <- function(x, dec = 1) {
   paste0(format(round(as.numeric(x), dec), nsmall = dec, decimal.mark = ",", trim = TRUE), " %")
@@ -167,29 +168,32 @@ kojem je skupu izračunato.
 Praktična posljedica za čitatelja je jednostavna. Ako se brojka s neke stranice ne slaže s brojkom iz
 nekog istraživanja, prva provjera nije aritmetika nego to govore li o istom skupu podataka.
 
-## Medijski barometar demokršćanstva u pripremi {#method-barometar}
+## Demokršćanstvo u medijima {#method-barometar}
 
-Barometar je zaseban instrument za stalni panel hrvatskih mrežnih medija.
-Njegov nazivnik čine svi prihvatljivi članci tog panela, pa njegovi pokazatelji
-nisu udjeli unutar korpusa katoličkih tema. Zastupljenost se izražava na 10.000
-analiziranih članaka, a širina kao udio medija stalnog panela s barem jednim
-uključenim člankom. Pokazatelji se ne spajaju u zajednički indeks.
+Demokršćanstvo u medijima zaseban je instrument i ne računa se na službenom korpusu.
+Mjeri se na cijeloj arhivi koju isporučuje sustav Determ, pa njegovi pokazatelji nisu
+udjeli unutar korpusa katoličkih tema. Nazivnik čine sve pretražive objave iste
+platforme i istoga mjeseca, a ne stalni panel odabranih medija. Zastupljenost se
+izražava na 100.000 pretraživih objava. Pokazatelji se ne spajaju u zajednički indeks.
 
-Uži obuhvat prati imenovanje demokršćanstva kao tradicije i ideje. Širi mu
-obuhvat može dodati socijalni nauk u političkom pitanju i kršćanski utemeljen
-argument iz načela, nakon zasebne ljudske provjere. Stranački nazivi i programski
-govor aktera ne daju samostalan razlog za uključivanje. Oznaka pripisanoga govora
-demokršćanskog aktera odnosi se na već prihvaćen argument i registraciju koja
-vrijedi na dan članka. Empirijsko izdanje još
-nije objavljeno; razvojni prikazi koriste izmišljene podatke. Rječnik je razvijen
-iz projektnog briefa i javnih naslova dokumenata socijalnog nauka.
+Uži obuhvat prati imenovanje demokršćanstva kao tradicije i ideje. Širi mu obuhvat
+dodaje socijalni nauk u političkom pitanju i kršćanski utemeljen argument iz načela.
+Stranački nazivi i programski govor aktera ne daju samostalan razlog za uključivanje.
+Oznaka pripisanoga govora demokršćanskog aktera odnosi se na već prihvaćen argument i
+registraciju koja vrijedi na dan članka. Rječnik je razvijen iz projektnog briefa i
+javnih naslova dokumenata socijalnog nauka.
 
-### Kontinuitet barometra {#method-barometar-kontinuitet}
+Empirijsko izdanje objavljeno je i obuhvaća `r digikat_hr_count(bm$platform_count, "platforma")`
+s podacima do `r digikat_hr_date(bm$data_through)` Brojke, tematska karta i tablice za
+preuzimanje nalaze se na stranici [Demokršćanstvo u medijima](demokrscanstvo/index.html).
+Tablice nose stupac `per_10000`, dok stranica isti pokazatelj prikazuje na 100.000 objava.
 
-Promjena prikupljanja 1. travnja 2024. označava se i u ovom instrumentu.
-Usporedivost se provjerava na preklopljenom mjesecu za prihvaćene putove,
-bez preuzimanja zaključka iz drugoga korpusa. Izvorni tekstovi, naslovi i
-poveznice na pojedinačne članke ostaju izvan javnog paketa.
+### Kontinuitet mjerenja {#method-barometar-kontinuitet}
+
+Promjena prikupljanja 1. travnja 2024. vrijedi i za ovaj instrument. Usporedivost se
+provjerava na preklopljenom mjesecu za prihvaćene putove, bez preuzimanja zaključka
+iz drugoga korpusa. Izvorni tekstovi, naslovi i poveznice na pojedinačne članke
+ostaju izvan javnog paketa.
 
 ## Promjena prikupljanja 2024. i što ona zabranjuje {#method-collection-break}
 

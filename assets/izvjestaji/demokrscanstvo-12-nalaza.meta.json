@@ -6,8 +6,8 @@
   "data_from": "2021-01-01",
   "data_through": "2026-09-10",
   "pages": 15,
-  "bytes": 160067,
-  "pdf_sha256": "e33be8e8eba86a353f423f35d61d7d06a2a91ff832f3daf2c4a995c71d8de786",
+  "bytes": 156642,
+  "pdf_sha256": "19f5e07de5a9710252c99c7cdda87c83767fc984ad5b215eeb5ef1758514eb74",
   "cover_sha256": "ef508a9dc1ef14779b2301d97e9aa5fae7ebf9f473c89e8acd27302001045307",
   "findings": 12
 }

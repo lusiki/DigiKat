@@ -75,7 +75,7 @@ website:
         menu:
           - text: "Tematska istraživanja"
             href: pages/studije/index.html
-          - text: "Medijski barometar demokršćanstva"
+          - text: "Demokršćanstvo u medijima"
             href: pages/demokrscanstvo/index.qmd
           - text: "Godišnji pregled 2025."
             href: assets/izvjestaji/godisnji-pregled-2025.html

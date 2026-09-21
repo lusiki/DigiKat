@@ -75,7 +75,7 @@ def verify(root, html=None):
         assert not [x for x in missing if 'barometar' in x or 'demokrscanstvo' in x],missing
         visible=' '.join(page.text)
         assert 'SINTETIČKI PODACI' not in visible
-        assert 'Tematska karta rasprave' in visible and 'O barometru' in visible
+        assert 'Tematska karta rasprave' in visible and 'O analizi' in visible
         assert not re.search(r'preliminar|Pretražena je cijela spojena arhiva|Raniji pregled 55',visible,re.I)
         assert not re.search(r'Error in |Execution halted|Traceback \(most recent',visible)
         result.update(rendered_checks='passed',inherited_missing_links=missing)
