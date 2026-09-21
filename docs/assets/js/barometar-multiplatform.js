@@ -62,7 +62,7 @@
     const y = n => H-bottom - n * (H-top-bottom) / max;
     const svg = svgNode("svg", {viewBox:`0 0 ${W} ${H}`, role:"img"});
     const title = `${labels[platform.value]} · ${UNIT}`;
-    svg.append(svgNode("title", {}, title), svgNode("desc", {}, "Mjesečna serija od 2021. do 2026. Točni brojevi slijede u tablici."));
+    svg.append(svgNode("title", {}, title), svgNode("desc", {}, "Mjesečna serija od 2021. do 2026."));
     for(let tick=0;tick<=4;tick++) {
       const v = max*tick/4;
       svg.append(svgNode("line", {x1:left,x2:W-right,y1:y(v),y2:y(v),class:"grid"}),
@@ -87,21 +87,6 @@
     document.getElementById("mp-status").textContent=latest
       ? `${title}. Posljednji raspoloživi mjesec ${latest.month}. ${fmt(matches(latest))} od ${fmt(denominator(latest))} objava. ${latest.observed_days} od ${days(latest.month)} kalendarskih dana u arhivi.`
       : "Za ovu platformu nema pretraživih objava.";
-    const table=document.createElement("table"),caption=document.createElement("caption");
-    caption.textContent=`${labels[platform.value]} · mjesečni brojevi`;table.append(caption);
-    const headings=["Mjesec","Prepoznate","Pretražive","Na 100.000","Puni tekst","Isječak","Samo naslov","Dana u arhivi","Puni tekst, na 100.000"];
-    const thead=table.createTHead(),tr=thead.insertRow();
-    headings.forEach(h=>{const cell=document.createElement("th");cell.scope="col";cell.textContent=h;tr.append(cell);});
-    const tbody=table.createTBody();
-    [...rows].reverse().forEach(r=>{
-      const row=tbody.insertRow();
-      const count=matches(r),d=denominator(r);
-      const fullRate=r.full_text_per_10000==null?null:10*r.full_text_per_10000;
-      [r.month,d?fmt(count):"—",fmt(d),fmt(value(r),2),fmt(r.full_text_records),fmt(r.snippet_records),fmt(r.title_records),`${r.observed_days}/${days(r.month)}`,fmt(fullRate,2)].forEach((v,i)=>{
-        const cell=document.createElement(i===0?"th":"td");if(i===0)cell.scope="row";cell.textContent=v;row.append(cell);
-      });
-    });
-    document.getElementById("mp-monthly").replaceChildren(table);
   }
   document.getElementById("mp-controls").hidden=false;
   document.getElementById("mp-interactive").hidden=false;

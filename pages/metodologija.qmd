@@ -171,7 +171,7 @@ nekog istraživanja, prva provjera nije aritmetika nego to govore li o istom sku
 ## Demokršćanstvo u medijima {#method-barometar}
 
 Demokršćanstvo u medijima zaseban je instrument i ne računa se na službenom korpusu.
-Mjeri se na cijeloj arhivi koju isporučuje sustav Determ, pa njegovi pokazatelji nisu
+Mjeri se na cijeloj arhivi prikupljenoj praćenjem medija, pa njegovi pokazatelji nisu
 udjeli unutar korpusa katoličkih tema. Nazivnik čine sve pretražive objave iste
 platforme i istoga mjeseca, a ne stalni panel odabranih medija. Zastupljenost se
 izražava na 100.000 pretraživih objava. Pokazatelji se ne spajaju u zajednički indeks.

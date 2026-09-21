@@ -47,3 +47,17 @@ E. Render `pages/demokrscanstvo/index.qmd` and `index.qmd`. Verify.
 - `data/processed/*.rds` md5 unchanged.
 - Every href/src in both rendered pages exists on disk AND in `git ls-files`.
 - Page `stopifnot` on the three PDF sha256 gates passes (proves meta.json was refreshed correctly).
+
+## Round 2 (PI, 2026-09-21, same day)
+- Removed the "Mjesečni podaci" disclosure under the Kretanja chart and the JS that filled it.
+- Platform table reduced to Platforma / Uključene objave / Na 100.000 objava / Obuhvaćeni dani.
+- No vendor name anywhere on the page: four source notes now read "Izvor: DigiKat." and the method
+  text says "prikupljene praćenjem medija". Also removed from slide 2 of the deck (rebuilt, PDF
+  re-rendered, meta refreshed) and from the sentence added to metodologija in round 1.
+- NOT changed: `data/barometar/demokrscanstvo-multiplatform/v1/README.md` still says "Determ archive".
+  It is sha256-hashed in that release's manifest, and the thematic release is chained to that manifest,
+  so a one-word edit would cascade through both releases and their verifiers. PI decision.
+- New HTML edition of "Demokršćanstvo u medijskom prostoru" via `public-report/build_html.py`, linked
+  from the report card as "Čitaj pregled na mreži". Checked word-for-word against the published PDF
+  with pdftotext (only page furniture differs, no number in the HTML absent from the PDF), axe WCAG 2.1
+  AA 0 violations, no overflow at 320/390/768 px.

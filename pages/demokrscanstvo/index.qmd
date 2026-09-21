@@ -19,6 +19,7 @@ resources:
   - ../../assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.pdf
   - ../../assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.webp
   - ../../assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.meta.json
+  - ../../assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.html
   - ../../assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.*
   - ../../assets/izvjestaji/demokrscanstvo-12-nalaza.*
 execute:
@@ -134,14 +135,13 @@ table_html(do.call(rbind,lapply(topic_rows,function(t)data.frame(Tema=t$label,Ob
 <section id="kretanja" class="dkb-inner dkb-section-rule">
 <p class="dkb-kicker">Kada se govori</p>
 <h2>Medijska prisutnost kroz vrijeme</h2>
-<p>Mjesečni prikaz otkriva razdoblja pojačane pozornosti. Pokazatelj na 100.000 objava pokazuje zastupljenost rasprave među svim pretraživim objavama odabrane platforme. Broj objava po mjesecu nalazi se u tablici ispod grafikona.</p>
+<p>Mjesečni prikaz otkriva razdoblja pojačane pozornosti. Pokazatelj na 100.000 objava pokazuje zastupljenost rasprave među svim pretraživim objavama odabrane platforme.</p>
 <div id="mp-controls" class="dkb-controls" hidden>
-<label>Platforma <select id="mp-platform" aria-controls="mp-chart mp-monthly"></select></label>
+<label>Platforma <select id="mp-platform" aria-controls="mp-chart"></select></label>
 </div>
 <p id="mp-status" class="dkb-status" role="status" aria-live="polite">Mjesečni podaci za sve platforme dostupni su u datoteci za preuzimanje.</p>
 <div id="mp-interactive" hidden>
-<div class="figure-card"><h3 id="mp-chart-title">Mjesečna zastupljenost</h3><div id="mp-chart" role="img" aria-label="Mjesečna zastupljenost odabrane platforme"></div><p class="dkb-status">Izvor: DigiKat / Determ. Prazni kružići označavaju djelomično obuhvaćene mjesece. Prekid crte označava mjesec bez podataka.</p></div>
-<details><summary>Mjesečni podaci</summary><div id="mp-monthly" class="table-responsive" tabindex="0" role="region" aria-label="Mjesečni podaci odabrane platforme"></div></details>
+<div class="figure-card"><h3 id="mp-chart-title">Mjesečna zastupljenost</h3><div id="mp-chart" role="img" aria-label="Mjesečna zastupljenost odabrane platforme"></div><p class="dkb-status">Izvor: DigiKat. Prazni kružići označavaju djelomično obuhvaćene mjesece. Prekid crte označava mjesec bez podataka.</p></div>
 </div>
 <div id="mp-static" class="figure-card">
 <h3>Mjesečna zastupljenost u mrežnim medijima</h3>
@@ -151,7 +151,7 @@ table_html(do.call(rbind,lapply(topic_rows,function(t)data.frame(Tema=t$label,Ob
 #| label: multiplatform-static
 #| fig-height: 3.5
 #| fig-alt: "Mjesečna zastupljenost demokršćanskih ideja u mrežnim objavama od 2021. do 2026."
-#| fig-cap: "Izvor: DigiKat / Determ. Prazni kružići označavaju djelomično obuhvaćene mjesece."
+#| fig-cap: "Izvor: DigiKat. Prazni kružići označavaju djelomično obuhvaćene mjesece."
 web <- m[m$platform=="web",]
 web$date <- as.Date(paste0(web$month,"-01"))
 web$per_100000 <- 10*web$per_10000
@@ -174,7 +174,7 @@ ggplot(web,aes(date,per_100000))+geom_line(color=dk_col$accent,na.rm=TRUE)+
 ```{r}
 #| label: multiplatform-composition
 #| fig-alt: "Broj objava o demokršćanskim idejama po platformama. Najveći broj dolazi s weba."
-#| fig-cap: "Izvor: DigiKat / Determ. Broj objava u razdoblju dostupnom za svaku platformu."
+#| fig-cap: "Izvor: DigiKat. Broj objava u razdoblju dostupnom za svaku platformu."
 p$label <- factor(labels[p$platform],levels=rev(labels[p$platform]))
 ggplot(p,aes(matching_records,label))+geom_col(fill=dk_col$accent,width=.7)+
   geom_text(aes(label=integer(matching_records)),hjust=-.15,size=3.5,color=dk_col$ink)+
@@ -183,13 +183,13 @@ ggplot(p,aes(matching_records,label))+geom_col(fill=dk_col$accent,width=.7)+
 ```
 
 <details><summary>Brojevi i razdoblja po platformama</summary>
-<p>Uz broj uključenih objava prikazan je ukupan broj pretraživih objava, njihova vremenska pokrivenost i zastupljenost demokršćanskih ideja.</p>
+<p>Uz broj uključenih objava prikazani su zastupljenost demokršćanskih ideja na 100.000 objava i broj dana s podacima za svaku platformu.</p>
 
 ```{r}
 #| output: asis
-table_html(data.frame(Platforma=labels[p$platform],`Pretražive objave`=integer(p$eligible_records),`Uključene objave`=integer(p$matching_records),
-  `Na 100.000 objava`=number(10*p$per_10000),`Od`=p$first_day,`Do`=p$last_day,
-  `Obuhvaćeni dani`=integer(p$observed_days),check.names=FALSE),"Objave i vremenski obuhvat po platformama")
+table_html(data.frame(Platforma=labels[p$platform],`Uključene objave`=integer(p$matching_records),
+  `Na 100.000 objava`=number(10*p$per_10000),`Obuhvaćeni dani`=integer(p$observed_days),check.names=FALSE),
+  "Objave po platformama")
 ```
 
 </details>
@@ -204,7 +204,7 @@ table_html(data.frame(Platforma=labels[p$platform],`Pretražive objave`=integer(
 #| label: multiplatform-themes
 #| fig-height: 4
 #| fig-alt: "Javna pitanja spomenuta u kontekstu demokršćanskih i kršćansko-socijalnih argumenata."
-#| fig-cap: "Izvor: DigiKat / Determ. Objave se mogu pojaviti u više kategorija."
+#| fig-cap: "Izvor: DigiKat. Objave se mogu pojaviti u više kategorija."
 themes <- aggregate(matching_records~theme,data=release$tables$themes,FUN=sum)
 unclassified <- sum(themes$matching_records[themes$theme=="unclassified"])
 themes <- themes[themes$theme!="unclassified",]
@@ -226,7 +226,7 @@ ggplot(themes,aes(matching_records,label))+geom_col(fill=dk_col$accent,width=.7)
 <p>Dva izvještaja čitaju isti medijski prostor iz različitih kutova. Pregled opisuje teme i medijsku prisutnost, a analiza jezika razrađuje riječi, načela i konkretne javne argumente. Autor obaju izvještaja i prezentacije je <a rel="author" href="https://www.lukasikic.info/">Luka Šikić</a>.</p>
 <article class="dkb-report">
 <img class="dkb-report-cover" src="../../assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.webp" alt="Naslovnica izvještaja Demokršćanstvo u medijskom prostoru" width="420" height="594" loading="lazy">
-<div class="dkb-report-copy"><p class="dkb-kicker">Pregled medijskog prostora</p><h3>Demokršćanstvo u medijskom prostoru</h3><p>Tematska karta, razlike među platformama i tri mjesečna portreta rasprave. Izvještaj objašnjava kako se demokršćanstvo pojavljuje u političkim porukama, sporovima oko vrijednosti i društvenim pitanjima.</p><p class="dkb-report-meta">`r integer(report$records)` objava · `r integer(report$pages)` stranica · PDF, `r number(report$bytes/1e6)` MB · `r digikat_hr_date(report$published)`</p><a class="dkb-report-download" href="../../assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.pdf" download>Preuzmi pregled (PDF)</a></div>
+<div class="dkb-report-copy"><p class="dkb-kicker">Pregled medijskog prostora</p><h3>Demokršćanstvo u medijskom prostoru</h3><p>Tematska karta, razlike među platformama i tri mjesečna portreta rasprave. Izvještaj objašnjava kako se demokršćanstvo pojavljuje u političkim porukama, sporovima oko vrijednosti i društvenim pitanjima.</p><p class="dkb-report-meta">`r integer(report$records)` objava · `r integer(report$pages)` stranica · PDF, `r number(report$bytes/1e6)` MB · `r digikat_hr_date(report$published)`</p><div class="dkb-publication-links"><a class="dkb-report-download" href="../../assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.pdf" download>Preuzmi pregled (PDF)</a><a href="../../assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.html">Čitaj pregled na mreži</a></div></div>
 </article>
 <article class="dkb-report">
 <img class="dkb-report-cover" src="../../assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.webp" alt="Naslovnica izvještaja Demokršćanstvo: od riječi do argumenta" width="420" height="594" loading="lazy">
@@ -239,7 +239,7 @@ ggplot(themes,aes(matching_records,label))+geom_col(fill=dk_col$accent,width=.7)
 <section id="metoda" class="dkb-inner dkb-section-rule">
 <p class="dkb-kicker">Izvori i objašnjenja</p>
 <h2>O analizi</h2>
-<p>Ova je analiza istraživački resurs projekta DigiKat pri Hrvatskom katoličkom sveučilištu. Analizira tekstove medijskih objava i javnih rasprava prikupljene putem sustava Determ. Autor: <a rel="author" href="https://www.lukasikic.info/">Luka Šikić</a>.</p>
+<p>Ova je analiza istraživački resurs projekta DigiKat pri Hrvatskom katoličkom sveučilištu. Analizira tekstove medijskih objava i javnih rasprava prikupljene praćenjem medija. Autor: <a rel="author" href="https://www.lukasikic.info/">Luka Šikić</a>.</p>
 <details><summary>Što analiza mjeri?</summary>
 <p>Mjeri prisutnost demokršćanskih ideja i kršćanske socijalne misli u prikupljenom tekstu. Uključuje njihovo zagovaranje, opisivanje i kritiku. Brojevi se odnose na objave; ne izražavaju potporu strankama ili stavove stanovništva. U izračunu se pretražuje `r integer(s$eligible_records)` objava na `r s$platform_count` platformi.</p>
 <p>Uži obuhvat prepoznaje izričito imenovanje demokršćanstva kao ideje ili tradicije. Širi obuhvat dodaje primjenu socijalnog nauka Crkve i kršćanski utemeljene argumente o javnim pitanjima. Naziv stranke ili riječ poput solidarnosti sama za sebe nije dovoljna za uključivanje. Prepoznavanje slijedi računalna pravila za hrvatske izraze i njihov neposredni kontekst.</p>

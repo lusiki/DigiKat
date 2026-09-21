@@ -28,6 +28,15 @@ python -X utf8 studies/demokrscanstvo-barometar/public-report/build.py
 python -X utf8 studies/demokrscanstvo-barometar/public-report/verify.py
 ```
 
+The HTML edition is generated from the same page content after `build.py` has
+written the chart SVGs. It re-runs `make_pages()` with HTML emitters in place of
+the ReportLab helpers, so its words and numbers cannot drift from the PDF:
+
+```powershell
+python -X utf8 studies/demokrscanstvo-barometar/public-report/build_html.py
+Copy-Item output/demokrscanstvo-public/v2/demokrscanstvo-u-medijskom-prostoru.html assets/izvjestaji/
+```
+
 Inspect every rendered page, especially charts, Croatian characters, spacing and
 full labels. Use `verify.py --visual-reviewed` only after that inspection. The
 verifier reconciles all retained numeric series independently to the original
