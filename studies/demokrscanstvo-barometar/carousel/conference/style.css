@@ -1,0 +1,141 @@
+/* Conference overlay. The original layout and typography remain the base. */
+:root {
+  --ink: #152f49;
+  --paper: #f8f9fa;
+  --copper: #75651d;
+  --muted: #526274;
+  --line: #d2d8db;
+  --gold: #d9c971;
+  --soft: #e7ebee;
+  --navy: #091f39;
+}
+
+.slide { border-top: 3px solid #a89b54; }
+.masthead { margin-top: -3px; }
+.masthead span:first-child { letter-spacing: -.3px; }
+.dark { background: var(--navy); }
+.dark .masthead, .dark .stat p, .dark .bar-label small,
+.dark .note, .dark .argument span, .dark .resource p,
+.dark footer, .cover-author span { color: #ccd7e2; }
+.dark .takeaway, .dark footer { border-color: #4b6177; }
+.dark .bar-track span { background: #e8edf1; }
+.dark .bar:nth-child(2) .bar-track span { background: var(--gold); }
+.dark .argument > div { border-color: #a89b54; }
+body.present { background: #071a2e; }
+
+.conference-context {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: .55px;
+}
+.conference-context::before {
+  content: '';
+  width: 27px;
+  border-top: 1px solid #a89b54;
+}
+.dark .conference-context { color: #ccd7e2; }
+
+.cover { border-top: 0; background: var(--navy); }
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 0 760px;
+  background-image: linear-gradient(90deg, #091f39 0%, rgba(9,31,57,.56) 30%, rgba(9,31,57,.03) 100%), var(--conference-image);
+  background-size: cover;
+  background-position: center, 68% 50%;
+  opacity: .92;
+  pointer-events: none;
+}
+.cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #091f39 0%, rgba(9,31,57,0) 21%);
+  pointer-events: none;
+}
+.cover > * { position: relative; z-index: 1; }
+.cover .masthead { margin-top: 0; margin-bottom: 40px; }
+.cover .masthead > span:last-child {
+  font-size: 17px;
+  color: #e8edf1;
+  letter-spacing: 1px;
+}
+.conference-heading { max-width: 825px; margin: 0 0 38px; }
+.conference-heading .event-label {
+  font-size: 17px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 11px;
+}
+.conference-heading .event-title {
+  font: 28px/1.25 Calibri, Arial, sans-serif;
+  letter-spacing: .1px;
+  color: #e2e9ef;
+  margin: 0;
+}
+.cover h1 {
+  font-size: 61px;
+  line-height: 1.14;
+  letter-spacing: -1.15px;
+  max-width: 1080px;
+  margin-bottom: 23px;
+}
+.cover-subtitle {
+  font: 37px/1.27 Georgia, serif;
+  max-width: 850px;
+  color: var(--gold);
+}
+.cover-author { margin-top: 37px; }
+.cover-author p { font-size: 28px; }
+.cover-author span { font-size: 21px; }
+.cover footer {
+  position: absolute;
+  bottom: 31px;
+  padding-top: 20px;
+  border-top: 1px solid #53657a;
+  color: #e3e8ed;
+}
+.cover footer a { color: #e3e8ed; }
+.cover .conference-venue { display: block; margin-bottom: 7px; font-size: 21px; }
+.cover .data-date { color: #bac8d7; font-size: 16px; }
+.cover footer > span:last-child { align-self: flex-end; }
+
+.reading {
+  background-image: linear-gradient(90deg, #091f39 60%, rgba(9,31,57,.93) 78%, rgba(9,31,57,.85) 100%), var(--conference-image);
+  background-size: 100% 100%, 550px auto;
+  background-position: center, right center;
+  background-repeat: no-repeat;
+}
+.conference-closing {
+  margin-top: 28px;
+  color: #ccd7e2;
+  font-size: 20px;
+  max-width: 1100px;
+}
+
+@media screen and (max-width:1100px) {
+  body:not(.present) .conference-context { display: none; }
+  body:not(.present) .cover::before { left: 40%; opacity: .38; }
+  body:not(.present) .cover .masthead { margin-bottom: 36px; }
+  body:not(.present) .cover .masthead > span:last-child { font-size: 13px; text-align: right; }
+  body:not(.present) .conference-heading { margin-bottom: 32px; max-width: 650px; }
+  body:not(.present) .conference-heading .event-label { font-size: 13px; letter-spacing: 1.2px; }
+  body:not(.present) .conference-heading .event-title { font-size: 23px; }
+  body:not(.present) .cover footer { position: relative; inset: auto; margin-top: 40px; }
+  body:not(.present) .cover .conference-venue { font-size: 18px; }
+  body:not(.present) .cover .data-date { font-size: 14px; }
+  body:not(.present) .reading { background-image: linear-gradient(90deg, #091f39 35%, rgba(9,31,57,.96) 100%), var(--conference-image); }
+  body:not(.present) .conference-closing { font-size: 18px; }
+}
+
+@media print {
+  .cover::before, .cover::after, .reading {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}

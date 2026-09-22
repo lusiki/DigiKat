@@ -4,9 +4,9 @@ import {spawn} from 'node:child_process';
 import {readFile,writeFile,mkdtemp,mkdir} from 'node:fs/promises';
 import {resolve,extname,sep} from 'node:path';
 import {tmpdir} from 'node:os';
-const root=process.cwd(),out=resolve(root,'output/demokrscanstvo-carousel');
-const stem='demokrscanske-vrijednosti-karusel';
-const qa=resolve(root,'tmp/pdfs/demokrscanstvo-carousel');await mkdir(qa,{recursive:true});
+const root=process.cwd(),out=resolve(root,process.argv[2]||'output/demokrscanstvo-carousel');
+const stem=process.argv[3]||'demokrscanske-vrijednosti-karusel';
+const qa=resolve(root,process.argv[4]||'tmp/pdfs/demokrscanstvo-carousel');await mkdir(qa,{recursive:true});
 const mime={'.html':'text/html; charset=utf-8','.js':'application/javascript','.css':'text/css'};
 const server=createServer(async(req,res)=>{try{const p=resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));if(!p.startsWith(root+sep))throw Error('path');res.setHeader('Content-Type',mime[extname(p)]||'application/octet-stream');res.end(await readFile(p));}catch{res.writeHead(404).end();}});
 await new Promise(r=>server.listen(0,'127.0.0.1',r));
@@ -23,7 +23,8 @@ try{
   const evaluate=async expression=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
   await send('Page.enable');await send('Runtime.enable');
   await send('Emulation.setDeviceMetricsOverride',{width:1600,height:1000,deviceScaleFactor:1,mobile:false});
-  await send('Page.navigate',{url:`http://127.0.0.1:${server.address().port}/output/demokrscanstvo-carousel/${stem}.html`});
+  const outputPath=out.slice(root.length).split(sep).join('/');
+  await send('Page.navigate',{url:`http://127.0.0.1:${server.address().port}${outputPath}/${stem}.html`});
   for(let i=0;i<100;i++){if(await evaluate(`document.querySelectorAll('.slide').length===18`))break;await sleep(100);}
   await evaluate('document.fonts.ready.then(()=>true)');
   const geometry=await evaluate(`Array.from(document.querySelectorAll('.slide')).map(s=>({id:s.id,title:(s.querySelector('h1,h2')||s).textContent,contentBottom:s.querySelector('.content').getBoundingClientRect().bottom-s.getBoundingClientRect().top,footerTop:s.querySelector('footer').getBoundingClientRect().top-s.getBoundingClientRect().top,width:s.scrollWidth,height:s.scrollHeight}))`);

@@ -24,7 +24,7 @@ reader = PdfReader(pdf)
 writer = PdfWriter()
 writer.clone_document_from_reader(reader)
 writer.add_metadata({'/Author':manifest['author'], '/Title':manifest['title'],
-                     '/Subject':'DigiKat. Projekt, podaci i deset nalaza o demokršćanstvu u medijima.'})
+                     '/Subject':manifest['conference'] + '. 24. rujna 2026. Konferencijska verzija.'})
 temp = OUT / (STEM + '.tmp.pdf')
 writer.write(temp)
 temp.replace(pdf)
@@ -48,11 +48,13 @@ shutil.copy2(pdf, ASSETS / pdf.name)
 (ASSETS / (STEM + '.html')).write_text(
     (OUT / (STEM + '.html')).read_text(encoding='utf-8'), encoding='utf-8', newline='\n')
 cover = Image.open(QA / 'slide-01.png').resize((1200, 675), Image.Resampling.LANCZOS)
-cover.save(ASSETS / (STEM + '.webp'), format='WEBP', quality=84, method=6)
+cover.save(ASSETS / (STEM + '.webp'), format='WEBP', quality=74, method=6)
 sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
 meta = dict(title=manifest['title'],author=manifest['author'],byline=manifest['byline'],
             author_url='https://www.lukasikic.info/',published='2026-09-22',
             data_from='2021-01-01',data_through='2026-09-10',pages=len(doc),findings=10,
+            conference=manifest['conference'],conference_date=manifest['conference_date'],
+            design='conference-navy-neutral-white-yellow-gold',
             bytes=pdf.stat().st_size,pdf_sha256=sha(pdf),
             cover_sha256=sha(ASSETS / (STEM + '.webp')),
             html_sha256=sha(ASSETS / (STEM + '.html')))

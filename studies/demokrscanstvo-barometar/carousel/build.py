@@ -10,6 +10,7 @@ import csv
 import hashlib
 import json
 import re
+from conference.theme import apply_conference_theme, CONFERENCE
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
@@ -277,10 +278,13 @@ for i, s in enumerate(slides, 1):
                  f'{heading}<div class="content">{s["body"]}</div>'
                  f'<footer><span>{a(s["url"],esc(s["source"]))}</span><span>{i:02d} / {len(slides)}</span></footer></section>')
 parts.append(f'</main><script>{js}</script></body></html>')
-(OUT / (STEM + '.html')).write_text('\n'.join(parts), encoding='utf-8')
+(OUT / (STEM + '.html')).write_text(apply_conference_theme('\n'.join(parts)), encoding='utf-8', newline='\n')
 (OUT / 'claims.json').write_text(json.dumps(claims, ensure_ascii=False, indent=2), encoding='utf-8')
 (OUT / 'manifest.json').write_text(json.dumps(dict(
     title=TITLE, author=AUTHOR, byline='Doc. dr. sc. Luka Šikić', slides=len(slides), findings=10,
+    conference=CONFERENCE, conference_date='2026-09-24',
+    design_inputs={str(p.relative_to(ROOT)).replace('\\','/'):hashlib.sha256(p.read_bytes()).hexdigest()
+                   for p in sorted((HERE/'conference').glob('*')) if p.is_file()},
     inputs={p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in INPUTS},
     slide_titles=[s['title'] for s in slides]), ensure_ascii=False, indent=2), encoding='utf-8')
 print(json.dumps(dict(slides=len(slides), numeric_claims=len(claims), output=str(OUT)), ensure_ascii=False))

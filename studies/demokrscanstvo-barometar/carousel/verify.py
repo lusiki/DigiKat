@@ -21,10 +21,15 @@ assert reader.metadata.author == 'Luka Šikić'
 assert reader.metadata.title == manifest['title']
 assert manifest['title'] in texts[0]
 assert 'Doc. dr. sc. Luka Šikić' in texts[0]
+assert manifest['conference'] == meta['conference']
+assert manifest['conference'] in texts[0]
+assert '24. rujna 2026.' in texts[0]
 assert all('\ufffd' not in t and '\x00' not in t for t in texts)
 assert sha(pdf) == meta['pdf_sha256']
 assert sha(pdf.with_suffix('.html')) == meta['html_sha256']
 for path, digest in manifest['inputs'].items():
+    assert sha(ROOT/path) == digest, path
+for path, digest in manifest['design_inputs'].items():
     assert sha(ROOT/path) == digest, path
 
 # Independently retained expected values from the reviewed reports. These checks

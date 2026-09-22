@@ -5,6 +5,14 @@ the earlier 15-slide findings presentation. It introduces DigiKat and its data,
 presents ten selected findings, and links to both reports and public resources.
 The exact author-requested title and byline are retained on the cover.
 
+The author approved the conference design for replacement and publication on
+2026-09-22. The `conference/` overlay preserves the reviewed 18-slide content and
+adds the exact conference title, date and original flag photograph from the
+supplied poster. Its approved palette is navy, neutral white and muted yellow
+gold. The author dislikes pink; avoid pink, peach and copper accents. The tracked
+photograph and provenance hashes make the build independent of the desktop PDF.
+All public URLs and filenames remain stable when this edition is published.
+
 The title refers to Catholic media. Slide 3 explicitly states that the findings
 from the reports cover the broader media discussion, including general media.
 They are not a new Catholic-publisher subset analysis. The official corpus count
