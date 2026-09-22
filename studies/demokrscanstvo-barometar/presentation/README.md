@@ -1,5 +1,10 @@
 # Findings presentation and publication resources
 
+**Retired on 2026-09-22.** The author replaced the public 15-slide presentation
+with the [18-slide carousel](../carousel/README.md). This directory preserves
+the historical authoring source. Do not run its publication script against the
+current site; use the carousel workflow instead.
+
 Author: [Luka Šikić](https://www.lukasikic.info/).
 
 The presentation contains 15 slides and 12 findings, combining the broad media

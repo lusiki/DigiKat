@@ -376,58 +376,64 @@ const barometarExpression = `(async () => {
 const multiplatformExpression = `(async () => {
   const data = JSON.parse(document.querySelector('#mp-data').textContent);
   const platform = document.querySelector('#mp-platform');
-  const scope = document.querySelector('#mp-scope');
-  const measure = document.querySelector('#mp-measure');
-  const basis = document.querySelector('#mp-text');
   const status = document.querySelector('#mp-status');
-  const keyboardState = platform.selectedIndex === platform.options.length - 1 &&
-    scope.value === 'narrow' && measure.value === 'count' && basis.value === 'full';
+  const keyboardState = platform.selectedIndex === platform.options.length - 1;
   const announcement = status.textContent.trim();
   const live = status.getAttribute('aria-live') === 'polite' &&
     announcement.includes(platform.selectedOptions[0].textContent) &&
-    announcement.includes(scope.selectedOptions[0].textContent) &&
-    announcement.includes(measure.selectedOptions[0].textContent) &&
-    announcement.includes(basis.selectedOptions[0].textContent);
+    announcement.includes('Na 100.000 objava');
   const change = (control, value) => {
     control.value = value;
     control.dispatchEvent(new Event('change', { bubbles: true }));
   };
-  change(platform, 'web'); change(scope, 'broad'); change(measure, 'rate'); change(basis, 'all');
-  const svg = document.querySelector('#mp-chart svg');
-  const marker = svg?.querySelector('line[stroke-dasharray]');
-  const seamX = Number(marker?.getAttribute('x1'));
-  const paths = [...svg.querySelectorAll('polyline.series')];
-  const crossings = paths.filter(path => {
-    const xs = path.getAttribute('points').trim().split(/\\s+/).map(point => Number(point.split(',')[0]));
-    return xs.some(x => x < seamX) && xs.some(x => x >= seamX);
-  }).length;
-  const sourceSpansBoundary = data.monthly.some(row => row.platform === 'web' && row.month < '2024-04' && row.eligible_records > 0) &&
-    data.monthly.some(row => row.platform === 'web' && row.month >= '2024-04' && row.eligible_records > 0);
-  const webRows = data.monthly.filter(row => row.platform === 'web');
-  const table = document.querySelector('#mp-monthly table');
-  const latest = webRows[webRows.length - 1];
-  const first = table.tBodies[0].rows[0];
   const fmt = (n, digits = 0) => Number(n).toLocaleString('hr-HR', { minimumFractionDigits: digits, maximumFractionDigits: digits });
-  const tableMatches = table.tBodies[0].rows.length === webRows.length &&
-    first.cells[0].textContent === latest.month && first.cells[1].textContent === fmt(latest.matching_records) &&
-    first.cells[2].textContent === fmt(latest.eligible_records) &&
-    first.cells[3].textContent === fmt(10000 * latest.matching_records / latest.eligible_records, 2);
-  const missing = data.monthly.find(row => !row.eligible_records);
-  if (missing) change(platform, missing.platform);
-  const missingRow = [...document.querySelectorAll('#mp-monthly tbody tr')].find(row => row.cells[0].textContent === missing?.month);
-  const unavailableText = missingRow?.cells[1].textContent === '—' && missingRow?.cells[3].textContent === '—';
+  // The current chart has one platform selector and a fixed per-100,000 unit.
+  // Check every rendered series against public counts, including missing months.
+  const series = [...platform.options].map(option => {
+    change(platform, option.value);
+    const rows = data.monthly.filter(row => row.platform === option.value);
+    const available = rows.filter(row => row.eligible_records > 0);
+    const svg = document.querySelector('#mp-chart svg');
+    const circles = [...svg.querySelectorAll('circle')];
+    const pointsMatch = circles.length === available.length && circles.every((circle, i) => {
+      const row = available[i];
+      const date = new Date(row.month + '-01T00:00:00Z');
+      const calendarDays = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth() + 1, 0)).getUTCDate();
+      const tooltip = circle.querySelector('title').textContent;
+      return tooltip.startsWith(row.month + ': ' + fmt(100000 * row.matching_records / row.eligible_records, 2) + ';') &&
+        tooltip.includes(fmt(row.eligible_records) + ' pretraživih') &&
+        tooltip.endsWith(row.observed_days + '/' + calendarDays + ' dana') &&
+        (circle.getAttribute('fill') === 'white') === (row.observed_days < calendarDays);
+    });
+    const paths = [...svg.querySelectorAll('polyline.series')];
+    const pathPoints = paths.map(path => path.getAttribute('points').trim().split(/\\s+/));
+    const firstMonths = rows.filter((row, i) => row.eligible_records > 0 && (!i || !rows[i - 1].eligible_records));
+    const noGapCrossings = paths.length === firstMonths.length && pathPoints.every(points => {
+      const indices = points.map(point => circles.findIndex(circle =>
+        point === circle.getAttribute('cx') + ',' + circle.getAttribute('cy')));
+      const months = indices.map(i => available[i]?.month);
+      return indices.every(i => i >= 0) && months.every((month, i) => !i ||
+        rows.findIndex(row => row.month === month) === rows.findIndex(row => row.month === months[i - 1]) + 1);
+    }) && pathPoints.flat().length === available.length;
+    const latest = available[available.length - 1];
+    const statusMatches = latest ? status.textContent.includes(latest.month) &&
+      status.textContent.includes(fmt(latest.matching_records) + ' od ' + fmt(latest.eligible_records) + ' objava') :
+      status.textContent.includes('nema pretraživih objava');
+    const labelMatches = svg.querySelector('title').textContent === option.textContent + ' · Na 100.000 objava';
+    return { platform: option.value, pointsMatch, noGapCrossings, statusMatches, labelMatches };
+  });
   const fallback = document.querySelector('#mp-static').hidden && !document.querySelector('#mp-interactive').hidden;
   change(platform, 'web');
   return {
     ok: keyboardState && live && platform.options.length === Object.keys(data.summary.platform_labels).length &&
-      Boolean(marker) && paths.length >= 2 && !crossings && sourceSpansBoundary && tableMatches && unavailableText && fallback,
+      series.every(item => item.pointsMatch && item.noGapCrossings && item.statusMatches && item.labelMatches) && fallback,
     keyboardState, live, announcement, platforms: platform.options.length,
-    marker: Boolean(marker), paths: paths.length, crossings, sourceSpansBoundary, tableMatches, unavailableText, fallback
+    series, fallback
   };
 })()`;
 
 async function checkMultiplatformBarometar(sessionId) {
-  for (const selector of ['#mp-platform', '#mp-scope', '#mp-measure', '#mp-text']) {
+  for (const selector of ['#mp-platform']) {
     await evaluate(`document.querySelector(${JSON.stringify(selector)}).focus()`, sessionId);
     for (const type of ['keyDown', 'keyUp']) {
       await command('Input.dispatchKeyEvent', {
@@ -561,7 +567,7 @@ try {
     }
     if (page === barometarPage) {
       const interaction = await checkBarometar(sessionId);
-      if (!interaction.ok) findings.push(`${page}: barometer keyboard/data/live-region/collection-boundary contract failed (${JSON.stringify(interaction)})`);
+      if (!interaction.ok) findings.push(`${page}: barometer keyboard/data/live-region contract failed (${JSON.stringify(interaction)})`);
       if (process.env.DIGIKAT_SCREENSHOT_DIR) {
         const output=resolve(process.env.DIGIKAT_SCREENSHOT_DIR);
         await mkdir(output,{recursive:true});
@@ -577,6 +583,12 @@ try {
             await pause(200);
             const reportShot=await command('Page.captureScreenshot',{format:'png'},sessionId);
             await writeFile(resolve(output,`barometar-report-${width}.png`),Buffer.from(reportShot.data,'base64'));
+            if (await evaluate("Boolean(document.querySelector('.dkb-presentation-preview'))",sessionId)) {
+              await evaluate("document.querySelector('.dkb-presentation-preview').scrollIntoView()",sessionId);
+              await pause(200);
+              const previewShot=await command('Page.captureScreenshot',{format:'png'},sessionId);
+              await writeFile(resolve(output,`barometar-carousel-${width}.png`),Buffer.from(previewShot.data,'base64'));
+            }
             if (width===390) {
               await evaluate("document.querySelector('.dkb-report-findings').scrollIntoView()",sessionId);
               await pause(200);
