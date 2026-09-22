@@ -21,9 +21,9 @@ def apply_conference_theme(html):
     html = html.replace('<span>DigiKat</span><span>',
         '<span>DigiKat</span><span class="conference-context">Zagreb · 24. rujna 2026.</span><span>')
     html = html.replace('<span class="conference-context">Zagreb · 24. rujna 2026.</span>', '', 1)
-    html = html.replace('>Podaci barometra do 10. rujna 2026.</a>',
+    html = html.replace('>Podaci do 10. rujna 2026.</a>',
         '><span class="conference-venue">24. rujna 2026. · Zagreb, Hrvatsko katoličko sveučilište</span>'
-        '<span class="data-date">Podaci barometra do 10. rujna 2026.</span></a>', 1)
+        '<span class="data-date">Podaci do 10. rujna 2026.</span></a>', 1)
     closing = '<p class="conference-closing">Izlaganje na skupu „' + CONFERENCE + '”.</p>'
     html, count = re.subn(r'(<section class="slide reading dark".*?)(</div><footer>)',
                           lambda m: m[1] + closing + m[2], html, count=1, flags=re.S)

@@ -11,6 +11,7 @@ import hashlib
 import json
 import re
 from conference.theme import apply_conference_theme, CONFERENCE
+from exploration import add_exploration_slides
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
@@ -24,9 +25,8 @@ BASE = 'https://lusiki.github.io/DigiKat/'
 PAGE = BASE + 'pages/demokrscanstvo/index.html'
 OVERVIEW = BASE + 'assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.html'
 LANGUAGE = BASE + 'assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html'
-BARAKAT = 'https://www.glas-slavonije.hr/osijek/2024/08/29/vijecnik-haj-barakat-napustio-sdp-osjecam-da-ovdje-nisam-bio-dobrodosao-567954/'
-CONSCIENCE = 'https://vlada.gov.hr/vijesti/aktualno-prijepodne-zahtjev-za-pomilovanjem-perkovica-i-mustaca-orkestrirana-akcija/35261'
-STIER = 'https://www.tportal.hr/vijesti/clanak/stier-hdz-za-demokrscansku-europu-kakvu-je-zagovarao-ivan-pavao-ii-20240607'
+EXPLORATION_INPUT = 'assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json'
+EXPLORATION = BASE + EXPLORATION_INPUT
 
 INPUTS = [
     'data/digikat_corpus_manifest.json',
@@ -35,6 +35,7 @@ INPUTS = [
     'data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv',
     'studies/demokrscanstvo-barometar/text-public/manuscript.md',
     'assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.meta.json',
+    EXPLORATION_INPUT,
 ]
 readjson = lambda p: json.loads((ROOT / p).read_text(encoding='utf-8'))
 rows = lambda p: list(csv.DictReader((ROOT / p).open(encoding='utf-8-sig')))
@@ -46,6 +47,7 @@ topics = {r['topic']: r for r in rows(INPUTS[2])}
 monthly = rows(INPUTS[3])
 manuscript = (ROOT / INPUTS[4]).read_text(encoding='utf-8')
 textmeta = readjson(INPUTS[5])
+exploration = readjson(EXPLORATION_INPUT)
 TOTAL = summary['matching_records']
 TEXTS = textmeta['texts']
 WORDS = {k: int(v.replace('.', '')) for k, v in re.findall(
@@ -94,7 +96,7 @@ slide('cover dark', 'DigiKat', TITLE,
       '<p class="cover-subtitle">narativni okviri hrvatskih<br>katoličkih medija od 2021. do 2026.</p></div>'
       '<div class="cover-author"><p>Doc. dr. sc. Luka Šikić</p>'
       '<span>Hrvatsko katoličko sveučilište</span></div>',
-      'Podaci barometra do 10. rujna 2026.', PAGE)
+      'Podaci do 10. rujna 2026.', PAGE)
 
 slide('project', 'Projekt i podaci', 'DigiKat istražuje katoličke teme u javnosti',
       '<p class="lead narrow">Projekt Hrvatskoga katoličkog sveučilišta prati kako mediji govore '
@@ -110,10 +112,10 @@ claim('Official corpus platforms', corpus['platforms'], None, INPUTS[0])
 slide('scope', 'Projekt i podaci', 'Katoličke teme u širem medijskom prostoru',
       '<div class="split"><div>' + statistic(num(corpus['rows']), 'objava u službenom korpusu DigiKata',
       f'{corpus["platforms"]} platformi<br>1. 1. 2021. – 11. 6. 2026.') + '</div>'
-      '<div class="scope-copy"><h3>Posebna analiza demokršćanstva</h3><p>Barometar pretražuje širu medijsku '
-      'arhivu i prati demokršćanske ideje te kršćansku socijalnu misao.</p>'
+      '<div class="scope-copy"><h3>Posebna analiza demokršćanstva</h3><p>Iz šire medijske arhive izdvojene su objave '
+      'koje spominju demokršćanstvo ili povezuju kršćanska načela s javnim pitanjima.</p>'
       '<p>Sljedeći nalazi uključuju katoličke i opće medije. Ne predstavljaju zasebnu analizu samo katoličkih nakladnika.</p></div></div>',
-      'Službeni korpus DigiKata i dokumentacija barometra. Različiti obuhvati podataka.', BASE + 'pages/baza.html')
+      'Službeni korpus DigiKata i dokumentacija analize. Različiti obuhvati podataka.', BASE + 'pages/baza.html')
 
 for label, n in [('Searchable archive', summary['eligible_records']), ('Selected publications', TOTAL), ('Distinct texts', TEXTS)]:
     claim(label, n, None, INPUTS[1] if label != 'Distinct texts' else INPUTS[5])
@@ -125,16 +127,16 @@ slide('selection', 'Projekt i podaci', 'Kako nastaje zbirka za ovu analizu',
       '<p>različita teksta</p></li></ol>'
       '<p class="takeaway">Za pregled brojimo objave. Za analizu jezika jednak tekst brojimo jednom.</p>'
       '<p class="note">Obuhvat arhive je od 1. 1. 2021. do 10. 9. 2026. Brojevi opisuju medijsku prisutnost, a ne potporu građana.</p>',
-      'Barometar. Oba izvještaja čitaju istu zbirku iz različitih kutova.', PAGE + '#metoda')
+      'Oba izvještaja čitaju istu zbirku iz različitih kutova.', PAGE + '#metoda')
 
 largest = sorted((r for r in topics.values() if r['topic'] != 'unassigned'), key=lambda r:int(r['records']), reverse=True)[:4]
 slide('explore', 'Projekt i podaci', 'Tri ulaza u istu medijsku raspravu',
       '<div class="split"><div class="explore-questions"><div><h3>O čemu se govori?</h3><p>Tematska karta povezuje objave sličnog rječnika.</p></div>'
       '<div><h3>Kada se govori?</h3><p>Mjesečni prikaz otkriva raspored pozornosti kroz vrijeme.</p></div>'
-      '<div><h3>Gdje se govori?</h3><p>Filtri platforme i godine otkrivaju različite naglaske.</p></div></div>'
+      '<div><h3>Gdje se govori?</h3><p>Uspoređujemo zastupljenost tema po platformama i godinama.</p></div></div>'
       '<div><p class="chart-label">Četiri najveće tematske skupine</p>' + bars([(r['label'], int(r['records'])) for r in largest], TOTAL, INPUTS[2]) + '</div></div>'
       '<p class="note">Računalne skupine opisuju sličnost sadržaja. Nazivi tema ne označuju slaganje s demokršćanstvom.</p>',
-      'Interaktivni barometar. Teme, vrijeme i platforme.', PAGE + '#teme')
+      'Interaktivni prikaz medijskih objava. Teme, vrijeme i platforme.', PAGE + '#teme')
 
 claim('Identity groups combined', identity_n, TOTAL, INPUTS[2])
 slide('identity dark', 'Nalaz 01', 'Politička pripadnost zauzima polovicu prostora',
@@ -174,60 +176,17 @@ for platform, label, t in [('twitter','X / Twitter','t02'), ('facebook','Faceboo
     claim('Platform leading topic ' + platform, n, d, INPUTS[3])
     platform_body += f'<div><h3>{label} <span>{pct(n,d)}</span></h3><p>{topics[t]["label"]}</p></div>'
 platform_body += '</div></div><p class="note">Desno su vodeće teme unutar manjih platformskih zbirki. Razdoblja i dostupnost teksta razlikuju se među platformama.</p>'
-slide('platforms', 'Nalaz 04', 'Platforme otkrivaju različite naglaske', platform_body,
+slide('platforms', 'Nalaz 04', 'Zastupljenost tema razlikuje se među platformama', platform_body,
       'Pregled medijskog prostora, str. 11–12. Prikaz opisuje prikupljeni materijal.', OVERVIEW + '#p12')
 
-slide('disagreement', 'Nalaz 05', 'Zajednička tradicija ostavlja prostor sporu',
-      '<p class="lead">U lipnju 2022. demokršćanstvo ulazi u raspravu o širini stranačke ponude i dosljednosti programu.</p>'
-      '<div class="editorial-columns"><div><h3>Stranačko predstavljanje HDZ-a</h3><p>Domoljublje i državotvornost stoje uz rad, solidarnost, toleranciju i otvorenost prema svijetu.</p></div>'
-      '<div><h3>Penavina kritika programa</h3><p>Ivan Penava tvrdi da se stranka udaljava od obitelji kao jezgre demokršćanskog svjetonazora.</p></div></div>'
-      '<p class="takeaway">Ista tradicija služi predstavljanju politike i propitivanju njezine vjerodostojnosti.</p>',
-      'Pregled medijskog prostora, str. 4 i 10. Prikaz pripisuje stavove njihovim govornicima.', OVERVIEW + '#p4')
+add_exploration_slides(slide, bars, statistic, claim, exploration, EXPLORATION_INPUT, EXPLORATION)
 
-slide('belonging dark', 'Nalaz 06', 'Poštovanje načela i stranačka pripadnost',
-      '<blockquote>„Poštujem demokršćanska načela,<br>ali ne pripadam demokršćanskom spektru”</blockquote>'
-      '<p class="attribution">Samir Haj Barakat, 29. kolovoza 2024.</p>'
-      '<p class="large-copy narrow">Nakon izlaska iz SDP-a zadržava lijeva uvjerenja i odbacuje prelazak u HDZ.</p>'
-      '<p class="takeaway">Odnos prema ideji može se razlikovati od odluke o stranačkom članstvu.</p>',
-      'Dario Kuštro, Glas Slavonije. Od riječi do argumenta, str. 9.', BARAKAT)
-
-slide('common-good', 'Nalaz 07', 'Opće dobro ulazi u pitanje zapošljavanja',
-      '<p class="lead">Jedan tekst iz travnja 2024. povezuje dostojanstvo osobe s kritikom stranačkog probitka i ideološke isključivosti.</p>'
-      '<div class="argument"><div><span>Polazište</span><h3>Dostojanstvo osobe</h3><p>Vrijednost osobe u javnom životu.</p></div>'
-      '<div><span>Mjerilo</span><h3>Opće dobro</h3><p>Odgovornost prema zajednici.</p></div>'
-      '<div><span>Javni zahtjev</span><h3>Stručnost i sposobnost</h3><p>Kriteriji za zapošljavanje.</p></div></div>'
-      '<p class="takeaway">Načelo dobiva konkretan sadržaj u pitanju tko dobiva posao i prema kojim kriterijima.</p>',
-      'Pregled medijskog prostora, str. 9. Sažetak jednog argumenta iz analiziranog teksta.', OVERVIEW + '#p9')
-
-slide('subsidiarity', 'Nalaz 08', 'Supsidijarnost otvara pitanje tko odlučuje',
-      '<p class="lead">Politolog Jakov Žižić demokršćanstvo tumači kroz zajednicu, solidarnost i raspodjelu vlasti.</p>'
-      '<ol class="levels"><li><strong>Lokalna</strong><span>razina</span></li><li><strong>Regionalna</strong><span>razina</span></li>'
-      '<li><strong>Državna</strong><span>razina</span></li><li><strong>Europska</strong><span>razina</span></li></ol>'
-      '<p class="large-copy">Rasprava o demokršćanstvu obuhvaća i podjelu ovlasti među tim razinama.</p>'
-      '<p class="note">Prikaz slijedi Žižićevo tumačenje u razgovoru s Matom Mijićem od 28. veljače 2021.</p>',
-      'Od riječi do argumenta, str. 12. Intervju na portalu Otvoreno.', LANGUAGE + '#p12')
-
-slide('conscience', 'Nalaz 09', 'Savjest i dostupnost zdravstvene usluge',
-      '<p class="lead">U Saboru 20. travnja 2022. sudionici rasprave naglašavaju različite obveze zdravstvenog sustava.</p>'
-      '<div class="editorial-columns"><div><h3>Anka Mrak-Taritaš</h3><p>Upozorava na bolnice u kojima, prema njezinu iskazu, zbog priziva savjesti nije moguće obaviti pobačaj.</p></div>'
-      '<div><h3>Andrej Plenković</h3><p>Poziva se na demokršćanske vrijednosti u obrani priziva savjesti i najavljuje provjeru dostupnosti usluge.</p></div></div>'
-      '<p class="takeaway">Pozivanje na vrijednosti otvara pitanje kako organizirati javnu uslugu uz zaštitu osobnog uvjerenja.</p>',
-      'Hina / Vlada RH, 20. 4. 2022. Od riječi do argumenta, str. 10.', CONSCIENCE)
-
-slide('solidarity dark', 'Nalaz 10', 'Europska solidarnost dobiva lokalnu adresu',
-      '<p class="lead">U europskoj kampanji u lipnju 2024. Davor Ivo Stier povezuje demokršćansku Europu s razvojem Hrvatske.</p>'
-      '<div class="argument"><div><span>Načelo</span><h3>Solidarnost</h3><p>Suradnja među članicama.</p></div>'
-      '<div><span>Institucije</span><h3>Europski fondovi</h3><p>Zajednička sredstva za razvoj.</p></div>'
-      '<div><span>Javne potrebe</span><h3>Pruga i zaštita od poplava</h3><p>Hrvatski Leskovac – Karlovac i Karlovačka županija.</p></div></div>'
-      '<p class="note">Slijed prikazuje Stierovo kampanjsko obrazloženje. Medijska izjava sama ne dokazuje učinak projekata.</p>',
-      'Hina, 7. 6. 2024. Od riječi do argumenta, str. 11.', STIER)
-
-slide('synthesis', 'Završni pogled', 'Što demokršćansko ime znači za javno djelovanje?',
-      '<div class="synthesis-rows"><div><h3>Pripadnost</h3><p>Tko se predstavlja kao demokršćanin i tko mu to osporava?</p></div>'
-      '<div><h3>Načela</h3><p>Koju ulogu imaju solidarnost, savjest i opće dobro?</p></div>'
-      '<div><h3>Odluke</h3><p>Što iz tih načela slijedi za zapošljavanje, zdravstvo ili europsku suradnju?</p></div></div>'
-      '<p class="takeaway">Za razumijevanje narativnog okvira važno je povezati govornika, načelo i konkretan javni zahtjev.</p>',
-      'Sinteza dvaju izvještaja. Primjeri ilustriraju argumente, bez procjene njihove ukupne učestalosti.', PAGE + '#izvjestaj')
+slide('synthesis', 'Završni pogled', 'Što podaci govore o medijskoj raspravi?',
+      '<div class="synthesis-rows"><div><h3>Osobe i izvori</h3><p>Koga članci spominju i koji izvori objavljuju najviše?</p></div>'
+      '<div><h3>Vrijeme</h3><p>U kojim se mjesecima i danima objave koncentriraju?</p></div>'
+      '<div><h3>Teme</h3><p>Koje su teme najzastupljenije u pojedinim razdobljima i na različitim platformama?</p></div></div>'
+      '<p class="takeaway">Brojevi opisuju prikupljene objave. Za tumačenje vrhunaca potrebno je čitati članke i provjeriti kontekst.</p>',
+      'Pregled zbirke, tematska analiza i podaci uz karusel.', EXPLORATION)
 
 slide('resources', 'Daljnje istraživanje', 'DigiKat kao prostor za daljnje istraživanje',
       '<div class="resource-columns"><div>'
@@ -247,24 +206,24 @@ qr.qr.make()
 matrix = qr.qr.modules
 size = len(matrix)
 cells = ''.join(f'M{x+4} {y+4}h1v1h-1z' for y,row in enumerate(matrix) for x,on in enumerate(row) if on)
-qrsvg = f'<svg viewBox="0 0 {size+8} {size+8}" role="img" aria-label="QR kod za otvaranje barometra"><rect width="100%" height="100%" fill="white"/><path d="{cells}" fill="#173e43"/></svg>'
-slide('reading dark', 'Izvori i čitanje', 'Izvještaji, podaci i izvorni argumenti',
+qrsvg = f'<svg viewBox="0 0 {size+8} {size+8}" role="img" aria-label="QR kod za otvaranje analize medijskih objava"><rect width="100%" height="100%" fill="white"/><path d="{cells}" fill="#173e43"/></svg>'
+slide('reading dark', 'Izvori i čitanje', 'Izvještaji i podaci za daljnje istraživanje',
       '<div class="reading-layout"><div>'
       + resource(OVERVIEW, 'Demokršćanstvo u medijskom prostoru', 'Tematska karta, mediji i vremenski portreti rasprave.')
       + resource(LANGUAGE, 'Demokršćanstvo: od riječi do argumenta', 'Rječnik, načela i detaljno čitanje javnih argumenata.')
-      + resource(PAGE + '#metoda', 'Barometar i otvorene zbirne tablice', 'Interaktivni prikaz, definicije i podaci za preuzimanje.')
-      + f'<p class="originals">Izvorni primjeri: {a(BARAKAT,"Haj Barakat")}, {a(CONSCIENCE,"priziv savjesti")}, {a(STIER,"europska solidarnost")}.</p>'
-      + '</div><div class="qr-link">' + a(PAGE, qrsvg) + '<p>Barometar demokršćanstva</p>'
+      + resource(EXPLORATION, 'Podaci uz karusel (JSON)', 'Osobe, izvori, mjesečni brojevi i vrhunci. Zbirne tablice i pravila brojanja.')
+      + f'<p class="originals">{a(PAGE + "#metoda","Obuhvat zbirke i način odabira objava")}.</p>'
+      + '</div><div class="qr-link">' + a(PAGE, qrsvg) + '<p>Demokršćanstvo u medijima</p>'
       '<span>lusiki.github.io/DigiKat</span></div></div>',
       'Doc. dr. sc. Luka Šikić. Hrvatsko katoličko sveučilište. Izdanje 22. rujna 2026.', 'https://www.lukasikic.info/')
 
 assert len(slides) == 18
-css = (HERE / 'style.css').read_text(encoding='utf-8')
+css = (HERE / 'style.css').read_text(encoding='utf-8') + '\n' + (HERE / 'exploration.css').read_text(encoding='utf-8')
 js = (HERE / 'carousel.js').read_text(encoding='utf-8')
 parts = [f'<!doctype html><html lang="hr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
          f'<meta name="author" content="{AUTHOR}"><meta name="description" content="Karusel povezuje projekt DigiKat, podatke i deset nalaza o demokršćanstvu u medijima.">'
          f'<title>{TITLE}</title><style>{css}</style></head><body><a class="skip" href="#slajd-1">Preskoči na karusel</a>'
-         f'<nav class="toolbar" aria-label="Upravljanje karuselom">{a(PAGE,"Barometar")}'
+         f'<nav class="toolbar" aria-label="Upravljanje karuselom">{a(PAGE,"Analiza medijskih objava")}'
          '<button id="mode" type="button" hidden>Prikaži slajdove</button><button id="prev" type="button" hidden>Prethodni</button>'
          '<span id="position" role="status" aria-live="polite"></span><button id="next" type="button" hidden>Sljedeći</button>'
          f'<a href="{STEM}.pdf" download>Preuzmi PDF</a></nav>'

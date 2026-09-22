@@ -27,6 +27,7 @@ assert '24. rujna 2026.' in texts[0]
 assert all('\ufffd' not in t and '\x00' not in t for t in texts)
 assert sha(pdf) == meta['pdf_sha256']
 assert sha(pdf.with_suffix('.html')) == meta['html_sha256']
+assert sha(pdf.with_name(STEM+'-podaci.json')) == meta['data_sha256']
 for path, digest in manifest['inputs'].items():
     assert sha(ROOT/path) == digest, path
 for path, digest in manifest['design_inputs'].items():
@@ -42,9 +43,12 @@ expected = {
     7:['1.123','103','27','49,8 %','4,6 %','1,2 %'],
     8:['2022.','2024.','2025.','24,4 %','24,8 %','25,9 %'],
     9:['78,5 %','1.811','29,9 %','22,2 %','28,6 %'],
-    11:['Samir Haj Barakat','29. kolovoza 2024.','Poštujem demokršćanska načela'],
-    14:['Anka Mrak-Taritaš','Andrej Plenković','20. travnja 2022.'],
-    15:['Davor Ivo Stier','Hrvatski Leskovac','Karlovačka županija'],
+    10:['1.811','Andrej Plenković','691','Franjo Tuđman','248','Miroslav Škoro','163','Ivan Penava','158','Zoran Milanović','156','Davor Ivo Stier','78'],
+    11:['239','index.hr','74','dragovoljac.com','70','direktno.hr','66','369','20,4 %'],
+    12:['1.811','132','119','109','2021.','2026.'],
+    13:['24,9 %','451','1.811','132','119','109','91'],
+    14:['Izbori i konzervativna scena','53','40,2 %','28','23,5 %','48','44,0 %'],
+    15:['39','11. 6. 2022.','26','20','51,3 %','10','25,6 %'],
 }
 for p, required in expected.items():
     for value in required:
@@ -52,10 +56,20 @@ for p, required in expected.items():
 
 urls = [str(a.get_object().get('/A',{}).get('/URI','')) for p in reader.pages for a in p.get('/Annots',[])]
 assert 'https://www.lukasikic.info/' in urls
-assert any('glas-slavonije.hr' in u for u in urls)
-assert any('vlada.gov.hr' in u for u in urls)
-assert any('tportal.hr' in u for u in urls)
+assert any('demokrscanske-vrijednosti-karusel-podaci.json' in u for u in urls)
 assert len(urls) >= 25
+assert not re.search(r'baromet\w*|naglaske', ' '.join(texts), re.I)
+for removed in ['Zajednička tradicija ostavlja prostor sporu','Poštovanje načela i stranačka pripadnost',
+                'Opće dobro ulazi u pitanje zapošljavanja','Supsidijarnost otvara pitanje tko odlučuje',
+                'Savjest i dostupnost zdravstvene usluge','Europska solidarnost dobiva lokalnu adresu']:
+    assert removed not in ' '.join(texts)
+
+evidence=json.loads((ROOT/'assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json').read_text(encoding='utf-8'))
+assert sum(r['articles'] for r in evidence['monthly']) == evidence['scope']['web_articles'] == 1811
+assert sum(p['articles'] for p in evidence['peak_months']) == 451
+assert evidence['peak_day']['articles'] == sum(r['articles'] for r in evidence['peak_day']['topics']) == 39
+for path,digest in evidence['provenance']['public_inputs'].items():
+    assert sha(ROOT/path)==digest,path
 doc = fitz.open(pdf)
 font_names = set()
 for n,page in enumerate(doc,1):

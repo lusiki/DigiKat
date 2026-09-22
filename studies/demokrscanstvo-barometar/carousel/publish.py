@@ -57,6 +57,7 @@ meta = dict(title=manifest['title'],author=manifest['author'],byline=manifest['b
             design='conference-navy-neutral-white-yellow-gold',
             bytes=pdf.stat().st_size,pdf_sha256=sha(pdf),
             cover_sha256=sha(ASSETS / (STEM + '.webp')),
+            data_sha256=sha(ASSETS / (STEM + '-podaci.json')),
             html_sha256=sha(ASSETS / (STEM + '.html')))
 (ASSETS / (STEM + '.meta.json')).write_text(json.dumps(meta,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
 finaldir = ROOT / 'output/pdf'

@@ -1,0 +1,615 @@
+{
+  "title": "Podaci uz karusel o demokršćanstvu u medijima",
+  "scope": {
+    "included_publications": 2306,
+    "web_articles": 1811,
+    "distinct_web_texts": 1798,
+    "web_sources": 239,
+    "full_text_articles": 1806,
+    "snippet_articles": 5,
+    "data_from": "2021-01-01",
+    "data_through": "2026-09-10",
+    "collection_break": "2024-04-01"
+  },
+  "methods": {
+    "unit": "Jedna uključena web objava. Jednaki tekstovi na različitim izvorima ostaju zasebne objave.",
+    "people": "Odabrane javne osobe, ne iscrpan popis. Puno ime i prezime u naslovu ili dostupnom tekstu, uz padežne oblike. Članak se po osobi broji jednom. Spominjanje ne označava potporu demokršćanstvu. Moguć je propust kada je navedeno samo prezime.",
+    "sources": "Izvor prema pohranjenoj oznaci; broj članaka, ne procjena publike ili utjecaja.",
+    "time": "Broj uključenih članaka po arhivskom datumu. Promjena obuhvata u travnju 2024. i nepotpuna 2026. ograničavaju usporedbe razdoblja.",
+    "topics": "Preuzete postojeće tematske oznake. Svaki članak ima jednu glavnu temu."
+  },
+  "people": [
+    {
+      "name": "Andrej Plenković",
+      "articles": 691,
+      "denominator": 1811,
+      "pattern": "\\bandrej[a-z]*\\s+plenkovic[a-z]*\\b"
+    },
+    {
+      "name": "Franjo Tuđman",
+      "articles": 248,
+      "denominator": 1811,
+      "pattern": "\\bfranj[a-z]*\\s+tudman[a-z]*\\b"
+    },
+    {
+      "name": "Miroslav Škoro",
+      "articles": 163,
+      "denominator": 1811,
+      "pattern": "\\bmiroslav[a-z]*\\s+skor[a-z]*\\b"
+    },
+    {
+      "name": "Ivan Penava",
+      "articles": 158,
+      "denominator": 1811,
+      "pattern": "\\bivan[a-z]*\\s+penav[a-z]*\\b"
+    },
+    {
+      "name": "Zoran Milanović",
+      "articles": 156,
+      "denominator": 1811,
+      "pattern": "\\bzoran[a-z]*\\s+milanovic[a-z]*\\b"
+    },
+    {
+      "name": "Davor Ivo Stier",
+      "articles": 78,
+      "denominator": 1811,
+      "pattern": "\\bdavor[a-z]*\\s+(?:ivo[a-z]*\\s+)?stier[a-z]*\\b"
+    }
+  ],
+  "sources": [
+    {
+      "source": "index.hr",
+      "articles": 74
+    },
+    {
+      "source": "dragovoljac.com",
+      "articles": 70
+    },
+    {
+      "source": "direktno.hr",
+      "articles": 66
+    },
+    {
+      "source": "dnevno.hr",
+      "articles": 54
+    },
+    {
+      "source": "narod.hr",
+      "articles": 54
+    },
+    {
+      "source": "kamenjar.com",
+      "articles": 51
+    },
+    {
+      "source": "tportal.hr",
+      "articles": 50
+    },
+    {
+      "source": "jutarnji.hr",
+      "articles": 48
+    }
+  ],
+  "monthly": [
+    {
+      "month": "2021-01",
+      "articles": 22
+    },
+    {
+      "month": "2021-02",
+      "articles": 43
+    },
+    {
+      "month": "2021-03",
+      "articles": 13
+    },
+    {
+      "month": "2021-04",
+      "articles": 49
+    },
+    {
+      "month": "2021-05",
+      "articles": 132
+    },
+    {
+      "month": "2021-06",
+      "articles": 55
+    },
+    {
+      "month": "2021-07",
+      "articles": 43
+    },
+    {
+      "month": "2021-08",
+      "articles": 16
+    },
+    {
+      "month": "2021-09",
+      "articles": 42
+    },
+    {
+      "month": "2021-10",
+      "articles": 54
+    },
+    {
+      "month": "2021-11",
+      "articles": 4
+    },
+    {
+      "month": "2021-12",
+      "articles": 43
+    },
+    {
+      "month": "2022-01",
+      "articles": 14
+    },
+    {
+      "month": "2022-02",
+      "articles": 10
+    },
+    {
+      "month": "2022-03",
+      "articles": 24
+    },
+    {
+      "month": "2022-04",
+      "articles": 29
+    },
+    {
+      "month": "2022-05",
+      "articles": 7
+    },
+    {
+      "month": "2022-06",
+      "articles": 119
+    },
+    {
+      "month": "2022-07",
+      "articles": 54
+    },
+    {
+      "month": "2022-08",
+      "articles": 10
+    },
+    {
+      "month": "2022-09",
+      "articles": 27
+    },
+    {
+      "month": "2022-10",
+      "articles": 13
+    },
+    {
+      "month": "2022-11",
+      "articles": 9
+    },
+    {
+      "month": "2022-12",
+      "articles": 11
+    },
+    {
+      "month": "2023-01",
+      "articles": 45
+    },
+    {
+      "month": "2023-02",
+      "articles": 11
+    },
+    {
+      "month": "2023-03",
+      "articles": 29
+    },
+    {
+      "month": "2023-04",
+      "articles": 21
+    },
+    {
+      "month": "2023-05",
+      "articles": 13
+    },
+    {
+      "month": "2023-06",
+      "articles": 13
+    },
+    {
+      "month": "2023-07",
+      "articles": 4
+    },
+    {
+      "month": "2023-08",
+      "articles": 18
+    },
+    {
+      "month": "2023-09",
+      "articles": 64
+    },
+    {
+      "month": "2023-10",
+      "articles": 16
+    },
+    {
+      "month": "2023-11",
+      "articles": 27
+    },
+    {
+      "month": "2023-12",
+      "articles": 14
+    },
+    {
+      "month": "2024-01",
+      "articles": 1
+    },
+    {
+      "month": "2024-02",
+      "articles": 1
+    },
+    {
+      "month": "2024-03",
+      "articles": 4
+    },
+    {
+      "month": "2024-04",
+      "articles": 91
+    },
+    {
+      "month": "2024-05",
+      "articles": 36
+    },
+    {
+      "month": "2024-06",
+      "articles": 109
+    },
+    {
+      "month": "2024-07",
+      "articles": 12
+    },
+    {
+      "month": "2024-08",
+      "articles": 18
+    },
+    {
+      "month": "2024-09",
+      "articles": 5
+    },
+    {
+      "month": "2024-10",
+      "articles": 17
+    },
+    {
+      "month": "2024-11",
+      "articles": 12
+    },
+    {
+      "month": "2024-12",
+      "articles": 25
+    },
+    {
+      "month": "2025-01",
+      "articles": 10
+    },
+    {
+      "month": "2025-02",
+      "articles": 7
+    },
+    {
+      "month": "2025-03",
+      "articles": 7
+    },
+    {
+      "month": "2025-04",
+      "articles": 31
+    },
+    {
+      "month": "2025-05",
+      "articles": 23
+    },
+    {
+      "month": "2025-06",
+      "articles": 22
+    },
+    {
+      "month": "2025-07",
+      "articles": 16
+    },
+    {
+      "month": "2025-08",
+      "articles": 5
+    },
+    {
+      "month": "2025-09",
+      "articles": 9
+    },
+    {
+      "month": "2025-10",
+      "articles": 12
+    },
+    {
+      "month": "2025-11",
+      "articles": 40
+    },
+    {
+      "month": "2025-12",
+      "articles": 30
+    },
+    {
+      "month": "2026-01",
+      "articles": 8
+    },
+    {
+      "month": "2026-02",
+      "articles": 10
+    },
+    {
+      "month": "2026-03",
+      "articles": 26
+    },
+    {
+      "month": "2026-04",
+      "articles": 26
+    },
+    {
+      "month": "2026-05",
+      "articles": 33
+    },
+    {
+      "month": "2026-06",
+      "articles": 16
+    },
+    {
+      "month": "2026-07",
+      "articles": 3
+    },
+    {
+      "month": "2026-08",
+      "articles": 17
+    },
+    {
+      "month": "2026-09",
+      "articles": 11
+    }
+  ],
+  "peak_months": [
+    {
+      "month": "2021-05",
+      "articles": 132,
+      "sources": 57,
+      "distinct_texts": 130,
+      "topics": [
+        {
+          "topic": "t07",
+          "label": "Izbori i konzervativna scena",
+          "articles": 53
+        },
+        {
+          "topic": "t02",
+          "label": "Domoljublje i državotvornost",
+          "articles": 26
+        },
+        {
+          "topic": "t05",
+          "label": "Obitelj i nacionalni identitet",
+          "articles": 22
+        },
+        {
+          "topic": "t01",
+          "label": "Politička pripadnost i ideje",
+          "articles": 13
+        },
+        {
+          "topic": "t03",
+          "label": "HDZ i demokršćanski identitet",
+          "articles": 11
+        },
+        {
+          "topic": "t06",
+          "label": "Europa i kršćanski korijeni",
+          "articles": 4
+        },
+        {
+          "topic": "t09",
+          "label": "Vrijednosti i svjetonazorski prijepori",
+          "articles": 2
+        },
+        {
+          "topic": "t08",
+          "label": "Idejna tradicija i javne rasprave",
+          "articles": 1
+        }
+      ]
+    },
+    {
+      "month": "2022-06",
+      "articles": 119,
+      "sources": 50,
+      "distinct_texts": 119,
+      "topics": [
+        {
+          "topic": "t02",
+          "label": "Domoljublje i državotvornost",
+          "articles": 28
+        },
+        {
+          "topic": "t03",
+          "label": "HDZ i demokršćanski identitet",
+          "articles": 23
+        },
+        {
+          "topic": "t05",
+          "label": "Obitelj i nacionalni identitet",
+          "articles": 19
+        },
+        {
+          "topic": "t01",
+          "label": "Politička pripadnost i ideje",
+          "articles": 18
+        },
+        {
+          "topic": "t09",
+          "label": "Vrijednosti i svjetonazorski prijepori",
+          "articles": 12
+        },
+        {
+          "topic": "t04",
+          "label": "Desni centar i suradnja stranaka",
+          "articles": 10
+        },
+        {
+          "topic": "t07",
+          "label": "Izbori i konzervativna scena",
+          "articles": 5
+        },
+        {
+          "topic": "t10",
+          "label": "Njemačka i međunarodni odnosi",
+          "articles": 3
+        },
+        {
+          "topic": "t06",
+          "label": "Europa i kršćanski korijeni",
+          "articles": 1
+        }
+      ]
+    },
+    {
+      "month": "2024-06",
+      "articles": 109,
+      "sources": 53,
+      "distinct_texts": 109,
+      "topics": [
+        {
+          "topic": "t06",
+          "label": "Europa i kršćanski korijeni",
+          "articles": 48
+        },
+        {
+          "topic": "t05",
+          "label": "Obitelj i nacionalni identitet",
+          "articles": 27
+        },
+        {
+          "topic": "t09",
+          "label": "Vrijednosti i svjetonazorski prijepori",
+          "articles": 15
+        },
+        {
+          "topic": "t08",
+          "label": "Idejna tradicija i javne rasprave",
+          "articles": 7
+        },
+        {
+          "topic": "t04",
+          "label": "Desni centar i suradnja stranaka",
+          "articles": 6
+        },
+        {
+          "topic": "t02",
+          "label": "Domoljublje i državotvornost",
+          "articles": 5
+        },
+        {
+          "topic": "t01",
+          "label": "Politička pripadnost i ideje",
+          "articles": 1
+        }
+      ]
+    },
+    {
+      "month": "2024-04",
+      "articles": 91,
+      "sources": 47,
+      "distinct_texts": 91,
+      "topics": [
+        {
+          "topic": "t06",
+          "label": "Europa i kršćanski korijeni",
+          "articles": 33
+        },
+        {
+          "topic": "t09",
+          "label": "Vrijednosti i svjetonazorski prijepori",
+          "articles": 13
+        },
+        {
+          "topic": "t05",
+          "label": "Obitelj i nacionalni identitet",
+          "articles": 13
+        },
+        {
+          "topic": "t07",
+          "label": "Izbori i konzervativna scena",
+          "articles": 11
+        },
+        {
+          "topic": "t01",
+          "label": "Politička pripadnost i ideje",
+          "articles": 8
+        },
+        {
+          "topic": "t08",
+          "label": "Idejna tradicija i javne rasprave",
+          "articles": 4
+        },
+        {
+          "topic": "t04",
+          "label": "Desni centar i suradnja stranaka",
+          "articles": 4
+        },
+        {
+          "topic": "t02",
+          "label": "Domoljublje i državotvornost",
+          "articles": 3
+        },
+        {
+          "topic": "t03",
+          "label": "HDZ i demokršćanski identitet",
+          "articles": 2
+        }
+      ]
+    }
+  ],
+  "peak_day": {
+    "day": "2022-06-11",
+    "articles": 39,
+    "sources": 26,
+    "distinct_texts": 39,
+    "topics": [
+      {
+        "topic": "t02",
+        "label": "Domoljublje i državotvornost",
+        "articles": 20
+      },
+      {
+        "topic": "t01",
+        "label": "Politička pripadnost i ideje",
+        "articles": 10
+      },
+      {
+        "topic": "t09",
+        "label": "Vrijednosti i svjetonazorski prijepori",
+        "articles": 6
+      },
+      {
+        "topic": "t03",
+        "label": "HDZ i demokršćanski identitet",
+        "articles": 2
+      },
+      {
+        "topic": "t04",
+        "label": "Desni centar i suradnja stranaka",
+        "articles": 1
+      }
+    ]
+  },
+  "provenance": {
+    "private_inputs": {
+      "grouped-documents.json": "7c803ceb1d184ec56cc1d823eb4b4af5b9a53f1fd32f2b091f0785ff8348f18c",
+      "sources.json": "14db6757d7f679933f9cc02b78ba20376f087d057c26ef45a52df74b890ab868"
+    },
+    "public_inputs": {
+      "data/barometar/demokrscanstvo-multiplatform/v1/monthly.csv": "2d147d85cb84c7a6fce46898f21cdb5d0b8d1641ebdb932ede2448d91c4cfadf",
+      "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv": "0de16f77914ceb1c080ef05a1e54b4bedfc12da5d2d1fe6feac112b4ef2cb417",
+      "data/barometar/demokrscanstvo-themes/v1/topics.csv": "40a35431eab5334be40ea4aeda61817bb3b8f73767f90ccddb9db73a6b9d51d1"
+    },
+    "monthly_and_topic_counts_reconciled": true
+  }
+}

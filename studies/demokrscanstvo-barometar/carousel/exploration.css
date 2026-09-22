@@ -1,0 +1,45 @@
+.people .split, .outlets .split { grid-template-columns: 1.2fr 1fr; gap: 78px; margin-top: 22px; }
+.people .bar, .outlets .bar { margin-bottom: 17px; }
+.people .bar-label, .outlets .bar-label { font-size: 25px; align-items: center; }
+.people .bar-label strong, .outlets .bar-label strong { font-size: 26px; }
+.people .bar-label small, .outlets .bar-label small { display: inline; margin-left: 12px; font-size: 19px; }
+.people .bar-track, .outlets .bar-track { height: 8px; margin-top: 9px; }
+.people .reading-copy p { font-size: 27px; line-height: 1.42; }
+.people .note, .outlets .note { margin-top: 22px; }
+.outlets .stat strong { font-size: 106px; }
+.outlets .stat > p { max-width: 430px; font-size: 27px; line-height: 1.45; }
+.time-chart { display: block; width: 100%; height: auto; margin-top: 32px; overflow: visible; }
+.chart-grid { stroke: var(--line); stroke-width: 1; }
+.chart-tick { fill: var(--muted); font: 20px Calibri, Arial, sans-serif; }
+.chart-area { fill: #e5eaf0; }
+.chart-series { fill: none; stroke: var(--ink); stroke-width: 3.5; stroke-linejoin: round; }
+.chart-break { stroke: var(--copper); stroke-width: 1.5; stroke-dasharray: 6 6; }
+.chart-peak { fill: var(--copper); }
+.chart-value { fill: var(--copper); font: bold 24px Calibri, Arial, sans-serif; }
+.timeline .note { margin-top: 25px; }
+.peaks .split { margin-top: 42px; }
+.peaks .bar { margin-bottom: 20px; }
+.peaks .note { margin-top: 18px; }
+.peaks .stat strong { font-size: 110px; }
+.peaks .takeaway { margin-top: 25px; }
+.peak-themes { margin-top: 32px; }
+.peak-themes > div { display: grid; grid-template-columns: 270px 1fr 235px; gap: 32px; align-items: center; border-top: 1px solid var(--line); padding: 20px 0; }
+.peak-themes p, .peak-themes h3 { margin: 0; }
+.peak-month { font: 29px/1.2 Georgia, serif; }
+.peak-month span, .peak-count span { display: block; font: 21px/1.3 Calibri, Arial, sans-serif; color: var(--muted); margin-top: 9px; }
+.peak-themes h3 { font: 31px/1.2 Georgia, serif; max-width: 550px; }
+.peak-count { text-align: right; }
+.peak-count strong { color: var(--copper); font: 43px/1 Georgia, serif; }
+.daily .split { margin-top: 35px; }
+.daily .stat strong { font-size: 125px; }
+.daily .stat p { font-size: 27px; max-width: 430px; }
+.daily .chart-label { color: #ccd7e2; }
+.daily .takeaway { margin-top: 36px; }
+@media screen and (max-width:1100px) {
+  body:not(.present) .peak-themes > div { grid-template-columns: 1fr; gap: 16px; }
+  body:not(.present) .peak-count { text-align: left; }
+  body:not(.present) .time-chart { min-width: 640px; }
+  body:not(.present) .timeline .content { overflow-x: auto; }
+  body:not(.present) .people .bar-label, body:not(.present) .outlets .bar-label { font-size: 21px; }
+  body:not(.present) .people .bar-label small, body:not(.present) .outlets .bar-label small { display: block; margin-left: 0; }
+}
