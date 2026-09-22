@@ -38,9 +38,9 @@ for path, digest in manifest['design_inputs'].items():
 expected = {
     3:['413.985','9 platformi','Ne predstavljaju zasebnu analizu samo katoličkih nakladnika'],
     4:['41.397.670','2.306','2.253','14 platformi'],
-    5:['377','335','290','274'],
-    6:['50,0 %','1.153','2.306'],
-    7:['1.123','103','27','49,8 %','4,6 %','1,2 %'],
+    5:['2.306','377','335','290','274','207','173','151','74'],
+    6:['2.253','1.123','830','818','49,8 %','36,8 %','36,3 %'],
+    7:['Pojam demokršćanstva','Domoljublje + narodnjaštvo','Demokršćanstvo + konzervativizam','Europa + solidarnost'],
     8:['2022.','2024.','2025.','24,4 %','24,8 %','25,9 %'],
     9:['78,5 %','1.811','29,9 %','22,2 %','28,6 %'],
     10:['1.811','Andrej Plenković','691','Franjo Tuđman','248','Miroslav Škoro','163','Ivan Penava','158','Zoran Milanović','156','Davor Ivo Stier','78'],
@@ -59,6 +59,7 @@ assert 'https://www.lukasikic.info/' in urls
 assert any('demokrscanske-vrijednosti-karusel-podaci.json' in u for u in urls)
 assert len(urls) >= 25
 assert not re.search(r'baromet\w*|naglaske', ' '.join(texts), re.I)
+assert 'demokršćansko ime' not in ' '.join(texts).lower()
 for removed in ['Zajednička tradicija ostavlja prostor sporu','Poštovanje načela i stranačka pripadnost',
                 'Opće dobro ulazi u pitanje zapošljavanja','Supsidijarnost otvara pitanje tko odlučuje',
                 'Savjest i dostupnost zdravstvene usluge','Europska solidarnost dobiva lokalnu adresu']:

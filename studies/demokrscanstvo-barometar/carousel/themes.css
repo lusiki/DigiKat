@@ -1,0 +1,28 @@
+.theme-columns{display:grid;grid-template-columns:1fr 1fr;gap:56px;margin-top:22px}
+.theme-map .bar{margin-bottom:8px}.theme-map .bar-label{font-size:22px;min-height:43px}
+.theme-map .bar-label strong{font-size:25px}.theme-map .bar-track{margin-top:7px;height:8px}
+.theme-map .note{margin-top:7px}
+.vocabulary-layout{display:grid;grid-template-columns:960px 1fr;gap:36px;align-items:center;margin-top:22px}
+.word-cloud svg{display:block;width:100%;height:350px}
+.word-ranking>div{display:flex;justify-content:space-between;gap:18px;border-top:1px solid #687a90;padding:15px 0;font-size:26px}
+.word-ranking strong{font-size:31px;color:var(--gold)}.word-ranking small{display:block;font-size:20px;text-align:right;font-weight:400}
+.vocabulary .chart-label{color:#bdcbdc}.vocabulary .note{font-size:21px;margin-top:18px}
+.word-pairs{border-collapse:collapse;width:100%;margin-top:20px;font-size:25px}
+.word-pairs th,.word-pairs td{text-align:left;padding:12px 16px 12px 0;border-bottom:1px solid var(--line);line-height:1.2}
+.word-pairs thead th{font-size:20px;color:var(--muted);padding-top:0}
+.word-pairs tbody th{width:43%;font-weight:400;color:var(--ink)}
+.connections .takeaway{font-size:29px;margin-top:24px}
+.year-heatmap{border-collapse:separate;border-spacing:3px;width:100%;font-size:20px;line-height:1.15;margin-top:12px}
+.year-heatmap th{text-align:left;font-weight:400;line-height:1.15}
+.year-heatmap thead th{font-weight:700;padding:0 12px 9px}
+.year-heatmap tbody th{width:37%;padding-right:14px}
+.year-heatmap td{text-align:center;padding:5px 8px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.year-map .note{font-size:21px;margin-top:17px}
+@media screen and (max-width:1100px){
+body:not(.present) .theme-columns,body:not(.present) .vocabulary-layout{grid-template-columns:1fr}
+body:not(.present) .word-cloud svg{height:auto}
+body:not(.present) .word-pairs{font-size:21px}
+body:not(.present) .word-pairs th,body:not(.present) .word-pairs td{overflow-wrap:anywhere}
+body:not(.present) .heatmap-scroll{overflow-x:auto}
+body:not(.present) .year-heatmap{min-width:960px}
+}

@@ -29,6 +29,14 @@ the stored title/body, once per article. They can miss surname-only mentions.
 The aggregate records exact patterns, denominators, input hashes and limitations.
 Monthly and topic counts reconcile to the existing public releases.
 
+The next author revision adapts four preferred report views into slides 5–8.
+`themes.py` uses the public theme tables for the full ten-topic ranking and yearly
+heatmap, and the published lexical HTML for its 48-word vector cloud and counts.
+It retains the different publication/text denominators and recolors the cloud
+for the conference palette. Selected word pairs summarize the existing report's
+qualitative interpretations, without presenting frequency ranks. Reader-facing
+copy uses “pojam demokršćanstva”, not “demokršćansko ime”.
+
 The title refers to Catholic media. Slide 3 explicitly states that the findings
 from the reports cover the broader media discussion, including general media.
 They are not a new Catholic-publisher subset analysis. The official corpus count

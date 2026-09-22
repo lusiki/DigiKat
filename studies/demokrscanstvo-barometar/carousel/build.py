@@ -12,6 +12,7 @@ import json
 import re
 from conference.theme import apply_conference_theme, CONFERENCE
 from exploration import add_exploration_slides
+from themes import add_theme_slides
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
@@ -36,6 +37,7 @@ INPUTS = [
     'studies/demokrscanstvo-barometar/text-public/manuscript.md',
     'assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.meta.json',
     EXPLORATION_INPUT,
+    "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html",
 ]
 readjson = lambda p: json.loads((ROOT / p).read_text(encoding='utf-8'))
 rows = lambda p: list(csv.DictReader((ROOT / p).open(encoding='utf-8-sig')))
@@ -129,43 +131,9 @@ slide('selection', 'Projekt i podaci', 'Kako nastaje zbirka za ovu analizu',
       '<p class="note">Obuhvat arhive je od 1. 1. 2021. do 10. 9. 2026. Brojevi opisuju medijsku prisutnost, a ne potporu građana.</p>',
       'Oba izvještaja čitaju istu zbirku iz različitih kutova.', PAGE + '#metoda')
 
-largest = sorted((r for r in topics.values() if r['topic'] != 'unassigned'), key=lambda r:int(r['records']), reverse=True)[:4]
-slide('explore', 'Projekt i podaci', 'Tri ulaza u istu medijsku raspravu',
-      '<div class="split"><div class="explore-questions"><div><h3>O čemu se govori?</h3><p>Tematska karta povezuje objave sličnog rječnika.</p></div>'
-      '<div><h3>Kada se govori?</h3><p>Mjesečni prikaz otkriva raspored pozornosti kroz vrijeme.</p></div>'
-      '<div><h3>Gdje se govori?</h3><p>Uspoređujemo zastupljenost tema po platformama i godinama.</p></div></div>'
-      '<div><p class="chart-label">Četiri najveće tematske skupine</p>' + bars([(r['label'], int(r['records'])) for r in largest], TOTAL, INPUTS[2]) + '</div></div>'
-      '<p class="note">Računalne skupine opisuju sličnost sadržaja. Nazivi tema ne označuju slaganje s demokršćanstvom.</p>',
-      'Interaktivni prikaz medijskih objava. Teme, vrijeme i platforme.', PAGE + '#teme')
-
-claim('Identity groups combined', identity_n, TOTAL, INPUTS[2])
-slide('identity dark', 'Nalaz 01', 'Politička pripadnost zauzima polovicu prostora',
-      '<div class="split"><div>' + statistic(pct(identity_n, TOTAL), 'objava u četiri teme političkog identiteta',
-      f'{num(identity_n)} od {num(TOTAL)} objava') + '</div><div>'
-      + bars([(topics[t]['label'], int(topics[t]['records'])) for t in identity], TOTAL, INPUTS[2]) + '</div></div>'
-      '<p class="takeaway">Demokršćansko ime služi određivanju vlastitog položaja i granica političke pripadnosti.</p>',
-      'Pregled medijskog prostora, str. 5–6. Svaka objava ima jednu glavnu temu.', OVERVIEW + '#p6')
-
-slide('values', 'Nalaz 02', 'Vrijednosti su česte. Pojedina načela mnogo rjeđa.',
-      '<div class="split"><div>' + bars([(w.capitalize(), WORDS[w]) for w in ['vrijednost', 'solidarnost', 'supsidijarnost']], TEXTS, INPUTS[4]) + '</div>'
-      '<div class="reading-copy"><p class="large-copy">Opći govor o vrijednostima širi je od izričitog imenovanja solidarnosti i supsidijarnosti.</p>'
-      '<p>Broji se riječ u rečenicama povezanima s temom, najviše jednom po tekstu.</p></div></div>'
-      '<p class="note">Rjeđa riječ sama po sebi ne dokazuje odsutnost ideje. Usporedba opisuje izričiti rječnik.</p>',
-      f'Od riječi do argumenta, str. 12. Nazivnik je {num(TEXTS)} različita teksta.', LANGUAGE + '#p12')
-
-years_body = '<div class="year-stories">'
-for year, t in [('2022', 't03'), ('2024', 't06'), ('2025', 't09')]:
-    counts = year_counts[year]
-    assert counts[t] == max(counts.values())
-    n, denominator = counts[t], sum(counts.values())
-    claim('Leading topic ' + year, n, denominator, INPUTS[3])
-    label = {'t03':'HDZ i demokršćanski identitet', 't06':'Europa i kršćanski korijeni', 't09':'Vrijednosti i svjetonazorski prijepori'}[t]
-    years_body += f'<div><p class="year">{year}.</p><h3>{label}</h3><strong>{pct(n, denominator)}</strong><p>objava te godine</p></div>'
-years_body += '</div>'
-slide('years', 'Nalaz 03', 'Različite godine otvaraju različita pitanja',
-      '<p class="lead">Najzastupljenija tema mijenja se od stranačkog identiteta prema Europi i vrijednosnim sporovima.</p>'
-      + years_body + '<p class="note">Udjeli se čitaju unutar godine. Obuhvat prikupljanja promijenio se u travnju 2024. Prikaz ne mjeri promjenu javne potpore.</p>',
-      'Pregled medijskog prostora, str. 7. Godišnji sastav uključenih objava.', OVERVIEW + '#p7')
+add_theme_slides(slide, bars, claim, topics, year_counts, TOTAL, TEXTS,
+                 (ROOT/INPUTS[7]).read_text(encoding='utf-8'),
+                 INPUTS[2], INPUTS[3], INPUTS[7], OVERVIEW, LANGUAGE)
 
 web_n = platforms['web']['matching_records']
 claim('Web publications', web_n, TOTAL, INPUTS[1])
@@ -219,6 +187,7 @@ slide('reading dark', 'Izvori i čitanje', 'Izvještaji i podaci za daljnje istr
 
 assert len(slides) == 18
 css = (HERE / 'style.css').read_text(encoding='utf-8') + '\n' + (HERE / 'exploration.css').read_text(encoding='utf-8')
+css += '\n' + (HERE / 'themes.css').read_text(encoding='utf-8')
 js = (HERE / 'carousel.js').read_text(encoding='utf-8')
 parts = [f'<!doctype html><html lang="hr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
          f'<meta name="author" content="{AUTHOR}"><meta name="description" content="Karusel povezuje projekt DigiKat, podatke i deset nalaza o demokršćanstvu u medijima.">'

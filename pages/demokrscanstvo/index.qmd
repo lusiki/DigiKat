@@ -94,10 +94,10 @@ for(stem in c(text_stem,slides_stem)) {
 
 <section id="nalazi" class="dkb-inner dkb-section-rule" aria-labelledby="nalazi-title">
 <p class="dkb-kicker">Što pokazuje analiza</p>
-<h2 id="nalazi-title">Političko ime, zajedničke vrijednosti i konkretne odluke</h2>
+<h2 id="nalazi-title">Politički pojam, zajedničke vrijednosti i konkretne odluke</h2>
 <p class="dkb-report-period">Pregled `r integer(report$records)` medijskih objava od `r digikat_hr_date(report$data_from)` do `r digikat_hr_date(report$data_through)`</p>
 <div class="dkb-report-findings">
-<article><h3>Politička pripadnost u središtu</h3><p>Teme političke pripadnosti, domoljublja, HDZ-ova identiteta i desnog centra zajedno obuhvaćaju <strong>`r number(100*identity_records/report$records)` % objava</strong>. Demokršćansko ime služi predstavljanju vlastitog položaja, ali i osporavanju političke vjerodostojnosti.</p></article>
+<article><h3>Politička pripadnost u središtu</h3><p>Teme političke pripadnosti, domoljublja, HDZ-ova identiteta i desnog centra zajedno obuhvaćaju <strong>`r number(100*identity_records/report$records)` % objava</strong>. Pojam demokršćanstva služi predstavljanju vlastitog položaja, ali i osporavanju političke vjerodostojnosti.</p></article>
 <article><h3>Zajedničke vrijednosti, različiti zaključci</h3><p>Vrijednosti i svjetonazorski prijepori okupljaju <strong>`r integer(values_topic$records)` objava</strong>. Obitelj, nacionalni identitet i savjest pojavljuju se u afirmaciji načela i u kritikama stranačke dosljednosti.</p></article>
 <article><h3>Od načela do javnog zahtjeva</h3><p>Solidarnost se povezuje s položajem radnika i europskom suradnjom, opće dobro sa zapošljavanjem prema sposobnosti, a supsidijarnost s razinama vlasti. Ti primjeri otvaraju društveni sadržaj demokršćanske tradicije.</p></article>
 </div>
