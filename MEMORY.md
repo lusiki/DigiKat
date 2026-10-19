@@ -746,3 +746,29 @@
   Do not edit the engine for a corpus change; the "Kako se govori o Crkvi?" analysis overrides
   `era_id`/`display_period`/`pre_periods`/`post_periods` locally from the corpus manifest, and its
   pre-merge anchor + reconciliation checks are enforced only on the August corpus sha.
+
+## Map figures rebuilt for legibility (2026-10-19)
+- [LEARN] `digikat_mobile_readable()` raised small text by assigning into `plot$layers[[i]]$aes_params`.
+  Layers are ggproto ENVIRONMENTS shared with the desktop plot, so the phone export (which runs first)
+  silently enlarged the desktop text too, and only for panels the two versions shared. It now edits a
+  `ggproto(NULL, layer)` child copy. Desktop label sizes are set explicitly (≈3,6–3,9) in each chunk.
+- [LEARN] Layer text does not inherit the theme font. Every `geom_text`/ggrepel/ggraph label on the maps
+  was Arial beside Source Sans axes. `digikat_map_text_defaults()` (called once per map page after
+  `theme_set`) fixes it; it is opt-in so the annual report's frozen figures are untouched.
+- [LEARN] A log axis plus one zero value (dailyadvent.com: reach but 0 interactions) makes the limits
+  NaN and the device dies as "Killing locked device" with a BLANK image and render exit 0. Filter
+  `> 0` before any log scale, and look at every PNG; a clean render log proves nothing.
+- [LEARN] In ggrepel 0.9.8 the label border is `linewidth = 0`; `label.size = 0` is ignored.
+- [LEARN] The 3 % event sample holds only 1–3 Stepinac texts a year, so no minimum-n floor can save
+  it. `R/07_stepinac_terms.R` draws 60 texts a year from the FULL corpus (3 100–5 200 mentions a year),
+  publishes a year only with ≥20, ranks words by texts-containing (one long timetable put "škola" on
+  top by raw count), and writes aggregate-only `data/page-ready/stepinac_terms.rds`, pinned to the
+  corpus sha (the page stops on a mismatch). Re-run after every corpus rebuild.
+- [LEARN] The Love/Angry chart was dropped by PI decision (values were ~0,006 %). `polarization_by_topic`
+  is still built by `R/05_page_summaries.R` and kept in the schema, just unused.
+- [LEARN] "Unutarcrkveni prijepori = 0 interakcija" was 3 documents, not a bug. Topic averages now need
+  ≥30 documents. Generic lemmas (sav, sv., godina, biti …) live in ONE display-only list,
+  `DIGIKAT_GENERIC_LEMMAS` in `R/lib/digikat_hr.R`, used by the word chart and the Stepinac step.
+- [LEARN] A headless Chrome `--window-size=390` screenshot is NOT a phone: it showed text running off the
+  right edge. CDP `Emulation.setDeviceMetricsOverride` (mobile: true) measured scrollWidth = viewport.
+  Measure overflow with device emulation before "fixing" it.

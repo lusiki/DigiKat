@@ -78,6 +78,7 @@ R + the restricted datasets live on the PI's pipeline machine, NOT necessarily t
 | `Rscript R/03_aggregate.R` | build and reconcile all 14 aggregates in a temporary directory |
 | `Rscript R/03_aggregate.R --apply` | confirmation-gated production aggregate generation swap |
 | `Rscript R/05_page_summaries.R --build` | build and atomically install compact inputs for the three NLP pages |
+| `Rscript R/07_stepinac_terms.R [--apply]` | Stepinac word counts for `događaji.qmd`, drawn from the full corpus (re-run after a corpus change) |
 | `quarto render pages/mapa/<page>.qmd` | render ONE page (fast; prefer during edits) |
 | `quarto render` | full site → `docs/` (before pushing site changes) |
 | `quarto preview` | live local preview |

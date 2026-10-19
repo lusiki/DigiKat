@@ -176,15 +176,88 @@ theme_digikat_map <- function(base_size = 14) {
 }
 
 theme_digikat_map_void <- function(base_size = 14) {
+  # theme_digikat() sets panel.grid.major by name, so clearing the parent
+  # panel.grid alone leaves the grid drawn under a network. Blank each child.
   theme_digikat_map(base_size = base_size) +
     ggplot2::theme(
       panel.background = ggplot2::element_blank(),
       panel.border = ggplot2::element_blank(),
       panel.grid = ggplot2::element_blank(),
+      panel.grid.major = ggplot2::element_blank(),
+      panel.grid.minor = ggplot2::element_blank(),
       axis.text = ggplot2::element_blank(),
       axis.title = ggplot2::element_blank(),
       axis.ticks = ggplot2::element_blank()
     )
+}
+
+# --- Map-page text and number conventions ----------------------------------
+# Text drawn by layers (geom_text, ggrepel, ggraph node labels) does not
+# inherit the theme's font, so on the maps it fell back to Arial beside the
+# Source Sans axes. The map pages call this once after theme_set(); other
+# users of this file keep their current defaults.
+digikat_map_text_defaults <- function() {
+  text_defaults <- list(family = dk_sans, colour = dk_col$ink)
+  ggplot2::update_geom_defaults("text", text_defaults)
+  ggplot2::update_geom_defaults("label", text_defaults)
+  if (requireNamespace("ggrepel", quietly = TRUE)) {
+    ggplot2::update_geom_defaults(ggrepel::GeomTextRepel, text_defaults)
+    ggplot2::update_geom_defaults(ggrepel::GeomLabelRepel, text_defaults)
+  }
+  invisible(NULL)
+}
+
+# Croatian number formats for axes, value labels and legends (voice guide §7):
+# thousands with a period, decimals with a comma, a space before %.
+dk_label_num <- function(accuracy = 1, ...) {
+  scales::label_number(accuracy = accuracy, big.mark = ".", decimal.mark = ",", ...)
+}
+dk_label_pct <- function(accuracy = 1, ...) {
+  scales::label_percent(accuracy = accuracy, big.mark = ".", decimal.mark = ",",
+                        suffix = " %", ...)
+}
+# Compact large counts for crowded value labels: 8,1 mil. / 327 tis. / 940.
+dk_label_compact <- function(x) {
+  millions <- x / 1e6
+  out <- ifelse(
+    abs(x) >= 1e6,
+    paste0(ifelse(abs(millions - round(millions)) < 1e-9,
+                  formatC(round(millions), format = "d", big.mark = ".", decimal.mark = ","),
+                  formatC(millions, format = "f", digits = 1, decimal.mark = ",")),
+           " mil."),
+    ifelse(
+      abs(x) >= 1e4,
+      paste0(formatC(round(x / 1e3), format = "d", big.mark = ".", decimal.mark = ","), " tis."),
+      formatC(round(x), format = "d", big.mark = ".", decimal.mark = ",")
+    )
+  )
+  out[is.na(x)] <- NA_character_
+  out
+}
+
+# Chart labels for the vendor's platform codes, in display order. Prose uses
+# digikat_platform_hr() (lower case, mid-sentence); figures use these.
+dk_platform_order <- c("web", "facebook", "youtube", "twitter", "reddit",
+                       "instagram", "tiktok", "forum", "comment")
+dk_platform_label_map <- c(
+  web = "Web portali", facebook = "Facebook", youtube = "YouTube",
+  twitter = "Twitter / X", reddit = "Reddit", instagram = "Instagram",
+  tiktok = "TikTok", forum = "Forumi", comment = "Komentari"
+)
+dk_platform_label <- function(x) {
+  out <- unname(dk_platform_label_map[as.character(x)])
+  ifelse(is.na(out), as.character(x), out)
+}
+
+# Source handles are labels, not prose. Long YouTube channel names carry a
+# tagline after " - "; keep the name and cut anything still too long.
+dk_short_source <- function(x, width = 26L) {
+  x <- as.character(x)
+  long <- nchar(x) > width & grepl(" - ", x, fixed = TRUE)
+  x[long] <- sub(" - .*$", "", x[long])
+  too_long <- nchar(x) > width
+  x[too_long] <- paste0(substr(x[too_long], 1L, width - 1L), "…")
+  x
 }
 
 # --- Brand scales (use for categorical / thematic series) ---
@@ -198,6 +271,9 @@ digikat_topic_label <- function(value) {
   label <- tolower(gsub("_", " ", as.character(value), fixed = TRUE))
   # The category keys are ASCII; restore the one diacritic the key spelling drops.
   label <- gsub("drzavom", "državom", label, fixed = TRUE)
+  # Two keys also drop a capital and a comma the display name needs.
+  label <- gsub("pape i vatikan", "pape i Vatikan", label, fixed = TRUE)
+  label <- gsub("mediji umjetnost", "mediji, umjetnost", label, fixed = TRUE)
   paste0(toupper(substr(label, 1L, 1L)), substring(label, 2L))
 }
 

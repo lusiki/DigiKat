@@ -2,7 +2,7 @@
 title: "Evolucija digitalnog ekosustava kroz vrijeme (2021.–2026.)"
 subtitle: "Kako se mijenjaju objave, interakcije i položaj izvora"
 description: "Evolucija ekosustava prati mjesečni broj objava, raspodjelu zabilježenih interakcija i udio najvećih izvora kroz vrijeme."
-date-modified: 2026-10-18
+date-modified: 2026-10-19
 data-cutoff: 2026-10-16
 status: "Ažurira se"
 schema-type: "Article"
@@ -27,6 +27,7 @@ digikat_map_setup()
 library(ggplot2)
 source("../../R/theme_digikat.R")
 theme_set(theme_digikat_map())
+digikat_map_text_defaults()
 library(dplyr)
 library(tidyr)
 library(scales)
@@ -79,6 +80,20 @@ last_full_year <- if (last_partial) last_year - 1L else last_year
 cutoff_m   <- max(platform_monthly$month)
 cutoff_lbl <- paste0(mjeseci_gen[as.integer(format(cutoff_m, "%m"))], " ",
                      format(cutoff_m, "%Y"), ".")
+
+# Posljednji mjesec korpusa obično nije potpun. Na mjesečnim grafikonima izgledao bi
+# kao nagli pad, pa se izostavlja i to se kaže u podnaslovu.
+cutoff_day <- as.Date(mf$corpus$date_max)
+last_month_partial <- format(cutoff_day + 1, "%m") == format(cutoff_day, "%m")
+monthly_shown <- if (last_month_partial) filter(platform_monthly, month < cutoff_m) else platform_monthly
+partial_month_note <- if (last_month_partial) {
+  paste0(" ", toupper(substr(mjeseci_hr[as.integer(format(cutoff_m, "%m"))], 1, 1)),
+         substring(mjeseci_hr[as.integer(format(cutoff_m, "%m"))], 2), " ",
+         format(cutoff_m, "%Y"), ". nije prikazan jer je nepotpun.")
+} else ""
+last_shown_month <- max(monthly_shown$month)
+last_shown_gen <- paste0(mjeseci_gen[as.integer(format(last_shown_month, "%m"))], " ",
+                         format(last_shown_month, "%Y"), ".")
 
 # Glavne platforme (po ukupnom volumenu) za male višestruke prikaze.
 main_platforms <- platform_summary %>%
@@ -173,7 +188,7 @@ stopifnot(length(posts_first) == 1, length(posts_lfy) == 1,
 ## Kako se digitalni prostor mijenja kroz vrijeme
 
 <div class="freshness-strip" aria-label="Svježina Evolucije ekosustava">
-  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">18. listopada 2026.</span></span>
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">19. listopada 2026.</span></span>
   <span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">`r data_cutoff_hr`</span></span>
   <span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--updating">Ažurira se</span></span>
 </div>
@@ -216,7 +231,7 @@ cat('<div class="metric-grid">',
 ::: {.callout-note}
 ## Kako čitati ovu mapu
 
-**Volumen** je broj objava u korpusu. Ne predstavlja cijeli hrvatski medijski prostor. **Interakcije** se mjere različito na svakoj platformi i ne pokazuju izravno veličinu publike. Godina `r last_year`. nije potpuna. Podaci završavaju `r cutoff_lbl`. Mjesečni prikazi ne procjenjuju ostatak godine. Metodologija objašnjava [platformske mjere](../metodologija.html#method-platform-metrics) i [promjenu prikupljanja 2024.](../metodologija.html#method-collection-break).
+**Volumen** je broj objava u korpusu. Ne predstavlja cijeli hrvatski medijski prostor. **Interakcije** se mjere različito na svakoj platformi i ne pokazuju izravno veličinu publike. Godina `r last_year`. nije potpuna. Podaci završavaju `r data_cutoff_hr` Mjesečni prikazi ne procjenjuju ostatak godine. Metodologija objašnjava [platformske mjere](../metodologija.html#method-platform-metrics) i [promjenu prikupljanja 2024.](../metodologija.html#method-collection-break)
 :::
 
 ---
@@ -234,32 +249,30 @@ Prvi grafikon prikazuje mjesečni broj objava po platformama. Način prikupljanj
 #| fig-height: 7
 #| column: page
 #| fig-alt: "Mjesečne linije broja objava u šest platformskih panela. Isprekidana okomita crta označava promjenu prikupljanja na početku 2024."
-#| fig-cap: "Opaženi mjesečni broj objava po glavnim platformama. Isprekidana crta označava promjenu prikupljanja na početku 2024. Izvor je analiza projekta DigiKat."
+#| fig-cap: "Izvor: analiza projekta DigiKat. Okomite osi neovisne su po platformi."
 
-rast_monthly <- platform_monthly %>%
+rast_monthly <- monthly_shown %>%
   filter(SOURCE_TYPE %in% main_platforms) %>%
   mutate(SOURCE_TYPE = factor(SOURCE_TYPE, levels = main_platforms))
 
+year_axis <- function(d) paste0("\u2019", format(d, "%y"))
 plot_growth <- ggplot(rast_monthly, aes(x = month, y = total_posts, colour = SOURCE_TYPE)) +
-  geom_vline(xintercept = seam_date, colour = dk_col$faint, linetype = "dashed") +
-  geom_line(linewidth = 0.7) +
-  facet_wrap(~SOURCE_TYPE, scales = "free_y") +
-  scale_x_date(date_breaks = "1 year", date_labels = "%Y") +
-  scale_y_continuous(labels = label_number(big.mark = ".", decimal.mark = ",")) +
+  geom_vline(xintercept = seam_date, colour = dk_col$faint, linetype = "dashed", linewidth = 0.5) +
+  geom_line(linewidth = 0.8) +
+  facet_wrap(~SOURCE_TYPE, scales = "free_y", labeller = as_labeller(dk_platform_label)) +
+  scale_x_date(date_breaks = "1 year", labels = year_axis, expand = expansion(mult = 0.02)) +
+  scale_y_continuous(labels = dk_label_num(), limits = c(0, NA), expand = expansion(mult = c(0, 0.08))) +
   scale_colour_manual(values = platform_colors, guide = "none") +
   theme_digikat_map(base_size = 14) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1),
-        strip.text = element_text(face = "bold")) +
+  theme(strip.text = element_text(hjust = 0), panel.spacing = unit(1.2, "lines")) +
   labs(
-    title = paste0("Broj objava po platformama, mjesečno (", first_year, ".–", last_year, ".)"),
-    subtitle = paste0("Podaci do ", cutoff_lbl, ". Isprekidana crta označava promjenu prikupljanja 2024."),
-    x = "Godina", y = "Broj objava",
-    caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru.\nNapomena: okomite su osi neovisne po platformi."
+    title = paste0("Mjesečni broj objava po platformama, ", first_year, ".–", last_year, "."),
+    subtitle = paste0("Isprekidana crta označava promjenu prikupljanja na početku 2024.", partial_month_note),
+    x = NULL, y = NULL
   )
 
 plot_growth_mobile <- plot_growth +
-  facet_wrap(~SOURCE_TYPE, scales = "free_y", ncol = 1) +
-  theme(axis.text.x = element_text(angle = 0, hjust = 0.5))
+  facet_wrap(~SOURCE_TYPE, scales = "free_y", ncol = 1, labeller = as_labeller(dk_platform_label))
 
 digikat_render_map_plot(
   plot_growth,
@@ -285,7 +298,7 @@ Mjesečni prikaz uključuje stvarne podatke za nepotpunu `r last_year`. godinu. 
 
 ## Raspodjela interakcija među platformama
 
-Objave i interakcije nisu jednako raspoređene. Sljedeći grafikon prati mjesečni udio svake platforme u ukupnim interakcijama. Platforme različito definiraju interakciju. Ovi udjeli zato nisu izravna mjera publike ili pažnje.
+Objave i interakcije nisu jednako raspoređene. Sljedeći grafikon prati mjesečni udio weba, Facebooka, YouTubea i ostalih platformi u ukupnim interakcijama. Platforme različito definiraju interakciju. Ovi udjeli zato nisu izravna mjera publike ili pažnje.
 
 <p class="figure-question"><strong>Pitanje.</strong> Kako se interakcije s vremenom raspoređuju među platformama?</p>
 <p class="figure-card__takeaway"><strong>Nalaz.</strong> Udio weba pada, dok Facebook i YouTube preuzimaju veći dio zabilježenih interakcija.</p>
@@ -295,87 +308,68 @@ Objave i interakcije nisu jednako raspoređene. Sljedeći grafikon prati mjeseč
 #| fig-width: 10
 #| fig-height: 7
 #| column: page
-#| fig-alt: "Mjesečne linije udjela platformi u zabilježenim interakcijama. Serije imaju različite boje, vrste crta, oblike i izravne oznake."
-#| fig-cap: "Mjesečni udjeli platformi u zabilježenim interakcijama. Isprekidana crta označava promjenu prikupljanja 2024. Interakcije nisu izravno usporedive među platformama."
+#| fig-alt: "Složene površine pokazuju mjesečni udio weba, Facebooka, YouTubea i ostalih platformi u zabilježenim interakcijama. Udio weba s vremenom se sužava."
+#| fig-cap: "Izvor: analiza projekta DigiKat. Reddit, forumi i komentari nemaju zabilježene interakcije. Platforme interakcije mjere na različite načine."
 
-# Udio po mjesecu, izveden izravno iz platform_monthly (isti postupak kao
-# proportions_summary, samo na mjesečnoj razini). Eksplicitna nula za platforme
-# kojih u ranim mjesecima nema u korpusu (instagram, tiktok) daje čist temelj
-# površinskom prikazu umjesto skrivenih praznina.
-mig_monthly <- platform_monthly %>%
+# Tri glavne platforme i zbroj ostalih. Udjeli zajedno daju 100 %, pa se slažu jedan na drugi.
+mig_groups <- c("web", "facebook", "youtube")
+mig_group_labels <- c(web = "Web portali", facebook = "Facebook", youtube = "YouTube",
+                      ostalo = "Ostale platforme")
+mig_group_colors <- c(platform_colors[mig_groups], ostalo = "#B8B4AA")
+# Oznake godina samo za godine s podacima, ne za prostor desno rezerviran za nazive.
+mig_year_breaks <- seq(as.Date(paste0(first_year, "-01-01")), as.Date(paste0(last_year, "-01-01")), by = "year")
+
+mig_monthly <- monthly_shown %>%
   filter(!is.na(SOURCE_TYPE)) %>%
-  mutate(SOURCE_TYPE = factor(SOURCE_TYPE, levels = names(platform_colors))) %>%
-  complete(month, SOURCE_TYPE, fill = list(total_interactions = 0)) %>%
+  mutate(group = ifelse(SOURCE_TYPE %in% mig_groups, as.character(SOURCE_TYPE), "ostalo")) %>%
+  group_by(month, group) %>%
+  summarise(total_interactions = sum(total_interactions), .groups = "drop") %>%
+  complete(month, group = c(mig_groups, "ostalo"), fill = list(total_interactions = 0)) %>%
   group_by(month) %>%
   mutate(interaction_share = total_interactions / sum(total_interactions)) %>%
-  ungroup()
+  ungroup() %>%
+  mutate(group = factor(group, levels = rev(c(mig_groups, "ostalo"))))
 
+# Oznaka sjedi na sredini svoje površine u zadnjem prikazanom mjesecu.
 mig_labels <- mig_monthly %>%
-  group_by(SOURCE_TYPE) %>%
   filter(month == max(month)) %>%
-  ungroup()
+  # Prva razina čimbenika slaže se na vrh, pa se zbroj računa od posljednje razine.
+  arrange(desc(group)) %>%
+  mutate(top = cumsum(interaction_share), mid = top - interaction_share / 2,
+         label = paste0(mig_group_labels[as.character(group)], "  ", dk_label_pct()(interaction_share)))
 
-plot_migration <- ggplot(
-  mig_monthly,
-  aes(x = month, y = interaction_share, colour = SOURCE_TYPE, linetype = SOURCE_TYPE)
-) +
-  geom_vline(xintercept = seam_date, colour = dk_col$faint, linetype = "dashed") +
-  geom_line(linewidth = 0.9) +
-  geom_point(aes(shape = SOURCE_TYPE), size = 1.5, alpha = 0.7) +
+plot_migration <- ggplot(mig_monthly, aes(x = month, y = interaction_share, fill = group)) +
+  geom_area(position = "stack", colour = dk_col$paper, linewidth = 0.25) +
+  geom_vline(xintercept = seam_date, colour = dk_col$ink, linetype = "dashed", linewidth = 0.4) +
   geom_text_repel(
     data = mig_labels,
-    aes(label = digikat_platform_hr(SOURCE_TYPE)),
-    direction = "y", hjust = 0, nudge_x = 70, size = 3.4,
-    segment.color = NA, show.legend = FALSE, max.overlaps = Inf
+    aes(x = month, y = mid, label = label, colour = group),
+    inherit.aes = FALSE, hjust = 0, direction = "y", nudge_x = 40,
+    xlim = c(max(mig_monthly$month) + 60, NA), size = 3.8,
+    segment.colour = dk_col$faint, segment.size = 0.3, min.segment.length = 0, seed = 3
   ) +
-  scale_x_date(date_breaks = "1 year", date_labels = "%Y") +
-  scale_y_continuous(labels = percent_format(decimal.mark = ",")) +
-  scale_colour_manual(values = platform_colors, name = "Platforma") +
-  scale_linetype_manual(values = dk_platform_linetypes, name = "Platforma") +
-  scale_shape_manual(values = dk_platform_shapes, name = "Platforma") +
+  annotate("text", x = seam_date + 20, y = 1.035, label = "promjena prikupljanja", hjust = 0,
+           size = 3.4, colour = dk_col$muted) +
+  scale_x_date(breaks = mig_year_breaks, date_labels = "%Y.",
+               limits = c(min(mig_monthly$month), max(mig_monthly$month) + 480),
+               expand = expansion(mult = 0)) +
+  scale_y_continuous(labels = dk_label_pct(), breaks = c(0, 0.25, 0.5, 0.75, 1),
+                     expand = expansion(mult = c(0, 0.06))) +
+  scale_fill_manual(values = mig_group_colors, guide = "none") +
+  scale_colour_manual(values = c(mig_group_colors[mig_groups], ostalo = dk_col$muted), guide = "none") +
   coord_cartesian(clip = "off") +
   theme_digikat_map(base_size = 14) +
-  theme(legend.position = "none", plot.margin = margin(10, 75, 10, 10)) +
+  theme(panel.grid.major.x = element_blank()) +
   labs(
-    title = paste0("Raspodjela interakcija među platformama,\nmjesečno (", first_year, ".–", last_year, ".)"),
-    subtitle = paste0("Izravne oznake, vrste crta i oblici nadopunjuju boju. Podaci do ", cutoff_lbl),
-    x = "Godina", y = "Udio interakcija",
-    caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru.\nNapomena: reddit, forum i komentari u agregatima nemaju zabilježenu mjeru interakcija (udio 0 %)."
+    title = paste0("Udio platformi u interakcijama, mjesečno, ", first_year, ".–", last_year, "."),
+    subtitle = paste0("Udjeli u svakom mjesecu zbrajaju se u 100 %.", partial_month_note),
+    x = NULL, y = NULL
   )
 
-migration_mobile_platforms <- mig_monthly %>%
-  group_by(SOURCE_TYPE) %>%
-  summarise(max_share = max(interaction_share, na.rm = TRUE), .groups = "drop") %>%
-  filter(max_share >= 0.01) %>%
-  pull(SOURCE_TYPE)
-
-plot_migration_mobile <- mig_monthly %>%
-  filter(SOURCE_TYPE %in% migration_mobile_platforms) %>%
-  ggplot(
-    aes(x = month, y = interaction_share, colour = SOURCE_TYPE,
-        linetype = SOURCE_TYPE)
-  ) +
-  geom_vline(xintercept = seam_date, colour = dk_col$faint, linetype = "dashed") +
-  geom_line(linewidth = 0.9) +
-  geom_point(aes(shape = SOURCE_TYPE), size = 1.8, alpha = 0.75) +
-  facet_wrap(
-    ~ SOURCE_TYPE,
-    ncol = 1,
-    labeller = labeller(SOURCE_TYPE = as_labeller(digikat_platform_hr))
-  ) +
-  scale_x_date(date_breaks = "1 year", date_labels = "%Y") +
-  scale_y_continuous(labels = percent_format(decimal.mark = ",")) +
-  scale_colour_manual(values = platform_colors) +
-  scale_linetype_manual(values = dk_platform_linetypes) +
-  scale_shape_manual(values = dk_platform_shapes) +
-  theme_digikat_map(base_size = 14) +
-  theme(legend.position = "none", strip.text = element_text(hjust = 0)) +
-  labs(
-    title = paste0("Raspodjela interakcija među platformama, mjesečno (", first_year, ".–", last_year, ".)"),
-    subtitle = paste0("Platforme s barem 1 % udjela u jednom mjesecu. Podaci do ", cutoff_lbl),
-    x = "Godina", y = "Udio interakcija",
-    caption = "Izvor: Analiza projekta DigiKat. Isprekidana crta označava promjenu prikupljanja 2024."
-  )
+plot_migration_mobile <- plot_migration +
+  scale_x_date(breaks = mig_year_breaks, labels = year_axis,
+               limits = c(min(mig_monthly$month), max(mig_monthly$month) + 1150),
+               expand = expansion(mult = 0))
 
 digikat_render_map_plot(
   plot_migration,
@@ -395,7 +389,7 @@ digikat_chart_evidence(
 )
 ```
 
-Prikaz uključuje podatke do `r cutoff_lbl`. Udio weba u interakcijama `r web_dir`. U `r first_year`. iznosi `r fmt_pct(web_ishare_first)`. U posljednjoj potpunoj `r last_full_year`. godini iznosi `r fmt_pct(web_ishare_last)`. Facebook i YouTube istodobno nose veći dio interakcija. Na promjenu utječu i kasniji ulazak Instagrama i TikToka te niska početna razina Facebooka. Budući da platforme različito mjere interakcije, grafikon ne potvrđuje seobu publike. Doseg nije glavna mjera jer za dio platformi nije dostupan i način njegova izračuna nije dovoljno jasan.
+Prikaz obuhvaća sve potpune mjesece do kraja `r last_shown_gen` Udio weba u interakcijama `r web_dir`. U `r first_year`. iznosi `r fmt_pct(web_ishare_first)`. U posljednjoj potpunoj `r last_full_year`. godini iznosi `r fmt_pct(web_ishare_last)`. Facebook i YouTube istodobno nose veći dio interakcija. Na promjenu utječu i kasniji ulazak Instagrama i TikToka te niska početna razina Facebooka. Budući da platforme različito mjere interakcije, grafikon ne potvrđuje seobu publike. Doseg nije glavna mjera jer za dio platformi nije dostupan i način njegova izračuna nije dovoljno jasan.
 
 ---
 
@@ -412,7 +406,7 @@ Treći grafikon pokazuje koliki udio godišnjih interakcija pripada deset najve�
 #| fig-height: 6
 #| column: page
 #| fig-alt: "Linija godišnjeg udjela deset najvećih izvora u interakcijama. Vrijednosti su izravno označene, a nepotpuna 2026. prikazana je praznim rombom."
-#| fig-cap: "Godišnji udio deset najvećih izvora u zabilježenim interakcijama. Nepotpuna završna godina prikazana je odvojeno. Izvor je analiza projekta DigiKat."
+#| fig-cap: "Izvor: analiza projekta DigiKat. Mjereno među platformama koje bilježe interakcije."
 
 conc_complete <- filter(conc_by_year, year <= last_full_year)
 conc_partial  <- filter(conc_by_year, year == last_year)
@@ -420,32 +414,29 @@ conc_partial  <- filter(conc_by_year, year == last_year)
 p <- ggplot(conc_complete, aes(x = year, y = top10)) +
   geom_line(linewidth = 1.1, colour = dk_col$accent) +
   geom_point(size = 4, colour = dk_col$accent) +
-  geom_text(aes(label = paste0(format(round(top10 * 100, 1), decimal.mark = ",",
-                                      nsmall = 1), " %")),
-            vjust = -1.1, size = 3.7, colour = dk_col$ink)
+  geom_text(aes(label = dk_label_pct(accuracy = 0.1)(top10)), vjust = -1.2, size = 3.9)
 
 if (last_partial) {
   p <- p +
     geom_point(data = conc_partial, size = 3.5, shape = 23,
                colour = dk_col$accent, fill = dk_col$paper, stroke = 1.2) +
     geom_text(data = conc_partial,
-              aes(label = paste0(format(round(top10 * 100, 1), decimal.mark = ",",
-                                        nsmall = 1), " % (do ", cutoff_lbl, ", nepotpuno)")),
-              vjust = -1.1, hjust = 1, size = 3.7, colour = dk_col$ink)
+              aes(label = paste0(dk_label_pct(accuracy = 0.1)(top10), "\nnepotpuno")),
+              vjust = 1.6, hjust = 0.7, size = 3.6, lineheight = 0.95, colour = dk_col$muted)
 }
 
 plot_concentration <- p +
-  scale_x_continuous(breaks = first_year:last_year,
-                      expand = expansion(mult = c(0.06, 0.10))) +
-  scale_y_continuous(labels = percent_format(decimal.mark = ","),
+  scale_x_continuous(breaks = first_year:last_year, labels = function(y) paste0(y, "."),
+                      expand = expansion(mult = c(0.09, 0.09))) +
+  scale_y_continuous(labels = dk_label_pct(),
                      limits = c(0, NA), expand = expansion(mult = c(0, 0.15))) +
   theme_digikat_map(base_size = 14) +
+  theme(panel.grid.major.x = element_blank()) +
   labs(
     title = "Udio deset najvećih izvora u interakcijama",
-    subtitle = paste0("Cjelovite godine ", first_year, ".–", last_full_year,
-                      ". Godina ", last_year, ". prikazana je zasebno jer nije potpuna"),
-    x = "Godina", y = "Udio deset najvećih izvora",
-    caption = "Izvor: Analiza projekta Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru.\nNapomena: mjereno među platformama koje bilježe interakcije."
+    subtitle = paste0("Potpune godine povezane su crtom. Godina ", last_year,
+                      ". prikazana je praznim rombom jer nije potpuna."),
+    x = NULL, y = NULL
   )
 
 digikat_render_map_plot(
@@ -482,28 +473,35 @@ Sljedeći grafikon prikazuje prosječan broj objava po kalendarskom mjesecu u po
 #| fig-height: 5.5
 #| column: page
 #| fig-alt: "Stupci prosječnog broja objava po kalendarskim mjesecima u godinama s potpunom mjesečnom pokrivenošću."
-#| fig-cap: "Prosječni opaženi volumen po kalendarskom mjesecu u godinama s potpunom mjesečnom pokrivenošću. Izvor je analiza projekta DigiKat."
+#| fig-cap: "Izvor: analiza projekta DigiKat. Prikazan je samo volumen objava."
 
 plot_rhythm <- ggplot(ritam, aes(x = mj_lab, y = avg_posts)) +
   geom_col(fill = dk_col$accent, alpha = 0.9) +
-  geom_text(
-    aes(label = label_number(big.mark = ".", decimal.mark = ",", accuracy = 1)(avg_posts)),
-    vjust = -0.35, size = 3.4, color = dk_col$ink
-  ) +
-  expand_limits(y = max(ritam$avg_posts) * 1.08) +
-  scale_y_continuous(labels = label_number(big.mark = ".", decimal.mark = ",")) +
+  geom_text(aes(label = dk_label_num()(avg_posts)), vjust = -0.45, size = 3.7) +
+  scale_y_continuous(labels = dk_label_num(), expand = expansion(mult = c(0, 0.1))) +
   theme_digikat_map(base_size = 14) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  theme(panel.grid.major.x = element_blank(),
+        axis.text.x = element_text(colour = dk_col$body, size = 11.5)) +
   labs(
-    title = "Godišnji ritam objavljivanja\nu godinama s potpunom mjesečnom pokrivenošću",
-    subtitle = paste0("Prosječan broj objava po kalendarskom mjesecu. Uključene godine su ", rhythm_years_lbl),
-    x = "Mjesec", y = "Prosječan broj objava",
-    caption = paste0("Izvor: Analiza projekta DigiKat.\nNapomena: uključene su samo godine sa svih 12 mjeseci u agregatima (", rhythm_years_lbl, "). Prikazan je isključivo volumen.")
+    title = "Godišnji ritam objavljivanja",
+    subtitle = paste0("Prosječan broj objava po kalendarskom mjesecu u potpunim godinama ", rhythm_years_lbl),
+    x = NULL, y = NULL
   )
+
+# Na uskom zaslonu dvanaest naziva mjeseci ne stane vodoravno, pa stupci leže.
+plot_rhythm_mobile <- ggplot(ritam, aes(x = avg_posts, y = factor(mj_lab, levels = rev(levels(mj_lab))))) +
+  geom_col(fill = dk_col$accent, alpha = 0.9, width = 0.75) +
+  geom_text(aes(label = dk_label_num()(avg_posts)), hjust = -0.15, size = 3.7) +
+  scale_x_continuous(labels = dk_label_num(), expand = expansion(mult = c(0, 0.2))) +
+  theme_digikat_map(base_size = 14) +
+  theme(panel.grid.major = element_blank(), axis.text.x = element_blank(),
+        axis.text.y = element_text(colour = dk_col$body)) +
+  labs(title = plot_rhythm$labels$title, subtitle = plot_rhythm$labels$subtitle, x = NULL, y = NULL)
 
 digikat_render_map_plot(
   plot_rhythm,
-  mobile_height = 7
+  plot_rhythm_mobile,
+  mobile_height = 8
 )
 ```
 

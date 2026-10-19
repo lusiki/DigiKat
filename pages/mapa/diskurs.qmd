@@ -2,7 +2,7 @@
 title: "Atmosfera katoličkog digitalnog diskursa (2021.–2026.)"
 subtitle: "Kako se razlikuju tonalitet, emocije i konfliktni rječnik"
 description: "Atmosfera diskursa opisuje tonalitet riječi, emocionalne oznake i Relativni indeks konflikta u dijelu korpusa DigiKat."
-date-modified: 2026-10-18
+date-modified: 2026-10-19
 data-cutoff: 2026-10-16
 status: "Preliminarno"
 schema-type: "Article"
@@ -32,6 +32,7 @@ library(stringr)
 library(ggplot2)
 source("../../R/theme_digikat.R")
 theme_set(theme_digikat_map())
+digikat_map_text_defaults()
 library(ggraph)
 library(igraph)
 library(ggrepel)
@@ -70,6 +71,9 @@ fmt_list <- function(x) {
 
 fmt_topics <- function(x) fmt_list(unname(digikat_topic_label(x)))
 
+# "anonymous_user" je oznaka pružatelja podataka za neimenovane autore, a ne izvor.
+media_strategy_data <- media_strategy_data |> filter(FROM != "anonymous_user")
+
 emotion_summary <- heatmap_data |>
   filter(is.finite(avg_sentiment), is.finite(n_articles), n_articles > 0) |>
   group_by(dominant_emotion) |>
@@ -104,6 +108,14 @@ highest_rik_pairs <- graph_data |>
   transmute(label = pair_label(item1, item2)) |>
   pull(label)
 
+# Mreža prikazuje samo najčešće parove. Svih 120 parova u jednoj slici ne može se čitati.
+n_network_edges <- 30L
+network_tone_sentence <- if (all(graph_data$avg_sentiment > 0)) {
+  "Prosječni zbroj tonaliteta pozitivan je za sve parove tema pa se ne prikazuje zasebno."
+} else {
+  "Prosječni zbroj tonaliteta razlikuje se među parovima, ali se na mreži ne prikazuje."
+}
+
 most_observed_pairs <- graph_data |>
   arrange(desc(n)) |>
   slice_head(n = 3) |>
@@ -114,7 +126,7 @@ most_observed_pairs <- graph_data |>
 ## Kakvim se riječima govori
 
 <div class="freshness-strip" aria-label="Svježina Atmosfere diskursa">
-  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">18. listopada 2026.</span></span>
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">19. listopada 2026.</span></span>
   <span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">`r data_cutoff_hr`</span></span>
   <span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--preliminary">Preliminarno</span></span>
 </div>
@@ -171,25 +183,43 @@ Grafikon prikazuje spojeve tema i glavnih emocionalnih oznaka koji imaju više o
 #| fig-height: 6.5
 #| column: page
 #| fig-alt: "Prikaz tema i emocionalnih oznaka. Svako polje ispisuje prosječni tonalitet, a boja daje dodatni znak."
-#| fig-cap: "Prosječni tonalitet prema spoju glavne teme i emocionalne oznake. Prikazani su spojevi s više od tri dokumenta."
+#| fig-cap: "Izvor: analiza projekta DigiKat. Prikazani su spojevi s više od tri dokumenta, a prazno polje znači da ih je manje."
 
-create_emotion_heatmap <- function(data = heatmap_data, label_size = 3.5,
-                                   legend_position = "right", split_panels = FALSE) {
+fmt_tone <- function(x) {
+  x <- round(x, 2)
+  x[x == 0] <- 0  # bez "-0,00"
+  formatC(x, format = "f", digits = 2, decimal.mark = ",")
+}
+
+create_emotion_heatmap <- function(data = heatmap_data, label_size = 3.7,
+                                   legend_position = "bottom", split_panels = FALSE) {
   plot <- ggplot(data, aes(x = dominant_emotion, y = dominant_topic, fill = avg_sentiment)) +
-    geom_tile(color = dk_col$paper, linewidth = 0.5) +
-    geom_text(aes(label = round(avg_sentiment, 2)), size = label_size, color = dk_col$ink) +
-    scale_fill_digikat_diverging(name = "Prosj. tonalitet") +
+    geom_tile(colour = dk_col$paper, linewidth = 0.9) +
+    # Na tamnim poljima broj je bijel, na svijetlima taman.
+    geom_text(aes(label = fmt_tone(avg_sentiment), colour = abs(avg_sentiment) > 0.62),
+              size = label_size) +
+    scale_colour_manual(values = c(`FALSE` = dk_col$ink, `TRUE` = "#FFFFFF"), guide = "none") +
+    scale_fill_digikat_diverging(
+      name = "Prosječni tonalitet", labels = fmt_tone,
+      guide = guide_colourbar(title.position = "top", barwidth = grid::unit(12, "lines"),
+                              barheight = grid::unit(0.7, "lines"))
+    ) +
+    # Devet naziva emocija ne stane u jedan red, pa se izmjenjuju u dva.
+    scale_x_discrete(position = "top", guide = guide_axis(n.dodge = 2)) +
     scale_y_discrete(labels = digikat_topic_label) +
     theme_digikat_map(base_size = 14) +
     theme(
-      axis.text.x = element_text(angle = 45, hjust = 1),
-      legend.position = legend_position
+      panel.grid.major = element_blank(),
+      axis.text.x.top = element_text(colour = dk_col$body, size = 11.5),
+      axis.text.y = element_text(colour = dk_col$body),
+      legend.position = legend_position,
+      legend.justification = "left"
     ) +
     labs(
       title = "Tonalitet prema temi i emociji",
-      subtitle = "Boja polja prikazuje prosječni tonalitet unutar spoja oznaka",
-      x = "Dominantna emocionalna kategorija",
-      y = "Dominantna tematska kategorija"
+      subtitle = "Prosječni tonalitet tekstova za svaki spoj glavne teme i glavne emocije",
+      x = NULL,
+      y = NULL
     )
 
   if (split_panels) {
@@ -210,7 +240,7 @@ create_emotion_heatmap <- function(data = heatmap_data, label_size = 3.5,
         legend.box = "vertical",
         legend.box.just = "left"
       ) +
-      labs(x = "", y = "")
+      labs(x = NULL, y = NULL)
   }
 
   plot
@@ -237,7 +267,7 @@ plot_emotion_heatmap_mobile <- create_emotion_heatmap(
   label_size = 4.3,
   legend_position = "bottom",
   split_panels = TRUE
-)
+) + scale_x_discrete(position = "bottom")
 
 digikat_render_map_plot(
   plot_emotion_heatmap,
@@ -267,7 +297,7 @@ Gustoća konfliktnog rječnika pokazuje broj podudaranja na tisuću riječi. Tak
 
 ### Izvori prema konfliktnom rječniku
 
-Grafikon prikazuje `r nrow(media_strategy_data)` izvora s najviše tekstova među onima koji imaju više od 20 objava u uzorku. Vodoravna os pokazuje prosječnu gustoću konfliktnog rječnika. Okomita os pokazuje koliko se RIK mijenja među tekstovima. Veličina točke označava broj tekstova. Grafikon ne dijeli izvore u unaprijed zadane skupine.
+Grafikon prikazuje `r nrow(media_strategy_data)` izvora s najviše tekstova među onima koji imaju više od 20 objava u uzorku. Lijevi dio pokazuje prosječnu gustoću konfliktnog rječnika. Desni dio pokazuje koliko se RIK mijenja među tekstovima istog izvora. Veličina točke označava broj tekstova. Grafikon ne dijeli izvore u unaprijed zadane skupine.
 
 <p class="figure-question"><strong>Pitanje.</strong> Koji se izvori razlikuju po gustoći konfliktnog rječnika i po tome koliko se RIK mijenja?</p>
 <p class="figure-card__takeaway"><strong>Nalaz.</strong> Izvori s gušćim konfliktnim rječnikom uglavnom imaju i promjenjiviji RIK, ali se položaji pojedinih izvora razlikuju.</p>
@@ -275,40 +305,56 @@ Grafikon prikazuje `r nrow(media_strategy_data)` izvora s najviše tekstova međ
 ```{r}
 #| label: plot-rci-strategy
 #| fig-width: 10
-#| fig-height: 7
+#| fig-height: 9.5
 #| column: page
-#| fig-alt: "Izvori su prikazani prema prosječnoj gustoći konfliktnog rječnika i prema tome koliko se RIK mijenja. Točke imaju izravne nazive, a veličina prikazuje broj dokumenata."
-#| fig-cap: "Izvori prema gustoći konfliktnog rječnika i promjenjivosti Relativnog indeksa konflikta. Položaj ne određuje motiv izvora."
+#| fig-alt: "Dva usporedna poretka istih izvora. Lijevo je prosječna gustoća konfliktnog rječnika, desno promjenjivost RIK-a. Svaki izvor imenovan je, a veličina točke prikazuje broj tekstova."
+#| fig-cap: "Izvor: analiza projekta DigiKat. Položaj opisuje riječi u tekstovima, a ne motive izvora."
 #| warning: false
 #| message: false
 
-create_rci_strategy_plot <- function(label_size = 3.5, legend_position = "right") {
-  ggplot(media_strategy_data, aes(x = avg_cli, y = rci_sd, size = n_articles)) +
-    geom_jitter(color = dk_col$accent, alpha = 0.7, width = 0.01, height = 0.01) +
-    geom_text_repel(aes(label = FROM), size = label_size, max.overlaps = 15) +
-    scale_x_log10(labels = scales::number_format(accuracy = 0.1, decimal.mark = ",")) +
-    scale_y_log10(labels = scales::number_format(accuracy = 0.1, decimal.mark = ",")) +
-    scale_size_continuous(range = c(3, 12), name = "Broj članaka") +
+rci_long <- media_strategy_data |>
+  mutate(name = dk_short_source(FROM, 26L)) |>
+  mutate(name = factor(name, levels = name[order(avg_cli)])) |>
+  tidyr::pivot_longer(c(avg_cli, rci_sd), names_to = "measure", values_to = "value") |>
+  mutate(measure = factor(
+    measure,
+    levels = c("avg_cli", "rci_sd"),
+    labels = c("Gustoća konfliktnog rječnika\n(na 1.000 riječi)",
+               "Promjenjivost RIK-a\n(standardna devijacija)")
+  ))
+
+create_rci_strategy_plot <- function(ncol = 2) {
+  ggplot(rci_long, aes(x = value, y = name)) +
+    geom_segment(aes(x = 0, xend = value, yend = name), colour = dk_col$hairline, linewidth = 0.7) +
+    geom_point(aes(size = n_articles), colour = dk_col$accent, alpha = 0.9) +
+    facet_wrap(~ measure, scales = "free_x", ncol = ncol) +
+    scale_x_continuous(labels = dk_label_num(), expand = expansion(mult = c(0, 0.08))) +
+    scale_size_area(max_size = 6, name = "Broj tekstova u uzorku", labels = dk_label_num(),
+                    breaks = c(100, 500, 1000)) +
     theme_digikat_map(base_size = 14) +
-    theme(legend.position = legend_position) +
+    theme(
+      panel.grid.major.y = element_blank(),
+      axis.text.y = element_text(colour = dk_col$body, size = 11.5),
+      strip.text = element_text(hjust = 0, lineheight = 1.05),
+      panel.spacing.x = unit(2, "lines"),
+      legend.position = "bottom",
+      legend.justification = "left"
+    ) +
     labs(
-      title = "Profili izvora prema konfliktnom rječniku",
-      subtitle = paste0(nrow(media_strategy_data), " izvora s najviše uzorkovanih tekstova. Položaj opisuje riječi, a ne motive izvora"),
-      x = "Prosječna gustoća konfliktnog rječnika (logaritamska skala)",
-      y = "Standardna devijacija Relativnog indeksa konflikta (logaritamska skala)"
+      title = "Izvori prema konfliktnom rječniku",
+      subtitle = paste0(nrow(media_strategy_data), " izvora s najviše tekstova u uzorku, poredanih prema gustoći konfliktnog rječnika"),
+      x = NULL, y = NULL
     )
 }
 
 plot_rci_strategy <- create_rci_strategy_plot()
-plot_rci_strategy_mobile <- create_rci_strategy_plot(
-  label_size = 4.2,
-  legend_position = "bottom"
-)
+plot_rci_strategy_mobile <- create_rci_strategy_plot(ncol = 1) +
+  theme(legend.title.position = "top")
 
 digikat_render_map_plot(
   plot_rci_strategy,
   plot_rci_strategy_mobile,
-  mobile_height = 8
+  mobile_height = 16
 )
 ```
 
@@ -331,74 +377,64 @@ Najvišu prosječnu gustoću konfliktnog rječnika imaju `r fmt_list(high_cli_so
 
 Mreža povezuje teme koje se pojavljuju u istim tekstovima. Izgled veze opisuje tekstove u kojima se taj par tema pojavljuje.
 
-Boja veze pokazuje prosječni zbroj prema leksikonu CroSentilex Gold. Plavo označava pozitivniji, a crveno negativniji zbroj. Taj zbroj ovisi o duljini teksta pa vrijednosti nisu izravno usporedive. Deblja veza znači viši prosječni RIK. Manje prozirna veza temelji se na više tekstova. Položaj tema služi samo preglednosti.
+Mreža prikazuje `r n_network_edges` parova tema s najviše zajedničkih tekstova. Deblja veza znači više takvih tekstova. Boja veze pokazuje prosječni RIK. Crvenija veza ima više konfliktnog rječnika od očekivanog, a plavija manje. `r network_tone_sentence` Položaj tema služi samo preglednosti.
 
-<p class="figure-question"><strong>Pitanje.</strong> Kako se uz veze među temama raspoređuju učestalost, tonalitet i RIK?</p>
-<p class="figure-card__takeaway"><strong>Nalaz.</strong> Najčešće veze nemaju nužno najvišu vrijednost RIK. Vrsta crte pokazuje tonalitet i bez boje.</p>
+<p class="figure-question"><strong>Pitanje.</strong> Koliko je konfliktnog rječnika u parovima tema koji se najčešće pojavljuju zajedno?</p>
+<p class="figure-card__takeaway"><strong>Nalaz.</strong> Najčešće veze nemaju nužno najvišu vrijednost RIK.</p>
 
 ```{r}
 #| label: plot-network
 #| fig-width: 10
 #| fig-height: 7.5
 #| column: page
-#| fig-alt: "Mreža tema koje se pojavljuju zajedno. Debljina veze prikazuje prosječni RIK, prozirnost broj tekstova, a puna ili isprekidana crta smjer tonaliteta."
-#| fig-cap: "Teme koje se pojavljuju zajedno uz prosječni RIK i tonalitet. Vrsta crte i boja zajedno označavaju smjer tonaliteta."
+#| fig-alt: "Mreža tema s najčešćim zajedničkim tekstovima. Debljina veze prikazuje broj tekstova, a boja prosječni RIK od plave prema crvenoj."
+#| fig-cap: "Izvor: analiza projekta DigiKat. Raspored tema služi samo preglednosti."
 #| warning: false
 #| message: false
 
-set.seed(123)
-graph_plot_data <- graph_data %>%
-  mutate(tonalitet_smjer = ifelse(avg_sentiment >= 0, "Pozitivniji", "Negativniji"))
+network_edges <- graph_data %>%
+  slice_max(n, n = n_network_edges, with_ties = FALSE)
+rik_limit <- max(abs(network_edges$avg_rci))
 
-create_discourse_network <- function(label_size = 3.4, legend_position = "right") {
-  plot <- graph_from_data_frame(graph_plot_data, directed = FALSE) %>%
-    ggraph(layout = "kk") +
-    geom_edge_fan(
-      aes(
-        color = avg_sentiment,
-        width = avg_rci,
-        alpha = n,
-        linetype = tonalitet_smjer
-      ),
-      arrow = NULL
-    ) +
-    geom_node_point(color = dk_col$accent, size = 8) +
-    geom_node_text(
-      aes(label = str_wrap(digikat_topic_label(name), 15)),
+create_discourse_network <- function(label_size = 3.6, legend_position = "right") {
+  set.seed(123)
+  plot <- graph_from_data_frame(network_edges, directed = FALSE) %>%
+    ggraph(layout = "stress") +
+    geom_edge_link(aes(colour = avg_rci, width = n), alpha = 0.85) +
+    geom_node_point(colour = dk_col$accent, size = 5) +
+    geom_node_label(
+      aes(label = str_wrap(digikat_topic_label(name), 18)),
       repel = TRUE,
-      color = dk_col$ink,
       size = label_size,
-      lineheight = 0.95,
-      box.padding = 0.4,
-      point.padding = 0.25,
-      force = 1.6,
+      lineheight = 0.92,
+      family = dk_sans,
+      colour = dk_col$ink,
+      fill = scales::alpha(dk_col$paper, 0.92),
+      linewidth = 0,
+      label.padding = unit(0.12, "lines"),
+      box.padding = 0.5,
+      point.padding = 0.35,
+      min.segment.length = 0.3,
+      segment.colour = dk_col$faint,
       max.overlaps = Inf,
       seed = 123
     ) +
-    scale_edge_color_gradient2(
-      low = dk_col$neg, mid = dk_col$neutral, high = dk_col$pos, midpoint = 0,
-      name="Prosječni CroSentilex Gold\nzbroj"
+    # Konfliktni rječnik: plavo manje, crveno više od očekivanog.
+    scale_edge_colour_gradient2(
+      low = dk_col$pos, mid = "#D9D4C7", high = dk_col$neg, midpoint = 0,
+      limits = c(-rik_limit, rik_limit), name = "Prosječni RIK",
+      labels = function(x) formatC(x, format = "f", digits = 0, decimal.mark = ",")
     ) +
-    scale_edge_width(
-      range = c(0.8, 3.2),
-      name="Prosječni RIK"
-    ) +
-    scale_edge_alpha(
-      range = c(0.18, 0.78),
-      guide = "none"
-    ) +
-    scale_edge_linetype_manual(
-      values = c("Negativniji" = "22", "Pozitivniji" = "solid"),
-      name = "Smjer tonaliteta"
-    ) +
-    # Nazivi čvorova na rubu mreže inače se režu na granici panela.
-    scale_x_continuous(expand = expansion(mult = 0.2)) +
-    scale_y_continuous(expand = expansion(mult = 0.2)) +
+    scale_edge_width(range = c(0.8, 4.5), name = "Zajednički tekstovi", labels = dk_label_num(),
+                     guide = guide_legend(override.aes = list(edge_colour = dk_col$muted))) +
+    scale_x_continuous(expand = expansion(mult = 0.12)) +
+    scale_y_continuous(expand = expansion(mult = 0.08)) +
+    coord_cartesian(clip = "off") +
     theme_digikat_map_void(base_size = 14) +
     theme(legend.position = legend_position) +
     labs(
-      title = "Teme koje se pojavljuju zajedno",
-      subtitle = "Vrsta crte i boja prikazuju tonalitet. Debljina prikazuje RIK, a prozirnost broj tekstova."
+      title = "Konfliktni rječnik u parovima tema",
+      subtitle = paste0(n_network_edges, " parova tema s najviše zajedničkih tekstova. Deblja crta znači više tekstova, crvenija viši RIK.")
     )
 
   if (identical(legend_position, "bottom")) {

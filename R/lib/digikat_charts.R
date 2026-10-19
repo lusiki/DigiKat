@@ -32,7 +32,14 @@ digikat_map_setup <- function() {
       inherits(layer$geom, "GeomLabel")
     size <- layer$aes_params$size
     if (is_text && is.numeric(size) && length(size) == 1L && size < minimum_size) {
-      plot$layers[[index]]$aes_params$size <- minimum_size
+      # Layers are ggproto environments shared with the desktop plot. Assigning
+      # into one in place raised the desktop text too, so change a clone. A
+      # ggproto(NULL, layer) child is not enough: build-time state is written back
+      # through the parent and one text layer then drew another layer's data.
+      mobile_layer <- rlang::env_clone(layer)
+      class(mobile_layer) <- class(layer)
+      mobile_layer$aes_params <- utils::modifyList(layer$aes_params, list(size = minimum_size))
+      plot$layers[[index]] <- mobile_layer
     }
   }
 
@@ -45,12 +52,15 @@ digikat_mobile_readable <- function(plot) {
     if (!is.character(value) || length(value) != 1L || !nzchar(value)) return(value)
     paste(strwrap(value, width = width), collapse = "\n")
   }
+  # Only rewrap labels that are text. An axis label deliberately set to NULL is
+  # stored as an explicit NULL, and assigning NULL back deletes it, after which
+  # ggplot prints the variable name ("date", "n_docs") as the axis title.
   wrap_plot_labels <- function(item) {
-    item$labels$title <- wrap_label(item$labels$title, 28)
-    item$labels$subtitle <- wrap_label(item$labels$subtitle, 44)
-    item$labels$caption <- wrap_label(item$labels$caption, 54)
-    item$labels$x <- wrap_label(item$labels$x, 30)
-    item$labels$y <- wrap_label(item$labels$y, 30)
+    widths <- c(title = 28, subtitle = 44, caption = 54, x = 30, y = 30)
+    for (name in names(widths)) {
+      value <- item$labels[[name]]
+      if (is.character(value)) item$labels[[name]] <- wrap_label(value, widths[[name]])
+    }
     item
   }
 

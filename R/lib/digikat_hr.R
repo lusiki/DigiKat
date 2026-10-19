@@ -95,3 +95,25 @@ digikat_hr_date <- function(x) {
     format(x, "%Y"), "."
   )
 }
+
+# Generic lemmas that dominate any Croatian frequency list without saying anything about the
+# subject: quantifiers and pronouns (sav, sam, mnogi), ordinals, size and time words, title
+# abbreviations, and the commonest reporting and auxiliary verbs. Display-only. Word charts
+# drop them so that a ranking shows vocabulary, never used to filter the corpus.
+DIGIKAT_GENERIC_LEMMAS <- c(
+  "sav", "sam", "svoj", "mnogi", "mnog", "neki", "svaki", "takav", "isti", "ovaj", "taj", "onaj",
+  "jedan", "prvi", "drugi", "treći", "posljednji", "zadnji", "nov", "novi", "star", "velik",
+  "veći", "mali", "cijel", "važan", "brojan", "dobar", "poseban",
+  "sv.", "dr.", "fra", "mons.", "prof.", "don", "o.",
+  "godina", "dan", "sat", "put", "način", "dio", "broj", "vrijeme", "mjesto", "trenutak",
+  "tjedan", "mjesec", "kraj", "početak", "čovjek", "osoba", "ime", "stvar", "primjer", "slučaj",
+  "biti", "imati", "moći", "htjeti", "trebati", "morati", "reći", "kazati", "činiti", "učiniti",
+  "postojati", "značiti", "dolaziti", "doći", "voditi", "tražiti", "istaknuti", "objaviti",
+  "održati", "dati", "uzeti", "vidjeti", "znati", "ostati", "postati", "nalaziti", "govoriti"
+)
+
+digikat_is_generic_lemma <- function(lemma) {
+  # stringi, not base tolower(): base errors on stray noncharacters in corpus text.
+  stringi::stri_trans_tolower(lemma) %in% DIGIKAT_GENERIC_LEMMAS |
+    !grepl("^\\p{L}[\\p{L}-]*$", lemma, perl = TRUE)
+}

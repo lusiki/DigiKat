@@ -22,8 +22,7 @@ figures <- list(
            "plot-lollipops-interactions", "plot-actor-map"),
   evolucija = c("plot-rast", "plot-migracija", "plot-koncentracija", "plot-ritam"),
   teme = c("plot-wordcloud", "plot-topic-trends", "plot-topic-intensity",
-           "plot-engagement-by-topic", "plot-polarization-by-topic",
-           "plot-actors-in-topics", "plot-topic-network"),
+           "plot-engagement-by-topic", "plot-actors-in-topics", "plot-topic-network"),
   diskurs = c("plot-emotion-heatmap", "plot-rci-strategy", "plot-network"),
   dogadjaji = c("plot-volume-anomalies", "plot-conflict-anomalies",
                 "event-seismograph-uskrs", "narrative-biography-robust")
