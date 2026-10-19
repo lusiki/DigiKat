@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-18eeef7e313107c10b6b051a6734352e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-89390a0b5fa5de9f06f1c04b1c1b6b2e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-05a0de8cf355dfe4f020f6ea4b5bd17a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -115,6 +115,52 @@ ul.task-list li input[type="checkbox"] {
     }
   ]
 }
+</script>
+<script>
+(function () {
+  var mobileCharts = window.matchMedia("(max-width: 767.98px)");
+
+  function updateChart(image) {
+    var mobileSource = image.getAttribute("data-mobile-src");
+    if (!mobileSource) return;
+
+    if (!image.hasAttribute("data-desktop-src")) {
+      image.setAttribute("data-desktop-src", image.getAttribute("src"));
+      image.setAttribute("data-desktop-width", image.getAttribute("width") || "");
+      image.setAttribute("data-desktop-height", image.getAttribute("height") || "");
+    }
+
+    if (mobileCharts.matches) {
+      image.setAttribute("src", mobileSource);
+      image.setAttribute("width", image.getAttribute("data-mobile-width"));
+      image.setAttribute("height", image.getAttribute("data-mobile-height"));
+    } else {
+      image.setAttribute("src", image.getAttribute("data-desktop-src"));
+      image.setAttribute("width", image.getAttribute("data-desktop-width"));
+      image.setAttribute("height", image.getAttribute("data-desktop-height"));
+    }
+  }
+
+  function updateCharts(root) {
+    if (root.nodeType === 1 && root.matches("img[data-mobile-src]")) updateChart(root);
+    if (root.querySelectorAll) {
+      root.querySelectorAll("img[data-mobile-src]").forEach(updateChart);
+    }
+  }
+
+  var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(updateCharts);
+    });
+  });
+
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+  mobileCharts.addEventListener("change", function () { updateCharts(document); });
+  document.addEventListener("DOMContentLoaded", function () {
+    updateCharts(document);
+    observer.disconnect();
+  });
+})();
 </script>
 
 
@@ -207,6 +253,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../pages/studije/index.html">
  <span class="dropdown-text">Tematska istraživanja</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../pages/demokrscanstvo/index.html">
+ <span class="dropdown-text">Demokršćanstvo u medijima</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../assets/izvjestaji/godisnji-pregled-2025.html">
@@ -488,11 +538,11 @@ Od svega prikupljenog zadržavaju se samo objave koje doista govore o katolički
 Službeni korpus
 </h3>
 <p style="margin: 0; color: #4f535a; font-size: 15px; max-width: 62ch;">
-Akumulator zadržava sve što je servis isporučio. Iz njega je izveden službeni korpus od 413.985 objava i 54 stupca, na kojem se grade žive stranice, mape i javni agregati. Dovršena tematska istraživanja nisu prebačena na novi ulaz.
+Akumulator zadržava sve što je servis isporučio. Iz njega je izveden službeni korpus od 611.583 objave i 55 stupaca, na kojem se grade žive stranice, mape i javni agregati. Dovršena tematska istraživanja nisu prebačena na novi ulaz.
 </p>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;">
-<span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">413.985 × 54</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">manifest + provenance</span>
+<span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">611.583 × 55</span><span style="background: #eaf0f2; color: #2c5663; padding: 4px 9px; border-radius: 4px;">manifest + provenance</span>
 </div>
 </div>
 <div style="position: relative; display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: start; background: #fff; border: 1px solid #e4e2da; border-radius: 10px; padding: 24px 26px; margin-bottom: 18px;">

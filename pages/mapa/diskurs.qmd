@@ -2,8 +2,8 @@
 title: "Atmosfera katoličkog digitalnog diskursa (2021.–2026.)"
 subtitle: "Kako se razlikuju tonalitet, emocije i konfliktni rječnik"
 description: "Atmosfera diskursa opisuje tonalitet riječi, emocionalne oznake i Relativni indeks konflikta u dijelu korpusa DigiKat."
-date-modified: 2026-08-25
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Preliminarno"
 schema-type: "Article"
 categories: ["Atmosfera diskursa", "Tonalitet", "Emocije"]
@@ -114,7 +114,7 @@ most_observed_pairs <- graph_data |>
 ## Kakvim se riječima govori
 
 <div class="freshness-strip" aria-label="Svježina Atmosfere diskursa">
-  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">24. kolovoza 2026.</span></span>
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">18. listopada 2026.</span></span>
   <span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">`r data_cutoff_hr`</span></span>
   <span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--preliminary">Preliminarno</span></span>
 </div>
@@ -270,7 +270,7 @@ Gustoća konfliktnog rječnika pokazuje broj podudaranja na tisuću riječi. Tak
 Grafikon prikazuje `r nrow(media_strategy_data)` izvora s najviše tekstova među onima koji imaju više od 20 objava u uzorku. Vodoravna os pokazuje prosječnu gustoću konfliktnog rječnika. Okomita os pokazuje koliko se RIK mijenja među tekstovima. Veličina točke označava broj tekstova. Grafikon ne dijeli izvore u unaprijed zadane skupine.
 
 <p class="figure-question"><strong>Pitanje.</strong> Koji se izvori razlikuju po gustoći konfliktnog rječnika i po tome koliko se RIK mijenja?</p>
-<p class="figure-card__takeaway"><strong>Nalaz.</strong> Visoka prosječna gustoća i velika promjenjivost nisu isto svojstvo. Izvori zato zauzimaju različite položaje.</p>
+<p class="figure-card__takeaway"><strong>Nalaz.</strong> Izvori s gušćim konfliktnim rječnikom uglavnom imaju i promjenjiviji RIK, ali se položaji pojedinih izvora razlikuju.</p>
 
 ```{r}
 #| label: plot-rci-strategy

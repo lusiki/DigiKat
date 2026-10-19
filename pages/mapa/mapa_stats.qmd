@@ -2,8 +2,8 @@
 title: "Tematske struje u katoličkom digitalnom prostoru (2021.–2026.)"
 subtitle: "Koje se teme pojavljuju i uz što se povezuju"
 description: "Tematske struje prikazuju učestalost, gustoću, zabilježene reakcije i veze 16 unaprijed definiranih tema u dijelu korpusa DigiKat."
-date-modified: 2026-08-25
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Preliminarno"
 schema-type: "Article"
 categories: ["Tematske struje", "Računalna obrada teksta", "16 kategorija"]
@@ -98,6 +98,21 @@ top_engagement_names <- engagement_by_topic %>%
   slice_head(n = 3) %>%
   pull(dominant_topic) %>%
   fmt_topics()
+
+# Preklapanje najčešćih tema i tema s najviše interakcija računa se, ne upisuje.
+top_topic_keys <- topic_trends_guided %>%
+  group_by(topic) %>% summarise(total = sum(total_mentions), .groups = "drop") %>%
+  arrange(desc(total)) %>% slice_head(n = 3) %>% pull(topic)
+top_engagement_keys <- engagement_by_topic %>%
+  arrange(desc(avg_interactions)) %>% slice_head(n = 3) %>% pull(dominant_topic)
+topic_overlap <- intersect(top_topic_keys, top_engagement_keys)
+overlap_sentence <- if (!length(topic_overlap)) {
+  "Te se skupine ne poklapaju."
+} else if (length(topic_overlap) == 1L) {
+  paste0("Te se skupine tek djelomično poklapaju. U objema se nalazi samo ", fmt_topics(topic_overlap), ".")
+} else {
+  paste0("Te se skupine djelomično poklapaju. U objema se nalaze ", fmt_topics(topic_overlap), ".")
+}
 top_love_names <- polarization_by_topic %>%
   arrange(desc(love_ratio)) %>%
   slice_head(n = 3) %>%
@@ -137,7 +152,7 @@ topic_intensity_summary <- thematic_intensity_data %>%
 ## O čemu se piše
 
 <div class="freshness-strip" aria-label="Svježina Tematskih struja">
-  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">24. kolovoza 2026.</span></span>
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">18. listopada 2026.</span></span>
   <span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">`r data_cutoff_hr`</span></span>
   <span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--preliminary">Preliminarno</span></span>
 </div>
@@ -246,7 +261,7 @@ Prema broju rječničkih podudaranja najzastupljenije su teme `r top_topic_names
 #| fig-height: 6.5
 #| column: page
 #| fig-alt: "Linije godišnjih udjela glavnih tematskih oznaka. Svaka linija ima zasebnu boju, vrstu crte i izravnu oznaku na kraju."
-#| fig-cap: "Godišnji udjeli tematskih oznaka koje prelaze 5 % u barem jednom presjeku. Godina 2026. nije uključena u pripremljeni uzorak za ovaj prikaz."
+#| fig-cap: "Godišnji udjeli tematskih oznaka koje prelaze 5 % u barem jednom presjeku. Posljednja godina nije potpuna."
 
 topic_line_types <- setNames(
   rep(c("solid", "22", "42", "13", "44", "longdash"), length.out = length(unique(topic_trends_guided$topic))),
@@ -270,7 +285,8 @@ plot_topic_trends <- ggplot(
     show.legend = FALSE, size = 3.4, max.overlaps = Inf
   ) +
   scale_y_continuous(labels = scales::percent_format(decimal.mark = ",")) +
-  scale_x_continuous(breaks = 2021:2025, limits = c(2021, 2025.8)) +
+  scale_x_continuous(breaks = sort(unique(topic_trends_guided$year)),
+                     limits = c(min(topic_trends_guided$year), max(topic_trends_guided$year) + 1.7)) +
   scale_colour_digikat(labels = digikat_topic_label) +
   scale_linetype_manual(values = topic_line_types) +
   labs(title = "Promjena zastupljenosti glavnih tema",
@@ -604,6 +620,6 @@ Podaci pokazuju tematske struje koje se preklapaju. Ne pokazuju strogu podjelu d
 
 Mreža pokazuje koje se oznake češće pojavljuju u istim dokumentima. Za tumačenje pojedine veze treba pročitati povezane tekstove. Ova analiza to ne čini.
 
-Za uredništvo je važna razlika između najčešćih tema i tema s najviše reakcija. Te se skupine ne poklapaju. Tema s mnogo objava ne mora izazvati mnogo reakcija. Tema s malo objava može imati visok prosjek reakcija po objavi. To pokazuje gdje je prostor zasićen, a gdje postoji više mjesta za novi sadržaj.
+Za uredništvo je važna razlika između najčešćih tema i tema s najviše reakcija. `r overlap_sentence` Tema s mnogo objava ne mora izazvati mnogo reakcija. Tema s malo objava može imati visok prosjek reakcija po objavi. To pokazuje gdje je prostor zasićen, a gdje postoji više mjesta za novi sadržaj.
 
 Sljedeća mapa [Atmosfera diskursa](diskurs.html) analizira tonalitet, emocije i konfliktni rječnik. Ni ona iz riječi ne izvodi namjeru autora bez dodatne provjere.

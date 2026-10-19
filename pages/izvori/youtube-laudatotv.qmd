@@ -1,9 +1,9 @@
 ---
 title: "LaudatoTV"
-subtitle: "YouTube · Divovi"
+subtitle: "YouTube · Megafoni"
 description: "Profil izvora LaudatoTV na platformi YouTube prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 show-freshness: true
 schema-type: "ProfilePage"
@@ -20,7 +20,7 @@ categories: ["Katalog izvora", "YouTube"]
   "description": "Profil izvora LaudatoTV na platformi YouTube prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/youtube-laudatotv.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/pages/izvori/"
   },
@@ -47,37 +47,37 @@ Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">3.537</div>
+<div class="metric-value">4.763</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">143.208</div>
+<div class="metric-value">210.986</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">5.642.997</div>
+<div class="metric-value">8.641.342</div>
 <div class="metric-label">Procijenjenoga dosega</div>
 </div>
 </div>
 
-Po volumenu objava, LaudatoTV je na **2. mjestu** od 20 praćenih izvora na platformi YouTube. Prosječno ostvaruje **40 interakcija po objavi**.
+Po volumenu objava, LaudatoTV je na **2. mjestu** od 21 praćenih izvora na platformi YouTube. Prosječno ostvaruje **44 interakcija po objavi**.
 
 ## Tipologija
 
-Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), LaudatoTV pripada skupini **Divovi**, koju obilježava visok doseg i visok angažman, što ga svrstava među vodeće aktere ekosustava.
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), LaudatoTV pripada skupini **Megafoni**, koju obilježava visok doseg uz nizak angažman, pa sadržaj doseže široku publiku bez intenzivne interakcije.
 
 Uređivačka oznaka je **konfesionalni izvor** *(prijedlog koji potvrđuje voditelj projekta)*
 
 ## Povezano
 
 - [Pregled platforme YouTube](platforma-youtube.html)
-- Srodni izvori: [pulherissimus](youtube-pulherissimus.html), [Pod Smokvom](youtube-pod-smokvom.html), [Hrana za dušu](youtube-hrana-za-dusu.html)
+- Srodni izvori: [pulherissimus](youtube-pulherissimus.html), [Pod Smokvom](youtube-pod-smokvom.html), [Stopama Padre Pija](youtube-stopama-padre-pija.html)
 - [Katalog izvora, sve platforme](index.html)
 - [Metodologija prikupljanja i mjerenja](../metodologija.html)
 
 ## Izvori podataka
 
-Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.
+Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 18. listopada 2026. zajedničkim generatorom Kataloga izvora.
 
 ::: {.callout-warning}
 Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira izvore na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.

@@ -3,8 +3,8 @@ title: "DigiKat — izvršni pregled / executive overview"
 pagetitle: "Izvršni pregled / executive overview"
 subtitle: "Kartografija katoličke tematike u hrvatskom digitalnom medijskom prostoru"
 description: "Izvršni pregled dvojezično sažima opseg korpusa DigiKat, odnose među platformama, tematske struje i metodološke granice."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 show-freshness: true
 schema-type: "Report"
@@ -326,7 +326,7 @@ ggplot(plot_df, aes(x = udio, y = metrika, fill = grupa)) +
   scale_fill_manual(values = boje, name = NULL, guide = guide_legend(reverse = TRUE)) +
   scale_x_continuous(expand = expansion(mult = c(0, 0.02)),
                      labels = function(x) paste0(x, " %")) +
-  labs(title = "Tri četvrtine proizvodnje, manje od polovice dosega",
+  labs(title = "Dvije trećine objava, nešto više od trećine dosega",
        subtitle = "Kako se objave, interakcije i doseg dijele među platformama, 2021.–2026.",
        x = NULL, y = NULL,
        caption = paste0("Izvor: DigiKat, javni agregati. „Ostale platforme” = Twitter/X, Reddit, forumi,\n",

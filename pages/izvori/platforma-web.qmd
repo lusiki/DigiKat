@@ -2,8 +2,8 @@
 title: "Izvori — Web"
 subtitle: "Praćeni izvori na platformi Web"
 description: "Pregled izvora na platformi Web uspoređuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Mapi ekosustava."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 show-freshness: true
 schema-type: "CollectionPage"
@@ -19,7 +19,7 @@ categories: ["Katalog izvora", "Web"]
   "description": "Pregled praćenih izvora na platformi Web u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/platforma-web.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/#website"
   },
@@ -34,22 +34,21 @@ Ova stranica okuplja praćene izvore na platformi **Web** iz **Kataloga izvora**
 
 | Izvor | Tipologija | Objava | Interakcija | Doseg |
 |---|---|---:|---:|---:|
-| [hkm.hr](web-hkm-hr.html) | Divovi | 55.087 | 2.986.089 | 41.080.542 |
-| [laudato.hr](web-laudato-hr.html) | Specijalizirani akteri | 11.512 | 685.687 | 8.550.486 |
-| [novizivot.net](web-novizivot-net.html) | Divovi | 6.782 | 3.404.252 | 42.241.140 |
-| [slobodnadalmacija.hr](web-slobodnadalmacija-hr.html) | Divovi | 5.949 | 872.923 | 28.694.499 |
-| [index.hr](web-index-hr.html) | Divovi | 4.303 | 2.071.834 | 71.284.584 |
-| [bitno.net](web-bitno-net.html) | Graditelji zajednica | 4.261 | 787.274 | 12.781.494 |
-| [vecernji.hr](web-vecernji-hr.html) | Divovi | 4.098 | 945.747 | 31.588.701 |
-| [narod.hr](web-narod-hr.html) | Specijalizirani akteri | 3.991 | 359.402 | 6.687.228 |
-| [net.hr](web-net-hr.html) | Specijalizirani akteri | 3.879 | 408.042 | 20.720.772 |
-| [dnevno.hr](web-dnevno-hr.html) | Divovi | 3.634 | 2.980.574 | 55.489.845 |
-| [24sata.hr](web-24sata-hr.html) | Divovi | 3.270 | 971.429 | 28.731.111 |
-| [jutarnji.hr](web-jutarnji-hr.html) | Megafoni | 2.828 | 743.462 | 29.739.897 |
-| [dnevnik.hr](web-dnevnik-hr.html) | Specijalizirani akteri | 2.079 | 564.700 | 15.146.586 |
-| [dalmatinskiportal.hr](web-dalmatinskiportal-hr.html) | Specijalizirani akteri | 1.919 | 356.175 | 9.374.376 |
-| [telegram.hr](web-telegram-hr.html) | Specijalizirani akteri | 1.435 | 637.206 | 12.459.948 |
-| [caritas.hr](web-caritas-hr.html) | Specijalizirani akteri | 171 | 447.069 | 7.056.738 |
+| [hkm.hr](web-hkm-hr.html) | Divovi | 66.857 | 3.258.232 | 45.286.281 |
+| [laudato.hr](web-laudato-hr.html) | Specijalizirani akteri | 14.152 | 806.029 | 10.060.110 |
+| [novizivot.net](web-novizivot-net.html) | Divovi | 11.649 | 5.006.612 | 62.155.557 |
+| [slobodnadalmacija.hr](web-slobodnadalmacija-hr.html) | Divovi | 7.821 | 1.051.862 | 36.264.660 |
+| [bitno.net](web-bitno-net.html) | Divovi | 6.818 | 2.256.216 | 45.989.964 |
+| [net.hr](web-net-hr.html) | Specijalizirani akteri | 6.341 | 629.387 | 33.272.451 |
+| [index.hr](web-index-hr.html) | Divovi | 6.107 | 2.411.557 | 92.188.899 |
+| [vecernji.hr](web-vecernji-hr.html) | Divovi | 5.967 | 1.188.253 | 41.620.389 |
+| [dnevno.hr](web-dnevno-hr.html) | Divovi | 4.981 | 3.149.702 | 60.991.167 |
+| [narod.hr](web-narod-hr.html) | Specijalizirani akteri | 4.878 | 378.853 | 7.246.809 |
+| [24sata.hr](web-24sata-hr.html) | Graditelji zajednica | 4.489 | 1.106.592 | 35.960.574 |
+| [jutarnji.hr](web-jutarnji-hr.html) | Megafoni | 3.890 | 857.394 | 38.012.463 |
+| [dnevnik.hr](web-dnevnik-hr.html) | Specijalizirani akteri | 3.353 | 788.118 | 22.147.014 |
+| [dalmatinskiportal.hr](web-dalmatinskiportal-hr.html) | Specijalizirani akteri | 2.706 | 444.984 | 11.030.388 |
+| [telegram.hr](web-telegram-hr.html) | Specijalizirani akteri | 2.008 | 735.906 | 14.891.118 |
 
 [Natrag na katalog izvora](index.html) · [Mapa ekosustava](../mapa/mapa.html)
 

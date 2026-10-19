@@ -2,8 +2,8 @@
 title: "kristijanilicic"
 subtitle: "Instagram · Divovi"
 description: "Profil izvora kristijanilicic na platformi Instagram prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Preliminarno"
 show-freshness: true
 schema-type: "ProfilePage"
@@ -20,7 +20,7 @@ categories: ["Katalog izvora", "Instagram"]
   "description": "Profil izvora kristijanilicic na platformi Instagram prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/instagram-kristijanilicic.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/pages/izvori/"
   },
@@ -47,24 +47,24 @@ Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">1</div>
+<div class="metric-value">2</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">13.296</div>
+<div class="metric-value">18.804</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">57.864</div>
+<div class="metric-value">112.605</div>
 <div class="metric-label">Procijenjenoga dosega</div>
 </div>
 </div>
 
 ::: {.callout-caution}
-Ovaj se profil temelji na samo 1 objava. Prikazan je radi potpunosti kataloga. Rang i tipologiju zato ne treba tumačiti kao stabilnu procjenu izvora.
+Ovaj se profil temelji na samo 2 objava. Prikazan je radi potpunosti kataloga. Rang i tipologiju zato ne treba tumačiti kao stabilnu procjenu izvora.
 :::
 
-Po volumenu objava, kristijanilicic je na **15. mjestu** od 20 praćenih izvora na platformi Instagram. Prosječno ostvaruje **13.296 interakcija po objavi**.
+Po volumenu objava, kristijanilicic je na **17. mjestu** od 21 praćenih izvora na platformi Instagram. Prosječno ostvaruje **9.402 interakcija po objavi**.
 
 ## Tipologija
 
@@ -81,7 +81,7 @@ Uređivačka oznaka je **ostalo** *(prijedlog koji potvrđuje voditelj projekta)
 
 ## Izvori podataka
 
-Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.
+Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 18. listopada 2026. zajedničkim generatorom Kataloga izvora.
 
 ::: {.callout-warning}
 Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira izvore na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.

@@ -2,8 +2,8 @@
 title: "Gospa"
 subtitle: "Facebook · Graditelji zajednica"
 description: "Profil izvora Gospa na platformi Facebook prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 show-freshness: true
 schema-type: "ProfilePage"
@@ -20,7 +20,7 @@ categories: ["Katalog izvora", "Facebook"]
   "description": "Profil izvora Gospa na platformi Facebook prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/facebook-gospa.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/pages/izvori/"
   },
@@ -47,20 +47,20 @@ Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">857</div>
+<div class="metric-value">1.414</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">209.117</div>
+<div class="metric-value">318.307</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">11.019.978</div>
+<div class="metric-value">17.060.432</div>
 <div class="metric-label">Procijenjenoga dosega</div>
 </div>
 </div>
 
-Po volumenu objava, Gospa je na **9. mjestu** od 19 praćenih izvora na platformi Facebook. Prosječno ostvaruje **244 interakcija po objavi**.
+Po volumenu objava, Gospa je na **10. mjestu** od 19 praćenih izvora na platformi Facebook. Prosječno ostvaruje **225 interakcija po objavi**.
 
 ## Tipologija
 
@@ -71,13 +71,13 @@ Uređivačka oznaka je **konfesionalni izvor** *(prijedlog koji potvrđuje vodit
 ## Povezano
 
 - [Pregled platforme Facebook](platforma-facebook.html)
-- Srodni izvori: [VJERA](facebook-vjera.html), [Slobodna Dalmacija](facebook-slobodna-dalmacija.html), [Kraljica Mira](facebook-kraljica-mira.html)
+- Srodni izvori: [Kraljica Mira](facebook-kraljica-mira.html), [Slobodna Dalmacija](facebook-slobodna-dalmacija.html), [VJERA](facebook-vjera.html)
 - [Katalog izvora, sve platforme](index.html)
 - [Metodologija prikupljanja i mjerenja](../metodologija.html)
 
 ## Izvori podataka
 
-Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.
+Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 18. listopada 2026. zajedničkim generatorom Kataloga izvora.
 
 ::: {.callout-warning}
 Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira izvore na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.

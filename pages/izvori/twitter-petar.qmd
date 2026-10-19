@@ -2,8 +2,8 @@
 title: "Petar"
 subtitle: "Twitter · Divovi"
 description: "Profil izvora Petar na platformi Twitter prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Preliminarno"
 show-freshness: true
 schema-type: "ProfilePage"
@@ -20,7 +20,7 @@ categories: ["Katalog izvora", "Twitter"]
   "description": "Profil izvora Petar na platformi Twitter prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/twitter-petar.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/pages/izvori/"
   },
@@ -47,24 +47,24 @@ Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">51</div>
+<div class="metric-value">69</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">1.724</div>
+<div class="metric-value">2.633</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">36.792</div>
+<div class="metric-value">61.912</div>
 <div class="metric-label">Procijenjenoga dosega</div>
 </div>
 </div>
 
 ::: {.callout-note}
-Profil se temelji na 51 objava i zato ima status **Preliminarno**. Pokazatelji opisuju zabilježeni dio korpusa, a ne cjelokupno djelovanje izvora.
+Profil se temelji na 69 objava i zato ima status **Preliminarno**. Pokazatelji opisuju zabilježeni dio korpusa, a ne cjelokupno djelovanje izvora.
 :::
 
-Po volumenu objava, Petar je na **3. mjestu** od 23 praćenih izvora na platformi Twitter. Prosječno ostvaruje **34 interakcija po objavi**.
+Po volumenu objava, Petar je na **2. mjestu** od 21 praćenih izvora na platformi Twitter. Prosječno ostvaruje **38 interakcija po objavi**.
 
 ## Tipologija
 
@@ -81,7 +81,7 @@ Uređivačka oznaka je **ostalo** *(prijedlog koji potvrđuje voditelj projekta)
 
 ## Izvori podataka
 
-Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.
+Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 18. listopada 2026. zajedničkim generatorom Kataloga izvora.
 
 ::: {.callout-warning}
 Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira izvore na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.

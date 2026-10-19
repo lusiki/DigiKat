@@ -2,8 +2,8 @@
 title: "slobodna.dalmacija"
 subtitle: "TikTok · Divovi"
 description: "Profil izvora slobodna.dalmacija na platformi TikTok prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Preliminarno"
 show-freshness: true
 schema-type: "ProfilePage"
@@ -20,7 +20,7 @@ categories: ["Katalog izvora", "TikTok"]
   "description": "Profil izvora slobodna.dalmacija na platformi TikTok prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/tiktok-slobodna-dalmacija.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/pages/izvori/"
   },
@@ -47,24 +47,24 @@ Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">11</div>
+<div class="metric-value">13</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">41.703</div>
+<div class="metric-value">38.950</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">505.918</div>
+<div class="metric-value">545.537</div>
 <div class="metric-label">Procijenjenoga dosega</div>
 </div>
 </div>
 
 ::: {.callout-caution}
-Ovaj se profil temelji na samo 11 objava. Prikazan je radi potpunosti kataloga. Rang i tipologiju zato ne treba tumačiti kao stabilnu procjenu izvora.
+Ovaj se profil temelji na samo 13 objava. Prikazan je radi potpunosti kataloga. Rang i tipologiju zato ne treba tumačiti kao stabilnu procjenu izvora.
 :::
 
-Po volumenu objava, slobodna.dalmacija je na **4. mjestu** od 16 praćenih izvora na platformi TikTok. Prosječno ostvaruje **3.791 interakcija po objavi**.
+Po volumenu objava, slobodna.dalmacija je na **3. mjestu** od 18 praćenih izvora na platformi TikTok. Prosječno ostvaruje **2.996 interakcija po objavi**.
 
 ## Tipologija
 
@@ -75,13 +75,13 @@ Uređivačka oznaka je **sekularni izvor** *(prijedlog koji potvrđuje voditelj 
 ## Povezano
 
 - [Pregled platforme TikTok](platforma-tiktok.html)
-- Srodni izvori: [hrvatska_radiotelevizija](tiktok-hrvatska-radiotelevizija.html), [vecernjilist](tiktok-vecernjilist.html), [trtbalkanbhsc](tiktok-trtbalkanbhsc.html)
+- Srodni izvori: [dnevnikhr](tiktok-dnevnikhr.html), [crovibes](tiktok-crovibes.html), [trtbalkanbhsc](tiktok-trtbalkanbhsc.html)
 - [Katalog izvora, sve platforme](index.html)
 - [Metodologija prikupljanja i mjerenja](../metodologija.html)
 
 ## Izvori podataka
 
-Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.
+Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 18. listopada 2026. zajedničkim generatorom Kataloga izvora.
 
 ::: {.callout-warning}
 Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira izvore na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.

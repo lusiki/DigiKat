@@ -1,8 +1,8 @@
 ---
 pagetitle: "Otvoreni opservatorij katoličkih tema u medijima"
 description: "DigiKat je znanstveni projekt koji sustavno prati katoličke teme u hrvatskom medijskom prostoru. Mjerimo tko objavljuje, o čemu se govori i što privlači pozornost publike."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 categories: ["Istraživački projekt", "Otvoreni podaci"]
 schema-type: "ResearchProject"
@@ -67,7 +67,7 @@ presjek <- hr_date(mf$corpus$date_max)
     <div class="home-section__heading">
       <div>
         <h2>Jedna službena osnova za rezultate</h2>
-        <p class="home-section__lead">Službeni korpus DigiKat obuhvaća približno 400.000 zapisa. Svaka objava prolazi dokumentirano pravilo uključivanja, a javni manifest čuva opseg, presjek i podrijetlo ove verzije.</p>
+        <p class="home-section__lead">Službeni korpus DigiKat obuhvaća više od `r fmt_int(floor(mf$corpus$rows / 10000) * 10000)` zapisa. Svaka objava prolazi dokumentirano pravilo uključivanja, a javni manifest čuva opseg, presjek i podrijetlo ove verzije.</p>
       </div>
       <a class="home-text-link" href="pages/baza.html">Otvorite korpus i javne datoteke</a>
     </div>

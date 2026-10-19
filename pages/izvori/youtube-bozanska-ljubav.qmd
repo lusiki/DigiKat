@@ -2,9 +2,9 @@
 title: "BOŽANSKA LJUBAV"
 subtitle: "YouTube · Graditelji zajednica"
 description: "Profil izvora BOŽANSKA LJUBAV na platformi YouTube prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
-status: "Preliminarno"
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
+status: "Ažurira se"
 show-freshness: true
 schema-type: "ProfilePage"
 image: false
@@ -20,7 +20,7 @@ categories: ["Katalog izvora", "YouTube"]
   "description": "Profil izvora BOŽANSKA LJUBAV na platformi YouTube prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/youtube-bozanska-ljubav.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/pages/izvori/"
   },
@@ -47,24 +47,20 @@ Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">152</div>
+<div class="metric-value">248</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">144.742</div>
+<div class="metric-value">382.618</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">1.244.769</div>
+<div class="metric-value">1.630.302</div>
 <div class="metric-label">Procijenjenoga dosega</div>
 </div>
 </div>
 
-::: {.callout-note}
-Profil se temelji na 152 objava i zato ima status **Preliminarno**. Pokazatelji opisuju zabilježeni dio korpusa, a ne cjelokupno djelovanje izvora.
-:::
-
-Po volumenu objava, BOŽANSKA LJUBAV je na **15. mjestu** od 20 praćenih izvora na platformi YouTube. Prosječno ostvaruje **952 interakcija po objavi**.
+Po volumenu objava, BOŽANSKA LJUBAV je na **16. mjestu** od 21 praćenih izvora na platformi YouTube. Prosječno ostvaruje **1.543 interakcija po objavi**.
 
 ## Tipologija
 
@@ -75,13 +71,13 @@ Uređivačka oznaka je **konfesionalni izvor** *(prijedlog koji potvrđuje vodit
 ## Povezano
 
 - [Pregled platforme YouTube](platforma-youtube.html)
-- Srodni izvori: [budiFRAjer](youtube-budifrajer.html), [RTL](youtube-rtl.html), [Bog Je Tu](youtube-bog-je-tu.html)
+- Srodni izvori: [Nova Eva](youtube-nova-eva.html), [Bog Je Tu](youtube-bog-je-tu.html), [RTL](youtube-rtl.html)
 - [Katalog izvora, sve platforme](index.html)
 - [Metodologija prikupljanja i mjerenja](../metodologija.html)
 
 ## Izvori podataka
 
-Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.
+Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 18. listopada 2026. zajedničkim generatorom Kataloga izvora.
 
 ::: {.callout-warning}
 Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira izvore na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.

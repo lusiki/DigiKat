@@ -2,8 +2,8 @@
 title: "Fokus na događaje (2021.–2026.)"
 subtitle: "Dani kada se volumen ili konfliktni rječnik ističu"
 description: "Fokus na događaje označava neuobičajene dane te opisuje razdoblje oko Uskrsa 2022. i riječi u tekstovima o Alojziju Stepincu."
-date-modified: 2026-08-25
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Preliminarno"
 schema-type: "Article"
 categories: ["Događaji", "Dinamika", "Tonalitet"]
@@ -119,7 +119,7 @@ stepinac_terms <- top_associated_words_final |>
 ## Kada se dnevni obrazac promijeni
 
 <div class="freshness-strip" aria-label="Svježina Fokusa na događaje">
-  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">24. kolovoza 2026.</span></span>
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">18. listopada 2026.</span></span>
   <span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">`r data_cutoff_hr`</span></span>
   <span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--preliminary">Preliminarno</span></span>
 </div>
@@ -332,7 +332,7 @@ digikat_chart_evidence(
 
 ### Što se vidi oko Uskrsa 2022.
 
-Udio teme **Duhovnost i liturgija** najveći je `r fmt_hr_date(easter_peak$date)`. Tada iznosi `r fmt_pct1(easter_peak$duhovnost_share)`, ali temelji se na samo `r easter_peak_n` dokumenta. Na sam Uskrs udio iznosi `r fmt_pct1(easter_day$duhovnost_share)` među `r easter_day_n` dokumenta. Prosječni tonalitet kreće se od `r format(easter_sentiment_range[1], digits = 2, decimal.mark = ",")` do `r format(easter_sentiment_range[2], digits = 2, decimal.mark = ",")`. Prosječna gustoća konfliktnog rječnika kreće se od `r format(easter_cli_range[1], digits = 2, decimal.mark = ",")` do `r format(easter_cli_range[2], digits = 2, decimal.mark = ",")`.
+Udio teme **Duhovnost i liturgija** najveći je `r fmt_hr_date(easter_peak$date)`. Tada iznosi `r fmt_pct1(easter_peak$duhovnost_share)`, ali temelji se na samo `r digikat_hr_count(easter_peak_n, "dokument")`. Na sam Uskrs udio iznosi `r fmt_pct1(easter_day$duhovnost_share)` među `r digikat_hr_count(easter_day_n, "dokument")`. Prosječni tonalitet kreće se od `r format(easter_sentiment_range[1], digits = 2, decimal.mark = ",")` do `r format(easter_sentiment_range[2], digits = 2, decimal.mark = ",")`. Prosječna gustoća konfliktnog rječnika kreće se od `r format(easter_cli_range[1], digits = 2, decimal.mark = ",")` do `r format(easter_cli_range[2], digits = 2, decimal.mark = ",")`.
 
 Grafikon pokazuje kada se tema pojačava u uzorku i kako se dvije jezične mjere kreću oko blagdana. Ne opisuje sve objave ni osjećaje publike. Ne pokazuje ni obrazac koji vrijedi za sve liturgijske događaje. Za takav zaključak trebalo bi istim postupkom analizirati više unaprijed odabranih vjerskih i drugih događaja.
 
@@ -405,4 +405,4 @@ Mapa daje tri ograničena rezultata. Dnevni postupak označio je `r nrow(volume_
 
 Pouzdaniji model tražio bi unaprijed određen popis događaja, zaseban skup za provjeru i najmanji dopušten broj tekstova po danu. Trebalo bi provjeriti i koliko točno model prepoznaje događaje. Tek bi tada bilo moguće govoriti o pouzdanom automatskom prepoznavanju ili predviđanju.
 
-Već se vide obrasci korisni za planiranje. Najveći vrhovi pažnje povezani su s datumima koji su poznati unaprijed, a ne s prijeporima. Kalendar zato pomaže predvidjeti velik dio godišnje pažnje. Onaj tko planira objave može vidjeti koji su termini već zasićeni, a gdje ima više prostora.
+Već se vide obrasci korisni za planiranje. Mnogi označeni vrhovi padaju na unaprijed poznate blagdanske datume, poput Božića, Velike Gospe i Uskrsa. Među najvećima su i dani koji se ne mogu unaprijed znati, poput smrti pape Franje. Kalendar zato pomaže predvidjeti dio godišnje pažnje, ali ne svu. Onaj tko planira objave može vidjeti koji su termini već zasićeni, a gdje ima više prostora.

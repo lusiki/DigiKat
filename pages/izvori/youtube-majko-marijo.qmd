@@ -2,8 +2,8 @@
 title: "Majko Marijo"
 subtitle: "YouTube · Divovi"
 description: "Profil izvora Majko Marijo na platformi YouTube prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 show-freshness: true
 schema-type: "ProfilePage"
@@ -20,7 +20,7 @@ categories: ["Katalog izvora", "YouTube"]
   "description": "Profil izvora Majko Marijo na platformi YouTube prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/youtube-majko-marijo.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/pages/izvori/"
   },
@@ -47,20 +47,20 @@ Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">333</div>
+<div class="metric-value">609</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">266.210</div>
+<div class="metric-value">595.869</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">9.386.044</div>
+<div class="metric-value">15.355.245</div>
 <div class="metric-label">Procijenjenoga dosega</div>
 </div>
 </div>
 
-Po volumenu objava, Majko Marijo je na **11. mjestu** od 20 praćenih izvora na platformi YouTube. Prosječno ostvaruje **799 interakcija po objavi**.
+Po volumenu objava, Majko Marijo je na **8. mjestu** od 21 praćenih izvora na platformi YouTube. Prosječno ostvaruje **978 interakcija po objavi**.
 
 ## Tipologija
 
@@ -71,13 +71,13 @@ Uređivačka oznaka je **konfesionalni izvor** *(prijedlog koji potvrđuje vodit
 ## Povezano
 
 - [Pregled platforme YouTube](platforma-youtube.html)
-- Srodni izvori: [Stopama Padre Pija](youtube-stopama-padre-pija.html), [RTL](youtube-rtl.html), [BOŽANSKA LJUBAV](youtube-bozanska-ljubav.html)
+- Srodni izvori: [Stopama Padre Pija](youtube-stopama-padre-pija.html), [RTL](youtube-rtl.html), [Pod Smokvom](youtube-pod-smokvom.html)
 - [Katalog izvora, sve platforme](index.html)
 - [Metodologija prikupljanja i mjerenja](../metodologija.html)
 
 ## Izvori podataka
 
-Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.
+Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 18. listopada 2026. zajedničkim generatorom Kataloga izvora.
 
 ::: {.callout-warning}
 Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira izvore na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.

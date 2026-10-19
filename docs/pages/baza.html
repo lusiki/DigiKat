@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Službeni korpus DigiKat obuhvaća približno 400.000 objava, uz javni manifest, agregate, rječnik varijabli i sintetički uzorak.">
+<meta name="description" content="Službeni korpus DigiKat obuhvaća više od 610.000 objava, uz javni manifest, agregate, rječnik varijabli i sintetički uzorak.">
 
 <title>Službeni korpus – DigiKat</title>
 <style>
@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-18eeef7e313107c10b6b051a6734352e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-89390a0b5fa5de9f06f1c04b1c1b6b2e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-05a0de8cf355dfe4f020f6ea4b5bd17a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -151,16 +151,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ]
 }
 </script>
+<script>
+(function () {
+  var mobileCharts = window.matchMedia("(max-width: 767.98px)");
+
+  function updateChart(image) {
+    var mobileSource = image.getAttribute("data-mobile-src");
+    if (!mobileSource) return;
+
+    if (!image.hasAttribute("data-desktop-src")) {
+      image.setAttribute("data-desktop-src", image.getAttribute("src"));
+      image.setAttribute("data-desktop-width", image.getAttribute("width") || "");
+      image.setAttribute("data-desktop-height", image.getAttribute("height") || "");
+    }
+
+    if (mobileCharts.matches) {
+      image.setAttribute("src", mobileSource);
+      image.setAttribute("width", image.getAttribute("data-mobile-width"));
+      image.setAttribute("height", image.getAttribute("data-mobile-height"));
+    } else {
+      image.setAttribute("src", image.getAttribute("data-desktop-src"));
+      image.setAttribute("width", image.getAttribute("data-desktop-width"));
+      image.setAttribute("height", image.getAttribute("data-desktop-height"));
+    }
+  }
+
+  function updateCharts(root) {
+    if (root.nodeType === 1 && root.matches("img[data-mobile-src]")) updateChart(root);
+    if (root.querySelectorAll) {
+      root.querySelectorAll("img[data-mobile-src]").forEach(updateChart);
+    }
+  }
+
+  var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(updateCharts);
+    });
+  });
+
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+  mobileCharts.addEventListener("change", function () { updateCharts(document); });
+  document.addEventListener("DOMContentLoaded", function () {
+    updateCharts(document);
+    observer.disconnect();
+  });
+})();
+</script>
 
 
 <meta property="og:title" content="Službeni korpus">
-<meta property="og:description" content="Službeni korpus DigiKat obuhvaća približno 400.000 objava, uz javni manifest, agregate, rječnik varijabli i sintetički uzorak.">
+<meta property="og:description" content="Službeni korpus DigiKat obuhvaća više od 610.000 objava, uz javni manifest, agregate, rječnik varijabli i sintetički uzorak.">
 <meta property="og:image" content="https://lusiki.github.io/DigiKat/assets/images/digikat-social-card.png">
 <meta property="og:site_name" content="DigiKat">
 <meta property="og:locale" content="hr_HR">
 <meta property="og:image:alt" content="DigiKat. Katolički medijski opservatorij Hrvatskoga katoličkog sveučilišta.">
 <meta name="twitter:title" content="Službeni korpus">
-<meta name="twitter:description" content="Službeni korpus DigiKat obuhvaća približno 400.000 objava, uz javni manifest, agregate, rječnik varijabli i sintetički uzorak.">
+<meta name="twitter:description" content="Službeni korpus DigiKat obuhvaća više od 610.000 objava, uz javni manifest, agregate, rječnik varijabli i sintetički uzorak.">
 <meta name="twitter:image" content="https://lusiki.github.io/DigiKat/assets/images/digikat-social-card.png">
 <meta name="twitter:image:alt" content="DigiKat. Katolički medijski opservatorij Hrvatskoga katoličkog sveučilišta.">
 <meta name="twitter:card" content="summary_large_image">
@@ -242,6 +288,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li>
     <a class="dropdown-item" href="../pages/studije/index.html">
  <span class="dropdown-text">Tematska istraživanja</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../pages/demokrscanstvo/index.html">
+ <span class="dropdown-text">Demokršćanstvo u medijima</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../assets/izvjestaji/godisnji-pregled-2025.html">
@@ -333,7 +383,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    Službeni korpus DigiKat obuhvaća približno 400.000 objava, uz javni manifest, agregate, rječnik varijabli i sintetički uzorak.
+    Službeni korpus DigiKat obuhvaća više od 610.000 objava, uz javni manifest, agregate, rječnik varijabli i sintetički uzorak.
   </div>
 </div>
 
@@ -345,7 +395,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Izmijenjeno</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">24. kolovoza 2026.</p>
+      <p class="date-modified">18. listopada 2026.</p>
     </div>
   </div>
     
@@ -361,7 +411,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "@context": "https://schema.org",
   "@type": "Dataset",
   "name": "Službeni korpus DigiKat",
-  "description": "Službeni korpus DigiKat obuhvaća 413.985 medijskih objava o katoličkim temama u hrvatskom digitalnom prostoru.",
+  "description": "Službeni korpus DigiKat obuhvaća 611.583 medijskih objava o katoličkim temama u hrvatskom digitalnom prostoru.",
   "url": "https://lusiki.github.io/DigiKat/pages/baza.html",
   "sameAs": "https://github.com/lusiki/DigiKat",
   "inLanguage": ["hr", "bs"],
@@ -377,8 +427,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "@type": "Organization",
     "name": "Hrvatsko katoličko sveučilište"
   },
-  "dateModified": "2026-08-10",
-  "temporalCoverage": "2021-01-01/2026-06-11",
+  "dateModified": "2026-10-18",
+  "temporalCoverage": "2021-01-01/2026-10-16",
   "spatialCoverage": {
     "@type": "Place",
     "name": "Hrvatska i regionalni južnoslavenski digitalni prostor"
@@ -386,7 +436,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "conditionsOfAccess": "Manifest, javni agregati i sintetički uzorak dostupni su otvoreno. Pristup redcima s punim tekstom odobrava se zasebno za istraživačke svrhe.",
   "keywords": ["katoličke teme", "hrvatski mediji", "digitalna religija", "računalne društvene znanosti"],
-  "variableMeasured": ["DATE", "TIME", "TITLE", "FROM", "AUTHOR", "URL", "URL_PHOTO", "SOURCE_TYPE", "GROUP_NAME", "KEYWORD_NAME", "FOUND_KEYWORDS", "LANGUAGES", "LOCATIONS", "TAGS", "MANUAL_SENTIMENT", "AUTO_SENTIMENT", "MENTION_SNIPPET", "REACH", "VIRALITY", "ENGAGEMENT_RATE", "INTERACTIONS", "FOLLOWERS_COUNT", "LIKE_COUNT", "COMMENT_COUNT", "SHARE_COUNT", "TWEET_COUNT", "LOVE_COUNT", "WOW_COUNT", "HAHA_COUNT", "SAD_COUNT", "ANGRY_COUNT", "TOTAL_REACTIONS_COUNT", "FAVORITE_COUNT", "RETWEET_COUNT", "VIEW_COUNT", "DISLIKE_COUNT", "COUNT", "REPOST_COUNT", "REDDIT_TYPE", "REDDIT_SCORE", "INFLUENCE_SCORE", "TWEET_TYPE", "TWEET_SOURCE_NAME", "TWEET_SOURCE_URL", "FULL_TEXT", "year", "data_source", "dk_era", "dk_master_row", "dk_n_decisive", "dk_n_total", "dk_score", "dk_old_rule", "dk_rule"],
+  "variableMeasured": ["DATE", "TIME", "TITLE", "FROM", "AUTHOR", "URL", "URL_PHOTO", "SOURCE_TYPE", "GROUP_NAME", "KEYWORD_NAME", "FOUND_KEYWORDS", "LANGUAGES", "LOCATIONS", "TAGS", "MANUAL_SENTIMENT", "AUTO_SENTIMENT", "MENTION_SNIPPET", "REACH", "VIRALITY", "ENGAGEMENT_RATE", "INTERACTIONS", "FOLLOWERS_COUNT", "LIKE_COUNT", "COMMENT_COUNT", "SHARE_COUNT", "TWEET_COUNT", "LOVE_COUNT", "WOW_COUNT", "HAHA_COUNT", "SAD_COUNT", "ANGRY_COUNT", "TOTAL_REACTIONS_COUNT", "FAVORITE_COUNT", "RETWEET_COUNT", "VIEW_COUNT", "DISLIKE_COUNT", "COUNT", "REPOST_COUNT", "REDDIT_TYPE", "REDDIT_SCORE", "INFLUENCE_SCORE", "TWEET_TYPE", "TWEET_SOURCE_NAME", "TWEET_SOURCE_URL", "FULL_TEXT", "year", "data_source", "dk_era", "dk_master_row", "dk_n_decisive", "dk_n_total", "dk_score", "dk_old_rule", "dk_rule", "dk_source_id"],
   "distribution": [
     {
       "@type": "DataDownload",
@@ -410,11 +460,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </script>
 <div class="freshness-strip" aria-label="Svježina službenoga korpusa">
-<p><span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">24. kolovoza 2026.</span></span> <span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">11. lipnja 2026.</span></span> <span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--updating">Ažurira se</span></span></p>
+<p><span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">18. listopada 2026.</span></span> <span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">16. listopada 2026.</span></span> <span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--updating">Ažurira se</span></span></p>
 </div>
 <div class="summary-60">
 <p><span class="summary-60__label">Sažetak u 60 sekundi</span></p>
-<p>Službeni korpus DigiKat obuhvaća približno 400.000 zapisa. Sadrži 413.985 objava s web-portala, društvenih platformi, foruma i komentara u razdoblju 2021.–2026.</p>
+<p>Službeni korpus DigiKat obuhvaća više od 610.000 zapisa. Sadrži 611.583 objava s web-portala, društvenih platformi, foruma i komentara u razdoblju 2021.–2026.</p>
 <p>Korpus je prikupljen prema sadržaju. U njemu su zato i crkveni i sekularni izvori koji objavljuju o katoličkim temama. Opisuje prikupljeni medijski sadržaj, a ne stavove stanovništva ili cijeli hrvatski medijski prostor.</p>
 <p>Manifest, agregati i sintetički uzorak dostupni su javno. Redci s punim tekstom i URL-ovima imaju poseban postupak pristupa za istraživačke svrhe.</p>
 </div>
@@ -424,8 +474,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Panel odvaja podatkovni presjek od datuma ove stranice i vodi izravno na svaki javni artefakt.</p>
 <section class="corpus-access" aria-label="Pristup službenom korpusu i javnim artefaktima">
   <div class="corpus-access__facts">
-    <div><span>Podaci zaključno s</span><strong>11. lipnja 2026.</strong></div>
-    <div><span>Verzija manifesta</span><strong>10. kolovoza 2026.</strong></div>
+    <div><span>Podaci zaključno s</span><strong>16. listopada 2026.</strong></div>
+    <div><span>Verzija manifesta</span><strong>18. listopada 2026.</strong></div>
     <div><span>Licencija javnih artefakata</span><strong>CC BY 4.0</strong></div>
     <div><span>Preporučeno citiranje</span><strong><a href="#citiranje">Citirajte ovu verziju</a></strong></div>
   </div>
@@ -447,11 +497,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Jedinica analize jedna je medijska objava. Korpus obuhvaća članke, objave na društvenim platformama, videozapise, forumske zapise i komentare koji zadovoljavaju dokumentirano pravilo uključivanja.</p>
 <div class="metric-grid corpus-metrics">
   <div class="metric-card">
-    <div class="metric-value">413.985</div>
+    <div class="metric-value">611.583</div>
     <div class="metric-label">objava</div>
   </div>
   <div class="metric-card">
-    <div class="metric-value">54</div>
+    <div class="metric-value">55</div>
     <div class="metric-label">varijable</div>
   </div>
   <div class="metric-card">
@@ -492,7 +542,7 @@ Ne opravdava uzročne zaključke ni izravno uspoređivanje procijenjenoga dosega
 </p>
 </article>
 </div>
-<p>Način prikupljanja promijenio se tijekom 2024. Podaci s obje strane te granice slijede isto pravilo uključivanja, ali promjena zabranjuje jednostavno čitanje skoka u volumenu kao promjene medijske pozornosti. <a href="metodologija.html#method-collection-break">Obrazloženje i dijagnostika nalaze se u Metodologiji</a>.</p>
+<p>Način prikupljanja promijenio se na početku 2024. Podaci s obje strane te granice slijede isto pravilo uključivanja, ali promjena zabranjuje jednostavno čitanje skoka u volumenu kao promjene medijske pozornosti. <a href="metodologija.html#method-collection-break">Obrazloženje i dijagnostika nalaze se u Metodologiji</a>.</p>
 </section>
 <section id="javni-artefakti" class="level2">
 <h2 class="anchored" data-anchor-id="javni-artefakti">Javni artefakti i pristup</h2>
@@ -573,13 +623,13 @@ Sve datoteke javnih agregata
 <div class="citation-block">
 <span class="citation-block__label">Preporučeni citat</span>
 <p class="citation-block__text">
-Šikić, L. i sur. (2025.–2027.). DigiKat: Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru. Hrvatsko katoličko sveučilište. Presjek korpusa: 11. lipnja 2026. (413.985 objava). https://lusiki.github.io/DigiKat/pages/baza.html
+Šikić, L. i sur. (2025.–2027.). DigiKat: Prikaz i analiza katoličke tematike u digitalnom medijskom prostoru. Hrvatsko katoličko sveučilište. Presjek korpusa: 16. listopada 2026. (611.583 objava). https://lusiki.github.io/DigiKat/pages/baza.html
 </p>
 <p>
 <strong>Trajna mrežna adresa</strong><br><a href="https://lusiki.github.io/DigiKat/pages/baza.html">https://lusiki.github.io/DigiKat/pages/baza.html</a>
 </p>
 <p>
-<strong>Verzija</strong><br>Manifest generiran 10. kolovoza 2026.
+<strong>Verzija</strong><br>Manifest generiran 18. listopada 2026.
 </p>
 <p>
 <strong>Licencija javnih artefakata</strong><br><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
@@ -593,7 +643,7 @@ Sve datoteke javnih agregata
 <h2 class="anchored" data-anchor-id="metodologija-po-temama">Metodologija po temama</h2>
 <p>Ova stranica zadržava samo podatke potrebne za pristup i odgovorno tumačenje. Tehnički postupci imaju jedno kanonsko mjesto.</p>
 <div class="method-link-list">
-<p><a href="metodologija.html#method-corpus-inclusion"><strong>Što ulazi u korpus</strong><span>Pravilo uključivanja i granica korpusa</span></a> <a href="metodologija.html#method-corpus-quality"><strong>Kvaliteta korpusa</strong><span>Ručna provjera i procjena pogreške</span></a> <a href="metodologija.html#method-collection-break"><strong>Promjena prikupljanja</strong><span>Prekid 2024. i vremenske usporedbe</span></a> <a href="metodologija.html#method-platform-metrics"><strong>Značenje mjera</strong><span>Objave, interakcije, angažman i procijenjeni doseg</span></a> <a href="metodologija.html#method-reproducibility"><strong>Reproducibilnost</strong><span>Obrada, manifesti i ponavljanje postupka</span></a></p>
+<p><a href="metodologija.html#method-corpus-inclusion"><strong>Što ulazi u korpus</strong><span>Pravilo uključivanja i granica korpusa</span></a> <a href="metodologija.html#method-corpus-quality"><strong>Kvaliteta korpusa</strong><span>Ručna provjera i procjena pogreške</span></a> <a href="metodologija.html#method-collection-break"><strong>Promjena prikupljanja</strong><span>Promjena 2024. i vremenske usporedbe</span></a> <a href="metodologija.html#method-platform-metrics"><strong>Značenje mjera</strong><span>Objave, interakcije, angažman i procijenjeni doseg</span></a> <a href="metodologija.html#method-reproducibility"><strong>Reproducibilnost</strong><span>Obrada, manifesti i ponavljanje postupka</span></a></p>
 </div>
 </section>
 <section id="referentni-odjeljci" class="level2">
@@ -622,56 +672,56 @@ Sastav korpusa po platformama
 <tr class="odd">
 <td style="text-align: left;">8</td>
 <td style="text-align: left;">Web portali</td>
-<td style="text-align: right;">286.662</td>
-<td style="text-align: right;">69,2 %</td>
+<td style="text-align: right;">392.416</td>
+<td style="text-align: right;">64,2 %</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">2</td>
-<td style="text-align: left;">Facebook</td>
-<td style="text-align: right;">63.513</td>
-<td style="text-align: right;">15,3 %</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">9</td>
 <td style="text-align: left;">YouTube</td>
-<td style="text-align: right;">47.345</td>
-<td style="text-align: right;">11,4 %</td>
+<td style="text-align: right;">96.600</td>
+<td style="text-align: right;">15,8 %</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Facebook</td>
+<td style="text-align: right;">93.413</td>
+<td style="text-align: right;">15,3 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">5</td>
 <td style="text-align: left;">Reddit</td>
-<td style="text-align: right;">5.621</td>
-<td style="text-align: right;">1,4 %</td>
+<td style="text-align: right;">12.878</td>
+<td style="text-align: right;">2,1 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">7</td>
 <td style="text-align: left;">Twitter / X</td>
-<td style="text-align: right;">3.860</td>
+<td style="text-align: right;">5.797</td>
 <td style="text-align: right;">0,9 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">3</td>
 <td style="text-align: left;">Forumi</td>
-<td style="text-align: right;">3.223</td>
-<td style="text-align: right;">0,8 %</td>
+<td style="text-align: right;">5.332</td>
+<td style="text-align: right;">0,9 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">4</td>
 <td style="text-align: left;">Instagram</td>
-<td style="text-align: right;">2.378</td>
-<td style="text-align: right;">0,6 %</td>
+<td style="text-align: right;">4.128</td>
+<td style="text-align: right;">0,7 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">1</td>
 <td style="text-align: left;">Komentari</td>
-<td style="text-align: right;">1.186</td>
-<td style="text-align: right;">0,3 %</td>
+<td style="text-align: right;">664</td>
+<td style="text-align: right;">0,1 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">6</td>
 <td style="text-align: left;">TikTok</td>
-<td style="text-align: right;">197</td>
-<td style="text-align: right;">0,0 %</td>
+<td style="text-align: right;">355</td>
+<td style="text-align: right;">0,1 %</td>
 </tr>
 </tbody>
 </table>
@@ -682,15 +732,15 @@ Sastav korpusa po platformama
 </details>
 <details class="reference-section" id="rjecnik-varijabli">
 <summary>
-Rječnik svih 54 varijabli
+Rječnik svih 55 varijabli
 </summary>
 <div class="reference-section__content">
-<p>Rječnik navodi funkcionalnu skupinu i tehnički tip svake varijable službenoga korpusa. Struktura se provjerava prema javnom sintetičkom uzorku, a sedam stupaca podrijetla filtriranja dodaje se prema ugovoru gradnje službenoga korpusa.</p>
+<p>Rječnik navodi funkcionalnu skupinu i tehnički tip svake varijable službenoga korpusa. Struktura se provjerava prema javnom sintetičkom uzorku, a 8 stupaca podrijetla filtriranja dodaje se prema ugovoru gradnje službenoga korpusa.</p>
 <div class="reference-table reference-table--tall" role="region" aria-label="Rječnik varijabli službenoga korpusa" tabindex="0">
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-striped table-hover table-sm caption-top small">
-<caption>Svih 54 varijabli službenoga korpusa</caption>
+<caption>Svih 55 varijabli službenoga korpusa</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th"></th>
@@ -1021,6 +1071,12 @@ Rječnik svih 54 varijabli
 <tr class="even">
 <td style="text-align: left;">dk_rule</td>
 <td style="text-align: left;">dk_rule</td>
+<td style="text-align: left;">Podrijetlo filtriranja</td>
+<td style="text-align: left;">character</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dk_source_id</td>
+<td style="text-align: left;">dk_source_id</td>
 <td style="text-align: left;">Podrijetlo filtriranja</td>
 <td style="text-align: left;">character</td>
 </tr>

@@ -2,8 +2,8 @@
 title: "index.hr"
 subtitle: "TikTok · Divovi"
 description: "Profil izvora index.hr na platformi TikTok prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Preliminarno"
 show-freshness: true
 schema-type: "ProfilePage"
@@ -20,7 +20,7 @@ categories: ["Katalog izvora", "TikTok"]
   "description": "Profil izvora index.hr na platformi TikTok prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/tiktok-index-hr.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/pages/izvori/"
   },
@@ -47,24 +47,24 @@ Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">4</div>
+<div class="metric-value">3</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">32.775</div>
+<div class="metric-value">32.678</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">405.049</div>
+<div class="metric-value">403.283</div>
 <div class="metric-label">Procijenjenoga dosega</div>
 </div>
 </div>
 
 ::: {.callout-caution}
-Ovaj se profil temelji na samo 4 objava. Prikazan je radi potpunosti kataloga. Rang i tipologiju zato ne treba tumačiti kao stabilnu procjenu izvora.
+Ovaj se profil temelji na samo 3 objava. Prikazan je radi potpunosti kataloga. Rang i tipologiju zato ne treba tumačiti kao stabilnu procjenu izvora.
 :::
 
-Po volumenu objava, index.hr je na **8. mjestu** od 16 praćenih izvora na platformi TikTok. Prosječno ostvaruje **8.194 interakcija po objavi**.
+Po volumenu objava, index.hr je na **7. mjestu** od 18 praćenih izvora na platformi TikTok. Prosječno ostvaruje **10.893 interakcija po objavi**.
 
 ## Tipologija
 
@@ -75,13 +75,13 @@ Uređivačka oznaka je **sekularni izvor** *(prijedlog koji potvrđuje voditelj 
 ## Povezano
 
 - [Pregled platforme TikTok](platforma-tiktok.html)
-- Srodni izvori: [shkm2026](tiktok-shkm2026.html), [mladifesthrvatska](tiktok-mladifesthrvatska.html), [kristijanilicic](tiktok-kristijanilicic.html)
+- Srodni izvori: [dontomolukac](tiktok-dontomolukac.html), [kristijanilicic](tiktok-kristijanilicic.html), [crovibes](tiktok-crovibes.html)
 - [Katalog izvora, sve platforme](index.html)
 - [Metodologija prikupljanja i mjerenja](../metodologija.html)
 
 ## Izvori podataka
 
-Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.
+Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 18. listopada 2026. zajedničkim generatorom Kataloga izvora.
 
 ::: {.callout-warning}
 Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira izvore na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.

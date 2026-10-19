@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-18eeef7e313107c10b6b051a6734352e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-89390a0b5fa5de9f06f1c04b1c1b6b2e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-05a0de8cf355dfe4f020f6ea4b5bd17a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -114,6 +114,52 @@ ul.task-list li input[type="checkbox"] {
     }
   ]
 }
+</script>
+<script>
+(function () {
+  var mobileCharts = window.matchMedia("(max-width: 767.98px)");
+
+  function updateChart(image) {
+    var mobileSource = image.getAttribute("data-mobile-src");
+    if (!mobileSource) return;
+
+    if (!image.hasAttribute("data-desktop-src")) {
+      image.setAttribute("data-desktop-src", image.getAttribute("src"));
+      image.setAttribute("data-desktop-width", image.getAttribute("width") || "");
+      image.setAttribute("data-desktop-height", image.getAttribute("height") || "");
+    }
+
+    if (mobileCharts.matches) {
+      image.setAttribute("src", mobileSource);
+      image.setAttribute("width", image.getAttribute("data-mobile-width"));
+      image.setAttribute("height", image.getAttribute("data-mobile-height"));
+    } else {
+      image.setAttribute("src", image.getAttribute("data-desktop-src"));
+      image.setAttribute("width", image.getAttribute("data-desktop-width"));
+      image.setAttribute("height", image.getAttribute("data-desktop-height"));
+    }
+  }
+
+  function updateCharts(root) {
+    if (root.nodeType === 1 && root.matches("img[data-mobile-src]")) updateChart(root);
+    if (root.querySelectorAll) {
+      root.querySelectorAll("img[data-mobile-src]").forEach(updateChart);
+    }
+  }
+
+  var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(updateCharts);
+    });
+  });
+
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+  mobileCharts.addEventListener("change", function () { updateCharts(document); });
+  document.addEventListener("DOMContentLoaded", function () {
+    updateCharts(document);
+    observer.disconnect();
+  });
+})();
 </script>
 
 
@@ -206,6 +252,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../../pages/studije/index.html">
  <span class="dropdown-text">Tematska istraživanja</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../pages/demokrscanstvo/index.html">
+ <span class="dropdown-text">Demokršćanstvo u medijima</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../assets/izvjestaji/godisnji-pregled-2025.html">
@@ -525,7 +575,7 @@ Language: <strong style="color:#0F4C5C;">English</strong> · <a href="agentski-s
       <li class="link" title="transition under watch"><span class="gate"><svg class="ic"><use href="#i-shield-sm"></use></svg></span><span class="arrow"><svg class="ic"><use href="#i-arrow"></use></svg></span></li>
       <li class="node">
         <div class="disc"><svg class="ic"><use href="#i-db"></use></svg></div>
-        <div class="colwrap"><b>Official corpus</b><small>413,985 × 54</small><span class="ag-tag priv">gitignored · derived</span></div>
+        <div class="colwrap"><b>Official corpus</b><small>611,583 × 55</small><span class="ag-tag priv">gitignored · derived</span></div>
       </li>
       <li class="link" title="transition under watch"><span class="gate"><svg class="ic"><use href="#i-shield-sm"></use></svg></span><span class="arrow"><svg class="ic"><use href="#i-arrow"></use></svg></span></li>
       <li class="node">
@@ -588,7 +638,7 @@ Language: <strong style="color:#0F4C5C;">English</strong> · <a href="agentski-s
         <ul class="members">
           <li><span class="m-name">verifier <span class="who">haiku</span></span><span class="m-gloss">Did the render/script actually succeed; did a render touch data.</span></li>
           <li><span class="m-name">numeric-claim <span class="who">sonnet</span></span><span class="m-gloss">Re-derives every published number from the public aggregates.</span></li>
-          <li><span class="m-name">r-reviewer <span class="who">sonnet</span></span><span class="m-gloss">R code: paths, seed, silent row loss, speed on 413,985 posts.</span></li>
+          <li><span class="m-name">r-reviewer <span class="who">sonnet</span></span><span class="m-gloss">R code: paths, seed, silent row loss, speed on 611,583 posts.</span></li>
           <li><span class="m-name">croatian-nlp <span class="who">opus</span></span><span class="m-gloss">Encoding, morphology, lexicon joins, sampling.</span></li>
           <li><span class="m-name">religion-media <span class="who">opus</span></span><span class="m-gloss">Constructs, claim↔data, typology, adversarial referee.</span></li>
         </ul>

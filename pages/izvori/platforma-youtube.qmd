@@ -2,8 +2,8 @@
 title: "Izvori — YouTube"
 subtitle: "Praćeni izvori na platformi YouTube"
 description: "Pregled izvora na platformi YouTube uspoređuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Mapi ekosustava."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 show-freshness: true
 schema-type: "CollectionPage"
@@ -19,7 +19,7 @@ categories: ["Katalog izvora", "YouTube"]
   "description": "Pregled praćenih izvora na platformi YouTube u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/platforma-youtube.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/#website"
   },
@@ -34,18 +34,15 @@ Ova stranica okuplja praćene izvore na platformi **YouTube** iz **Kataloga izvo
 
 | Izvor | Tipologija | Objava | Interakcija | Doseg |
 |---|---|---:|---:|---:|
-| [pulherissimus](youtube-pulherissimus.html) | Divovi | 6.031 | 1.620.448 | 18.017.818 |
-| [LaudatoTV](youtube-laudatotv.html) | Divovi | 3.537 | 143.208 | 5.642.997 |
-| [Pod Smokvom](youtube-pod-smokvom.html) | Divovi | 1.522 | 589.626 | 3.889.465 |
-| [Hrana za dušu](youtube-hrana-za-dusu.html) | Divovi | 1.476 | 177.424 | 3.976.961 |
-| [Dijete Vjere](youtube-dijete-vjere.html) | Specijalizirani akteri | 903 | 77.612 | 1.858.783 |
-| [Nova Eva](youtube-nova-eva.html) | Divovi | 666 | 93.953 | 4.123.158 |
-| [Stopama Padre Pija](youtube-stopama-padre-pija.html) | Graditelji zajednica | 404 | 103.281 | 1.007.332 |
-| [Majko Marijo](youtube-majko-marijo.html) | Divovi | 333 | 266.210 | 9.386.044 |
-| [RTL](youtube-rtl.html) | Megafoni | 298 | 39.403 | 2.984.782 |
-| [BOŽANSKA LJUBAV](youtube-bozanska-ljubav.html) | Graditelji zajednica | 152 | 144.742 | 1.244.769 |
-| [budiFRAjer](youtube-budifrajer.html) | Divovi | 152 | 118.891 | 3.397.741 |
-| [Bog Je Tu](youtube-bog-je-tu.html) | Megafoni | 87 | 83.104 | 3.128.452 |
+| [pulherissimus](youtube-pulherissimus.html) | Divovi | 9.058 | 2.724.293 | 31.207.471 |
+| [LaudatoTV](youtube-laudatotv.html) | Megafoni | 4.763 | 210.986 | 8.641.342 |
+| [Pod Smokvom](youtube-pod-smokvom.html) | Graditelji zajednica | 1.994 | 774.211 | 5.273.324 |
+| [Stopama Padre Pija](youtube-stopama-padre-pija.html) | Specijalizirani akteri | 663 | 193.961 | 2.561.744 |
+| [Majko Marijo](youtube-majko-marijo.html) | Divovi | 609 | 595.869 | 15.355.245 |
+| [RTL](youtube-rtl.html) | Megafoni | 494 | 82.947 | 6.921.972 |
+| [BOŽANSKA LJUBAV](youtube-bozanska-ljubav.html) | Graditelji zajednica | 248 | 382.618 | 1.630.302 |
+| [Nova Eva](youtube-nova-eva.html) | Specijalizirani akteri | 195 | 75.439 | 4.741.415 |
+| [Bog Je Tu](youtube-bog-je-tu.html) | Megafoni | 149 | 141.586 | 6.371.870 |
 
 [Natrag na katalog izvora](index.html) · [Mapa ekosustava](../mapa/mapa.html)
 

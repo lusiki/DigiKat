@@ -2,8 +2,8 @@
 title: "Izvori — Facebook"
 subtitle: "Praćeni izvori na platformi Facebook"
 description: "Pregled izvora na platformi Facebook uspoređuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Mapi ekosustava."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 show-freshness: true
 schema-type: "CollectionPage"
@@ -19,7 +19,7 @@ categories: ["Katalog izvora", "Facebook"]
   "description": "Pregled praćenih izvora na platformi Facebook u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/platforma-facebook.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/#website"
   },
@@ -34,22 +34,20 @@ Ova stranica okuplja praćene izvore na platformi **Facebook** iz **Kataloga izv
 
 | Izvor | Tipologija | Objava | Interakcija | Doseg |
 |---|---|---:|---:|---:|
-| [VJERA U NAMA †](facebook-vjera-u-nama.html) | Divovi | 5.180 | 249.123 | 18.151.290 |
-| [Bitno.net](facebook-bitno-net.html) | Divovi | 3.552 | 595.434 | 51.445.569 |
-| [Radio Marija Hrvatska](facebook-radio-marija-hrvatska.html) | Graditelji zajednica | 2.959 | 151.195 | 8.979.233 |
-| [Zagrebačka nadbiskupija](facebook-zagrebacka-nadbiskupija.html) | Graditelji zajednica | 2.202 | 281.662 | 12.766.185 |
-| [Kapljice ljubavi Božje](facebook-kapljice-ljubavi-bozje.html) | Divovi | 1.840 | 383.278 | 21.352.333 |
-| [Laudato](facebook-laudato.html) | Divovi | 1.636 | 720.991 | 42.049.631 |
-| [Kraljica Mira](facebook-kraljica-mira.html) | Divovi | 1.244 | 126.499 | 18.876.855 |
-| [VJERA](facebook-vjera.html) | Graditelji zajednica | 1.172 | 320.460 | 16.481.614 |
-| [Gospa](facebook-gospa.html) | Graditelji zajednica | 857 | 209.117 | 11.019.978 |
-| [Slobodna Dalmacija](facebook-slobodna-dalmacija.html) | Megafoni | 750 | 118.144 | 18.405.019 |
-| [RTL Danas](facebook-rtl-danas.html) | Specijalizirani akteri | 533 | 107.870 | 14.630.113 |
-| [DNEVNIK.hr](facebook-dnevnik-hr.html) | Megafoni | 494 | 102.280 | 25.847.181 |
-| [Večernji list](facebook-vecernji-list.html) | Megafoni | 489 | 70.821 | 23.805.176 |
-| [24sata](facebook-24sata.html) | Megafoni | 452 | 124.136 | 45.587.972 |
-| [Net.hr](facebook-net-hr.html) | Specijalizirani akteri | 364 | 70.732 | 17.229.204 |
-| [Index.hr](facebook-index-hr.html) | Specijalizirani akteri | 222 | 125.004 | 17.552.956 |
+| [VJERA U NAMA †](facebook-vjera-u-nama.html) | Divovi | 6.994 | 429.706 | 29.370.200 |
+| [Bitno.net](facebook-bitno-net.html) | Divovi | 4.887 | 811.449 | 71.481.596 |
+| [Radio Marija Hrvatska](facebook-radio-marija-hrvatska.html) | Specijalizirani akteri | 4.288 | 210.346 | 13.645.100 |
+| [Kapljice ljubavi Božje](facebook-kapljice-ljubavi-bozje.html) | Divovi | 2.610 | 516.041 | 29.266.769 |
+| [Zagrebačka nadbiskupija](facebook-zagrebacka-nadbiskupija.html) | Graditelji zajednica | 2.604 | 308.299 | 14.543.048 |
+| [Laudato](facebook-laudato.html) | Divovi | 2.372 | 942.394 | 57.604.617 |
+| [VJERA](facebook-vjera.html) | Divovi | 2.177 | 557.483 | 29.256.592 |
+| [Kraljica Mira](facebook-kraljica-mira.html) | Megafoni | 2.142 | 186.293 | 30.638.015 |
+| [Gospa](facebook-gospa.html) | Graditelji zajednica | 1.414 | 318.307 | 17.060.432 |
+| [Slobodna Dalmacija](facebook-slobodna-dalmacija.html) | Specijalizirani akteri | 870 | 162.802 | 23.485.820 |
+| [Večernji list](facebook-vecernji-list.html) | Megafoni | 637 | 88.699 | 32.520.348 |
+| [24sata](facebook-24sata.html) | Megafoni | 448 | 137.579 | 47.950.506 |
+| [DNEVNIK.hr](facebook-dnevnik-hr.html) | Megafoni | 403 | 107.182 | 28.097.733 |
+| [Index.hr](facebook-index-hr.html) | Specijalizirani akteri | 245 | 168.413 | 22.274.682 |
 
 [Natrag na katalog izvora](index.html) · [Mapa ekosustava](../mapa/mapa.html)
 

@@ -2,8 +2,8 @@
 title: "Izvori — Instagram"
 subtitle: "Praćeni izvori na platformi Instagram"
 description: "Pregled izvora na platformi Instagram uspoređuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Mapi ekosustava."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 show-freshness: true
 schema-type: "CollectionPage"
@@ -19,7 +19,7 @@ categories: ["Katalog izvora", "Instagram"]
   "description": "Pregled praćenih izvora na platformi Instagram u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/platforma-instagram.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/#website"
   },
@@ -34,19 +34,18 @@ Ova stranica okuplja praćene izvore na platformi **Instagram** iz **Kataloga iz
 
 | Izvor | Tipologija | Objava | Interakcija | Doseg |
 |---|---|---:|---:|---:|
-| [dnevniavaz](instagram-dnevniavaz.html) | Divovi | 41 | 16.757 | 469.434 |
-| [laudatotv](instagram-laudatotv.html) | Divovi | 30 | 16.341 | 141.603 |
-| [ivan.anusic.hr](instagram-ivan-anusic-hr.html) | Graditelji zajednica | 9 | 7.400 | 7.724 |
-| [jutarnji.hr](instagram-jutarnji-hr.html) | Megafoni | 6 | 898 | 65.375 |
-| [_rina.rs](instagram-rina-rs.html) | Divovi | 5 | 8.099 | 34.124 |
-| [hrvatskivojnik_magazin](instagram-hrvatskivojnik-magazin.html) | Specijalizirani akteri | 5 | 5.730 | 2.914 |
-| [oslobodjenje.ba](instagram-oslobodjenje-ba.html) | Specijalizirani akteri | 4 | 6.268 | 9.854 |
-| [insidebosnia](instagram-insidebosnia.html) | Graditelji zajednica | 2 | 7.127 | 15.495 |
-| [hns_cff](instagram-hns-cff.html) | Divovi | 1 | 52.022 | 84.478 |
-| [kristijanilicic](instagram-kristijanilicic.html) | Divovi | 1 | 13.296 | 57.864 |
-| [ekostraza](instagram-ekostraza.html) | Divovi | 1 | 12.286 | 20.261 |
-| [klaskalica](instagram-klaskalica.html) | Graditelji zajednica | 1 | 10.238 | 8.214 |
-| [zenskisvijet](instagram-zenskisvijet.html) | Specijalizirani akteri | 1 | 6.928 | 8.804 |
+| [dnevniavaz](instagram-dnevniavaz.html) | Divovi | 61 | 51.159 | 766.012 |
+| [laudatotv](instagram-laudatotv.html) | Divovi | 40 | 19.756 | 188.867 |
+| [ivan.anusic.hr](instagram-ivan-anusic-hr.html) | Specijalizirani akteri | 15 | 12.031 | 13.259 |
+| [oslobodjenje.ba](instagram-oslobodjenje-ba.html) | Graditelji zajednica | 12 | 14.495 | 35.774 |
+| [_rina.rs](instagram-rina-rs.html) | Graditelji zajednica | 9 | 12.454 | 54.737 |
+| [jutarnji.hr](instagram-jutarnji-hr.html) | Megafoni | 8 | 2.004 | 126.760 |
+| [insidebosnia](instagram-insidebosnia.html) | Specijalizirani akteri | 4 | 11.783 | 31.414 |
+| [24sata.hr](instagram-24sata-hr.html) | Megafoni | 4 | 5.088 | 96.684 |
+| [hns_cff](instagram-hns-cff.html) | Divovi | 2 | 103.110 | 165.856 |
+| [kristijanilicic](instagram-kristijanilicic.html) | Divovi | 2 | 18.804 | 112.605 |
+| [ekostraza](instagram-ekostraza.html) | Specijalizirani akteri | 1 | 12.286 | 20.261 |
+| [klaskalica](instagram-klaskalica.html) | Specijalizirani akteri | 1 | 10.238 | 8.214 |
 
 [Natrag na katalog izvora](index.html) · [Mapa ekosustava](../mapa/mapa.html)
 

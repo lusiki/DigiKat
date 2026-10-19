@@ -2,8 +2,8 @@
 title: "Izvori — TikTok"
 subtitle: "Praćeni izvori na platformi TikTok"
 description: "Pregled izvora na platformi TikTok uspoređuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Mapi ekosustava."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 show-freshness: true
 schema-type: "CollectionPage"
@@ -19,7 +19,7 @@ categories: ["Katalog izvora", "TikTok"]
   "description": "Pregled praćenih izvora na platformi TikTok u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/platforma-tiktok.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/#website"
   },
@@ -34,21 +34,13 @@ Ova stranica okuplja praćene izvore na platformi **TikTok** iz **Kataloga izvor
 
 | Izvor | Tipologija | Objava | Interakcija | Doseg |
 |---|---|---:|---:|---:|
-| [dnevnikhr](tiktok-dnevnikhr.html) | Divovi | 16 | 12.437 | 297.060 |
-| [trtbalkanbhsc](tiktok-trtbalkanbhsc.html) | Divovi | 14 | 16.522 | 399.181 |
-| [hrvatska_radiotelevizija](tiktok-hrvatska-radiotelevizija.html) | Megafoni | 12 | 9.465 | 232.185 |
-| [slobodna.dalmacija](tiktok-slobodna-dalmacija.html) | Divovi | 11 | 41.703 | 505.918 |
-| [vecernjilist](tiktok-vecernjilist.html) | Specijalizirani akteri | 9 | 8.688 | 112.937 |
-| [kristijanilicic](tiktok-kristijanilicic.html) | Divovi | 6 | 57.511 | 1.143.431 |
-| [shkm2026](tiktok-shkm2026.html) | Specijalizirani akteri | 5 | 7.374 | 69.432 |
-| [index.hr](tiktok-index-hr.html) | Divovi | 4 | 32.775 | 405.049 |
-| [mladifesthrvatska](tiktok-mladifesthrvatska.html) | Specijalizirani akteri | 4 | 10.870 | 111.250 |
-| [crovibes](tiktok-crovibes.html) | Specijalizirani akteri | 3 | 5.728 | 79.832 |
-| [plenkovic_andrej](tiktok-plenkovic-andrej.html) | Specijalizirani akteri | 2 | 5.790 | 85.300 |
-| [dontomolukac](tiktok-dontomolukac.html) | Divovi | 1 | 40.752 | 354.900 |
-| [kamenkrsislanina](tiktok-kamenkrsislanina.html) | Divovi | 1 | 13.400 | 185.300 |
-| [hypetelevizija.hr](tiktok-hypetelevizija-hr.html) | Graditelji zajednica | 1 | 10.991 | 85.700 |
-| [euforija.online](tiktok-euforija-online.html) | Specijalizirani akteri | 1 | 5.646 | 99.400 |
+| [trtbalkanbhsc](tiktok-trtbalkanbhsc.html) | Megafoni | 19 | 19.956 | 469.483 |
+| [dnevnikhr](tiktok-dnevnikhr.html) | Specijalizirani akteri | 15 | 15.440 | 320.179 |
+| [slobodna.dalmacija](tiktok-slobodna-dalmacija.html) | Divovi | 13 | 38.950 | 545.537 |
+| [crovibes](tiktok-crovibes.html) | Specijalizirani akteri | 9 | 16.347 | 242.707 |
+| [kristijanilicic](tiktok-kristijanilicic.html) | Divovi | 8 | 61.621 | 1.219.319 |
+| [dontomolukac](tiktok-dontomolukac.html) | Divovi | 3 | 55.336 | 479.400 |
+| [index.hr](tiktok-index-hr.html) | Divovi | 3 | 32.678 | 403.283 |
 
 [Natrag na katalog izvora](index.html) · [Mapa ekosustava](../mapa/mapa.html)
 

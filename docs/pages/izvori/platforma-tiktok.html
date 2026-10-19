@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-18eeef7e313107c10b6b051a6734352e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-89390a0b5fa5de9f06f1c04b1c1b6b2e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-05a0de8cf355dfe4f020f6ea4b5bd17a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -115,6 +115,52 @@ ul.task-list li input[type="checkbox"] {
     }
   ]
 }
+</script>
+<script>
+(function () {
+  var mobileCharts = window.matchMedia("(max-width: 767.98px)");
+
+  function updateChart(image) {
+    var mobileSource = image.getAttribute("data-mobile-src");
+    if (!mobileSource) return;
+
+    if (!image.hasAttribute("data-desktop-src")) {
+      image.setAttribute("data-desktop-src", image.getAttribute("src"));
+      image.setAttribute("data-desktop-width", image.getAttribute("width") || "");
+      image.setAttribute("data-desktop-height", image.getAttribute("height") || "");
+    }
+
+    if (mobileCharts.matches) {
+      image.setAttribute("src", mobileSource);
+      image.setAttribute("width", image.getAttribute("data-mobile-width"));
+      image.setAttribute("height", image.getAttribute("data-mobile-height"));
+    } else {
+      image.setAttribute("src", image.getAttribute("data-desktop-src"));
+      image.setAttribute("width", image.getAttribute("data-desktop-width"));
+      image.setAttribute("height", image.getAttribute("data-desktop-height"));
+    }
+  }
+
+  function updateCharts(root) {
+    if (root.nodeType === 1 && root.matches("img[data-mobile-src]")) updateChart(root);
+    if (root.querySelectorAll) {
+      root.querySelectorAll("img[data-mobile-src]").forEach(updateChart);
+    }
+  }
+
+  var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(updateCharts);
+    });
+  });
+
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+  mobileCharts.addEventListener("change", function () { updateCharts(document); });
+  document.addEventListener("DOMContentLoaded", function () {
+    updateCharts(document);
+    observer.disconnect();
+  });
+})();
 </script>
 
 
@@ -209,6 +255,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Tematska istraživanja</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../pages/demokrscanstvo/index.html">
+ <span class="dropdown-text">Demokršćanstvo u medijima</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../assets/izvjestaji/godisnji-pregled-2025.html">
  <span class="dropdown-text">Godišnji pregled 2025.</span></a>
   </li>  
@@ -292,7 +342,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Izmijenjeno</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">24. kolovoza 2026.</p>
+      <p class="date-modified">18. listopada 2026.</p>
     </div>
   </div>
     
@@ -303,7 +353,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="freshness-strip" aria-label="Svježina i status stranice"><span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">24. kolovoza 2026.</span></span><span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">11. lipnja 2026.</span></span><span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--updating">Ažurira se</span></span></div>
+<div class="freshness-strip" aria-label="Svježina i status stranice"><span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">18. listopada 2026.</span></span><span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">16. listopada 2026.</span></span><span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--updating">Ažurira se</span></span></div>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -312,7 +362,7 @@ ul.task-list li input[type="checkbox"] {
   "description": "Pregled praćenih izvora na platformi TikTok u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/platforma-tiktok.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/#website"
   },
@@ -334,109 +384,53 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><a href="tiktok-dnevnikhr.html">dnevnikhr</a></td>
-<td>Divovi</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">12.437</td>
-<td style="text-align: right;">297.060</td>
+<td><a href="tiktok-trtbalkanbhsc.html">trtbalkanbhsc</a></td>
+<td>Megafoni</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">19.956</td>
+<td style="text-align: right;">469.483</td>
 </tr>
 <tr class="even">
-<td><a href="tiktok-trtbalkanbhsc.html">trtbalkanbhsc</a></td>
-<td>Divovi</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">16.522</td>
-<td style="text-align: right;">399.181</td>
+<td><a href="tiktok-dnevnikhr.html">dnevnikhr</a></td>
+<td>Specijalizirani akteri</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">15.440</td>
+<td style="text-align: right;">320.179</td>
 </tr>
 <tr class="odd">
-<td><a href="tiktok-hrvatska-radiotelevizija.html">hrvatska_radiotelevizija</a></td>
-<td>Megafoni</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">9.465</td>
-<td style="text-align: right;">232.185</td>
-</tr>
-<tr class="even">
 <td><a href="tiktok-slobodna-dalmacija.html">slobodna.dalmacija</a></td>
 <td>Divovi</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">41.703</td>
-<td style="text-align: right;">505.918</td>
-</tr>
-<tr class="odd">
-<td><a href="tiktok-vecernjilist.html">vecernjilist</a></td>
-<td>Specijalizirani akteri</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">8.688</td>
-<td style="text-align: right;">112.937</td>
-</tr>
-<tr class="even">
-<td><a href="tiktok-kristijanilicic.html">kristijanilicic</a></td>
-<td>Divovi</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">57.511</td>
-<td style="text-align: right;">1.143.431</td>
-</tr>
-<tr class="odd">
-<td><a href="tiktok-shkm2026.html">shkm2026</a></td>
-<td>Specijalizirani akteri</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">7.374</td>
-<td style="text-align: right;">69.432</td>
-</tr>
-<tr class="even">
-<td><a href="tiktok-index-hr.html">index.hr</a></td>
-<td>Divovi</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">32.775</td>
-<td style="text-align: right;">405.049</td>
-</tr>
-<tr class="odd">
-<td><a href="tiktok-mladifesthrvatska.html">mladifesthrvatska</a></td>
-<td>Specijalizirani akteri</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">10.870</td>
-<td style="text-align: right;">111.250</td>
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">38.950</td>
+<td style="text-align: right;">545.537</td>
 </tr>
 <tr class="even">
 <td><a href="tiktok-crovibes.html">crovibes</a></td>
 <td>Specijalizirani akteri</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">5.728</td>
-<td style="text-align: right;">79.832</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">16.347</td>
+<td style="text-align: right;">242.707</td>
 </tr>
 <tr class="odd">
-<td><a href="tiktok-plenkovic-andrej.html">plenkovic_andrej</a></td>
-<td>Specijalizirani akteri</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">5.790</td>
-<td style="text-align: right;">85.300</td>
+<td><a href="tiktok-kristijanilicic.html">kristijanilicic</a></td>
+<td>Divovi</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">61.621</td>
+<td style="text-align: right;">1.219.319</td>
 </tr>
 <tr class="even">
 <td><a href="tiktok-dontomolukac.html">dontomolukac</a></td>
 <td>Divovi</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">40.752</td>
-<td style="text-align: right;">354.900</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">55.336</td>
+<td style="text-align: right;">479.400</td>
 </tr>
 <tr class="odd">
-<td><a href="tiktok-kamenkrsislanina.html">kamenkrsislanina</a></td>
+<td><a href="tiktok-index-hr.html">index.hr</a></td>
 <td>Divovi</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">13.400</td>
-<td style="text-align: right;">185.300</td>
-</tr>
-<tr class="even">
-<td><a href="tiktok-hypetelevizija-hr.html">hypetelevizija.hr</a></td>
-<td>Graditelji zajednica</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">10.991</td>
-<td style="text-align: right;">85.700</td>
-</tr>
-<tr class="odd">
-<td><a href="tiktok-euforija-online.html">euforija.online</a></td>
-<td>Specijalizirani akteri</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">5.646</td>
-<td style="text-align: right;">99.400</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">32.678</td>
+<td style="text-align: right;">403.283</td>
 </tr>
 </tbody>
 </table>

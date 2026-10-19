@@ -1,9 +1,9 @@
 ---
 title: "Darko Lesinger"
-subtitle: "Twitter · Graditelji zajednica"
+subtitle: "Twitter · Specijalizirani akteri"
 description: "Profil izvora Darko Lesinger na platformi Twitter prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Preliminarno"
 show-freshness: true
 schema-type: "ProfilePage"
@@ -20,7 +20,7 @@ categories: ["Katalog izvora", "Twitter"]
   "description": "Profil izvora Darko Lesinger na platformi Twitter prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/twitter-darko-lesinger.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/pages/izvori/"
   },
@@ -47,41 +47,41 @@ Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">9</div>
+<div class="metric-value">13</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">692</div>
+<div class="metric-value">913</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">16.413</div>
+<div class="metric-value">24.692</div>
 <div class="metric-label">Procijenjenoga dosega</div>
 </div>
 </div>
 
 ::: {.callout-caution}
-Ovaj se profil temelji na samo 9 objava. Prikazan je radi potpunosti kataloga. Rang i tipologiju zato ne treba tumačiti kao stabilnu procjenu izvora.
+Ovaj se profil temelji na samo 13 objava. Prikazan je radi potpunosti kataloga. Rang i tipologiju zato ne treba tumačiti kao stabilnu procjenu izvora.
 :::
 
-Po volumenu objava, Darko Lesinger je na **12. mjestu** od 23 praćenih izvora na platformi Twitter. Prosječno ostvaruje **77 interakcija po objavi**.
+Po volumenu objava, Darko Lesinger je na **10. mjestu** od 21 praćenih izvora na platformi Twitter. Prosječno ostvaruje **70 interakcija po objavi**.
 
 ## Tipologija
 
-Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Darko Lesinger pripada skupini **Graditelji zajednica**, koju obilježava nizak doseg uz vrlo visok angažman, dakle dubok odnos s vjernom publikom.
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Darko Lesinger pripada skupini **Specijalizirani akteri**, koju obilježava umjeren doseg i angažman, usmjeren na užu i specifičnu publiku.
 
 Uređivačka oznaka je **ostalo** *(prijedlog koji potvrđuje voditelj projekta)*
 
 ## Povezano
 
 - [Pregled platforme Twitter](platforma-twitter.html)
-- Srodni izvori: [DNEVNIK.hr](twitter-dnevnik-hr.html), [Stephen Nikola Bartulica](twitter-stephen-nikola-bartulica.html), [Hrvatski Kanal](twitter-hrvatski-kanal.html)
+- Srodni izvori: [Stephen Nikola Bartulica](twitter-stephen-nikola-bartulica.html), [Pavel Gregoric](twitter-pavel-gregoric.html), [Ivan Anušić](twitter-ivan-anusic.html)
 - [Katalog izvora, sve platforme](index.html)
 - [Metodologija prikupljanja i mjerenja](../metodologija.html)
 
 ## Izvori podataka
 
-Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.
+Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 18. listopada 2026. zajedničkim generatorom Kataloga izvora.
 
 ::: {.callout-warning}
 Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira izvore na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.

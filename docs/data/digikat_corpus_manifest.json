@@ -1,28 +1,28 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-08-10 13:10:27 UTC",
+  "generated_utc": "2026-10-18 17:58:11 UTC",
   "generator": "R/build_corpus.R",
   "corpus": {
     "path": "data/digikat_corpus.rds",
-    "rows": 413985,
-    "columns": 54,
-    "bytes": 524573828,
-    "sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a",
+    "rows": 611583,
+    "columns": 55,
+    "bytes": 748582010,
+    "sha256": "5d8b695939bbefcf9f9fe4d2ee0f8d78d25a07faa9c37ed415898be77f3e44c6",
     "date_min": "2021-01-01",
-    "date_max": "2026-06-11",
+    "date_max": "2026-10-16",
     "year_min": 2021,
     "year_max": 2026,
     "platforms": 9,
     "platform_counts": {
-      "comment": 1186,
-      "facebook": 63513,
-      "forum": 3223,
-      "instagram": 2378,
-      "reddit": 5621,
-      "tiktok": 197,
-      "twitter": 3860,
-      "web": 286662,
-      "youtube": 47345
+      "comment": 664,
+      "facebook": 93413,
+      "forum": 5332,
+      "instagram": 4128,
+      "reddit": 12878,
+      "tiktok": 355,
+      "twitter": 5797,
+      "web": 392416,
+      "youtube": 96600
     }
   },
   "rule": {
@@ -46,21 +46,30 @@
     "accumulator": "data/merged_comprehensive.rds",
     "accumulator_rows": 710307,
     "accumulator_columns": 47,
+    "post2024_source": "determdb",
     "decisions_pre2024": "data/rebuild/pre2024_decisions_v4.rds",
-    "decisions_post2024": "data/rebuild/post2024_decisions_v4.rds"
+    "decisions_post2024": "data/rebuild/determ_post2024_decisions_v4.rds",
+    "era_split": "2024-01-01",
+    "determdb_table": "main.media_data_all",
+    "determdb_rows_scanned": 22594216,
+    "determdb_span": "2024-01-01 -> 2026-10-16",
+    "determdb_platforms": ["facebook", "forum", "instagram", "reddit", "tiktok", "twitter", "web", "youtube"],
+    "determdb_excluded_platforms": "comment",
+    "duplicates_removed_within_2024plus": 1110,
+    "duplicates_removed_across_eras": 368
   },
   "eras": {
     "post2024": {
-      "rows_in": 440724,
-      "kept": 221124,
-      "kept_pct": 50.2,
-      "span": "2024-07-01 -> 2026-06-11"
+      "rows_in": 22594216,
+      "kept": 425706,
+      "kept_pct": 1.88,
+      "span": "2024-01-01 -> 2026-10-16"
     },
     "pre2024": {
-      "rows_in": 269583,
-      "kept": 192861,
-      "kept_pct": 71.5,
-      "span": "2021-01-01 -> 2024-07-04"
+      "rows_in": 258759,
+      "kept": 185877,
+      "kept_pct": 71.8,
+      "span": "2021-01-01 -> 2023-12-31"
     }
   },
   "years": {
@@ -77,20 +86,20 @@
       "kept": 64069
     },
     "2024": {
-      "rows_in": 114231,
-      "kept": 56923
+      "rows_in": 7920034,
+      "kept": 134379
     },
     "2025": {
-      "rows_in": 236166,
-      "kept": 124346
+      "rows_in": 8266344,
+      "kept": 167843
     },
     "2026": {
-      "rows_in": 101151,
-      "kept": 46839
+      "rows_in": 6407838,
+      "kept": 123484
     }
   },
   "caveats": {
-    "instrument_change_2024": "One inclusion rule makes the two eras RULE-comparable, not CAPTURE-comparable. The collection method changed in 2024 and the kept share still steps about 20 points down at that break. A rise in post counts across it is not a rise in media attention.",
-    "text_gap": "February-May 2024 carries no text in the vendor feed, so neither era has rows there."
+    "instrument_change_2024": "One inclusion rule makes the two eras RULE-comparable, not CAPTURE-comparable. Up to 2023 the corpus is cut from a stream the vendor had already selected with a religious keyword query; from 2024-01-01 it is cut from the vendor's whole general feed. The seam falls on 1 January 2024. A rise in post counts across it is not a rise in media attention.",
+    "precision_2024plus": "The rule's precision was measured on the accumulator's post-2024 stream (87,0% at 0,40). The 2024+ era is now cut from the general feed, which holds material that stream never carried; its precision is being re-measured on a hand-read sample."
   }
 }

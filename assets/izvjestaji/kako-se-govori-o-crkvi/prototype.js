@@ -657,7 +657,7 @@
     const plotWidth = width - left - right;
     const plotHeight = height - top - bottom;
     const trend = DATA.churchMediaTrend;
-    const periods = ["2021. I", "2021. II", "2022. I", "2022. II", "2023. I", "2023. II", "2024. II", "2025. I", "2025. II", "2026. I"];
+    const periods = trend.labels || ["2021. I", "2021. II", "2022. I", "2022. II", "2023. I", "2023. II", "2024. II", "2025. I", "2025. II", "2026. I"];
     const values = [...trend.series.pre, ...trend.series.post];
     trend.yTicks.forEach(value => {
       const y = top + plotHeight - (value - trend.yMin) / (trend.yMax - trend.yMin) * plotHeight;

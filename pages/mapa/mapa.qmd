@@ -2,8 +2,8 @@
 title: "Mapa ekosustava katoličkog digitalnog prostora u RH (2021.–2026.)"
 subtitle: "Tko objavljuje i gdje sadržaj odjekuje"
 description: "Mapa ekosustava uspoređuje volumen objava, zabilježene interakcije i procijenjeni doseg po platformama i izvorima u službenom korpusu DigiKat."
-date-modified: 2026-08-25
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 schema-type: "Article"
 categories: ["Mapa ekosustava", "Akteri", "Doseg"]
@@ -52,7 +52,7 @@ arhetipovi <- c("Divovi", "Graditelji zajednica", "Megafoni", "Specijalizirani a
 ## Tko objavljuje i gdje se bilježi odjek
 
 <div class="freshness-strip" aria-label="Svježina Mape ekosustava">
-  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">24. kolovoza 2026.</span></span>
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">18. listopada 2026.</span></span>
   <span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">`r data_cutoff_hr`</span></span>
   <span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--updating">Ažurira se</span></span>
 </div>
@@ -349,7 +349,7 @@ plot_combined_share <- ggplot(
   share_long,
   aes(x = year, y = share, colour = SOURCE_TYPE, linetype = SOURCE_TYPE)
 ) +
-  geom_vline(xintercept = 2024, colour = dk_col$faint, linetype = "dashed") +
+  geom_vline(xintercept = 2023.5, colour = dk_col$faint, linetype = "dashed") +
   geom_line(linewidth = 0.9) +
   geom_point(aes(shape = SOURCE_TYPE), size = 2.4) +
   ggrepel::geom_text_repel(
@@ -383,7 +383,7 @@ digikat_render_map_plot(
 #| output: asis
 digikat_chart_evidence(
   "mapa-platform-shares",
-  "Udjeli platformi razlikuju se između objava, zabilježenih interakcija i procijenjenog dosega. Crta na 2024. označava promjenu prikupljanja.",
+  "Udjeli platformi razlikuju se između objava, zabilježenih interakcija i procijenjenog dosega. Crta između 2023. i 2024. označava promjenu prikupljanja.",
   "mapa_files/figure-html/plot-shares-1.svg",
   "Godišnji udjeli platformi prema trima mjerama"
 )

@@ -2,8 +2,8 @@
 title: "Moj medij"
 subtitle: "Koliko vaš medij objavljuje o katoličkim temama i koliko toga odjekne"
 description: "Moj medij sažima opseg, pažnju, teme i ritam objavljivanja pojedinog izvora u službenom korpusu DigiKat."
-date-modified: "2026-08-24"
-data-cutoff: "2026-06-11"
+date-modified: "2026-10-18"
+data-cutoff: "2026-10-16"
 status: "Ažurira se"
 categories: ["Moj medij", "Katalog izvora", "Otvoreni podaci"]
 schema-type: "WebPage"
@@ -67,7 +67,7 @@ data_cutoff_hr <- paste0(
 ```
 
 <div class="freshness-strip" aria-label="Svježina alata Moj medij">
-  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">24. kolovoza 2026.</span></span>
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">18. listopada 2026.</span></span>
   <span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">`r data_cutoff_hr`</span></span>
   <span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--updating">Ažurira se</span></span>
 </div>
@@ -890,9 +890,8 @@ publika. Mjeri se drukčije na svakoj platformi. Zato profil uspoređuje izvore 
 platforme. <a href="metodologija.html#method-platform-metrics">Definicije mjera</a> opisuju njihove
 granice.</p>
 <p>Vrijeme objave prošlo je zasebnu provjeru i odgovara lokalnom vremenu Europe/Zagreb. Kalendarski
-test koristi iste isključene dane za izvor i usporedivo polje. Uskrs 2024. zato je označen kao
-nemjerljiv, a ne kao nula. <a href="metodologija.html#method-collection-break">Prekid u prikupljanju</a>
-objašnjava zašto.</p>
+test koristi iste dane za izvor i usporedivo polje. Isključeni su samo dani nakon presjeka podataka,
+pa se ne broje kao nula.</p>
 </details>
 
 <details>

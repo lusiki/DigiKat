@@ -1,9 +1,9 @@
 ---
 title: "Ivan Anušić"
-subtitle: "Twitter · Graditelji zajednica"
+subtitle: "Twitter · Divovi"
 description: "Profil izvora Ivan Anušić na platformi Twitter prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Preliminarno"
 show-freshness: true
 schema-type: "ProfilePage"
@@ -20,7 +20,7 @@ categories: ["Katalog izvora", "Twitter"]
   "description": "Profil izvora Ivan Anušić na platformi Twitter prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/twitter-ivan-anusic.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/pages/izvori/"
   },
@@ -47,41 +47,41 @@ Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">7</div>
+<div class="metric-value">20</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">1.176</div>
+<div class="metric-value">2.992</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">15.747</div>
+<div class="metric-value">101.761</div>
 <div class="metric-label">Procijenjenoga dosega</div>
 </div>
 </div>
 
-::: {.callout-caution}
-Ovaj se profil temelji na samo 7 objava. Prikazan je radi potpunosti kataloga. Rang i tipologiju zato ne treba tumačiti kao stabilnu procjenu izvora.
+::: {.callout-note}
+Profil se temelji na 20 objava i zato ima status **Preliminarno**. Pokazatelji opisuju zabilježeni dio korpusa, a ne cjelokupno djelovanje izvora.
 :::
 
-Po volumenu objava, Ivan Anušić je na **14. mjestu** od 23 praćenih izvora na platformi Twitter. Prosječno ostvaruje **168 interakcija po objavi**.
+Po volumenu objava, Ivan Anušić je na **7. mjestu** od 21 praćenih izvora na platformi Twitter. Prosječno ostvaruje **150 interakcija po objavi**.
 
 ## Tipologija
 
-Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Ivan Anušić pripada skupini **Graditelji zajednica**, koju obilježava nizak doseg uz vrlo visok angažman, dakle dubok odnos s vjernom publikom.
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Ivan Anušić pripada skupini **Divovi**, koju obilježava visok doseg i visok angažman, što ga svrstava među vodeće aktere ekosustava.
 
 Uređivačka oznaka je **ostalo** *(prijedlog koji potvrđuje voditelj projekta)*
 
 ## Povezano
 
 - [Pregled platforme Twitter](platforma-twitter.html)
-- Srodni izvori: [Stephen Nikola Bartulica](twitter-stephen-nikola-bartulica.html), [Pavel Gregoric](twitter-pavel-gregoric.html), [Darko Lesinger](twitter-darko-lesinger.html)
+- Srodni izvori: [Hrvatski Kanal](twitter-hrvatski-kanal.html), [Andrej Plenković](twitter-andrej-plenkovic.html), [Vlada Republike Hrvatske](twitter-vlada-republike-hrvatske.html)
 - [Katalog izvora, sve platforme](index.html)
 - [Metodologija prikupljanja i mjerenja](../metodologija.html)
 
 ## Izvori podataka
 
-Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.
+Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 18. listopada 2026. zajedničkim generatorom Kataloga izvora.
 
 ::: {.callout-warning}
 Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira izvore na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.

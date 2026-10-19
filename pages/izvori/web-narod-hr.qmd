@@ -2,8 +2,8 @@
 title: "narod.hr"
 subtitle: "Web · Specijalizirani akteri"
 description: "Profil izvora narod.hr na platformi Web prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 show-freshness: true
 schema-type: "ProfilePage"
@@ -20,7 +20,7 @@ categories: ["Katalog izvora", "Web"]
   "description": "Profil izvora narod.hr na platformi Web prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/web-narod-hr.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/pages/izvori/"
   },
@@ -47,20 +47,20 @@ Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">3.991</div>
+<div class="metric-value">4.878</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">359.402</div>
+<div class="metric-value">378.853</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">6.687.228</div>
+<div class="metric-value">7.246.809</div>
 <div class="metric-label">Procijenjenoga dosega</div>
 </div>
 </div>
 
-Po volumenu objava, narod.hr je na **8. mjestu** od 16 praćenih izvora na platformi Web. Prosječno ostvaruje **90 interakcija po objavi**.
+Po volumenu objava, narod.hr je na **10. mjestu** od 16 praćenih izvora na platformi Web. Prosječno ostvaruje **78 interakcija po objavi**.
 
 ## Tipologija
 
@@ -71,13 +71,13 @@ Uređivačka oznaka je **sekularni izvor** *(prijedlog koji potvrđuje voditelj 
 ## Povezano
 
 - [Pregled platforme Web](platforma-web.html)
-- Srodni izvori: [vecernji.hr](web-vecernji-hr.html), [net.hr](web-net-hr.html), [bitno.net](web-bitno-net.html)
+- Srodni izvori: [dnevno.hr](web-dnevno-hr.html), [vecernji.hr](web-vecernji-hr.html), [24sata.hr](web-24sata-hr.html)
 - [Katalog izvora, sve platforme](index.html)
 - [Metodologija prikupljanja i mjerenja](../metodologija.html)
 
 ## Izvori podataka
 
-Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.
+Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 18. listopada 2026. zajedničkim generatorom Kataloga izvora.
 
 ::: {.callout-warning}
 Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira izvore na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.

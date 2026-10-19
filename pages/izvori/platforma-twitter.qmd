@@ -2,8 +2,8 @@
 title: "Izvori — Twitter"
 subtitle: "Praćeni izvori na platformi Twitter"
 description: "Pregled izvora na platformi Twitter uspoređuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Mapi ekosustava."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 show-freshness: true
 schema-type: "CollectionPage"
@@ -19,7 +19,7 @@ categories: ["Katalog izvora", "Twitter"]
   "description": "Pregled praćenih izvora na platformi Twitter u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/platforma-twitter.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/#website"
   },
@@ -34,21 +34,19 @@ Ova stranica okuplja praćene izvore na platformi **Twitter** iz **Kataloga izvo
 
 | Izvor | Tipologija | Objava | Interakcija | Doseg |
 |---|---|---:|---:|---:|
-| [Zagrebačka nadbiskupija](twitter-zagrebacka-nadbiskupija.html) | Divovi | 65 | 935 | 32.084 |
-| [Petar](twitter-petar.html) | Divovi | 51 | 1.724 | 36.792 |
-| [Vlada Republike Hrvatske](twitter-vlada-republike-hrvatske.html) | Divovi | 45 | 1.989 | 463.973 |
-| [Andrej Plenković](twitter-andrej-plenkovic.html) | Divovi | 30 | 3.509 | 164.672 |
-| [Hrvatski Kanal](twitter-hrvatski-kanal.html) | Graditelji zajednica | 12 | 722 | 10.838 |
-| [DNEVNIK.hr](twitter-dnevnik-hr.html) | Megafoni | 12 | 27 | 158.041 |
-| [Darko Lesinger](twitter-darko-lesinger.html) | Graditelji zajednica | 9 | 692 | 16.413 |
-| [Stephen Nikola Bartulica](twitter-stephen-nikola-bartulica.html) | Divovi | 8 | 1.161 | 17.737 |
-| [Ivan Anušić](twitter-ivan-anusic.html) | Graditelji zajednica | 7 | 1.176 | 15.747 |
-| [Pavel Gregoric](twitter-pavel-gregoric.html) | Graditelji zajednica | 7 | 1.145 | 16.550 |
-| [Mate Mijić 🇭🇷](twitter-mate-mijic.html) | Graditelji zajednica | 7 | 746 | 12.356 |
-| [Dominik Alpeza](twitter-dominik-alpeza.html) | Graditelji zajednica | 5 | 687 | 11.087 |
-| [Dalija Orešković](twitter-dalija-oreskovic.html) | Specijalizirani akteri | 4 | 647 | 11.140 |
-| [Vesna Rajnović 🌿](twitter-vesna-rajnovic.html) | Specijalizirani akteri | 4 | 616 | 9.469 |
-| [24sata](twitter-24sata.html) | Megafoni | 2 | 0 | 19.606 |
+| [Petar](twitter-petar.html) | Divovi | 69 | 2.633 | 61.912 |
+| [Zagrebačka nadbiskupija](twitter-zagrebacka-nadbiskupija.html) | Specijalizirani akteri | 65 | 935 | 32.084 |
+| [Vlada Republike Hrvatske](twitter-vlada-republike-hrvatske.html) | Divovi | 53 | 2.609 | 188.189 |
+| [Andrej Plenković](twitter-andrej-plenkovic.html) | Divovi | 45 | 6.076 | 187.692 |
+| [Hrvatski Kanal](twitter-hrvatski-kanal.html) | Graditelji zajednica | 32 | 1.187 | 45.326 |
+| [Ivan Anušić](twitter-ivan-anusic.html) | Divovi | 20 | 2.992 | 101.761 |
+| [Darko Lesinger](twitter-darko-lesinger.html) | Specijalizirani akteri | 13 | 913 | 24.692 |
+| [Stephen Nikola Bartulica](twitter-stephen-nikola-bartulica.html) | Graditelji zajednica | 10 | 1.211 | 47.464 |
+| [Pavel Gregoric](twitter-pavel-gregoric.html) | Divovi | 10 | 1.175 | 78.266 |
+| [DNEVNIK.hr](twitter-dnevnik-hr.html) | Megafoni | 10 | 13 | 64.438 |
+| [Dalija Orešković](twitter-dalija-oreskovic.html) | Graditelji zajednica | 7 | 1.543 | 54.393 |
+| [Dominik Alpeza](twitter-dominik-alpeza.html) | Megafoni | 7 | 700 | 71.668 |
+| [Željka Markić](twitter-zeljka-markic.html) | Graditelji zajednica | 4 | 1.081 | 48.242 |
 
 [Natrag na katalog izvora](index.html) · [Mapa ekosustava](../mapa/mapa.html)
 

@@ -2,8 +2,8 @@
 title: "Kapljice ljubavi Božje"
 subtitle: "Facebook · Divovi"
 description: "Profil izvora Kapljice ljubavi Božje na platformi Facebook prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 show-freshness: true
 schema-type: "ProfilePage"
@@ -20,7 +20,7 @@ categories: ["Katalog izvora", "Facebook"]
   "description": "Profil izvora Kapljice ljubavi Božje na platformi Facebook prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/facebook-kapljice-ljubavi-bozje.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/pages/izvori/"
   },
@@ -47,20 +47,20 @@ Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">1.840</div>
+<div class="metric-value">2.610</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">383.278</div>
+<div class="metric-value">516.041</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">21.352.333</div>
+<div class="metric-value">29.266.769</div>
 <div class="metric-label">Procijenjenoga dosega</div>
 </div>
 </div>
 
-Po volumenu objava, Kapljice ljubavi Božje je na **5. mjestu** od 19 praćenih izvora na platformi Facebook. Prosječno ostvaruje **208 interakcija po objavi**.
+Po volumenu objava, Kapljice ljubavi Božje je na **4. mjestu** od 19 praćenih izvora na platformi Facebook. Prosječno ostvaruje **198 interakcija po objavi**.
 
 ## Tipologija
 
@@ -71,13 +71,13 @@ Uređivačka oznaka je **konfesionalni izvor** *(prijedlog koji potvrđuje vodit
 ## Povezano
 
 - [Pregled platforme Facebook](platforma-facebook.html)
-- Srodni izvori: [Zagrebačka nadbiskupija](facebook-zagrebacka-nadbiskupija.html), [Laudato](facebook-laudato.html), [Radio Marija Hrvatska](facebook-radio-marija-hrvatska.html)
+- Srodni izvori: [Radio Marija Hrvatska](facebook-radio-marija-hrvatska.html), [Zagrebačka nadbiskupija](facebook-zagrebacka-nadbiskupija.html), [Bitno.net](facebook-bitno-net.html)
 - [Katalog izvora, sve platforme](index.html)
 - [Metodologija prikupljanja i mjerenja](../metodologija.html)
 
 ## Izvori podataka
 
-Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.
+Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 18. listopada 2026. zajedničkim generatorom Kataloga izvora.
 
 ::: {.callout-warning}
 Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira izvore na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.

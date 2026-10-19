@@ -2,8 +2,8 @@
 title: "Metodologija"
 subtitle: "Kako nastaje korpus, što se na njemu mjeri i gdje su granice tih mjera"
 description: "Metodologija DigiKat dokumentira prikupljanje, pravilo uključivanja, računalnu obradu teksta, pokazatelje, provjere i granice službenoga korpusa."
-date-modified: 2026-09-18
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 show-freshness: true
 schema-type: "WebPage"
@@ -51,6 +51,18 @@ stopifnot(min_odlucnih == 1L, min_ukupno == 2L)
 
 akum_redaka  <- digikat_hr_int(mf$source$accumulator_rows)
 akum_stupaca <- mf$source$accumulator_columns
+
+# Granica dvaju načina prikupljanja i opseg općega toka iz manifesta korpusa.
+granica      <- digikat_hr_date(mf$source$era_split)
+granica_god  <- as.integer(substr(mf$source$era_split, 1, 4))
+opci_tok     <- digikat_hr_int(mf$source$determdb_rows_scanned)
+iskljucene   <- digikat_hr_list(digikat_platform_hr(mf$source$determdb_excluded_platforms))
+
+# Godine: najveća potpuna godina i opseg nepotpune posljednje, računato iz manifesta.
+god_kept   <- vapply(mf$years, function(x) x$kept, numeric(1))
+zadnja_god <- mf$corpus$year_max
+puna_god   <- names(god_kept)[names(god_kept) != as.character(zadnja_god)]
+najveca    <- puna_god[which.max(god_kept[puna_god])]
 
 # Mjerena preciznost postoji samo kao bilješka uz pravilo u manifestu. Vadi se regularnim
 # izrazom umjesto da se prepisuje, pa se ne može razići s onim što manifest tvrdi.
@@ -129,6 +141,10 @@ zadržanih oko `r p_odziv` % onoga što jest katolički sadržaj. Kvaliteta nije
 (`r p_pre` % prije 2024. i `r p_post` % poslije, mjereno pri nižem pragu), i ta je razlika svojstvo
 prikupljanja, a ne mjerenja.
 
+Te su mjere nastale prije nego što se razdoblje od `r granica_god`. počelo rezati iz cijeloga općeg
+toka pružatelja. Taj tok sadrži i objave koje ranija isporuka nije nosila, pa se preciznost toga
+razdoblja ponovno mjeri na novom, ručno pročitanom uzorku.
+
 Drugim riječima, korpus je namjerno širok. Manji dio objava u njemu spominje katoličke pojmove, a nije
 o njima. Ta razina šuma opisana je i mjerena, a ne prešućena.
 
@@ -153,12 +169,14 @@ Projekt vodi dva odvojena skupa podataka i njihovo miješanje najčešći je na�
 brojke.
 
 **Akumulator** (`r digikat_hr_count(mf$source$accumulator_rows, "redak")`,
-`r digikat_hr_count(akum_stupaca, "stupac")`) sve je što je servis za praćenje medija isporučio, bez
-ikakvog filtriranja. On raste sa svakom novom isporukom.
+`r digikat_hr_count(akum_stupaca, "stupac")`) sve je što je servis za praćenje medija isporučio u
+obliku pojedinačnih izvoza, bez ikakvog filtriranja.
 
-**Službeni korpus** (`r digikat_hr_count(mf$corpus$rows, "objava")`) izrezan je iz akumulatora
-pravilom opisanim gore. Sve što opisuju stranice ovoga sjedišta, sve mape i svi javni agregati
-računaju se na njemu.
+**Službeni korpus** (`r digikat_hr_count(mf$corpus$rows, "objava")`) reže se pravilom opisanim gore iz
+dvaju izvora. Objave do kraja `r granica_god - 1L`. dolaze iz akumulatora. Objave od `r granica`
+dolaze iz cijeloga općeg toka istoga pružatelja, koji za to razdoblje sadrži
+`r digikat_hr_count(mf$source$determdb_rows_scanned, "objava")` na platformama korpusa. Sve što
+opisuju stranice ovoga sjedišta, sve mape i svi javni agregati računaju se na službenom korpusu.
 
 Dovršena tematska istraživanja i dalje čitaju akumulator, imenom, jer su na njemu izračunata i
 objavljena. Prebacivanje gotove analize na novi ulaz tiho bi promijenilo brojke koje su već objavljene,
@@ -197,10 +215,12 @@ ostaju izvan javnog paketa.
 
 ## Promjena prikupljanja 2024. i što ona zabranjuje {#method-collection-break}
 
-Tijekom 2024. promijenio se način na koji su objave prikupljane. Pravilo uključivanja ostalo je isto s
-obje strane te granice, pa su razdoblja usporediva po pravilu, ali nisu usporediva po zahvatu. Udio
-zadržanih objava skače za otprilike dvadeset postotnih bodova preko te granice, i to je svojstvo
-instrumenta, ne medijske stvarnosti.
+Granica dvaju načina prikupljanja pada na `r granica` Do kraja `r granica_god - 1L`. korpus se reže
+iz toka koji je pružatelj već prethodno suzio upitom po ključnim riječima. Od te granice reže se iz
+cijeloga općeg toka. Pravilo uključivanja isto je s obje strane, pa su razdoblja usporediva po
+pravilu, ali nisu usporediva po zahvatu. Opći tok obuhvaća više izvora, pa se razine preko granice ne
+smiju izravno uspoređivati. Udio zadržanih objava u dvama razdobljima mjeri različite stvari, jer je
+nazivnik jednom suženi tok, a drugi put cijeli opći tok.
 
 ```{r}
 #| label: ere-tablica
@@ -209,26 +229,28 @@ ere <- mf$eras
 data.frame(
   Razdoblje = c("Prije promjene", "Poslije promjene"),
   Raspon = c(ere$pre2024$span, ere$post2024$span),
-  `Objava u akumulatoru` = c(digikat_hr_int(ere$pre2024$rows_in), digikat_hr_int(ere$post2024$rows_in)),
+  `Razmotrenih objava` = c(digikat_hr_int(ere$pre2024$rows_in), digikat_hr_int(ere$post2024$rows_in)),
   `Zadržano u korpusu` = c(digikat_hr_int(ere$pre2024$kept), digikat_hr_int(ere$post2024$kept)),
   `Udio zadržanih` = c(hr_pct(ere$pre2024$kept_pct), hr_pct(ere$post2024$kept_pct)),
   check.names = FALSE
 ) |>
   kable(caption = paste("Dva razdoblja prikupljanja pod istim pravilom uključivanja.",
+                        "Prije granice razmatra se suženi tok, poslije nje cijeli opći tok.",
                         "Izvor: manifest službenoga korpusa, odjeljak o razdobljima."),
         align = c("l", "l", "r", "r", "r"))
 ```
 
 Iz toga slijedi jedno ograničenje koje vrijedi za sve prikaze na ovom sjedištu. **Porast broja objava
 preko 2024. nije porast medijske pažnje.** Godišnji volumeni smiju se uspoređivati unutar istoga toka
-prikupljanja, a ne preko granice. Najveća godina u korpusu, 2025. s
-`r digikat_hr_count(mf$years[["2025"]]$kept, "objava")`, dijelom je posljedica obuhvatnijega
+prikupljanja, a ne preko granice. Najveća potpuna godina u korpusu, `r najveca`. s
+`r digikat_hr_count(mf$years[[najveca]]$kept, "objava")`, dijelom je posljedica obuhvatnijega
 prikupljanja, a ne samo veće medijske pažnje. Instagram i TikTok ulaze u prikupljanje tek 2024., pa
 ranije godine za te platforme nemaju objava i platformski udjeli nisu usporedivi kroz cijelo
 razdoblje.
 
-Uz to, u izvoru pružatelja podataka za razdoblje od veljače do svibnja 2024. nema teksta, pa nijedno razdoblje
-nema retke u tim mjesecima. Prikupljanje ima i kraćih prekida.
+Opći tok ima tekst za svaki dan od `r granica`, pa korpus više nema praznine od veljače do svibnja
+2024. koju je imala ranija isporuka. Platforma `r iskljucene` iz općega se toka ne preuzima, jer je tok
+bilježi samo u nekoliko odvojenih mjeseci, pa bi se prekidi prikupljanja čitali kao skokovi pažnje.
 
 ::: {.callout-important}
 ## Ovo je jedino mjesto na kojem se ta ograda navodi
@@ -244,13 +266,15 @@ ovaj odjeljak.
 god <- mf$years
 data.frame(
   Godina = paste0(names(god), "."),
-  `U akumulatoru` = digikat_hr_int(vapply(god, function(x) x$rows_in, numeric(1))),
+  `Razmotreno` = digikat_hr_int(vapply(god, function(x) x$rows_in, numeric(1))),
   `U korpusu` = digikat_hr_int(vapply(god, function(x) x$kept, numeric(1))),
   `Udio zadržanih` = hr_pct(100 * vapply(god, function(x) x$kept / x$rows_in, numeric(1))),
   check.names = FALSE, row.names = NULL
 ) |>
-  kable(caption = paste("Zadržane objave po godini. Godina 2026. obuhvaća razdoblje do lipnja.",
-                        "Izvor: manifest službenoga korpusa, odjeljak o godinama."),
+  kable(caption = paste0("Zadržane objave po godini. Godina ", zadnja_god, ". obuhvaća razdoblje do ",
+                         digikat_hr_date(mf$corpus$date_max), " Od ", granica_god,
+                         ". nazivnik je cijeli opći tok, pa udio zadržanih nije usporediv s ranijim godinama. ",
+                         "Izvor: manifest službenoga korpusa, odjeljak o godinama."),
         align = c("l", "r", "r", "r"))
 ```
 

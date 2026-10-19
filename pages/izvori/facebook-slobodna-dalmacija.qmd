@@ -1,9 +1,9 @@
 ---
 title: "Slobodna Dalmacija"
-subtitle: "Facebook · Megafoni"
+subtitle: "Facebook · Specijalizirani akteri"
 description: "Profil izvora Slobodna Dalmacija na platformi Facebook prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 show-freshness: true
 schema-type: "ProfilePage"
@@ -20,7 +20,7 @@ categories: ["Katalog izvora", "Facebook"]
   "description": "Profil izvora Slobodna Dalmacija na platformi Facebook prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/facebook-slobodna-dalmacija.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/pages/izvori/"
   },
@@ -47,37 +47,37 @@ Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">750</div>
+<div class="metric-value">870</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">118.144</div>
+<div class="metric-value">162.802</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">18.405.019</div>
+<div class="metric-value">23.485.820</div>
 <div class="metric-label">Procijenjenoga dosega</div>
 </div>
 </div>
 
-Po volumenu objava, Slobodna Dalmacija je na **10. mjestu** od 19 praćenih izvora na platformi Facebook. Prosječno ostvaruje **158 interakcija po objavi**.
+Po volumenu objava, Slobodna Dalmacija je na **11. mjestu** od 19 praćenih izvora na platformi Facebook. Prosječno ostvaruje **187 interakcija po objavi**.
 
 ## Tipologija
 
-Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Slobodna Dalmacija pripada skupini **Megafoni**, koju obilježava visok doseg uz nizak angažman, pa sadržaj doseže široku publiku bez intenzivne interakcije.
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), Slobodna Dalmacija pripada skupini **Specijalizirani akteri**, koju obilježava umjeren doseg i angažman, usmjeren na užu i specifičnu publiku.
 
 Uređivačka oznaka je **sekularni izvor** *(prijedlog koji potvrđuje voditelj projekta)*
 
 ## Povezano
 
 - [Pregled platforme Facebook](platforma-facebook.html)
-- Srodni izvori: [Gospa](facebook-gospa.html), [RTL Danas](facebook-rtl-danas.html), [VJERA](facebook-vjera.html)
+- Srodni izvori: [Gospa](facebook-gospa.html), [Kraljica Mira](facebook-kraljica-mira.html), [Večernji list](facebook-vecernji-list.html)
 - [Katalog izvora, sve platforme](index.html)
 - [Metodologija prikupljanja i mjerenja](../metodologija.html)
 
 ## Izvori podataka
 
-Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.
+Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 18. listopada 2026. zajedničkim generatorom Kataloga izvora.
 
 ::: {.callout-warning}
 Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira izvore na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.

@@ -1,9 +1,9 @@
 ---
 title: "VJERA"
-subtitle: "Facebook · Graditelji zajednica"
+subtitle: "Facebook · Divovi"
 description: "Profil izvora VJERA na platformi Facebook prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 show-freshness: true
 schema-type: "ProfilePage"
@@ -20,7 +20,7 @@ categories: ["Katalog izvora", "Facebook"]
   "description": "Profil izvora VJERA na platformi Facebook prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/facebook-vjera.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/pages/izvori/"
   },
@@ -47,37 +47,37 @@ Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">1.172</div>
+<div class="metric-value">2.177</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">320.460</div>
+<div class="metric-value">557.483</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">16.481.614</div>
+<div class="metric-value">29.256.592</div>
 <div class="metric-label">Procijenjenoga dosega</div>
 </div>
 </div>
 
-Po volumenu objava, VJERA je na **8. mjestu** od 19 praćenih izvora na platformi Facebook. Prosječno ostvaruje **273 interakcija po objavi**.
+Po volumenu objava, VJERA je na **8. mjestu** od 19 praćenih izvora na platformi Facebook. Prosječno ostvaruje **256 interakcija po objavi**.
 
 ## Tipologija
 
-Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), VJERA pripada skupini **Graditelji zajednica**, koju obilježava nizak doseg uz vrlo visok angažman, dakle dubok odnos s vjernom publikom.
+Prema tipologiji **Mape ekosustava** (podjela po medijanu angažmana i dosega unutar platforme), VJERA pripada skupini **Divovi**, koju obilježava visok doseg i visok angažman, što ga svrstava među vodeće aktere ekosustava.
 
 Uređivačka oznaka je **konfesionalni izvor** *(prijedlog koji potvrđuje voditelj projekta)*
 
 ## Povezano
 
 - [Pregled platforme Facebook](platforma-facebook.html)
-- Srodni izvori: [Kraljica Mira](facebook-kraljica-mira.html), [Gospa](facebook-gospa.html), [Laudato](facebook-laudato.html)
+- Srodni izvori: [Laudato](facebook-laudato.html), [Kraljica Mira](facebook-kraljica-mira.html), [Gospa](facebook-gospa.html)
 - [Katalog izvora, sve platforme](index.html)
 - [Metodologija prikupljanja i mjerenja](../metodologija.html)
 
 ## Izvori podataka
 
-Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.
+Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 18. listopada 2026. zajedničkim generatorom Kataloga izvora.
 
 ::: {.callout-warning}
 Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira izvore na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.

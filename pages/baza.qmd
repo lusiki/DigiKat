@@ -2,9 +2,9 @@
 title: "Službeni korpus DigiKat"
 pagetitle: "Službeni korpus"
 subtitle: "Jedna istraživačka zbirka za analizu katoličkih tema u hrvatskom digitalnom medijskom prostoru"
-description: "Službeni korpus DigiKat obuhvaća približno 400.000 objava, uz javni manifest, agregate, rječnik varijabli i sintetički uzorak."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+description: "Službeni korpus DigiKat obuhvaća više od 610.000 objava, uz javni manifest, agregate, rječnik varijabli i sintetički uzorak."
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 categories: ["Korpus", "Otvoreni podaci", "Metodologija"]
 schema-type: "Dataset"
@@ -20,6 +20,7 @@ library(data.table)
 library(jsonlite)
 
 source("../R/lib/digikat_paths.R", encoding = "UTF-8")
+source("../R/lib/digikat_hr.R", encoding = "UTF-8")
 
 mf <- digikat_read_corpus_manifest(base_dir = "../data")
 agg_mf <- jsonlite::read_json("../data/processed/manifest.json", simplifyVector = FALSE)
@@ -88,7 +89,8 @@ provenance_schema <- list(
   dk_n_total = NA_integer_,
   dk_score = NA_real_,
   dk_old_rule = NA,
-  dk_rule = NA_character_
+  dk_rule = NA_character_,
+  dk_source_id = NA_character_
 )
 for (name in names(provenance_schema)) {
   if (!name %in% names(schema)) schema[, (name) := provenance_schema[[name]]]
@@ -164,7 +166,7 @@ cat(
 ```
 
 <div class="freshness-strip" aria-label="Svježina službenoga korpusa">
-  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">24. kolovoza 2026.</span></span>
+  <span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">18. listopada 2026.</span></span>
   <span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">`r data_cutoff_hr`</span></span>
   <span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--updating">Ažurira se</span></span>
 </div>
@@ -172,7 +174,7 @@ cat(
 ::: {.summary-60}
 <span class="summary-60__label">Sažetak u 60 sekundi</span>
 
-Službeni korpus DigiKat obuhvaća približno 400.000 zapisa. Sadrži `r fmt_int(n_records)` objava s web-portala, društvenih platformi, foruma i komentara u razdoblju `r corpus_range`
+Službeni korpus DigiKat obuhvaća više od `r fmt_int(floor(n_records / 10000) * 10000)` zapisa. Sadrži `r fmt_int(n_records)` objava s web-portala, društvenih platformi, foruma i komentara u razdoblju `r corpus_range`
 
 Korpus je prikupljen prema sadržaju. U njemu su zato i crkveni i sekularni izvori koji objavljuju o katoličkim temama. Opisuje prikupljeni medijski sadržaj, a ne stavove stanovništva ili cijeli hrvatski medijski prostor.
 
@@ -251,7 +253,7 @@ Ove dvije granice vrijede prije svake analize.
   </article>
 </div>
 
-Način prikupljanja promijenio se tijekom 2024. Podaci s obje strane te granice slijede isto pravilo uključivanja, ali promjena zabranjuje jednostavno čitanje skoka u volumenu kao promjene medijske pozornosti. [Obrazloženje i dijagnostika nalaze se u Metodologiji](metodologija.html#method-collection-break).
+Način prikupljanja promijenio se na početku 2024. Podaci s obje strane te granice slijede isto pravilo uključivanja, ali promjena zabranjuje jednostavno čitanje skoka u volumenu kao promjene medijske pozornosti. [Obrazloženje i dijagnostika nalaze se u Metodologiji](metodologija.html#method-collection-break).
 
 ## Javni artefakti i pristup {#javni-artefakti}
 
@@ -323,7 +325,7 @@ Ova stranica zadržava samo podatke potrebne za pristup i odgovorno tumačenje. 
 <div class="method-link-list">
   <a href="metodologija.html#method-corpus-inclusion"><strong>Što ulazi u korpus</strong><span>Pravilo uključivanja i granica korpusa</span></a>
   <a href="metodologija.html#method-corpus-quality"><strong>Kvaliteta korpusa</strong><span>Ručna provjera i procjena pogreške</span></a>
-  <a href="metodologija.html#method-collection-break"><strong>Promjena prikupljanja</strong><span>Prekid 2024. i vremenske usporedbe</span></a>
+  <a href="metodologija.html#method-collection-break"><strong>Promjena prikupljanja</strong><span>Promjena 2024. i vremenske usporedbe</span></a>
   <a href="metodologija.html#method-platform-metrics"><strong>Značenje mjera</strong><span>Objave, interakcije, angažman i procijenjeni doseg</span></a>
   <a href="metodologija.html#method-reproducibility"><strong>Reproducibilnost</strong><span>Obrada, manifesti i ponavljanje postupka</span></a>
 </div>
@@ -365,7 +367,7 @@ knitr::kable(
 <summary>Rječnik svih `r n_vars` varijabli</summary>
 <div class="reference-section__content">
 
-Rječnik navodi funkcionalnu skupinu i tehnički tip svake varijable službenoga korpusa. Struktura se provjerava prema javnom sintetičkom uzorku, a sedam stupaca podrijetla filtriranja dodaje se prema ugovoru gradnje službenoga korpusa.
+Rječnik navodi funkcionalnu skupinu i tehnički tip svake varijable službenoga korpusa. Struktura se provjerava prema javnom sintetičkom uzorku, a `r digikat_hr_count(sum(startsWith(names(schema), "dk_")), "stupac")` podrijetla filtriranja dodaje se prema ugovoru gradnje službenoga korpusa.
 
 <div class="reference-table reference-table--tall" role="region" aria-label="Rječnik varijabli službenoga korpusa" tabindex="0">
 

@@ -2,8 +2,8 @@
 title: "Mreža izvora"
 subtitle: "Katalog izvora kao interaktivna mreža — šest platformi povezanih pripadnošću i zajedničkim brendom"
 description: "Mreža izvora prikazuje pripadnost pojedinačnih izvora platformama i povezuje račune koji dijele isti medijski brend."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 show-freshness: true
 schema-type: "CollectionPage"

@@ -2,8 +2,8 @@
 title: "Mapa medijskog prostora"
 subtitle: "Četiri analitičke razine i vremenski presjek katoličkoga digitalnog prostora"
 description: "Mapa medijskog prostora povezuje pet analitičkih prikaza izvora, tema, atmosfere diskursa, događaja i promjena kroz vrijeme."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Ažurira se"
 show-freshness: true
 schema-type: "CollectionPage"

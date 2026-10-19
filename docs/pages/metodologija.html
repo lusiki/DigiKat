@@ -361,7 +361,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Izmijenjeno</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">18. rujna 2026.</p>
+      <p class="date-modified">18. listopada 2026.</p>
     </div>
   </div>
     
@@ -372,12 +372,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="freshness-strip" aria-label="Svježina i status stranice"><span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">18. rujna 2026.</span></span><span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">11. lipnja 2026.</span></span><span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--updating">Ažurira se</span></span></div>
+<div class="freshness-strip" aria-label="Svježina i status stranice"><span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">18. listopada 2026.</span></span><span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">16. listopada 2026.</span></span><span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--updating">Ažurira se</span></span></div>
 <p>Ova stranica okuplja tehnički dio projekta na jednom mjestu. Ostale stranice vode računa o tome što podaci pokazuju. Ovdje piše kako su nastali, na čemu su mjereni i što se iz njih ne smije zaključiti. Namijenjena je čitatelju koji želi provjeriti postupak, ponoviti ga ili citirati.</p>
 <p>Svaka brojka na ovoj stranici izračunata je iz praćenih manifesta koji nastaju zajedno s podacima. Nijedna nije prepisana rukom.</p>
 <section id="method-corpus-inclusion" class="level2">
 <h2 class="anchored" data-anchor-id="method-corpus-inclusion">Što ulazi u korpus</h2>
-<p>Službeni korpus sadrži 413.985 objava i 54 stupca, prikupljenih u razdoblju 2021.–2026. na 9 vrsta izvora i platformi. U njega ulazi objava koja prođe dva uzastopna uvjeta.</p>
+<p>Službeni korpus sadrži 611.583 objave i 55 stupaca, prikupljenih u razdoblju 2021.–2026. na 9 vrsta izvora i platformi. U njega ulazi objava koja prođe dva uzastopna uvjeta.</p>
 <p><strong>Prvi uvjet je rječnički.</strong> Objava mora unutar prvih 3.000 znakova teksta pogoditi najmanje 1 odlučan i najmanje 2 različita pojma s popisa od 119 pojmova. Popis razlikuje 99 pojmova koji sami po sebi upućuju na katoličku tematiku i 20 pojmova koji se u hrvatskom javljaju i izvan religijskog konteksta, pa ne mogu sami donijeti odluku.</p>
 <p>Ograničenje na prvih 3.000 znakova nije tehnička sitnica. Ranije je rječnik čitao cijeli tekst, a drugi uvjet i ljudski koderi samo početak, pa su u korpus ulazile objave čiji je jedini religijski trag bio duboko u tekstu i tipično nije imao veze s temom. Od svih takvih objava koje su pročitane ručno nijedna nije bila katolički sadržaj, pa se pravilo sada na oba mjesta primjenjuje na isti prozor.</p>
 <p><strong>Drugi uvjet je modelski.</strong> Objava koja prođe rječnik ocjenjuje se statističkim modelom uvježbanim na ručno označenim primjerima i ulazi u korpus samo ako dosegne ocjenu od najmanje 0,70. Prag je odluka voditelja projekta iz kolovoza 2026. i namjerno je postavljen tako da zadrži volumen. Viši prag daje čišći, ali manji korpus.</p>
@@ -385,6 +385,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="method-corpus-quality" class="level3">
 <h3 class="anchored" data-anchor-id="method-corpus-quality">Koliko je korpus čist</h3>
 <p>Preciznost je mjerena ručnim čitanjem 250 objava po razdoblju. Na tako mjerenoj osnovici zajednička krivulja procjenjuje da je oko 84,5 % objava u korpusu doista katolički sadržaj, uz zadržanih oko 87,2 % onoga što jest katolički sadržaj. Kvaliteta nije jednaka u oba razdoblja (68,0 % prije 2024. i 87,0 % poslije, mjereno pri nižem pragu), i ta je razlika svojstvo prikupljanja, a ne mjerenja.</p>
+<p>Te su mjere nastale prije nego što se razdoblje od 2024. počelo rezati iz cijeloga općeg toka pružatelja. Taj tok sadrži i objave koje ranija isporuka nije nosila, pa se preciznost toga razdoblja ponovno mjeri na novom, ručno pročitanom uzorku.</p>
 <p>Drugim riječima, korpus je namjerno širok. Manji dio objava u njemu spominje katoličke pojmove, a nije o njima. Ta razina šuma opisana je i mjerena, a ne prešućena.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -399,11 +400,11 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Objava u korpusu</td>
-<td style="text-align: left;">413.985</td>
+<td style="text-align: left;">611.583</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Stupaca</td>
-<td style="text-align: left;">54</td>
+<td style="text-align: left;">55</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Razdoblje</td>
@@ -434,8 +435,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="method-data-lineage" class="level2">
 <h2 class="anchored" data-anchor-id="method-data-lineage">Dva skupa podataka koja nisu zamjenjiva</h2>
 <p>Projekt vodi dva odvojena skupa podataka i njihovo miješanje najčešći je način da se dobiju krive brojke.</p>
-<p><strong>Akumulator</strong> (710.307 redaka, 47 stupaca) sve je što je servis za praćenje medija isporučio, bez ikakvog filtriranja. On raste sa svakom novom isporukom.</p>
-<p><strong>Službeni korpus</strong> (413.985 objava) izrezan je iz akumulatora pravilom opisanim gore. Sve što opisuju stranice ovoga sjedišta, sve mape i svi javni agregati računaju se na njemu.</p>
+<p><strong>Akumulator</strong> (710.307 redaka, 47 stupaca) sve je što je servis za praćenje medija isporučio u obliku pojedinačnih izvoza, bez ikakvog filtriranja.</p>
+<p><strong>Službeni korpus</strong> (611.583 objave) reže se pravilom opisanim gore iz dvaju izvora. Objave do kraja 2023. dolaze iz akumulatora. Objave od 1. siječnja 2024. dolaze iz cijeloga općeg toka istoga pružatelja, koji za to razdoblje sadrži 22.594.216 objava na platformama korpusa. Sve što opisuju stranice ovoga sjedišta, sve mape i svi javni agregati računaju se na službenom korpusu.</p>
 <p>Dovršena tematska istraživanja i dalje čitaju akumulator, imenom, jer su na njemu izračunata i objavljena. Prebacivanje gotove analize na novi ulaz tiho bi promijenilo brojke koje su već objavljene, pa se to ne radi. Svako istraživanje na stranici <a href="studije/index.html">Tematska istraživanja</a> navodi na kojem je skupu izračunato.</p>
 <p>Praktična posljedica za čitatelja je jednostavna. Ako se brojka s neke stranice ne slaže s brojkom iz nekog istraživanja, prva provjera nije aritmetika nego to govore li o istom skupu podataka.</p>
 </section>
@@ -451,23 +452,23 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="method-collection-break" class="level2">
 <h2 class="anchored" data-anchor-id="method-collection-break">Promjena prikupljanja 2024. i što ona zabranjuje</h2>
-<p>Tijekom 2024. promijenio se način na koji su objave prikupljane. Pravilo uključivanja ostalo je isto s obje strane te granice, pa su razdoblja usporediva po pravilu, ali nisu usporediva po zahvatu. Udio zadržanih objava skače za otprilike dvadeset postotnih bodova preko te granice, i to je svojstvo instrumenta, ne medijske stvarnosti.</p>
+<p>Granica dvaju načina prikupljanja pada na 1. siječnja 2024. Do kraja 2023. korpus se reže iz toka koji je pružatelj već prethodno suzio upitom po ključnim riječima. Od te granice reže se iz cijeloga općeg toka. Pravilo uključivanja isto je s obje strane, pa su razdoblja usporediva po pravilu, ali nisu usporediva po zahvatu. Opći tok obuhvaća više izvora, pa se razine preko granice ne smiju izravno uspoređivati. Udio zadržanih objava u dvama razdobljima mjeri različite stvari, jer je nazivnik jednom suženi tok, a drugi put cijeli opći tok.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
-<caption>Dva razdoblja prikupljanja pod istim pravilom uključivanja. Izvor: manifest službenoga korpusa, odjeljak o razdobljima.</caption>
+<caption>Dva razdoblja prikupljanja pod istim pravilom uključivanja. Prije granice razmatra se suženi tok, poslije nje cijeli opći tok. Izvor: manifest službenoga korpusa, odjeljak o razdobljima.</caption>
 <colgroup>
 <col style="width: 17%">
-<col style="width: 25%">
-<col style="width: 21%">
-<col style="width: 19%">
+<col style="width: 26%">
+<col style="width: 20%">
+<col style="width: 20%">
 <col style="width: 15%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Razdoblje</th>
 <th style="text-align: left;">Raspon</th>
-<th style="text-align: right;">Objava u akumulatoru</th>
+<th style="text-align: right;">Razmotrenih objava</th>
 <th style="text-align: right;">Zadržano u korpusu</th>
 <th style="text-align: right;">Udio zadržanih</th>
 </tr>
@@ -475,24 +476,24 @@ ul.task-list li input[type="checkbox"] {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Prije promjene</td>
-<td style="text-align: left;">2021-01-01 -&gt; 2024-07-04</td>
-<td style="text-align: right;">269.583</td>
-<td style="text-align: right;">192.861</td>
-<td style="text-align: right;">71,5 %</td>
+<td style="text-align: left;">2021-01-01 -&gt; 2023-12-31</td>
+<td style="text-align: right;">258.759</td>
+<td style="text-align: right;">185.877</td>
+<td style="text-align: right;">71,8 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Poslije promjene</td>
-<td style="text-align: left;">2024-07-01 -&gt; 2026-06-11</td>
-<td style="text-align: right;">440.724</td>
-<td style="text-align: right;">221.124</td>
-<td style="text-align: right;">50,2 %</td>
+<td style="text-align: left;">2024-01-01 -&gt; 2026-10-16</td>
+<td style="text-align: right;">22.594.216</td>
+<td style="text-align: right;">425.706</td>
+<td style="text-align: right;">1,9 %</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<p>Iz toga slijedi jedno ograničenje koje vrijedi za sve prikaze na ovom sjedištu. <strong>Porast broja objava preko 2024. nije porast medijske pažnje.</strong> Godišnji volumeni smiju se uspoređivati unutar istoga toka prikupljanja, a ne preko granice. Najveća godina u korpusu, 2025. s 124.346 objava, dijelom je posljedica obuhvatnijega prikupljanja, a ne samo veće medijske pažnje. Instagram i TikTok ulaze u prikupljanje tek 2024., pa ranije godine za te platforme nemaju objava i platformski udjeli nisu usporedivi kroz cijelo razdoblje.</p>
-<p>Uz to, u izvoru pružatelja podataka za razdoblje od veljače do svibnja 2024. nema teksta, pa nijedno razdoblje nema retke u tim mjesecima. Prikupljanje ima i kraćih prekida.</p>
+<p>Iz toga slijedi jedno ograničenje koje vrijedi za sve prikaze na ovom sjedištu. <strong>Porast broja objava preko 2024. nije porast medijske pažnje.</strong> Godišnji volumeni smiju se uspoređivati unutar istoga toka prikupljanja, a ne preko granice. Najveća potpuna godina u korpusu, 2025. s 167.843 objave, dijelom je posljedica obuhvatnijega prikupljanja, a ne samo veće medijske pažnje. Instagram i TikTok ulaze u prikupljanje tek 2024., pa ranije godine za te platforme nemaju objava i platformski udjeli nisu usporedivi kroz cijelo razdoblje.</p>
+<p>Opći tok ima tekst za svaki dan od 1. siječnja 2024., pa korpus više nema praznine od veljače do svibnja 2024. koju je imala ranija isporuka. Platforma komentari iz općega se toka ne preuzima, jer je tok bilježi samo u nekoliko odvojenih mjeseci, pa bi se prekidi prikupljanja čitali kao skokovi pažnje.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -509,11 +510,11 @@ ul.task-list li input[type="checkbox"] {
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
-<caption>Zadržane objave po godini. Godina 2026. obuhvaća razdoblje do lipnja. Izvor: manifest službenoga korpusa, odjeljak o godinama.</caption>
+<caption>Zadržane objave po godini. Godina 2026. obuhvaća razdoblje do 16. listopada 2026. Od 2024. nazivnik je cijeli opći tok, pa udio zadržanih nije usporediv s ranijim godinama. Izvor: manifest službenoga korpusa, odjeljak o godinama.</caption>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Godina</th>
-<th style="text-align: right;">U akumulatoru</th>
+<th style="text-align: right;">Razmotreno</th>
 <th style="text-align: right;">U korpusu</th>
 <th style="text-align: right;">Udio zadržanih</th>
 </tr>
@@ -539,21 +540,21 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 <tr class="even">
 <td style="text-align: left;">2024.</td>
-<td style="text-align: right;">114.231</td>
-<td style="text-align: right;">56.923</td>
-<td style="text-align: right;">49,8 %</td>
+<td style="text-align: right;">7.920.034</td>
+<td style="text-align: right;">134.379</td>
+<td style="text-align: right;">1,7 %</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">2025.</td>
-<td style="text-align: right;">236.166</td>
-<td style="text-align: right;">124.346</td>
-<td style="text-align: right;">52,7 %</td>
+<td style="text-align: right;">8.266.344</td>
+<td style="text-align: right;">167.843</td>
+<td style="text-align: right;">2,0 %</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2026.</td>
-<td style="text-align: right;">101.151</td>
-<td style="text-align: right;">46.839</td>
-<td style="text-align: right;">46,3 %</td>
+<td style="text-align: right;">6.407.838</td>
+<td style="text-align: right;">123.484</td>
+<td style="text-align: right;">1,9 %</td>
 </tr>
 </tbody>
 </table>
@@ -583,17 +584,17 @@ ul.task-list li input[type="checkbox"] {
 <tr class="odd">
 <td style="text-align: left;">Tematske struje</td>
 <td style="text-align: right;">5,0 %</td>
-<td style="text-align: right;">20.658</td>
+<td style="text-align: right;">30.531</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Fokus na događaje</td>
 <td style="text-align: right;">3,0 %</td>
-<td style="text-align: right;">12.384</td>
+<td style="text-align: right;">18.309</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Atmosfera diskursa</td>
 <td style="text-align: right;">2,0 %</td>
-<td style="text-align: right;">8.250</td>
+<td style="text-align: right;">12.200</td>
 </tr>
 </tbody>
 </table>

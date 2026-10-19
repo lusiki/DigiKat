@@ -2,8 +2,8 @@
 title: "Hrvatski Kanal"
 subtitle: "Twitter · Graditelji zajednica"
 description: "Profil izvora Hrvatski Kanal na platformi Twitter prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat."
-date-modified: 2026-08-24
-data-cutoff: 2026-06-11
+date-modified: 2026-10-18
+data-cutoff: 2026-10-16
 status: "Preliminarno"
 show-freshness: true
 schema-type: "ProfilePage"
@@ -20,7 +20,7 @@ categories: ["Katalog izvora", "Twitter"]
   "description": "Profil izvora Hrvatski Kanal na platformi Twitter prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/twitter-hrvatski-kanal.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/pages/izvori/"
   },
@@ -47,24 +47,24 @@ Ključni pokazatelji ovog izvora u korpusu.
 
 <div class="metric-grid">
 <div class="metric-card">
-<div class="metric-value">12</div>
+<div class="metric-value">32</div>
 <div class="metric-label">Objava</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">722</div>
+<div class="metric-value">1.187</div>
 <div class="metric-label">Interakcija</div>
 </div>
 <div class="metric-card">
-<div class="metric-value">10.838</div>
+<div class="metric-value">45.326</div>
 <div class="metric-label">Procijenjenoga dosega</div>
 </div>
 </div>
 
-::: {.callout-caution}
-Ovaj se profil temelji na samo 12 objava. Prikazan je radi potpunosti kataloga. Rang i tipologiju zato ne treba tumačiti kao stabilnu procjenu izvora.
+::: {.callout-note}
+Profil se temelji na 32 objava i zato ima status **Preliminarno**. Pokazatelji opisuju zabilježeni dio korpusa, a ne cjelokupno djelovanje izvora.
 :::
 
-Po volumenu objava, Hrvatski Kanal je na **10. mjestu** od 23 praćenih izvora na platformi Twitter. Prosječno ostvaruje **60 interakcija po objavi**.
+Po volumenu objava, Hrvatski Kanal je na **6. mjestu** od 21 praćenih izvora na platformi Twitter. Prosječno ostvaruje **37 interakcija po objavi**.
 
 ## Tipologija
 
@@ -75,13 +75,13 @@ Uređivačka oznaka je **sekularni izvor** *(prijedlog koji potvrđuje voditelj 
 ## Povezano
 
 - [Pregled platforme Twitter](platforma-twitter.html)
-- Srodni izvori: [DNEVNIK.hr](twitter-dnevnik-hr.html), [Darko Lesinger](twitter-darko-lesinger.html), [Stephen Nikola Bartulica](twitter-stephen-nikola-bartulica.html)
+- Srodni izvori: [Andrej Plenković](twitter-andrej-plenkovic.html), [Ivan Anušić](twitter-ivan-anusic.html), [Vlada Republike Hrvatske](twitter-vlada-republike-hrvatske.html)
 - [Katalog izvora, sve platforme](index.html)
 - [Metodologija prikupljanja i mjerenja](../metodologija.html)
 
 ## Izvori podataka
 
-Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.
+Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 18. listopada 2026. zajedničkim generatorom Kataloga izvora.
 
 ::: {.callout-warning}
 Brojke su **indikativne**. Agregati opisuju službeni korpus u razdoblju **2021.–2026.** s **9** vrsta izvora i platformi. Katalog profilira izvore na **6** platformi (web, YouTube, Facebook, Instagram, TikTok i Twitter). Reddit, forumi i komentari prisutni su u korpusu, ali nemaju pojedinačne profile. Godina 2026. nepotpuna je, pa apsolutne vrijednosti valja tumačiti oprezno.

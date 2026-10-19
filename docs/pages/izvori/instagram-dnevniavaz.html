@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-18eeef7e313107c10b6b051a6734352e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-89390a0b5fa5de9f06f1c04b1c1b6b2e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-05a0de8cf355dfe4f020f6ea4b5bd17a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -115,6 +115,52 @@ ul.task-list li input[type="checkbox"] {
     }
   ]
 }
+</script>
+<script>
+(function () {
+  var mobileCharts = window.matchMedia("(max-width: 767.98px)");
+
+  function updateChart(image) {
+    var mobileSource = image.getAttribute("data-mobile-src");
+    if (!mobileSource) return;
+
+    if (!image.hasAttribute("data-desktop-src")) {
+      image.setAttribute("data-desktop-src", image.getAttribute("src"));
+      image.setAttribute("data-desktop-width", image.getAttribute("width") || "");
+      image.setAttribute("data-desktop-height", image.getAttribute("height") || "");
+    }
+
+    if (mobileCharts.matches) {
+      image.setAttribute("src", mobileSource);
+      image.setAttribute("width", image.getAttribute("data-mobile-width"));
+      image.setAttribute("height", image.getAttribute("data-mobile-height"));
+    } else {
+      image.setAttribute("src", image.getAttribute("data-desktop-src"));
+      image.setAttribute("width", image.getAttribute("data-desktop-width"));
+      image.setAttribute("height", image.getAttribute("data-desktop-height"));
+    }
+  }
+
+  function updateCharts(root) {
+    if (root.nodeType === 1 && root.matches("img[data-mobile-src]")) updateChart(root);
+    if (root.querySelectorAll) {
+      root.querySelectorAll("img[data-mobile-src]").forEach(updateChart);
+    }
+  }
+
+  var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(updateCharts);
+    });
+  });
+
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+  mobileCharts.addEventListener("change", function () { updateCharts(document); });
+  document.addEventListener("DOMContentLoaded", function () {
+    updateCharts(document);
+    observer.disconnect();
+  });
+})();
 </script>
 
 
@@ -203,6 +249,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../../pages/studije/index.html">
  <span class="dropdown-text">Tematska istraživanja</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../pages/demokrscanstvo/index.html">
+ <span class="dropdown-text">Demokršćanstvo u medijima</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../assets/izvjestaji/godisnji-pregled-2025.html">
@@ -298,7 +348,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Izmijenjeno</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">24. kolovoza 2026.</p>
+      <p class="date-modified">18. listopada 2026.</p>
     </div>
   </div>
     
@@ -309,7 +359,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="freshness-strip" aria-label="Svježina i status stranice"><span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">24. kolovoza 2026.</span></span><span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">11. lipnja 2026.</span></span><span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--preliminary">Preliminarno</span></span></div>
+<div class="freshness-strip" aria-label="Svježina i status stranice"><span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">18. listopada 2026.</span></span><span class="freshness-strip__item"><span class="freshness-strip__label">Podaci zaključno s</span><span class="freshness-strip__value">16. listopada 2026.</span></span><span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--preliminary">Preliminarno</span></span></div>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -318,7 +368,7 @@ ul.task-list li input[type="checkbox"] {
   "description": "Profil izvora dnevniavaz na platformi Instagram prikazuje volumen objava, zabilježene interakcije, procijenjeni doseg i položaj u Katalogu izvora DigiKat.",
   "url": "https://lusiki.github.io/DigiKat/pages/izvori/instagram-dnevniavaz.html",
   "inLanguage": "hr",
-  "dateModified": "2026-08-24",
+  "dateModified": "2026-10-18",
   "isPartOf": {
     "@id": "https://lusiki.github.io/DigiKat/pages/izvori/"
   },
@@ -342,7 +392,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="metric-grid">
 <div class="metric-card">
 <div class="metric-value">
-41
+61
 </div>
 <div class="metric-label">
 Objava
@@ -350,7 +400,7 @@ Objava
 </div>
 <div class="metric-card">
 <div class="metric-value">
-16.757
+51.159
 </div>
 <div class="metric-label">
 Interakcija
@@ -358,7 +408,7 @@ Interakcija
 </div>
 <div class="metric-card">
 <div class="metric-value">
-469.434
+766.012
 </div>
 <div class="metric-label">
 Procijenjenoga dosega
@@ -375,10 +425,10 @@ Napomena
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Profil se temelji na 41 objava i zato ima status <strong>Preliminarno</strong>. Pokazatelji opisuju zabilježeni dio korpusa, a ne cjelokupno djelovanje izvora.</p>
+<p>Profil se temelji na 61 objava i zato ima status <strong>Preliminarno</strong>. Pokazatelji opisuju zabilježeni dio korpusa, a ne cjelokupno djelovanje izvora.</p>
 </div>
 </div>
-<p>Po volumenu objava, dnevniavaz je na <strong>2. mjestu</strong> od 20 praćenih izvora na platformi Instagram. Prosječno ostvaruje <strong>409 interakcija po objavi</strong>.</p>
+<p>Po volumenu objava, dnevniavaz je na <strong>2. mjestu</strong> od 21 praćenih izvora na platformi Instagram. Prosječno ostvaruje <strong>839 interakcija po objavi</strong>.</p>
 </section>
 <section id="tipologija" class="level2">
 <h2 class="anchored" data-anchor-id="tipologija">Tipologija</h2>
@@ -389,14 +439,14 @@ Napomena
 <h2 class="anchored" data-anchor-id="povezano">Povezano</h2>
 <ul>
 <li><a href="platforma-instagram.html">Pregled platforme Instagram</a></li>
-<li>Srodni izvori: <a href="instagram-laudatotv.html">laudatotv</a>, <a href="instagram-ivan-anusic-hr.html">ivan.anusic.hr</a>, <a href="instagram-jutarnji-hr.html">jutarnji.hr</a></li>
+<li>Srodni izvori: <a href="instagram-laudatotv.html">laudatotv</a>, <a href="instagram-ivan-anusic-hr.html">ivan.anusic.hr</a>, <a href="instagram-oslobodjenje-ba.html">oslobodjenje.ba</a></li>
 <li><a href="index.html">Katalog izvora, sve platforme</a></li>
 <li><a href="../metodologija.html">Metodologija prikupljanja i mjerenja</a></li>
 </ul>
 </section>
 <section id="izvori-podataka" class="level2">
 <h2 class="anchored" data-anchor-id="izvori-podataka">Izvori podataka</h2>
-<p>Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 24. kolovoza 2026. zajedničkim generatorom Kataloga izvora.</p>
+<p>Pokazatelji su izračunani iz javnog agregata bez osobnih podataka. Profil je ažuriran 18. listopada 2026. zajedničkim generatorom Kataloga izvora.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
