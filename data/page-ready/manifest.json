@@ -1,106 +1,106 @@
 {
   "schema_version": 1,
-  "generated_utc": "2026-08-10 16:37:19 UTC",
+  "generated_utc": "2026-10-18 19:05:11 UTC",
   "generator": "R/05_page_summaries.R",
   "disclosure": "aggregate plot and table inputs only; no text, title, URL, or row-level record",
   "inputs": {
     "R/lib/thematic_dictionaries.R": {
       "path": "R/lib/thematic_dictionaries.R",
       "bytes": 3504,
-      "modified_utc": "2026-07-28 07:21:06 UTC",
+      "modified_utc": "2026-09-18 11:30:09 UTC",
       "sha256": "a49c8b4db4b1d146aa19ff95025de47b7c6b1c8aee720db296e000e2e5e9e33e"
     },
     "R/lib/page_summaries.R": {
       "path": "R/lib/page_summaries.R",
       "bytes": 24856,
-      "modified_utc": "2026-07-28 10:26:17 UTC",
+      "modified_utc": "2026-09-18 11:30:09 UTC",
       "sha256": "ba6eb66f2981ba32eb734652fc4dcedaf65ec30d049b221f3aadf14f113350f9"
     },
     "resources/lexicons/crosentilex-negatives.txt": {
       "path": "resources/lexicons/crosentilex-negatives.txt",
       "bytes": 642190,
-      "modified_utc": "2026-06-29 07:35:57 UTC",
+      "modified_utc": "2026-09-18 11:54:39 UTC",
       "sha256": "93a52c91d71e4e37b6b921ac2cfff8e0fd99c50d53dcaf9a3ca61c6a4a41fe13"
     },
     "resources/lexicons/crosentilex-positives.txt": {
       "path": "resources/lexicons/crosentilex-positives.txt",
       "bytes": 641404,
-      "modified_utc": "2026-06-29 07:35:57 UTC",
+      "modified_utc": "2026-09-18 11:54:39 UTC",
       "sha256": "7810531e2e4a55395a2c93ddef639ea62059faf5de3f7b9345bc0ebec4e7630a"
     },
     "resources/lexicons/gs-sentiment-annotations.txt": {
       "path": "resources/lexicons/gs-sentiment-annotations.txt",
       "bytes": 26629,
-      "modified_utc": "2026-06-29 07:35:57 UTC",
+      "modified_utc": "2026-09-18 11:54:39 UTC",
       "sha256": "158e503a74fe38c130058201792b709eac8094e2d2427a951ff8dab85c354473"
     },
     "resources/dictionaries/lilaHR_clean.xlsx": {
       "path": "resources/dictionaries/lilaHR_clean.xlsx",
       "bytes": 400292,
-      "modified_utc": "2026-01-08 04:58:14 UTC",
+      "modified_utc": "2026-06-24 16:37:58 UTC",
       "sha256": "b8fef0e9d0d69819b5b54b6f24db640e0f72f48edb36a7fc50de17371b24f143"
     },
     "data/nlp/manifest.json": {
       "path": "data/nlp/manifest.json",
-      "bytes": 2130,
-      "modified_utc": "2026-08-10 16:35:39 UTC",
-      "sha256": "820dc1e54e8d315454bcad0fa2347093943779e4dbac4bec927bade1cb6899d9"
+      "bytes": 2132,
+      "modified_utc": "2026-10-18 19:02:13 UTC",
+      "sha256": "bddfd949f5555d14cfa371d6b14181a6cd0aa80d3e499175715916828d46365a"
     },
     "data/nlp/mapa_stats_sample.rds": {
       "path": "data/nlp/mapa_stats_sample.rds",
-      "bytes": 28874589,
-      "modified_utc": "2026-08-10 15:54:39 UTC",
-      "sha256": "951c72d199c2a82dcd7c38fc1b98160f8484905c8ff1bbe854e645c6b009187f"
+      "bytes": 41261044,
+      "modified_utc": "2026-10-18 18:04:16 UTC",
+      "sha256": "d7b482f6cb1d8057fcc98bb5d0554ece695937361d9f99ceff262b7f6e60f0ec"
     },
     "data/nlp/mapa_stats_tokens.rds": {
       "path": "data/nlp/mapa_stats_tokens.rds",
-      "bytes": 70207179,
-      "modified_utc": "2026-08-10 16:15:22 UTC",
-      "sha256": "0c2da2fbc0d5ce072288861bb5f33179a9376b23db04fe49809fb1a9a9185f89"
+      "bytes": 98597934,
+      "modified_utc": "2026-10-18 18:33:21 UTC",
+      "sha256": "417373ba4ac7c71f2e04e451f0d472ab16d36fb2051aa2995428206e15280271"
     },
     "data/nlp/diskurs_sample.rds": {
       "path": "data/nlp/diskurs_sample.rds",
-      "bytes": 11551432,
-      "modified_utc": "2026-08-10 16:27:56 UTC",
-      "sha256": "d8f1eecdc7b62cd374e36a36852fff1778a45852eb818256a97da2bb246b8c0e"
+      "bytes": 16508989,
+      "modified_utc": "2026-10-18 18:50:40 UTC",
+      "sha256": "01e833f3536754e0b783bcbc217432d80eecd6653b361174894c15e7ce16c736"
     },
     "data/nlp/diskurs_tokens.rds": {
       "path": "data/nlp/diskurs_tokens.rds",
-      "bytes": 27960033,
-      "modified_utc": "2026-08-10 16:35:35 UTC",
-      "sha256": "173e8c054aaf872e7253c72363b433529772086a9305a139e177bd6de0bbfcf2"
+      "bytes": 39199005,
+      "modified_utc": "2026-10-18 19:02:07 UTC",
+      "sha256": "e3e308ec310e2f8cafa9067891a9b7d98a69829139f97cb4765a80af607650bb"
     },
     "data/nlp/dogadjaji_sample.rds": {
       "path": "data/nlp/dogadjaji_sample.rds",
-      "bytes": 17596096,
-      "modified_utc": "2026-08-10 16:15:28 UTC",
-      "sha256": "0d79318ed61965ccd3e369d2fed2801451d1061a2d906a89b8d91c1a57b0ee53"
+      "bytes": 24595427,
+      "modified_utc": "2026-10-18 18:33:32 UTC",
+      "sha256": "07cc64463b21c86462d72c233ec819d16dd6a5f50c5ed1998141f34584c24ede"
     },
     "data/nlp/dogadjaji_tokens.rds": {
       "path": "data/nlp/dogadjaji_tokens.rds",
-      "bytes": 42820331,
-      "modified_utc": "2026-08-10 16:27:52 UTC",
-      "sha256": "6029037723a003e541ebe0c9921eba84ead81a7c97afe308bb02b8922ed07edc"
+      "bytes": 58507462,
+      "modified_utc": "2026-10-18 18:50:33 UTC",
+      "sha256": "b0d110c225d7f8a7dddf53370a9fb5bfa8dbe1c0b2a0a25d63c3f8e1934f8fab"
     }
   },
   "pages": {
     "mapa_stats": {
-      "bytes": 1178054,
-      "sha256": "8ac04dd41917742d465fba912e46727ea4d2c1e7845b4133ad6d9152649ccdf0",
-      "object_rows": [137708, 36, 107116, 16, 17, 50, 120],
-      "object_hashes": ["703627dabc77678bf0110694caae3ce62826c97e01e2302e6b2954478d35d9fd", "4d5356cddf0d570ee6aee19830f36db15644177e3a702409717719f1595ccae0", "685b3c0b0f9073582c2d1213db2e2344fac9a7c7b6bb917b4a93ebca3ed1cf7b", "a593d5bdd4993c5dfa9c597fde65e0b971435a4e9815aa7edcc75bba16c219a9", "ac4c0c9071bb29ef1526ecd63efdac1659d02bc99c99b0801bc1df258fe9473a", "f16a647f78e03ae3faba19a6163f6ec34f08304607d65356c8b215b4c6c59a46", "4a5ce3999d8df0985ce1dc3a7140efcf9d8d78fcacd00e688c8928d2116a48b0"]
+      "bytes": 1514513,
+      "sha256": "c3dc6b6d745f749792f536766626066def651168034d4df395e22950a6016a8a",
+      "object_rows": [171014, 36, 150035, 16, 16, 50, 120],
+      "object_hashes": ["8c2e11bfc06e1e5557d538092ab14bfd533ac7fad772cf22bee0793ed260ef51", "4b469865060bd9b466ae788943710f9bffe54a34598eebed4fd1a979f8c9a48d", "3d3f7ac41ea43c6110cf3d670d61d56b09debf41108c1bef1c371f2f09afa7f1", "e2c303fbb19dfff7387706bf78cfb4e9a39ea6850cae15a720b3b9dcc708b33b", "d4381f5272f56c2569b341c11a65d43ac2f38e90c4dfc4554685367d7e2a9b2e", "86e16c0dd57c3b30b37980d5d097356bab389ec82cb93525ad708c7d05d26175", "23c815eb57cc5b879aa11833838f0da99bc4466485844c194108e7a8d19f061d"]
     },
     "diskurs": {
-      "bytes": 4648,
-      "sha256": "7c282831db7f256d6311b3635422bf6945e6cfa0669d3674c29a3e451f438a49",
-      "object_rows": [61, 30, 118],
-      "object_hashes": ["07a38ad79539749c374b70b5b8660691ac28b32b07090d2eeb3f9e67cc9c126d", "3a64eb5823ca4158c13899c5a7c6f566ffbd397f01b937e7e7e63fac87e07170", "5c80208ad9957af37acb05e0ae85a631137c346e8181e899bcd04df8b59a293f"]
+      "bytes": 4906,
+      "sha256": "33a3e5cc2dfe106090d2734fdcd95f2a1fed206a6ee9a39841143114ee88a1c5",
+      "object_rows": [70, 31, 120],
+      "object_hashes": ["a0be935fa9543ac0713484ae88ba1cf4dac48fad825bd3c99daf07676bb67f92", "892bb27abf58722724a49311e0bbf41b18585307aab3ca27f0e89c5a3eaa0c92", "489e17496e807677adc54d75352a29fc39980be14356469f6875c110e688a283"]
     },
     "dogadjaji": {
-      "bytes": 39873,
-      "sha256": "6872d792cda63b3aff9371f4ca63e9f8533c1a9cebac239bdf2f6d6d325ac459",
-      "object_rows": [1764, 26, 17, 28, 48],
-      "object_hashes": ["3ee6c78921c26de360670bb57c5144e686bc71717f21e7511f4c9002c60e3099", "0c4e615f305df5ff843a4684e11ae50cf3d3087449374915bc282ed067eac94a", "12babeecb3b350c98d7bcf96455977eec948cd4a8496676a2ae2b8d9db052bc1", "c3fc418d26e940f36344033f82e9eb7acc3d685f69386492af56f63fd8d9d7a1", "f2f8e7437d11c7ad9ba18948e934a3ff6cb9abde43cd4a3f99fed10efb4670cd"]
+      "bytes": 46545,
+      "sha256": "d0273d10412b6f3bcc4a0b1a3bb5230493dc2d85d8583a533b61adf497cf12e1",
+      "object_rows": [2071, 30, 13, 28, 48],
+      "object_hashes": ["3e647089adafb920a838cd4f57747ebcc25bd3d369afdae63aa3227c0e89473a", "74f0bc01a2d3e6c46b17a6529e6ff86fcbc1f206d37afd3e878fe89a5c8e348a", "5b47e1c06bf37bd7e4b7e231bb3d5b17b84d73bc26a0d7d05dacb95298b6eb70", "a846920d8a86b042aea2dc1afa134d4cab6c988a41989339d3f90271e2f9a60b", "0b9611138aa50463e1ffe4e3e1080c1659136c61f57673bc4744ec63e4e71415"]
     }
   }
 }
