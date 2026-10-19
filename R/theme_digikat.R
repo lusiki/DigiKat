@@ -196,6 +196,8 @@ scale_color_digikat  <- scale_colour_digikat
 # analytical data. Keep machine keys in data; translate only at display time.
 digikat_topic_label <- function(value) {
   label <- tolower(gsub("_", " ", as.character(value), fixed = TRUE))
+  # The category keys are ASCII; restore the one diacritic the key spelling drops.
+  label <- gsub("drzavom", "državom", label, fixed = TRUE)
   paste0(toupper(substr(label, 1L, 1L)), substring(label, 2L))
 }
 

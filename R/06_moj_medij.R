@@ -62,7 +62,7 @@ digikat_assert_aggregates_current(file.path("data", "processed", "manifest.json"
 MIN_POSTS <- 100L
 MIN_RHYTHM_CELL_POSTS <- 20L
 MIN_TOPIC_CLASSIFIED_POSTS <- 100L
-EVENT_YEARS <- c(2024L, 2025L)
+EVENT_YEARS <- c(2024L, 2025L, 2026L)
 
 # Sidecar `kind` values that are not media actors and never appear.
 KIND_NOT_ACTOR <- c("offtopic", "noise", "duplicate")
@@ -214,7 +214,13 @@ event_windows <- digikat_event_windows(events, collected_dates)
 for (event_year in EVENT_YEARS) {
   annual_gap_path <- file.path("studies", "annual-report", "output", as.character(event_year),
                                "coverage_gaps.csv")
-  if (file.exists(annual_gap_path)) {
+  annual_manifest_path <- file.path(dirname(annual_gap_path), "manifest.json")
+  # A frozen annual edition built from an earlier corpus documents THAT corpus's gaps; comparing it
+  # with the current one would only report that the corpus moved. Check like with like.
+  same_corpus <- file.exists(annual_manifest_path) &&
+    identical(jsonlite::fromJSON(annual_manifest_path)$dataset$sha256,
+              digikat_read_corpus_manifest()$corpus$sha256)
+  if (file.exists(annual_gap_path) && same_corpus) {
     annual_gaps <- read.csv(annual_gap_path, stringsAsFactors = FALSE)
     annual_gaps$start <- as.Date(annual_gaps$start)
     annual_gaps$end <- as.Date(annual_gaps$end)
@@ -653,8 +659,10 @@ similar_payloads <- unlist(lapply(records, function(record) {
 similar_payloads <- similar_payloads[!vapply(similar_payloads, is.null, logical(1L))]
 stopifnot(all(vapply(similar_payloads, function(similar) length(similar) %in% 3:4, logical(1L))))
 easter_2024 <- event_windows$registry[event_windows$registry$id == "easter-2024", ]
-stopifnot(nrow(easter_2024) == 1L, !isTRUE(easter_2024$measurable),
-          identical(easter_2024$reason, "collection_gap"))
+# Easter 2024 fell inside the February-May 2024 collection gap in the 2026-08-10 corpus and is
+# measurable in the corpus cut from DetermDB. Assert whichever is true of the data, not of a date.
+stopifnot(nrow(easter_2024) == 1L,
+          isTRUE(easter_2024$measurable) == (as.Date("2024-03-31") %in% collected_dates))
 
 ## ---- report ------------------------------------------------------------------
 cat("\n=== Moj medij ===\n")

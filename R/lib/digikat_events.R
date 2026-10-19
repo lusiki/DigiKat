@@ -8,23 +8,24 @@ DIGIKAT_EVENT_REGISTRY <- data.frame(
   id = c(
     "easter-2024", "assumption-2024", "all-saints-2024", "christmas-eve-2024",
     "christmas-2024", "easter-2025", "pope-death-2025", "pope-funeral-2025",
-    "assumption-2025", "all-saints-2025", "christmas-2025"
+    "assumption-2025", "all-saints-2025", "christmas-2025", "easter-2026", "assumption-2026"
   ),
   date = as.Date(c(
     "2024-03-31", "2024-08-15", "2024-11-01", "2024-12-24", "2024-12-25",
     "2025-04-20", "2025-04-21", "2025-04-26", "2025-08-15", "2025-11-01",
-    "2025-12-25"
+    "2025-12-25", "2026-04-05", "2026-08-15"
   )),
   label_hr = c(
     "Uskrs", "Velika Gospa", "Svi sveti", "Badnjak", "Božić", "Uskrs",
-    "Smrt pape Franje", "Sprovod pape Franje", "Velika Gospa", "Svi sveti", "Božić"
+    "Smrt pape Franje", "Sprovod pape Franje", "Velika Gospa", "Svi sveti", "Božić", "Uskrs",
+    "Velika Gospa"
   ),
   label_en = c(
     "Easter", "Assumption of Mary", "All Saints' Day", "Christmas Eve", "Christmas Day",
     "Easter", "Death of Pope Francis", "Funeral of Pope Francis", "Assumption of Mary",
-    "All Saints' Day", "Christmas Day"
+    "All Saints' Day", "Christmas Day", "Easter", "Assumption of Mary"
   ),
-  moj_medij = c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE),
+  moj_medij = c(TRUE, TRUE, TRUE, FALSE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE),
   stringsAsFactors = FALSE
 )
 

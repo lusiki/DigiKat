@@ -688,3 +688,61 @@
   a print-only solid unavailable band preserves the meaning and avoids it.
   Current Chromium also needs the details content pseudo-element made visible
   to print closed disclosure sections, and cards should avoid page splits.
+
+## 2026-09-19 — Public analytical report voice
+
+- [LEARN] For the general-public demokršćanstvo report, lead with substantive
+  findings and explain collection in ordinary language. Keep the approved
+  teal/copper design. Use one understandable unit (texts and posts), expand
+  interesting event portraits, and place operational status, validation,
+  deduplication and robustness detail in the separate technical package.
+  Simplification must preserve the scope of counts and attribution of political
+  statements; it does not authorize new prevalence, public-opinion or causal claims.
+
+## Theological voices report (2026-10-13)
+- [LEARN] The canonical `TEOLOGIJA_I_DOKTRINA` dictionary stem `moral` also matches the verb *morati*
+  ("moralo", "morala", "morali"), so any "doctrine share" computed from it is inflated by ordinary
+  modal verbs. `studies/theological-voices/03_sources.R` uses a study-local list with `moraln`; fixing
+  the canonical dictionary would change published mapa figures and is a PI decision.
+- [LEARN] The "Svećenički profili" actor group is ~97 % ONE YouTube channel (pulherissimus, 6 009 of
+  6 191 corpus posts). Any group-level clergy statistic is a statement about that channel; show it
+  with and without it. A model coder found no visible author in its posts despite the registry's
+  "priest editor" note.
+- [LEARN] Of 1 571 corpus posts that call someone "teolog", only 58 name one of 25 faculty
+  theologians; 70 % appear outside Catholic sources. The media label "teolog" mostly goes to lay
+  commentators and foreign/other-confession theologians, not to KBF professors.
+
+## Corpus extended to 2026-10-16 from DetermDB (2026-10-18)
+- [LEARN] The official corpus's 2024+ era is now cut from the DetermDB merged general feed
+  (`R/rebuild_determdb.R` → `data/rebuild/determ_post2024_decisions_v4.rds`), not from the vendor
+  .xlsx exports, which stop at 2026-06-11, lost YouTube and comments after January 2026, and never had
+  Feb–May 2024 text. Pre-2024 is unchanged, truncated at `ERA_SPLIT = 2024-01-01`, so the one seam is a
+  year boundary. 611 583 rows × 55 (new `dk_source_id` = "SOURCE_TYPE:ITEM_ID"). `--post-source=accumulator`
+  rebuilds the 2026-08-10 corpus. Plan: `quality_reports/plans/2026-10-18_corpus-extension-to-2026-10-16.md`.
+- [LEARN] Calibration week 2026-05-04..10: DetermDB holds 93,2% of the corpus's URLs and the official
+  rule on DetermDB reproduces 92,2% of corpus posts; it finds ×1,2 more web and restores YouTube.
+  About half the 2024+ era (219 828) is material the old corpus never had; its precision is unmeasured
+  until the 150-item blind read in `data/rebuild/determ_coder.html` is scored.
+- [LEARN] DetermDB's `comment` stream is INTERMITTENT (2024-04..06 and 2026-08..10 only) and is left out
+  of the 2024+ era via `POST_EXCLUDE` in `R/build_corpus.R`, or it prints collection bursts as spikes.
+  DetermDB merged otherwise covers every calendar day 2021-01-01 → 2026-10-16 with text.
+- [LEARN] DetermDB vendor rows can carry NUL bytes; strip with `replace(x, chr(0), '')` in SQL before R
+  reads them ("String contains null byte"). ITEM_ID max ≈ 1,19e11, so a double join is exact.
+- [LEARN] The project renv `.Rprofile` shadows the user `.Renviron`, so `DIGIKAT_DETERMDB_PATH` is unset
+  inside repo Rscript runs — export it (and `DIGIKAT_MASTER_PATH` to the Dropbox 710k accumulator; the
+  repo's local copy is an old 612k snapshot) on the command line.
+- [LEARN] `R/05_page_summaries.R --build` swapped the WHOLE `data/page-ready/` directory and deleted
+  `moj_medij.json` (written by `R/06_moj_medij.R`). Restored from `data/private/page-ready-backups/`;
+  the script now carries over files it does not produce. `06_moj_medij.R` must run AFTER
+  `R/wiki_sources.R`, because it links only catalogue pages that exist on disk.
+- [LEARN] Regenerating the catalogue on new aggregates changes the per-platform top lists; newcomers
+  without a `publish` row in `source_labels.csv` are held, so published actor pages fell 87 → 70.
+- [LEARN] Six DetermDB web posts in the 2026-10-18 corpus carry U+FFFE (a Unicode noncharacter). It is
+  valid UTF-8, so stringi and the site pipeline pass it, but base `tolower()` errors ("invalid input").
+  `explorations/okvir-katolicanstva-prototype/analysis.R` strips U+FFFE/U+FFFF before themes; the next
+  corpus build should strip them upstream in `R/build_corpus.R` (not done, to keep sha 5d8b6959 stable).
+- [LEARN] `explorations/_okvir_engine/okvir_lib.R` hard-codes the 2026-08-10 corpus (era seam 2024-07-01,
+  "2026. do lipnja", post half-years ending 2026H1) and is ALSO sourced by `studies/theological-*`.
+  Do not edit the engine for a corpus change; the "Kako se govori o Crkvi?" analysis overrides
+  `era_id`/`display_period`/`pre_periods`/`post_periods` locally from the corpus manifest, and its
+  pre-merge anchor + reconciliation checks are enforced only on the August corpus sha.

@@ -89,8 +89,45 @@ if (!identical(digikat_hash_file(corpus_path), corpus_manifest$corpus$sha256)) {
   stop("The corpus hash differs from data/digikat_corpus_manifest.json.", call. = FALSE)
 }
 
+# --- Periods follow the corpus, not the engine's August constants (2026-10-18) -----------------
+# The shared engine (explorations/_okvir_engine/okvir_lib.R) hard-codes the 2026-08-10 corpus: an
+# era seam at 2024-07-01, a last period "2026. do lipnja" and post-seam half-years ending at 2026H1.
+# Two theology studies source the same engine and stay pinned to it, so the engine is NOT edited.
+# This report overrides the four objects here, deriving them from the corpus manifest. Trend
+# half-years stop at the last essentially complete half (its end at most 30 days past the data), so
+# a half missing Advent and Christmas is never fitted as a trend point.
+PREMERGE_CORPUS_SHA <- "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a"
+report_seam <- as.Date(if (!is.null(corpus_manifest$source$era_split)) corpus_manifest$source$era_split
+                       else "2024-07-01")
+report_date_max <- as.Date(corpus_manifest$corpus$date_max)
+report_year_max <- as.integer(format(report_date_max, "%Y"))
+half_end <- function(h) {
+  y <- as.integer(substr(h, 1, 4))
+  as.Date(ifelse(endsWith(h, "H1"), sprintf("%d-06-30", y), sprintf("%d-12-31", y)))
+}
+all_halves <- paste0(rep(2021:report_year_max, each = 2L), "H", rep(1:2, report_year_max - 2020L))
+pre_periods <- all_halves[half_end(all_halves) < report_seam]
+post_periods <- all_halves[half_end(all_halves) >= report_seam &
+                             half_end(all_halves) <= report_date_max + 30]
+all_periods <- c(pre_periods, post_periods)
+half_label <- function(h) paste0(substr(h, 1, 4), ". ", substr(h, 6, 6), ". pol.")
+era_id <- function(date) {
+  ifelse(as.Date(date) < report_seam,
+         paste0("2021.–", as.integer(format(report_seam, "%Y")) - 1L, "."),
+         paste0(half_label(post_periods[1]), "–", half_label(post_periods[length(post_periods)])))
+}
+last_period_label <- paste0(report_year_max, ". do ",
+                            month_genitive[as.integer(format(report_date_max, "%m"))])
+display_period <- function(date) {
+  year <- as.integer(format(as.Date(date), "%Y"))
+  ifelse(year == report_year_max, last_period_label, paste0(year, "."))
+}
+
 corpus_raw <- readRDS(corpus_path)
 required <- c("DATE", "FROM", "SOURCE_TYPE", "INTERACTIONS", "FULL_TEXT")
+# Six web posts in the 2026-10-18 corpus carry U+FFFE / U+FFFF, Unicode noncharacters. They are
+# valid UTF-8 (stringi accepts them) but base tolower() refuses them, which stops the theme step.
+strip_nonchars <- function(x) gsub("[\\x{FFFE}\\x{FFFF}]", "", x, perl = TRUE)
 missing_required <- setdiff(required, names(corpus_raw))
 if (length(missing_required)) stop("Corpus lacks: ", paste(missing_required, collapse = ", "), call. = FALSE)
 corpus <- as.data.table(corpus_raw)[, ..required]
@@ -116,7 +153,7 @@ corpus[, `:=`(
 rm(classification)
 corpus[is.na(interactions) | interactions < 0, interactions := 0]
 
-periods <- c("2021.", "2022.", "2023.", "2024.", "2025.", "2026. do lipnja")
+periods <- c(paste0(2021:(report_year_max - 1L), "."), last_period_label)
 corpus <- corpus[period %in% periods]
 if (nrow(corpus) != corpus_manifest$corpus$rows) stop("Unexpected corpus row loss.", call. = FALSE)
 
@@ -138,7 +175,9 @@ anchor <- fread(anchor_path, encoding = "UTF-8")
 anchor_match <- identical(as.character(actor_total$actor_group), as.character(anchor$actor_group)) &&
   identical(as.integer(actor_total$posts), as.integer(anchor$posts)) &&
   isTRUE(all.equal(as.numeric(actor_total$interactions), as.numeric(anchor$interactions)))
-if (!anchor_match) stop("Actor totals differ from the pre-merge anchor.", call. = FALSE)
+if (!anchor_match && identical(corpus_manifest$corpus$sha256, PREMERGE_CORPUS_SHA)) {
+  stop("Actor totals differ from the pre-merge anchor.", call. = FALSE)
+}
 
 actor_shares <- lapply(periods, function(period_value) {
   row <- actor_period[period == period_value]
@@ -270,7 +309,7 @@ fwrite(rhythm_effects, file.path(output_dir, "rhythm_effects.csv"), bom = TRUE)
 
 say("03_themes | assigning the canonical categories to all posts with text")
 has_text <- !is.na(corpus$FULL_TEXT) & nzchar(trimws(corpus$FULL_TEXT))
-theme_input <- corpus[has_text, .(row_id, text = substr(FULL_TEXT, 1L, 3000L))]
+theme_input <- corpus[has_text, .(row_id, text = strip_nonchars(substr(FULL_TEXT, 1L, 3000L)))]
 theme_fingerprint <- digikat_hash_object(list(
   corpus_sha256 = corpus_manifest$corpus$sha256,
   dictionaries = digikat_thematic_dictionaries,
@@ -430,6 +469,7 @@ sample[, `:=`(
 )]
 rm(sample_actor)
 sample[is.na(interactions) | interactions < 0, interactions := 0]
+sample[, `:=`(TITLE = strip_nonchars(TITLE), FULL_TEXT = strip_nonchars(FULL_TEXT))]
 sample[, c("primary_frame", "frame_score") := score_frames(TITLE, FULL_TEXT)]
 sample[, sharp := sharp_frame(primary_frame)]
 
@@ -528,6 +568,8 @@ church_media_trend <- list(
   yMin = 0,
   yMax = 40,
   yTicks = c(0, 10, 20, 30, 40),
+  # Axis labels travel with the data so the page never assumes which half-years exist.
+  labels = paste0(substr(all_periods, 1, 4), ". ", ifelse(endsWith(all_periods, "H1"), "I", "II")),
   series = web_trend
 )
 
@@ -602,7 +644,10 @@ public_sharp <- sharp_by_actor[actor_group == "public"]
 creator_faith <- theme_by_actor[actor_group == "creator" & theme == "faith"]
 public_faith <- theme_by_actor[actor_group == "public" & theme == "faith"]
 newer_web_values <- as.numeric(unlist(church_media_trend$series$post, use.names = FALSE))
-if (length(newer_web_values) != 4L || any(!is.finite(newer_web_values))) {
+pre_web_values <- as.numeric(unlist(church_media_trend$series$pre, use.names = FALSE))
+half_loc <- function(h) paste0(ifelse(endsWith(h, "H1"), "prvoj", "drugoj"), " polovici ", substr(h, 1, 4), ".")
+if (length(newer_web_values) != length(post_periods) || any(!is.finite(newer_web_values)) ||
+    length(pre_web_values) != length(pre_periods)) {
   stop("Unexpected newer web-series values.", call. = FALSE)
 }
 
@@ -621,6 +666,14 @@ coverage_text <- paste(vapply(actor_levels, function(key) {
   paste0(actor_definitions[[key]]$short, " ", fmt_pct(row$recognised_share))
 }, character(1)), collapse = ", ")
 
+# Comparison words and the "svaka N-ta" ordinal follow the numbers; the 2026-08 wording hard-coded
+# "veći udio" and "svaka peta", both of which stopped being true on the 2026-10-18 corpus.
+share_cmp <- function(post_share, interaction_share) {
+  if (interaction_share > 1.1 * post_share) "veći" else if (interaction_share < 0.9 * post_share) "manji" else "sličan"
+}
+recent_web <- mean(tail(newer_web_values, 2L))
+ordinal_hr <- c("treća", "četvrta", "peta", "šesta", "sedma", "osma", "deveta", "deseta")
+recent_web_ordinal <- ordinal_hr[min(max(round(100 / recent_web), 3L), 10L) - 2L]
 narrative <- list(
   actor = paste0(
     "Većina digitalnog razgovora o Crkvi odvija se izvan katoličkih izvora. Ostali mediji i javni izvori objavljuju ",
@@ -641,10 +694,10 @@ narrative <- list(
     " objava više na svakih 100 objava katoličkih izvora. Sve druge razlike mnogo su manje."
   ),
   sharp = paste0(
-    "Takav je rječnik rijedak. Pojavljuje se u približno četiri od 100 objava, odnosno u ",
-    fmt_pct(overall_sharp_post), ", ali na te objave otpada ", fmt_pct(overall_sharp_interaction),
-    " zabilježenih reakcija. Razlika je najvidljivija kod ostalih javnih izvora. Ondje oštriji govor čini ",
-    fmt_pct(public_sharp$post_share), " objava, ali dobiva ", fmt_pct(public_sharp$interaction_share), " reakcija."
+    "Takav je rječnik rijedak. Pojavljuje se u ",
+    fmt_pct(overall_sharp_post), " objava. Na njih otpada ", share_cmp(overall_sharp_post, overall_sharp_interaction),
+    " udio zabilježenih reakcija, ", fmt_pct(overall_sharp_interaction), ". Kod ostalih javnih izvora oštriji govor čini ",
+    fmt_pct(public_sharp$post_share), " objava i dobiva ", fmt_pct(public_sharp$interaction_share), " reakcija."
   ),
   tone = paste0(
     "Najviše riječi sukoba u odnosu na uobičajenu razinu pojavljuje se u objavama ostalih javnih izvora o zlostavljanju i krizi povjerenja. ",
@@ -667,19 +720,22 @@ narrative <- list(
     "Veliki blagdani zato ponajprije uvode temu Crkve u širi javni razgovor."
   ),
   trend = paste0(
-    "Crkveni mediji i ustanove činili su približno trećinu web-objava tijekom 2022. i 2023. U novijem dijelu niza njihov udio pada s ",
-    fmt_pct(newer_web_values[1]), " u drugoj polovici 2024. na ", fmt_pct(newer_web_values[2]),
-    " u prvoj polovici 2025. U sljedeća dva polugodišta ostaje oko ", fmt_pct(mean(newer_web_values[3:4])),
-    ". To znači da približno svaka peta web-objava o Crkvi dolazi iz njezinih medija i ustanova."
+    "Crkveni mediji i ustanove činili su prosječno ",
+    fmt_pct(mean(pre_web_values[substr(pre_periods, 1, 4) %in% c("2022", "2023")])),
+    " web-objava tijekom 2022. i 2023. U novijem dijelu niza njihov udio iznosi ",
+    fmt_pct(newer_web_values[1]), " u ", half_loc(post_periods[1]), ", a ",
+    fmt_pct(newer_web_values[length(newer_web_values)]), " u ", half_loc(post_periods[length(post_periods)])
   )
 )
 
 synthesis <- c(
   paste0("Ostali mediji i javni izvori nose većinu razgovora. Objavljuju ", fmt_pct(actor_posts_leader_share), " sadržaja o Crkvi."),
   paste0("Vjera i duhovni život najčešća su tema s ", fmt_pct(leading_theme$share), " objava, a osobito su važni vjerskim stvarateljima."),
-  paste0("Oštriji govor ostaje rijedak s ", fmt_pct(overall_sharp_post), " objava, ali dobiva nešto veći udio reakcija od ", fmt_pct(overall_sharp_interaction), "."),
+  paste0("Oštriji govor ostaje rijedak s ", fmt_pct(overall_sharp_post), " objava i dobiva ",
+         share_cmp(overall_sharp_post, overall_sharp_interaction), " udio reakcija, ", fmt_pct(overall_sharp_interaction), "."),
   paste0("Veliki blagdani i papinski događaji šire razgovor prema općoj javnosti. Uz smrt pape Franje ostali javni izvori objavili su ", fmt_pct(largest_composition_shift$share), " sadržaja."),
-  paste0("U posljednja dva prikazana polugodišta približno svaka peta web-objava dolazi iz crkvenih medija i ustanova.")
+  paste0("U posljednja dva prikazana polugodišta približno svaka ", recent_web_ordinal,
+         " web-objava dolazi iz crkvenih medija i ustanova.")
 )
 capability_sentence <- paste0(
   "Za crkvene komunikatore glavni je signal jednostavan. Svakodnevni duhovni razgovor ostaje najbliži katoličkim izvorima, ",
@@ -747,14 +803,19 @@ reconciliation_paths[, identical := premerge_sha256 == merged_sha256]
 reconciliation_paths[, note := fifelse(
   artifact == "theme_selection",
   "Intentional: group 4 replaces the curated general-news panel.",
-  fifelse(identical, "Reproduced byte-for-byte.", "Unexpected difference.")
+  fifelse(identical, "Reproduced byte-for-byte.",
+          if (identical(corpus_manifest$corpus$sha256, PREMERGE_CORPUS_SHA)) "Unexpected difference."
+          else "Expected: the pre-merge freeze describes the 2026-08-10 corpus, not the current one.")
 )]
 fwrite(
   reconciliation_paths[, .(artifact, expected, identical, premerge_sha256, merged_sha256, note)],
   file.path(output_dir, "reconciliation.csv"),
   bom = TRUE
 )
-if (reconciliation_paths[expected == "identical", any(!identical)]) {
+# The pre-merge freeze reproduces the AUGUST corpus. On any other corpus every artifact differs by
+# construction, so the identity check is enforced only on the corpus it was frozen against.
+if (identical(corpus_manifest$corpus$sha256, PREMERGE_CORPUS_SHA) &&
+    reconciliation_paths[expected == "identical", any(!identical)]) {
   bad <- reconciliation_paths[expected == "identical" & !identical, artifact]
   stop("Unexpected reconciliation difference: ", paste(bad, collapse = ", "), call. = FALSE)
 }
@@ -938,7 +999,7 @@ if (grepl("usluga|ponuda|klijent", page_text, ignore.case = TRUE)) {
 }
 
 stopifnot(
-  result$meta$corpusRows == 413985L,
+  result$meta$corpusRows == corpus_manifest$corpus$rows,
   length(result$actorShares) == length(periods),
   length(result$themes) == 6L,
   nrow(theme_by_actor) == 24L,

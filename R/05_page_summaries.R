@@ -170,6 +170,19 @@ if (!is_production) {
   quit(save = "no", status = 0L)
 }
 
+# data/page-ready/ is shared: R/06_moj_medij.R installs moj_medij.json beside these summaries.
+# The swap below replaces the whole directory, so carry over every file this script does not
+# produce, or a summary rebuild silently deletes the Moj medij lookup (it did, 2026-10-18).
+if (dir.exists(production_dir)) {
+  foreign <- setdiff(list.files(production_dir, all.files = TRUE, no.. = TRUE),
+                     list.files(build_dir, all.files = TRUE, no.. = TRUE))
+  for (f in foreign) {
+    if (!file.copy(file.path(production_dir, f), file.path(build_dir, f), copy.date = TRUE))
+      stop("Could not carry over ", f, " into the staged page-ready generation.", call. = FALSE)
+  }
+  if (length(foreign)) cat("Carried over unchanged:", paste(foreign, collapse = ", "), "\n")
+}
+
 stamp <- format(Sys.time(), "%Y%m%d_%H%M%S", tz = "UTC")
 previous_dir <- file.path("data", "private", "page-ready-backups", stamp)
 dir.create(dirname(previous_dir), recursive = TRUE, showWarnings = FALSE)
