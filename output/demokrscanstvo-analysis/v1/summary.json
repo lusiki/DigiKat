@@ -1,0 +1,27 @@
+{
+  "records": 2306,
+  "exact_text_groups": 2253,
+  "distinct_contexts": 1731,
+  "extra_exact_copies": 53,
+  "publications_in_repeated_groups": 72,
+  "max_group_size": 13,
+  "cross_topic_exact_groups": 0,
+  "a1": 2211,
+  "stored_body": 2290,
+  "eligible": 41397670,
+  "pooled_per_10000": 0.5570361810217822,
+  "short_contexts_le20": 131,
+  "median_body_words": 521.0,
+  "human_validation_complete": false,
+  "interpretive_prevalence_released": false,
+  "input_manifests": {
+    "data\\barometar\\demokrscanstvo-multiplatform\\v1\\manifest.json": "c91f3ae8e80b74b0e9ff4374f3e9cafb3bd1a68a8f3a9949efb8c945be5d432a",
+    "data\\barometar\\demokrscanstvo-themes\\v1\\manifest.json": "b2baa825c12505c770e9fe548ad1cdf991a2c8b678c1c70153002703408298e3"
+  },
+  "seed": 20260919,
+  "topic_fit_reproduced": true,
+  "model_features": 1372,
+  "development_size": 140,
+  "group_definition": "exact casefolded NFC whitespace-normalized stored title + title-stripped stored body; punctuation retained",
+  "created": "2026-09-19"
+}

@@ -1,0 +1,12 @@
+check,status,detail
+Frozen universe and 1:1 source linkage,PASS,2306 records; 2253 representatives; 7467 sentence units; 2963 zero-concept rows preserved
+Source spans,PASS,Every local sentence and all argument spans match normalized fields; dictionary phrases stay in one field/sentence
+Vocabulary and TF-IDF accounting,PASS,99681 retained tokens; document means include 2253 groups; normalized frequencies sum to 10000
+Associations independently reconciled,PASS,All support and NPMI match previous frozen lexical output; phi matches Pearson correlation of full binary sentence vectors
+Temporal membership,PASS,Both contrasts reconciled from all group members; 511/273 and 121/139 groups; no use of representative date alone
+Phrase headline supports,PASS,"Independent adjacent-token enumeration matches 454, 11 and 14 text groups; all controls are bounded by initial support"
+Sampling and honest validation status,PASS,400 unique groups; weights sum 2253; seed reproduction exact; two blind packs contain no completed codes
+Small temporal cells,PASS,2024-Q1 has six web texts and is explicitly marked; 2026-Q3 flagged as partial
+Preserved reports,PASS,Approved plan and previous analytical report retain input SHA256 hashes
+PDF numeric and geometry checks,PASS,18 pages; every numeric token in prose/tables found on its registered page; no off-page characters or replacement glyphs
+Public/private separation,PASS,No original record keys or exact group IDs in public text aggregates; evidence and row-level TF-IDF stay private

@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "slides": 18,
+  "unchanged_analytical_bodies": 18,
+  "pdf_links": 34,
+  "embedded_fonts": [
+    "AAAAAA+Calibri-Bold",
+    "BAAAAA+Calibri",
+    "CAAAAA+Georgia"
+  ],
+  "pdf_sha256": "615ded01b547523a87ed5184ad4cddd16953c347dfaf87a43c25417f5b7286bb",
+  "html_sha256": "5da9613194b01f7b4602a639877f61f23222a09554e1b2d5d8c4aa5838d58cd1",
+  "original_assets_unchanged": true,
+  "published": false
+}

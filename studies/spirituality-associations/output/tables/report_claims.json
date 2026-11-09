@@ -1,0 +1,23 @@
+{
+  "register": 1325,
+  "counties": 21,
+  "website_fields": 60,
+  "media_2025": 8514361,
+  "screened": 1043,
+  "held": 282,
+  "candidate_organisations": 248,
+  "screened_no_candidate": 795,
+  "candidate_items": 3806,
+  "pilot_states": {
+    "unvalidated_candidate": 18,
+    "not_observed_under_rules": 37,
+    "not_yet_searched": 5
+  },
+  "filter_totals": {
+    "raw_rows": 510471,
+    "retained_rows": 275967,
+    "candidate_rows": 122,
+    "retained_candidate_rows": 118
+  },
+  "candidate_top10_share_pct": 31.00227215349659
+}

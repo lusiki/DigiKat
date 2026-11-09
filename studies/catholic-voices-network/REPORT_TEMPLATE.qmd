@@ -1,0 +1,88 @@
+---
+title: "{{scalar:report_title}}"
+subtitle: "Imena, glasovi i mreže u digitalnom katoličkom korpusu"
+author:
+  - name: "doc. dr. sc. Luka Šikić"
+    affiliation: "Hrvatsko katoličko sveučilište"
+date: "{{scalar:report_date}}"
+lang: hr
+language:
+  crossref-fig-title: "Slika"
+  crossref-tbl-title: "Tablica"
+  title-block-author-single: "Autor"
+  title-block-author-plural: "Autori"
+  title-block-affiliation-single: "Ustanova"
+  title-block-affiliation-plural: "Ustanove"
+  title-block-published: "Objavljeno"
+toc: true
+toc-title: "Sadržaj"
+toc-depth: 2
+number-sections: false
+format-links: false
+cover-stat: "{{scalar:corpus_documents}} objava"
+cover-line: "{{scalar:corpus_period}} · {{scalar:platforms}} platformi · strojno prepoznavanje"
+back-line: "Korpus {{scalar:corpus_sha_short}} · izdanje bez ljudske validacije"
+bibliography: refs.bib
+reference-section-title: "Literatura"
+format:
+  html:
+    css: report.css
+    embed-resources: true
+    fig-align: center
+    anchor-sections: false
+    toc-location: left
+    include-after-body:
+      text: |
+        <footer class="machine-only-footer">Imena i izjave prepoznati automatski; nije provedena ljudska provjera.</footer>
+  typst:
+    papersize: a4
+    fontsize: 10.5pt
+    template-partials:
+      - typst-template.typ
+      - typst-show.typ
+filters:
+  - report-html.lua
+---
+
+# Kako čitati ovaj izvještaj
+
+{{fragment:orientation}}
+
+# Tko se spominje
+
+{{fragment:mentions}}
+
+# Tko dobiva riječ
+
+{{fragment:speech}}
+
+# Tko tumači vjeru
+
+{{fragment:interpretation}}
+
+# Mreže izvora i osoba
+
+{{fragment:networks}}
+
+# Vrijeme i događaji
+
+{{fragment:temporal}}
+
+# Kruženje tekstova
+
+{{fragment:circulation}}
+
+# Metodologija i strojne provjere
+
+{{fragment:methods}}
+
+# Ograničenja i granice zaključivanja
+
+{{fragment:limitations}}
+
+# Dodatak: istraživački rezultati
+
+{{fragment:exploratory}}
+
+::: {#refs}
+:::

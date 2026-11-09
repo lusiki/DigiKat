@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "pdf_sha256": "7c870ae948369fd36e9fabd8bb5a9cc57471e89293b8601040280ee9024519dc",
+  "pages_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "method": "All current pages rendered by Poppler at 110 dpi and inspected in three contact sheets; full-size checks of temporal chart and dense methods page.",
+  "findings": "No clipped or overlapping text, missing Croatian glyphs, broken tables, unreadable labels or footer collisions. Small 2024-Q1 cell correctly marked.",
+  "reviewer": "Codex AI"
+}

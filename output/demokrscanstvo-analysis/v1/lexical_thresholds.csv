@@ -1,0 +1,4 @@
+min_groups,positive_pairs,positive_pairs_surviving_shared_sentence_removal
+5,99,82
+10,79,61
+20,58,48

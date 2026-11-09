@@ -1,0 +1,9 @@
+{
+  "sentence_units": 7467,
+  "distinct_sentence_forms": 4841,
+  "exact_text_representatives": 2253,
+  "tokens_offset_checked": 187597,
+  "adjacent_units": 4685,
+  "lexicon_size": 25,
+  "human_semantic_validation": false
+}

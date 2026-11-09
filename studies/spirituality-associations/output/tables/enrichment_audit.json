@@ -1,0 +1,14 @@
+{
+  "population_source": "DZS STAN-2026-3-1 table 1",
+  "population_reference": "mid-2025",
+  "population_publication": "2026-09-04",
+  "register_reference": "2026-09-11",
+  "population_national": 3874993,
+  "population_counties": 21,
+  "national_associations_per_100000": 34.19361015619899,
+  "source_html_sha256": "536d1730e775dfe3943dca2a8fc134c1ac3a97149651e115ee1af8a25fc218f7",
+  "web_pages_attempted": 11,
+  "collection_status_counts": {
+    "downloaded": 12
+  }
+}

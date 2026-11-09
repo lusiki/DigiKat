@@ -1,0 +1,216 @@
+{
+  "database_file": "determDB_merged.duckdb",
+  "fingerprint_before": {
+    "bytes": 96774139904,
+    "mtime_ns": 1789839606728170200
+  },
+  "read_only": true,
+  "rows": 42267474,
+  "start": "2021-01-01",
+  "end": "2026-09-10",
+  "register_sha256": "d3b1f3ec9dba4b25314af9b3d2ce429ac89abe27aab20e86a05186d7f4a7a0b9",
+  "rule_sha256": "a0ec89b05dfbfaa6840cab0293c398a0c3dba174e2eb878a6e6c421a70c7df24",
+  "plan_sha256": "a78ec440d6381aadd841ac910c9b0d2abed832314e53617199289d93cfa9b44c",
+  "registered_organisations": 1325,
+  "searched_organisations": 1043,
+  "schema": [
+    {
+      "field": "DATE",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "TIME",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "TITLE",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "FROM",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "AUTHOR",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "URL",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "URL_PHOTO",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "SOURCE_TYPE",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "GROUP_NAME",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "KEYWORD_NAME",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "FOUND_KEYWORDS",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "LANGUAGES",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "LOCATIONS",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "TAGS",
+      "type": "BOOLEAN"
+    },
+    {
+      "field": "MANUAL_SENTIMENT",
+      "type": "BOOLEAN"
+    },
+    {
+      "field": "AUTO_SENTIMENT",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "MENTION_SNIPPET",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "REACH",
+      "type": "DOUBLE"
+    },
+    {
+      "field": "VIRALITY",
+      "type": "DOUBLE"
+    },
+    {
+      "field": "ENGAGEMENT_RATE",
+      "type": "DOUBLE"
+    },
+    {
+      "field": "INTERACTIONS",
+      "type": "DOUBLE"
+    },
+    {
+      "field": "FOLLOWERS_COUNT",
+      "type": "DOUBLE"
+    },
+    {
+      "field": "LIKE_COUNT",
+      "type": "DOUBLE"
+    },
+    {
+      "field": "COMMENT_COUNT",
+      "type": "DOUBLE"
+    },
+    {
+      "field": "SHARE_COUNT",
+      "type": "DOUBLE"
+    },
+    {
+      "field": "TWEET_COUNT",
+      "type": "BOOLEAN"
+    },
+    {
+      "field": "LOVE_COUNT",
+      "type": "DOUBLE"
+    },
+    {
+      "field": "WOW_COUNT",
+      "type": "DOUBLE"
+    },
+    {
+      "field": "HAHA_COUNT",
+      "type": "DOUBLE"
+    },
+    {
+      "field": "SAD_COUNT",
+      "type": "DOUBLE"
+    },
+    {
+      "field": "ANGRY_COUNT",
+      "type": "DOUBLE"
+    },
+    {
+      "field": "TOTAL_REACTIONS_COUNT",
+      "type": "DOUBLE"
+    },
+    {
+      "field": "FAVORITE_COUNT",
+      "type": "DOUBLE"
+    },
+    {
+      "field": "RETWEET_COUNT",
+      "type": "DOUBLE"
+    },
+    {
+      "field": "VIEW_COUNT",
+      "type": "DOUBLE"
+    },
+    {
+      "field": "DISLIKE_COUNT",
+      "type": "BOOLEAN"
+    },
+    {
+      "field": "COUNT",
+      "type": "BOOLEAN"
+    },
+    {
+      "field": "REPOST_COUNT",
+      "type": "BOOLEAN"
+    },
+    {
+      "field": "REDDIT_TYPE",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "REDDIT_SCORE",
+      "type": "DOUBLE"
+    },
+    {
+      "field": "INFLUENCE_SCORE",
+      "type": "DOUBLE"
+    },
+    {
+      "field": "TWEET_TYPE",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "TWEET_SOURCE_NAME",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "TWEET_SOURCE_URL",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "FULL_TEXT",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "DATETIME",
+      "type": "TIMESTAMP"
+    },
+    {
+      "field": "ITEM_ID",
+      "type": "BIGINT"
+    },
+    {
+      "field": "SOURCE_BATCH",
+      "type": "VARCHAR"
+    },
+    {
+      "field": "I_FILTERED",
+      "type": "BOOLEAN"
+    }
+  ],
+  "run_utc": "2026-09-19T18:29:56.489206+00:00",
+  "duckdb": "1.5.5"
+}

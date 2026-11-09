@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "page": "https://lusiki.github.io/DigiKat/pages/demokrscanstvo/index.html",
+  "pages": 18,
+  "pdf_sha256": "65a9b43503559af1e6d0158abf1f0dfaffb30c44c5990f0248336886b89751d2",
+  "resources": [
+    {
+      "url": "https://lusiki.github.io/DigiKat/pages/demokrscanstvo/index.html",
+      "status": 200,
+      "bytes": 391090
+    },
+    {
+      "url": "https://lusiki.github.io/DigiKat/assets/izvjestaji/demokrscanske-vrijednosti-karusel.pdf",
+      "status": 200,
+      "bytes": 199027
+    },
+    {
+      "url": "https://lusiki.github.io/DigiKat/assets/izvjestaji/demokrscanske-vrijednosti-karusel.html",
+      "status": 200,
+      "bytes": 47047
+    },
+    {
+      "url": "https://lusiki.github.io/DigiKat/assets/izvjestaji/demokrscanske-vrijednosti-karusel.webp",
+      "status": 200,
+      "bytes": 31682
+    },
+    {
+      "url": "https://lusiki.github.io/DigiKat/assets/izvjestaji/demokrscanske-vrijednosti-karusel.meta.json",
+      "status": 200,
+      "bytes": 652
+    }
+  ]
+}

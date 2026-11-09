@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "pdf_sha256": "f8348a3cf87b4e2b323ec1c46b7890ea659bb8264adfa97dc4f79cdb3415866f",
+  "pages": 20,
+  "outline_entries": 20,
+  "external_links": 5,
+  "text_spans_checked": 538,
+  "text_outside_page": 0,
+  "replacement_characters": 0,
+  "embedded_fonts": {
+    "/AAAAAA+Calibri-Bold": true,
+    "/AAAAAA+Georgia": true,
+    "/AAAAAA+Calibri": true
+  },
+  "body_font_pt": 11.2,
+  "tables_font_pt": 10.5,
+  "visual_review": "All 20 Poppler-rendered pages inspected by Codex AI; revised pages reinspected",
+  "visual_review_is_human_validation": false,
+  "renderer_packages": {
+    "reportlab": "4.5.1",
+    "svglib": "2.2.0",
+    "matplotlib": "3.11.0",
+    "pandas": "3.0.3",
+    "pypdf": "6.10.2",
+    "PyMuPDF": "1.27.2.3"
+  }
+}

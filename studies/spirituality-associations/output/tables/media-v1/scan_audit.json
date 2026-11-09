@@ -1,0 +1,11 @@
+{
+  "months": 69,
+  "scanned": 42267474,
+  "source_unchanged": true,
+  "fingerprint_after": {
+    "bytes": 96774139904,
+    "mtime_ns": 1789839606728170200
+  },
+  "finalize_invocation_seconds": 1.5,
+  "timing_note": "Monthly audits retain worker elapsed times; this final invocation can resume entirely from cache."
+}

@@ -1,0 +1,362 @@
+term,label,platform,regime,groups,eligible_groups,quarters_present,quarters_available,named_sources,unknown_source_groups,largest_source,largest_source_groups,largest_source_percent,largest_sentence_groups,remaining_sentence_groups,remaining_word_groups,peak_month,remaining_peak_month_groups,remaining_source_groups
+domoljublje,Domoljublje,comment,before,3,25,2,6,2,0,vecernji.hr,2,66.66666666666667,1,2,2,2021-05,1,1
+drzavotvornost,Državotvornost,comment,before,0,25,0,6,0,0,,0,,0,0,0,,0,0
+narodnjastvo,Narodnjaštvo,comment,before,0,25,0,6,0,0,,0,,0,0,0,,0,0
+obitelj,Obitelj,comment,before,2,25,1,6,1,0,vecernji.hr,2,100.0,1,1,1,2022-06,0,0
+konzervativizam,Konzervativizam,comment,before,4,25,3,6,1,0,vecernji.hr,4,100.0,2,2,2,2022-12,2,0
+vrijednosti,Vrijednosti,comment,before,4,25,2,6,2,0,vecernji.hr,3,75.0,1,3,3,2022-06,2,1
+europa,Europa,comment,before,1,25,1,6,1,0,index.hr,1,100.0,1,0,0,2021-06,0,0
+solidarnost,Solidarnost,comment,before,0,25,0,6,0,0,,0,,0,0,0,,0,0
+supsidijarnost,Supsidijarnost,comment,before,0,25,0,6,0,0,,0,,0,0,0,,0,0
+opce_dobro,Opće dobro,comment,before,0,25,0,6,0,0,,0,,0,0,0,,0,0
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,comment,before,0,25,0,6,0,0,,0,,0,0,0,,0,0
+dostojanstvo_rada,Dostojanstvo rada,comment,before,0,25,0,6,0,0,,0,,0,0,0,,0,0
+radnik,Radnik,comment,before,0,25,0,6,0,0,,0,,0,0,0,,0,0
+socijalna_drzava,Socijalna država,comment,before,0,25,0,6,0,0,,0,,0,0,0,,0,0
+trzisno_gospodarstvo,Tržišno gospodarstvo,comment,before,0,25,0,6,0,0,,0,,0,0,0,,0,0
+savjest,Savjest,comment,before,1,25,1,6,1,0,maxportal.hr,1,100.0,1,0,0,2021-03,0,0
+vjerska_sloboda,Vjerska sloboda,comment,before,0,25,0,6,0,0,,0,,0,0,0,,0,0
+demokracija,Demokracija,comment,before,1,25,1,6,1,0,vecernji.hr,1,100.0,1,0,0,2022-10,0,0
+sloboda,Sloboda,comment,before,1,25,1,6,1,0,vecernji.hr,1,100.0,1,0,0,2022-06,0,0
+domoljublje,Domoljublje,comment,after,2,31,1,2,1,0,facebook.com,2,100.0,2,0,0,2024-04,0,0
+drzavotvornost,Državotvornost,comment,after,0,31,0,2,0,0,,0,,0,0,0,,0,0
+narodnjastvo,Narodnjaštvo,comment,after,0,31,0,2,0,0,,0,,0,0,0,,0,0
+obitelj,Obitelj,comment,after,2,31,2,2,1,0,facebook.com,2,100.0,1,1,1,2026-08,1,0
+konzervativizam,Konzervativizam,comment,after,1,31,1,2,1,0,facebook.com,1,100.0,1,0,0,2026-09,0,0
+vrijednosti,Vrijednosti,comment,after,14,31,2,2,1,0,facebook.com,14,100.0,1,13,13,2026-08,10,0
+europa,Europa,comment,after,1,31,1,2,1,0,facebook.com,1,100.0,1,0,0,2026-09,0,0
+solidarnost,Solidarnost,comment,after,0,31,0,2,0,0,,0,,0,0,0,,0,0
+supsidijarnost,Supsidijarnost,comment,after,0,31,0,2,0,0,,0,,0,0,0,,0,0
+opce_dobro,Opće dobro,comment,after,0,31,0,2,0,0,,0,,0,0,0,,0,0
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,comment,after,0,31,0,2,0,0,,0,,0,0,0,,0,0
+dostojanstvo_rada,Dostojanstvo rada,comment,after,0,31,0,2,0,0,,0,,0,0,0,,0,0
+radnik,Radnik,comment,after,0,31,0,2,0,0,,0,,0,0,0,,0,0
+socijalna_drzava,Socijalna država,comment,after,0,31,0,2,0,0,,0,,0,0,0,,0,0
+trzisno_gospodarstvo,Tržišno gospodarstvo,comment,after,0,31,0,2,0,0,,0,,0,0,0,,0,0
+savjest,Savjest,comment,after,0,31,0,2,0,0,,0,,0,0,0,,0,0
+vjerska_sloboda,Vjerska sloboda,comment,after,0,31,0,2,0,0,,0,,0,0,0,,0,0
+demokracija,Demokracija,comment,after,0,31,0,2,0,0,,0,,0,0,0,,0,0
+sloboda,Sloboda,comment,after,0,31,0,2,0,0,,0,,0,0,0,,0,0
+domoljublje,Domoljublje,facebook,before,18,50,7,12,8,0,HDZ - Hrvatska demokratska zajednica,8,44.44444444444444,1,17,17,2023-12,15,10
+drzavotvornost,Državotvornost,facebook,before,10,50,5,12,5,0,HDZ - Hrvatska demokratska zajednica,5,50.0,1,9,8,2022-12,7,5
+narodnjastvo,Narodnjaštvo,facebook,before,19,50,7,12,6,0,HDZ - Hrvatska demokratska zajednica,12,63.1578947368421,1,18,17,2023-12,16,7
+obitelj,Obitelj,facebook,before,8,50,7,12,6,0,"Zajednica žena ""Katarina Zrinski"" Splitsko-dalmatinske Županije",3,37.5,3,5,5,2022-06,6,5
+konzervativizam,Konzervativizam,facebook,before,1,50,1,12,1,0,Stephen Nikola Bartulica,1,100.0,1,0,0,2022-06,0,0
+vrijednosti,Vrijednosti,facebook,before,24,50,9,12,10,0,HDZ - Hrvatska demokratska zajednica,10,41.666666666666664,1,23,22,2023-12,21,14
+europa,Europa,facebook,before,14,50,6,12,8,0,HDZ - Hrvatska demokratska zajednica,5,35.714285714285715,1,13,12,2023-09,11,9
+solidarnost,Solidarnost,facebook,before,0,50,0,12,0,0,,0,,0,0,0,,0,0
+supsidijarnost,Supsidijarnost,facebook,before,1,50,1,12,1,0,Hrvatsko katoličko sveučilište (Universitas Studiorum Catholica Croatica),1,100.0,1,0,0,2021-10,0,0
+opce_dobro,Opće dobro,facebook,before,0,50,0,12,0,0,,0,,0,0,0,,0,0
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,before,0,50,0,12,0,0,,0,,0,0,0,,0,0
+dostojanstvo_rada,Dostojanstvo rada,facebook,before,0,50,0,12,0,0,,0,,0,0,0,,0,0
+radnik,Radnik,facebook,before,0,50,0,12,0,0,,0,,0,0,0,,0,0
+socijalna_drzava,Socijalna država,facebook,before,0,50,0,12,0,0,,0,,0,0,0,,0,0
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,before,0,50,0,12,0,0,,0,,0,0,0,,0,0
+savjest,Savjest,facebook,before,0,50,0,12,0,0,,0,,0,0,0,,0,0
+vjerska_sloboda,Vjerska sloboda,facebook,before,0,50,0,12,0,0,,0,,0,0,0,,0,0
+demokracija,Demokracija,facebook,before,2,50,2,12,2,0,Laudato,1,50.0,1,1,1,2023-01,1,1
+sloboda,Sloboda,facebook,before,7,50,4,12,4,0,HDZ - Hrvatska demokratska zajednica,3,42.857142857142854,1,6,5,2022-12,5,4
+domoljublje,Domoljublje,facebook,after,20,55,7,10,8,0,Andrej Plenković,9,45.0,2,18,18,2024-06,15,11
+drzavotvornost,Državotvornost,facebook,after,4,55,3,10,4,0,Andrej Plenković,2,50.0,2,2,2,2026-01,2,2
+narodnjastvo,Narodnjaštvo,facebook,after,11,55,5,10,3,0,HDZ - Hrvatska demokratska zajednica,5,45.45454545454545,1,10,9,2026-03,9,6
+obitelj,Obitelj,facebook,after,6,55,5,10,5,0,Andrej Plenković,2,33.333333333333336,1,5,4,2024-06,4,4
+konzervativizam,Konzervativizam,facebook,after,1,55,1,10,1,0,HSP BiH,1,100.0,1,0,0,2025-04,0,0
+vrijednosti,Vrijednosti,facebook,after,40,55,9,10,16,0,Andrej Plenković,8,20.0,2,38,38,2024-06,32,32
+europa,Europa,facebook,after,27,55,8,10,14,0,Karlo Ressler,5,18.51851851851852,2,25,25,2024-06,19,22
+solidarnost,Solidarnost,facebook,after,6,55,5,10,4,0,Davor Ivo Stier,3,50.0,1,5,5,2024-05,4,3
+supsidijarnost,Supsidijarnost,facebook,after,0,55,0,10,0,0,,0,,0,0,0,,0,0
+opce_dobro,Opće dobro,facebook,after,1,55,1,10,1,0,HDZ Split,1,100.0,1,0,0,2026-07,0,0
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,after,2,55,2,10,2,0,Karlo Ressler,1,50.0,1,1,1,2026-07,1,1
+dostojanstvo_rada,Dostojanstvo rada,facebook,after,0,55,0,10,0,0,,0,,0,0,0,,0,0
+radnik,Radnik,facebook,after,0,55,0,10,0,0,,0,,0,0,0,,0,0
+socijalna_drzava,Socijalna država,facebook,after,0,55,0,10,0,0,,0,,0,0,0,,0,0
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,after,2,55,1,10,2,0,Ante Sanader,1,50.0,1,1,0,2024-06,0,1
+savjest,Savjest,facebook,after,1,55,1,10,1,0,Nikola Grmoja,1,100.0,1,0,0,2025-06,0,0
+vjerska_sloboda,Vjerska sloboda,facebook,after,0,55,0,10,0,0,,0,,0,0,0,,0,0
+demokracija,Demokracija,facebook,after,0,55,0,10,0,0,,0,,0,0,0,,0,0
+sloboda,Sloboda,facebook,after,3,55,3,10,3,0,HDZ Split,1,33.333333333333336,1,2,2,2026-07,2,2
+domoljublje,Domoljublje,forum,before,0,18,0,5,0,0,,0,,0,0,0,,0,0
+drzavotvornost,Državotvornost,forum,before,0,18,0,5,0,0,,0,,0,0,0,,0,0
+narodnjastvo,Narodnjaštvo,forum,before,0,18,0,5,0,0,,0,,0,0,0,,0,0
+obitelj,Obitelj,forum,before,2,18,2,5,1,0,forum.hr,2,100.0,1,1,1,2024-01,1,0
+konzervativizam,Konzervativizam,forum,before,10,18,4,5,1,0,forum.hr,10,100.0,3,7,7,2023-12,6,0
+vrijednosti,Vrijednosti,forum,before,2,18,2,5,1,0,forum.hr,2,100.0,1,1,1,2024-01,1,0
+europa,Europa,forum,before,0,18,0,5,0,0,,0,,0,0,0,,0,0
+solidarnost,Solidarnost,forum,before,0,18,0,5,0,0,,0,,0,0,0,,0,0
+supsidijarnost,Supsidijarnost,forum,before,0,18,0,5,0,0,,0,,0,0,0,,0,0
+opce_dobro,Opće dobro,forum,before,0,18,0,5,0,0,,0,,0,0,0,,0,0
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,forum,before,0,18,0,5,0,0,,0,,0,0,0,,0,0
+dostojanstvo_rada,Dostojanstvo rada,forum,before,0,18,0,5,0,0,,0,,0,0,0,,0,0
+radnik,Radnik,forum,before,0,18,0,5,0,0,,0,,0,0,0,,0,0
+socijalna_drzava,Socijalna država,forum,before,0,18,0,5,0,0,,0,,0,0,0,,0,0
+trzisno_gospodarstvo,Tržišno gospodarstvo,forum,before,0,18,0,5,0,0,,0,,0,0,0,,0,0
+savjest,Savjest,forum,before,0,18,0,5,0,0,,0,,0,0,0,,0,0
+vjerska_sloboda,Vjerska sloboda,forum,before,0,18,0,5,0,0,,0,,0,0,0,,0,0
+demokracija,Demokracija,forum,before,0,18,0,5,0,0,,0,,0,0,0,,0,0
+sloboda,Sloboda,forum,before,0,18,0,5,0,0,,0,,0,0,0,,0,0
+domoljublje,Domoljublje,forum,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+drzavotvornost,Državotvornost,forum,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+narodnjastvo,Narodnjaštvo,forum,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+obitelj,Obitelj,forum,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+konzervativizam,Konzervativizam,forum,after,2,2,1,1,1,0,forum.hr,2,100.0,1,1,1,2025-06,0,0
+vrijednosti,Vrijednosti,forum,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+europa,Europa,forum,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+solidarnost,Solidarnost,forum,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+supsidijarnost,Supsidijarnost,forum,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+opce_dobro,Opće dobro,forum,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,forum,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+dostojanstvo_rada,Dostojanstvo rada,forum,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+radnik,Radnik,forum,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+socijalna_drzava,Socijalna država,forum,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+trzisno_gospodarstvo,Tržišno gospodarstvo,forum,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+savjest,Savjest,forum,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+vjerska_sloboda,Vjerska sloboda,forum,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+demokracija,Demokracija,forum,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+sloboda,Sloboda,forum,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+domoljublje,Domoljublje,instagram,after,6,8,4,4,2,0,plenkovic.andrej,5,83.33333333333333,1,5,5,2024-07,4,1
+drzavotvornost,Državotvornost,instagram,after,0,8,0,4,0,0,,0,,0,0,0,,0,0
+narodnjastvo,Narodnjaštvo,instagram,after,5,8,4,4,2,0,plenkovic.andrej,3,60.0,1,4,4,2024-04,3,2
+obitelj,Obitelj,instagram,after,2,8,2,4,1,0,plenkovic.andrej,2,100.0,1,1,1,2024-07,1,0
+konzervativizam,Konzervativizam,instagram,after,0,8,0,4,0,0,,0,,0,0,0,,0,0
+vrijednosti,Vrijednosti,instagram,after,7,8,4,4,2,0,plenkovic.andrej,5,71.42857142857143,1,6,6,2024-07,5,2
+europa,Europa,instagram,after,4,8,3,4,2,0,plenkovic.andrej,3,75.0,1,3,3,2026-06,3,1
+solidarnost,Solidarnost,instagram,after,2,8,2,4,1,0,plenkovic.andrej,2,100.0,1,1,1,2024-10,1,0
+supsidijarnost,Supsidijarnost,instagram,after,0,8,0,4,0,0,,0,,0,0,0,,0,0
+opce_dobro,Opće dobro,instagram,after,0,8,0,4,0,0,,0,,0,0,0,,0,0
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,instagram,after,0,8,0,4,0,0,,0,,0,0,0,,0,0
+dostojanstvo_rada,Dostojanstvo rada,instagram,after,0,8,0,4,0,0,,0,,0,0,0,,0,0
+radnik,Radnik,instagram,after,0,8,0,4,0,0,,0,,0,0,0,,0,0
+socijalna_drzava,Socijalna država,instagram,after,0,8,0,4,0,0,,0,,0,0,0,,0,0
+trzisno_gospodarstvo,Tržišno gospodarstvo,instagram,after,1,8,1,4,1,0,plenkovic.andrej,1,100.0,1,0,0,2024-06,0,0
+savjest,Savjest,instagram,after,0,8,0,4,0,0,,0,,0,0,0,,0,0
+vjerska_sloboda,Vjerska sloboda,instagram,after,0,8,0,4,0,0,,0,,0,0,0,,0,0
+demokracija,Demokracija,instagram,after,1,8,1,4,1,0,plenkovic.andrej,1,100.0,1,0,0,2024-06,0,0
+sloboda,Sloboda,instagram,after,1,8,1,4,1,0,plenkovic.andrej,1,100.0,1,0,0,2024-10,0,0
+domoljublje,Domoljublje,print,after,12,72,2,9,9,0,7 Dnevno - Hrvatska,3,25.0,3,9,8,2026-04,3,9
+drzavotvornost,Državotvornost,print,after,0,72,0,9,0,0,,0,,0,0,0,,0,0
+narodnjastvo,Narodnjaštvo,print,after,13,72,5,9,9,0,Večernji list HR,2,15.384615384615385,3,10,9,2026-04,4,11
+obitelj,Obitelj,print,after,5,72,3,9,4,0,Večernji list HR,2,40.0,1,4,4,2025-12,3,3
+konzervativizam,Konzervativizam,print,after,7,72,5,9,7,0,Večernji list HR,1,14.285714285714286,2,5,5,2025-07,5,6
+vrijednosti,Vrijednosti,print,after,33,72,8,9,15,0,7 Dnevno - Hrvatska,7,21.21212121212121,3,30,29,2026-04,24,26
+europa,Europa,print,after,16,72,7,9,8,0,Večernji list HR,4,25.0,1,15,15,2025-07,12,12
+solidarnost,Solidarnost,print,after,2,72,2,9,2,0,Varaždinske Vijesti,1,50.0,1,1,1,2025-12,1,1
+supsidijarnost,Supsidijarnost,print,after,1,72,1,9,1,0,Hrvatski tjednik,1,100.0,1,0,0,2026-07,0,0
+opce_dobro,Opće dobro,print,after,0,72,0,9,0,0,,0,,0,0,0,,0,0
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,print,after,0,72,0,9,0,0,,0,,0,0,0,,0,0
+dostojanstvo_rada,Dostojanstvo rada,print,after,0,72,0,9,0,0,,0,,0,0,0,,0,0
+radnik,Radnik,print,after,0,72,0,9,0,0,,0,,0,0,0,,0,0
+socijalna_drzava,Socijalna država,print,after,0,72,0,9,0,0,,0,,0,0,0,,0,0
+trzisno_gospodarstvo,Tržišno gospodarstvo,print,after,2,72,2,9,1,0,Poslovni dnevnik,2,100.0,1,1,1,2026-06,1,0
+savjest,Savjest,print,after,0,72,0,9,0,0,,0,,0,0,0,,0,0
+vjerska_sloboda,Vjerska sloboda,print,after,0,72,0,9,0,0,,0,,0,0,0,,0,0
+demokracija,Demokracija,print,after,4,72,3,9,4,0,Poslovni dnevnik,1,25.0,2,2,2,2025-07,2,3
+sloboda,Sloboda,print,after,3,72,3,9,2,0,Poslovni dnevnik,2,66.66666666666667,1,2,2,2026-05,2,1
+domoljublje,Domoljublje,radio,after,11,27,2,4,8,0,HRT HR 1,3,27.272727272727273,10,1,1,2026-07,1,8
+drzavotvornost,Državotvornost,radio,after,11,27,2,4,8,0,HRT HR 1,3,27.272727272727273,10,1,1,2026-07,1,8
+narodnjastvo,Narodnjaštvo,radio,after,2,27,2,4,2,0,Radio Tvornica,1,50.0,1,1,1,2026-06,1,1
+obitelj,Obitelj,radio,after,0,27,0,4,0,0,,0,,0,0,0,,0,0
+konzervativizam,Konzervativizam,radio,after,1,27,1,4,1,0,Yammat FM,1,100.0,1,0,0,2026-09,0,0
+vrijednosti,Vrijednosti,radio,after,12,27,2,4,8,0,Hrvatski katolički radio,4,33.333333333333336,5,7,7,2026-04,2,8
+europa,Europa,radio,after,3,27,2,4,2,0,HRT HR 1,2,66.66666666666667,2,1,1,2026-04,1,1
+solidarnost,Solidarnost,radio,after,0,27,0,4,0,0,,0,,0,0,0,,0,0
+supsidijarnost,Supsidijarnost,radio,after,0,27,0,4,0,0,,0,,0,0,0,,0,0
+opce_dobro,Opće dobro,radio,after,0,27,0,4,0,0,,0,,0,0,0,,0,0
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,radio,after,0,27,0,4,0,0,,0,,0,0,0,,0,0
+dostojanstvo_rada,Dostojanstvo rada,radio,after,0,27,0,4,0,0,,0,,0,0,0,,0,0
+radnik,Radnik,radio,after,0,27,0,4,0,0,,0,,0,0,0,,0,0
+socijalna_drzava,Socijalna država,radio,after,0,27,0,4,0,0,,0,,0,0,0,,0,0
+trzisno_gospodarstvo,Tržišno gospodarstvo,radio,after,0,27,0,4,0,0,,0,,0,0,0,,0,0
+savjest,Savjest,radio,after,0,27,0,4,0,0,,0,,0,0,0,,0,0
+vjerska_sloboda,Vjerska sloboda,radio,after,0,27,0,4,0,0,,0,,0,0,0,,0,0
+demokracija,Demokracija,radio,after,0,27,0,4,0,0,,0,,0,0,0,,0,0
+sloboda,Sloboda,radio,after,0,27,0,4,0,0,,0,,0,0,0,,0,0
+domoljublje,Domoljublje,reddit,before,1,8,1,5,1,0,croatia,1,100.0,1,0,0,2023-02,0,0
+drzavotvornost,Državotvornost,reddit,before,1,8,1,5,1,0,croatia,1,100.0,1,0,0,2023-02,0,0
+narodnjastvo,Narodnjaštvo,reddit,before,0,8,0,5,0,0,,0,,0,0,0,,0,0
+obitelj,Obitelj,reddit,before,2,8,2,5,1,0,croatia,2,100.0,1,1,1,2022-09,1,0
+konzervativizam,Konzervativizam,reddit,before,1,8,1,5,1,0,croatia,1,100.0,1,0,0,2021-05,0,0
+vrijednosti,Vrijednosti,reddit,before,3,8,2,5,1,0,croatia,3,100.0,1,2,2,2023-03,2,0
+europa,Europa,reddit,before,0,8,0,5,0,0,,0,,0,0,0,,0,0
+solidarnost,Solidarnost,reddit,before,0,8,0,5,0,0,,0,,0,0,0,,0,0
+supsidijarnost,Supsidijarnost,reddit,before,0,8,0,5,0,0,,0,,0,0,0,,0,0
+opce_dobro,Opće dobro,reddit,before,0,8,0,5,0,0,,0,,0,0,0,,0,0
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,reddit,before,0,8,0,5,0,0,,0,,0,0,0,,0,0
+dostojanstvo_rada,Dostojanstvo rada,reddit,before,0,8,0,5,0,0,,0,,0,0,0,,0,0
+radnik,Radnik,reddit,before,0,8,0,5,0,0,,0,,0,0,0,,0,0
+socijalna_drzava,Socijalna država,reddit,before,0,8,0,5,0,0,,0,,0,0,0,,0,0
+trzisno_gospodarstvo,Tržišno gospodarstvo,reddit,before,0,8,0,5,0,0,,0,,0,0,0,,0,0
+savjest,Savjest,reddit,before,0,8,0,5,0,0,,0,,0,0,0,,0,0
+vjerska_sloboda,Vjerska sloboda,reddit,before,0,8,0,5,0,0,,0,,0,0,0,,0,0
+demokracija,Demokracija,reddit,before,0,8,0,5,0,0,,0,,0,0,0,,0,0
+sloboda,Sloboda,reddit,before,1,8,1,5,1,0,croatia,1,100.0,1,0,0,2022-06,0,0
+domoljublje,Domoljublje,reddit,after,1,18,1,8,1,0,belanedeja @ r/croatia,1,100.0,1,0,0,2026-02,0,0
+drzavotvornost,Državotvornost,reddit,after,0,18,0,8,0,0,,0,,0,0,0,,0,0
+narodnjastvo,Narodnjaštvo,reddit,after,1,18,1,8,1,0,crogod @ r/croatia,1,100.0,1,0,0,2026-01,0,0
+obitelj,Obitelj,reddit,after,1,18,1,8,1,0,novine_eu-bot-001 @ r/hrvatska,1,100.0,1,0,0,2026-05,0,0
+konzervativizam,Konzervativizam,reddit,after,5,18,5,8,5,0,mantis_in_a_hill @ r/Catholicism,1,20.0,1,4,4,2026-02,4,4
+vrijednosti,Vrijednosti,reddit,after,4,18,3,8,4,0,novine_eu-bot-001 @ r/hrvatska,1,25.0,1,3,3,2026-05,3,3
+europa,Europa,reddit,after,1,18,1,8,1,0,belanedeja @ r/croatia,1,100.0,1,0,0,2026-02,0,0
+solidarnost,Solidarnost,reddit,after,0,18,0,8,0,0,,0,,0,0,0,,0,0
+supsidijarnost,Supsidijarnost,reddit,after,0,18,0,8,0,0,,0,,0,0,0,,0,0
+opce_dobro,Opće dobro,reddit,after,0,18,0,8,0,0,,0,,0,0,0,,0,0
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,reddit,after,0,18,0,8,0,0,,0,,0,0,0,,0,0
+dostojanstvo_rada,Dostojanstvo rada,reddit,after,0,18,0,8,0,0,,0,,0,0,0,,0,0
+radnik,Radnik,reddit,after,1,18,1,8,1,0,crogod @ r/Split,1,100.0,1,0,0,2025-07,0,0
+socijalna_drzava,Socijalna država,reddit,after,0,18,0,8,0,0,,0,,0,0,0,,0,0
+trzisno_gospodarstvo,Tržišno gospodarstvo,reddit,after,0,18,0,8,0,0,,0,,0,0,0,,0,0
+savjest,Savjest,reddit,after,0,18,0,8,0,0,,0,,0,0,0,,0,0
+vjerska_sloboda,Vjerska sloboda,reddit,after,0,18,0,8,0,0,,0,,0,0,0,,0,0
+demokracija,Demokracija,reddit,after,0,18,0,8,0,0,,0,,0,0,0,,0,0
+sloboda,Sloboda,reddit,after,0,18,0,8,0,0,,0,,0,0,0,,0,0
+domoljublje,Domoljublje,tiktok,after,0,2,0,2,0,0,,0,,0,0,0,,0,0
+drzavotvornost,Državotvornost,tiktok,after,0,2,0,2,0,0,,0,,0,0,0,,0,0
+narodnjastvo,Narodnjaštvo,tiktok,after,0,2,0,2,0,0,,0,,0,0,0,,0,0
+obitelj,Obitelj,tiktok,after,0,2,0,2,0,0,,0,,0,0,0,,0,0
+konzervativizam,Konzervativizam,tiktok,after,0,2,0,2,0,0,,0,,0,0,0,,0,0
+vrijednosti,Vrijednosti,tiktok,after,0,2,0,2,0,0,,0,,0,0,0,,0,0
+europa,Europa,tiktok,after,1,2,1,2,1,0,kraljevina_hrvatska,1,100.0,1,0,0,2025-08,0,0
+solidarnost,Solidarnost,tiktok,after,0,2,0,2,0,0,,0,,0,0,0,,0,0
+supsidijarnost,Supsidijarnost,tiktok,after,0,2,0,2,0,0,,0,,0,0,0,,0,0
+opce_dobro,Opće dobro,tiktok,after,0,2,0,2,0,0,,0,,0,0,0,,0,0
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,tiktok,after,0,2,0,2,0,0,,0,,0,0,0,,0,0
+dostojanstvo_rada,Dostojanstvo rada,tiktok,after,0,2,0,2,0,0,,0,,0,0,0,,0,0
+radnik,Radnik,tiktok,after,0,2,0,2,0,0,,0,,0,0,0,,0,0
+socijalna_drzava,Socijalna država,tiktok,after,0,2,0,2,0,0,,0,,0,0,0,,0,0
+trzisno_gospodarstvo,Tržišno gospodarstvo,tiktok,after,0,2,0,2,0,0,,0,,0,0,0,,0,0
+savjest,Savjest,tiktok,after,0,2,0,2,0,0,,0,,0,0,0,,0,0
+vjerska_sloboda,Vjerska sloboda,tiktok,after,0,2,0,2,0,0,,0,,0,0,0,,0,0
+demokracija,Demokracija,tiktok,after,0,2,0,2,0,0,,0,,0,0,0,,0,0
+sloboda,Sloboda,tiktok,after,0,2,0,2,0,0,,0,,0,0,0,,0,0
+domoljublje,Domoljublje,tv,after,1,28,1,8,1,0,HRT 1,1,100.0,1,0,0,2026-07,0,0
+drzavotvornost,Državotvornost,tv,after,1,28,1,8,1,0,HRT 1,1,100.0,1,0,0,2026-07,0,0
+narodnjastvo,Narodnjaštvo,tv,after,3,28,2,8,2,0,SBTV,2,66.66666666666667,1,2,1,2026-08,1,1
+obitelj,Obitelj,tv,after,1,28,1,8,1,0,Nova TV,1,100.0,1,0,0,2025-02,0,0
+konzervativizam,Konzervativizam,tv,after,2,28,1,8,1,0,Z1 Televizija,2,100.0,1,1,1,2025-05,1,0
+vrijednosti,Vrijednosti,tv,after,6,28,5,8,4,0,SBTV,2,33.333333333333336,1,5,4,2026-08,4,4
+europa,Europa,tv,after,4,28,3,8,3,0,HRT 1,2,50.0,1,3,3,2025-02,2,2
+solidarnost,Solidarnost,tv,after,0,28,0,8,0,0,,0,,0,0,0,,0,0
+supsidijarnost,Supsidijarnost,tv,after,0,28,0,8,0,0,,0,,0,0,0,,0,0
+opce_dobro,Opće dobro,tv,after,0,28,0,8,0,0,,0,,0,0,0,,0,0
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,tv,after,0,28,0,8,0,0,,0,,0,0,0,,0,0
+dostojanstvo_rada,Dostojanstvo rada,tv,after,0,28,0,8,0,0,,0,,0,0,0,,0,0
+radnik,Radnik,tv,after,0,28,0,8,0,0,,0,,0,0,0,,0,0
+socijalna_drzava,Socijalna država,tv,after,0,28,0,8,0,0,,0,,0,0,0,,0,0
+trzisno_gospodarstvo,Tržišno gospodarstvo,tv,after,0,28,0,8,0,0,,0,,0,0,0,,0,0
+savjest,Savjest,tv,after,0,28,0,8,0,0,,0,,0,0,0,,0,0
+vjerska_sloboda,Vjerska sloboda,tv,after,0,28,0,8,0,0,,0,,0,0,0,,0,0
+demokracija,Demokracija,tv,after,4,28,2,8,3,0,SBTV,2,50.0,1,3,3,2026-08,2,2
+sloboda,Sloboda,tv,after,0,28,0,8,0,0,,0,,0,0,0,,0,0
+domoljublje,Domoljublje,twitter,before,16,47,5,11,34,0,HDZ,6,37.5,2,14,14,2022-06,10,10
+drzavotvornost,Državotvornost,twitter,before,10,47,5,11,19,0,HDZ,4,40.0,2,8,8,2021-12,7,6
+narodnjastvo,Narodnjaštvo,twitter,before,13,47,5,11,27,0,HDZ,5,38.46153846153846,2,11,11,2021-12,8,8
+obitelj,Obitelj,twitter,before,1,47,1,11,1,0,Stephen Nikola Bartulica,1,100.0,1,0,0,2022-06,0,0
+konzervativizam,Konzervativizam,twitter,before,10,47,5,11,4,0,GenX973,6,60.0,1,9,9,2021-10,7,4
+vrijednosti,Vrijednosti,twitter,before,25,47,7,11,41,0,HDZ,6,24.0,2,23,23,2022-06,18,19
+europa,Europa,twitter,before,4,47,3,11,4,0,Tomislav,1,25.0,1,3,3,2023-03,2,3
+solidarnost,Solidarnost,twitter,before,0,47,0,11,0,0,,0,,0,0,0,,0,0
+supsidijarnost,Supsidijarnost,twitter,before,0,47,0,11,0,0,,0,,0,0,0,,0,0
+opce_dobro,Opće dobro,twitter,before,0,47,0,11,0,0,,0,,0,0,0,,0,0
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,before,0,47,0,11,0,0,,0,,0,0,0,,0,0
+dostojanstvo_rada,Dostojanstvo rada,twitter,before,0,47,0,11,0,0,,0,,0,0,0,,0,0
+radnik,Radnik,twitter,before,1,47,1,11,1,0,Ivana Tomić,1,100.0,1,0,0,2021-06,0,0
+socijalna_drzava,Socijalna država,twitter,before,0,47,0,11,0,0,,0,,0,0,0,,0,0
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,before,0,47,0,11,0,0,,0,,0,0,0,,0,0
+savjest,Savjest,twitter,before,0,47,0,11,0,0,,0,,0,0,0,,0,0
+vjerska_sloboda,Vjerska sloboda,twitter,before,0,47,0,11,0,0,,0,,0,0,0,,0,0
+demokracija,Demokracija,twitter,before,2,47,2,11,2,0,Učenjak🇻🇦🇭🇷,1,50.0,1,1,1,2022-07,1,1
+sloboda,Sloboda,twitter,before,6,47,3,11,18,0,Vesna Simic,2,33.333333333333336,2,4,4,2023-09,4,4
+domoljublje,Domoljublje,twitter,after,16,53,5,9,8,0,Ivan Bosančić,5,31.25,3,13,13,2024-10,12,11
+drzavotvornost,Državotvornost,twitter,after,5,53,2,9,4,0,Andrej Plenković,2,40.0,3,2,2,2026-07,2,3
+narodnjastvo,Narodnjaštvo,twitter,after,4,53,3,9,3,0,HDZ,2,50.0,2,2,2,2024-07,2,2
+obitelj,Obitelj,twitter,after,6,53,2,9,4,0,Ivan Bosančić,3,50.0,2,4,4,2024-07,3,3
+konzervativizam,Konzervativizam,twitter,after,3,53,3,9,3,0,Sisak24,1,33.333333333333336,1,2,2,2026-08,2,2
+vrijednosti,Vrijednosti,twitter,after,35,53,7,9,22,0,Tomislav Sokol,5,14.285714285714286,3,32,32,2024-06,25,30
+europa,Europa,twitter,after,17,53,5,9,13,0,Tomislav Sokol,3,17.647058823529413,3,14,14,2024-06,11,14
+solidarnost,Solidarnost,twitter,after,2,53,1,9,2,0,kalimero,1,50.0,2,0,0,2024-07,0,1
+supsidijarnost,Supsidijarnost,twitter,after,0,53,0,9,0,0,,0,,0,0,0,,0,0
+opce_dobro,Opće dobro,twitter,after,0,53,0,9,0,0,,0,,0,0,0,,0,0
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,after,0,53,0,9,0,0,,0,,0,0,0,,0,0
+dostojanstvo_rada,Dostojanstvo rada,twitter,after,0,53,0,9,0,0,,0,,0,0,0,,0,0
+radnik,Radnik,twitter,after,0,53,0,9,0,0,,0,,0,0,0,,0,0
+socijalna_drzava,Socijalna država,twitter,after,0,53,0,9,0,0,,0,,0,0,0,,0,0
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,after,0,53,0,9,0,0,,0,,0,0,0,,0,0
+savjest,Savjest,twitter,after,0,53,0,9,0,0,,0,,0,0,0,,0,0
+vjerska_sloboda,Vjerska sloboda,twitter,after,0,53,0,9,0,0,,0,,0,0,0,,0,0
+demokracija,Demokracija,twitter,after,0,53,0,9,0,0,,0,,0,0,0,,0,0
+sloboda,Sloboda,twitter,after,0,53,0,9,0,0,,0,,0,0,0,,0,0
+domoljublje,Domoljublje,web,before,260,1114,13,13,75,0,hdz.hr,17,6.538461538461538,20,240,240,2022-06,208,243
+drzavotvornost,Državotvornost,web,before,168,1114,12,13,60,0,direktno.hr,10,5.9523809523809526,20,148,148,2023-09,141,158
+narodnjastvo,Narodnjaštvo,web,before,220,1114,13,13,64,0,hdz.hr,26,11.818181818181818,20,200,200,2021-05,176,194
+obitelj,Obitelj,web,before,133,1114,13,13,72,0,narod.hr,6,4.511278195488722,12,121,121,2022-06,95,127
+konzervativizam,Konzervativizam,web,before,118,1114,12,13,42,0,dragovoljac.com,10,8.474576271186441,9,109,109,2021-05,89,108
+vrijednosti,Vrijednosti,web,before,554,1114,13,13,118,0,hdz.hr,25,4.512635379061372,15,539,535,2022-06,467,529
+europa,Europa,web,before,247,1114,13,13,76,0,dragovoljac.com,17,6.882591093117409,8,239,235,2021-06,213,230
+solidarnost,Solidarnost,web,before,41,1114,9,13,30,0,hkm.hr,4,9.75609756097561,13,28,28,2022-06,18,37
+supsidijarnost,Supsidijarnost,web,before,21,1114,9,13,12,0,unicath.hr,5,23.80952380952381,3,18,18,2021-10,16,16
+opce_dobro,Opće dobro,web,before,5,1114,3,13,4,0,hu-benedikt.hr,2,40.0,2,3,3,2023-05,3,3
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,before,9,1114,2,13,9,0,prigorski.hr,1,11.11111111111111,4,5,1,2023-09,1,8
+dostojanstvo_rada,Dostojanstvo rada,web,before,0,1114,0,13,0,0,,0,,0,0,0,,0,0
+radnik,Radnik,web,before,5,1114,4,13,4,0,slobodnadalmacija.hr,2,40.0,2,3,3,2021-05,3,3
+socijalna_drzava,Socijalna država,web,before,6,1114,6,13,6,0,unicath.hr,1,16.666666666666668,2,4,4,2022-11,5,5
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,before,4,1114,3,13,4,0,tomislavnews.com,1,25.0,2,2,2,2022-04,2,3
+savjest,Savjest,web,before,21,1114,3,13,16,0,tportal.hr,2,9.523809523809524,8,13,10,2022-04,9,19
+vjerska_sloboda,Vjerska sloboda,web,before,11,1114,2,13,11,0,tportal.hr,1,9.090909090909092,5,6,3,2022-07,2,10
+demokracija,Demokracija,web,before,64,1114,10,13,37,0,hkm.hr,7,10.9375,6,58,52,2023-01,46,57
+sloboda,Sloboda,web,before,50,1114,11,13,29,0,narod.hr,6,12.0,4,46,42,2023-09,39,44
+domoljublje,Domoljublje,web,after,142,684,10,10,60,0,index.hr,9,6.338028169014085,14,128,128,2024-06,117,133
+drzavotvornost,Državotvornost,web,after,37,684,5,10,24,0,jutarnji.hr,4,10.81081081081081,5,32,27,2025-06,26,33
+narodnjastvo,Narodnjaštvo,web,after,84,684,6,10,37,0,prigorski.hr,6,7.142857142857143,14,70,70,2026-03,63,78
+obitelj,Obitelj,web,after,90,684,8,10,55,0,tportal.hr,6,6.666666666666667,12,78,78,2024-06,70,84
+konzervativizam,Konzervativizam,web,after,48,684,10,10,37,0,glas-koncila.hr,4,8.333333333333334,4,44,44,2026-05,38,44
+vrijednosti,Vrijednosti,web,after,360,684,10,10,111,0,index.hr,17,4.722222222222222,24,336,336,2024-06,281,343
+europa,Europa,web,after,243,684,10,10,86,0,totalno.hr,12,4.938271604938271,24,219,219,2024-06,151,231
+solidarnost,Solidarnost,web,after,50,684,5,10,39,0,tportal.hr,3,6.0,10,40,40,2024-06,33,47
+supsidijarnost,Supsidijarnost,web,after,7,684,3,10,7,0,radio-medjugorje.com,1,14.285714285714286,2,5,5,2024-05,4,6
+opce_dobro,Opće dobro,web,after,6,684,3,10,6,0,radio-medjugorje.com,1,16.666666666666668,2,4,4,2025-12,3,5
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,after,6,684,3,10,5,0,hkm.hr,2,33.333333333333336,2,4,4,2026-05,4,4
+dostojanstvo_rada,Dostojanstvo rada,web,after,11,684,1,10,10,0,novilist.hr,2,18.181818181818183,9,2,2,2026-05,0,9
+radnik,Radnik,web,after,16,684,3,10,13,0,vecernji.hr,2,12.5,9,7,7,2026-05,5,14
+socijalna_drzava,Socijalna država,web,after,1,684,1,10,1,0,tportal.hr,1,100.0,1,0,0,2026-06,0,0
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,after,3,684,3,10,3,0,radnickaprava.org,1,33.333333333333336,1,2,2,2026-03,2,2
+savjest,Savjest,web,after,6,684,5,10,6,0,sbperiskop.net,1,16.666666666666668,1,5,5,2026-02,4,5
+vjerska_sloboda,Vjerska sloboda,web,after,0,684,0,10,0,0,,0,,0,0,0,,0,0
+demokracija,Demokracija,web,after,49,684,8,10,34,0,grabancijas.com,5,10.204081632653061,14,35,33,2025-04,33,44
+sloboda,Sloboda,web,after,40,684,9,10,31,0,glas-koncila.hr,3,7.5,10,30,24,2025-04,22,37
+domoljublje,Domoljublje,youtube,before,0,9,0,5,0,0,,0,,0,0,0,,0,0
+drzavotvornost,Državotvornost,youtube,before,0,9,0,5,0,0,,0,,0,0,0,,0,0
+narodnjastvo,Narodnjaštvo,youtube,before,0,9,0,5,0,0,,0,,0,0,0,,0,0
+obitelj,Obitelj,youtube,before,0,9,0,5,0,0,,0,,0,0,0,,0,0
+konzervativizam,Konzervativizam,youtube,before,0,9,0,5,0,0,,0,,0,0,0,,0,0
+vrijednosti,Vrijednosti,youtube,before,1,9,1,5,1,0,SPACENET,1,100.0,1,0,0,2023-08,0,0
+europa,Europa,youtube,before,4,9,3,5,4,0,Osjecka TV,1,25.0,2,2,2,2023-02,3,3
+solidarnost,Solidarnost,youtube,before,0,9,0,5,0,0,,0,,0,0,0,,0,0
+supsidijarnost,Supsidijarnost,youtube,before,0,9,0,5,0,0,,0,,0,0,0,,0,0
+opce_dobro,Opće dobro,youtube,before,0,9,0,5,0,0,,0,,0,0,0,,0,0
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,youtube,before,0,9,0,5,0,0,,0,,0,0,0,,0,0
+dostojanstvo_rada,Dostojanstvo rada,youtube,before,0,9,0,5,0,0,,0,,0,0,0,,0,0
+radnik,Radnik,youtube,before,0,9,0,5,0,0,,0,,0,0,0,,0,0
+socijalna_drzava,Socijalna država,youtube,before,0,9,0,5,0,0,,0,,0,0,0,,0,0
+trzisno_gospodarstvo,Tržišno gospodarstvo,youtube,before,0,9,0,5,0,0,,0,,0,0,0,,0,0
+savjest,Savjest,youtube,before,0,9,0,5,0,0,,0,,0,0,0,,0,0
+vjerska_sloboda,Vjerska sloboda,youtube,before,0,9,0,5,0,0,,0,,0,0,0,,0,0
+demokracija,Demokracija,youtube,before,1,9,1,5,1,0,LaudatoTV,1,100.0,1,0,0,2023-01,0,0
+sloboda,Sloboda,youtube,before,0,9,0,5,0,0,,0,,0,0,0,,0,0
+domoljublje,Domoljublje,youtube,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+drzavotvornost,Državotvornost,youtube,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+narodnjastvo,Narodnjaštvo,youtube,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+obitelj,Obitelj,youtube,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+konzervativizam,Konzervativizam,youtube,after,1,2,1,1,1,0,Stephen Nikola Bartulica,1,100.0,1,0,0,2025-11,0,0
+vrijednosti,Vrijednosti,youtube,after,1,2,1,1,1,0,Stephen Nikola Bartulica,1,100.0,1,0,0,2025-11,0,0
+europa,Europa,youtube,after,1,2,1,1,1,0,Stephen Nikola Bartulica,1,100.0,1,0,0,2025-11,0,0
+solidarnost,Solidarnost,youtube,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+supsidijarnost,Supsidijarnost,youtube,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+opce_dobro,Opće dobro,youtube,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,youtube,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+dostojanstvo_rada,Dostojanstvo rada,youtube,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+radnik,Radnik,youtube,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+socijalna_drzava,Socijalna država,youtube,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+trzisno_gospodarstvo,Tržišno gospodarstvo,youtube,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+savjest,Savjest,youtube,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+vjerska_sloboda,Vjerska sloboda,youtube,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+demokracija,Demokracija,youtube,after,0,2,0,1,0,0,,0,,0,0,0,,0,0
+sloboda,Sloboda,youtube,after,0,2,0,1,0,0,,0,,0,0,0,,0,0

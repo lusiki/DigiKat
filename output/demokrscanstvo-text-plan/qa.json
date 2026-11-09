@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "pages": 18,
+  "bookmarks": 18,
+  "source_blocks_checked": 363,
+  "missing_source_blocks": 0,
+  "text_outside_margins": 0,
+  "replacement_characters": 0,
+  "unique_external_references": 9,
+  "original_pdf_sha256_verified": true,
+  "visual_review": "All 18 pages inspected as rendered PNGs; full-size review of cover, dense methods, validation, and final revised page 4.",
+  "pdf_sha256": "cdc3a1b1b47003f5c69284b065077f7c9925c9ea2c74e37dde17d7f59dad7254",
+  "source_sha256": "0a088e9bf053ea4edfc7f6270a3ba6e2543283e254623173d5253c48a4ea5c76",
+  "new_analysis_executed": false
+}

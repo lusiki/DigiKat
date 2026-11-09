@@ -1,0 +1,176 @@
+{
+  "rows": 612065,
+  "columns": ["DATE", "TIME", "TITLE", "FROM", "AUTHOR", "URL", "URL_PHOTO", "SOURCE_TYPE", "GROUP_NAME", "KEYWORD_NAME", "FOUND_KEYWORDS", "LANGUAGES", "LOCATIONS", "TAGS", "MANUAL_SENTIMENT", "AUTO_SENTIMENT", "MENTION_SNIPPET", "REACH", "VIRALITY", "ENGAGEMENT_RATE", "INTERACTIONS", "FOLLOWERS_COUNT", "LIKE_COUNT", "COMMENT_COUNT", "SHARE_COUNT", "TWEET_COUNT", "LOVE_COUNT", "WOW_COUNT", "HAHA_COUNT", "SAD_COUNT", "ANGRY_COUNT", "TOTAL_REACTIONS_COUNT", "FAVORITE_COUNT", "RETWEET_COUNT", "VIEW_COUNT", "DISLIKE_COUNT", "COUNT", "REPOST_COUNT", "REDDIT_TYPE", "REDDIT_SCORE", "INFLUENCE_SCORE", "TWEET_TYPE", "TWEET_SOURCE_NAME", "TWEET_SOURCE_URL", "FULL_TEXT", "year", "data_source"],
+  "classes": {
+    "DATE": "character",
+    "TIME": "character",
+    "TITLE": "character",
+    "FROM": "character",
+    "AUTHOR": "character",
+    "URL": "character",
+    "URL_PHOTO": "character",
+    "SOURCE_TYPE": "character",
+    "GROUP_NAME": "character",
+    "KEYWORD_NAME": "character",
+    "FOUND_KEYWORDS": "character",
+    "LANGUAGES": "character",
+    "LOCATIONS": "character",
+    "TAGS": "logical",
+    "MANUAL_SENTIMENT": "logical",
+    "AUTO_SENTIMENT": "character",
+    "MENTION_SNIPPET": "character",
+    "REACH": "numeric",
+    "VIRALITY": "numeric",
+    "ENGAGEMENT_RATE": "numeric",
+    "INTERACTIONS": "numeric",
+    "FOLLOWERS_COUNT": "numeric",
+    "LIKE_COUNT": "numeric",
+    "COMMENT_COUNT": "numeric",
+    "SHARE_COUNT": "numeric",
+    "TWEET_COUNT": "logical",
+    "LOVE_COUNT": "numeric",
+    "WOW_COUNT": "numeric",
+    "HAHA_COUNT": "numeric",
+    "SAD_COUNT": "numeric",
+    "ANGRY_COUNT": "numeric",
+    "TOTAL_REACTIONS_COUNT": "numeric",
+    "FAVORITE_COUNT": "numeric",
+    "RETWEET_COUNT": "numeric",
+    "VIEW_COUNT": "numeric",
+    "DISLIKE_COUNT": "numeric",
+    "COUNT": "logical",
+    "REPOST_COUNT": "logical",
+    "REDDIT_TYPE": "character",
+    "REDDIT_SCORE": "numeric",
+    "INFLUENCE_SCORE": "numeric",
+    "TWEET_TYPE": "character",
+    "TWEET_SOURCE_NAME": "character",
+    "TWEET_SOURCE_URL": "character",
+    "FULL_TEXT": "character",
+    "year": "numeric",
+    "data_source": "character"
+  },
+  "date_range": ["2021-01-01", "2026-01-06"],
+  "platform": [
+    {
+      "SOURCE_TYPE": "web",
+      "N": 449698
+    },
+    {
+      "SOURCE_TYPE": "facebook",
+      "N": 69315
+    },
+    {
+      "SOURCE_TYPE": "twitter",
+      "N": 5961
+    },
+    {
+      "SOURCE_TYPE": "comment",
+      "N": 3649
+    },
+    {
+      "SOURCE_TYPE": "youtube",
+      "N": 65521
+    },
+    {
+      "SOURCE_TYPE": "forum",
+      "N": 6235
+    },
+    {
+      "SOURCE_TYPE": "reddit",
+      "N": 8149
+    },
+    {
+      "SOURCE_TYPE": "tiktok",
+      "N": 277
+    },
+    {
+      "SOURCE_TYPE": "instagram",
+      "N": 3260
+    }
+  ],
+  "sentiment": [
+    {
+      "field": "MANUAL_SENTIMENT",
+      "counts": [
+        {
+          "Freq": 612065
+        }
+      ]
+    },
+    {
+      "field": "AUTO_SENTIMENT",
+      "counts": [
+        {
+          "Var1": "negative",
+          "Freq": 175974
+        },
+        {
+          "Var1": "neutral",
+          "Freq": 146834
+        },
+        {
+          "Var1": "positive",
+          "Freq": 289179
+        },
+        {
+          "Var1": "undefined",
+          "Freq": 78
+        },
+        {
+          "Freq": 0
+        }
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "field": "REACH",
+      "missing": 25825,
+      "class": "numeric",
+      "summary": ["   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.     NAs ", "      0      48     552    3587    2492 9064560   25825 "]
+    },
+    {
+      "field": "ENGAGEMENT_RATE",
+      "missing": 178376,
+      "class": "numeric",
+      "summary": ["     Min.   1st Qu.    Median      Mean   3rd Qu.      Max.       NAs ", "   0.0000    0.3745    2.3284    3.4940    5.5096 3300.0000    178376 "]
+    },
+    {
+      "field": "INTERACTIONS",
+      "missing": 19155,
+      "class": "numeric",
+      "summary": ["    Min.  1st Qu.   Median     Mean  3rd Qu.     Max.      NAs ", "     0.0      0.0      9.0    105.5     51.0 257884.0    19155 "]
+    },
+    {
+      "field": "LIKE_COUNT",
+      "missing": 26090,
+      "class": "numeric",
+      "summary": ["     Min.   1st Qu.    Median      Mean   3rd Qu.      Max.       NAs ", "     0.00      0.00      3.00     79.71     38.00 115565.00     26090 "]
+    },
+    {
+      "field": "COMMENT_COUNT",
+      "missing": 33504,
+      "class": "numeric",
+      "summary": ["    Min.  1st Qu.   Median     Mean  3rd Qu.     Max.      NAs ", "    0.00     0.00     0.00    17.65     3.00 22452.00    33504 "]
+    },
+    {
+      "field": "SHARE_COUNT",
+      "missing": 92828,
+      "class": "numeric",
+      "summary": ["    Min.  1st Qu.   Median     Mean  3rd Qu.     Max.      NAs ", "     0.0      0.0      1.0     10.1      5.0 177371.0    92828 "]
+    },
+    {
+      "field": "VIEW_COUNT",
+      "missing": 543207,
+      "class": "numeric",
+      "summary": ["   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.     NAs ", "      0      70     476    3675    1879 5546813  543207 "]
+    },
+    {
+      "field": "DISLIKE_COUNT",
+      "missing": 607873,
+      "class": "numeric",
+      "summary": ["    Min.  1st Qu.   Median     Mean  3rd Qu.     Max.      NAs ", "  0.0000   0.0000   0.0000   0.7178   0.0000 175.0000   607873 "]
+    }
+  ]
+}

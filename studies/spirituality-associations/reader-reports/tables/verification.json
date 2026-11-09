@@ -1,0 +1,32 @@
+{
+  "checks": "passed",
+  "reports": [
+    {
+      "file": "output\\pdf\\udruge-duhovnosti-u-medijskom-prostoru.pdf",
+      "pages": 16,
+      "words": 2801,
+      "sha256": "d7b238cf74d2b75dfc83349e6788f938036657e8043cd38d63c173cf3a8b1c02",
+      "size_bytes": 581492,
+      "text_bounds": "pass",
+      "placeholders": "none"
+    },
+    {
+      "file": "output\\pdf\\udruge-duhovnosti-od-rijeci-do-javne-uloge.pdf",
+      "pages": 16,
+      "words": 2594,
+      "sha256": "e32cd0af5c8bd9ed9ceaf572fbf5a9eff5caa6efb3e25bf377c47277683647c8",
+      "size_bytes": 1114069,
+      "text_bounds": "pass",
+      "placeholders": "none"
+    }
+  ],
+  "topic_denominator": 18938,
+  "candidate_denominator": 23436,
+  "rank_pairs": 7283,
+  "rank_unique_urls": 7219,
+  "ranked_names": 333,
+  "organisation_totals_reconciled": true,
+  "input_hashes_unchanged": true,
+  "human_validation_claimed": false,
+  "visual_review": "See QUALITY_REVIEW.md; contact sheets do not themselves establish review."
+}

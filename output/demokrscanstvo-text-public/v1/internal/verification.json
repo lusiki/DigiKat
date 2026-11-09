@@ -1,0 +1,154 @@
+{
+  "status": "PASS",
+  "reviewer": "Codex AI; not independent human coding",
+  "pdf_sha256": "8bc603616b34ad49d550b8b20628619a58ee9a81152035dc5eaaf24068554bac",
+  "checks": [
+    {
+      "check": "Frozen source hashes",
+      "pass": true,
+      "detail": 6
+    },
+    {
+      "check": "Records and exact groups",
+      "pass": true,
+      "detail": "2306 records / 2253 distinct texts"
+    },
+    {
+      "check": "All word-cloud numbers recalculated",
+      "pass": true,
+      "detail": "48 overall + 10 × 18 topic words; independent set counts"
+    },
+    {
+      "check": "Whole original vocabulary reconciled",
+      "pass": true,
+      "detail": 9795
+    },
+    {
+      "check": "All topic numbers reconciled",
+      "pass": true,
+      "detail": "10 topics + 1 unassigned"
+    },
+    {
+      "check": "All phrase numbers reconciled",
+      "pass": true,
+      "detail": "8 phrases; strict adjacency; original phrase table"
+    },
+    {
+      "check": "All selected-word numbers reconciled",
+      "pass": true,
+      "detail": "15 words; four displayed on page 12"
+    },
+    {
+      "check": "Identity aggregate",
+      "pass": true,
+      "detail": "1105 / 2253 = 49.0%"
+    },
+    {
+      "check": "Cases and literal quotations",
+      "pass": true,
+      "detail": "Four source texts; dates, names, projects and two direct quotations checked against preserved body"
+    },
+    {
+      "check": "Page count and text layer",
+      "pass": true,
+      "detail": "12 pages, selectable text"
+    },
+    {
+      "check": "Croatian characters",
+      "pass": true,
+      "detail": "No replacement characters; diacritics present"
+    },
+    {
+      "check": "Printed numerical prose and tables",
+      "pass": true,
+      "detail": "Every fixed result in narrative checked; charts and panels generated from verified tables"
+    },
+    {
+      "check": "Public PDF excludes internal reporting",
+      "pass": true,
+      "detail": "Keyword scan plus editorial reading; speaker statements about checking access are substantive content"
+    },
+    {
+      "check": "Public source and author links",
+      "pass": true,
+      "detail": "Three source links; linked author and PDF author metadata"
+    },
+    {
+      "check": "Page content stays above footer",
+      "pass": true,
+      "detail": 72.5897637795278
+    },
+    {
+      "check": "Word-cloud geometry and size order",
+      "pass": true,
+      "detail": "All bounding boxes inside canvas, no overlap; word sizes monotone with text count"
+    },
+    {
+      "check": "PDF glyphs within page margins",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "check": "HTML text alternatives and structure",
+      "pass": true,
+      "detail": "11 clouds + 2 charts with full data tables; ordered heading/navigation structure"
+    },
+    {
+      "check": "Previous numerical analysis retained",
+      "pass": true,
+      "detail": "Existing computational checks and reproducibility record retained outside public report"
+    }
+  ],
+  "cases": [
+    {
+      "case": "K01",
+      "archived_date": "2024-06-07",
+      "source": "telegram.hr",
+      "source_title": "Stier bi EU po mjeri Ivana Pavla II: 'Tako bismo ulovili korak, sagradili pruge i nasipe'",
+      "body_sha256": "a8ceef8bb402dc0ab0cf5c8f6e589a1c5d329da94ad35089b9a7cad3bc344056",
+      "names_and_supporting_passages_matched": 5,
+      "scope": "complete available body reread; interpretation attributed to speaker"
+    },
+    {
+      "case": "K02",
+      "archived_date": "2022-04-20",
+      "source": "kamenjar.com",
+      "source_title": "Plenković: Milanović primitivnim napadom pokazao ogromnu nervozu",
+      "body_sha256": "96826e2faecb0090dfe61ab8bb3f0b7c67980e051bde35725dc899dc8addf0af",
+      "names_and_supporting_passages_matched": 3,
+      "scope": "complete available body reread; interpretation attributed to speaker"
+    },
+    {
+      "case": "K03",
+      "archived_date": "2021-02-28",
+      "source": "otvoreno.hr",
+      "source_title": "Žižić: Približavanjem demokršćana ljevici otvorio bi se veliki prostor za nacionalne konzervativce",
+      "body_sha256": "38c8d03cdebda9ec274c330ee342f6254327edf296f5ab6830fef11455534f5b",
+      "names_and_supporting_passages_matched": 5,
+      "scope": "complete available body reread; interpretation attributed to speaker"
+    },
+    {
+      "case": "K05",
+      "archived_date": "2024-08-30",
+      "source": "Glas Slavonije - HR",
+      "source_title": "Samir Haj Barakat napustio SDP: Razočaran sam, u šalabahter- demokraciji ne želim sudjelovati",
+      "body_sha256": "e61fe993e26cdb9545adba7407cca6c81a79a9e15fc060168aad58c115fc3045",
+      "names_and_supporting_passages_matched": 4,
+      "scope": "complete available body reread; interpretation attributed to speaker"
+    }
+  ],
+  "links": [
+    "https://www.lukasikic.info/",
+    "https://www.lukasikic.info/",
+    "https://www.glas-slavonije.hr/osijek/2024/08/29/vijecnik-haj-barakat-napustio-sdp-osjecam-da-ovdje-nisam-bio-dobrodosao-567954/",
+    "https://vlada.gov.hr/vijesti/aktualno-prijepodne-zahtjev-za-pomilovanjem-perkovica-i-mustaca-orkestrirana-akcija/35261",
+    "https://www.tportal.hr/vijesti/clanak/stier-hdz-za-demokrscansku-europu-kakvu-je-zagovarao-ivan-pavao-ii-20240607"
+  ],
+  "visual_qa": "See visual-qa.json, which must match this PDF hash",
+  "limits": [
+    "No independently double-coded semantic prevalence is claimed.",
+    "Topic assignments are descriptive fixed-model groups.",
+    "Selected source texts can be incomplete archived captures.",
+    "PDF has language metadata and text layer but no PDF/UA certification; semantic HTML and data tables provided."
+  ]
+}

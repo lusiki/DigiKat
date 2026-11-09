@@ -1,0 +1,18 @@
+{
+  "register_rows": 1325,
+  "organisations_with_rules": 1043,
+  "rules": 1060,
+  "pilot_n": 60,
+  "pilot_counties": 21,
+  "pilot_strata": {
+    "christian": 10,
+    "culture_heritage_community": 10,
+    "humanitarian_social_support": 10,
+    "no_lexical_cue": 10,
+    "other_named_traditions": 10,
+    "yoga_meditation_development": 10
+  },
+  "seed": "20260919",
+  "rule_sha256": "a0ec89b05dfbfaa6840cab0293c398a0c3dba174e2eb878a6e6c421a70c7df24",
+  "pilot_sha256": "afd50808bf6a5a006dc413c69af24d5b89549c9be5d0ea01ee53e9b77db09b9a"
+}

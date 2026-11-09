@@ -1,0 +1,15 @@
+﻿file,rows,columns,hash_matches
+"platform_summary.rds",49,"year | SOURCE_TYPE | total_posts | total_interactions | total_reach",TRUE
+"proportions_summary.rds",49,"year | SOURCE_TYPE | total_posts | total_interactions | total_reach | post_share | interaction_share | reach_share",TRUE
+"platform_monthly.rds",435,"month | SOURCE_TYPE | total_posts | total_interactions | total_reach",TRUE
+"source_summary.rds",17976,"year | FROM | productivity | total_interactions | avg_engagement_rate | total_reach",TRUE
+"top_sources_by_year.rds",90,"year | FROM | productivity | total_interactions | avg_engagement_rate | total_reach",TRUE
+"top_web_sources.rds",20,"FROM | total_posts | total_interactions | total_reach",TRUE
+"top_youtube_sources.rds",20,"FROM | total_posts | total_interactions | total_reach",TRUE
+"top_facebook_sources.rds",20,"FROM | total_posts | total_interactions | total_reach",TRUE
+"web_actors.rds",16,"FROM | total_posts | total_interactions | total_reach",TRUE
+"youtube_actors.rds",20,"FROM | total_posts | total_interactions | total_reach",TRUE
+"facebook_actors.rds",19,"FROM | total_posts | total_interactions | total_reach",TRUE
+"instagram_actors.rds",20,"FROM | total_posts | total_interactions | total_reach",TRUE
+"tiktok_actors.rds",16,"FROM | total_posts | total_interactions | total_reach",TRUE
+"twitter_actors.rds",23,"FROM | total_posts | total_interactions | total_reach",TRUE

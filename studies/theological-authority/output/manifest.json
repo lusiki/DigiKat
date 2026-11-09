@@ -1,0 +1,61 @@
+{
+  "input": {
+    "path": "data/merged_comprehensive.rds",
+    "sha256": "f6b276321822b29525240012c7be950fce9e6502928590f5f0815648c79d0d4f",
+    "raw_rows": 612065,
+    "date_range": ["2021-01-01", "2026-01-06"],
+    "main_period": ["2021-01-01", "2025-12-31"],
+    "excluded_outside_period": 2909,
+    "duplicate_captures_removed": 8120,
+    "stored_year_disagreements": 987,
+    "source_unit": "platform plus normalized source label; one inherited duplicate alias merged"
+  },
+  "main": [
+    {
+      "posts": 601036,
+      "sources": 16642,
+      "observed": 582895,
+      "interactions": 61128886,
+      "mean": 104.871179200371,
+      "median": 9
+    }
+  ],
+  "core": [
+    {
+      "posts": 153015,
+      "sources": 722,
+      "observed": 152312,
+      "interactions": 14901833,
+      "mean": 97.837550554126,
+      "median": 8
+    }
+  ],
+  "versions": {
+    "R": "4.6.0",
+    "data_table": "1.18.4",
+    "jsonlite": "2.0.0",
+    "digest": "0.6.39"
+  },
+  "resource_hashes": [
+    {
+      "path": "studies/catholic-influencers/actor_classification.R",
+      "sha256": "daebbf878a85f80618af83d49025d690f64b9875440173df10c4b09780c5fbcf"
+    },
+    {
+      "path": "explorations/_okvir_engine/okvir_lib.R",
+      "sha256": "c27952f07b7ad7cfea38a1023823a4b9ea75f486cdd1d5499f08fb36cc4a547f"
+    },
+    {
+      "path": "explorations/okvir-katolicanstva-prototype/source-groups.csv",
+      "sha256": "36cf018b67490c18fa749fad2c372bc1f0d69fda444030c3d2a25ddefa75255d"
+    },
+    {
+      "path": "resources/dictionaries/source_labels.csv",
+      "sha256": "a5223fd5d12eea01ca9a90157357abe39abb9ef95c6354873ed8136f37b87570"
+    },
+    {
+      "path": "R/lib/thematic_dictionaries.R",
+      "sha256": "a49c8b4db4b1d146aa19ff95025de47b7c6b1c8aee720db296e000e2e5e9e33e"
+    }
+  ]
+}

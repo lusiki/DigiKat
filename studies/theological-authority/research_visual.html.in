@@ -1,0 +1,118 @@
+<div id="faith-research">
+ <h2>Akteri i zabilježena pažnja</h2>
+ <div class="text-small text-muted">Raniji lokalni presjek DigiKat · 2021.–2025. · 153.015 objava odabranih komunikatora od ukupno 601.036 obrađenih zapisa</div>
+ <div class="viz-controls">
+  <label class="form-label">Platforma<select class="form-select" id="fr-platform"><option value="facebook">Facebook</option><option value="youtube">YouTube</option><option value="web">Web</option><option value="instagram">Instagram</option><option value="twitter">Twitter / X</option><option value="tiktok">TikTok</option><option value="all">Sve platforme — sirovi zbrojevi</option></select></label>
+  <label class="form-label">Razdoblje<select class="form-select" id="fr-year"><option value="all">Ukupno 2021.–2025.</option><option>2021</option><option>2022</option><option>2023</option><option>2024</option><option>2025</option></select></label>
+ </div>
+ <div id="fr-context" class="text-small" aria-live="polite"></div>
+ <div class="nav nav-pills" role="tablist" aria-label="Istraživački pogledi">
+  <button class="nav-link active" type="button" id="fr-types-tab" role="tab" aria-controls="fr-types" aria-selected="true">Vrste aktera</button>
+  <button class="nav-link" type="button" id="fr-top-tab" role="tab" aria-controls="fr-top" aria-selected="false">Top 50</button>
+  <button class="nav-link" type="button" id="fr-season-tab" role="tab" aria-controls="fr-season" aria-selected="false">2024./2025.</button>
+ </div>
+ <section id="fr-types" role="tabpanel" aria-labelledby="fr-types-tab">
+  <h3>Udio objava i udio interakcija po vrsti aktera</h3>
+  <div class="viz-row text-small"><span><i class="fr-key fr-post"></i>Objave</span><span><i class="fr-key fr-eng"></i>Zabilježene interakcije</span><span>Isti raspon: 0–100 % odabranog obuhvata</span></div>
+  <div id="fr-group-chart" role="img" aria-label="Usporedba udjela objava i interakcija za šest radnih skupina aktera"></div>
+  <div class="text-small text-muted">Izvor znači par platforme i normalizirane oznake FROM iz povijesnog lokalnog skupa objava. Vaši primjeri nisu popis koji se ovdje broji. Skupine su radne oznake: od 514 pobožnih i autorskih kanala, 483 su svrstana prema obrascu naziva.</div>
+  <div class="table-responsive"><table class="table table-sm"><thead><tr><th>Skupina</th><th class="text-end">Izvori</th><th class="text-end">Objave</th><th class="text-end">Interakcije</th><th class="text-end">Objave s poznatim interakcijama</th></tr></thead><tbody id="fr-groups"></tbody></table></div>
+ </section>
+ <section id="fr-top" role="tabpanel" aria-labelledby="fr-top-tab" hidden>
+  <h3 id="fr-top-heading">Vodeći izvori prema zabilježenim interakcijama</h3>
+  <div class="text-small text-muted" id="fr-rank-note"></div>
+  <div id="fr-history" aria-live="polite"></div>
+  <h3 id="fr-list-heading">Popis za istraživački pregled</h3>
+  <div class="table-responsive"><table class="table table-sm"><thead><tr><th>Mjesto / izvor · odabir otvara povijest</th><th class="text-end">Interakcije</th><th class="text-end">Medijan po objavi</th><th class="text-end">Pokrivenost</th></tr></thead><tbody id="fr-leaders"></tbody></table></div>
+ </section>
+ <section id="fr-season" role="tabpanel" aria-labelledby="fr-season-tab" hidden>
+  <h3>Srpanj–prosinac 2024. i 2025.</h3>
+  <div class="text-small">Isti izvori s ≥5 zabilježenih objava u oba prozora · odabrana platforma · ne ovisi o godišnjem filtru</div>
+  <div id="fr-season-chart"></div>
+  <div class="text-small text-muted">Broj i dob objava te uvjeti opažanja nisu izjednačeni.</div>
+ </section>
+ <!--RESEARCH_DATA-->
+</div>
+<style>
+#faith-research section {margin-top:20px}
+#faith-research .fr-key {display:inline-block;width:18px;height:9px;margin-right:6px}
+#faith-research .fr-post {background:var(--viz-series-2)}
+#faith-research .fr-eng {background:var(--viz-series-1)}
+#faith-research .fr-group {margin:18px 0}
+#faith-research .fr-label {display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:5px}
+#faith-research .fr-barline {display:grid;grid-template-columns:1fr 68px;gap:10px;align-items:center;margin:4px 0}
+#faith-research .fr-track {height:13px;background:color-mix(in srgb,var(--foreground) 6%,transparent)}
+#faith-research .fr-mark {height:100%;transition:width .25s ease}
+#faith-research .fr-number {text-align:right;font-variant-numeric:tabular-nums}
+#faith-research .fr-mini {height:5px;background:var(--viz-series-1);margin-top:5px}
+#faith-research .fr-history-row {display:grid;grid-template-columns:45px 1fr 100px;gap:12px;align-items:center;margin:10px 0}
+#faith-research .fr-detail {margin:4px 0 16px}
+#faith-research .fr-source-label {overflow-wrap:anywhere}
+#faith-research #fr-context {margin:12px 0}
+@media(prefers-reduced-motion:reduce){#faith-research .fr-mark{transition:none}}
+</style>
+<script>
+(()=>{
+ const root=document.getElementById('faith-research');
+ const raw=JSON.parse(root.querySelector('#research-data').textContent);
+ const $=id=>root.querySelector('#'+id);
+ const nf=new Intl.NumberFormat('hr-HR',{maximumFractionDigits:0});
+ const pf=new Intl.NumberFormat('hr-HR',{style:'percent',maximumFractionDigits:1});
+ const fmt=v=>v==null?'Nedostupno':nf.format(v), pct=v=>v==null?'—':pf.format(v);
+ const groups={church_media:'Crkveni mediji',church_org:'Crkvene ustanove i računi',independent:'Neovisni katolički mediji',clergy:'Svećenički profili',community:'Zajednice i udruge',devotional:'Pobožni i autorski kanali'};
+ const order=Object.keys(groups);
+ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const metric=a=>({posts:a[0],n:a[1],total:a[2],mean:a[3],median:a[4],months:a[5],first:a[6],last:a[7],rank:a[8],share:a[9]});
+ const sources=raw.sources.map((a,i)=>({i,id:a[0],name:a[1]||a[0],platform:a[2],group:a[3],rule:a[4],confidence:a[5],...metric(a.slice(6))}));
+ const annual=raw.annual.map(a=>({...sources[a[0]],year:a[1],...metric(a.slice(2))}));
+ const sum=(rows,k)=>rows.reduce((a,r)=>a+(r[k]??0),0);
+ const observedSum=(rows,k)=>rows.some(r=>r[k]!=null)?sum(rows,k):null;
+ const stableIds=[...sources].sort((a,b)=>{const x=new TextEncoder().encode(a.id),y=new TextEncoder().encode(b.id);for(let i=0;i<Math.min(x.length,y.length);i++){if(x[i]!==y[i])return x[i]-y[i]}return x.length-y.length});
+ const tieOrder=new Map(stableIds.map((s,i)=>[s.id,i]));
+ const sorted=rows=>[...rows].filter(r=>r.total!=null).sort((a,b)=>b.total-a.total||tieOrder.get(a.id)-tieOrder.get(b.id));
+ let selected=null;
+ const bar=(ratio,kind)=>`<div class="fr-track"><div class="fr-mark ${kind}" style="width:${Math.max(0,Math.min(100,(ratio??0)*100))}%"></div></div>`;
+ function rows(){const list=$('fr-year').value==='all'?sources:annual.filter(r=>r.year===+$('fr-year').value);return list.filter(r=>$('fr-platform').value==='all'||r.platform===$('fr-platform').value)}
+ function save(){window.openai?.setWidgetState?.({modelContent:{platform:$('fr-platform').value,period:$('fr-year').value,source_id:selected?.id||null},privateContent:null}).catch(()=>{});}
+ function history(source){
+  selected=source;
+  if(!source){$('fr-history').innerHTML='';return}
+  const hist=annual.filter(r=>r.id===source.id),max=Math.max(0,...hist.map(r=>r.total||0));
+  $('fr-history').innerHTML=`<hr><h3 class="fr-source-label">${esc(source.name)} · ${esc(source.platform)}</h3><div class="text-small">${groups[source.group]} · radna oznaka · ${esc(source.rule)}</div><div class="text-small">Godišnja povijest istog izvora · interakcije uz objave datirane u godini</div>`+[2021,2022,2023,2024,2025].map(y=>{
+   const r=hist.find(r=>r.year===y);
+   return `<div class="fr-history-row"><span>${y}</span>${bar(r&&max?r.total/max:0,'fr-eng')}<span class="fr-number">${r?fmt(r.total):'—'}</span></div><div class="text-small text-muted fr-detail">${r?`${fmt(r.posts)} objava · ${r.months}/12 mjeseci · ${esc(r.first)} – ${esc(r.last)} · rang na platformi: ${fmt(r.rank)} · udio: ${pct(r.share)} · pokrivenost interakcijama: ${pct(r.n/r.posts)}`:'Nema zabilježenih objava'}</div>`;
+  }).join('')+'<hr>';
+ }
+ function season(){
+  const platforms=$('fr-platform').value==='all'?['facebook','youtube','web','instagram','twitter','tiktok']:[$('fr-platform').value];
+  $('fr-season-chart').innerHTML=platforms.map(p=>{
+   const rr=raw.seasonal.filter(r=>r.platform===p&&r.cohort.startsWith('Isti izvori'));
+   if(!rr.length)return `<h3>${esc(p)}</h3><div class="text-small">Nema izvora koji zadovoljavaju oba prozora.</div>`;
+   const max=Math.max(...rr.map(r=>r.total_interactions||0));
+   return `<h3>${esc(p)} · zabilježene interakcije</h3>`+[2024,2025].map(y=>{
+    const r=rr.find(r=>r.year===y);return `<div class="fr-history-row"><span>${y}</span>${bar(r&&max?r.total_interactions/max:0,'fr-eng')}<span class="fr-number">${fmt(r?.total_interactions)}</span></div><div class="text-small fr-detail">${r?`${fmt(r.posts)} objava · prosjek ${fmt(r.mean_interactions)} · medijan ${fmt(r.median_interactions)} · pokrivenost ${pct(r.interaction_coverage)} · ${r.months_observed}/6 mjeseci`:'Nema zabilježenih objava'}</div>`;
+   }).join('');
+  }).join('');
+ }
+ function render(){
+  const rr=rows(),posts=sum(rr,'posts'),total=observedSum(rr,'total'),obs=sum(rr,'n');
+  $('fr-context').textContent=`${nf.format(rr.length)} izvora · ${fmt(posts)} objava · ${fmt(total)} zabilježenih interakcija · pokrivenost ${pct(posts?obs/posts:null)}`;
+  const cov=raw.coverage.filter(r=>r.platform===$('fr-platform').value&&($('fr-year').value==='all'||r.year===+$('fr-year').value));
+  if(cov.length)$('fr-context').textContent+=' · Mjeseci s objavama: '+cov.map(r=>`${r.year}: ${r.months_observed}/12`).join(', ');
+  const agg=order.map(g=>{const z=rr.filter(r=>r.group===g);return{g,count:z.length,posts:sum(z,'posts'),n:sum(z,'n'),total:observedSum(z,'total')}});
+  if(!$('fr-group-chart').children.length)$('fr-group-chart').innerHTML=agg.map(a=>`<div class="fr-group" data-group="${a.g}"><div class="fr-label"><span>${groups[a.g]}</span></div><div class="fr-barline">${bar(0,'fr-post')}<span class="fr-number fr-pct-post"></span></div><div class="fr-barline">${bar(0,'fr-eng')}<span class="fr-number fr-pct-eng"></span></div></div>`).join('');
+  agg.forEach(a=>{const el=$('fr-group-chart').querySelector(`[data-group="${a.g}"]`),p=posts?a.posts/posts:null,e=total&&a.total!=null?a.total/total:null;el.querySelector('.fr-post').style.width=(p??0)*100+'%';el.querySelector('.fr-eng').style.width=(e??0)*100+'%';el.querySelector('.fr-pct-post').textContent=pct(p);el.querySelector('.fr-pct-eng').textContent=pct(e)});
+  $('fr-groups').innerHTML=agg.map(a=>`<tr><td>${groups[a.g]}</td><td class="text-end">${fmt(a.count)}</td><td class="text-end">${fmt(a.posts)}</td><td class="text-end">${fmt(a.total)}</td><td class="text-end">${pct(a.posts?a.n/a.posts:null)}</td></tr>`).join('');
+  const leaders=sorted(rr).slice(0,50),max=leaders[0]?.total||0;
+  $('fr-rank-note').textContent=$('fr-platform').value==='all'?'Popis za odabir izvora preko platformi; nije platformski neutralna ljestvica utjecaja.':'Rang unutar odabrane platforme, razdoblja i šest skupina. Interakcije nisu broj jedinstvenih osoba.';
+  $('fr-list-heading').textContent=`Popis za pregled: ${leaders.length} izvora · ukupne interakcije silazno, zatim stabilni ID`;
+  $('fr-leaders').innerHTML=leaders.map((r,i)=>`<tr><td><button class="btn btn-ghost" type="button" data-source="${r.i}">${i+1}. ${esc(r.name)}</button><div class="text-small">${esc(r.platform)} · ${groups[r.group]}</div></td><td class="text-end">${fmt(r.total)}<div class="fr-mini" style="width:${max?r.total/max*100:0}%"></div></td><td class="text-end">${fmt(r.median)}</td><td class="text-end">${pct(r.n/r.posts)}</td></tr>`).join('');
+  history(selected&&rr.some(r=>r.id===selected.id)?selected:leaders[0]||null);season();
+ }
+ function restore(state){const s=state?.modelContent;if(!s)return;if([...$('fr-platform').options].some(o=>o.value===s.platform))$('fr-platform').value=s.platform;if([...$('fr-year').options].some(o=>o.value===s.period))$('fr-year').value=s.period;selected=sources.find(r=>r.id===s.source_id)||null;}
+ restore(window.openai?.widgetState);render();
+ for(const id of ['fr-platform','fr-year'])$(id).addEventListener('change',()=>{render();save()});
+ $('fr-leaders').addEventListener('click',e=>{const b=e.target.closest('[data-source]');if(b){history(sources[+b.dataset.source]);save()}});
+ window.addEventListener('openai:set_globals',e=>{restore(e.detail?.globals?.widgetState);render()});
+})();
+</script>

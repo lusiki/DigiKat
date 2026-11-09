@@ -1,0 +1,10 @@
+{
+  "n": 140,
+  "same": 94,
+  "ari": 0.3942391726344603,
+  "iterations": 7,
+  "context_reprojection_matches": 140,
+  "context_reprojection_iterations": 6,
+  "sample": "purposive development sample; not a prevalence estimate or held-out test",
+  "method": "project whole masked title/body into original context-trained vocabulary, IDF and L2-normalized NMF components"
+}

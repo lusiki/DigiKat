@@ -1,0 +1,28 @@
+{
+  "python": "3.14.4",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "duckdb": "1.5.5",
+    "pandas": "3.0.3",
+    "numpy": "2.4.6",
+    "matplotlib": "3.11.0",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "pyahocorasick": "2.3.1",
+    "reportlab": "4.5.1",
+    "pypdf": "6.10.2",
+    "pymupdf": "1.27.2.3"
+  },
+  "scripts": {
+    "00_run_scan.py": "6c808cc62a5735ae43595d59c1ed2424adf54a3c56343c57e6cb6c958af42745",
+    "01_scan.py": "308bbb1e89b8eb5b1b4277ae2289a8a5ae8b40bccdf04878a3c5fd4813e80263",
+    "02_analyse.py": "87d544f0154fce30a12fb4e289cb9f44afb6888636f98bf915beaff3adcd4e03",
+    "03b_repeat_check.py": "ae228c94d7babde76698de889c14852ff5369a6ee0a842de6f6e2ca25a3f7721",
+    "03_topics.py": "879d1ad6cab66c73edac8ef8d50b87e1c593e5212cff3110544f22c755417390",
+    "04_figures.py": "74c608712f6579e1d10e17a089334bf56c88d8c39844f49aa46547c3728f1386",
+    "05_report.py": "6c5dd1221d055f95d0bfcede4c277b18a43812f90b5238d03dc6b29747ad9b8f",
+    "06_verify.py": "901ee76a2adc694a88e728a72227974a05d8458b0342e1e414127cf3167da15a",
+    "07_package.py": "5531abe8d145d7cc2937e5ab3d965ec1039202d242e3c90b4aff01c3efc68d4f",
+    "report_tools.py": "38da91adae0806ad340d75aab5bc0a4290333983110eeb7f7b8416f29cde25f5"
+  }
+}

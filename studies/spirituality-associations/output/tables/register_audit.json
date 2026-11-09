@@ -1,0 +1,55 @@
+{
+  "source_files": [
+    {
+      "source": "register_json",
+      "stored_file": "associations_parsed.json",
+      "bytes": 174731,
+      "sha256": "c58b72c671b477320780196d74bf4e72ea2fb14898407727bb8df75112da54e0"
+    },
+    {
+      "source": "register_pdf",
+      "stored_file": "associations_register.pdf",
+      "bytes": 4663340,
+      "sha256": "5341486266bd2814b6e89c25bd365c3707085e5cb9ed2597f4883811fc0a7fad"
+    },
+    {
+      "source": "research_brief",
+      "stored_file": "research_brief.txt",
+      "bytes": 12999,
+      "sha256": "20d15fc2bc6ab97d85c700b48790ca10123013bfbdec10ead90f2d208bba1987"
+    }
+  ],
+  "pdf_pages": 74,
+  "pdf_metadata": {
+    "format": "PDF 1.7",
+    "title": "",
+    "author": "",
+    "subject": "",
+    "keywords": "",
+    "creator": "Microsoft Reporting Services 2026.6.0.0",
+    "producer": "Microsoft Reporting Services PDF Rendering Extension 2026.6.0.0",
+    "creationDate": "D:20260911115329+02'00'",
+    "modDate": "D:20260911121041+02'00'",
+    "trapped": "",
+    "encryption": null
+  },
+  "pdf_report_dates": [
+    "11.9.2026."
+  ],
+  "cover_total": 1325,
+  "json_rows": 1325,
+  "pdf_rows": 1325,
+  "unique_ids": 1325,
+  "county_count": 21,
+  "missing_from_pdf": [],
+  "extra_in_pdf": [],
+  "row_discrepancies": 0,
+  "footer_counties": 21,
+  "county_totals_reconcile": true,
+  "website_populated": 60,
+  "email_populated": 490,
+  "locality_candidate_populated": 1324,
+  "duplicate_normalized_name_groups": 0,
+  "pymupdf_version": "1.27.2.3",
+  "run_utc": "2026-09-19T16:24:14.105826+00:00"
+}

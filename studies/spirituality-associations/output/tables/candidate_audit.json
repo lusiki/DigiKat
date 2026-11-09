@@ -1,0 +1,12 @@
+{
+  "raw_candidate_rows": 3813,
+  "unique_candidate_items": 3806,
+  "organisation_item_pairs": 3961,
+  "organisations_with_candidates": 248,
+  "organisations_screened": 1043,
+  "organisations_held_for_rules": 282,
+  "human_review_queue_rows": 453,
+  "source_unchanged": true,
+  "elapsed_seconds": 17.51,
+  "candidate_matches_sha256": "1b25a3ecc2884b781e2c57f6a2a228631ab3fb7d6c8537141faa1ae86f6328e7"
+}

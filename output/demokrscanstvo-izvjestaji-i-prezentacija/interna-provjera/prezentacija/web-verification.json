@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "page": "pages/demokrscanstvo/index.html",
+      "width": 390,
+      "violations": [],
+      "layout": {
+        "width": 390,
+        "scrollWidth": 375
+      }
+    },
+    {
+      "page": "pages/demokrscanstvo/index.html",
+      "width": 1366,
+      "violations": [],
+      "layout": {
+        "width": 1366,
+        "scrollWidth": 1351
+      }
+    },
+    {
+      "page": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html",
+      "width": 390,
+      "violations": [],
+      "layout": {
+        "width": 390,
+        "scrollWidth": 375
+      }
+    },
+    {
+      "page": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html",
+      "width": 1366,
+      "violations": [],
+      "layout": {
+        "width": 1366,
+        "scrollWidth": 1351
+      }
+    },
+    {
+      "page": "assets/izvjestaji/demokrscanstvo-12-nalaza.html",
+      "width": 390,
+      "violations": [],
+      "layout": {
+        "width": 390,
+        "scrollWidth": 375
+      }
+    },
+    {
+      "page": "assets/izvjestaji/demokrscanstvo-12-nalaza.html",
+      "width": 1366,
+      "violations": [],
+      "layout": {
+        "width": 1366,
+        "scrollWidth": 1351
+      }
+    }
+  ],
+  "errors": []
+}

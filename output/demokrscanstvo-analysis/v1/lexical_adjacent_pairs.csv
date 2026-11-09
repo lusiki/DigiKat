@@ -1,0 +1,197 @@
+a,b,a_label,b_label,sentence_units,a_sentences,b_sentences,cooccurrences,groups,npmi,distinct_sentence_forms,largest_shared_sentence_groups,groups_after_removing_largest_shared_sentence_groups
+demokrscanstvo,vrijednosti,Demokršćanstvo,Vrijednosti,4685,3672,1623,1522,1011,0.1595409832793183,1034,12,999
+demokrscanstvo,hdz,Demokršćanstvo,HDZ,4685,3672,1240,1100,795,0.08545443770925967,774,16,779
+demokrscanstvo,europa,Demokršćanstvo,Europa,4685,3672,881,758,510,0.05119867512138032,511,11,499
+demokrscanstvo,domoljublje,Demokršćanstvo,Domoljublje,4685,3672,668,658,476,0.1164319665532197,436,16,460
+hdz,vrijednosti,HDZ,Vrijednosti,4685,1240,1623,545,419,0.11063303435673787,366,12,407
+demokrscanstvo,narodnjastvo,Demokršćanstvo,Narodnjaštvo,4685,3672,505,502,346,0.1064109651844474,321,16,330
+demokrscanstvo,izbori,Demokršćanstvo,Izbori / izbor,4685,3672,481,402,327,0.02614939500077834,234,11,316
+domoljublje,vrijednosti,Domoljublje,Vrijednosti,4685,668,1623,424,323,0.25205544421994597,280,12,311
+europa,vrijednosti,Europa,Vrijednosti,4685,881,1623,355,294,0.058585112869500314,244,11,283
+domoljublje,hdz,Domoljublje,HDZ,4685,668,1240,339,279,0.2478813612469367,214,16,263
+domoljublje,narodnjastvo,Domoljublje,Narodnjaštvo,4685,668,505,360,268,0.6271893447858464,228,16,252
+hdz,narodnjastvo,HDZ,Narodnjaštvo,4685,1240,505,321,259,0.32683394009936906,194,16,243
+narodnjastvo,vrijednosti,Narodnjaštvo,Vrijednosti,4685,505,1623,363,254,0.28538483495543226,242,12,242
+demokrscanstvo,obitelj,Demokršćanstvo,Obitelj,4685,3672,355,320,230,0.052102481141821845,228,11,219
+demokrscanstvo,drzavotvornost,Demokršćanstvo,Državotvornost,4685,3672,295,289,225,0.08008084668990667,178,16,209
+domoljublje,drzavotvornost,Domoljublje,Državotvornost,4685,668,295,255,205,0.6191031740268397,155,16,189
+demokrscanstvo,desni_centar,Demokršćanstvo,Desni centar,4685,3672,268,258,192,0.07091776003496657,158,12,180
+izbori,vrijednosti,Izbori / izbor,Vrijednosti,4685,481,1623,214,191,0.08107148481664829,115,11,180
+demokrscanstvo,konzervativizam,Demokršćanstvo,Konzervativizam,4685,3672,337,315,190,0.06524022360107595,234,8,182
+obitelj,vrijednosti,Obitelj,Vrijednosti,4685,355,1623,244,172,0.231861579549819,172,11,161
+desni_centar,vrijednosti,Desni centar,Vrijednosti,4685,268,1623,233,171,0.3066030428316082,138,12,159
+drzavotvornost,narodnjastvo,Državotvornost,Narodnjaštvo,4685,295,505,221,170,0.6348318469031803,137,16,154
+drzavotvornost,hdz,Državotvornost,HDZ,4685,295,1240,184,162,0.2648025434465653,117,16,146
+europa,hdz,Europa,HDZ,4685,881,1240,184,161,-0.07317076418971448,125,11,150
+drzavotvornost,vrijednosti,Državotvornost,Vrijednosti,4685,295,1623,173,142,0.15957352428509977,110,10,132
+hdz,izbori,HDZ,Izbori / izbor,4685,1240,481,178,142,0.10248813813940663,104,11,131
+desni_centar,hdz,Desni centar,HDZ,4685,268,1240,174,135,0.2724885815418262,106,12,123
+desni_centar,narodnjastvo,Desni centar,Narodnjaštvo,4685,268,505,168,125,0.5289833533741671,97,12,113
+desni_centar,domoljublje,Desni centar,Domoljublje,4685,268,668,146,113,0.38646303313288605,81,12,101
+hdz,obitelj,HDZ,Obitelj,4685,1240,355,128,104,0.08587755600189348,87,11,93
+demokracija,demokrscanstvo,Demokracija,Demokršćanstvo,4685,197,3672,132,90,-0.043922202321746304,86,11,79
+domoljublje,europa,Domoljublje,Europa,4685,668,881,103,88,-0.051997700481405,69,7,81
+europa,izbori,Europa,Izbori / izbor,4685,881,481,99,85,0.02341615693058348,55,11,74
+demokrscanstvo,solidarnost,Demokršćanstvo,Solidarnost,4685,3672,161,129,77,0.006134629174638332,86,10,67
+demokrscanstvo,sloboda,Demokršćanstvo,Sloboda,4685,3672,141,95,74,-0.038800430164495296,76,4,70
+sloboda,vrijednosti,Sloboda,Vrijednosti,4685,141,1623,86,72,0.14149800549175054,66,6,66
+izbori,narodnjastvo,Izbori / izbor,Narodnjaštvo,4685,481,505,80,70,0.10656315807203949,39,10,60
+hdz,konzervativizam,HDZ,Konzervativizam,4685,1240,337,91,68,0.005082411121830874,66,7,61
+domoljublje,izbori,Domoljublje,Izbori / izbor,4685,668,481,71,65,0.00826974898195264,38,10,55
+solidarnost,vrijednosti,Solidarnost,Vrijednosti,4685,161,1623,92,64,0.1273362557098604,57,10,54
+demokracija,vrijednosti,Demokracija,Vrijednosti,4685,197,1623,72,63,0.012825432549427859,38,11,52
+domoljublje,obitelj,Domoljublje,Obitelj,4685,668,355,77,62,0.10211499716982539,53,6,56
+desni_centar,drzavotvornost,Desni centar,Državotvornost,4685,268,295,74,58,0.3563654673095538,46,10,48
+europa,obitelj,Europa,Obitelj,4685,881,355,63,57,-0.01344155865280457,41,11,46
+epp,europa,EPP,Europa,4685,133,881,89,56,0.32026130193795366,65,6,50
+konzervativizam,vrijednosti,Konzervativizam,Vrijednosti,4685,337,1623,67,56,-0.13073808634125278,52,5,51
+europa,narodnjastvo,Europa,Narodnjaštvo,4685,881,505,58,53,-0.11226957653107486,47,4,49
+demokrscanstvo,epp,Demokršćanstvo,EPP,4685,3672,133,112,51,0.019225079504171953,83,6,45
+demokracija,europa,Demokracija,Europa,4685,197,881,63,50,0.12322957389135644,39,11,39
+drzavotvornost,izbori,Državotvornost,Izbori / izbor,4685,295,481,47,47,0.09548646055009735,16,10,37
+domoljublje,solidarnost,Domoljublje,Solidarnost,4685,668,161,69,46,0.2609130696813756,33,10,36
+izbori,obitelj,Izbori / izbor,Obitelj,4685,481,355,46,45,0.050346825711642375,19,11,34
+desni_centar,izbori,Desni centar,Izbori / izbor,4685,268,481,43,43,0.09517684314711308,23,10,33
+izbori,konzervativizam,Izbori / izbor,Konzervativizam,4685,481,337,58,40,0.11763475899216408,28,7,33
+cdu,demokrscanstvo,CDU,Demokršćanstvo,4685,82,3672,50,38,-0.05529986102475718,32,5,33
+desni_centar,europa,Desni centar,Europa,4685,268,881,42,38,-0.0386585354707865,33,4,34
+drzavotvornost,europa,Državotvornost,Europa,4685,295,881,39,37,-0.07358165600781721,26,6,31
+cdu,vrijednosti,CDU,Vrijednosti,4685,82,1623,35,34,0.04262366985488993,19,6,28
+europa,konzervativizam,Europa,Konzervativizam,4685,881,337,57,34,-0.02403411502649156,42,4,30
+demokracija,sloboda,Demokracija,Sloboda,4685,197,141,44,33,0.42938658876797187,33,6,27
+europa,solidarnost,Europa,Solidarnost,4685,881,161,52,33,0.12017721548889365,39,7,26
+hdz,solidarnost,HDZ,Solidarnost,4685,1240,161,40,33,-0.01328304928518426,23,10,23
+epp,vrijednosti,EPP,Vrijednosti,4685,133,1623,55,30,0.039838499337329705,44,4,26
+demokracija,hdz,Demokracija,HDZ,4685,197,1240,32,27,-0.0979092591702752,14,6,21
+europa,sloboda,Europa,Sloboda,4685,881,141,32,27,0.03771059999402431,26,2,25
+demokracija,domoljublje,Demokracija,Domoljublje,4685,197,668,25,25,-0.022260542837544584,11,6,19
+demokracija,drzavotvornost,Demokracija,Državotvornost,4685,197,295,25,25,0.13391650590408294,11,6,19
+domoljublje,sloboda,Domoljublje,Sloboda,4685,668,141,26,25,0.04951260068622899,21,2,23
+demokrscanstvo,savjest,Demokršćanstvo,Savjest,4685,3672,48,39,24,0.007515846422928661,20,7,17
+narodnjastvo,sloboda,Narodnjaštvo,Sloboda,4685,505,141,27,24,0.11144454114533792,21,2,22
+desni_centar,solidarnost,Desni centar,Solidarnost,4685,268,161,26,23,0.19981160194719713,11,10,13
+izbori,solidarnost,Izbori / izbor,Solidarnost,4685,481,161,23,23,0.06213408930741413,9,10,13
+narodnjastvo,solidarnost,Narodnjaštvo,Solidarnost,4685,505,161,26,23,0.07783077000154905,11,10,13
+obitelj,solidarnost,Obitelj,Solidarnost,4685,355,161,38,23,0.23599063911511048,26,6,17
+cdu,sloboda,CDU,Sloboda,4685,82,141,25,22,0.4424630832826557,17,6,16
+drzavotvornost,solidarnost,Državotvornost,Solidarnost,4685,295,161,25,22,0.17247754202860752,10,10,12
+demokrscanstvo,supsidijarnost,Demokršćanstvo,Supsidijarnost,4685,3672,52,39,21,-0.009199557627521707,31,2,19
+domoljublje,konzervativizam,Domoljublje,Konzervativizam,4685,668,337,28,21,-0.10547933341893896,20,3,18
+hdz,savjest,HDZ,Savjest,4685,1240,48,37,21,0.220806972055491,18,7,14
+hdz,sloboda,HDZ,Sloboda,4685,1240,141,23,20,-0.09103725732700894,20,2,18
+europa,supsidijarnost,Europa,Supsidijarnost,4685,881,52,33,19,0.24544435899343728,27,2,17
+cdu,demokracija,CDU,Demokracija,4685,82,197,18,18,0.2971313244784164,12,6,12
+demokracija,izbori,Demokracija,Izbori / izbor,4685,197,481,18,18,-0.02096067929709399,5,11,7
+konzervativizam,obitelj,Konzervativizam,Obitelj,4685,337,355,20,17,-0.04478186125177713,17,2,15
+cdu,izbori,CDU,Izbori / izbor,4685,82,481,16,16,0.1130592003230938,8,5,11
+demokracija,narodnjastvo,Demokracija,Narodnjaštvo,4685,197,505,17,16,-0.03958556096630286,12,4,12
+solidarnost,supsidijarnost,Solidarnost,Supsidijarnost,4685,161,52,25,16,0.5041515827249439,21,2,14
+drzavotvornost,sloboda,Državotvornost,Sloboda,4685,295,141,15,15,0.09130042954618385,12,2,13
+cdu,hdz,CDU,HDZ,4685,82,1240,21,14,-0.006091848701802681,14,3,11
+drzavotvornost,obitelj,Državotvornost,Obitelj,4685,295,355,14,14,-0.08049363165268528,9,4,10
+cdu,konzervativizam,CDU,Konzervativizam,4685,82,337,14,12,0.14869548429821897,8,5,7
+epp,obitelj,EPP,Obitelj,4685,133,355,12,12,0.02925333511143788,8,4,8
+radnik,solidarnost,Radnik,Solidarnost,4685,32,161,15,12,0.45490926747170557,8,6,6
+radnik,vrijednosti,Radnik,Vrijednosti,4685,32,1623,15,12,0.05264627226907778,8,6,6
+savjest,vrijednosti,Savjest,Vrijednosti,4685,48,1623,18,12,0.014250978949556075,11,5,7
+demokracija,konzervativizam,Demokracija,Konzervativizam,4685,197,337,13,11,-0.014644741030208387,9,4,7
+demokrscanstvo,ljudsko_dostojanstvo,Demokršćanstvo,Ljudsko dostojanstvo,4685,3672,21,13,11,-0.04007758629337408,11,3,8
+dostojanstvo_rada,radnik,Dostojanstvo rada,Radnik,4685,14,32,14,11,0.857789525046561,7,6,5
+dostojanstvo_rada,solidarnost,Dostojanstvo rada,Solidarnost,4685,14,161,14,11,0.5798520208851783,7,6,5
+dostojanstvo_rada,vrijednosti,Dostojanstvo rada,Vrijednosti,4685,14,1623,14,11,0.1823633202329334,7,6,5
+demokrscanstvo,trzisno_gospodarstvo,Demokršćanstvo,Tržišno gospodarstvo,4685,3672,17,13,10,-0.0041844444741413475,12,2,8
+demokrscanstvo,vjerska_sloboda,Demokršćanstvo,Vjerska sloboda,4685,3672,12,11,10,0.025869213994252273,6,5,5
+desni_centar,sloboda,Desni centar,Sloboda,4685,268,141,10,10,0.03495538740212806,8,2,8
+epp,ljudsko_dostojanstvo,EPP,Ljudsko dostojanstvo,4685,133,21,12,10,0.503108486536484,10,3,7
+europa,vjerska_sloboda,Europa,Vjerska sloboda,4685,881,12,11,10,0.2616440503192112,6,5,5
+izbori,savjest,Izbori / izbor,Savjest,4685,481,48,19,10,0.2450199267172699,7,7,3
+demokracija,epp,Demokracija,EPP,4685,197,133,17,9,0.19786437352715291,12,4,5
+desni_centar,obitelj,Desni centar,Obitelj,4685,268,355,9,9,-0.1300995120722037,9,1,8
+epp,sloboda,EPP,Sloboda,4685,133,141,17,9,0.25738552020748806,12,4,5
+izbori,sloboda,Izbori / izbor,Sloboda,4685,481,141,11,9,-0.04535851429343878,7,2,7
+obitelj,sloboda,Obitelj,Sloboda,4685,355,141,11,9,0.00481296667704942,10,2,7
+trzisno_gospodarstvo,vrijednosti,Tržišno gospodarstvo,Vrijednosti,4685,17,1623,10,9,0.08609777507465119,9,2,7
+domoljublje,epp,Domoljublje,EPP,4685,668,133,8,8,-0.13543354011224004,8,1,7
+hdz,vjerska_sloboda,HDZ,Vjerska sloboda,4685,1240,12,8,8,0.14496090785474416,3,5,3
+narodnjastvo,savjest,Narodnjaštvo,Savjest,4685,505,48,17,8,0.21170930902791193,5,7,1
+demokrscanstvo,radnik,Demokršćanstvo,Radnik,4685,3672,32,8,7,-0.1793068191731778,7,2,5
+demokrscanstvo,socijalna_drzava,Demokršćanstvo,Socijalna država,4685,3672,19,17,7,0.02356397565896983,14,2,5
+desni_centar,trzisno_gospodarstvo,Desni centar,Tržišno gospodarstvo,4685,268,17,8,7,0.3306870149664032,7,2,5
+drzavotvornost,konzervativizam,Državotvornost,Konzervativizam,4685,295,337,9,7,-0.13712656933548217,6,2,5
+epp,hdz,EPP,HDZ,4685,133,1240,7,7,-0.2482526975790372,7,1,6
+konzervativizam,sloboda,Konzervativizam,Sloboda,4685,337,141,9,7,-0.01910456016020882,8,2,5
+konzervativizam,supsidijarnost,Konzervativizam,Supsidijarnost,4685,337,52,7,7,0.09632406486663463,5,2,5
+narodnjastvo,obitelj,Narodnjaštvo,Obitelj,4685,505,355,7,7,-0.26108050647499376,7,1,6
+cdu,europa,CDU,Europa,4685,82,881,6,6,-0.14171846037939714,4,2,4
+demokrscanstvo,opce_dobro,Demokršćanstvo,Opće dobro,4685,3672,16,7,6,-0.08961423571482315,6,2,4
+desni_centar,epp,Desni centar,EPP,4685,268,133,6,6,-0.03565203432193268,6,1,5
+domoljublje,trzisno_gospodarstvo,Domoljublje,Tržišno gospodarstvo,4685,668,17,6,6,0.13608557367764135,5,2,4
+europa,trzisno_gospodarstvo,Europa,Tržišno gospodarstvo,4685,881,17,6,6,0.09453085580966189,5,2,4
+sloboda,trzisno_gospodarstvo,Sloboda,Tržišno gospodarstvo,4685,141,17,6,6,0.3696356941186857,4,2,4
+desni_centar,konzervativizam,Desni centar,Konzervativizam,4685,268,337,7,5,-0.15570330566171806,5,3,2
+epp,konzervativizam,EPP,Konzervativizam,4685,133,337,11,5,0.023055698729783736,8,2,3
+konzervativizam,narodnjastvo,Konzervativizam,Narodnjaštvo,4685,337,505,5,5,-0.2898106153281407,4,2,3
+konzervativizam,solidarnost,Konzervativizam,Solidarnost,4685,337,161,5,5,-0.12274836545634173,3,2,3
+opce_dobro,solidarnost,Opće dobro,Solidarnost,4685,16,161,6,5,0.35882248970747127,5,2,3
+epp,narodnjastvo,EPP,Narodnjaštvo,4685,133,505,4,4,-0.1806571306903784,4,1,3
+epp,trzisno_gospodarstvo,EPP,Tržišno gospodarstvo,4685,133,17,4,4,0.29930723372272555,4,1,3
+europa,ljudsko_dostojanstvo,Europa,Ljudsko dostojanstvo,4685,881,21,5,4,0.03448633141614959,5,1,3
+europa,opce_dobro,Europa,Opće dobro,4685,881,16,4,4,0.0403023190809324,3,2,2
+hdz,supsidijarnost,HDZ,Supsidijarnost,4685,1240,52,6,4,-0.12465234584905799,3,2,2
+konzervativizam,trzisno_gospodarstvo,Konzervativizam,Tržišno gospodarstvo,4685,337,17,5,4,0.2058056429929291,5,1,3
+ljudsko_dostojanstvo,vrijednosti,Ljudsko dostojanstvo,Vrijednosti,4685,21,1623,5,4,-0.05480231696603098,5,1,3
+obitelj,trzisno_gospodarstvo,Obitelj,Tržišno gospodarstvo,4685,355,17,4,4,0.16036119324071757,4,1,3
+sloboda,solidarnost,Sloboda,Solidarnost,4685,141,161,6,4,0.03208780804224026,6,1,3
+supsidijarnost,vrijednosti,Supsidijarnost,Vrijednosti,4685,52,1623,4,4,-0.21297715975116474,4,1,3
+epp,izbori,EPP,Izbori / izbor,4685,133,481,3,3,-0.20608976399680903,2,2,1
+ljudsko_dostojanstvo,opce_dobro,Ljudsko dostojanstvo,Opće dobro,4685,21,16,7,3,0.7040841669054811,7,1,2
+obitelj,socijalna_drzava,Obitelj,Socijalna država,4685,355,19,4,3,0.1446198458046241,3,2,1
+obitelj,supsidijarnost,Obitelj,Supsidijarnost,4685,355,52,3,3,-0.03707454879038769,2,2,1
+opce_dobro,sloboda,Opće dobro,Sloboda,4685,16,141,4,3,0.2996205529862982,4,1,2
+opce_dobro,supsidijarnost,Opće dobro,Supsidijarnost,4685,16,52,3,3,0.3844288595626986,2,2,1
+cdu,narodnjastvo,CDU,Narodnjaštvo,4685,82,505,4,2,-0.11221080553265639,2,2,0
+cdu,obitelj,CDU,Obitelj,4685,82,355,3,2,-0.09901443823703174,3,1,1
+demokracija,ljudsko_dostojanstvo,Demokracija,Ljudsko dostojanstvo,4685,197,21,2,2,0.10536730852353059,2,1,1
+demokracija,obitelj,Demokracija,Obitelj,4685,197,355,2,2,-0.2590617186402362,1,2,0
+demokracija,solidarnost,Demokracija,Solidarnost,4685,197,161,2,2,-0.15715218484714105,2,1,1
+demokracija,trzisno_gospodarstvo,Demokracija,Tržišno gospodarstvo,4685,197,17,3,2,0.19505197163428403,3,1,1
+drzavotvornost,trzisno_gospodarstvo,Državotvornost,Tržišno gospodarstvo,4685,295,17,2,2,0.08056215598860009,1,2,0
+epp,supsidijarnost,EPP,Supsidijarnost,4685,133,52,2,2,0.03913861908506719,2,1,1
+europa,savjest,Europa,Savjest,4685,881,48,2,2,-0.1942254554365797,2,1,1
+hdz,socijalna_drzava,HDZ,Socijalna država,4685,1240,19,4,2,-0.03239395577686778,2,2,0
+izbori,supsidijarnost,Izbori / izbor,Supsidijarnost,4685,481,52,2,2,-0.12654284080200232,2,1,1
+konzervativizam,socijalna_drzava,Konzervativizam,Socijalna država,4685,337,19,2,2,0.0490717542063083,1,2,0
+ljudsko_dostojanstvo,sloboda,Ljudsko dostojanstvo,Sloboda,4685,21,141,3,2,0.21179700400815782,3,1,1
+ljudsko_dostojanstvo,solidarnost,Ljudsko dostojanstvo,Solidarnost,4685,21,161,4,2,0.2423621174740146,4,1,1
+narodnjastvo,supsidijarnost,Narodnjaštvo,Supsidijarnost,4685,505,52,4,2,-0.04774906037355279,2,2,0
+obitelj,opce_dobro,Obitelj,Opće dobro,4685,355,16,3,2,0.12321015493509914,3,1,1
+socijalna_drzava,solidarnost,Socijalna država,Solidarnost,4685,19,161,4,2,0.2565265544061126,2,2,0
+socijalna_drzava,supsidijarnost,Socijalna država,Supsidijarnost,4685,19,52,4,2,0.4164739566034577,2,2,0
+solidarnost,trzisno_gospodarstvo,Solidarnost,Tržišno gospodarstvo,4685,161,17,2,2,0.15860997394157958,2,1,1
+cdu,desni_centar,CDU,Desni centar,4685,82,268,1,1,-0.1828635673228146,1,1,0
+cdu,trzisno_gospodarstvo,CDU,Tržišno gospodarstvo,4685,82,17,1,1,0.1434182704474364,1,1,0
+demokracija,opce_dobro,Demokracija,Opće dobro,4685,197,16,1,1,0.0468910388961961,1,1,0
+demokracija,socijalna_drzava,Demokracija,Socijalna država,4685,197,19,1,1,0.02655883435623062,1,1,0
+demokracija,supsidijarnost,Demokracija,Supsidijarnost,4685,197,52,1,1,-0.09255975330074576,1,1,0
+epp,opce_dobro,EPP,Opće dobro,4685,133,16,3,1,0.2567203843783533,3,1,0
+epp,radnik,EPP,Radnik,4685,133,32,1,1,0.011362374182657843,1,1,0
+epp,solidarnost,EPP,Solidarnost,4685,133,161,1,1,-0.17979300858718603,1,1,0
+europa,radnik,Europa,Radnik,4685,881,32,1,1,-0.21233395649775913,1,1,0
+europa,socijalna_drzava,Europa,Socijalna država,4685,881,19,1,1,-0.1506574954501033,1,1,0
+hdz,ljudsko_dostojanstvo,HDZ,Ljudsko dostojanstvo,4685,1240,21,1,1,-0.20293934056827503,1,1,0
+hdz,opce_dobro,HDZ,Opće dobro,4685,1240,16,1,1,-0.17076591223941426,1,1,0
+hdz,radnik,HDZ,Radnik,4685,1240,32,2,1,-0.18602126821679024,2,1,0
+ljudsko_dostojanstvo,obitelj,Ljudsko dostojanstvo,Obitelj,4685,21,355,2,1,0.029466286085993294,2,1,0
+narodnjastvo,trzisno_gospodarstvo,Narodnjaštvo,Tržišno gospodarstvo,4685,505,17,1,1,-0.07165663680270018,1,1,0
+obitelj,radnik,Obitelj,Radnik,4685,355,32,2,1,-0.02482097719265287,2,1,0
+obitelj,vjerska_sloboda,Obitelj,Vjerska sloboda,4685,355,12,2,1,0.10159125865550489,2,1,0
+opce_dobro,radnik,Opće dobro,Radnik,4685,16,32,1,1,0.2619220097114081,1,1,0
+opce_dobro,vrijednosti,Opće dobro,Vrijednosti,4685,16,1623,2,1,-0.13137715278693218,2,1,0
+radnik,sloboda,Radnik,Sloboda,4685,32,141,2,1,0.09418417702203816,2,1,0
+savjest,sloboda,Savjest,Sloboda,4685,48,141,1,1,-0.04352040134556878,1,1,0
+savjest,vjerska_sloboda,Savjest,Vjerska sloboda,4685,48,12,1,1,0.24798668709314944,1,1,0
+sloboda,supsidijarnost,Sloboda,Supsidijarnost,4685,141,52,1,1,-0.05299053385194936,1,1,0
+sloboda,vjerska_sloboda,Sloboda,Vjerska sloboda,4685,141,12,1,1,0.12049692982967386,1,1,0
+socijalna_drzava,trzisno_gospodarstvo,Socijalna država,Tržišno gospodarstvo,4685,19,17,2,1,0.43402852566390226,2,1,0
+supsidijarnost,trzisno_gospodarstvo,Supsidijarnost,Tržišno gospodarstvo,4685,52,17,1,1,0.19730717220264524,1,1,0
+vjerska_sloboda,vrijednosti,Vjerska sloboda,Vrijednosti,4685,12,1623,2,1,-0.09429981860221597,2,1,0

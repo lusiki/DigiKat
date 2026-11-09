@@ -1,0 +1,175 @@
+{
+  "status": "PASS",
+  "slides": 18,
+  "geometry": [
+    {
+      "id": "slajd-1",
+      "title": "Demokršćanske vrijednostiu digitalnom javnom prostoru:",
+      "contentBottom": 631.25,
+      "footerTop": 703.5,
+      "width": 1440,
+      "height": 810
+    },
+    {
+      "id": "slajd-2",
+      "title": "DigiKat istražuje katoličke teme u javnosti",
+      "contentBottom": 637.796875,
+      "footerTop": 743.75,
+      "width": 1440,
+      "height": 807
+    },
+    {
+      "id": "slajd-3",
+      "title": "Katoličke teme u širem medijskom prostoru",
+      "contentBottom": 508.75,
+      "footerTop": 743.75,
+      "width": 1440,
+      "height": 807
+    },
+    {
+      "id": "slajd-4",
+      "title": "Kako nastaje zbirka za ovu analizu",
+      "contentBottom": 671.90625,
+      "footerTop": 743.75,
+      "width": 1440,
+      "height": 807
+    },
+    {
+      "id": "slajd-5",
+      "title": "Politički položaj ostaje u središtu karte",
+      "contentBottom": 698.640625,
+      "footerTop": 743.75,
+      "width": 1440,
+      "height": 807
+    },
+    {
+      "id": "slajd-6",
+      "title": "Koje riječi prate demokršćanstvo?",
+      "contentBottom": 703.265625,
+      "footerTop": 743.75,
+      "width": 1440,
+      "height": 807
+    },
+    {
+      "id": "slajd-7",
+      "title": "Riječi koje povezuju raspravu",
+      "contentBottom": 702.28125,
+      "footerTop": 743.75,
+      "width": 1440,
+      "height": 807
+    },
+    {
+      "id": "slajd-8",
+      "title": "Različite godine, različite teme",
+      "contentBottom": 706.890625,
+      "footerTop": 743.75,
+      "width": 1440,
+      "height": 807
+    },
+    {
+      "id": "slajd-9",
+      "title": "Zastupljenost tema razlikuje se među platformama",
+      "contentBottom": 603.265625,
+      "footerTop": 743.75,
+      "width": 1440,
+      "height": 807
+    },
+    {
+      "id": "slajd-10",
+      "title": "Odabrane javne osobe u člancima",
+      "contentBottom": 708.890625,
+      "footerTop": 743.75,
+      "width": 1440,
+      "height": 807
+    },
+    {
+      "id": "slajd-11",
+      "title": "Koji izvori objavljuju najviše članaka?",
+      "contentBottom": 708.890625,
+      "footerTop": 743.75,
+      "width": 1440,
+      "height": 807
+    },
+    {
+      "id": "slajd-12",
+      "title": "Broj web članaka kroz vrijeme",
+      "contentBottom": 673.140625,
+      "footerTop": 743.75,
+      "width": 1440,
+      "height": 807
+    },
+    {
+      "id": "slajd-13",
+      "title": "Četiri mjeseca s najviše članaka",
+      "contentBottom": 668.484375,
+      "footerTop": 743.75,
+      "width": 1440,
+      "height": 807
+    },
+    {
+      "id": "slajd-14",
+      "title": "Koje teme prevladavaju u vršnim mjesecima?",
+      "contentBottom": 701.03125,
+      "footerTop": 743.75,
+      "width": 1440,
+      "height": 807
+    },
+    {
+      "id": "slajd-15",
+      "title": "Dnevni vrhunac okuplja više izvora",
+      "contentBottom": 679.40625,
+      "footerTop": 743.75,
+      "width": 1440,
+      "height": 807
+    },
+    {
+      "id": "slajd-16",
+      "title": "Što podaci govore o medijskoj raspravi?",
+      "contentBottom": 635.640625,
+      "footerTop": 743.75,
+      "width": 1440,
+      "height": 807
+    },
+    {
+      "id": "slajd-17",
+      "title": "DigiKat kao prostor za daljnje istraživanje",
+      "contentBottom": 509.515625,
+      "footerTop": 743.75,
+      "width": 1440,
+      "height": 807
+    },
+    {
+      "id": "slajd-18",
+      "title": "Izvještaji i podaci za daljnje istraživanje",
+      "contentBottom": 606.328125,
+      "footerTop": 743.75,
+      "width": 1440,
+      "height": 807
+    }
+  ],
+  "accessibility": [],
+  "keyboard": true,
+  "mobile": [
+    {
+      "width": 320,
+      "scrollWidth": 305,
+      "clipping": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 375,
+      "clipping": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 753,
+      "clipping": []
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1009,
+      "clipping": []
+    }
+  ],
+  "errors": []
+}

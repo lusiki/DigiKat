@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "seed": 20261025,
+  "checkpoint_documents": 5000,
+  "era_split": "2024-01-01",
+  "ner_pilot_documents": 10000,
+  "llm_pilot_passages": 300,
+  "local_inference_only": true,
+  "human_validation": false,
+  "minhash_permutations": 128,
+  "minhash_shingle_words": 5,
+  "max_passage_characters": 1200
+}

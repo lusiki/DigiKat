@@ -1,0 +1,1340 @@
+[
+  {
+    "key": "Official DigiKat corpus",
+    "value": 413985,
+    "denominator": null,
+    "source": "data/digikat_corpus_manifest.json"
+  },
+  {
+    "key": "Official corpus platforms",
+    "value": 9,
+    "denominator": null,
+    "source": "data/digikat_corpus_manifest.json"
+  },
+  {
+    "key": "Searchable archive",
+    "value": 41397670,
+    "denominator": null,
+    "source": "data/barometar/demokrscanstvo-multiplatform/v1/summary.json"
+  },
+  {
+    "key": "Selected publications",
+    "value": 2306,
+    "denominator": null,
+    "source": "data/barometar/demokrscanstvo-multiplatform/v1/summary.json"
+  },
+  {
+    "key": "Distinct texts",
+    "value": 2253,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.meta.json"
+  },
+  {
+    "key": "Politička pripadnost i ideje",
+    "value": 377,
+    "denominator": 2306,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topics.csv"
+  },
+  {
+    "key": "Vrijednosti i svjetonazorski prijepori",
+    "value": 335,
+    "denominator": 2306,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topics.csv"
+  },
+  {
+    "key": "HDZ i demokršćanski identitet",
+    "value": 290,
+    "denominator": 2306,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topics.csv"
+  },
+  {
+    "key": "Domoljublje i državotvornost",
+    "value": 274,
+    "denominator": 2306,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topics.csv"
+  },
+  {
+    "key": "Desni centar i suradnja stranaka",
+    "value": 212,
+    "denominator": 2306,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topics.csv"
+  },
+  {
+    "key": "Europa i kršćanski korijeni",
+    "value": 212,
+    "denominator": 2306,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topics.csv"
+  },
+  {
+    "key": "Obitelj i nacionalni identitet",
+    "value": 207,
+    "denominator": 2306,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topics.csv"
+  },
+  {
+    "key": "Idejna tradicija i javne rasprave",
+    "value": 173,
+    "denominator": 2306,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topics.csv"
+  },
+  {
+    "key": "Izbori i konzervativna scena",
+    "value": 151,
+    "denominator": 2306,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topics.csv"
+  },
+  {
+    "key": "Njemačka i međunarodni odnosi",
+    "value": 74,
+    "denominator": 2306,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topics.csv"
+  },
+  {
+    "key": "vrijednost",
+    "value": 1123,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "stranka",
+    "value": 830,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "HDZ",
+    "value": 818,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "politički",
+    "value": 610,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "Hrvatska",
+    "value": 595,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "hrvatski",
+    "value": 567,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "europski",
+    "value": 425,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "politika",
+    "value": 364,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "predsjednik",
+    "value": 357,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "načelo",
+    "value": 329,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "izbor",
+    "value": 323,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "domoljublje",
+    "value": 309,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "Plenković",
+    "value": 308,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "desni",
+    "value": 289,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "Europa",
+    "value": 276,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "centar",
+    "value": 267,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "čovjek",
+    "value": 256,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "nacionalan",
+    "value": 231,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "narodnjaštvo",
+    "value": 197,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "demokracija",
+    "value": 195,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "narod",
+    "value": 195,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "domoljuban",
+    "value": 190,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "domovinski",
+    "value": 188,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "put",
+    "value": 188,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "tradicija",
+    "value": 187,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "identitet",
+    "value": 185,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "program",
+    "value": 185,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "obitelj",
+    "value": 179,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "državotvornost",
+    "value": 174,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "rad",
+    "value": 169,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "društvo",
+    "value": 168,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "interes",
+    "value": 168,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "građanin",
+    "value": 166,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "zajednica",
+    "value": 165,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "vlada",
+    "value": 163,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "život",
+    "value": 161,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "mlad",
+    "value": 160,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "narodnjački",
+    "value": 159,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "država",
+    "value": 156,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "ideja",
+    "value": 154,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "pokret",
+    "value": 153,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "svijet",
+    "value": 148,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "demokratski",
+    "value": 146,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "Tuđman",
+    "value": 146,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "socijalan",
+    "value": 143,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "svjetonazor",
+    "value": 143,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "parlament",
+    "value": 137,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "rat",
+    "value": 131,
+    "denominator": 2253,
+    "source": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html"
+  },
+  {
+    "key": "Politička pripadnost i ideje 2021",
+    "value": 103,
+    "denominator": 602,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Politička pripadnost i ideje 2022",
+    "value": 79,
+    "denominator": 385,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Politička pripadnost i ideje 2023",
+    "value": 52,
+    "denominator": 318,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Politička pripadnost i ideje 2024",
+    "value": 52,
+    "denominator": 448,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Politička pripadnost i ideje 2025",
+    "value": 35,
+    "denominator": 309,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Politička pripadnost i ideje 2026",
+    "value": 56,
+    "denominator": 244,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Vrijednosti i svjetonazorski prijepori 2021",
+    "value": 62,
+    "denominator": 602,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Vrijednosti i svjetonazorski prijepori 2022",
+    "value": 43,
+    "denominator": 385,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Vrijednosti i svjetonazorski prijepori 2023",
+    "value": 48,
+    "denominator": 318,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Vrijednosti i svjetonazorski prijepori 2024",
+    "value": 77,
+    "denominator": 448,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Vrijednosti i svjetonazorski prijepori 2025",
+    "value": 80,
+    "denominator": 309,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Vrijednosti i svjetonazorski prijepori 2026",
+    "value": 25,
+    "denominator": 244,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "HDZ i demokršćanski identitet 2021",
+    "value": 70,
+    "denominator": 602,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "HDZ i demokršćanski identitet 2022",
+    "value": 94,
+    "denominator": 385,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "HDZ i demokršćanski identitet 2023",
+    "value": 46,
+    "denominator": 318,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "HDZ i demokršćanski identitet 2024",
+    "value": 27,
+    "denominator": 448,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "HDZ i demokršćanski identitet 2025",
+    "value": 43,
+    "denominator": 309,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "HDZ i demokršćanski identitet 2026",
+    "value": 10,
+    "denominator": 244,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Domoljublje i državotvornost 2021",
+    "value": 110,
+    "denominator": 602,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Domoljublje i državotvornost 2022",
+    "value": 35,
+    "denominator": 385,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Domoljublje i državotvornost 2023",
+    "value": 54,
+    "denominator": 318,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Domoljublje i državotvornost 2024",
+    "value": 16,
+    "denominator": 448,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Domoljublje i državotvornost 2025",
+    "value": 20,
+    "denominator": 309,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Domoljublje i državotvornost 2026",
+    "value": 39,
+    "denominator": 244,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Desni centar i suradnja stranaka 2021",
+    "value": 36,
+    "denominator": 602,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Desni centar i suradnja stranaka 2022",
+    "value": 41,
+    "denominator": 385,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Desni centar i suradnja stranaka 2023",
+    "value": 16,
+    "denominator": 318,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Desni centar i suradnja stranaka 2024",
+    "value": 38,
+    "denominator": 448,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Desni centar i suradnja stranaka 2025",
+    "value": 19,
+    "denominator": 309,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Desni centar i suradnja stranaka 2026",
+    "value": 62,
+    "denominator": 244,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Europa i kršćanski korijeni 2021",
+    "value": 44,
+    "denominator": 602,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Europa i kršćanski korijeni 2022",
+    "value": 6,
+    "denominator": 385,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Europa i kršćanski korijeni 2023",
+    "value": 29,
+    "denominator": 318,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Europa i kršćanski korijeni 2024",
+    "value": 111,
+    "denominator": 448,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Europa i kršćanski korijeni 2025",
+    "value": 16,
+    "denominator": 309,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Europa i kršćanski korijeni 2026",
+    "value": 6,
+    "denominator": 244,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Obitelj i nacionalni identitet 2021",
+    "value": 39,
+    "denominator": 602,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Obitelj i nacionalni identitet 2022",
+    "value": 48,
+    "denominator": 385,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Obitelj i nacionalni identitet 2023",
+    "value": 28,
+    "denominator": 318,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Obitelj i nacionalni identitet 2024",
+    "value": 50,
+    "denominator": 448,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Obitelj i nacionalni identitet 2025",
+    "value": 29,
+    "denominator": 309,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Obitelj i nacionalni identitet 2026",
+    "value": 13,
+    "denominator": 244,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Idejna tradicija i javne rasprave 2021",
+    "value": 33,
+    "denominator": 602,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Idejna tradicija i javne rasprave 2022",
+    "value": 17,
+    "denominator": 385,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Idejna tradicija i javne rasprave 2023",
+    "value": 33,
+    "denominator": 318,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Idejna tradicija i javne rasprave 2024",
+    "value": 35,
+    "denominator": 448,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Idejna tradicija i javne rasprave 2025",
+    "value": 33,
+    "denominator": 309,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Idejna tradicija i javne rasprave 2026",
+    "value": 22,
+    "denominator": 244,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Izbori i konzervativna scena 2021",
+    "value": 85,
+    "denominator": 602,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Izbori i konzervativna scena 2022",
+    "value": 16,
+    "denominator": 385,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Izbori i konzervativna scena 2023",
+    "value": 1,
+    "denominator": 318,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Izbori i konzervativna scena 2024",
+    "value": 36,
+    "denominator": 448,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Izbori i konzervativna scena 2025",
+    "value": 7,
+    "denominator": 309,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Izbori i konzervativna scena 2026",
+    "value": 6,
+    "denominator": 244,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Njemačka i međunarodni odnosi 2021",
+    "value": 19,
+    "denominator": 602,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Njemačka i međunarodni odnosi 2022",
+    "value": 6,
+    "denominator": 385,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Njemačka i međunarodni odnosi 2023",
+    "value": 11,
+    "denominator": 318,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Njemačka i međunarodni odnosi 2024",
+    "value": 6,
+    "denominator": 448,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Njemačka i međunarodni odnosi 2025",
+    "value": 27,
+    "denominator": 309,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Njemačka i međunarodni odnosi 2026",
+    "value": 5,
+    "denominator": 244,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Web publications",
+    "value": 1811,
+    "denominator": 2306,
+    "source": "data/barometar/demokrscanstvo-multiplatform/v1/summary.json"
+  },
+  {
+    "key": "Platform leading topic twitter",
+    "value": 41,
+    "denominator": 137,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Platform leading topic facebook",
+    "value": 24,
+    "denominator": 108,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Platform leading topic comment",
+    "value": 16,
+    "denominator": 56,
+    "source": "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv"
+  },
+  {
+    "key": "Andrej Plenković",
+    "value": 691,
+    "denominator": 1811,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Franjo Tuđman",
+    "value": 248,
+    "denominator": 1811,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Miroslav Škoro",
+    "value": 163,
+    "denominator": 1811,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Ivan Penava",
+    "value": 158,
+    "denominator": 1811,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Zoran Milanović",
+    "value": 156,
+    "denominator": 1811,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Davor Ivo Stier",
+    "value": 78,
+    "denominator": 1811,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Distinct web sources",
+    "value": 239,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Articles from six leading sources",
+    "value": 369,
+    "denominator": 1811,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "index.hr",
+    "value": 74,
+    "denominator": 1811,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "dragovoljac.com",
+    "value": 70,
+    "denominator": 1811,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "direktno.hr",
+    "value": 66,
+    "denominator": 1811,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "dnevno.hr",
+    "value": 54,
+    "denominator": 1811,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "narod.hr",
+    "value": 54,
+    "denominator": 1811,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "kamenjar.com",
+    "value": 51,
+    "denominator": 1811,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2021-01",
+    "value": 22,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2021-02",
+    "value": 43,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2021-03",
+    "value": 13,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2021-04",
+    "value": 49,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2021-05",
+    "value": 132,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2021-06",
+    "value": 55,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2021-07",
+    "value": 43,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2021-08",
+    "value": 16,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2021-09",
+    "value": 42,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2021-10",
+    "value": 54,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2021-11",
+    "value": 4,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2021-12",
+    "value": 43,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2022-01",
+    "value": 14,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2022-02",
+    "value": 10,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2022-03",
+    "value": 24,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2022-04",
+    "value": 29,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2022-05",
+    "value": 7,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2022-06",
+    "value": 119,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2022-07",
+    "value": 54,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2022-08",
+    "value": 10,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2022-09",
+    "value": 27,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2022-10",
+    "value": 13,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2022-11",
+    "value": 9,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2022-12",
+    "value": 11,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2023-01",
+    "value": 45,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2023-02",
+    "value": 11,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2023-03",
+    "value": 29,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2023-04",
+    "value": 21,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2023-05",
+    "value": 13,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2023-06",
+    "value": 13,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2023-07",
+    "value": 4,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2023-08",
+    "value": 18,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2023-09",
+    "value": 64,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2023-10",
+    "value": 16,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2023-11",
+    "value": 27,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2023-12",
+    "value": 14,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2024-01",
+    "value": 1,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2024-02",
+    "value": 1,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2024-03",
+    "value": 4,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2024-04",
+    "value": 91,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2024-05",
+    "value": 36,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2024-06",
+    "value": 109,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2024-07",
+    "value": 12,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2024-08",
+    "value": 18,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2024-09",
+    "value": 5,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2024-10",
+    "value": 17,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2024-11",
+    "value": 12,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2024-12",
+    "value": 25,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2025-01",
+    "value": 10,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2025-02",
+    "value": 7,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2025-03",
+    "value": 7,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2025-04",
+    "value": 31,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2025-05",
+    "value": 23,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2025-06",
+    "value": 22,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2025-07",
+    "value": 16,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2025-08",
+    "value": 5,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2025-09",
+    "value": 9,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2025-10",
+    "value": 12,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2025-11",
+    "value": 40,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2025-12",
+    "value": 30,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2026-01",
+    "value": 8,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2026-02",
+    "value": 10,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2026-03",
+    "value": 26,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2026-04",
+    "value": 26,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2026-05",
+    "value": 33,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2026-06",
+    "value": 16,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2026-07",
+    "value": 3,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2026-08",
+    "value": 17,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Web articles 2026-09",
+    "value": 11,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Articles in four busiest web months",
+    "value": 451,
+    "denominator": 1811,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Svibanj 2021.",
+    "value": 132,
+    "denominator": 1811,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Lipanj 2022.",
+    "value": 119,
+    "denominator": 1811,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Lipanj 2024.",
+    "value": 109,
+    "denominator": 1811,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Travanj 2024.",
+    "value": 91,
+    "denominator": 1811,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Leading web peak topic 2021-05",
+    "value": 53,
+    "denominator": 132,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Leading web peak topic 2022-06",
+    "value": 28,
+    "denominator": 119,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Leading web peak topic 2024-06",
+    "value": 48,
+    "denominator": 109,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Busiest web day articles",
+    "value": 39,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Busiest web day sources",
+    "value": 26,
+    "denominator": null,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Domoljublje i državotvornost",
+    "value": 20,
+    "denominator": 39,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Politička pripadnost i ideje",
+    "value": 10,
+    "denominator": 39,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  },
+  {
+    "key": "Vrijednosti i svjetonazorski prijepori",
+    "value": 6,
+    "denominator": 39,
+    "source": "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json"
+  }
+]

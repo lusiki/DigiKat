@@ -1,0 +1,16 @@
+{
+  "status": "design preview, not published",
+  "slides": 18,
+  "conference": "Izazovi i budućnost demokršćanstva u Hrvatskoj i Europi",
+  "event_date": "2026-09-24",
+  "venue": "Zagreb, Hrvatsko katoličko sveučilište, Ilica 244",
+  "source": "assets\\izvjestaji\\demokrscanske-vrijednosti-karusel.html",
+  "source_sha256": "51b0afec4d6331eae4a0a99a9198c1528127e61f94fa857ee037d56e3ebc54ec",
+  "poster": "C:\\Users\\lsikic\\Desktop\\Konferencija - Izazovi i budućnost kršćanske demokracije u Hrvatskoj i Europi - Poster.pdf",
+  "poster_sha256": "ac14283ff0b3619389e8a0a30241f48a9793de3894a046d096582f6c64191319",
+  "flag_sha256": "b5898b6eb08b7a5dee91c40fa358d43695e81a6deb69616d70cb8580d2c01b3a",
+  "source_pdf_sha256": "65a9b43503559af1e6d0158abf1f0dfaffb30c44c5990f0248336886b89751d2",
+  "title": "Demokršćanske vrijednosti u digitalnom javnom prostoru: narativni okviri hrvatskih katoličkih medija od 2021. do 2026.",
+  "author": "Luka Šikić",
+  "output": "C:\\Users\\lsikic\\projects\\DigiKat\\output\\conference-carousel\\demokrscanske-vrijednosti-konferencijska-verzija.html"
+}

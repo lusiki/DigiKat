@@ -29,3 +29,9 @@ that could indirectly identify a person or account.
 The full master corpus is restricted and is never a study deliverable. The
 repository's synthetic sample is the public fixture for testing and examples.
 
+## New research fronts
+
+- [Croatia spirituality associations and public visibility](spirituality-associations/README.md)
+  — national organisational atlas; initial register, official-source enrichment,
+  2025 media discovery screen and collection-filter audit completed on 2026-09-19.
+  Identity and substantive visibility validation remain pending.

@@ -1,0 +1,17 @@
+{
+  "edition": "public-v2",
+  "pages": 14,
+  "records": 2306,
+  "source_hashes": {
+    "summary.json": "b355c435b26977416e8c1a2bdf2974ea01e1505e2bcce961db796ce7e53faa61",
+    "topic_sensitivity.csv": "d452d90a03f24be97d07a9eccaebef77354cc2d4b4da578d4405de7537e2608d",
+    "topic_profiles.csv": "d3b161387edde743eb9e2895e01204d64f00bae80068612c2cb1e337f71eeb97",
+    "platforms.csv": "3879da30562b9804b1cd3e015721ddbcd3f574e11e795fda33dea61c23c46d3a",
+    "episode_selection.csv": "dd134a4454731d4ff1b34c1ef44fb486330547aea2cf7476059a5ea8b2d2ec8e",
+    "lexical_pairs.csv": "1a8272410af1fca2a2a6ed2fde365b80cbd49d531115cbab526ca008ca1d7256",
+    "qualitative_review.md": "5e45c549d30202084c6c83f41e96ee017a9d9ec729e09cd6d6c2a514e5961863"
+  },
+  "pdf_sha256": "04776182eb3663918822e2d0710d3d1ffe7d22ed871b283a32a793fdcd6bdad3",
+  "builder_sha256": "8e326fc937c9cb9d40746a072ff0de78b0d5fbbc19af61bfd060946f4c512648",
+  "original_technical_pdf_sha256": "f8348a3cf87b4e2b323ec1c46b7890ea659bb8264adfa97dc4f79cdb3415866f"
+}

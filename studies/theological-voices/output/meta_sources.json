@@ -1,0 +1,14 @@
+{
+  "corpus": {
+    "path": "C:/Users/lsikic/Dropbox/HKS/Projekti/Digitalni Kat/SHKM/DigiKat/data/digikat_corpus.rds",
+    "sha256": "15473a615bf301c02b5d4149d662a4db282927d3b3e98308c5ff54cbe1de520a",
+    "rows": 413985
+  },
+  "posts_after_dedup": 409007,
+  "duplicates_removed": 4978,
+  "core_posts": 156080,
+  "core_sources": 672,
+  "all_sources": 10884,
+  "date_range": ["2021-01-01", "2026-06-11"],
+  "generated": "2026-10-13 17:55:22 UTC"
+}

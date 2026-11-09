@@ -1,0 +1,7 @@
+classla==2.2.3
+duckdb==1.5.5
+datasketch
+requests
+pyarrow
+pandas
+rapidfuzz

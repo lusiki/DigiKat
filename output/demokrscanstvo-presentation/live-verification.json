@@ -1,0 +1,128 @@
+{
+  "commit": "f90e92e93dd96e9028842040ebb1610211ec5e7c",
+  "status": "PASS",
+  "resources": [
+    {
+      "path": "pages/demokrscanstvo/index.html",
+      "status": 200,
+      "matches_reviewed_resource": true,
+      "sha256": "133bad2896a910770f817fb9ec2179c8cab9f02c5e975562dd2dc91788db5d91",
+      "bytes": 393323
+    },
+    {
+      "path": "assets/css/barometar.css",
+      "status": 200,
+      "matches_reviewed_resource": true,
+      "sha256": "2bbf11ab8411e2957c5fed3d0cbaad18f9d62737416c2af232f9ec388a0feedc",
+      "bytes": 13673
+    },
+    {
+      "path": "assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.pdf",
+      "status": 200,
+      "matches_reviewed_resource": true,
+      "sha256": "04776182eb3663918822e2d0710d3d1ffe7d22ed871b283a32a793fdcd6bdad3",
+      "bytes": 645834
+    },
+    {
+      "path": "assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.webp",
+      "status": 200,
+      "matches_reviewed_resource": true,
+      "sha256": "c0d66ef58551c5e838f62d6fbc9f0e368304d035a0902b50c5eb91760cb41a1c",
+      "bytes": 16388
+    },
+    {
+      "path": "assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.meta.json",
+      "status": 200,
+      "matches_reviewed_resource": true,
+      "sha256": "6bb4e11fb91dcc914eb4a93817541b08c27c6744155621d14a1b57e6d2bdfbd0",
+      "bytes": 443
+    },
+    {
+      "path": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.pdf",
+      "status": 200,
+      "matches_reviewed_resource": true,
+      "sha256": "8bc603616b34ad49d550b8b20628619a58ee9a81152035dc5eaaf24068554bac",
+      "bytes": 165626
+    },
+    {
+      "path": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.webp",
+      "status": 200,
+      "matches_reviewed_resource": true,
+      "sha256": "7a58013d379e2a8c79fdadd753faaa4a53dd881a56305dcc3f352a906a2f082f",
+      "bytes": 14978
+    },
+    {
+      "path": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.meta.json",
+      "status": 200,
+      "matches_reviewed_resource": true,
+      "sha256": "6d028f1f60e458cd23dcee34b6e68082fc417f0eed09b5abaa634e6449ed3767",
+      "bytes": 471
+    },
+    {
+      "path": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html",
+      "status": 200,
+      "matches_reviewed_resource": true,
+      "sha256": "854a32748e1c4a39f679d6fc7a605ae79e7f8b4b3af796b1660ff2721234a1c7",
+      "bytes": 130891
+    },
+    {
+      "path": "assets/izvjestaji/demokrscanstvo-12-nalaza.pdf",
+      "status": 200,
+      "matches_reviewed_resource": true,
+      "sha256": "e33be8e8eba86a353f423f35d61d7d06a2a91ff832f3daf2c4a995c71d8de786",
+      "bytes": 160067
+    },
+    {
+      "path": "assets/izvjestaji/demokrscanstvo-12-nalaza.webp",
+      "status": 200,
+      "matches_reviewed_resource": true,
+      "sha256": "ef508a9dc1ef14779b2301d97e9aa5fae7ebf9f473c89e8acd27302001045307",
+      "bytes": 17200
+    },
+    {
+      "path": "assets/izvjestaji/demokrscanstvo-12-nalaza.meta.json",
+      "status": 200,
+      "matches_reviewed_resource": true,
+      "sha256": "97554d43f2a24252310b5b3ff2c7a0c90388f82e6e8e31bce4188bf2abf408a0",
+      "bytes": 453
+    },
+    {
+      "path": "assets/izvjestaji/demokrscanstvo-12-nalaza.html",
+      "status": 200,
+      "matches_reviewed_resource": true,
+      "sha256": "7d6fa66bd1b40b86756797f12eca992410dc138795316ce3926da4f096fcb250",
+      "bytes": 71295
+    }
+  ],
+  "canonical_urls": [
+    {
+      "url": "pages/demokrscanstvo/",
+      "status": 200,
+      "matches_reviewed_resource": true
+    },
+    {
+      "url": "assets/izvjestaji/demokrscanstvo-12-nalaza.html",
+      "status": 200,
+      "matches_reviewed_resource": true
+    },
+    {
+      "url": "assets/izvjestaji/demokrscanstvo-12-nalaza.pdf",
+      "status": 200,
+      "matches_reviewed_resource": true
+    },
+    {
+      "url": "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.pdf",
+      "status": 200,
+      "matches_reviewed_resource": true
+    },
+    {
+      "url": "assets/izvjestaji/demokrscanstvo-u-medijskom-prostoru.pdf",
+      "status": 200,
+      "matches_reviewed_resource": true
+    }
+  ],
+  "author_site_status": 200,
+  "verified_at": "2026-09-19T18:24:23.794671+00:00",
+  "deployment": "GitHub Pages built f90e92e at 2026-09-19T18:20:06Z",
+  "full_ci": "Separate full repository CI still installing its R environment; page-specific local checks completed."
+}

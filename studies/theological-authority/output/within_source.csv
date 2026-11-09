@@ -1,0 +1,15 @@
+﻿SOURCE_TYPE,group,sources,median_mean_difference,share_negative_higher
+facebook,independent,6,6.79440251397716,0.666666666666667
+facebook,devotional,23,-0.535714285714287,0.478260869565217
+facebook,church_org,3,-2.34857142857143,0.333333333333333
+facebook,community,1,-23.2660256410256,0
+web,church_org,20,0.893087855297157,0.5
+web,independent,4,-26.7859693733182,0.25
+web,church_media,4,-3.92105590047541,0.5
+web,devotional,18,-0.621080776475046,0.333333333333333
+youtube,devotional,40,-2.74861111111111,0.4
+youtube,church_org,10,-0.685457516339869,0.4
+youtube,community,3,4.67500000000001,0.666666666666667
+youtube,church_media,1,5,1
+youtube,independent,4,0.860825215425746,0.5
+youtube,clergy,1,-53.8348138903164,0

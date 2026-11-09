@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "identical_files": 13,
+  "method": "two complete consecutive analysis runs with same frozen inputs",
+  "files": [
+    {
+      "file": "vocabulary_local.csv",
+      "identical": true,
+      "sha256": "bfca46cc823e50dfd9031c11fb745b86765e78c16298c94c2d9d09a198c3afbf"
+    },
+    {
+      "file": "vocabulary_expanded.csv",
+      "identical": true,
+      "sha256": "d478dce008bc79cd880aad54ac8fb6d645ccd75ed210069b10d55b10a5efaf5c"
+    },
+    {
+      "file": "contrasts.csv",
+      "identical": true,
+      "sha256": "c090c74fdb389ab3a7b716dca55dda159206753718d5f74d4208e050c1d68fab"
+    },
+    {
+      "file": "phrases.csv",
+      "identical": true,
+      "sha256": "5dae4cda243de249ab33399dc0e9251a68d59d989fdbc00f21f244c055dcce20"
+    },
+    {
+      "file": "relations.csv",
+      "identical": true,
+      "sha256": "8956b5075e7a3805708a3c1890e6c61ea67331cfbace6b236988fbea95b0a78a"
+    },
+    {
+      "file": "dispersion.csv",
+      "identical": true,
+      "sha256": "c695d3ae39b553f8cf5dc12c49f210a43f06c70f511312d4eddebbf105b4f72b"
+    },
+    {
+      "file": "quarterly.csv",
+      "identical": true,
+      "sha256": "4d6203b367933f9c2b76fdc19b43c92ff14d2b5fc3190d26e021b8f4b8bfc3c7"
+    },
+    {
+      "file": "near_copy_content_sensitivity.csv",
+      "identical": true,
+      "sha256": "df2cbc959069a283d0c88c2e40ced187afe3f4546bf71861bf3b04ff99866f0b"
+    },
+    {
+      "file": "sampling_design.csv",
+      "identical": true,
+      "sha256": "5f925f2906a856f8aeb3b5f26bbc07bd950371a12bbb52971390ac4a17e02f9e"
+    },
+    {
+      "file": "summary.json",
+      "identical": true,
+      "sha256": "c4a92bd9e7f24fcbe59b95688172e8df07af89a596d1a538cb53dcdc47a71418"
+    },
+    {
+      "file": "contrast_design.json",
+      "identical": true,
+      "sha256": "7f39ee0c15861cf887752a518cee7c6e44883a1c8aa34b2aac08ca45a582a7fa"
+    },
+    {
+      "file": "window_sensitivity.csv",
+      "identical": true,
+      "sha256": "48c6978073c0f874082b2d825e02d5988b2f6cdd5471d6421c90ee4664e8c51a"
+    },
+    {
+      "file": "lexicon.json",
+      "identical": true,
+      "sha256": "feed4053ffdb1c63ca0a3a27b149151044f52bc8eabb7aea6732ae84c35e3bd7"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "status": "not performed",
+  "pack_items": 200,
+  "eligible_clusters": 1556,
+  "design": "stratified by frozen primary topic, one representative per exploratory 0.85 near-copy cluster; previously reviewed exact/near/context counterparts excluded",
+  "population": "remaining eligible clusters only; weights do not generalize to the entire archive",
+  "precision": null,
+  "recall": null,
+  "kappa": null,
+  "coders_completed": 0
+}

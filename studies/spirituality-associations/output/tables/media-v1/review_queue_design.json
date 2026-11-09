@@ -1,0 +1,8 @@
+{
+  "sample_pairs": 506,
+  "sample_exact_text_clusters": 480,
+  "excluded_development_clusters": 644,
+  "draw": "40 clusters per first-observed year x web/other stratum, SHA256 seeded ordering",
+  "scope": "Preparation only. Near-copy leakage and full route-risk stratification still need assessment before independent evaluation.",
+  "human_annotations_completed": 0
+}

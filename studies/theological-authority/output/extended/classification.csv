@@ -1,0 +1,11 @@
+﻿rule,confidence,sources,posts,interactions,reach
+"existing_registry","registry",32,100035,8724270,212543588
+"creator_pattern","pattern",516,37324,4845844,173033914
+"catalogue_confessional","catalogue",2,3573,601780,9184578
+"institution_pattern","pattern",88,8924,512028,17764688
+"inherited_creator_list","inherited_list",28,812,139022,3785077
+"inherited_media_list","inherited_list",2,268,18118,1782418
+"independent_pattern","pattern",9,1223,20645,3285721
+"inherited_institution_list","inherited_list",11,703,17021,294803
+"inherited_creator_list","pattern",32,146,23069,728777
+"inherited_institution_list","pattern",2,7,36,2085

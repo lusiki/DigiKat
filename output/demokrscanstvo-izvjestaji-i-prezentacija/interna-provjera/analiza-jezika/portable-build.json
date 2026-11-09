@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "method": "Delivered source/build.py run against delivered aggregate tables and manuscript.md",
+  "byte_identical_pdf": true,
+  "pdf_sha256": "8bc603616b34ad49d550b8b20628619a58ee9a81152035dc5eaaf24068554bac"
+}

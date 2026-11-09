@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "Public release manifests",
+      "status": "PASS",
+      "detail": "Every listed input artifact matches its SHA256"
+    },
+    {
+      "check": "Original plan preserved",
+      "status": "PASS",
+      "detail": "PDF is byte-identical to the supplied plan"
+    },
+    {
+      "check": "Private checkpoint integrity",
+      "status": "PASS",
+      "detail": "278 current file hashes match the frozen thematic input multiset"
+    },
+    {
+      "check": "One-to-one source reconciliation",
+      "status": "PASS",
+      "detail": "2306 original selected keys, routes, stored contexts and topic assignments agree"
+    },
+    {
+      "check": "Topic counts and denominators",
+      "status": "PASS",
+      "detail": "All seven scope tables independently rebuilt from record assignments and exact-text keys"
+    },
+    {
+      "check": "Temporal/platform topic tables",
+      "status": "PASS",
+      "detail": "All topic-by-year/regime/platform and 2025 cells independently recomputed"
+    },
+    {
+      "check": "Rates and coverage",
+      "status": "PASS",
+      "detail": "Monthly rate ratios, platform denominators and 2025 coverage reconcile to original monthly release"
+    },
+    {
+      "check": "Annual aggregates",
+      "status": "PASS",
+      "detail": "All annual rates are ratios of source sums; no unweighted rate averaging"
+    },
+    {
+      "check": "Near-copy controls",
+      "status": "PASS",
+      "detail": "Every member pair independently passes shingle/length rules; all sensitivity topic counts recomputed"
+    },
+    {
+      "check": "Lexical numerator/denominator identities",
+      "status": "PASS",
+      "detail": "Every NPMI, marginal, joint count, text support and shared-sentence control independently recalculated"
+    },
+    {
+      "check": "Lexical threshold counts",
+      "status": "PASS",
+      "detail": "5/10/20 group counts reconcile"
+    },
+    {
+      "check": "Lexical scope sensitivity",
+      "status": "PASS",
+      "detail": "Short, distinct and truly adjacent sentence numerators and denominators independently checked"
+    },
+    {
+      "check": "Long-text projection",
+      "status": "PASS",
+      "detail": "94 of 140 whole-text assignments unchanged; context-only re-projection reproduces all 140 original labels"
+    },
+    {
+      "check": "No fabricated human evaluation",
+      "status": "PASS",
+      "detail": "Two blank 200-item packs; no completed coders or non-null performance metrics"
+    },
+    {
+      "check": "Aggregate package disclosure check",
+      "status": "PASS",
+      "detail": "No actual archive record keys in public output text files; private row-level files remain outside repository"
+    },
+    {
+      "check": "Claim-register integrity",
+      "status": "PASS",
+      "detail": "All registered report blocks name their evidence source and page"
+    }
+  ],
+  "human_validation_complete": false,
+  "reviewer": "Codex AI",
+  "method": "independent recalculation plus frozen-input hash verification",
+  "pdf_qa_verified": true
+}

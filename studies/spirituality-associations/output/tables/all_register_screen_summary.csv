@@ -1,0 +1,4 @@
+group,status,associations
+all_register,not_observed_under_rules,795
+all_register,not_yet_searched,282
+all_register,unvalidated_candidate,248

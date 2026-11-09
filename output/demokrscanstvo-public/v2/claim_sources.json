@@ -1,0 +1,132 @@
+[
+  {
+    "page": 2,
+    "text": "Četiri teme povezane s političkom pripadnošću, domoljubljem, HDZ-ovim identitetom i desnim centrom zajedno obuhvaćaju 1.153 tekstova i objava, odnosno 50,0% analiziranog materijala. Demokršćansko ime služi predstavljanju vlastitog položaja, traženju političkih saveznika i povlačenju granice prema drugim opcijama.",
+    "source": "topic_sensitivity.csv: publications t01-t04; qualitative_review.md"
+  },
+  {
+    "page": 2,
+    "text": "Tema vrijednosti i svjetonazorskih prijepora obuhvaća 335 tekstova i objava (14,5%). U raspravi se susreću pozivi na obitelj, nacionalni identitet i savjest, ali i prigovori da političari ne postupaju u skladu s načelima na koja se pozivaju.",
+    "source": "topic_sensitivity.csv: publications t09; development t05/t09 and 139"
+  },
+  {
+    "page": 2,
+    "text": "Solidarnost se povezuje s položajem radnika i europskom suradnjom, opće dobro sa zapošljavanjem i političkom odgovornošću, a supsidijarnost s odnosima između razina vlasti. Takvi primjeri otvaraju sadržaj demokršćanstva izvan same stranačke oznake.",
+    "source": "development_review.json: 104,111,119,125"
+  },
+  {
+    "page": 3,
+    "text": "Izvještaj se temelji na 2.306 tekstova i objava koje je projekt DigiKat izdvojio iz materijala prikupljenog praćenjem medija. Obuhvaćeno je razdoblje od 1. siječnja 2021. do 10. rujna 2026.",
+    "source": "summary.json; base summary data_from/data_through"
+  },
+  {
+    "page": 4,
+    "text": "Predizborne rasprave povezuju demokršćanstvo s domoljubljem, državotvornošću i narodnjaštvom. Andrej Plenković poziva se na načela koja pripisuje Tuđmanovu HDZ-u, dok Zlatko Hasanbegović osporava vjerodostojnost Plenkovićeva demokršćanskog identiteta. U drugim se tekstovima otvara pitanje udaljava li se HDZ od očekivanja svojeg biračkog tijela. Demokršćanstvo tako postaje jezik borbe za političko nasljeđe: jedni njime naglašavaju kontinuitet, a drugi tvrde da je taj kontinuitet prekinut. Uz hrvatsku izbornu raspravu pojavljuju se i prava te položaj Hrvata u Bosni i Hercegovini.",
+    "source": "episode_review.json: 2021-05; development t05 for June 2022"
+  },
+  {
+    "page": 4,
+    "text": "Tekstovi o HDZ-u prenose poruke o novom vodstvu, desnom centru i demokršćanskim vrijednostima. U stranačkom predstavljanju domoljublje i državotvornost stoje uz rad, solidarnost, toleranciju i otvorenost prema svijetu. Istodobno Ivan Penava kritizira stranački program, tvrdeći da se udaljava od obitelji kao jezgre demokršćanskog svjetonazora. Spor se zato vodi i oko širine političke ponude i oko granica prihvatljivog društvenog programa. Ista tradicija služi kao argument za otvorenost, ali i kao mjerilo prema kojem protivnici ocjenjuju stranačku dosljednost.",
+    "source": "episode_review.json: 2022-06; development t05 for June 2022"
+  },
+  {
+    "page": 4,
+    "text": "U kampanji za Europski parlament demokršćanske vrijednosti povezuju se s nacionalnim interesima, suverenizmom i položajem Hrvatske u europskoj obitelji. Od kandidata se traži sposobnost pregovaranja o hrvatskim prioritetima. Davor Ivo Stier pritom naglašava Europu solidarnosti i tvrdi da takva suradnja Hrvatskoj omogućuje rast i razvoj. Demokršćanstvo se u tim porukama predstavlja kao veza između nacionalne pripadnosti i europske suradnje. Uz kampanjske izjave pojavljuju se i šire rasprave o povijesnom nasljeđu te budućnosti demokršćanske ideje.",
+    "source": "episode_review.json: 2024-06; development t05 for June 2022"
+  },
+  {
+    "page": 5,
+    "text": "Politička pripadnost i ideje obuhvaćaju 377 tekstova, vrijednosti i prijepori 335 tekstova, a HDZ-ov demokršćanski identitet 290. U toj se raspravi političko predstavljanje susreće s pitanjem odgovara li djelovanje aktera vrijednostima koje ističu.",
+    "source": "topic_sensitivity.csv: publications t01,t09,t03; topic_content_review.csv"
+  },
+  {
+    "page": 6,
+    "text": "Niz domoljublje, državotvornost, narodnjaštvo i demokršćanstvo povezuje suvremeno stranačko predstavljanje s povijesnim nasljeđem. U porukama HDZ-a taj niz opisuje temeljna načela stranke i njezinu vezu s hrvatskim nacionalnim interesima.",
+    "source": "episode_review.json: 2021-05; pair_review.json domoljublje pairs"
+  },
+  {
+    "page": 6,
+    "text": "Pozivanje na demokršćanski svjetonazor pojavljuje se i pri traženju suradnje na desnom centru. Zajedničko ime tada označuje krug mogućih partnera. U drugim izjavama ono služi upravo razgraničenju: netko može poštovati demokršćanska načela, a ipak ne smatrati da pripada toj političkoj tradiciji.",
+    "source": "topic_content_review.csv: t04; development t05 Bilić and 1,3,4"
+  },
+  {
+    "page": 7,
+    "text": "U tekstovima iz 2022. najzastupljenija je tema HDZ-a i demokršćanskog identiteta (24,4%). U tekstovima iz 2024. ističu se Europa i kršćanski korijeni (24,8%), a u onima iz 2025. vrijednosti i svjetonazorski prijepori (25,9%).",
+    "source": "topic_profiles.csv: year"
+  },
+  {
+    "page": 8,
+    "text": "Domoljublje i demokršćanstvo mogu se pojaviti u predstavljanju stranačkih načela, ali i u prigovoru da ih stranka napušta. Savjest se povezuje i s konkretnim pitanjem priziva savjesti i s osobnom odgovornošću pri političkom izboru. U raspravama o Europi solidarnost dobiva značenje suradnje i zajedničkog razvoja.",
+    "source": "lexical_pairs.csv: five selected pairs; pair_review.json; qualitative_review.md"
+  },
+  {
+    "page": 9,
+    "text": "U čestitki za Praznik rada Andrej Plenković povezuje kršćansko načelo solidarnosti i dostojanstvo radnika s gospodarskim jačanjem Hrvatske i većom produktivnošću. Radnici i radnice pritom su pozvani na zajedničko djelovanje s Vladom. Solidarnost je dio političkog obrazloženja odnosa prema radu i razvoju.",
+    "source": "development_review.json: 104"
+  },
+  {
+    "page": 9,
+    "text": "Tekst o političkom djelovanju polazi od dostojanstva osobe i općeg dobra kako bi kritizirao stranački probitak i ideološku isključivost. Iz tih načela izvodi zahtjev za slobodom izražavanja i zapošljavanjem prema stručnosti i sposobnosti. Kršćanske društvene ideje služe kao mjerilo postupanja u javnom životu.",
+    "source": "development_review.json: 111"
+  },
+  {
+    "page": 9,
+    "text": "Politolog Jakov Žižić u razgovoru s Matom Mijićem objašnjava demokršćanstvo kroz zajednicu, solidarnost i raspodjelu vlasti. Supsidijarnost povezuje s lokalnom i regionalnom samoupravom te europskim institucijama. Time raspravu o identitetu premješta na pitanje gdje se i na kojoj razini donose odluke.",
+    "source": "development_review.json: 125"
+  },
+  {
+    "page": 9,
+    "text": "Plenković se poziva na demokršćanske vrijednosti kada obrazlaže stav HDZ-a da neće zabranjivati priziv savjesti. Načelo se ovdje veže uz određen politički izbor i javni spor. Pozivanje na tradiciju dobiva prepoznatljivu sadržajnu posljedicu.",
+    "source": "development_review.json: 139"
+  },
+  {
+    "page": 10,
+    "text": "Samir Haj Barakat nakon izlaska iz SDP-a u kolovozu 2024. objašnjava da poštuje demokršćanska načela, ali ne pripada demokršćanskom političkom spektru. Ujedno odbacuje pretpostavku da njegov odlazak znači prelazak u HDZ. Njegova izjava razdvaja odnos prema ideji od odluke o stranačkom članstvu.",
+    "source": "development_review.json: 1,3,4"
+  },
+  {
+    "page": 10,
+    "text": "U jednoj mrežnoj raspravi iz travnja 2024. sudionik se određuje kao demokršćanin, a istodobno snažno kritizira HDZ i želi njegov odlazak s vlasti. Vlastitu pripadnost tradiciji ne vezuje uz podršku stranci. Demokršćanski identitet u takvom iskazu postaje polazište za politički izbor koji se protivi HDZ-u.",
+    "source": "development_review.json: 133"
+  },
+  {
+    "page": 10,
+    "text": "Kritike poput Penavine u lipnju 2022. polaze od tvrdnje da obitelj treba biti središnji dio demokršćanskog svjetonazora. Stranački se program zatim prosuđuje prema tom očekivanju. Sudionici se tako mogu pozivati na istu tradiciju, a iz nje izvoditi različite zahtjeve prema politici.",
+    "source": "development_review.json: t05 typical June 2022"
+  },
+  {
+    "page": 11,
+    "text": "Na mrežne stranice otpada 1.811 tekstova, odnosno 78,5% analiziranog materijala. Slijede X / Twitter s 137 objava i Facebook sa 108. Prisutni su i tisak, komentari čitatelja te radijski i televizijski tekstovi.",
+    "source": "platforms.csv"
+  },
+  {
+    "page": 11,
+    "text": "Vijesti prenose političke izjave i kampanjske poruke, razgovori otvaraju idejne razlike, a mrežne objave i komentari daju prostor osobnom određenju i kritici. U tim se oblicima susreću službeno predstavljanje političara, novinarski prikaz i reakcije sudionika rasprave.",
+    "source": "development_review.json: mixed-platform examples; episode_review.json"
+  },
+  {
+    "page": 12,
+    "text": "Na X-u / Twitteru ističu se domoljublje i državotvornost (29,9%) te HDZ-ov identitet (21,9%). Na Facebooku najzastupljenija je tema desnog centra i suradnje stranaka (22,2%). U komentarima je na prvom mjestu odnos HDZ-a i demokršćanskog identiteta (28,6%).",
+    "source": "topic_profiles.csv: platform"
+  },
+  {
+    "page": 13,
+    "text": "Europa i kršćanski korijeni čine zasebnu temu s 212 tekstova i objava (9,2%). Idejna tradicija i javne rasprave okupljaju još 173 (7,5%). U tim se tekstovima demokršćanstvo razmatra kao političko nasljeđe, ali i kao odgovor na pitanja suvremenog društva.",
+    "source": "topic_sensitivity.csv: publications t06,t08"
+  },
+  {
+    "page": 13,
+    "text": "U lipnju 2024. Stier demokršćansku Europu opisuje kroz solidarnost i suradnju. Taj koncept povezuje s hrvatskim razvojem i pripadnošću europskoj zajednici, a suprotstavlja ga politikama koje naziva sebičnima. Nacionalni interes i europska povezanost u njegovu se argumentu međusobno podupiru.",
+    "source": "development_review.json: 119; episode_review.json: 2024-06"
+  },
+  {
+    "page": 13,
+    "text": "U razgovoru iz veljače 2021. Žižić razliku između demokršćanstva i liberalnog konzervativizma objašnjava odnosom prema zajednici. Demokršćanstvu pripisuje snažniji naglasak na solidarnosti i djelovanju za zajedničku dobrobit. Takva rasprava otvara socijalna i gospodarska pitanja koja se lako izgube kada se političke tradicije svode na položaj na ljevici ili desnici.",
+    "source": "development_review.json: 125"
+  },
+  {
+    "page": 13,
+    "text": "Izvještaji o predstavljanju zbornika „Demokršćanstvo: izvori, postignuća i perspektive” u siječnju 2023. prenose raspravu o odnosu demokršćanstva prema državi, drugim političkim idejama i Europi. Uz dnevnu politiku tako se pojavljuje i pitanje kako razumjeti povijest te društvene mogućnosti te tradicije.",
+    "source": "development_review.json: t08 typical January 2023, excluding flagged index 74"
+  }
+]

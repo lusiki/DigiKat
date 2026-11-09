@@ -1,0 +1,15 @@
+{
+  "selection": "purposive examples of ambiguity and apparently substantive hits; not a precision sample",
+  "reviewer_type": "AI",
+  "human_validated": false,
+  "examples": 15,
+  "assessments": {
+    "incorrect_generic_phrase": 5,
+    "ambiguous_other_organisation": 2,
+    "boilerplate_only": 1,
+    "plausible_substantive_mention": 5,
+    "metadata_or_tag_list_only": 1,
+    "service_identifier_in_description": 1
+  },
+  "private_labels_sha256": "a39e9a499bba0caee7fe2b9df9ec116c08ca2eb1c4c28995edcf14aa11d8e5d3"
+}

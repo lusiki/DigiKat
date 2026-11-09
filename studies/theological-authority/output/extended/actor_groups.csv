@@ -1,0 +1,9 @@
+﻿group,posts,sources,observed,interactions,mean,median,label
+independent,30282,24,30276,3513606,116.052516845026,16,Neovisni katolički mediji
+church_media,53897,9,53892,3146384,58.3831366436577,0,Crkveni mediji
+public,441969,15919,424531,42916997,101.092728210661,9,Ostali i nerazvrstani izvori
+church_org,20996,110,20966,1028130,49.0379662310407,0,Crkvene ustanove i računi
+devotional,40047,514,39476,5390724,136.556996656196,34,Pobožni i autorski kanali
+other_christian,6052,1,6052,3310056,546.935888962327,57,Ostali kršćanski izvori
+community,1604,47,1580,212399,134.429746835443,42,Zajednice i udruge
+clergy,6189,18,6122,1610590,263.082326037243,125,Svećenički profili

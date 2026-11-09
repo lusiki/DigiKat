@@ -1,0 +1,14 @@
+{
+  "source_snapshot_records": 42267474,
+  "register_entries": 1325,
+  "candidate_items": 23436,
+  "topic_items": 18938,
+  "human_validated_pairs": 0,
+  "source_hashes": {
+    "output\\tables\\media-v1\\summary.json": "1909129148c3a6db2b5b6449c61da0b42ce63f274adef689a21c14949a369d84",
+    "output\\tables\\media-v1\\annual_landscape.csv": "8bbbdac65293f9714f258ab019c2e3fdd6e2d173cd3540dced8541e4207eb422",
+    "output\\tables\\media-v1\\repeat_check_channels.csv": "676042374f2534f9750b5b1beb051d98ab86e8d536f7e946c18457b28990a821",
+    "output\\private\\media\\v1\\repeat_check_assignments.csv": "5674119bfa94b8856d31895d61450872971dba06cdf79d19f6c27631fd1c6c6c",
+    "output\\private\\media\\v1\\pair_evidence.jsonl": "39ef4c3a64aac9be2943347acf4998660cd857011f4ea6c1e025f0e73a869001"
+  }
+}

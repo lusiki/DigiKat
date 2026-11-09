@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="581.248438pt" height="314.64pt" viewBox="0 0 581.248438 314.64" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-19T18:34:36.821598</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.0, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 314.64 
+L 581.248438 314.64 
+L 581.248438 0 
+L 0 0 
+z
+" style="fill: #fcfbf7"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 65.662188 274.44 
+L 574.048437 274.44 
+L 574.048437 7.2 
+L 65.662188 7.2 
+z
+" style="fill: #fcfbf7"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 92.093458 274.44 
+L 92.093458 7.2 
+" clip-path="url(#p84bb6823f7)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2">
+      <defs>
+       <path id="m35042afae9" d="M 0 0 
+L 0 3.5 
+" style="stroke: #526b6f; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m35042afae9" x="92.093458" y="274.44" style="fill: #526b6f; stroke: #526b6f; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: middle; fill: #526b6f" x="92.093458" y="289.69" transform="rotate(-0 92.093458 289.69)">−8</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 149.033922 274.44 
+L 149.033922 7.2 
+" clip-path="url(#p84bb6823f7)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m35042afae9" x="149.033922" y="274.44" style="fill: #526b6f; stroke: #526b6f; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: middle; fill: #526b6f" x="149.033922" y="289.69" transform="rotate(-0 149.033922 289.69)">−6</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 205.974385 274.44 
+L 205.974385 7.2 
+" clip-path="url(#p84bb6823f7)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m35042afae9" x="205.974385" y="274.44" style="fill: #526b6f; stroke: #526b6f; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: middle; fill: #526b6f" x="205.974385" y="289.69" transform="rotate(-0 205.974385 289.69)">−4</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 262.914849 274.44 
+L 262.914849 7.2 
+" clip-path="url(#p84bb6823f7)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m35042afae9" x="262.914849" y="274.44" style="fill: #526b6f; stroke: #526b6f; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: middle; fill: #526b6f" x="262.914849" y="289.69" transform="rotate(-0 262.914849 289.69)">−2</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 319.855312 274.44 
+L 319.855312 7.2 
+" clip-path="url(#p84bb6823f7)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m35042afae9" x="319.855312" y="274.44" style="fill: #526b6f; stroke: #526b6f; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: middle; fill: #526b6f" x="319.855312" y="289.69" transform="rotate(-0 319.855312 289.69)">0</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_11">
+      <path d="M 376.795776 274.44 
+L 376.795776 7.2 
+" clip-path="url(#p84bb6823f7)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m35042afae9" x="376.795776" y="274.44" style="fill: #526b6f; stroke: #526b6f; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: middle; fill: #526b6f" x="376.795776" y="289.69" transform="rotate(-0 376.795776 289.69)">2</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_13">
+      <path d="M 433.73624 274.44 
+L 433.73624 7.2 
+" clip-path="url(#p84bb6823f7)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m35042afae9" x="433.73624" y="274.44" style="fill: #526b6f; stroke: #526b6f; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: middle; fill: #526b6f" x="433.73624" y="289.69" transform="rotate(-0 433.73624 289.69)">4</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_15">
+      <path d="M 490.676703 274.44 
+L 490.676703 7.2 
+" clip-path="url(#p84bb6823f7)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_16">
+      <g>
+       <use xlink:href="#m35042afae9" x="490.676703" y="274.44" style="fill: #526b6f; stroke: #526b6f; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_8">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: middle; fill: #526b6f" x="490.676703" y="289.69" transform="rotate(-0 490.676703 289.69)">6</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_17">
+      <path d="M 547.617167 274.44 
+L 547.617167 7.2 
+" clip-path="url(#p84bb6823f7)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_18">
+      <g>
+       <use xlink:href="#m35042afae9" x="547.617167" y="274.44" style="fill: #526b6f; stroke: #526b6f; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_9">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: middle; fill: #526b6f" x="547.617167" y="289.69" transform="rotate(-0 547.617167 289.69)">8</text>
+     </g>
+    </g>
+    <g id="text_10">
+     <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="319.855312" y="304.69" transform="rotate(-0 319.855312 304.69)">Težinski log-omjer: lijevo 2023.  |  desno 2021.</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_19"/>
+     <g id="text_11">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="62.162188" y="29.256688" transform="rotate(-0 62.162188 29.256688)">izbor</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_20"/>
+     <g id="text_12">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="62.162188" y="50.290927" transform="rotate(-0 62.162188 50.290927)">hrvatski</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_21"/>
+     <g id="text_13">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="62.162188" y="71.325165" transform="rotate(-0 62.162188 71.325165)">živjeti</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_22"/>
+     <g id="text_14">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="62.162188" y="92.359404" transform="rotate(-0 62.162188 92.359404)">predstavljati</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_23"/>
+     <g id="text_15">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="62.162188" y="113.393642" transform="rotate(-0 62.162188 113.393642)">scena</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_24"/>
+     <g id="text_16">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="62.162188" y="134.427881" transform="rotate(-0 62.162188 134.427881)">put</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_25"/>
+     <g id="text_17">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="62.162188" y="155.462119" transform="rotate(-0 62.162188 155.462119)">zbornik</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_26"/>
+     <g id="text_18">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="62.162188" y="176.496358" transform="rotate(-0 62.162188 176.496358)">rad</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_27"/>
+     <g id="text_19">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="62.162188" y="197.530596" transform="rotate(-0 62.162188 197.530596)">poseban</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_28"/>
+     <g id="text_20">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="62.162188" y="218.564835" transform="rotate(-0 62.162188 218.564835)">tendencija</text>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_29"/>
+     <g id="text_21">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="62.162188" y="239.599073" transform="rotate(-0 62.162188 239.599073)">dijeliti</text>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_30"/>
+     <g id="text_22">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="62.162188" y="260.633312" transform="rotate(-0 62.162188 260.633312)">autokratski</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 319.855312 19.347273 
+L 425.180737 19.347273 
+L 425.180737 30.916104 
+L 319.855312 30.916104 
+z
+" clip-path="url(#p84bb6823f7)" style="fill: #173e43"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 319.855312 40.381511 
+L 406.894174 40.381511 
+L 406.894174 51.950342 
+L 319.855312 51.950342 
+z
+" clip-path="url(#p84bb6823f7)" style="fill: #173e43"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 319.855312 61.41575 
+L 402.840614 61.41575 
+L 402.840614 72.984581 
+L 319.855312 72.984581 
+z
+" clip-path="url(#p84bb6823f7)" style="fill: #173e43"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 319.855312 82.449988 
+L 401.745465 82.449988 
+L 401.745465 94.018819 
+L 319.855312 94.018819 
+z
+" clip-path="url(#p84bb6823f7)" style="fill: #173e43"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 319.855312 103.484227 
+L 400.071864 103.484227 
+L 400.071864 115.053058 
+L 319.855312 115.053058 
+z
+" clip-path="url(#p84bb6823f7)" style="fill: #173e43"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 319.855312 124.518465 
+L 398.581269 124.518465 
+L 398.581269 136.087296 
+L 319.855312 136.087296 
+z
+" clip-path="url(#p84bb6823f7)" style="fill: #173e43"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 319.855312 145.552704 
+L 148.103201 145.552704 
+L 148.103201 157.121535 
+L 319.855312 157.121535 
+z
+" clip-path="url(#p84bb6823f7)" style="fill: #a9643b"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 319.855312 166.586942 
+L 197.478359 166.586942 
+L 197.478359 178.155773 
+L 319.855312 178.155773 
+z
+" clip-path="url(#p84bb6823f7)" style="fill: #a9643b"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 319.855312 187.621181 
+L 205.034085 187.621181 
+L 205.034085 199.190012 
+L 319.855312 199.190012 
+z
+" clip-path="url(#p84bb6823f7)" style="fill: #a9643b"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 319.855312 208.655419 
+L 206.966821 208.655419 
+L 206.966821 220.22425 
+L 319.855312 220.22425 
+z
+" clip-path="url(#p84bb6823f7)" style="fill: #a9643b"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 319.855312 229.689658 
+L 207.333161 229.689658 
+L 207.333161 241.258489 
+L 319.855312 241.258489 
+z
+" clip-path="url(#p84bb6823f7)" style="fill: #a9643b"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 319.855312 250.723896 
+L 210.934525 250.723896 
+L 210.934525 262.292727 
+L 319.855312 262.292727 
+z
+" clip-path="url(#p84bb6823f7)" style="fill: #a9643b"/>
+   </g>
+   <g id="line2d_31">
+    <path d="M 319.855312 274.44 
+L 319.855312 7.2 
+" clip-path="url(#p84bb6823f7)" style="fill: none; stroke: #526b6f; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 65.662188 274.44 
+L 574.048437 274.44 
+" style="fill: none; stroke: #cdd9d4; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 10px; font-family: 'Calibri'; text-anchor: start; fill: #173e43" x="428.597165" y="27.631688" transform="rotate(-0 428.597165 27.631688)">110 / 7</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 10px; font-family: 'Calibri'; text-anchor: start; fill: #173e43" x="410.310602" y="48.665927" transform="rotate(-0 410.310602 48.665927)">155 / 48</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 10px; font-family: 'Calibri'; text-anchor: start; fill: #173e43" x="406.257041" y="69.700165" transform="rotate(-0 406.257041 69.700165)">46 / 0</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 10px; font-family: 'Calibri'; text-anchor: start; fill: #173e43" x="405.161892" y="90.734404" transform="rotate(-0 405.161892 90.734404)">74 / 7</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 10px; font-family: 'Calibri'; text-anchor: start; fill: #173e43" x="403.488292" y="111.768642" transform="rotate(-0 403.488292 111.768642)">40 / 1</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 10px; font-family: 'Calibri'; text-anchor: start; fill: #173e43" x="401.997697" y="132.802881" transform="rotate(-0 401.997697 132.802881)">81 / 14</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 10px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="144.686773" y="153.837119" transform="rotate(-0 144.686773 153.837119)">0 / 14</text>
+   </g>
+   <g id="text_30">
+    <text style="font-size: 10px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="194.061931" y="174.871358" transform="rotate(-0 194.061931 174.871358)">23 / 56</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 10px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="201.617657" y="195.905596" transform="rotate(-0 201.617657 195.905596)">0 / 30</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 10px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="203.550393" y="216.939835" transform="rotate(-0 203.550393 216.939835)">0 / 13</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 10px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="203.916733" y="237.974073" transform="rotate(-0 203.916733 237.974073)">5 / 36</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 10px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="207.518097" y="259.008312" transform="rotate(-0 207.518097 259.008312)">0 / 12</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p84bb6823f7">
+   <rect x="65.662188" y="7.2" width="508.38625" height="267.24"/>
+  </clipPath>
+ </defs>
+</svg>

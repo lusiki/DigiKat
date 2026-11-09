@@ -1,0 +1,806 @@
+[
+  {
+    "claim": "Mrežni mediji",
+    "value": 1811,
+    "denominator": 2306,
+    "source": "platforms.csv"
+  },
+  {
+    "claim": "Sve ostale platforme",
+    "value": 495,
+    "denominator": 2306,
+    "source": "platforms.csv"
+  },
+  {
+    "claim": "Four political topic groups",
+    "value": 1153,
+    "denominator": 2306,
+    "source": "thematic summary.json"
+  },
+  {
+    "claim": "Politička pripadnost i ideje",
+    "value": 377,
+    "denominator": 2306,
+    "source": "thematic summary.json"
+  },
+  {
+    "claim": "Domoljublje i državotvornost",
+    "value": 274,
+    "denominator": 2306,
+    "source": "thematic summary.json"
+  },
+  {
+    "claim": "HDZ i demokršćanski identitet",
+    "value": 290,
+    "denominator": 2306,
+    "source": "thematic summary.json"
+  },
+  {
+    "claim": "Desni centar i suradnja stranaka",
+    "value": 212,
+    "denominator": 2306,
+    "source": "thematic summary.json"
+  },
+  {
+    "claim": "vrijednost",
+    "value": 1123,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "stranka",
+    "value": 830,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "HDZ",
+    "value": 818,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "politički",
+    "value": 610,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "Hrvatska",
+    "value": 595,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "hrvatski",
+    "value": 567,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "europski",
+    "value": 425,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "politika",
+    "value": 364,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "predsjednik",
+    "value": 357,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "načelo",
+    "value": 329,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "izbor",
+    "value": 323,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "domoljublje",
+    "value": 309,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "Plenković",
+    "value": 308,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "desni",
+    "value": 289,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "Europa",
+    "value": 276,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "centar",
+    "value": 267,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "čovjek",
+    "value": 256,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "nacionalan",
+    "value": 231,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "narodnjaštvo",
+    "value": 197,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "demokracija",
+    "value": 195,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "narod",
+    "value": 195,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "domoljuban",
+    "value": 190,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "domovinski",
+    "value": 188,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "put",
+    "value": 188,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "tradicija",
+    "value": 187,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "identitet",
+    "value": 185,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "program",
+    "value": 185,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "obitelj",
+    "value": 179,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "državotvornost",
+    "value": 174,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "rad",
+    "value": 169,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "društvo",
+    "value": 168,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "interes",
+    "value": 168,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "građanin",
+    "value": 166,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "zajednica",
+    "value": 165,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "vlada",
+    "value": 163,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "život",
+    "value": 161,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "mlad",
+    "value": 160,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "narodnjački",
+    "value": 159,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "država",
+    "value": 156,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "ideja",
+    "value": 154,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "pokret",
+    "value": 153,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "svijet",
+    "value": 148,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "demokratski",
+    "value": 146,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "Tuđman",
+    "value": 146,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "socijalan",
+    "value": 143,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "svjetonazor",
+    "value": 143,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "parlament",
+    "value": 137,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "rat",
+    "value": 131,
+    "denominator": 2253,
+    "source": "word-clouds.csv:all"
+  },
+  {
+    "claim": "domoljublje",
+    "value": 209,
+    "denominator": 243,
+    "source": "word-clouds.csv:t02"
+  },
+  {
+    "claim": "državotvornost",
+    "value": 163,
+    "denominator": 243,
+    "source": "word-clouds.csv:t02"
+  },
+  {
+    "claim": "narodnjaštvo",
+    "value": 155,
+    "denominator": 243,
+    "source": "word-clouds.csv:t02"
+  },
+  {
+    "claim": "HDZ",
+    "value": 144,
+    "denominator": 243,
+    "source": "word-clouds.csv:t02"
+  },
+  {
+    "claim": "vrijednost",
+    "value": 123,
+    "denominator": 243,
+    "source": "word-clouds.csv:t02"
+  },
+  {
+    "claim": "hrvatski",
+    "value": 114,
+    "denominator": 243,
+    "source": "word-clouds.csv:t02"
+  },
+  {
+    "claim": "stranka",
+    "value": 111,
+    "denominator": 243,
+    "source": "word-clouds.csv:t02"
+  },
+  {
+    "claim": "Plenković",
+    "value": 106,
+    "denominator": 243,
+    "source": "word-clouds.csv:t02"
+  },
+  {
+    "claim": "predsjednik",
+    "value": 104,
+    "denominator": 243,
+    "source": "word-clouds.csv:t02"
+  },
+  {
+    "claim": "načelo",
+    "value": 99,
+    "denominator": 243,
+    "source": "word-clouds.csv:t02"
+  },
+  {
+    "claim": "Tuđman",
+    "value": 95,
+    "denominator": 243,
+    "source": "word-clouds.csv:t02"
+  },
+  {
+    "claim": "narod",
+    "value": 83,
+    "denominator": 243,
+    "source": "word-clouds.csv:t02"
+  },
+  {
+    "claim": "Hrvatska",
+    "value": 66,
+    "denominator": 243,
+    "source": "word-clouds.csv:t02"
+  },
+  {
+    "claim": "politički",
+    "value": 59,
+    "denominator": 243,
+    "source": "word-clouds.csv:t02"
+  },
+  {
+    "claim": "svijet",
+    "value": 55,
+    "denominator": 243,
+    "source": "word-clouds.csv:t02"
+  },
+  {
+    "claim": "rad",
+    "value": 52,
+    "denominator": 243,
+    "source": "word-clouds.csv:t02"
+  },
+  {
+    "claim": "demokracija",
+    "value": 49,
+    "denominator": 243,
+    "source": "word-clouds.csv:t02"
+  },
+  {
+    "claim": "desni",
+    "value": 46,
+    "denominator": 243,
+    "source": "word-clouds.csv:t02"
+  },
+  {
+    "claim": "HDZ",
+    "value": 255,
+    "denominator": 279,
+    "source": "word-clouds.csv:t03"
+  },
+  {
+    "claim": "stranka",
+    "value": 115,
+    "denominator": 279,
+    "source": "word-clouds.csv:t03"
+  },
+  {
+    "claim": "vrijednost",
+    "value": 112,
+    "denominator": 279,
+    "source": "word-clouds.csv:t03"
+  },
+  {
+    "claim": "Plenković",
+    "value": 53,
+    "denominator": 279,
+    "source": "word-clouds.csv:t03"
+  },
+  {
+    "claim": "hrvatski",
+    "value": 51,
+    "denominator": 279,
+    "source": "word-clouds.csv:t03"
+  },
+  {
+    "claim": "ideologija",
+    "value": 46,
+    "denominator": 279,
+    "source": "word-clouds.csv:t03"
+  },
+  {
+    "claim": "politika",
+    "value": 43,
+    "denominator": 279,
+    "source": "word-clouds.csv:t03"
+  },
+  {
+    "claim": "Hrvatska",
+    "value": 41,
+    "denominator": 279,
+    "source": "word-clouds.csv:t03"
+  },
+  {
+    "claim": "politički",
+    "value": 34,
+    "denominator": 279,
+    "source": "word-clouds.csv:t03"
+  },
+  {
+    "claim": "svjetonazor",
+    "value": 33,
+    "denominator": 279,
+    "source": "word-clouds.csv:t03"
+  },
+  {
+    "claim": "čovjek",
+    "value": 33,
+    "denominator": 279,
+    "source": "word-clouds.csv:t03"
+  },
+  {
+    "claim": "centar",
+    "value": 32,
+    "denominator": 279,
+    "source": "word-clouds.csv:t03"
+  },
+  {
+    "claim": "načelo",
+    "value": 31,
+    "denominator": 279,
+    "source": "word-clouds.csv:t03"
+  },
+  {
+    "claim": "izbor",
+    "value": 26,
+    "denominator": 279,
+    "source": "word-clouds.csv:t03"
+  },
+  {
+    "claim": "obitelj",
+    "value": 26,
+    "denominator": 279,
+    "source": "word-clouds.csv:t03"
+  },
+  {
+    "claim": "problem",
+    "value": 25,
+    "denominator": 279,
+    "source": "word-clouds.csv:t03"
+  },
+  {
+    "claim": "interes",
+    "value": 22,
+    "denominator": 279,
+    "source": "word-clouds.csv:t03"
+  },
+  {
+    "claim": "odnos",
+    "value": 22,
+    "denominator": 279,
+    "source": "word-clouds.csv:t03"
+  },
+  {
+    "claim": "Europa",
+    "value": 147,
+    "denominator": 212,
+    "source": "word-clouds.csv:t06"
+  },
+  {
+    "claim": "europski",
+    "value": 141,
+    "denominator": 212,
+    "source": "word-clouds.csv:t06"
+  },
+  {
+    "claim": "vrijednost",
+    "value": 93,
+    "denominator": 212,
+    "source": "word-clouds.csv:t06"
+  },
+  {
+    "claim": "Hrvatska",
+    "value": 74,
+    "denominator": 212,
+    "source": "word-clouds.csv:t06"
+  },
+  {
+    "claim": "izbor",
+    "value": 52,
+    "denominator": 212,
+    "source": "word-clouds.csv:t06"
+  },
+  {
+    "claim": "parlament",
+    "value": 47,
+    "denominator": 212,
+    "source": "word-clouds.csv:t06"
+  },
+  {
+    "claim": "politika",
+    "value": 47,
+    "denominator": 212,
+    "source": "word-clouds.csv:t06"
+  },
+  {
+    "claim": "ideja",
+    "value": 43,
+    "denominator": 212,
+    "source": "word-clouds.csv:t06"
+  },
+  {
+    "claim": "lista",
+    "value": 40,
+    "denominator": 212,
+    "source": "word-clouds.csv:t06"
+  },
+  {
+    "claim": "EU",
+    "value": 39,
+    "denominator": 212,
+    "source": "word-clouds.csv:t06"
+  },
+  {
+    "claim": "budućnost",
+    "value": 38,
+    "denominator": 212,
+    "source": "word-clouds.csv:t06"
+  },
+  {
+    "claim": "hrvatski",
+    "value": 36,
+    "denominator": 212,
+    "source": "word-clouds.csv:t06"
+  },
+  {
+    "claim": "kandidat",
+    "value": 33,
+    "denominator": 212,
+    "source": "word-clouds.csv:t06"
+  },
+  {
+    "claim": "svijet",
+    "value": 33,
+    "denominator": 212,
+    "source": "word-clouds.csv:t06"
+  },
+  {
+    "claim": "politički",
+    "value": 32,
+    "denominator": 212,
+    "source": "word-clouds.csv:t06"
+  },
+  {
+    "claim": "demokracija",
+    "value": 30,
+    "denominator": 212,
+    "source": "word-clouds.csv:t06"
+  },
+  {
+    "claim": "unija",
+    "value": 30,
+    "denominator": 212,
+    "source": "word-clouds.csv:t06"
+  },
+  {
+    "claim": "HDZ",
+    "value": 26,
+    "denominator": 212,
+    "source": "word-clouds.csv:t06"
+  },
+  {
+    "claim": "katolički",
+    "value": 82,
+    "denominator": 173,
+    "source": "word-clouds.csv:t08"
+  },
+  {
+    "claim": "politički",
+    "value": 68,
+    "denominator": 173,
+    "source": "word-clouds.csv:t08"
+  },
+  {
+    "claim": "hrvatski",
+    "value": 66,
+    "denominator": 173,
+    "source": "word-clouds.csv:t08"
+  },
+  {
+    "claim": "Hrvatska",
+    "value": 47,
+    "denominator": 173,
+    "source": "word-clouds.csv:t08"
+  },
+  {
+    "claim": "socijaldemokracija",
+    "value": 43,
+    "denominator": 173,
+    "source": "word-clouds.csv:t08"
+  },
+  {
+    "claim": "sveučilište",
+    "value": 43,
+    "denominator": 173,
+    "source": "word-clouds.csv:t08"
+  },
+  {
+    "claim": "crkva",
+    "value": 40,
+    "denominator": 173,
+    "source": "word-clouds.csv:t08"
+  },
+  {
+    "claim": "socijalan",
+    "value": 40,
+    "denominator": 173,
+    "source": "word-clouds.csv:t08"
+  },
+  {
+    "claim": "politika",
+    "value": 35,
+    "denominator": 173,
+    "source": "word-clouds.csv:t08"
+  },
+  {
+    "claim": "zbornik",
+    "value": 34,
+    "denominator": 173,
+    "source": "word-clouds.csv:t08"
+  },
+  {
+    "claim": "demokracija",
+    "value": 33,
+    "denominator": 173,
+    "source": "word-clouds.csv:t08"
+  },
+  {
+    "claim": "europski",
+    "value": 32,
+    "denominator": 173,
+    "source": "word-clouds.csv:t08"
+  },
+  {
+    "claim": "perspektiva",
+    "value": 32,
+    "denominator": 173,
+    "source": "word-clouds.csv:t08"
+  },
+  {
+    "claim": "izvor",
+    "value": 31,
+    "denominator": 173,
+    "source": "word-clouds.csv:t08"
+  },
+  {
+    "claim": "rad",
+    "value": 31,
+    "denominator": 173,
+    "source": "word-clouds.csv:t08"
+  },
+  {
+    "claim": "skup",
+    "value": 30,
+    "denominator": 173,
+    "source": "word-clouds.csv:t08"
+  },
+  {
+    "claim": "čovjek",
+    "value": 30,
+    "denominator": 173,
+    "source": "word-clouds.csv:t08"
+  },
+  {
+    "claim": "glas",
+    "value": 29,
+    "denominator": 173,
+    "source": "word-clouds.csv:t08"
+  },
+  {
+    "claim": "demokršćanske vrijednosti",
+    "value": 454,
+    "denominator": 2253,
+    "source": "phrases.csv"
+  },
+  {
+    "claim": "desni centar",
+    "value": 208,
+    "denominator": 2253,
+    "source": "phrases.csv"
+  },
+  {
+    "claim": "demokršćanska stranka",
+    "value": 111,
+    "denominator": 2253,
+    "source": "phrases.csv"
+  },
+  {
+    "claim": "demokršćanska načela",
+    "value": 105,
+    "denominator": 2253,
+    "source": "phrases.csv"
+  },
+  {
+    "claim": "solidarnost",
+    "value": 103,
+    "denominator": 2253,
+    "source": "selected-words.csv"
+  },
+  {
+    "claim": "savjest",
+    "value": 29,
+    "denominator": 2253,
+    "source": "selected-words.csv"
+  },
+  {
+    "claim": "supsidijarnost",
+    "value": 27,
+    "denominator": 2253,
+    "source": "selected-words.csv"
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "pdf_sha256": "04776182eb3663918822e2d0710d3d1ffe7d22ed871b283a32a793fdcd6bdad3",
+  "pages": 14,
+  "public_release_counts_reconciled": true,
+  "original_report_and_plan_unchanged": true,
+  "technical_material_absent": true,
+  "embedded_fonts": [
+    "/AAAAAA+Calibri",
+    "/AAAAAA+Calibri-Bold",
+    "/AAAAAA+Georgia"
+  ],
+  "text_spans_checked": 308,
+  "text_outside_page": 0,
+  "visual_review": "All pages inspected; changed pages reinspected",
+  "visual_reviewer": "Codex AI"
+}

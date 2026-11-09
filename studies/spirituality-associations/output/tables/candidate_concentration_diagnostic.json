@@ -1,0 +1,8 @@
+{
+  "top_1_share_pct": 5.705629891441555,
+  "top_5_share_pct": 18.808381721787427,
+  "top_10_share_pct": 31.00227215349659,
+  "top_20_share_pct": 46.30143903054784,
+  "denominator": "unvalidated organisation-item pairs, all 1325 rows with unresolved/unscreened rows not treated as valid zeros",
+  "organisation_item_pairs": 3961
+}

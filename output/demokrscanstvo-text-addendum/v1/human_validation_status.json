@@ -1,0 +1,13 @@
+{
+  "population": 2253,
+  "sample": 400,
+  "seed": 20260920,
+  "weight_sum": 2253.0,
+  "pilot_prepared": 60,
+  "independent_human_codings_required": 800,
+  "independent_human_codings_completed": 0,
+  "codebook_status": "draft; pilot not coded",
+  "alpha": null,
+  "application_prevalence": null,
+  "reason": "No independent human decisions supplied; explicit computational-core fallback in approved plan."
+}

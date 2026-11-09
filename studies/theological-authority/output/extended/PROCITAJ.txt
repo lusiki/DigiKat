@@ -1,0 +1,48 @@
+﻿DigiKat: agregati proširenog istraživačkog izvještaja
+Razdoblje: 2021.-2025. Lokalni raniji presjek, nije noviji službeni korpus.
+Ovaj paket je izrađen lokalno za dijeljenje; nije objavljen na webu.
+
+Datoteke su UTF-8 CSV s decimalnom točkom. NA označuje nedostupno, ne nulu.
+Manifest sadrži identitet ulaza, hash i verzije resursa/paketa.
+platform: mjere za scope=all (svi zapisi) i selected (šest skupina).
+groups, group_platform: vrste aktera i njihove platforme.
+annual, annual_groups, annual_all: godišnje mjere; year_calc je godina datuma.
+monthly, monthly_origin: mjesečne mjere i ulazni izvori. Prazni mjeseci nisu
+imputirani nulama. Veljača-svibanj 2024. nema zapisa u ulaznom presjeku.
+cohort_matched: isti izvori s >=5 objava u oba prozora srpanj-prosinac
+2024. i 2025. cohort_all: svi odabrani izvori u istim prozorima.
+cohort_source_changes: svakom izvoru jednaka težina; razlike prosjeka.
+classification: naslijeđeno pravilo i pokrivenost. group_concentration:
+koncentracija interakcija unutar skupina. rank_overlap: preklapanje top 50.
+raw_metrics, metric_flags, metric_audit: dostupnost/sastav metrika.
+sentiment, sentiment_2025: svi postojeći sentimenti uključujući unknown.
+within_source: negativno/neutralno, >=5 objava obiju oznaka kod istog izvora.
+themes: rječnički tragovi u prvih 3000 znakova; preklapajuće kategorije.
+concentration: odabrani izvori s dostupnim interakcijama, unutar platforme.
+actor_groups: osnovna podjela cijelog skupa, s ostalim/nerazvrstanim izvorima.
+public_schema, public_availability: odvojeni pregled postojećih javnih resursa.
+
+STUPCI: posts=broj zapisa; sources=broj parova platforma/naziv;
+interaction_n=zapisi s interakcijama; interactions=zbroj dostupnih reakcija;
+interaction_mean/median=prosjek/medijan dostupnih reakcija po objavi;
+reach_n=zapisi s dosegom; reach_total=zbroj dostupnih procjena dosega;
+reach_mean/median=prosjek/medijan po objavi; reach_zero_n=zabilježene nule;
+views_n/views_total=broj zapisa i zbroj zasebnog polja pregleda;
+text_n=zapisi s tekstom; months=broj mjeseci sa zapisima; first/last=datumi.
+U osnovnim tablicama observed, mean i median odnose se na interakcije.
+Udjeli su 0-1, promjene prosjeka apsolutne. Brojevi izvora nisu aditivni
+preko mjeseci/godina. Nazivi autora i sadržaj objava nisu uključeni.
+
+SKUPINE: church_media=crkveni mediji; church_org=crkvene ustanove;
+independent=neovisni katolički mediji; clergy=svećenički profili;
+community=zajednice/udruge; devotional=pobožni/autorski kanali.
+public=ostali/nerazvrstani, nije sinonim za sekularne izvore;
+other_christian=međukršćanski granični slučaj iz postojećeg registra.
+
+OGRANIČENJA: REACH nije jedinstvena publika. Platformske metrike nisu
+izravno usporedive. Reddit/forum/comment nemaju upotrebljiv doseg i
+interakcije. Odabir aktera je indikativan. Godina 2024. je nepotpuna i
+obuhvaća promjenu prikupljanja. Nalazi su deskriptivni, bez kauzalnih tvrdnji.
+Osnovne stare tablice actor_groups/sentiment/metric_audit koriste osnovnu
+shemu; kada nema dostupnih interakcija, njihov zbroj može biti 0 uz
+observed=0. U novim tablicama takav zbroj je NA.

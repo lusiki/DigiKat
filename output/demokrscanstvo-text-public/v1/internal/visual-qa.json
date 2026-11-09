@@ -1,0 +1,80 @@
+{
+  "pdf_sha256": "8bc603616b34ad49d550b8b20628619a58ee9a81152035dc5eaaf24068554bac",
+  "renderer": "Poppler pdftoppm 26.09.0, 110 dpi",
+  "reviewer": "Codex AI, every final rendered page inspected",
+  "pages": [
+    {
+      "page": 1,
+      "render_sha256": "2a44a10337b8ecda5e432751b37af231d05b4795c03f42ecca4df63b11e25633",
+      "visually_inspected": true,
+      "finding": "Naslovnica: jasan naslov, podnaslov, razdoblje i jedinice; autor Luka Šikić i poveznica na osobnu stranicu čitljivi; bez prelijevanja."
+    },
+    {
+      "page": 2,
+      "render_sha256": "4666b438bffa59920a72570691476eee9787a827034016bd5aaa05fd797fc523",
+      "visually_inspected": true,
+      "finding": "Četiri sadržajna nalaza; hijerarhija i istaknuta poruka čitljive."
+    },
+    {
+      "page": 3,
+      "render_sha256": "a1e22720443560cfe0843dabb5907e252152c40fecef24e6d9ecdf5f6acda4ca",
+      "visually_inspected": true,
+      "finding": "Ukupni oblak: 48 riječi, hrvatski znakovi i razmaci; tablica nazivnika čitljiva."
+    },
+    {
+      "page": 4,
+      "render_sha256": "a9b67f0a278ea3771fa5edd471dea21652a1bb660d4b1200ee17a9b9aaa9f904",
+      "visually_inspected": true,
+      "finding": "Deset tematskih stupaca: oznake i vrijednosti potpuno vidljive."
+    },
+    {
+      "page": 5,
+      "render_sha256": "590c079dbe0a52a50ee9c608c56ff36157ce4fffaef4626afe4c0309c0206b89",
+      "visually_inspected": true,
+      "finding": "Četiri politička oblaka: bez sudara riječi, nazivi i brojčani opisi čitljivi."
+    },
+    {
+      "page": 6,
+      "render_sha256": "8aacc4f35f219e7a5da1c7d14a4042dca8e708600ad11651955ab404c089a2c8",
+      "visually_inspected": true,
+      "finding": "Četiri oblaka vrijednosti i ideja: čitljivi nazivi, riječi i tumačenja."
+    },
+    {
+      "page": 7,
+      "render_sha256": "c6bc121b2ac8bac1f87fcee41510ef6cc063a2a3505a2f1c92112528824ef8e1",
+      "visually_inspected": true,
+      "finding": "Dva oblaka: izbori i međunarodni odnosi; tekst i napomene dobro razmaknuti."
+    },
+    {
+      "page": 8,
+      "render_sha256": "f6c51fb267182c677eb4ee632807bb8a7d3fc6fcb121ada2053a9bb69ee58fd3",
+      "visually_inspected": true,
+      "finding": "Osam izraza: točan nazivnik, postoci i objašnjenje preklapanja."
+    },
+    {
+      "page": 9,
+      "render_sha256": "149e47b0b7d459d874b0a14fc1d1d32ef171a9585384358b74153f50bc841f1a",
+      "visually_inspected": true,
+      "finding": "Haj Barakat: citat, datumi objave/događaja, tablica i izvor čitljivi."
+    },
+    {
+      "page": 10,
+      "render_sha256": "72299e8abfd899ece8efecc94148a0c18c4bf84050fea0d3eb4e55fa94e46cf3",
+      "visually_inspected": true,
+      "finding": "Savjest: razlikovani govornici, citat, tablica i izvor bez prijelomnih problema."
+    },
+    {
+      "page": 11,
+      "render_sha256": "fde2424ef48ac300f96ce626c9db2b72e7689894fe48e395da66ad81fb311f1c",
+      "visually_inspected": true,
+      "finding": "Europa: trodijelni slijed, izvori i ograda o ekonomskom učinku čitljivi."
+    },
+    {
+      "page": 12,
+      "render_sha256": "8076a79fdf29e5494e209e814517cd1a98654c0e691aa02688bf31825936389c",
+      "visually_inspected": true,
+      "finding": "Žižić: četiri brojčana retka i završna interpretacija; tekst iznad podnožja."
+    }
+  ],
+  "unresolved_layout_issues": []
+}

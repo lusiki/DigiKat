@@ -1,0 +1,81 @@
+{
+  "corpus_sha256": "5d8b695939bbefcf9f9fe4d2ee0f8d78d25a07faa9c37ed415898be77f3e44c6",
+  "config_hash": "7e07fd6c27efe1cf9ad14226c09b5efd569ecbefdf2882171098b75a0adf689f",
+  "report_data_sha256": "36b43d9710ce7d8695ab5a20335d0ab271dc495ce9b4fe976a015649a86e6350",
+  "office_register_sha256": "68c8cf596d769f3f1490fbb2403d4c2ce05d7ebb8bcaa33a52f26aa5407ec140",
+  "code_sha256": "be9a599fc86537b73a1ee779c7618ff4e73c7e5d529f747aac7f994dd408ade4",
+  "rules_sha256": "9899f9e0c0f87f52cfcdcebf8bd9de18d81b808c4096fa2ccf5839c18a1d4669",
+  "files": {
+    "offices.csv": {
+      "rows": 399,
+      "sha256": "831d9751001b46254c37efe3625c7dbbe79c335a98a07a70ef5fa69cf2219572",
+      "columns": [
+        "statement_id",
+        "entity_qid",
+        "name",
+        "office_qid",
+        "office_label_hr",
+        "place_qids",
+        "start_earliest",
+        "start_latest",
+        "end_earliest",
+        "end_latest",
+        "end_basis",
+        "source_public_page"
+      ]
+    },
+    "aliases_public.csv": {
+      "rows": 546,
+      "sha256": "9e3ff3b91e68b9ae1a83774d207e2e14dfbc8d9d5f459984bdd3b5a545f21bbe",
+      "columns": [
+        "entity_qid",
+        "canonical_name",
+        "surface_form",
+        "documents"
+      ]
+    },
+    "mention_outlets_edges.csv": {
+      "rows": 260,
+      "sha256": "76f8cbe97ced29168927492335c84c22244669ca78b815a639bf6727ce92451a",
+      "columns": [
+        "from_qid",
+        "to_qid",
+        "shared_contexts",
+        "independent_documents"
+      ]
+    },
+    "mention_paragraphs_edges.csv": {
+      "rows": 659,
+      "sha256": "77c4aa3dbc5edee52667c5cc0ae74d431c86693ce804372f4abeb955f770ffc3",
+      "columns": [
+        "from_qid",
+        "to_qid",
+        "shared_contexts",
+        "independent_documents"
+      ]
+    }
+  },
+  "aggregate_parquet": {
+    "rows": 9,
+    "columns": [
+      "platform",
+      "documents",
+      "long_documents",
+      "short_documents",
+      "document_counts_suppressed",
+      "eligibility_counts_suppressed",
+      "corpus_sha256",
+      "config_hash",
+      "created_utc"
+    ],
+    "sha256": "134053796b8c568897e96a0be673bf36325949a770062c95d3d135b0c7aeab12",
+    "created_utc": "2026-10-28T08:19:39.274384+00:00",
+    "code_sha256": "ea75872b2923f2b9b8b7b1cc6405f1b37620aad75daa510497e304b22bcb97bd",
+    "scope": "Identity-free full-corpus platform coverage; no people, accounts, URLs, document IDs or text.",
+    "suppression": "If any cell is below five, suppress its full column family across platforms; both sides of the length split are suppressed together."
+  },
+  "scope": "Machine-derived public metadata and D6 aggregate mention edges. No source passages, document IDs, private account identifiers or speech claims.",
+  "office_limitations": "Incomplete public office coverage; only usable dated claims potentially overlapping 2021–2026 and the documented maximum-tenure bound. Open ends are not proof of current office. Death bounds are distinguished from office-end dates.",
+  "alias_limitations": "Only agreed morphological forms with at least five distinct contemporary documents and short multiword name shape. Other forms remain private; this is not a verified complete alias dictionary.",
+  "network_limitations": "Only D6 endpoints; ties supported by fewer than five contexts or paragraph-document units omitted. These release edges differ from the full internal backbone. They do not express speech, support or influence."
+}

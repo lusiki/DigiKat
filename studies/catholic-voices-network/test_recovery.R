@@ -1,0 +1,27 @@
+# Real DuckDB transactions: committed data survives reopen, partial batches roll back.
+invisible(Sys.setlocale("LC_CTYPE", "English_United States.utf8"))
+db <- tempfile(fileext = ".duckdb")
+con <- DBI::dbConnect(duckdb::duckdb(), db)
+DBI::dbExecute(con, "CREATE TABLE docs (doc_id INTEGER PRIMARY KEY)")
+DBI::dbExecute(con, "CREATE TABLE checkpoints (batch_start INTEGER PRIMARY KEY)")
+DBI::dbWithTransaction(con, {
+  DBI::dbExecute(con, "INSERT INTO docs VALUES (1), (2)")
+  DBI::dbExecute(con, "INSERT INTO checkpoints VALUES (1)")
+})
+DBI::dbExecute(con, "CHECKPOINT")
+tryCatch(DBI::dbWithTransaction(con, {
+  DBI::dbExecute(con, "INSERT INTO docs VALUES (3)")
+  stop("simulated interruption before completion marker")
+}), error = function(e) invisible(NULL))
+DBI::dbDisconnect(con, shutdown = TRUE)
+con <- DBI::dbConnect(duckdb::duckdb(), db)
+stopifnot(identical(DBI::dbReadTable(con, "docs")$doc_id, 1:2))
+stopifnot(identical(DBI::dbReadTable(con, "checkpoints")$batch_start, 1L))
+DBI::dbWithTransaction(con, {
+  DBI::dbExecute(con, "INSERT INTO docs VALUES (3)")
+  DBI::dbExecute(con, "INSERT INTO checkpoints VALUES (3)")
+})
+stopifnot(nrow(DBI::dbReadTable(con, "docs")) == 3)
+DBI::dbDisconnect(con, shutdown = TRUE)
+unlink(db)
+cat("PASS: committed batch persists, interrupted batch rolls back, resume completes without duplicates.\n")

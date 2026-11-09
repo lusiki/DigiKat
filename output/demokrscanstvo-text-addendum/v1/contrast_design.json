@@ -1,0 +1,24 @@
+[
+  {
+    "contrast": "web_2021_2023",
+    "a_groups": 511,
+    "b_groups": 273,
+    "shared_groups": 0,
+    "a_records": 516,
+    "b_records": 275,
+    "largest_source": "index.hr",
+    "source_groups_removed": 33,
+    "eligible": true
+  },
+  {
+    "contrast": "web_jan_aug_2025_2026",
+    "a_groups": 121,
+    "b_groups": 139,
+    "shared_groups": 1,
+    "a_records": 121,
+    "b_records": 139,
+    "largest_source": "narod.hr",
+    "source_groups_removed": 16,
+    "eligible": true
+  }
+]

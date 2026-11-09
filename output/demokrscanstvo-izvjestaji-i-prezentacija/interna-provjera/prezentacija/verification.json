@@ -1,0 +1,272 @@
+{
+  "status": "PASS",
+  "pdf_sha256": "e33be8e8eba86a353f423f35d61d7d06a2a91ff832f3daf2c4a995c71d8de786",
+  "author": "Luka Šikić",
+  "author_url": "https://www.lukasikic.info/",
+  "slides": 15,
+  "substantive_findings": 12,
+  "numeric_claims_reconciled": 134,
+  "scope": "2,306 publications for media presence; 2,253 distinct texts for vocabulary. No public-opinion, reach or prevalence-of-arguments claims.",
+  "case_evidence": [
+    {
+      "case": "K01",
+      "archived_date": "2024-06-07",
+      "source": "telegram.hr",
+      "source_title": "Stier bi EU po mjeri Ivana Pavla II: 'Tako bismo ulovili korak, sagradili pruge i nasipe'",
+      "body_sha256": "a8ceef8bb402dc0ab0cf5c8f6e589a1c5d329da94ad35089b9a7cad3bc344056",
+      "names_and_supporting_passages_matched": 5,
+      "scope": "complete available body reread; interpretation attributed to speaker"
+    },
+    {
+      "case": "K02",
+      "archived_date": "2022-04-20",
+      "source": "kamenjar.com",
+      "source_title": "Plenković: Milanović primitivnim napadom pokazao ogromnu nervozu",
+      "body_sha256": "96826e2faecb0090dfe61ab8bb3f0b7c67980e051bde35725dc899dc8addf0af",
+      "names_and_supporting_passages_matched": 3,
+      "scope": "complete available body reread; interpretation attributed to speaker"
+    },
+    {
+      "case": "K03",
+      "archived_date": "2021-02-28",
+      "source": "otvoreno.hr",
+      "source_title": "Žižić: Približavanjem demokršćana ljevici otvorio bi se veliki prostor za nacionalne konzervativce",
+      "body_sha256": "38c8d03cdebda9ec274c330ee342f6254327edf296f5ab6830fef11455534f5b",
+      "names_and_supporting_passages_matched": 5,
+      "scope": "complete available body reread; interpretation attributed to speaker"
+    },
+    {
+      "case": "K05",
+      "archived_date": "2024-08-30",
+      "source": "Glas Slavonije - HR",
+      "source_title": "Samir Haj Barakat napustio SDP: Razočaran sam, u šalabahter- demokraciji ne želim sudjelovati",
+      "body_sha256": "e61fe993e26cdb9545adba7407cca6c81a79a9e15fc060168aad58c115fc3045",
+      "names_and_supporting_passages_matched": 4,
+      "scope": "complete available body reread; interpretation attributed to speaker"
+    }
+  ],
+  "browser": {
+    "status": "PASS",
+    "slides": 15,
+    "geometry": [
+      {
+        "id": "slajd-1",
+        "title": "Demokršćanstvo u medijima",
+        "contentBottom": 499.25,
+        "footerTop": 618.5,
+        "width": 1200,
+        "height": 675
+      },
+      {
+        "id": "slajd-2",
+        "title": "Dva pogleda na istu medijsku raspravu",
+        "contentBottom": 467.5625,
+        "footerTop": 618.5,
+        "width": 1200,
+        "height": 675
+      },
+      {
+        "id": "slajd-3",
+        "title": "Medijska slika pretežito je mrežna",
+        "contentBottom": 410.609375,
+        "footerTop": 618.5,
+        "width": 1200,
+        "height": 675
+      },
+      {
+        "id": "slajd-4",
+        "title": "Politička pripadnost zauzima polovicu prostora",
+        "contentBottom": 490.203125,
+        "footerTop": 618.5,
+        "width": 1200,
+        "height": 675
+      },
+      {
+        "id": "slajd-5",
+        "title": "Vrijednosti su središnja riječ rasprave",
+        "contentBottom": 551.53125,
+        "footerTop": 618.5,
+        "width": 1200,
+        "height": 675
+      },
+      {
+        "id": "slajd-6",
+        "title": "Domoljublje i HDZ nose različite naglaske",
+        "contentBottom": 536.5,
+        "footerTop": 618.5,
+        "width": 1200,
+        "height": 675
+      },
+      {
+        "id": "slajd-7",
+        "title": "Europa i stručna rasprava otvaraju druge prostore",
+        "contentBottom": 536.5,
+        "footerTop": 618.5,
+        "width": 1200,
+        "height": 675
+      },
+      {
+        "id": "slajd-8",
+        "title": "Među izrazima prednjače „demokršćanske vrijednosti”",
+        "contentBottom": 490.203125,
+        "footerTop": 618.5,
+        "width": 1200,
+        "height": 675
+      },
+      {
+        "id": "slajd-9",
+        "title": "Poštovanje načela ne znači stranačku pripadnost",
+        "contentBottom": 371.203125,
+        "footerTop": 618.5,
+        "width": 1200,
+        "height": 675
+      },
+      {
+        "id": "slajd-10",
+        "title": "Iste vrijednosti ulaze u spor o javnoj usluzi",
+        "contentBottom": 423.40625,
+        "footerTop": 618.5,
+        "width": 1200,
+        "height": 675
+      },
+      {
+        "id": "slajd-11",
+        "title": "Europska solidarnost dobiva lokalnu adresu",
+        "contentBottom": 427.4375,
+        "footerTop": 618.5,
+        "width": 1200,
+        "height": 675
+      },
+      {
+        "id": "slajd-12",
+        "title": "Rjeđa načela ipak nose konkretne argumente",
+        "contentBottom": 418.609375,
+        "footerTop": 618.5,
+        "width": 1200,
+        "height": 675
+      },
+      {
+        "id": "slajd-13",
+        "title": "Supsidijarnost otvara pitanje tko treba odlučivati",
+        "contentBottom": 451.96875,
+        "footerTop": 618.5,
+        "width": 1200,
+        "height": 675
+      },
+      {
+        "id": "slajd-14",
+        "title": "Značenje vrijednosti vidi se u onome što opravdavaju",
+        "contentBottom": 511.34375,
+        "footerTop": 618.5,
+        "width": 1200,
+        "height": 675
+      },
+      {
+        "id": "slajd-15",
+        "title": "Istražite prostor. Pročitajte argumente.",
+        "contentBottom": 524.71875,
+        "footerTop": 618.5,
+        "width": 1200,
+        "height": 675
+      }
+    ],
+    "accessibility": [],
+    "keyboard": true,
+    "mobile": [
+      {
+        "width": 320,
+        "scrollWidth": 305,
+        "clipping": []
+      },
+      {
+        "width": 390,
+        "scrollWidth": 375,
+        "clipping": []
+      },
+      {
+        "width": 768,
+        "scrollWidth": 753,
+        "clipping": []
+      }
+    ],
+    "errors": []
+  },
+  "visual_pages": [
+    {
+      "page": 1,
+      "render_sha256": "e5922902013053344a71f11b10af7dbe967d5b0a27f68df2b02062469683fa8d",
+      "visual_review": "Readable Croatian text; full labels; content clear of footer; links and hierarchy retained"
+    },
+    {
+      "page": 2,
+      "render_sha256": "ef618958e0171de3f1e8ef980b825f85966a053a691b4f6a8fbf661fd2a7c257",
+      "visual_review": "Readable Croatian text; full labels; content clear of footer; links and hierarchy retained"
+    },
+    {
+      "page": 3,
+      "render_sha256": "f1c58688780aa97088049ae156080aeb4ca37a818900e7de561f4461bee24ec0",
+      "visual_review": "Readable Croatian text; full labels; content clear of footer; links and hierarchy retained"
+    },
+    {
+      "page": 4,
+      "render_sha256": "b8446c2a8f011e3c9b5f13220903334b6f52d19f39ff3091adb6374dc39dc2d6",
+      "visual_review": "Readable Croatian text; full labels; content clear of footer; links and hierarchy retained"
+    },
+    {
+      "page": 5,
+      "render_sha256": "ca5d75972790a6c91c4ef14cf10f4ce1e87bf3343f12e2df8a3761fb1c5eccf5",
+      "visual_review": "Readable Croatian text; full labels; content clear of footer; links and hierarchy retained"
+    },
+    {
+      "page": 6,
+      "render_sha256": "e4e30d20c2398945eabfdd50f0461ce468f5c451ab17a7f004a093f6a739b735",
+      "visual_review": "Readable Croatian text; full labels; content clear of footer; links and hierarchy retained"
+    },
+    {
+      "page": 7,
+      "render_sha256": "5847207ebe1d2a373e84fd7c4a22b192dfcd16567be93e809a91e6c889d3011a",
+      "visual_review": "Readable Croatian text; full labels; content clear of footer; links and hierarchy retained"
+    },
+    {
+      "page": 8,
+      "render_sha256": "c19eb961cf6c2fffc4b87b8dac850ef268428560070690b547ac7046b417ebe5",
+      "visual_review": "Readable Croatian text; full labels; content clear of footer; links and hierarchy retained"
+    },
+    {
+      "page": 9,
+      "render_sha256": "b4ce40480759f6c0187295cb67534337e6931168d20ed36eba7ecae53bf2dd5e",
+      "visual_review": "Readable Croatian text; full labels; content clear of footer; links and hierarchy retained"
+    },
+    {
+      "page": 10,
+      "render_sha256": "8118d674ed85aa5095aeffb39ea26a993ee7624fb70d2a24128a10d657a4464f",
+      "visual_review": "Readable Croatian text; full labels; content clear of footer; links and hierarchy retained"
+    },
+    {
+      "page": 11,
+      "render_sha256": "d28ce7cd157833121908ea523787b37b32e6aca7e42fb4e76e7b08651811b870",
+      "visual_review": "Readable Croatian text; full labels; content clear of footer; links and hierarchy retained"
+    },
+    {
+      "page": 12,
+      "render_sha256": "8632c101033e0533bb4024345441a8453c048d115833280d290b835bd737fbde",
+      "visual_review": "Readable Croatian text; full labels; content clear of footer; links and hierarchy retained"
+    },
+    {
+      "page": 13,
+      "render_sha256": "d7a16ae3ae2497fe8e38488b47d5090759090414b8f1f40948518b2eccb0863a",
+      "visual_review": "Readable Croatian text; full labels; content clear of footer; links and hierarchy retained"
+    },
+    {
+      "page": 14,
+      "render_sha256": "9534d844fbc7805744b9c7857eaaf5caca20a60358704a0eabbc577cb8a88530",
+      "visual_review": "Readable Croatian text; full labels; content clear of footer; links and hierarchy retained"
+    },
+    {
+      "page": 15,
+      "render_sha256": "4c6f2e4d84ee14dc21f45fb7b38dc3341ce2384d5ed14f7492439b65cb8c5dcd",
+      "visual_review": "Readable Croatian text; full labels; content clear of footer; links and hierarchy retained"
+    }
+  ],
+  "reviewer": "Codex AI; no independent human review claimed"
+}

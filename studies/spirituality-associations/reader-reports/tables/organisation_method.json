@@ -1,0 +1,138 @@
+{
+  "unit": "organisation x canonical web URL; earliest retained publication-day",
+  "selection": "existing restricted_candidate and title_or_lead; web only; exclude archive URL paths and explicit tag-page text",
+  "title_or_lead": "name occurs in title or first 800 normalised body characters",
+  "context_rules": {
+    "8013": "\\b(?:osije\\w*|breza hr|zemlja bez granica|socijalno terapij\\w*)\\b",
+    "62177": "\\b(?:cekade|socijaln\\w*|sirom\\w*|rijek\\w*|rijeck\\w*|inkluz\\w*)\\b"
+  },
+  "selection_audit": {
+    "prominent_restricted_web_pairs": 7538,
+    "breza_without_osijek_context": 77,
+    "archive_pages_removed": 123,
+    "sunce_program_without_local_social_context": 34
+  },
+  "rank_pairs": 7283,
+  "unique_web_urls": 7219,
+  "names": 333,
+  "word_unit": "once per retained text context; existing name masking and repeat suppression",
+  "word_display_exclusions": [
+    "albona",
+    "alfa",
+    "cetvrtak",
+    "godina",
+    "godine",
+    "godinu",
+    "gordana",
+    "hdkn",
+    "hkld",
+    "hrkac",
+    "hrvatsko",
+    "hrvatskog",
+    "hrvatskoga",
+    "image",
+    "jelic",
+    "katolickih",
+    "katolicko",
+    "katolickog",
+    "kolovoza",
+    "larger",
+    "lijecnickog",
+    "lipnja",
+    "listopada",
+    "mladen",
+    "nedjelju",
+    "nikole",
+    "novinara",
+    "ozujka",
+    "petak",
+    "ponedjeljak",
+    "posted",
+    "prosinca",
+    "rujna",
+    "sijecnja",
+    "sklopu",
+    "skrabe",
+    "srijedu",
+    "srpnja",
+    "studenoga",
+    "subotu",
+    "sunce",
+    "svibnja",
+    "travnja",
+    "utorak",
+    "veljace",
+    "view",
+    "vijesti",
+    "webmaster"
+  ],
+  "profile_table_terms": {
+    "4553": [
+      "mlade",
+      "prijave",
+      "duhovne",
+      "vjezbe"
+    ],
+    "1147": [
+      "slijepih",
+      "aktivnosti",
+      "provodi",
+      "projekta"
+    ],
+    "62177": [
+      "siromastva",
+      "program",
+      "djece",
+      "dijaloga"
+    ],
+    "15343": [
+      "komunikacija",
+      "medija",
+      "nagrade",
+      "priznanja"
+    ],
+    "15417": [
+      "podruznica",
+      "zivota",
+      "medicine",
+      "skup"
+    ],
+    "53291": [
+      "program",
+      "poetsko",
+      "glazbeni",
+      "kazaliste"
+    ],
+    "60490": [
+      "progledaj",
+      "srcem",
+      "misa",
+      "radionice"
+    ],
+    "14130": [
+      "otpada",
+      "mora",
+      "okolisa",
+      "organizira"
+    ],
+    "53102": [
+      "projekta",
+      "mladih",
+      "radionice",
+      "aktivnosti"
+    ],
+    "57750": [
+      "projekta",
+      "provodi",
+      "volonterka",
+      "bolnickom"
+    ]
+  },
+  "topic_denominator": "organisation-specific retained text contexts, printed as n; frozen six-topic assignments",
+  "human_validation_claimed": false,
+  "inputs": {
+    "pair_evidence.jsonl": "39ef4c3a64aac9be2943347acf4998660cd857011f4ea6c1e025f0e73a869001",
+    "repeat_check_assignments.csv": "5674119bfa94b8856d31895d61450872971dba06cdf79d19f6c27631fd1c6c6c",
+    "rules.csv": "a0ec89b05dfbfaa6840cab0293c398a0c3dba174e2eb878a6e6c421a70c7df24"
+  }
+}

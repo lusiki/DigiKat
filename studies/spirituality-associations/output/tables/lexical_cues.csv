@@ -1,0 +1,8 @@
+lexical_cue,associations,regex_normalized_name
+christian,141,katolic|krscan|bratov|isus|marijin|franjev|hagioter|evandel|biblij|salezij|dominik|karmel|ignacij|stepinc|bogorod|apostol
+other_named_traditions,18,budis|budd|padmasana|shechen|zidov|hebrej|islams|dervis|hare kris|vaisnav|bahai|baha i|hindu|vedsk
+yoga_meditation_development,129,"joga|yoga|medit|holist|osobn.{0,8}razvoj|duhovn|reiki|svjesnost|svijesnost|psihofiz|transformacij"
+humanitarian_social_support,100,humanitar|socijal|inkluz|volonter|dobrotvor|pomoc|potpor|solidarn|invalid|djeci|djece|obitelj
+culture_heritage_community,182,matic[ae] hrvatsk|kultur|bastin|zbor|izvidac|branitelj|veteran|folklor|tradic|umjet|zena|turist
+no_lexical_cue,808,
+multiple_cues,49,

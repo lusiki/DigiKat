@@ -1,0 +1,16 @@
+{
+  "documents": 20598,
+  "vocabulary": 6500,
+  "restricted_pairs_with_context": 21255,
+  "selected_k": 8,
+  "selection_reason": "Fixed eight-topic display within the predeclared exploratory 6/8/10/12 grid; interpret after representative readings.",
+  "zero_weight_items": 1,
+  "low_dominance_below_0_4": 1108,
+  "fulltext_aligned_mean_cosine": 0.5920198747183079,
+  "fulltext_iterations": 87,
+  "lemmatized": false,
+  "input": "accent-folded surface forms, name masking, ±450-character match contexts",
+  "sklearn": "1.9.1",
+  "scipy": "1.18.1",
+  "human_coded": false
+}

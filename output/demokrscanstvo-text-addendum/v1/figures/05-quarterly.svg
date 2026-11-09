@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="674.333594pt" height="307.44pt" viewBox="0 0 674.333594 307.44" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-19T18:34:37.468108</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.0, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 307.44 
+L 674.333594 307.44 
+L 674.333594 0 
+L 0 0 
+z
+" style="fill: #fcfbf7"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 73.573594 251.767344 
+L 667.133594 251.767344 
+L 667.133594 7.2 
+L 73.573594 7.2 
+z
+" style="fill: #fcfbf7"/>
+   </g>
+   <g clip-path="url(#p6cf7cea083)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAzkAAAFUCAYAAAAH5/K0AAAJ1klEQVR4nO3ZX8vfdR3H8Y8xtrEt2aw5yYixSGSagWYR/YWyToQiC7KCDkLsqMPuQGd1F/KgqMM8kM4KavTXZElumSurITlwf9plXtfyWobhPQgKfm+fPR634MX39/n+vjz53PDKP//x6hrkiT//YU1y74nbNj2B/9D3f3pq1LN64IMf3vSE0bZ2ttckhw8e2vQEXqecZc+H/49369r13TXJgb371iSHh31H37DpAQAAAP9LIgcAAEgROQAAQIrIAQAAUkQOAACQInIAAIAUkQMAAKSIHAAAIEXkAAAAKSIHAABIETkAAECKyAEAAFJEDgAAkCJyAACAFJEDAACkiBwAACBF5AAAACkiBwAASBE5AABAisgBAABSRA4AAJAicgAAgBSRAwAApIgcAAAgReQAAAApIgcAAEgROQAAQIrIAQAAUkQOAACQInIAAIAUkQMAAKSIHAAAIEXkAAAAKSIHAABIETkAAECKyAEAAFJEDgAAkCJyAACAFJEDAACkiBwAACBF5AAAACkiBwAASBE5AABAisgBAABSRA4AAJAicgAAgBSRAwAApIgcAAAgReQAAAApIgcAAEgROQAAQIrIAQAAUkQOAACQInIAAIAUkQMAAKSIHAAAIOWGZy+cf3XTIyY7fvTYmuTp559bk5y89W1riq2d7U1PGO3iSy+uSQ7t278mObB335rk8MFDa4pp79akZ/Oa85deWJNM+25N4zy/fni3+G+4yQEAAFJEDgAAkCJyAACAFJEDAACkiBwAACBF5AAAACkiBwAASBE5AABAisgBAABSRA4AAJAicgAAgBSRAwAApIgcAAAgReQAAAApIgcAAEgROQAAQIrIAQAAUkQOAACQInIAAIAUkQMAAKSIHAAAIEXkAAAAKSIHAABIETkAAECKyAEAAFJEDgAAkCJyAACAFJEDAACkiBwAACBF5AAAACkiBwAASBE5AABAisgBAABSRA4AAJAicgAAgBSRAwAApIgcAAAgReQAAAApIgcAAEgROQAAQIrIAQAAUkQOAACQInIAAIAUkQMAAKSIHAAAIEXkAAAAKSIHAABIETkAAECKyAEAAFJEDgAAkCJyAACAFJEDAACkiBwAACBF5AAAACkiBwAASBE5AABAyp7r/3plTXLbLbeuSS5cvbImObB335pka2d7TfGNb393TfK1L31x0xNGe8uRN61JJp3laf89036raR559LE1ydcffmjTE0a7dn13TXL44KE1xflLL6xJTj/zzJrk+NFja5IfPP7LNcn9733fmsRNDgAAkCJyAACAFJEDAACkiBwAACBF5AAAACkiBwAASBE5AABAisgBAABSRA4AAJAicgAAgBSRAwAApIgcAAAgReQAAAApIgcAAEgROQAAQIrIAQAAUkQOAACQInIAAIAUkQMAAKSIHAAAIEXkAAAAKSIHAABIETkAAECKyAEAAFJEDgAAkCJyAACAFJEDAACkiBwAACBF5AAAACkiBwAASBE5AABAisgBAABSRA4AAJAicgAAgBSRAwAApIgcAAAgReQAAAApIgcAAEgROQAAQIrIAQAAUkQOAACQInIAAIAUkQMAAKSIHAAAIEXkAAAAKSIHAABIETkAAECKyAEAAFJEDgAAkCJyAACAFJEDAACkiBwAACBF5AAAACkiBwAASBE5AABAyp5fPPnUmuTRyz9ek3zl059akzx74fk1ys3H1hRP/u7cmuRnZ8+sSd56y81rkgtXr6xJtndfXpM8cfbpNcUd7zixJjn+5jn/O6859avTa5SHH9r0gtGmfUe3ru2sKQ4fOLgmOXvuT2uSe26/fU3ygTvfuSbZ2tlek7jJAQAAUkQOAACQInIAAIAUkQMAAKSIHAAAIEXkAAAAKSIHAABIETkAAECKyAEAAFJEDgAAkCJyAACAFJEDAACkiBwAACBF5AAAACkiBwAASBE5AABAisgBAABSRA4AAJAicgAAgBSRAwAApIgcAAAgReQAAAApIgcAAEgROQAAQIrIAQAAUkQOAACQInIAAIAUkQMAAKSIHAAAIEXkAAAAKSIHAABIETkAAECKyAEAAFJEDgAAkCJyAACAFJEDAACkiBwAACBF5AAAACkiBwAASBE5AABAisgBAABSRA4AAJAicgAAgBSRAwAApIgcAAAgReQAAAApIgcAAEgROQAAQIrIAQAAUkQOAACQInIAAIAUkQMAAKSIHAAAIEXkAAAAKSIHAABIETkAAEDKno+8++41yfs/9+U1ye7u9U1PGO2hBz65pti/f9+a5PLfttYkd544sSbZ3n150xNGO/X46TXFvXeeXJNcu767JnnXyds2PWG0rZ3tNcmH7rhrTfK9H/1wTfGFj923Jnnw/k+sSR559LE1ydGbjqxJvvrZz6xJ3OQAAAApIgcAAEgROQAAQIrIAQAAUkQOAACQInIAAIAUkQMAAKSIHAAAIEXkAAAAKSIHAABIETkAAECKyAEAAFJEDgAAkCJyAACAFJEDAACkiBwAACBF5AAAACkiBwAASBE5AABAisgBAABSRA4AAJAicgAAgBSRAwAApIgcAAAgReQAAAApIgcAAEgROQAAQIrIAQAAUkQOAACQInIAAIAUkQMAAKSIHAAAIEXkAAAAKSIHAABIETkAAECKyAEAAFJEDgAAkCJyAACAFJEDAACkiBwAACBF5AAAACkiBwAASBE5AABAisgBAABSRA4AAJAicgAAgBSRAwAApIgcAAAgReQAAAApIgcAAEgROQAAQIrIAQAAUkQOAACQInIAAIAUkQMAAKTs+flvn1qT3P7242uSy1e31iSHb3zjmuTi3+c8n78899c1yZlzz65J3nPXHWuSn/z69Jrk8x+/b9MTxjrzx1ln+aN337Mm+c3Z369JLly9sukJo1186cU1yf59e9cU087ON7/1nTXJ0ZuOrEluPHRwTXL+0gtrEjc5AABAisgBAABSRA4AAJAicgAAgBSRAwAApIgcAAAgReQAAAApIgcAAEgROQAAQIrIAQAAUkQOAACQInIAAIAUkQMAAKSIHAAAIEXkAAAAKSIHAABIETkAAECKyAEAAFJEDgAAkCJyAACAFJEDAACkiBwAACBF5AAAACkiBwAASBE5AABAisgBAABSRA4AAJAicgAAgBSRAwAApIgcAAAgReQAAAApIgcAAEgROQAAQIrIAQAAUkQOAACQInIAAIAUkQMAAKSIHAAAIEXkAAAAKSIHAABIETkAAECKyAEAAFJEDgAAkCJyAACAFJEDAACkiBwAACBF5AAAACkiBwAASBE5AABAisgBAABSRA4AAJAicgAAgBSRAwAApIgcAAAgReQAAAApIgcAAFgl/waFBLyUBA+F4QAAAABJRU5ErkJggg==" id="image9fac5b94eb" transform="scale(1 -1) translate(0 -244.8)" x="73.44" y="-7.2" width="594" height="244.8"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(77.353322 263.010508)">2021</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(81.168478 273.996836)">Q1</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(103.160279 263.010508)">2021</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(106.975435 273.996836)">Q2</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(128.967235 263.010508)">2021</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(132.782391 273.996836)">Q3</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(154.774192 263.010508)">2021</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(158.589348 273.996836)">Q4</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(180.581148 263.010508)">2022</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(184.396304 273.996836)">Q1</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(206.388105 263.010508)">2022</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(210.203261 273.996836)">Q2</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_7"/>
+     <g id="text_7">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(232.195061 263.010508)">2022</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(236.010217 273.996836)">Q3</text>
+     </g>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_8"/>
+     <g id="text_8">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(258.002018 263.010508)">2022</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(261.817174 273.996836)">Q4</text>
+     </g>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_9"/>
+     <g id="text_9">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(283.808974 263.010508)">2023</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(287.62413 273.996836)">Q1</text>
+     </g>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_10"/>
+     <g id="text_10">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(309.615931 263.010508)">2023</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(313.431087 273.996836)">Q2</text>
+     </g>
+    </g>
+    <g id="xtick_11">
+     <g id="line2d_11"/>
+     <g id="text_11">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(335.422887 263.010508)">2023</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(339.238043 273.996836)">Q3</text>
+     </g>
+    </g>
+    <g id="xtick_12">
+     <g id="line2d_12"/>
+     <g id="text_12">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(361.229844 263.010508)">2023</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(365.045 273.996836)">Q4</text>
+     </g>
+    </g>
+    <g id="xtick_13">
+     <g id="line2d_13"/>
+     <g id="text_13">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(387.0368 263.010508)">2024</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(390.851957 273.996836)">Q1</text>
+     </g>
+    </g>
+    <g id="xtick_14">
+     <g id="line2d_14"/>
+     <g id="text_14">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(412.843757 263.010508)">2024</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(416.658913 273.996836)">Q2</text>
+     </g>
+    </g>
+    <g id="xtick_15">
+     <g id="line2d_15"/>
+     <g id="text_15">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(438.650713 263.010508)">2024</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(442.46587 273.996836)">Q3</text>
+     </g>
+    </g>
+    <g id="xtick_16">
+     <g id="line2d_16"/>
+     <g id="text_16">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(464.45767 263.010508)">2024</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(468.272826 273.996836)">Q4</text>
+     </g>
+    </g>
+    <g id="xtick_17">
+     <g id="line2d_17"/>
+     <g id="text_17">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(490.264626 263.010508)">2025</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(494.079783 273.996836)">Q1</text>
+     </g>
+    </g>
+    <g id="xtick_18">
+     <g id="line2d_18"/>
+     <g id="text_18">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(516.071583 263.010508)">2025</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(519.886739 273.996836)">Q2</text>
+     </g>
+    </g>
+    <g id="xtick_19">
+     <g id="line2d_19"/>
+     <g id="text_19">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(541.878539 263.010508)">2025</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(545.693696 273.996836)">Q3</text>
+     </g>
+    </g>
+    <g id="xtick_20">
+     <g id="line2d_20"/>
+     <g id="text_20">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(567.685496 263.010508)">2025</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(571.500652 273.996836)">Q4</text>
+     </g>
+    </g>
+    <g id="xtick_21">
+     <g id="line2d_21"/>
+     <g id="text_21">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(593.492452 263.010508)">2026</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(597.307609 273.996836)">Q1</text>
+     </g>
+    </g>
+    <g id="xtick_22">
+     <g id="line2d_22"/>
+     <g id="text_22">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(619.299409 263.010508)">2026</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(623.114565 273.996836)">Q2</text>
+     </g>
+    </g>
+    <g id="xtick_23">
+     <g id="line2d_23"/>
+     <g id="text_23">
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(645.106365 263.010508)">2026</text>
+      <text style="font-size: 9px; font-family: 'Calibri'; fill: #526b6f" transform="translate(648.921522 273.996836)">Q3</text>
+     </g>
+    </g>
+    <g id="text_24">
+     <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="370.353594" y="297.49" transform="rotate(-0 370.353594 297.49)">Granica prikupljanja: 1. 4. 2024.  |  2026-Q3 završava 10. 9.</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_24"/>
+     <g id="text_25">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="70.073594" y="31.705612" transform="rotate(-0 70.073594 31.705612)">Domoljublje</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_25"/>
+     <g id="text_26">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="70.073594" y="72.466836" transform="rotate(-0 70.073594 72.466836)">Narodnjaštvo</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_26"/>
+     <g id="text_27">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="70.073594" y="113.22806" transform="rotate(-0 70.073594 113.22806)">Obitelj</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_27"/>
+     <g id="text_28">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="70.073594" y="153.989284" transform="rotate(-0 70.073594 153.989284)">Solidarnost</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_28"/>
+     <g id="text_29">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="70.073594" y="194.750508" transform="rotate(-0 70.073594 194.750508)">Supsidijarnost</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_29"/>
+     <g id="text_30">
+      <text style="font-size: 11px; font-family: 'Calibri'; text-anchor: end; fill: #173e43" x="70.073594" y="235.511732" transform="rotate(-0 70.073594 235.511732)">Savjest</text>
+     </g>
+    </g>
+   </g>
+   <g id="line2d_30">
+    <path d="M 409.064029 251.767344 
+L 409.064029 7.2 
+" clip-path="url(#p6cf7cea083)" style="fill: none; stroke: #a9643b; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="86.477072" y="29.830612" transform="rotate(-0 86.477072 29.830612)">13</text>
+   </g>
+   <g id="text_32">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #ffffff" x="112.284029" y="29.830612" transform="rotate(-0 112.284029 29.830612)">45</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="138.090985" y="29.830612" transform="rotate(-0 138.090985 29.830612)">27</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="163.897942" y="29.830612" transform="rotate(-0 163.897942 29.830612)">22</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="189.704898" y="29.830612" transform="rotate(-0 189.704898 29.830612)">7</text>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #ffffff" x="215.511855" y="29.830612" transform="rotate(-0 215.511855 29.830612)">57</text>
+   </g>
+   <g id="text_37">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="241.318811" y="29.830612" transform="rotate(-0 241.318811 29.830612)">25</text>
+   </g>
+   <g id="text_38">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="267.125768" y="29.830612" transform="rotate(-0 267.125768 29.830612)">5</text>
+   </g>
+   <g id="text_39">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="292.932724" y="29.830612" transform="rotate(-0 292.932724 29.830612)">16</text>
+   </g>
+   <g id="text_40">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="318.739681" y="29.830612" transform="rotate(-0 318.739681 29.830612)">1</text>
+   </g>
+   <g id="text_41">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="344.546637" y="29.830612" transform="rotate(-0 344.546637 29.830612)">29</text>
+   </g>
+   <g id="text_42">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="370.353594" y="29.830612" transform="rotate(-0 370.353594 29.830612)">12</text>
+   </g>
+   <g id="text_43">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="396.16055" y="29.830612" transform="rotate(-0 396.16055 29.830612)">1*</text>
+   </g>
+   <g id="text_44">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #ffffff" x="421.967507" y="29.830612" transform="rotate(-0 421.967507 29.830612)">50</text>
+   </g>
+   <g id="text_45">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="447.774463" y="29.830612" transform="rotate(-0 447.774463 29.830612)">2</text>
+   </g>
+   <g id="text_46">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="473.58142" y="29.830612" transform="rotate(-0 473.58142 29.830612)">2</text>
+   </g>
+   <g id="text_47">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="499.388376" y="29.830612" transform="rotate(-0 499.388376 29.830612)">4</text>
+   </g>
+   <g id="text_48">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="525.195333" y="29.830612" transform="rotate(-0 525.195333 29.830612)">12</text>
+   </g>
+   <g id="text_49">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="551.002289" y="29.830612" transform="rotate(-0 551.002289 29.830612)">2</text>
+   </g>
+   <g id="text_50">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="576.809246" y="29.830612" transform="rotate(-0 576.809246 29.830612)">30</text>
+   </g>
+   <g id="text_51">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="602.616202" y="29.830612" transform="rotate(-0 602.616202 29.830612)">23</text>
+   </g>
+   <g id="text_52">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="628.423159" y="29.830612" transform="rotate(-0 628.423159 29.830612)">14</text>
+   </g>
+   <g id="text_53">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="654.230115" y="29.830612" transform="rotate(-0 654.230115 29.830612)">3</text>
+   </g>
+   <g id="text_54">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="86.477072" y="70.591836" transform="rotate(-0 86.477072 70.591836)">3</text>
+   </g>
+   <g id="text_55">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #ffffff" x="112.284029" y="70.591836" transform="rotate(-0 112.284029 70.591836)">75</text>
+   </g>
+   <g id="text_56">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="138.090985" y="70.591836" transform="rotate(-0 138.090985 70.591836)">21</text>
+   </g>
+   <g id="text_57">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="163.897942" y="70.591836" transform="rotate(-0 163.897942 70.591836)">21</text>
+   </g>
+   <g id="text_58">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="189.704898" y="70.591836" transform="rotate(-0 189.704898 70.591836)">2</text>
+   </g>
+   <g id="text_59">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #ffffff" x="215.511855" y="70.591836" transform="rotate(-0 215.511855 70.591836)">38</text>
+   </g>
+   <g id="text_60">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="241.318811" y="70.591836" transform="rotate(-0 241.318811 70.591836)">14</text>
+   </g>
+   <g id="text_61">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="267.125768" y="70.591836" transform="rotate(-0 267.125768 70.591836)">3</text>
+   </g>
+   <g id="text_62">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="292.932724" y="70.591836" transform="rotate(-0 292.932724 70.591836)">4</text>
+   </g>
+   <g id="text_63">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="318.739681" y="70.591836" transform="rotate(-0 318.739681 70.591836)">4</text>
+   </g>
+   <g id="text_64">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="344.546637" y="70.591836" transform="rotate(-0 344.546637 70.591836)">29</text>
+   </g>
+   <g id="text_65">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="370.353594" y="70.591836" transform="rotate(-0 370.353594 70.591836)">4</text>
+   </g>
+   <g id="text_66">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="396.16055" y="70.591836" transform="rotate(-0 396.16055 70.591836)">2*</text>
+   </g>
+   <g id="text_67">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="421.967507" y="70.591836" transform="rotate(-0 421.967507 70.591836)">27</text>
+   </g>
+   <g id="text_68">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="447.774463" y="70.591836" transform="rotate(-0 447.774463 70.591836)">0</text>
+   </g>
+   <g id="text_69">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="473.58142" y="70.591836" transform="rotate(-0 473.58142 70.591836)">1</text>
+   </g>
+   <g id="text_70">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="499.388376" y="70.591836" transform="rotate(-0 499.388376 70.591836)">0</text>
+   </g>
+   <g id="text_71">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="525.195333" y="70.591836" transform="rotate(-0 525.195333 70.591836)">13</text>
+   </g>
+   <g id="text_72">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="551.002289" y="70.591836" transform="rotate(-0 551.002289 70.591836)">0</text>
+   </g>
+   <g id="text_73">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="576.809246" y="70.591836" transform="rotate(-0 576.809246 70.591836)">4</text>
+   </g>
+   <g id="text_74">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="602.616202" y="70.591836" transform="rotate(-0 602.616202 70.591836)">22</text>
+   </g>
+   <g id="text_75">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="628.423159" y="70.591836" transform="rotate(-0 628.423159 70.591836)">17</text>
+   </g>
+   <g id="text_76">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="654.230115" y="70.591836" transform="rotate(-0 654.230115 70.591836)">0</text>
+   </g>
+   <g id="text_77">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="86.477072" y="111.35306" transform="rotate(-0 86.477072 111.35306)">14</text>
+   </g>
+   <g id="text_78">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="112.284029" y="111.35306" transform="rotate(-0 112.284029 111.35306)">19</text>
+   </g>
+   <g id="text_79">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="138.090985" y="111.35306" transform="rotate(-0 138.090985 111.35306)">1</text>
+   </g>
+   <g id="text_80">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="163.897942" y="111.35306" transform="rotate(-0 163.897942 111.35306)">9</text>
+   </g>
+   <g id="text_81">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="189.704898" y="111.35306" transform="rotate(-0 189.704898 111.35306)">3</text>
+   </g>
+   <g id="text_82">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #ffffff" x="215.511855" y="111.35306" transform="rotate(-0 215.511855 111.35306)">42</text>
+   </g>
+   <g id="text_83">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="241.318811" y="111.35306" transform="rotate(-0 241.318811 111.35306)">11</text>
+   </g>
+   <g id="text_84">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="267.125768" y="111.35306" transform="rotate(-0 267.125768 111.35306)">7</text>
+   </g>
+   <g id="text_85">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="292.932724" y="111.35306" transform="rotate(-0 292.932724 111.35306)">2</text>
+   </g>
+   <g id="text_86">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="318.739681" y="111.35306" transform="rotate(-0 318.739681 111.35306)">4</text>
+   </g>
+   <g id="text_87">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="344.546637" y="111.35306" transform="rotate(-0 344.546637 111.35306)">13</text>
+   </g>
+   <g id="text_88">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="370.353594" y="111.35306" transform="rotate(-0 370.353594 111.35306)">7</text>
+   </g>
+   <g id="text_89">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="396.16055" y="111.35306" transform="rotate(-0 396.16055 111.35306)">1*</text>
+   </g>
+   <g id="text_90">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #ffffff" x="421.967507" y="111.35306" transform="rotate(-0 421.967507 111.35306)">48</text>
+   </g>
+   <g id="text_91">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="447.774463" y="111.35306" transform="rotate(-0 447.774463 111.35306)">0</text>
+   </g>
+   <g id="text_92">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="473.58142" y="111.35306" transform="rotate(-0 473.58142 111.35306)">0</text>
+   </g>
+   <g id="text_93">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="499.388376" y="111.35306" transform="rotate(-0 499.388376 111.35306)">9</text>
+   </g>
+   <g id="text_94">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="525.195333" y="111.35306" transform="rotate(-0 525.195333 111.35306)">5</text>
+   </g>
+   <g id="text_95">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="551.002289" y="111.35306" transform="rotate(-0 551.002289 111.35306)">2</text>
+   </g>
+   <g id="text_96">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="576.809246" y="111.35306" transform="rotate(-0 576.809246 111.35306)">21</text>
+   </g>
+   <g id="text_97">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="602.616202" y="111.35306" transform="rotate(-0 602.616202 111.35306)">3</text>
+   </g>
+   <g id="text_98">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="628.423159" y="111.35306" transform="rotate(-0 628.423159 111.35306)">1</text>
+   </g>
+   <g id="text_99">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="654.230115" y="111.35306" transform="rotate(-0 654.230115 111.35306)">1</text>
+   </g>
+   <g id="text_100">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="86.477072" y="152.114284" transform="rotate(-0 86.477072 152.114284)">4</text>
+   </g>
+   <g id="text_101">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="112.284029" y="152.114284" transform="rotate(-0 112.284029 152.114284)">0</text>
+   </g>
+   <g id="text_102">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="138.090985" y="152.114284" transform="rotate(-0 138.090985 152.114284)">2</text>
+   </g>
+   <g id="text_103">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="163.897942" y="152.114284" transform="rotate(-0 163.897942 152.114284)">3</text>
+   </g>
+   <g id="text_104">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="189.704898" y="152.114284" transform="rotate(-0 189.704898 152.114284)">1</text>
+   </g>
+   <g id="text_105">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="215.511855" y="152.114284" transform="rotate(-0 215.511855 152.114284)">23</text>
+   </g>
+   <g id="text_106">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="241.318811" y="152.114284" transform="rotate(-0 241.318811 152.114284)">1</text>
+   </g>
+   <g id="text_107">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="267.125768" y="152.114284" transform="rotate(-0 267.125768 152.114284)">4</text>
+   </g>
+   <g id="text_108">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="292.932724" y="152.114284" transform="rotate(-0 292.932724 152.114284)">0</text>
+   </g>
+   <g id="text_109">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="318.739681" y="152.114284" transform="rotate(-0 318.739681 152.114284)">1</text>
+   </g>
+   <g id="text_110">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="344.546637" y="152.114284" transform="rotate(-0 344.546637 152.114284)">2</text>
+   </g>
+   <g id="text_111">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="370.353594" y="152.114284" transform="rotate(-0 370.353594 152.114284)">0</text>
+   </g>
+   <g id="text_112">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="396.16055" y="152.114284" transform="rotate(-0 396.16055 152.114284)">0*</text>
+   </g>
+   <g id="text_113">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="421.967507" y="152.114284" transform="rotate(-0 421.967507 152.114284)">22</text>
+   </g>
+   <g id="text_114">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="447.774463" y="152.114284" transform="rotate(-0 447.774463 152.114284)">0</text>
+   </g>
+   <g id="text_115">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="473.58142" y="152.114284" transform="rotate(-0 473.58142 152.114284)">0</text>
+   </g>
+   <g id="text_116">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="499.388376" y="152.114284" transform="rotate(-0 499.388376 152.114284)">2</text>
+   </g>
+   <g id="text_117">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="525.195333" y="152.114284" transform="rotate(-0 525.195333 152.114284)">0</text>
+   </g>
+   <g id="text_118">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="551.002289" y="152.114284" transform="rotate(-0 551.002289 152.114284)">3</text>
+   </g>
+   <g id="text_119">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="576.809246" y="152.114284" transform="rotate(-0 576.809246 152.114284)">12</text>
+   </g>
+   <g id="text_120">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="602.616202" y="152.114284" transform="rotate(-0 602.616202 152.114284)">0</text>
+   </g>
+   <g id="text_121">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="628.423159" y="152.114284" transform="rotate(-0 628.423159 152.114284)">11</text>
+   </g>
+   <g id="text_122">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="654.230115" y="152.114284" transform="rotate(-0 654.230115 152.114284)">0</text>
+   </g>
+   <g id="text_123">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="86.477072" y="192.875508" transform="rotate(-0 86.477072 192.875508)">3</text>
+   </g>
+   <g id="text_124">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="112.284029" y="192.875508" transform="rotate(-0 112.284029 192.875508)">3</text>
+   </g>
+   <g id="text_125">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="138.090985" y="192.875508" transform="rotate(-0 138.090985 192.875508)">0</text>
+   </g>
+   <g id="text_126">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="163.897942" y="192.875508" transform="rotate(-0 163.897942 192.875508)">5</text>
+   </g>
+   <g id="text_127">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="189.704898" y="192.875508" transform="rotate(-0 189.704898 192.875508)">0</text>
+   </g>
+   <g id="text_128">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="215.511855" y="192.875508" transform="rotate(-0 215.511855 192.875508)">1</text>
+   </g>
+   <g id="text_129">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="241.318811" y="192.875508" transform="rotate(-0 241.318811 192.875508)">1</text>
+   </g>
+   <g id="text_130">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="267.125768" y="192.875508" transform="rotate(-0 267.125768 192.875508)">4</text>
+   </g>
+   <g id="text_131">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="292.932724" y="192.875508" transform="rotate(-0 292.932724 192.875508)">2</text>
+   </g>
+   <g id="text_132">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="318.739681" y="192.875508" transform="rotate(-0 318.739681 192.875508)">1</text>
+   </g>
+   <g id="text_133">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="344.546637" y="192.875508" transform="rotate(-0 344.546637 192.875508)">0</text>
+   </g>
+   <g id="text_134">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="370.353594" y="192.875508" transform="rotate(-0 370.353594 192.875508)">1</text>
+   </g>
+   <g id="text_135">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="396.16055" y="192.875508" transform="rotate(-0 396.16055 192.875508)">0*</text>
+   </g>
+   <g id="text_136">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="421.967507" y="192.875508" transform="rotate(-0 421.967507 192.875508)">3</text>
+   </g>
+   <g id="text_137">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="447.774463" y="192.875508" transform="rotate(-0 447.774463 192.875508)">0</text>
+   </g>
+   <g id="text_138">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="473.58142" y="192.875508" transform="rotate(-0 473.58142 192.875508)">0</text>
+   </g>
+   <g id="text_139">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="499.388376" y="192.875508" transform="rotate(-0 499.388376 192.875508)">1</text>
+   </g>
+   <g id="text_140">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="525.195333" y="192.875508" transform="rotate(-0 525.195333 192.875508)">0</text>
+   </g>
+   <g id="text_141">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="551.002289" y="192.875508" transform="rotate(-0 551.002289 192.875508)">0</text>
+   </g>
+   <g id="text_142">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="576.809246" y="192.875508" transform="rotate(-0 576.809246 192.875508)">3</text>
+   </g>
+   <g id="text_143">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="602.616202" y="192.875508" transform="rotate(-0 602.616202 192.875508)">0</text>
+   </g>
+   <g id="text_144">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="628.423159" y="192.875508" transform="rotate(-0 628.423159 192.875508)">0</text>
+   </g>
+   <g id="text_145">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="654.230115" y="192.875508" transform="rotate(-0 654.230115 192.875508)">0</text>
+   </g>
+   <g id="text_146">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="86.477072" y="233.636732" transform="rotate(-0 86.477072 233.636732)">0</text>
+   </g>
+   <g id="text_147">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="112.284029" y="233.636732" transform="rotate(-0 112.284029 233.636732)">8</text>
+   </g>
+   <g id="text_148">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="138.090985" y="233.636732" transform="rotate(-0 138.090985 233.636732)">0</text>
+   </g>
+   <g id="text_149">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="163.897942" y="233.636732" transform="rotate(-0 163.897942 233.636732)">0</text>
+   </g>
+   <g id="text_150">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="189.704898" y="233.636732" transform="rotate(-0 189.704898 233.636732)">0</text>
+   </g>
+   <g id="text_151">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="215.511855" y="233.636732" transform="rotate(-0 215.511855 233.636732)">12</text>
+   </g>
+   <g id="text_152">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="241.318811" y="233.636732" transform="rotate(-0 241.318811 233.636732)">0</text>
+   </g>
+   <g id="text_153">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="267.125768" y="233.636732" transform="rotate(-0 267.125768 233.636732)">0</text>
+   </g>
+   <g id="text_154">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="292.932724" y="233.636732" transform="rotate(-0 292.932724 233.636732)">1</text>
+   </g>
+   <g id="text_155">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="318.739681" y="233.636732" transform="rotate(-0 318.739681 233.636732)">0</text>
+   </g>
+   <g id="text_156">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="344.546637" y="233.636732" transform="rotate(-0 344.546637 233.636732)">0</text>
+   </g>
+   <g id="text_157">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="370.353594" y="233.636732" transform="rotate(-0 370.353594 233.636732)">0</text>
+   </g>
+   <g id="text_158">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="396.16055" y="233.636732" transform="rotate(-0 396.16055 233.636732)">0*</text>
+   </g>
+   <g id="text_159">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="421.967507" y="233.636732" transform="rotate(-0 421.967507 233.636732)">1</text>
+   </g>
+   <g id="text_160">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="447.774463" y="233.636732" transform="rotate(-0 447.774463 233.636732)">0</text>
+   </g>
+   <g id="text_161">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="473.58142" y="233.636732" transform="rotate(-0 473.58142 233.636732)">1</text>
+   </g>
+   <g id="text_162">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="499.388376" y="233.636732" transform="rotate(-0 499.388376 233.636732)">0</text>
+   </g>
+   <g id="text_163">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="525.195333" y="233.636732" transform="rotate(-0 525.195333 233.636732)">0</text>
+   </g>
+   <g id="text_164">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="551.002289" y="233.636732" transform="rotate(-0 551.002289 233.636732)">0</text>
+   </g>
+   <g id="text_165">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="576.809246" y="233.636732" transform="rotate(-0 576.809246 233.636732)">1</text>
+   </g>
+   <g id="text_166">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="602.616202" y="233.636732" transform="rotate(-0 602.616202 233.636732)">2</text>
+   </g>
+   <g id="text_167">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="628.423159" y="233.636732" transform="rotate(-0 628.423159 233.636732)">1</text>
+   </g>
+   <g id="text_168">
+    <text style="font-size: 9px; font-family: 'Calibri'; text-anchor: middle; fill: #173e43" x="654.230115" y="233.636732" transform="rotate(-0 654.230115 233.636732)">0</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p6cf7cea083">
+   <rect x="73.573594" y="7.2" width="593.56" height="244.567344"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,210 @@
+{
+  "version": "1.0",
+  "concepts": {
+    "demokrscanstvo": {
+      "label": "Demokršćanstvo",
+      "lemma_regex": "\\b(?:demokršć\\w*|demokrsc\\w*|kršćansk\\w* demokrac\\w*)\\b"
+    },
+    "domoljublje": {
+      "label": "Domoljublje",
+      "lemma_regex": "\\bdomoljub\\w*\\b"
+    },
+    "drzavotvornost": {
+      "label": "Državotvornost",
+      "lemma_regex": "\\bdržavotvor\\w*\\b"
+    },
+    "narodnjastvo": {
+      "label": "Narodnjaštvo",
+      "lemma_regex": "\\bnarodnja\\w*\\b"
+    },
+    "obitelj": {
+      "label": "Obitelj",
+      "lemma_regex": "\\bobitelj\\w*\\b"
+    },
+    "konzervativizam": {
+      "label": "Konzervativizam",
+      "lemma_regex": "\\bkonzervati\\w*\\b"
+    },
+    "vrijednosti": {
+      "label": "Vrijednosti",
+      "lemma_regex": "\\bvrijednost\\w*\\b"
+    },
+    "europa": {
+      "label": "Europa",
+      "lemma_regex": "\\beurop\\w*\\b"
+    },
+    "solidarnost": {
+      "label": "Solidarnost",
+      "lemma_regex": "\\bsolidarn\\w*\\b"
+    },
+    "supsidijarnost": {
+      "label": "Supsidijarnost",
+      "lemma_regex": "\\b(?:supsidijarn\\w*|subsidi?jarn\\w*)\\b"
+    },
+    "opce_dobro": {
+      "label": "Opće dobro",
+      "lemma_regex": "\\bopć\\w* dobr\\w*\\b"
+    },
+    "ljudsko_dostojanstvo": {
+      "label": "Ljudsko dostojanstvo",
+      "lemma_regex": "\\b(?:ljudsk\\w* dostojanstv\\w*|dostojanstv\\w* (?:ljudsk\\w* )?(?:osob\\w*|čovjek\\w*))\\b"
+    },
+    "dostojanstvo_rada": {
+      "label": "Dostojanstvo rada",
+      "lemma_regex": "\\bdostojanstv\\w* (?:rad\\w*|radnik\\w*)\\b"
+    },
+    "radnik": {
+      "label": "Radnik",
+      "lemma_regex": "\\bradni[kc]\\w*\\b"
+    },
+    "socijalna_drzava": {
+      "label": "Socijalna država",
+      "lemma_regex": "\\bsocijal\\w* držav\\w*\\b"
+    },
+    "trzisno_gospodarstvo": {
+      "label": "Tržišno gospodarstvo",
+      "lemma_regex": "\\b(?:tržišn\\w* (?:gospodarstv\\w*|ekonomij\\w*))\\b"
+    },
+    "savjest": {
+      "label": "Savjest",
+      "lemma_regex": "\\bsavjest\\w*\\b"
+    },
+    "vjerska_sloboda": {
+      "label": "Vjerska sloboda",
+      "lemma_regex": "\\bvjersk\\w* slobod\\w*\\b"
+    },
+    "demokracija": {
+      "label": "Demokracija",
+      "lemma_regex": "\\bdemokracij\\w*\\b"
+    },
+    "izbori": {
+      "label": "Izbori / izbor",
+      "lemma_regex": "\\bizbor\\w*\\b"
+    },
+    "sloboda": {
+      "label": "Sloboda",
+      "lemma_regex": "\\bslobod\\w*\\b"
+    },
+    "hdz": {
+      "label": "HDZ",
+      "lemma_regex": "\\bhdz\\b"
+    },
+    "epp": {
+      "label": "EPP",
+      "lemma_regex": "\\bepp\\b"
+    },
+    "cdu": {
+      "label": "CDU",
+      "lemma_regex": "\\bcdu\\b"
+    },
+    "desni_centar": {
+      "label": "Desni centar",
+      "lemma_regex": "\\bdesn\\w* centar\\b"
+    }
+  },
+  "dictionary_phrases": [
+    [
+      "socijalan",
+      "tržišni",
+      "gospodarstvo"
+    ],
+    [
+      "socijalan",
+      "tržišni",
+      "ekonomija"
+    ],
+    [
+      "opći",
+      "dobro"
+    ],
+    [
+      "ljudski",
+      "dostojanstvo"
+    ],
+    [
+      "dostojanstvo",
+      "ljudski",
+      "osoba"
+    ],
+    [
+      "dostojanstvo",
+      "radnik"
+    ],
+    [
+      "dostojanstvo",
+      "rad"
+    ],
+    [
+      "vjerski",
+      "sloboda"
+    ],
+    [
+      "sloboda",
+      "savjest"
+    ],
+    [
+      "priziv",
+      "savjest"
+    ],
+    [
+      "priziv",
+      "na",
+      "savjest"
+    ],
+    [
+      "socijalan",
+      "država"
+    ],
+    [
+      "kršćanski",
+      "demokracija"
+    ],
+    [
+      "desni",
+      "centar"
+    ],
+    [
+      "demokratski",
+      "pluralizam"
+    ],
+    [
+      "europski",
+      "suradnja"
+    ],
+    [
+      "socijalan",
+      "tržišni",
+      "gospodarski",
+      "sustav"
+    ]
+  ],
+  "kept_pos": [
+    "ADJ",
+    "ADV",
+    "NOUN",
+    "PROPN",
+    "VERB"
+  ],
+  "preserved_function_words": [
+    "ali",
+    "bez",
+    "ne",
+    "nije",
+    "nikad",
+    "nikada",
+    "nisam",
+    "niti",
+    "protiv"
+  ],
+  "excluded_lemmas": [
+    "biti",
+    "htjeti",
+    "imati",
+    "kazati",
+    "moći",
+    "reći"
+  ],
+  "ngram_rule": "2/3 adjacent tokens before stop filtering; punctuation is a boundary; no field/sentence crossing",
+  "concept_rule": "Inherited lemma regex with punctuation removed, with original sentence retained for semantic checking",
+  "dictionary_rule": "longest match at each start; subphrase at later start may overlap; spans retained privately"
+}

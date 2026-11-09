@@ -1,0 +1,2376 @@
+term,label,platform,regime,quarter,groups,eligible_groups,small_cell,partial_quarter
+domoljublje,Domoljublje,comment,before,2021-Q1,1,6,True,False
+domoljublje,Domoljublje,comment,before,2021-Q2,2,8,True,False
+domoljublje,Domoljublje,comment,before,2021-Q3,0,1,True,False
+domoljublje,Domoljublje,comment,before,2022-Q2,0,6,True,False
+domoljublje,Domoljublje,comment,before,2022-Q3,0,1,True,False
+domoljublje,Domoljublje,comment,before,2022-Q4,0,3,True,False
+drzavotvornost,Državotvornost,comment,before,2021-Q1,0,6,True,False
+drzavotvornost,Državotvornost,comment,before,2021-Q2,0,8,True,False
+drzavotvornost,Državotvornost,comment,before,2021-Q3,0,1,True,False
+drzavotvornost,Državotvornost,comment,before,2022-Q2,0,6,True,False
+drzavotvornost,Državotvornost,comment,before,2022-Q3,0,1,True,False
+drzavotvornost,Državotvornost,comment,before,2022-Q4,0,3,True,False
+narodnjastvo,Narodnjaštvo,comment,before,2021-Q1,0,6,True,False
+narodnjastvo,Narodnjaštvo,comment,before,2021-Q2,0,8,True,False
+narodnjastvo,Narodnjaštvo,comment,before,2021-Q3,0,1,True,False
+narodnjastvo,Narodnjaštvo,comment,before,2022-Q2,0,6,True,False
+narodnjastvo,Narodnjaštvo,comment,before,2022-Q3,0,1,True,False
+narodnjastvo,Narodnjaštvo,comment,before,2022-Q4,0,3,True,False
+obitelj,Obitelj,comment,before,2021-Q1,0,6,True,False
+obitelj,Obitelj,comment,before,2021-Q2,0,8,True,False
+obitelj,Obitelj,comment,before,2021-Q3,0,1,True,False
+obitelj,Obitelj,comment,before,2022-Q2,2,6,True,False
+obitelj,Obitelj,comment,before,2022-Q3,0,1,True,False
+obitelj,Obitelj,comment,before,2022-Q4,0,3,True,False
+konzervativizam,Konzervativizam,comment,before,2021-Q1,0,6,True,False
+konzervativizam,Konzervativizam,comment,before,2021-Q2,1,8,True,False
+konzervativizam,Konzervativizam,comment,before,2021-Q3,0,1,True,False
+konzervativizam,Konzervativizam,comment,before,2022-Q2,1,6,True,False
+konzervativizam,Konzervativizam,comment,before,2022-Q3,0,1,True,False
+konzervativizam,Konzervativizam,comment,before,2022-Q4,2,3,True,False
+vrijednosti,Vrijednosti,comment,before,2021-Q1,0,6,True,False
+vrijednosti,Vrijednosti,comment,before,2021-Q2,2,8,True,False
+vrijednosti,Vrijednosti,comment,before,2021-Q3,0,1,True,False
+vrijednosti,Vrijednosti,comment,before,2022-Q2,2,6,True,False
+vrijednosti,Vrijednosti,comment,before,2022-Q3,0,1,True,False
+vrijednosti,Vrijednosti,comment,before,2022-Q4,0,3,True,False
+europa,Europa,comment,before,2021-Q1,0,6,True,False
+europa,Europa,comment,before,2021-Q2,1,8,True,False
+europa,Europa,comment,before,2021-Q3,0,1,True,False
+europa,Europa,comment,before,2022-Q2,0,6,True,False
+europa,Europa,comment,before,2022-Q3,0,1,True,False
+europa,Europa,comment,before,2022-Q4,0,3,True,False
+solidarnost,Solidarnost,comment,before,2021-Q1,0,6,True,False
+solidarnost,Solidarnost,comment,before,2021-Q2,0,8,True,False
+solidarnost,Solidarnost,comment,before,2021-Q3,0,1,True,False
+solidarnost,Solidarnost,comment,before,2022-Q2,0,6,True,False
+solidarnost,Solidarnost,comment,before,2022-Q3,0,1,True,False
+solidarnost,Solidarnost,comment,before,2022-Q4,0,3,True,False
+supsidijarnost,Supsidijarnost,comment,before,2021-Q1,0,6,True,False
+supsidijarnost,Supsidijarnost,comment,before,2021-Q2,0,8,True,False
+supsidijarnost,Supsidijarnost,comment,before,2021-Q3,0,1,True,False
+supsidijarnost,Supsidijarnost,comment,before,2022-Q2,0,6,True,False
+supsidijarnost,Supsidijarnost,comment,before,2022-Q3,0,1,True,False
+supsidijarnost,Supsidijarnost,comment,before,2022-Q4,0,3,True,False
+opce_dobro,Opće dobro,comment,before,2021-Q1,0,6,True,False
+opce_dobro,Opće dobro,comment,before,2021-Q2,0,8,True,False
+opce_dobro,Opće dobro,comment,before,2021-Q3,0,1,True,False
+opce_dobro,Opće dobro,comment,before,2022-Q2,0,6,True,False
+opce_dobro,Opće dobro,comment,before,2022-Q3,0,1,True,False
+opce_dobro,Opće dobro,comment,before,2022-Q4,0,3,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,comment,before,2021-Q1,0,6,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,comment,before,2021-Q2,0,8,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,comment,before,2021-Q3,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,comment,before,2022-Q2,0,6,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,comment,before,2022-Q3,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,comment,before,2022-Q4,0,3,True,False
+dostojanstvo_rada,Dostojanstvo rada,comment,before,2021-Q1,0,6,True,False
+dostojanstvo_rada,Dostojanstvo rada,comment,before,2021-Q2,0,8,True,False
+dostojanstvo_rada,Dostojanstvo rada,comment,before,2021-Q3,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,comment,before,2022-Q2,0,6,True,False
+dostojanstvo_rada,Dostojanstvo rada,comment,before,2022-Q3,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,comment,before,2022-Q4,0,3,True,False
+radnik,Radnik,comment,before,2021-Q1,0,6,True,False
+radnik,Radnik,comment,before,2021-Q2,0,8,True,False
+radnik,Radnik,comment,before,2021-Q3,0,1,True,False
+radnik,Radnik,comment,before,2022-Q2,0,6,True,False
+radnik,Radnik,comment,before,2022-Q3,0,1,True,False
+radnik,Radnik,comment,before,2022-Q4,0,3,True,False
+socijalna_drzava,Socijalna država,comment,before,2021-Q1,0,6,True,False
+socijalna_drzava,Socijalna država,comment,before,2021-Q2,0,8,True,False
+socijalna_drzava,Socijalna država,comment,before,2021-Q3,0,1,True,False
+socijalna_drzava,Socijalna država,comment,before,2022-Q2,0,6,True,False
+socijalna_drzava,Socijalna država,comment,before,2022-Q3,0,1,True,False
+socijalna_drzava,Socijalna država,comment,before,2022-Q4,0,3,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,comment,before,2021-Q1,0,6,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,comment,before,2021-Q2,0,8,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,comment,before,2021-Q3,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,comment,before,2022-Q2,0,6,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,comment,before,2022-Q3,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,comment,before,2022-Q4,0,3,True,False
+savjest,Savjest,comment,before,2021-Q1,1,6,True,False
+savjest,Savjest,comment,before,2021-Q2,0,8,True,False
+savjest,Savjest,comment,before,2021-Q3,0,1,True,False
+savjest,Savjest,comment,before,2022-Q2,0,6,True,False
+savjest,Savjest,comment,before,2022-Q3,0,1,True,False
+savjest,Savjest,comment,before,2022-Q4,0,3,True,False
+vjerska_sloboda,Vjerska sloboda,comment,before,2021-Q1,0,6,True,False
+vjerska_sloboda,Vjerska sloboda,comment,before,2021-Q2,0,8,True,False
+vjerska_sloboda,Vjerska sloboda,comment,before,2021-Q3,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,comment,before,2022-Q2,0,6,True,False
+vjerska_sloboda,Vjerska sloboda,comment,before,2022-Q3,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,comment,before,2022-Q4,0,3,True,False
+demokracija,Demokracija,comment,before,2021-Q1,0,6,True,False
+demokracija,Demokracija,comment,before,2021-Q2,0,8,True,False
+demokracija,Demokracija,comment,before,2021-Q3,0,1,True,False
+demokracija,Demokracija,comment,before,2022-Q2,0,6,True,False
+demokracija,Demokracija,comment,before,2022-Q3,0,1,True,False
+demokracija,Demokracija,comment,before,2022-Q4,1,3,True,False
+sloboda,Sloboda,comment,before,2021-Q1,0,6,True,False
+sloboda,Sloboda,comment,before,2021-Q2,0,8,True,False
+sloboda,Sloboda,comment,before,2021-Q3,0,1,True,False
+sloboda,Sloboda,comment,before,2022-Q2,1,6,True,False
+sloboda,Sloboda,comment,before,2022-Q3,0,1,True,False
+sloboda,Sloboda,comment,before,2022-Q4,0,3,True,False
+domoljublje,Domoljublje,comment,after,2024-Q2,2,25,False,False
+domoljublje,Domoljublje,comment,after,2026-Q3,0,6,True,True
+drzavotvornost,Državotvornost,comment,after,2024-Q2,0,25,False,False
+drzavotvornost,Državotvornost,comment,after,2026-Q3,0,6,True,True
+narodnjastvo,Narodnjaštvo,comment,after,2024-Q2,0,25,False,False
+narodnjastvo,Narodnjaštvo,comment,after,2026-Q3,0,6,True,True
+obitelj,Obitelj,comment,after,2024-Q2,1,25,False,False
+obitelj,Obitelj,comment,after,2026-Q3,1,6,True,True
+konzervativizam,Konzervativizam,comment,after,2024-Q2,0,25,False,False
+konzervativizam,Konzervativizam,comment,after,2026-Q3,1,6,True,True
+vrijednosti,Vrijednosti,comment,after,2024-Q2,9,25,False,False
+vrijednosti,Vrijednosti,comment,after,2026-Q3,5,6,True,True
+europa,Europa,comment,after,2024-Q2,0,25,False,False
+europa,Europa,comment,after,2026-Q3,1,6,True,True
+solidarnost,Solidarnost,comment,after,2024-Q2,0,25,False,False
+solidarnost,Solidarnost,comment,after,2026-Q3,0,6,True,True
+supsidijarnost,Supsidijarnost,comment,after,2024-Q2,0,25,False,False
+supsidijarnost,Supsidijarnost,comment,after,2026-Q3,0,6,True,True
+opce_dobro,Opće dobro,comment,after,2024-Q2,0,25,False,False
+opce_dobro,Opće dobro,comment,after,2026-Q3,0,6,True,True
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,comment,after,2024-Q2,0,25,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,comment,after,2026-Q3,0,6,True,True
+dostojanstvo_rada,Dostojanstvo rada,comment,after,2024-Q2,0,25,False,False
+dostojanstvo_rada,Dostojanstvo rada,comment,after,2026-Q3,0,6,True,True
+radnik,Radnik,comment,after,2024-Q2,0,25,False,False
+radnik,Radnik,comment,after,2026-Q3,0,6,True,True
+socijalna_drzava,Socijalna država,comment,after,2024-Q2,0,25,False,False
+socijalna_drzava,Socijalna država,comment,after,2026-Q3,0,6,True,True
+trzisno_gospodarstvo,Tržišno gospodarstvo,comment,after,2024-Q2,0,25,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,comment,after,2026-Q3,0,6,True,True
+savjest,Savjest,comment,after,2024-Q2,0,25,False,False
+savjest,Savjest,comment,after,2026-Q3,0,6,True,True
+vjerska_sloboda,Vjerska sloboda,comment,after,2024-Q2,0,25,False,False
+vjerska_sloboda,Vjerska sloboda,comment,after,2026-Q3,0,6,True,True
+demokracija,Demokracija,comment,after,2024-Q2,0,25,False,False
+demokracija,Demokracija,comment,after,2026-Q3,0,6,True,True
+sloboda,Sloboda,comment,after,2024-Q2,0,25,False,False
+sloboda,Sloboda,comment,after,2026-Q3,0,6,True,True
+domoljublje,Domoljublje,facebook,before,2021-Q1,1,5,True,False
+domoljublje,Domoljublje,facebook,before,2021-Q2,4,5,True,False
+domoljublje,Domoljublje,facebook,before,2021-Q4,3,9,True,False
+domoljublje,Domoljublje,facebook,before,2022-Q1,0,1,True,False
+domoljublje,Domoljublje,facebook,before,2022-Q2,2,6,True,False
+domoljublje,Domoljublje,facebook,before,2022-Q3,0,1,True,False
+domoljublje,Domoljublje,facebook,before,2022-Q4,0,3,True,False
+domoljublje,Domoljublje,facebook,before,2023-Q1,1,4,True,False
+domoljublje,Domoljublje,facebook,before,2023-Q2,0,2,True,False
+domoljublje,Domoljublje,facebook,before,2023-Q3,1,5,True,False
+domoljublje,Domoljublje,facebook,before,2023-Q4,6,6,True,False
+domoljublje,Domoljublje,facebook,before,2024-Q1,0,3,True,False
+drzavotvornost,Državotvornost,facebook,before,2021-Q1,0,5,True,False
+drzavotvornost,Državotvornost,facebook,before,2021-Q2,3,5,True,False
+drzavotvornost,Državotvornost,facebook,before,2021-Q4,2,9,True,False
+drzavotvornost,Državotvornost,facebook,before,2022-Q1,0,1,True,False
+drzavotvornost,Državotvornost,facebook,before,2022-Q2,0,6,True,False
+drzavotvornost,Državotvornost,facebook,before,2022-Q3,0,1,True,False
+drzavotvornost,Državotvornost,facebook,before,2022-Q4,3,3,True,False
+drzavotvornost,Državotvornost,facebook,before,2023-Q1,0,4,True,False
+drzavotvornost,Državotvornost,facebook,before,2023-Q2,0,2,True,False
+drzavotvornost,Državotvornost,facebook,before,2023-Q3,1,5,True,False
+drzavotvornost,Državotvornost,facebook,before,2023-Q4,1,6,True,False
+drzavotvornost,Državotvornost,facebook,before,2024-Q1,0,3,True,False
+narodnjastvo,Narodnjaštvo,facebook,before,2021-Q1,0,5,True,False
+narodnjastvo,Narodnjaštvo,facebook,before,2021-Q2,4,5,True,False
+narodnjastvo,Narodnjaštvo,facebook,before,2021-Q4,3,9,True,False
+narodnjastvo,Narodnjaštvo,facebook,before,2022-Q1,0,1,True,False
+narodnjastvo,Narodnjaštvo,facebook,before,2022-Q2,0,6,True,False
+narodnjastvo,Narodnjaštvo,facebook,before,2022-Q3,0,1,True,False
+narodnjastvo,Narodnjaštvo,facebook,before,2022-Q4,3,3,True,False
+narodnjastvo,Narodnjaštvo,facebook,before,2023-Q1,1,4,True,False
+narodnjastvo,Narodnjaštvo,facebook,before,2023-Q2,1,2,True,False
+narodnjastvo,Narodnjaštvo,facebook,before,2023-Q3,3,5,True,False
+narodnjastvo,Narodnjaštvo,facebook,before,2023-Q4,4,6,True,False
+narodnjastvo,Narodnjaštvo,facebook,before,2024-Q1,0,3,True,False
+obitelj,Obitelj,facebook,before,2021-Q1,1,5,True,False
+obitelj,Obitelj,facebook,before,2021-Q2,0,5,True,False
+obitelj,Obitelj,facebook,before,2021-Q4,0,9,True,False
+obitelj,Obitelj,facebook,before,2022-Q1,1,1,True,False
+obitelj,Obitelj,facebook,before,2022-Q2,2,6,True,False
+obitelj,Obitelj,facebook,before,2022-Q3,0,1,True,False
+obitelj,Obitelj,facebook,before,2022-Q4,0,3,True,False
+obitelj,Obitelj,facebook,before,2023-Q1,1,4,True,False
+obitelj,Obitelj,facebook,before,2023-Q2,0,2,True,False
+obitelj,Obitelj,facebook,before,2023-Q3,1,5,True,False
+obitelj,Obitelj,facebook,before,2023-Q4,1,6,True,False
+obitelj,Obitelj,facebook,before,2024-Q1,1,3,True,False
+konzervativizam,Konzervativizam,facebook,before,2021-Q1,0,5,True,False
+konzervativizam,Konzervativizam,facebook,before,2021-Q2,0,5,True,False
+konzervativizam,Konzervativizam,facebook,before,2021-Q4,0,9,True,False
+konzervativizam,Konzervativizam,facebook,before,2022-Q1,0,1,True,False
+konzervativizam,Konzervativizam,facebook,before,2022-Q2,1,6,True,False
+konzervativizam,Konzervativizam,facebook,before,2022-Q3,0,1,True,False
+konzervativizam,Konzervativizam,facebook,before,2022-Q4,0,3,True,False
+konzervativizam,Konzervativizam,facebook,before,2023-Q1,0,4,True,False
+konzervativizam,Konzervativizam,facebook,before,2023-Q2,0,2,True,False
+konzervativizam,Konzervativizam,facebook,before,2023-Q3,0,5,True,False
+konzervativizam,Konzervativizam,facebook,before,2023-Q4,0,6,True,False
+konzervativizam,Konzervativizam,facebook,before,2024-Q1,0,3,True,False
+vrijednosti,Vrijednosti,facebook,before,2021-Q1,3,5,True,False
+vrijednosti,Vrijednosti,facebook,before,2021-Q2,2,5,True,False
+vrijednosti,Vrijednosti,facebook,before,2021-Q4,3,9,True,False
+vrijednosti,Vrijednosti,facebook,before,2022-Q1,0,1,True,False
+vrijednosti,Vrijednosti,facebook,before,2022-Q2,2,6,True,False
+vrijednosti,Vrijednosti,facebook,before,2022-Q3,0,1,True,False
+vrijednosti,Vrijednosti,facebook,before,2022-Q4,3,3,True,False
+vrijednosti,Vrijednosti,facebook,before,2023-Q1,1,4,True,False
+vrijednosti,Vrijednosti,facebook,before,2023-Q2,1,2,True,False
+vrijednosti,Vrijednosti,facebook,before,2023-Q3,4,5,True,False
+vrijednosti,Vrijednosti,facebook,before,2023-Q4,5,6,True,False
+vrijednosti,Vrijednosti,facebook,before,2024-Q1,0,3,True,False
+europa,Europa,facebook,before,2021-Q1,0,5,True,False
+europa,Europa,facebook,before,2021-Q2,0,5,True,False
+europa,Europa,facebook,before,2021-Q4,4,9,True,False
+europa,Europa,facebook,before,2022-Q1,0,1,True,False
+europa,Europa,facebook,before,2022-Q2,0,6,True,False
+europa,Europa,facebook,before,2022-Q3,1,1,True,False
+europa,Europa,facebook,before,2022-Q4,2,3,True,False
+europa,Europa,facebook,before,2023-Q1,1,4,True,False
+europa,Europa,facebook,before,2023-Q2,2,2,True,False
+europa,Europa,facebook,before,2023-Q3,4,5,True,False
+europa,Europa,facebook,before,2023-Q4,0,6,True,False
+europa,Europa,facebook,before,2024-Q1,0,3,True,False
+solidarnost,Solidarnost,facebook,before,2021-Q1,0,5,True,False
+solidarnost,Solidarnost,facebook,before,2021-Q2,0,5,True,False
+solidarnost,Solidarnost,facebook,before,2021-Q4,0,9,True,False
+solidarnost,Solidarnost,facebook,before,2022-Q1,0,1,True,False
+solidarnost,Solidarnost,facebook,before,2022-Q2,0,6,True,False
+solidarnost,Solidarnost,facebook,before,2022-Q3,0,1,True,False
+solidarnost,Solidarnost,facebook,before,2022-Q4,0,3,True,False
+solidarnost,Solidarnost,facebook,before,2023-Q1,0,4,True,False
+solidarnost,Solidarnost,facebook,before,2023-Q2,0,2,True,False
+solidarnost,Solidarnost,facebook,before,2023-Q3,0,5,True,False
+solidarnost,Solidarnost,facebook,before,2023-Q4,0,6,True,False
+solidarnost,Solidarnost,facebook,before,2024-Q1,0,3,True,False
+supsidijarnost,Supsidijarnost,facebook,before,2021-Q1,0,5,True,False
+supsidijarnost,Supsidijarnost,facebook,before,2021-Q2,0,5,True,False
+supsidijarnost,Supsidijarnost,facebook,before,2021-Q4,1,9,True,False
+supsidijarnost,Supsidijarnost,facebook,before,2022-Q1,0,1,True,False
+supsidijarnost,Supsidijarnost,facebook,before,2022-Q2,0,6,True,False
+supsidijarnost,Supsidijarnost,facebook,before,2022-Q3,0,1,True,False
+supsidijarnost,Supsidijarnost,facebook,before,2022-Q4,0,3,True,False
+supsidijarnost,Supsidijarnost,facebook,before,2023-Q1,0,4,True,False
+supsidijarnost,Supsidijarnost,facebook,before,2023-Q2,0,2,True,False
+supsidijarnost,Supsidijarnost,facebook,before,2023-Q3,0,5,True,False
+supsidijarnost,Supsidijarnost,facebook,before,2023-Q4,0,6,True,False
+supsidijarnost,Supsidijarnost,facebook,before,2024-Q1,0,3,True,False
+opce_dobro,Opće dobro,facebook,before,2021-Q1,0,5,True,False
+opce_dobro,Opće dobro,facebook,before,2021-Q2,0,5,True,False
+opce_dobro,Opće dobro,facebook,before,2021-Q4,0,9,True,False
+opce_dobro,Opće dobro,facebook,before,2022-Q1,0,1,True,False
+opce_dobro,Opće dobro,facebook,before,2022-Q2,0,6,True,False
+opce_dobro,Opće dobro,facebook,before,2022-Q3,0,1,True,False
+opce_dobro,Opće dobro,facebook,before,2022-Q4,0,3,True,False
+opce_dobro,Opće dobro,facebook,before,2023-Q1,0,4,True,False
+opce_dobro,Opće dobro,facebook,before,2023-Q2,0,2,True,False
+opce_dobro,Opće dobro,facebook,before,2023-Q3,0,5,True,False
+opce_dobro,Opće dobro,facebook,before,2023-Q4,0,6,True,False
+opce_dobro,Opće dobro,facebook,before,2024-Q1,0,3,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,before,2021-Q1,0,5,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,before,2021-Q2,0,5,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,before,2021-Q4,0,9,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,before,2022-Q1,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,before,2022-Q2,0,6,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,before,2022-Q3,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,before,2022-Q4,0,3,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,before,2023-Q1,0,4,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,before,2023-Q2,0,2,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,before,2023-Q3,0,5,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,before,2023-Q4,0,6,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,before,2024-Q1,0,3,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,before,2021-Q1,0,5,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,before,2021-Q2,0,5,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,before,2021-Q4,0,9,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,before,2022-Q1,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,before,2022-Q2,0,6,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,before,2022-Q3,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,before,2022-Q4,0,3,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,before,2023-Q1,0,4,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,before,2023-Q2,0,2,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,before,2023-Q3,0,5,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,before,2023-Q4,0,6,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,before,2024-Q1,0,3,True,False
+radnik,Radnik,facebook,before,2021-Q1,0,5,True,False
+radnik,Radnik,facebook,before,2021-Q2,0,5,True,False
+radnik,Radnik,facebook,before,2021-Q4,0,9,True,False
+radnik,Radnik,facebook,before,2022-Q1,0,1,True,False
+radnik,Radnik,facebook,before,2022-Q2,0,6,True,False
+radnik,Radnik,facebook,before,2022-Q3,0,1,True,False
+radnik,Radnik,facebook,before,2022-Q4,0,3,True,False
+radnik,Radnik,facebook,before,2023-Q1,0,4,True,False
+radnik,Radnik,facebook,before,2023-Q2,0,2,True,False
+radnik,Radnik,facebook,before,2023-Q3,0,5,True,False
+radnik,Radnik,facebook,before,2023-Q4,0,6,True,False
+radnik,Radnik,facebook,before,2024-Q1,0,3,True,False
+socijalna_drzava,Socijalna država,facebook,before,2021-Q1,0,5,True,False
+socijalna_drzava,Socijalna država,facebook,before,2021-Q2,0,5,True,False
+socijalna_drzava,Socijalna država,facebook,before,2021-Q4,0,9,True,False
+socijalna_drzava,Socijalna država,facebook,before,2022-Q1,0,1,True,False
+socijalna_drzava,Socijalna država,facebook,before,2022-Q2,0,6,True,False
+socijalna_drzava,Socijalna država,facebook,before,2022-Q3,0,1,True,False
+socijalna_drzava,Socijalna država,facebook,before,2022-Q4,0,3,True,False
+socijalna_drzava,Socijalna država,facebook,before,2023-Q1,0,4,True,False
+socijalna_drzava,Socijalna država,facebook,before,2023-Q2,0,2,True,False
+socijalna_drzava,Socijalna država,facebook,before,2023-Q3,0,5,True,False
+socijalna_drzava,Socijalna država,facebook,before,2023-Q4,0,6,True,False
+socijalna_drzava,Socijalna država,facebook,before,2024-Q1,0,3,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,before,2021-Q1,0,5,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,before,2021-Q2,0,5,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,before,2021-Q4,0,9,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,before,2022-Q1,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,before,2022-Q2,0,6,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,before,2022-Q3,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,before,2022-Q4,0,3,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,before,2023-Q1,0,4,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,before,2023-Q2,0,2,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,before,2023-Q3,0,5,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,before,2023-Q4,0,6,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,before,2024-Q1,0,3,True,False
+savjest,Savjest,facebook,before,2021-Q1,0,5,True,False
+savjest,Savjest,facebook,before,2021-Q2,0,5,True,False
+savjest,Savjest,facebook,before,2021-Q4,0,9,True,False
+savjest,Savjest,facebook,before,2022-Q1,0,1,True,False
+savjest,Savjest,facebook,before,2022-Q2,0,6,True,False
+savjest,Savjest,facebook,before,2022-Q3,0,1,True,False
+savjest,Savjest,facebook,before,2022-Q4,0,3,True,False
+savjest,Savjest,facebook,before,2023-Q1,0,4,True,False
+savjest,Savjest,facebook,before,2023-Q2,0,2,True,False
+savjest,Savjest,facebook,before,2023-Q3,0,5,True,False
+savjest,Savjest,facebook,before,2023-Q4,0,6,True,False
+savjest,Savjest,facebook,before,2024-Q1,0,3,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,before,2021-Q1,0,5,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,before,2021-Q2,0,5,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,before,2021-Q4,0,9,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,before,2022-Q1,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,before,2022-Q2,0,6,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,before,2022-Q3,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,before,2022-Q4,0,3,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,before,2023-Q1,0,4,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,before,2023-Q2,0,2,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,before,2023-Q3,0,5,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,before,2023-Q4,0,6,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,before,2024-Q1,0,3,True,False
+demokracija,Demokracija,facebook,before,2021-Q1,0,5,True,False
+demokracija,Demokracija,facebook,before,2021-Q2,0,5,True,False
+demokracija,Demokracija,facebook,before,2021-Q4,1,9,True,False
+demokracija,Demokracija,facebook,before,2022-Q1,0,1,True,False
+demokracija,Demokracija,facebook,before,2022-Q2,0,6,True,False
+demokracija,Demokracija,facebook,before,2022-Q3,0,1,True,False
+demokracija,Demokracija,facebook,before,2022-Q4,0,3,True,False
+demokracija,Demokracija,facebook,before,2023-Q1,1,4,True,False
+demokracija,Demokracija,facebook,before,2023-Q2,0,2,True,False
+demokracija,Demokracija,facebook,before,2023-Q3,0,5,True,False
+demokracija,Demokracija,facebook,before,2023-Q4,0,6,True,False
+demokracija,Demokracija,facebook,before,2024-Q1,0,3,True,False
+sloboda,Sloboda,facebook,before,2021-Q1,0,5,True,False
+sloboda,Sloboda,facebook,before,2021-Q2,2,5,True,False
+sloboda,Sloboda,facebook,before,2021-Q4,2,9,True,False
+sloboda,Sloboda,facebook,before,2022-Q1,0,1,True,False
+sloboda,Sloboda,facebook,before,2022-Q2,0,6,True,False
+sloboda,Sloboda,facebook,before,2022-Q3,0,1,True,False
+sloboda,Sloboda,facebook,before,2022-Q4,2,3,True,False
+sloboda,Sloboda,facebook,before,2023-Q1,0,4,True,False
+sloboda,Sloboda,facebook,before,2023-Q2,0,2,True,False
+sloboda,Sloboda,facebook,before,2023-Q3,1,5,True,False
+sloboda,Sloboda,facebook,before,2023-Q4,0,6,True,False
+sloboda,Sloboda,facebook,before,2024-Q1,0,3,True,False
+domoljublje,Domoljublje,facebook,after,2024-Q2,6,19,True,False
+domoljublje,Domoljublje,facebook,after,2024-Q3,3,5,True,False
+domoljublje,Domoljublje,facebook,after,2024-Q4,2,4,True,False
+domoljublje,Domoljublje,facebook,after,2025-Q1,1,2,True,False
+domoljublje,Domoljublje,facebook,after,2025-Q2,0,4,True,False
+domoljublje,Domoljublje,facebook,after,2025-Q3,0,5,True,False
+domoljublje,Domoljublje,facebook,after,2025-Q4,0,3,True,False
+domoljublje,Domoljublje,facebook,after,2026-Q1,5,5,True,False
+domoljublje,Domoljublje,facebook,after,2026-Q2,1,2,True,False
+domoljublje,Domoljublje,facebook,after,2026-Q3,2,6,True,True
+drzavotvornost,Državotvornost,facebook,after,2024-Q2,0,19,True,False
+drzavotvornost,Državotvornost,facebook,after,2024-Q3,0,5,True,False
+drzavotvornost,Državotvornost,facebook,after,2024-Q4,1,4,True,False
+drzavotvornost,Državotvornost,facebook,after,2025-Q1,0,2,True,False
+drzavotvornost,Državotvornost,facebook,after,2025-Q2,0,4,True,False
+drzavotvornost,Državotvornost,facebook,after,2025-Q3,0,5,True,False
+drzavotvornost,Državotvornost,facebook,after,2025-Q4,0,3,True,False
+drzavotvornost,Državotvornost,facebook,after,2026-Q1,2,5,True,False
+drzavotvornost,Državotvornost,facebook,after,2026-Q2,0,2,True,False
+drzavotvornost,Državotvornost,facebook,after,2026-Q3,1,6,True,True
+narodnjastvo,Narodnjaštvo,facebook,after,2024-Q2,4,19,True,False
+narodnjastvo,Narodnjaštvo,facebook,after,2024-Q3,2,5,True,False
+narodnjastvo,Narodnjaštvo,facebook,after,2024-Q4,2,4,True,False
+narodnjastvo,Narodnjaštvo,facebook,after,2025-Q1,0,2,True,False
+narodnjastvo,Narodnjaštvo,facebook,after,2025-Q2,0,4,True,False
+narodnjastvo,Narodnjaštvo,facebook,after,2025-Q3,0,5,True,False
+narodnjastvo,Narodnjaštvo,facebook,after,2025-Q4,0,3,True,False
+narodnjastvo,Narodnjaštvo,facebook,after,2026-Q1,2,5,True,False
+narodnjastvo,Narodnjaštvo,facebook,after,2026-Q2,1,2,True,False
+narodnjastvo,Narodnjaštvo,facebook,after,2026-Q3,0,6,True,True
+obitelj,Obitelj,facebook,after,2024-Q2,2,19,True,False
+obitelj,Obitelj,facebook,after,2024-Q3,1,5,True,False
+obitelj,Obitelj,facebook,after,2024-Q4,1,4,True,False
+obitelj,Obitelj,facebook,after,2025-Q1,1,2,True,False
+obitelj,Obitelj,facebook,after,2025-Q2,0,4,True,False
+obitelj,Obitelj,facebook,after,2025-Q3,0,5,True,False
+obitelj,Obitelj,facebook,after,2025-Q4,0,3,True,False
+obitelj,Obitelj,facebook,after,2026-Q1,0,5,True,False
+obitelj,Obitelj,facebook,after,2026-Q2,0,2,True,False
+obitelj,Obitelj,facebook,after,2026-Q3,1,6,True,True
+konzervativizam,Konzervativizam,facebook,after,2024-Q2,0,19,True,False
+konzervativizam,Konzervativizam,facebook,after,2024-Q3,0,5,True,False
+konzervativizam,Konzervativizam,facebook,after,2024-Q4,0,4,True,False
+konzervativizam,Konzervativizam,facebook,after,2025-Q1,0,2,True,False
+konzervativizam,Konzervativizam,facebook,after,2025-Q2,1,4,True,False
+konzervativizam,Konzervativizam,facebook,after,2025-Q3,0,5,True,False
+konzervativizam,Konzervativizam,facebook,after,2025-Q4,0,3,True,False
+konzervativizam,Konzervativizam,facebook,after,2026-Q1,0,5,True,False
+konzervativizam,Konzervativizam,facebook,after,2026-Q2,0,2,True,False
+konzervativizam,Konzervativizam,facebook,after,2026-Q3,0,6,True,True
+vrijednosti,Vrijednosti,facebook,after,2024-Q2,15,19,True,False
+vrijednosti,Vrijednosti,facebook,after,2024-Q3,5,5,True,False
+vrijednosti,Vrijednosti,facebook,after,2024-Q4,3,4,True,False
+vrijednosti,Vrijednosti,facebook,after,2025-Q1,1,2,True,False
+vrijednosti,Vrijednosti,facebook,after,2025-Q2,0,4,True,False
+vrijednosti,Vrijednosti,facebook,after,2025-Q3,4,5,True,False
+vrijednosti,Vrijednosti,facebook,after,2025-Q4,2,3,True,False
+vrijednosti,Vrijednosti,facebook,after,2026-Q1,5,5,True,False
+vrijednosti,Vrijednosti,facebook,after,2026-Q2,2,2,True,False
+vrijednosti,Vrijednosti,facebook,after,2026-Q3,3,6,True,True
+europa,Europa,facebook,after,2024-Q2,12,19,True,False
+europa,Europa,facebook,after,2024-Q3,2,5,True,False
+europa,Europa,facebook,after,2024-Q4,2,4,True,False
+europa,Europa,facebook,after,2025-Q1,0,2,True,False
+europa,Europa,facebook,after,2025-Q2,0,4,True,False
+europa,Europa,facebook,after,2025-Q3,4,5,True,False
+europa,Europa,facebook,after,2025-Q4,1,3,True,False
+europa,Europa,facebook,after,2026-Q1,1,5,True,False
+europa,Europa,facebook,after,2026-Q2,2,2,True,False
+europa,Europa,facebook,after,2026-Q3,3,6,True,True
+solidarnost,Solidarnost,facebook,after,2024-Q2,2,19,True,False
+solidarnost,Solidarnost,facebook,after,2024-Q3,1,5,True,False
+solidarnost,Solidarnost,facebook,after,2024-Q4,1,4,True,False
+solidarnost,Solidarnost,facebook,after,2025-Q1,0,2,True,False
+solidarnost,Solidarnost,facebook,after,2025-Q2,0,4,True,False
+solidarnost,Solidarnost,facebook,after,2025-Q3,1,5,True,False
+solidarnost,Solidarnost,facebook,after,2025-Q4,0,3,True,False
+solidarnost,Solidarnost,facebook,after,2026-Q1,0,5,True,False
+solidarnost,Solidarnost,facebook,after,2026-Q2,0,2,True,False
+solidarnost,Solidarnost,facebook,after,2026-Q3,1,6,True,True
+supsidijarnost,Supsidijarnost,facebook,after,2024-Q2,0,19,True,False
+supsidijarnost,Supsidijarnost,facebook,after,2024-Q3,0,5,True,False
+supsidijarnost,Supsidijarnost,facebook,after,2024-Q4,0,4,True,False
+supsidijarnost,Supsidijarnost,facebook,after,2025-Q1,0,2,True,False
+supsidijarnost,Supsidijarnost,facebook,after,2025-Q2,0,4,True,False
+supsidijarnost,Supsidijarnost,facebook,after,2025-Q3,0,5,True,False
+supsidijarnost,Supsidijarnost,facebook,after,2025-Q4,0,3,True,False
+supsidijarnost,Supsidijarnost,facebook,after,2026-Q1,0,5,True,False
+supsidijarnost,Supsidijarnost,facebook,after,2026-Q2,0,2,True,False
+supsidijarnost,Supsidijarnost,facebook,after,2026-Q3,0,6,True,True
+opce_dobro,Opće dobro,facebook,after,2024-Q2,0,19,True,False
+opce_dobro,Opće dobro,facebook,after,2024-Q3,0,5,True,False
+opce_dobro,Opće dobro,facebook,after,2024-Q4,0,4,True,False
+opce_dobro,Opće dobro,facebook,after,2025-Q1,0,2,True,False
+opce_dobro,Opće dobro,facebook,after,2025-Q2,0,4,True,False
+opce_dobro,Opće dobro,facebook,after,2025-Q3,0,5,True,False
+opce_dobro,Opće dobro,facebook,after,2025-Q4,0,3,True,False
+opce_dobro,Opće dobro,facebook,after,2026-Q1,0,5,True,False
+opce_dobro,Opće dobro,facebook,after,2026-Q2,0,2,True,False
+opce_dobro,Opće dobro,facebook,after,2026-Q3,1,6,True,True
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,after,2024-Q2,0,19,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,after,2024-Q3,0,5,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,after,2024-Q4,0,4,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,after,2025-Q1,0,2,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,after,2025-Q2,0,4,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,after,2025-Q3,1,5,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,after,2025-Q4,0,3,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,after,2026-Q1,0,5,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,after,2026-Q2,0,2,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,facebook,after,2026-Q3,1,6,True,True
+dostojanstvo_rada,Dostojanstvo rada,facebook,after,2024-Q2,0,19,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,after,2024-Q3,0,5,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,after,2024-Q4,0,4,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,after,2025-Q1,0,2,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,after,2025-Q2,0,4,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,after,2025-Q3,0,5,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,after,2025-Q4,0,3,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,after,2026-Q1,0,5,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,after,2026-Q2,0,2,True,False
+dostojanstvo_rada,Dostojanstvo rada,facebook,after,2026-Q3,0,6,True,True
+radnik,Radnik,facebook,after,2024-Q2,0,19,True,False
+radnik,Radnik,facebook,after,2024-Q3,0,5,True,False
+radnik,Radnik,facebook,after,2024-Q4,0,4,True,False
+radnik,Radnik,facebook,after,2025-Q1,0,2,True,False
+radnik,Radnik,facebook,after,2025-Q2,0,4,True,False
+radnik,Radnik,facebook,after,2025-Q3,0,5,True,False
+radnik,Radnik,facebook,after,2025-Q4,0,3,True,False
+radnik,Radnik,facebook,after,2026-Q1,0,5,True,False
+radnik,Radnik,facebook,after,2026-Q2,0,2,True,False
+radnik,Radnik,facebook,after,2026-Q3,0,6,True,True
+socijalna_drzava,Socijalna država,facebook,after,2024-Q2,0,19,True,False
+socijalna_drzava,Socijalna država,facebook,after,2024-Q3,0,5,True,False
+socijalna_drzava,Socijalna država,facebook,after,2024-Q4,0,4,True,False
+socijalna_drzava,Socijalna država,facebook,after,2025-Q1,0,2,True,False
+socijalna_drzava,Socijalna država,facebook,after,2025-Q2,0,4,True,False
+socijalna_drzava,Socijalna država,facebook,after,2025-Q3,0,5,True,False
+socijalna_drzava,Socijalna država,facebook,after,2025-Q4,0,3,True,False
+socijalna_drzava,Socijalna država,facebook,after,2026-Q1,0,5,True,False
+socijalna_drzava,Socijalna država,facebook,after,2026-Q2,0,2,True,False
+socijalna_drzava,Socijalna država,facebook,after,2026-Q3,0,6,True,True
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,after,2024-Q2,2,19,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,after,2024-Q3,0,5,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,after,2024-Q4,0,4,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,after,2025-Q1,0,2,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,after,2025-Q2,0,4,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,after,2025-Q3,0,5,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,after,2025-Q4,0,3,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,after,2026-Q1,0,5,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,after,2026-Q2,0,2,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,facebook,after,2026-Q3,0,6,True,True
+savjest,Savjest,facebook,after,2024-Q2,0,19,True,False
+savjest,Savjest,facebook,after,2024-Q3,0,5,True,False
+savjest,Savjest,facebook,after,2024-Q4,0,4,True,False
+savjest,Savjest,facebook,after,2025-Q1,0,2,True,False
+savjest,Savjest,facebook,after,2025-Q2,1,4,True,False
+savjest,Savjest,facebook,after,2025-Q3,0,5,True,False
+savjest,Savjest,facebook,after,2025-Q4,0,3,True,False
+savjest,Savjest,facebook,after,2026-Q1,0,5,True,False
+savjest,Savjest,facebook,after,2026-Q2,0,2,True,False
+savjest,Savjest,facebook,after,2026-Q3,0,6,True,True
+vjerska_sloboda,Vjerska sloboda,facebook,after,2024-Q2,0,19,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,after,2024-Q3,0,5,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,after,2024-Q4,0,4,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,after,2025-Q1,0,2,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,after,2025-Q2,0,4,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,after,2025-Q3,0,5,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,after,2025-Q4,0,3,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,after,2026-Q1,0,5,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,after,2026-Q2,0,2,True,False
+vjerska_sloboda,Vjerska sloboda,facebook,after,2026-Q3,0,6,True,True
+demokracija,Demokracija,facebook,after,2024-Q2,0,19,True,False
+demokracija,Demokracija,facebook,after,2024-Q3,0,5,True,False
+demokracija,Demokracija,facebook,after,2024-Q4,0,4,True,False
+demokracija,Demokracija,facebook,after,2025-Q1,0,2,True,False
+demokracija,Demokracija,facebook,after,2025-Q2,0,4,True,False
+demokracija,Demokracija,facebook,after,2025-Q3,0,5,True,False
+demokracija,Demokracija,facebook,after,2025-Q4,0,3,True,False
+demokracija,Demokracija,facebook,after,2026-Q1,0,5,True,False
+demokracija,Demokracija,facebook,after,2026-Q2,0,2,True,False
+demokracija,Demokracija,facebook,after,2026-Q3,0,6,True,True
+sloboda,Sloboda,facebook,after,2024-Q2,0,19,True,False
+sloboda,Sloboda,facebook,after,2024-Q3,0,5,True,False
+sloboda,Sloboda,facebook,after,2024-Q4,1,4,True,False
+sloboda,Sloboda,facebook,after,2025-Q1,1,2,True,False
+sloboda,Sloboda,facebook,after,2025-Q2,0,4,True,False
+sloboda,Sloboda,facebook,after,2025-Q3,0,5,True,False
+sloboda,Sloboda,facebook,after,2025-Q4,0,3,True,False
+sloboda,Sloboda,facebook,after,2026-Q1,0,5,True,False
+sloboda,Sloboda,facebook,after,2026-Q2,0,2,True,False
+sloboda,Sloboda,facebook,after,2026-Q3,1,6,True,True
+domoljublje,Domoljublje,forum,before,2021-Q3,0,5,True,False
+domoljublje,Domoljublje,forum,before,2022-Q3,0,3,True,False
+domoljublje,Domoljublje,forum,before,2023-Q2,0,2,True,False
+domoljublje,Domoljublje,forum,before,2023-Q4,0,7,True,False
+domoljublje,Domoljublje,forum,before,2024-Q1,0,1,True,False
+drzavotvornost,Državotvornost,forum,before,2021-Q3,0,5,True,False
+drzavotvornost,Državotvornost,forum,before,2022-Q3,0,3,True,False
+drzavotvornost,Državotvornost,forum,before,2023-Q2,0,2,True,False
+drzavotvornost,Državotvornost,forum,before,2023-Q4,0,7,True,False
+drzavotvornost,Državotvornost,forum,before,2024-Q1,0,1,True,False
+narodnjastvo,Narodnjaštvo,forum,before,2021-Q3,0,5,True,False
+narodnjastvo,Narodnjaštvo,forum,before,2022-Q3,0,3,True,False
+narodnjastvo,Narodnjaštvo,forum,before,2023-Q2,0,2,True,False
+narodnjastvo,Narodnjaštvo,forum,before,2023-Q4,0,7,True,False
+narodnjastvo,Narodnjaštvo,forum,before,2024-Q1,0,1,True,False
+obitelj,Obitelj,forum,before,2021-Q3,1,5,True,False
+obitelj,Obitelj,forum,before,2022-Q3,0,3,True,False
+obitelj,Obitelj,forum,before,2023-Q2,0,2,True,False
+obitelj,Obitelj,forum,before,2023-Q4,0,7,True,False
+obitelj,Obitelj,forum,before,2024-Q1,1,1,True,False
+konzervativizam,Konzervativizam,forum,before,2021-Q3,4,5,True,False
+konzervativizam,Konzervativizam,forum,before,2022-Q3,1,3,True,False
+konzervativizam,Konzervativizam,forum,before,2023-Q2,1,2,True,False
+konzervativizam,Konzervativizam,forum,before,2023-Q4,4,7,True,False
+konzervativizam,Konzervativizam,forum,before,2024-Q1,0,1,True,False
+vrijednosti,Vrijednosti,forum,before,2021-Q3,1,5,True,False
+vrijednosti,Vrijednosti,forum,before,2022-Q3,0,3,True,False
+vrijednosti,Vrijednosti,forum,before,2023-Q2,0,2,True,False
+vrijednosti,Vrijednosti,forum,before,2023-Q4,0,7,True,False
+vrijednosti,Vrijednosti,forum,before,2024-Q1,1,1,True,False
+europa,Europa,forum,before,2021-Q3,0,5,True,False
+europa,Europa,forum,before,2022-Q3,0,3,True,False
+europa,Europa,forum,before,2023-Q2,0,2,True,False
+europa,Europa,forum,before,2023-Q4,0,7,True,False
+europa,Europa,forum,before,2024-Q1,0,1,True,False
+solidarnost,Solidarnost,forum,before,2021-Q3,0,5,True,False
+solidarnost,Solidarnost,forum,before,2022-Q3,0,3,True,False
+solidarnost,Solidarnost,forum,before,2023-Q2,0,2,True,False
+solidarnost,Solidarnost,forum,before,2023-Q4,0,7,True,False
+solidarnost,Solidarnost,forum,before,2024-Q1,0,1,True,False
+supsidijarnost,Supsidijarnost,forum,before,2021-Q3,0,5,True,False
+supsidijarnost,Supsidijarnost,forum,before,2022-Q3,0,3,True,False
+supsidijarnost,Supsidijarnost,forum,before,2023-Q2,0,2,True,False
+supsidijarnost,Supsidijarnost,forum,before,2023-Q4,0,7,True,False
+supsidijarnost,Supsidijarnost,forum,before,2024-Q1,0,1,True,False
+opce_dobro,Opće dobro,forum,before,2021-Q3,0,5,True,False
+opce_dobro,Opće dobro,forum,before,2022-Q3,0,3,True,False
+opce_dobro,Opće dobro,forum,before,2023-Q2,0,2,True,False
+opce_dobro,Opće dobro,forum,before,2023-Q4,0,7,True,False
+opce_dobro,Opće dobro,forum,before,2024-Q1,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,forum,before,2021-Q3,0,5,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,forum,before,2022-Q3,0,3,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,forum,before,2023-Q2,0,2,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,forum,before,2023-Q4,0,7,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,forum,before,2024-Q1,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,forum,before,2021-Q3,0,5,True,False
+dostojanstvo_rada,Dostojanstvo rada,forum,before,2022-Q3,0,3,True,False
+dostojanstvo_rada,Dostojanstvo rada,forum,before,2023-Q2,0,2,True,False
+dostojanstvo_rada,Dostojanstvo rada,forum,before,2023-Q4,0,7,True,False
+dostojanstvo_rada,Dostojanstvo rada,forum,before,2024-Q1,0,1,True,False
+radnik,Radnik,forum,before,2021-Q3,0,5,True,False
+radnik,Radnik,forum,before,2022-Q3,0,3,True,False
+radnik,Radnik,forum,before,2023-Q2,0,2,True,False
+radnik,Radnik,forum,before,2023-Q4,0,7,True,False
+radnik,Radnik,forum,before,2024-Q1,0,1,True,False
+socijalna_drzava,Socijalna država,forum,before,2021-Q3,0,5,True,False
+socijalna_drzava,Socijalna država,forum,before,2022-Q3,0,3,True,False
+socijalna_drzava,Socijalna država,forum,before,2023-Q2,0,2,True,False
+socijalna_drzava,Socijalna država,forum,before,2023-Q4,0,7,True,False
+socijalna_drzava,Socijalna država,forum,before,2024-Q1,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,forum,before,2021-Q3,0,5,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,forum,before,2022-Q3,0,3,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,forum,before,2023-Q2,0,2,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,forum,before,2023-Q4,0,7,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,forum,before,2024-Q1,0,1,True,False
+savjest,Savjest,forum,before,2021-Q3,0,5,True,False
+savjest,Savjest,forum,before,2022-Q3,0,3,True,False
+savjest,Savjest,forum,before,2023-Q2,0,2,True,False
+savjest,Savjest,forum,before,2023-Q4,0,7,True,False
+savjest,Savjest,forum,before,2024-Q1,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,forum,before,2021-Q3,0,5,True,False
+vjerska_sloboda,Vjerska sloboda,forum,before,2022-Q3,0,3,True,False
+vjerska_sloboda,Vjerska sloboda,forum,before,2023-Q2,0,2,True,False
+vjerska_sloboda,Vjerska sloboda,forum,before,2023-Q4,0,7,True,False
+vjerska_sloboda,Vjerska sloboda,forum,before,2024-Q1,0,1,True,False
+demokracija,Demokracija,forum,before,2021-Q3,0,5,True,False
+demokracija,Demokracija,forum,before,2022-Q3,0,3,True,False
+demokracija,Demokracija,forum,before,2023-Q2,0,2,True,False
+demokracija,Demokracija,forum,before,2023-Q4,0,7,True,False
+demokracija,Demokracija,forum,before,2024-Q1,0,1,True,False
+sloboda,Sloboda,forum,before,2021-Q3,0,5,True,False
+sloboda,Sloboda,forum,before,2022-Q3,0,3,True,False
+sloboda,Sloboda,forum,before,2023-Q2,0,2,True,False
+sloboda,Sloboda,forum,before,2023-Q4,0,7,True,False
+sloboda,Sloboda,forum,before,2024-Q1,0,1,True,False
+domoljublje,Domoljublje,forum,after,2025-Q2,0,2,True,False
+drzavotvornost,Državotvornost,forum,after,2025-Q2,0,2,True,False
+narodnjastvo,Narodnjaštvo,forum,after,2025-Q2,0,2,True,False
+obitelj,Obitelj,forum,after,2025-Q2,0,2,True,False
+konzervativizam,Konzervativizam,forum,after,2025-Q2,2,2,True,False
+vrijednosti,Vrijednosti,forum,after,2025-Q2,0,2,True,False
+europa,Europa,forum,after,2025-Q2,0,2,True,False
+solidarnost,Solidarnost,forum,after,2025-Q2,0,2,True,False
+supsidijarnost,Supsidijarnost,forum,after,2025-Q2,0,2,True,False
+opce_dobro,Opće dobro,forum,after,2025-Q2,0,2,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,forum,after,2025-Q2,0,2,True,False
+dostojanstvo_rada,Dostojanstvo rada,forum,after,2025-Q2,0,2,True,False
+radnik,Radnik,forum,after,2025-Q2,0,2,True,False
+socijalna_drzava,Socijalna država,forum,after,2025-Q2,0,2,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,forum,after,2025-Q2,0,2,True,False
+savjest,Savjest,forum,after,2025-Q2,0,2,True,False
+vjerska_sloboda,Vjerska sloboda,forum,after,2025-Q2,0,2,True,False
+demokracija,Demokracija,forum,after,2025-Q2,0,2,True,False
+sloboda,Sloboda,forum,after,2025-Q2,0,2,True,False
+domoljublje,Domoljublje,instagram,after,2024-Q2,2,3,True,False
+domoljublje,Domoljublje,instagram,after,2024-Q3,2,2,True,False
+domoljublje,Domoljublje,instagram,after,2024-Q4,1,2,True,False
+domoljublje,Domoljublje,instagram,after,2026-Q2,1,1,True,False
+drzavotvornost,Državotvornost,instagram,after,2024-Q2,0,3,True,False
+drzavotvornost,Državotvornost,instagram,after,2024-Q3,0,2,True,False
+drzavotvornost,Državotvornost,instagram,after,2024-Q4,0,2,True,False
+drzavotvornost,Državotvornost,instagram,after,2026-Q2,0,1,True,False
+narodnjastvo,Narodnjaštvo,instagram,after,2024-Q2,2,3,True,False
+narodnjastvo,Narodnjaštvo,instagram,after,2024-Q3,1,2,True,False
+narodnjastvo,Narodnjaštvo,instagram,after,2024-Q4,1,2,True,False
+narodnjastvo,Narodnjaštvo,instagram,after,2026-Q2,1,1,True,False
+obitelj,Obitelj,instagram,after,2024-Q2,1,3,True,False
+obitelj,Obitelj,instagram,after,2024-Q3,1,2,True,False
+obitelj,Obitelj,instagram,after,2024-Q4,0,2,True,False
+obitelj,Obitelj,instagram,after,2026-Q2,0,1,True,False
+konzervativizam,Konzervativizam,instagram,after,2024-Q2,0,3,True,False
+konzervativizam,Konzervativizam,instagram,after,2024-Q3,0,2,True,False
+konzervativizam,Konzervativizam,instagram,after,2024-Q4,0,2,True,False
+konzervativizam,Konzervativizam,instagram,after,2026-Q2,0,1,True,False
+vrijednosti,Vrijednosti,instagram,after,2024-Q2,3,3,True,False
+vrijednosti,Vrijednosti,instagram,after,2024-Q3,2,2,True,False
+vrijednosti,Vrijednosti,instagram,after,2024-Q4,1,2,True,False
+vrijednosti,Vrijednosti,instagram,after,2026-Q2,1,1,True,False
+europa,Europa,instagram,after,2024-Q2,2,3,True,False
+europa,Europa,instagram,after,2024-Q3,0,2,True,False
+europa,Europa,instagram,after,2024-Q4,1,2,True,False
+europa,Europa,instagram,after,2026-Q2,1,1,True,False
+solidarnost,Solidarnost,instagram,after,2024-Q2,1,3,True,False
+solidarnost,Solidarnost,instagram,after,2024-Q3,0,2,True,False
+solidarnost,Solidarnost,instagram,after,2024-Q4,1,2,True,False
+solidarnost,Solidarnost,instagram,after,2026-Q2,0,1,True,False
+supsidijarnost,Supsidijarnost,instagram,after,2024-Q2,0,3,True,False
+supsidijarnost,Supsidijarnost,instagram,after,2024-Q3,0,2,True,False
+supsidijarnost,Supsidijarnost,instagram,after,2024-Q4,0,2,True,False
+supsidijarnost,Supsidijarnost,instagram,after,2026-Q2,0,1,True,False
+opce_dobro,Opće dobro,instagram,after,2024-Q2,0,3,True,False
+opce_dobro,Opće dobro,instagram,after,2024-Q3,0,2,True,False
+opce_dobro,Opće dobro,instagram,after,2024-Q4,0,2,True,False
+opce_dobro,Opće dobro,instagram,after,2026-Q2,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,instagram,after,2024-Q2,0,3,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,instagram,after,2024-Q3,0,2,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,instagram,after,2024-Q4,0,2,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,instagram,after,2026-Q2,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,instagram,after,2024-Q2,0,3,True,False
+dostojanstvo_rada,Dostojanstvo rada,instagram,after,2024-Q3,0,2,True,False
+dostojanstvo_rada,Dostojanstvo rada,instagram,after,2024-Q4,0,2,True,False
+dostojanstvo_rada,Dostojanstvo rada,instagram,after,2026-Q2,0,1,True,False
+radnik,Radnik,instagram,after,2024-Q2,0,3,True,False
+radnik,Radnik,instagram,after,2024-Q3,0,2,True,False
+radnik,Radnik,instagram,after,2024-Q4,0,2,True,False
+radnik,Radnik,instagram,after,2026-Q2,0,1,True,False
+socijalna_drzava,Socijalna država,instagram,after,2024-Q2,0,3,True,False
+socijalna_drzava,Socijalna država,instagram,after,2024-Q3,0,2,True,False
+socijalna_drzava,Socijalna država,instagram,after,2024-Q4,0,2,True,False
+socijalna_drzava,Socijalna država,instagram,after,2026-Q2,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,instagram,after,2024-Q2,1,3,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,instagram,after,2024-Q3,0,2,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,instagram,after,2024-Q4,0,2,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,instagram,after,2026-Q2,0,1,True,False
+savjest,Savjest,instagram,after,2024-Q2,0,3,True,False
+savjest,Savjest,instagram,after,2024-Q3,0,2,True,False
+savjest,Savjest,instagram,after,2024-Q4,0,2,True,False
+savjest,Savjest,instagram,after,2026-Q2,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,instagram,after,2024-Q2,0,3,True,False
+vjerska_sloboda,Vjerska sloboda,instagram,after,2024-Q3,0,2,True,False
+vjerska_sloboda,Vjerska sloboda,instagram,after,2024-Q4,0,2,True,False
+vjerska_sloboda,Vjerska sloboda,instagram,after,2026-Q2,0,1,True,False
+demokracija,Demokracija,instagram,after,2024-Q2,1,3,True,False
+demokracija,Demokracija,instagram,after,2024-Q3,0,2,True,False
+demokracija,Demokracija,instagram,after,2024-Q4,0,2,True,False
+demokracija,Demokracija,instagram,after,2026-Q2,0,1,True,False
+sloboda,Sloboda,instagram,after,2024-Q2,0,3,True,False
+sloboda,Sloboda,instagram,after,2024-Q3,0,2,True,False
+sloboda,Sloboda,instagram,after,2024-Q4,1,2,True,False
+sloboda,Sloboda,instagram,after,2026-Q2,0,1,True,False
+domoljublje,Domoljublje,print,after,2024-Q3,0,1,True,False
+domoljublje,Domoljublje,print,after,2024-Q4,0,2,True,False
+domoljublje,Domoljublje,print,after,2025-Q1,0,4,True,False
+domoljublje,Domoljublje,print,after,2025-Q2,0,11,True,False
+domoljublje,Domoljublje,print,after,2025-Q3,0,20,False,False
+domoljublje,Domoljublje,print,after,2025-Q4,3,6,True,False
+domoljublje,Domoljublje,print,after,2026-Q1,0,4,True,False
+domoljublje,Domoljublje,print,after,2026-Q2,9,14,True,False
+domoljublje,Domoljublje,print,after,2026-Q3,0,10,True,True
+drzavotvornost,Državotvornost,print,after,2024-Q3,0,1,True,False
+drzavotvornost,Državotvornost,print,after,2024-Q4,0,2,True,False
+drzavotvornost,Državotvornost,print,after,2025-Q1,0,4,True,False
+drzavotvornost,Državotvornost,print,after,2025-Q2,0,11,True,False
+drzavotvornost,Državotvornost,print,after,2025-Q3,0,20,False,False
+drzavotvornost,Državotvornost,print,after,2025-Q4,0,6,True,False
+drzavotvornost,Državotvornost,print,after,2026-Q1,0,4,True,False
+drzavotvornost,Državotvornost,print,after,2026-Q2,0,14,True,False
+drzavotvornost,Državotvornost,print,after,2026-Q3,0,10,True,True
+narodnjastvo,Narodnjaštvo,print,after,2024-Q3,0,1,True,False
+narodnjastvo,Narodnjaštvo,print,after,2024-Q4,0,2,True,False
+narodnjastvo,Narodnjaštvo,print,after,2025-Q1,1,4,True,False
+narodnjastvo,Narodnjaštvo,print,after,2025-Q2,0,11,True,False
+narodnjastvo,Narodnjaštvo,print,after,2025-Q3,0,20,False,False
+narodnjastvo,Narodnjaštvo,print,after,2025-Q4,1,6,True,False
+narodnjastvo,Narodnjaštvo,print,after,2026-Q1,1,4,True,False
+narodnjastvo,Narodnjaštvo,print,after,2026-Q2,9,14,True,False
+narodnjastvo,Narodnjaštvo,print,after,2026-Q3,1,10,True,True
+obitelj,Obitelj,print,after,2024-Q3,0,1,True,False
+obitelj,Obitelj,print,after,2024-Q4,2,2,True,False
+obitelj,Obitelj,print,after,2025-Q1,0,4,True,False
+obitelj,Obitelj,print,after,2025-Q2,1,11,True,False
+obitelj,Obitelj,print,after,2025-Q3,0,20,False,False
+obitelj,Obitelj,print,after,2025-Q4,2,6,True,False
+obitelj,Obitelj,print,after,2026-Q1,0,4,True,False
+obitelj,Obitelj,print,after,2026-Q2,0,14,True,False
+obitelj,Obitelj,print,after,2026-Q3,0,10,True,True
+konzervativizam,Konzervativizam,print,after,2024-Q3,0,1,True,False
+konzervativizam,Konzervativizam,print,after,2024-Q4,1,2,True,False
+konzervativizam,Konzervativizam,print,after,2025-Q1,0,4,True,False
+konzervativizam,Konzervativizam,print,after,2025-Q2,2,11,True,False
+konzervativizam,Konzervativizam,print,after,2025-Q3,2,20,False,False
+konzervativizam,Konzervativizam,print,after,2025-Q4,1,6,True,False
+konzervativizam,Konzervativizam,print,after,2026-Q1,0,4,True,False
+konzervativizam,Konzervativizam,print,after,2026-Q2,1,14,True,False
+konzervativizam,Konzervativizam,print,after,2026-Q3,0,10,True,True
+vrijednosti,Vrijednosti,print,after,2024-Q3,0,1,True,False
+vrijednosti,Vrijednosti,print,after,2024-Q4,1,2,True,False
+vrijednosti,Vrijednosti,print,after,2025-Q1,3,4,True,False
+vrijednosti,Vrijednosti,print,after,2025-Q2,3,11,True,False
+vrijednosti,Vrijednosti,print,after,2025-Q3,7,20,False,False
+vrijednosti,Vrijednosti,print,after,2025-Q4,4,6,True,False
+vrijednosti,Vrijednosti,print,after,2026-Q1,1,4,True,False
+vrijednosti,Vrijednosti,print,after,2026-Q2,10,14,True,False
+vrijednosti,Vrijednosti,print,after,2026-Q3,4,10,True,True
+europa,Europa,print,after,2024-Q3,0,1,True,False
+europa,Europa,print,after,2024-Q4,1,2,True,False
+europa,Europa,print,after,2025-Q1,1,4,True,False
+europa,Europa,print,after,2025-Q2,3,11,True,False
+europa,Europa,print,after,2025-Q3,4,20,False,False
+europa,Europa,print,after,2025-Q4,1,6,True,False
+europa,Europa,print,after,2026-Q1,0,4,True,False
+europa,Europa,print,after,2026-Q2,4,14,True,False
+europa,Europa,print,after,2026-Q3,2,10,True,True
+solidarnost,Solidarnost,print,after,2024-Q3,0,1,True,False
+solidarnost,Solidarnost,print,after,2024-Q4,0,2,True,False
+solidarnost,Solidarnost,print,after,2025-Q1,0,4,True,False
+solidarnost,Solidarnost,print,after,2025-Q2,0,11,True,False
+solidarnost,Solidarnost,print,after,2025-Q3,1,20,False,False
+solidarnost,Solidarnost,print,after,2025-Q4,1,6,True,False
+solidarnost,Solidarnost,print,after,2026-Q1,0,4,True,False
+solidarnost,Solidarnost,print,after,2026-Q2,0,14,True,False
+solidarnost,Solidarnost,print,after,2026-Q3,0,10,True,True
+supsidijarnost,Supsidijarnost,print,after,2024-Q3,0,1,True,False
+supsidijarnost,Supsidijarnost,print,after,2024-Q4,0,2,True,False
+supsidijarnost,Supsidijarnost,print,after,2025-Q1,0,4,True,False
+supsidijarnost,Supsidijarnost,print,after,2025-Q2,0,11,True,False
+supsidijarnost,Supsidijarnost,print,after,2025-Q3,0,20,False,False
+supsidijarnost,Supsidijarnost,print,after,2025-Q4,0,6,True,False
+supsidijarnost,Supsidijarnost,print,after,2026-Q1,0,4,True,False
+supsidijarnost,Supsidijarnost,print,after,2026-Q2,0,14,True,False
+supsidijarnost,Supsidijarnost,print,after,2026-Q3,1,10,True,True
+opce_dobro,Opće dobro,print,after,2024-Q3,0,1,True,False
+opce_dobro,Opće dobro,print,after,2024-Q4,0,2,True,False
+opce_dobro,Opće dobro,print,after,2025-Q1,0,4,True,False
+opce_dobro,Opće dobro,print,after,2025-Q2,0,11,True,False
+opce_dobro,Opće dobro,print,after,2025-Q3,0,20,False,False
+opce_dobro,Opće dobro,print,after,2025-Q4,0,6,True,False
+opce_dobro,Opće dobro,print,after,2026-Q1,0,4,True,False
+opce_dobro,Opće dobro,print,after,2026-Q2,0,14,True,False
+opce_dobro,Opće dobro,print,after,2026-Q3,0,10,True,True
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,print,after,2024-Q3,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,print,after,2024-Q4,0,2,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,print,after,2025-Q1,0,4,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,print,after,2025-Q2,0,11,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,print,after,2025-Q3,0,20,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,print,after,2025-Q4,0,6,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,print,after,2026-Q1,0,4,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,print,after,2026-Q2,0,14,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,print,after,2026-Q3,0,10,True,True
+dostojanstvo_rada,Dostojanstvo rada,print,after,2024-Q3,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,print,after,2024-Q4,0,2,True,False
+dostojanstvo_rada,Dostojanstvo rada,print,after,2025-Q1,0,4,True,False
+dostojanstvo_rada,Dostojanstvo rada,print,after,2025-Q2,0,11,True,False
+dostojanstvo_rada,Dostojanstvo rada,print,after,2025-Q3,0,20,False,False
+dostojanstvo_rada,Dostojanstvo rada,print,after,2025-Q4,0,6,True,False
+dostojanstvo_rada,Dostojanstvo rada,print,after,2026-Q1,0,4,True,False
+dostojanstvo_rada,Dostojanstvo rada,print,after,2026-Q2,0,14,True,False
+dostojanstvo_rada,Dostojanstvo rada,print,after,2026-Q3,0,10,True,True
+radnik,Radnik,print,after,2024-Q3,0,1,True,False
+radnik,Radnik,print,after,2024-Q4,0,2,True,False
+radnik,Radnik,print,after,2025-Q1,0,4,True,False
+radnik,Radnik,print,after,2025-Q2,0,11,True,False
+radnik,Radnik,print,after,2025-Q3,0,20,False,False
+radnik,Radnik,print,after,2025-Q4,0,6,True,False
+radnik,Radnik,print,after,2026-Q1,0,4,True,False
+radnik,Radnik,print,after,2026-Q2,0,14,True,False
+radnik,Radnik,print,after,2026-Q3,0,10,True,True
+socijalna_drzava,Socijalna država,print,after,2024-Q3,0,1,True,False
+socijalna_drzava,Socijalna država,print,after,2024-Q4,0,2,True,False
+socijalna_drzava,Socijalna država,print,after,2025-Q1,0,4,True,False
+socijalna_drzava,Socijalna država,print,after,2025-Q2,0,11,True,False
+socijalna_drzava,Socijalna država,print,after,2025-Q3,0,20,False,False
+socijalna_drzava,Socijalna država,print,after,2025-Q4,0,6,True,False
+socijalna_drzava,Socijalna država,print,after,2026-Q1,0,4,True,False
+socijalna_drzava,Socijalna država,print,after,2026-Q2,0,14,True,False
+socijalna_drzava,Socijalna država,print,after,2026-Q3,0,10,True,True
+trzisno_gospodarstvo,Tržišno gospodarstvo,print,after,2024-Q3,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,print,after,2024-Q4,0,2,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,print,after,2025-Q1,0,4,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,print,after,2025-Q2,1,11,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,print,after,2025-Q3,0,20,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,print,after,2025-Q4,0,6,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,print,after,2026-Q1,0,4,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,print,after,2026-Q2,1,14,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,print,after,2026-Q3,0,10,True,True
+savjest,Savjest,print,after,2024-Q3,0,1,True,False
+savjest,Savjest,print,after,2024-Q4,0,2,True,False
+savjest,Savjest,print,after,2025-Q1,0,4,True,False
+savjest,Savjest,print,after,2025-Q2,0,11,True,False
+savjest,Savjest,print,after,2025-Q3,0,20,False,False
+savjest,Savjest,print,after,2025-Q4,0,6,True,False
+savjest,Savjest,print,after,2026-Q1,0,4,True,False
+savjest,Savjest,print,after,2026-Q2,0,14,True,False
+savjest,Savjest,print,after,2026-Q3,0,10,True,True
+vjerska_sloboda,Vjerska sloboda,print,after,2024-Q3,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,print,after,2024-Q4,0,2,True,False
+vjerska_sloboda,Vjerska sloboda,print,after,2025-Q1,0,4,True,False
+vjerska_sloboda,Vjerska sloboda,print,after,2025-Q2,0,11,True,False
+vjerska_sloboda,Vjerska sloboda,print,after,2025-Q3,0,20,False,False
+vjerska_sloboda,Vjerska sloboda,print,after,2025-Q4,0,6,True,False
+vjerska_sloboda,Vjerska sloboda,print,after,2026-Q1,0,4,True,False
+vjerska_sloboda,Vjerska sloboda,print,after,2026-Q2,0,14,True,False
+vjerska_sloboda,Vjerska sloboda,print,after,2026-Q3,0,10,True,True
+demokracija,Demokracija,print,after,2024-Q3,0,1,True,False
+demokracija,Demokracija,print,after,2024-Q4,0,2,True,False
+demokracija,Demokracija,print,after,2025-Q1,0,4,True,False
+demokracija,Demokracija,print,after,2025-Q2,0,11,True,False
+demokracija,Demokracija,print,after,2025-Q3,2,20,False,False
+demokracija,Demokracija,print,after,2025-Q4,1,6,True,False
+demokracija,Demokracija,print,after,2026-Q1,0,4,True,False
+demokracija,Demokracija,print,after,2026-Q2,1,14,True,False
+demokracija,Demokracija,print,after,2026-Q3,0,10,True,True
+sloboda,Sloboda,print,after,2024-Q3,0,1,True,False
+sloboda,Sloboda,print,after,2024-Q4,0,2,True,False
+sloboda,Sloboda,print,after,2025-Q1,0,4,True,False
+sloboda,Sloboda,print,after,2025-Q2,1,11,True,False
+sloboda,Sloboda,print,after,2025-Q3,0,20,False,False
+sloboda,Sloboda,print,after,2025-Q4,1,6,True,False
+sloboda,Sloboda,print,after,2026-Q1,0,4,True,False
+sloboda,Sloboda,print,after,2026-Q2,1,14,True,False
+sloboda,Sloboda,print,after,2026-Q3,0,10,True,True
+domoljublje,Domoljublje,radio,after,2025-Q2,1,1,True,False
+domoljublje,Domoljublje,radio,after,2026-Q1,0,2,True,False
+domoljublje,Domoljublje,radio,after,2026-Q2,0,13,True,False
+domoljublje,Domoljublje,radio,after,2026-Q3,10,11,True,True
+drzavotvornost,Državotvornost,radio,after,2025-Q2,1,1,True,False
+drzavotvornost,Državotvornost,radio,after,2026-Q1,0,2,True,False
+drzavotvornost,Državotvornost,radio,after,2026-Q2,0,13,True,False
+drzavotvornost,Državotvornost,radio,after,2026-Q3,10,11,True,True
+narodnjastvo,Narodnjaštvo,radio,after,2025-Q2,1,1,True,False
+narodnjastvo,Narodnjaštvo,radio,after,2026-Q1,0,2,True,False
+narodnjastvo,Narodnjaštvo,radio,after,2026-Q2,1,13,True,False
+narodnjastvo,Narodnjaštvo,radio,after,2026-Q3,0,11,True,True
+obitelj,Obitelj,radio,after,2025-Q2,0,1,True,False
+obitelj,Obitelj,radio,after,2026-Q1,0,2,True,False
+obitelj,Obitelj,radio,after,2026-Q2,0,13,True,False
+obitelj,Obitelj,radio,after,2026-Q3,0,11,True,True
+konzervativizam,Konzervativizam,radio,after,2025-Q2,0,1,True,False
+konzervativizam,Konzervativizam,radio,after,2026-Q1,0,2,True,False
+konzervativizam,Konzervativizam,radio,after,2026-Q2,0,13,True,False
+konzervativizam,Konzervativizam,radio,after,2026-Q3,1,11,True,True
+vrijednosti,Vrijednosti,radio,after,2025-Q2,0,1,True,False
+vrijednosti,Vrijednosti,radio,after,2026-Q1,0,2,True,False
+vrijednosti,Vrijednosti,radio,after,2026-Q2,11,13,True,False
+vrijednosti,Vrijednosti,radio,after,2026-Q3,1,11,True,True
+europa,Europa,radio,after,2025-Q2,0,1,True,False
+europa,Europa,radio,after,2026-Q1,1,2,True,False
+europa,Europa,radio,after,2026-Q2,2,13,True,False
+europa,Europa,radio,after,2026-Q3,0,11,True,True
+solidarnost,Solidarnost,radio,after,2025-Q2,0,1,True,False
+solidarnost,Solidarnost,radio,after,2026-Q1,0,2,True,False
+solidarnost,Solidarnost,radio,after,2026-Q2,0,13,True,False
+solidarnost,Solidarnost,radio,after,2026-Q3,0,11,True,True
+supsidijarnost,Supsidijarnost,radio,after,2025-Q2,0,1,True,False
+supsidijarnost,Supsidijarnost,radio,after,2026-Q1,0,2,True,False
+supsidijarnost,Supsidijarnost,radio,after,2026-Q2,0,13,True,False
+supsidijarnost,Supsidijarnost,radio,after,2026-Q3,0,11,True,True
+opce_dobro,Opće dobro,radio,after,2025-Q2,0,1,True,False
+opce_dobro,Opće dobro,radio,after,2026-Q1,0,2,True,False
+opce_dobro,Opće dobro,radio,after,2026-Q2,0,13,True,False
+opce_dobro,Opće dobro,radio,after,2026-Q3,0,11,True,True
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,radio,after,2025-Q2,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,radio,after,2026-Q1,0,2,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,radio,after,2026-Q2,0,13,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,radio,after,2026-Q3,0,11,True,True
+dostojanstvo_rada,Dostojanstvo rada,radio,after,2025-Q2,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,radio,after,2026-Q1,0,2,True,False
+dostojanstvo_rada,Dostojanstvo rada,radio,after,2026-Q2,0,13,True,False
+dostojanstvo_rada,Dostojanstvo rada,radio,after,2026-Q3,0,11,True,True
+radnik,Radnik,radio,after,2025-Q2,0,1,True,False
+radnik,Radnik,radio,after,2026-Q1,0,2,True,False
+radnik,Radnik,radio,after,2026-Q2,0,13,True,False
+radnik,Radnik,radio,after,2026-Q3,0,11,True,True
+socijalna_drzava,Socijalna država,radio,after,2025-Q2,0,1,True,False
+socijalna_drzava,Socijalna država,radio,after,2026-Q1,0,2,True,False
+socijalna_drzava,Socijalna država,radio,after,2026-Q2,0,13,True,False
+socijalna_drzava,Socijalna država,radio,after,2026-Q3,0,11,True,True
+trzisno_gospodarstvo,Tržišno gospodarstvo,radio,after,2025-Q2,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,radio,after,2026-Q1,0,2,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,radio,after,2026-Q2,0,13,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,radio,after,2026-Q3,0,11,True,True
+savjest,Savjest,radio,after,2025-Q2,0,1,True,False
+savjest,Savjest,radio,after,2026-Q1,0,2,True,False
+savjest,Savjest,radio,after,2026-Q2,0,13,True,False
+savjest,Savjest,radio,after,2026-Q3,0,11,True,True
+vjerska_sloboda,Vjerska sloboda,radio,after,2025-Q2,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,radio,after,2026-Q1,0,2,True,False
+vjerska_sloboda,Vjerska sloboda,radio,after,2026-Q2,0,13,True,False
+vjerska_sloboda,Vjerska sloboda,radio,after,2026-Q3,0,11,True,True
+demokracija,Demokracija,radio,after,2025-Q2,0,1,True,False
+demokracija,Demokracija,radio,after,2026-Q1,0,2,True,False
+demokracija,Demokracija,radio,after,2026-Q2,0,13,True,False
+demokracija,Demokracija,radio,after,2026-Q3,0,11,True,True
+sloboda,Sloboda,radio,after,2025-Q2,0,1,True,False
+sloboda,Sloboda,radio,after,2026-Q1,0,2,True,False
+sloboda,Sloboda,radio,after,2026-Q2,0,13,True,False
+sloboda,Sloboda,radio,after,2026-Q3,0,11,True,True
+domoljublje,Domoljublje,reddit,before,2021-Q2,0,1,True,False
+domoljublje,Domoljublje,reddit,before,2021-Q4,0,1,True,False
+domoljublje,Domoljublje,reddit,before,2022-Q2,0,2,True,False
+domoljublje,Domoljublje,reddit,before,2022-Q3,0,1,True,False
+domoljublje,Domoljublje,reddit,before,2023-Q1,1,3,True,False
+drzavotvornost,Državotvornost,reddit,before,2021-Q2,0,1,True,False
+drzavotvornost,Državotvornost,reddit,before,2021-Q4,0,1,True,False
+drzavotvornost,Državotvornost,reddit,before,2022-Q2,0,2,True,False
+drzavotvornost,Državotvornost,reddit,before,2022-Q3,0,1,True,False
+drzavotvornost,Državotvornost,reddit,before,2023-Q1,1,3,True,False
+narodnjastvo,Narodnjaštvo,reddit,before,2021-Q2,0,1,True,False
+narodnjastvo,Narodnjaštvo,reddit,before,2021-Q4,0,1,True,False
+narodnjastvo,Narodnjaštvo,reddit,before,2022-Q2,0,2,True,False
+narodnjastvo,Narodnjaštvo,reddit,before,2022-Q3,0,1,True,False
+narodnjastvo,Narodnjaštvo,reddit,before,2023-Q1,0,3,True,False
+obitelj,Obitelj,reddit,before,2021-Q2,0,1,True,False
+obitelj,Obitelj,reddit,before,2021-Q4,0,1,True,False
+obitelj,Obitelj,reddit,before,2022-Q2,1,2,True,False
+obitelj,Obitelj,reddit,before,2022-Q3,1,1,True,False
+obitelj,Obitelj,reddit,before,2023-Q1,0,3,True,False
+konzervativizam,Konzervativizam,reddit,before,2021-Q2,1,1,True,False
+konzervativizam,Konzervativizam,reddit,before,2021-Q4,0,1,True,False
+konzervativizam,Konzervativizam,reddit,before,2022-Q2,0,2,True,False
+konzervativizam,Konzervativizam,reddit,before,2022-Q3,0,1,True,False
+konzervativizam,Konzervativizam,reddit,before,2023-Q1,0,3,True,False
+vrijednosti,Vrijednosti,reddit,before,2021-Q2,0,1,True,False
+vrijednosti,Vrijednosti,reddit,before,2021-Q4,0,1,True,False
+vrijednosti,Vrijednosti,reddit,before,2022-Q2,0,2,True,False
+vrijednosti,Vrijednosti,reddit,before,2022-Q3,1,1,True,False
+vrijednosti,Vrijednosti,reddit,before,2023-Q1,2,3,True,False
+europa,Europa,reddit,before,2021-Q2,0,1,True,False
+europa,Europa,reddit,before,2021-Q4,0,1,True,False
+europa,Europa,reddit,before,2022-Q2,0,2,True,False
+europa,Europa,reddit,before,2022-Q3,0,1,True,False
+europa,Europa,reddit,before,2023-Q1,0,3,True,False
+solidarnost,Solidarnost,reddit,before,2021-Q2,0,1,True,False
+solidarnost,Solidarnost,reddit,before,2021-Q4,0,1,True,False
+solidarnost,Solidarnost,reddit,before,2022-Q2,0,2,True,False
+solidarnost,Solidarnost,reddit,before,2022-Q3,0,1,True,False
+solidarnost,Solidarnost,reddit,before,2023-Q1,0,3,True,False
+supsidijarnost,Supsidijarnost,reddit,before,2021-Q2,0,1,True,False
+supsidijarnost,Supsidijarnost,reddit,before,2021-Q4,0,1,True,False
+supsidijarnost,Supsidijarnost,reddit,before,2022-Q2,0,2,True,False
+supsidijarnost,Supsidijarnost,reddit,before,2022-Q3,0,1,True,False
+supsidijarnost,Supsidijarnost,reddit,before,2023-Q1,0,3,True,False
+opce_dobro,Opće dobro,reddit,before,2021-Q2,0,1,True,False
+opce_dobro,Opće dobro,reddit,before,2021-Q4,0,1,True,False
+opce_dobro,Opće dobro,reddit,before,2022-Q2,0,2,True,False
+opce_dobro,Opće dobro,reddit,before,2022-Q3,0,1,True,False
+opce_dobro,Opće dobro,reddit,before,2023-Q1,0,3,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,reddit,before,2021-Q2,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,reddit,before,2021-Q4,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,reddit,before,2022-Q2,0,2,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,reddit,before,2022-Q3,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,reddit,before,2023-Q1,0,3,True,False
+dostojanstvo_rada,Dostojanstvo rada,reddit,before,2021-Q2,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,reddit,before,2021-Q4,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,reddit,before,2022-Q2,0,2,True,False
+dostojanstvo_rada,Dostojanstvo rada,reddit,before,2022-Q3,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,reddit,before,2023-Q1,0,3,True,False
+radnik,Radnik,reddit,before,2021-Q2,0,1,True,False
+radnik,Radnik,reddit,before,2021-Q4,0,1,True,False
+radnik,Radnik,reddit,before,2022-Q2,0,2,True,False
+radnik,Radnik,reddit,before,2022-Q3,0,1,True,False
+radnik,Radnik,reddit,before,2023-Q1,0,3,True,False
+socijalna_drzava,Socijalna država,reddit,before,2021-Q2,0,1,True,False
+socijalna_drzava,Socijalna država,reddit,before,2021-Q4,0,1,True,False
+socijalna_drzava,Socijalna država,reddit,before,2022-Q2,0,2,True,False
+socijalna_drzava,Socijalna država,reddit,before,2022-Q3,0,1,True,False
+socijalna_drzava,Socijalna država,reddit,before,2023-Q1,0,3,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,reddit,before,2021-Q2,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,reddit,before,2021-Q4,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,reddit,before,2022-Q2,0,2,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,reddit,before,2022-Q3,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,reddit,before,2023-Q1,0,3,True,False
+savjest,Savjest,reddit,before,2021-Q2,0,1,True,False
+savjest,Savjest,reddit,before,2021-Q4,0,1,True,False
+savjest,Savjest,reddit,before,2022-Q2,0,2,True,False
+savjest,Savjest,reddit,before,2022-Q3,0,1,True,False
+savjest,Savjest,reddit,before,2023-Q1,0,3,True,False
+vjerska_sloboda,Vjerska sloboda,reddit,before,2021-Q2,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,reddit,before,2021-Q4,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,reddit,before,2022-Q2,0,2,True,False
+vjerska_sloboda,Vjerska sloboda,reddit,before,2022-Q3,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,reddit,before,2023-Q1,0,3,True,False
+demokracija,Demokracija,reddit,before,2021-Q2,0,1,True,False
+demokracija,Demokracija,reddit,before,2021-Q4,0,1,True,False
+demokracija,Demokracija,reddit,before,2022-Q2,0,2,True,False
+demokracija,Demokracija,reddit,before,2022-Q3,0,1,True,False
+demokracija,Demokracija,reddit,before,2023-Q1,0,3,True,False
+sloboda,Sloboda,reddit,before,2021-Q2,0,1,True,False
+sloboda,Sloboda,reddit,before,2021-Q4,0,1,True,False
+sloboda,Sloboda,reddit,before,2022-Q2,1,2,True,False
+sloboda,Sloboda,reddit,before,2022-Q3,0,1,True,False
+sloboda,Sloboda,reddit,before,2023-Q1,0,3,True,False
+domoljublje,Domoljublje,reddit,after,2024-Q2,0,3,True,False
+domoljublje,Domoljublje,reddit,after,2024-Q3,0,3,True,False
+domoljublje,Domoljublje,reddit,after,2024-Q4,0,2,True,False
+domoljublje,Domoljublje,reddit,after,2025-Q2,0,1,True,False
+domoljublje,Domoljublje,reddit,after,2025-Q3,0,5,True,False
+domoljublje,Domoljublje,reddit,after,2025-Q4,0,1,True,False
+domoljublje,Domoljublje,reddit,after,2026-Q1,1,2,True,False
+domoljublje,Domoljublje,reddit,after,2026-Q2,0,1,True,False
+drzavotvornost,Državotvornost,reddit,after,2024-Q2,0,3,True,False
+drzavotvornost,Državotvornost,reddit,after,2024-Q3,0,3,True,False
+drzavotvornost,Državotvornost,reddit,after,2024-Q4,0,2,True,False
+drzavotvornost,Državotvornost,reddit,after,2025-Q2,0,1,True,False
+drzavotvornost,Državotvornost,reddit,after,2025-Q3,0,5,True,False
+drzavotvornost,Državotvornost,reddit,after,2025-Q4,0,1,True,False
+drzavotvornost,Državotvornost,reddit,after,2026-Q1,0,2,True,False
+drzavotvornost,Državotvornost,reddit,after,2026-Q2,0,1,True,False
+narodnjastvo,Narodnjaštvo,reddit,after,2024-Q2,0,3,True,False
+narodnjastvo,Narodnjaštvo,reddit,after,2024-Q3,0,3,True,False
+narodnjastvo,Narodnjaštvo,reddit,after,2024-Q4,0,2,True,False
+narodnjastvo,Narodnjaštvo,reddit,after,2025-Q2,0,1,True,False
+narodnjastvo,Narodnjaštvo,reddit,after,2025-Q3,0,5,True,False
+narodnjastvo,Narodnjaštvo,reddit,after,2025-Q4,0,1,True,False
+narodnjastvo,Narodnjaštvo,reddit,after,2026-Q1,1,2,True,False
+narodnjastvo,Narodnjaštvo,reddit,after,2026-Q2,0,1,True,False
+obitelj,Obitelj,reddit,after,2024-Q2,0,3,True,False
+obitelj,Obitelj,reddit,after,2024-Q3,0,3,True,False
+obitelj,Obitelj,reddit,after,2024-Q4,0,2,True,False
+obitelj,Obitelj,reddit,after,2025-Q2,0,1,True,False
+obitelj,Obitelj,reddit,after,2025-Q3,0,5,True,False
+obitelj,Obitelj,reddit,after,2025-Q4,0,1,True,False
+obitelj,Obitelj,reddit,after,2026-Q1,0,2,True,False
+obitelj,Obitelj,reddit,after,2026-Q2,1,1,True,False
+konzervativizam,Konzervativizam,reddit,after,2024-Q2,0,3,True,False
+konzervativizam,Konzervativizam,reddit,after,2024-Q3,1,3,True,False
+konzervativizam,Konzervativizam,reddit,after,2024-Q4,1,2,True,False
+konzervativizam,Konzervativizam,reddit,after,2025-Q2,0,1,True,False
+konzervativizam,Konzervativizam,reddit,after,2025-Q3,1,5,True,False
+konzervativizam,Konzervativizam,reddit,after,2025-Q4,1,1,True,False
+konzervativizam,Konzervativizam,reddit,after,2026-Q1,1,2,True,False
+konzervativizam,Konzervativizam,reddit,after,2026-Q2,0,1,True,False
+vrijednosti,Vrijednosti,reddit,after,2024-Q2,1,3,True,False
+vrijednosti,Vrijednosti,reddit,after,2024-Q3,0,3,True,False
+vrijednosti,Vrijednosti,reddit,after,2024-Q4,0,2,True,False
+vrijednosti,Vrijednosti,reddit,after,2025-Q2,0,1,True,False
+vrijednosti,Vrijednosti,reddit,after,2025-Q3,2,5,True,False
+vrijednosti,Vrijednosti,reddit,after,2025-Q4,0,1,True,False
+vrijednosti,Vrijednosti,reddit,after,2026-Q1,0,2,True,False
+vrijednosti,Vrijednosti,reddit,after,2026-Q2,1,1,True,False
+europa,Europa,reddit,after,2024-Q2,0,3,True,False
+europa,Europa,reddit,after,2024-Q3,0,3,True,False
+europa,Europa,reddit,after,2024-Q4,0,2,True,False
+europa,Europa,reddit,after,2025-Q2,0,1,True,False
+europa,Europa,reddit,after,2025-Q3,0,5,True,False
+europa,Europa,reddit,after,2025-Q4,0,1,True,False
+europa,Europa,reddit,after,2026-Q1,1,2,True,False
+europa,Europa,reddit,after,2026-Q2,0,1,True,False
+solidarnost,Solidarnost,reddit,after,2024-Q2,0,3,True,False
+solidarnost,Solidarnost,reddit,after,2024-Q3,0,3,True,False
+solidarnost,Solidarnost,reddit,after,2024-Q4,0,2,True,False
+solidarnost,Solidarnost,reddit,after,2025-Q2,0,1,True,False
+solidarnost,Solidarnost,reddit,after,2025-Q3,0,5,True,False
+solidarnost,Solidarnost,reddit,after,2025-Q4,0,1,True,False
+solidarnost,Solidarnost,reddit,after,2026-Q1,0,2,True,False
+solidarnost,Solidarnost,reddit,after,2026-Q2,0,1,True,False
+supsidijarnost,Supsidijarnost,reddit,after,2024-Q2,0,3,True,False
+supsidijarnost,Supsidijarnost,reddit,after,2024-Q3,0,3,True,False
+supsidijarnost,Supsidijarnost,reddit,after,2024-Q4,0,2,True,False
+supsidijarnost,Supsidijarnost,reddit,after,2025-Q2,0,1,True,False
+supsidijarnost,Supsidijarnost,reddit,after,2025-Q3,0,5,True,False
+supsidijarnost,Supsidijarnost,reddit,after,2025-Q4,0,1,True,False
+supsidijarnost,Supsidijarnost,reddit,after,2026-Q1,0,2,True,False
+supsidijarnost,Supsidijarnost,reddit,after,2026-Q2,0,1,True,False
+opce_dobro,Opće dobro,reddit,after,2024-Q2,0,3,True,False
+opce_dobro,Opće dobro,reddit,after,2024-Q3,0,3,True,False
+opce_dobro,Opće dobro,reddit,after,2024-Q4,0,2,True,False
+opce_dobro,Opće dobro,reddit,after,2025-Q2,0,1,True,False
+opce_dobro,Opće dobro,reddit,after,2025-Q3,0,5,True,False
+opce_dobro,Opće dobro,reddit,after,2025-Q4,0,1,True,False
+opce_dobro,Opće dobro,reddit,after,2026-Q1,0,2,True,False
+opce_dobro,Opće dobro,reddit,after,2026-Q2,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,reddit,after,2024-Q2,0,3,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,reddit,after,2024-Q3,0,3,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,reddit,after,2024-Q4,0,2,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,reddit,after,2025-Q2,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,reddit,after,2025-Q3,0,5,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,reddit,after,2025-Q4,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,reddit,after,2026-Q1,0,2,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,reddit,after,2026-Q2,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,reddit,after,2024-Q2,0,3,True,False
+dostojanstvo_rada,Dostojanstvo rada,reddit,after,2024-Q3,0,3,True,False
+dostojanstvo_rada,Dostojanstvo rada,reddit,after,2024-Q4,0,2,True,False
+dostojanstvo_rada,Dostojanstvo rada,reddit,after,2025-Q2,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,reddit,after,2025-Q3,0,5,True,False
+dostojanstvo_rada,Dostojanstvo rada,reddit,after,2025-Q4,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,reddit,after,2026-Q1,0,2,True,False
+dostojanstvo_rada,Dostojanstvo rada,reddit,after,2026-Q2,0,1,True,False
+radnik,Radnik,reddit,after,2024-Q2,0,3,True,False
+radnik,Radnik,reddit,after,2024-Q3,0,3,True,False
+radnik,Radnik,reddit,after,2024-Q4,0,2,True,False
+radnik,Radnik,reddit,after,2025-Q2,0,1,True,False
+radnik,Radnik,reddit,after,2025-Q3,1,5,True,False
+radnik,Radnik,reddit,after,2025-Q4,0,1,True,False
+radnik,Radnik,reddit,after,2026-Q1,0,2,True,False
+radnik,Radnik,reddit,after,2026-Q2,0,1,True,False
+socijalna_drzava,Socijalna država,reddit,after,2024-Q2,0,3,True,False
+socijalna_drzava,Socijalna država,reddit,after,2024-Q3,0,3,True,False
+socijalna_drzava,Socijalna država,reddit,after,2024-Q4,0,2,True,False
+socijalna_drzava,Socijalna država,reddit,after,2025-Q2,0,1,True,False
+socijalna_drzava,Socijalna država,reddit,after,2025-Q3,0,5,True,False
+socijalna_drzava,Socijalna država,reddit,after,2025-Q4,0,1,True,False
+socijalna_drzava,Socijalna država,reddit,after,2026-Q1,0,2,True,False
+socijalna_drzava,Socijalna država,reddit,after,2026-Q2,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,reddit,after,2024-Q2,0,3,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,reddit,after,2024-Q3,0,3,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,reddit,after,2024-Q4,0,2,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,reddit,after,2025-Q2,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,reddit,after,2025-Q3,0,5,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,reddit,after,2025-Q4,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,reddit,after,2026-Q1,0,2,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,reddit,after,2026-Q2,0,1,True,False
+savjest,Savjest,reddit,after,2024-Q2,0,3,True,False
+savjest,Savjest,reddit,after,2024-Q3,0,3,True,False
+savjest,Savjest,reddit,after,2024-Q4,0,2,True,False
+savjest,Savjest,reddit,after,2025-Q2,0,1,True,False
+savjest,Savjest,reddit,after,2025-Q3,0,5,True,False
+savjest,Savjest,reddit,after,2025-Q4,0,1,True,False
+savjest,Savjest,reddit,after,2026-Q1,0,2,True,False
+savjest,Savjest,reddit,after,2026-Q2,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,reddit,after,2024-Q2,0,3,True,False
+vjerska_sloboda,Vjerska sloboda,reddit,after,2024-Q3,0,3,True,False
+vjerska_sloboda,Vjerska sloboda,reddit,after,2024-Q4,0,2,True,False
+vjerska_sloboda,Vjerska sloboda,reddit,after,2025-Q2,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,reddit,after,2025-Q3,0,5,True,False
+vjerska_sloboda,Vjerska sloboda,reddit,after,2025-Q4,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,reddit,after,2026-Q1,0,2,True,False
+vjerska_sloboda,Vjerska sloboda,reddit,after,2026-Q2,0,1,True,False
+demokracija,Demokracija,reddit,after,2024-Q2,0,3,True,False
+demokracija,Demokracija,reddit,after,2024-Q3,0,3,True,False
+demokracija,Demokracija,reddit,after,2024-Q4,0,2,True,False
+demokracija,Demokracija,reddit,after,2025-Q2,0,1,True,False
+demokracija,Demokracija,reddit,after,2025-Q3,0,5,True,False
+demokracija,Demokracija,reddit,after,2025-Q4,0,1,True,False
+demokracija,Demokracija,reddit,after,2026-Q1,0,2,True,False
+demokracija,Demokracija,reddit,after,2026-Q2,0,1,True,False
+sloboda,Sloboda,reddit,after,2024-Q2,0,3,True,False
+sloboda,Sloboda,reddit,after,2024-Q3,0,3,True,False
+sloboda,Sloboda,reddit,after,2024-Q4,0,2,True,False
+sloboda,Sloboda,reddit,after,2025-Q2,0,1,True,False
+sloboda,Sloboda,reddit,after,2025-Q3,0,5,True,False
+sloboda,Sloboda,reddit,after,2025-Q4,0,1,True,False
+sloboda,Sloboda,reddit,after,2026-Q1,0,2,True,False
+sloboda,Sloboda,reddit,after,2026-Q2,0,1,True,False
+domoljublje,Domoljublje,tiktok,after,2025-Q1,0,1,True,False
+domoljublje,Domoljublje,tiktok,after,2025-Q3,0,1,True,False
+drzavotvornost,Državotvornost,tiktok,after,2025-Q1,0,1,True,False
+drzavotvornost,Državotvornost,tiktok,after,2025-Q3,0,1,True,False
+narodnjastvo,Narodnjaštvo,tiktok,after,2025-Q1,0,1,True,False
+narodnjastvo,Narodnjaštvo,tiktok,after,2025-Q3,0,1,True,False
+obitelj,Obitelj,tiktok,after,2025-Q1,0,1,True,False
+obitelj,Obitelj,tiktok,after,2025-Q3,0,1,True,False
+konzervativizam,Konzervativizam,tiktok,after,2025-Q1,0,1,True,False
+konzervativizam,Konzervativizam,tiktok,after,2025-Q3,0,1,True,False
+vrijednosti,Vrijednosti,tiktok,after,2025-Q1,0,1,True,False
+vrijednosti,Vrijednosti,tiktok,after,2025-Q3,0,1,True,False
+europa,Europa,tiktok,after,2025-Q1,0,1,True,False
+europa,Europa,tiktok,after,2025-Q3,1,1,True,False
+solidarnost,Solidarnost,tiktok,after,2025-Q1,0,1,True,False
+solidarnost,Solidarnost,tiktok,after,2025-Q3,0,1,True,False
+supsidijarnost,Supsidijarnost,tiktok,after,2025-Q1,0,1,True,False
+supsidijarnost,Supsidijarnost,tiktok,after,2025-Q3,0,1,True,False
+opce_dobro,Opće dobro,tiktok,after,2025-Q1,0,1,True,False
+opce_dobro,Opće dobro,tiktok,after,2025-Q3,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,tiktok,after,2025-Q1,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,tiktok,after,2025-Q3,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,tiktok,after,2025-Q1,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,tiktok,after,2025-Q3,0,1,True,False
+radnik,Radnik,tiktok,after,2025-Q1,0,1,True,False
+radnik,Radnik,tiktok,after,2025-Q3,0,1,True,False
+socijalna_drzava,Socijalna država,tiktok,after,2025-Q1,0,1,True,False
+socijalna_drzava,Socijalna država,tiktok,after,2025-Q3,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,tiktok,after,2025-Q1,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,tiktok,after,2025-Q3,0,1,True,False
+savjest,Savjest,tiktok,after,2025-Q1,0,1,True,False
+savjest,Savjest,tiktok,after,2025-Q3,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,tiktok,after,2025-Q1,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,tiktok,after,2025-Q3,0,1,True,False
+demokracija,Demokracija,tiktok,after,2025-Q1,0,1,True,False
+demokracija,Demokracija,tiktok,after,2025-Q3,0,1,True,False
+sloboda,Sloboda,tiktok,after,2025-Q1,0,1,True,False
+sloboda,Sloboda,tiktok,after,2025-Q3,0,1,True,False
+domoljublje,Domoljublje,tv,after,2024-Q4,0,3,True,False
+domoljublje,Domoljublje,tv,after,2025-Q1,0,6,True,False
+domoljublje,Domoljublje,tv,after,2025-Q2,0,4,True,False
+domoljublje,Domoljublje,tv,after,2025-Q3,0,6,True,False
+domoljublje,Domoljublje,tv,after,2025-Q4,0,1,True,False
+domoljublje,Domoljublje,tv,after,2026-Q1,0,3,True,False
+domoljublje,Domoljublje,tv,after,2026-Q2,0,2,True,False
+domoljublje,Domoljublje,tv,after,2026-Q3,1,3,True,True
+drzavotvornost,Državotvornost,tv,after,2024-Q4,0,3,True,False
+drzavotvornost,Državotvornost,tv,after,2025-Q1,0,6,True,False
+drzavotvornost,Državotvornost,tv,after,2025-Q2,0,4,True,False
+drzavotvornost,Državotvornost,tv,after,2025-Q3,0,6,True,False
+drzavotvornost,Državotvornost,tv,after,2025-Q4,0,1,True,False
+drzavotvornost,Državotvornost,tv,after,2026-Q1,0,3,True,False
+drzavotvornost,Državotvornost,tv,after,2026-Q2,0,2,True,False
+drzavotvornost,Državotvornost,tv,after,2026-Q3,1,3,True,True
+narodnjastvo,Narodnjaštvo,tv,after,2024-Q4,0,3,True,False
+narodnjastvo,Narodnjaštvo,tv,after,2025-Q1,0,6,True,False
+narodnjastvo,Narodnjaštvo,tv,after,2025-Q2,0,4,True,False
+narodnjastvo,Narodnjaštvo,tv,after,2025-Q3,0,6,True,False
+narodnjastvo,Narodnjaštvo,tv,after,2025-Q4,0,1,True,False
+narodnjastvo,Narodnjaštvo,tv,after,2026-Q1,0,3,True,False
+narodnjastvo,Narodnjaštvo,tv,after,2026-Q2,1,2,True,False
+narodnjastvo,Narodnjaštvo,tv,after,2026-Q3,2,3,True,True
+obitelj,Obitelj,tv,after,2024-Q4,0,3,True,False
+obitelj,Obitelj,tv,after,2025-Q1,1,6,True,False
+obitelj,Obitelj,tv,after,2025-Q2,0,4,True,False
+obitelj,Obitelj,tv,after,2025-Q3,0,6,True,False
+obitelj,Obitelj,tv,after,2025-Q4,0,1,True,False
+obitelj,Obitelj,tv,after,2026-Q1,0,3,True,False
+obitelj,Obitelj,tv,after,2026-Q2,0,2,True,False
+obitelj,Obitelj,tv,after,2026-Q3,0,3,True,True
+konzervativizam,Konzervativizam,tv,after,2024-Q4,0,3,True,False
+konzervativizam,Konzervativizam,tv,after,2025-Q1,0,6,True,False
+konzervativizam,Konzervativizam,tv,after,2025-Q2,2,4,True,False
+konzervativizam,Konzervativizam,tv,after,2025-Q3,0,6,True,False
+konzervativizam,Konzervativizam,tv,after,2025-Q4,0,1,True,False
+konzervativizam,Konzervativizam,tv,after,2026-Q1,0,3,True,False
+konzervativizam,Konzervativizam,tv,after,2026-Q2,0,2,True,False
+konzervativizam,Konzervativizam,tv,after,2026-Q3,0,3,True,True
+vrijednosti,Vrijednosti,tv,after,2024-Q4,0,3,True,False
+vrijednosti,Vrijednosti,tv,after,2025-Q1,0,6,True,False
+vrijednosti,Vrijednosti,tv,after,2025-Q2,1,4,True,False
+vrijednosti,Vrijednosti,tv,after,2025-Q3,1,6,True,False
+vrijednosti,Vrijednosti,tv,after,2025-Q4,0,1,True,False
+vrijednosti,Vrijednosti,tv,after,2026-Q1,1,3,True,False
+vrijednosti,Vrijednosti,tv,after,2026-Q2,1,2,True,False
+vrijednosti,Vrijednosti,tv,after,2026-Q3,2,3,True,True
+europa,Europa,tv,after,2024-Q4,0,3,True,False
+europa,Europa,tv,after,2025-Q1,2,6,True,False
+europa,Europa,tv,after,2025-Q2,0,4,True,False
+europa,Europa,tv,after,2025-Q3,1,6,True,False
+europa,Europa,tv,after,2025-Q4,0,1,True,False
+europa,Europa,tv,after,2026-Q1,1,3,True,False
+europa,Europa,tv,after,2026-Q2,0,2,True,False
+europa,Europa,tv,after,2026-Q3,0,3,True,True
+solidarnost,Solidarnost,tv,after,2024-Q4,0,3,True,False
+solidarnost,Solidarnost,tv,after,2025-Q1,0,6,True,False
+solidarnost,Solidarnost,tv,after,2025-Q2,0,4,True,False
+solidarnost,Solidarnost,tv,after,2025-Q3,0,6,True,False
+solidarnost,Solidarnost,tv,after,2025-Q4,0,1,True,False
+solidarnost,Solidarnost,tv,after,2026-Q1,0,3,True,False
+solidarnost,Solidarnost,tv,after,2026-Q2,0,2,True,False
+solidarnost,Solidarnost,tv,after,2026-Q3,0,3,True,True
+supsidijarnost,Supsidijarnost,tv,after,2024-Q4,0,3,True,False
+supsidijarnost,Supsidijarnost,tv,after,2025-Q1,0,6,True,False
+supsidijarnost,Supsidijarnost,tv,after,2025-Q2,0,4,True,False
+supsidijarnost,Supsidijarnost,tv,after,2025-Q3,0,6,True,False
+supsidijarnost,Supsidijarnost,tv,after,2025-Q4,0,1,True,False
+supsidijarnost,Supsidijarnost,tv,after,2026-Q1,0,3,True,False
+supsidijarnost,Supsidijarnost,tv,after,2026-Q2,0,2,True,False
+supsidijarnost,Supsidijarnost,tv,after,2026-Q3,0,3,True,True
+opce_dobro,Opće dobro,tv,after,2024-Q4,0,3,True,False
+opce_dobro,Opće dobro,tv,after,2025-Q1,0,6,True,False
+opce_dobro,Opće dobro,tv,after,2025-Q2,0,4,True,False
+opce_dobro,Opće dobro,tv,after,2025-Q3,0,6,True,False
+opce_dobro,Opće dobro,tv,after,2025-Q4,0,1,True,False
+opce_dobro,Opće dobro,tv,after,2026-Q1,0,3,True,False
+opce_dobro,Opće dobro,tv,after,2026-Q2,0,2,True,False
+opce_dobro,Opće dobro,tv,after,2026-Q3,0,3,True,True
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,tv,after,2024-Q4,0,3,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,tv,after,2025-Q1,0,6,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,tv,after,2025-Q2,0,4,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,tv,after,2025-Q3,0,6,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,tv,after,2025-Q4,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,tv,after,2026-Q1,0,3,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,tv,after,2026-Q2,0,2,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,tv,after,2026-Q3,0,3,True,True
+dostojanstvo_rada,Dostojanstvo rada,tv,after,2024-Q4,0,3,True,False
+dostojanstvo_rada,Dostojanstvo rada,tv,after,2025-Q1,0,6,True,False
+dostojanstvo_rada,Dostojanstvo rada,tv,after,2025-Q2,0,4,True,False
+dostojanstvo_rada,Dostojanstvo rada,tv,after,2025-Q3,0,6,True,False
+dostojanstvo_rada,Dostojanstvo rada,tv,after,2025-Q4,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,tv,after,2026-Q1,0,3,True,False
+dostojanstvo_rada,Dostojanstvo rada,tv,after,2026-Q2,0,2,True,False
+dostojanstvo_rada,Dostojanstvo rada,tv,after,2026-Q3,0,3,True,True
+radnik,Radnik,tv,after,2024-Q4,0,3,True,False
+radnik,Radnik,tv,after,2025-Q1,0,6,True,False
+radnik,Radnik,tv,after,2025-Q2,0,4,True,False
+radnik,Radnik,tv,after,2025-Q3,0,6,True,False
+radnik,Radnik,tv,after,2025-Q4,0,1,True,False
+radnik,Radnik,tv,after,2026-Q1,0,3,True,False
+radnik,Radnik,tv,after,2026-Q2,0,2,True,False
+radnik,Radnik,tv,after,2026-Q3,0,3,True,True
+socijalna_drzava,Socijalna država,tv,after,2024-Q4,0,3,True,False
+socijalna_drzava,Socijalna država,tv,after,2025-Q1,0,6,True,False
+socijalna_drzava,Socijalna država,tv,after,2025-Q2,0,4,True,False
+socijalna_drzava,Socijalna država,tv,after,2025-Q3,0,6,True,False
+socijalna_drzava,Socijalna država,tv,after,2025-Q4,0,1,True,False
+socijalna_drzava,Socijalna država,tv,after,2026-Q1,0,3,True,False
+socijalna_drzava,Socijalna država,tv,after,2026-Q2,0,2,True,False
+socijalna_drzava,Socijalna država,tv,after,2026-Q3,0,3,True,True
+trzisno_gospodarstvo,Tržišno gospodarstvo,tv,after,2024-Q4,0,3,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,tv,after,2025-Q1,0,6,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,tv,after,2025-Q2,0,4,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,tv,after,2025-Q3,0,6,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,tv,after,2025-Q4,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,tv,after,2026-Q1,0,3,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,tv,after,2026-Q2,0,2,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,tv,after,2026-Q3,0,3,True,True
+savjest,Savjest,tv,after,2024-Q4,0,3,True,False
+savjest,Savjest,tv,after,2025-Q1,0,6,True,False
+savjest,Savjest,tv,after,2025-Q2,0,4,True,False
+savjest,Savjest,tv,after,2025-Q3,0,6,True,False
+savjest,Savjest,tv,after,2025-Q4,0,1,True,False
+savjest,Savjest,tv,after,2026-Q1,0,3,True,False
+savjest,Savjest,tv,after,2026-Q2,0,2,True,False
+savjest,Savjest,tv,after,2026-Q3,0,3,True,True
+vjerska_sloboda,Vjerska sloboda,tv,after,2024-Q4,0,3,True,False
+vjerska_sloboda,Vjerska sloboda,tv,after,2025-Q1,0,6,True,False
+vjerska_sloboda,Vjerska sloboda,tv,after,2025-Q2,0,4,True,False
+vjerska_sloboda,Vjerska sloboda,tv,after,2025-Q3,0,6,True,False
+vjerska_sloboda,Vjerska sloboda,tv,after,2025-Q4,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,tv,after,2026-Q1,0,3,True,False
+vjerska_sloboda,Vjerska sloboda,tv,after,2026-Q2,0,2,True,False
+vjerska_sloboda,Vjerska sloboda,tv,after,2026-Q3,0,3,True,True
+demokracija,Demokracija,tv,after,2024-Q4,0,3,True,False
+demokracija,Demokracija,tv,after,2025-Q1,2,6,True,False
+demokracija,Demokracija,tv,after,2025-Q2,0,4,True,False
+demokracija,Demokracija,tv,after,2025-Q3,0,6,True,False
+demokracija,Demokracija,tv,after,2025-Q4,0,1,True,False
+demokracija,Demokracija,tv,after,2026-Q1,0,3,True,False
+demokracija,Demokracija,tv,after,2026-Q2,0,2,True,False
+demokracija,Demokracija,tv,after,2026-Q3,2,3,True,True
+sloboda,Sloboda,tv,after,2024-Q4,0,3,True,False
+sloboda,Sloboda,tv,after,2025-Q1,0,6,True,False
+sloboda,Sloboda,tv,after,2025-Q2,0,4,True,False
+sloboda,Sloboda,tv,after,2025-Q3,0,6,True,False
+sloboda,Sloboda,tv,after,2025-Q4,0,1,True,False
+sloboda,Sloboda,tv,after,2026-Q1,0,3,True,False
+sloboda,Sloboda,tv,after,2026-Q2,0,2,True,False
+sloboda,Sloboda,tv,after,2026-Q3,0,3,True,True
+domoljublje,Domoljublje,twitter,before,2021-Q1,1,1,True,False
+domoljublje,Domoljublje,twitter,before,2021-Q2,2,6,True,False
+domoljublje,Domoljublje,twitter,before,2021-Q3,0,1,True,False
+domoljublje,Domoljublje,twitter,before,2021-Q4,5,8,True,False
+domoljublje,Domoljublje,twitter,before,2022-Q1,0,4,True,False
+domoljublje,Domoljublje,twitter,before,2022-Q2,6,14,True,False
+domoljublje,Domoljublje,twitter,before,2022-Q3,0,3,True,False
+domoljublje,Domoljublje,twitter,before,2023-Q1,0,4,True,False
+domoljublje,Domoljublje,twitter,before,2023-Q2,0,1,True,False
+domoljublje,Domoljublje,twitter,before,2023-Q3,0,2,True,False
+domoljublje,Domoljublje,twitter,before,2024-Q1,2,3,True,False
+drzavotvornost,Državotvornost,twitter,before,2021-Q1,0,1,True,False
+drzavotvornost,Državotvornost,twitter,before,2021-Q2,2,6,True,False
+drzavotvornost,Državotvornost,twitter,before,2021-Q3,0,1,True,False
+drzavotvornost,Državotvornost,twitter,before,2021-Q4,3,8,True,False
+drzavotvornost,Državotvornost,twitter,before,2022-Q1,0,4,True,False
+drzavotvornost,Državotvornost,twitter,before,2022-Q2,2,14,True,False
+drzavotvornost,Državotvornost,twitter,before,2022-Q3,0,3,True,False
+drzavotvornost,Državotvornost,twitter,before,2023-Q1,1,4,True,False
+drzavotvornost,Državotvornost,twitter,before,2023-Q2,0,1,True,False
+drzavotvornost,Državotvornost,twitter,before,2023-Q3,0,2,True,False
+drzavotvornost,Državotvornost,twitter,before,2024-Q1,2,3,True,False
+narodnjastvo,Narodnjaštvo,twitter,before,2021-Q1,0,1,True,False
+narodnjastvo,Narodnjaštvo,twitter,before,2021-Q2,2,6,True,False
+narodnjastvo,Narodnjaštvo,twitter,before,2021-Q3,0,1,True,False
+narodnjastvo,Narodnjaštvo,twitter,before,2021-Q4,5,8,True,False
+narodnjastvo,Narodnjaštvo,twitter,before,2022-Q1,0,4,True,False
+narodnjastvo,Narodnjaštvo,twitter,before,2022-Q2,3,14,True,False
+narodnjastvo,Narodnjaštvo,twitter,before,2022-Q3,0,3,True,False
+narodnjastvo,Narodnjaštvo,twitter,before,2023-Q1,1,4,True,False
+narodnjastvo,Narodnjaštvo,twitter,before,2023-Q2,0,1,True,False
+narodnjastvo,Narodnjaštvo,twitter,before,2023-Q3,0,2,True,False
+narodnjastvo,Narodnjaštvo,twitter,before,2024-Q1,2,3,True,False
+obitelj,Obitelj,twitter,before,2021-Q1,0,1,True,False
+obitelj,Obitelj,twitter,before,2021-Q2,0,6,True,False
+obitelj,Obitelj,twitter,before,2021-Q3,0,1,True,False
+obitelj,Obitelj,twitter,before,2021-Q4,0,8,True,False
+obitelj,Obitelj,twitter,before,2022-Q1,0,4,True,False
+obitelj,Obitelj,twitter,before,2022-Q2,1,14,True,False
+obitelj,Obitelj,twitter,before,2022-Q3,0,3,True,False
+obitelj,Obitelj,twitter,before,2023-Q1,0,4,True,False
+obitelj,Obitelj,twitter,before,2023-Q2,0,1,True,False
+obitelj,Obitelj,twitter,before,2023-Q3,0,2,True,False
+obitelj,Obitelj,twitter,before,2024-Q1,0,3,True,False
+konzervativizam,Konzervativizam,twitter,before,2021-Q1,0,1,True,False
+konzervativizam,Konzervativizam,twitter,before,2021-Q2,1,6,True,False
+konzervativizam,Konzervativizam,twitter,before,2021-Q3,0,1,True,False
+konzervativizam,Konzervativizam,twitter,before,2021-Q4,3,8,True,False
+konzervativizam,Konzervativizam,twitter,before,2022-Q1,3,4,True,False
+konzervativizam,Konzervativizam,twitter,before,2022-Q2,1,14,True,False
+konzervativizam,Konzervativizam,twitter,before,2022-Q3,2,3,True,False
+konzervativizam,Konzervativizam,twitter,before,2023-Q1,0,4,True,False
+konzervativizam,Konzervativizam,twitter,before,2023-Q2,0,1,True,False
+konzervativizam,Konzervativizam,twitter,before,2023-Q3,0,2,True,False
+konzervativizam,Konzervativizam,twitter,before,2024-Q1,0,3,True,False
+vrijednosti,Vrijednosti,twitter,before,2021-Q1,0,1,True,False
+vrijednosti,Vrijednosti,twitter,before,2021-Q2,2,6,True,False
+vrijednosti,Vrijednosti,twitter,before,2021-Q3,0,1,True,False
+vrijednosti,Vrijednosti,twitter,before,2021-Q4,8,8,True,False
+vrijednosti,Vrijednosti,twitter,before,2022-Q1,0,4,True,False
+vrijednosti,Vrijednosti,twitter,before,2022-Q2,9,14,True,False
+vrijednosti,Vrijednosti,twitter,before,2022-Q3,0,3,True,False
+vrijednosti,Vrijednosti,twitter,before,2023-Q1,1,4,True,False
+vrijednosti,Vrijednosti,twitter,before,2023-Q2,1,1,True,False
+vrijednosti,Vrijednosti,twitter,before,2023-Q3,2,2,True,False
+vrijednosti,Vrijednosti,twitter,before,2024-Q1,2,3,True,False
+europa,Europa,twitter,before,2021-Q1,0,1,True,False
+europa,Europa,twitter,before,2021-Q2,0,6,True,False
+europa,Europa,twitter,before,2021-Q3,0,1,True,False
+europa,Europa,twitter,before,2021-Q4,0,8,True,False
+europa,Europa,twitter,before,2022-Q1,0,4,True,False
+europa,Europa,twitter,before,2022-Q2,1,14,True,False
+europa,Europa,twitter,before,2022-Q3,1,3,True,False
+europa,Europa,twitter,before,2023-Q1,2,4,True,False
+europa,Europa,twitter,before,2023-Q2,0,1,True,False
+europa,Europa,twitter,before,2023-Q3,0,2,True,False
+europa,Europa,twitter,before,2024-Q1,0,3,True,False
+solidarnost,Solidarnost,twitter,before,2021-Q1,0,1,True,False
+solidarnost,Solidarnost,twitter,before,2021-Q2,0,6,True,False
+solidarnost,Solidarnost,twitter,before,2021-Q3,0,1,True,False
+solidarnost,Solidarnost,twitter,before,2021-Q4,0,8,True,False
+solidarnost,Solidarnost,twitter,before,2022-Q1,0,4,True,False
+solidarnost,Solidarnost,twitter,before,2022-Q2,0,14,True,False
+solidarnost,Solidarnost,twitter,before,2022-Q3,0,3,True,False
+solidarnost,Solidarnost,twitter,before,2023-Q1,0,4,True,False
+solidarnost,Solidarnost,twitter,before,2023-Q2,0,1,True,False
+solidarnost,Solidarnost,twitter,before,2023-Q3,0,2,True,False
+solidarnost,Solidarnost,twitter,before,2024-Q1,0,3,True,False
+supsidijarnost,Supsidijarnost,twitter,before,2021-Q1,0,1,True,False
+supsidijarnost,Supsidijarnost,twitter,before,2021-Q2,0,6,True,False
+supsidijarnost,Supsidijarnost,twitter,before,2021-Q3,0,1,True,False
+supsidijarnost,Supsidijarnost,twitter,before,2021-Q4,0,8,True,False
+supsidijarnost,Supsidijarnost,twitter,before,2022-Q1,0,4,True,False
+supsidijarnost,Supsidijarnost,twitter,before,2022-Q2,0,14,True,False
+supsidijarnost,Supsidijarnost,twitter,before,2022-Q3,0,3,True,False
+supsidijarnost,Supsidijarnost,twitter,before,2023-Q1,0,4,True,False
+supsidijarnost,Supsidijarnost,twitter,before,2023-Q2,0,1,True,False
+supsidijarnost,Supsidijarnost,twitter,before,2023-Q3,0,2,True,False
+supsidijarnost,Supsidijarnost,twitter,before,2024-Q1,0,3,True,False
+opce_dobro,Opće dobro,twitter,before,2021-Q1,0,1,True,False
+opce_dobro,Opće dobro,twitter,before,2021-Q2,0,6,True,False
+opce_dobro,Opće dobro,twitter,before,2021-Q3,0,1,True,False
+opce_dobro,Opće dobro,twitter,before,2021-Q4,0,8,True,False
+opce_dobro,Opće dobro,twitter,before,2022-Q1,0,4,True,False
+opce_dobro,Opće dobro,twitter,before,2022-Q2,0,14,True,False
+opce_dobro,Opće dobro,twitter,before,2022-Q3,0,3,True,False
+opce_dobro,Opće dobro,twitter,before,2023-Q1,0,4,True,False
+opce_dobro,Opće dobro,twitter,before,2023-Q2,0,1,True,False
+opce_dobro,Opće dobro,twitter,before,2023-Q3,0,2,True,False
+opce_dobro,Opće dobro,twitter,before,2024-Q1,0,3,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,before,2021-Q1,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,before,2021-Q2,0,6,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,before,2021-Q3,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,before,2021-Q4,0,8,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,before,2022-Q1,0,4,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,before,2022-Q2,0,14,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,before,2022-Q3,0,3,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,before,2023-Q1,0,4,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,before,2023-Q2,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,before,2023-Q3,0,2,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,before,2024-Q1,0,3,True,False
+dostojanstvo_rada,Dostojanstvo rada,twitter,before,2021-Q1,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,twitter,before,2021-Q2,0,6,True,False
+dostojanstvo_rada,Dostojanstvo rada,twitter,before,2021-Q3,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,twitter,before,2021-Q4,0,8,True,False
+dostojanstvo_rada,Dostojanstvo rada,twitter,before,2022-Q1,0,4,True,False
+dostojanstvo_rada,Dostojanstvo rada,twitter,before,2022-Q2,0,14,True,False
+dostojanstvo_rada,Dostojanstvo rada,twitter,before,2022-Q3,0,3,True,False
+dostojanstvo_rada,Dostojanstvo rada,twitter,before,2023-Q1,0,4,True,False
+dostojanstvo_rada,Dostojanstvo rada,twitter,before,2023-Q2,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,twitter,before,2023-Q3,0,2,True,False
+dostojanstvo_rada,Dostojanstvo rada,twitter,before,2024-Q1,0,3,True,False
+radnik,Radnik,twitter,before,2021-Q1,0,1,True,False
+radnik,Radnik,twitter,before,2021-Q2,1,6,True,False
+radnik,Radnik,twitter,before,2021-Q3,0,1,True,False
+radnik,Radnik,twitter,before,2021-Q4,0,8,True,False
+radnik,Radnik,twitter,before,2022-Q1,0,4,True,False
+radnik,Radnik,twitter,before,2022-Q2,0,14,True,False
+radnik,Radnik,twitter,before,2022-Q3,0,3,True,False
+radnik,Radnik,twitter,before,2023-Q1,0,4,True,False
+radnik,Radnik,twitter,before,2023-Q2,0,1,True,False
+radnik,Radnik,twitter,before,2023-Q3,0,2,True,False
+radnik,Radnik,twitter,before,2024-Q1,0,3,True,False
+socijalna_drzava,Socijalna država,twitter,before,2021-Q1,0,1,True,False
+socijalna_drzava,Socijalna država,twitter,before,2021-Q2,0,6,True,False
+socijalna_drzava,Socijalna država,twitter,before,2021-Q3,0,1,True,False
+socijalna_drzava,Socijalna država,twitter,before,2021-Q4,0,8,True,False
+socijalna_drzava,Socijalna država,twitter,before,2022-Q1,0,4,True,False
+socijalna_drzava,Socijalna država,twitter,before,2022-Q2,0,14,True,False
+socijalna_drzava,Socijalna država,twitter,before,2022-Q3,0,3,True,False
+socijalna_drzava,Socijalna država,twitter,before,2023-Q1,0,4,True,False
+socijalna_drzava,Socijalna država,twitter,before,2023-Q2,0,1,True,False
+socijalna_drzava,Socijalna država,twitter,before,2023-Q3,0,2,True,False
+socijalna_drzava,Socijalna država,twitter,before,2024-Q1,0,3,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,before,2021-Q1,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,before,2021-Q2,0,6,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,before,2021-Q3,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,before,2021-Q4,0,8,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,before,2022-Q1,0,4,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,before,2022-Q2,0,14,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,before,2022-Q3,0,3,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,before,2023-Q1,0,4,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,before,2023-Q2,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,before,2023-Q3,0,2,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,before,2024-Q1,0,3,True,False
+savjest,Savjest,twitter,before,2021-Q1,0,1,True,False
+savjest,Savjest,twitter,before,2021-Q2,0,6,True,False
+savjest,Savjest,twitter,before,2021-Q3,0,1,True,False
+savjest,Savjest,twitter,before,2021-Q4,0,8,True,False
+savjest,Savjest,twitter,before,2022-Q1,0,4,True,False
+savjest,Savjest,twitter,before,2022-Q2,0,14,True,False
+savjest,Savjest,twitter,before,2022-Q3,0,3,True,False
+savjest,Savjest,twitter,before,2023-Q1,0,4,True,False
+savjest,Savjest,twitter,before,2023-Q2,0,1,True,False
+savjest,Savjest,twitter,before,2023-Q3,0,2,True,False
+savjest,Savjest,twitter,before,2024-Q1,0,3,True,False
+vjerska_sloboda,Vjerska sloboda,twitter,before,2021-Q1,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,twitter,before,2021-Q2,0,6,True,False
+vjerska_sloboda,Vjerska sloboda,twitter,before,2021-Q3,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,twitter,before,2021-Q4,0,8,True,False
+vjerska_sloboda,Vjerska sloboda,twitter,before,2022-Q1,0,4,True,False
+vjerska_sloboda,Vjerska sloboda,twitter,before,2022-Q2,0,14,True,False
+vjerska_sloboda,Vjerska sloboda,twitter,before,2022-Q3,0,3,True,False
+vjerska_sloboda,Vjerska sloboda,twitter,before,2023-Q1,0,4,True,False
+vjerska_sloboda,Vjerska sloboda,twitter,before,2023-Q2,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,twitter,before,2023-Q3,0,2,True,False
+vjerska_sloboda,Vjerska sloboda,twitter,before,2024-Q1,0,3,True,False
+demokracija,Demokracija,twitter,before,2021-Q1,0,1,True,False
+demokracija,Demokracija,twitter,before,2021-Q2,0,6,True,False
+demokracija,Demokracija,twitter,before,2021-Q3,0,1,True,False
+demokracija,Demokracija,twitter,before,2021-Q4,1,8,True,False
+demokracija,Demokracija,twitter,before,2022-Q1,0,4,True,False
+demokracija,Demokracija,twitter,before,2022-Q2,0,14,True,False
+demokracija,Demokracija,twitter,before,2022-Q3,1,3,True,False
+demokracija,Demokracija,twitter,before,2023-Q1,0,4,True,False
+demokracija,Demokracija,twitter,before,2023-Q2,0,1,True,False
+demokracija,Demokracija,twitter,before,2023-Q3,0,2,True,False
+demokracija,Demokracija,twitter,before,2024-Q1,0,3,True,False
+sloboda,Sloboda,twitter,before,2021-Q1,0,1,True,False
+sloboda,Sloboda,twitter,before,2021-Q2,2,6,True,False
+sloboda,Sloboda,twitter,before,2021-Q3,0,1,True,False
+sloboda,Sloboda,twitter,before,2021-Q4,2,8,True,False
+sloboda,Sloboda,twitter,before,2022-Q1,0,4,True,False
+sloboda,Sloboda,twitter,before,2022-Q2,0,14,True,False
+sloboda,Sloboda,twitter,before,2022-Q3,0,3,True,False
+sloboda,Sloboda,twitter,before,2023-Q1,0,4,True,False
+sloboda,Sloboda,twitter,before,2023-Q2,0,1,True,False
+sloboda,Sloboda,twitter,before,2023-Q3,2,2,True,False
+sloboda,Sloboda,twitter,before,2024-Q1,0,3,True,False
+domoljublje,Domoljublje,twitter,after,2024-Q2,3,18,True,False
+domoljublje,Domoljublje,twitter,after,2024-Q3,4,9,True,False
+domoljublje,Domoljublje,twitter,after,2024-Q4,4,8,True,False
+domoljublje,Domoljublje,twitter,after,2025-Q1,0,1,True,False
+domoljublje,Domoljublje,twitter,after,2025-Q2,0,5,True,False
+domoljublje,Domoljublje,twitter,after,2025-Q3,0,5,True,False
+domoljublje,Domoljublje,twitter,after,2026-Q1,1,1,True,False
+domoljublje,Domoljublje,twitter,after,2026-Q2,0,1,True,False
+domoljublje,Domoljublje,twitter,after,2026-Q3,4,5,True,True
+drzavotvornost,Državotvornost,twitter,after,2024-Q2,0,18,True,False
+drzavotvornost,Državotvornost,twitter,after,2024-Q3,0,9,True,False
+drzavotvornost,Državotvornost,twitter,after,2024-Q4,1,8,True,False
+drzavotvornost,Državotvornost,twitter,after,2025-Q1,0,1,True,False
+drzavotvornost,Državotvornost,twitter,after,2025-Q2,0,5,True,False
+drzavotvornost,Državotvornost,twitter,after,2025-Q3,0,5,True,False
+drzavotvornost,Državotvornost,twitter,after,2026-Q1,0,1,True,False
+drzavotvornost,Državotvornost,twitter,after,2026-Q2,0,1,True,False
+drzavotvornost,Državotvornost,twitter,after,2026-Q3,4,5,True,True
+narodnjastvo,Narodnjaštvo,twitter,after,2024-Q2,0,18,True,False
+narodnjastvo,Narodnjaštvo,twitter,after,2024-Q3,2,9,True,False
+narodnjastvo,Narodnjaštvo,twitter,after,2024-Q4,1,8,True,False
+narodnjastvo,Narodnjaštvo,twitter,after,2025-Q1,0,1,True,False
+narodnjastvo,Narodnjaštvo,twitter,after,2025-Q2,0,5,True,False
+narodnjastvo,Narodnjaštvo,twitter,after,2025-Q3,0,5,True,False
+narodnjastvo,Narodnjaštvo,twitter,after,2026-Q1,1,1,True,False
+narodnjastvo,Narodnjaštvo,twitter,after,2026-Q2,0,1,True,False
+narodnjastvo,Narodnjaštvo,twitter,after,2026-Q3,0,5,True,True
+obitelj,Obitelj,twitter,after,2024-Q2,3,18,True,False
+obitelj,Obitelj,twitter,after,2024-Q3,3,9,True,False
+obitelj,Obitelj,twitter,after,2024-Q4,0,8,True,False
+obitelj,Obitelj,twitter,after,2025-Q1,0,1,True,False
+obitelj,Obitelj,twitter,after,2025-Q2,0,5,True,False
+obitelj,Obitelj,twitter,after,2025-Q3,0,5,True,False
+obitelj,Obitelj,twitter,after,2026-Q1,0,1,True,False
+obitelj,Obitelj,twitter,after,2026-Q2,0,1,True,False
+obitelj,Obitelj,twitter,after,2026-Q3,0,5,True,True
+konzervativizam,Konzervativizam,twitter,after,2024-Q2,1,18,True,False
+konzervativizam,Konzervativizam,twitter,after,2024-Q3,0,9,True,False
+konzervativizam,Konzervativizam,twitter,after,2024-Q4,0,8,True,False
+konzervativizam,Konzervativizam,twitter,after,2025-Q1,0,1,True,False
+konzervativizam,Konzervativizam,twitter,after,2025-Q2,0,5,True,False
+konzervativizam,Konzervativizam,twitter,after,2025-Q3,1,5,True,False
+konzervativizam,Konzervativizam,twitter,after,2026-Q1,0,1,True,False
+konzervativizam,Konzervativizam,twitter,after,2026-Q2,0,1,True,False
+konzervativizam,Konzervativizam,twitter,after,2026-Q3,1,5,True,True
+vrijednosti,Vrijednosti,twitter,after,2024-Q2,16,18,True,False
+vrijednosti,Vrijednosti,twitter,after,2024-Q3,6,9,True,False
+vrijednosti,Vrijednosti,twitter,after,2024-Q4,6,8,True,False
+vrijednosti,Vrijednosti,twitter,after,2025-Q1,0,1,True,False
+vrijednosti,Vrijednosti,twitter,after,2025-Q2,1,5,True,False
+vrijednosti,Vrijednosti,twitter,after,2025-Q3,4,5,True,False
+vrijednosti,Vrijednosti,twitter,after,2026-Q1,1,1,True,False
+vrijednosti,Vrijednosti,twitter,after,2026-Q2,0,1,True,False
+vrijednosti,Vrijednosti,twitter,after,2026-Q3,1,5,True,True
+europa,Europa,twitter,after,2024-Q2,8,18,True,False
+europa,Europa,twitter,after,2024-Q3,1,9,True,False
+europa,Europa,twitter,after,2024-Q4,0,8,True,False
+europa,Europa,twitter,after,2025-Q1,0,1,True,False
+europa,Europa,twitter,after,2025-Q2,1,5,True,False
+europa,Europa,twitter,after,2025-Q3,4,5,True,False
+europa,Europa,twitter,after,2026-Q1,0,1,True,False
+europa,Europa,twitter,after,2026-Q2,0,1,True,False
+europa,Europa,twitter,after,2026-Q3,3,5,True,True
+solidarnost,Solidarnost,twitter,after,2024-Q2,0,18,True,False
+solidarnost,Solidarnost,twitter,after,2024-Q3,2,9,True,False
+solidarnost,Solidarnost,twitter,after,2024-Q4,0,8,True,False
+solidarnost,Solidarnost,twitter,after,2025-Q1,0,1,True,False
+solidarnost,Solidarnost,twitter,after,2025-Q2,0,5,True,False
+solidarnost,Solidarnost,twitter,after,2025-Q3,0,5,True,False
+solidarnost,Solidarnost,twitter,after,2026-Q1,0,1,True,False
+solidarnost,Solidarnost,twitter,after,2026-Q2,0,1,True,False
+solidarnost,Solidarnost,twitter,after,2026-Q3,0,5,True,True
+supsidijarnost,Supsidijarnost,twitter,after,2024-Q2,0,18,True,False
+supsidijarnost,Supsidijarnost,twitter,after,2024-Q3,0,9,True,False
+supsidijarnost,Supsidijarnost,twitter,after,2024-Q4,0,8,True,False
+supsidijarnost,Supsidijarnost,twitter,after,2025-Q1,0,1,True,False
+supsidijarnost,Supsidijarnost,twitter,after,2025-Q2,0,5,True,False
+supsidijarnost,Supsidijarnost,twitter,after,2025-Q3,0,5,True,False
+supsidijarnost,Supsidijarnost,twitter,after,2026-Q1,0,1,True,False
+supsidijarnost,Supsidijarnost,twitter,after,2026-Q2,0,1,True,False
+supsidijarnost,Supsidijarnost,twitter,after,2026-Q3,0,5,True,True
+opce_dobro,Opće dobro,twitter,after,2024-Q2,0,18,True,False
+opce_dobro,Opće dobro,twitter,after,2024-Q3,0,9,True,False
+opce_dobro,Opće dobro,twitter,after,2024-Q4,0,8,True,False
+opce_dobro,Opće dobro,twitter,after,2025-Q1,0,1,True,False
+opce_dobro,Opće dobro,twitter,after,2025-Q2,0,5,True,False
+opce_dobro,Opće dobro,twitter,after,2025-Q3,0,5,True,False
+opce_dobro,Opće dobro,twitter,after,2026-Q1,0,1,True,False
+opce_dobro,Opće dobro,twitter,after,2026-Q2,0,1,True,False
+opce_dobro,Opće dobro,twitter,after,2026-Q3,0,5,True,True
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,after,2024-Q2,0,18,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,after,2024-Q3,0,9,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,after,2024-Q4,0,8,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,after,2025-Q1,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,after,2025-Q2,0,5,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,after,2025-Q3,0,5,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,after,2026-Q1,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,after,2026-Q2,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,twitter,after,2026-Q3,0,5,True,True
+dostojanstvo_rada,Dostojanstvo rada,twitter,after,2024-Q2,0,18,True,False
+dostojanstvo_rada,Dostojanstvo rada,twitter,after,2024-Q3,0,9,True,False
+dostojanstvo_rada,Dostojanstvo rada,twitter,after,2024-Q4,0,8,True,False
+dostojanstvo_rada,Dostojanstvo rada,twitter,after,2025-Q1,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,twitter,after,2025-Q2,0,5,True,False
+dostojanstvo_rada,Dostojanstvo rada,twitter,after,2025-Q3,0,5,True,False
+dostojanstvo_rada,Dostojanstvo rada,twitter,after,2026-Q1,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,twitter,after,2026-Q2,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,twitter,after,2026-Q3,0,5,True,True
+radnik,Radnik,twitter,after,2024-Q2,0,18,True,False
+radnik,Radnik,twitter,after,2024-Q3,0,9,True,False
+radnik,Radnik,twitter,after,2024-Q4,0,8,True,False
+radnik,Radnik,twitter,after,2025-Q1,0,1,True,False
+radnik,Radnik,twitter,after,2025-Q2,0,5,True,False
+radnik,Radnik,twitter,after,2025-Q3,0,5,True,False
+radnik,Radnik,twitter,after,2026-Q1,0,1,True,False
+radnik,Radnik,twitter,after,2026-Q2,0,1,True,False
+radnik,Radnik,twitter,after,2026-Q3,0,5,True,True
+socijalna_drzava,Socijalna država,twitter,after,2024-Q2,0,18,True,False
+socijalna_drzava,Socijalna država,twitter,after,2024-Q3,0,9,True,False
+socijalna_drzava,Socijalna država,twitter,after,2024-Q4,0,8,True,False
+socijalna_drzava,Socijalna država,twitter,after,2025-Q1,0,1,True,False
+socijalna_drzava,Socijalna država,twitter,after,2025-Q2,0,5,True,False
+socijalna_drzava,Socijalna država,twitter,after,2025-Q3,0,5,True,False
+socijalna_drzava,Socijalna država,twitter,after,2026-Q1,0,1,True,False
+socijalna_drzava,Socijalna država,twitter,after,2026-Q2,0,1,True,False
+socijalna_drzava,Socijalna država,twitter,after,2026-Q3,0,5,True,True
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,after,2024-Q2,0,18,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,after,2024-Q3,0,9,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,after,2024-Q4,0,8,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,after,2025-Q1,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,after,2025-Q2,0,5,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,after,2025-Q3,0,5,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,after,2026-Q1,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,after,2026-Q2,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,twitter,after,2026-Q3,0,5,True,True
+savjest,Savjest,twitter,after,2024-Q2,0,18,True,False
+savjest,Savjest,twitter,after,2024-Q3,0,9,True,False
+savjest,Savjest,twitter,after,2024-Q4,0,8,True,False
+savjest,Savjest,twitter,after,2025-Q1,0,1,True,False
+savjest,Savjest,twitter,after,2025-Q2,0,5,True,False
+savjest,Savjest,twitter,after,2025-Q3,0,5,True,False
+savjest,Savjest,twitter,after,2026-Q1,0,1,True,False
+savjest,Savjest,twitter,after,2026-Q2,0,1,True,False
+savjest,Savjest,twitter,after,2026-Q3,0,5,True,True
+vjerska_sloboda,Vjerska sloboda,twitter,after,2024-Q2,0,18,True,False
+vjerska_sloboda,Vjerska sloboda,twitter,after,2024-Q3,0,9,True,False
+vjerska_sloboda,Vjerska sloboda,twitter,after,2024-Q4,0,8,True,False
+vjerska_sloboda,Vjerska sloboda,twitter,after,2025-Q1,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,twitter,after,2025-Q2,0,5,True,False
+vjerska_sloboda,Vjerska sloboda,twitter,after,2025-Q3,0,5,True,False
+vjerska_sloboda,Vjerska sloboda,twitter,after,2026-Q1,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,twitter,after,2026-Q2,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,twitter,after,2026-Q3,0,5,True,True
+demokracija,Demokracija,twitter,after,2024-Q2,0,18,True,False
+demokracija,Demokracija,twitter,after,2024-Q3,0,9,True,False
+demokracija,Demokracija,twitter,after,2024-Q4,0,8,True,False
+demokracija,Demokracija,twitter,after,2025-Q1,0,1,True,False
+demokracija,Demokracija,twitter,after,2025-Q2,0,5,True,False
+demokracija,Demokracija,twitter,after,2025-Q3,0,5,True,False
+demokracija,Demokracija,twitter,after,2026-Q1,0,1,True,False
+demokracija,Demokracija,twitter,after,2026-Q2,0,1,True,False
+demokracija,Demokracija,twitter,after,2026-Q3,0,5,True,True
+sloboda,Sloboda,twitter,after,2024-Q2,0,18,True,False
+sloboda,Sloboda,twitter,after,2024-Q3,0,9,True,False
+sloboda,Sloboda,twitter,after,2024-Q4,0,8,True,False
+sloboda,Sloboda,twitter,after,2025-Q1,0,1,True,False
+sloboda,Sloboda,twitter,after,2025-Q2,0,5,True,False
+sloboda,Sloboda,twitter,after,2025-Q3,0,5,True,False
+sloboda,Sloboda,twitter,after,2026-Q1,0,1,True,False
+sloboda,Sloboda,twitter,after,2026-Q2,0,1,True,False
+sloboda,Sloboda,twitter,after,2026-Q3,0,5,True,True
+domoljublje,Domoljublje,web,before,2021-Q1,13,77,False,False
+domoljublje,Domoljublje,web,before,2021-Q2,45,234,False,False
+domoljublje,Domoljublje,web,before,2021-Q3,27,99,False,False
+domoljublje,Domoljublje,web,before,2021-Q4,22,101,False,False
+domoljublje,Domoljublje,web,before,2022-Q1,7,46,False,False
+domoljublje,Domoljublje,web,before,2022-Q2,57,155,False,False
+domoljublje,Domoljublje,web,before,2022-Q3,25,91,False,False
+domoljublje,Domoljublje,web,before,2022-Q4,5,33,False,False
+domoljublje,Domoljublje,web,before,2023-Q1,16,85,False,False
+domoljublje,Domoljublje,web,before,2023-Q2,1,46,False,False
+domoljublje,Domoljublje,web,before,2023-Q3,29,85,False,False
+domoljublje,Domoljublje,web,before,2023-Q4,12,57,False,False
+domoljublje,Domoljublje,web,before,2024-Q1,1,6,True,False
+drzavotvornost,Državotvornost,web,before,2021-Q1,3,77,False,False
+drzavotvornost,Državotvornost,web,before,2021-Q2,47,234,False,False
+drzavotvornost,Državotvornost,web,before,2021-Q3,3,99,False,False
+drzavotvornost,Državotvornost,web,before,2021-Q4,20,101,False,False
+drzavotvornost,Državotvornost,web,before,2022-Q1,3,46,False,False
+drzavotvornost,Državotvornost,web,before,2022-Q2,30,155,False,False
+drzavotvornost,Državotvornost,web,before,2022-Q3,13,91,False,False
+drzavotvornost,Državotvornost,web,before,2022-Q4,6,33,False,False
+drzavotvornost,Državotvornost,web,before,2023-Q1,13,85,False,False
+drzavotvornost,Državotvornost,web,before,2023-Q2,1,46,False,False
+drzavotvornost,Državotvornost,web,before,2023-Q3,27,85,False,False
+drzavotvornost,Državotvornost,web,before,2023-Q4,2,57,False,False
+drzavotvornost,Državotvornost,web,before,2024-Q1,0,6,True,False
+narodnjastvo,Narodnjaštvo,web,before,2021-Q1,3,77,False,False
+narodnjastvo,Narodnjaštvo,web,before,2021-Q2,75,234,False,False
+narodnjastvo,Narodnjaštvo,web,before,2021-Q3,21,99,False,False
+narodnjastvo,Narodnjaštvo,web,before,2021-Q4,21,101,False,False
+narodnjastvo,Narodnjaštvo,web,before,2022-Q1,2,46,False,False
+narodnjastvo,Narodnjaštvo,web,before,2022-Q2,38,155,False,False
+narodnjastvo,Narodnjaštvo,web,before,2022-Q3,14,91,False,False
+narodnjastvo,Narodnjaštvo,web,before,2022-Q4,3,33,False,False
+narodnjastvo,Narodnjaštvo,web,before,2023-Q1,4,85,False,False
+narodnjastvo,Narodnjaštvo,web,before,2023-Q2,4,46,False,False
+narodnjastvo,Narodnjaštvo,web,before,2023-Q3,29,85,False,False
+narodnjastvo,Narodnjaštvo,web,before,2023-Q4,4,57,False,False
+narodnjastvo,Narodnjaštvo,web,before,2024-Q1,2,6,True,False
+obitelj,Obitelj,web,before,2021-Q1,14,77,False,False
+obitelj,Obitelj,web,before,2021-Q2,19,234,False,False
+obitelj,Obitelj,web,before,2021-Q3,1,99,False,False
+obitelj,Obitelj,web,before,2021-Q4,9,101,False,False
+obitelj,Obitelj,web,before,2022-Q1,3,46,False,False
+obitelj,Obitelj,web,before,2022-Q2,42,155,False,False
+obitelj,Obitelj,web,before,2022-Q3,11,91,False,False
+obitelj,Obitelj,web,before,2022-Q4,7,33,False,False
+obitelj,Obitelj,web,before,2023-Q1,2,85,False,False
+obitelj,Obitelj,web,before,2023-Q2,4,46,False,False
+obitelj,Obitelj,web,before,2023-Q3,13,85,False,False
+obitelj,Obitelj,web,before,2023-Q4,7,57,False,False
+obitelj,Obitelj,web,before,2024-Q1,1,6,True,False
+konzervativizam,Konzervativizam,web,before,2021-Q1,14,77,False,False
+konzervativizam,Konzervativizam,web,before,2021-Q2,33,234,False,False
+konzervativizam,Konzervativizam,web,before,2021-Q3,22,99,False,False
+konzervativizam,Konzervativizam,web,before,2021-Q4,15,101,False,False
+konzervativizam,Konzervativizam,web,before,2022-Q1,3,46,False,False
+konzervativizam,Konzervativizam,web,before,2022-Q2,7,155,False,False
+konzervativizam,Konzervativizam,web,before,2022-Q3,1,91,False,False
+konzervativizam,Konzervativizam,web,before,2022-Q4,5,33,False,False
+konzervativizam,Konzervativizam,web,before,2023-Q1,5,85,False,False
+konzervativizam,Konzervativizam,web,before,2023-Q2,3,46,False,False
+konzervativizam,Konzervativizam,web,before,2023-Q3,5,85,False,False
+konzervativizam,Konzervativizam,web,before,2023-Q4,5,57,False,False
+konzervativizam,Konzervativizam,web,before,2024-Q1,0,6,True,False
+vrijednosti,Vrijednosti,web,before,2021-Q1,44,77,False,False
+vrijednosti,Vrijednosti,web,before,2021-Q2,95,234,False,False
+vrijednosti,Vrijednosti,web,before,2021-Q3,42,99,False,False
+vrijednosti,Vrijednosti,web,before,2021-Q4,42,101,False,False
+vrijednosti,Vrijednosti,web,before,2022-Q1,18,46,False,False
+vrijednosti,Vrijednosti,web,before,2022-Q2,112,155,False,False
+vrijednosti,Vrijednosti,web,before,2022-Q3,57,91,False,False
+vrijednosti,Vrijednosti,web,before,2022-Q4,12,33,False,False
+vrijednosti,Vrijednosti,web,before,2023-Q1,49,85,False,False
+vrijednosti,Vrijednosti,web,before,2023-Q2,16,46,False,False
+vrijednosti,Vrijednosti,web,before,2023-Q3,35,85,False,False
+vrijednosti,Vrijednosti,web,before,2023-Q4,29,57,False,False
+vrijednosti,Vrijednosti,web,before,2024-Q1,3,6,True,False
+europa,Europa,web,before,2021-Q1,22,77,False,False
+europa,Europa,web,before,2021-Q2,40,234,False,False
+europa,Europa,web,before,2021-Q3,15,99,False,False
+europa,Europa,web,before,2021-Q4,40,101,False,False
+europa,Europa,web,before,2022-Q1,7,46,False,False
+europa,Europa,web,before,2022-Q2,18,155,False,False
+europa,Europa,web,before,2022-Q3,12,91,False,False
+europa,Europa,web,before,2022-Q4,7,33,False,False
+europa,Europa,web,before,2023-Q1,23,85,False,False
+europa,Europa,web,before,2023-Q2,11,46,False,False
+europa,Europa,web,before,2023-Q3,38,85,False,False
+europa,Europa,web,before,2023-Q4,13,57,False,False
+europa,Europa,web,before,2024-Q1,1,6,True,False
+solidarnost,Solidarnost,web,before,2021-Q1,4,77,False,False
+solidarnost,Solidarnost,web,before,2021-Q2,0,234,False,False
+solidarnost,Solidarnost,web,before,2021-Q3,2,99,False,False
+solidarnost,Solidarnost,web,before,2021-Q4,3,101,False,False
+solidarnost,Solidarnost,web,before,2022-Q1,1,46,False,False
+solidarnost,Solidarnost,web,before,2022-Q2,23,155,False,False
+solidarnost,Solidarnost,web,before,2022-Q3,1,91,False,False
+solidarnost,Solidarnost,web,before,2022-Q4,4,33,False,False
+solidarnost,Solidarnost,web,before,2023-Q1,0,85,False,False
+solidarnost,Solidarnost,web,before,2023-Q2,1,46,False,False
+solidarnost,Solidarnost,web,before,2023-Q3,2,85,False,False
+solidarnost,Solidarnost,web,before,2023-Q4,0,57,False,False
+solidarnost,Solidarnost,web,before,2024-Q1,0,6,True,False
+supsidijarnost,Supsidijarnost,web,before,2021-Q1,3,77,False,False
+supsidijarnost,Supsidijarnost,web,before,2021-Q2,3,234,False,False
+supsidijarnost,Supsidijarnost,web,before,2021-Q3,0,99,False,False
+supsidijarnost,Supsidijarnost,web,before,2021-Q4,5,101,False,False
+supsidijarnost,Supsidijarnost,web,before,2022-Q1,0,46,False,False
+supsidijarnost,Supsidijarnost,web,before,2022-Q2,1,155,False,False
+supsidijarnost,Supsidijarnost,web,before,2022-Q3,1,91,False,False
+supsidijarnost,Supsidijarnost,web,before,2022-Q4,4,33,False,False
+supsidijarnost,Supsidijarnost,web,before,2023-Q1,2,85,False,False
+supsidijarnost,Supsidijarnost,web,before,2023-Q2,1,46,False,False
+supsidijarnost,Supsidijarnost,web,before,2023-Q3,0,85,False,False
+supsidijarnost,Supsidijarnost,web,before,2023-Q4,1,57,False,False
+supsidijarnost,Supsidijarnost,web,before,2024-Q1,0,6,True,False
+opce_dobro,Opće dobro,web,before,2021-Q1,0,77,False,False
+opce_dobro,Opće dobro,web,before,2021-Q2,0,234,False,False
+opce_dobro,Opće dobro,web,before,2021-Q3,1,99,False,False
+opce_dobro,Opće dobro,web,before,2021-Q4,1,101,False,False
+opce_dobro,Opće dobro,web,before,2022-Q1,0,46,False,False
+opce_dobro,Opće dobro,web,before,2022-Q2,0,155,False,False
+opce_dobro,Opće dobro,web,before,2022-Q3,0,91,False,False
+opce_dobro,Opće dobro,web,before,2022-Q4,0,33,False,False
+opce_dobro,Opće dobro,web,before,2023-Q1,0,85,False,False
+opce_dobro,Opće dobro,web,before,2023-Q2,3,46,False,False
+opce_dobro,Opće dobro,web,before,2023-Q3,0,85,False,False
+opce_dobro,Opće dobro,web,before,2023-Q4,0,57,False,False
+opce_dobro,Opće dobro,web,before,2024-Q1,0,6,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,before,2021-Q1,0,77,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,before,2021-Q2,0,234,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,before,2021-Q3,0,99,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,before,2021-Q4,0,101,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,before,2022-Q1,0,46,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,before,2022-Q2,0,155,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,before,2022-Q3,0,91,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,before,2022-Q4,0,33,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,before,2023-Q1,0,85,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,before,2023-Q2,1,46,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,before,2023-Q3,8,85,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,before,2023-Q4,0,57,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,before,2024-Q1,0,6,True,False
+dostojanstvo_rada,Dostojanstvo rada,web,before,2021-Q1,0,77,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,before,2021-Q2,0,234,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,before,2021-Q3,0,99,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,before,2021-Q4,0,101,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,before,2022-Q1,0,46,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,before,2022-Q2,0,155,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,before,2022-Q3,0,91,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,before,2022-Q4,0,33,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,before,2023-Q1,0,85,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,before,2023-Q2,0,46,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,before,2023-Q3,0,85,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,before,2023-Q4,0,57,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,before,2024-Q1,0,6,True,False
+radnik,Radnik,web,before,2021-Q1,1,77,False,False
+radnik,Radnik,web,before,2021-Q2,2,234,False,False
+radnik,Radnik,web,before,2021-Q3,0,99,False,False
+radnik,Radnik,web,before,2021-Q4,0,101,False,False
+radnik,Radnik,web,before,2022-Q1,0,46,False,False
+radnik,Radnik,web,before,2022-Q2,0,155,False,False
+radnik,Radnik,web,before,2022-Q3,0,91,False,False
+radnik,Radnik,web,before,2022-Q4,0,33,False,False
+radnik,Radnik,web,before,2023-Q1,0,85,False,False
+radnik,Radnik,web,before,2023-Q2,1,46,False,False
+radnik,Radnik,web,before,2023-Q3,0,85,False,False
+radnik,Radnik,web,before,2023-Q4,1,57,False,False
+radnik,Radnik,web,before,2024-Q1,0,6,True,False
+socijalna_drzava,Socijalna država,web,before,2021-Q1,1,77,False,False
+socijalna_drzava,Socijalna država,web,before,2021-Q2,1,234,False,False
+socijalna_drzava,Socijalna država,web,before,2021-Q3,0,99,False,False
+socijalna_drzava,Socijalna država,web,before,2021-Q4,1,101,False,False
+socijalna_drzava,Socijalna država,web,before,2022-Q1,0,46,False,False
+socijalna_drzava,Socijalna država,web,before,2022-Q2,1,155,False,False
+socijalna_drzava,Socijalna država,web,before,2022-Q3,1,91,False,False
+socijalna_drzava,Socijalna država,web,before,2022-Q4,1,33,False,False
+socijalna_drzava,Socijalna država,web,before,2023-Q1,0,85,False,False
+socijalna_drzava,Socijalna država,web,before,2023-Q2,0,46,False,False
+socijalna_drzava,Socijalna država,web,before,2023-Q3,0,85,False,False
+socijalna_drzava,Socijalna država,web,before,2023-Q4,0,57,False,False
+socijalna_drzava,Socijalna država,web,before,2024-Q1,0,6,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,before,2021-Q1,0,77,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,before,2021-Q2,0,234,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,before,2021-Q3,0,99,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,before,2021-Q4,0,101,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,before,2022-Q1,0,46,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,before,2022-Q2,2,155,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,before,2022-Q3,0,91,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,before,2022-Q4,1,33,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,before,2023-Q1,0,85,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,before,2023-Q2,1,46,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,before,2023-Q3,0,85,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,before,2023-Q4,0,57,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,before,2024-Q1,0,6,True,False
+savjest,Savjest,web,before,2021-Q1,0,77,False,False
+savjest,Savjest,web,before,2021-Q2,8,234,False,False
+savjest,Savjest,web,before,2021-Q3,0,99,False,False
+savjest,Savjest,web,before,2021-Q4,0,101,False,False
+savjest,Savjest,web,before,2022-Q1,0,46,False,False
+savjest,Savjest,web,before,2022-Q2,12,155,False,False
+savjest,Savjest,web,before,2022-Q3,0,91,False,False
+savjest,Savjest,web,before,2022-Q4,0,33,False,False
+savjest,Savjest,web,before,2023-Q1,1,85,False,False
+savjest,Savjest,web,before,2023-Q2,0,46,False,False
+savjest,Savjest,web,before,2023-Q3,0,85,False,False
+savjest,Savjest,web,before,2023-Q4,0,57,False,False
+savjest,Savjest,web,before,2024-Q1,0,6,True,False
+vjerska_sloboda,Vjerska sloboda,web,before,2021-Q1,0,77,False,False
+vjerska_sloboda,Vjerska sloboda,web,before,2021-Q2,0,234,False,False
+vjerska_sloboda,Vjerska sloboda,web,before,2021-Q3,0,99,False,False
+vjerska_sloboda,Vjerska sloboda,web,before,2021-Q4,0,101,False,False
+vjerska_sloboda,Vjerska sloboda,web,before,2022-Q1,0,46,False,False
+vjerska_sloboda,Vjerska sloboda,web,before,2022-Q2,0,155,False,False
+vjerska_sloboda,Vjerska sloboda,web,before,2022-Q3,9,91,False,False
+vjerska_sloboda,Vjerska sloboda,web,before,2022-Q4,0,33,False,False
+vjerska_sloboda,Vjerska sloboda,web,before,2023-Q1,2,85,False,False
+vjerska_sloboda,Vjerska sloboda,web,before,2023-Q2,0,46,False,False
+vjerska_sloboda,Vjerska sloboda,web,before,2023-Q3,0,85,False,False
+vjerska_sloboda,Vjerska sloboda,web,before,2023-Q4,0,57,False,False
+vjerska_sloboda,Vjerska sloboda,web,before,2024-Q1,0,6,True,False
+demokracija,Demokracija,web,before,2021-Q1,0,77,False,False
+demokracija,Demokracija,web,before,2021-Q2,16,234,False,False
+demokracija,Demokracija,web,before,2021-Q3,3,99,False,False
+demokracija,Demokracija,web,before,2021-Q4,10,101,False,False
+demokracija,Demokracija,web,before,2022-Q1,0,46,False,False
+demokracija,Demokracija,web,before,2022-Q2,3,155,False,False
+demokracija,Demokracija,web,before,2022-Q3,0,91,False,False
+demokracija,Demokracija,web,before,2022-Q4,1,33,False,False
+demokracija,Demokracija,web,before,2023-Q1,18,85,False,False
+demokracija,Demokracija,web,before,2023-Q2,2,46,False,False
+demokracija,Demokracija,web,before,2023-Q3,8,85,False,False
+demokracija,Demokracija,web,before,2023-Q4,2,57,False,False
+demokracija,Demokracija,web,before,2024-Q1,1,6,True,False
+sloboda,Sloboda,web,before,2021-Q1,5,77,False,False
+sloboda,Sloboda,web,before,2021-Q2,9,234,False,False
+sloboda,Sloboda,web,before,2021-Q3,5,99,False,False
+sloboda,Sloboda,web,before,2021-Q4,5,101,False,False
+sloboda,Sloboda,web,before,2022-Q1,4,46,False,False
+sloboda,Sloboda,web,before,2022-Q2,4,155,False,False
+sloboda,Sloboda,web,before,2022-Q3,1,91,False,False
+sloboda,Sloboda,web,before,2022-Q4,2,33,False,False
+sloboda,Sloboda,web,before,2023-Q1,2,85,False,False
+sloboda,Sloboda,web,before,2023-Q2,2,46,False,False
+sloboda,Sloboda,web,before,2023-Q3,11,85,False,False
+sloboda,Sloboda,web,before,2023-Q4,0,57,False,False
+sloboda,Sloboda,web,before,2024-Q1,0,6,True,False
+domoljublje,Domoljublje,web,after,2024-Q2,50,236,False,False
+domoljublje,Domoljublje,web,after,2024-Q3,2,35,False,False
+domoljublje,Domoljublje,web,after,2024-Q4,2,54,False,False
+domoljublje,Domoljublje,web,after,2025-Q1,4,24,False,False
+domoljublje,Domoljublje,web,after,2025-Q2,12,76,False,False
+domoljublje,Domoljublje,web,after,2025-Q3,2,30,False,False
+domoljublje,Domoljublje,web,after,2025-Q4,30,81,False,False
+domoljublje,Domoljublje,web,after,2026-Q1,23,44,False,False
+domoljublje,Domoljublje,web,after,2026-Q2,14,75,False,False
+domoljublje,Domoljublje,web,after,2026-Q3,3,31,False,True
+drzavotvornost,Državotvornost,web,after,2024-Q2,15,236,False,False
+drzavotvornost,Državotvornost,web,after,2024-Q3,0,35,False,False
+drzavotvornost,Državotvornost,web,after,2024-Q4,0,54,False,False
+drzavotvornost,Državotvornost,web,after,2025-Q1,0,24,False,False
+drzavotvornost,Državotvornost,web,after,2025-Q2,12,76,False,False
+drzavotvornost,Državotvornost,web,after,2025-Q3,0,30,False,False
+drzavotvornost,Državotvornost,web,after,2025-Q4,0,81,False,False
+drzavotvornost,Državotvornost,web,after,2026-Q1,2,44,False,False
+drzavotvornost,Državotvornost,web,after,2026-Q2,7,75,False,False
+drzavotvornost,Državotvornost,web,after,2026-Q3,1,31,False,True
+narodnjastvo,Narodnjaštvo,web,after,2024-Q2,27,236,False,False
+narodnjastvo,Narodnjaštvo,web,after,2024-Q3,0,35,False,False
+narodnjastvo,Narodnjaštvo,web,after,2024-Q4,1,54,False,False
+narodnjastvo,Narodnjaštvo,web,after,2025-Q1,0,24,False,False
+narodnjastvo,Narodnjaštvo,web,after,2025-Q2,13,76,False,False
+narodnjastvo,Narodnjaštvo,web,after,2025-Q3,0,30,False,False
+narodnjastvo,Narodnjaštvo,web,after,2025-Q4,4,81,False,False
+narodnjastvo,Narodnjaštvo,web,after,2026-Q1,22,44,False,False
+narodnjastvo,Narodnjaštvo,web,after,2026-Q2,17,75,False,False
+narodnjastvo,Narodnjaštvo,web,after,2026-Q3,0,31,False,True
+obitelj,Obitelj,web,after,2024-Q2,48,236,False,False
+obitelj,Obitelj,web,after,2024-Q3,0,35,False,False
+obitelj,Obitelj,web,after,2024-Q4,0,54,False,False
+obitelj,Obitelj,web,after,2025-Q1,9,24,False,False
+obitelj,Obitelj,web,after,2025-Q2,5,76,False,False
+obitelj,Obitelj,web,after,2025-Q3,2,30,False,False
+obitelj,Obitelj,web,after,2025-Q4,21,81,False,False
+obitelj,Obitelj,web,after,2026-Q1,3,44,False,False
+obitelj,Obitelj,web,after,2026-Q2,1,75,False,False
+obitelj,Obitelj,web,after,2026-Q3,1,31,False,True
+konzervativizam,Konzervativizam,web,after,2024-Q2,10,236,False,False
+konzervativizam,Konzervativizam,web,after,2024-Q3,1,35,False,False
+konzervativizam,Konzervativizam,web,after,2024-Q4,2,54,False,False
+konzervativizam,Konzervativizam,web,after,2025-Q1,2,24,False,False
+konzervativizam,Konzervativizam,web,after,2025-Q2,3,76,False,False
+konzervativizam,Konzervativizam,web,after,2025-Q3,3,30,False,False
+konzervativizam,Konzervativizam,web,after,2025-Q4,4,81,False,False
+konzervativizam,Konzervativizam,web,after,2026-Q1,5,44,False,False
+konzervativizam,Konzervativizam,web,after,2026-Q2,12,75,False,False
+konzervativizam,Konzervativizam,web,after,2026-Q3,6,31,False,True
+vrijednosti,Vrijednosti,web,after,2024-Q2,148,236,False,False
+vrijednosti,Vrijednosti,web,after,2024-Q3,4,35,False,False
+vrijednosti,Vrijednosti,web,after,2024-Q4,15,54,False,False
+vrijednosti,Vrijednosti,web,after,2025-Q1,13,24,False,False
+vrijednosti,Vrijednosti,web,after,2025-Q2,25,76,False,False
+vrijednosti,Vrijednosti,web,after,2025-Q3,20,30,False,False
+vrijednosti,Vrijednosti,web,after,2025-Q4,34,81,False,False
+vrijednosti,Vrijednosti,web,after,2026-Q1,31,44,False,False
+vrijednosti,Vrijednosti,web,after,2026-Q2,53,75,False,False
+vrijednosti,Vrijednosti,web,after,2026-Q3,17,31,False,True
+europa,Europa,web,after,2024-Q2,160,236,False,False
+europa,Europa,web,after,2024-Q3,1,35,False,False
+europa,Europa,web,after,2024-Q4,4,54,False,False
+europa,Europa,web,after,2025-Q1,4,24,False,False
+europa,Europa,web,after,2025-Q2,7,76,False,False
+europa,Europa,web,after,2025-Q3,15,30,False,False
+europa,Europa,web,after,2025-Q4,24,81,False,False
+europa,Europa,web,after,2026-Q1,6,44,False,False
+europa,Europa,web,after,2026-Q2,14,75,False,False
+europa,Europa,web,after,2026-Q3,8,31,False,True
+solidarnost,Solidarnost,web,after,2024-Q2,22,236,False,False
+solidarnost,Solidarnost,web,after,2024-Q3,0,35,False,False
+solidarnost,Solidarnost,web,after,2024-Q4,0,54,False,False
+solidarnost,Solidarnost,web,after,2025-Q1,2,24,False,False
+solidarnost,Solidarnost,web,after,2025-Q2,0,76,False,False
+solidarnost,Solidarnost,web,after,2025-Q3,3,30,False,False
+solidarnost,Solidarnost,web,after,2025-Q4,12,81,False,False
+solidarnost,Solidarnost,web,after,2026-Q1,0,44,False,False
+solidarnost,Solidarnost,web,after,2026-Q2,11,75,False,False
+solidarnost,Solidarnost,web,after,2026-Q3,0,31,False,True
+supsidijarnost,Supsidijarnost,web,after,2024-Q2,3,236,False,False
+supsidijarnost,Supsidijarnost,web,after,2024-Q3,0,35,False,False
+supsidijarnost,Supsidijarnost,web,after,2024-Q4,0,54,False,False
+supsidijarnost,Supsidijarnost,web,after,2025-Q1,1,24,False,False
+supsidijarnost,Supsidijarnost,web,after,2025-Q2,0,76,False,False
+supsidijarnost,Supsidijarnost,web,after,2025-Q3,0,30,False,False
+supsidijarnost,Supsidijarnost,web,after,2025-Q4,3,81,False,False
+supsidijarnost,Supsidijarnost,web,after,2026-Q1,0,44,False,False
+supsidijarnost,Supsidijarnost,web,after,2026-Q2,0,75,False,False
+supsidijarnost,Supsidijarnost,web,after,2026-Q3,0,31,False,True
+opce_dobro,Opće dobro,web,after,2024-Q2,1,236,False,False
+opce_dobro,Opće dobro,web,after,2024-Q3,0,35,False,False
+opce_dobro,Opće dobro,web,after,2024-Q4,0,54,False,False
+opce_dobro,Opće dobro,web,after,2025-Q1,0,24,False,False
+opce_dobro,Opće dobro,web,after,2025-Q2,0,76,False,False
+opce_dobro,Opće dobro,web,after,2025-Q3,0,30,False,False
+opce_dobro,Opće dobro,web,after,2025-Q4,4,81,False,False
+opce_dobro,Opće dobro,web,after,2026-Q1,1,44,False,False
+opce_dobro,Opće dobro,web,after,2026-Q2,0,75,False,False
+opce_dobro,Opće dobro,web,after,2026-Q3,0,31,False,True
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,after,2024-Q2,3,236,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,after,2024-Q3,0,35,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,after,2024-Q4,0,54,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,after,2025-Q1,0,24,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,after,2025-Q2,0,76,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,after,2025-Q3,0,30,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,after,2025-Q4,0,81,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,after,2026-Q1,1,44,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,after,2026-Q2,2,75,False,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web,after,2026-Q3,0,31,False,True
+dostojanstvo_rada,Dostojanstvo rada,web,after,2024-Q2,0,236,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,after,2024-Q3,0,35,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,after,2024-Q4,0,54,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,after,2025-Q1,0,24,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,after,2025-Q2,0,76,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,after,2025-Q3,0,30,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,after,2025-Q4,0,81,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,after,2026-Q1,0,44,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,after,2026-Q2,11,75,False,False
+dostojanstvo_rada,Dostojanstvo rada,web,after,2026-Q3,0,31,False,True
+radnik,Radnik,web,after,2024-Q2,0,236,False,False
+radnik,Radnik,web,after,2024-Q3,0,35,False,False
+radnik,Radnik,web,after,2024-Q4,0,54,False,False
+radnik,Radnik,web,after,2025-Q1,0,24,False,False
+radnik,Radnik,web,after,2025-Q2,2,76,False,False
+radnik,Radnik,web,after,2025-Q3,0,30,False,False
+radnik,Radnik,web,after,2025-Q4,0,81,False,False
+radnik,Radnik,web,after,2026-Q1,2,44,False,False
+radnik,Radnik,web,after,2026-Q2,12,75,False,False
+radnik,Radnik,web,after,2026-Q3,0,31,False,True
+socijalna_drzava,Socijalna država,web,after,2024-Q2,0,236,False,False
+socijalna_drzava,Socijalna država,web,after,2024-Q3,0,35,False,False
+socijalna_drzava,Socijalna država,web,after,2024-Q4,0,54,False,False
+socijalna_drzava,Socijalna država,web,after,2025-Q1,0,24,False,False
+socijalna_drzava,Socijalna država,web,after,2025-Q2,0,76,False,False
+socijalna_drzava,Socijalna država,web,after,2025-Q3,0,30,False,False
+socijalna_drzava,Socijalna država,web,after,2025-Q4,0,81,False,False
+socijalna_drzava,Socijalna država,web,after,2026-Q1,0,44,False,False
+socijalna_drzava,Socijalna država,web,after,2026-Q2,1,75,False,False
+socijalna_drzava,Socijalna država,web,after,2026-Q3,0,31,False,True
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,after,2024-Q2,1,236,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,after,2024-Q3,0,35,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,after,2024-Q4,0,54,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,after,2025-Q1,0,24,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,after,2025-Q2,1,76,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,after,2025-Q3,0,30,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,after,2025-Q4,0,81,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,after,2026-Q1,1,44,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,after,2026-Q2,0,75,False,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,web,after,2026-Q3,0,31,False,True
+savjest,Savjest,web,after,2024-Q2,1,236,False,False
+savjest,Savjest,web,after,2024-Q3,0,35,False,False
+savjest,Savjest,web,after,2024-Q4,1,54,False,False
+savjest,Savjest,web,after,2025-Q1,0,24,False,False
+savjest,Savjest,web,after,2025-Q2,0,76,False,False
+savjest,Savjest,web,after,2025-Q3,0,30,False,False
+savjest,Savjest,web,after,2025-Q4,1,81,False,False
+savjest,Savjest,web,after,2026-Q1,2,44,False,False
+savjest,Savjest,web,after,2026-Q2,1,75,False,False
+savjest,Savjest,web,after,2026-Q3,0,31,False,True
+vjerska_sloboda,Vjerska sloboda,web,after,2024-Q2,0,236,False,False
+vjerska_sloboda,Vjerska sloboda,web,after,2024-Q3,0,35,False,False
+vjerska_sloboda,Vjerska sloboda,web,after,2024-Q4,0,54,False,False
+vjerska_sloboda,Vjerska sloboda,web,after,2025-Q1,0,24,False,False
+vjerska_sloboda,Vjerska sloboda,web,after,2025-Q2,0,76,False,False
+vjerska_sloboda,Vjerska sloboda,web,after,2025-Q3,0,30,False,False
+vjerska_sloboda,Vjerska sloboda,web,after,2025-Q4,0,81,False,False
+vjerska_sloboda,Vjerska sloboda,web,after,2026-Q1,0,44,False,False
+vjerska_sloboda,Vjerska sloboda,web,after,2026-Q2,0,75,False,False
+vjerska_sloboda,Vjerska sloboda,web,after,2026-Q3,0,31,False,True
+demokracija,Demokracija,web,after,2024-Q2,20,236,False,False
+demokracija,Demokracija,web,after,2024-Q3,1,35,False,False
+demokracija,Demokracija,web,after,2024-Q4,0,54,False,False
+demokracija,Demokracija,web,after,2025-Q1,1,24,False,False
+demokracija,Demokracija,web,after,2025-Q2,16,76,False,False
+demokracija,Demokracija,web,after,2025-Q3,2,30,False,False
+demokracija,Demokracija,web,after,2025-Q4,2,81,False,False
+demokracija,Demokracija,web,after,2026-Q1,0,44,False,False
+demokracija,Demokracija,web,after,2026-Q2,2,75,False,False
+demokracija,Demokracija,web,after,2026-Q3,5,31,False,True
+sloboda,Sloboda,web,after,2024-Q2,3,236,False,False
+sloboda,Sloboda,web,after,2024-Q3,1,35,False,False
+sloboda,Sloboda,web,after,2024-Q4,0,54,False,False
+sloboda,Sloboda,web,after,2025-Q1,4,24,False,False
+sloboda,Sloboda,web,after,2025-Q2,20,76,False,False
+sloboda,Sloboda,web,after,2025-Q3,1,30,False,False
+sloboda,Sloboda,web,after,2025-Q4,3,81,False,False
+sloboda,Sloboda,web,after,2026-Q1,3,44,False,False
+sloboda,Sloboda,web,after,2026-Q2,3,75,False,False
+sloboda,Sloboda,web,after,2026-Q3,2,31,False,True
+domoljublje,Domoljublje,youtube,before,2021-Q4,0,2,True,False
+domoljublje,Domoljublje,youtube,before,2022-Q2,0,1,True,False
+domoljublje,Domoljublje,youtube,before,2023-Q1,0,4,True,False
+domoljublje,Domoljublje,youtube,before,2023-Q3,0,1,True,False
+domoljublje,Domoljublje,youtube,before,2024-Q1,0,1,True,False
+drzavotvornost,Državotvornost,youtube,before,2021-Q4,0,2,True,False
+drzavotvornost,Državotvornost,youtube,before,2022-Q2,0,1,True,False
+drzavotvornost,Državotvornost,youtube,before,2023-Q1,0,4,True,False
+drzavotvornost,Državotvornost,youtube,before,2023-Q3,0,1,True,False
+drzavotvornost,Državotvornost,youtube,before,2024-Q1,0,1,True,False
+narodnjastvo,Narodnjaštvo,youtube,before,2021-Q4,0,2,True,False
+narodnjastvo,Narodnjaštvo,youtube,before,2022-Q2,0,1,True,False
+narodnjastvo,Narodnjaštvo,youtube,before,2023-Q1,0,4,True,False
+narodnjastvo,Narodnjaštvo,youtube,before,2023-Q3,0,1,True,False
+narodnjastvo,Narodnjaštvo,youtube,before,2024-Q1,0,1,True,False
+obitelj,Obitelj,youtube,before,2021-Q4,0,2,True,False
+obitelj,Obitelj,youtube,before,2022-Q2,0,1,True,False
+obitelj,Obitelj,youtube,before,2023-Q1,0,4,True,False
+obitelj,Obitelj,youtube,before,2023-Q3,0,1,True,False
+obitelj,Obitelj,youtube,before,2024-Q1,0,1,True,False
+konzervativizam,Konzervativizam,youtube,before,2021-Q4,0,2,True,False
+konzervativizam,Konzervativizam,youtube,before,2022-Q2,0,1,True,False
+konzervativizam,Konzervativizam,youtube,before,2023-Q1,0,4,True,False
+konzervativizam,Konzervativizam,youtube,before,2023-Q3,0,1,True,False
+konzervativizam,Konzervativizam,youtube,before,2024-Q1,0,1,True,False
+vrijednosti,Vrijednosti,youtube,before,2021-Q4,0,2,True,False
+vrijednosti,Vrijednosti,youtube,before,2022-Q2,0,1,True,False
+vrijednosti,Vrijednosti,youtube,before,2023-Q1,0,4,True,False
+vrijednosti,Vrijednosti,youtube,before,2023-Q3,1,1,True,False
+vrijednosti,Vrijednosti,youtube,before,2024-Q1,0,1,True,False
+europa,Europa,youtube,before,2021-Q4,1,2,True,False
+europa,Europa,youtube,before,2022-Q2,1,1,True,False
+europa,Europa,youtube,before,2023-Q1,2,4,True,False
+europa,Europa,youtube,before,2023-Q3,0,1,True,False
+europa,Europa,youtube,before,2024-Q1,0,1,True,False
+solidarnost,Solidarnost,youtube,before,2021-Q4,0,2,True,False
+solidarnost,Solidarnost,youtube,before,2022-Q2,0,1,True,False
+solidarnost,Solidarnost,youtube,before,2023-Q1,0,4,True,False
+solidarnost,Solidarnost,youtube,before,2023-Q3,0,1,True,False
+solidarnost,Solidarnost,youtube,before,2024-Q1,0,1,True,False
+supsidijarnost,Supsidijarnost,youtube,before,2021-Q4,0,2,True,False
+supsidijarnost,Supsidijarnost,youtube,before,2022-Q2,0,1,True,False
+supsidijarnost,Supsidijarnost,youtube,before,2023-Q1,0,4,True,False
+supsidijarnost,Supsidijarnost,youtube,before,2023-Q3,0,1,True,False
+supsidijarnost,Supsidijarnost,youtube,before,2024-Q1,0,1,True,False
+opce_dobro,Opće dobro,youtube,before,2021-Q4,0,2,True,False
+opce_dobro,Opće dobro,youtube,before,2022-Q2,0,1,True,False
+opce_dobro,Opće dobro,youtube,before,2023-Q1,0,4,True,False
+opce_dobro,Opće dobro,youtube,before,2023-Q3,0,1,True,False
+opce_dobro,Opće dobro,youtube,before,2024-Q1,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,youtube,before,2021-Q4,0,2,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,youtube,before,2022-Q2,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,youtube,before,2023-Q1,0,4,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,youtube,before,2023-Q3,0,1,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,youtube,before,2024-Q1,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,youtube,before,2021-Q4,0,2,True,False
+dostojanstvo_rada,Dostojanstvo rada,youtube,before,2022-Q2,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,youtube,before,2023-Q1,0,4,True,False
+dostojanstvo_rada,Dostojanstvo rada,youtube,before,2023-Q3,0,1,True,False
+dostojanstvo_rada,Dostojanstvo rada,youtube,before,2024-Q1,0,1,True,False
+radnik,Radnik,youtube,before,2021-Q4,0,2,True,False
+radnik,Radnik,youtube,before,2022-Q2,0,1,True,False
+radnik,Radnik,youtube,before,2023-Q1,0,4,True,False
+radnik,Radnik,youtube,before,2023-Q3,0,1,True,False
+radnik,Radnik,youtube,before,2024-Q1,0,1,True,False
+socijalna_drzava,Socijalna država,youtube,before,2021-Q4,0,2,True,False
+socijalna_drzava,Socijalna država,youtube,before,2022-Q2,0,1,True,False
+socijalna_drzava,Socijalna država,youtube,before,2023-Q1,0,4,True,False
+socijalna_drzava,Socijalna država,youtube,before,2023-Q3,0,1,True,False
+socijalna_drzava,Socijalna država,youtube,before,2024-Q1,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,youtube,before,2021-Q4,0,2,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,youtube,before,2022-Q2,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,youtube,before,2023-Q1,0,4,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,youtube,before,2023-Q3,0,1,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,youtube,before,2024-Q1,0,1,True,False
+savjest,Savjest,youtube,before,2021-Q4,0,2,True,False
+savjest,Savjest,youtube,before,2022-Q2,0,1,True,False
+savjest,Savjest,youtube,before,2023-Q1,0,4,True,False
+savjest,Savjest,youtube,before,2023-Q3,0,1,True,False
+savjest,Savjest,youtube,before,2024-Q1,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,youtube,before,2021-Q4,0,2,True,False
+vjerska_sloboda,Vjerska sloboda,youtube,before,2022-Q2,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,youtube,before,2023-Q1,0,4,True,False
+vjerska_sloboda,Vjerska sloboda,youtube,before,2023-Q3,0,1,True,False
+vjerska_sloboda,Vjerska sloboda,youtube,before,2024-Q1,0,1,True,False
+demokracija,Demokracija,youtube,before,2021-Q4,0,2,True,False
+demokracija,Demokracija,youtube,before,2022-Q2,0,1,True,False
+demokracija,Demokracija,youtube,before,2023-Q1,1,4,True,False
+demokracija,Demokracija,youtube,before,2023-Q3,0,1,True,False
+demokracija,Demokracija,youtube,before,2024-Q1,0,1,True,False
+sloboda,Sloboda,youtube,before,2021-Q4,0,2,True,False
+sloboda,Sloboda,youtube,before,2022-Q2,0,1,True,False
+sloboda,Sloboda,youtube,before,2023-Q1,0,4,True,False
+sloboda,Sloboda,youtube,before,2023-Q3,0,1,True,False
+sloboda,Sloboda,youtube,before,2024-Q1,0,1,True,False
+domoljublje,Domoljublje,youtube,after,2025-Q4,0,2,True,False
+drzavotvornost,Državotvornost,youtube,after,2025-Q4,0,2,True,False
+narodnjastvo,Narodnjaštvo,youtube,after,2025-Q4,0,2,True,False
+obitelj,Obitelj,youtube,after,2025-Q4,0,2,True,False
+konzervativizam,Konzervativizam,youtube,after,2025-Q4,1,2,True,False
+vrijednosti,Vrijednosti,youtube,after,2025-Q4,1,2,True,False
+europa,Europa,youtube,after,2025-Q4,1,2,True,False
+solidarnost,Solidarnost,youtube,after,2025-Q4,0,2,True,False
+supsidijarnost,Supsidijarnost,youtube,after,2025-Q4,0,2,True,False
+opce_dobro,Opće dobro,youtube,after,2025-Q4,0,2,True,False
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,youtube,after,2025-Q4,0,2,True,False
+dostojanstvo_rada,Dostojanstvo rada,youtube,after,2025-Q4,0,2,True,False
+radnik,Radnik,youtube,after,2025-Q4,0,2,True,False
+socijalna_drzava,Socijalna država,youtube,after,2025-Q4,0,2,True,False
+trzisno_gospodarstvo,Tržišno gospodarstvo,youtube,after,2025-Q4,0,2,True,False
+savjest,Savjest,youtube,after,2025-Q4,0,2,True,False
+vjerska_sloboda,Vjerska sloboda,youtube,after,2025-Q4,0,2,True,False
+demokracija,Demokracija,youtube,after,2025-Q4,0,2,True,False
+sloboda,Sloboda,youtube,after,2025-Q4,0,2,True,False

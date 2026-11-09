@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "slides": 18,
+  "findings": 10,
+  "pdf_sha256": "d4b7c5a62b4ca1e227b2edf708bc72883814fbc5bb4f521f427f384dc206e534",
+  "pdf_links": 32,
+  "embedded_fonts": [
+    "AAAAAA+Calibri-Bold",
+    "BAAAAA+Calibri",
+    "CAAAAA+Georgia"
+  ],
+  "tagged": true,
+  "title": "Demokršćanske vrijednosti u digitalnom javnom prostoru: narativni okviri hrvatskih katoličkih medija od 2021. do 2026.",
+  "scope": "Broader media discussion, including general and Catholic media",
+  "visual_review": "Separate inspection of all rendered pages required"
+}

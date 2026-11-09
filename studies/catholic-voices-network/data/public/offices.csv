@@ -1,0 +1,400 @@
+statement_id,entity_qid,name,office_qid,office_label_hr,place_qids,start_earliest,start_latest,end_earliest,end_latest,end_basis,source_public_page
+Q101190387$74e2aac5-4f69-f3b2-5fee-1134bea60f82,Q101190387,Rezeq Namoura,Q102047690,ambassador of Palestine to Bosnia and Herzegovina,,2014-09-25,2014-09-25,2026-01-01,2026-01-31,office_end,https://www.wikidata.org/wiki/Q101190387
+Q137849011$da74ffc4-4816-3cdd-1016-ed13e93e9eef,Q137849011,Sylvia abu laban,Q102047690,ambassador of Palestine to Bosnia and Herzegovina,,2026-01-26,2026-01-26,,,open,https://www.wikidata.org/wiki/Q137849011
+Q106564108$5b13b548-4ec5-d18d-b70e-5bea9a855ac1,Q106564108,Eric Hauck,Q106564564,delegate of the Government of the Generalitat of Catalonia in South-Eastern Europe,,2018-12-04,2018-12-04,2024-12-01,2024-12-01,office_end,https://www.wikidata.org/wiki/Q106564108
+Q136078134$841c7500-42ad-d111-09c1-37c492bd4697,Q136078134,Q136078134,Q106564564,delegate of the Government of the Generalitat of Catalonia in South-Eastern Europe,,2025-04-15,2025-04-15,,,open,https://www.wikidata.org/wiki/Q136078134
+Q103826052$928ffdaa-40ec-d861-fbc3-5c82f1b81656,Q103826052,Q103826052,Q107134703,spanish ambassador to Croatia,,2022-03-30,2022-03-30,2025-05-07,2025-05-07,office_end,https://www.wikidata.org/wiki/Q103826052
+Q27755484$36ae0879-4d56-2ab2-921f-ba7d80cd0ffc,Q27755484,José Ramón García Hernández,Q107134703,spanish ambassador to Croatia,,2025-05-07,2025-05-07,,,open,https://www.wikidata.org/wiki/Q27755484
+Q5670080$b854540a-4744-d70c-4b25-a8c958c823e7,Q5670080,Alonso Dezcallar,Q107134703,spanish ambassador to Croatia,,2018-10-01,2018-10-01,2022-03-29,2022-03-29,office_end,https://www.wikidata.org/wiki/Q5670080
+Q26248569$1c2cd2fb-44f4-6599-0942-81f8f4566034,Q26248569,Oleg Butković,Q107370329,"Minister of Maritime Affairs, Transport and Infrastructure",,2016-01-22,2016-01-22,,,open,https://www.wikidata.org/wiki/Q26248569
+Q140235647$b9e48d29-48ab-6dfc-2756-a2e620b9f7ce,Q140235647,David Grabovac,Q1075179,honorary consul,,2016-01-01,2016-12-31,,,open,https://www.wikidata.org/wiki/Q140235647
+Q24641177$5605E549-5221-4A09-8611-49374961E52B,Q24641177,Tomo Medved,Q108068825,Ministar Hrvatskih Branitelja,,2016-03-21,2016-03-21,,,open,https://www.wikidata.org/wiki/Q24641177
+Q2619574$8D086BF8-4842-4C80-A769-DDE5848AA668,Q2619574,Davor Božinović,Q108068872,Ministar Unutarnjih Poslova,,2017-06-09,2017-06-09,,,open,https://www.wikidata.org/wiki/Q2619574
+Q111194379$61F2AE6D-DFCE-45F5-BC5A-A734583F17E2,Q111194379,Ivan Paladina,Q108068933,"Ministar prostornoga uređenja, graditeljstva i državne imovine",,2022-03-09,2022-03-09,2023-01-11,2023-01-11,office_end,https://www.wikidata.org/wiki/Q111194379
+Q54810256$B142E891-66C2-4E48-8213-87931E212E7C,Q54810256,Darko Horvat,Q108068933,"Ministar prostornoga uređenja, graditeljstva i državne imovine",,2020-07-23,2020-07-23,2022-02-19,2022-02-19,office_end,https://www.wikidata.org/wiki/Q54810256
+Q100788301$0391CFBD-CD0B-411F-A6CD-411F0F08F2C1,Q100788301,Davor Filipović,Q108069316,Ministar gospodarstva i održivog razvoja,,2022-04-29,2022-04-29,2023-12-12,2023-12-12,office_end,https://www.wikidata.org/wiki/Q100788301
+Q27537240$356310A8-2146-4E99-9F4D-A74D859D5F49,Q27537240,Tomislav Ćorić,Q108069316,Ministar gospodarstva i održivog razvoja,,2020-07-23,2020-07-23,2022-04-29,2022-04-29,office_end,https://www.wikidata.org/wiki/Q27537240
+Q111893657$626845a1-4246-26f5-459f-9d50898316b9,Q111893657,Marin Piletić,Q108069330,Minister of Labour and Pension System,,2022-04-29,2022-04-29,,,open,https://www.wikidata.org/wiki/Q111893657
+Q65922295$810B0D91-1AFF-4A75-AFC3-ACE909EEFCF9,Q65922295,Josip Aladrović,Q108069330,Minister of Labour and Pension System,,2019-07-19,2019-07-19,2022-04-29,2022-04-29,office_end,https://www.wikidata.org/wiki/Q65922295
+Q97654605$472C22CA-F056-4E2E-A7C4-575CE05023A2,Q97654605,Nataša Tramišak,Q108069372,Minister of Regional Development and EU Funds,,2020-07-23,2020-07-23,2023-01-11,2023-01-11,office_end,https://www.wikidata.org/wiki/Q97654605
+Q65922777$12B498A9-C8AE-4779-97FA-1C393EA07376,Q65922777,Marija Vučković,Q108069397,Ministrica poljoprivrede,,2019-07-22,2019-07-22,,,open,https://www.wikidata.org/wiki/Q65922777
+Q83985420$8D7489C1-1165-4A6C-BB40-9E5F391BE9D9,Q83985420,Nikolina Brnjac,Q108069630,Ministrica turizma i sporta,,2020-07-23,2020-07-23,,,open,https://www.wikidata.org/wiki/Q83985420
+Q299667$2CBD6585-0F49-4397-B774-DAE396F1316D,Q299667,Dubravka Šuica,Q108179058,European Commissioner for Democracy and Demography,,2019-12-01,2019-12-01,2024-11-30,2024-11-30,office_end,https://www.wikidata.org/wiki/Q299667
+Q24290038$D765EC7E-3727-42CF-80FC-A471944946B6,Q24290038,Tomislav Rogić,Q108535320,Roman Catholic Bishop of Šibenik,Q878652,2016-06-03,2016-06-03,,,open,https://www.wikidata.org/wiki/Q24290038
+Q135934976$9330B1DC-5836-4324-A986-9B883338A178,Q135934976,Savo Minić,Q108822438,Prime Minister of Republika Srpska,,2025-09-02,2025-09-02,,,open,https://www.wikidata.org/wiki/Q135934976
+Q58416549$E3D52A18-81A4-4849-80F3-FE78327D052D,Q58416549,Radovan Višković,Q108822438,Prime Minister of Republika Srpska,,2018-12-18,2018-12-18,2025-08-22,2025-08-22,office_end,https://www.wikidata.org/wiki/Q58416549
+Q20525402$BF67B5AF-7E81-4C05-B41B-C6010F03A9D8,Q20525402,Fadil Novalić,Q109374382,Prime Minister of the Federation of Bosnia and Herzegovina,,2015-03-31,2015-03-31,2023-04-28,2023-04-28,office_end,https://www.wikidata.org/wiki/Q20525402
+Q6996487$f85606ff-44c7-0930-d6a9-4a3d47d90e14,Q6996487,Nermin Nikšić,Q109374382,Prime Minister of the Federation of Bosnia and Herzegovina,,2023-04-28,2023-04-28,,,open,https://www.wikidata.org/wiki/Q6996487
+Q25686675$84cf0612-46be-08c7-6488-ba52161f6990,Q25686675,Irfan Čengić,Q109374396,Zastupnik u Zastupničkom domu Parlamenta Federacije Bosne i Hercegovine,,2018-11-27,2018-11-27,2022-12-01,2022-12-01,office_end,https://www.wikidata.org/wiki/Q25686675
+Q12628155$775D47C4-D35E-474B-9BAA-115E0FD7D90A,Q12628155,Boris Vujčić,Q109467807,Governor of the Croatian National Bank,,2012-07-08,2012-07-08,,,open,https://www.wikidata.org/wiki/Q12628155
+Q61063348$66979002-4b3a-c63a-2888-ead5612f6840,Q61063348,Drago Balvanović,Q1095227,Chaplain of His Holiness,,2000-01-01,2000-12-31,2026-03-26,2026-03-26,death_upper_bound,https://www.wikidata.org/wiki/Q61063348
+Q45312548$0bddb167-41c7-a6f7-24fc-6ff50e388ec2,Q45312548,Maja Vodanovic,Q109615888,executive committee member,,2021-11-24,2021-11-24,2025-11-02,2025-11-02,office_end,https://www.wikidata.org/wiki/Q45312548
+Q12752078$06b8dd3f-45a4-8070-71ac-3f6d29a5511f,Q12752078,Zoran Tegeltija,Q109645194,Minister of Finance and Treasury,,2023-01-25,2023-01-25,2023-06-15,2023-06-15,office_end,https://www.wikidata.org/wiki/Q12752078
+Q57844$5FC1EC1F-4417-43E0-9568-A1C18C160020,Q57844,Vjekoslav Bevanda,Q109645194,Minister of Finance and Treasury,,2015-03-31,2015-03-31,2023-01-25,2023-01-25,office_end,https://www.wikidata.org/wiki/Q57844
+Q7511838$2B721224-D6CF-429E-BA09-819C0A5115BE,Q7511838,Sifet Podžić,Q109645226,Ministar odbrane Bosne i Hercegovine,,2019-12-23,2019-12-23,2023-01-25,2023-01-25,office_end,https://www.wikidata.org/wiki/Q7511838
+Q3443267$BE1BBC28-C3C0-4CEB-B423-7F4FEA7F629A,Q3443267,Selmo Cikotić,Q109645247,Minister of Security of Bosnia and Herzegovina,,2020-07-23,2020-07-23,2023-01-25,2023-01-25,office_end,https://www.wikidata.org/wiki/Q3443267
+Q22696487$3F9E5DF9-D5D4-4DA7-B5FE-D7BF5A239FB5,Q22696487,Josip Grubeša,Q109645278,Minister of Justice of Bosnia and Herzegovina,,2015-03-31,2015-03-31,2023-01-25,2023-01-25,office_end,https://www.wikidata.org/wiki/Q22696487
+Q127725018$3b904ad4-445f-d482-7992-e2ff2198abd9,Q127725018,Dubravka Bošnjak,Q109645293,Minister of Civil Affairs,,2023-01-25,2023-01-25,,,open,https://www.wikidata.org/wiki/Q127725018
+Q80903166$AB6B2C32-C93B-43FB-8064-30A3FF6FE6F6,Q80903166,Ankica Gudeljević,Q109645293,Minister of Civil Affairs,,2019-12-23,2019-12-23,2023-01-25,2023-01-25,office_end,https://www.wikidata.org/wiki/Q80903166
+Q61134042$D85DA815-0009-4114-A7E9-42501EBD080E,Q61134042,Vojin Mitrović,Q109645312,Minister of Communication and Traffic of Bosnia and Herzegovina,,2019-12-23,2019-12-23,2023-01-25,2023-01-25,office_end,https://www.wikidata.org/wiki/Q61134042
+Q109646599$B9150326-0F66-4E76-AB86-B67566F98C04,Q109646599,Miloš Lučić,Q109646596,Minister of Human Rights and Refugees of Bosnia and Herzegovina,,2020-05-15,2020-05-15,2022-12-12,2022-12-12,office_end,https://www.wikidata.org/wiki/Q109646599
+Q115792272$033b057b-454e-dd1b-9ef8-9b30da5a6b2d,Q115792272,Dževad Mahmutović,Q109646596,Minister of Human Rights and Refugees of Bosnia and Herzegovina,,2022-12-12,2022-12-12,2023-01-25,2023-01-25,office_end,https://www.wikidata.org/wiki/Q115792272
+Q12759664$0B61F134-B4FD-4954-B077-1F40C536BB93,Q12759664,Staša Košarac,Q109646608,Minister of Foreign Trade and Economic Relations (Bosnia and Herzegovina),,2019-12-23,2019-12-23,,,open,https://www.wikidata.org/wiki/Q12759664
+Q137599400$67a6b68c-4ef3-c38d-00e1-6085ede36f8f,Q137599400,Q137599400,Q109646743,Governor of the Central Bank of Bosnia and Herzegovina,,2024-01-03,2024-01-03,,,open,https://www.wikidata.org/wiki/Q137599400
+Q25431462$95A409B2-6599-4F76-BBF4-216F196A9ED4,Q25431462,Senad Softić,Q109646743,Governor of the Central Bank of Bosnia and Herzegovina,,2015-08-11,2015-08-11,2024-01-03,2024-01-03,office_end,https://www.wikidata.org/wiki/Q25431462
+Q335688$C5CA73D5-651C-42CD-8332-BD1906FB9E14,Q335688,Milorad Dodik,Q109646831,član Predsjedništva Bosne i Hercegovine iz reda srpskog naroda,,2018-11-20,2018-11-20,2022-11-16,2022-11-16,office_end,https://www.wikidata.org/wiki/Q335688
+Q5528031$A6CC0361-41D0-45E2-AE7F-3F3DDBDF7CB9,Q5528031,Željka Cvijanović,Q109646831,član Predsjedništva Bosne i Hercegovine iz reda srpskog naroda,,2022-11-16,2022-11-16,,,open,https://www.wikidata.org/wiki/Q5528031
+Q13081568$1D2725AF-BA9B-4F09-8C00-268550DA01A6,Q13081568,Denis Bećirović,Q109646833,član Predsjedništva Bosne i Hercegovine iz reda bošnjačkog naroda,,2022-11-16,2022-11-16,,,open,https://www.wikidata.org/wiki/Q13081568
+Q20525169$0D4296C9-443B-4C10-AE33-01D8CF58C913,Q20525169,Šefik Džaferović,Q109646833,član Predsjedništva Bosne i Hercegovine iz reda bošnjačkog naroda,,2018-11-20,2018-11-20,2022-11-16,2022-11-16,office_end,https://www.wikidata.org/wiki/Q20525169
+Q297825$EB151433-8B4C-454A-B12A-92BCC6D8C99D,Q297825,Željko Komšić,Q109646836,član Predsjedništva Bosne i Hercegovine iz reda hrvatskog naroda,,2018-11-20,2018-11-20,,,open,https://www.wikidata.org/wiki/Q297825
+Q47504756$5059bb97-49e4-1b78-cedd-bec0f3f45d1d,Q47504756,Draško Stanivuković,Q110270077,gradonačelnik Banje Luke,,2020-12-24,2020-12-24,,,open,https://www.wikidata.org/wiki/Q47504756
+Q110537677$cab06f6c-4cba-10f3-7b69-4eda66adfba4,Q110537677,Adriana Kremenjaš-Daničić,Q110537657,počasni konzul Francuske u Dubrovniku,,2015-01-01,2015-12-31,,,open,https://www.wikidata.org/wiki/Q110537677
+Q1990608$abff474d-4322-cc74-44c0-0ba2d072cb9b,Q1990608,Nikola Eterović,Q110546064,apostolic nuncio to Germany,,2013-09-21,2013-09-21,2026-04-09,2026-04-09,office_end,https://www.wikidata.org/wiki/Q1990608
+Q1267268$5ee1f07f-3f6e-4c72-838c-f7954c110dfa,Q1267268,Alessandro D’Errico,Q110549169,Apostolic Nuncio to Bosnia and Herzegovina,,2005-11-21,2005-11-21,,,open,https://www.wikidata.org/wiki/Q1267268
+Q1876241$29f8d22a-1a49-48d3-ae05-d9adbdda0ab5,Q1876241,Luigi Pezzuto,Q110549169,Apostolic Nuncio to Bosnia and Herzegovina,,2012-11-17,2012-11-17,2021-08-31,2021-08-31,office_end,https://www.wikidata.org/wiki/Q1876241
+Q721621$5B9E2184-2311-47E6-B4C2-67EBFF7A8050,Q721621,Francesco Monterisi,Q110549169,Apostolic Nuncio to Bosnia and Herzegovina,,1993-06-11,1993-06-11,,,open,https://www.wikidata.org/wiki/Q721621
+Q110788569$a250388b-47ac-f5cb-8dc3-4d5910af6ebf,Q110788569,Zakri Jaafar,Q110793540,Ambassador of Malaysia to Bosnia and Herzegovina,,2017-01-01,2017-12-31,2021-01-01,2021-12-31,office_end,https://www.wikidata.org/wiki/Q110788569
+Q110879417$a27fb705-49ff-9d9a-2f36-d353145c0f89,Q110879417,Uladzimir Ulakhovich,Q110880412,ambassador of Belarus to Croatia,,2022-02-10,2022-02-10,,,open,https://www.wikidata.org/wiki/Q110879417
+Q102101678$73c4ef6d-43dd-0b0f-fe5d-e0c57567f0ac,Q102101678,Elmedin Konaković,Q110951456,Member of the House of Peoples of the Federation of Bosnia and Herzegovina,,2019-07-01,2019-07-01,2022-12-01,2022-12-01,office_end,https://www.wikidata.org/wiki/Q102101678
+Q4317737$8CC2CD6E-6C75-4D48-A4A2-85E2FC9247E6,Q4317737,Andrey Nesterenko,Q110997119,Russian Ambassador to Croatia,,2020-08-21,2020-08-21,,,open,https://www.wikidata.org/wiki/Q4317737
+Q109487598$0d8cd042-4cd0-587a-8b37-35e9568b5d10,Q109487598,Igor Kalabukhov,Q111285969,ambassador of Russia to Bosnia and Herzegovina,,2020-11-06,2020-11-06,,,open,https://www.wikidata.org/wiki/Q109487598
+Q111533931$5c0aaa1b-463e-488e-8ba4-653e1a7f7f87,Q111533931,Biljana Gutić-Bjelica,Q111530213,ambassador of   Bosnia and Herzegovina to  Hungary,,2019-01-01,2019-12-31,,,open,https://www.wikidata.org/wiki/Q111533931
+Q5984702$8d646136-4566-4e55-8fa3-3e9b09571967,Q5984702,Ibrahim Rahimić,Q1130252,sporting director,,2025-07-17,2025-07-17,2026-09-10,2026-09-10,office_end,https://www.wikidata.org/wiki/Q5984702
+Q11720924$8cb293ac-4cc7-0ddb-ae85-4e2bfcaeff94,Q11720924,Jarosław Lindenberg,Q113150178,ambassador of Poland to Bosnia and Herzegovina,,2018-01-01,2018-12-31,2023-09-09,2023-09-09,office_end,https://www.wikidata.org/wiki/Q11720924
+Q9152319$38f1418d-4a97-5707-c8b3-a162784c5374,Q9152319,Andrzej Jasionowski,Q113150178,ambassador of Poland to Bosnia and Herzegovina,,2023-10-01,2023-10-31,,,open,https://www.wikidata.org/wiki/Q9152319
+Q111519096$a301d03b-45ab-624f-eea7-3aee2ccc47ee,Q111519096,Milan Zgrablić,Q114371233,coadjutor archbishop,Q1122514,2022-04-07,2022-04-07,2023-01-14,2023-01-14,office_end,https://www.wikidata.org/wiki/Q111519096
+Q1256070$e59a40de-449a-3cc5-89cf-5ee3b0e681b3,Q1256070,Dražen Kutleša,Q114371233,coadjutor archbishop,Q1261961,2023-02-14,2023-02-14,2023-04-15,2023-04-15,office_end,https://www.wikidata.org/wiki/Q1256070
+Q1256070$e59e3b16-47e8-1191-e797-3f7f2649caa1,Q1256070,Dražen Kutleša,Q114371233,coadjutor archbishop,Q1365624,2020-07-11,2020-07-11,2022-05-13,2022-05-13,office_end,https://www.wikidata.org/wiki/Q1256070
+Q335206$c3b0b8f6-48a6-a32e-1ff8-3720985a9487,Q335206,Mate Uzinić,Q114371233,coadjutor archbishop,Q1365429,2020-11-04,2020-11-04,2022-10-11,2022-10-11,office_end,https://www.wikidata.org/wiki/Q335206
+Q704937$87b493c7-4730-7225-db0c-13aadd74bcb3,Q704937,Tomo Vukšić,Q114371233,coadjutor archbishop,Q1365875,2020-01-22,2020-01-22,2022-01-29,2022-01-29,office_end,https://www.wikidata.org/wiki/Q704937
+q105754367$badbc4b3-4a01-bf9c-1d94-3ba1d1fd1f12,Q105754367,Ranko Vidović,Q1144278,dijecezanski biskup,Q869573,2021-03-04,2021-03-04,,,open,https://www.wikidata.org/wiki/Q105754367
+Q1226937$20986C26-1D2E-41EB-8C4A-16CFD8177C60,Q1226937,Dionizije Njaradi,Q1144278,dijecezanski biskup,Q225138,1920-04-22,1920-04-22,,,open,https://www.wikidata.org/wiki/Q1226937
+Q136894417$cf10d71f-44cb-d232-a23e-b4b03de0e230,Q136894417,Miro Relota,Q1144278,dijecezanski biskup,Q1587460,2025-11-21,2025-11-21,,,open,https://www.wikidata.org/wiki/Q136894417
+Q960903$D53DA237-7789-47F6-95B8-9940890608F6,Q960903,Vjekoslav Huzjak,Q1144278,dijecezanski biskup,Q867221,2009-12-05,2009-12-05,,,open,https://www.wikidata.org/wiki/Q960903
+Q128034339$86f65885-4396-ecbd-8aad-9712e071f4c2,Q128034339,Luigi Soreca,Q115751793,ambassador of the European Union to Bosnia and Herzegovina,,2024-09-01,2024-09-30,,,open,https://www.wikidata.org/wiki/Q128034339
+Q28015585$0de87cb4-48c1-4d29-9482-bdd099001abe,Q28015585,Johann Sattler,Q115751793,ambassador of the European Union to Bosnia and Herzegovina,,2019-09-01,2019-09-30,2024-01-01,2024-12-31,office_end,https://www.wikidata.org/wiki/Q28015585
+Q506570$ACF79E69-C8D2-48DF-A141-AD8D476B2C81,Q506570,Vinko Puljić,Q115766552,Roman Catholic Archbishop of Vrhbosna,Q1365875,1991-01-06,1991-01-06,2022-01-29,2022-01-29,office_end,https://www.wikidata.org/wiki/Q506570
+Q704937$3d94908f-4a1b-576d-8592-7c8812c12779,Q704937,Tomo Vukšić,Q115766552,Roman Catholic Archbishop of Vrhbosna,Q1365875,2022-01-29,2022-01-29,,,open,https://www.wikidata.org/wiki/Q704937
+q50378031$fb725736-4380-14d5-5315-e5b10b3a6696,Q50378031,Petar Palić,Q115767750,Roman Catholic Bishop of Mostar-Duvno (-Trebinje e Mrkan),Q872659,2020-07-11,2020-07-11,,,open,https://www.wikidata.org/wiki/Q50378031
+Q123701997$55939a45-477c-7d67-3102-1c6396a93a97,Q123701997,Željko Majić,Q115787804,Roman Catholic Bishop of Banja Luka,Q866994,2023-12-08,2023-12-08,,,open,https://www.wikidata.org/wiki/Q123701997
+Q1353931$F9F67F4A-CF95-4687-A464-015B5919C047,Q1353931,Franjo Komarica,Q115787804,Roman Catholic Bishop of Banja Luka,Q866994,1989-05-15,1989-05-15,2023-12-08,2023-12-08,office_end,https://www.wikidata.org/wiki/Q1353931
+Q56192032$27c7a113-44bc-9008-a5ec-409800358e8d,Q56192032,Paweł Czerwiński,Q115912641,ambassador of Poland to Croatia,,2023-08-01,2023-08-31,,,open,https://www.wikidata.org/wiki/Q56192032
+Q9152319$4e792fe3-4315-b869-7eaa-cd2a78fbeab4,Q9152319,Andrzej Jasionowski,Q115912641,ambassador of Poland to Croatia,,2018-01-01,2018-01-01,2023-08-31,2023-08-31,office_end,https://www.wikidata.org/wiki/Q9152319
+Q7930115$a584717d-454c-aee7-be80-c12f49286b9e,Q7930115,Vilayat Guliyev,Q115918651,ambassador of Azerbaijan to Bosnia and Herzegovina,,2022-05-04,2022-05-04,,,open,https://www.wikidata.org/wiki/Q7930115
+Q57887970$97A2810E-6D40-42B5-8121-1646BEAFDDE1,Q57887970,Makoto Ito,Q115920652,ambassador of Japan to Bosnia and Herzegovina,,2020-10-16,2020-10-16,2022-12-09,2022-12-09,office_end,https://www.wikidata.org/wiki/Q57887970
+Q89673379$81d72403-4aa9-a13e-9971-f470c578a8d8,Q89673379,Masami Kinefuchi,Q115920652,ambassador of Japan to Bosnia and Herzegovina,,2022-12-01,2022-12-31,,,open,https://www.wikidata.org/wiki/Q89673379
+Q99913160$37a5f1cd-41a2-7e6a-4c1a-5b02c173b173,Q99913160,Gankhuurai Battungalag,Q116172870,ambassador of Mongolia to Bosnia and Herzegovina,,2017-01-01,2017-12-31,,,open,https://www.wikidata.org/wiki/Q99913160
+Q99913160$b165fbbe-4fd2-1fa5-c1e9-878d45120aa8,Q99913160,Gankhuurai Battungalag,Q116172871,ambassador of Mongolia to Croatia,,2017-01-01,2017-12-31,,,open,https://www.wikidata.org/wiki/Q99913160
+Q110537677$50882be7-4320-7dfc-2d7e-3d7b2fb10d07,Q110537677,Adriana Kremenjaš-Daničić,Q1162163,direktor,,1995-01-01,1995-12-31,,,open,https://www.wikidata.org/wiki/Q110537677
+Q342135$96DE0BDC-1112-4CE3-9979-DA9D8B72FF8C,Q342135,Đuro Gašparović,Q117322418,Roman Catholic Bishop of Srijem,Q246117,2008-06-18,2008-06-18,2024-02-14,2024-02-14,office_end,https://www.wikidata.org/wiki/Q342135
+Q11685764$cc8446c3-4823-10cf-7744-af8934b95472,Q11685764,Andrej Plenković,Q1195270,Predsjednik Vlade Republike Hrvatske,,2016-10-19,2016-10-19,,,open,https://www.wikidata.org/wiki/Q11685764
+Q20557748$165f2ace-4280-d957-149d-524d6f156bb2,Q20557748,Dražen Hrastić,Q121219383,hrvatski veleposlanik u Japanu,,2015-01-01,2015-12-31,,,open,https://www.wikidata.org/wiki/Q20557748
+Q8075577$d70ed4f4-4ab9-1421-379e-95c51d57bced,Q8075577,Zvonimir Šeparović,Q121998,veleposlanik,,1992-01-01,1992-12-31,2022-01-30,2022-01-30,death_upper_bound,https://www.wikidata.org/wiki/Q8075577
+Q123245092$7f2a53d5-4eed-619e-cf07-cf94289148d5,Q123245092,Filip Vučak,Q123239268,Veleposlanik Republike Hrvatske u Parizu,,2017-01-01,2017-12-31,2021-01-01,2021-12-31,office_end,https://www.wikidata.org/wiki/Q123245092
+Q123245092$ca91ea2c-4270-2383-af6b-684cbb7a6097,Q123245092,Filip Vučak,Q123245237,Veleposlanik Republike Hrvatske pri Svetoj Stolici,,2011-01-01,2011-12-31,2021-01-16,2021-01-16,death_upper_bound,https://www.wikidata.org/wiki/Q123245092
+Q61063348$292bdbbb-41a8-d1ff-e4f1-b8b30d137ed4,Q61063348,Drago Balvanović,Q1237385,canon,,2019-01-01,2019-12-31,2026-03-26,2026-03-26,death_upper_bound,https://www.wikidata.org/wiki/Q61063348
+Q56398760$9dff0313-4316-cc2c-3194-5025514f6c93,Q56398760,Roem Kono,Q124454162,ambassador of Indonesia to Bosnia and Herzegovina,,2020-10-26,2020-10-26,,,open,https://www.wikidata.org/wiki/Q56398760
+Q16046752$544dff8b-41a2-377a-d736-6ebd8f040359,Q16046752,Abuzar Ebrahimi Torkaman,Q124540443,ambassador of Iran to Bosnia and Herzegovina,,2023-10-01,2023-10-31,,,open,https://www.wikidata.org/wiki/Q16046752
+Q110597536$3e5e2087-4b5a-4670-ce3c-a272f7770963,Q110597536,Jasmina Žiljak Ilinčić,Q1255921,predsjednik,,2018-01-01,2018-12-31,,,open,https://www.wikidata.org/wiki/Q110597536
+Q139902617$44e8b251-4ccf-83cf-e4dd-f7e5b7c28fc9,Q139902617,Admir Rahimić,Q1255921,predsjednik,,2024-09-16,2024-09-16,,,open,https://www.wikidata.org/wiki/Q139902617
+Q3335768$668f4060-4690-a6eb-1674-e8722e1a6b04,Q3335768,Nansi Ivanišević,Q1255921,predsjednik,,1994-01-01,1994-12-31,,,open,https://www.wikidata.org/wiki/Q3335768
+Q18645074$a9647fc0-401a-f9a8-7cbf-6db8f9349338,Q18645074,Roman Leljak,Q12638170,općinski načelnik,,2018-12-01,2018-12-31,,,open,https://www.wikidata.org/wiki/Q18645074
+Q391171$8D5AB53E-3656-438B-9128-9E7C91B039C7,Q391171,Nedeljko Čubrilović,Q12757792,Predsjednik Narodne skupštine Republike Srpske,,2014-11-24,2014-11-24,2022-11-15,2022-11-15,office_end,https://www.wikidata.org/wiki/Q391171
+Q61133942$e742b966-488a-1e53-c1cd-12dd22163e8c,Q61133942,Nenad Stevandić,Q12757792,Predsjednik Narodne skupštine Republike Srpske,,2022-11-15,2022-11-15,,,open,https://www.wikidata.org/wiki/Q61133942
+Q121748438$29e16420-4b09-54db-6951-e6593b4005aa,Q121748438,Ivan Kovač,Q128100125,Q128100125,,2023-06-29,2023-06-29,,,open,https://www.wikidata.org/wiki/Q121748438
+Q3176299$DF9CB447-A081-404B-B8DC-92558FCAFE27,Q3176299,Kolinda Grabar-Kitarović,Q128212331,member of the International Olympic Committee,,2020-01-01,2020-12-31,,,open,https://www.wikidata.org/wiki/Q3176299
+Q135068074$042ea374-429b-da3d-fd58-5f24b5ebb8e1,Q135068074,Tomislav Šuta,Q130270678,gradonačelnik Splita,,2025-06-09,2025-06-09,,,open,https://www.wikidata.org/wiki/Q135068074
+Q31763154$98cee0d7-4b96-6e29-112b-6a9276fdb06e,Q31763154,Andro Krstulović Opara,Q130270678,gradonačelnik Splita,,2017-01-01,2017-12-31,2021-01-01,2021-12-31,office_end,https://www.wikidata.org/wiki/Q31763154
+Q64861570$d1db71ab-4d38-3048-c352-078f956f98d4,Q64861570,Ivica Puljak,Q130270678,gradonačelnik Splita,,2021-06-07,2021-06-07,2025-06-09,2025-06-09,office_end,https://www.wikidata.org/wiki/Q64861570
+Q134052040$c35a1510-49f3-95e8-975b-be819f7efe1a,Q134052040,Q134052040,Q133967164,ambassador of Denmark to Croatia,,2022-09-01,2022-09-30,,,open,https://www.wikidata.org/wiki/Q134052040
+Q134052295$7fca9f7a-4abe-481e-3626-2f2d6957f578,Q134052295,Q134052295,Q133967164,ambassador of Denmark to Croatia,,2017-09-01,2017-09-30,2021-08-01,2021-08-31,office_end,https://www.wikidata.org/wiki/Q134052295
+Q134007287$4e921ebf-4dc2-3f23-9ad9-72cc00024afc,Q134007287,Q134007287,Q133967183,ambassador of Denmark to Bosnia and Herzegovina,,2024-11-01,2024-11-01,,,open,https://www.wikidata.org/wiki/Q134007287
+q48405569$13db2c21-41cf-1438-6cbb-45c56f0ba3ab,Q48405569,Sreten Radović,Q135827020,FIBA referee,,2001-01-01,2001-12-31,,,open,https://www.wikidata.org/wiki/Q48405569
+Q97256267$8d1b633b-4b7a-e0d8-734c-7f4db155dc30,Q97256267,Osman Topčagić,Q136647458,ambassador of Bosnia and Herzegovina to the United Kingdom,,2023-08-01,2023-08-31,,,open,https://www.wikidata.org/wiki/Q97256267
+Q5984702$05176554-4110-340b-7699-19fcdfa79b69,Q5984702,Ibrahim Rahimić,Q136659823,association football head coach,,2025-09-29,2025-09-29,2026-09-10,2026-09-10,office_end,https://www.wikidata.org/wiki/Q5984702
+Q48405569$0e286a1c-4007-7223-27cd-796052a603ad,Q48405569,Sreten Radović,Q136681857,EuroLeague referee,,2007-01-01,2007-12-31,,,open,https://www.wikidata.org/wiki/Q48405569
+Q1256070$0dc7f66d-40a5-b38b-f878-2d48009d9281,Q1256070,Dražen Kutleša,Q137392707,President of the Croatian Bishops' Conference,,2022-01-01,2022-12-31,,,open,https://www.wikidata.org/wiki/Q1256070
+Q350437$b4de4c31-4e46-79fc-05dd-881b286304a3,Q350437,Želimir Puljić,Q137392707,President of the Croatian Bishops' Conference,,2012-01-01,2012-12-31,2022-01-01,2022-12-31,office_end,https://www.wikidata.org/wiki/Q350437
+Q1396155$91e2ee0a-407f-b320-f819-5ca12eed6909,Q1396155,Sven Alkalaj,Q137785452,Permanent Representative of Bosnia and Herzegovina to the United Nations,,2019-07-05,2019-07-05,2023-06-30,2023-06-30,office_end,https://www.wikidata.org/wiki/Q1396155
+Q63184404$ca487ac5-418a-8d67-ca45-da926d973158,Q63184404,Gérard Denegri,Q140686,predsjedavajući,,1992-01-01,1992-12-31,,,open,https://www.wikidata.org/wiki/Q63184404
+Q95099155$B299985C-95E6-434C-AA02-6E2FD142623C,Q95099155,Siniša Milić,Q140686,predsjedavajući,,2020-12-23,2020-12-23,2024-11-29,2024-11-29,office_end,https://www.wikidata.org/wiki/Q95099155
+Q299667$48352115-40d9-df31-0e2f-c23b86969ee5,Q299667,Dubravka Šuica,Q141444286,European Commissioner for Mediterranean,,2024-12-01,2024-12-01,,,open,https://www.wikidata.org/wiki/Q299667
+Q12752078$344A73FD-49D0-4BE2-AACC-7EFA97EBDF6E,Q12752078,Zoran Tegeltija,Q16020744,Predsjedatelj Vijeća ministara Bosne i Hercegovine,,2019-12-23,2019-12-23,2023-01-25,2023-01-25,office_end,https://www.wikidata.org/wiki/Q12752078
+Q387491$4100d588-416c-0a9a-ec2e-76bcb084b81d,Q387491,Borjana Krišto,Q16020744,Predsjedatelj Vijeća ministara Bosne i Hercegovine,,2023-01-25,2023-01-25,,,open,https://www.wikidata.org/wiki/Q387491
+Q111893514$9d71c3bd-4170-a5ed-bb1f-e342f5e070b3,Q111893514,Anja Šimpraga,Q16973527,Potpredsjednik Vlade Republike Hrvatske,,2022-04-29,2022-04-29,,,open,https://www.wikidata.org/wiki/Q111893514
+Q23303210$5600B22F-E57E-42A4-82F9-05833263A125,Q23303210,Zdravko Marić,Q16973527,Potpredsjednik Vlade Republike Hrvatske,,2019-07-19,2019-07-19,2022-07-05,2022-07-05,office_end,https://www.wikidata.org/wiki/Q23303210
+Q24641177$85EF586C-CFB3-4768-A8B2-E4A52E394D8C,Q24641177,Tomo Medved,Q16973527,Potpredsjednik Vlade Republike Hrvatske,,2020-07-23,2020-07-23,,,open,https://www.wikidata.org/wiki/Q24641177
+Q2619574$5614968F-AECC-4465-908C-45BFBD1BF6AE,Q2619574,Davor Božinović,Q16973527,Potpredsjednik Vlade Republike Hrvatske,,2019-07-19,2019-07-19,,,open,https://www.wikidata.org/wiki/Q2619574
+Q26248569$23b6de51-4876-4aba-3352-c834f307555c,Q26248569,Oleg Butković,Q16973527,Potpredsjednik Vlade Republike Hrvatske,,2022-07-15,2022-07-15,,,open,https://www.wikidata.org/wiki/Q26248569
+Q97671314$d0e95c68-476a-9de0-8a1b-0cb157f30594,Q97671314,Boris Milošević (političar),Q16973527,Potpredsjednik Vlade Republike Hrvatske,,2020-07-23,2020-07-23,2022-04-29,2022-04-29,office_end,https://www.wikidata.org/wiki/Q97671314
+Q105588566$41EBEC7B-7826-4E56-BCA7-394EE805E838,Q105588566,Esed Kadrić,Q17003837,Spisak gradonačelnika Brčko Distrikta,,2020-12-23,2020-12-23,2023-03-15,2023-03-15,office_end,https://www.wikidata.org/wiki/Q105588566
+Q95099155$f2f92aec-4270-f040-5bad-e413668f676c,Q95099155,Siniša Milić,Q17003837,Spisak gradonačelnika Brčko Distrikta,,2024-11-29,2024-11-29,,,open,https://www.wikidata.org/wiki/Q95099155
+Q16116138$73e0e5b3-4aa7-5f06-5084-ace887857cee,Q16116138,Robert Hranj,Q1704651,Načelnik Glavnog stožera Oružanih snaga Republike Hrvatske,,2020-03-01,2020-03-01,,,open,https://www.wikidata.org/wiki/Q16116138
+Q42162193$381e9c8d-47ce-2ee1-744f-826d8f9a3f5e,Q42162193,Alma Zadić,Q1714331,Federal Minister of Justice,,2020-01-07,2020-01-07,2025-03-03,2025-03-03,office_end,https://www.wikidata.org/wiki/Q42162193
+Q137170017$fdac21ed-4ed3-32bd-2fdb-3389852708ed,Q137170017,Radovan Kovačević,Q17221,glasnogovornik,,2018-02-23,2018-02-23,,,open,https://www.wikidata.org/wiki/Q137170017
+Q42162193$1A385A3D-C1BB-4AC9-A3FE-992A315BD4F8,Q42162193,Alma Zadić,Q17535155,member of the National Council of Austria,,2024-10-24,2024-10-24,,,open,https://www.wikidata.org/wiki/Q42162193
+Q72072625$84a19b2f-49da-4476-267e-d01b7c9ff0cf,Q72072625,Bedrana Ribo,Q17535155,member of the National Council of Austria,,2019-10-23,2019-10-23,,,open,https://www.wikidata.org/wiki/Q72072625
+Q107618439$0553bb65-4bcd-4d98-f375-237670622bcb,Q107618439,Michael J. Murphy,Q1837641,United States Ambassador to Bosnia and Herzegovina,,2021-12-18,2021-12-18,,,open,https://www.wikidata.org/wiki/Q107618439
+Q11215968$80c93b05-474f-04d5-ca52-505d5808c2ea,Q11215968,Urša Raukar,Q18643511,zastupnik u Hrvatskom saboru,,2021-06-18,2021-06-18,,,open,https://www.wikidata.org/wiki/Q11215968
+Q113453282$95C35342-87B8-4732-812D-9E40E429BCB0,Q113453282,Daniel Spajić,Q18643511,zastupnik u Hrvatskom saboru,,2020-07-22,2020-07-22,2023-12-06,2023-12-06,office_end,https://www.wikidata.org/wiki/Q113453282
+Q113453290$75AC1539-0D5E-4B2E-B6B7-6732E4944619,Q113453290,Hrvoje Šimić,Q18643511,zastupnik u Hrvatskom saboru,,2020-07-22,2020-07-22,2023-09-20,2023-09-20,office_end,https://www.wikidata.org/wiki/Q113453290
+Q113453303$EF104F3B-DAA1-43EB-B32C-E2CB60350ED0,Q113453303,Ljubomir Kolarek,Q18643511,zastupnik u Hrvatskom saboru,,2020-07-22,2020-07-22,2022-09-23,2022-09-23,office_end,https://www.wikidata.org/wiki/Q113453303
+Q113453319$413D87EC-F2EF-43C7-B7FD-98A035B0407B,Q113453319,Nadica Dreven Budinski,Q18643511,zastupnik u Hrvatskom saboru,,2021-06-18,2021-06-18,2023-06-07,2023-06-07,office_end,https://www.wikidata.org/wiki/Q113453319
+Q114315979$aa91b6d2-450c-56c9-e89c-dea3d5d02cbd,Q114315979,Dražen Srpak,Q18643511,zastupnik u Hrvatskom saboru,,2022-09-23,2022-09-23,,,open,https://www.wikidata.org/wiki/Q114315979
+Q114316004$8ebe43c5-42e6-4003-df77-2c96dd7df000,Q114316004,Jelena Miloš,Q18643511,zastupnik u Hrvatskom saboru,,2022-09-23,2022-09-23,,,open,https://www.wikidata.org/wiki/Q114316004
+Q11685764$078c2984-4dcc-b9c4-c3b0-57e78f172eed,Q11685764,Andrej Plenković,Q18643511,zastupnik u Hrvatskom saboru,,2016-01-01,2016-12-31,,,open,https://www.wikidata.org/wiki/Q11685764
+Q12644663$7D3C0CBC-4559-4FE2-98B9-4FE42A30F02F,Q12644663,Vili Matula,Q18643511,zastupnik u Hrvatskom saboru,,2020-07-22,2020-07-22,2022-09-15,2022-09-15,office_end,https://www.wikidata.org/wiki/Q12644663
+Q16111501$5028a340-4c4a-5ac0-0230-c5a1941116de,Q16111501,Anka Mrak Taritaš,Q18643511,zastupnik u Hrvatskom saboru,,2016-10-14,2016-10-14,,,open,https://www.wikidata.org/wiki/Q16111501
+Q23659045$FEB05970-2AA3-4807-AC95-4EC1536E5861,Q23659045,Vlaho Orepić,Q18643511,zastupnik u Hrvatskom saboru,,2017-05-10,2017-05-10,,,open,https://www.wikidata.org/wiki/Q23659045
+Q2590916$06b06aab-4dd5-5a99-6e77-580e9243cab0,Q2590916,Milorad Pupovac,Q18643511,zastupnik u Hrvatskom saboru,,2011-01-01,2011-12-31,,,open,https://www.wikidata.org/wiki/Q2590916
+Q31763154$20db739b-42a2-3da1-7229-4938b3684de5,Q31763154,Andro Krstulović Opara,Q18643511,zastupnik u Hrvatskom saboru,,2024-05-16,2024-05-16,,,open,https://www.wikidata.org/wiki/Q31763154
+Q31763154$A801AEE8-EFB1-483A-B12A-71DF2C0A70C2,Q31763154,Andro Krstulović Opara,Q18643511,zastupnik u Hrvatskom saboru,,2020-07-22,2020-07-22,2024-05-16,2024-05-16,office_end,https://www.wikidata.org/wiki/Q31763154
+Q43677228$D12E6809-4639-41A9-B4DB-6967BF9D558A,Q43677228,Robert Jankovics,Q18643511,zastupnik u Hrvatskom saboru,,2016-01-01,2016-12-31,,,open,https://www.wikidata.org/wiki/Q43677228
+Q5242086$3d000d5b-44db-6038-9741-487d227d46f2,Q5242086,Davor Bernardić,Q18643511,zastupnik u Hrvatskom saboru,,2021-10-08,2021-10-08,,,open,https://www.wikidata.org/wiki/Q5242086
+Q5242086$bb1f23fe-41ac-315b-3547-e8e115b1be2c,Q5242086,Davor Bernardić,Q18643511,zastupnik u Hrvatskom saboru,,2020-07-22,2020-07-22,2021-10-07,2021-10-07,office_end,https://www.wikidata.org/wiki/Q5242086
+Q62990563$004469E2-CCCF-483C-BE7D-1EFEE2DCA0FF,Q62990563,Romana Jerković,Q18643511,zastupnik u Hrvatskom saboru,,2016-10-14,2016-10-14,,,open,https://www.wikidata.org/wiki/Q62990563
+Q96250350$E9B214E9-0046-457B-AA4B-3E17F47801FB,Q96250350,Tomislav Tomašević,Q18643511,zastupnik u Hrvatskom saboru,,2020-07-22,2020-07-22,2021-06-18,2021-06-18,office_end,https://www.wikidata.org/wiki/Q96250350
+Q131412543$f1b3f086-45c0-3d89-f773-94d0d1a7f736,Q131412543,Irena Andrassy,Q19356884,permanent representative,,2019-09-01,2019-09-30,,,open,https://www.wikidata.org/wiki/Q131412543
+Q1396155$c7435f24-41a0-332a-43d0-04915a849228,Q1396155,Sven Alkalaj,Q19359052,ambassador to the United States of America,,2023-06-30,2023-06-30,,,open,https://www.wikidata.org/wiki/Q1396155
+Q96814$1B1CEF29-5ABA-4D8F-BB61-C971EAC1D011,Q96814,Josip Juratović,Q1939555,member of the German Bundestag,,2021-10-26,2021-10-26,,,open,https://www.wikidata.org/wiki/Q96814
+Q96814$B0B83607-66F5-4806-B1F6-03BEB34A25FF,Q96814,Josip Juratović,Q1939555,member of the German Bundestag,,2017-10-24,2017-10-24,2021-10-26,2021-10-26,office_end,https://www.wikidata.org/wiki/Q96814
+q450675$5EAE7402-3FD0-4F19-8BD5-0870FFB94B43,Q450675,Franjo,Q19546,papa,,2013-03-13,2013-03-13,2025-04-21,2025-04-21,office_end,https://www.wikidata.org/wiki/Q450675
+Q6109517$2ee94b25-42c9-f865-8e15-ff7acf7b0d6e,Q6109517,Lav XIV.,Q19546,papa,,2025-05-08,2025-05-08,,,open,https://www.wikidata.org/wiki/Q6109517
+Q1256070$15781583-4b62-faaf-002c-b96cb2bd692e,Q1256070,Dražen Kutleša,Q1993358,apostolski administrator,Q874395,2020-07-11,2020-07-11,2023-03-18,2023-03-18,office_end,https://www.wikidata.org/wiki/Q1256070
+Q350437$61966ec9-4dd6-8772-bd7e-3f30eb2a01fe,Q350437,Želimir Puljić,Q1993358,apostolski administrator,Q1365624,2023-02-14,2023-02-14,,,open,https://www.wikidata.org/wiki/Q350437
+Q704937$f8c4572a-47a4-87a1-69b3-3095a3a91583,Q704937,Tomo Vukšić,Q1993358,apostolski administrator,Q1587460,2020-01-24,2020-01-24,,,open,https://www.wikidata.org/wiki/Q704937
+Q365529$F5F688FD-629B-4710-8B2D-794ABD24E00C,Q365529,Josip Bozanić,Q2033341,cardinal priest,,2003-10-21,2003-10-21,,,open,https://www.wikidata.org/wiki/Q365529
+Q506570$24BF95E8-1691-43E8-B64F-F7E677E1F55B,Q506570,Vinko Puljić,Q2033341,cardinal priest,,1994-11-26,1994-11-26,,,open,https://www.wikidata.org/wiki/Q506570
+Q112961494$906fa3be-4054-d8a5-0f5d-15da8e6853c6,Q112961494,Marko Primorac,Q20675343,Ministar Financija,,2022-07-15,2022-07-15,,,open,https://www.wikidata.org/wiki/Q112961494
+Q23303210$6B5C8C90-89C4-4E82-BFB3-465877BE447C,Q23303210,Zdravko Marić,Q20675343,Ministar Financija,,2016-01-22,2016-01-22,2022-07-05,2022-07-05,office_end,https://www.wikidata.org/wiki/Q23303210
+Q68595998$80a96b77-451f-3fa5-58bb-a78322ee16f3,Q68595998,Pamela Habibović,Q20963610,rector magnificus of Maastricht University,,2022-02-01,2022-02-01,,,open,https://www.wikidata.org/wiki/Q68595998
+Q17440685$009270a8-423b-2136-d55e-378f5ee83823,Q17440685,Damir Boras,Q212071,rektor,,2014-01-01,2014-12-31,,,open,https://www.wikidata.org/wiki/Q17440685
+Q310136$669A2A7B-B278-4128-8AD6-15061765D869,Q310136,Nebojša Radmanović,Q21290855,Zastupnik u Zastupničkom domu Parlamentarne skupštine Bosne i Hercegovine,,2018-12-06,2018-12-06,,,open,https://www.wikidata.org/wiki/Q310136
+Q387491$0DBB99D5-9513-470A-8E05-F58A04362FDE,Q387491,Borjana Krišto,Q21290855,Zastupnik u Zastupničkom domu Parlamentarne skupštine Bosne i Hercegovine,,2014-12-09,2014-12-09,2022-12-01,2022-12-01,office_end,https://www.wikidata.org/wiki/Q387491
+Q65499539$d365258b-46a3-5b23-4616-90561f3a882e,Q65499539,Darko Babalj,Q21290855,Zastupnik u Zastupničkom domu Parlamentarne skupštine Bosne i Hercegovine,,2022-12-01,2022-12-01,,,open,https://www.wikidata.org/wiki/Q65499539
+Q6996487$0D14D2FB-B261-455C-9F3C-8DAB897D19FB,Q6996487,Nermin Nikšić,Q21290855,Zastupnik u Zastupničkom domu Parlamentarne skupštine Bosne i Hercegovine,,2018-11-20,2018-11-20,2022-12-01,2022-12-01,office_end,https://www.wikidata.org/wiki/Q6996487
+Q120489796$1ee73821-4a90-ac6c-cab4-5eddfd132fd4,Q120489796,Kemal Ademović,Q21328613,Delegat u Domu naroda Parlamentarne skupštine Bosne i Hercegovine,,2023-02-16,2023-02-16,,,open,https://www.wikidata.org/wiki/Q120489796
+Q140249118$7ead51c1-4e97-82f9-b0aa-9ec98849991d,Q140249118,Ilija Cvitanović,Q21328613,Delegat u Domu naroda Parlamentarne skupštine Bosne i Hercegovine,,2023-02-16,2023-02-16,,,open,https://www.wikidata.org/wiki/Q140249118
+Q22671805$33409EF9-80D5-4924-ACF1-C49AE5F6D4BB,Q22671805,Marina Pendeš,Q21328613,Delegat u Domu naroda Parlamentarne skupštine Bosne i Hercegovine,,2019-12-23,2019-12-23,,,open,https://www.wikidata.org/wiki/Q22671805
+Q311882$86895661-05CA-4807-B85D-81CAD2F61518,Q311882,Nikola Špirić,Q21328613,Delegat u Domu naroda Parlamentarne skupštine Bosne i Hercegovine,,2019-02-25,2019-02-25,,,open,https://www.wikidata.org/wiki/Q311882
+Q31200021$8005cff7-4d42-f1e2-db72-8797505fbe93,Q31200021,Zdenko Ćosić,Q21328613,Delegat u Domu naroda Parlamentarne skupštine Bosne i Hercegovine,,2023-02-16,2023-02-16,,,open,https://www.wikidata.org/wiki/Q31200021
+Q312355$8505C649-E818-4608-ACC4-2049D44606CA,Q312355,Bakir Izetbegović,Q21328613,Delegat u Domu naroda Parlamentarne skupštine Bosne i Hercegovine,,2019-02-25,2019-02-25,2023-02-16,2023-02-16,office_end,https://www.wikidata.org/wiki/Q312355
+Q559756$90DD4A2E-E7FC-4089-B81F-2AC967DEADAE,Q559756,Dragan Čović,Q21328613,Delegat u Domu naroda Parlamentarne skupštine Bosne i Hercegovine,,2019-02-28,2019-02-28,,,open,https://www.wikidata.org/wiki/Q559756
+Q46511044$1DBAD56C-07DF-458D-BCF0-2A802D05947E,Q46511044,Gordan Grlić Radman,Q22979107,Minister of Foreign and European Affairs,,2019-07-22,2019-07-22,,,open,https://www.wikidata.org/wiki/Q46511044
+Q61409788$E33EDFC1-1103-4177-A508-C88EB81F6D40,Q61409788,Ante Jozić,Q24199504,apostolic nuncio to Belarus,,2020-05-21,2020-05-21,2024-06-28,2024-06-28,office_end,https://www.wikidata.org/wiki/Q61409788
+Q1267268$5b99a77d-d1ee-4cc8-85ee-1c3d1c138549,Q1267268,Alessandro D’Errico,Q24975625,apostolski nuncij u Hrvatskoj,,2012-05-21,2012-05-21,,,open,https://www.wikidata.org/wiki/Q1267268
+Q1354880$eb63ffe5-427d-b79f-221b-b638b726535b,Q1354880,Leopoldo Girelli,Q24975625,apostolski nuncij u Hrvatskoj,,2026-03-13,2026-03-13,,,open,https://www.wikidata.org/wiki/Q1354880
+Q1441845$55b19918-4d6c-47d7-b5ab-76c809cb405c,Q1441845,Francisco-Javier Lozano Sebastián,Q24975625,apostolski nuncij u Hrvatskoj,,2003-08-04,2003-08-04,,,open,https://www.wikidata.org/wiki/Q1441845
+Q966014$df055aec-41b8-8e2d-72a9-ab41a4585f32,Q966014,Giorgio Lingua,Q24975625,apostolski nuncij u Hrvatskoj,,2019-07-22,2019-07-22,2026-01-22,2026-01-22,office_end,https://www.wikidata.org/wiki/Q966014
+Q1397858$B495BE8C-C0AE-4F74-A1DF-1DEADEB26634,Q1397858,Barbara Visser,Q26197286,Minister of Infrastructure and Environment,,2021-08-31,2021-08-31,2022-01-10,2022-01-10,office_end,https://www.wikidata.org/wiki/Q1397858
+Q70843391$d624ebd3-44af-37e1-30e6-df5063da5494,Q70843391,Thomas Fitschen,Q26205388,ambassador of Germany to Bosnia and Herzegovina,,2022-10-10,2022-10-10,,,open,https://www.wikidata.org/wiki/Q70843391
+Q74385982$9cea15b6-4243-c14f-af8c-d507e0377b37,Q74385982,Margret Uebber,Q26205388,ambassador of Germany to Bosnia and Herzegovina,,2019-08-02,2019-08-02,2022-01-01,2022-12-31,office_end,https://www.wikidata.org/wiki/Q74385982
+Q84318950$34e1d026-4ae1-f20b-096f-48ebf3e58014,Q84318950,Alfred Grannas,Q26205388,ambassador of Germany to Bosnia and Herzegovina,,2025-08-26,2025-08-26,,,open,https://www.wikidata.org/wiki/Q84318950
+Q47655898$b63170dc-45c9-98f5-d367-85e06323d1d5,Q47655898,François Delmas,Q26252472,ambassador of France to Bosnia and Herzegovina,,2023-08-01,2023-08-01,,,open,https://www.wikidata.org/wiki/Q47655898
+Q50693391$6a41bd62-462c-6348-911d-c4f861d49eca,Q50693391,Christine Toudic,Q26252472,ambassador of France to Bosnia and Herzegovina,,2020-09-21,2020-09-21,2023-08-01,2023-08-01,office_end,https://www.wikidata.org/wiki/Q50693391
+Q57687$80c873fe-47cb-e3f5-b0c3-7d9d0ba3c334,Q57687,Zoran Milanović,Q268984,Predsjednik Republike Hrvatske,,2020-02-19,2020-02-19,,,open,https://www.wikidata.org/wiki/Q57687
+Q11074254$2b662210-21e5-4764-a333-3ed6abacb8cf,Q11074254,Biljana Borzan,Q27169,član Europskog parlamenta,,2019-07-02,2019-07-02,2024-07-15,2024-07-15,office_end,https://www.wikidata.org/wiki/Q11074254
+Q11074254$753e5ccf-4d2a-1b8b-3ded-00e944447e85,Q11074254,Biljana Borzan,Q27169,član Europskog parlamenta,,2024-07-16,2024-07-16,,,open,https://www.wikidata.org/wiki/Q11074254
+Q113453333$46C1E501-CDCC-4960-AB54-E7A02207062A,Q113453333,Stephen Nikola Bartulica,Q27169,član Europskog parlamenta,,2024-07-16,2024-07-16,,,open,https://www.wikidata.org/wiki/Q113453333
+Q1260118$71CC2584-B78B-4C0C-B09B-999D2F94DDEB,Q1260118,Ruža Tomašić,Q27169,član Europskog parlamenta,,2019-07-02,2019-07-02,2021-06-30,2021-06-30,office_end,https://www.wikidata.org/wiki/Q1260118
+Q126487364$DEF223FC-0916-4AAB-ADD1-1088DA5794D1,Q126487364,Gordan Bosanac,Q27169,član Europskog parlamenta,,2024-07-16,2024-07-16,,,open,https://www.wikidata.org/wiki/Q126487364
+Q12956737$02c7eea9-4450-f685-9b7e-2269adcdc028,Q12956737,Davor Stier,Q27169,član Europskog parlamenta,,2024-07-16,2024-07-16,,,open,https://www.wikidata.org/wiki/Q12956737
+Q16113442$84de718c-68c1-4de2-990c-a1b54d9538b8,Q16113442,Sunčana Glavak,Q27169,član Europskog parlamenta,,2024-07-16,2024-07-16,,,open,https://www.wikidata.org/wiki/Q16113442
+Q16113442$d5840e4c-46a4-c062-ea65-1629946fffad,Q16113442,Sunčana Glavak,Q27169,član Europskog parlamenta,,2019-12-01,2019-12-01,2024-07-15,2024-07-15,office_end,https://www.wikidata.org/wiki/Q16113442
+Q18668688$9AB383E1-8438-4650-9363-803DABEFD977,Q18668688,Ivan Vilibor Sinčić,Q27169,član Europskog parlamenta,,2019-07-02,2019-07-02,2024-07-15,2024-07-15,office_end,https://www.wikidata.org/wiki/Q18668688
+Q19973739$40d8fea7-f846-475d-b1e5-a25d81920958,Q19973739,Predrag Matić,Q27169,član Europskog parlamenta,,2024-07-16,2024-07-16,2024-08-23,2024-08-23,office_end,https://www.wikidata.org/wiki/Q19973739
+Q19973739$61C02685-8E35-4708-8E10-AB35C21BB1B7,Q19973739,Predrag Matić,Q27169,član Europskog parlamenta,,2019-07-02,2019-07-02,2024-07-15,2024-07-15,office_end,https://www.wikidata.org/wiki/Q19973739
+Q20525324$783dfc07-4634-54cf-89dd-5d7edb4e839f,Q20525324,Valter Flego,Q27169,član Europskog parlamenta,,2019-07-02,2019-07-02,2024-07-15,2024-07-15,office_end,https://www.wikidata.org/wiki/Q20525324
+Q20525869$127e23a1-4a38-c6f0-eae3-ccce1145df6c,Q20525869,Ladislav Ilčić,Q27169,član Europskog parlamenta,,2021-07-01,2021-07-01,2024-07-15,2024-07-15,office_end,https://www.wikidata.org/wiki/Q20525869
+Q2617559$2b57840c-444e-eb3a-f370-fd839a672a12,Q2617559,Tonino Picula,Q27169,član Europskog parlamenta,,2024-07-16,2024-07-16,,,open,https://www.wikidata.org/wiki/Q2617559
+Q2617559$9C721307-7FC6-4C04-9980-98C24BEF71A2,Q2617559,Tonino Picula,Q27169,član Europskog parlamenta,,2019-07-02,2019-07-02,,,open,https://www.wikidata.org/wiki/Q2617559
+Q27666246$4EB98BA8-23E8-4E64-A118-450698709EA4,Q27666246,Željana Zovko,Q27169,član Europskog parlamenta,,2019-07-02,2019-07-02,,,open,https://www.wikidata.org/wiki/Q27666246
+Q27666246$50B840B6-2A9B-4FB9-9DA6-04AB9F47414F,Q27666246,Željana Zovko,Q27169,član Europskog parlamenta,,2016-10-24,2016-10-24,,,open,https://www.wikidata.org/wiki/Q27666246
+Q27666246$ea1d7b4e-7cd8-4c63-8626-0382815d3972,Q27666246,Željana Zovko,Q27169,član Europskog parlamenta,,2024-07-16,2024-07-16,,,open,https://www.wikidata.org/wiki/Q27666246
+Q43677404$42c1cd48-826c-4464-a579-bf493f9a8840,Q43677404,Tomislav Sokol,Q27169,član Europskog parlamenta,,2024-07-16,2024-07-16,,,open,https://www.wikidata.org/wiki/Q43677404
+Q43677404$655FDA23-9FC4-422D-BA38-94AC8F53D198,Q43677404,Tomislav Sokol,Q27169,član Europskog parlamenta,,2019-07-02,2019-07-02,,,open,https://www.wikidata.org/wiki/Q43677404
+Q43677472$042680ea-4a54-0fe5-c0f4-f3aac3a3cdd8,Q43677472,Marko Vešligaj,Q27169,član Europskog parlamenta,,2024-09-05,2024-09-05,,,open,https://www.wikidata.org/wiki/Q43677472
+Q61062718$883da309-c680-4735-aa95-eb606a53938a,Q61062718,Mislav Kolakušić,Q27169,član Europskog parlamenta,,2019-07-02,2019-07-02,2024-07-15,2024-07-15,office_end,https://www.wikidata.org/wiki/Q61062718
+Q62990563$3c4fc33e-427a-6500-0279-a28b4d2de162,Q62990563,Romana Jerković,Q27169,član Europskog parlamenta,,2020-02-01,2020-02-01,,,open,https://www.wikidata.org/wiki/Q62990563
+Q62990563$9aad48c5-6bd4-480a-ad9c-c142fccd0989,Q62990563,Romana Jerković,Q27169,član Europskog parlamenta,,2024-07-16,2024-07-16,,,open,https://www.wikidata.org/wiki/Q62990563
+Q63348832$83121d6c-e296-4942-8aa7-e4b69b983ea4,Q63348832,Karlo Ressler,Q27169,član Europskog parlamenta,,2024-07-16,2024-07-16,,,open,https://www.wikidata.org/wiki/Q63348832
+Q63348832$DEA96DC1-286F-464D-BE5F-98FEFCE9C5A1,Q63348832,Karlo Ressler,Q27169,član Europskog parlamenta,,2019-07-02,2019-07-02,,,open,https://www.wikidata.org/wiki/Q63348832
+Q83985420$2CA0762B-47CA-4ABB-B99C-FB77852A9D08,Q83985420,Nikolina Brnjac,Q27169,član Europskog parlamenta,,2024-07-16,2024-07-16,,,open,https://www.wikidata.org/wiki/Q83985420
+Q137170017$2a0399c7-4808-0bfb-7d3f-b2bc0fa7e9ff,Q137170017,Radovan Kovačević,Q2718547,Dom naroda Parlamentarne skupštine Bosne i Hercegovine,,2023-02-16,2023-02-16,,,open,https://www.wikidata.org/wiki/Q137170017
+Q1397858$b51d7248-41f9-47a9-1db5-4c3e3ad210f4,Q1397858,Barbara Visser,Q28539191,Dutch Secretary of State for Defense,,2017-10-26,2017-10-26,2021-08-31,2021-08-31,office_end,https://www.wikidata.org/wiki/Q1397858
+Q61409788$7d6cc69b-4105-0169-fcb0-95fa9918d139,Q61409788,Ante Jozić,Q28664291,apostolic nuncio to Georgia,,2024-06-28,2024-06-28,,,open,https://www.wikidata.org/wiki/Q61409788
+Q61409788$5ac7fd33-4a2d-0faa-b42a-5b77982841d5,Q61409788,Ante Jozić,Q28664292,Apostolic Nunco to Armenia,,2024-06-28,2024-06-28,,,open,https://www.wikidata.org/wiki/Q61409788
+Q102101678$65b6363b-4b38-230d-47e3-52bc822abeeb,Q102101678,Elmedin Konaković,Q28866410,Minister of Foreign Affairs,,2023-01-25,2023-01-25,,,open,https://www.wikidata.org/wiki/Q102101678
+Q4917286$4BA34A67-A2DB-42EF-95D7-BBE1DF7831C7,Q4917286,Bisera Turković,Q28866410,Minister of Foreign Affairs,,2019-12-23,2019-12-23,2023-01-25,2023-01-25,office_end,https://www.wikidata.org/wiki/Q4917286
+Q86458127$CDB78BC7-2420-43E4-AB33-3E20ACC163E6,Q86458127,Vili Beroš,Q29017739,Ministar zdravstva,,2020-01-31,2020-01-31,,,open,https://www.wikidata.org/wiki/Q86458127
+Q92368446$212fc100-4d27-5beb-5bf6-e990d8f766b9,Q92368446,Irena Hrstić,Q29017739,Ministar zdravstva,,2024-05-17,2024-05-17,,,open,https://www.wikidata.org/wiki/Q92368446
+Q30111243$636399c2-4cdc-7aa6-c614-a241bb427121,Q30111243,Marija Pejčinović Burić,Q2942251,Secretary General of the Council of Europe,,2019-09-18,2019-09-18,2024-09-18,2024-09-18,office_end,https://www.wikidata.org/wiki/Q30111243
+Q33217580$3af76168-40fb-6642-402b-638ca3e91f19,Q33217580,Fabien Fieschi,Q29897329,veleposlanik Francuske u Hrvatskoj,,2023-08-20,2023-08-20,,,open,https://www.wikidata.org/wiki/Q33217580
+Q82652308$fe711415-4efb-a882-4b97-2b380b32eaae,Q82652308,Gaël Veyssière,Q29897329,veleposlanik Francuske u Hrvatskoj,,2019-01-01,2019-12-31,2023-07-01,2023-07-31,office_end,https://www.wikidata.org/wiki/Q82652308
+Q12640934$8E2FD62D-7D94-428D-8FE0-BD9ED7DA3FCD,Q12640934,Radovan Fuchs,Q30140238,Minister of Science and Education,,2020-07-23,2020-07-23,,,open,https://www.wikidata.org/wiki/Q12640934
+Q113453318$511f7492-48ec-aa55-656f-bc2918cbe0a2,Q113453318,Mišel Jakšić,Q30185,gradonačelnik,,2016-06-01,2016-06-01,,,open,https://www.wikidata.org/wiki/Q113453318
+Q134775579$4ef55b4c-48b4-b0aa-517f-82d71bba5bb2,Q134775579,Suzana Jašić,Q30185,gradonačelnik,,2021-01-01,2021-12-31,,,open,https://www.wikidata.org/wiki/Q134775579
+Q65028744$FE27F317-D76D-4B2B-9E12-46820F49CCCD,Q65028744,Fuad Kasumović,Q30185,gradonačelnik,,2016-10-01,2016-10-01,,,open,https://www.wikidata.org/wiki/Q65028744
+Q63184442$f76eb575-4089-c399-e533-f905f0b0986b,Q63184442,Daniel Denegri,Q3029430,Director of Research at CNRS,,1982-01-01,1982-12-31,,,open,https://www.wikidata.org/wiki/Q63184442
+Q65704442$FA3A3BE1-F41C-4743-BB3F-476AD7A3C769,Q65704442,Ivan Malenica,Q30344682,Minister of Justice,,2020-07-24,2020-07-24,,,open,https://www.wikidata.org/wiki/Q65704442
+Q3335768$da7333ff-4d22-0f31-2bc0-ddd762bdfe8d,Q3335768,Nansi Ivanišević,Q30461,Predsjednik,,2003-01-01,2003-12-31,,,open,https://www.wikidata.org/wiki/Q3335768
+Q118931698$e8c660f5-4988-d97f-0ea3-9ed3732565b4,Q118931698,Sara Žerić,Q3151032,inženjer istraživanja,,2022-01-01,2022-12-31,,,open,https://www.wikidata.org/wiki/Q118931698
+Q134514570$6c6e7a43-4212-ed57-a8c9-6da7f95c7245,Q134514570,Ivan Balabanić,Q3151032,inženjer istraživanja,,2024-04-01,2024-04-01,,,open,https://www.wikidata.org/wiki/Q134514570
+Q6764419$586D42F0-C454-4EE7-A3D7-C6D29F1EEE9E,Q6764419,Marinko Čavara,Q3273002,Predsjednik Federacije Bosne i Hercegovine,,2015-02-09,2015-02-09,2023-02-28,2023-02-28,office_end,https://www.wikidata.org/wiki/Q6764419
+Q1337804$85B6CE8F-22F9-4192-B2F0-C39177C457AC,Q1337804,Gordan Jandroković,Q3357859,Predsjednik Hrvatskog sabora,,2017-05-05,2017-05-05,,,open,https://www.wikidata.org/wiki/Q1337804
+Q121623851$499e4344-42b8-43ce-6593-1edf29661d11,Q121623851,Ramo Isak,Q3500488,Federalno ministarstvo unutarnjih poslova,,2023-04-28,2023-04-28,,,open,https://www.wikidata.org/wiki/Q121623851
+Q65922962$BAB3B616-8DDF-4594-84D9-A9C0C88E15E6,Q65922962,Mario Banožić,Q47449525,Minister of Defence,,2020-07-23,2020-07-23,2023-11-11,2023-11-11,office_end,https://www.wikidata.org/wiki/Q65922962
+Q45312548$9dacbc8c-4779-1f10-1f54-f896e0f7293b,Q45312548,Maja Vodanovic,Q47450833,Borough Mayor (Montreal),,2017-01-01,2017-12-31,2025-11-02,2025-11-02,office_end,https://www.wikidata.org/wiki/Q45312548
+Q12756416$f5862dcb-455d-af65-4534-8702417e706f,Q12756416,Obren Petrović,Q47501825,Gradonačelnik Doboja,,2016-01-01,2016-12-31,,,open,https://www.wikidata.org/wiki/Q12756416
+Q65200669$17e2fb78-437d-7c1b-9a44-4105efe27f85,Q65200669,Boris Jerinić,Q47501825,Gradonačelnik Doboja,,2019-02-17,2019-02-17,,,open,https://www.wikidata.org/wiki/Q65200669
+Q117468252$09d94f91-4d9e-0509-f242-b422a0fdaa15,Q117468252,Masato Iso,Q48294129,japanski veleposlanik u Hrvatskoj,,2022-01-01,2022-12-31,2024-01-01,2024-12-31,office_end,https://www.wikidata.org/wiki/Q117468252
+Q47582762$4ad5f54d-4348-6027-d42e-843d4f07980b,Q47582762,Misako Kaji,Q48294129,japanski veleposlanik u Hrvatskoj,,2019-01-01,2019-12-31,2022-01-01,2022-12-31,office_end,https://www.wikidata.org/wiki/Q47582762
+Q88729666$904661b9-4aac-b8d3-dd60-8d14af7910c8,Q88729666,Mitsuhiro Wada,Q48294129,japanski veleposlanik u Hrvatskoj,,2024-01-01,2024-12-31,,,open,https://www.wikidata.org/wiki/Q88729666
+Q139902617$42e1e59a-405c-c612-9400-fd1ba792df45,Q139902617,Admir Rahimić,Q484876,glavni izvršni direktor,,2017-12-11,2017-12-11,,,open,https://www.wikidata.org/wiki/Q139902617
+Q111696255$24d55b56-4339-c1f6-b6b1-49243128e41f,Q111696255,John Joseph Kennedy,Q50362553,titular archbishop,Q332861,2024-07-29,2024-07-29,,,open,https://www.wikidata.org/wiki/Q111696255
+Q1594942$399DE4A4-7909-49CB-B01A-C47172054705,Q1594942,Ivan Jurkovič,Q50362553,titular archbishop,Q1091479,2001-07-28,2001-07-28,,,open,https://www.wikidata.org/wiki/Q1594942
+Q458202$A5BBD75D-08C8-45FE-B80E-4FA54104CA3B,Q458202,Leonardo Sandri,Q50362553,titular archbishop,Q1026935,1997-07-22,1997-07-22,,,open,https://www.wikidata.org/wiki/Q458202
+Q721621$6617ACC2-32A4-49E9-8573-44C95ABEB22E,Q721621,Francesco Monterisi,Q50362553,titular archbishop,Q2603079,1982-12-24,1982-12-24,,,open,https://www.wikidata.org/wiki/Q721621
+Q949467$A5CBCB16-BF5B-46AB-8BB5-1DE5DF63F931,Q949467,Martin Vidović,Q50362553,titular archbishop,Q19399694,2004-09-15,2004-09-15,,,open,https://www.wikidata.org/wiki/Q949467
+Q955967$d4fc3169-298d-41a1-88ab-7f995632a0f2,Q955967,Gianfranco Gardin,Q50362553,titular archbishop,Q59415,2006-07-10,2006-07-10,2024-06-21,2024-06-21,office_end,https://www.wikidata.org/wiki/Q955967
+Q998895$EE02858F-F6B0-4243-84DD-9FE68FBB6254,Q998895,Petar Rajič,Q50362553,titular archbishop,Q2947238,2009-12-02,2009-12-02,,,open,https://www.wikidata.org/wiki/Q998895
+Q12800875$D895A5FF-7F08-4DD7-8871-0203AFDC5319,Q12800875,Senad Mašović,Q5097121,Chief of the Joint Staff of the Armed Forces of Bosnia and Herzegovina,,2018-02-28,2018-02-28,,,open,https://www.wikidata.org/wiki/Q12800875
+Q61063693$98c3ddc5-4ae4-79b3-6dd1-ccca80fa3408,Q61063693,Milivoj Bolobanić,Q52769526,župnik,,1961-01-01,1961-12-31,,,open,https://www.wikidata.org/wiki/Q61063693
+Q27468700$5d715328-40a2-6111-c554-1e610d7de1e4,Q27468700,Nina Obuljen Koržinek,Q54869586,ministrica kulture Vlade Republike Hrvatske,,2016-10-19,2016-10-19,,,open,https://www.wikidata.org/wiki/Q27468700
+Q107377419$647073d8-4e6c-2403-662f-34bd3246187b,Q107377419,José María Valdemoro Giménez,Q55083635,ambassador of Spain to Bosnia and Herzegovina,,2018-01-01,2018-12-31,2021-01-01,2021-12-31,office_end,https://www.wikidata.org/wiki/Q107377419
+Q115628102$6dde6e7b-4fbd-a880-e530-4caf9dbad30a,Q115628102,María Teresa Lizaranzu Perinat,Q55083635,ambassador of Spain to Bosnia and Herzegovina,,2021-07-20,2021-07-20,2024-07-30,2024-07-30,office_end,https://www.wikidata.org/wiki/Q115628102
+Q128192769$2950dc44-426f-a6bd-05bd-b1f3e96173c5,Q128192769,María Molina Álvarez de Toledo,Q55083635,ambassador of Spain to Bosnia and Herzegovina,,2024-07-30,2024-07-30,,,open,https://www.wikidata.org/wiki/Q128192769
+Q106421203$A6829C96-7F24-4B7D-9C85-7FE5021D0A36,Q106421203,Benjamina Karić,Q55903038,Gradonačelnik Sarajeva,,2021-04-08,2021-04-08,2024-11-18,2024-11-18,office_end,https://www.wikidata.org/wiki/Q106421203
+Q3946492$bbc6b0c9-4c84-6dbd-a966-05dc814381d5,Q3946492,Samir Avdić,Q55903038,Gradonačelnik Sarajeva,,2025-07-16,2025-07-16,,,open,https://www.wikidata.org/wiki/Q3946492
+Q43266497$0FC7A042-D707-42D2-9561-E13AD3E449FB,Q43266497,Abdulah Skaka,Q55903038,Gradonačelnik Sarajeva,,2017-02-06,2017-02-06,2021-04-08,2021-04-08,office_end,https://www.wikidata.org/wiki/Q43266497
+Q138659759$4def812a-4ce1-3d5c-03e2-34b526d2ff57,Q138659759,Dawn McKen,Q56761108,ambassador of the United Kingdom to Bosnia and Herzegovina,,2026-08-01,2026-08-31,,,open,https://www.wikidata.org/wiki/Q138659759
+Q138661098$9358b067-4479-6d89-e4e2-72c48218c288,Q138661098,Julian Reilly,Q56761108,ambassador of the United Kingdom to Bosnia and Herzegovina,,2022-01-01,2022-12-31,2026-01-01,2026-12-31,office_end,https://www.wikidata.org/wiki/Q138661098
+Q59256694$050d0340-4834-28ba-a8c4-df2b0fffb694,Q59256694,Matt Field,Q56761108,ambassador of the United Kingdom to Bosnia and Herzegovina,,2018-08-01,2018-08-31,2022-12-01,2022-12-31,office_end,https://www.wikidata.org/wiki/Q59256694
+Q138660806$702b5ccf-42ea-fafb-1cdc-3a93888dacb4,Q138660806,Javed Patel,Q56761117,ambassador of the United Kingdom to Croatia,,2025-01-01,2025-12-31,,,open,https://www.wikidata.org/wiki/Q138660806
+Q138665269$ecb94acb-48e3-f4fb-3ae0-fe93d096223a,Q138665269,Simon Thomas,Q56761117,ambassador of the United Kingdom to Croatia,,2021-01-01,2021-12-31,2025-01-01,2025-12-31,office_end,https://www.wikidata.org/wiki/Q138665269
+Q57577950$1BD5B4CB-E213-415B-B66A-6819FEE00C8A,Q57577950,Andrew Dalgleish,Q56761117,ambassador of the United Kingdom to Croatia,,2016-01-01,2016-12-31,2021-01-01,2021-12-31,office_end,https://www.wikidata.org/wiki/Q57577950
+Q26207668$539F631D-471A-49A7-B082-CCB74E2DD269,Q26207668,Dubravka Šimonović,Q57542435,Permanent Representative to the International Atomic Energy Agency,,2013-01-01,2013-12-31,,,open,https://www.wikidata.org/wiki/Q26207668
+Q110518955$08514bf1-4d6d-46ea-7949-5c66a1b14e2c,Q110518955,Pascal Hector,Q58876256,Njemački veleposlanik u Hrvatskoj,,2025-08-28,2025-08-28,,,open,https://www.wikidata.org/wiki/Q110518955
+Q19277346$797b2e16-49b4-8ccc-801b-baae87ac586d,Q19277346,Christian Hellbach,Q58876256,Njemački veleposlanik u Hrvatskoj,,2022-01-01,2022-12-31,,,open,https://www.wikidata.org/wiki/Q19277346
+Q58930146$d6aae392-4cb9-4786-891a-4487733c3b45,Q58930146,Robert Klinke,Q58876256,Njemački veleposlanik u Hrvatskoj,,2018-01-01,2018-12-31,2022-01-01,2022-12-31,office_end,https://www.wikidata.org/wiki/Q58930146
+Q97225329$1774e303-465d-0fae-f13b-2c1a036a056d,Q97225329,Marko Paradžik,Q589298,glavni urednik,,2013-01-01,2013-12-31,,,open,https://www.wikidata.org/wiki/Q97225329
+Q444367$c3d06cd5-47d0-ede6-ca2a-d5402f0ccc10,Q444367,Aldo Cavalli,Q592144,apostolic visitor,Q872659,2021-11-27,2021-11-27,,,open,https://www.wikidata.org/wiki/Q444367
+Q1256070$1b88b51b-46ea-59ce-1268-542d844fcd51,Q1256070,Dražen Kutleša,Q59873778,zagrebački nadbiskup,Q1261961,2023-04-15,2023-04-15,,,open,https://www.wikidata.org/wiki/Q1256070
+Q365529$F7020664-B674-429C-AE19-CA5F681759E6,Q365529,Josip Bozanić,Q59873778,zagrebački nadbiskup,Q1261961,1997-07-05,1997-07-05,2023-04-15,2023-04-15,office_end,https://www.wikidata.org/wiki/Q365529
+Q1256070$665626d5-402e-beb0-e076-2d8fcb7c47cc,Q1256070,Dražen Kutleša,Q59874247,splitsko-makarski nadbiskup,Q1365624,2022-05-13,2022-05-13,2023-02-14,2023-02-14,office_end,https://www.wikidata.org/wiki/Q1256070
+Q23711406$37b97a05-4ea9-a2e8-3e2a-87df40221bd1,Q23711406,Zdenko Križić,Q59874247,splitsko-makarski nadbiskup,Q1365624,2023-09-08,2023-09-08,,,open,https://www.wikidata.org/wiki/Q23711406
+Q723170$89A9B177-D692-4F96-9321-E7A12483AD6F,Q723170,Marin Barišić,Q59874247,splitsko-makarski nadbiskup,Q1365624,2000-06-21,2000-06-21,2022-05-13,2022-05-13,office_end,https://www.wikidata.org/wiki/Q723170
+Q1232284$C3E7C079-DE33-4DFB-A761-8877B102386B,Q1232284,Đuro Hranić,Q59874460,đakovačko-osječki nadbiskup,Q936243,2013-04-18,2013-04-18,,,open,https://www.wikidata.org/wiki/Q1232284
+Q335206$fa17250a-43f9-6a37-1884-c0e46a41d93f,Q335206,Mate Uzinić,Q59874580,riječki nadbiskup,Q1365429,2022-10-11,2022-10-11,,,open,https://www.wikidata.org/wiki/Q335206
+Q353945$c9636dc2-412b-01c2-f935-5f3440468c3a,Q353945,Ivan Devčić,Q59874580,riječki nadbiskup,Q1365429,2000-12-16,2000-12-16,2022-10-11,2022-10-11,office_end,https://www.wikidata.org/wiki/Q353945
+Q111519096$829c9dec-4e4d-4c1b-e201-919f15b524db,Q111519096,Milan Zgrablić,Q59874636,zadarski nadbiskup,Q1122514,2023-01-14,2023-01-14,,,open,https://www.wikidata.org/wiki/Q111519096
+Q350437$9a9dfab9-469f-ce10-2d7c-580ab3b18434,Q350437,Želimir Puljić,Q59874636,zadarski nadbiskup,Q1122514,2010-03-15,2010-03-15,2023-01-14,2023-01-14,office_end,https://www.wikidata.org/wiki/Q350437
+Q109829374$d5d0559b-4f23-5a8d-097b-caaedaf3012f,Q109829374,Roko Glasnović,Q59874929,dubrovački biskup,,2021-11-30,2021-11-30,,,open,https://www.wikidata.org/wiki/Q109829374
+Q130459779$2dfb817c-446e-0f00-4132-4ff3afb44b8b,Q130459779,Marko Medo,Q59875035,gospićko-senjski biskup,Q869179,2024-10-07,2024-10-07,,,open,https://www.wikidata.org/wiki/Q130459779
+Q23711406$92B89EC9-E304-4075-86B1-6FAC3F89CC44,Q23711406,Zdenko Križić,Q59875035,gospićko-senjski biskup,Q869179,2016-04-04,2016-04-04,2023-09-08,2023-09-08,office_end,https://www.wikidata.org/wiki/Q23711406
+Q50378031$FD7CADA2-0A64-4F9F-9471-858A810DBDFF,Q50378031,Petar Palić,Q59875220,hvarski biskup,Q869573,2018-04-30,2018-04-30,,,open,https://www.wikidata.org/wiki/Q50378031
+Q62090925$b80a7cff-cb5b-4ee9-8d03-a0d895f6479c,Q62090925,Milan Stipić,Q59875648,križevački biskup,Q225138,2020-09-08,2020-09-08,,,open,https://www.wikidata.org/wiki/Q62090925
+Q18873084$81669F0E-FA85-4C76-824E-7234809AF989,Q18873084,Ivica Petanjak,Q59875996,krčki biskup,Q870801,2015-01-24,2015-01-24,,,open,https://www.wikidata.org/wiki/Q18873084
+Q104419234$8e0c8ddf-4f47-23c0-1180-34b455f18bbf,Q104419234,Ivan Štironja,Q59876355,porečko-pulski biskup,Q874395,2023-01-31,2023-01-31,,,open,https://www.wikidata.org/wiki/Q104419234
+Q124815473$ed62412b-4464-e8b4-f95c-3dc712da836d,Q124815473,Ivo Martinović,Q59876499,požeški biskup,Q874560,2024-03-11,2024-03-11,,,open,https://www.wikidata.org/wiki/Q124815473
+Q610079$C83AA166-35FE-4BB2-8618-59F056F45CAE,Q610079,Antun Škvorčević,Q59876499,požeški biskup,Q874560,1997-07-05,1997-07-05,2024-03-11,2024-03-11,office_end,https://www.wikidata.org/wiki/Q610079
+Q741036$F56133EF-324E-43E5-91E8-DCCDA145B9F6,Q741036,Vlado Košić,Q59876643,sisački biskup,Q876613,2009-12-05,2009-12-05,,,open,https://www.wikidata.org/wiki/Q741036
+Q66057354$DCCA80E8-9789-46C7-A548-71E95ACD926E,Q66057354,Bože Radoš,Q59876951,varaždinski biskup,Q877779,2019-08-01,2019-08-01,,,open,https://www.wikidata.org/wiki/Q66057354
+Q21596775$29C7A264-CF2B-4E60-812F-88C28766957B,Q21596775,Jure Bogdan,Q59877120,vojni biskup Hrvatske,Q1789652,2015-11-30,2015-11-30,,,open,https://www.wikidata.org/wiki/Q21596775
+Q99519713$19c28bde-436b-cd93-33f1-813254a76072,Q99519713,Giovanni Gaspari,Q60041029,naslovni biskup Albe Maritime,Q2603079,2020-09-21,2020-09-21,,,open,https://www.wikidata.org/wiki/Q99519713
+Q1990608$e008c8b8-4ad8-460d-991a-b4605de1d982,Q1990608,Nikola Eterović,Q60041082,naslovni biskup Cibala,Q1091472,2009-11-30,2009-11-30,,,open,https://www.wikidata.org/wiki/Q1990608
+Q61409788$BAB173ED-BEEB-4C51-8D1D-90D09FD07EB6,Q61409788,Ante Jozić,Q60041150,naslovni biskup Cisse,Q59415,2019-02-02,2019-02-02,,,open,https://www.wikidata.org/wiki/Q61409788
+Q53861445$395D8C55-219E-469F-B9E2-ABD757D381FC,Q53861445,Pierre Olivier Tremblay,Q60041181,naslovni biskup Knina,Q1528209,2018-05-21,2018-05-21,2022-06-24,2022-06-24,office_end,https://www.wikidata.org/wiki/Q53861445
+Q1594942$72D92661-2980-4CD8-96CE-21AD4BA06763,Q1594942,Ivan Jurkovič,Q60041214,naslovni biskup Krbava,,2001-07-28,2001-07-28,,,open,https://www.wikidata.org/wiki/Q1594942
+Q56651146$C3B3B008-4493-4E96-A1C6-CD928314627E,Q56651146,Juan Miguel Betancourt,Q60041223,naslovni biskup Cursole,,2018-09-18,2018-09-18,,,open,https://www.wikidata.org/wiki/Q56651146
+Q1237695$67dc865c-4831-8b58-e4ca-e9dc04fa39b8,Q1237695,Dominick John Lagonegro,Q60041227,naslovni biskup Modruša,,2001-10-30,2001-10-30,,,open,https://www.wikidata.org/wiki/Q1237695
+Q27653554$47FBD61E-2DDE-4319-B22F-C6E5AF96C8F6,Q27653554,Heriberto Cavazos Pérez,Q60041234,naslovni biskup Narone,Q1483539,2016-10-31,2016-10-31,,,open,https://www.wikidata.org/wiki/Q27653554
+Q1574015$1c9f8a1d-4772-181d-6acb-07b2a4747ebc,Q1574015,José Avelino Bettencourt,Q60041365,naslovni biskup Aemone,Q1026935,2018-02-26,2018-02-26,,,open,https://www.wikidata.org/wiki/Q1574015
+Q125133920$f8234cbd-4885-c17f-410b-296d07b85a99,Q125133920,Paul Reder,Q60041573,naslovni biskup Petine,Q2079790,2024-03-25,2024-03-25,,,open,https://www.wikidata.org/wiki/Q125133920
+Q324456$A062BA6F-72E6-4ECA-BC0F-9EF92A5C8516,Q324456,Rafael Palmero Ramos,Q60041573,naslovni biskup Petine,Q2079790,1987-11-24,1987-11-24,2021-03-08,2021-03-08,death_upper_bound,https://www.wikidata.org/wiki/Q324456
+Q360305$B1A0AA7E-1031-48BD-BEC3-996603E0D9C8,Q360305,Valentin Pozaić,Q60041573,naslovni biskup Petine,Q2079790,2005-02-02,2005-02-02,2023-05-15,2023-05-15,death_upper_bound,https://www.wikidata.org/wiki/Q360305
+Q43930$43168B83-E439-420E-9381-3A17CD21A928,Q43930,Reinhard Marx,Q60041573,naslovni biskup Petine,Q2079790,1996-01-01,1996-12-31,,,open,https://www.wikidata.org/wiki/Q43930
+Q55452837$31CB4AF3-681E-4225-98CA-5BFE18B6DF53,Q55452837,Júlio César Souza de Jesus,Q60041593,naslovni biskup Arbe,Q626850,2018-07-11,2018-07-11,2024-06-07,2024-06-07,office_end,https://www.wikidata.org/wiki/Q55452837
+Q941716$34D4871F-957A-403C-A037-24164F3B9D55,Q941716,Jan Paweł Lenga,Q60041593,naslovni biskup Arbe,Q626850,1991-04-13,1991-04-13,,,open,https://www.wikidata.org/wiki/Q941716
+Q1710891$EAA696AD-CDFB-49F3-A871-CA6320555E53,Q1710891,Jude Saint-Antoine,Q60041597,naslovni biskup Scardone,Q2229011,1981-03-20,1981-03-20,,,open,https://www.wikidata.org/wiki/Q1710891
+Q573627$CA2E908E-526E-4D79-8D2F-2DDD57BDD987,Q573627,Anthony Pilla,Q60041597,naslovni biskup Scardone,Q2229011,1979-06-30,1979-06-30,2021-09-21,2021-09-21,death_upper_bound,https://www.wikidata.org/wiki/Q573627
+Q136812528$6aa8a76d-481f-b872-47d1-1d6b02282485,Q136812528,Vlado Razum,Q60041601,naslovni biskup Stagnuma,Q123579115,2025-11-17,2025-11-17,,,open,https://www.wikidata.org/wiki/Q136812528
+Q542407$0631E892-190E-4A11-B0DA-BFAF82EF28EE,Q542407,Dale Joseph Melczek,Q60041609,naslovni biskup Traguriuma,Q2448079,1982-12-03,1982-12-03,2022-08-25,2022-08-25,death_upper_bound,https://www.wikidata.org/wiki/Q542407
+Q2721266$ea54719d-48d1-993d-74c1-664f554b5553,Q2721266,Husein Kavazović,Q61364069,reis-ul-ulema,,2012-01-01,2012-12-31,,,open,https://www.wikidata.org/wiki/Q2721266
+Q62077488$595C70DC-C128-433A-9F80-7A6A0FAFCF88,Q62077488,Mathieu Viskovic,Q62083721,Mayor of Noisiel,,2020-05-24,2020-05-24,2026-03-21,2026-03-21,office_end,https://www.wikidata.org/wiki/Q62077488
+Q62077488$DA1D46B1-5449-4188-B922-232E909ED0AF,Q62077488,Mathieu Viskovic,Q62083721,Mayor of Noisiel,,2026-03-22,2026-03-22,,,open,https://www.wikidata.org/wiki/Q62077488
+Q113141206$3a6b182e-4256-7f8a-af27-c688e5eecb8e,Q113141206,Davor Derenčinović,Q64682634,Judge of the European Court of Human Rights,,2022-01-02,2022-01-02,,,open,https://www.wikidata.org/wiki/Q113141206
+Q45116268$9166C9F4-73C9-4406-B12F-3B1C82BD3BF6,Q45116268,Faris Vehabović,Q64682634,Judge of the European Court of Human Rights,,2012-12-03,2012-12-03,,,open,https://www.wikidata.org/wiki/Q45116268
+Q299667$E6DA3C8F-27A6-4DC0-A842-9C7400888B62,Q299667,Dubravka Šuica,Q651703,vice-president of the European Commission,,2019-12-01,2019-12-01,2024-11-30,2024-11-30,office_end,https://www.wikidata.org/wiki/Q299667
+Q105069608$8C9D60E9-85B3-4194-8E2B-AC96144CE673,Q105069608,Eva-Maria Liimets,Q65261729,ambassador of Estonia to Croatia,,2019-01-01,2019-12-31,2021-01-01,2021-12-31,office_end,https://www.wikidata.org/wiki/Q105069608
+Q12956737$62797695-47d9-4893-b895-30d19aacf526,Q12956737,Davor Stier,Q65494714,Representative of the Parliamentary Assembly of the Council of Europe,,2017-10-09,2017-10-09,,,open,https://www.wikidata.org/wiki/Q12956737
+Q43676712$99896979-54e1-4d04-8c42-4f3dea00d857,Q43676712,Marijana Balić,Q65494714,Representative of the Parliamentary Assembly of the Council of Europe,,2017-01-23,2017-01-23,,,open,https://www.wikidata.org/wiki/Q43676712
+Q43677144$de8656dc-e2a3-4e85-90e3-b4739ea8c403,Q43677144,Goran Beus Richembergh,Q65494714,Representative of the Parliamentary Assembly of the Council of Europe,,2017-01-23,2017-01-23,,,open,https://www.wikidata.org/wiki/Q43677144
+Q43677212$638d1578-4ecd-d892-a01a-ff5c8ec7a408,Q43677212,Sabina Glasovac,Q65494714,Representative of the Parliamentary Assembly of the Council of Europe,,2020-09-15,2020-09-15,,,open,https://www.wikidata.org/wiki/Q43677212
+Q43677225$8d09cb4d-e45f-483a-9d23-d51a9af2b24f,Q43677225,Domagoj Hajduković,Q65494714,Representative of the Parliamentary Assembly of the Council of Europe,,2017-01-23,2017-01-23,,,open,https://www.wikidata.org/wiki/Q43677225
+Q43677376$3f99647d-aa69-4b62-a16f-ca69c4660203,Q43677376,Sanja Putica,Q65494714,Representative of the Parliamentary Assembly of the Council of Europe,,2017-06-26,2017-06-26,,,open,https://www.wikidata.org/wiki/Q43677376
+Q12629972$89212129-f34d-493c-a8b1-9f1c779e8820,Q12629972,Domagoj Ivan Milošević,Q65494724,substitute member of the Parliamentary Assembly of the Council of Europe,,2017-01-23,2017-01-23,,,open,https://www.wikidata.org/wiki/Q12629972
+Q12631651$0c522a83-d1e9-47ee-bc8e-bd298445fa0a,Q12631651,Gordan Maras,Q65494724,substitute member of the Parliamentary Assembly of the Council of Europe,,2017-01-23,2017-01-23,,,open,https://www.wikidata.org/wiki/Q12631651
+Q12958427$7dc63214-5495-43f7-a94a-ef3641bcb638,Q12958427,Mihael Zmajlović,Q65494724,substitute member of the Parliamentary Assembly of the Council of Europe,,2017-01-23,2017-01-23,,,open,https://www.wikidata.org/wiki/Q12958427
+Q22677422$bdc72736-014a-479a-b9b3-79fe42fe0403,Q22677422,Anton Kliman,Q65494724,substitute member of the Parliamentary Assembly of the Council of Europe,,2017-10-09,2017-10-09,,,open,https://www.wikidata.org/wiki/Q22677422
+Q96814$0f5b23b4-a15c-44e9-a5bb-ff3d1d7d05d3,Q96814,Josip Juratović,Q65494724,substitute member of the Parliamentary Assembly of the Council of Europe,,2015-11-27,2015-11-27,,,open,https://www.wikidata.org/wiki/Q96814
+Q141162945$1A250F7D-1E63-48CB-ADE4-C0D3A8A758A9,Q141162945,Csaba Demcsák,Q65503336,ambassador of Hungary to Croatia,,2020-02-03,2020-02-03,2026-07-16,2026-07-16,office_end,https://www.wikidata.org/wiki/Q141162945
+Q62077488$4F1A9A34-9E8C-4C25-97EF-118AA5A1B102,Q62077488,Mathieu Viskovic,Q65503411,Q65503411,,2026-03-15,2026-03-15,,,open,https://www.wikidata.org/wiki/Q62077488
+Q62077488$B7F2F191-C05E-4E0A-9FE5-BF9226AD37C7,Q62077488,Mathieu Viskovic,Q65503411,Q65503411,,2020-05-18,2020-05-18,2026-03-14,2026-03-14,office_end,https://www.wikidata.org/wiki/Q62077488
+Q136538608$9163EE3A-6710-40EF-93EB-BF76AB059269,Q136538608,Ana Trišić-Babić,Q6594693,Predsjednici Republike Srpske,,2025-10-18,2025-10-18,,,open,https://www.wikidata.org/wiki/Q136538608
+Q335688$F42185FB-52D3-4F53-9BD0-440C458F92AF,Q335688,Milorad Dodik,Q6594693,Predsjednici Republike Srpske,,2022-11-15,2022-11-15,2025-08-18,2025-08-18,office_end,https://www.wikidata.org/wiki/Q335688
+Q5528031$995C96DA-C85D-4632-A32F-B088480D2B00,Q5528031,Željka Cvijanović,Q6594693,Predsjednici Republike Srpske,,2018-11-19,2018-11-19,2022-11-15,2022-11-15,office_end,https://www.wikidata.org/wiki/Q5528031
+Q122810532$3be85162-481a-d0d5-b63d-6f18752c1a16,Q122810532,Ivana Živković,Q66091263,Assistant Secretary-General of the United Nations,,2022-09-01,2022-09-30,,,open,https://www.wikidata.org/wiki/Q122810532
+Q108909719$ce95e78d-49c2-e914-3fe8-2a8da43233c3,Q108909719,Krisztián Pósa,Q66104823,ambassador of Hungary to Bosnia and Herzegovina,,2018-09-05,2018-09-05,2026-07-16,2026-07-16,office_end,https://www.wikidata.org/wiki/Q108909719
+Q62077488$ED9B19A8-4C53-4F80-A73E-C71FA5AF4013,Q62077488,Mathieu Viskovic,Q66501423,Q66501423,,2017-12-14,2017-12-14,,,open,https://www.wikidata.org/wiki/Q62077488
+Q66773760$bc574a81-4020-5d31-7250-b561ebdb2d76,Q66773760,Mladen Andrlic,Q66776881,ambassador of Croatia to Hungary,,2017-01-01,2017-12-31,,,open,https://www.wikidata.org/wiki/Q66773760
+Q12814703$f002b095-4ab3-3645-1229-5313cb6b6f18,Q12814703,Ilan Mor,Q68597054,ambassador of Israel to Croatia,,2019-01-01,2019-12-31,,,open,https://www.wikidata.org/wiki/Q12814703
+Q61063348$4de6dd42-449a-043f-3ead-636fc8c52374,Q61063348,Drago Balvanović,Q725440,prelat,,2007-01-01,2007-12-31,2026-03-26,2026-03-26,death_upper_bound,https://www.wikidata.org/wiki/Q61063348
+Q131919176$447b95c6-4555-e180-1ede-3fea3507bb96,Q131919176,Zrinka Mužinić Bikić,Q736559,Ministar vanjskih poslova,,2024-08-01,2024-08-31,,,open,https://www.wikidata.org/wiki/Q131919176
+Q1226937$644FBE4C-AD41-4A2A-8696-17224B32D0E0,Q1226937,Dionizije Njaradi,Q75178,pomoćni biskup,Q225138,1914-12-05,1914-12-05,,,open,https://www.wikidata.org/wiki/Q1226937
+Q1232284$8449264C-DD12-43A3-B2C8-4FEABB333574,Q1232284,Đuro Hranić,Q75178,pomoćni biskup,Q936243,2001-07-05,2001-07-05,,,open,https://www.wikidata.org/wiki/Q1232284
+Q1284994$25F8C01E-A7EC-42D3-9986-94328A14E059,Q1284994,Marin Srakić,Q75178,pomoćni biskup,Q137398523,1990-02-02,1990-02-02,,,open,https://www.wikidata.org/wiki/Q1284994
+Q136812489$83c3a4f0-46b0-0ee9-ac04-842799593b51,Q136812489,Marko Kovač,Q75178,pomoćni biskup,Q1261961,2025-11-17,2025-11-17,,,open,https://www.wikidata.org/wiki/Q136812489
+Q136812528$af5de434-49e1-14ae-29d8-c740ca41dd2c,Q136812528,Vlado Razum,Q75178,pomoćni biskup,Q1261961,2025-11-17,2025-11-17,,,open,https://www.wikidata.org/wiki/Q136812528
+Q1431235$4764971A-8998-4863-96C9-C12BDE87BB77,Q1431235,Juraj Jezerinac,Q75178,pomoćni biskup,Q1261961,1991-04-11,1991-04-11,,,open,https://www.wikidata.org/wiki/Q1431235
+Q1672436$17622449-EF37-4735-A708-BCD783F9C3B8,Q1672436,Mijo Gorski,Q75178,pomoćni biskup,Q1261961,2010-05-03,2010-05-03,,,open,https://www.wikidata.org/wiki/Q1672436
+Q1675634$1237E4D5-51CC-4F3F-BE1B-950215F16F6A,Q1675634,Ivan Šaško,Q75178,pomoćni biskup,Q1261961,2008-02-11,2008-02-11,,,open,https://www.wikidata.org/wiki/Q1675634
+Q553299$7FB88C25-CAB9-4F4C-AF62-6039B923F3E5,Q553299,Marko Semren,Q75178,pomoćni biskup,Q866994,2010-07-15,2010-07-15,2024-07-15,2024-07-15,office_end,https://www.wikidata.org/wiki/Q553299
+Q62023998$561c4b49-67b5-4752-abd1-93a9f3c45b0a,Q62023998,Ivan Ćurić,Q75178,pomoćni biskup,Q936243,2019-03-11,2019-03-11,,,open,https://www.wikidata.org/wiki/Q62023998
+Q741036$391F2C1D-1CA0-4639-B43D-9CE801EA19F1,Q741036,Vlado Košić,Q75178,pomoćni biskup,Q1261961,1998-12-29,1998-12-29,,,open,https://www.wikidata.org/wiki/Q741036
+Q137170017$799f0222-4805-9390-baf7-0446144b5ec7,Q137170017,Radovan Kovačević,Q8125919,political adviser,,2022-11-15,2022-11-15,2023-02-16,2023-02-16,office_end,https://www.wikidata.org/wiki/Q137170017
+Q13081568$52178189-4fcb-743c-9c91-09d3ea69d09f,Q13081568,Denis Bećirović,Q848335,Predsjedavajući Predsjedništva Bosne i Hercegovine,,2024-03-16,2024-03-16,2024-11-16,2024-11-16,office_end,https://www.wikidata.org/wiki/Q13081568
+Q13081568$DF91FEFB-5D5C-4723-AEF5-3154569AB405,Q13081568,Denis Bećirović,Q848335,Predsjedavajući Predsjedništva Bosne i Hercegovine,,2026-03-16,2026-03-16,,,open,https://www.wikidata.org/wiki/Q13081568
+Q20525169$0B260EF1-E8BB-455C-B1FB-D2DFD9B86AE2,Q20525169,Šefik Džaferović,Q848335,Predsjedavajući Predsjedništva Bosne i Hercegovine,,2022-03-20,2022-03-20,2022-11-16,2022-11-16,office_end,https://www.wikidata.org/wiki/Q20525169
+Q297825$2c280918-458b-d60f-4b72-bd622e3b9062,Q297825,Željko Komšić,Q848335,Predsjedavajući Predsjedništva Bosne i Hercegovine,,2025-07-16,2025-07-16,,,open,https://www.wikidata.org/wiki/Q297825
+Q297825$41bd21b7-42cc-5aab-8f44-a868bec0813f,Q297825,Željko Komšić,Q848335,Predsjedavajući Predsjedništva Bosne i Hercegovine,,2023-07-16,2023-07-16,2024-03-16,2024-03-16,office_end,https://www.wikidata.org/wiki/Q297825
+Q297825$BF4F18F0-DC42-415F-9014-137E22874927,Q297825,Željko Komšić,Q848335,Predsjedavajući Predsjedništva Bosne i Hercegovine,,2021-07-20,2021-07-20,2022-03-20,2022-03-20,office_end,https://www.wikidata.org/wiki/Q297825
+Q335688$05A3E6B9-093B-4C98-B122-81AB79B055AD,Q335688,Milorad Dodik,Q848335,Predsjedavajući Predsjedništva Bosne i Hercegovine,,2020-11-20,2020-11-20,2021-07-20,2021-07-20,office_end,https://www.wikidata.org/wiki/Q335688
+Q5528031$72A90937-CC8E-4CC9-98E5-6D6E2A9B4198,Q5528031,Željka Cvijanović,Q848335,Predsjedavajući Predsjedništva Bosne i Hercegovine,,2022-11-16,2022-11-16,2023-07-16,2023-07-16,office_end,https://www.wikidata.org/wiki/Q5528031
+Q5528031$D7891668-5D88-49B7-A55C-46C9AFC912B7,Q5528031,Željka Cvijanović,Q848335,Predsjedavajući Predsjedništva Bosne i Hercegovine,,2024-11-16,2024-11-16,2025-07-16,2025-07-16,office_end,https://www.wikidata.org/wiki/Q5528031
+Q104832075$5486AB75-6C78-4735-8997-52503F537B59,Q104832075,Goran Filipi,Q94084,Gostujući profesor,,2003-01-01,2003-12-31,2021-01-08,2021-01-08,death_upper_bound,https://www.wikidata.org/wiki/Q104832075
+Q117966$B462D8A3-E700-411C-8072-86DD82A65CDC,Q117966,Peter Henrici,Q948657,naslovni biskup,Q332861,1993-03-04,1993-03-04,2023-06-06,2023-06-06,office_end,https://www.wikidata.org/wiki/Q117966
+Q122243$1165F087-8B3B-4486-A348-83B6B9BA5915,Q122243,Pierre Farine,Q948657,naslovni biskup,Q2448079,1996-08-12,1996-08-12,,,open,https://www.wikidata.org/wiki/Q122243
+Q1232284$FB2A31AC-60B7-4500-A1DC-B95BB544EEF9,Q1232284,Đuro Hranić,Q948657,naslovni biskup,Q977333,2001-07-05,2001-07-05,,,open,https://www.wikidata.org/wiki/Q1232284
+Q1237695$89D2B3E7-6A2A-4E8B-8951-51E3EAA11687,Q1237695,Dominick John Lagonegro,Q948657,naslovni biskup,Q1347713,2001-10-30,2001-10-30,,,open,https://www.wikidata.org/wiki/Q1237695
+Q126855353$0fe2c574-4a08-3752-7759-1cc271dba925,Q126855353,Luis Alfonso Tut Tun,Q948657,naslovni biskup,Q626850,2024-06-21,2024-06-21,,,open,https://www.wikidata.org/wiki/Q126855353
+Q127607307$40f3b803-4ae0-a773-411f-8ec4b54bc417,Q127607307,Andrej Znoska,Q948657,naslovni biskup,Q2229011,2024-07-19,2024-07-19,,,open,https://www.wikidata.org/wiki/Q127607307
+Q1284994$EFA342DD-2298-4C90-A302-0D81402CC5CD,Q1284994,Marin Srakić,Q948657,naslovni biskup,Q1054806,1990-02-02,1990-02-02,,,open,https://www.wikidata.org/wiki/Q1284994
+Q132746481$fafb2ee5-4ba9-c646-2002-7c45d1a3e1f0,Q132746481,Joselito Ramalho Nogueira,Q948657,naslovni biskup,Q1528209,2025-02-25,2025-02-25,,,open,https://www.wikidata.org/wiki/Q132746481
+Q136812489$e16128c0-45ef-5379-19dd-f5cc199940af,Q136812489,Marko Kovač,Q948657,naslovni biskup,Q654017,2025-11-17,2025-11-17,,,open,https://www.wikidata.org/wiki/Q136812489
+Q15821090$31786916-B558-4D37-9505-E63973FD0BCC,Q15821090,Joaquím Humberto Pinzón Güiza,Q948657,naslovni biskup,Q2041389,2013-02-21,2013-02-21,,,open,https://www.wikidata.org/wiki/Q15821090
+Q1672436$7FCF2C2E-FFE6-4813-A158-AEEE09F58F77,Q1672436,Mijo Gorski,Q948657,naslovni biskup,Q1346950,2010-05-03,2010-05-03,,,open,https://www.wikidata.org/wiki/Q1672436
+Q1675634$885397CF-E6B6-41C5-9E1A-3BAEB2F642AD,Q1675634,Ivan Šaško,Q948657,naslovni biskup,Q1268225,2008-02-11,2008-02-11,,,open,https://www.wikidata.org/wiki/Q1675634
+Q1823691$822D72E3-1824-4D96-A518-F1807FD8C112,Q1823691,Ted Hoogenboom,Q948657,naslovni biskup,Q866738,2009-12-07,2009-12-07,,,open,https://www.wikidata.org/wiki/Q1823691
+Q23050745$2E162BC2-41B5-4820-AFF3-FEFC3001918E,Q23050745,Jacek Kiciński,Q948657,naslovni biskup,Q1133996,2016-02-13,2016-02-13,,,open,https://www.wikidata.org/wiki/Q23050745
+Q443459$07227087-71BE-466D-A0BE-D6B504E37C6B,Q443459,Franjo Kuharić,Q948657,naslovni biskup,Q1924667,1964-02-15,1964-02-15,,,open,https://www.wikidata.org/wiki/Q443459
+Q516157$045EEA8D-87AF-459C-AA85-8DA022AF6F00,Q516157,András Veres,Q948657,naslovni biskup,Q59415,1999-11-05,1999-11-05,,,open,https://www.wikidata.org/wiki/Q516157
+Q5983604$09A8E028-C61A-4BFA-AEC3-B552B819928A,Q5983604,Luis Guízar Barragán,Q948657,naslovni biskup,Q1528209,1938-10-07,1938-10-07,,,open,https://www.wikidata.org/wiki/Q5983604
+Q741014$84946709-DEAB-4281-BB8D-FD2753E1F1A7,Q741014,Pero Sudar,Q948657,naslovni biskup,Q762661,1993-05-28,1993-05-28,,,open,https://www.wikidata.org/wiki/Q741014
+Q741036$FD028903-C3C6-4B0E-89DD-187F4469B06D,Q741036,Vlado Košić,Q948657,naslovni biskup,Q1322619,1998-12-29,1998-12-29,,,open,https://www.wikidata.org/wiki/Q741036
+Q107521104$e2c46126-4880-19e9-9b93-3157d6429a16,Q107521104,Massimo Fusarelli,Q96176308,Minister General of Order of Friars Minor,,2021-07-13,2021-07-13,,,open,https://www.wikidata.org/wiki/Q107521104
+Q13410165$04d08e38-4f44-63f5-d7ac-d9896afaa902,Q13410165,Michael Anthony Perry,Q96176308,Minister General of Order of Friars Minor,,2013-01-01,2013-12-31,2021-01-01,2021-12-31,office_end,https://www.wikidata.org/wiki/Q13410165
+Q15815037$3a4e295f-45de-81eb-e0d2-8c7eb64767a7,Q15815037,Dunja Mijatović,Q968482,Commissioner for Human Rights,,2018-04-01,2018-04-01,2024-03-31,2024-03-31,office_end,https://www.wikidata.org/wiki/Q15815037
+Q105709059$FE2D6DE8-5D01-4402-992E-7F17C3752BD6,Q105709059,Jelena Pavičić Vukičević,Q99248243,mayor of Zagreb,,2021-02-28,2021-02-28,2021-06-04,2021-06-04,office_end,https://www.wikidata.org/wiki/Q105709059
+q368226$CBB2EBEC-B4A4-41F7-9F1B-31881BC70A7B,Q368226,Milan Bandić,Q99248243,mayor of Zagreb,,2005-05-15,2005-05-15,2021-02-28,2021-02-28,office_end,https://www.wikidata.org/wiki/Q368226
+Q96250350$606D3ACB-E16C-4982-8E15-3CACCAD5D744,Q96250350,Tomislav Tomašević,Q99248243,mayor of Zagreb,,2021-06-04,2021-06-04,,,open,https://www.wikidata.org/wiki/Q96250350

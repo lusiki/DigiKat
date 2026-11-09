@@ -1,0 +1,45 @@
+{
+  "title": "Demokršćanske vrijednosti u digitalnom javnom prostoru: narativni okviri hrvatskih katoličkih medija od 2021. do 2026.",
+  "author": "Luka Šikić",
+  "byline": "Doc. dr. sc. Luka Šikić",
+  "slides": 18,
+  "findings": 10,
+  "conference": "Izazovi i budućnost demokršćanstva u Hrvatskoj i Europi",
+  "conference_date": "2026-09-24",
+  "design_inputs": {
+    "studies/demokrscanstvo-barometar/carousel/conference/flag.jpg": "b5898b6eb08b7a5dee91c40fa358d43695e81a6deb69616d70cb8580d2c01b3a",
+    "studies/demokrscanstvo-barometar/carousel/conference/source.json": "36026ac509dfaa882f1d97e0fd221e4184ad243cc7013c9847dea84a1a155581",
+    "studies/demokrscanstvo-barometar/carousel/conference/style.css": "ddd1a3dc94c740661d89e61d6ed2cb547c6753ab666f083bc471e2279c56a34d",
+    "studies/demokrscanstvo-barometar/carousel/conference/theme.py": "bfcfb51236242a740a9847aa3a2b3b3aa90d301d2f774910cd5d6e004e4a7c65"
+  },
+  "inputs": {
+    "data/digikat_corpus_manifest.json": "c163739c05dee508c0f235bd87a4b30b8427194e80c8a0f18dc7a17c08c10954",
+    "data/barometar/demokrscanstvo-multiplatform/v1/summary.json": "0d98ce0ad2d9ce725bd18084b8a410c7e0d57b532d2c325331d7b46d8e23c871",
+    "data/barometar/demokrscanstvo-themes/v1/topics.csv": "40a35431eab5334be40ea4aeda61817bb3b8f73767f90ccddb9db73a6b9d51d1",
+    "data/barometar/demokrscanstvo-themes/v1/topic_monthly.csv": "0de16f77914ceb1c080ef05a1e54b4bedfc12da5d2d1fe6feac112b4ef2cb417",
+    "studies/demokrscanstvo-barometar/text-public/manuscript.md": "df9955ee326088e348f02bc3a054224599b1c7d99e2233eaacfc8476cc6f26f8",
+    "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.meta.json": "b08921587a507ec23b7e2e1820ef59fe070bc1c4461d7c555e1f7a5e6b32ea94",
+    "assets/izvjestaji/demokrscanske-vrijednosti-karusel-podaci.json": "44bd925b89da88829a1292bc74efbd10eacfe641cdf7508442c8175a43bf01e0",
+    "assets/izvjestaji/demokrscanstvo-od-rijeci-do-argumenta.html": "f66b3dae7c5a27dea69b726837fa2154c310f8c85e386239502c9e43b1acd99f"
+  },
+  "slide_titles": [
+    "Demokršćanske vrijednosti u digitalnom javnom prostoru: narativni okviri hrvatskih katoličkih medija od 2021. do 2026.",
+    "DigiKat istražuje katoličke teme u javnosti",
+    "Katoličke teme u širem medijskom prostoru",
+    "Kako nastaje zbirka za ovu analizu",
+    "Politički položaj ostaje u središtu karte",
+    "Koje riječi prate demokršćanstvo?",
+    "Riječi koje povezuju raspravu",
+    "Različite godine, različite teme",
+    "Zastupljenost tema razlikuje se među platformama",
+    "Odabrane javne osobe u člancima",
+    "Koji izvori objavljuju najviše članaka?",
+    "Broj web članaka kroz vrijeme",
+    "Četiri mjeseca s najviše članaka",
+    "Koje teme prevladavaju u vršnim mjesecima?",
+    "Dnevni vrhunac okuplja više izvora",
+    "Što podaci govore o medijskoj raspravi?",
+    "DigiKat kao prostor za daljnje istraživanje",
+    "Izvještaji i podaci za daljnje istraživanje"
+  ]
+}

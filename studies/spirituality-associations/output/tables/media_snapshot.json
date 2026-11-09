@@ -1,0 +1,226 @@
+{
+  "database_file": "determDB_merged.duckdb",
+  "table": "main.media_data_all",
+  "read_only": true,
+  "file_fingerprint": {
+    "bytes": 91362439168,
+    "mtime_ns": 1789669036189151000
+  },
+  "snapshot_rows": 41748837,
+  "snapshot_start": "2021-01-01",
+  "snapshot_end": "2026-09-10",
+  "schema": [
+    {
+      "field": "DATE",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "TIME",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "TITLE",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "FROM",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "AUTHOR",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "URL",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "URL_PHOTO",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "SOURCE_TYPE",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "GROUP_NAME",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "KEYWORD_NAME",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "FOUND_KEYWORDS",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "LANGUAGES",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "LOCATIONS",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "TAGS",
+      "storage_type": "BOOLEAN"
+    },
+    {
+      "field": "MANUAL_SENTIMENT",
+      "storage_type": "BOOLEAN"
+    },
+    {
+      "field": "AUTO_SENTIMENT",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "MENTION_SNIPPET",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "REACH",
+      "storage_type": "DOUBLE"
+    },
+    {
+      "field": "VIRALITY",
+      "storage_type": "DOUBLE"
+    },
+    {
+      "field": "ENGAGEMENT_RATE",
+      "storage_type": "DOUBLE"
+    },
+    {
+      "field": "INTERACTIONS",
+      "storage_type": "DOUBLE"
+    },
+    {
+      "field": "FOLLOWERS_COUNT",
+      "storage_type": "DOUBLE"
+    },
+    {
+      "field": "LIKE_COUNT",
+      "storage_type": "DOUBLE"
+    },
+    {
+      "field": "COMMENT_COUNT",
+      "storage_type": "DOUBLE"
+    },
+    {
+      "field": "SHARE_COUNT",
+      "storage_type": "DOUBLE"
+    },
+    {
+      "field": "TWEET_COUNT",
+      "storage_type": "BOOLEAN"
+    },
+    {
+      "field": "LOVE_COUNT",
+      "storage_type": "DOUBLE"
+    },
+    {
+      "field": "WOW_COUNT",
+      "storage_type": "DOUBLE"
+    },
+    {
+      "field": "HAHA_COUNT",
+      "storage_type": "DOUBLE"
+    },
+    {
+      "field": "SAD_COUNT",
+      "storage_type": "DOUBLE"
+    },
+    {
+      "field": "ANGRY_COUNT",
+      "storage_type": "DOUBLE"
+    },
+    {
+      "field": "TOTAL_REACTIONS_COUNT",
+      "storage_type": "DOUBLE"
+    },
+    {
+      "field": "FAVORITE_COUNT",
+      "storage_type": "DOUBLE"
+    },
+    {
+      "field": "RETWEET_COUNT",
+      "storage_type": "DOUBLE"
+    },
+    {
+      "field": "VIEW_COUNT",
+      "storage_type": "DOUBLE"
+    },
+    {
+      "field": "DISLIKE_COUNT",
+      "storage_type": "BOOLEAN"
+    },
+    {
+      "field": "COUNT",
+      "storage_type": "BOOLEAN"
+    },
+    {
+      "field": "REPOST_COUNT",
+      "storage_type": "BOOLEAN"
+    },
+    {
+      "field": "REDDIT_TYPE",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "REDDIT_SCORE",
+      "storage_type": "DOUBLE"
+    },
+    {
+      "field": "INFLUENCE_SCORE",
+      "storage_type": "DOUBLE"
+    },
+    {
+      "field": "TWEET_TYPE",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "TWEET_SOURCE_NAME",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "TWEET_SOURCE_URL",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "FULL_TEXT",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "DATETIME",
+      "storage_type": "TIMESTAMP"
+    },
+    {
+      "field": "ITEM_ID",
+      "storage_type": "BIGINT"
+    },
+    {
+      "field": "SOURCE_BATCH",
+      "storage_type": "VARCHAR"
+    },
+    {
+      "field": "I_FILTERED",
+      "storage_type": "BOOLEAN"
+    }
+  ],
+  "search_start": "2025-01-01",
+  "search_end_exclusive": "2026-01-01",
+  "days_2025": 365,
+  "rows_2025": 8514361,
+  "search_fields": [
+    "TITLE",
+    "FULL_TEXT"
+  ],
+  "normalization": "lowercase, strip accents, d-stroke to d, non-alphanumerics to spaces",
+  "retrieval_status": "unvalidated candidates",
+  "run_utc": "2026-09-19T16:42:58.489130+00:00",
+  "duckdb_version": "1.5.5",
+  "python_packages": {
+    "pyahocorasick": "2.3.1",
+    "pandas": "3.0.3"
+  }
+}

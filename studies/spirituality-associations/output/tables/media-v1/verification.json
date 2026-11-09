@@ -1,0 +1,208 @@
+{
+  "checks": [
+    {
+      "check": "All 42,267,474 source records scanned",
+      "passed": true
+    },
+    {
+      "check": "Every date present",
+      "passed": true
+    },
+    {
+      "check": "Every month and every year retained",
+      "passed": true
+    },
+    {
+      "check": "2026 is explicitly partial",
+      "passed": true
+    },
+    {
+      "check": "All register entries retained",
+      "passed": true
+    },
+    {
+      "check": "Complete organisation-year panel with distinct held states",
+      "passed": true
+    },
+    {
+      "check": "Search status reconciles",
+      "passed": true
+    },
+    {
+      "check": "Candidate item and pair reconciliation",
+      "passed": true
+    },
+    {
+      "check": "Unique item and pair keys",
+      "passed": true
+    },
+    {
+      "check": "Foreign keys valid",
+      "passed": true
+    },
+    {
+      "check": "No human labels fabricated",
+      "passed": true
+    },
+    {
+      "check": "Raw-rate numerator and denominator same units",
+      "passed": true
+    },
+    {
+      "check": "Platform totals reconcile",
+      "passed": true
+    },
+    {
+      "check": "Geographical totals reconcile",
+      "passed": true
+    },
+    {
+      "check": "Inflected Breza alias matched",
+      "passed": true
+    },
+    {
+      "check": "Distinct field boundary prevents false name",
+      "passed": true
+    },
+    {
+      "check": "Word boundary prevents SKAC Split suffix match",
+      "passed": true
+    },
+    {
+      "check": "Diacritic folding handles KRAK",
+      "passed": true
+    },
+    {
+      "check": "YouTube content IDs preserved",
+      "passed": true
+    },
+    {
+      "check": "Tracking-only URL parameters removed",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: annual_landscape.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: common_domain_members.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: common_domain_panel.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: county_landscape.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: daily_coverage.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: funnel.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: monthly_coverage.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: monthly_landscape.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: persistence.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: platform_landscape.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: repeat_check_channels.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: repeat_check_models.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: repeat_check_terms.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: same_calendar_window.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: sensitivity.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: topic_fulltext_alignment.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: topic_model_runs.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: topic_platform.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: topic_shares.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: topic_terms.csv",
+      "passed": true
+    },
+    {
+      "check": "Aggregate disclosure: web_domain_landscape.csv",
+      "passed": true
+    },
+    {
+      "check": "Topic assignment denominator reconciles",
+      "passed": true
+    },
+    {
+      "check": "Topic models cover the predeclared grid",
+      "passed": true
+    },
+    {
+      "check": "Repeat-suppression sample reconciles",
+      "passed": true
+    },
+    {
+      "check": "Repeated-token totals bounded",
+      "passed": true
+    },
+    {
+      "check": "PDF has content on every page",
+      "passed": true
+    },
+    {
+      "check": "PDF includes every study year",
+      "passed": true
+    },
+    {
+      "check": "PDF includes key computed totals",
+      "passed": true
+    },
+    {
+      "check": "No placeholders or replacement characters",
+      "passed": true
+    },
+    {
+      "check": "Source database fingerprint unchanged",
+      "passed": true
+    }
+  ],
+  "passed": 50,
+  "pdf_pages": 18,
+  "pdf_sha256": "cd0ef1a63711b3ac6ae5b9dcffdb101ea8a9d84b898b09c8a27b8f8e61d78792",
+  "visual_review": "separately recorded after rendered-page inspection"
+}

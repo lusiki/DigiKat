@@ -1,0 +1,15 @@
+﻿role,catholic_source,statements
+akademski,TRUE,1804
+akademski,FALSE,1229
+redovnica,TRUE,146
+redovnica,FALSE,124
+svecenik,TRUE,2780
+biskup,FALSE,19682
+biskup,TRUE,16035
+laik,FALSE,464
+laik,TRUE,13
+papa,FALSE,15231
+papa,TRUE,11047
+vidjelac,FALSE,142
+vidjelac,TRUE,25
+svecenik,FALSE,2537

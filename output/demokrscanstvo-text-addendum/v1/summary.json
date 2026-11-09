@@ -1,0 +1,31 @@
+{
+  "records": 2306,
+  "exact_groups": 2253,
+  "record_a1": 2211,
+  "rep_a1": 2159,
+  "record_empty_body": 108,
+  "rep_empty_body": 71,
+  "missing_sources": 0,
+  "local": {
+    "sentences": 7467,
+    "positions_checked": 187597,
+    "duplicate_sentences_omitted": 226,
+    "distinct_sentences": 4841
+  },
+  "expanded": {
+    "sentences": 11843,
+    "positions_checked": 289955,
+    "duplicate_sentences_omitted": 299,
+    "distinct_sentences": 7478
+  },
+  "local_retained_tokens": 99681,
+  "expanded_retained_tokens": 154199,
+  "empty_local_lexical_documents": 0,
+  "empty_expanded_lexical_documents": 0,
+  "relations_with_10_groups": 91,
+  "zero_concept_sentences": 2963,
+  "date_min": "2021-01-06",
+  "date_max": "2026-09-10",
+  "sentiment": "Not run: no human pilot; no evidence that a global tone score improves target-specific stance reading.",
+  "lda": "Not run: conditional module; existing NMF retained."
+}

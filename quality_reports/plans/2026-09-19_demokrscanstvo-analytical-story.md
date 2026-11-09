@@ -1,5 +1,12 @@
 # Christian democracy in public discourse: analytical and visual plan
 
+**Superseded by the reviewed PDF-first protocol:**
+[Analytical protocol, version 2.0](2026-09-19_demokrscanstvo-pdf-protocol.md).
+The revision checks the actual data structures and matched-period sample sizes,
+defines coding and sensitivity controls, and delivers a standalone PDF before
+any later barometer integration. This earlier document is retained as the
+initial proposal.
+
 Status: proposal only. Requested on 2026-09-19 after the public barometer upgrade.
 No new coding, model fitting, data extraction or visual implementation is authorized
 by this planning request. Existing completed barometer changes are separately

@@ -1,0 +1,15 @@
+{
+  "design": "15th of each month in 2025; fixed calendar diagnostic; not a probability sample",
+  "days_read": 12,
+  "totals": {
+    "raw_rows": 510471,
+    "retained_rows": 275967,
+    "candidate_rows": 122,
+    "retained_candidate_rows": 118
+  },
+  "candidate_rows_lost": 4,
+  "candidate_retention_pct": 96.72131147540983,
+  "all_row_retention_pct": 54.06124931680742,
+  "rules_sha256": "a0ec89b05dfbfaa6840cab0293c398a0c3dba174e2eb878a6e6c421a70c7df24",
+  "run_utc": "2026-09-19T16:31:50.249028+00:00"
+}

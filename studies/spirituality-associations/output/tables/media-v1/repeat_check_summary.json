@@ -1,0 +1,11 @@
+{
+  "input_items": 20598,
+  "retained_items": 18938,
+  "excluded_below_15_tokens": 1660,
+  "repeated_8grams_at_least_20_items": 3208,
+  "input_tokens": 2121777,
+  "removed_repeated_tokens": 241603,
+  "model_k": 6,
+  "interpretation": "Sensitivity only: repeated substantive announcements can also be removed. This is not a validated cleaned corpus.",
+  "selected_model_reason": "Six-topic diagnostic after six-topic initial model was most stable; eight-topic solution retained as sensitivity. Not preregistered."
+}

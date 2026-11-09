@@ -1,0 +1,78 @@
+scope,topic,label,n,denominator,percent
+publications,t01,Politička pripadnost i ideje,377,2306,16.34865568083261
+publications,t02,Domoljublje i državotvornost,274,2306,11.882046834345186
+publications,t03,HDZ i demokršćanski identitet,290,2306,12.575888985255855
+publications,t04,Desni centar i suradnja stranaka,212,2306,9.193408499566349
+publications,t05,Obitelj i nacionalni identitet,207,2306,8.976582827406766
+publications,t06,Europa i kršćanski korijeni,212,2306,9.193408499566349
+publications,t07,Izbori i konzervativna scena,151,2306,6.548135299219427
+publications,t08,Idejna tradicija i javne rasprave,173,2306,7.502168256721596
+publications,t09,Vrijednosti i svjetonazorski prijepori,335,2306,14.527320034692108
+publications,t10,Njemačka i međunarodni odnosi,74,2306,3.209019947961839
+publications,unassigned,Ostali konteksti,1,2306,0.04336513443191674
+exact_text_groups,t01,Politička pripadnost i ideje,374,2253,16.600088770528185
+exact_text_groups,t02,Domoljublje i državotvornost,243,2253,10.785619174434087
+exact_text_groups,t03,HDZ i demokršćanski identitet,279,2253,12.383488681757656
+exact_text_groups,t04,Desni centar i suradnja stranaka,209,2253,9.276520195295163
+exact_text_groups,t05,Obitelj i nacionalni identitet,207,2253,9.18774966711052
+exact_text_groups,t06,Europa i kršćanski korijeni,212,2253,9.409675987572125
+exact_text_groups,t07,Izbori i konzervativna scena,149,2253,6.613404349755881
+exact_text_groups,t08,Idejna tradicija i javne rasprave,173,2253,7.678650687971594
+exact_text_groups,t09,Vrijednosti i svjetonazorski prijepori,334,2253,14.824678206835332
+exact_text_groups,t10,Njemačka i međunarodni odnosi,72,2253,3.195739014647137
+exact_text_groups,unassigned,Ostali konteksti,1,2253,0.04438526409232135
+distinct_contexts,t01,Politička pripadnost i ideje,289,1731,16.695551704217216
+distinct_contexts,t02,Domoljublje i državotvornost,168,1731,9.705372616984402
+distinct_contexts,t03,HDZ i demokršćanski identitet,238,1731,13.749277874061237
+distinct_contexts,t04,Desni centar i suradnja stranaka,145,1731,8.376660889659156
+distinct_contexts,t05,Obitelj i nacionalni identitet,151,1731,8.723281340265743
+distinct_contexts,t06,Europa i kršćanski korijeni,162,1731,9.358752166377815
+distinct_contexts,t07,Izbori i konzervativna scena,108,1731,6.239168110918544
+distinct_contexts,t08,Idejna tradicija i javne rasprave,140,1731,8.087810514153668
+distinct_contexts,t09,Vrijednosti i svjetonazorski prijepori,271,1731,15.655690352397459
+distinct_contexts,t10,Njemačka i međunarodni odnosi,58,1731,3.3506643558636626
+distinct_contexts,unassigned,Ostali konteksti,1,1731,0.057770075101097634
+a1,t01,Politička pripadnost i ideje,367,2211,16.59882406151063
+a1,t02,Domoljublje i državotvornost,263,2211,11.895070104025327
+a1,t03,HDZ i demokršćanski identitet,288,2211,13.025780189959294
+a1,t04,Desni centar i suradnja stranaka,212,2211,9.588421528720037
+a1,t05,Obitelj i nacionalni identitet,206,2211,9.317051108095884
+a1,t06,Europa i kršćanski korijeni,207,2211,9.362279511533243
+a1,t07,Izbori i konzervativna scena,133,2211,6.015377657168702
+a1,t08,Idejna tradicija i javne rasprave,129,2211,5.834464043419267
+a1,t09,Vrijednosti i svjetonazorski prijepori,332,2211,15.015829941203075
+a1,t10,Njemačka i međunarodni odnosi,73,2211,3.3016734509271823
+a1,unassigned,Ostali konteksti,1,2211,0.045228403437358664
+additional_routes,t01,Politička pripadnost i ideje,10,95,10.526315789473685
+additional_routes,t02,Domoljublje i državotvornost,11,95,11.578947368421053
+additional_routes,t03,HDZ i demokršćanski identitet,2,95,2.1052631578947367
+additional_routes,t04,Desni centar i suradnja stranaka,0,95,0.0
+additional_routes,t05,Obitelj i nacionalni identitet,1,95,1.0526315789473684
+additional_routes,t06,Europa i kršćanski korijeni,5,95,5.2631578947368425
+additional_routes,t07,Izbori i konzervativna scena,18,95,18.94736842105263
+additional_routes,t08,Idejna tradicija i javne rasprave,44,95,46.31578947368421
+additional_routes,t09,Vrijednosti i svjetonazorski prijepori,3,95,3.1578947368421053
+additional_routes,t10,Njemačka i međunarodni odnosi,1,95,1.0526315789473684
+additional_routes,unassigned,Ostali konteksti,0,95,0.0
+stored_body,t01,Politička pripadnost i ideje,372,2290,16.24454148471616
+stored_body,t02,Domoljublje i državotvornost,271,2290,11.83406113537118
+stored_body,t03,HDZ i demokršćanski identitet,287,2290,12.532751091703057
+stored_body,t04,Desni centar i suradnja stranaka,212,2290,9.25764192139738
+stored_body,t05,Obitelj i nacionalni identitet,204,2290,8.908296943231441
+stored_body,t06,Europa i kršćanski korijeni,212,2290,9.25764192139738
+stored_body,t07,Izbori i konzervativna scena,150,2290,6.550218340611353
+stored_body,t08,Idejna tradicija i javne rasprave,173,2290,7.554585152838428
+stored_body,t09,Vrijednosti i svjetonazorski prijepori,334,2290,14.585152838427948
+stored_body,t10,Njemačka i međunarodni odnosi,74,2290,3.2314410480349345
+stored_body,unassigned,Ostali konteksti,1,2290,0.043668122270742356
+web,t01,Politička pripadnost i ideje,315,1811,17.393705135284375
+web,t02,Domoljublje i državotvornost,198,1811,10.933186085035892
+web,t03,HDZ i demokršćanski identitet,204,1811,11.264494754279404
+web,t04,Desni centar i suradnja stranaka,144,1811,7.951408061844285
+web,t05,Obitelj i nacionalni identitet,179,1811,9.884041965764771
+web,t06,Europa i kršćanski korijeni,175,1811,9.66316951960243
+web,t07,Izbori i konzervativna scena,136,1811,7.5096631695196026
+web,t08,Idejna tradicija i javne rasprave,138,1811,7.620099392600773
+web,t09,Vrijednosti i svjetonazorski prijepori,257,1811,14.191054665930425
+web,t10,Njemačka i međunarodni odnosi,65,1811,3.5891772501380452
+web,unassigned,Ostali konteksti,0,1811,0.0

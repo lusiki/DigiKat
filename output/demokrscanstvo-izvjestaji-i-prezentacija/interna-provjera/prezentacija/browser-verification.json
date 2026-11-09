@@ -1,0 +1,146 @@
+{
+  "status": "PASS",
+  "slides": 15,
+  "geometry": [
+    {
+      "id": "slajd-1",
+      "title": "Demokršćanstvo u medijima",
+      "contentBottom": 499.25,
+      "footerTop": 618.5,
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "id": "slajd-2",
+      "title": "Dva pogleda na istu medijsku raspravu",
+      "contentBottom": 467.5625,
+      "footerTop": 618.5,
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "id": "slajd-3",
+      "title": "Medijska slika pretežito je mrežna",
+      "contentBottom": 410.609375,
+      "footerTop": 618.5,
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "id": "slajd-4",
+      "title": "Politička pripadnost zauzima polovicu prostora",
+      "contentBottom": 490.203125,
+      "footerTop": 618.5,
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "id": "slajd-5",
+      "title": "Vrijednosti su središnja riječ rasprave",
+      "contentBottom": 551.53125,
+      "footerTop": 618.5,
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "id": "slajd-6",
+      "title": "Domoljublje i HDZ nose različite naglaske",
+      "contentBottom": 536.5,
+      "footerTop": 618.5,
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "id": "slajd-7",
+      "title": "Europa i stručna rasprava otvaraju druge prostore",
+      "contentBottom": 536.5,
+      "footerTop": 618.5,
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "id": "slajd-8",
+      "title": "Među izrazima prednjače „demokršćanske vrijednosti”",
+      "contentBottom": 490.203125,
+      "footerTop": 618.5,
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "id": "slajd-9",
+      "title": "Poštovanje načela ne znači stranačku pripadnost",
+      "contentBottom": 371.203125,
+      "footerTop": 618.5,
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "id": "slajd-10",
+      "title": "Iste vrijednosti ulaze u spor o javnoj usluzi",
+      "contentBottom": 423.40625,
+      "footerTop": 618.5,
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "id": "slajd-11",
+      "title": "Europska solidarnost dobiva lokalnu adresu",
+      "contentBottom": 427.4375,
+      "footerTop": 618.5,
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "id": "slajd-12",
+      "title": "Rjeđa načela ipak nose konkretne argumente",
+      "contentBottom": 418.609375,
+      "footerTop": 618.5,
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "id": "slajd-13",
+      "title": "Supsidijarnost otvara pitanje tko treba odlučivati",
+      "contentBottom": 451.96875,
+      "footerTop": 618.5,
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "id": "slajd-14",
+      "title": "Značenje vrijednosti vidi se u onome što opravdavaju",
+      "contentBottom": 511.34375,
+      "footerTop": 618.5,
+      "width": 1200,
+      "height": 675
+    },
+    {
+      "id": "slajd-15",
+      "title": "Istražite prostor. Pročitajte argumente.",
+      "contentBottom": 524.71875,
+      "footerTop": 618.5,
+      "width": 1200,
+      "height": 675
+    }
+  ],
+  "accessibility": [],
+  "keyboard": true,
+  "mobile": [
+    {
+      "width": 320,
+      "scrollWidth": 305,
+      "clipping": []
+    },
+    {
+      "width": 390,
+      "scrollWidth": 375,
+      "clipping": []
+    },
+    {
+      "width": 768,
+      "scrollWidth": 753,
+      "clipping": []
+    }
+  ],
+  "errors": []
+}

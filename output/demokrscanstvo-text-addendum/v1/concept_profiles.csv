@@ -1,0 +1,76 @@
+term,label,scope,groups,denominator,percent
+demokrscanstvo,Demokršćanstvo,all,2090,2253,92.76520195295161
+demokrscanstvo,Demokršćanstvo,a1_representative,2090,2159,96.8040759610931
+demokrscanstvo,Demokršćanstvo,web_presence,1651,1798,91.82424916573972
+domoljublje,Domoljublje,all,509,2253,22.592099422991566
+domoljublje,Domoljublje,a1_representative,509,2159,23.575729504400186
+domoljublje,Domoljublje,web_presence,402,1798,22.35817575083426
+drzavotvornost,Državotvornost,all,247,2253,10.963160230803373
+drzavotvornost,Državotvornost,a1_representative,247,2159,11.440481704492822
+drzavotvornost,Državotvornost,web_presence,205,1798,11.401557285873192
+narodnjastvo,Narodnjaštvo,all,375,2253,16.644474034620504
+narodnjastvo,Narodnjaštvo,a1_representative,375,2159,17.369152385363595
+narodnjastvo,Narodnjaštvo,web_presence,304,1798,16.907675194660733
+obitelj,Obitelj,all,261,2253,11.584553928095872
+obitelj,Obitelj,a1_representative,255,2159,11.811023622047244
+obitelj,Obitelj,web_presence,223,1798,12.402669632925473
+konzervativizam,Konzervativizam,all,215,2253,9.54283177984909
+konzervativizam,Konzervativizam,a1_representative,213,2159,9.865678554886522
+konzervativizam,Konzervativizam,web_presence,166,1798,9.232480533926585
+vrijednosti,Vrijednosti,all,1125,2253,49.93342210386152
+vrijednosti,Vrijednosti,a1_representative,1109,2159,51.366373320981936
+vrijednosti,Vrijednosti,web_presence,914,1798,50.834260289210235
+europa,Europa,all,588,2253,26.098535286284953
+europa,Europa,a1_representative,572,2159,26.49374710514127
+europa,Europa,web_presence,490,1798,27.25250278086763
+solidarnost,Solidarnost,all,103,2253,4.571682201509099
+solidarnost,Solidarnost,a1_representative,81,2159,3.7517369152385363
+solidarnost,Solidarnost,web_presence,91,1798,5.061179087875417
+supsidijarnost,Supsidijarnost,all,30,2253,1.3315579227696406
+supsidijarnost,Supsidijarnost,a1_representative,21,2159,0.9726725335803613
+supsidijarnost,Supsidijarnost,web_presence,28,1798,1.557285873192436
+opce_dobro,Opće dobro,all,12,2253,0.5326231691078562
+opce_dobro,Opće dobro,a1_representative,6,2159,0.2779064381658175
+opce_dobro,Opće dobro,web_presence,11,1798,0.6117908787541713
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,all,17,2253,0.7545494895694629
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,a1_representative,11,2159,0.5094951366373321
+ljudsko_dostojanstvo,Ljudsko dostojanstvo,web_presence,15,1798,0.8342602892102335
+dostojanstvo_rada,Dostojanstvo rada,all,11,2253,0.4882379050155348
+dostojanstvo_rada,Dostojanstvo rada,a1_representative,0,2159,0.0
+dostojanstvo_rada,Dostojanstvo rada,web_presence,11,1798,0.6117908787541713
+radnik,Radnik,all,23,2253,1.020861074123391
+radnik,Radnik,a1_representative,8,2159,0.37054191755442334
+radnik,Radnik,web_presence,21,1798,1.167964404894327
+socijalna_drzava,Socijalna država,all,7,2253,0.31069684864624947
+socijalna_drzava,Socijalna država,a1_representative,7,2159,0.3242241778601204
+socijalna_drzava,Socijalna država,web_presence,7,1798,0.389321468298109
+trzisno_gospodarstvo,Tržišno gospodarstvo,all,12,2253,0.5326231691078562
+trzisno_gospodarstvo,Tržišno gospodarstvo,a1_representative,12,2159,0.555812876331635
+trzisno_gospodarstvo,Tržišno gospodarstvo,web_presence,7,1798,0.389321468298109
+savjest,Savjest,all,29,2253,1.2871726586773191
+savjest,Savjest,a1_representative,25,2159,1.1579434923575729
+savjest,Savjest,web_presence,27,1798,1.5016685205784204
+vjerska_sloboda,Vjerska sloboda,all,11,2253,0.4882379050155348
+vjerska_sloboda,Vjerska sloboda,a1_representative,10,2159,0.4631773969430292
+vjerska_sloboda,Vjerska sloboda,web_presence,11,1798,0.6117908787541713
+demokracija,Demokracija,all,128,2253,5.681313803817133
+demokracija,Demokracija,a1_representative,119,2159,5.511811023622047
+demokracija,Demokracija,web_presence,113,1798,6.28476084538376
+izbori,Izbori / izbor,all,370,2253,16.4225477141589
+izbori,Izbori / izbor,a1_representative,357,2159,16.53543307086614
+izbori,Izbori / izbor,web_presence,326,1798,18.13125695216908
+sloboda,Sloboda,all,112,2253,4.9711495783399915
+sloboda,Sloboda,a1_representative,107,2159,4.955998147290412
+sloboda,Sloboda,web_presence,90,1798,5.005561735261401
+hdz,HDZ,all,868,2253,38.52640923213493
+hdz,HDZ,a1_representative,867,2159,40.15748031496063
+hdz,HDZ,web_presence,710,1798,39.48832035595105
+epp,EPP,all,64,2253,2.8406569019085666
+epp,EPP,a1_representative,62,2159,2.871699861046781
+epp,EPP,web_presence,50,1798,2.7808676307007785
+cdu,CDU,all,66,2253,2.929427430093209
+cdu,CDU,a1_representative,66,2159,3.0569708198239924
+cdu,CDU,web_presence,56,1798,3.114571746384872
+desni_centar,Desni centar,all,208,2253,9.232134931202841
+desni_centar,Desni centar,a1_representative,208,2159,9.634089856415008
+desni_centar,Desni centar,web_presence,156,1798,8.676307007786429

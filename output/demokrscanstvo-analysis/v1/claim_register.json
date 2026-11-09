@@ -1,0 +1,552 @@
+[
+  {
+    "id": "C001",
+    "page": 2,
+    "claim": "Četirima jezičnim temama koje opisuju pripadnost, domoljublje, HDZ-ov identitet i desni centar pripada 1.153 od 2.306 zapisa (50,0%). Najveća pojedinačna tema, \"Politička pripadnost i ideje\", obuhvaća 377 zapisa. To su dodjele modela, a ne potvrđen udio objava koje iskazuju jednu političku funkciju.",
+    "source": "topic_sensitivity.csv: publications, t01-t04",
+    "unit": "archived records",
+    "denominator": "2306",
+    "control": "Exact / near-copy, A1 and web sensitivity",
+    "alternative": "Topic boundaries are imperfect; identity language is favoured by retrieval"
+  },
+  {
+    "id": "C002",
+    "page": 2,
+    "claim": "Od 2.306 zapisa nastaje 2.253 skupina potpuno jednakog normaliziranog naslova i tijela, ali samo 1.731 različitih dokaznih konteksta. Ponavljanje citata zato je šire od ponavljanja identičnih zapisa. Glavne jezične teme opstaju u provjerama, uz promjene njihovih udjela.",
+    "source": "summary.json; topic_sensitivity.csv; near_copy_sensitivity.csv",
+    "unit": "records / exact texts / contexts",
+    "denominator": "2306 / 2253 / 1731",
+    "control": "Three near-copy thresholds",
+    "alternative": "Different wording can report the same statement; no measure here counts independent stories"
+  },
+  {
+    "id": "C003",
+    "page": 2,
+    "claim": "Pregledani primjeri povezuju solidarnost s radom i europskom suradnjom, supsidijarnost s razinama vlasti te savjest s političkom odlukom. Drugi primjeri samo nabrajaju vrijednosti ili kritiziraju nedosljednost aktera. Bez neovisnog kodiranja ne izvodimo postotak \"stvarne primjene\" niti tvrdnju da je ona u javnosti rijetka.",
+    "source": "Private development review: 104,111,119,125,133,139; qualitative_review.md",
+    "unit": "reviewed examples",
+    "denominator": "purposive examples, no population estimate",
+    "control": "Read named principle and linked proposition separately",
+    "alternative": "A short qualifying context can omit a substantive argument"
+  },
+  {
+    "id": "C004",
+    "page": 2,
+    "claim": "Status izdanja: proveden računalni i sadržajni pregled uz pomoć AI-ja. Neovisna ljudska validacija nije dovršena. Nalazi su opisni; ograničenja odabira vidljiva su od početka izvještaja.",
+    "source": "content_review_summary.json; human_validation_status.json",
+    "unit": "",
+    "denominator": "",
+    "control": "Recomputed from aggregate tables",
+    "alternative": "Archive selection and coding are not a random media sample"
+  },
+  {
+    "id": "C005",
+    "page": 3,
+    "claim": "Polazni skup čini 2.306 automatski uključenih arhivskih zapisa od 1. siječnja 2021. do 10. rujna 2026. Izdanje potječe iz arhive s 41.397.670 pretraživih zapisa. Povezivanje identifikatora, klasifikacije, teksta i postojećih tema provjereno je jedan prema jedan.",
+    "source": "summary.json; checks.csv",
+    "unit": "records",
+    "denominator": "41397670",
+    "control": "Manifest hashes and platform-month reconciliation",
+    "alternative": ""
+  },
+  {
+    "id": "C006",
+    "page": 3,
+    "claim": "Provjera sadržaja otkrila je vezu iz preporučenog članka koja ulazi u odabir te izraz o personalističkom vodstvu stranke koji nije dokaz kršćanskog personalizma. Takvi slučajevi znače da se svaki automatski pogodak ne može proglasiti sadržajno potvrđenom objavom o demokršćanstvu.",
+    "source": "content_review_summary.json; private content_flags.json",
+    "unit": "inspected cases",
+    "denominator": "",
+    "control": "Full text inspected for the four flagged examples",
+    "alternative": "Flags are not an estimate of total error"
+  },
+  {
+    "id": "C007",
+    "page": 3,
+    "claim": "Kontrolno izostavljanje 5 zapisa povezanih s pregledanim rizičnim kontekstima ostavlja 2.301 zapisa. Time se provjerava utjecaj poznatih problema, ali ne čisti cijela zbirka. Glavni rezultati zadržavaju izvorni skup radi usporedivosti.",
+    "source": "content_review_summary.json; flagged_case_sensitivity.csv",
+    "unit": "records",
+    "denominator": "2306",
+    "control": "Exact-context counterpart exclusion",
+    "alternative": "Other false positives and missed records remain unmeasured"
+  },
+  {
+    "id": "C008",
+    "page": 4,
+    "claim": "Slika 1. Mjesečni broj automatskih pogodaka i stopa na 10.000 pretraživih zapisa. Nazivnik se mijenja po mjesecu. Isprekidana crta označuje 1. travnja 2024.; posljednji mjesec završava 10. rujna 2026.",
+    "source": "timeline.csv",
+    "unit": "records / rate",
+    "denominator": "monthly eligible records",
+    "control": "Recomputed from aggregate tables",
+    "alternative": "Archive selection and coding are not a random media sample"
+  },
+  {
+    "id": "C009",
+    "page": 4,
+    "claim": "Ukupna stopa cijele zbirke iznosi 0,557 na 10.000 zapisa. To je gustoća u prikupljenom materijalu, ne udio medijske publike. Visoki mjesečni vrhovi mogu nastati prenošenjem malog broja izjava.",
+    "source": "summary.json; timeline.csv",
+    "unit": "records per 10000 eligible records",
+    "denominator": "41397670",
+    "control": "Ratio of sums, not mean of monthly rates",
+    "alternative": ""
+  },
+  {
+    "id": "C010",
+    "page": 4,
+    "claim": "Od travnja 2024. mijenja se arhiva, uključujući ulazni filtar samostalne riječi \"i\". Sirov pad ili rast preko te granice zato nema jednoznačno društveno tumačenje. Godina 2026. nije potpuna; usporedba godišnjih zbrojeva s cijelom 2025. nije opravdana.",
+    "source": "Base MULTIPLATFORM.md; summary.json",
+    "unit": "collection policy",
+    "denominator": "",
+    "control": "Break shown in every timeline",
+    "alternative": ""
+  },
+  {
+    "id": "C011",
+    "page": 5,
+    "claim": "145 zapisa; 143 točnih tekstova; 116 različita konteksta; stopa 3,53 na 10.000.",
+    "source": "episode_selection.csv: 2021-05",
+    "unit": "records / exact groups / contexts / rate",
+    "denominator": "410197",
+    "control": "Compare count peak with rate; inspect examples",
+    "alternative": ""
+  },
+  {
+    "id": "C012",
+    "page": 5,
+    "claim": "U pregledanim tekstovima isprepliću se izborno pozicioniranje, pozivanje na temeljne vrijednosti i osporavanje vjerodostojnosti demokršćanskog identiteta. Najbrojnija primarna tema mjeseca povezana je s izborima i konzervativnom scenom. Nisu svi zapisi odjek iste izjave.",
+    "source": "Private episode_review.json: 2021-05; topic_profiles.csv",
+    "unit": "reviewed contextual examples",
+    "denominator": "",
+    "control": "Six leading exact contexts examined per month",
+    "alternative": "No causal claim and no whole-month event attribution"
+  },
+  {
+    "id": "C013",
+    "page": 5,
+    "claim": "150 zapisa; 141 točnih tekstova; 103 različita konteksta; stopa 3,35 na 10.000.",
+    "source": "episode_selection.csv: 2022-06",
+    "unit": "records / exact groups / contexts / rate",
+    "denominator": "447171",
+    "control": "Compare count peak with rate; inspect examples",
+    "alternative": ""
+  },
+  {
+    "id": "C014",
+    "page": 5,
+    "claim": "Tekstovi prenose opise stranačkog vodstva, nabrajanje vrijednosti i raspravu o političkoj otvorenosti. Drugi tekstovi osporavaju odnos stranačkog programa i obitelji. Isti mjesec zato uključuje afirmaciju i kritiku, koje broj spominjanja ne razdvaja.",
+    "source": "Private episode_review.json: 2022-06; topic_profiles.csv",
+    "unit": "reviewed contextual examples",
+    "denominator": "",
+    "control": "Six leading exact contexts examined per month",
+    "alternative": "No causal claim and no whole-month event attribution"
+  },
+  {
+    "id": "C015",
+    "page": 5,
+    "claim": "137 zapisa; 137 točnih tekstova; 92 različita konteksta; stopa 1,15 na 10.000.",
+    "source": "episode_selection.csv: 2024-06",
+    "unit": "records / exact groups / contexts / rate",
+    "denominator": "1192500",
+    "control": "Compare count peak with rate; inspect examples",
+    "alternative": ""
+  },
+  {
+    "id": "C016",
+    "page": 5,
+    "claim": "Europska kampanja povezuje nacionalne interese, demokršćanske vrijednosti i mjesto Hrvatske u Europi. U jednom pregledanom argumentu solidarnost se povezuje s razvojem članice Unije. To je sadržaj izjave, a ne dokaz ekonomskog učinka tradicije.",
+    "source": "Private episode_review.json: 2024-06; topic_profiles.csv",
+    "unit": "reviewed contextual examples",
+    "denominator": "",
+    "control": "Six leading exact contexts examined per month",
+    "alternative": "No causal claim and no whole-month event attribution"
+  },
+  {
+    "id": "C017",
+    "page": 5,
+    "claim": "Prva dva portreta pripadaju starom, a treći novom režimu prikupljanja. Njihove stope nisu izravna usporedba javne relevantnosti. Arhivski datum ne dokazuje vrijeme izvorne objave ni smjer širenja.",
+    "source": "episode_selection.csv; MULTIPLATFORM.md",
+    "unit": "",
+    "denominator": "",
+    "control": "Recomputed from aggregate tables",
+    "alternative": "Archive selection and coding are not a random media sample"
+  },
+  {
+    "id": "C018",
+    "page": 6,
+    "claim": "Slika 2. Udjeli po objavama i jednom predstavniku potpuno jednakog naslova i tijela. Brojevi uz tamne stupce jesu brojevi objava. Nazivnici: 2.306 objava i 2.253 tekstualne skupine; uključena je jedna nerazvrstana objava.",
+    "source": "topic_sensitivity.csv: publications and exact_text_groups",
+    "unit": "records / exact text groups",
+    "denominator": "2306 / 2253",
+    "control": "Recomputed from aggregate tables",
+    "alternative": "Archive selection and coding are not a random media sample"
+  },
+  {
+    "id": "C019",
+    "page": 6,
+    "claim": "Kontrola identičnih tekstova zadržava najveću temu na prvom mjestu. Međutim, bliske teme dijele rječnik, a njihovi rubni primjeri prelaze sadržajne granice naslova. Kartu zato valja čitati kao orijentaciju kroz jezik zbirke, ne kao iscrpan popis značenja demokršćanstva.",
+    "source": "topic_sensitivity.csv; topic_content_review.csv",
+    "unit": "fixed-model topic assignments",
+    "denominator": "",
+    "control": "Ten typical/boundary contexts per topic",
+    "alternative": ""
+  },
+  {
+    "id": "C020",
+    "page": 7,
+    "claim": "Potpuna tekstualna jednakost uklanja 53 dodatnih kopija (2,3% zapisa). Ponavljani dokazni konteksti brojniji su. Već promjena interpunkcije, naslova ili dodatnog odlomka može stvoriti drugi tekst, iako sadrži isti politički citat.",
+    "source": "summary.json",
+    "unit": "extra exact copies",
+    "denominator": "2306",
+    "control": "Exact context and near-copy comparisons",
+    "alternative": ""
+  },
+  {
+    "id": "C021",
+    "page": 7,
+    "claim": "Slika 3. Odabrane teme po trima jedinicama. Kratka smeđa crta ispod točaka pokazuje raspon udjela kroz tri istraživačka praga gotovo jednakih tekstova. Svaka serija ima vlastiti nazivnik.",
+    "source": "topic_sensitivity.csv; near_copy_sensitivity.csv",
+    "unit": "records / texts / contexts",
+    "denominator": "2306 / 2253 / 1731; near-copy denominators 1793,1944,2123",
+    "control": "Recomputed from aggregate tables",
+    "alternative": "Archive selection and coding are not a random media sample"
+  },
+  {
+    "id": "C022",
+    "page": 7,
+    "claim": "Tema \"Domoljublje i državotvornost\" prelazi s 11,9% objava na 10,8% točnih tekstova i 9,7% različitih konteksta. To upućuje na doprinos ponavljanih formulacija njezinoj vidljivosti, uz očuvanu prisutnost u različitim tekstovima.",
+    "source": "topic_sensitivity.csv: t02",
+    "unit": "topic shares",
+    "denominator": "2306 / 2253 / 1731",
+    "control": "Near-copy range; typical texts read",
+    "alternative": "Contexts with differing punctuation can still convey the same statement"
+  },
+  {
+    "id": "C023",
+    "page": 7,
+    "claim": "Istraživačko grupiranje gotovo jednakih tekstova daje od 1.793 do 2.123 skupina. Taj raspon nije interval pouzdanosti niti broj samostalnih priča. Nije potvrđena jedinstvena granica koja bi opravdala zamjenu glavnog nazivnika.",
+    "source": "near_copy_summary.csv",
+    "unit": "algorithmic groups",
+    "denominator": "",
+    "control": "Jaccard 0.85 / 0.90 / 0.95; complete pairwise similarity rule",
+    "alternative": ""
+  },
+  {
+    "id": "C024",
+    "page": 8,
+    "claim": "Slika 4. Deset primarnih tema; jedna nerazvrstana objava nije prikazana u retcima, ali ostaje u nazivniku svoje godine. † Godina 2024. sadrži oba režima prikupljanja. * Godina 2026. završava 10. rujna.",
+    "source": "topic_profiles.csv: year",
+    "unit": "topic assignments",
+    "denominator": "year-specific included records",
+    "control": "Recomputed from aggregate tables",
+    "alternative": "Archive selection and coding are not a random media sample"
+  },
+  {
+    "id": "C025",
+    "page": 8,
+    "claim": "Promjene se mogu čitati kao razlike u zabilježenoj raspravi: pojedine godine ističu se kampanjskim ili vrijednosnim jezikom. Ne proizlazi da su građani promijenili ideološke stavove. Ponavljani citati, promjene platformi i duljina teksta ostaju moguća objašnjenja.",
+    "source": "topic_profiles.csv; topic_content_review.csv",
+    "unit": "descriptive topic mix",
+    "denominator": "",
+    "control": "Exact text, web-only and model-start sensitivity",
+    "alternative": "Changing archive and episode composition"
+  },
+  {
+    "id": "C026",
+    "page": 9,
+    "claim": "Izričito nazivlje A1 obuhvaća 2.211 zapisa, odnosno 95,9% skupa. Preostalih 95 ulazi drugim pravilima. Ta mala skupina sadržajno se razlikuje od većine i zato je ne treba sakriti u ukupnom postotku.",
+    "source": "summary.json",
+    "unit": "records",
+    "denominator": "2306",
+    "control": "A1-only and additional-route tables",
+    "alternative": ""
+  },
+  {
+    "id": "C027",
+    "page": 9,
+    "claim": "Slika 5. Primarna tema \"Idejna tradicija i javne rasprave\" u cijeloj zbirci, užem A1 skupu i dodatno uključenim zapisima. Isti model primjenjuje se u svim trima skupinama.",
+    "source": "topic_sensitivity.csv: t08",
+    "unit": "records",
+    "denominator": "2306 / 2211 / 95",
+    "control": "Recomputed from aggregate tables",
+    "alternative": "Archive selection and coding are not a random media sample"
+  },
+  {
+    "id": "C028",
+    "page": 9,
+    "claim": "Temi pripada 44 od 95 dodatnih zapisa (46,3%). U samom A1 skupu njezin je udio 5,8%. Razlika potvrđuje da izbor ulaznog pravila oblikuje ono što vidimo kao temu zbirke.",
+    "source": "topic_sensitivity.csv: t08",
+    "unit": "topic assignments",
+    "denominator": "95 / 2211",
+    "control": "Same fixed model and manually read non-A1 examples",
+    "alternative": "Additional routes include false or uncertain anchors"
+  },
+  {
+    "id": "C029",
+    "page": 9,
+    "claim": "Dodatni putovi uključuju socijalni nauk Crkve i argumentacijske obrasce, pa mogu otvoriti prostor za socijalna pitanja koja ne imenuju demokršćanstvo. Isti širi zahvat nosi rizik pogrešnog sidra. Ova usporedba ne dokazuje veću kvalitetu ili \"autentičnost\" jedne skupine.",
+    "source": "MULTIPLATFORM.md; content_review_summary.json",
+    "unit": "interpretation of selection rules",
+    "denominator": "",
+    "control": "Inspected false-anchor case",
+    "alternative": ""
+  },
+  {
+    "id": "C030",
+    "page": 10,
+    "claim": "Web čini 1.811 zapisa (78,5% cjeline). Ostale platforme pružaju važne primjere, ali broj objava u zajedničkom razdoblju često ne dopušta razrađeno rangiranje udjela.",
+    "source": "platforms.csv",
+    "unit": "records",
+    "denominator": "2306",
+    "control": "Full-period vs 2025 comparison",
+    "alternative": ""
+  },
+  {
+    "id": "C031",
+    "page": 10,
+    "claim": "Tablica 1. Broj uključenih zapisa te broj dana s bilo kojim arhivskim podatkom na platformi. Dani ne dokazuju potpuno praćenje. Platforme počinju u različito vrijeme.",
+    "source": "platforms.csv",
+    "unit": "records and observed days",
+    "denominator": "platform-specific archived coverage",
+    "control": "Recomputed from aggregate tables",
+    "alternative": "Archive selection and coding are not a random media sample"
+  },
+  {
+    "id": "C032",
+    "page": 10,
+    "claim": "Komentari u 2025. imaju samo 7 pretraživih zapisa, raspoređenih na 6 dana. Nula pogodaka zato ne znači odsutnost rasprave. X i Facebook imaju 11 odnosno 14 pogodaka: za ovu godinu prikladniji su brojevi i primjeri.",
+    "source": "platforms.csv: comment, twitter, facebook",
+    "unit": "records and observed days",
+    "denominator": "2025 platform archives",
+    "control": "Coverage before interpretation",
+    "alternative": ""
+  },
+  {
+    "id": "C033",
+    "page": 11,
+    "claim": "Slika 6. Tematski sastav pet većih skupina. U ćeliji su udio i broj zapisa; n ispod platforme jest nazivnik. Razdoblja, izvori i obuhvat razlikuju se, osobito za tisak i komentare.",
+    "source": "topic_profiles.csv: platform; platforms.csv",
+    "unit": "primary topic assignments",
+    "denominator": "platform-specific included records",
+    "control": "Recomputed from aggregate tables",
+    "alternative": "Archive selection and coding are not a random media sample"
+  },
+  {
+    "id": "C034",
+    "page": 11,
+    "claim": "Naglašena ćelija može potjecati od formata komunikacije, ponavljanih izjava ili sastava izvora. Iz nje ne proizlazi da platforma ili njezina publika više podupire neku ideju. Za usklađenu usporedbu 2025. većina društvenih platformi nema dovoljan broj uključenih zapisa.",
+    "source": "platforms.csv; topic_profiles.csv",
+    "unit": "descriptive platform composition",
+    "denominator": "",
+    "control": "2025 feasibility; no significance tests",
+    "alternative": "Text length, coverage and repetition"
+  },
+  {
+    "id": "C035",
+    "page": 12,
+    "claim": "U 7.467 rečeničnih jedinica iz 2.253 točnih tekstova izmjerena su supojavljivanja odabranih riječi i fraza. NPMI uspoređuje zajedničku prisutnost s očekivanjem prema zasebnim učestalostima. Čitanje primjera određuje što ta blizina znači.",
+    "source": "lexical_summary.json; lexical_pairs.csv",
+    "unit": "sentence instances",
+    "denominator": "7467",
+    "control": "Token offsets and original field boundaries",
+    "alternative": ""
+  },
+  {
+    "id": "C036",
+    "page": 12,
+    "claim": "Slika 7. Pet pregledanih parova. Uz NPMI je broj različitih točnih tekstova s parom. Skup rečenica uključuje i rečenice bez ijednog pojma; tekst se broji jednom za potporu para.",
+    "source": "lexical_pairs.csv",
+    "unit": "lexical pairs",
+    "denominator": "7467 sentence instances / 2253 exact texts",
+    "control": "Recomputed from aggregate tables",
+    "alternative": "Archive selection and coding are not a random media sample"
+  },
+  {
+    "id": "C037",
+    "page": 12,
+    "claim": "Domoljublje, narodnjaštvo i državotvornost često su dio iste formule političkog određenja. Pregled sadrži i kritike aktera koji se navodno ne drže tih vrijednosti. Veza demokršćanstva i konzervativizma također uključuje razlikovanje i osporavanje: supojavljivanje nije dokaz da su pojmovi istoznačni.",
+    "source": "Private pair_review.json; qualitative_review.md",
+    "unit": "49 reviewed supporting examples",
+    "denominator": "",
+    "control": "Read negations and oppositions",
+    "alternative": "Shared quotations can produce strong lexical edges"
+  },
+  {
+    "id": "C038",
+    "page": 12,
+    "claim": "Par Europa-solidarnost podupire 27 tekstova; nakon uklanjanja svih tekstova s njegovom najraširenijom jednakom rečenicom ostaje 17. Par HDZ-savjest prelazi s 20 na 12. Obje veze postoje i izvan te rečenice, uz osjetljivost na formulaciju i širi kontekst.",
+    "source": "lexical_pairs.csv: europa-solidarnost, hdz-savjest",
+    "unit": "exact text groups",
+    "denominator": "",
+    "control": "Largest shared-sentence group removal",
+    "alternative": "Other paraphrases of the same quotation can remain"
+  },
+  {
+    "id": "C039",
+    "page": 13,
+    "claim": "Tablica 2. Pregledane parafraze iz privatnog razvojnog skupa: četiri različita argumentacijska slučaja. Izvorni tekst i identifikatori ostaju privatni.",
+    "source": "Private development_review.json: 104,111,125,139; qualitative_review.md",
+    "unit": "linked argument",
+    "denominator": "purposefully selected examples",
+    "control": "Recomputed from aggregate tables",
+    "alternative": "Archive selection and coding are not a random media sample"
+  },
+  {
+    "id": "C040",
+    "page": 14,
+    "claim": "U pregledanoj izjavi politički akter istodobno izražava poštovanje prema demokršćanskim načelima i odbija vlastito svrstavanje u taj politički spektar. Automatsko brojanje bliskih pojmova vidjelo bi snažnu povezanost; čitanje pokazuje razliku između poštovanja ideje i pripadnosti.",
+    "source": "Private development_review.json: 1,3,4",
+    "unit": "qualitative case",
+    "denominator": "",
+    "control": "Negation and target distinguished",
+    "alternative": ""
+  },
+  {
+    "id": "C041",
+    "page": 14,
+    "claim": "Jedan sudionik rasprave vlastiti svjetonazor određuje kao demokršćanski, a istodobno snažno odbacuje HDZ. Pozitivan odnos prema tradiciji i negativan odnos prema stranci ovdje stoje u istom iskazu. Zato ne objavljujemo jedinstvenu automatsku ocjenu \"pozitivnog\" ili \"negativnog\" demokršćanstva.",
+    "source": "Private development_review.json: 133",
+    "unit": "qualitative case",
+    "denominator": "",
+    "control": "Actor target separate from tradition",
+    "alternative": "Single purposive example, no population frequency"
+  },
+  {
+    "id": "C042",
+    "page": 14,
+    "claim": "U duljem razgovoru demokršćanstvo se razlikuje od liberalnog konzervativizma preko zajednice, solidarnosti i odnosa prema političkim razinama. Taj primjer pokazuje da česta identitetska uporaba ne iscrpljuje sadržaj skupa. Ne može se, međutim, upotrijebiti za mjerenje koliko je takvih objašnjenja u cijeloj zbirci.",
+    "source": "Private development_review.json: 125",
+    "unit": "qualitative case",
+    "denominator": "",
+    "control": "Read definitions, contrasts and application separately",
+    "alternative": ""
+  },
+  {
+    "id": "C043",
+    "page": 14,
+    "claim": "Ovdje su namjerno odabrani kontrastni slučajevi. Oni dokazuju da različite funkcije postoje u materijalu, ne koliko su raširene.",
+    "source": "qualitative_review.md; content_review_summary.json",
+    "unit": "",
+    "denominator": "",
+    "control": "Recomputed from aggregate tables",
+    "alternative": "Archive selection and coding are not a random media sample"
+  },
+  {
+    "id": "C044",
+    "page": 15,
+    "claim": "Tablica 3. Sve promjene udjela odnose se na isti zamrznuti tematski model. ARI je prilagođeno slaganje particija, ne točnost. Razvojni podskup duljeg teksta namjerno je odabran.",
+    "source": "topic_sensitivity.csv; flagged_case_sensitivity.csv; near_copy_summary.csv; model_stability.csv; long_text_summary.json",
+    "unit": "topic share changes and assignment agreement",
+    "denominator": "scope-specific denominators",
+    "control": "Recomputed from aggregate tables",
+    "alternative": "Archive selection and coding are not a random media sample"
+  },
+  {
+    "id": "C045",
+    "page": 15,
+    "claim": "Najčvršća sinteza jest da političko određenje i ponavljane vrijednosne formule čine važan dio zabilježenog jezika, dok pregledani primjeri potvrđuju i konkretno obrazlaganje. Podaci ne određuju koliko je demokršćanstvo društveno utjecajno niti dopuštaju jedinstveni indeks njegove relevantnosti.",
+    "source": "All sensitivity tables; qualitative_review.md",
+    "unit": "synthesis",
+    "denominator": "",
+    "control": "Explicit scope and counterexamples",
+    "alternative": "Selection, repetition, text length and coding errors"
+  },
+  {
+    "id": "C046",
+    "page": 16,
+    "claim": "Provjereni su SHA256 kontrolni zbrojevi obaju javnih izdanja te povezano svih 2.306 odabranih ključeva s privatnim međurezultatima. Izvorna baza nije ponovno pretraživana i kriterij uključivanja nije izmijenjen. Ponovljeni arhivski zapis može predstavljati isti članak, prijenos ili drugi kontekst.",
+    "source": "checks.csv; summary.json; prepare.R",
+    "unit": "records",
+    "denominator": "2306",
+    "control": "1:1 join and per-platform/month equality",
+    "alternative": ""
+  },
+  {
+    "id": "C047",
+    "page": 17,
+    "claim": "Referentni TF-IDF/NMF model ponovno je uklopljen na 1.731 različitih konteksta uz 1.372 značajke. Najmanja frekvencija jest pet konteksta, najveća 85%; koriste se sublinearni TF i L2 normalizacija. Lematizirane su imenice, pridjevi i vlastita imena. Sve dodjele iz izvornog izdanja reproducirane su točno.",
+    "source": "summary.json; checks.csv; thematic summary.json",
+    "unit": "contexts / features / record assignments",
+    "denominator": "2306",
+    "control": "Input signature, original assignment equality",
+    "alternative": ""
+  },
+  {
+    "id": "C048",
+    "page": 17,
+    "claim": "Tablica 4. ARI se računa na 1.730 konteksta s barem jednom zadržanom značajkom. Usporedbe s različitim brojem tema nisu ocjena točnosti niti kriterij odabira pobjedničkog modela.",
+    "source": "model_stability.csv",
+    "unit": "topic partition agreement",
+    "denominator": "1730 nonzero contexts",
+    "control": "Recomputed from aggregate tables",
+    "alternative": "Archive selection and coding are not a random media sample"
+  },
+  {
+    "id": "C049",
+    "page": 17,
+    "claim": "Na 140 razvojnih tekstova cijeli pohranjeni sadržaj projiciran je u isti rječnik, IDF i komponente modela. Dodjela ostaje ista u 94 slučaja (67,1%), a mijenja se u 46. To je ciljana provjera osjetljivosti, bez procjene udjela promjene u cijeloj zbirci.",
+    "source": "long_text_summary.json; long_text_sensitivity.csv",
+    "unit": "development texts",
+    "denominator": "140",
+    "control": "Same model; no full-text refit",
+    "alternative": "Purposive sample enriched for boundary cases"
+  },
+  {
+    "id": "C050",
+    "page": 17,
+    "claim": "Uspoređeni su skupovi nizova od pet riječi. Za tekstove od barem 80 riječi i omjer duljina od najmanje 0,80 ispitani su Jaccardovi pragovi 0,85, 0,90 i 0,95. Svaki par unutar skupine mora prijeći prag, čime se sprječava ulančavanje. Pregledano je 15 parova oko pragova na razini naslova i dokaznih konteksta; ne tvrdi se da je utvrđena točnost grupiranja.",
+    "source": "controls.py; near_copy_summary.csv; private near_copy_review.json",
+    "unit": "algorithmic near-copy groups",
+    "denominator": "",
+    "control": "All pairwise threshold condition; exploratory parameter range",
+    "alternative": ""
+  },
+  {
+    "id": "C051",
+    "page": 18,
+    "claim": "Za jezične veze ponovno su anotirane izvorne rečenice lokalnim hrvatskim UDPipe modelom. Sačuvane su leme, vrste riječi, glagoli, negacija i položaji. Provjereno je 187.597 tokena prema izvornim normaliziranim rasponima. Udaljeni odlomci i odvojena polja nisu spojeni u istu rečenicu.",
+    "source": "lexical_summary.json; prepare.R; lexical.py",
+    "unit": "token instances",
+    "denominator": "",
+    "control": "Exact substring assertions",
+    "alternative": ""
+  },
+  {
+    "id": "C052",
+    "page": 18,
+    "claim": "Dopunske tablice ispituju pragove potpore od 5, 10 i 20 tekstova, susjedne stvarne rečenice, potpuno različite rečenice, jednakost slijeda riječi bez interpunkcije te izostavljanje rečenica duljih od 120 riječi. Računalna granica rečenice može pogriješiti u lošem prijepisu ili nabrajanju; zato se veze ne tumače kao automatski potvrđeni argumenti.",
+    "source": "lexical_thresholds.csv; lexical_adjacent_pairs.csv; lexical_distinct_sentence_pairs.csv; lexical_word_sequence_pairs.csv; lexical_short_sentence_pairs.csv",
+    "unit": "lexical cooccurrences",
+    "denominator": "",
+    "control": "Sentence unit and support sensitivity",
+    "alternative": ""
+  },
+  {
+    "id": "C053",
+    "page": 18,
+    "claim": "AI asistent pročitao je 140 razvojnih konteksta: 50 tipičnih, 50 graničnih i 40 dodatnih raznolikih slučajeva. Pročitani su i potporni primjeri za pet jezičnih parova te epizodni i rizični slučajevi. Uzorci su namjerni i ne daju ukupnu stopu pogreške.",
+    "source": "content_review_summary.json; topic_content_review.csv; qualitative_review.md",
+    "unit": "reviewed development contexts",
+    "denominator": "140",
+    "control": "Negative cases and full text for flagged selection risks",
+    "alternative": ""
+  },
+  {
+    "id": "C054",
+    "page": 18,
+    "claim": "Pripremljena su dva slijepa koderska paketa s istih 200 novih jedinica i zasebnom evidencijom uzorkovanja. Nema dovršenih ljudskih kodera, matrice pogrešaka, preciznosti, odziva ni kappe. Prema rezervnom postupku plana izostavljeni su automatski udjeli načela, matrica potvrđenih primjena i profili govornika.",
+    "source": "human_validation_status.json",
+    "unit": "prospective coding pack",
+    "denominator": "200",
+    "control": "Previously read contexts and near-copy clusters excluded",
+    "alternative": "Pack preparation is not validation"
+  },
+  {
+    "id": "C055",
+    "page": 19,
+    "claim": "Tablica 5. Nazivnici stoje u zadnjem retku. Jedna primarna tema po jedinici; zasebni pojmovni kodovi ne zbrajaju se s ovim brojevima.",
+    "source": "topic_sensitivity.csv",
+    "unit": "primary topic counts",
+    "denominator": "2306 / 2253 / 2211",
+    "control": "Recomputed from aggregate tables",
+    "alternative": "Archive selection and coding are not a random media sample"
+  }
+]

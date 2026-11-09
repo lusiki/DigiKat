@@ -1,0 +1,14 @@
+{
+  "development_contexts_read": 140,
+  "topic_typical": 50,
+  "topic_boundary": 50,
+  "additional_diverse": 40,
+  "supporting_pair_examples_read": 49,
+  "flagged_full_text_cases": 4,
+  "flagged_context_counterparts": 5,
+  "remaining_for_sensitivity": 2301,
+  "reviewer": "Codex AI; no independent human coders",
+  "scope": "context reading for all 140; full-text reading of four selection-risk cases; 49 supporting sentence examples",
+  "counts_are_not_error_rate": true,
+  "automatic_principle_prevalence_released": false
+}
