@@ -39,3 +39,10 @@ docs/data/barometar/demokrscanstvo-themes/v1/** -text
 *.woff binary
 *.woff2 binary
 *.xlsx binary
+
+# Preserve checksummed manuscript and research-release bytes on every platform.
+assets/papers/** -text
+docs/assets/papers/** -text
+studies/catholic-voices-network/data/public/** -text
+output/** -text
+studies/*/output/** -text

@@ -156,3 +156,11 @@ studies/*/output/**/intermediate/
 /vault/
 # Local Node dependencies used by release checks
 node_modules/
+
+# Task-local manuscript conversions, render QA and isolated document renderer.
+/tmp/church-papers-publication/
+
+# Local render experiments, browser QA, backup copies and knitr caches.
+/tmp/
+/docs/tmp/
+/pages/**/*_cache/
