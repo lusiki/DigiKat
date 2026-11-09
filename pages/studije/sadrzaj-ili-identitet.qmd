@@ -1,0 +1,60 @@
+---
+title: "Sadržaj ili identitet?"
+subtitle: "Demokršćanski socijalnopolitički diskurs u hrvatskom digitalnom medijskom prostoru (2021.–2025.)"
+description: "Studija uspoređuje socijalnopolitički sadržaj i kulturno identitarni registar demokršćanskog diskursa u korpusu DigiKat."
+author:
+  - name: "Luka Šikić"
+    url: "https://www.lukasikic.info/"
+    affiliation: "Hrvatsko katoličko sveučilište"
+  - name: "Andreja Sršen"
+    url: "https://www.fhs.hr/staff/andreja.srsen"
+    affiliation: "Fakultet hrvatskih studija Sveučilišta u Zagrebu"
+date-modified: 2026-11-09
+status: "Preliminarno"
+show-freshness: true
+schema-type: "ScholarlyArticle"
+categories: ["Tematsko istraživanje", "Radni rukopis"]
+---
+
+Kada se u medijima govori jezikom demokršćanske tradicije, koliko je u njemu socijalne politike,
+a koliko kulturnog identiteta? Rad Luke Šikića i Andreje Sršen istražuje odnos tih dviju
+dimenzija u hrvatskom digitalnom medijskom prostoru.
+
+## Istraživačko pitanje
+
+Prevladavaju li pojmovi solidarnosti, supsidijarnosti i radničkih prava ili pojmovi tradicije,
+nacionalnog identiteta i obiteljskih vrijednosti? Rad ispituje razlike između diskurzivnih
+kategorija, promjene kroz vrijeme i odnos sadržaja prema angažmanu publike.
+
+## Podaci i metode
+
+Analiza obuhvaća objave iz korpusa DigiKat od 2021. do 2025. koje sadrže barem jedan pojam
+iz socijalnopolitičkog ili kulturno identitarnog rječnika. Indeks supstantivnosti izražava udio
+socijalnopolitičkih pogodaka u ukupnom broju pogodaka obaju rječnika.
+
+Diskurzivne kategorije označavaju aktere o kojima se govori, a ne autore objava. Regresijski
+modeli ispituju razlike između kategorija i godina te odnos supstantivnosti i angažmana.
+Rječnici, provjere i ograničenja dostupni su u punom tekstu rada.
+
+## Ključni nalaz
+
+Prema nalazima rukopisa kulturno identitarni registar prevladava nad socijalnopolitičkim.
+Rasprava o akademskoj zajednici ima izraženiji socijalnopolitički sadržaj, ali malen volumen.
+Tijekom promatranog razdoblja nema trenda rasta supstantivnosti, a sadržaj s izraženijom
+socijalnopolitičkom dimenzijom nije nagrađen većim angažmanom publike.
+
+## Cijeli rad
+
+Dostupno je izdanje rukopisa od 14. travnja 2026. HTML, PDF i Word prenose isti tekst,
+tablice i slike.
+
+::: {.study-paper-formats aria-label="Dostupni formati rada"}
+<a class="study-paper-format study-paper-format--primary" href="../../assets/papers/sadrzaj-ili-identitet.html"><span class="study-paper-format__type">HTML</span><span class="study-paper-format__label">Čitanje u pregledniku</span></a>
+<a class="study-paper-format" href="../../assets/papers/sadrzaj-ili-identitet.pdf"><span class="study-paper-format__type">PDF</span><span class="study-paper-format__label">Preuzimanje i ispis</span></a>
+<a class="study-paper-format" href="../../assets/papers/sadrzaj-ili-identitet.docx"><span class="study-paper-format__type">Word</span><span class="study-paper-format__label">Uređivanje rukopisa</span></a>
+:::
+
+## Status
+
+Radni rukopis za Reviju za socijalnu politiku. Rad pripada
+[tematskim istraživanjima na korpusu DigiKat](index.html).

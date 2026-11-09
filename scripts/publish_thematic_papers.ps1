@@ -3,6 +3,8 @@ param(
   [string[]]$Only,
   [string]$ChurchFramingSourceHtml = $env:DIGIKAT_CHURCH_FRAMING_HTML,
   [string]$ChurchFramingSourceDocx = $env:DIGIKAT_CHURCH_FRAMING_DOCX,
+  [string]$ChristianDemocracySourceHtml,
+  [string]$ChristianDemocracySourceDocx,
   [switch]$SkipPdf
 )
 
@@ -13,12 +15,25 @@ $utf8NoBom = New-Object Text.UTF8Encoding($false)
 $churchFramingHtml = if ($ChurchFramingSourceHtml) {
   [IO.Path]::GetFullPath($ChurchFramingSourceHtml)
 } else {
-  "https://raw.githubusercontent.com/lusiki/Church-and-dezinfo/6dffe79e33f1ad2e139c19a2b93b3135946abcf2/papers/03_framing_paper_2.html"
+  # Retain the verified frozen edition, including its self-contained formulas.
+  Join-Path $paperDir 'crkva-i-dezinformacije.html'
 }
 $churchFramingDocx = if ($ChurchFramingSourceDocx) {
   [IO.Path]::GetFullPath($ChurchFramingSourceDocx)
 } else {
-  $null
+  $existing = Join-Path $paperDir 'crkva-i-dezinformacije.docx'
+  if (Test-Path -LiteralPath $existing) { $existing } else { $null }
+}
+$christianDemocracyHtml = if ($ChristianDemocracySourceHtml) {
+  [IO.Path]::GetFullPath($ChristianDemocracySourceHtml)
+} else {
+  Join-Path $paperDir 'sadrzaj-ili-identitet.html'
+}
+$christianDemocracyDocx = if ($ChristianDemocracySourceDocx) {
+  [IO.Path]::GetFullPath($ChristianDemocracySourceDocx)
+} else {
+  $existing = Join-Path $paperDir 'sadrzaj-ili-identitet.docx'
+  if (Test-Path -LiteralPath $existing) { $existing } else { $null }
 }
 
 $profiles = @{
@@ -27,6 +42,7 @@ $profiles = @{
   "katolicki-influenceri" = "katolicki-influenceri"
   "redovnicke-zajednice" = "redovnicke-zajednice"
   "crkva-i-dezinformacije" = "crkva-i-dezinformacije"
+  "sadrzaj-ili-identitet" = "sadrzaj-ili-identitet"
   "inflation-information-delayed-repricing" = "inflacija-i-religija"
   "socijalni-nauk-i-gospodarstvo" = "socijalni-nauk-i-gospodarstvo"
   "katolicko-obrazovanje-i-stepinac" = "katolicko-obrazovanje-i-stepinac"
@@ -82,7 +98,19 @@ $papers = @(
     SourceHtml = $churchFramingHtml
     SourceDocx = $churchFramingDocx
     Authors = @(
-      [pscustomobject]@{ Name = "Luka Šikić"; Url = "https://www.lukasikic.info/" }
+      [pscustomobject]@{ Name = "Luka Šikić"; Url = "https://www.lukasikic.info/" },
+      [pscustomobject]@{ Name = "Andreja Sršen"; Url = "https://www.fhs.hr/staff/andreja.srsen" }
+    )
+    InjectByline = $false
+    Affiliation = ""
+  },
+  [pscustomobject]@{
+    Stem = "sadrzaj-ili-identitet"
+    SourceHtml = $christianDemocracyHtml
+    SourceDocx = $christianDemocracyDocx
+    Authors = @(
+      [pscustomobject]@{ Name = "Luka Šikić"; Url = "https://www.lukasikic.info/" },
+      [pscustomobject]@{ Name = "Andreja Sršen"; Url = "https://www.fhs.hr/staff/andreja.srsen" }
     )
     InjectByline = $false
     Affiliation = ""
@@ -147,7 +175,9 @@ function Copy-DocumentSource([string]$Source, [string]$Target) {
   }
   else {
     if (-not (Test-Path -LiteralPath $Source)) { throw "Missing document source: $Source" }
-    Copy-Item -LiteralPath $Source -Destination $Target -Force
+    if ([IO.Path]::GetFullPath($Source) -ne [IO.Path]::GetFullPath($Target)) {
+      Copy-Item -LiteralPath $Source -Destination $Target -Force
+    }
   }
 }
 
@@ -272,6 +302,14 @@ foreach ($paper in $papers) {
 
   Write-Host "[paper] $($paper.Stem)"
   $html = Read-HtmlSource $paper.SourceHtml
+  if ($paper.Stem -in @('crkva-i-dezinformacije', 'sadrzaj-ili-identitet')) {
+    # The selected upstream editions double-escape TeX in their math spans.
+    # Normalize transport escaping only; retain every mathematical expression.
+    $html = [regex]::Replace($html, '(?is)(<span\b[^>]*class="math (?:inline|display)"[^>]*>)(.*?)(</span>)', [Text.RegularExpressions.MatchEvaluator]{
+      param($match)
+      return $match.Groups[1].Value + $match.Groups[2].Value.Replace('\\', '\') + $match.Groups[3].Value
+    })
+  }
   $html = Remove-PreviousChrome $html
   $html = Link-TitleAuthors -Html $html -Authors @($paper.Authors) -InjectByline $paper.InjectByline -Affiliation $paper.Affiliation
   $hasWord = [bool]$paper.SourceDocx

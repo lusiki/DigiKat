@@ -2,7 +2,7 @@
 title: "Tematska istraživanja"
 subtitle: "Pregled svih studija provedenih na DigiKat korpusu, s autorstvom i fazom izrade"
 description: "Tematska istraživanja okupljaju studije nastale na korpusu DigiKat te za svaku navode pitanje, autore, status i dostupne oblike rada."
-date-modified: 2026-08-24
+date-modified: 2026-11-09
 status: "Ažurira se"
 show-freshness: true
 schema-type: "CollectionPage"
@@ -51,10 +51,21 @@ Autori su Suzana Obrovac Lipar i [Luka Šikić](https://www.lukasikic.info/) · 
 
 ::: {.info-card}
 ### [Tko govori iz katoličkoga medijskog prostora](crkva-i-dezinformacije.html)
-**Jedna oznaka skriva različite glasove.** U obnovljenom korpusu katolički mediji kao cjelina ne
-odstupaju na očekivanim afirmativnim okvirima, ali orijentirani portali češće od službenih glasila
-aktiviraju svih osam mjerenih okvira.
+**Jedna oznaka skriva različite glasove.** Službena crkvena glasila snažnije naglašavaju
+tradicionalne vrijednosti, a katolički orijentirani portali suverenitet, vanjsku prijetnju,
+medijsku kritiku i zavjeru.
 Autori su [Luka Šikić](https://www.lukasikic.info/) i Andreja Sršen · u recenziji.
+
+[HTML](../../assets/papers/crkva-i-dezinformacije.html) · [PDF](../../assets/papers/crkva-i-dezinformacije.pdf) · [Word](../../assets/papers/crkva-i-dezinformacije.docx)
+:::
+
+::: {.info-card}
+### [Sadržaj ili identitet?](sadrzaj-ili-identitet.html)
+**Demokršćanstvo između socijalne politike i identiteta.** Rad ispituje odnos socijalnopolitičkih
+i kulturno identitarnih pojmova u hrvatskom digitalnom medijskom prostoru (2021.–2025.).
+Autori su [Luka Šikić](https://www.lukasikic.info/) i Andreja Sršen · radni rukopis.
+
+[HTML](../../assets/papers/sadrzaj-ili-identitet.html) · [PDF](../../assets/papers/sadrzaj-ili-identitet.pdf) · [Word](../../assets/papers/sadrzaj-ili-identitet.docx)
 :::
 
 ::: {.info-card}

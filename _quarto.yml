@@ -22,7 +22,8 @@ project:
     # Dovršena tematska istraživanja ostaju na verzioniranim ulazima na kojima
     # su objavljena; puni render žive stranice ne smije ih ponovno izračunati.
     # Pregled istraživanja ostaje aktivna stranica i renderira se redovito.
-    - "!pages/studije/crkva-i-dezinformacije.qmd"
+    # The author-selected church-paper profiles are static summaries of pinned
+    # manuscripts. They contain no analysis chunks and can render with the site.
     - "!pages/studije/hodocasnicki-turizam.qmd"
     - "!pages/studije/inflacija-i-religija.qmd"
     - "!pages/studije/katolicki-influenceri.qmd"

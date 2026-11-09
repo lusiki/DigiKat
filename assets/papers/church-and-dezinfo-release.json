@@ -1,0 +1,74 @@
+{
+  "selected_on": "2026-11-09",
+  "manuscript_date": "2026-04-14",
+  "source": {
+    "repository": "lusiki/Church-and-dezinfo",
+    "commit": "1475dd962a93f25c66b7747c60fa6be8305d0e8a",
+    "files": {
+      "03_framing_paper_2.html": {
+        "url": "https://raw.githubusercontent.com/lusiki/Church-and-dezinfo/1475dd962a93f25c66b7747c60fa6be8305d0e8a/papers/03_framing_paper_2.html",
+        "sha256": "ce81e36b4857276ef1ebf391d4d29225f98446021d134f8b9d46a5993914c4dc",
+        "bytes": 3311719
+      },
+      "rsp_paper_revised.html": {
+        "url": "https://raw.githubusercontent.com/lusiki/Church-and-dezinfo/1475dd962a93f25c66b7747c60fa6be8305d0e8a/papers/rsp_paper_revised.html",
+        "sha256": "fa7eab688b52f11f763b1bfda7a7e50a56041c55afd472b25ac4e37ef0c35e80",
+        "bytes": 2837350
+      },
+      "03_framing_paper_2.qmd": {
+        "url": "https://raw.githubusercontent.com/lusiki/Church-and-dezinfo/1475dd962a93f25c66b7747c60fa6be8305d0e8a/papers/03_framing_paper_2.qmd",
+        "sha256": "01ef5506cc234f79cc8cbabf431011cabd917bb98977b7c7c894397f28a18004",
+        "bytes": 70413
+      },
+      "rsp_paper_revised.qmd": {
+        "url": "https://raw.githubusercontent.com/lusiki/Church-and-dezinfo/1475dd962a93f25c66b7747c60fa6be8305d0e8a/papers/rsp_paper_revised.qmd",
+        "sha256": "89e49b3f616d8101ae9d91477a1ac706cb9f9e704272d3178e4fab894291cc0f",
+        "bytes": 40818
+      }
+    }
+  },
+  "conversion": {
+    "method": "Frozen rendered HTML to Pandoc DOCX; LibreOffice DOCX to PDF",
+    "pandoc": "Quarto bundled Pandoc",
+    "libreoffice": "26.2.7",
+    "analysis_rerun": false,
+    "changes": [
+      "Site navigation and author hyperlinks",
+      "Print layout and removal of browser controls/folded R code from Word/PDF",
+      "Correction of doubled TeX transport escaping, preserving formulas"
+    ],
+    "validation": {
+      "tables_per_paper": 8,
+      "figures_per_paper": 3,
+      "editable_equations_per_paper": 10,
+      "table_cells_and_image_hashes_match_source": true
+    },
+    "html_math_renderer": "KaTeX 0.19.1, embedded CSS and fonts, HTML and accessible MathML"
+  },
+  "outputs": {
+    "crkva-i-dezinformacije.html": {
+      "sha256": "4c742d0d57f27e886da87d61214c1029724bb4299d3daf8a37fad0eb2f57531f",
+      "bytes": 4797949
+    },
+    "crkva-i-dezinformacije.pdf": {
+      "sha256": "d194bf5320b6cf52235ed3c9ca8281fc40b59ccda1c88fee17353f4025c797cb",
+      "bytes": 830600
+    },
+    "crkva-i-dezinformacije.docx": {
+      "sha256": "54d5a676b2526f71163da598a54d9fa9a43d248a6b11dc8ba137290bcc8b7c82",
+      "bytes": 609339
+    },
+    "sadrzaj-ili-identitet.html": {
+      "sha256": "eb5242280f16a20c2d68a53e1eecdff91cbcf9962aa8dfff2af0378d2220f081",
+      "bytes": 4322197
+    },
+    "sadrzaj-ili-identitet.pdf": {
+      "sha256": "bb5b7b1aac3a34c4a03f2e4545fceedf7a8664fb7de1ae079ff6283fd35f3631",
+      "bytes": 726800
+    },
+    "sadrzaj-ili-identitet.docx": {
+      "sha256": "164b29c8dffd1cc43f5100b2b4aacee475cc5bf6f284ede2c389299796216c35",
+      "bytes": 270911
+    }
+  }
+}

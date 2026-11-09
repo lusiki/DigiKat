@@ -46,7 +46,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-18eeef7e313107c10b6b051a6734352e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-89390a0b5fa5de9f06f1c04b1c1b6b2e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-05a0de8cf355dfe4f020f6ea4b5bd17a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -117,6 +117,52 @@ ul.task-list li input[type="checkbox"] {
     }
   ]
 }
+</script>
+<script>
+(function () {
+  var mobileCharts = window.matchMedia("(max-width: 767.98px)");
+
+  function updateChart(image) {
+    var mobileSource = image.getAttribute("data-mobile-src");
+    if (!mobileSource) return;
+
+    if (!image.hasAttribute("data-desktop-src")) {
+      image.setAttribute("data-desktop-src", image.getAttribute("src"));
+      image.setAttribute("data-desktop-width", image.getAttribute("width") || "");
+      image.setAttribute("data-desktop-height", image.getAttribute("height") || "");
+    }
+
+    if (mobileCharts.matches) {
+      image.setAttribute("src", mobileSource);
+      image.setAttribute("width", image.getAttribute("data-mobile-width"));
+      image.setAttribute("height", image.getAttribute("data-mobile-height"));
+    } else {
+      image.setAttribute("src", image.getAttribute("data-desktop-src"));
+      image.setAttribute("width", image.getAttribute("data-desktop-width"));
+      image.setAttribute("height", image.getAttribute("data-desktop-height"));
+    }
+  }
+
+  function updateCharts(root) {
+    if (root.nodeType === 1 && root.matches("img[data-mobile-src]")) updateChart(root);
+    if (root.querySelectorAll) {
+      root.querySelectorAll("img[data-mobile-src]").forEach(updateChart);
+    }
+  }
+
+  var observer = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+      mutation.addedNodes.forEach(updateCharts);
+    });
+  });
+
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+  mobileCharts.addEventListener("change", function () { updateCharts(document); });
+  document.addEventListener("DOMContentLoaded", function () {
+    updateCharts(document);
+    observer.disconnect();
+  });
+})();
 </script>
 
 
@@ -209,6 +255,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../../pages/studije/index.html">
  <span class="dropdown-text">Tematska istraživanja</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../pages/demokrscanstvo/index.html">
+ <span class="dropdown-text">Demokršćanstvo u medijima</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../assets/izvjestaji/godisnji-pregled-2025.html">
@@ -325,7 +375,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Izmijenjeno</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">24. kolovoza 2026.</p>
+      <p class="date-modified">9. studenoga 2026.</p>
     </div>
   </div>
     
@@ -336,66 +386,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="freshness-strip" aria-label="Svježina i status stranice"><span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">24. kolovoza 2026.</span></span><span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--preliminary">Preliminarno</span></span></div>
-<p>Rad istražuje narativne okvire u hrvatskim katoličkim web medijima (2021.–2026.) i pokazuje da agregirana oznaka katoličkog medija prikriva važnu unutarnju razliku. Katolički orijentirani portali češće od službenih crkvenih glasila aktiviraju svaki od osam mjerenih okvira.</p>
+<div class="freshness-strip" aria-label="Svježina i status stranice"><span class="freshness-strip__item"><span class="freshness-strip__label">Ažurirano</span><span class="freshness-strip__value">9. studenoga 2026.</span></span><span class="freshness-strip__item"><span class="freshness-strip__label">Status</span><span class="status status--preliminary">Preliminarno</span></span></div>
+<p>Koje razlike skriva zajednička oznaka katoličkih medija? Rad uspoređuje narativne okvire službenih crkvenih glasila i katolički orijentiranih portala. Autori su Luka Šikić i Andreja Sršen.</p>
 <section id="istraživačko-pitanje" class="level2">
 <h2 class="anchored" data-anchor-id="istraživačko-pitanje">Istraživačko pitanje</h2>
-<p>Razlikuju li se katolički mediji od ostalih medijskih tipova u uporabi narativnih okvira nakon kontrole duljine članka i razdoblja objave, koje se kombinacije okvira udružuju u prepoznatljive interpretativne pakete te u kojoj se mjeri razlikuju narativne strategije službenih crkvenih medija (npr. IKA, Glas Koncila) od katolički orijentiranih portala bez izravne uredničke odgovornosti prema crkvenoj hijerarhiji (npr. narod.hr, dnevno.hr).</p>
+<p>Razlikuju li se katolički mediji od ostalih medija u uporabi narativnih okvira i koliko se razlikuju glasovi unutar samoga katoličkog prostora? Rad ispituje i supojavljivanje okvira te promjene njihovih odnosa tijekom promatranog razdoblja.</p>
 </section>
 <section id="podaci-i-metode" class="level2">
 <h2 class="anchored" data-anchor-id="podaci-i-metode">Podaci i metode</h2>
-<p>Analiza polazi od službenoga korpusa s 413.985 objava, obnovljenoga 10. kolovoza 2026. Nakon izdvajanja weba i uklanjanja 4.078 ponovljenih URL-ova, analitički presjek obuhvaća 282.584 članaka iz 1.995 izvora. Od toga 91.292 članaka dolazi iz 65 katoličkih izvora. Podaci završavaju 11. lipnja 2026.</p>
-<p>Osam narativnih okvira prepoznaje se rječničkim postupkom osjetljivim na hrvatsku morfologiju. Logistički modeli kontroliraju godinu i duljinu članka, a standardne su pogreške grupirane po izvoru. Izvorna ručna provjera na 200 članaka nije ponovljena za mjesece dodane obnovom korpusa. Promjena načina prikupljanja 2024. i nepotpuna 2026. dodatno ograničavaju vremensku interpretaciju.</p>
+<p>Rukopis analizira web članke iz korpusa DigiKat objavljene od početka 2021. do siječnja 2026. Rječnički postupak prepoznaje narativne okvire, a regresijski modeli uspoređuju medijske skupine uz kontrolu godine objave i duljine članka. Standardne pogreške uzimaju u obzir povezanost članaka istoga izvora. Pojedinosti uzorka, provjere i ograničenja navedeni su u radu.</p>
 </section>
 <section id="ključni-nalaz" class="level2">
 <h2 class="anchored" data-anchor-id="ključni-nalaz">Ključni nalaz</h2>
-<p>Katolički mediji kao cjelina nemaju veću vjerojatnost uporabe obrane vjere ni tradicionalnih vrijednosti od ostalih medija. Jedina statistički značajna agregirana razlika jest manja vjerojatnost okvira zavjere u katoličkim medijima, uz OR 0,40.</p>
-<p>Unutarnja je razlika snažna. Katolički orijentirani portali statistički značajno češće od službenih crkvenih glasila aktiviraju svih osam okvira. Omjeri izgleda kreću se od 1,21 za tradicionalne vrijednosti do 4,88 za zavjeru. Orijentirani portali, dakle, ne zamjenjuju afirmativne okvire antagonističkima. Oni pojačavaju cijeli mjereni narativni repertoar. Supojavljivanja okvira ostaju slaba, pa podaci ne podupiru tvrdnju o čvrstim interpretativnim paketima.</p>
-<div class="metric-grid">
-<div class="metric-card">
-<div class="metric-value">
-282.584
-</div>
-<div class="metric-label">
-web članaka u novom presjeku
-</div>
-</div>
-<div class="metric-card">
-<div class="metric-value">
-91.292
-</div>
-<div class="metric-label">
-članaka iz katoličkih izvora
-</div>
-</div>
-<div class="metric-card">
-<div class="metric-value">
-8 / 8
-</div>
-<div class="metric-label">
-okvira češćih na orijentiranim portalima
-</div>
-</div>
-<div class="metric-card">
-<div class="metric-value">
-OR 4,88
-</div>
-<div class="metric-label">
-najveća unutarnja razlika za zavjeru
-</div>
-</div>
-</div>
+<p>Službena crkvena glasila i katolički orijentirani portali imaju različite narativne profile. Orijentirani portali češće aktiviraju okvire suvereniteta, vanjske prijetnje, medijske kritike i zavjere. Službena glasila češće aktiviraju okvir tradicionalnih vrijednosti, dok je obrana vjere zajednička objema skupinama. Zajednička oznaka katoličkih medija zato prikriva važne razlike u načinu tumačenja javnih događaja.</p>
 </section>
 <section id="cijeli-rad" class="level2">
 <h2 class="anchored" data-anchor-id="cijeli-rad">Cijeli rad</h2>
-<p>Rukopis je dostupan u tri usklađena formata.</p>
+<p>Dostupno je izdanje rukopisa od 14. travnja 2026. HTML, PDF i Word prenose isti tekst, tablice i slike.</p>
 <div class="study-paper-formats" aria-label="Dostupni formati rada">
 <p><a class="study-paper-format study-paper-format--primary" href="../../assets/papers/crkva-i-dezinformacije.html"><span class="study-paper-format__type">HTML</span><span class="study-paper-format__label">Čitanje u pregledniku</span></a> <a class="study-paper-format" href="../../assets/papers/crkva-i-dezinformacije.pdf"><span class="study-paper-format__type">PDF</span><span class="study-paper-format__label">Preuzimanje i ispis</span></a> <a class="study-paper-format" href="../../assets/papers/crkva-i-dezinformacije.docx"><span class="study-paper-format__type">Word</span><span class="study-paper-format__label">Uređivanje rukopisa</span></a></p>
 </div>
 </section>
 <section id="status" class="level2">
 <h2 class="anchored" data-anchor-id="status">Status</h2>
-<p>U recenziji. Dio je drugoga izlaznog toka projekta, koji obuhvaća tematske studije i radove. Popis je na stranici <a href="../../pages/schedule.html">Projektni raspored</a>.</p>
+<p>U recenziji. Rad pripada <a href="index.html">tematskim istraživanjima na korpusu DigiKat</a>.</p>
 
 
 </section>
